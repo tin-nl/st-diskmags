@@ -1,0 +1,89 @@
+ {*f1
+          EscAPE PAINT 0.5e
+         -------------------{*f0
+                        A NEW TRUECOLOR PAINTING TOOL
+
+autor  : No / Escape
+system : Falcon, 4 MB RAM, TV / RGB / VGA-monitor, harddisk
+status : freeware
+
+Yup, here comes another painting-program. You  all surely knew my problems. I'm
+a NeoChrome Master  fanatic and so nearly all painting-program  around are more
+or less useless and shitty in my eyes. I don't like Delmpaint (Schelmpaint ;-),
+Indypaint or Godpaint. This  programs are  in fact full filled of good features
+but I don't like the handling. I hope you know what I mean...
+On the Intercon I've received a version of this new painting-program  and becoz
+I'm searchin' hard for a program on the Falcon I have installed it on my Falcon
+and... it runs perfectly, also under NVDI and Screenblaster... BUT... the first
+thing what appears on the screen was a GEM-based menu with differend boxes...
+Oh, shit! Not  another GEM-program! But  than cames  the surprise. The  program
+offers two different magnify-types, Degas Elite or Neo Master. And when  you've
+entered the painting-screen it isn't a GEM-program anymore. In  the Neo-magnify
+you will see a screen which remembers a little bit to the best painting-prog on
+the ST. You have a color-selection, some kind of painting-options (lines, boxes
+and circles) and a realtime-magnify with different resolutions.
+Ok the ground-functions  are  avaiable  and  so  you  can paint simple pictures
+without  problems. But if  you will use the other  options of the program, like
+anitaliasing, rotating, copying or so one, you must go back to the GEM and this
+sucks. Because  in  the  Neo  Master  mode  there  is  many  space left I don't
+understand why this options aren't integrated here.
+Because of  this the program  isn't easy to handle in my eyes. You may say that
+I shouldn't  demand to much from  a freeware-program but I need a program which
+is very easy to handle (even for an idiot) and not one where I must jump around
+between different screens and menus.
+Ok, back  to the facts. The program contains also 5 module-slots and so you can
+code your own modules for use with this program.
+You can work on 3 different pictures at the same time.
+One point I don't  understand is, that  only  true-color-picture-formats can be
+loaded or saved. You can't load Gif or IFF and also no NEO or Degas-formats...
+But hopefully there will be more formats included in later versions.
+
+At last here are all features in a short survey:
+
+painting-tools
+- drawing
+- lines
+- rectangle
+- circles
+- polylines
+- boxes
+- fill-option
+- text
+- block-cutting
+- block-putting
+
+block-edit
+- negative block
+- antialiase block
+- recut block
+- scaling
+- rotating
+- x- and y-mirror
+- block-options (transparent, bakcground, rgb etc.)
+
+extern modules
+- 4 different filter-modules (brighten etc.) are included
+
+zoom and magnify
+- 2 different zoom-types (NeoChrome Master and Degas Elite) with grid
+- realtime-zoom
+- 4 different magnify-types (3:1, 5:1, 7:1, 9:1)
+
+disk-options
+- following picture-formats can be loaded: GOD, PI9, TGA, TPI, TRP, TRU, XGA
+- following picture-formats can be saved: TRP, XGA
+- palette can be saved as: INDY or EPP
+- blocks can be saved as: TRP or TRU
+
+Hum, what  should I say. A nice try but this program needs some months more for
+development. This time it contains only the usual painting-tools and no special
+things (take a look at the Rainbow 2 article)...
+Good is that the program runs without any problems on VGA and under NVDI / SB.
+I'll  hope that there  will be more  improvements in the  next versions because
+there are some good first signs...
+If you're a painter  you can get  it and see by yourself  what's good or bad on
+this  little  tool, remember: it's  freeware - you  can take  a look at  it for
+nothing and so why not?
+
+----------------------------------------------------------------Moondog of tnb-
+

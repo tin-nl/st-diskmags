@@ -1,0 +1,150 @@
+       RASTER INTERRUPT PROGRAMMING BY POWER MAN OF THE WILD BOYS
+       ----------------------------------------------------------
+
+Chill out dudes! Power Man is here to tell you how to get more than 16 
+colours on the screen at the same time. Even if you are a novice coder
+you should be able to understand it(unless you are well thick and are
+a lamer). 
+
+I'll start from the beginning(where else?) by explaing the TIMER B
+interrupt which is the key to the routine.
+
+The TIMER B interrupt
+---------------------
+   Each time the screen is updated(50 times a second in the default
+50HZ mode) the electron beam draws 200 scanlines (a scanline is 1
+line of pixels, or 1 line of the screen). To change the palette
+or just certain colours of the palette while the screen is being
+updated you need to wait until a certain amount of scanlines have
+been drawn. You use the TIMER B interrupt for this. Once it is enabled 
+and has been started(explained later), it's data register is decremented
+by one. When it reaches zero, the CPU jumps to an interrupt handler
+routine whose address is stored in memory location $120. This routine
+can then change the colours and restart the TIMER B interrupt, and must
+tell the CPU that it has done the interrupt. The TIMER B control 
+register is used to stop and start the TIMER B interrupt.
+
+Important addresses-
+-------------------
+$FFFFFA1B  -  THIS IS THE ADDRESS OF THE TIMER B CONTROL REGISTER
+$FFFFFA21  -  THIS IS THE ADDRESS OF THE TIMER B DATA REGISTER
+$120       -  THIS ADDRESS CONTAINS THE ADDRESS OF THE TIMER B 
+	      INTERRUPT ROUTINE
+$70        -  THIS ADDRESS CONTAINS THE ADDRESS OF THE VBL
+	      INTERRUPT ROUTINE
+
+The VBL Interrupt
+-----------------
+   The Vertical Blank Interrupt occurs each time the screen has been 
+updated. In this routine, you need to set the colours for the top of
+the screen and set a pointer to a table of colours which will be
+used by the TIMER B routine. You also need to start TIMER B in the VBL
+routine for syncronisation, or else the colours won't be changed
+at the right place on the screen.
+
+Now, lets see this theory is action!
+
+First, we need to enable TIMER B using this code:
+ 
+ORI.B #1,$FFFFFA07.W
+ORI.B #1,$FFFFFA13.W
+
+Then, we need some colours to change, so the example here will change
+colour 0 every 10 scanlines, which means we need 20 (200/10) colours
+stored in a table, like this:
+
+COLOURS	DC.W $700,$710,$720,$730,$740,$750,$760,$770,$670,$570
+	DC.W $470,$370,$270,$170,$070,$071,$072,$073,$074,$075
+
+We then need a pointer which points to the start of the table:
+
+PAL	DC.L COLOURS+2    
+ 
+NOTE:We need to add 2 to COLOURS because the VBL routine sets the
+first colour.
+
+Then we need to set up the TIMER B interrupt routine:
+
+MOVE.L #TIMERB,$120.W
+
+Next we need a new VBL interrupt routine:
+
+VBL	CLR.B $FFFFFA1B.W	    ;STOP TIMER B FOR SYNCRONISATION
+	MOVE.B #10,$FFFFFA21.W	    ;COUNTER=10 SCANLINES
+	MOVE.L #COLOURS+2,PAL       ;START OF COLOUR TABLE
+        MOVE.W COLOURS,$FFFF8240.W  ;SET COLOUR 0 TO FIRST COLOUR
+	MOVE.B #8,$FFFFFA1B.W	    ;START TIMER B
+	RTE			    ;PISS OFF
+
+NOTE:The address $FFFF8240 is the colour 0 register, colour 1 is this
+     address plus 2, for colour 2 add 4 etc. You can change any of
+     the colours you want.
+
+The TIMER B interrupt routine is then done like this:
+
+TIMERB	CLR.B $FFFFFA1B.W	    ;STOP TIMER B
+	MOVE.L A0,-(A7)		    ;SAVE A0
+	MOVEA.L PAL,A0              ;A0=ADDRESS OF COLOUR
+	MOVE.W (A0)+,$FFFF8240.W    ;COLOUR=0 NEW COLOUR
+        MOVE.L A0,PAL		    ;PAL=NEXT COLOUR IN TABLE
+	MOVEA.L (A7)+,A0	    ;RESTORE A0
+	MOVE.B #10,$FFFFFA21.W	    ;COUNTER=10 SCANLINES
+	MOVE.B #8,$FFFFFA1B.W	    ;START TIMER B
+	BCLR #0,$FFFFFA0F.W	    ;I'VE DONE THE ROUTINE
+	RTE			    ;GO AWAY
+
+Almost finished now, all thats left is to replace the keyboard interrupt
+with a new one, disable the mouse and disable TIMER C. All of this is
+done to prevent jittering of the colours.
+
+DC.W $A000
+DC.W $A00A			;HIDE MOUSE
+MOVE.B #$12,$FFFFFC02.W 	;DISABLE MOUSE
+MOVE.L #KEY,$118.W		;NEW KEYBOARD ROUTINE
+MOVE.W #5,-(A7)			;5=TIMER C INTERRUPT
+MOVE.W #26,-(A7)		;26=DISBALE INTERRUPT
+TRAP #14
+ADDQ.L #4,A7
+
+Lastly, we have the new keyboard routine:
+
+KEY	MOVE.W #$2500,SR	;SET IPL TO LEVEL 5 SO THAT ONLY
+				;LEVEL 6 AND 7 INTERRUPTS CAN OCCUR.
+	BCLR #6,$FFFFFA11.W     ;I'VE DONE THE ROUTINE
+	RTE			;SOD OFF
+
+There is a file called COLOURS.PRG on this disk which is a demo of
+the above routines. The source code is in a file called COLOURS.S and
+contains all the above routines.
+
+If you use these routines and are using a lot of processor time then
+you may find that the colours are not changed exactly at the beginning
+of the line. The only way around this is to either:
+1)In the TIMER B interrupt routine, start TIMER B and wait until the
+  data register changes(this waits until the right border is reached)
+  and then change the colour in the right border. There are two
+  problems here. You can only change colours every two or more scanlines
+  and it wastes a hell of a lot of processor time if you have a lot of
+  rasters.
+2)This is the best solution, even though it's inconvenient and maybe
+  even crude. What you do is this: on the lines on which the colours
+  are changed, don't draw anything using the colours which are being
+  changed. That way, the colours will have been set properly by the
+  time the next line is reached. This isn't as inconvenient as you
+  might think. For example, if you've got a background made up of 
+  32 by 32 pixel blocks drawn in colour 1, and you want to change
+  colour 1 every 32 pixels, so that each line of blocks is a different
+  colour, then all you have to do is design the block so that the 
+  bottom line is left blank. Easy huh?
+
+Well, that's it for now. If the Lost Boys make another maggie, then I
+might send them more articles on coding. Don't forget, if you want
+to write to me or send me stuff(I desperately need some good grafix
+and muzix for my demos!) then write to:
+
+       The Wild Boys
+       131 Gunnersbury Avenue
+       Acton W3 8LE
+       London
+
+So, until next time, chill out......

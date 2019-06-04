@@ -1,0 +1,61 @@
+
+                                        Maggie 21: Previews
+
+
+
+R A D I C A L   R A C E   ( P R E V I E W )
+
+
+          GAMES: Back in the very earliest days of the Falcon, a group 
+           called Pentagon made some rather  impressive 3D demos. After 
+           4 years, they're back with a neat little game preview...
+          Super-Sprinter: Tat
+
+
+This is another in-development title that  has been hanging around for 
+ a while now, but as with  so  much  Falcon software, it looks like the 
+ title itself has been  postponed  for another few weeks/months/decades 
+ (or the programmers have decided  to  work  on their next title before 
+ finishing the last one.) "Radical  Race  The  Preview" itself takes up 
+ around 3 megabytes of diskspace, so you can at least see that a lot of 
+ work has already gone into it - after all, it is French.
+
+After finally getting it installed you  are presented with a series of 
+ beautiful introductory pictures, and  then  a well-presented and well-
+ drawn menu. Options are mostly disabled,  but  there is even an option 
+ to customize the in-game screen area:  a nice touch, although by using 
+ the Abstract/Fatal Design screen routines mean  that the whole game is 
+ unuseable on a normal  television.  [Hackers'  hints: Change the lines 
+ after "btst #7,$ffff8006.w" from "bne.s" to "beq.s" using MonST...]
+
+Having chosen your game  type,  it's  on  to  the character selections 
+ (more beautiful graphics) then the  track  to  drive on, which are all 
+ basically the same with  different  graphics,  then, finally, the main 
+ game itself.
+
+Oh yes, the game! As usual, much of the gameplay is only half-finished 
+ - intelligence routines and  gameplay  design  always  seems to be the 
+ *last* thing that people put in a  game (shouldn't it be the other way 
+ round?) As a result, it would  be  unfair  to  make any comment on the 
+ game in detail. What we -can-  say  is  that the game is loosely based 
+ around the SuperSprint / Badlands / Micro Machines style, racing round 
+ the overhead views  of  hardware-scrolling  tracks,  while shooting at 
+ other cars while they shoot at you. Splendid fun.
+
+In-game graphics aren't as good as  the options screens, however in an 
+ intelligent move, the programmers have not attempted to go for complex 
+ presentation … la "Moonspeeder"  (incidentally  a very similar program 
+ gameplay-wise), and  instead  have  a  smooth  50/60Hz  update,  which 
+ enhances playability a lot. Sound is also very good with effective use 
+ of samples in a cool French accent ("Wan!" "Tuuuu!" "Shreee!" "Go!").
+
+
+There are of course a few bugs left in (particularly when the computer 
+ decides you've won halfway through a  circuit?) but overall this shows 
+ promise. Will is ever be released though? We hope it does, if only for 
+ the ace visuals.
+
+
+
+
+(C) 1996 Maggie Team

@@ -1,0 +1,214 @@
+                               SPIELE-TIPS
+                               -----------
+ 
+Yo! Auch diesmal gibt's hier wieder ein paar Tips zu PD- und Kommerz-Games...
+
+-------------------------------------------------------------------------------
+
+TRAIN 1.0 (PD)
+---------
+
+Um nicht immer in  den Baby-Levels  anfangen zu  mssen, hier  schnell ein paar
+Codes, die euch in knackigere Levels fhren:
+
+2. GOGOGOGOGO
+3. AROUNDERER
+4. GOTOFUTURE
+5. NUMMEROFNF
+6. JOYSTICKER
+7. BIDDERLING
+
+Ok, viel Spa beim Modellbahnplatten-verschrotten!
+
+-------------------------------------------------------------------------------
+                                                                 Moondog of tnb
+-------------------------------------------------------------------------------
+
+STONEAGE (Eclipse)
+--------
+Levelcodes
+
+ Lvl  Code         Lvl  Code         Lvl  Code
+ ------------------------------------------------------------------------------
+   2  BOVIDO        27  HADOHI        52  SIFUBA
+   3  SIDULA        28  LUFIBO        53  DEVODO
+   4  BIFISI        29  HIVADA        54  SEDILE
+   5  LOVUHO        30  DODALO        55  BUFASE
+   6  BADEBA        31  HIFUSE        56  SUVAHI
+   7  LUFIDO        32  DIVEHE        57  BIDUBI
+   8  HAVULU        33  SEDIBI        58  LAFODU
+   9  LODISE        34  DUFUDI        59  BIVILI
+  10  HIFUHI        35  SUVIBU        60  LEDASU
+  11  DIVOBI        36  DIDUDI        61  BOFAHA
+  12  HEDIHA        37  SOFELU        62  LUVUBO
+  13  DAFALI        38  BIVISA        63  HUDEDE
+  14  HUVESU        39  SEDUHO        64  LIFILI
+  15  DADOHA        40  BEFIBE        65  HAVUSO
+  16  SOFOBO        41  LUVUDI        66  DODIHA
+  17  DIVIDE        42  BUDOLO        67  HETUBU
+  18  SIDABI        43  LIFISA        68  DOREDU
+  19  BEFEDO        44  HAVAHU        69  SUHIBE
+  20  SAVOLI        45  LIDEBU        70  DUTUDI
+  21  BUDUSU        46  HEFODE        71  SIRILO
+  22  LIFOHU        47  DEVOLI        72  DAHUSA
+  23  BOVIBE        48  HUDISO        73  SOTOHI
+  24  LIDADA        49  DUFAHA        74  BERIBU
+  25  BIFALO        50  HIVEBI        75  SOHADA
+  26  LEVUSA        51  DADODU        76  BUTELO
+
+Weiter bin ich leider nicht gekommen. Level 76 hat es echt in sich...
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                   Drizzt / tnb
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+RINGS OF MEDUSA (Starbyte)
+~~~~~~~~~~~~~~~
+
+So, jetzt mu ich gleich mal ein paar Tips vom Stapel lassen.
+
+Was mich als erstes genervt hat,  war, da man immer zum Speichern die Diskette
+wechseln mute.  Ich habe dann das Grafik-File von Disk B auf eine andere  Disk
+kopiert und es ging immer noch nicht,  was mich zu der Annahme brachte,  da er
+die  Diskette  an  dem Grafik-File erkennt,  was dann gleich  mit  dem  Bugaboo
+behoben wurde.  Das ganze funktioniert so:  (ICH šBERNEHME KEINE HAFTUNG, FALLS
+SICH JETZT MIT DIESER ANLEITUNG DIE DISK ZERSCHIESST!!!)
+
+Man macht ein Back-up vom Main-Prog ("MEDUSA.PRG",  oder so) und geht  mit  dem
+Bugaboo  auf  eben dieses File los.  Man spring im Hexdump-Modus ans  Ende  des
+Files und scrollt sich so zum Anfang hin durch.  Jetzt taucht nach einiger Zeit
+zweimal  im kurzen Abstand die Buchstaben-Folge "MEDUSA.GRF" auf.  Davor  steht
+jeweils  ein  kurzer  Text.   Man  nimmt  das  "MEDUSA.GRF",   das  hinter  der
+Aufforderung,  die  Save-Disk  einzulegen,  steht  und  ver„ndern  es  z.B.  in
+"MEDUSA.GRX".  Jetzt wird das ganze wieder auf die Disk gebannt und schon  kann
+man auf ein Back-Up der 2. Disk Games abspeichern.
+
+Schon spielt sich das Game ein wenig flssiger...
+
+Noch  ein Tip:  Immer wenn man eine Armee aufbaut,  grbelt man wieder  darber
+nach,  fr welchen Job man welche Rassen nimmt.  Deswegen hier eine Tabelle, wo
+wer am besten ist. (hohe Zahl -> gut; niedrige Zahl -> schlecht)
+
+
+Rasse     | Inf | Kav | Art | Auf | Dra | Mag | Bog |
+----------+-----+-----+-----+-----+-----------+-----+
+Mensch    | 050 | 050 | 050 | 050 | 050 | 050 | 050 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Elf       | 039 | 056 | 055 | 055 | 048 | 064 | 053 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Zwerg     | 065 | 043 | 042 | 043 | 052 | 031 | 047 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Halbling  | 038 | 055 | 051 | 060 | 047 | 065 | 053 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Ork       | 059 | 040 | 036 | 047 | 048 | 039 | 044 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Gnom      | 032 | 061 | 060 | 062 | 048 | 073 | 057 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Riese     | 066 | 031 | 030 | 044 | 047 | 029 | 038 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Troll     | 064 | 033 | 033 | 044 | 048 | 031 | 040 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Oger      | 062 | 037 | 035 | 044 | 049 | 034 | 042 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+Zwark     | 036 | 059 | 059 | 060 | 049 | 068 | 056 |
+----------+-----+-----+-----+-----+-----+-----+-----+
+
+
+Noch   ein   Tip  zum  Geld-Vermehren:   Wenn  man  erstmal   ordentlich   Geld
+zusammengesammelt hat,  sucht man sich eine Handelsstrecke,  die m”glichst viel
+Gewinn bringt. Jetzt geht man zu der einen Stadt, kauft so viele billige Waren,
+wie das Geld reicht.  Dann geht man zur Bank,  nimmt den h”chstm”glichen Kredit
+und  kauft noch mehr Waren ein.  Jetzt wieder zur Bank,  und dadurch,  da  man
+jetzt einen gr”eren Waren-Wert hat,  kann man wieder Kredit nehmen... Das l„t
+sich  bis zu einem Gewissen Punkt treiben,  dann spuckt die Bank  keinen  mden
+Taler mehr aus.  Jetzt schnell zur anderen Stadt und alles wird verkauft. Jetzt
+noch  das Geld an die Bank zurckzahlen und der Gewinn ist recht  hoch  (solang
+die  Preis-Differenz der Waren gro genug sind (mind.  18%)).  Der  Vorteil  in
+dieser Methode,  liegt darin, da man sehr schnell, ohne 100 mal hin und her zu
+rennen,  an Geld kommen kann.  Auerdem kann sich dieser Trick bei  pl”tzlichen
+sehr groen Preis-Differenzen auszahlen.  Wer der Bank kein Geld in den  Rachen
+schieben will,  mu dann doch auf alte Art an Geld kommen...  Haken: man sollte
+mind. 500.000 Taler haben.
+
+
+M”glichst immer von Ost nach West/West nach Ost reisen. Je weiter die St„dte in
+horizontaler Richtung entfernt sind, desto h”her sind auch die Gewinne...
+
+
+So schnell,  wie es geht Aufkl„rer kaufen (ca.  100 Stck). Damit kann man dann
+sch”n den Armeen ausweichen. Die zwei Zauberer nicht vergessen!!!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                   Drizzt / tnb
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+KNIGHTMARE (Mindscape)
+~~~~~~~~~~
+
+Ein paar Tips noch, zum Game...
+
+Nachdem  man sich seine Party zusammengewurstelt hat,  findet man sich  in  der
+"Ausenwelt"  wieder.  Nachdem man jetzt etwas mit der komischen Lore  gefahren
+ist,  nimmt man den Short-Cut to the Forest. Hier angekommen sollte man erstmal
+abspeichern.  Als n„chstes nimmt man den Stock, der links von dem Eingang liegt
+und schaltet den Hebel um,  was zur folge hat,  da sich am  gegenberliegenden
+Ende  ein  Busch  in Luft aufgel”st hat.  Jetzt kann man  in  den  Wald  gehen.
+Vorzugsweise  sollte  man beim Weg bleiben,  da man sich ganz  sch”n  verlaufen
+kann.
+Als  erstes  sollte man eine ordenlich Anzahl an Hasen t”ten,  um an  Essen  zu
+kommen.  Allerdings sollte man nicht zu viele umbringen, da sie sich, schneller
+vermehren,  wenn noch eine halbwegs groe Anzahl vorhanden ist (zumindest  habe
+ich  diesen Eindruck).  Jetzt sucht man den lebendigen Baum,  der "Where is  my
+Child" (o.s.„.) sagt,  und wirft den Stock auf ihn.  Der Baum verschwindet  und
+hinterl„t ein Messer.  Jetzt rein in den freigelegten Dungeon-Eingang.  In dem
+ersten  Dungeon  soll  man ein Schild finden.  Das Teil  beschr„nkt  sich  aufs
+Monsterschlachten und Knopfdrcken.  Bis zum Prison drfte das eigentlich  kein
+groes  Problem darstellen.  Ist man erstmal im Prison,  geht man halb  um  den
+Knast in der Mitte herum.  Dort ist ein 2 Felder breiter Gang,  in dem versetzt
+zwei Gitter im Boden sind. Man stellt sich vom Prison aus links vor die Stelle,
+an der das erste Gitter liegt, dreht sich nach links und geht durch die Wand.
+Dort ist an der Wand ein kleiner Schalter;  wenn der gedrckt wird, werden alle
+Monster herausgelassen.  Hat man alle tot,  steckt man den Schlssel ins  Loch,
+geht  wieder  durch die Geheim-Wand,  wo nun ein neuer Gang zu  sehen  ist,  an
+dessen  Ende  sich eine Tr befindet.  Diese ”ffnet  man,  t”tet  den  dahinter
+befindlichen Geist und den station„ren Troll, nimmt das Schild und hpft in die
+Grube,  womit man sich wieder im Wald befindet.  Das Schild wirft man jetzt auf
+den Baum,  der "Where is my Cover" sagt (mehrmals versuchen),  und schon  kommt
+man in den n„chsten Dungeon.  Dort gibt es erstmal einen "Raum" mit einem Block
+in  der  Mitte,  der  jeweils eine Tr auf jeder Seite  hat.  Nachdem  man  das
+Viehzeug  niedergemetzelt hat,  wirft man von jeder Seite,  abgesehen  von  der
+Seite,  gegenber  der  von  der  man  kommt,  einen  kleinen,  bedeutungslosen
+Gegenstand (keine Tennisb„lle!) durch die Tren.  Jetzt ”ffnen sich neue G„nge,
+in denen man einen Schlssel (von denen man insges.  drei braucht) und ein paar
+Pfeile findet.  Der zweite Schlssel liegt hinter dem Bodenplatten  Feld.  Wenn
+man auf eine Der Platten tritt, wird ein Feuerball ausgel”st. Trick: Man stellt
+sich  vor das erste Feld der rechten Reihe,  legt einen unwichtigen  Gegenstand
+drauf und springt um die Ecke.  Jetzt stellt man sich auf die erste Platte  und
+legt  was auf die n„chste.  Jetzt wieder um die Ecke,  den Feuerball  abwarten.
+Danach  das  Ganze noch mit der letzten Platte,  dann ist der  Weg  frei.  Hier
+findet  man  jetzt den 2.  Schlssel und auch gleich dazugeh”rige  Tren  (aber
+leider  3  davon  hintereinander).   Hinter  der  2.   Tr  befindet  sich  ein
+Lebensbrunnen und ein Bogen. Die Aufgabe fr den 3. Schlssel konnte ich leider
+nicht erfllen.  Man hat einen Wrfel und einen Raum, der Mystic Chamber heit.
+Eine Seite des Raumes (vom Eingang aus die rechte) ist besonders.  An ihr  sind
+kleine Kugeln. Man kann jetzt den Wrfel rollen. Es wird anscheinend immer eine
+seitliche Seite (???) gezeigt,  an der man dann mit Hilfe eines echten  Wrfels
+die oben liegende Seite erraten kann. Ich habe allerdings keine Ahnung, was man
+da machen mu.
+
+Falls mir jemand helfen kann, schreibt er bitte an:
+
+                               ~~~~~~~~~~~~~~~~~
+                                 Drizzt of tnb
+                                 Lorenz  Witte
+                               Bunnenbergstr. 20
+                                30165  Hannover
+                               ~~~~~~~~~~~~~~~~~
+
+Als  Gegenleistung  gibt  es  dann  die  n„chste  UCM-Ausgabe  direkt  von  mir
+(inklusive Porto und Disketten)-
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                   Drizzt / tnb
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ou

@@ -1,0 +1,1444 @@
+* Ever wanted to know how JPEG compression works?  Read on...!
+
+This article answers Frequently Asked Questions about JPEG image compression.
+This is part 1, covering general questions and answers about JPEG.  Part 2
+gives system-specific hints and program recommendations.  As always,
+suggestions for improvement of this FAQ are welcome.
+
+New since version of 5 March 1995:
+  * Minor corrections.
+
+
+This article includes the following sections:
+
+Basic questions:
+
+[1] What is JPEG?
+[2] Why use JPEG?
+[3] When should I use JPEG, and when should I stick with GIF?
+[4] How well does JPEG compress images?
+[5] What are good "quality" settings for JPEG?
+[6] Where can I get JPEG software?
+[7] How do I view JPEG images posted on Usenet?
+
+More advanced questions:
+
+[8] What is color quantization?
+[9] What are some rules of thumb for converting GIF images to JPEG?
+[10] Does loss accumulate with repeated compression/decompression?
+[11] What is progressive JPEG?
+[12] Isn't there a lossless JPEG?
+[13] Why all the argument about file formats?
+[14] How do I recognize which file format I have, and what do I do about it?
+[15] How does JPEG work?
+[16] What about arithmetic coding?
+[17] Could an FPU speed up JPEG?  How about a DSP chip?
+[18] Isn't there an M-JPEG standard for motion pictures?
+
+Miscellaneous:
+
+[19] Where are FAQ lists archived?
+
+
+This article and its companion are posted every 2 weeks.  If you can't find
+part 2, you can get it from the news.answers archive at rtfm.mit.edu
+(see "[19] Where are FAQ lists archived?").  Part 2 changes very frequently;
+get a new copy if the one you are reading is more than a couple months old.
+
+------------------------------
+
+Subject: [1] What is JPEG?
+
+JPEG (pronounced "jay-peg") is a standardized image compression mechanism.
+JPEG stands for Joint Photographic Experts Group, the original name of the
+committee that wrote the standard.
+
+JPEG is designed for compressing either full-color or gray-scale images
+of natural, real-world scenes.  It works well on photographs, naturalistic
+artwork, and similar material; not so well on lettering, simple cartoons,
+or line drawings.  JPEG handles only still images, but there is a related
+standard called MPEG for motion pictures.
+
+JPEG is "lossy," meaning that the decompressed image isn't quite the same as
+the one you started with.  (There are lossless image compression algorithms,
+but JPEG achieves much greater compression than is possible with lossless
+methods.)  JPEG is designed to exploit known limitations of the human eye,
+notably the fact that small color changes are perceived less accurately than
+small changes in brightness.  Thus, JPEG is intended for compressing images
+that will be looked at by humans.  If you plan to machine-analyze your
+images, the small errors introduced by JPEG may be a problem for you, even
+if they are invisible to the eye.
+
+A useful property of JPEG is that the degree of lossiness can be varied by
+adjusting compression parameters.  This means that the image maker can trade
+off file size against output image quality.  You can make *extremely* small
+files if you don't mind poor quality; this is useful for applications such
+as indexing image archives.  Conversely, if you aren't happy with the output
+quality at the default compression setting, you can jack up the quality
+until you are satisfied, and accept lesser compression.
+
+Another important aspect of JPEG is that decoders can trade off decoding
+speed against image quality, by using fast but inaccurate approximations to
+the required calculations.  Some viewers obtain remarkable speedups in this
+way.
+
+------------------------------
+
+Subject: [2] Why use JPEG?
+
+There are two good reasons: to make your image files smaller, and to store
+24-bit-per-pixel color data instead of 8-bit-per-pixel data.
+
+Making image files smaller is a win for transmitting files across networks
+and for archiving libraries of images.  Being able to compress a 2 Mbyte
+full-color file down to, say, 100 Kbytes makes a big difference in disk
+space and transmission time!  And JPEG can easily provide 20:1 compression
+of full-color data.  If you are comparing GIF and JPEG, the size ratio is
+usually more like 4:1 (see "[4] How well does JPEG compress images?").
+
+If your viewing software doesn't support JPEG directly, you'll have to
+convert JPEG to some other format to view the image.  Even with a
+JPEG-capable viewer, it takes longer to decode and view a JPEG image than
+to view an image of a simpler format such as GIF.  Thus, using JPEG is
+essentially a time/space tradeoff: you give up some time in order to store
+or transmit an image more cheaply.  But it's worth noting that when network
+or telephone transmission is involved, the time savings from transferring a
+shorter file can be greater than the time needed to decompress the file.
+
+The second fundamental advantage of JPEG is that it stores full color
+information: 24 bits/pixel (16 million colors).  GIF, the other image format
+widely used on Usenet, can only store 8 bits/pixel (256 or fewer colors).
+GIF is reasonably well matched to inexpensive computer displays --- most
+run-of-the-mill PCs can't display more than 256 distinct colors at once.
+But full-color hardware is getting cheaper all the time, and JPEG images
+look *much* better than GIFs on such hardware.  Within a couple of years,
+GIF will probably seem as obsolete as black-and-white MacPaint format does
+today.  Furthermore, JPEG is far more useful than GIF for exchanging images
+among people with widely varying display hardware, because it avoids
+prejudging how many colors to use (see "[8] What is color quantization?").
+Hence JPEG is considerably more appropriate than GIF for use as a Usenet
+posting standard.
+
+A lot of people are scared off by the term "lossy compression".  But when
+it comes to representing real-world scenes, *no* digital image format can
+retain all the information that impinges on your eyeball.  By comparison
+with the real-world scene, JPEG loses far less information than GIF.
+The real disadvantage of lossy compression is that if you repeatedly
+compress and decompress an image, you lose a little quality each time
+(see "[10] Does loss accumulate with repeated compression/decompression?").
+This is a serious objection for some applications but matters not at all
+for many others.
+
+------------------------------
+
+Subject: [3] When should I use JPEG, and when should I stick with GIF?
+
+JPEG is *not* going to displace GIF entirely; for some types of images,
+GIF is superior in image quality, file size, or both.  One of the first
+things to learn about JPEG is which kinds of images to apply it to.
+
+Generally speaking, JPEG is superior to GIF for storing full-color or
+gray-scale images of "realistic" scenes; that means scanned photographs and
+similar material.  Any continuous variation in color, such as occurs in
+highlighted or shaded areas, will be represented more faithfully and in less
+space by JPEG than by GIF.
+
+GIF does significantly better on images with only a few distinct colors,
+such as line drawings and simple cartoons.  Not only is GIF lossless for
+such images, but it often compresses them more than JPEG can.  For example,
+large areas of pixels that are all *exactly* the same color are compressed
+very efficiently indeed by GIF.  JPEG can't squeeze such data as much as GIF
+does without introducing visible defects.  (One implication of this is that
+large single-color borders are quite cheap in GIF files, while they are best
+avoided in JPEG files.)
+
+Computer-drawn images, such as ray-traced scenes, usually fall between
+photographs and cartoons in terms of complexity.  The more complex and
+subtly rendered the image, the more likely that JPEG will do well on it.
+The same goes for semi-realistic artwork (fantasy drawings and such).
+But icons that use only a few colors are handled better by GIF.
+
+JPEG has a hard time with very sharp edges: a row of pure-black pixels
+adjacent to a row of pure-white pixels, for example.  Sharp edges tend to
+come out blurred unless you use a very high quality setting.  Edges this
+sharp are rare in scanned photographs, but are fairly common in GIF files:
+consider borders, overlaid text, etc.  The blurriness is particularly
+objectionable with text that's only a few pixels high.  If you have a GIF
+with a lot of small-size overlaid text, don't JPEG it.  (If you want to
+attach descriptive text to a JPEG image, put it in as a comment rather than
+trying to overlay it on the image.  Most recent JPEG software can deal with
+textual comments in a JPEG file, although older viewers may just ignore the
+comments.)
+
+Plain black-and-white (two level) images should never be converted to JPEG;
+they violate all of the conditions given above.  You need at least about
+16 gray levels before JPEG is useful for gray-scale images.  It should also
+be noted that GIF is lossless for gray-scale images of up to 256 levels,
+while JPEG is not.
+
+If you have a large library of GIF images, you may want to save space by
+converting the GIFs to JPEG.  This is trickier than it may seem --- even
+when the GIFs contain photographic images, they are actually very poor
+source material for JPEG, because the images have been color-reduced.
+Non-photographic images should generally be left in GIF form.  Good-quality
+photographic GIFs can often be converted with no visible quality loss, but
+only if you know what you are doing and you take the time to work on each
+image individually.  Otherwise you're likely to lose a lot of image quality
+or waste a lot of disk space ... quite possibly both.  Read sections 8 and 9
+if you want to convert GIFs to JPEG.
+
+------------------------------
+
+Subject: [4] How well does JPEG compress images?
+
+Very well indeed, when working with its intended type of image (photographs
+and suchlike).  For full-color images, the uncompressed data is normally 24
+bits/pixel.  The best known lossless compression methods can compress such
+data about 2:1 on average.  JPEG can typically achieve 10:1 to 20:1
+compression without visible loss, bringing the effective storage requirement
+down to 1 to 2 bits/pixel.  30:1 to 50:1 compression is possible with small
+to moderate defects, while for very-low-quality purposes such as previews or
+archive indexes, 100:1 compression is quite feasible.  An image compressed
+100:1 with JPEG takes up the same space as a full-color one-tenth-scale
+thumbnail image, yet it retains much more detail than such a thumbnail.
+
+For comparison, a GIF version of the same image would start out by
+sacrificing most of the color information to reduce the image to 256 colors
+(8 bits/pixel).  This provides 3:1 compression.  GIF has additional "LZW"
+compression built in, but LZW doesn't work very well on typical photographic
+data; at most you may get 5:1 compression overall, and it's not at all
+uncommon for LZW to be a net loss (i.e., less than 3:1 overall compression).
+LZW *does* work well on simpler images such as line drawings, which is why
+GIF handles that sort of image so well.  When a JPEG file is made from
+full-color photographic data, using a quality setting just high enough to
+prevent visible loss, the JPEG will typically be a factor of four or five
+smaller than a GIF file made from the same data.
+
+Gray-scale images do not compress by such large factors.  Because the human
+eye is much more sensitive to brightness variations than to hue variations,
+JPEG can compress hue data more heavily than brightness (gray-scale) data.
+A gray-scale JPEG file is generally only about 10%-25% smaller than a
+full-color JPEG file of similar visual quality.  But the uncompressed
+gray-scale data is only 8 bits/pixel, or one-third the size of the color
+data, so the calculated compression ratio is much lower.  The threshold of
+visible loss is often around 5:1 compression for gray-scale images.
+
+The exact threshold at which errors become visible depends on your viewing
+conditions.  The smaller an individual pixel, the harder it is to see an
+error; so errors are more visible on a computer screen (at maybe 70
+dots/inch) than on a high-quality color printout (300 or more dots/inch).
+Thus a higher-resolution image can tolerate more compression ... which is
+fortunate considering it's much bigger to start with.  The numbers quoted
+above are typical for screen viewing.  Also note that the threshold of
+visible error varies considerably across images.
+
+------------------------------
+
+Subject: [5] What are good "quality" settings for JPEG?
+
+Most JPEG compressors let you pick a file size vs. image quality tradeoff by
+selecting a quality setting.  There seems to be widespread confusion about
+the meaning of these settings.  "Quality 95" does NOT mean "keep 95% of the
+information", as some have claimed.  The quality scale is purely arbitrary;
+it's not a percentage of anything.
+
+In fact, quality scales aren't even standardized across JPEG programs.
+The quality settings discussed in this article apply to the free IJG JPEG
+software (described in part 2), and to many programs based on it.  Other
+JPEG implementations, notably Apple's and HSI's, use completely different
+quality scales; for instance, Apple's scale runs from 0-4, not 0-100.  Some
+programs don't even provide a numeric scale, just "high"/"medium"/"low"
+style choices.  (Fortunately, this doesn't prevent different implementations
+from exchanging compressed files.)
+
+In most cases the user's goal is to pick the lowest quality setting, or
+smallest file size, that decompresses into an image indistinguishable from
+the original.  This setting will vary from one image to another and from one
+observer to another, but here are some rules of thumb.
+
+For good-quality, full-color source images, the default IJG quality setting
+(Q 75) is very often the best choice.  This setting is about the lowest you
+can go without expecting to see defects in a typical image.  Try Q 75 first;
+if you see defects, then go up.
+
+If the image was less than perfect quality to begin with, you might be able
+to drop down to Q 50 without objectionable degradation.  On the other hand,
+you might need to go to a *higher* quality setting to avoid further loss.
+This is often necessary if the image contains dithering or moire patterns
+(see "[9] What are some rules of thumb for converting GIF images to JPEG?").
+
+Except for experimental purposes, never go above about Q 95; using Q 100
+will produce a file two or three times as large as Q 95, but of hardly any
+better quality.  If you see a file made with Q 100, it's a pretty sure sign
+that the maker didn't know what he/she was doing.
+
+If you want a very small file (say for preview or indexing purposes) and are
+prepared to tolerate large defects, a Q setting in the range of 5 to 10 is
+about right.  Q 2 or so may be amusing as "op art".  (It's worth mentioning
+that the current IJG software is not optimized for such low quality factors.
+Future versions may achieve better image quality for the same file size at
+low quality settings.)
+
+------------------------------
+
+Subject: [6] Where can I get JPEG software?
+
+See part 2 of this FAQ for recommendations about programs for particular
+systems.  Part 2 also tells where to find free C source code for
+implementing JPEG, in case you want to write your own programs using JPEG.
+
+The comp.graphics FAQs and the alt.binaries.pictures FAQ are more general
+sources of information about graphics programs available on the Internet
+(see "[19] Where are FAQ lists archived?").
+
+------------------------------
+
+Subject: [7] How do I view JPEG images posted on Usenet?
+
+Image files posted on the alt.binaries.pictures.* newsgroups are usually
+"uuencoded".  Uuencoding converts binary image data into text that can
+safely be posted.  Most posters also divide large posts into multiple parts,
+since some news software can't cope with big articles.  Before your viewer
+will recognize the image, you must combine the parts into one file and run
+the text through a uudecode program.  (This is all true for GIF as well as
+JPEG, by the way.)  There are programs available to automate this process.
+
+For more info see the alt.binaries.pictures FAQ, which is available from
+rtfm.mit.edu:/pub/usenet/news.answers/pictures-faq/part[1-3], or on WWW at
+http://www.cis.ohio-state.edu/hypertext/faq/usenet/pictures-faq/top.html
+(see also "[19] Where are FAQ lists archived?").
+
+------------------------------
+
+Subject: [8] What is color quantization?
+
+Most people don't have full-color (24 bit per pixel) display hardware.
+Typical display hardware stores 8 or fewer bits per pixel, so it can display
+256 or fewer distinct colors at a time.  To display a full-color image, the
+computer must choose an appropriate set of representative colors and map the
+image into these colors.  This process is called "color quantization".
+(This is something of a misnomer; "color selection" or "color reduction"
+would be a better term.  But we're stuck with the standard usage.)
+
+Clearly, color quantization is a lossy process.  It turns out that for most
+images, the details of the color quantization algorithm have *much* more
+impact on the final image quality than do any errors introduced by JPEG
+itself (except at the very lowest JPEG quality settings).  Making a good
+color quantization method is a black art, and no single algorithm is best
+for all images.
+
+Since JPEG is a full-color format, displaying a color JPEG image on
+8-bit-or-less hardware requires color quantization.  The speed and image
+quality of a JPEG viewer running on such hardware are largely determined by
+its quantization algorithm.  Depending on whether a quick-and-dirty or
+good-but-slow method is used, you'll see great variation in image quality
+among viewers on 8-bit displays, much more than occurs on 24-bit displays.
+
+On the other hand, a GIF image has already been quantized to 256 or fewer
+colors.  (A GIF always has a specific number of colors in its palette, and
+the format doesn't allow more than 256 palette entries.)  GIF has the
+advantage that the image maker precomputes the color quantization, so
+viewers don't have to; this is one of the things that make GIF viewers
+faster than JPEG viewers.  But this is also the *disadvantage* of GIF:
+you're stuck with the image maker's quantization.  If the maker quantized to
+a different number of colors than what you can display, you'll either waste
+display capability or else have to requantize to reduce the number of colors
+(which usually results in much poorer image quality than quantizing once
+from a full-color image).  Furthermore, if the maker didn't use a
+high-quality color quantization algorithm, you're out of luck --- the image
+is ruined.
+
+For this reason, JPEG promises significantly better image quality than GIF
+for all users whose machines don't match the image maker's display hardware.
+JPEG's full color image can be quantized to precisely match the viewer's
+display hardware.  Furthermore, you will be able to take advantage of future
+improvements in quantization algorithms, or purchase better display
+hardware, to get a better view of JPEG images you already have.  With a GIF,
+you're stuck forevermore with what was sent.
+
+A growing number of people have better-than-8-bit display hardware already:
+15-bit "hi-color" PC displays, true 24-bit displays on workstations and
+Macintoshes, etc.  For these people, GIF is already obsolete, as it cannot
+represent an image to the full capabilities of their display.  JPEG images
+can drive these displays much more effectively.
+
+In short, JPEG is an all-around better choice than GIF for representing
+photographic images in a machine-independent fashion.
+
+
+It's sometimes thought that a JPEG converted from a GIF shouldn't require
+color quantization.  This is false: even when you feed a 256-or-less-color
+GIF into JPEG, what comes out of the decompressor is not 256 colors, but
+thousands of colors.  This happens because JPEG's lossiness affects each
+pixel a little differently, so two pixels that started with identical colors
+will usually come out with slightly different colors.  Considering the whole
+image, each original color gets "smeared" into a group of nearby colors.
+Therefore quantization is always required to display a color JPEG on a
+colormapped display, regardless of the image source.
+
+The same effect makes it nearly meaningless to talk about the number of
+colors used by a JPEG image.  Even if you tried to count the number of
+distinct pixel values, different JPEG decoders would give you different
+results because of roundoff error differences.  I occasionally see posted
+images described as "256-color JPEG".  This tells me that the poster
+(a) hasn't read this FAQ and (b) probably converted the JPEG from a GIF.
+JPEGs can be classified as color or gray-scale, but number of colors just
+isn't a useful concept for JPEG, any more than it is for a real photograph.
+
+------------------------------
+
+Subject: [9] What are some rules of thumb for converting GIF images to JPEG?
+
+Converting GIF files to JPEG is a tricky business --- you are piling one set
+of limitations atop a quite different set, and the results can be awful.
+Certainly a JPEG made from a GIF will never be as good as a JPEG made from
+true 24-bit color data.  But if what you've got is GIFs, and you need to
+save space, here are some hints for getting the best results.
+
+With care and a clean source image, it's often possible to make a JPEG of
+quality equivalent to the GIF.  This does not mean that the JPEG looks
+pixel-for-pixel identical to the GIF --- it won't.  Especially not on an
+8-bit display, because the color quantization process used to display the
+JPEG probably won't quite match the quantization process used to make the
+GIF from the original data (see "[8] What is color quantization?").  But
+remember that the GIF itself is not all that faithful to the full-color
+original, if you look at individual pixels.  Looking at the overall image,
+a converted JPEG can look as good as its GIF source.  Some people claim that
+on 24-bit displays, a carefully converted JPEG can actually look better than
+the GIF source, because dither patterns have been eliminated.  (More about
+dithering in a moment.)
+
+On the other hand, JPEG conversion absolutely *will* degrade an unsuitable
+image or one that is converted carelessly.  If you are not willing to take
+the amount of trouble suggested below, you're much better off leaving your
+GIF images alone.  Simply cranking the JPEG quality setting up to a very
+high value wastes space (which defeats the whole point of the exercise, no?)
+and some images will be degraded anyway.
+
+The first rule is never to convert an image that's not appropriate for JPEG
+(see "[3] When should I use JPEG, and when should I stick with GIF?").
+Large, high-visual-quality photographic images are usually the best source
+material.  And they take up lots of space in GIF form, so they offer
+significant potential space savings.  (A good rule of thumb is not to bother
+converting any GIF that's much under 100 Kbytes; the potential savings isn't
+worth the hassle.)
+
+The second rule is to look at each JPEG, to make sure you are happy with it,
+before throwing away the corresponding GIF.  This will give you a chance to
+re-do the conversion with a higher quality setting if necessary.  Also
+compare the file sizes --- if the image isn't suitable JPEG material, a JPEG
+file of reasonable quality may come out *larger* than the GIF.
+
+The third rule is to get rid of the border.  Many people have developed
+an odd habit of putting a large single-color border around a GIF image.
+While useless, this is nearly free in terms of storage cost in GIF files.
+It is *not* free in JPEG files, either in storage space or in decoding time.
+Worse, the sharp border boundary can create visible artifacts ("ghost" edges).
+Furthermore, when viewing a bordered JPEG on an 8-bit display, the quantizer
+will think the border color is important because there's so much of it, and
+hence will waste color palette entries on the border, thus actually reducing
+the displayed quality of the main part of the image!  So do yourself a favor
+and crop off any border before JPEGing.
+
+The fourth rule is to know where the image came from.  Repeated GIF<=>JPEG
+conversions are guaranteed to turn an image into mush, because you pay a
+quality-loss price on each round trip.  Don't reconvert images that have
+been converted before.
+
+Gray-scale images usually convert without much problem.  When using cjpeg,
+be sure to use the -gray switch.  (Otherwise, cjpeg treats a GIF as color
+data; this works, but it wastes space and time if the image is really only
+gray-scale.)  Quality settings around the default (75) are usually fine.
+
+Color images are much trickier.  Color GIFs of photographic images are
+usually "dithered" to fool your eye into seeing more than the 256 colors
+that GIF can actually store.  If you enlarge the image, you will find that
+adjacent pixels are often of significantly different colors; at normal size
+the eye averages these pixels together to produce the illusion of an
+intermediate color value.  The trouble with dithering is that, to JPEG, it
+looks like high-spatial-frequency color noise; and JPEG can't compress noise
+very well.  The resulting JPEG file is both larger and of lower image
+quality than what you would have gotten from JPEGing the original full color
+image (if you had it).  To get around this, you need to "smooth" the GIF
+image before compression.  Smoothing averages together nearby pixels, thus
+approximating the color that you thought you saw anyway, and in the process
+getting rid of the rapid color changes that give JPEG trouble.  Proper use
+of smoothing will both reduce the size of the compressed file and give you a
+better-looking output image than you'd get without smoothing.
+
+With the IJG JPEG software (cjpeg or derived programs), a simple smoothing
+capability is built in.  Try "-smooth 10" or so when converting GIFs.
+Values of 10 to 25 seem to work well for high-quality GIFs.  GIFs with
+heavy-handed dithering may require larger smoothing factors.  (If you can
+see regular fine-scale patterns on the GIF image even without enlargement,
+then strong smoothing is definitely called for.)  Too large a smoothing
+factor will blur the output image, which you don't want.  If you are an
+image processing wizard, you can also do smoothing with a separate filtering
+program, but appropriate use of such tools is beyond the scope of this FAQ.
+
+Quality settings around 85 (a bit higher than default) usually work well
+when converting color GIFs, assuming that you've picked a good smoothing
+factor.  You may need still higher quality settings if you can't hide the
+dithering pattern with a reasonable smoothing factor.  Really badly dithered
+GIFs are best left as GIFs.
+
+Don't expect JPEG files converted from GIFs to be as small as those created
+directly from full-color originals.  The dithering noise wastes space, but
+you won't be able to smooth away all the noise without blurring the image.
+Typically, a good-quality converted JPEG will be one-half to one-third the
+size of the GIF file, not one-fourth as suggested in section 4.  If the JPEG
+comes out much more than half the size of the GIF, this is a good sign that
+the image shouldn't be converted at all.
+
+The upshot of all this is that "cjpeg -quality 85 -smooth 10" is probably a
+good starting point for converting color GIFs.  But if you care about the
+image, you'll want to check the results and maybe try a few other settings.
+Blindly converting a large GIF library at this or any other setting is a
+recipe for disaster.
+
+------------------------------
+
+Subject: [10] Does loss accumulate with repeated compression/decompression?
+
+It would be nice if, having compressed an image with JPEG, you could
+decompress it, manipulate it (crop off a border, say), and recompress it
+without any further image degradation beyond what you lost initially.
+Unfortunately THIS IS NOT THE CASE.  In general, recompressing an altered
+image loses more information.  Hence it's important to minimize the number
+of generations of JPEG compression between initial and final versions of an
+image.
+
+It turns out that if you decompress and recompress an image at the same
+quality setting first used, little or no further degradation occurs.  This
+means that you can make local modifications to a JPEG image without material
+degradation of other areas of the image.  The areas you change will degrade,
+however.  Counterintuitively, this works better the lower the quality
+setting.  But you must use *exactly* the same setting, or all bets are off.
+Also, the decompressed image must be saved in a full-color format; if you do
+JPEG=>GIF=>JPEG, the color quantization step loses lots of information.
+
+Unfortunately, cropping doesn't count as a local change!  JPEG processes
+the image in small blocks, and cropping usually moves the block boundaries,
+so that the image looks completely different to JPEG.  You can take
+advantage of the low-degradation behavior if you are careful to crop the
+top and left margins only by a multiple of the block size (typically 16
+pixels), so that the remaining blocks start in the same places.
+
+The bottom line is that JPEG is a useful format for archival storage and
+transmission of images, but you don't want to use it as an intermediate
+format for sequences of image manipulation steps.  Use a lossless 24-bit
+format (PPM, RLE, TIFF, etc) while working on the image, then JPEG it when
+you are ready to file it away.  Aside from avoiding degradation, you will
+save a lot of compression/decompression time this way :-).
+
+------------------------------
+
+Subject: [11] What is progressive JPEG?
+
+A simple or "baseline" JPEG file is stored as one top-to-bottom scan of the
+image.  Progressive JPEG allows the image to be stored as a series of scans
+of increasing quality.  The first scan shows the image at the equivalent of
+a very low quality setting, and therefore it takes very little space.
+Successive scans improve the quality.  Each scan adds to the data already
+provided, so that the total storage requirement is about the same as for a
+baseline JPEG image of the same quality as the final scan.  (Basically,
+progressive JPEG is just a rearrangement of the same data into a more
+complicated order.)
+
+The advantage of progressive JPEG is that if an image is being viewed
+on-the-fly as it is transmitted, the viewer sees an approximation to the
+whole image very quickly, with gradual improvement of quality as one waits
+longer; this is much nicer than a slow top-to-bottom display of the image.
+The disadvantage is that each scan takes about the same amount of
+computation to display as a whole baseline JPEG file would.  So progressive
+JPEG only makes sense if one has a decoder that's much faster than the
+communication link.
+
+Up until recently, there weren't many applications in which progressive JPEG
+looked attractive, so hardly any implementations of it are available.  But
+with the popularity of WWW browsers running over rather slow modem links,
+and with the ever-increasing horsepower of personal computers, progressive
+JPEG is starting to look like a win for WWW.  I expect that progressive JPEG
+capability will start to appear in WWW browsers during 1995.
+
+------------------------------
+
+Subject: [12] Isn't there a lossless JPEG?
+
+There's a great deal of confusion on this subject.  The JPEG standard does
+include a truly lossless compression algorithm, i.e., one that guarantees
+its decompressed output is bit-for-bit identical to the original input.
+However, this lossless mode has almost nothing in common with the regular
+lossy JPEG algorithm, and it offers much less compression.
+
+Lossless JPEG typically compresses full-color data by around 2:1.  Lossless
+JPEG works well only on continuous-tone images; it does not provide useful
+compression of palette-color images or low-bit-depth images.  (The JBIG
+standard is considered superior to lossless JPEG for images of less than
+about 6 bits/sample.)
+
+At present, very few implementations of lossless JPEG exist.  The PVRG code
+mentioned in part 2 handles lossless JPEG.  Another free implementation
+is available from ftp.cs.cornell.edu:/pub/multimed/ljpg.tar.Z; this is a
+smaller program that handles *only* lossless JPEG.
+
+Cranking a regular JPEG implementation up to its maximum quality setting
+*does not* get you lossless storage; lossless JPEG is a fundamentally
+different method.  Even at the maximum possible quality setting, regular
+JPEG cannot be lossless because it is subject to roundoff errors in various
+calculations.  The roundoff errors are nearly always too small to be seen,
+but they will accumulate if you put the image through multiple cycles of
+compression.
+
+Many implementations won't even let you get to the maximum possible setting,
+because it's such an inefficient way to use regular JPEG.  With the IJG JPEG
+software, for example, you have to say not only "-quality 100" but also
+"-sample 1x1" to eliminate all deliberate loss of information.  The
+resulting files are far larger and of only fractionally better quality than
+files generated at more reasonable settings.  And they're still slightly
+lossy!  If you really need lossless storage, don't try to approximate it
+with regular JPEG.
+
+------------------------------
+
+Subject: [13] Why all the argument about file formats?
+
+Strictly speaking, JPEG refers only to a family of compression algorithms;
+it does *not* refer to a specific image file format.  The JPEG committee was
+prevented from defining a file format by turf wars within the international
+standards organizations.
+
+Since we can't actually exchange images with anyone else unless we agree on
+a common file format, this leaves us with a problem.  In the absence of
+official standards, a number of JPEG program writers have just gone off to
+"do their own thing", and as a result their programs aren't compatible with
+anyone else's.
+
+The closest thing we have to a standard JPEG format is some work that's been
+coordinated by people at C-Cube Microsystems.  They have defined two
+JPEG-based file formats:
+  * JFIF (JPEG File Interchange Format), a "low-end" format that transports
+    pixels and not much else.
+  * TIFF/JPEG, aka TIFF 6.0, an extension of the Aldus TIFF format.  TIFF is
+    a "high-end" format that will let you record just about everything you
+    ever wanted to know about an image, and a lot more besides :-).  TIFF
+    is far more complex than JFIF, and is generally less transportable,
+    because different vendors have often implemented slightly different
+    and incompatible subsets of TIFF.  It's not likely that adding JPEG to
+    the mix will do anything to improve this situation.
+Both of these formats were developed with input from all the major vendors
+of JPEG-related products; it's reasonably likely that future commercial
+products will adhere to one or both standards.
+
+JFIF has emerged as the de-facto standard on Usenet.  JFIF is simpler than
+TIFF and is available now; the TIFF 6.0 spec for incorporating JPEG is not
+widely implemented, partly because it has some serious design flaws.  It is
+likely that the TIFF 6.0 JPEG section will be changed significantly before
+widespread adoption occurs.  Even when TIFF/JPEG is well defined, the JFIF
+format is likely to be a widely supported "lowest common denominator";
+TIFF/JPEG files may never be as transportable as JFIF.
+
+A particular case of wide interest is Apple's Macintosh QuickTime software.
+QuickTime uses a JFIF-compatible format wrapped inside the Mac-specific PICT
+structure.  Conversion between JFIF and PICT/JPEG is pretty straightforward,
+and several Mac programs are available to do it (see Mac portion of part 2).
+If you have an editor that handles binary files, you can even strip a
+PICT/JPEG file down to JFIF by hand; see the next section for details.
+
+Another particular case is Handmade Software's DOS programs (GIF2JPG/JPG2GIF
+and Image Alchemy).  These programs are capable of reading and writing JFIF
+format.  By default, though, they write a proprietary format developed by
+HSI.  This format is NOT readable by any non-HSI programs and should not be
+used for Usenet postings.  Use the -j switch to get JFIF output.  (This
+applies to old versions of these programs; the current releases emit JFIF
+format by default.  You still should be careful not to post HSI-format
+files, unless you want to get flamed by people on non-PC platforms.)
+
+News flash: the ISO JPEG committee seems to have won their turf wars.  They
+will define a complete file format spec called "SPIFF" in the next version
+of the JPEG standard.  It's pretty late in the game though, so whether this
+will have much impact on real-world files remains to be seen.
+
+------------------------------
+
+Subject: [14] How do I recognize which file format I have,
+              and what do I do about it?
+
+If you have an alleged JPEG file that your software won't read, it's likely
+to be HSI format or some other proprietary JPEG-based format.  You can tell
+what you have by inspecting the first few bytes of the file:
+
+1.  A JFIF-standard file will start with the four bytes (hex) FF D8 FF E0,
+    followed by two variable bytes (often hex 00 10), followed by 'JFIF'.
+
+2.  If you see FF D8 at the start, but not the 'JFIF' marker, you may have a
+    "raw JPEG" file.  This is probably decodable as-is by JFIF software ---
+    it's worth a try, anyway.
+
+3.  HSI files start with 'hsi1'.  You're out of luck unless you have HSI
+    software.  Portions of the file may look like plain JPEG data, but they
+    usually won't decompress properly with non-HSI programs.
+
+4.  A Macintosh PICT file, if JPEG-compressed, will have several hundred
+    bytes of header (often 726 bytes, but not always) followed by JPEG data.
+    Look for the 3-byte sequence (hex) FF D8 FF.  The text 'Photo - JPEG'
+    will usually appear shortly before this header, and 'AppleMark' or
+    'JFIF' will usually appear shortly after it.  Strip off everything
+    before the FF D8 FF and you will usually be able to decode the file.
+    (This will fail if the PICT image is divided into multiple "bands",
+    but that is uncommon.)
+
+5.  If the file came from a Macintosh, it could also be a standard JFIF
+    file with a MacBinary header attached.  In this case, the JFIF header
+    will appear 128 bytes into the file.  Get rid of the first 128 bytes
+    and you're set.
+
+6.  Anything else: it's a proprietary format, or not JPEG at all.  If you
+    are lucky, the file may consist of a header and a raw JPEG data stream.
+    If you can identify the start of the JPEG data stream (look for FF D8),
+    try stripping off everything before that.
+
+HSI files used to be rather common in alt.binaries.pictures.* postings,
+although thankfully they have gotten less so.  You can spot an HSI posting
+by looking at the first few characters of the uuencoded data.  The
+characteristic HSI pattern is
+	"begin" line
+	M:'-I ...
+whereas standard JFIF files begin with
+	"begin" line
+	M_]C_X ...
+If you learn to spot the HSI pattern, you can save yourself the trouble
+of downloading unusable files.
+
+------------------------------
+
+Subject: [15] How does JPEG work?
+
+You can find an introduction and references for further reading in the
+comp.compression FAQ, which is available from the news.answers archive at
+rtfm.mit.edu, in files /pub/usenet/news.answers/compression-faq/part[1-3]
+(see also "[19] Where are FAQ lists archived?").
+
+The comp.compression FAQ is also a good starting point for information on
+other state-of-the-art image compression methods, such as wavelets and
+fractals.  A quick comparison: wavelets are likely to be the basis of the
+next generation of image-compression standards, but they are perhaps 10
+years behind JPEG in the standardization pipeline.  Fractals have been
+terribly over-hyped by their chief commercial proponent, and it's difficult
+to say what their true capabilities are.
+
+------------------------------
+
+Subject: [16] What about arithmetic coding?
+
+The JPEG spec defines two different "back end" modules for the final output
+of compressed data: either Huffman coding or arithmetic coding is allowed.
+The choice has no impact on image quality, but arithmetic coding usually
+produces a smaller compressed file.  On typical images, arithmetic coding
+produces a file 5 to 10 percent smaller than Huffman coding.  (All the
+file-size numbers previously cited are for Huffman coding.)
+
+Unfortunately, the particular variant of arithmetic coding specified by the
+JPEG standard is subject to patents owned by IBM, AT&T, and Mitsubishi.
+Thus *you cannot legally use JPEG arithmetic coding* unless you obtain
+licenses from these companies.  (Patent law's "experimental use" exception
+allows people to test a patented method in the context of scientific
+research, but any commercial or routine personal use is infringement.)
+
+I recommend that people not use JPEG arithmetic coding; the space savings
+isn't great enough to justify the potential legal hassles.  In particular,
+arithmetic coding *should not* be used for any images to be exchanged on
+Usenet.  Even if you don't care about US patent law, other folks do.
+
+------------------------------
+
+Subject: [17] Could an FPU speed up JPEG?  How about a DSP chip?
+
+Since JPEG is so compute-intensive, many people suggest that using an
+FPU chip (a math coprocessor) should speed it up.  This is not so.
+Most production-quality JPEG programs use only integer arithmetic and so
+they are unaffected by the presence or absence of floating-point hardware.
+
+It is possible to save a few operations by doing the DCT step in floating
+point.  On most PC-class machines, FP math is enough slower than integer
+math that the overall speed is still much worse with FP.  Some high-priced
+workstations and supercomputers have fast enough FP hardware to make an FP
+DCT method be a win.
+
+DSP (digital signal processing) chips are ideally suited for fast repetitive
+integer arithmetic, so programming a DSP to do JPEG can yield significant
+speedups.  DSPs are starting to be found as add-ons for PCs and small
+workstations, so you can expect to see DSP-based JPEG programs popping up.
+
+------------------------------
+
+Subject: [18] Isn't there an M-JPEG standard for motion pictures?
+
+As was stated in section 1, JPEG is only for still images.  Nonetheless,
+you will frequently see references to "motion JPEG" or "M-JPEG" for video.
+*There is no such standard*.  Various vendors have applied JPEG to
+individual frames of a video sequence, and have called the result "M-JPEG".
+Unfortunately, in the absence of any recognized standard, they've each done
+it differently.  The resulting files are usually not compatible across
+different vendors.
+
+MPEG is the recognized standard for motion picture compression.  It uses
+many of the same techniques as JPEG, but adds inter-frame compression to
+exploit the similarities that usually exist between successive frames.
+Because of this, MPEG typically compresses a video sequence by about a
+factor of three more than "M-JPEG" methods can.  The disadvantages of MPEG
+are (1) it requires much more computation to generate the compressed
+sequence (since detecting visual similarities is hard for a computer), and
+(2) it's difficult to edit an MPEG sequence on a frame-by-frame basis
+(since each frame is intimately tied to the ones around it).  This latter
+problem has made "M-JPEG" methods rather popular for video editing products.
+
+It's a shame that there isn't a recognized M-JPEG standard.  But there
+isn't, so if you buy a product identified as "M-JPEG", be aware that you
+are probably locking yourself into that one vendor.
+
+See the MPEG FAQ for more information about MPEG.
+
+------------------------------
+
+Subject: [19] Where are FAQ lists archived?
+
+Many FAQs are crossposted to news.answers.  Well-run netnews sites will have
+the latest versions available in that newsgroup.  However, there are a *lot*
+of postings in news.answers, and they can be hard to sort through.
+
+The latest versions of news.answers postings are archived at rtfm.mit.edu.
+You can retrieve this FAQ by FTP as /pub/usenet/news.answers/jpeg-faq/part1
+and /pub/usenet/news.answers/jpeg-faq/part2.  If you have no FTP access,
+send e-mail to mail-server@rtfm.mit.edu containing the lines
+	send usenet/news.answers/jpeg-faq/part1
+	send usenet/news.answers/jpeg-faq/part2
+(If you don't get a reply, the server may be misreading your return address;
+add a line such as "path myname@mysite" to specify your correct e-mail
+address to reply to.)  For more info about the FAQ archive, retrieve the
+file rtfm.mit.edu:/pub/usenet/news.answers/news-answers/introduction.
+
+The same FAQs are also available in the World Wide Web; see the index at
+http://www.cis.ohio-state.edu/hypertext/faq/usenet/FAQ-List.html.  This FAQ
+is http://www.cis.ohio-state.edu/hypertext/faq/usenet/jpeg-faq/top.html.
+
+Archive-name: jpeg-faq/part2
+Posting-Frequency: every 14 days
+Last-modified: 29 April 1995
+
+This article answers Frequently Asked Questions about JPEG image compression.
+This is part 2, covering system-specific hints and program recommendations
+for a variety of computer systems.  Part 1 covers general questions and
+answers about JPEG.  As always, suggestions for improvement of this FAQ are
+welcome.
+
+New since version of 2 April 1995:
+  * New entry for NTj (Windows NT viewer).
+  * New versions of QPV (formerly QPEG; 1.6c), ACDSee (1.24),
+    GraphicConverter (2.1).
+
+
+This article includes the following sections:
+
+General info:
+
+[1] What is covered in this FAQ?
+[2] How do I retrieve these programs?
+
+Programs and hints for specific systems:
+
+[3] X Windows
+[4] Unix (without X)
+[5] MS-DOS
+[6] Microsoft Windows
+[7] OS/2
+[8] Macintosh
+[9] Amiga
+[10] Atari ST
+[11] Acorn Archimedes
+[12] NeXT
+[13] Other systems
+
+Source code for JPEG:
+
+[14] Freely available source code for JPEG
+
+Miscellaneous:
+
+[15] Where are FAQ lists archived?
+
+
+This article and its companion are posted every 2 weeks.  If you can't find
+part 1, you can get it from the news.answers archive at rtfm.mit.edu
+(see "[15] Where are FAQ lists archived?"). This article changes frequently;
+get a new copy if the one you are reading is more than a couple months old.
+
+------------------------------
+
+Subject: [1] What is covered in this FAQ?
+
+This list describes programs that are of particular interest to JPEG users.
+For the most part, I concentrate on viewers, since a viewer program is the
+first thing you'll need.  Some general image-editing programs are listed
+too, especially if they are useful as plain viewers (meaning that they can
+load and display an image as quickly and easily as a dedicated viewer).
+Programs that convert JPEG to and from other image file formats are also
+covered.
+
+I list only freeware and shareware programs that are available on the
+Internet by FTP.  Commercial products are intentionally excluded, to keep
+the list to a reasonable size and to avoid any appearance of advertising.
+Also, I try to list only programs that are popular among Usenet users, as
+indicated by comments and recommendations in news articles.  I have no
+access to many of the types of systems covered here, so I have to rely on
+what other people say about a program to decide whether to list it.  If you
+have an opinion pro or con on any program, I'd appreciate hearing it.
+
+This FAQ also includes a few hints that are specific to a machine or
+program, and thus don't belong in the general discussion of part 1.
+
+------------------------------
+
+Subject: [2] How do I retrieve these programs?
+
+All the files mentioned in this FAQ are available by standard Internet FTP.
+If you don't know how to use FTP, please read the article "Anonymous FTP
+FAQ List", which you can get by sending e-mail to mail-server@rtfm.mit.edu
+with the single line "send usenet/news.answers/ftp-list/faq" in the body.
+(See also "[15] Where are FAQ lists archived?")  This section gives some
+quick reminders which are not meant as a substitute for reading the FTP FAQ.
+
+If you do not have direct access to FTP, you can use an "ftpmail" server to
+obtain files by e-mail.  See the FTP FAQ for details.
+
+If you use a WWW browser such as Mosaic or Lynx, it will do FTP for you.
+To retrieve a file described here as "site.name:/path/to/file", tell the
+browser to open the URL "ftp://site.name/path/to/file".  (If you are reading
+this FAQ in the WWW FAQ archive, the file names should appear as links that
+you can just click on.)  Don't forget to set save-to-disk mode first.
+
+Many of the pointers given here refer to popular central archive sites,
+such as oak.oakland.edu for DOS software or sumex-aim.stanford.edu for Mac.
+These sites are often overloaded, and are likely to refuse your connection
+request when they are busy.  You can try again at a less popular time of
+day, or you can look for a "mirror site".  Most central archive sites have
+groups of mirror sites that keep copies of their files.  Find out the name
+of the mirror site closest to you, and visit that site instead; it's good
+net citizenship and you'll get faster response.  Check the FAQs for the
+newsgroups specific to your system type to find lists of mirror sites.
+(The archive site may list some mirror sites in its connection-refused error
+message.  Unfortunately, some FTP programs won't show you the whole message.
+WWW browsers are often bad about this.)
+
+If you are able to reach the archive site, but the file you want doesn't
+exist, most likely it's been replaced by a newer version.  Get a directory
+listing of the directory that's supposed to contain the file, and look for
+a file with a similar name but a higher version number.  (If you find an
+out-of-date reference in a *current* version of the JPEG FAQ, I'd
+appreciate hearing about it by e-mail.)
+
+Practically all of the files listed here are compressed archive files.
+This means you need to retrieve them in binary mode.  (WWW browsers do this
+automatically, but many older FTP programs must be told to use binary mode.)
+Once you've got the archive file, you'll need a decompressor/dearchiver
+to extract the program and documentation files inside it.  Check the FAQs
+for your system type to find out where to get dearchiver programs.
+
+------------------------------
+
+Subject: [3] X Windows
+
+XV is an excellent viewer for JPEG, GIF, and many other image formats.
+It can also do format conversion and some simple image manipulations.
+Get it from ftp.cis.upenn.edu:/pub/xv/xv-3.10.tar.gz.  Shareware, $25.
+Version 3.10 has some nifty new features, and it loads JPEGs noticeably
+faster than any prior version.  If you're still using version 2.anything,
+it's definitely time to upgrade.  HINT: if you have an 8-bit display then
+you need to "lock 8-bit mode" to get decent display of JPEG images.  (But
+do NOT do this if you intend to resave the image, because it'll be written
+from the 8-bit version, thus costing you image quality.)  You can set this
+mode to be default by adding "xv.force8: true" to your .Xdefaults file.
+
+Another excellent choice is John Cristy's free ImageMagick package,
+ftp.x.org:/contrib/applications/ImageMagick/ImageMagick-3.5.tar.gz.  This
+package handles many image processing and conversion tasks.  The ImageMagick
+viewer handles 24-bit displays correctly; for colormapped displays, it does
+better (though slower) color quantization than XV or the basic IJG JPEG
+software.
+
+Both of the above are large, complex packages.  If you just want a simple
+image viewer, try xloadimage or xli.  xloadimage views and converts many
+image file types including JPEG.  Version 4.1 has better JPEG support than
+prior versions and is easier to install.  xloadimage is free and available
+from ftp.x.org:/R5contrib/xloadimage.4.1.tar.gz.  xli is a variant version
+of xloadimage; xli is slightly better as an interactive viewer, but it can't
+be used as a converter, and it supports fewer file formats.  xli is also
+free and available from ftp.x.org:/contrib/applications/xli.1.16.tar.gz.
+
+------------------------------
+
+Subject: [4] Unix (without X)
+
+If you want a command-line JPEG conversion program, see the IJG source code
+described in section 14.  (This code is included as a subdirectory in most
+of the X programs described above, although they may not have the latest
+version.)
+
+Non-X viewers are hard to come by, since they are very hardware dependent.
+Linux users with VGA/SVGA displays may like zgv.  Version 2.5 is available
+from sunsite.unc.edu:/pub/Linux/apps/graphics/viewers/zgv2.5-bin.tar.gz.
+(Several other alternatives are available in the same directory.)
+If you use a less popular platform, you're probably out of luck.
+
+------------------------------
+
+Subject: [5] MS-DOS
+
+This covers plain DOS; for Windows or OS/2 programs, see the next sections.
+
+NOTE ABOUT SIMTEL FILES: The largest Internet collection of PC-related
+programs is the Simtel archives (named for the original archive site, now
+defunct).  The principal archive site for these files is oak.oakland.edu,
+which keeps Simtel files under /SimTel; so files in the msdos/graphics
+section of the archives are at oak.oakland.edu:/SimTel/msdos/graphics/.
+There are many mirror sites which keep copies of the Simtel files; for
+quickest response you should use the mirror site closest to you.  Consult
+the periodic postings in comp.archives.msdos.announce to find your nearest
+mirror site.  If you have no FTP capability, the same postings will tell you
+how to retrieve Simtel files by e-mail.
+
+QPV (formerly called QPEG) is the fastest noncommercial JPEG viewer I know
+of.  In exchange for speed, QPV gives up some image quality, particularly on
+256-or-less-color displays.  Its best feature is a really-fast small preview
+window, which is great for searching through lots of image files. Also views
+GIF,TGA,BMP,PNG.  Requires 386-or-better CPU and VGA-or-better display card.
+Current version is 1.6c, available from
+ftp.tu-clausthal.de:/pub/msdos/graphics/qpv16c.zip.  In the USA, a closer
+site is ftp.best.com:/pub/bryanw/qpv/.  Shareware, $20.
+
+DVPEG is a free viewer for JPEG, GIF, Targa, and PPM files.  Current version
+is 3.0l, available from sunee.uwaterloo.ca:/pub/jpeg/viewers/dvpeg30l.zip.
+(That's lower case l, not digit 1.)  This is a good basic viewer that works
+on either 286 or 386/486 machines.  The user interface is clunky but
+functional.  DVPEG is substantially faster than it used to be; on hi-color
+displays it is nearly as fast as QPV.  On 8-bit displays, its two-pass
+quantization mode is slow but gives much better image quality than QPV can
+provide.
+
+Lesser-used DOS viewers include:
+* DISPLAY, alias DISP.  The Swiss army knife of DOS viewers.  Does almost
+  everything, but a bit intimidating for newcomers.  User interface is much
+  improved over early versions, but still awkward in places.  Requires 386
+  or better.  Freeware.  Current version is 1.87, available from
+  nctuccca.edu.tw:/PC/graphics/disp/disp187a.zip and disp187b.zip.
+* GDS.  A well-done viewer and image converter for many image formats.
+  Installation is simple, and the on-line documentation is very good.
+  JPEG loading is a bit slower than the above viewers, though.  Shareware,
+  $40.  Current version is 3.1f.  A slightly restricted demo version is
+  available from ftp.netcom.com:/pub/ph/photodex/gds31f.zip.
+* NVIEW.  Views JPEG and half a dozen other image formats.  Easy to use,
+  very easy to install.  Only moderately fast, but it has lots of options.
+  Supports hi-color and true-color modes on some cards, but not mine :-(.
+  Requires 386 or better.  Current version is 1.40, available from Simtel
+  sites, file msdos/graphics/nview140.zip.  Shareware, $29.
+* ColorView for DOS.  This viewer's main advantage is easy installation.
+  Menu interface is spiffy-looking but I find it a bit clunky to use.
+  Does not require 386, should work with any display that has a VESA
+  driver.  Current version is 2.1, available from Simtel sites, file
+  msdos/graphics/dcview21.zip.  Requires a VESA graphics driver; if you
+  don't have one, look in msdos/graphics/vesadrv2.zip or
+  msdos/graphics/vesa-tsr.zip.  Shareware, $30.
+
+DISRECOMMENDATION: The well-known GIF viewer CompuShow (CSHOW, recently
+renamed 2SHOW) supports JPEG, but CSHOW's JPEG implementation is crummy:
+it's much slower than any of the above viewers, and its image quality is
+poor except on hi-color displays.  Too bad ... it'd have been nice to see
+a good JPEG capability in CSHOW, especially since CSHOW supports pre-VGA
+displays while most of the above viewers don't.  Available from Simtel
+sites, file msdos/gif/2show106.zip.  Shareware, $25.
+
+Due to the remarkable variety of PC graphics hardware, any one of these
+viewers might not work on your particular machine.  If you can't get *any*
+of them to work, you'll need to use one of the following conversion programs
+to convert JPEG to GIF, then view with your favorite GIF viewer.  (If you
+have hi-color hardware, don't use GIF as the intermediate format; try to
+find a hi-color BMP- or TARGA-capable viewer instead.)
+
+The free IJG JPEG converters are available from Simtel sites, file
+msdos/graphics/jpg5a.zip (or jpg5a386.zip if you have a 386 or better CPU
+and extended memory).  These programs will convert JPEG to and from GIF,
+BMP, Targa, and PPM formats; they are DOS compilations of the free source
+code described in section 14.
+
+Handmade Software offers free JPEG<=>GIF conversion tools, GIF2JPG/JPG2GIF.
+These are quite slow and are limited to conversion to and from GIF format;
+thus they can't produce 24-bit color output from a JPEG.  The sole advantage
+of these tools is that they will read and write HSI's proprietary JPEG
+format as well as the Usenet-standard JFIF format.  Since HSI-format files
+are rather widespread on BBSes, this is a useful capability.  Version 2.0
+of these tools is free (prior versions were shareware).  Get it from Simtel
+sites, file msdos/graphics/gif2jpg2.zip.
+NOTE: do not use HSI format for files to be posted on Usenet, since it is
+not readable by any non-HSI software.
+
+Handmade Software also has a shareware image conversion and manipulation
+package, Image Alchemy.  This will translate JPEG files (both JFIF and HSI
+formats) to and from many other image formats.  It can also display images.
+A demo version of Image Alchemy version 1.77 is available from Simtel sites,
+file msdos/graphics/alch177.zip.
+
+JPGINDEX is a useful tool for making indexes of JPEG image collections.
+Available from Simtel sites, file msdos/graphics/jpgidx13.zip.
+
+------------------------------
+
+Subject: [6] Microsoft Windows
+
+LView Pro is a viewer/editor/converter for JPEG, GIF, BMP, and other
+formats.  Version 1.A is available from Simtel sites (see NOTE in previous
+section), file win3/graphics/lviewp1a.zip.  Requires 386 or better CPU.
+LView Pro offers a wide array of image editing functions and can load JPEGs
+in either fast/low-quality or slow/high-quality modes.  Shareware payment
+($30) is required only for business usage or to obtain versions optimized
+for Win32s/NT, 486 or Pentium CPUs.
+
+ACDSee is a very fast, easy to use JPEG/GIF/BMP/TGA viewer.  Good viewing
+and browsing capabilities, but no image editing or conversion.  Current
+version is 1.24, available from
+ftp.cica.indiana.edu:/pub/pc/win3/desktop/acdc124.zip.  Shareware, $15.
+
+WinECJ is a fast, no-frills viewer with image quality noticeably worse than
+most other JPEG viewers.  (You can purchase a version with better image
+quality for AUD$30.)  Version 1.2 is free and available from Simtel sites,
+file win3/graphics/winecj12.zip.  Requires Windows 3.1 and
+256-or-more-colors mode.
+
+WinJPEG (shareware, $25) displays JPEG,GIF,Targa,TIFF,PCX, and BMP files;
+it can write all of these formats too, so it can be used as a converter.
+It has some other nifty features including screen capture, color-balance
+adjustment, and slideshow.  The current version is 2.65, available from
+Simtel sites, file win3/graphics/winjp265.zip.  (This is a 286-compatible
+version; if you register, you'll get the 386-and-up version, which is
+roughly twice as fast.)
+
+Some people prefer Paint Shop Pro.  It's not very impressive as just a JPEG
+viewer (especially since image quality is not very good on 8-bit displays),
+but it has lots of image manipulation features.  Current version is 2.00,
+available from ftp.cica.indiana.edu:/pub/pc/win3/desktop/pspro200.zip.
+Shareware, $69.
+
+QPV and DVPEG (see section 5) work under Windows, but only in full-screen
+mode, not in a window.  Also note that you can run the DOS conversion
+programs described earlier inside a Windows DOS window.
+
+For a native Windows NT viewer, try NTj.  Reads JPEG, GIF, and BMP.
+Available from ftp.digital.com:/pub/DEC/NTj/NTj-x86.exe (or NTj.exe
+for the DEC Alpha version).
+
+------------------------------
+
+Subject: [7] OS/2
+
+The most widely used OS/2 JPEG viewers are:
+
+JoeView 1.22b: free JPEG/GIF/BMP/PCX/TIFF viewer.  Available from
+hobbes.nmsu.edu:/os2/graphics/jovw122b.zip.
+
+PMJPEG 1.63: OS/2 2.x port of WinJPEG, a popular viewer/converter for
+Windows (see description in previous section).  Shareware, $20.  Available
+from hobbes.nmsu.edu:/os2/graphics/pmjpg163.zip.
+
+PMView 0.90: JPEG/GIF/BMP/Targa/etc viewer.  GIF viewing very fast, JPEG
+viewing roughly the same speed as the above two programs.  Has image
+manipulation & slideshow functions.  Shareware, $35.  Available from
+hobbes.nmsu.edu:/os2/graphics/pmview90.zip.
+
+All of these viewers require Palette Manager for best display quality.
+Opinion seems to be about equally split as to which is the best, so try
+them all to see which one you like.
+
+Possibilities for file format conversion include:
+
+Image Archiver 1.03: image conversion/viewing with PM graphical interface.
+Strong on conversion functions, viewing is a bit weaker.  Shareware, $15.
+hobbes.nmsu.edu:/os2/graphics/imgarc13.zip.
+
+hobbes.nmsu.edu:/os2/graphics/jpegv4.zip is a 32-bit version of the free IJG
+conversion programs, version 4.  (Version 5 is stuck in the archive admin's
+input queue :-(.)
+
+hobbes.nmsu.edu:/os2/graphics/jpeg4_16.zip is a 16-bit version of
+same, suitable for OS/2 1.x.
+
+Note: the hobbes OS/2 collection is mirrored at ftp-os2.cdrom.com.
+
+------------------------------
+
+Subject: [8] Macintosh
+
+Most Mac JPEG programs rely on Apple's JPEG implementation, which is part of
+the QuickTime system extension; so you need to have QuickTime installed.
+To use QuickTime, you need a 68020 or better CPU and you need to be running
+System 6.0.7 or later.  (If you're running System 6, you must also install
+the 32-bit QuickDraw extension; in System 7, that is built in.)  The latest
+freely available version of QuickTime is 1.6.1, available from
+ftp.apple.com:/dts/mac/sys.soft/quicktime/quicktime-1-6-1.hqx.
+
+Mac users should keep in mind that QuickTime's JPEG format, PICT/JPEG, is
+not the same as the Usenet-standard JFIF JPEG format.  (See part 1 for
+details.)  If you post images on Usenet, make sure they are in JFIF format.
+Most of the programs mentioned here can handle either format.
+
+The two major Internet sites for Mac software are sumex-aim.stanford.edu and
+mac.archive.umich.edu.  Unfortunately they are both very busy, so you may
+have better luck getting files from a mirror site.  See "Introductory
+Macintosh Frequently Asked Questions" in the comp.sys.mac.* newsgroups for
+the current locations of mirrors.
+
+JPEGView is an excellent free program for viewing JFIF,PICT/JPEG,GIF,TIFF,
+and other image files.  It can convert between the two JPEG formats and can
+create preview images for files.  The current version is 3.3.1, available
+from sumex-aim.stanford.edu:/info-mac/grf/util/jpeg-view-331.hqx.  Requires
+System 7; QuickTime is optional.  JPEGView usually produces the best color
+image quality of all the currently available Mac JPEG viewers, and it needs
+much less memory to view large images than most other Mac viewers.  Given
+a large image, JPEGView automatically scales it down to fit on the screen,
+rather than presenting scroll bars like most other viewers.  (You can zoom
+in on any desired portion, though.)  Some people like this behavior, some
+don't.  Overall, JPEGView's user interface is very well thought out.
+
+GIFConverter, a shareware ($40) image viewer/editor/converter, supports
+JFIF,PICT/JPEG,GIF, and many other image formats.  Current version is 2.3.7,
+mac.archive.umich.edu:/mac/graphics/graphicsutil/gifconverter2.37.cpt.hqx.
+Requires System 6.0.5 or later.  GIFConverter is not better than JPEGView as
+a plain JPEG/GIF viewer, but it has much more extensive image manipulation
+and format conversion capabilities.  Also, GIFConverter can load and save
+JFIF images *without* QuickTime, so it is your best bet if your machine is
+too old to run QuickTime.  (But it's faster with QuickTime.)  Hint: if
+GIFConverter runs out of memory while loading a large JPEG, try converting
+the file to GIF with JPEG Convert, then viewing the GIF version.
+
+A competitor to GIFConverter is GraphicConverter, also shareware ($35).
+Current version is 2.1 (2.11 for Power Mac), available at
+sumex-aim.stanford.edu:/info-mac/grf/util/graphic-converter-21.hqx or
+sumex-aim.stanford.edu:/info-mac/grf/util/graphic-converter-211-ppc.hqx.
+Requires System 7 and QuickTime to handle JPEG.  GraphicConverter has even
+more functionality than GIFConverter, but is correspondingly larger.  Worth
+checking out if you want to manipulate images, not just look at them.
+
+JPEG Convert, a Mac version of the free IJG JPEG conversion utilities, is
+available at sumex-aim.stanford.edu:/info-mac/app/jpeg-convert-10.hqx.
+This will run on any Mac, but it only does file conversion, not viewing.
+You can use it in conjunction with any GIF viewer.
+
+Storm Technology's Picture Decompress is a free JPEG viewer/converter.
+This rather old program is inferior to the above programs in many ways, but
+it will run without System 7 or QuickTime, so you may be forced to use it on
+older systems.  (It needs 32-bit QuickDraw, so really old machines can't use
+it.)  File sumex-aim.stanford.edu:/info-mac/app/picture-decompress-201.hqx.
+
+If your Mac is too old to run 32-bit QuickDraw (a Mac Plus for instance),
+GIFConverter is your only choice for single-program JPEG viewing.  If you
+don't want to pay for GIFConverter, use JPEG Convert and a free GIF viewer.
+
+More and more commercial Mac applications are supporting JPEG, although not
+all can deal with the Usenet-standard JFIF format.  Adobe Photoshop, version
+2.0.1 or later, can read and write JFIF-format JPEG files.  (In 2.0.1, use
+the JPEG plug-in on the Acquire menu; 2.5 and later handle JPEG the same as
+other file types.)  You must set the file type code of a downloaded JPEG
+file to 'JPEG' to allow Photoshop to recognize it.
+
+HINT: if you use Fetch to retrieve files by FTP, add ".jpg" to its list of
+binary file types under Customize/Suffix Mapping.  Otherwise Fetch's
+"automatic" retrieval mode will retrieve JPEGs in text mode, thus corrupting
+the data.
+
+------------------------------
+
+Subject: [9] Amiga
+
+Most programs listed in this section are available from "AmiNet" archive
+sites.  The master AmiNet site is wuarchive.wustl.edu, but there are many
+mirror sites and you should try to use the closest one.
+
+Osma Ahvenlampi posted a good review of Amiga picture viewers in
+comp.sys.amiga.reviews in March 1994.  You can retrieve it from
+math.uh.edu:/pub/Amiga/comp.sys.amiga.reviews/software/graphics/PictureViewerSurvey_2.
+Opinions here are mostly stolen from his article.
+
+FastView is a fast, high-quality JPEG/GIF/ILBM viewer.  It's new but has
+achieved a good reputation in a short time.  Works well on both ECS and AGA
+displays.  Shareware, $15; requires OS 2.0.  Version 1.30 is available from
+Aminet sites, file /pub/aminet/gfx/show/FView130.lha.
+
+FastJPEG is a free JPEG viewer; it's fast and has good image quality, but it
+doesn't view any formats except JPEG.  Somewhat faster than FastView on ECS
+machines, slower on AGA.  Version 1.10 is available from Aminet sites, file
+/pub/aminet/gfx/show/FastJPEG_1.10.lha.
+
+PPShow is a good free JPEG/GIF/ILBM/ANIM/Datatype viewer.  Version 4.0 is
+available from Aminet sites, file /pub/aminet/gfx/show/PPShow40.lha.  For
+viewing JPEGs it is a little slower than FastJPEG, and image quality is not
+as good (particularly on ECS machines); but if you want to use just one
+viewer, PPShow is the one.
+
+HamLab Plus is an excellent JPEG viewer/converter, as well as being a
+general image manipulation tool.  It's cheap (shareware, $20) and can read
+several formats besides JPEG.  The current version is 2.0.8.  A demo version
+is available from AmiNet sites, file /pub/aminet/gfx/edit/hamlab208d.lha.
+The demo version will crop images larger than 512x512, but it is otherwise
+fully functional.
+
+Rend24 (shareware, $30) is an image renderer that can display JPEG, ILBM,
+and GIF images.  The program can be used to create animations, even
+capturing frames on-the-fly from rendering packages like Lightwave.
+The current version is 1.05, available from AmiNet sites, file
+/pub/aminet/gfx/aga/rend105.lha.
+
+Viewtek is a free JPEG/ILBM/GIF/ANIM viewer.  The current version is 2.1,
+available from AmiNet sites, file /pub/aminet/gfx/show/ViewTEK21.lha.
+Viewtek used to be the best free JPEG viewer for Amiga, but it now faces
+stiff competition from FastJPEG and PPShow.  The choice depends on your
+display hardware and personal preferences.  In particular, Viewtek has poor
+display quality on ECS machines.
+
+There is finally a good JPEG datatype for use with datatype-based viewers
+(such as Multiview or ShowDT).  Available from AmiNet sites, file
+/pub/aminet/util/wb/jfif_dtc.lha.
+
+The free IJG JPEG software is available compiled for Amigas from AmiNet
+sites, file /pub/aminet/gfx/conv/jpegV5Bbin.lha.  These programs convert
+JPEG to/from PPM, GIF, BMP, Targa formats.
+
+If you have a DCTV box or a compatible display, try JPEGonDCTV.  Available
+from AmiNet sites, file /pub/aminet/gfx/show/JPEGonDCTV100.lha.  Viewtek is
+also reported to work well with DCTV.
+
+------------------------------
+
+Subject: [10] Atari ST
+
+GEM-View (shareware, $26) displays JPEG, GIF, and other image formats.
+FTP from atari.archive.umich.edu:/atari/Graphics/Gemview/gview248.lzh.
+This is a well regarded viewer.  The English documentation tends to be a
+few versions behind, though.
+
+For monochrome ST monitors, try MGIF, which manages to achieve four-level
+gray-scale effect by flickering.  Version 4.2 loads JPEG files much faster
+than 4.1 did.  FTP from atari.archive.umich.edu:/atari/Graphics/mgif42b.zoo.
+
+The free IJG JPEG software is available compiled for Atari ST/TT/etc
+from micros.hensa.ac.uk:/micros/atari/tos/p/p108/jpeg5abn.zoo.
+These programs convert JPEG to/from PPM, GIF, BMP, Targa formats.
+
+------------------------------
+
+Subject: [11] Acorn Archimedes
+
+The Acorn archive at micros.hensa.ac.uk contains several JPEG-capable
+programs.  Read the file micros.hensa.ac.uk:/micros/arch/riscos/index
+for retrieval instructions.  Recommended archive entries include:
+
+a022 Translator 7.18: image file format converter (shareware)
+b008 FYEO 2.01: For Your Eyes Only, fast JPEG/GIF image viewer (shareware)
+a110 JPEG 5.00: IJG v5 software (JPEG<=>PPM,GIF,Targa) w/ desktop front end
+
+!ChangeFSI, supplied with RISC OS 3 version 3.10, can convert from and view
+JPEG JFIF format.  Provision is also made to convert images to JPEG,
+although this must be done from the CLI rather than by double-clicking.
+
+------------------------------
+
+Subject: [12] NeXT
+
+OmniImageFilter is a filter package that converts NeXTStep TIFF to and from
+about 30 image formats.  It reads JPEG but does not write it.  It works with
+most NeXTStep programs that handle drag-and-drop.  OmniImage is a simple
+image viewer that uses the filter package.  Both are free.  Available from
+ftp.omnigroup.com:/pub/software/OmniImageFilter-3.0.pkg.tar and
+ftp.omnigroup.com:/pub/software/OmniImage-3.0.1.pkg.tar.
+
+ImageViewer is a PD utility that displays images and can do some format
+conversions.  The current version reads JPEG but does not write it.
+ImageViewer is available from the NeXT archives at sonata.cc.purdue.edu and
+cs.orst.edu:/pub/next/3.0/bin/ImageViewer0.9i.tar.Z.  Note that there
+is an older version floating around that does not support JPEG.
+
+NeXTStep includes built-in support for TIFF/JPEG, but not for the
+Usenet-standard JFIF format.  Be warned that the TIFF/JPEG standard is
+about to change away from the flavor currently produced by NeXTStep,
+so compatibility with other platforms is doubtful.
+
+------------------------------
+
+Subject: [13] Other systems
+
+If you don't see what you want for your machine, check out the free IJG
+source code described in the next section.  Assuming you have a C compiler
+and at least a little knowledge of compiling C programs, you should be able
+to prepare JPEG conversion programs from the source code.  You'll also need
+a viewer program.  If your display is 8 bits or less, any GIF viewer will do
+fine; if you have a display with more color capability, try to find a viewer
+that can read Targa, BMP, or PPM 24-bit image files.
+
+------------------------------
+
+Subject: [14] Freely available source code for JPEG
+
+Free, portable C code for JPEG compression is available from the Independent
+JPEG Group.  Source code, documentation, and test files are included.
+Version 5b is available from ftp.uu.net:/graphics/jpeg/jpegsrc.v5b.tar.gz.
+If you are on a PC you may prefer ZIP archive format, which you can find at
+oak.oakland.edu:/SimTel/msdos/graphics/jpgsrc5a.zip (or at any Simtel mirror
+site).  On CompuServe, see the GRAPHSUPPORT forum (GO GRAPHSUP), library 12,
+file jpgs5a.zip.
+
+The IJG code includes a reusable JPEG compression/decompression library,
+plus sample applications "cjpeg" and "djpeg", which perform conversion
+between JPEG JFIF format and image files in PPM/PGM (PBMPLUS), GIF, BMP,
+Utah RLE, and Targa formats.  Two small applications "wrjpgcom" and
+"rdjpgcom" insert and extract textual comments in JFIF files.
+The package is highly portable; it has been used successfully on many
+machines ranging from Apple IIs to Crays.
+
+The IJG code is free for both noncommercial and commercial use; only an
+acknowledgement in your documentation is required to use it in a product.
+(See the README file in the distribution for details.)
+
+
+A different free JPEG implementation, written by the PVRG group at Stanford,
+is available from havefun.stanford.edu:/pub/jpeg/JPEGv1.2.tar.Z.  The PVRG
+code is designed for research and experimentation rather than production
+use; it is slower, harder to use, and less portable than the IJG code, but
+the PVRG code is easier to understand.  Also, the PVRG code supports
+lossless JPEG, while the IJG code does not.
+
+------------------------------
+
+Subject: [15] Where are FAQ lists archived?
+
+Many FAQs are crossposted to news.answers.  Well-run netnews sites will have
+the latest versions available in that newsgroup.  However, there are a *lot*
+of postings in news.answers, and they can be hard to sort through.
+
+The latest versions of news.answers postings are archived at rtfm.mit.edu.
+You can retrieve this FAQ by FTP as /pub/usenet/news.answers/jpeg-faq/part1
+and /pub/usenet/news.answers/jpeg-faq/part2.  If you have no FTP access,
+send e-mail to mail-server@rtfm.mit.edu containing the lines
+	send usenet/news.answers/jpeg-faq/part1
+	send usenet/news.answers/jpeg-faq/part2
+(If you don't get a reply, the server may be misreading your return address;
+add a line such as "path myname@mysite" to specify your correct e-mail
+address to reply to.)  For more info about the FAQ archive, retrieve the
+file rtfm.mit.edu:/pub/usenet/news.answers/news-answers/introduction.
+
+The same FAQs are also available in the World Wide Web; see the index at
+http://www.cis.ohio-state.edu/hypertext/faq/usenet/FAQ-List.html.  This FAQ
+is http://www.cis.ohio-state.edu/hypertext/faq/usenet/jpeg-faq/top.html.
+
+-- 
+			tom lane
+			organizer, Independent JPEG Group
+			tgl@netcom.com or tgl@sss.pgh.pa.us
+
+

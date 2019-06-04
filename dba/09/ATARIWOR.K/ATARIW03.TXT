@@ -1,0 +1,316 @@
+ATARI WORKS PART 3
+
+ |||  Data Dayes
+ |||  By: Albert Dayes
+/ | \ GEnie: AEO.1    CompuServe: 70007,3615
+      -------------------------------------------------------------------
+
+In the past several issues of AEO, Andreas and Lyre discussed the Word
+Processor and Spreadsheet portions of Atari Works. This installment
+will focus on the Database part of the program.
+
+The database module of Atari Works allows one to access a group of
+non-homogenous data elements in many different ways. One method can be
+as an individual record and another as a group of records.
+
+//// Import/Export
+
+When one first runs Atari Works, and selects "database", one is given
+the option creating a new database or importing an existing database.
+The options for importing a pre-existing dBASE III data file (also
+known as a dbf file) is straight forward. Select "Import file" (or
+SHIFT-CONTROL-O) under the FILE menu and then choose the DBF file
+option. A file selector appears and the file is imported quickly.
+The advantage of the DBF file is that most database programs can
+import and export that file type (i.e., SuperBase, dbMAN, etc).
+
+The other option is a delimited ASCII file and the delimiter can be
+changed by the user (tab, space, comma, and pipe symbols are common
+ones). This allows for a much greater variety of import/export
+capability since ascii data files are generated and used by many
+programs.
+
+//// Grab and Drag
+
+The other method is to create a database file from scratch. This is
+what can be thought of the grab and drag phase. Selecting NEW
+(CONTROL-N) option under the FILE menu one begins the process of
+creating a database.
+
+A dialog box appears and one inputs the name of the desired field.
+This process continues until the user selects the done option. Now
+the grab operation begins. The entire screen is a blank form and one
+places the fields anywhere he/she wishes on the screen. All of the
+fields are currently in a linear layout from top to the bottom of the
+screen.
+
+Moving the mouse cursor over the field name and pressing the left
+mouse button allows one to drag the field to any position. After the
+position is found one can stretch the data portion of the field
+accordingly. By grabbing (selecting a region with the mouse and
+holding down the left mouse button) the right end of the field one can
+change the size of the field from 1 to 255 characters in length.
+
+Also with each field comes a series of attributes of which some are
+listed below.
+
+TYPE:        DISPLAY:     DATE:     STYLE:      ALIGN:
+====================================================================
+text         general      short     bold        left
+numeric      fixed        medium    underline   center
+date         currency     long      italic      right
+time         percent      show day  comma
+computed
+       
+The following shows examples of some of the different formats:
+
+short  date    2/13/1993
+medium date    Feb 13, 1993
+long   date    February 13, 1993
+long date +
+  show day     Sunday, February 13, 1993
+
+In Currency formats: (negative values are enclosed in () ).
+
+   $56.00
+ ($403.42)
+
+Adding the comma option yields results like:
+
+$45,000.23
+
+One can then try out the many other options to yield the results
+he/she is looking for. It is very simple to change the field type at
+anytime after creation of the database as well.
+
+In using the computed fields one types in a formula using the fields
+and or functions needed to perform a specific calculation. The
+formula remains hidden until any part of the column is selected then
+the formula appears on the data entry line at the top of the screen.
+
+The dynamic nature of the database allows you to add fields specially
+for calculations during the course of your work. Then can be removed
+at any time so one does not have to create a new database everytime
+one needs to perform some specific calculation.
+
+If a mistake is made when spelling a field name one can just double
+click on field name and change it. One of the best features of
+database is that everything is dynamic. The field names can be
+changed, the field sizes, fonts and more fields can be added at any
+time. So as your needs change your database can change with you.
+
+//// Two Modes of Viewing Data
+
+There are two basic modes of operation. One being the form view and
+the other being the list view. Basically one can think of the form
+mode as examining a single record while the list mode can show several
+records at once.
+
+By double clicking (while in form mode) on any blank space that is
+not currently occupied by a field the mode changes instantly to list
+mode. This list mode looks the same as the spreadsheet but the way
+data is acted upon is very different. Double clicking to the left of
+all the records in list mode will take you back to the form mode.
+
+In the list mode you can move the fields (columns) into any order you
+wish at any time. Just click on the column name (field name) and hold
+down the mouse. Then drag it to the new position. The fields can
+also be sized as well by grabbing the vertical line that separates any
+two fields. This will size the field size to the left of that line.
+It very useful to have the complete freedom to dynamically change
+anything about the database at will.
+
+//// Multiple Files
+
+In moving data around the most popular functions are:
+
+1) CUT     ( CONTROL-X )
+2) COPY    ( CONTROL-C )
+3) PASTE   ( CONTROL-V )
+4) DELETE  (    DEL    )
+
+The functions are also found under the EDIT menu. One of the most
+useful features of Atari Works is the ability to have multiple files
+open at any one time. These can be any combination of word processing,
+spreadsheets, graphs or database files.
+
+For database users this is very useful way to merge selected data from
+one database file to another. Every file that is open is treated as a
+completely separate entity. One can select certain records in one
+database file and then paste them into another. The makes updating
+databases a very simple operation.
+
+//// Selecting the right information
+
+To display only the information a person needs is very easy with Atari
+Works. For example one needs to find all records that have the word
+"ATARI" in them. Choosing the SELECT menu and the match records
+(CONTROL-M) a dialog box appears. One types in the word Atari and
+presses return. Within a few seconds all records that have the word
+Atari in any field will be selected. This is a very simple method but
+one can easily get more complicated by using the select records
+function.
+
+Other features include the ability to search all fields for a matching
+value. One can search text fields for sub-strings for example. One can
+include or exclude non text fields if the user so desires. It works
+equally well on numeric and non-numeric fields and is a very useful
+when one needs to jump to a specific field within any record. This is
+very helpful when one needs to edit fields with a specific record as
+well.
+
+By choosing the SELECT menu and the option select records (CONTROL-R)
+you can perform a more complicated query. This gives the user more
+control over the entire process of selecting right information. The
+three steps necessary for making a query are as follows:
+
+a) choose field name
+b) choose relational operator (operation to perform)
+c) value to compare against
+
+For example how does one find out how many people in New York and pay
+90% in taxes? Basically this requires two parts and both parts must
+be true.
+
+ 1).  live in New York
+ 2).  pay 90% in taxes
+
+The relational operators that act upon a field are as follows:
+
+is less than
+is less than or equal to
+is equal to
+is not equal to
+is greater than or equal to
+is greater than
+
+In the database there are fields "city" and "tax" which will be used.
+The formula Atari Works creates is as follows:
+
+city is equal to New York AND tax is equal to 90%
+
+The steps one has to follow involve using the rules. The first step
+involves selecting the field to act upon. City is chosen first and
+the operation "is equal to" and the the value is New York. The second
+step selects the Tax field, operation "is equal to" and the value 90
+percent.
+
+When selecting a field name one does not have to type in the name but
+select it from a scrollable list. The same is true for the operators.
+The only input required is at the rule or value input which is the
+last part needed for any rule.
+
+This is a very easy to install the rules and select how the rules
+work with one another using AND or OR. In this case it would work as
+follows:
+
+1.  Choose the field CITY
+2.  Choose operator "is equal to"
+3.  Input NEW YORK for the value or rule
+4.  Install Rule
+5.  Choose the field TAX
+6.  Choose operator "is equal to"
+7.  Input 90 for value or rule
+8.  Install rule
+9.  Choose the AND option 
+
+One can perform a much more complicated query than is listed here but
+it is just to give one the idea how this would work.
+
+//// How does one restart?
+
+There is an option under the SELECT menu called show all (CONTROL-E)
+which displays all the records in the database. After one has
+selected specific records one can view/select all of them by using the
+command show all.
+
+//// Fonts and the Display
+
+The Fonts play a very useful role in way one accesses the information
+in the database. If one want to see more records on the screen at one
+time during the list mode one can reduce the size of the font to view
+even more records. So fonts can play a very important role in
+addition to making the output look spectacular.
+
+//// Report Generation
+
+Report generation follows the same principles involved with selecting
+records. The main difference is the output is sent to the printer.
+There are other features as well such as the ability to sum a field,
+sub-total a field and start a new page after a sub-total. Using all
+of the options discussed earlier one should be able to generate
+reports very quickly.
+
+//// Conclusion
+
+The database allows one to add and subtract fields and records at
+will. The dynamic nature of the Atari Works database module is what
+makes it so useful. In addition, the user can sit and down and start
+almost immediately without having to read the manual too much, except
+for reference purposes. The other features include the ability to mail
+merge with the word processor, generate reports, and change fonts and
+sizes with very little work involved. In working with Works it's easy
+to forget that there are other modules in the same package other than
+the one you are currently using. It seems strange sometimes that one
+just has to open a different file type (spreadsheet or word processor)
+to access that part of the program. All in all, Atari Works is one of
+the most exciting integrated software packages I have seen in a long
+time.
+
+/*---------------------------------------------------------------*/
+
+GLOSSARY:
+
+ASCII = American Standard Code for Information Interchange.
+
+database = A collection of logically related records.
+
+data dictionary = A list of all the files, fields, and variables used
+                  in a DBMS.
+
+data element = see field for definition.
+
+data structures = The relationships between data elements in a
+                  computer file.
+
+dBASE III = A relational database program by Borland/Ashton-Tate
+
+dbf = general name used when speaking data files in used in the
+      program dBASE III. An example of a filename: RADICAL.DBF
+
+DBMS = DataBase Management System - the collection of hardware and
+       software that organizes and provides access to a database.
+
+delimiter = A symbol that serves to mark the beginning or the end.
+
+export = The capacity to write information from one program so it can
+         be used by another program.
+
+field = An item of  data made up of a number of characters, bytes or
+        codes and treated as a unit. This unit can be thought of as
+        a number, name or an address. Can also be thought of as a
+        column used to store a particular piece of information.
+
+flat file database = General hierarchy (from highest to lowest)
+
+                     1. single database file
+                     2. record
+                     3. field
+
+import = The capacity to read information generated from another
+         program.
+
+query = Retrieval request and is expressed as search criteria.
+
+record = A data structure in which there are a number of named
+         components, called fields. These fields are not necessarily
+         of the same type.
+
+relational operator = A symbol used to compare to values. It
+                      specifies a condition that may be either true or
+                      false.
+
+select = To pick out a group of records from a database according to
+         the specifications provided by the user.
+
+

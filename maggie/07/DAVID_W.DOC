@@ -1,0 +1,266 @@
+
+
+Music Ripping by MUG U.K¿ for The Lost Boys' "Maggie 6.0"
+---------------------------------------------------------
+
+After the previous article in Maggie 4.0 by ZCT of The Lower Level, I
+decided to follow it up with some more information on certain particular
+composers and their different storage formats.  I hope to be covering all
+the current ST musicians, and detailing how to rip their music and use it
+within your own 68000/GFA v3 programs.  Each article will have accompanying
+source.  Seeing as Mad Max/Jochen Hippel music was covered by ZCT, I'll
+leave his music to a much later date.  Look forward to the following
+composers/formats:  Count Zero, Ben Daglish, Jas C. Brooke, Quartet,
+TCB Tracker & the numerous Soundtracker formats.
+
+This article was originally written for Maggie 5.0, but after I had finished
+it, and before I made any backup copies of my hard-disk, the damn thing
+decided to screw-up and left me without a hard-drive for over 4 weeks.  My
+thanks for the initial help I received from Tim (Manikin) & Michael (Sammy)
+but it turned out that a link-virus had wiped out all of the partition
+information on Drive C: - this is especially ironic seeing as I am the
+author of the 'Professional Virus Killer' !!!
+
+Anyway, onwards with the proper article !!
+
+
+First Steps in Music Ripping.
+-----------------------------
+
+You will need a decent disassembler.  The one I use is MonST by Hisoft,
+but if you can't afford this, get hold of the Turbo Assembler which is
+shareware, and the disassembler is called 'Bugaboo' !!  Talking of Turbo
+Assembler, I've now got a full English translation of this speedy
+assembler, as it's got a nice bundle of features I want to use, but all of
+the source files are still written in techno-German !!!
+
+Now get the program that contains the music that you want to rip out.
+If you're a beginner at this stuff, I suggest that you get used to MonST
+before you start, as I will be referring to functions of MonST throughout
+this and future articles.  After I give a certain procedure to follow,
+I will give the appropriate MonST command in brackets.  This of course will
+be different if you use another disassembler (Raid, Easy Rider or Bugaboo).
+
+Right, once you are in possession of the program (game or demo), load it
+into MonST with the executable file option (Ctrl & L).
+
+If the program file is packed (more than likely), then I suggest that you
+learn how to unpack these files.  Some files can be unpacked by the program
+that packed them in the first place (Automation/Pompey/JAM/JEK), but others,
+such as the Ice & Fire packers do not (at least not in the versions I have).
+The easy way to unpack these files is to search for 'TST.L (A0)' or
+'JMP (A0)' commands - the address register used will differ slightly
+for each packer.  Once you have found the first of these instructions
+(which might not be straight away), set a breakpoint (Crtl & B) at this
+command, and then run it (Ctrl & R).  Step through (Ctrl & Z) this command
+and you should be in the relocation routine for this packed file.
+There should now be a similar 'JMP (A0)' command in this relocation routine.
+Set a breakpoint here also, and run until this breakpoint - unless you are
+a masochist and want to single-step your way through a LARGE loop !!
+Depending on how much data there is to relocate, there will be a slight
+pause.  Now step through this jump command and you should be inside the
+main unpacked program - which contains the music you want to rip out !!
+
+Now after all this, I'll describe the music format for certain music
+composers.  In each issue of Maggie (from 6.0 onwards), I will be
+discussing the methods of ripping various music files by well known
+and also the not-so well known composers.  Some of them are no longer
+on the ST, but the majority of them are.  For example, I haven't heard of
+Jas C. Brooke for a long while, and then I see that he wrote the IBM PC
+versions of F-29 Retaliator !!!
+
+I would also like to hear from fellow music-rippers out there and I would
+especially like some assistance (eg. helping with similar articles as this)
+with music by Sound Images (Pang, Viz etc.), Alistair Brimble (various
+Codemasters games), Matt Furniss (Hill Street Blues) and other ST composers.
+Alistair Brimbles' music routine is easy to hack out (eg. Fast Food), BUT
+it uses the 'Soundtracker' format for it's data - does anyone have the
+ability/know-how to use this routine with ANY other Soundtracker music ???
+
+Right, on with the article.  The first composer under the microscope
+is .....
+
+
+                              David Whittaker
+                              ---------------
+
+I'll start off with David Whittaker, as he has written an astounding
+amount of music for various games.  In the beginning he used a slightly
+different music player, but in recent times his routine has become more
+standardised, and therefore dead easy to find and rip out !!!  Using the
+method below, I can guarantee that you (yes, YOU), will be able to rip
+out David Whittaker music to the exact byte.  Of course, it will help
+if you posess a reasonable amount of intelligence, a will to succeed,
+and the ability to stay up all night with reams of paper at your feet
+complete with mindless hex (not sex) addresses on !!
+
+Accompanying this article, should be the following files:-
+
+DAVID_W.S       -       68000 source
+DAVID_W.GFA     -       GFA BASIC v3.5 source
+DAN_DARE.INL    -       A David Whittaker music file
+
+Before you continue, make sure that you have loaded in (and depacked)
+the program that DEFINITELY contains some David Whittaker music.
+
+
+Ripping the music
+-----------------
+
+Change the control window (TAB/Alt & 3) to the Memory window.  Now you are
+going to search for the David Whittaker play routine.  Enable the
+search routine (G), then select the longword search (L).  Enter the
+longword '48E7FFFE', which is the instruction 'MOVEM.L D0-7/A0-6,-(A7)'.
+If you find a copy of the above, then it COULD be the music routine,
+although if the programmer of the game/demo is using a lot of routines
+that quosh registers, then expect to find a lot of these 'preserve
+registers' lines in the program/demo you're hacking.
+
+The bit that makes David Whittaker play routine easy to find is that
+it has such a bloody tidy 'front-end' so-to-speak !!  You will find that
+there will be three of the above instructions set out as so.  In the
+example below, I've used the address $40000 as an example, of course
+this will be different in your disassembly.
+
+
+$40000  MOVEM.L D0-D7/A0-A6,-(A7)  ;Music initialise routine, send D0
+$40004  BSR $4017A                 ;here containing the tune number or
+$40008  MOVEM.L (A7)+,D0-D7/A0-A6  ;F/X that you want to play.  Always
+$4000C  RTS                        ;starts with 0 upto xx tune numbers
+----------------------------------------------------------------------
+$4000E  MOVEM.L D0-D7/A0-A6,-(A7)  ;Music Player VBL routine.  Call this
+$40012  BSR $40208                 ;address from your VBL routine to
+$40016  MOVEM.L (A7)+,D0-D7/A0-A6  ;make the music run with your program.
+$4001A  RTS                        ;
+----------------------------------------------------------------------
+$4001C  MOVEM.L D0-D7/A0-A6,-(A7)  ;Music Off routine.  Call this when
+$40020  BSR $404B8                 ;you want to stop the music playing.
+$40024  MOVEM.L (A7)+,D0-D7/A0-A6  ;
+$40028  RTS                        ;
+----------------------------------------------------------------------
+
+I've explained what each routine does, so at least you know what to look
+for when ripping David Whittaker music out of wherever !!  Sometimes you
+will find the above routines used when D.W. is written some Quartet
+music (which is just as easy to rip-out - but that's another article !!)
+for the game, enter the full-screen mode (ALT & Z) on the memory window
+and page down a wee bit, if you see the words 'Quartet Player Program by
+Nik Pelling' etc., then you know that you are NOT looking at any chip
+music routine.  This occurrence of a Quartet play-routine and chip
+music will fool the Ultimate Ripper cartridge completely !!
+
+Now, this is the fun bit - saving out his music files !!  Write down the
+start address of the music routine (the first 'MOVEM.L' opcode), now go to
+the memory window, and search for the word '4E71' which is what David
+Whittaker uses to signal the end of his routine.  Write down this address+2
+(eg. '4E71' found at $41CA0, write down $41CA2') on the same piece of paper.
+Once you've done this bit of note-scribbling, you are ready to save off the
+file.
+
+The above method is 90% foolproof, and there will always be the odd 5%
+of fools out there, and the other 5% will be through sheer coincidence that
+a routine has a similar beginning to it and will probably crash.
+
+The majority of David Whittaker music is very small in size, and it ranges
+from 5K upto approximately 14K (Super Wonderboy).
+
+Press (S) to save off a binary file.  Enter a filename first, and then at
+the next prompt enter the two addresses that you scribbled down, seperated
+by a comma.  Now quit MonST (CTRL C) and load up GenST.
+
+
+The 68000 & GFA source files
+----------------------------
+
+Accompanying this article should be an example source file that you load
+into GENST.  Change the filename at the 'music' label, to the music file
+that you saved from MonST.  I will admit that my source code isn't as
+nice as the one supplied with ZCT's article - but it works, so what the
+hell !!!  The main reason for my sloppy assembler program, is because
+I'm just a poor GFA programmer, who dabbles in 68000 now and then !!!
+
+Now assemble it (Alt+Shift A) to memory.  Now press (Alt+Shift X) and you
+should hear your YM1249 chip straining to make some audible strains that
+sound like music.  Press any key to go back to GenST.
+
+If you do not hear anything, then go back to the program via MonST, and
+CHECK both the addresses that you wrote down.  Save out the file with
+the re-checked addresses and if nothing happens, then give up this one 
+and return to it at a later date.
+
+Hopefully, the above didn't apply, and you heard some music emitting from
+your ST/E/TT/Stacey !! Depending on what hertz rate you are running your
+machine at (50/60/70 hz), the music will either sound OK, or like a demented
+conductor in charge of the YM1249 !!  David Whittaker music WILL NOT run
+at 60hz/70hz, without some sort of 68000 modication to your program that
+will slow it down !!  Whatever needs doing is beyond me !!!
+
+In my source file, you will need to alter two numbers.  These are clearly
+labelled 'tune_no' & 'max_tune', which are self-explanatory.  Here is the
+trial and error bit.  The value for 'max_tune' is set at 8 in my source
+code.  So that if you assemble your hacked file with a value of 8 or more
+the source code will NOT call the music.  What you have to do is increase
+the value of 'tune_no' until you cause a crash !!!  Once you discover the
+maximum limit of tunes for this particular file, set 'max_tune' to this
+value.  The usual crash will be three bombs (save your source at this
+point !!) or silence !!
+
+Once everything is OK, save a copy of your first music rip to a blank disk
+labelled 'My Music Rips Vol. 1', and go back to the beginning, but with
+another program !!  Now increase your collection with lots and lots of
+easy to rip David Whittaker music.
+
+As for the GFA BASIC v3.5 source, this is just as easy to use.  Alter
+the length of the INLINE statement 'music' to equal the file length of
+your hacked file.  Load your file into this INLINE, and press SHIFT & F10
+to test the music.  Alter the routine 'music_on(0)' to whatever tune number
+you require (providing that tune exists!).  Whenever you want to switch the
+music off, call 'music_off', and ALWAYS switch off the music when you
+exit a program (either via your control, or an error).  I've included a
+quit routine that can be tailored to your own programs needs.
+
+
+Ripping with a cartridge
+------------------------
+
+Another point to make is that with a lot of todays programs being protected
+to the hilt, it is easier to use a cartridge to get into the program.
+Especially when you consider that a cartridge is unaffected by 99% of all
+protection checks (except the Multiface which isn't too good !!).  I personally
+recommend the Ultimate Ripper cartridge, which is being sold by Power
+Computing.  Originally MPH were supposed to be selling it, but they were
+overtaken by Power Computing who sell it for œ39.95 (read Maggie 5.0 for
+some updated information on the Ultimate Ripper).
+
+With this cartridge, there is an option to rip out music from anywhere.
+This ripper will find David Whittaker (and most Jochen Hippel) with ease.
+This is because this cartridge has a specific (although not perfect)
+music ripper function !!  Press 'F6', enter a start and end address to
+search between, and if it finds anything like a music routine, it will
+allow you to play it from within the cartridge, or save out the file to
+disk.  When ripping David Whittaker music, this music ripper will do it
+the byte.  It follows the same method that I've outlined above, only that
+the cartridge can be fooled by David Whittakers Quartet play-routine, as
+it looks extremely similar (to the cartridge anyway).
+
+A note to the authors of this cartridge:-  WILL YOU REPLACE THE IDIOSYNCRATIC
+INPUT ROUTINE WITH A DECENT ONE !!!
+
+If the information is correct as per the last issue of Maggie, concerning
+the Ulimate Ripper, can anyone in the know please let me know when the
+update/new & improved version will be ready ???
+
+On that note, I bid you farewell until the next article.  I hope you
+gain some useful knowledge from this article.  May I thank Sammy Joe for
+all his help in starting me off on the road to music-ripping.
+
+In the next article, I will be showing you how to rip another composers
+music.  Future articles will feature Quartet music, Soundtracker music
+and much, much more !!!
+
+Till next time,
+
+
+MUG U.K¿
+
+

@@ -1,0 +1,189 @@
+FALCON 030
+      ~FALCON.BL2~
+
+
+
+
+
+
+
+
+
+ 
+
+
+Finally !  These are the official specs of the Atari Falcon 030. This 
+information is taken from the colorful folder which Atari Benelux gave us at 
+the Dusseldorfer Messe. The original was in German, but I translated it as far 
+as I could...
+
+=============================================================================
+
+THE NEW DIMENSION:  ATARI Falcon 030.  Multimedia
+
+
+The new class.
+
+Our world is colorful and in motion, full of voices and music. And now there is 
+a computer on which you can work with all this. And it fits on your desktop ! 
+High resolution graphics, flawless animation, still and motion videopictures 
+with very fine colorshades, speech and music in CD quality. It's all what 
+multimedia is about. A new class of computers enters the arena of personal 
+computing:
+The ATARI Falcon 030, the workstation for your budget..
+
+
+Up-to-date technology.
+
+The new Atari Falcon 030 is packed in the familiar 1040 STE enclosure, this is 
+done on purpose so even optically you can see it's compatible with all the 
+existing ST software, all those thousands of programs which already haven been 
+programmed can be used. Even compared to the TT with it's professional 
+capabilities the Falcon will form a milestone in the history of 
+dataprocessing. Data which doesn't have to be just numbers, but now can be 
+pictures, voices and sounds.
+
+
+Speaking of sounds.
+
+The ability that a computer can produce a simple beep or even play a 1-voice 
+melody is completely outdated. We want to sample speech or digitize sounds, 
+work with them, change them, or make a mixture of sounds and combine them with 
+pictures, all without knowing if the visuals you see are real (like from a 
+videocamera) or the product of some clever animations package. For all these 
+purposes has the Atari Falcon 030 the hardware already built in which will put 
+this machine way ahead of it's competitors.
+The classic tasks like wordprocessing, databanking and of course program 
+development are also possible. With a maximum memory capacity of 14 Megabytes, 
+it's capable of fullfilling the highest demands..
+
+
+In a workstation of this class....
+
+...you will find that the main processor (which is a hefty 16 MHz MC68030) 
+doesn't have to do all these tasks alone. It's assisted by an optional 
+floating point processor MC68881/68882 and a standard the new ST-compatible 
+BLITTER which now runs at 16 MHz and has some new capabilities. But the main 
+difference is the new digital signal processor (DSP for short) which takes the 
+Falcon a big step into the future. This DSP (a DSP56k) is a 32 MHz processor 
+whic can go as fast as 16 million operations a second (that's 16 MIPS) It can 
+do a Fast-Fouries transformation of 1024 points in 2.07 milliseconds and has a 
+dynamic sound capacity of 144 dB (24 bits) This DSP is replacing a huge amount 
+of analog equipment inside the Falcon. It can filter, amplify, mix, correct 
+and transform signals. In the Falcon the DSP works together with a highly 
+sophisticated sound sub system which can sample 8 channels of 16 bits at rates 
+up to 50 kHz for recording and playback. There are stereo digital-to-analog
+and analog-to-digital converters and connection for industry standard digital 
+audio equipment.
+You can use the DSP for Voice-mail, Teleconference-systems, Synthesizer and 
+Equalizer functions, but the digital data can be just as well be coming from 
+digitised images. The DSP is already being used for patternmatching, character 
+recognition and graphic-output booster and for calculating 3 dimensional 
+vector images for use in animation. In some telecomunications systems the DSP 
+is being used for real time digital speech compression, you can even use it 
+for doing highspeed modem functions. The most important thing is that in the 
+Falcon all these components are so connected that they can communicate 
+optimally with each other.
+
+
+Just so the fun of gameplaying is not spoiled.
+
+The Falcon has become the extra joystick ports of the STE so you can connect 
+upto 4 analog paddles. It has a 1.44 Megabyte diskdrive built in and an 
+integrated IDE-bus harddisk connection for an internal harddisk. The mouse 
+port has been enhanced so it supports mice of up to a 300 dpi. The realtime 
+clock is standard and is backed up by a battery.
+
+
+Monitor support.
+
+The Falcon 030 can handle a range of monitors including standard television 
+sets (it has a built in modulator) and the existing Atari monitors like the 
+SM124, SC1224, SM144. For better picture quality you can connect standard VGA 
+monitors like the Atari PTC1426 and PC VGA monitors. For all these types of 
+monitors you will need an adaptor plug to connect them to the Falcon. Gen-
+locking is supported so you can synchronize the Falcons video output with any 
+available video source. The True-Color modes have a 'see-through' option which 
+can be useful for overlaying computer and video images, subtitling etc. You 
+can select overscan on all TV and RGB modes so ther will be no borders 
+visible. Flexibility was the main priority in designing the Falcon 030 so you 
+can select vertical line numbers between 200 and 480, the horizontal resolu-
+tion is either 320 or 640 pixels and you can select up to 16 planes of color 
+information. Palette choice is from 262144 possible colors. In true color mode 
+the colors are represented by the pixel bits directly  and it's possible to 
+use up to 65536 different colors at once on screen or 32768 if you use the 
+overlay bit.          
+
+
+Toptechnology in all directions.
+
+The Atari Falcon 030 opens up a brand new concept which exceeds the former 
+idea of a personal computer. It will bring it's user a host of possibilities 
+from animated game computer, sound and video workstation upto the desktop
+publishing area. Don't let the compact case and the low price fool you. With 
+the Atari Falcon, a whole new powerclass will become available in your home 
+-- the WORKSTATION -- which will be just as happy in your home as it will be 
+in professional creative design studios.   
+
+
+-----------------------------------------------------------------------------
+    The technical specifications:
+-----------------------------------------------------------------------------
+Main system:
+              * CPU:     Motorola MC 68030 at 16 MHz internal cache
+              * FPU:     Optional MC 68881 or 68882 co-processor 16 MHz
+              * RAM:     Dedicated connector for 1,4 or 14 Mbyte
+              * ROM:     512 kBytes (128 kbytes extra through ROM port)
+              * BLITTER: ST compatible graphic co-processor at 16 MHz
+
+Video:
+              * a flexible video subsystem which supports VGA, RGB and TV
+                external synchronization (gen-locking) possible.
+              * VGA:     640x480x256 colors from a palette of 262144
+                         320x480x65535 colors (true color)
+                         320x480x32768 colors (true color with overlay)
+              * RGB/TV   768x480x256 colors from a palette of 262144
+                         (with interlace)
+                         768x480x65536 colors (true color interlaced)
+                         768x480x32768 colors (true color interlaced
+                         with overlay bit)
+              * All ST modes, 320x200, 640x200 and 640x400 (71 Hz)
+              * hardware overscan
+              * hardware scrolling (all modes)
+              * see through color capability (overlay)    
+
+Co-Processors:
+              * Digital Signal Processor Motorola DSP 56k at 32 MHz
+                with 32kx24 bit SRAM 0 waitstates.
+              * Blitter 16 MHz compatible to ST blitter
+
+Ports:        
+              * Parallel port (enhanced for computer to computer
+                data transfer with handshake)
+              * Modem/RS232 port (extra high speed)
+              * MIDI IN/OUT/THROUGH
+              * Cartridge port 128 kBytes
+              * SCSI-2 connector with DMA support
+              * LAN local area network (Mega STE and TT compatible)
+              * Mouse port
+              * Standard joystick ports
+              * STE joystick ports for 4 analog paddles
+            
+Floppy:       * 1.44 Mb diskdrive 3.5 inch (PC compatible)
+        
+Harddisk:     * internal (optional) IDE-bus harddisk
+
+Keyboard:     * 94/95 key keyboard improved for high resolution
+                mouse support (up to 300 dpi), fast keyboard typing
+                and larger key buffer so no overflows can occur.
+
+Mouse:        * 100 dpi standard
+
+Extras:       * Real time clock with battery back up
+              * Internal expansion connector with all CPU, Bus control
+                interrupt and clock signals.
+              * Internal RAM bus for easy expansion (up to 14 MB)
+===========================================================================
+
+              Translated and typed in by KGE..
+                        

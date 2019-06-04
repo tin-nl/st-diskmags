@@ -1,0 +1,72 @@
+               How to create and install a RESET routine
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                    by  Ninja  of  Hidden Strength
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+  Firstly, this is a help text for those that program in 68000
+assembly language and not bull like STOS.  So if you dont know
+how to write in assembly then go away.  So that should have got
+rid of most of the lamers out there, so its down to business....
+
+  To start with you need to be in supervisor mode because we are
+going to be writting directly to the vector tables.
+
+  The ST has a longword check value in $426 to ensure that the
+routine pointed to by the reset vector is an actual routine and
+not just a corrupted vector address.  This check value can be set by...  
+        move.l    #$31415926,$426
+
+  Now to set the routine address is identical to screwing around with
+the other vectors like the VBL for example and can be set by...
+        move.l    #your_routine,$42a
+
+
+So now we have the routine installed, but when it actually executes,
+a few sytem setups have to made.  These will also work on the STE
+(I know this 'cos I use one!).
+
+your_routine
+
+  As the ST places itself in 60Hz mode, some TVs cant cope with that
+so it could be a good idea to force 50Hz. (50Hz is the standard value.)
+This can be done by...
+        move.b    #2,$ffff820a
+
+  As a general rule, I always assume that the palette and screen have
+been buggered up and so need to be set up.
+
+  The first thing I do is copy my picture or screen data to the screen
+address held in $44e.  ($44e holds the last physical screen address
+set by the XBIOS functions.)
+
+  To do the palette, I normally use the direct method but the XBIOS
+function might work also, the direct method is as follows...
+        movem.l    palette_data,d0-7
+        movem.l    d0-7,$ffff8240
+
+  Some people like to use the XBIOS functions to set the screen address
+but once again I prefer the direct method...
+        move.b    $44f,$ffff8201
+        move.b    $450,$ffff8203
+
+
+  If your routine has reached this point, you should be looking at a
+screen display with the correct palette etc.  If all you want is this
+screen displayed and have no other routines to do like animated sprites
+etc. then add to the end of your routine...
+.stop   bra.s    .stop
+
+  Please note that it is NOT a good idea to insert RTS or RTE at the end
+of your routine as it will only cause you problems.
+
+  Well that about wraps up this tutorial, unfortunatly, animated sprites
+are a whole new ball game and thus beyond the scope of this article,
+but I might write something about them at a later date...
+
+  So its bye for now and I hope to see you all in our new multi-screen
+demo that will be released soon...
+
+                          Sayonara,
+                                 Paul "Ninja" Swanson

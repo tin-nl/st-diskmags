@@ -1,0 +1,228 @@
+
+Ò--------------------------------------------------------------------------------
+ INTERVIEW with:                       COINCIDENCE and MISUNDERSTANDING/IMAGINA
+Ò--------------------------------------------------------------------------------
+
+Hello again to another part  of the "Interviews with Ex-IMAGINA-members"-series!
+As it happened  that IMAGINA  was one  of my  fave bands  on  STE I'm  very very
+interested in the truth :-)...
+
+
+
+ÒUCM: Hello Misunderstanding. [iCEBREAKER ONE] How are you?
+
+MIS: Hello I'm fine. After  finishing  a master in  Computer Science I have been
+     working as a  programmer for  4 years now. Primarly as a web developer. Now
+     I'm  working  for the  biggest Norwegian  newspaper (http://www.vg.no) as a
+     programmer and I'm  enjoying it  very much. Life is generally good and live
+     together with my girlfriend in our flat here in Oslo.
+
+COI: I'm also  fine, working as a  Technical  director of  company  dealing with
+     Cellular phones  and  Sms. Together  with  two  other strange  characters I
+     started  this  company  soon  two  years ago... Telitas  is the name of the
+     company, and  http://www.biip.no is the web site... DIZZY TUNES is actually
+     working in  the same company. And  it's been  really great  to have contact
+     with  him on  a  steady basis. He is  one  of those  friends I always think
+     about, so I was really happy to offer him a job. Basically I am doing a lot
+     of programming and planning.
+     He is making Ringtones and stuff and is responsible for all of the content.
+     Life is good, working out and  relaxing with my  girlfriend in the evenings
+     and weekends. Me and MIS meet a few  times a month  doing something. (F.ex.
+     beer, playing games etc.)
+
+
+
+ÒUCM: So [iCEBREAKER TWO] please tell us a  bit of your computer  history (I hope
+Ò     I won't  bore people  out there  with this  question :-)... So  how did you
+Ò     start computing and when did you became a member of the demoscene?
+
+MIS: It started when I was 12 and got myself a C-64. I was very  fascinated with
+     technical  things and the  basic on the C-64 was very intriguing. I started
+     to write in the examples from the C-64 book to get  them to run. After that
+     I tried modifying everything until I figured out what was going on.
+     COINCIDENCE bought an Atari after he went to buy an Amiga in  the store and
+     the said hey, why don't you buy an Atari it's cheaper and just as good. The
+     he persuaded me (it actually involved some physical arguments :) to  buy an
+     Atari. So I started naturally with GFA-basic. We started making  some games
+     in GFA. The classic  Maniac Games  that was  never finished  and a  Dungeon
+     Master clone  that wasn't  even close  to be  finished. At this  time I was
+     doing the programming and Coincidence the graphics. We were very fascinated
+     with the demo scene and we tried to learn assembler.
+     I tried to buy a book but it  sucked and  I gave up. COINCIDENCE bought the
+     book that was the best (Atari Internals or something) and after he finished
+     reading it, I was able to learn assembler.
+     Since we never knew many people  that programmed, all our rutines were self
+     made. We just had to guess how other  people did it. This  usually involved
+     me programming an insanly complex version that worked but was very slow.
+     Then  COINCIDENCE  made a  faster and simpler  one and  eventually  we made
+     things that were near  optimal. My first assembler routine was a raster bar
+     which was just some horizontal lines that nearly took one VBL. When Wizzcat
+     looked at it he went wow. And I don't think the wow was entirely positive.
+     Anyways since we were  kids we  didn't  know the  math  involved for vector
+     rotation. So I took an  example from Gfa basic  which I couldn't understand
+     and converted it to assembler. This is the  routine that we  used in all of
+     our demos. And it's not vector rotation, it actually rotates all the points
+     with the full  formula (12 muls) since I never figured  out the vector part
+     in the example. After that we  had much  fun coding  and  we met some nutty
+     norwegians named IMAGINA that welcomed us  to the crew  and learned us some
+     secrets about coding assembler (most of all the secret of REPT). After that
+     we made some demos. Well COINCIDENCE made  most of  them anyway since I was
+     also focused on school and I played basketball at that time.
+     I made an intro for the  IMAGINA/DELTA FORCE party  and I made a demo which
+     involved a jumping reindeer (Systematic error).
+     I remember  making a  routine with  3 transparent circles  for an  intro or
+     something. At  this  time I was  17 or 18 (that was in 1991) and  the Atari
+     scene was  fading. No more  games and  the first  Pentium came. COINCIDENCE
+     never gave up on the dream of making a shoot'em'up but  he had big problems
+     getting  the graphics  for the  game. At this  time I  gave up on Atari and
+     stopped using any  computer exept  in school. When I finished school I went
+     to the military service where I coded a vector intro for COINCIDENCEs game.
+     It got finished but the game was never completed.
+
+COI: At first, MIS was the programmer  of the two. I hadn't  really thought much
+     about it before he made some dorkey basic  games on the 64. But then again,
+     it really got me interested in the magic the lay behind it.
+     You write a few lines of some tricky language, and woops you've got an ugly
+     basketball beeing steered by the joystick. COOL eh?
+     Then as MIS writes, we got the book, read a lot, sweared a LOT, tried a LOT
+     and suddenly we started getting quite good at making things fly around.
+     What MIS had in complexity I had in simple solutions that worked. We were a
+     good  team, discussing  problems  and  tried  our  different  solutions and
+     fulfilled them.
+     My best demo was the Cozmic Jam demo where  I made an Inconvex routine with
+     stipling/shading which I am still quite proud and astonished about. To this
+     day I can't understand how I made it..   :)
+     These are some of my  demos: Cozmic Jam, KulturMelk, Explotion and at least
+     10 more I don't remember. Then after a while the Atari scene went limp, and
+     I lost the interest together with MIS.
+
+
+
+ÒUCM: One of my favourite questions to former IMAGINA-members is... WHAT THE HELL
+Ò     HAS HAPPENED back  in  the  days? From  one  day  to  another  the crew was
+Ò     vanished from Atariland.
+
+MIS: Well we were young and loved electronic music. One day we went to a  Cosmic
+     Baby party and  started raving. It was  the music that  attracted us to the
+     arrangements. What we didn't  know was that  it was a lot of drugs at these
+     parties. Well, we  found  that  out  eventually  and  had  an expand of our
+     horizon with  psycedelic experiences period (it was  mostly  acid). After a
+     while  it  got  more  and  more  intense and I lost interest because of the
+     people that was  attracted to the scene. And I had other things to do other
+     than partying. COI just broke up with his girlfriend, lost his  job and was
+     broke. By a series of  coincidences he ended up  taking his  partying to an
+     other level (think  freak  brothers). At this  time we  lost contact  for a
+     couple of years  until we got  contact again. I went  to the University and
+     got my degree. COI got himself  a PC and learned to  program Delphi and the
+     Clarion. Now we  stay away from drugs (we never took any hard stuff, it was
+     mostly Extacy and Acid) and lead normal lifes.
+
+COI: Well, we just didn't  vanish from  Atariland.. I just vanished. Flying into
+     a wild period of houseparties and you know what... This  lasted until I one
+     day grew up... Got  a real job, working  and basically  started my "Normal"
+     life again. A crazy period, but also  a period  of learning and discovering
+     unknown things about  oneself. But, every now and  then I think  of both of
+     these periods of my life..
+     These two are actually the most important times of my life this far. Thanks
+     to everybody for beeing a part of the points with the full formula it!! And
+     thank's for all the letters I got!
+
+
+
+ÒUCM: How many members had IMAGINA and can you remember them all?
+
+MIS: Mistake : Was GFX man and coder, is now a programmmer and DJ
+     D-Jan: Was GFX man, is now an painter or something like that. He's actually
+            makin' logos for COI's company.
+     P-nut: Was a coder, is now a games programmer I think.
+     Outzider: Was a musician, makes  radio adverts  and  celular  phone ringing
+            tunes.
+     Lt. Earwax: Was a musician, has now a PhD in physics I think.
+     Dizzy tunes: Was a musician, makes celular phone ringing tunes.
+     Henning: (I remember only his real name): Coded s ome utilities, was at the
+            university at the same time as me. Maybe he got a PhD?
+     Nerve: Was a swapper has started a Linux company.
+
+     There are some more that I couldn't remember.
+
+
+
+ÒUCM: What are you and other IMAGINA members are doing nowadays?
+
+MIS: We are doing fine. No worries. The last  year we have gotten better contact
+     with many of the old members. It is very fun remembering the old times.
+
+
+
+ÒUCM: Are there  any plans for a  comeback? I heard you recovered some of the old
+Ò     Imagina sources for unreleased productions? Is that true?
+
+MIS: Yupp, I played around with Steem and got really inspired. So I found my old
+     discettes and tried to recover things. I thought everything was lost, but I
+     found a lot of  code. The intro  for the shoot'em'up  was one thing I found
+     and it actually  looked nice. So I  thought I could  brush up the intro and
+     release it some time.
+
+COI: I'm actually waiting for DIZZY TUNES to get me some sourcecode he has lying
+     around. One with  7500 stars  flying through  space. Blew the head of those
+     who has seen it. Don't  think it  will blow  someones head  anymore, but it
+     would still be cool to release it.
+
+
+
+ÒUCM: Brainstorming! Just  write  down  what comes  to your  mind  when you  read
+Ò     following words.
+
+COI:
+
+A.miga - Blitter, slow processor.
+B.rainiacs - Hmmm
+C.ozmic Jam - Three or four months of hard work.
+D.elta Force - Alot of hacks.
+E.lectronic Images - Games
+F.alcon - Atari Bankrupt
+G.igabyte Crew - Hacks
+H.ardscrolling - Sync
+I.CC2 - Copyparty Demo
+J.oysticks - IK +
+K.ultur Melk - My first STE demo
+L.ost Boys - Great demo's
+M.aggie - Cool reading
+N.erve - Ehhh
+O.outzider - Moslem Avenger (Makes you think eh?)
+P.irates (Software) - Fun
+Q.uadralien - Ehhhh
+R.ave-o-lution - Mods
+S.ystematic Error - Cool demo, strange guy
+T.echno - Extacy
+U.nlimited Matricks - ehhh
+V.entura Demo - ehhh
+W.izzcat - Hallo Bitcha!
+X.plotion - My second demo
+Y.esterday (was it better?) - Life has just started
+Z.Buffer - Sorting method
+
+MIS: Those memories, those memories. I remember the time  when the TLB ruled and
+     they released the megademo with the 3D game with a ship  flying around in a
+     landscape. And the ULM megademo. Those were the times.
+
+
+
+ÒUCM: Any last words for the sceners out there?
+
+MIS: Well I must  say the  same thing  about  Atariland as  they say  about dead
+     persons that you  love: Atariland will never die  as long as we  keep those
+     memories alive in our heads. rt of the points  with the full formula Nobody
+     can take  that away  from us. Remember to live the life  in the present and
+     try to stop once in a while, and enjoy your life.
+
+COI: I agree, Atariland is  in our  hearts.. (And my brain :) ) Life have  to be
+     lived forwards, but will always be understood backwards!
+
+Ò--------------------------------------------------------------------------------
+
+ MC Laser/The Sirius Cybernetics Corporation             [ mc_laser@atari.org ]
+
+Ò--------------------------------------------------------------------------------
+
+                             http://tscc.atari.org

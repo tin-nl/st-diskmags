@@ -1,0 +1,53 @@
+--------------------------------------------------------------------------------
+                       ñ"3D DOTS STARFIELD 128"ð by òCHECKPOINT
+--------------------------------------------------------------------------------
+ó________________________________________________________________________________
+ó _______________   _____________  _________     /ð
+ó/   ____ __/   /__/  _     / _  \ \ __/   /_   /ð machines: ñst/e/fo3o
+ó\__/ __  \_   __  \_/  /\  \_/  / / \_   __/__ \ð specials: ñ512kb/rgb
+ó/    \/  /    \/  /    \/  /    \/  /    \/   \ \ð credits: ñcode - defjam
+ó\____    \____    \____    \____    \____     / /
+ò====ðAó\___/ò===ðBó\___/ò===ðOó\___/ò===ðUó\___/ò===ðTó\_md/ò=ó/
+ó________________________________________________________________________________
+
+Here it is, óDEFJAMð's second 128 byte intro and as the name says it's a starfield
+and nothing more (and nothing less).
+
+After the cool ñ"HUNT FOR FUJI 128"ð ... btw... check out my review at:
+>--> HUNT FOR FUJI 128 <--<                                                         {*\FUJI.TXT}
+...I hoped for another cool thingie, blowing away all those crap intros around.
+
+This 3D dots starfield  thing comes up in two different versions, one is showing
+just 256 stars (dots) and the second shows 64o stars on a grey-green background,
+spreaded from a center below over the whole screen.
+The whole thing (the 64o version) looks like this...
+
+{*i stars.pi1 m 0 20 0 200}
+
+In comparison  with his first intro  this one  doesn't run in all  ST compatible
+resolutions  and needs just ST LOW. The restriction  he gave in the readme file,
+that the 256 stars are thought for 8MHz machines and the 64o are for faster ones
+isn't  thought to take  serious, also the  64o stars were  displayed (only a bit
+slower) on a simple ST and they looking much better.
+
+òConclusionð: What more  to say? It's just a  starfield, displaying  more stars as
+            bytes long... this time the chosen  colours are much better, even if
+            I had  prefered a  dark blue background (bla bla... =) ...) but it's
+            still a nice intro, not as  spectacular as his  first one, because a
+            starfield  isn't as impressive, but  anyway a nice one, displaying a
+            real old school demo  effect instead of  some fake  shit... So  what
+            comes next? What about vectors? (hehe...)
+            Anyway... a small bonus point for the óST compatibilityð too...
+
+ò________________________________________________________________________________
+ò ________________________   ___   _________________   ______
+ò/   ____ /   ____ __/   /_ /   \ /   ____ /    ___/__/  ___/__ ó code.ð8o% ógfx.ð--%
+ò\__/  \/ \__/ __  \_   __/_\___/_\__/   / \   /__  \______    \ó orig.ð6o% ómsx.ð--%
+ò/    \   /    \/  /    \/  /     /     /  /    \/  /    \/    /ó design.......ð68%
+ò\____/   \____    \____    \__   \____/   \____    \____     / ñ/================
+ñ====ðRò\___/ñ===ðAò\___/ñ===ðTò\___/ñ=ðiò\___/ñ==ðNò\___/ñ===ðGò\___/ñ===ðSò\_md/ñ=/ óOVERALL......ð76%
+ò________________________________________________________________________________
+
+--------------------------------------------------------------------------------
+ ó.no retreat and no surrender.                        ò moondog ð.ó poets of decay
+--------------------------------------------------------------------11-1o-1998--

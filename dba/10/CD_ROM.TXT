@@ -1,0 +1,94 @@
+CD-ROM AND ATARI...
+
+By KGE
+
+Years ago Atari came up with the idea of connecting a CD-Player to a 
+computer. They made a CD-Player (CDAR 504) with a port which could be 
+connected directly to the DMA port of the ST. Problem in those days was 
+that there was no software available on CD yet. A few test CD's were made 
+an that was it. The whole idea just silently faded away.. 
+But in the last few months CD-ROM has rocketed off again but not on Atari, 
+no on Commodore and DOS computers (also on Sega Mega CD and of course the 
+Atari Jaguar) And they all think THEY invented the wheel...
+CD's for DOS and Amiga are available at the thousands already, and we 
+Atarians are left in the cold.
+
+What benefit can we get from a (DOS) CD-ROM ?
+
+First of all the amount of data on a CD-ROM disc is huge (more than 600 
+Mbyte!) For PC and Amiga you can buy shareware discs by the dozen. But 
+there are also discs which contain mainly data. For example the CD 'Music 
+Box 1994' contains 690 MOD files and 560 VOC files. The MOD files are very 
+well known by us all, the VOC files are in fact just samples which can be 
+read by Atari System Sound Manager 'SAM' and although the program says 
+'unrecognized format' you can load them anyway. With most of these VOC 
+files you have to toggle the sign otherwise the sound is very (very!) 
+distorted on playback...
+
+There are also lot's of CD's with collections of clipart to be used in DTP 
+programs. The disc 'DTP-Grafiken' which is made by Werbedesign Schutz in 
+Germany contains lot's of crisp black & white images in various formats. 
+This disc is also usable on MS-DOS machines although the supplied fonts 
+which are also on the disc, are only for Atari.
+
+On most of the shareware discs for MS-DOS you can find lot's of GIF, PCX, 
+TIF, BMP picture files which are also familiar on the Atari. Programs like 
+Papillon, PixArt, GemView etc. can read in these formats and convert them 
+to Degas and other formats.
+
+There are a few Atari specific CD-ROM discs available, but you have to 
+search hard to find them. In the USA there is a disc called 'Gemini' which 
+contains shareware programs and picture files and lots of other stuff all 
+specially for Atari ST/STE/TT/Falcon.
+
+-----------------------------------------------------------------------------
+
+How can you connect a CD-ROM disc player to your Atari ?
+
+So far the only way to connect a CD-ROM player is through a SCSI port, the 
+Falcon and TT have them standard, all other Atari computers like ST and STE 
+need a adapter from the ACSI (DMA) port to a SCSI port. The biggest problem 
+is with ST and STE computers is that the Atari Metados drivers currently 
+can not handle SCSI drives on the DMA port. Other driver manufacturers like 
+Hard & Soft Computerzubehor GmbH have already written drivers that do work.
+
+TT users can take a standard Macintosh SCSI cable (25 pin D connector to 50 
+pin Centronics connector). You can buy them at an Apple computer shop but 
+then you'll have to pay a lot! I bought a suitable cable on an Atari fair 
+for about about Fl. 25,- Dutch guilders (is about $ 12)
+
+Falcon users need a SCSI-II cable which is sadly quite a lot more expensive 
+(and hard to get) prices vary from Fl. 75,- to Fl. 150,- ($35 to $80)
+
+As for the drives you can choose any SCSI CD-ROM drive which is able to 
+read the ISO9660 Compact Disc's.
+
+Apple produces several drives for the Macintosh which can be used directly 
+on the TT and Falcon. (for example the CD150, CD300 and PowerCD)
+
+Kodak offers a Photo-CD player which has a SCSI connector and this is also 
+'connectable' to the TT and Falcon. (in fact this is a Philips Photo-CD 
+player) 
+ 
+NEC produces several drives with SCSI interfaces one of them is the NEC210 
+(also know as the NEC55j?) which I'm using at this time.
+
+The Apple and Kodak players are 'plug and play' types that is, they are 
+external CD-ROM drives. The NEC210 drive is an internal drive which came 
+along with a SCSI card for PC. For this drive you have to get a power 
+supply and a case. I built my NEC210 in a Tandy floppy drive case and that 
+looks just fine. Power supply is by an ancient Apple II switch mode supply 
+which was just gathering dust...
+
+The Kodak and CD150 from Apple are single speed drives, they deliver 150 
+kbytes per second into the SCSI port, the Kodak drive is (of course) 
+Photo-CD compatible and multisession (it can read discs on which 
+information can be added later, for example Photo-CD's or CDR's)
+
+The Apple CD150 can read only ISO9660 discs and plays Audio discs as well.
+
+The Apple CD300, PowerCD and the NEC210 are double speed drives (300kbytes 
+per second) These drives can handle most of the new MultiMedia discs 
+(Photo-CD, ISO9660, CDI, Audio etc)
+
+ 

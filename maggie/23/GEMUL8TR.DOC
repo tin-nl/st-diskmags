@@ -1,0 +1,182 @@
+
+ "There is no need to fix what ain't broke."
+              Yngwie Malmsteen (defending his not changing style)
+
+                   HARDWARE REVIEW: GEMULATOR
+                      by Richard Karsmakers
+
+
+ At  the  moment that I am writing this,  I am  using  "1st  Word 
+Plus",  via the GEMulator,  on a PC.  In the background,  another 
+task is running - similarly,  a GEMulator task - which is  batch-
+compressing  a  collection of documents using  "Pack  Ice".  Both 
+GEMulators  have 4 Mb of RAM for ST memory,  though each of  them 
+could  have 14 Mb if I'd want them to.  I can switch to  and  fro 
+between  these two tasks,  or I could both minimize them  and  do 
+something  in  regular  PC  mode using  Windoze  95.  It  is  the 
+wonderful world of GEMulator that I have embarked upon, and these 
+are some comments on said product.
+
+The Briefs
+
+ First of all, perhaps, a short introduction might be in order.
+ Some of you may have heard my name before.  For the previous ten 
+years I have been occupied doing a variety of things in the Atari 
+scene,  most well-known of which are probably the disk  magazine, 
+ST  NEWS,  and  a  program by the name  of  the  "Ultimate  Virus 
+Killer". Last summer I finished the final issue of ST NEWS, and I 
+have  in the mean time switched my Falcon set-up for a  GEMulator 
+card,  an extra 1.2 Gb hard disk and a 28k8 modem added to the PC 
+set-up that I had bought about a year ago.  The GEMulator is  the 
+thing that this article revolves around.
+
+ Incidentally, I am beginning to feel a bit like Metallica. Years 
+ago they swore never to give in to MTV,  never to produce a video 
+clip,  let alone whole series of video clips.  Now they have. And 
+here I am,  known to have more or less solemnly pledged never  to 
+actually  switch  to  a PC in favour of  my  Falcon,  now  having 
+completely switched to one of those dratted machines.  It's  just 
+too  easy to have all this stuff in one case,  instead of  having 
+two  systems  and two flippin' monitors sitting  around  on  your 
+desk. Besides, the Falcon wasn't exactly gaining value.
+
+ Anyway,  I shall keep close ties with the Atari community for  a 
+long  while  via continuing development of  the  "Ultimate  Virus 
+Killer",  articles like this one,  and reading the various Usenet 
+newsgroups    involving   our    beloved    machine,    primarily 
+comp.sys.atari.st.
+
+ Anyway!
+
+ The  GEMulator,  originally  released a couple of years  ago  by 
+Branch Always Software (now called Emulators Inc.) and programmed 
+by Darek "Quick ST" Mihocka, is a hardware Atari emulator for the 
+PC.  The  hardware basically consists of a fairly  basic  plug-in 
+card that up to four Atari TOS ROM versions can be plugged  into. 
+In addition to that,  it comes with a disk containing the  actual 
+emulation software, "GEMul8r".
+
+ The  version  of "GEMulator" used by me now  is  "GEMulator  96" 
+version  4.50,  of  September 1996.  I understand there's  a  new 
+version  underway (4.60),  but I haven't gotten my hands on  that 
+one yet.
+
+The Longs
+
+ The  GEMulator  consists  of  one  plug-in  card,  as  mentioned 
+earlier,  and comes with a manual and a HD disk.  Once installed, 
+all  you need to do is fire up "GEMul8r" and,  well,  bob's  your 
+uncle. You need to perform some initial setup details (whether or 
+not  to search the ROM card for TOS versions,  whether or not  to 
+search for MagiC,  whether or not to check network  drives,  that 
+kind  of thing) and away you go.  Hard drive C is booted from  if 
+nothing is found on drive A,  and that's it.  The disadvantage of 
+this  is  that you will clutter up your  carefully  minimised  PC 
+drive C root directory with Atari accessories and their secondary 
+files,  as well as NEWDESK.INF,  a CPX folder and an AUTO folder. 
+You can't simply create an ATARI folder and have that used as  an 
+Atari boot thing. Too bad, but I guess we'll live.
+
+ Everything works more or less the same as on the real thing. You 
+can  install  various resident programs such as  "Let  'em  Fly", 
+"Selectric",  "NVDI" and "NeoDesk".  It's pretty compatible  (but 
+I'll  come  to  that later).  Accessories  work  the  same,  too, 
+including the XCONTROL.ACC if you want to use CPX files. You need 
+no hard disk driver (nor one for CD ROM), though. "GEMulator" can 
+access all your PC peripherals,  including modems, hard disks (of 
+unlimited partition size) and CD ROMs.
+
+ Branch Always Software also supplies the "GEMulator" user with a 
+program called "VGAWIN.PRG",  which is a special application that 
+will allow your ST modes to use enhanced resolutions in VGA mode, 
+as  well  as  the  Atari  utility  "MOSDOS.PRG".  The  latter  is 
+important  if  you  want  to  convert  non-PC-compatible   Atari-
+formatted  disks  to PC format,  although this  only  works  with 
+regular disks.  It is possible to read "fat formatted" disks  (10 
+SPT  in  case of DD disks),  but no "hyper  formatted"  (11  SPT) 
+disks.  This is important to keep in mind when porting stuff from 
+your Atari to the PC (unless you use a null-modem cable).
+
+What about it then?
+
+ Once up and running, you will find most stuff working. "1st Word 
+Plus",  "Superbase",  "GfA Basic" (though there are problems when 
+compiling,  see below),  "NeoDesk", "Mutil" (though not the "disk 
+edit" section),  "Pack Ice",  "ST News" (in standard resolutions, 
+with  the music turned off in the  configuration  file),  "XBoot" 
+(though it is not possible to write sets,  damn it!),  "Calamus", 
+"Ultimate Virus Killer" (though the presence of its configuration 
+file  will cause a crash if you're using version 6.9  or  lower), 
+"Backup   Destruction   Utility",   "Wowbagger   the   Infinitely 
+Prolonged",  "Hiscore Terminal Utility",  "Revenge Doc Displayer" 
+(though you need to do some manual tinkering with the NEWDESK.INF 
+file) and a lot more.
+
+ Stuff that doesn't work includes "Diamond Edge",  "ST Zip"  (but 
+you can use Symantec's "Winzip", and even install that PC program 
+as default application for Atari .ZIP files when clicking on them 
+from  within "GEMulator"),  "Ledpanel" and  "Kobold"  (programmed 
+much  too  close  to the  hardware,  I  guess).  Of  course,  you 
+shouldn't  expect games and other programs that  directly  access 
+the hardware (e.g.  "Spectrum 512",  or Falcon-specific stuff) to 
+work properly. Unfortunately, "Maggie" didn't work either (the ST 
+version), probably caused by the music. A configuration file with 
+the  music  switched off by default might  fix  this.  All  these 
+compatibilities were tested with regular disk access mode.
+
+Speed
+
+ Keanu  would  be fairly proud  of  "GEMulator".  Although  Darek 
+Mihocka  rather exaggerates the specs,  on a Pentium 60  you  get 
+something approaching regular ST speed.  Don't expect  benchmarks 
+here,  as  benchmarks  only give a  numerical  representation  of 
+things,  and  I think it's much more the way things feel that  is 
+important.  It  feels  about as fast as a standard  ST.  This  is 
+pretty fast,  I guess,  as every single neat 68000 command has to 
+be worked into a clumsy Intel command before anything happens. As 
+far  as I understand,  this is software emulation -  the  plug-in 
+card  is only needed to access the  TOS  chips.  Apparently,  the 
+latest  version  is  even quicker.  On a Pentium  70  or  higher, 
+performance may indeed approximate a 32 Mhz TT's spec, such as is 
+proudly proclaimed by Darek.
+
+Problems
+
+ There  are  a  few distinct oddities about  "GEMulator"  that  I 
+really  can't explain.  The end of a file (as determined  by  the 
+"GfA Basic" EOF(#x) command) is never found.  And the "GfA Basic" 
+compiler  refuses  to compile programs unless you do  some  extra 
+work.  A "FILE.GFA" file can be selected but the actual  compiler 
+module will,  for some or other reason,  want to go out and  look 
+for "FILE.GFA.GFA".  Quite ununderstandable,  though this can  be 
+solved  simply  by having two identical files called  "FILE"  and 
+"FILE.GFA".  It's just odd.  Another thing I noticed was "XBoot", 
+which doesn't work,  at least not with regular disk access  mode, 
+insofar as SET storage is concerned. Odd, too.
+
+Concluding
+
+ For those who have lost faith in the perpetually stable value of 
+their  Atari systems in a world where PC systems are  just  about 
+force-fed and any person with academic or professional  standards 
+absolutely refuses to accept anything that isn't made on a PC  or 
+Mac system, "GEMulator" is a good solution. It won't turn your PC 
+into  a  high-end  TOS  machine,   though,   and,  unfortunately, 
+excellently playable ST games such as "Llamatron", "Time Bandit", 
+"Super Spring", "Bubble Bobble" and "Blood Money" will forever be 
+a matter of the past.  Well, like the English say, you can't have 
+your cake and eat it (the etymology of this proverb always eluded 
+me, and probably always will).
+
+ The  basic  reason why I wanted to get "GEMulator"  was  that  I 
+didn't  want  to switch back and forth  between  two  systems;  I 
+didn't  want  to  have two monitors sitting on  my  desk.  And  I 
+preferred  to have all my text files and stuff accessible  within 
+one system, Atari stuff and PC stuff alike. The main reason why I 
+wanted to maintain Atari compatibility was that I didn't want  to 
+convert  10  Mb  of hundreds of letters conceived  in  "1st  Word 
+Plus",  nor  did  I want to convert my  "Superbase  Professional" 
+database.  Of  course,  I also wanted to continue developing  the 
+"Ultimate  Virus  Killer" in "GfA Basic".  For someone  like  me, 
+"GEMulator" is a perfect if somewhat expensive solution.
+

@@ -1,0 +1,231 @@
+0660103030571
+9[........................................................]
+
+…GRAOUMFTRACKER
+
+„(V0.8777)
+
+€
+Thisisareviewthathasbeenalongtimeoverdue,thisisprobably
+thebestmulti-channelmoduleplayer/compositionprogramavailableon
+theFalcon..(DigitalTrackerOwners,feelfreetodisagree?)We've
+madedirectuseofaversionofthesourcecodefortheFalconMaggie
+shellsoundenginesinceissue18,heavilycreditingLaurentde
+Souras,theauthorofthisprogramatthetime..Sincethen,ithas
+beenseenthattherehasbeencontinuingdevelopmentoverthepast
+coupleofyears,withthistrackergettingprogressivelybetterastime
+goeson..
+
+Betterstill,itisshareware,andataveryreasonableprice(c.œ10
+UKP),soI'mnowabletobringyouareviewofalateregistered
+sharewareversionofGraoumfTracker..
+
+Firinguptheprogrambringsupabriefintroscreen,whichisclicked
+onsmartlytodisperseit,andloadupthemainmenu,whichlooksnot
+unlikeatrackerscreen..
+
+("It'sonlyatrackerscreen!"-UnknownDutch/Germanaccentedvoice
+on-cameratoFelicewhowasbusilytapingthe1996Symposium..)
+
+Itisasmartlookingcreamycolouredtrackerscreen,withquiteabit
+moretherethanonthestandardProtrackeraffairs..Youhavealot
+moreoftheFalconsoddscreenresolutionstoplaywith,including
+overscanonRGBmonitortypes,givinguptoninetrackbays,whereyou
+cankeyinnotesonscreen..Ofcourse,oneofthesellingpointsof
+Graoumf,isthatitallowsyouuptothirty-twochannelsofsound,
+whichareaccessedbyclickingonthenumberedindicatorsabovethe
+channelsdisplayed..
+
+Occupyingthespaceaboveit,aretherestofthecontrolsforthe
+tracker..Thesearelaidoutinaneatandlogicalway,andhavea
+sculptedlooktothem..Thegeneralinterfaceisdeterminelynon-GEM,
+aswiththemajorityofsoundtrackersontheFalcon,someevenmoreso
+(Himegatracker!)thanothers..Theonlyslightcomplaintmightbe,is
+thatsomeofthebuttonsaretiny,andmightbehardtodistinguishon
+apoorqualitymonitororblurredtelevision..Changingthetrack
+indicatorstogoabovethenumberpresentedonscreenneedsgood
+eyesightandasteadyhandinthesecases..
+
+Theusualonesareallthere,adiskmenu,forloadinginsamples,and
+modfiles,alsotheinevitable'start','stop',and'edit'buttons
+familiartoProtrackerfansworldwide,andwhichareusuallyenoughto
+getyougoing..
+
+Thosepeoplelookingforabitmore,canfindmenusforinstruments„and€
+samples,wherebothcanbefinelysetandcontrolled..Thereisa
+built-insampleeditorwithagraphicalinterface,whichcanaccessthe
+Falcon'sownsoundcapturingcapabilities,orworkonthesamples
+containedinthecurrentlyloadedmodfile..Therearecontrolormixing
+desksforvolume,panning,envelopecontrol,mastervolume,andawhole
+hostofthingsthatprofessionalmusicianswouldunderstand..
+
+I'mgoingtolameoutofthisbitofthereview,andgiveyoualist
+fromtheoriginaldocumentfile,whichsumsupadmirablywhatIwas
+startingtotellyou,andincidentally,makesuslookabitlike'Fun'
+magazineinourcuttingofreviewtextsfromtheprogrammersown
+documentation!
+
+OvertoyouLaurent!
+
+Specifications
+~~~~~~~~~~~~~~
+        - 50 KHz replay, 16 bits stereo, internal 24 bits , with
+          possibilty of interpolation for each voice (track).
+        - 32 voices.
+        - up to 256 positions in the song.
+        - 256 patterns.
+        - Up to 256 lines a pattern.
+        - 8 octaves «.
+        - 255 instruments multi-samples
+        - 255 samples, 8 or 16 bits, variable frequency between 2 and 
+65 KHz.
+        - Periode 16 times more precise than usual in soundtrackers.
+          (very useful when you use high frequencies)
+        - Effects on 4 numbers (65536 values), numerous and original.
+        - Linear and logarithmic volume for the instruments.
+        - Independent volume for the samples.
+        - Mixing desk, incuding high precision volume and panning for
+ each voice and master volume; the whole functions can be 
+controlledin the score.
+        - Volume envelopes, tone and panning for instruments.
+        - Runs in every resolutions (even overscans and extended rez )
+          to show as many tracks and lines as possible.
+
+Phew!It'salottotakein,isn'tit!
+
+Butwhatisitactuallyliketouse?
+
+WewerefortunateinobtainingtheservicesofSteve'Bonkers'Mooreat
+thispoint,myownveryquestionabletracker/modulecomposingskills
+havingfallenintodisusesometimeago..
+
+Forthisexercise,hechosetoworkoncovertinganextantfourchannel
+Protrackerbasedmoduleofhisowncompositionintoaneightchannel
+one..AsanexperiencedProtracker/Octalysercomposer,hetookquite
+quicklytoGraoumf,nothavinghadanypreviousexperienceofthe
+Falcon,orthetracker..Onauseability/intuitivenessbasis,Graoumf
+cameoutverywell,andaccordingtohim,shouldnotpresentany
+problemstoanyonefamiliarwithaProtrackertypecomposer..The
+modulecameoutprettywelltoo..
+
+Theonlyproblemwhichemergedlateroninthesession,wasaslight
+tendencytoinstability,whichmayhavebeenduetoanexistingand
+longestablishedAtariTOSbug,whenthemodfilerefusedtosaveafter
+severalsuccessful'saves'before..Ittendstobattleuneasilywith
+theUniversalItemSelectorIII,bringupthesettingsdialogueatthe
+mostinopportunemomentswhenloadingorsavingafile..Idon'tknow
+ifotherthirdpartyfileselectorsareaffectedinthisway,andit
+maybebettersometimestotryitwithacleanbootedFalconincaseof
+othergeneralclasheswithpre-loadedbitsandbobs?
+
+However,wegotthereintheend,andStevechosetoexportthemodfile
+inFastTracker(PC)format..hecouldhavealsochosenthenativeGT2
+orGTKformatswhichretainafullrangeofGraoumfgeneratedspecial
+effects,orifhewishedtoexporttootherformatsinareasonably
+complexmulti-channeltrackerformat,couldalsohavechosen
+Screamtracker3(S3M)..
+
+YoumaybeinterestedtoknowthatGraoumfloadsinandplaysthe
+followingformatsaswell:
+               
+ GT2 : GT modules,
+                GTK : old GT modules,
+                MOD : ProTracker and assimilate...,
+                MMD : OctaMED Pro 3,
+                669 : Composer 669,
+                MTM : MultiTracker Modules,
+                S3M : Scream Tracker 3,
+                ULT : ULtra Tracker,
+                DTM : Digital Tracker,
+                XM  : Fast Tracker 2.
+
+Itcan recognise packed modules with Atomik 3.5 or Ice 2.1/2.4.
+
+Thereisvarying,butgeneralsuccesswiththeindividualthirdparty
+moduletypes,Screamtracker3isaroaringsuccess,XMorFastTracker
+IIseemstobemostly,butnotquiteperfectlyimplemented..Most
+DigitalorDTMmodulesplaywiththis,butsome16-bitsampledones,or
+earlyimperfectversionsofDTMmightgiveitsomeproblems..Idon't
+haveanyinformationonhowtheothermainthirdpartymoduletypes
+listedperform,butIshouldthinktheywouldworkprettywelltoo..
+        
+Graoumf'sabilitytocopewiththirdparty(PCandAmigainspired)
+modfileformatswasoneofourprimaryreasonsforgettinginterested
+init..Graoumfseemstohaveamuchbetterrealisedaudioenginefor
+copingwiththemanydifferentmodfiletypesthanotherFalconmulti-
+channeltrackers.(Icanstandtobecorrectedonthisbythewayif
+youhavebetterinformation!)Thisisamajorsellingpointfor
+Graoumf,evenifyouarenotanactivecomposer,andjustliketo
+listentothevastnumbersofgoodmulti-channelcompositionsmadeon
+othercomputers..
+
+GraoumfdoesnotlikeMagiC,butwhatnon-GEMapplicationdoes?
+
+GraoumfdoesrecogniseNemesis,andshouldrecogniseandutiliseother
+accelerators..(SeetheNemesisreviewandfieldtestinMaggie23..)
+
+Withtheregistrationpack,Laurentisdecentenoughtoincludethe
+sourcecode(veryhandyforus!)andfulldocumentation,including
+translatedEnglishlanguagetexts..Thereisevenaspecificiconif
+youwantGraoumfonyourdesktop!
+
+Hangon,what'sthislot?
+
+- Many tools to enhance the facility of use for musicians
+          like presets, shortcuts, le DrumKit, etc.
+        - Evoluated sample editor: copy/cut/paste/insert.
+        - Volume functions, fade in/out.
+        - Resampling with interpolation option.
+        - FFT.
+        - Automatic accords.
+        - Ultra-complete samples mix function with adjustable fades
+        - Fully adjustable multi-tap Delay .
+        - Flanger
+        - Song-2-disk, to record a module into a sample.
+        - Compresser
+
+Thatlotclear?Thesongtodiskoptionsoundsabitpeachy,andonthe
+vergeofturningGraoumfintoaprofessionalmusictool!
+
+Otherfutureoptionsmaywellincludesuchthingsasmorechannels,an
+extendedversionoftheSongtodiskfunction,arealanaloguetype
+synthesiserinthereaswell?
+
+Inconclusion,GraoumfislikelytobetheoneofthebestFalcon
+soundtracker/compositionprogramstoemerge..Itcertainlyisthebest
+inits(shareware)pricebracket,andiswellworthregisteringifyou
+haveevenapassinginterestinmodulecompositionandlistening..
+
+Advantages:
+
+Intuitiveandeasytoworkwith..
+
+Wealthofoptionsforsoundandsongmanipulation..
+
+ThebestreplayofthirdpartymodfileformatsontheFalcon..
+
+It'ssharewarepriced!
+
+
+Disadvantages:
+
+Controlshardtodistinguishonsomedisplays..
+
+Slighthintofinstability..
+
+Personalityclashwithsomefileselectors(seeabove..)
+
+
+Themantocontact:
+
+        address :    Laurent de SORAS
+                     92 avenue Albert 1er
+                     92500 RUEIL-MALMAISON
+                     FRANCE
+
+        or : dumbo@stmag.pressimage.fr
+
+
+
+CiH,Sept'97
+

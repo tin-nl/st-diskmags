@@ -1,0 +1,189 @@
+
+
+                       G a m e   P r e v i e w s 
+
+                             Coming soon..
+
+Yet again, you could be forgiven for thinking that nothing new is going
+to appear for your favourite computers,  but once again there are still 
+lots  of  dedicated or foolhardy people who are  really  interested  in 
+producing  new  games,  and  giving me some much needed copy  for  this 
+column..
+
+(We'll  have to go back through past Maggies to suss out what  previews 
+actually  went any further,  and which ones failed miserably,  could be 
+an interesting exercise!)
+
++From last time!+
+
+Bad  Mood,  the Falcon Doom .WAD player is still moving up through ever 
+newer and better versions.. It works satisfactorily on a standard '030, 
+but  does  benefit  greatly from an accelerator  card..  We  are  still 
+waiting for something that gives us more than just a walk around  .WADs 
+though.. Some enemies and something lethal to squish them with would be 
+very nice as well..
+
+The  Reservoir Gods Falcon 'Columns' game previously mentioned  is  now 
+'Skyfall',  which  was  first released at the Symposium  Convention  in 
+April..  The  registered version will have extra twists and tweaks  and 
+amusing sound samples all over the place,  and should be available from 
+June..
+ 
+Top  Byte  have not released any of their pending games in  their  back 
+catalogue  as  yet,  but are now selling a 3-D polygon based  shootemup 
+'Kryptonite Data' for the ST..  Having spoken to James recently,  he is 
+sort  of  back  on  the case,  and 'Aronath' should  be  with  us  very 
+shortly..
+
+Village  Software  have just released 'Biohazard 2',  an overhead  view 
+strategy game for all machines..
+
+
++For this time!+
+
+Symposium Stuff..
+Several  games  previews  were seen,  and indeed released  for  general 
+enjoyment at the Symposium in April..
+
+'Running'
+You  remember  the Fried Bits last year..  You may also remember a  96k 
+Intro  called  'Doomino'  which featured a realistic  Doom  style  game 
+engine for the Falcon..  Well after a year of work, this has become the 
+soon  to be finished commercial release 'Running'!!  - More details can 
+be found in the Symposium party report and in our preview of the  newly 
+arrived demo version!
+
+'X-Moon'
+A vertically scrolling arcade blaster for Falcon very much in the mould 
+of  that old Thalion/Eclipse ST classic 'Wings of Death'..  Very much a 
+'scene'  production,  as  several very famous names on the Falcon  demo 
+circuit  are  on the credits..  Still a lot more they would like to  do 
+before  this  game  is  released..  See more in  our  preview  of  this 
+promising game..
+
+'Painium Disaster'
+Another vertically scrolling arcade challenge with one man against  the 
+alien hordes for your Falcon.. Cruor/Anvilsoft are doing this one..
+
+
+Stosser Soft Stuff..
+Having  released  his new game 'Island Strike',  Tony Greenwood is  now 
+working  on a new top secret game project for the ST/STe,  which should 
+appear  around the end of September at the forthcoming Atari  Shows  in 
+London and Birmingham..  Initial discussions with Tony suggested a huge 
+Monkey  Island  style graphical arcade adventure game coming on  up  to 
+five  disks,  but later information given in his Maggie interview  (see 
+this issue!) now suggests that an ultra-fast Sonic style platform games 
+is in the works instead.. Watch this space..
+
+
+'Free Willy'
+Closer  to home,  a demo of a new Falcon game 'WILLY THE ADVENTURER' is
+now doing  the  rounds..  It  bears  quite  a lot of resemblance to the
+Jaguar game  Rayman,  especially  in how  the main character sprite has
+been  put  together..   A  very  simple  preliminary  concept  demo  is 
+circulating the online community, and  shows that a relatively advanced
+platform game can  work on the Falcon,  and (hopefully) give the Jaguar
+a run for its money..
+
+This one is by  Swedish developers  'New Beat developments'..  The full
+game is expected to be a commercial release, and should be  ready later
+in 1996..
+
+More information can be gleaned from their home page; 
+
+ http//www.kuai.se/~dhedberg
+ 
+
+Another Doom Clone..
+'Bad Mood' and 'Running' are not the final words on this 'who will  get 
+to do a Doom clone on Atari' saga.. Indeed, this one is intended for ST 
+machines  as well as Falcon,  and is reported by one Beta tester to  be 
+better  than Sub Station,  even in these early stages..  We gather that 
+this  game  has  a fully texture mapped game engine,  although  how  it 
+looks,  or how well it works on an ST, has yet to be determined.. 'Kill 
+Things',  to give it its working title, should start to emerge from the 
+development shadows fairly shortly.. More info here as we get it..
+
+And  as  if  by the action of mysterious psychic forces,  here  is  some 
+additional  textual  info  from  the author Jon  Lewis  of  Digi  Tallis 
+Developments, who also wrote the 'Sub Aqua' game for the ST and Falcon..
+
+------
+
+KillThings..
+
+Started out cos I was peed off with  the prospect of having to buy an STe
+to play a doom type game (Substation) and I thought I could do better..
+
+Besides, Substation looked like pants.. (no offence to the programmers)
+and I thought I could do something with texture mapping in it..
+
+Heck, every other machine has a  texture  mapped wolf clone of some kind,
+why not the good ol' ST. Its  about  time somebody showed these PC owners
+that you don't need 8 meg of memory,  a pentium and a big hard drive just
+to have FUN.. (And the weapons n  death  n stuff just weren't good enough
+in everyone elses!)
+
+Current development stage:-
+
+The game world is running. texture mapped  and  z shaded and with a frame
+rate that isn't too  bad..   Flat  shaded  floor  and  ceiling, trying to
+figure out how to texture map both of  em in as little time as possible..
+Glass objects are  in.  ie  stuff  that  you  can  see  thru, for example
+walls that have windows  in..  Monsters  are  in  with  the  basics of an
+intelligence routine.. this will be expanded!
+
+Bullets are in, ready for the weapon systems and they should be worth the
+wait. =]
+
+Nice rotaty map mode, sort  of  like  AvP  but  not  overlaid on the game
+world (it'd take too much time!)
+
+Oh, and its not a square substation  type map. it can have curved walls..
+=] and at the moment its  a  fullscreen  affair,  but that will get taken
+down so I can display a status bar of some kind..
+
+things to do:-
+
+        collision detection with walls, bullets etc..
+        texture mapped floor and ceiling
+        animating textures
+        proper monster intelligence
+        finished weapon systems
+        bonus packs and such like..
+        sound. usually gobbles up processor time.. =[
+        some other stuff.. =] (can't say, but you'll like it..)
+
+there ye go.. hope thats enough info for you.. =]
+
+------------------------------------------------------------------------
+
+Well, since I've pestered you guys with pointless news, here's some more!
+
+The bullets are working within  KillThings.  Ie,  you can fire at things,
+and the monsters can fire at you if they are in a 'suitable mood'..
+
+And, shock of all shocks..
+COLLISION works! well, collision between aliens/bullets against walls..
+so you can run upto a wall, keep  the  fire button down and not watch the
+bullets go straight thru the wall.. =]
+
+Only snag is. the time  taken  to  check aliens/bullets is exponential to
+the number of walls/points that make up the map! Don't panic, the code is
+self modifying (sort of) so that it picks the best check method according
+to the number of walls versus 3d  points.. Hopefully this should keep the
+time taken to check down by a minimum.. =]
+
+I love it. I was running around the small map last night just letting off
+many bullets..  and watching them dissapear into the gloom.. =]
+
+All that's needed  now  is  the  player  collision,  alien against bullet
+collision etc, and stuff.. =]
+
+Just thought I'd let you know.. =]
+
+gone..
+
+().
+

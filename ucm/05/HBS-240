@@ -1,0 +1,76 @@
+ 
+                             Mehr Speed fr alle!
+                             --------------------
+
+Wenn man so an  das doch schon recht  betuchte Alter des  geliebten ST's denkt,
+verf„llt man  sehr leicht dem  Gedanken, da der  doch  einst so  flotte 8 MHZ-
+68000er  von Motorola, heute  wohl nicht mehr  ganz aktuell  ist (Wenn man denn
+aktuell sein mu.).
+Sicherlich, es gibt ja auch schon einige Nachfolger, z.B.: 68020, 68030...
+Um hier den Anschlu nicht zu verlieren, k”nnte man ja einfach auf einen Falcon
+oder TT umsteigen. Da aber  nicht jeder ber das  notwendige Kleingeld verfgt,
+mu etwas gnstigeres herhalten.
+Im Gegensatz zu den allseits  geliebten DOSen-Brdern bieten sich beim ST zahl-
+reiche Beschleunigerboards  an. Konkurrenzlos  gnstig, mit 149,-- DM ist zwei-
+fellos das HBS 240 von Heyer & Neumann.
+Es bietet eine 68000er CPU mit 16 MHZ, 16 KB  Cache (sprich K„sch) und  ein er-
+weitertes  FastROM-System. Dieses erm”glicht  den ROM-Zugriff  mit 3, 2, 1 oder
+0 Wait-State.
+Was nun den  Geschwindigkeitszuwachs  angeht, so kann  die Karte  sehr angenehm
+berraschen. Schon  nach dem  Einschalten f„llt  auf, da sich  die GEM-Fenster
+viel schneller aufbauen, die Mausbewegungen, alles l„uft einfach noch flssiger
+und sehr angenehm. Gerade  in Verbindung mit  dem Mausbeschleuniger  QuickMouse
+und dem Bildschirmspeeder QuickST, wird die Mausgeschwindig und der Fensterauf-
+bau so gut, da es besser nicht geht! Es  ist eine wahre Freude mit dem Desktop
+zu spielen.
+Das PD-Programm Quick-Index liefert  folgende Werte (ohne QuickST) im Vergleich
+zu einem 8 MHZ Standard ST (100%):
+
+      CPU - Memory    163%           Bios - Text    117%
+      CPU - Register  203%           Bios - String  114%
+      CPU - Divide    202%           Bios - Scroll  133%
+      CPU - Shifts    206%           GEM - Draw     146%
+      DMA - Read      100%           GEM - Dos      100%
+      (..nicht getestet..)
+
+Mit dem PD-Programm  QuickST aus der  ST Serie (Nr. ca. 250, wei  gerade nicht
+auswendig), lassen  sich  alle  Werte  fr 'Bios' und 'Gem' auf  mehr  als 200%
+steigern. Und das macht sich dann  natrlich im  Bildschirm-/Fensteraufbau ganz
+besonders bemerkbar.
+
+Probleme mit  der Kompatibilit„t gibt  es eigentlich h”chstens bei Spielen, die
+auf die  8 MHZ der  CPU zurckgreifen z.B.:zur  Synchronisation. Hier kann aber
+eventuell mit dem beiliegenden Schalter, zum  umschalten auf '8 MHZ+Cache' aus,
+abgeholfen werden. Bei  Anwenderprogrammen ist mir bisher noch keines begegnet,
+das Probleme bereitet hat.
+
+Was den Einbau der Karte angeht, so h”rt sich  dieser recht einfach an: Die ST-
+Platine  wird  vollkommen  herausgenommen, die  einzelnen  Beinchen  des  alten
+68000ers werden abgeklemmt und danach einzeln ausgel”tet. An die gleiche Stelle
+wird ein CPU-Sockel gel”tet und  die Karte dann einfach  eingesteckt. Falls er-
+wnscht noch den Cache-Schalter nach auen fhren und fertig.
+Fr STler  mit Blitter sei angemerkt, da die  kleine Platine  auf der CPU, die
+einen Fehler im Blitter  ausgleicht, wegf„llt und  vom HBS 240 ersetzt wird. In
+diesem Fall mu nur noch  das bestehende  Kabel zu dieser  Platine an den neuen
+68000er gel”tet werden.
+Nun, vor  einem allzuschnellen  Angriff auf die Atari CPU sei hier eindringlich
+gewarnt, denn es ist eindeutig der Profi gefragt. Denn  zum Einbau ist  ein su-
+permini-Seitenschneider, ein  Elektronikl”tkolben und eine Entl”tpumpe zwingend
+erforderlich. Ohne diese Ausrstung besteht keine Chance zum erfolgreichen Ein-
+bau. Desweiteren  ist natrlich  die Erdung  von  Platine, L”tkolben und Mensch
+Voraussetzung.
+Fr den  Profi liegt  ein Programm  bei, das eventuelle Fehler beim Einbau auf-
+zeigt.
+
+Zum Schlu  bleibt mir  nur zu  sagen, da  eine Beschleunigerkarte  mit diesem
+Preis-/Leistungsverh„ltnis, ein Mu ist fr jeden  ST-User. Sie  sollte einfach
+Standard sein auf dem ST.
+Freilich, wenn  das  Geld nicht  so kanpp ist, kann  es ja auch der HBS 640 mit
+28/36 MHZ und 64 KB Cache sein. Auch ein Sockel fr den Coprozessor 68881 is in
+allen Ausfhrungen  bereits enthalten. Dieser braucht nur noch eingesteckt wer-
+den und steht dann zur Verfgung.
+
+-------------------------------------------------------------------------------
+                                                              wH...Baby Jane...
+-------------------------------------------------------------------------------
+leh

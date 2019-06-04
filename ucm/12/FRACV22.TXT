@@ -1,0 +1,53 @@
+{*f1FRACTALS 2.2{*f0
+
+Another fractalprogram.. What the  hell do we  need it for? On the other hand
+you  might say  the atari (Falcon) has  never seen  a good fractal-gegerator.
+That is, one  that is  versatile and  fast at  the same  time. Mostly  it was
+either fast OR versatile.
+
+So, when I ran  this program (found  on the French  lip6 FTP-archive) and saw
+that it was GEM-based I was  immediately struck by images of a snail crawling
+up a very slippery lamppost. Boy was I wrong!
+
+Fractals v2.2 is one of the fastest fractal engines! It uses  the DSP to good
+effect. Calculating pictures of 640*400 in 256 colours is a piece of cake and
+even  deep zooms  and many  iterations  won't make  the program  break into a
+sweat!
+
+On top of that it  supports loads of fractal-types. Nine in all with ofcourse
+the  most  popular  types: ÚMandelbrot, ÒJulia and ÛBarnsley. I kinda missed the
+gorgeous hÅpfer-set, but the number of parameters make up for it. You can set
+the  size  of  the  image, have  two different  calculation-methods  at  your
+disposal, can set the  number of  iterations and  coordinates. Furthermore it
+can save to GIF, TIFF and XIMG, which is really cool!
+
+But it doesn't  stop there. Also  you can make  an animation of fractal-zooms
+and choose  the initialising  values for a julia visually! You move the mouse
+over the mandelbrot-image and a thumbnail julia is updated realtime!! This is
+stuff that makes you smile! :)
+
+As a matter  of fact it  has all things  you'd expect  from a modern fractal-
+program and the  speed too! The  only drawbacks  are that  it is in French so
+most people have problems understanding the stuff. Furthermore the zooming is
+a bit  lame, because  you can't  simply drag  and drop.. Instead  you have to
+select an option everytime and do weird things with both mouse buttons.
+Also I would have liked fractal-landscapes in there.
+
+But for the  rest, it's a dream to use because the interface is logical, most
+features  are  easily  accessible  and it  is ÒFAST!! Eventhough everything is
+French  it remains  understandable. Therefore I can recommend this program to
+any falcon-user!
+
+ratings:
+
+* Features:     Loads. Only a few more sets and maybe fractallandscapes.  85%
+* Ease of use:  It's GEM and logically laid out on top of that.           95%
+* System
+  requirements: Needs a Falcon. Could have worked on ST too. But the
+                harddiskspace and RAM required are only little.           70%
+* Performance:  The internal routines are fast. GEM is the bottleneck
+                here.                                                     90%
+                                                                         ----
+                                                              OVERALL:    85%
+
+- EarX/FUN ------------------------------------------------------------------

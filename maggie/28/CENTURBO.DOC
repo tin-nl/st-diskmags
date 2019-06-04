@@ -1,0 +1,899 @@
+
+                  ‰Centurbo 2 - The definitive lowdown!
+                  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+ 
+Preamble... 
+
+The  'greed for speed' is a potent infection,  and one which never goes 
+away.  I blame the PC people for this,  as every week, it seems they're 
+adding  a new processor or other widget to make their machines go  just 
+that bit faster for their latest new game,  which would otherwise cluck 
+like a sick turkey without it.
+
+We Atari owners sat back smug and satisfied for a long time.  "It's all 
+a  matter to getting to know your existing hardware better!" We  cried, 
+which is still true to a very large extent.  However,  flattened by the 
+constant bombardment of 'fast is good' propaganda from the PC camp, and 
+flattered by slick and clever advertising from vendors closer to  home, 
+many of us are now thinking the previously unthinkable, speeding up the 
+old Falcy.
+
+I  never  really learned from the Nemesis story,  which came down to  a 
+case  of 'fine and dandy when the unit was installed and running,  but, 
+oh,   the  pain and suffering involved in getting there!' This time was 
+going to be different.
+
+I  thought that the going would be infinitely smoother when it came  to 
+getting  my brand new Centurbo 2 (revision B) accelerator installed  in 
+my ex-Floppyshop Desktopper Falcon. With professional fitting of a very 
+high quality, it was going to be easy.
+
+I was, of course, wrong.
+
+Firstly,  'revision  B' turned out to have three chapters in its  short 
+and  happy life.  The first 'revision B' turned its nose up at  certain 
+kinds of EDO FastRAM, most of them in fact. The second version, which I 
+lived with for a good few weeks had a DSP controller that wouldn't talk 
+to   the  DSP.  The third attempt got it right with a reprogrammed  DSP 
+controller,  but  my DSP had decided to lie down and die,  and could be 
+described as 'intermittent' at best.  At the time of writing this first 
+installment   of  my  review,  a (hopefully) final visit  to  cure  the 
+problem is being arranged.
+
+Do you detect a theme here?
+
+To  be fair,  none of the above can be blamed on the people  installing 
+it, the  ever-mighty  System Solutions.  In fact,  I could say that the 
+fitting  service provided by Sys Sols,  and their dogged persistence in 
+rooting out the various problems,  one by one,  made all the difference 
+to  my  sanity  remaining intact over  this  difficult  period.  System 
+Solutions  have  been burdened with a reputation for  charging  premium 
+prices for their services, but it was really worth it, as they went way 
+above and beyond the normal call of duty in laying this thing to rest!
+
+It  is  possible to self-fit the Centurbo 2 (CT2),  but  with  previous 
+Nemesis  related  experiences  on my mind,  you would have to  be  very 
+*very*  sure  of yourself to make the attempt.  A professional  fitting 
+service of the quality of System Solutions is an essential item, if you 
+are planning to spend that sort of money anyway.
+
+Anyway,  at  time  of  writing  this  opening  bit,  I  have  a  nicely 
+functioning  50  mhz GEM-box with "occasional" DSP support!  (Sys  Sols 
+thinks the DSP SRAM keeps failing.) We should have the full system, DSP 
+and all  by the time I get down to doing some heavy duty games and demo 
+testing.
+ 
+(Update  note,  we  got it back okay!  See the software section for the 
+lowdown!)
+ 
+
+ An overview... 
+
+Centurbo 2 is one of the next generation of Falcon accelerators. It had 
+been  in the pipeline for some time before,  but hadn't been seen until 
+the  back  end  of last year,  presumably to allow  for  an  extra-long 
+testing  and debugging 'making really sure' period.
+
+It  escews the earlier Nemesis and Centurbo 1 methods of  acceleration, 
+which  is  to  overclock,speeding up key  existing  components  of  the 
+Falcon.  This  method  is  fine up to a point,  but is limited  by  the 
+tolerances  and goodwill of those components.  In the case of  Nemesis, 
+the  speed gain was kept to an extra 50% over normal,  as this may have 
+been perceived as a maximum 'safe' working level for the CPU and  other 
+support hardware.
+
+In  other  words,  something  like Nemesis could be made to  go  a  lot 
+faster,  but the failure rate could go up a lot too!  Don't forget,  we 
+are  talking of Falcons made from job-lot components,  sourced by Atari 
+from God knows where, at the cheapest possible prices!
+
+Centurbo 2 takes the pressure off by running a separate higher  quality 
+68030  CPU at 50 mhz on a daughterboard.  This is actually a 32 mhz CPU 
+overclocked  itself  to 50 mhz.  Official 50 mhz (clocked to  75  mhz!) 
+processors were used in early prototypes,  but various complications in 
+obtaining these, and in keeping manufacturing costs down, meant that
+these couldn't really be considered.
+
+Fact:- My Centurbo fitted Falcon has had its original 16 mhz 68030  CPU 
+removed!  With  the new CPU running at all times,  the old processor is 
+just sitting there consuming power and doing nothing otherwise.
+
+CT2  runs  on  a daughterboard,  with the CPU  and  68882  co-processor 
+(optional  but  very  useful) on there,  and many wires  going  off  to 
+different parts of the Falcy.  The DSP is charged to 50 mhz, not such a 
+great  gain  as the CPU,  but still very useful,  the bus is speeded up 
+accordingly,  with implications for new and exciting video modes,  more 
+of which shortly.
+ 
+The other major advantage to CT2,  is its thoroughly modern approach to 
+adding extra memory.  This is in the form of EDO fastRAM (the PC owners 
+first  choice!) The revision B can take things all the way to 128MB!  I 
+settled  for a good price on 64MB,  which is more than enough for  most 
+Falcon  owners,  who are still really waiting for something that  fully 
+demands the 14MB of a standard machine! I got a strange warm and tingly 
+feeling  from  owning  a Falcon with more memory as  my  original  1993 
+purchased Falcon had hard disk space! (64MB plus 14MB)
+
+There is a certain amount of software to go with the hardware,  various 
+system patches and autofolder programs, benchmark and testing utilites, 
+CentScreen  and CentVidel,  and demo versions of other Centek  programs 
+too.
+
+When you finally get to switching it on,  a choice of three modes is on 
+offer,  normal  16  mhz Falcon,  Turbo without fastRAM,  and the rather 
+strangely named TOS 7.02 mode, with full fastRAM support. Being keen to 
+get on with it,  I opted for 7.02.  (An option for Dolmen,  the new O/S 
+for the Phenix was on the flash ROM menu, but has been quietly dropped, 
+as it was only for use by Phenix developers anyway.)
+
+
+ How it feels in use... 
+
+With the CPU going from a lowly 16 mhz,  to a rather less lowly 50 mhz, 
+the view from the desktop is transformed from "Take a good long look at 
+that",  to  "Did you see that?!" A large part of the improvement,  GEM-
+wise does come from NVDI, essential if using CT2 in its highest 'turbo' 
+mode  with fastRAM support.  That isn't to downplay all the good things 
+that  are  going  on at the CPU level,  as many  things  which  chugged 
+sedately before, now charge along with renewed urgency.
+
+For  example,  Aniplayer (used by Centek to demonstrate CT2) manages to 
+comfortably  run the vast majority of .AVI and .MOV animations  without 
+any missed screens.  Even .JPG depacking without DSP is in the category 
+of  'lightning fast',  thanks to the speeded up CPU.  Many GEM programs 
+are transformed by the sheer speed.
+
+With CT2, there seems to be a pretty solid feel whilst in use. Even the 
+notoriously fickle MagiC O/S can be tamed sufficiently to work with it, 
+and with the gorgeous Jinnee desktop running in conjunction with it, in 
+high resolution Truecolour mode, CT2 really comes into its own.
+
+We're  still  trying  to resolve the question  of  internet  connection 
+software,   as  CT2 and parts of STinG don't seem to get along with the 
+current CAB overlay module? When this is sorted, then internet browsing 
+will become a positive pleasure,  rather than an extended wait,  if the 
+impressive off-line speed of CAB is any guideline.
+
+In general, CT2 in operation feels like an enlivening cool shower after 
+a hot and sticky summer day.  
+
+
+ How Fast?
+
+ Okay, so you want some benchmarks then?
+
+I've  stayed away from GEMbench,  as it tends to throw too much on  the 
+screen/VDI  update  side of things,  especially if you're comparing  an 
+NVDI  fitted  computer with a machine that doesn't  have  it.  Instead, 
+Nembench concentrates purely on the CPU, and we compare the Afterburner 
+040, The CT2, and this Falcon temporarily removed from its normal guise 
+of high speed glamour and running at an uncharismatic 16 mhz speed. 
+
+For the purposes of making sense of the results,  assume a stock Falcon 
+runs  (mostly) at values of 100%.  There is an exception on my machine, 
+which I'll explain at the appropriate time.
+
+Firstly, the Afterburner 040..
+ 
+NemBench v2.1 - precision CPU/FPU profiler.
+Test resolution : 640x480x2colors
+Ref. resolution : MONO ST (640x400)
+
+ Integer multiply (16bit)     -> 2.925 Mips (~477%)
+Integer divide (16bit)       -> 1.187 Mips (~328%)
+Linear (stalled) integer     -> 32.000 Mips (~401%)
+Interleaved (piped) integer  -> 32.000 Mips (~401%)
+
+Float multiply (64bit)       -> 6.606 MegaFlops (~2492%)  Wow!
+Float divide (64bit)         -> 0.875 MegaFlops (~505%)   These
+Linear (stalled) float       -> 6.770 MegaFlops (~1270%)   are fast!
+Interleaved (piped) float    -> 10.778 MegaFlops (~2026%) 
+
+16bit read (100% hit)        -> 63.091 MByte/sec (~803%)
+16bit write (100% hit)       -> 8.849 MByte/sec (~147%)
+32bit read (100% hit)        -> 125.786 MByte/sec (~801%)
+32bit write (100% hit)       -> 17.730 MByte/sec (~265%)
+
+Linear 32bit read (ST-Ram)   -> 5.092 MByte/sec (~95%)
+Linear 32bit write (ST-Ram)  -> 4.879 MByte/sec (~75%)
+Linear 32bit copy (ST-Ram)   -> 2.493 MByte/sec (~77%)
+
+Linear 32bit read (FastRAM)  -> 34.629 MByte/sec (~651%)
+Linear 32bit write (FastRAM) -> 17.055 MByte/sec (~264%)
+Linear 32bit copy (FastRAM)  -> 11.397 MByte/sec (~353%)
+
+Linear burst copy (ST-Ram)   -> 2.617 MByte/sec (~81%)
+Linear burst copy (FastRAM)  -> 19.650 MByte/sec (~608%)
+Linear burst copy (ST->Fast) -> 4.582 MByte/sec (~141%)
+Linear burst copy (Fast->ST) -> 4.649 MByte/sec (~144%)
+
+As  you  can  see,  the '040 scores impressively over a  stock  Falcon, 
+especially  where its 040 based floating point power leaves  everything 
+else  for  dead.  It seems to be happiest with FastRAM,  as ST RAM read 
+write  and  copy is slower than even on an '030 16  mhz  machine.  Read 
+performances   in  FastRAM  score  significantly  higher   over   write 
+performances.  The  generally  accepted 'rough' benchmark is 8x  faster 
+than a stock Falcon, but some bits are a great deal faster than others.
+ 
+CENTurbo II Rev B
+
+NemBench v2.1 - precision CPU/FPU profiler.
+Test resolution : 640x480x2colors
+Ref. resolution : MONO ST (640x400)
+
+ Integer multiply (16bit)     -> 1.921 Mips (~313%)
+Integer divide (16bit)       -> 1.135 Mips (~313%)
+Linear (stalled) integer     -> 24.975 Mips (~313%)
+Interleaved (piped) integer  -> 24.975 Mips (~313%)
+
+Float multiply (64bit)       -> 0.840 MegaFlops (~317%)
+Float divide (64bit)         -> 0.544 MegaFlops (~314%)
+Linear (stalled) float       -> 1.665 MegaFlops (~312%)
+Interleaved (piped) float    -> 1.658 MegaFlops (~311%)
+
+16bit read (100% hit)        -> 24.630 MByte/sec (~313%)
+16bit write (100% hit)       -> 20.161 MByte/sec (~335%)
+32bit read (100% hit)        -> 49.140 MByte/sec (~313%)
+32bit write (100% hit)       -> 40.322 MByte/sec (~604%)
+
+Linear 32bit read (ST-Ram)   -> 10.288 MByte/sec (~193%)
+Linear 32bit write (ST-Ram)  -> 11.538 MByte/sec (~178%)
+Linear 32bit copy (ST-Ram)   -> 5.769 MByte/sec (~178%)
+
+Linear 32bit read (FastRAM)  -> 32.483 MByte/sec (~611%)
+Linear 32bit write (FastRAM) -> 38.778 MByte/sec (~601%)
+Linear 32bit copy (FastRAM)  -> 13.855 MByte/sec (~429%)
+
+Much has been made of the impressive FastRAM performance compared  with 
+just about everything else, and this has even been used to score points 
+off  Afterburner!  Read/write  rates  are a lot  less  dissimilar  than 
+Afterburner,  everything  else more or less reflects the fact that this 
+is  roughly  a  3x CPU speedup over a stock  Falcy  in  the  relatively 
+neutral  setting  of  a NemBench test.
+ 
+Stock 16 mhz Falcon (with FPU)
+NemBench v2.1 - precision CPU/FPU profiler.
+Test resolution : 640x480x2colours
+
+ Integer multiply (16bit)     -> 0.616 Mips (~100%)
+Integer divide (16bit)       -> 0.363 Mips (~100%)
+Linear (stalled) integer     -> 8.007 Mips (~100%)
+Interleaved (piped) integer  -> 8.007 Mips (~100%)
+
+Float multiply (64bit)       -> 0.541 MegaFlops (~204%)
+Float divide (64bit)         -> 0.350 MegaFlops (~202%)
+Linear (stalled) float       -> 0.888 MegaFlops (~166%)
+Interleaved (piped) float    -> 0.884 MegaFlops (~166%)
+
+16bit read (100% hit)        -> 7.898 MByte/sec (~100%)
+16bit write (100% hit)       -> 6.045 MByte/sec (~100%)
+32bit read (100% hit)        -> 15.785 MByte/sec (~100%)
+32bit write (100% hit)       -> 6.702 MByte/sec (~100%)
+
+Linear 32bit read (ST-Ram)   -> 5.345 MByte/sec (~100%)
+Linear 32bit write (ST-Ram)  -> 6.488 MByte/sec (~100%)
+Linear 32bit copy (ST-Ram)   -> 3.247 MByte/sec (~100%)
+
+Almost  everything  comes up with the magic 100%.  Note,  there are  no 
+FastRAM  figures.  Also  note,  that my Falcy has an FPU which may well 
+distort the figures in the float section?
+
+
+ Screen Modes... 
+
+With the supplied CentScreen software (reviewed in Maggie 27), Some new 
+and  interesting possibilities come to light.  Quite apart from all the 
+standard  (and very well known) Falcon screen modes,  two in particular 
+stand out.
+
+Firstly,  we  are  able  to  force  out a high  resolution  640  x  480 
+truecolour  screen mode (this is a fudge of 320 x 480,  but it  works!) 
+There isn't the sort of speed drop that you get normally when trying to 
+squeeze  truecolour out of a standard Falcon either,  as GEM  responses 
+are  still pretty sharp.  Obvious benefits include truecolour operation 
+of   picture   displayers,   art,   image   processing  and   animation 
+packages.Displaying  of pictures is quicker as the time-lag to  convert 
+down to, say, 256 colours in an equivalent screen res has gone as well.
+
+Also,  it  is  nice  to  be able to be able to  www  browse  with  full 
+truecolour  and  a decent lick of speed.  Not forgetting that GEM  Demo 
+looks really good in hi-res, especially in a multi-tasking context! One 
+of  my  favourite  things  that  I  did  the  other  day,  was  to  run 
+MagiC/Jinnee in 640 x 480 truecolour,  with GEM Demo and Aniplayer (and 
+a  couple  of other things) going at the same time.  Now that's what  I 
+call multi-tasking!  Even with a 25 megabyte animation running entirely 
+in memory, I still had the  best part of 40-50 meg of RAM left!
+
+With MagiC,  to get that elusive high-res truecolour mode,  you have to 
+set up Centscreen in normal TOS first, and save the mode, then save the 
+desktop.  When you go into MagiC,  select truecolour 320 x 480, and off 
+you go!
+
+The  other screen mode that turned into a bit of a show-stopper  on  my 
+monitor,  was  the  1024  x 768 in 256 colours mode.  This  was  almost 
+certainly  interlaced somewhere,  as there was some slight flicker.  It 
+was  interesting  to  try  out  picture  viewers  with  that   extended 
+resolution, and almost certainly, web-browsing would give good results, 
+as an offline test of CAB seemed to show.  With this screen mode, there 
+is a bit more of a tendency for crashes to occur. These are still rare, 
+and  may be down to tolerances of certain GEM software being  pushed  a 
+bit too hard?
+
+You  may  want to try out 1024 x 768 in mono,  especially if  you're  a 
+large  desktop area DTP freak with a good monitor.  This upgrade  makes 
+the Falcon serious competition for the TT even in that specialised area 
+at last.
+
+In  the end,  I found that my preferred day to day option,  was a user-
+defined screen mode of 800 x 592, of either 256 or 16 colours. Centvidl 
+came  in useful there.  Screen updates and overall system speed  remain 
+good.
+ 
+                  That all-important software round-up!
+ 
+ Games...
+
+ (3D polygon games) 
+I  tried  'Running' The definitive Duke/Doom clone first.  Yes it  ran, 
+Centurbo's own list was telling the truth after all. It is very fast in 
+low detail mode,  the main menu music does not play correctly,  but the 
+in-game sound FX are all still ok.
+
+On  the  low  detail setting,  this game feels like a fast  PC  playing 
+'Doom',  in other words,  incredibly fast! Speed is still acceptable on 
+high detail. As far as I was concerned, this game alone is a sufficient 
+showcase for the power of the CT2, the rest of what was to follow was a 
+pleasant bonus.
+
+Next,  I  looked  at  the underrated and  underpowered  gallic  classic 
+'Lasers and Men'. Anxiously awaited the main game screen, and yes, this 
+one  worked  too.  There was an immediately notable improvement in  the 
+framerate. It still wasn't completely smooth, but good enough now. With 
+a tendency for the game to throw in the odd super-tough bad guy,  it is 
+still  a SOB to play!  Sound support,  including title screen music was 
+there, and unblemished.
+
+There  was  also  a Lasers and Men,  pre-preview version.  Again,  this 
+worked fine.  It also does not use the DSP,  I found that out as it was 
+one of the few that worked in my 'DSP-less' period. The pre-preview was 
+more  sensible  in  some respects than the final game.  It  only  half-
+textured  its world, only the walls were textured, so it was acceptably 
+fast  even  on a standard Falcy,  making it very fast on turbo.  It was 
+also memorable for using a bunch of ripped Wolfenstein graphics.
+
+We  soon  went  for some space-based action in the form  of  'Crown  of 
+Creation  3D'.  This  worked,  but  there were problems in the form  of 
+frequent  DSP clashes and communication error messages when the  action 
+heated  up  with the appearance of DSP generated  spaceship  shaped  3D 
+objects. This is really better at the standard 16mhz Falcon, unless you 
+like lots of error messages onscreen, right in the middle of the mother 
+of all DSP object generated space battles.
+
+I  would  give  this game top marks for  error  handling  though,  this 
+program shows a very high standard of finish not out of place for  many 
+professional  productions,  as most other games would have crashed  for 
+good at that point!
+
+Towers  II ran without a glitch.  This game never was really slow on  a 
+stock Falcon though. Nice to see it could work on here.
+
+The  ex Compo France 'F-Zero' styled racer 'Moon Games' ran,  once  you 
+remember  to boot it in accelerator friendly 'Mode B'.  Very smooth and 
+responsive  indeed.  Also a testament to the programmers recognition of 
+accelerators relatively early in the Falcon's life.
+
+I'm still not sure about 'Steel Talons'.  You may well remember this as 
+one  of  the  Atari sponsored productions,  where Atari  Corp  took  an 
+average arcade game, and then beat the third party developers senseless 
+with the 'mediocre stick', to produce an uninspired conversion. It is a 
+genuine  3D game.  Its graphics seem closer to the ST than the  Falcon, 
+reasonable  for  the earlier machine,  but not a patch on later  native 
+Falcon games. It seems like it wants to run, but freezes?
+
+More investigations are needed.
+
+Another game we took a closer look at was the Czech created  hovercraft 
+simulator  'Gravon'.  This  was  interesting for its  simulation  of  a 
+'Midwinter' style landscape, with added effects such as mistiness. Like 
+many of the other games discussed, it could have really used a touch of 
+extra polygon processing power.  It got it with CT2 in full turbo.  The 
+one noteworthy 'extra' that we got was a flickery control panel.
+
+Gravon was a bit fussier than normal,  as to run it, we had to dispense 
+with  the Centscreen resolution changer,  it only works with the boring 
+default  TOS res changer.  The sound on this game is present (no  title 
+music though) and it has a nasty habit of kicking the internal  speaker 
+on,  whether  you  want it or not!  Gravon always was a bit of a sod to 
+play,  but that is not now through any lack of 3D updating. Like Lasers 
+and Men, perhaps more a case of a difficulty level tilted away from the 
+player?
+
+Reekin' Rubber (v0.8) ran beautifully,  averaging a frame rate of 27-28 
+frames  per  second!  The finished game is looked forward to with  some 
+anticipation by us!
+
+Looking  at  an  ST-based,  but  'generic' 3D game,  the  follow-up  to 
+'Elite'.  David Braben's 'Frontier'. This did run, and very smoothly as 
+well.  One of the few games on Atari to sit totally within legal system 
+guidelines,  this could be seen to run on 8 mhz ST (very slow),  16 mhz 
+Falcon,  (acceptable),  and even 32 mhz TT (very acceptable!). Caused a 
+bit of excitement running at 50 mhz, I can tell you!
+
+'Hunter'  was  another  favourite on the ST.  I came across  a  cracked 
+version,  which  was able to run from the desktop,  and this coped with 
+CT2 turbo mode! There wasn't a lot of difference discernible, it always 
+had a good 3D virtual world engine that was comfortable, even on an ST.
+
+It may well be worth trying out some other 3D ST-based games, if these 
+are runnable from the desktop somehow. This will probably exclude most 
+legal/original disk protected copies?
+
+One  that springs to mind to try,  would be Unique Developments gouraud 
+based Wolfenstein genre classic 'Sub Station'. This runs fast enough on 
+a 16 mhz Falcon in any case, and might be too much of a good thing with 
+a CT2 turbo mode?
+
+One  game which might occur to a lot of people to try with CT2 too,  is 
+the  Caspian Software STe derived space arcade blaster 'Zero  5'.  This 
+WON'T  work  under  CT2 turbo mode,  as it uses the blitter,  which  is 
+locked  out by NVDI on turbo mode.  The blitter isn't that acceleration 
+friendly,  even  with  less  ambitious  speedups such  as  Nemesis,  so 
+anything trying to use it would crash.
+
+Another  ST  classic is the racing game 'Vroom',which got as far  as  a 
+Falcon '030 version.  The version I got may or may not be official, but 
+bears a strong resemblance to the ST original?
+
+The  title  sequence works fine,  but the main game screen is  severely 
+messed up.  Until you look again,  and try it without Centscreen,  then 
+it's  fine!  The  only thing left to do then,  is to try to contact the 
+programmers  to  ask  them to  widen the tracks.  We now have  F1  cars 
+charging around at close to Mach 1 (supersonic!) speeds.  The trackside 
+objects do,  rather tediously,  make their presence felt a lot as well. 
+You  even get full in-game sound effects,  so every roadside scrunch is 
+heard.
+
+
+(Non Polygon games)
+
+The  majority  of non-polygon based games won't really need  the  extra 
+speed afforded by the CT2. In some cases, it could well hinder them!
+
+Another  area  where a big speed-up paid off was with  the  Godboy  and 
+Godlenes  emulators.  There was a big improvement (the music messed up, 
+so  turn it off) but the the emulation speed was more authentic,  and a 
+lot more playable in the case of early Godboy releases, especially
+'Megaman'!
+
+A quick note regarding other Reservoir Gods games.  These aren't really 
+speed critical,  and in the case of 'Double Bobble',  the blitter kicks 
+in with those zooming points scores,  and will therefore crash it. (You 
+might  like  to try 'Skyfall' in 'suicide mode' sometime,  just  for  a 
+moments sick self-amusement!)
+
+Willies Adventures, the preview version, apparently, yes, even the 
+music,  according  to  one report I've had.  The finished game,  when it 
+turns up, will be well worth seeing!
+
+The  Bad Mood and Patrice Mandin Doom engines should work.  I  probably 
+need a new WAD file as mine may have got corrupted? Doom gets so far on 
+the  main  menu,  and  crashes.  There is an early (unoptimised?)  demo 
+'Quake' engine reported as 'crawling' on CT2. Source - Evil of DHS
+
+Do Say:- "Heey, I'm getting motion sickness from speeding up Running!"
+
+Don't say:- "Will 'Backwards' still run in turbo mode?'
+
+
+ Music... 
+
+With music products,  the news was very mixed. This being an area where 
+the DSP was most likely to be heavily used.
+
+First  off  the  musical blocks was Graoumf Tracker.  It  worked,  just 
+about. It was fiddly about which screen mode it liked to run in, really 
+preferring  a  16 colour mode.  In 256 colour mode,  it leaves a  mouse 
+pointer  trail onscreen which is messy.  The modfile format selector in 
+the  program  tends to provoke a crash too.  There is some gain on  CPU 
+time,  but not as great as might have been anticipated.  One S3M, which 
+is my 100% CPU benchmark on a standard Falcon,  came up 60ish% CPU time 
+used?  This  may well show the extent to which the DSP is being  leaned 
+upon here?  This is listed as compatible in Centek's own listing, but I 
+seem  to  be one of the luckier ones here,  as some CT2  fitted  Falcys 
+refuse to play with this one?
+
+Digital  Tracker  was  a firm 'No' It never  will  either,  if  various 
+stories about the poor relations between the author and Centek/Class  4 
+are  true?  This,  sadly,  extends  to trying to use it in normal 16 mhz 
+mode.
+
+The news was better for Flex Tracker v0.5,  which works fine and ran in 
+a stable fashion.  Hopes are high for the full version (currently up to 
+v0.8 at time of writing.)
+
+Mega Player (registered version) Yes, up to a point, but crashes on the 
+bigger multi-channel modfiles, which it really shouldn't? This has been 
+reported as a 'no go' by at least one other CT2 owner (Evil of DHS.)
+
+The  rather  strange  huge virtual screen  area  based  'Mega  Tracker' 
+(preview version) does, but only on RGB systems?
+
+With the Commodore 64 music emulator 'Flaysid' player, this works fine, 
+which  is what the authors would have intended anyway.  Nice to see  no 
+more slowdown of replay on the higher quality 33 mhz mode.
+
+The Creamsid player works fine too. As it does not use GEM or expect to 
+run  in a multi-tasking environment,  there isn't really a need for  it 
+to.  It  will  be interesting to see how the forthcoming generic  Amiga 
+format player will respond to turbo mode?
+
+Protracker  is  doubtful on turbo mode.  The program boots up,  'Faclon 
+Commando'  message  and all,  modfiles load in,  and you can access the 
+different  modes  for 'edit',  'play' etc,  but when trying to play the 
+modfile,  nothing  moves!  (You  can quit out safely,  so it isn't as if 
+there is a crash.)
+
+There  are still other players and tracker programs to try out,  expect 
+to get mixed results from what you try.
+
+
+ Graphics.. 
+
+The  area of graphics software produced some excitement  and  interest, 
+especially as certain programs had a lot more screen area to play  with 
+than before!
+
+We spent a long time with Apex Media.  There was extensive testing done 
+using this,  especially with the earlier DSP fault. One way how to find 
+out  if  your  DSP  is playing or not from Apex  is  to  click  on  the 
+Cyberdials  option.  If  it  gets  stuck,  you've got a  problem.  Also 
+problems  with  JPEG loading will show themselves with a  screenful  of 
+white garbage displayed. If there is no DSP fault, then Apex works just 
+fine.  The  extra  fluidity  is  noticeable when using  even  the  more 
+involved tools.
+
+Later versions of this program are capable of hi-res truecolour  screen 
+modes and work areas.
+
+The  Apex  viewers all came up fine.  They were quick,  but they always 
+were.
+
+With  'Godpaint',  it only seemed to like 100hz VGA,  came up a mess on 
+RGB.
+
+Rainbow Paint was a definite no-show. Standard mode only.
+
+GEMview got a new lease of life with turbo mode. Loading and displaying 
+were very good,  fast loading,  even without Brainstorm DSP depacker on 
+JPEG  was  impressive.   There  were  very  good  results  in  extended 
+resolutions - 1068 x 768 - 256 colour. With the depacker, loading times 
+on most JPEG files dropped right down.
+
+Image Copy 4 benefited from the Brainstorm JPEG depacker too. Also able 
+to use the extended screen modes.
+
+Speed of Light 3.8,  yep,  again, happy to accomodate a huge 256 colour 
+screen.
+
+It has been reported that the *original* Atari Neopaint works in turbo! 
+(not Neo Master?) Also Crackart may well work too,  this was written to 
+work on both an ST and TT, so it should do.
+
+Aniplayer works. but you would expect it to, with the author developing 
+on  a  CT2  based Falcon!  Impressive results were obtained  with  JPEG 
+loading and AVI/MOV file playing. DSP decompression with the 50 mhz DSP 
+played  its  part  in  reducing CPU load  on  a  multi-tasking  system, 
+Excitingly,  future  versions of Aniplayer are to support a better MPEG 
+player,  including  MPEG  audio  level  3!  (MP3) A beta of  this  with 
+unoptimised MP3 playing code 'lifted' from the PC is doing the rounds.
+
+Smurf  (demo version) was tried out,  and found to work in the extended 
+GEM screen modes. Those effects modules supplied with it showed a major 
+reduction in the time factor (whilst still not quite being real-time on 
+some of the more complex ones.) Again,  able to use the Brainstorm JPEG 
+depacker, where this was present.
+
+Best  of all.  the 'Whip' Sound to Light software definitely does  work 
+under CT2 turbo!  (like Godpaint,  only really fancying 100hz VGA,  but 
+not RGB whilst in turbo?)
+
+
+ Demos... 
+
+The  most subjective area of all....  Many won't.  These are ones which 
+do.
+
+Where  monitors  are concerned.  things get extremely  subjective  from 
+here, and some productions which are described as working under my SVGA 
+may well not work, if it is an older and less flexible screen. The best 
+bet  to  get maximum compatibility is to try to lay hands on  a  decent 
+modern multisync or SVGA screen. As a rough rule, if it can get a 100hz 
+mode, then you'll be fine. 
+
+The Alive Demo by FUN will.  This one is nice,  with lots of 3D enviro-
+mapped objects. Also the ATS Demo by DHS does. Both of these are recent 
+EIL (Error in Line) releases. Both authors are using a CT2. 'Alive' has 
+more  to offer with an options menu for enhancements with extra  speed, 
+higher definition 3D objects etc. ATS is just happy to run.
+
+Another  EIL  release,  the  'Revert' demo by Cobra runs  too.  It  was 
+notable for running a very slow 3D virtual world on a standard machine, 
+so any extra performance is clearly a bonus. it still isn't the fastest 
+in the world,  but it is better than before. Even the sound track works 
+(A long sample made from an .XM modfile.  ) It is really an RGB demo in 
+normal life, but was able to run on my SVGA.
+
+If  you really want to show off the sheer CPU power of a CT2,  then I'd 
+recommend  the  DHS Orneta '97 4ktro (4ever?) It  is  blindingly  fast! 
+There is no DSP involvement,  but don't forget,  the FPU is used.  Just 
+watch those tunnels fly!
+
+The 'Blue' 4ktro by New Beat from Orneta '97 runs as well. It runs like 
+the clappers but really needs an RGB screen. The later 'Flu' 4ktro gets 
+as far as the title screen then hangs when it tries to get to the  next 
+part.
+
+The  Symposium 4ktros were worth checking out.  The Lazer 'Gurkensalat' 
+Elite-tro, is *very* fast in turbo! The Spirits Ewigekeit God-tro runs, 
+and also the tSCc 3D morphing grid, and the TNB BSE+ intros.
+
+BSE+, timed to 2 minutes normally with countdown on screen, runs out of 
+effects  about 23 seconds from the end in turbo!  All best started from 
+ST low. All ran okay on my SVGA at 100hz.
+
+Other  intros that did,  included the EIL DHS Party invite  (bumpmapped 
+lake effect with haunting Tommy soundtrack.) This runs extremely  fast, 
+musically perfect too.  Also,  the Place to Be part V intro runs, there 
+are lots of complex 3-D objects, toasters, gouraud cows, etc, which are 
+very  slow on a standard Falcon,  now running at a respectable speed on 
+CT2  turbo (looks like all CPU and no DSP apart from audio.)  Parts  of 
+this intro may have been derived from an Amiga demo?  Both of these ran 
+perfectly on my SVGA.
+
+The  'Joint  Venture'  demo does,  amazingly enough,  just  ignore  the 
+garbage onscreen at the very beginning.  It prefers RGB screens and the 
+music  timing  is  'out',  but that doesn't matter with  this  demo  as 
+effects  and  music  not really linked.  individual parts such  as  the 
+'solar system' bit at the beginning are conspiciously faster.
+
+Tat's 'Sono' demo was not expected to work but we tried anyway!  Before 
+it  did  crash,  those  fishes didn't half shift  onscreen.  Completely 
+fluid,  natural,  fantastic!  It could have been interesting to see Tat 
+carving  out  some  code for the CT2.  If the basics for his  3D  world 
+worked  okay on a standard Falcon,  it would only have been a matter of 
+adjusting  the  CPU/DSP ratios and sitting back and enjoying  the  vast 
+extra power!?
+
+Lost  Blubb  ran under turbo!  I'll repeat that,  Lost Blubb ran  under 
+turbo! Yes it did, although the music timing drifted badly out with the 
+rest  of the demo, and cut off abruptly at the end. Many of the effects 
+were  very much faster!  We never realised that Martina had it in  her! 
+This  is  one where you would need a really good screen,  as it ran  on 
+both my SVGA and RGB monitors,  but not perfectly in either case.  (but 
+with all the best bits still on show!)
+
+The early but nicely formed Tat-derived effort 'Bio' did,  but not very 
+well on RGB. It was fine on my SVGA though. The speed-up can be seen to 
+best  effect  with  the fastest smoothest Z-Buffering  on  offer,  even 
+including the previously sluggish textured objects!
+
+The  Hydroxid  Symposium  '96  entry was  very  well  behaved,  running 
+perfectly  on  my SVGA,  incredible,  bearing in mind one of the  major 
+effects were to do with DSP dot objects.
+
+The early Lazer megademo, 'Autowaschen Verboten' (Ungto) did, but with
+corrupted speeded up sound, in fact speeded up everything. Scarey! And  
+it got a picture from my SVGA, but garbled the screen on RGB!
+
+In general,  I don't subscribe to conventional wisdom,  which would say 
+that  demos ought not to run outright on such an accelerator as a  CT2. 
+Whilst  this  is  mostly  true,  you  can see from  the,  by  no  means 
+exhaustive,  list above,  that quite a lot do to some extent, including 
+one  or  two  surprises!  
+
+In general, if you are exploring your demo collection, then be prepared 
+to  expect  the following.  Strange screen modes,  and demos working on 
+monitor types they normally ought not to work on.  Conversely, on other 
+screens  where they do normally run,  then they may not?  In some cases 
+you might get dodgy sound, although the majority of the time, the sound 
+player was the bit that worked the best.  The soundtrack can get out of 
+sync with the effects a lot of the time.  Some demos, certain EKO demos 
+springing  to mind here,  run a large part of the way in,  but crash in 
+mid-demo (when deploying a DSP based effect, probably?)
+
+There have been some notable failures found as we've gone into this.
+
+The DHS 'Dream Dimension' demo didn't,  a shame for a relatively recent 
+and  rather good demo.  It wasn't even very good with the DSP IRQ patch 
+running in standard mode where jerks about and blinks onscreen as if it 
+was running out of frames? Good job I've still for my Nemesis Falcy.
+ Update,  problem  solved  when a CT2 friendly version of that demo  was 
+released! Thanks Evil!
+ 
+'Termfin',  the  grand-daddy of all Falcon demos by Amiga legend Sanity 
+didn't really get going.  The soundtrack implied it was there,  but the 
+screen stayed blank.
+
+The  1995 Inter   'Obnoxious' megademo crashed and made a "Turn off  this 
+machine NOW!" type noise.
+
+On  an  almost  incidental note to close this  section,  you  might  be 
+interested to know that both Maggie shells,  ST,  and Falcon (issue 27) 
+ran  okay  under turbo mode,  even the music was fine,  with the Falcon 
+shell  using  Graoumf sources.  The only really noticeable  differences 
+were the really fast picture loading/depacking,  and the elimination of 
+speed lags on the text displayer in VGA when playing the really intense 
+bits of a multi-channel modfile.
+
+The  equally legendary Undercover MagaScene,  at least in its issue  15 
+and  16  incarnations,  was also happy with Centurbo 2 set any way  you 
+like.
+
+
+ Still rumbling on, issues yet to be resolved? 
+
+I finally got my DSP back in a fully working state,  thanks to the hard 
+work  of the nice people at System Solutions.  Rather than an  outright 
+component failure (the DSP Static RAM was suspected),  it seemed that a 
+bad connection/dry solder joint was to blame,  and a resolder cured the 
+fault. (Revise paragraph when eventually get machine working!!)
+
+This  is why you've now got compatibility reports on all  those  lovely 
+games and demos detailed above!
+
+At  time  of writing,  I still have internet connection  software  that 
+crashes/freezes  the moment I dial into my account when in turbo  mode. 
+It  is  an oldish version of STinG,  and it looks like this  will  need 
+replacing,  which  I  am  loath  to do,  taking Mr Pink's view  on  the 
+subject, "If it isn't broken, then don't fix it!"
+
+It now seems that it is broken?
+
+Also,  once  you've  got  past  the  barrier  of  actually  making  the 
+connection work,  there is the possibility, that CAB may well provoke a 
+crash  on  its  own.  This may be down to a clash  between  STinG,  and 
+certain  versions  of  the CAB ovl module?  A shame,  as CAB runs  very 
+sweetly with the extra speed on offer on an offline basis.
+
+There  may  well be a follow-up,  which may or may not come within  the 
+scope  of this article.  I'd be very disappointed if this aspect of the 
+upgrade turned out to be a letdown?
+
+I'm a *little* disappointed that the greatest failure rate seems to  be 
+in  the crucial audio sector.  The DSP-IRQ patch partially resolves the 
+situation, but it isn't perfect. At least one person has come up with a 
+schematic  to  rewire  the DSP IRQ back into  things,  (the  author  of 
+Aniplayer.) Digital Tracker is the biggest permanent failure,  detailed 
+earlier, not working even in standard 16 mhz mode.
+
+There  was  the  odd bout of NVDI inspired 'whiteing  out'  of  desktop 
+icons, but this seems to have settled down. The very early installation 
+of  CT2  with the bugged DSP controller had a habit of  chewing  up  my 
+newdesk.inf  file,  but with the second fitting,  that problem vanished 
+too.
+
+Apart  from  that,  Centurbo  2 hasn't presented me with  any  horrible 
+surprises  since,  and  being left on over a good period of  time,  has 
+stayed  rock  solid.  A reassuring change from my other  Falcon,  which 
+suffers  from  'mouse  cursor epilepsy' from time to  time.  Any  other 
+failures  are due to the extreme nature of the power on offer,  and the 
+software not being able to cope with it.
+
+
+ Some ideas you might like to try? 
+
+With  an  upgrade of this extent,  it really could be worth  trying  to 
+'think  outside of the box' (management seminar cliche no.962!)  I  was 
+personally heartened that so much of the very best Falcon software  ran 
+on the CT2.
+
+I daresay the gendarmerie were called in,  to investigate the source of 
+the  manic sounds of cheering around the vicinity of Centek  GHQ,  when 
+they found out 'Running' worked!
+
+There  is  a  certain amount of software,  both  Falcon  specific,  and 
+intended for the higher spec TOS clones, that would really go down well 
+on  a  CT2  powered Falcy.  There are even  individual  'scene'  people 
+involved   pretty   directly  with  their  own  CT2's,   and   offering 
+enhancements to their new productions at the very least?
+
+It  is unlikely that there will be anything really written closely  for 
+the CT2,  owing to the sort of development time needed. We've been very 
+lucky to get the software that we have now,  with the sort of pressures 
+working against us over the last few years.
+
+I  might  suggest  investigating a few possibilities  to  (quickly  and 
+easily?) fill the gap though.
+
+I  wonder if there is an Amiga equivalent to 'Bad Mood',  say one  that 
+got  more  developed,   used  original  material,  had  sources  freely 
+available, and was still able to run decently on a 50 mhz '030?
+
+Just speculating there?
+
+Porting  of  Amiga demo effects,  and wholesale demos?  The majority of 
+'Scene' Amigas are probably accelerated to some extent by now. It might 
+be difficult to convert Power PC based Amiga stuff over,  but there was 
+a lot of faster '030 material?  Think about it, the Falcon has one over 
+the Amiga, if you are able to use the 50 mhz DSP as well?
+
+Generally,  for  demo coders.  might be interesting to see if you could 
+get  something of the 3D world complexity of 'Sono' without  having  to 
+use  the DSP?  Tat's 'Binliner' sources could be a good starting  point 
+here?
+
+Another area which could be re-examined,  is the conversion of emulator 
+software,  again, this would be mainly Amiga based, with the sources in 
+common?  CT2  seems  to be able to handle 8-Bit computer  emulation  of 
+those existing TOS-based emulators with ease. It should be able to do a 
+half-decent Commodore 64, and hopefully some of the more interesting 8-
+bitters,  say  the  Amstrad  6128  or MSX?  DSP support  would  not  be 
+necessary, and apart from soundchip emulation of the Flaysid variety, I 
+can't see how the DSP could be made use of for an emulator?
+
+To give you an idea of what is possible now, the AtOric v0.9 Oric Atmos 
+emulator timed to 5-6 seconds on a benchmark program running under  CT2 
+turbo  mode.  This is comparable with 15 seconds on the real thing,  25 
+seconds on a TT,  and 127 seconds on a standard ST.  This also compares 
+reasonably well with the 5 seconds taken by an '040 Milan!
+
+Matthias  Jaap  suggested that someone might try to  convert  the  MESS 
+Multi  machine emulator,  which can emulate several different computers 
+and consoles.  This may be marginal,  even on a CT2,  if not optimised, 
+but  would give access to a vast software library of many thousands  of  
+titles!
+
+Whilst I'm on the subject,  anyone up for an Atari version of M.A.M.E.? 
+(The  arcade emulator.) I'd be happy with the early vector-based  Atari 
+games,  Asteroids,  Gravitar,  that  kind  of thing.  (See John Haywards 
+review in this issue.)
+
+Okay, that'll be it for now. Like I said, just a few ideas.
+
+
+ And finally... 
+
+It  has been a long six months since I started to get this upgrade.  In 
+an  echo of the hyper-extended Mr Pink Nemesis 'awayday' saga,  I  have 
+only just now got a fully working CT2!
+
+To  be fair,  I've not been without my Falcy for a very long time,  and 
+I've had it working in some form or other since the second visit to the 
+premises  of  System Solutions.  (I've got to know the inside of  their 
+workshop  *very*  well,  and  I  can tell you that  among  other  Atari 
+curiosities,  they've  got  a  couple of old style  ST's  (no  built-in 
+floppy, slightly smaller case!) also, what looks like a brand new SH204 
+20MB  hard  drive,  complete with manual,  and that was something which 
+stopped being new in 1987!)
+
+I've had time to examine the different aspects of CT2, and they haven't 
+been  found wanting.  In the case of the more difficult 'non GEM legal' 
+software  arena,  I've  been pleasantly surprised at what did  actually 
+run!
+
+CT2 certainly will add a new lease of life to a tired and slow  feeling 
+Falcon,  especially  where  software seems to make more demands of  it, 
+such as the new generation of GEM software really intended for the  new 
+TOS  clones.  It  is refreshing to use in turbo mode,  and very hard to 
+switch back to 'normal'.  I've already raved on enough about its effect 
+on certain games and demos, so I won't anymore!
+
+In  the context of the limited current market,  CT2 has done very well, 
+with  Revision  A and the first batch of Rev B both  selling  out,  and 
+further production of Rev B to cater for demand. I get the feeling that 
+we  really could have done with something like this a couple  of  years 
+earlier,  as  the  next generation of TOS hardware is  finally  getting 
+ready to do the doorstep challenge to a wider world.
+
+I  also  can't  help thinking that Atari really should  have  made  the 
+Falcon like this in the first place, as a large part of CT2 seems to be 
+about putting right deficiencies left in the original Falcon design  by 
+Atari Corp,  (you know, limited memory expansion potential, lack of big 
+truecolour  screen  modes,  slow processor....)  Still,  it is  finally  
+here, and it certainly lives up to its promise.
+
+Well, let's see what Class 4/Centek can do with the Phenix next!
+
+ CiH - August '99 for Maggie
+     
+

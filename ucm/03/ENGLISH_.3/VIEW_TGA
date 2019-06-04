@@ -1,0 +1,19 @@
+ 
+                                ViewTGA 3.0
+                                ===========
+
+The program displays  unpacked TARGA-files. You need a Falcon 030 with best 4MB
+or more. The piccy  is displayed in True Color. Using interlace I can show a 18
+bit color palette. To display 640  pixels horizontal I  have to average any two
+pixels on a VGA-monitor. The quality doesn't suffer from this.
+
+Screenblaster:
+==============
+Sorry, I couldn't find a  useful "Screenblaster"-mode for ViewTGA. Last but not
+least you can't use ViewTGA from a  Screenblasters display mode. Best way is to
+use a ST-Mode.
+
+Sorry for the  short description, but it is extra  work for me to translate the
+texts into english...
+
+                                                     Apache of tnb / 05.04.1994

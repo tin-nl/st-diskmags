@@ -1,0 +1,371 @@
+ATARI CD-ROM SUMMARY 5
+~DROPS.FIL~
+Games/Tads:
+
+tads.lzh       155  Text ADventure System, make your own text games.
+unnkul12.arc   206  Ver 1.2 of a game using tads by Dave. :).
+uhz.arc        435  Unnkulia Zero, Unnkulia One-Half (ST/Falcon/TT)
+uu1.arc        308  Unnkulian Underworld: The Unknown Universe (ST/Falc/TT)
+uu2.arc        329  Unnkulian Unventure II: The Secret of Acme (ST/Falc/TT)
+take2_bw.lzh   55   Similar to Mah jong, mono version
+take2_col.lzh  65   Color version of above.
+tanx.arc       30   Blow your opponent's tank t bits
+taquin.zoo     56   Taquin's world - demo of shareware game
+tbcheat.arc    6    Cheat file for time bandits
+tectic.lzh     27   Monochrome version of a game similar to Tic Tac Toe
+teserae.lzh    48   A tetris like game with animated background.
+tess.arc       36   Bizzare text adventure game (tesseract)
+tetris.arc     13   Ok version of tetris.
+tetris.zip     5    Tetris Desk accessory
+tetritis.lzh   27   German version of tetris.  10/91.  Can't read the dox.
+tetrix.arc     26   Unix version of tetris. Really bad.
+thrug_r.lzh    105  Thurg 'n murg, sharware from MajiSoft.
+timeband.lzh   4    Time Bandit Invincibility Program
+towers_1.zip   373  Good "Tryware" RPG. Modem to Modem mode, limited demo.
+towers_2.zip   473  Part 2 of Towers
+towrptch.zip   55   Update Towers to 1.1
+twrptch4.zip   56   Update Towers to 1.4
+towr14d1.zip   375  Towers Version 1.4 Can link up to PC version over modem
+towr14d2.zip   472  disk 2 of Towers 1.4
+towpowpt1.zip  421  A game based upon Archon, color only
+towpowpt2.zip  351  part 2 of above
+towdata1.zip   693  optional data disk for above, with more samples, etc.
+traffic.lzh    9    Drive your car through the city and get stuck at lights
+traps12.zoo    22   A variant of the minesweeper game
+treasure.lzh   40   Recover stolen treasire froum pirates.  Low rez only
+trek0404.zip   220  A really nice StarTrek game for the ST.
+triyahoo.zip   147  Yahtzee clone.  Works on any machine, any rez, etc.
+trucker.lzh    21   Move goods w/o being arrested
+trucker.zip    50   articulated lorry driving simulator, ST Low only
+turrican.tos   113  Playable demo of turrican II
+tuzzle.lzh     93   A puzze type game
+ukmatch.lzh    177  Icon matching game
+umoria.arc     280  Umoria, ported by Howard.
+utopus15.zip   230  "Thrust" type game
+uxhangmn.zoo   143  Hangman, off course.
+video_g1.zip   52   Play 3 classic games at once with one joystick. 
+virtue.arc     74   Shoot the werfs, colour
+vpoker.lzh     6    Lo Res poker
+vsquared.lzh   27   Weltris for the ST. color only
+wallball.arc   280  Vollyball with walls. 2 player, mono    
+walllst.arc    43   Buy, sell, options, bonds, etc.
+wanderer.arc   216  Through the cave, get the diamonds. Col/mono 
+wargames.lzh   43   Pat's game of war
+window.arc     16   Another breakout clone   
+winglord.lzh   157  Good shareware joust type game.
+wizard.arc     57   Wizard of Wor
+wordqst1.lzh   60   Word Quest, a shareware word puzzle game
+worms.arc      38   Makes worms on your screen. D/A & prg.
+wormwar.arc    13   Centipede clone     
+wq1puzl2.lzh   57   Puzzles for word quest, wordqst1.lzh.
+wusel.lzh      26   German action game. Mono, with level editor
+wyrdways.arc   605  Maze, Puzzle game, shareware                 
+x_peg1.tos     19   Self extracting space shoot'em up.  Disk #1.
+x_peg2.tos     20   Self extracting space shoot'em up.  Disk #2.
+x_worm.tos     130  Self extracting worm battle game
+yahtzee2.arc   15   Play a bad version of yahtzee and win. Color only.
+zmachine.zoo   53   InfoCom game player
+
+============================================================================-
+Gnustuff:
+
+  Files marked "(d)" are files I think should be deleted.
+  Files marked "(m)" should probably be moved somewhere else.
+
+881/                   2    (d) Michael Ritzert's 68881 coprocessor math      
+                            lib for GCC
+                       I'm pretty sure all of this code has been merged into
+                       the Portable Math Library -- hyc
+
+aa.gnu.881             4     description file
+contents               1     contents file
+lib5.zoo               23    Object library, patchlevel 5
+src6.zoo               67    library source, patchlevel 6
+Bash/                  2     Bourne Again SHell for TOS, somewhat /bin/sh     
+                             compatible
+Bash-108/              2     Bash 1.08
+108src-d2.zoo          99    diffs and support code for TOS bash
+aa.gnu.bash            5     description file
+bash-108.zoo           1695  Full source and binary for TOS bash
+contents               19    contents file
+Bash-110/              2     Bash 1.10
+Mintversion/           2     Bash 1.10 for MiNT
+aa.gnu.bash.minversion 1     description file
+bash110b.zoo           118   MiNT-Bash binary, you'll need the source for     
+                             supp files
+bash110s.zoo           457   MiNT-Bash source code
+contents               14    contents file
+glob.zoo               9     Wildcard globbing library for compiling Bash
+readline.zoo           216   Terminal input routine library for compiling     
+                             Bash
+Unixmodeversion/       2     Bash with UNIXMODE support
+110bin-d3.zoo          226   Binary and docs
+110src-d3.zoo          63    Patches relative to prep distribution
+aa.gnu.bash.unixmode   3     description file
+contents               1     contents file
+Bash-1135/             2     Bash 1.13.5
+Bash1135.zoo           168   Bourne Again Shell,v 1.13.5
+bash1135.zoo.contents  288   Filenames found in archive 
+Bison/                 2     GNU's version of the yacc grammar compiler
+aa.gnu.bison           1     description file
+bisn119b.zoo           67    Bison 1.19 binaries
+bisn119s.zoo           327   Bison 1.19, atari-patched source
+bison1-14.zoo          156   (d) Source code for bison 1.14
+bison1-18.zoo          4     (d) Diffs for bison 1.18
+bison1-19.zoo          4      Diffs for bison 1.19
+byacc.zoo              61     (m) Berkeley public domain yacc(1) clone
+contents               5      contents file
+Curses/                2      Terminal-independent screen I/O package for     
+                              GCC
+aa.gnu.curses          6      description file
+contents               8      contents file
+crsolb12.zoo           58     (d) Compiled libraries
+crssrc12.zoo           264    (d) Source code for Curses, Termcap, and Widget 
+                              libs
+crsolb16.zoo           115    Compiled Curses, Termcap, Widget libs
+crssrc16.zoo           257    Source code for Curses, Termcap, and Widget
+libs widgetdoc.zoo     28     documentation for the Widget library found in
+                              crs*.zoo
+
+Diff/                  2      Produces the difference between two files
+aa.gnu.diff            2      description file
+contents               2      contents file
+diff-1.15.zoo          121    (d) old version
+diff-1.5.zoo           181    diff 1.5 source and binaries
+diff20b.zoo            94     diff 2.0 binaries and diffs relative to orig
+2.0 dist
+
+Doc/                   2      Frank Ridderbusch's reference cards for GCC
+aa.gnu.doc             1      description file
+contents               2      contents file
+gcc-doc-dvi.zoo        105    Ref cards (DVI output)
+gcc-doc-tex.zoo        141    Ref cards (TeX source)
+gcc.brief              69     Out-of-date man page for GCC
+txnf214b.zoo           79     Texinfo - programs to format GNU docs w/o TeX
+
+Emacs/                 2      GNU Emacs text editor
+Emacs18.55/            2      Emacs 18.55
+aa.gnu.emacs1855       5      description file
+contents               16     contents file
+jrb_emacs_src/         2      GNU Emacs 18.55, J. Bammi's port
+++jrb_emacs_src.zo1    644    Emacs 18.55 source code in 3 parts...
+++jrb_emacs_src.zo2    657    "cat" these 3 files together before unzooing
+++jrb_emacs_src.zo3    83     use a binary cat, gulam's is text only!
+temacs.lzh             140    undumped emacs binary ???
+xemacs.lzh             244    dumped emacs binary ???
+Emacs18.57/            2      Emacs 18.57
+1857bin-d2.zoo         589    binaries and elisp files
+1857src-d2.zoo         438    source code; elisp files not included
+aa.gnu.emacs1857       3      description file
+contents               13     contents file
+
+Flex/                  2      clone of lex(1) lexical analyser generator
+aa.gnu.flex            2      description file
+contents               1      contents file
+flexb237.zoo           69     Flex binary, lib, and source diffs
+flexs237.zoo           159    Flex source (fully patched already)
+
+Futils/                2      GNU Fileutils
+Futils-2.0/            2      Fileutils 2.0, port by scott@sparc1.stevens-    
+                              tech.edu
+fu2-bin.zoo            563    Fileutils 2.0 binaries
+fu2-diff.zoo           11     Fileutils 2.0 diffs and instructions
+Futils-jgj/            2      Jackson's port of GNU file, misc, shell, and    
+                              text
+utils
+Bin/              2       Jeff Jackson's GNU utilities, binaries
+misc1b.zoo        489     Jeff's miscutils
+shell13b.zoo      295     Jeff's shellutils
+text11b.zoo       500     Jeff's textutils
+Man/              2       Jeff's man pages for the utilities
+manpages.zoo      139     Jeff's man pages for the utilities
+readme.zoo        21      Jeff's readme for the utilities
+Src/              2       Jeff Jackson's GNU utilities, sources
+file31s.zoo       243     Jeff's fileutils
+misc1s.zoo        539     Jeff's miscutils
+shell13s.zoo      191     Jeff's shellutils
+text11s.zoo       274     Jeff's textutils
+Utils/            2       Jeff's version of the mint utilities
+mint.zoo          94      Jeff's version of the mint utilities
+readme            7       Readme for Jeff's GNU utils package
+
+G++/              2       GNU C++ libs/includes
+Abaddon_g++/      2       ???
+aa.gnu.abaddong++ 2       description file
+contents          4       contents file
+gxxbin.zoo        558     ???
+gxxinc.zoo        124     ???
+gxxlib.zoo        169     ???
+g++233b.zoo       504     g++ code generator, v 2.3.3. Needs gcc233b.zoo.
+gpincl15.zoo      94      g++ include files
+gpincl17.zoo      102     g++ include files for libg++ 2.3
+gpincl20.zoo      102     g++ include files for patchlevel 20 libraries
+gplibd15.zoo      4       docs for g++ iostream lib in texinfo format
+gplibdoc.zoo      232     docs for libg++ in .DVI and PostScript format
+gplibo15.zoo      133     g++ compiled .olb libraries
+gplibs15.zoo      197     source code for g++ libs
+gplibo17.zoo      317     g++ compiled .olb libraries and include files
+gplibs17.zoo      209     source code for libg++
+gplibo20.zoo      142     g++ compiled .olb libraries and include files
+gplibs20.zoo      202     source code for libg++ 
+tests09.zoo       32      source for tests for g++ libs
+
+Gas/              2       GNU assembler
+aa.gnu.gas        2       description file
+contents          6       contents file
+gas-1.38-bin.zoo  80      (d) GNU assembler 1.38 (pl0?) binaries
+gas-1.38-src.zoo  368     (d) GNU assembler 1.38 (pl0?) sources
+gasbin02.zoo      84      (d) GNU assembler 1.38 pl2 binaries
+gassrc02.zoo      568     (d) GNU assembler 1.38 pl2 sources
+gasbin04.zoo      62      GNU assembler 1.38 pl4 binaries
+gassrc04.zoo      531     GNU assembler 1.38 pl4 sources
+
+Gawk/             2       clone of awk(1) file processing language
+aa.gnu.gawk       3       description file
+cawf2st.zoo       138     nroff-like text formatter written in awk
+contents          16      contents file
+gawk213b.zoo      172     gawk binaries, man page, and test files
+gawk213s.zoo      267     gawk source code
+gawk2-15-5b.zoo   105    More gawk, with bus-error fix
+
+Gcc/              2       GNU C compiler
+gcc258b.zoo       1207    GCC 2.5.8 binaries
+gcc258s.zoo       55      GCC 2.5.8 source diffs
+gccdoc.lzh        321     Frank's documentation for gcc
+gccman.zoo        31      man page for gcc/g++ 2.0
+
+Gcctest/          2       GCC test programs
+tests03.zoo       50      (d) GCC library confidence test source code
+tests05.zoo       37      GCC library test source code, patchlevel 5
+
+Gdb/              2       GNU debugger
+aa.gnu.gdb        2       description file
+contents          5       contents file
+gdb_18b.zoo       187     gdb binaries
+gdb_18s.zoo       453     gdb source
+
+Gemlib/           2       GEM libs for GCC
+aa.gnu.gemlib     1       description file
+contents          7       contents file
+gemlib27.zoo      173     GEM libraries for GCC, source, patchlevel 27
+gemolb27.zoo      33      GEM libraries for GCC, compiled, patchlevel 27
+gmlibo23.zoo      48      (d) GEM libraries for GCC, compiled .olb
+gmlibs23.zoo      230     (d) GEM libraries for GCC, source code
+gmlibo30.zoo      33      GEM libraries for GCC, compiled, patchlevel 30
+gmlibs30.zoo      67      GEM libraries for GCC, source, patchlevel 30
+
+Ghostscript/            Postscript(tm) graphics language interpreter
+0readme           1       Readme file explaining some things about gs
+gemgs13.zoo       64      GEM front-end for ghostscript
+gs261b.zoo        383     Ghostscript binaries
+gs261s.zoo        77      Ghostscipt source code
+ps_picts.zoo      427     Postscript(tm) files for use with Ghostscript
+
+Gnulib/           2       Libraries for GCC
+aa.gnu.gnulib     1       description file
+contents          15      contents file
+libolb98.zoo      152     GCC libs, compiled, needs Include/incl98.zoo
+libsrc98.zoo      358     GCC libs, source code, needs Include/incl98.zoo
+
+Gnumake/          2       Program maintenance tool
+aa.gnu.gnumake    1       description file
+contents          5       contents file
+gmake362.zoo      86      binary for GNU make 3.6.2, supports 8.3 filenames
+only
+gnumake.zoo       87      (d) GNU make 3.58 diffs and binary
+gulmake.zoo       16      (d) Stuff to build GCC 1.37 under TOS and Gulam
+make-3.60.zoo     393     GNU make 3.60 source and binary
+pdmake.zoo        30      (m) source for public domain Make, ST port by Bammi
+
+Gnutar/           2       "tape" archiver for .tar files
+aa.gnu.gnutar     2       description file
+contents          1       contents file
+gtarbin.zoo       73      GNU tar binaries
+gtarsrc.zoo       172     GNU tar source code
+
+Gprof/            2       profiling tools for GCC
+gpfbin07.zoo      102     ???
+gpfsrc07.zoo      104     ???
+gpfbin09.zoo      45      Binaries for gprof, patchlevel 9
+gpfsrc09.zoo      72      Source code for gprof, patchlevel 9
+
+Grep/             2       Scan files for regular expressions
+aa.gnu.grep       4       description file
+contents          2       contents file
+grep.lzh          79      GNU grep source code
+
+Include/          2       Include files for GCC
+aa.gnu.include    1       description file
+contents          6       contents file
+incl98.zoo        120     Include files for GCC, patchlevel 98
+tccompat.zoo      1       Include files for Turbo/Pure C compatibility
+
+Othergnu/         2       ???
+atari-groff.zoo   13      Nroff GNU-clone
+bc102b.zoo        68      bc - arbitrary precision arithmetic language/calc   
+
+
+ 
+bc102s.zoo        18      sources for the above   
+contents          9       contents file
+flip.zoo          48      Converts lfs to lf/crs for you!
+gdbm15.zoo        96      Database library - standard subroutines 
+gmp.zoo           3       Diffs for GNU Multi-Precision Math Library
+gnu-m522.zoo      227     Gnu Moria 5.22  
+gnuchess.zoo      119     Chess game      
+gnugo.arc         18      Go game 
+gnuplot.zoo       280     Very popular plotting program for scientific data   
+ 
+gnuplt_x.zoo      256     ???     
+gp2ST.zoo         19      ???     
+gzip107st.zoo     82      Gnu Zip 1.07 for the st and ste
+gzip107tt.zoo     81      Optimized to run on tt and falcon
+indent-1.5.zoo    173     Pretty printer for C sources - very flexible    
+ispell.zoo        234     Good spell checking program - best works with emacs 
+ 
+joveexe.zoo       70      Jove editor - emacs like        
+less-1.77.zoo     190     Just like more - a file display program 
+ms.zoo            25      Source and executable for tiny command shell
+perl4035.zoo      4       Diffs for Perl 4.035
+rcs5_6.zoo        4       Config file for RCS 5.6
+scm4b2.zoo        4       Diffs for scm 4b2 Portable Scheme Interpreter
+termcap-1.0.zoo   103     Terminal independent display routines lib
+texinfo31.zoo     490     TeXInfo documentation system.   
+
+Patch/            2       Updates source distributions from "context diffs"
+aa.gnu.patch      4       description file
+contents          2       contents file
+patch.zoo         86      (d) patch source and binary
+patch12u8.zoo     110     patch 2.0-12u8 Unix source, ST diffs, and ST binary
+
+Pmathlib/         2       Portable Math Library for GCC
+aa.gnu.pmathlib   7       description file
+contents          1       contents file
+pmlolb18.zoo      29      PML compiled library
+pmlsrc18.zoo      188     PML source code
+pmlolb21.zoo      27      PML compiled library
+pmlsrc21.zoo      137     PML source code, patchlevel 21
+pmlsrc23.zoo      135     PML source code, patchlevel 23
+
+Progutils/        2       ???
+contents          26      contents file
+dri2gnu.lzh       27      Converts Alcyon-format object files to GCC format
+gperf.zoo         192     Perfect hash library from GNU   
+iostream.zoo      87      C++ library - one of the basic ones     
+mkptypes.zoo      15      Create automatically ANSI prototypes for K&R        
+                          programs
+ 
+proff.zoo         69      A formatter from the roff family.       
+stdwin.zoo        341     ???
+szadb1_4.zoo      150     (m) Debugger for Sozobon C
+
+Rtx/              2       (m) GCC bindings for Micro RTX kernel
+urtx.zoo          16      GCC bindings for Micro RTX, patchlevel 1
+update0.diff      5       (m) updates RTX Patchlevel 1 to Patchlevel 2
+
+Smalltalk/        2       ???
+aa.gnu.smalltalk  6       description file
+contents          11      contents file
+smalltalk1-1.zoo  544     ???
+ 
+END OF PART 5

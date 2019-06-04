@@ -1,0 +1,365 @@
+ATARI CD-ROM SUMMARY 1
+~DROPS.FIL~
+This is the complete index of the CD, shamelessly hacked from the 0compind
+file on a.a.u.e.  I've re-organised it a bit, and added a few things and 
+removed others.
+
+Have fun!
+
+All the best,
+                                Simon.
+
+Re-edited by Slimer
+
+============================================================================-
+Applications:
+
+0index          ??      The index you are now reading
+
+Applications/Astronomy:  A directory of astronomical programs and related     
+                         files
+astrocal.arc   109     
+gnomplot.lzh   96      Star plotting program (mono only)
+gravcalc.zoo   61      Calculates planetary orbits
+norad.arc      65      Sattelite tracking program. Color or mono
+noradsrc.arc   50      Sources for above
+sat401.lzh     96      Sattelite tracking program ver. 4.01
+star2000.lzh   170     Demo fo Starbase 8000. 
+starchrt.arc   22      A star chart, no doubt.
+stargide.lzh   85      Star guide - color
+yale.arc       108     The Yale starchart.  
+
+Applications/Cad:
+
+clav2r1.zip    356     Digital logic design for ST/TT/Falcon
+dynadem.zip    532     DynaCADD 1.56 Demo Version.
+
+Applications/Databases:  A directory of database programs
+
+audio_b.lzh    51      Tracks CD/tape/album library by song
+cardfile.arc   65      Index card like program
+cf4_work.lzh   3       Cardfile 4 <--> Atari Works database file converter
+dm2works.lzh   16      Converts DataManager files to Atari works files
+easydat_120.lzh 162    Database program (looks pretty good) now with english
+fastbase.zoo   253     Andy's Fast Database
+most.zip       21      Shareware "teaser" views files on Compton's CD-ROMs
+nice.lzh       109     German database, mono.
+quick_db.arc   41      Quick database.  Fast, but limited.
+recipe35.lzh   83      Recipe card database. 
+reltree2.lzh   52      Family tree program.  
+sbase.arc      28      Yet another database program.  
+tcos.arc       55      A database program .  A sort of stripped Hypercard.
+
+Applications/Dtp:  Desktop publishing programs and accessories
+
+bjc800.lzh     1       Cannon BJC800 printer driver for Pagestream 2.x
+calamus.lzh    1080    Demo of Calamus SL 
+cfnlist2.lzh   65      Calaums Font Database.  
+poster.zip     25      Poster Builder.  Requires Speedo/FSM GDOS
+pgs_cfg.lzh    16      Configures PageStream import/export modules
+
+Applications/Dtp/Clipart:
+
+clipart1.zoo  626     Animals, flags, military, symbols, christmas, etc.
+clipart2.zoo  550     Office, whimsy, sports, etc.
+clipart3.zoo  549     72 different mac imgs
+clipart4.zoo  556     Food, more macart, some misc.
+clipart5.zoo  447     frames, misc others
+clipart6.zoo  440     All sorts of different stuff
+clipart7.zoo  392     Icons, cartoons, more
+clipart8.zoo  542     Cars, animals, etc.
+clipart9.zoo  415     Teddy bears, more.
+outline.zoo   83      Re-scalable clipart like things
+easymove.arc   26      DTP utility
+easytext.lzh   74      EasyText, a decent PD/shareware dtp package.
+fastprt.zoo    4       Speeds Calamus printing
+
+Applications/Dtp/Fonts: Fonts for use with all of your favorite programs
+
+Calamus:  Fonts specifically for use with calamus
+
+arc.zoo      361     Arc font, not an archiver!
+blip.arc     208     Blip font
+cal_fnts.lzh 44      carawbol.cfn  flash.cfn  gismonda.cfn  revue.cfn
+caligrap.zoo 10      Caligraphy font
+chanceri.arc 83      Chanceri font
+chancery.zoo 89      Chancery font
+cursive.zoo  51      Cursive font
+dandy.zoo    66      Dandy font
+fractur.zoo  20      Fractur font
+gaudy.zoo    24      Gaudy font
+glip.lzh     164     Complimentary font from FontAbility
+lucifer2.arc 93      Lucifer font
+maths.zoo    7       Math symbols
+micron.zoo   64      Micron font
+mini_6.arc   14      Mini 6 font
+seg.zoo      61      Seg font
+swiss.zoo    261     Swiss font
+tiempo.zoo   68      tiempo font
+tiempo12.arc 69      Tiempo 12 point font
+times.zoo    141     Times font
+fntinf10.lzh  18      Produces a summary of GEM font files 
+
+Gdos:  Fonts for use with gdos.
+
+edit_gdf.lzh 21      Editors for gdos fonts.  In German, mono only.
+gdosfont1.arc 244    Mac fonts converted to gdos format. 
+gdsfonts.zoo 551     Tons o gdos fonts
+gemfo120.lzh 193     German GDOS font editor with some GDOS fonts
+gen_demo.lzh  72      Demo of Genus font editor
+ibm_font.lzh  3       True ibm font.  Great with Flash.
+
+Pagestream: Pagestream fonts, etc.
+
+chancery.arc 23      Pagestream chancery font
+pgsfe.arc    110     Pagestream font editor
+tyme_ui.arc  43      Tymes font
+univ_rmn.arc 40      Universal roman font
+
+  Speedo: Fonts for use w/ Bitstream SpeedoGDOS
+
+couri810.zip 100     Courier
+dutch801     105     Dutch
+school.zip   92      Schoolbook
+swiss721.zip 77      Swiss
+symbol.zip   24      Mathamatic and scientific symbols
+wp_6_fnt.zip 45      .IMG graphic displays WordPerfect font package
+idealimg.arc   19      Ideal img file creator
+newsdisk.arc   33      Program for creating user group news letters
+pgst2_2b.lzh   295     Updates Pagestream to 2.2 for 2.1 owners
+
+Applications/For_Kids:  Programs especially for (young) children
+
+homework.lzh   138     Wordprocessor for kids with multiple fonts 
+kidpub_d.lzh   45      Kid Publisher demo, by DA Brumleve, color only
+kpaint_d.lzh   34      Kid Paint demo, by DA Brumleve, color only
+skg_demo.lzh   28      Super Kid Grid demo, by DA Brumleve, color only
+
+Applications/Language: Programs relating to spoken languages
+ 
+vocab.zoo      129     Demo version of ST-Vocab and Verbmaster
+
+Applications/Math:  Mathematical programs
+
+bstat247.zip   542     Business statistics, highly rated. 
+calc150.lzh    58      Calculator with lots of functions.
+cl098st.zoo    59      Program assembler for HP48sx
+classdoc.zoo   57      Docs for cl098st.zoo.  
+euler.zip      418     Good Mathematica type program, with demo included
+godel.zip      53      ST mathematics processor (PD version)
+gp.zoo         383     Multiple precision interctive calculator
+lpsolveb.zoo   32      Linear programming solver - binaries
+lpsolves.zoo   82      Sources for the above.
+n_anova.lzh    23      Does an AN(alysis) O(f) VA(riance) on your data 
+pi_st.zip      85      Solutions to recent pi calc. contest
+plot172l.zoo   97      john's 2d data/function plotting program
+solution.lzh   233     Demo of math solver program from Elan Software
+
+Applications/Other: miscellaneous applications 
+
+am.zoo          40     Amortization Schedule Generator.
+astchef.arc    112     Assistant chef. Color only.  Recipe keeper      
+cled122s.lzh   84      Cassette lable editor.  A good example of GEM prog
+concord.arc    139     A bible concordance program
+crosspro.lzh   37      Crossword puzzle pro.
+cvvids10.zip   21      Keeps track of videos (demo, shareware)
+dotplot.lzh    268     Compares dna molecules pairwise then plots diff. Mono.
+
+Mono.
+ 
+ger2en30.lzh   218     German to english translator
+gramaran.lzh   17      Checks text for spelling and grammar errors 
+grocry42.zip   114     Maintain a grocery list.  Keep track of store prices.
+labp_usa.zip   273     Calculates many useful equations in chemisty
+morse.arc      51      Learn morse code now!
+morsemag.zoo   26      Yet another morse trainer.
+newgen.lzh     168     A 'robust' family tree genealogy program
+ocr125.lzh     130     Optical Character Recognition; German/English/French
+puz_demo.zoo   124     Demo of Crossword and Word Search generating programs.
+st_diary.lzh   56      Monochrome only diary program. Good.
+stsimon.arc    66      ST Simon.
+talkspk.arc    57      Front end for speech.tos
+translat.arc   21      Translater, no dictionaries.
+typist.arc     123     Randy's port of a unix typing tutorial program
+videocat.lzh   33      Videotape cataloger, mono/color.
+xxxxs.lzh      6       Sequential number generator i.e. raffle tickets, etc.
+
+Applications/Spreadsheets: 
+
+opus200.lzh    207     Quite possibly the best pd/sw ss for the ST.
+powdemo.zip    163     Demo of LDW Power, a Lotus clone for ST
+sheet_20.lzh   76      Fairly decent spreadsheet program.
+viscalc.lzh    50      The one that started it all.  Not too good.
+
+Applications/Wordproc:
+
+1wp2rtf.zoo    13      First word 2 rtf converter
+dj_wwrtr.lzh   1       Deskjet printer driver for WordWriter
+epsjet.lzh     4       Epsons MX-80 emulator for Deskjet
+gram_110.lzh   14      Grammar checker
+japworpr.arc   201     Japaense word processor
+marcel23.zip   123     Latest version of Marcel with RTF/Postscript
+marcel_a.zip   166     American dictionary for Marcel 2.3
+wp_demo.tos    22      Demo of prg to convert Word Perfect to Word+ and vv. 
+
+============================================================================-
+Archivers:
+
+0index          1      I am what I am
+++jrbzoo21.zoo  367    J. Bammi's port of zoo
+2in1107m.zip    125    Archiver shell, for arc, lzh, zip, zoo, etc.  Nice!
+4pak.lzh        7      Unpacker program, pretty fast   
+Unix/           2      Archiver source code for UNIX systems
+lha-1.00.tar.Z 88      lharc for UNIX
+unz50p1.zoo    232     Unzip sources for unix and everything else
+zip19p1.zoo    192     Unzip, zip, funzip sources for unix, st, amiga, etc. 
+zoo210.tar.Z   241     zoo 2.10 for UNIX
+a2lswtc2.lzh    22     Switches arc to lzh     
+arc.ttp         48     A binary of arc to get you started
+arc.ttp.old     41     An old binary of arc
+arc.zoo         95     ???
+arc2lzh3.lzh    29     converts .arc's to .lzh's
+arc521e.arc     64     arc version 5.21e
+arc602.ttp      65     arc version 6.02
+arcgsh41.zoo    84     arc graphics shell front end for arc
+arclzh63.lzh    34     Supposed to handle arc,arj,lzh,zoo,etc  
+arcshl30.arc    55     a front end for arc
+auto_501.lzh    26     A new version of Ice
+boozgem3.zoo    32     Booz, yet another archiver.     
+brikbin.zoo     35     32k bit crc generator for binaries      
+briksrc.zoo     67     source for brikbin.zoo  
+cdc220.arc      37     Chaos disk compacter. Similar to msa    
+compress.arc    39     Unix style compress
+compress.ttp    37     Gets rid of those nasty .Z files        
+compress.zoo    66     Newer version of compress       
+crunch3.arc     21     Newer version of crunch 
+cruncher.lzh    15     Disk archiver and GEM interface to arc.ttp
+darc.arc        17     De-arcer : not great.   
+decompre.lzh    52     De-arc and lzh files
+esscd61.lzh     89     UUDecode/UUEncode for Atari using GEM interface
+expand15.lzh    26     Expando-matic archiver shell.  Version 1.5
+ezsqueez.arc    8      Old, unadequtate compression.   
+flxar31a.lzh    12     Configurable shell to handle all archivers.
+gzip06st.zoo    79     GNU ZIP compressor (single files only)
+ice_240.lzh     9      Pack ice v.2.40, faster than other packers      
+jampack4.lzh    34      Executable/Data/Whole-disk compression utility
+lharc.arc       39     Lharc   
+lha201.lzh      67     Roger Burrow's lharc with -lh5- compression. NOT
+                       Quester's version!
+lha_232.tos     146    Christian Grunenberg's LHArc, v2.32
+lha310.tos      270    Lharc 3.10 with GEM interface.
+lharc.ttp       52     an lharc binary to get you started
+lpak.zip        33     Compress/Decompress data files (not for programs)
+lzh201le.ttp    31     Questors lharc v2.01le "English-ized"   
+lzh_201l.lzh    70     Questors lharc v2.01l   
+lzhsourc.lzh    75     Source for lzh  
+msa_141.lzh     30     Magic Shadow Archiver (full disk archiver)
+msa_2_3+.prg    28     New MSA program version 2.3+
+multi13.lzh     15     Extracts multiple zoo, arc, and lharc files, v 1.3
+multiarc.lzh    15     Extracts multiple zoo, arc, and lharc files     
+naughty.lzh     9      Unpack packed executables.      
+ncmp424b.zoo    36     Binaries for ncompress 4.2 patchlevel 4
+ncmp424d.zoo    2      Diffs for ncompress 4.2 patchlevel 4
+ncmp424s.zoo    37     Source for ncompress 4.2 patchlevel 4
+packer.arc      14     Packs executables       
+pfxpak30.lzh    29     Demo of PFX Pak v3.0
+pkunarc.arc     4      PK Unarc        
+pompey.lzh      11     Packs executables so they still run     
+restore.arc     17     Archivers backup restorer       
+sfx_lzh.lzh     13     Makes .lzh files into self-extracting archives
+sfx16.lzh       16     Make .lzh files into self-extracting archives, v1.6
+shar.arc        23     Manipulate UNIX shell archives
+sttar.arc       20     Extracts/makes .tar compressed files
+stzip26.tos     139    GEM implementation of Zip
+thunder2.lzh    5      Executable program packer
+ultra.lzh       10     Like MSA, writes an entire disk to a single file
+unarj241c.tos   117    Expands .ARJ files
+unarj_s1.lzh    85     Source and binary for UnARJ
+unarj_st.lzh    81     Unpacks .ARJ files.  Binary and source for ST Turbo C.
+unarjshl.lzh    13     Shell for UnARJ.
+unlzh172.lzh    42     Unpacks .LZH files.
+unsit.lzh       25     Unpacks those MAC .sit stuff it files
+unzip51b.tos    156    Good unzipper
+unzip51b.zoo    152    same as unzip51b.tos except zoo'ed
+uux789.zoo      29     Duumas (sp?) uud(3.3)/uue(3.1) source and binary
+zip24qwk.zip    5      zap the 5 second delay in STZIP 2.4 to .1 second!
+zoo21.ttp       82     zoo binary to get you started
+zoo21bin.zoo    110    binaries for zoo 2.1
+zoo21src.zoo    300    source for zoo 2.1
+zooshl06.zoo    10     a front end for zoo
+zoossr06.zoo    9      source for the front end for zoo
+
+============================================================================-
+Cli:
+
+0index          ??     This file.
+ashell.doc      41     Docs for 'A Shell' (ashell.lzh)
+ashell.lzh      39     Another shell
+cli1.arc        12     ???
+cli2.arc        13     ???
+cli_1_0u.lzh    67     New from Germany, lots of builti-ins.  German docs
+cpp2.lzh        5      Very small shell interpreter
+gulam.arc       119    Classic cli, eveyone has it, why not you?
+gulamdoc.arc    110    Complete docs for gulam
+gulaminf.arc    42     Semi-complete doc? Difference to be investigated. ???
+master60.zoo    192    Master, v.6.0 updated for use with mint.
+mx2.arc         119    The mx2 cli.
+mx2src.arc      95     Source for mx2.arc
+nutshell.arc    9      Have your shell within a gem application too.
+okami15.zoo     268    Okami v 1.5 Binaries
+pcdos3.lzh      18     Command line like PC-DOS
+pcommand.arc    33     Very primitive shell.   
+powerdos.zoo    92     Some sort of multitasking shell
+shell.zip       16     very small shell, intended for ramdisk usage
+system2.arc     157    An MSDOS like CLI       
+tom_shel.lzh    28     Decent cli shell with file completion and commands.
+
+============================================================================-
+Demos:  
+
+4n_afair.arc    567    4n affair sound demo
+Index           ??     This fabulous thing you're reading right now.
+acedemo.arc     224    Old space ace, with multiple pics       
+acid2.arc       369    Acid2 demo.  Needs st moniter to be at 50hz.    
+adardemo.arc    198    A day at the races demo.  Complete simulation.
+aggparty.zip     71    Program describing upcoming demo party. Aggression.
+ambience.lzh    614    Another demo from Chaos. 
+amiga.arc       36     Amiga bouncing ball demo.
+amiga2.arc      10     "   like demo.
+amigajok.arc    280    Amiga joke demo. Ed thinks its funny.   
+ancool1.msa     420    An Cool demo, part 1
+ancool2.msa     419    An Cool demo, part 2
+anomoly1.lzh    743    ANOMOLY demo by French crew MJJ Prod, disk 1
+anomoly2.lzh    724    ANOMOLY demo by French crew MJJ Prod, disk 2
+april.lzh       475    AprilFool Demo   STf/STe also mini-game
+atari.lzh       142    Old ST demo.  Ed thinks it's froum Atari corp. 
+badtaste.msa    543    Bad taste demo from the Brainless Inst. Ste only.
+balls.arc       48     More bouncing balls.
+batman.lzh      268    Batman demo, using the prince song.  
+bird.arc        40     Flying bird, blitter demo       
+bird.msa        776    Intro to never released game Birds of Prey
+bombclub.arc    214    Boston bomb club demo
+bttf3.arc       183    Target game scene demo  
+buggin1.msa     418    Buggin' demo, part 1
+buggin2.msa     357    Buggin' demo, part 2
+burning1.lzh    288    Burning Illusion demo, part 1
+burning2.lzh    172    Burning Illusion demo, part 2
+calimero.zip    668    Calimero demo (excellent)
+chaos1.msa      414    Part 1 of the Chaos demo
+chaos2.msa      283    Part 2 of the above
+chaos_1.tos     154    Playable demo of Bitmap Bros "The Chaos Engine" part 1
+chaos_2.tos     185    part 2 of "The Chaos Engine"
+choiceg1.lzh    754    Choice of Gods demo, disk 1
+choiceg2.lzh    599    Choice of Gods demo, disk 2
+ck_demo2.lzh    18     Codeheads codekeys, macro tool demo     
+coldemo.lzh     8      Demo 512k in med. res.  
+colr3000.arc    15     Colorburst 3000 
+cuddly1.msa     410    Cuddly demo.  Disk1.  
+cuddly2.msa     431    Disk 2 for cuddly demo.  Needs both disks.
+cybscape.lzh    555    Cyberscape demo.  Ed likes this one too.        
+daythund.lzh    199    Playable Days of Thunder demo.
+dccparty1993.lzh 33    ??
+dcd_demo.arc    94     DC Desktop demo.        
+dcudemo.arc     59     DC Utilites 2 demo      
+
+END OF PART 1

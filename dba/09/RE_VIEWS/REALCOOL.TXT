@@ -1,0 +1,99 @@
+MULTITOS BY JMS
+
+did ya know that it is real cool to edit a text with MultiTOS and
+Edison Editor ? YOu got the text window right beneath the Desktop
+windows and you can have a resolution  of REAL 800x280 or 800x560
+interlaced on RGB Monitor. And even  boostable  to 256 Colours or
+even Truecolour. When you do not  believe it, than  SUCK MY DICK. 
+Falcon makes it possible !  The very astaunished and happy jMS/AM
+
+Okay now here it comes: the MultiTOS praxistest !  We  gotta have
+MultiTOS 1.02 from 16.2.93 and a Falcon030 with 4MB RAM and 60 MB 
+Harddisc and a normal RGB Monitor plugged up to the RGB connector
+Now we cheat a little in the desktop Info and we got overscan with
+768x256 or sumthing like that ! Now we set the Frequency to 60 Hz
+with Bootconf, and now we use the wondeful FS to patch the screen
+to our ordinary RGB Monitor and so we adjust it right and push the
+Monitor to it's limits a bit, and than we got ca.800x280 and than
+we use the Desktop's Screenresolution box to do Interlace and 256
+colours. So we got the Hardware ready (You gotta do this only one
+time, ofcourse) When you dislike interlaced... Fuck you, buy a VGA
+monitor ! okay, now we start over with multitos. We take the MTOS
+Disc and start the install program ! Now We set the path to what-
+ever we like, but NOT to the one Atari preset :-) Should be easy!
+Okay now we edit MINT.CNF and GEM.CNF so that we use the programs
+we like most ! Our favourites ! And now we can reset and look- 
+everything bombs up ! Shit ! We take the multiTOS CPX and switch
+of da fuckin' memory protection ! Aah , every runs well ! So let
+us see what programs we have inda memory now ! We take PSCONTROL
+V .. erm, I don't know.. And it says that... We have running (Now
+here comes the Tasklist !)
+         Name       ID PRI FL  CPU   Bytes
+         MiNT        0   0 20    2     160
+         AESSYS      1   0  1 1232  562400
+         SCREEN     20   0 20   29    1824
+         NEWDESK    21   0 20    7  167504
+         FCLOCK     22   0 20   12   15360    
+         XCONTROL   23   0 20    1   62720
+         EDISON     24   0 20  122 1263504
+         PS_CONTR   26   0  0   38   34624
+         
+Now we should have how much memory ? Let's load a calculator !
+Argh shit, just deleted it from harddisc ! Okay, Edison says
+we got 977 KB free ! Cool ! Let's see which performance let SYS
+INFo Show us ? It's an old Version which do not support Falcon
+That will boost the performance a bit (hehe =;-> )
+Okay, no speeddown from this point ! Now let's start with a tiny
+little paintprogram ! What about Truepaint which runs quite
+well... And than we will start gemview also ! We have now
+running Selectric 1.03 and Let'em fly 1.19 in the Autofolder and 
+FCLOCK 1.14 and Xcontrol as accessorys. i just recoverd that
+the Edison screen blanker do not work quite well, it doesn't
+clear the stars, but no shit on screen anyway. loox cool !
+Okay now we do it ! Let's start Truepaint !
+Yeah ! Loaded without any problems ! We have now running the
+Desktop, Edison, PS Control and Truepaint ! Let's open a screen
+and paint a bit !
+Works quite okay, but some mistakes ! Now let's load a PC1 Pic!
+Yeah ! about 12 Windows opne no prob. From other applications!
+Now let's depack sum huge grafix with Gemview while painting with
+truepaint ! but before we must have more mem ! We have to say
+Edison that it shall only take about, erm, 500 K !
+Okay, 264 did it also ! Till now everything worked stable ! We
+will now load gemview ! I hate this nerving shareware requester,
+but now it's alright ! We will load a 304 KB packed GIF Picture
+in Highres with 256 cols ! And while depacking we try to paint 
+a little pic with truepaint ! Let's do !  Speed is slowed down
+extremely ! I feel like with GEOS on C64, but worse: Truepaint
+messed around with the gemview screen and now you can see the
+gemviews screen... Wow ! gemview's finished, but out of memory!
+Only 291 KBytes are aviable. To load, depack, and the gemview
+specific formatchanges it took us 1.42.5 minutes ! So this try
+failed ! All in all Multitos is quite nice but too slow and for
+daily use not that good ! But I can also do it with a singletask
+system, but multitasking is nice ! ou know, I type this text, I
+can paint pictures and all this ! And i have the full desktop
+functions ! but speed will rapidly increase when you do it non-
+interlaced iwht "only" 280 and with "only" 16 cols, which is 
+more than enuff for GEm applications ! And when you use the NVDI
+for falcon, every problem will be solved ! We hope for the
+phuture !
+							      $i9NiN9 0FF jM$ 0F ANiMAL MiNe
+							      
+Now I will remove MultiTOS and Interlace ... Phew ! :-)
+Oh, forgot sumthing ! We will test the GEMVIEW iconify function !
+I load gemview and click on iconify, like in windows ! Not cool
+enuff... You got an eye symbol in the upper right part of the
+screen but you cannot move it, and it hides the half of my "F"
+Partition.. Oh, have i told you lately ... When you load multitos
+you have Pipes at the Drive "U" ! Cool you can pipeline to every
+drive and/or every application ! And you got a devices folder and
+controller like on amiga ! Cool stuff, dude !
+Quite nice is also that the new multitos (1.02) handles the screen
+resolution switch right ! The former versions had problems ! but
+shit is that you have to quit every application before changing
+the rez ...	And again, we hope 4 da phuta !
+
+						      
+         
+

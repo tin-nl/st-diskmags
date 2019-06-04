@@ -1,0 +1,52 @@
+ò                      _____                        _____
+ò                     |_   _|                      |_   _|
+ò                       | |                          | |
+ò                       | | ðóCHAPTER 1 : INTRODUCTIONðò | |
+ò                      _| |_                        _| |_
+ò                     |_____|                      |_____|
+
+First off all I'd like to dedicate this to all of the atariscene. The scene is
+very important to me and I'd just like to give this weird textfile as a gift
+to all of you that have supported me in the last years and all that just enjoy
+working with their atari a lot. You know who you are and I love you!
+
+The basic reason this book was put up is that we have many coder wannabe's in
+the scene. People who are fresh and enthousiastic. But these people need help
+from their older, more experienced coders and some good books. In the past
+there weren't any good books about the coding demos/games on the ST. Only one
+in German and that's all. So that's where this, freeware textfile comes in.
+
+OK, what I'm going to tell you might be dissapointing to some people that
+read my first 'book', but this is going to be far more technical. I made
+the first book to let people see what making Atari games was about. It gave
+information about how you should start off and what you should expect and
+what the Atari had to offer a games-designer. It didn't expect you to have
+any programming skills.
+
+This book however expects of you that you know a bit of assembler code. It is
+probably best suited to people that have been doing assembler a few months. It
+probably offers something for more experienced 680x0 coders too. Don't think
+this book is meant for all you programmers dead serious about doing GEM,
+databases or whatever. It's all about smart code, trickery and basicly using
+dirty tricks. (I hate working with the stack =) Hi Cspion! ;-))
+
+There'll be some explanation of much used demo and game effects and I hope to
+include most atari specific stuff about implementation of these. Also some DSP
+stuff, just for the really curious guys.
+
+For those that know absolutely zip about assembler and coding, there's some
+appendices especially for you. These explain most basic stuff you absolutely
+need to know about.
+
+Well, what you'll see in here is a lot about constructing 'handy' game/demo-
+routines. A large part is also devoted to making fast loops, which is an very
+important matter when writing stuff on Atari (unless you've got a fast TT,
+souped up Falcon or a clone).
+
+At the end of each chapter there is a little summary of what some things in the
+chapter were about. Also at the end of the book there are complete sourcecodes
+for explaining how hardware registers work and how optimised code will look,
+etc.
+
+OK, there's not much left to say.. Enjoy, and oh.. I almost forgot. This book
+may be freely copied!

@@ -1,0 +1,61 @@
+SYNERGY DEPACKER
+
+The new version of the Synergy Giga Depacker 2.2
+
+It has great new features and many packers are supported but you can
+see for your self. Wingleader asked me to write a little manual for
+it but the program is so user friendly you can work it all out with
+out any problems. So if you have unwanted packed files, here is the
+solution... 
+
+This is a DBA-MAG 9 Release with release date : 30-08-93
+
+The following changes have been made since version 2.1 :
+
+- Bug fixed in path_name during filedepack not correctly cutted.
+- Program files are now checked for execution.
+- Better recognation of Pack-Ice 2.11 and 2.12.
+- Bug fixed in auto_saving.
+- Cancelling dest_path would cause that a wrong path was put back,fixed.
+- Error Handeling is better now (Hopefully). 
+- When Disk Full appears you just select a new dest_path.
+- Faster loading and recognation of files.
+- Now 500 folders are allowed on one partition.
+- Files which are to big will be skipped (A message will appear).
+- A complete new look all screens are now in Falcon mode.
+- Better Pompey Check and Atomic 3.5 check.
+- The Program will not hang on a 1.0 machine, due to a failure in TOS.
+
+The following new Packers are included :
+
+- Pack-Ice 2.2
+- Ice 1.1
+- Pack-Fire 1.0
+- Sentry 2.06
+- PFX Packer 1.13 till 2.1p
+
+This Program should work on all ST(e), Mega ST(e), TT and Falcon's. 
+It's tested on a Falcon 030 4.02, TT 3.6, STe 1.6 and an ST 1.0.
+If my program refuses to work on your machine, send me full details of
+your machine and i will try to fix it as soon as possible. 
+
+This Program is Share-Ware, so you can copy it as often as you like. If
+you use this program often and you like it, and you want me to continue
+with this program please send me :
+                        
+                *       Fl. 10,= or
+                *       DM  10,= or
+                *       œ    4,=
+
+Little Note from the Programmer : When you got new packers or old ones
+                                 that you like to see appear in this
+                                 program send them to me and i will see
+                                 i've i can include them in my program.
+                                 Thanks in advance.
+
+My address: 
+Wingleader/Synergy 
+Majoraan 45
+8101 DS RAALTE (Holland)
+
+

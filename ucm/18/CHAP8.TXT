@@ -1,0 +1,207 @@
+ò                           ___                    ___
+ò                          /   \..__          __../   \
+ò                         <<ðó CHAPTER 8: STRUCTURISINGðò >>
+ò                          \___/                  \___/
+
+When making bigger and bigger demo's and games it, structurising is an
+important issue. Contrary to what people say, even the most standard
+assembler offers quite alot of functions for doing this:
+
+EQUates:
+
+A good first step in making your code more flexible is using equates. One is
+defined by writing down this for instance:
+
+label:  EQU     1
+label2: EQU     10
+
+Now if you use label in your code:
+
+        move.w  #label,d0
+
+This moves whatever value you coupled to "label" into d0. The assembler sees
+the label and replaces it with the value.
+
+        move.w  #label*label2,d0
+
+This moves label multiplied by label into d0. The assembler has no problems
+with statements like these. You can also add, subtract, and, or, divide
+labels with eachother.
+
+Equates are very handy for bigger sourcecodes, where a certain value is used
+very often. Equates make code more adaptable and often more readable.
+
+A good example is for instance the size of an effectwindow or the
+screendimensions. If you change either, you have a lot of code rewrite. But
+simply using EQU's solves the whole thing quite easily. Simply giving the
+labels' values will do the trick.
+
+RS:
+
+RS is basicly only used for defining datastructures. I've found them quite
+handy. They're defined like this:
+
+                RSRESET                         * Indicate a new structure.
+headerid:       RS.L    1                       * 0 Headerid is one longword.
+headerxsize:    RS.W    1                       * 4 Xsize is one word.
+headerysize:    RS.W    1                       * 6 Ysize is one word.
+headersize:     RS.B    0                       * 8 total size of header
+
+They basicly define offsets for datafield in structures. Now you can use
+these offsets like this for instance:
+
+        lea     header_buffer,a0                * Get address of header.
+        move.l  #"HEAD",headerid(a0)            * Move headerid in header.
+        move.w  #16,headerxsize(a0)             * Move xsize in header.
+        move.w  #20,headerysize(a0)             * Move ysize in header.
+        lea     headersize(a0),a0               * Get startaddress of data.
+
+Ofcourse this isn't very optimal code. The assembler just converts every
+label to an offset. So every move is an offset move. You might want to use
+"move ..,(a0)+" instead. That's ok, but you will lose out on easy
+adaptability of the header.
+
+So using RS is only really handy in situations where speed is not the
+leading issue and the code must be very readable.
+
+Directives:
+
+These are often used in combination with equates. Sometimes used to comment
+a block of code when an equate doesn't have the right value.
+
+use_testmode:   EQU     1
+
+        IFNE    use_testmode
+* These is additional code for the test mode.
+;
+;
+        ELSE
+* These are instructions for when the testmode is disabled.
+;
+;
+        ENDC
+
+"IFNE" is such a directive which includes a block depending on what value
+it tests. If the label isn't equal to zero (which it isn't), then the whole
+part will be included in the code. This is again done by the assembler. This
+is very nifty if your sourcecode can be assembled in different modes (for
+instance for black/white or color).
+
+Another little trick which might be very essential for optimisin is the
+"REPT" directive.
+
+        REPT    4
+        move.l  d0,(a0)+
+        ENDR
+
+This RePeaTs the instruction inbetween "REPT" and "ENDR" four times. This is
+done the hardcoded way. So it will actually look like this in the final
+executable:
+
+        move.l  d0,(a0)+
+        move.l  d0,(a0)+
+        move.l  d0,(a0)+
+        move.l  d0,(a0)+
+
+REPT can also be used in conjunction with a label:
+
+times_to_repeat:        EQU     10
+
+        REPT    times_to_repeat
+        move.l  d0,(a0)+
+        ENDR
+
+Especially for making innerloops a bit more optimised this can be very, very
+handy!
+
+Macro's:
+
+People either love 'em or hate 'em. (Hi evl! =)) Macro's pieces of code much
+like the subroutines, but they aren't called, but directly put in the
+executable by the assembler. Macro's can have parameters, so in fact you can
+use them to make assembler a bit more like a highlevel language.
+
+stupid_macro:   MACRO
+                move.l  \1,d0
+                move.l  \2,d1
+                ENDM
+
+* Actual program goes in here
+;
+;
+;
+        stupid_marco    #1,#2
+
+The problem is that the assembler replaces this with the code in the macro,
+but it's mostly hard to know what exactly stands in the macro's. Knowing
+your code is essential when debugging, so it can make your source harder to
+comprehend.
+
+Oh the other hand, it is the faster solution, because it doesn't suffer from
+a bsr/jsr, rts combination. So it is wise to use macro's only for very small
+pieces of code where this overhead seems like alot.
+
+Using macro's in combination with IFxx directives, you can construct highly
+optimised code for specific immediate-data parameters. Much like high-level
+compilers do.
+
+But please don't implement complete >100-line routines in a macro. It simply
+makes your code into a mess.
+
+Local labels:
+
+Perhaps one of the most used assembler options ever. And it's explained in
+here!! =) (Duuhhh....)
+
+When you've got hundreds of labels already in your sourcecode you might run
+out of new labels to use. To avoid your labels getting really big or
+strange, you could use local labels.
+
+The nifty extra of local labels is that you can only reference them in a
+local area in the code. That is: only inbetween two global labels. If you
+use Turbo Assembler, you can skip this. It hasn't got this feature.
+
+******** :ExamplE: ********
+
+        bra     .local1                         * wrong!!
+
+global1:
+        bra     .local2                         * correct
+.local1:
+        bra     .local2                         * correct
+.local2:
+        bra     .local1                         * correct
+
+global2:
+        bra     .local1                         * wrong!!
+
+The local labels always have points "." in front of them. As you can see you
+can't reference local labels from behind another global label. Only between
+two global labels it's possible. Ofcourse you can declare local labels with
+the same names behind every new global label.
+
+Local labels are ideal for use in subroutines. If you force yourself to only
+use local labels within a subroutine you can check more easily if there are
+any references outside the subroutine perhaps causing bugs. Also it clears
+up the code because using 50 characters long names isn't anybody's idea of
+having fun.
+
+But beware that local labels don't show up in your debugger, so it might
+actually only be good to use if you've already proven your subroutines work
+bugfree. With debugging it's always better to use global labels, or at least
+until your sure that routine is bugfree.
+
+Register equates:
+
+I haven't seen this used much or used this myself very often. using register
+equates has the advantage of both keeping data in the internal registers
+(=faster) as well as having easy names for the register (=more readable).
+
+I only recommend to use this when the algorithm uses loads of registers,
+but not when the register gets a different function everytime. This because
+you can map multiple equated to one register, so sometimes it becomes
+unclear when a register is overwritten or not.
+
+A second disadvantage is the increased contrast between sourcecode and the
+final code. This can make debugging more painful. Still, a nice way to make
+code better readable.

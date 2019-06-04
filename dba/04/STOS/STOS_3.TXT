@@ -1,0 +1,320 @@
+STOS LESSON 3
+
+ ******   **      **  *******   *******  ******
+**    **   **    **   **    **  **       **   **
+**          **  **    **    **  **       **   **
+**           ****     *******   *****    ******
+**            **      **    **  **       **   **
+**    **     **       **    **  **       **   **
+ ******     **        *******   *******  **   **
+           ** 
+          **              ******   **     **  **     **  **   **
+                          **   **  **     **  ***    **  **  **
+                          **   **  **     **  ****   **  ** **
+                          ******   **     **  ** **  **  ****
+                          **       **     **  **  ** **  ** **
+                          **       **     **  **   ****  **  **
+                          **         *****    **     **  **   **
+
+-----------------------------------------------------------------
+The Cyberpunks STOS lesson part 3                       (PD) 1992
+-----------------------------------------------------------------
+
+
+Well  if all versions of DBA mag 3 was like the copy  i  received 
+then you didnt find the files to the lesson 2 on the disk,  so as 
+the STOS part of mag 3 has to be reprinted in this mag, i decided 
+that i should keep this part a bit shorter than normal.
+( The files Cyberpunk is talking about were lost due of a harddisk
+problem. And the fact he didn't send them in on time the lost files
+are not on this disk. Maybe (we will try to) next time !! Red.)  
+So  if  everything is right this time then you  should  find  the 
+following files on the disk:
+
+                    - Artintro.bas 
+                    - Shaolin.run (music file)
+                   
+
+I haven't included the S-Extension part that i promised last time 
+as  it takes up to much space,  instead i have included  the  new 
+intro to NET SLIDE 4. This is the newest prog i have made, and it 
+uses a similar technique to last issues scroll, the difference is 
+that it uses more memory,  and it looks absolutely impossible  to 
+do in basic.  Every single pix on the screen are either  scrolled 
+in  parallax or animated 50 or 60 times a sec,  without  cheating 
+you couldn't even have done that in MC as the computer cant  move 
+data that fast.   
+
+This  isn't the real intro prog but the designer i used  while  i 
+tested  out the efx,  the difference is that this prog loads  NEO 
+files  from  the  disk  while  the  intro  itself  has  them   in 
+databanks.
+
+This  file is probably 1meg only,  but it fits in a 520 as a  prg 
+file.  If  you  are a 520 user then you have to cut down  to  two 
+screen banks (not so smooth scrolling).
+
+So  what  does this intro do then?  Well it  scrolls  the  screen 
+downwards  at  2 pix a update,  this in it self takes  nearly  no 
+time  at  all but it uses 256Kb,  then it puts pic  equ's  and  a 
+little  scroll over the the right part of the screen (x  239-319)  
+this takes some time and it uses 32kb.
+
+Those  of you that have been so lucky to see  Net Slide  4  knows 
+that  the  intro has a parallax scroll in  the  background,  this 
+isnt important now as you DOES NOT HAVE TO CHANGE THE CODE to  do 
+that!!! No kidding mon...
+
+Before  you can run this file you have to draw 5 NEO screens  and 
+copy  the  music  file over to the same disk  as  you  saved  the 
+screens on. 
+
+Find  a  picture with a see through (colour  0)  background,  the 
+square x239,y0 to x319,y200 should be cleared. As you have to add 
+a  parallax background later on the object in the  pic  shouldn't 
+cover  to much of the space.  And colours 1,2 and 3 are  used  as 
+equalisers so they will blink to the beat!
+
+Now save this pic as "ms1.neo"
+
+Copy  the  object  in the picture two (2) pix down  (copy  it  so 
+the upper corner moves from x0,y0 to x0,y2)
+
+Save this pic as "ms2.neo"
+
+Copy the object etc....
+
+Save as "ms3.neo"
+
+Copy the ....
+
+Save as "ms4.neo"
+
+You  should  now  have  4 screens that  looks  nearly  the  same, 
+remember that if some part of the object goes below the screen as 
+you copies it downwards, you have to copy the missing part to the 
+top of the screen.                    
+
+Flipping  through the pic's should now create a smooth  scrolling 
+effect. 
+
+You also needs a fifth screen, this is the equaliser screen. Each 
+of  the  equaliser blocks are 80 wide and  50  high,  the  screen 
+should be set up like this:
+
+
+                      0  1  2  3
+                      4  5  6  7
+                      8  9 10  s
+                     11 12 13  s
+
+
+0 - 13 is the animation the equaliser flips through,  's' is  the 
+space used by the little scrolling logo.
+
+Draw a logo that are 80 wide and 50 high,  copy this to x240,y100 
+and  x240,y150,  the  top  and bottom of the  logo  have  to  fit 
+together.
+
+
+Save this screen as "Equagirl.neo"
+
+Copy  the music file (in.run) to the same disk as the  neo  pic's 
+are on.
+
+Load the 'artintro.bas' file into STOS basic.
+
+Change to the disk with the pic's and music and write run
+
+In  basic  this  shouldn't be smooth (i think)  but  if  you  now 
+compiles it you should have a smooth scroll.
+
+Exit  the prog by pressing 'Space',  if you breaks the  prog  you 
+have  to  write  call start(13)+2 to turn off  the  music  so  it 
+doesn't crash you ST.
+
+I'll tell you about the Parallax after the listing.
+
+------------------------------------------------------------------
+
+This  is a old version so i'm not that sure what that sp=1  does, 
+but i knows it has something to do with the equ's.  The dims  are 
+for  the  x and y cords of the equs the r,  g and b are  for  the 
+colour equs.
+
+1 SP=1
+10 mode 0 : flash off : click off : hide : curs off : key off 
+20 dim X(17),Y(17),R(16),G(16),B(16)
+
+Loads data values into the equ variables 
+
+30 for I=0 to 15 : read X(I) : read Y(I) : next I
+40 for I=0 to 15 : read R(I) : next I
+50 for I=0 to 15 : read G(I) : next I
+60 for I=0 to 15 : read B(I) : next I
+
+Reserves the screen banks as 66560bytes (2*32000+2560)
+
+70 reserve as work 7,66560
+80 reserve as work 8,66560
+90 reserve as work 9,66560
+100 reserve as work 10,66560
+
+Loads  the  graphics and copies them around (i had to  take  some 
+extra returns/enters here to fit it into the doc)
+
+110 load "ms1.neo",back : copy back,back+32000 to start(7) 
+: copy back,back+32000 to start(7)+32000
+120 load "ms2.neo",back : copy back,back+32000 to start(8) 
+: copy back,back+32000 to start(8)+32000
+130 load "ms3.neo",back : copy back,back+32000 to start(9) 
+: copy back,back+32000 to start(9)+32000
+140 load "ms4.neo",back : copy back,back+32000 to start(10) 
+: copy back,back+32000 to start(10)+32000
+150 load "equagirl.neo",back
+
+Reserves and loads music, 170 starts the music 
+
+160 reserve as work 13,10240 : bload "in.run",13
+170 dreg(0)=1 : call start(13) : logic=physic
+180 rem
+190 rem
+200 rem
+
+Scroll routine.  1280bytes are 8 screen lines (see earlier lesson 
+in  DBA  mag  to understand the calculations) 7  to  10  are  the 
+screens. Lines 210-230 + 370-390 is enough to parallax scroll the 
+entire screen
+
+210 for I=30720 to 0 step-1280
+220 for E=7 to 10
+230 physic=start(E)+I
+
+The  equ ruts:  psg is a STOS commando that reads what the  music 
+chip  is doing 270-290 is the pic equs and 310-340 is the  colour 
+equs
+
+240 A=psg(8) : if A>15 then A=15
+250 B=psg(9) : if B>15 then B=15
+260 C=psg(10) : if C>15 then C=15
+270 screen copy back,X(A),Y(A),X(A)+80,Y(A)+50 to physic,240,0
+280 screen copy back,X(B),Y(B),X(B)+80,Y(B)+50 to physic,240,50
+290 screen copy back,X(C),Y(C),X(C)+80,Y(C)+50 to physic,240,100
+310 colour 1,R(A)
+320 colour 2,G(B)
+330 colour 3,B(C)
+340 get palette (logic)
+
+This is the logo scroll,  i can see that it aint like the one  in 
+the intro,  shit i have to change this....  No wait a minute.. it 
+is the right version + some leftovers,  that TT and SP shit isn't 
+used i think,  so you can probably erase it,  now i remember,  SP 
+and TT was used to create a random speed and random speed  change 
+on the logo scroll........
+
+354 YS=YS+B/2-4 : TT=rnd(50) if TT=44 then SP=rnd(16)-8
+355 if YS>=50 then YS=YS-50
+356 if YS<=0 then YS=YS+50
+357 screen copy back,240,100+YS,320,YS+150 to physic,240,150
+
+Loop end
+
+370 wait vbl 
+380 if inkey$=" " then call start(13)+2 : stop 
+390 next E : next I : goto 210
+
+Equ data (extra returns/enters taken)
+
+400 data 0,0,0,0,0,0,80,0,160,0,240,0
+410 data 0,50,80,50,160,0,240,0
+420 data 0,100,80,100,160,100
+430 data 0,150,80,150,160,150
+440 data $0,$100,$200,$300,$400,$500,$600,$700,$711,$721,$722,$733,
+$744,$755,$766,$777
+450 data $0,$10,$20,$30,$40,$50,$60,$70,$171,$172,$272,$373,$474,
+$575,$676,$777
+460 data $0,$1,$2,$3,$4,$5,$6,$7,$117,$127,$227,$337,$447,$557,$667,
+$777
+
+------------------------------------------------------------------------
+
+Well that was the listing, now some parallax theory...
+
+You  have probably noticed that sometimes wheels in  films  spins 
+backwards  but  the car/Waggon goes forward,  this is  a  optical 
+illusion  created  by the fact that a wheel has  several  sectors 
+that  looks  the same,  and that the camera takes pictures  at  a 
+regular interval (24 a sec on a movie, 25 on a tv)   
+
+This is how it works
+
+dot          1   2   3   4   5
+pic 1     :  *   *   *   *   * :
+
+pic 2     :   *   *   *   *   *:
+dot           2   3   4   5   6
+
+As  you can see the dots have moved to the left,  but  they  have 
+moved  with a speed that have made dot 2 stand one space  to  the 
+right of dot 1's earlier position,  so it will look like the dots 
+moves to the right!  
+
+So how can you use this effect in this prog.  Well first we  have 
+to  look at what we have here.  When you run the above  prog  and 
+you have the right pictures it looks like you have a scroll  that 
+moves 2 pix a update, but that aint the truth, what you have is a 
+scroll  that moves 8 pix a update but swaps between  4  different 
+versions of the picture.
+
+So lets say that i writes 'NETWORK' 8 pix high the entire  screen 
+down  and  copies this into the other screens without  moving  it 
+downwards  2  pix  for each pic.  The result would  be  that  the 
+'NETWORK' text wouldn't move at all. 
+
+If  you now writes 'NETWORK' with a 10 pix font and did the  same 
+as above you would get a scroll that scrolled the opposite way of 
+the 'real' scrolling direction.
+
+And  you can now start moving the text sideways to  get  sideways 
+scrolling or distorting etc..
+
+As  i  uses four screens in the routine it might take  some  time 
+before  you gets the hang of how to draw your screens to get  the 
+desired efx.  if you want to do a full screen parallax distorting 
+effect then it might be smart to go down to two screens,  or even 
+one  screen.  Its also possible to feed data in  below and  above 
+the screen to avoid a repeating pattern.
+
+If  you only going to have patterns and not a big object  on  the 
+screen then it would be smart to save the graphic in a basic form 
+and  copy them around before you starts the scrolling (thats  why 
+some demos takes some time to start) It would also be smart to do 
+that  even  if you have a big object on the screen but  what  the 
+f**k....  If  you uses my routine with finished screens  then you 
+could always animate the big object,  you would then have a  full 
+screen  animated  parallax scroller in basic (maybe i  should  do 
+that!)       
+
+If  you  want  to scroll the entire  screen,  simply  remove  the 
+equalisers and the logo scroll.  If you uses border removal  then 
+remember  to  increase the databank size and change  the  copying 
+routine.  
+
+As i cant bother to write more about this routine i stop here.
+
+
+See ya mon...
+
+CP signs of on the 15. march 1992
+
+PS:  if you want to see Net Slide 4 and the intro but you haven't 
+a copy (i'm not exactly going bankrupt on postal fees in a bid to 
+spread  my work to all people) then send me a  letter  containing 
+one  disk and a envelope with your name and address on it  to  me 
+and i will return it the following day.  (if you does not include 
+an  envelope  then it will take a week or two) You can  also  get 
+hold of it in the DBA PD Club.
+
+ 
+
+

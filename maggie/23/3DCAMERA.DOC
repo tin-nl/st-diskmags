@@ -1,0 +1,308 @@
+
+Maggie 23: Programming
+
+
+
+                  3D Programming and Camera Movement
+
+                          (Steve Tattersall)
+
+
+
+Right, this article stems from a request by a friend of Arto/RG (hi
+Nicholas!) who wanted to know how to control camera movement when 
+doing 3D systems. In fact there are several ways of controlling the       
+"camera" depending on the effect you wish to create; it's a bit like
+directing a feature-film. Hence most games use an "in-car" viewpoint, 
+which is slightly different from most demos. However, most of the 
+mathematics behind this is the same.
+
+Some sort of basic maths knowledge would be very useful here. If you 
+don't know about x,y and z axes, matrices or multiplication, stop 
+here, or write to us and we'll do another article on the maths. My 
+maths is pretty poor because I'm not sure when to use matrices, 
+vectors or points. But the principles behind it are fairly safe.
+
+However, I've purposely generalised the maths so it's not specialised 
+to people who want to do this kind of thing in assembler.
+
+
+
+
+
+               Part One: Basic mathematical principles
+               (given so you can understand Part Two!)
+
+
+
+                       3D Point Representation
+
+
+Any 3D point in our 3D system will of course have 3 co-ordinates, one 
+for each axis. We shall denote this in the form of a 1x3 matrix
+
+P = [px]
+    [py]
+    [pz]
+
+The x and y coordinates are similar to x and y on your normal 2D 
+screen. The z distance here denotes distance away from the origin, 
+where a positive z coordinate is "forwards" and a negative behind the 
+viewer.
+
+                          3D Point Movement
+
+
+To move a 3D point, we simply add on the amounts of x,y and z, to our 
+point P. This simply translates our 3D in the given offsets of x,y 
+and z eg. A point P, moved by (-30,+60,-90) becomes:
+
+    NewP = P + [ -30 ]
+               [ +60 ]
+               [ -90 ]
+
+
+
+
+
+                    3D Rotation round the origins
+
+To rotate a given point around any one of the x,y or z axes, we 
+multiply it by a special matrix (the "rotation matrix") To rotate 
+about more than one axis at once, we can either:
+
+(a) rotate about axis 1, then take the result and rotate this 
+around axis 2, or:
+(b) combine the two rotation axes by multiplying them together. We 
+then must only do one matrix multiplication rather than two.
+
+IMPORTANT NOTE: the sequence of rotation round axes IS important e.g. 
+rotating 30 degrees round x, then 40 degrees round y is NOT the same 
+as rotating 40deg round y, then 30 degrees round x.
+
+
+EXAMPLE DATA:
+Here are the individual 3x3 matrices for rotation about the x,y and z 
+axes:
+
+Rotation of angle A round X:  MA= [    1      0      0     ]
+                                  [    0    cosA  -sinA    ]
+                                  [    0    sinA   cosA    ]
+
+Rotation of angle B round Y:  MB= [  cosB     0   -sinB    ]
+                                  [    0      1      0     ] 
+                                  [  sinB     0    cosB    ] 
+
+Rotation of angle C round Z:  MC= [  cosC  –sinC     0     ]
+                                  [  sinC   cosC     0     ]
+                                  [    0      0      1     ]
+
+And this is what you get if you calculate MA.MB.MC: (ie. Rotate about 
+Z, then Y then X):
+
+MA.MB.MC = [ cosBcosC              -cosBsinC              -sinB     ]
+           [ cosAsinC-sinAsinBcosC +cosAcosC+sinAsinBsinC -sinAcosB ]
+           [ sinAsinC+cosAsinBcosC +sinAcosC-cosAsinBsinC +cosAcosB ]
+
+
+..and a point P rotated round these angles becomes:
+
+    NewP = MA.MB.MC.P = MA.MB.MC.[ px ]
+                                 [ py ]
+                                 [ pz ]
+
+
+
+(If you don't understand this fully, don't worry yet. All could still 
+be revealed in part two. All you need to know is that you multiply 
+two matrices to combine two rotations.]
+
+
+
+
+
+                   3D Perspectivising to 2D screens
+
+To convert any given point into 3D perspective, we calculate a 
+scaling value s dependent on the z-coordinate part of the given point 
+(pz). The usual formula for this is:
+
+S = 1 / pz    so that s decreases as Z (the distance
+  away) increases.
+
+
+This works if your 3D system is set up so that you want the far 
+distance (ie the horizon) to tend towards +infinity. If it goes the 
+other way,
+           S = 1 / -pz.
+
+So the screen coordinates [sx] = [px] * s
+                          [sy]   [py] 
+
+
+                    Important Notes for this Model
+
+Both the point rotation and point perspectivisation rely on the idea 
+that our centre of rotation and the centre for viewpoints  (that is, 
+our camera position) is at coordinate (0,0,0) or the origin O.
+
+ (See the picture that is included with this article)
+
+The big problem is that in our 3D world system, we will need to add 
+some modifications. This is because our centres of rotation will be 
+different depending on what we must rotate, and our 'camera' will 
+appear move about the 3D world. This is what we must address in part 
+Two.
+
+
+
+
+
+
+
+              Part Two: Applying the maths to a 3D world
+
+Now all this maths is quite simple (!) but when it is applied to any 
+3D system, we can have problems.
+
+Let's take a simple 3D system. Our 'world' is made up of many 
+'objects'. Each 'object' has a central point (its 'origin') about 
+which it is rotated on its own.
+
+Then all the objects in the world are also rotated, depending on the 
+angle at which we look at them with our camera.
+
+(look at the article's picture 2)
+
+The model we use to control the camera and movement depends on how we 
+want to. We shall look at two models:
+
+
+
+
+               Model One: The 'Camera-in-object' Model
+
+In this model all the objects rotate about our camera. If we imagine 
+that our camera is flying through a 3D world just like one of the 
+objects in it, and rotating, we can build up the maths quite easily 
+from what we already know.
+
+In fact we only need a few pieces of information:-
+- The object centre and rotation matrix for each object (OC and OR)
+- The camera centre and rotation matrix (CC and CR)
+
+(see picture 3)
+
+The first step is to rotate all the object's coordinates about its 
+centre. We assume that the object's centre is 0,0,0 and all the 
+points in the object are stored as offsets from O, so the coordinates 
+of our rotated object will become:
+
+      Po = OR.[px]
+              [py]
+              [pz]
+
+In our 3D space, we then translate the point so that it is centre 
+around the object centre OC:
+
+        Po2 = OR.[px] + OC
+                 [py]
+                 [pz]
+
+
+Now we need to rotate the resulting points around the camera. However 
+the camera centre is not at (0,0,0), so first we must find the offset 
+of the new rotated point (Po) from the centre (CC). We then rotate 
+this value the camera rotation CR. The final object coordinate is 
+then:
+
+
+      Po3 = rot_round_camera.( offset_from_objpoint_to_camera)
+
+      Po3 = CR.( Po2-CC )
+
+          = CR. ( OR.[px] + OC - CC )
+                     [py]
+                     [pz]
+
+We can optimise this calculation quite a lot by using the fact that 
+most of the calculations here will be used more than once (eg. OC-CC 
+is a constant for each object), but this is our basic method of 
+calculating a 3D point.
+
+This method works for all cases where our camera is like one of the 
+objects (e.g. a flight simulator's cockpit view) What happens if the 
+'universe' does not rotate about our camera position?
+
+
+
+
+
+                Model Two: The 'Camera-point-at' Model
+
+This is the model is similar to the one most often used in demos, 
+probably because it is quite straightforward to program in its 
+simplest form (ie. when there is no universe rotation). In demos it 
+is used when just displaying one object, usually in the centre of the 
+screen.
+
+This model is a very simple extension of the one above. Instead of 
+taking the CC as the centre of rotation, we chose a point that we 
+want to 'focus on' as the centre of our world, round which all our 
+views rotate. If you look at Avena's Fried Bits 3 demo, in the 3D 
+world, this focus point is usually the little spaceship that is 
+flying around. This point we will call the Focus. Its coordinate will 
+be FC (focus centre), and our rotation round it FR (focus rotation).
+
+If we then substitute these values in for OC and OR in the formula 
+above we will then appear to be 'inside' the object we are looking 
+at. What we want to do instead is pull back some way from the point 
+of interest. We do this by translating all the rotated points in the 
+z-direction using a vector such as 'FD' (focus distance) in the form
+
+      FD = [   0  ]  , where 'dist' is the distance away.
+           [   0  ]
+           [ dist ]
+
+By changing 'dist' we can zoom in and out of the action at will too.
+
+This change is easy to make to our rotation model. The additional 
+translation gives us:
+
+      Po3 = rot_round_focus.( offset_from_objpoint_to_focus)
+                  + focus_distance
+
+      Po3 = FR.( Po2-FC ) + FD
+
+          = FR. ( OR.[px] + OC - FC ) + FD
+                     [py]
+                     [pz]
+
+In practice this model is very useful for creating 3D animations. To 
+follow an object which is moving, we set the focus centre to be the 
+same as the object's centre, for example. To pan across from one 
+object to another, we simply take the two objects' centre points and 
+'morph' between them. By applying rotation effects too, we can come 
+up with lots of nice tricks to control animation and movement.
+
+
+
+
+                              Conclusion
+
+Although these are not the only two ways of controlling camera 
+movement in 3D, they are probably the simplest both to program and 
+understand. Both have drawbacks, depending on which application you 
+use them for (e.g. how do I move around the 3D world using the first 
+technique?) and advantages, but that's for you to find out if you 
+want to use them...
+
+
+
+
+tat
+19/4/97
+
+
+
+

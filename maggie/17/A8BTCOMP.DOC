@@ -1,0 +1,2160 @@
+06601030305800
+F0110030
+9[........................................................]001
+€
+ˆWelcome to the€
+ˆcomp.sys.atari.8bit/Info-Atari8 Digest/INFO-A8 discussiongroup!€
+
+
+                          ˆAtari 8-Bit Computers€
+
+                     ˆFrequently Asked Questions List€
+
+                            ˆRevised 19-Dec-94€
+
+
+Additions/suggestions/comments/corrections are needed!  Please send to:
+
+                      mailto:mcurrent@carleton.edu
+                     UUCP: ...!umn-cs!ccnfld!mcurrent
+                        Cleveland Free-Net: aa700
+
+Copyright (c) 1992-1994 by Michael D. Current, and others where noted. 
+The Atari 8-Bit Computers Frequently Asked Questions List is distributed
+as Freeware.  Permission is explicitly granted to reproduce this FAQ
+List,in whole or in part, so long as that portion reproduced is not
+modified inany way other than automatic conversion to hypertext by the
+OSU WWW FAQServer, so long as no profit is gained from such
+reproduction, and so longas credit is given to this FAQ List or its
+Keeper, or the author of thatsection reproduced when given. 
+
+------------------------------
+
+Subject: 0.1) Table of contents
+
+ 0.1) Table of contents
+
+     Introduction
+ 1.1) What is this 8-bit Atari FAQ List?
+ 1.2) What is an Atari 8-bit computer?
+
+     Usenet
+ 2.1) What is comp.sys.atari.8bit?
+ 2.2) What is comp.sys.atari.announce?
+ 2.3) What is comp.sys.atari.advocacy?
+ 2.4) What is comp.sys.atari.programmer?
+ 2.5) What is comp.emulators.misc?
+ 2.6) What is comp.emulators.announce?
+
+     E-Mail
+ 3.1) What is the Info-Atari8 Digest?
+ 3.2) What is INFO-A8?
+ 3.3) How can I access the Merit/UMich Archive by e-mail?
+ 3.4) How can I retrieve files from FTP sites by e-mail?
+ 3.5) How can I post to Usenet newsgroups by e-mail?
+
+     FTP
+ 4.1) How can I access the Merit/UMich Archive by FTP? 
+€ 4.2) What is the Boston Archive?
+ 4.3) What is the PVV Archive?
+ 4.4) What is the ClarkNet Archive?
+ 4.5) What is the Gatekeeper's Archive?
+ 4.6) What is The Atari Connection II?
+ 4.7) What is the Super Archive?
+
+     Telnet
+ 5.1) What is the Cleveland Free-Net Atari SIG?
+ 5.2) What is the Youngstown Free-Net Atari SIG?
+ 5.3) What is the National Capital Free-Net Atari SIG?
+ 5.4) How can I access the World Wide Web by Telnet?
+
+     Gopher
+ 6.1) How can I retrieve files from the Merit/UMich Archive through
+Gopher?
+
+     World Wide Web
+ 7.1) What is the Atari Classic Homepage?
+ 7.2) What is the Atari 8-Bit Home Page?
+ 7.3) What is the Atari 8-Bit Resort?
+ 7.4) What is the Big Atari 8bit Home Page?
+ 7.5) What is the Central Atari Information Network?
+
+     Prospero
+ 7.8) How can I access the Merit/UMich Archive by AFS?
+
+     IRC
+ 7.9) What is #Atari8?
+
+     Publications
+ 8.1) What print magazines support the 8-bit Atari?
+ 8.2) What disk magazines support the 8-bit Atari?
+ 8.3) What is the CAIN Newsletter?
+
+     File Formats
+ 9.1) What's this UUEncoding stuff (.uu, .uue files) all about?
+ 9.2) What is an .arc file?
+ 9.3) Okay, how about a .dcm file?
+ 9.4) What is an .xmo file?
+
+     Emulation
+ 10.1) What 8-bit Atari emulators exist for other computing platforms?
+
+     File Transfer Solutions
+ 11.1) What are the best terminal emulators available?
+ 11.2) Can I read/write 8-bit Atari disks on an IBM-PC?
+ 11.3) Can I read/write MS-DOS disks on an 8-bit Atari?
+ 11.4) How do I transfer files using a null modem cable?
+
+     Storage Media
+ 12.1) What 5.25" floppy disk drives are available?
+ 12.2) How can I use 3.5" floppy disks with my 8-bit Atari?
+ 12.3) What do I need to connect a hard drive to my 8-bit Atari?
+€ 12.4) How can I use an IBM-PC as a storage device for my Atari?
+
+     General Interest
+ 13.1) What's the best DOS for the Atari?
+ 13.2) What hardware has Atari created in the 8-bit computer line?
+ 13.3) What are the power-supply requirements for my Atari components?
+ 13.4) What are the pinouts for the...?
+ 13.5) What BBS software can be used on the Atari?
+
+     Other Documents of Interest
+ 14.1) What product developers or vendors support the 8-bit Atari?
+ 14.2) Where is my nearest 8-bit Atari BBS?
+ 14.3) Where is my nearest 8-bit Atari user group?
+ 14.4) How do I use my new or emulated Atari?
+ 14.5) What prominent Atarians are reachable by e-mail?
+
+------------------------------
+
+Subject: 1.1) What is this 8-bit Atari FAQ List?
+
+The Atari 8-Bit Computers Frequently Asked Questions List was created to
+provide answers to many commonly asked questions found in
+news:comp.sys.atari.8bit, the Info-Atari8 Digest, and INFO-A8.  It is in a
+constant state of development. 
+
+Much of this FAQ List is geared toward providing information on the
+various Internet resources available for 8-bit Atari users. 
+
+        Where to get the latest copy of the 8-bit Atari FAQ List
+
+The home of many FTP archive sites, automatically updated monthly:
+ftp://rtfm.mit.edu/pub/usenet-by-group/news.answers/atari-8-bit/faq
+
+The World Wide Web hypertext version, automatically generated monthly:
+http://www.cis.ohio-state.edu/hypertext/faq/usenet/atari-8-bit/faq/faq.
+html
+
+Usenet newsgroups where this FAQ List is automatically posted monthly:
+news:comp.sys.atari.8bit   news:comp.answers   news:news.answers
+
+You can also get the latest version by e-mail.
+mailto:mail-server@rtfm.mit.edu, message says:
+send usenet/news.answers/atari-8-bit/faq
+quit
+
+Finally, you can always ask me for a copy at mailto:mcurrent@carleton.edu
+
+------------------------------
+
+Subject: 1.2) What is an Atari 8-bit computer?
+
+In order of their release, the 8-bit Atari computers include the 400,
+800, 1200XL, 600XL, 800XL, 65XE, 130XE, and the XE Game System.  The
+400/800 models were first shown publicly in November 1978 and first
+€sold in 1979.  The final machine, the XE Game System, was released
+in 1987.  Atari Corp. officially dropped all remaining support of their
+8-bit computer line on January 1, 199 .  [ <- I can't believe I forgot
+already.]
+
+The following text was written by Chris Crawford and appears in De Re 
+Atari (Atari#APX-90008), a book published and copyright by Atari, Inc., 
+1981-1982.  It has been very slightly modified here for generality.
+
+     "The internal layout of the Atari 8-bit computer is very different 
+from other systems.  It of course has a microprocessor (a 6502), RAM, 
+ROM, and a (PIA).  However, it also has three special-purpose (LSI)
+chips known as ANTIC, GTIA, and POKEY.  These chips were designed by
+Atari engineers primarily to take much of the burden of housekeeping off
+of the 6502, thereby freeing the 6502 to concentrate on computations.
+While they were at it, they designed a great deal of power into these
+chips.  Each of these chips is almost as big (in terms of silicon area)
+as a 6502, so the three of them together provide a tremendous amount of
+power.  Mastering the Atari 8-bit computers is primarily a matter of 
+mastering these three chips.
+
+     ANTIC is a microprocessor dedicated to the television display.  It 
+is a true microprocessor; it has an instruction set, a program (called 
+the display list), and data.  The display list and the display data are 
+written into RAM by the 6502.  ANTIC retrieves this information from RAM 
+using direct memory access (DMA).  It processes the higher level 
+instructions in the display list and translates these instructions into
+a real-time stream of simple instructions to GTIA.
+
+     GTIA is a television interface chip.  ANTIC directly controls most 
+of GTIA's operations, but the 6502 can be programmed to intercede and 
+control some or all of GTIA's functions.  GTIA converts the digital 
+commands from ANTIC (or the 6502) into the signal that goes to the 
+television.  GTIA also adds some factors of its own, such as color 
+values, player-missle graphics, and collision detection.
+
+     POKEY is a digital input/output (I/O) chip.  It handles such 
+disparate tasks as the serial I/O bus, audio generation, keyboard scan, 
+and random number generation.  It also digitizes the resistive paddle 
+inputs and controls maskable interrupt (IRQ) requests from peripherals.
+
+     All four of these LSI chips function simultaneously.  Careful 
+separation of their functions in the design phase has minimized
+conflicts between the chips.  The only hardware level conflict between
+any two chips in the system occurs when ANTIC needs to use the address
+and data buses to fetch its display information.  To do this, it halts
+the 6502 and takes control of the buses."
+
+The 130XE and XEGS contain a small additional LSI called FREDDIE. 
+According to Masstorage@closer.brisnet.org.au (Masstorage), "Freddy is
+atype of memory controller.  It takes the address and clock from the
+CPUand multiplexes it with the appropriate timings and signals to use
+DYNAMICmemory.  Freddy also buffers the system clock crystal and
+divides it downthen feeds that to GTIA.  The XEGS has a freddy but it
+€doesn't have theextended RAM.  Even if it did, you would still need the
+chip that does theREAL bank switching.  It is a small 16-pin chip
+(Atari/Best Electronicscatalog number CO25953: rev9/page 42).  It gets
+RAS from freddy, the bankselect bits from PIA, A14, A15 and the 6502
+halt signal to control whichbank of 8 chips RAS goes to.  A14 and A15
+then go to freddy for the addressrange of the extra memory bank (or
+normal address range with no bankswitching).  The ANTIC/6502 select
+bits in combination with the 6502 haltline, control the switching of
+the PIA bank number bits to A14/A15 andwhich bank of memory RAS goes
+to.  Why people say freddy does the bankswitching is beyond me.  An
+800XL can look like a 130XE with that 16-pinchip installed (That's
+right NO freddy) and an extra 8 RAM chips."
+  
+
+Hardware Arrangement
+                        
+   OS RAM======#         
+               #======+-+
+   User RAM====#      |P|      +-----+
+                      |r|======|6502 | 
+   Left Cart.==#      |o|      +-----+
+               #      |c|
+   OS ROM======#======|e|
+               #      |s|      +-----+
+   Right Cart.=#      |s|======|ANTIC|-<------Light Pen
+                      |o|      +-----+
+                      |r|         |
+                      | |         \/ 
+                      |b|          |        /-Console Switches
+                      |u|      +-----+-<---+--Joystick Triggers
+                      |s|======|GTIA |      /-Picture    
+                      | |      +-----+--->-+--Sound
+                      | |          |        \-Keyboard Speaker
+                      | |         /\
+                      | |         |         /-Keyboard
+                      | |      +-----+-<---+--Paddles
+                      | |======|POKEY|
+                      | |      +-----+====Disk Drives==Other Peripherals
+                      | |       
+                      | |      +-----+      /-Keyboard Controllers
+                      +-+======| PIA |-<---+--Joystick
+                               +-----+      \-Paddle Triggers
+
+Beginners at using the 8-bit Atari platform may wish to contact Bill
+Kendrick, mailto:kendrick@sonoma.edu, for his Newbie/Emulator FAQ. 
+
+------------------------------
+
+Subject: 2.1) What is comp.sys.atari.8bit?
+
+If you have Usenet newsgroup access you can access this discussion group
+through news:comp.sys.atari.8bit.  This is an unmoderated newsgroup for
+discussion about the 8-bit Atari 400/800/XL/XE computing platform.  All
+postings to news:comp.sys.atari.8bit automatically appear in the
+€Info-Atari8 Digest and in INFO-A8. 
+
+[I'd like to include the charter for news:comp.sys.atari.8bit here.
+Anyoneknow where to get it?]
+
+news:comp.sys.atari.8bit is archived by the INFO-A8 listserv.
+
+------------------------------
+
+Subject: 2.2) What is comp.sys.atari.announce?
+
+news:comp.sys.atari.announce is the moderated Usenet newsgroup for news
+items and announcements related to all Atari computing platforms.  This
+isa low-volume, high-signal newsgroup, useful for reaching the widest
+possible audience when making 8-bit Atari announcements. 
+
+[need the moderator's address]
+
+------------------------------
+
+Subject: 2.3) What is comp.sys.atari.advocacy?
+
+news:comp.sys.atari.advocacy is the unmoderated Usenet newsgroup for
+advocating for or against the various Atari computing platforms.  If you
+enjoy making comparisons between Atari 8-bit and other computing
+platforms, this is the place to do it. 
+
+------------------------------
+
+Subject: 2.4) What is comp.sys.atari.programmer?
+
+news:comp.sys.atari.programmer is the unmoderated Usenet newsgroup for 
+topics in programming on the various Atari computing platforms, 
+including the Atari 8-bit.
+
+------------------------------
+
+Subject: 2.5) What is comp.emulators.misc?
+
+news:comp.emulators.misc is the unmoderated Usenet newsgroup for the
+discussion of emulating computing platforms on other computing
+platforms. All emulator discussion that does not involve the Apple ][,
+theCommodore 64, or the WINE MS-Windows emulator (which each have their
+own emulator groups) may be found on news:comp.emulators.misc.
+
+------------------------------
+
+Subject: 2.6) What is comp.emulators.announce?
+
+news:comp.emulators.announce is the moderated Usenet newsgroup for
+news items about emulating one computing platform on another.  This is
+a low-volume, high-signal newsgroup, useful for reaching the widest
+possible audience when making 8-bit Atari emulator announcements. 
+
+€The moderator may be contacted at mailto:emulators-request@qualcomm.com
+
+------------------------------
+
+Subject: 3.1) What is the Info-Atari8 Digest?
+
+If you have Internet e-mail access you can access this discussion group
+through the Info-Atari8 Digest. 
+
+The Info-Atari8 Digest originates from
+ 
+mailto:info-atari8-request@pine.cse.nau.edu
+
+Subscription requests should be sent to the above address with the
+subject:
+
+SUBSCRIBE  |  UNSUBSCRIBE         (that is, one or the other)
+
+The first line of the body of the letter should be the person's full
+namefollowed by his/her mailing address.  For example:
+
+Mike Todd snyder10@convex1.tcs.tulane.edu
+
+     To contribute to discussion threads in the Info-Atari8 Digest,
+sendyour posting to mailto:comp-sys-atari-8bit@cs.utexas.edu.  Postings
+senthere automatically appear on news:comp.sys.atari.8bit and in
+INFO-A8.
+
+     Note that any posting sent to mailto:info-atari8@pine.cse.nau.edu
+will NOT be cross-posted to news:comp.sys.atari.8bit.  The Moderator is 
+presently working to correct this. 
+
+The Info-Atari8 Digest is archived by the INFO-A8 listserv.
+
+The Info-Atari8 Digest Moderator is Mike Todd,
+mailto:snyder10@convex1.TCS.Tulane.EDU
+
+------------------------------
+
+Subject: 3.2) What is INFO-A8?
+
+If you have BITNET or Internet e-mail access you can access this
+discussion group through INFO-A8. 
+
+The BITNET subscription commands are:
+      tell listserv at marist register <your real full name>
+      tell listserv at marist subscribe info-a8
+
+The Internet subscription command is:
+      mailto:listerv@vm.marist.edu, message says
+      subscribe info-a8 <your real full name>
+
+To contribute to discussion threads in INFO-A8, send your posting to
+mailto:comp-sys-atari-8bit@cs.utexas.edu.  Postings sent here
+€automatically appear on news:comp.sys.atari.8bit and in the Info-Atari8
+Digest. 
+
+Any postings sent to mailto:info-a8@vm.marist.edu or to INFO-A8@MARIST 
+will not reach news:comp.sys.atari.8bit, so don't send your postings
+there.
+
+You may leave the list at any time by sending a "SIGNOFF INFO-A8"
+commandto LISTSERV@MARIST, or by sending a message to
+mailto:listserv@vm.marist.edu that says "unsubscribe info-a8".  Please
+note that this command must NOT be sent to INFO-A8@MARIST nor to
+mailto:info-a8@vm.marist.edu. 
+
+The archive of comp.sys.atari.8bit, the Info-Atari8 Digest, and INFO-A8:
+
+You can obtain a list of the available archive files by sending an
+"INDEXINFO-A8" command to LISTSERV@MARIST or by sending a message to
+mailto:listserv@vm.marist.edu that says "index info-a8".  These files
+canthen be retrieved by means of a "GET INFO-A8 filetype" command, or
+byusing the database search facilities of LISTSERV.  Send an "INFO
+DATABASE"command for more information on the latter. 
+
+The INFO-A8 Moderators are:
+          HARRY@MARIST                    (A Harry Williams)
+   mailto:ravi@mcnc.org                   (Ravi Subrahmanyan)
+   mailto:billw@score.stanford.edu        (Bill Westfield)
+
+INFO-A8 was created on December 9, 1986.
+
+------------------------------
+
+Subject: 3.3) How can I access the Merit/UMich Archive by e-mail?
+
+For more information on the Merit/UMich archive, see the section of this 
+FAQ list on accessing this archive by FTP.
+
+Downloading - BART
+-----------
+Brode's Archive Retrieval Thang - the Merit/UMich Archive e-mail file
+server
+
+     To learn about using BART to access the Merit/UMich Archive, send
+e-mail to: mailto:atari@atari.archive.umich.edu.  The subject of the
+message doesn't matter, but let the body of your message be: 
+
+help
+send 8bit/0index
+
+If you receive nothing within a day (it should take just a few minutes),
+try including a line of this form:
+
+path [your e-mail address]
+
+BART automatically uuencodes binary files (so they may be mailed over
+€theInternet) and splits up large files into parts of about 30K or less.
+
+Uploading
+---------
+Simply uuencode the file, (please split it into parts of 60 K or less)
+and mail the result to mailto:lenn@atari.archive.umich.edu.  Please name
+the parts in the subject line.  This is really helpful as the parts
+usually don't arrive in the proper sequence.  Also, please include a 
+message labeled "file transmission," containing a short description of 
+the file, etc.  Shar files are also acceptable, but uuencoded is
+preferred.
+
+------------------------------
+
+Subject: 3.4) How can I retrieve files from FTP sites by e-mail?
+
+     There are several general-purpose FTP mail-servers.  These may be
+used toretrieve any files available from anonymous FTP sites on the
+Internet.
+
+     1) mailto:ftpmail@decwrl.dec.com with no subject line, and two-line 
+body with line 1 help and line 2 quit 
+
+     2) mailto:ftpmail@grasp.insa-lyon.fr (body: help ) Please, European 
+users only. 
+
+     3) mailto:bitftp@pucc.princeton.edu (body: help or ftplist for a 
+list of anonymous ftp sites) 
+
+     4) mail BITFTP@DEARN or to mailto:BITFTP@vm.gmd.de (body: help or 
+ftplist for a list of anonymous ftp sites) (Europe only) 
+
+------------------------------
+
+Subject: 3.5) How can I post to Usenet newsgroups by e-mail?
+
+There are a several 'public' mail/News gateways. Each one has their own
+ways for addressing syntax. The three most common ones are: 
+
+           Site:    cs.utexas.edu
+           Syntax:  newsgroup-name@cs.utexas.edu
+           Example: To send to the newsgroup 'comp.sys.atari.8bit',
+                    address the message to
+                  comp-sys-atari-8bit@cs.utexas.edu
+
+           Site:    newbase.cs.yale.edu
+           Syntax:  newsgroup.name-news@newsbase.cs.yale.edu
+           Example: To send to the newsgroup 'comp.sys.atari.8bit',
+                    address the message to
+                  comp.sys.atari.8bit-news@newsbase.cs.yale.edu
+
+           Site:    decwrl.dec.com
+           Syntax:  newsgroup.name@decwrl.dec.com
+           Example: To send to the newsgroup 'comp.sys.atari.8bit',
+€                    address the message to
+                  comp.sys.atari.8bit@decwrl.dec.com
+
+     Mail-to-news gateways of this sort tend to be overloaded.
+     Therefore, please do not use these gateways or any other similar
+     gateways if you can post to Usenet directly.
+
+------------------------------
+
+Subject: 4.1) How can I access the Merit/UMich Archive by FTP? 
+
+     The Merit/University of Michigan Software Archives hold a huge
+numberof files for many computing platforms, including the Atari 8-bit
+computers.  Our 8-bit Atari Archivist is Jody Lenn,
+mailto:lenn@atari.archive.umich.edu; the Atari Archive as a whole is
+maintained by Mickey Boyd, mailto:boydm@atari.archive.umich.edu.
+
+  The convention for Anonymous FTP sites is to accept "anonymous" as
+your username, and your e-mail address as your password.  All of the
+FTP sites mentioned in the FAQ list follow this convention.
+
+Downloading (Try the site nearest you first)
+-----------
+  a) ftp://atari.archive.umich.edu/atari/8bit (141.211.120.11, U.S.A.)
+
+  b) ftp://wuarchive.wustl.edu/mirrors/archive.umich.edu/atari/8bit
+     (128.252.135.4, U.S.A.)
+
+  c) ftp://src.doc.ic.ac.uk/computing/systems/atari/umich/8bit
+     (146.169.2.10, Great Britain)
+  d) 
+ftp://info2.rus.uni-stuttgart.de/afs/umich.edu/group/itd/archive/atari/
+8bit
+     (129.69.8.13, Germany)
+
+  e) ftp://ftp.orst.edu/pub/mirrors/archive.umich.edu/atari/8bit
+     (128.193.4.2, U.S.A.)
+
+  f) ftp://barnone.citi.umich.edu/afs/umich.edu/group/itd/archive/atari/
+8bit
+     (141.211.128.22, U.S.A.)
+
+Remember to set file type to BINARY when downloading non-text files
+(.arc, .com, .dcm, etc.) by FTP.
+
+Uploading
+---------
+Place uploads in ftp://atari.archive.umich.edu/atari/8bit/New 
+
+No uploads may be made to the Archive's mirror sites.
+
+Remember to set file type to BINARY when uploading non-text files
+(.arc, .com, .dcm, etc.) by FTP.  Also, please upload a short .text file
+describing what your upload is, so our 8-Bit Archivist will be sure to
+€placeit in an appropriate permanent directory.
+
+Note that the 8bit/New directory is "write-only."
+
+Newly uploaded items may be found in the 8bit/Newitems subdirectory.
+
+------------------------------
+
+Subject: 4.2) What is the Boston Archive?
+
+     Here's an 8-bit Atari FTP site located at Boston University.  It is
+maintained by Adam Bryant, mailto:adb@albert.bu.edu.  This site seems to
+have seen no uploads for years, but there are some files here that
+aren'ton any of the other sites. 
+
+     ftp://cs-ftp.bu.edu/PC/ATARI (128.197.13.20)
+
+------------------------------
+
+Subject: 4.3) What is the PVV Archive?
+
+     This is a mid-sized Atari FTP site maintained by Eyvind
+Bernhardsen,mailto:eyvind@lise.unit.no.  PVV stands for
+ProgramVareVerstedet, or The Software Workshop, a student society at the
+University of Trondheim, Norway.
+
+     ftp://nova.pvv.unit.no/pub/Atari/8bit (129.241.36.207)
+
+Uploads go to ftp://nova.pvv.unit.no/incoming/atari/8bit; Eyvind moves
+them to the appropriate directory.  Please include a .readme file with
+each upload, so people know what they're downloading. 
+
+------------------------------
+
+Subject: 4.4) What is the ClarkNet Archive?
+
+This smallish 8-bit Atari FTP site is maintained by Kevin Atkinson, 
+mailto:kevina@clark.net.
+
+ftp://ftp.clark.net/pub/atari (168.143.0.2)
+
+     [Is there a place for uploads?]
+
+------------------------------
+
+Subject: 4.5) What is the Gatekeeper's Archive?
+
+This small FTP site offers most of the resources provided on the Atari 
+8-Bit Home Page.  Kept by mailto:ipoorten@cs.vu.nl (Ivo van Poorten, The 
+Gatekeeper).
+
+ftp://ftp.cs.vu.nl/pub/ipoorten/atari.8bit (192.31.231.43)
+
+------------------------------
+€ 
+Subject: 4.6) What is The Atari Connection II?
+
+This mid-sized archive is kept by mailto:jeking@xmission.com(James King)
+
+ftp://xmission.com/pub/users/jeking/Atari (198.60.22.2)
+
+Uploads may be placed in ftp://xmission.com/pub/users/jeking/Uploads
+
+------------------------------
+
+Subject: 4.7) What is the Super Archive?
+
+Here is a "small but growing" FTP site in Australia kept (I believe?) by 
+mailto:Dave.Blears@closer.brisnet.org.au (Dave Blears).
+
+ftp://closer2.brisnet.org.au/pub/archive1/8_BIT (203.4.149.98)
+
+Support site for James Bradfords Super 8-bit Products including
+SuperDos,SuperRam, Super800<->XL and much more.
+
+Uploads go in ftp://closer2.brisnet.org.au/pub/incoming
+
+------------------------------
+
+Subject: 5.1) What is the Cleveland Free-Net Atari SIG?
+
+     The Cleveland Free-Net is the hub system of the NPTN, the National
+Public Telecomputing Network.  It can be accessed by any of the
+following: 
+telnet://freenet-in-a.cwru.edu, telnet://freenet-in-b.cwru.edu, or 
+telnet://freenet-in-c.cwru.edu (129.22.8.32 or 129.22.8.51).
+Type "go atari" to reach the Atari SIG.
+
+Those who add their names to the Atari SIG user directories are
+automatically members of the official Atari user group C.A.I.N. -Central
+Atari Information Network. 
+
+The Cleveland Free-Net Atari SIG publishes the CAIN Newsletter,maintains 
+the CAIN Home Page on the WWW, and keeps the "Who's Who in the Atari 
+Community E-Mail Directory" listing.  Send correspondence and press 
+releases to mailto:xx004@cleveland.freenet.edu. 
+
+------------------------------
+
+Subject: 5.2) What is the Youngstown Free-Net Atari SIG?
+
+Youngstown Free-Net (Youngstown, Ohio  USA)
+telnet://visitor@yfn.ysu.edu (192.55.234.27)
+
+Type "go atari" to reach the Atari SIG.  Write to 
+mailto:xx140@yfn.ysu.edu for more information.
+
+------------------------------
+€
+Subject: 5.3) What is the National Capital Free-Net Atari SIG?
+
+National Capital Free-Net (Ottawa, Canada)
+telnet://guest@freenet.carleton.ca (134.117.1.25)
+
+Type "go atari" to reach the Atari SIG.  Write to Christopher Browne at
+mailto:aa454@Freenet.carleton.ca for more info.
+
+------------------------------
+
+Subject: 5.4) How can I access the World Wide Web by Telnet?
+
+This section swiped from the WWW FAQ, which is kept by
+mailto:boutell@netcom.com (Thomas Boutell).
+
+   An up-to-date list of these is available on the Web as
+   http://info.cern.ch/hypertext/WWW/FAQ/Bootstrap.html and should be
+   regarded as an authoritative list.
+   
+   telnet://info.cern.ch
+          No password is required. This is in Switzerland, so
+continental
+          US users might be better off using a closer browser.
+          
+   telnet://www@www.cc.ukans.edu
+          A full screen browser "Lynx" which requires a vt100 terminal.
+          Log in as www. Does not allow users to "go" to arbitrary URLs,
+          so GET YOUR OWN COPY of Lynx and install it on your system if
+          your administrator has not done so already. The best plaintext
+          browser, so move mountains if necessary to get your own copy
+         of Lynx!
+          
+   telnet://www@www.njit.edu
+          (or telnet 128.235.163.2) Log in as www. A full-screen browser
+          in New Jersey Institute of Technology. USA.
+          
+   telnet://www@www.huji.ac.il
+          A dual-language Hebrew/English database, with links to the
+          restof the world. The line mode browser, plus extra features.
+Log in as www. Hebrew University of Jerusalem, Israel.
+          
+   telnet://sun.uakom.cs
+          Slovakia. Has a slow link, only use from nearby.
+          
+   telnet://www@info.funet.fi
+          (or telnet 128.214.6.102). Log in as www. Offers several
+          browsers, including Lynx (goto option is disabled there also).
+          
+   telnet://www@fserv.kfki.hu
+          Hungary. Has slow link, use from nearby. Login is as www.
+          
+------------------------------
+
+€Subject: 6.1) How can I retrieve files from the Merit/UMich Archive
+through Gopher?
+
+     The Merit/UMich Archive has a native Gopher server.  Try
+
+gopher://gopher.archive.merit.edu:7055/11/atari/8bit
+
+to connect directly to the Merit/UMich Archive's 8-bit Atari directory.  I 
+personally recommend this method for downloading from the Merit/UMich 
+Archive. 
+
+There is also a mirror archive site with a Gopher server:
+
+gopher://src.doc.ic.ac.uk/11/computing/systems/atari/umich/8bit
+
+------------------------------
+
+Subject: 7.1) What is the Atari Classic Homepage?
+
+Maintained by Eyvind Bernhardsen, mailto:eyvind@pvv.unit.no, in Norway. 
+Last I checked there wasn't anything there, but perhaps there is by now. 
+
+http://www.pvv.unit.no/~eyvind/atari/
+
+------------------------------
+
+Subject: 7.2) What is the Atari 8-Bit Home Page?
+
+Run by mailto:ipoorten@cs.vu.nl (Ivo van Poorten, The Gatekeeper), in 
+Holland.  Very nice.
+
+Interesting resources include:
+   ASCII:       About the 65c816... 
+                Documentation about the 6502/6510/8500/8502 iset. 
+                Schematic of a small MIDI interface for the C64 
+                X-Modem/Y-Modem Protocol Reference 
+                Atari System Reference Manual
+                Rob Funk's Reference Cards
+   PostScript:  Opcode table for 6502c and 65C02 
+   Hypertext:   Atari System Reference Manual
+                Rob Funk's Reference Cards
+   Software:    MODPlay v1.22 Distribution 
+                UnZip v1.13 Distribution 
+
+Also FULLY supports this FAQ List.
+
+Point you Web client to:
+
+http://www.cs.vu.nl/~ipoorten/Atari.8bit.Homepage/index.html
+
+Most resources offered are also made available through his FTP server,
+the "Gatekeeper's Archive."
+
+------------------------------
+€
+Subject: 7.3) What is the Atari 8-Bit Resort?
+
+This one is kept by mailto:un55@rz.uni-karlsruhe.de, Marek Tomczyk, in
+Germany.  Last I looked, the only thing of significance was News from
+ABBUC(German)
+
+http://rzstud1.rz.uni-karlsruhe.de/~un55/8bit.html
+
+------------------------------
+
+Subject: 7.4) What is the Big Atari 8bit Home Page?
+
+This home page is kept by Tomasz Tatar,
+mailto:tatar@student.uci.agh.edu.pl, in Poland.  Another nice one. 
+
+Interesting resources include:
+     * Atari System Reference Manual by Bob Duhamel
+     * "Famous Atarians" page
+and the following original material by Thomas Tatar:
+     * Short description of the Disk Operating Systems for Atari 8bit
+       computers 
+     * Short (so far) description of the Atari 8bit languages 
+     * Atari 8bit copy party, Mirow near Czestochowa, 4-5 June 1994:
+       Results of the competitions
+     * Short list of the Input/Output errors 
+
+Supports the hypertext version of this FAQ list.
+   
+Point your WWW client to
+http://www.uci.agh.edu.pl/student/robo1grp/tatar/public_html/Atari/
+hp.html
+
+------------------------------
+
+Subject: 7.5) What is the Central Atari Information Network?
+
+         CAIN, the Central Atari Information Network, is an independent
+         Atari user group dedicated to supporting ALL Atari products.
+         CAIN serves the Atari community by maintaining a FREE monthly
+         ASCII newsletter and an Atari Special Interest Group on The
+         Cleveland Free-Net Community Computer System. Furthermore,CAIN
+         has recently thrown the CAIN Atari Fun Fest, an Atari products
+         show in the Cleveland, OHIO (USA) area. 
+          
+http://ace.cs.ohiou.edu/personal/mleair/cain.html
+
+------------------------------
+
+Subject: 7.8) How can I access the Merit/UMich Archive by AFS?
+
+Downloading
+-----------
+Just cd /afs/umich.edu/group/itd/archive/atari/8bit
+€[What is the propsero:// URL for this?]
+
+Uploading
+---------
+Just cp the file into /afs/umich.edu/group/itd/archive/atari/8bit/New
+[What is the propsero:// URL for this?]
+
+------------------------------
+
+Subject: 7.9) What is #Atari8?
+
+There is a channel on Internet Relay Chat for 8-bit Atari users.  Its
+name is #Atari8.  Join #Atari8 on port 6667 (EFNet) and enjoy (if you 
+meet somebody there).
+
+There should be a small bot called XE_BOT on this channel.  While on 
+channel #Atari8 use the command 
+                           /msg XE_BOT help
+for more information.
+
+The latest information on #Atari8 and the XE_BOT may be found here:
+http://www.uci.agh.edu.pl/student/robo1grp/tatar/public_html/Atari/
+irc.html
+
+Channel #Atari8 and the XE_BOT are the work of Tomasz Tatar, 
+mailto:tatar@student.uci.agh.edu.pl.
+
+------------------------------
+
+Subject: 8.1) What print magazines support the 8-bit Atari?
+
+     Atari 8-Bit Alive
+     c/o Damon Walker
+     RD#1 Box 62
+     Salem, NJ 08079
+     U.S.A.
+     CIS: 74354,3015
+     bimonthly, $8/three issues
+
+     Atari Classics
+     5507 Langford Court
+     Concord, CA 94521-1614
+     U.S.A.
+     mailto:j.hood9@genie.geis.com
+                                  1 Year  2 Years  3 Years
+       USA 2nd Class Mail          $25      $46      $63 
+       Canada Surface Mail         $30      $56      $78
+       Other Foreign Surface Mail  $32      $60      $84
+       European Airmail            $38      $72     $102
+       Asia/Pacific Airmail        $40      $76     $108
+       AC Software Disk (Anywhere)  $9      $18      $27
+
+     ATARI-magazyn
+     ul. Wasilkowskiego 7
+€     02-776 Warsaw
+     POLAND
+     tel: 643-18-40, Friday 13.00-15.30
+     Address of publisher:
+     Wydawnictwo "Bajtek"
+     ul. Rapperswilska 12
+     03-956 Warsaw
+     POLAND
+     tel: 617-50-70
+       Monthly.  Price: 22000 zl (about 1$)
+       Foreign subsriptions also available
+
+     ATARImagazin
+     Power Per Post
+     Postfach 1640
+     D-75006 Bretten
+     GERMANY
+        39DM + 6DM p&p/6 months (3 issues)
+        abroad: 39DM + 12DM p&p/6 months
+        disk & membership: add 60DM
+
+     Current Notes
+     122 N. Johnson Rd.
+     Sterling, VA 20164
+     U.S.A.
+     tel: (703) 450-4761
+     mailto:joe.waters@genie.geis.com
+     mailto:74005.1270@compuserve.com
+        published bi-monthly
+        $24 per year ($44/2 years)
+        foreign surface: $30/year ($55/2 years)
+        disk subscriptions: $48/year ($92/2 years)
+        foreign disk subscriptions: $57/yr ($109/2 yrs)
+        air mail: Canada/Mexico $35; Cen.Am., Caribbean, $42;
+        S.Amer. Europe, N.Africa, $49; Mid East, Africa, Asia, 
+        Australia, $58
+
+     Historically Brewed
+     Historical Computer Society
+     2962 Park Street #1
+     Jacksonville, FL 32205
+     U.S.A.
+     mailto:hcsociety@aol.com (HCSociety)
+        6 bimonthly issues: $18 ; or $2 for a sample issue
+
+     LACE Newsletter
+     London Atari Computer Enthusiasts (LACE)
+     c/o Roy Whiteman, Secretary
+     153b Swaby Road
+     Earlsfield
+     London SW16
+     ENGLAND
+     mailto:trew@def.bae.co.uk
+       #7.00 / year (monthly), or free to members
+€
+     New Atari User
+     Page 6 Publishing
+     P.O. Box 54
+     Stafford ST16 1DR 
+     ENGLAND
+     tel: 0785-213928
+     FAX: 0785-54335
+             (bi-monthly)   Magazine only  Magazine and Disk
+        UK                      #15.00          #25.00
+        Europe (Air Mail)       #17.00          #32.00
+        USA/Canada - Surface    #17.00          #32.00
+        USA/Canada - Air Mail   #23.00          #42.00
+                   Other countries as USA/Canada
+
+     News-Paper
+     D.G.S.
+     62 Thomson Ave.
+     Balby
+     Doncaster
+     DN4 0NU
+     ENGLAND
+     tel: +44-302-855-026 (10am - 7pm GMT only)
+       U.K.: #6.00 / 4 issues
+       Europe: #8.00 / 4 issues
+       U.S.A.: #10.50 (US$21) / 4 issues
+       Far East & Rest Of World: #13.00 / 4 issues
+     mailto:dx107@cleveland.freenet.edu
+
+     STAK Atari
+     Revista STAK Atari
+     Casilla 51552 STGO 1
+     Correo Central
+     Santiago de Chile
+     CHILE
+       air: US$50                     (cannot accept checks or credit
+cards)
+       magazine + disk, air: US$70
+
+     Swiat ATARI
+     Agencja Wydawnicza B.I.M.
+     PO BOX 178
+     Warsaw 4
+     POLAND
+        Very irregular
+
+     TWAUG Newsletter
+     TWAUG (Tyne & Wear Atari User Group)
+     P.O. Box 8
+     Wallsend
+     Tyne & Wear
+     NE28 6DQ
+     ENGLAND
+       bimonthly, includes either disk or cassette
+€       1 copy              #2.00
+       6 copies           #11.00
+       Europe 1 copy       #2.20
+       Europe 6 copies    #12.50
+       Elsewhere 1 copy    #2.50
+       Elsewhere 6 copies #14.00
+
+     Zong
+     KE-Soft
+     Frankenstrasse 24
+     D-63477 Maintal
+     GERMANY
+     tel: +49-6181/87539
+     FAX: +49-6181/83436
+        40DM/6 months (3 issues)
+        magazine + disk: 55DM/6 months (3 mags., 3 disks)
+        abroad: add 10DM p&p
+
+------------------------------
+
+Subject: 8.2) What disk magazines support the 8-bit Atari?
+
+     8-Bit Magazin
+     Powersoft
+     Markus Roesner
+     Fachriastr. 9
+     D-74226 Nordhausen
+     GERMANY
+     tel: (0)7135/2840
+
+     Classic 8-Bit Atari
+     Artacyis Publications
+     639 W. Grace Suite #336
+     Chicago, IL 60613
+     U.S.A.
+       $5 for sample disk
+
+     DCW Magazine
+     Richard Vermeulen
+     Princessenpad 3
+     5502 TV Veldhoven
+     HOLLAND
+        free introductory issue,
+        7.50 Dutch guilders/disk
+        outside Holland: add 6.00 guilders/disk
+
+     Diskmagazin
+     A.B.B.U.C. e.V.
+     Wolfgang Burger
+     Wieschenbeck 45
+     45699 Herten
+     GERMANY
+
+     Futura
+€     S. J. Murray
+     71 Walker Road
+     Torry, Aberdeen
+     AB1 3DL
+     SCOTLAND
+        $3 cash or L2 IMO for sample issue
+
+     Mega Magazine
+     A.N.G. Software
+     Ridderkerksestraat 60
+     3114 RK Schiedam
+     HOLLAND
+        fl10.00/disk
+
+     Phoenix
+     Robert Paden
+     54 Ardmillan Crescent
+     Scrabo Estate, Newtownards, Co. Down
+     BT23 4PW
+     NORTHERN IRELAND
+       public domain
+
+     Strange Invasion
+     Stefan Lausberg
+     Koerschstr. 58
+     D-70599 Stuttgart
+     GERMANY
+     tel: (0)711/45 51 71
+       single issue 5DM
+       6 issues (1/2 year) 25DM
+
+     TOP-Magazin
+     c/o Markus Roemer
+     Schiefersteinstr. 10
+     D-55606 Kellenbach
+     GERMANY
+     tel: (0)6765-420
+     BBS: (0)345/78 80 148   (24 hours, 8N1, 16k8bps)
+       25DM for 6 months (6 issues)
+
+     User-Mag
+     Avatar
+     Postfach 1103
+     24318 Luetjenburg
+     GERMANY
+     tel: +49/4381/7678 
+     BBS/FAX: +49/4381/4739  (24 hours, 8N1, 300-19200 bps)
+     mailto:ulf@zodiac.de   
+     FIDO: Ulf Petersen@2:240/2018.22
+       bi-monthly
+
+------------------------------
+
+Subject: 8.3) What is the CAIN Newsletter?
+€
+The Central Atari Information Network Newsletter is the monthly online 
+magazine of the Cleveland Free-Net Atari SIG.  The editor is Mark 
+Leair of the Atari SIG.  8-bit computers support is provided by Michael 
+Current and Craig Lisowski.  For information, write to the Atari SIG at 
+xx004@cleveland.freenet.edu.
+
+------------------------------
+
+Subject: 9.1) What's this UUEncoding stuff (.uu, .uue files) all about?
+
+     UUEncode/UUdecode is a UNIX utility that will convert a binary file into
+100% printable ASCII characters, so that the file may be posted or maild
+anywhere a text message can go.  The 8-bit Atari is perfectly capable of
+UUEncoding/UUdecoding as well.  On the archives:
+
+Uudecode 1.2a by John Sangster - very functional.
+  Merit/UMich: Archivers/uudecode.bas, Archivers/uudecode.doc
+  Boston: comm/uudecode.lst, comm/uudecode.doc
+
+Yet Another UU-coder by John Dunning - both decoding/encoding.
+  Merit/UMich: Archivers/yau.arc
+  Boston: comm/yau.uue, comm/yaue.uue, comm/yau.doc
+
+Uudecode.com, Uuencode.com by ??? - "newer, cleaner, easier to use."
+  Merit/UMich: Utilities/uue.arc
+
+Dumas UU-coder by John Dunning - should work w/BART-style split files.
+  Merit/UMich: Cc65/dumasuu.arc
+
+------------------------------
+
+Subject: 9.2) What is an .arc file?
+
+     A file with the extender .arc has been archived in a standard
+manner thatis common in the MS-DOS world.  This is done to make the
+file shorter,so it takes up less space on your disk and it takes less
+time to transfer between computers.  The archives contains several 8-bit
+Atari archivers fully compatible with this standard, including:
+
+Super Un-Arc 2.3, Super Arc 2.0 by Bob Puff - highly recommended.
+  Merit/UMich: Archivers/superarc.arc - both Super Un-Arc & Super Arc
+               Archivers/suprarc2.arc - Super Arc
+               Archivers/supunarc.com - Super Un-Arc
+               Archivers/supunarc.uue - Super Un-Arc
+  Boston: {comm,util}/superarc.uue, {comm,util}/superarc.doc
+
+------------------------------
+
+Subject: 9.3) Okay, how about a .dcm file?
+
+     A .dcm file is a format unique to the 8-bit Atari which is used to
+convertentire disk images into files.  To work with .dcm files you'll
+need:
+€
+Disk Communicator 3.2 by Bob Puff.
+  Merit/UMich: Archivers/dskcom32.arc or Archivers/diskcomm.arc (same!)
+  Boston: {util,comm}/diskcomm.uue
+
+------------------------------
+
+Subject: 9.4) What is an .xmo file?
+
+This section by mailto:winston@merk.com (Winston Smith)
+ 
+      In the recesses of my memory, I seem to remember ".XMO" as being a
+"download extender" for the download section of one of the very early
+ATARIBBSes such as A.M.I.S. BBS.  I seem to recall that ".XMO" implies
+that thefile has been transfered with an early version of XMODEM and
+has thereforehad CONTROL-Z pad characters appended onto the end of the
+file.  Toretrieve a working file again, the CONTROL-Z trailer padding
+needs to bestripped off.  A copy of the file is made, and then a
+utility such as DiskDoctor (the original program, not the SpartaDOS
+utility) / Download Doctoris used to strip off the trailing padding.
+You probably could just loadthe file into TEXTPRO and just back over
+the trailing bytes.  The reason toalways use a copy of the file is in
+case of the rare instances where thefile actually ends with the
+CONTROL-Z character.  In that case, you don'twant to back up all of the
+way.  Bob Puff's SUPERARC was the program thatfinally saved everyone
+from the task of manually having to strip off thepad bytes.  (Please
+correct me if I am wrong.  In any event, that is what Iremember about
+".XMO" extenders....)
+
+------------------------------
+
+Subject: 10.1) What 8-bit Atari emulators exist for other computing 
+               platforms?
+
+These are the emulators that are usable.
+
+1) ST Xformer 2.55, from Branch Always (see companion Vendor/Developer
+List for complete contact info).  A freeware 8-bit Atari emulator for
+theAtari ST. 
+  Merit/UMich: /atari/Emulators/stxf255.lzh
+
+2) PC Xformer, from Branch Always (see companion Vendor/Developer 
+List for complete contact info).  The 8-bit Atari emulator for 
+DOS/Windows/OS/2.  Versions 2.0 and 2.5 are freeware; 3.0 is the
+commercial version.
+
+The following further info on PC Xformer provided by Bill Kendrick, 
+mailto:kendrick@sonoma.edu.  Contact him for his Newbie/Emulator FAQ.
+
+      2.0 emulates an Atari 800.  It requires about 300K of
+      free memory, 320x200x256 (MCGA/VGA/SVGA) graphics, and a 286 CPU.
+      It does not support ROM files, disk image swapping within the
+      program, player/missile graphics collision detection, sound,
+      PC joystick support, modem/printer support, but is free.
+€
+      2.5 is the replacement for 2.0.  It emulates either an Atari 800
+      or an Atari 800XL.  It requires about the same as 2.0.  It does
+      support ROM files and the PC speaker is used to emulate the old
+      Atari 400/800 internal speaker clicks.  It is also free.
+
+      3.0 is the first commercial release.  It emulates an Atari 800,
+      800XL, or 130XE (128K RAM; I heard it was to do 320K but I think
+      that was reduced).  It requires a 386 and 512K of memory.  It
+      supports Sound Blaster, player/missile graphics collision
+detection, modem/printer and PC joystick support.  It
+      comes with a disk with the software, an ammendum to the printed
+      documents, and a bunch of Atari 8-bit software (example programs:
+    demos/games, and a few useful utilities).  It supports disk swapping
+    through a (currently) simple menu.
+
+      All versions support .XFD (Xformer disk) format disk images, and
+      all versions of PC Xformer support SIO2PC disk images (.ATR's).
+
+   PC Xformer 3.0 comes with a 36-page printed manual and reference.
+   It includes appendicies explaining graphics, sounds, colors, BASIC,
+   subdirectory paths (for MSDOS which in turn explains Sparta/MyDOS),
+   a quick keyboard reference, ATASCII characters (all 128 drawn out),
+   the Atari editor, error codes, file IO (commands, devices, XIO calls)
+   as well as giving breif information on how to contact other Atari
+   users, common file extenders, and it includes a LARGE glossary
+   explaining Atari BASIC / TurboBASIC XL commands, Atari computer
+   terms, and general computer terms.
+
+  Merit/UMich: Xf2/xf2.zip, Xf2/xf25.zip
+
+Of importance to PC Xformer users is:
+DcmToDsk, freeware by Jason Duerstock.  It converts most .DCM files into
+SIO2PC .ATR's for use with SIO2PC and PC Xformer.
+  Merit/UMich: Sio2pc/dcm2dsk2.zip
+
+------------------------------
+
+Subject: 11.1) What are the best terminal emulators available?
+
+     Here are some of the more popular PD/freeware/shareware terminal 
+programs available.
+
+BobTerm 1.22, shareware by Bob Puff
+     Emulates: VT52
+     Text: 40 columns in gr.0; 80 col. w/ XEP80
+     File Xfer: XMODEM, YMODEM, FMODEM
+     Autodial: Yes
+     Backscroll buffer: No
+     Capture-to-disk: Yes
+     Summary: Feature-filled; excellent for BBSing
+     Merit/UMich: Telecomm/bterm12.arc
+
+Kermit-65 3.7, PD by John R. Dunning
+€     Emulates: VT100
+     Text: 40 columns in gr.0; 80 col. in gr.8; 80 col. w/ XEP80(sortof)
+     File Xfer: Kermit
+     Autodial: No
+     Backscroll buffer: No
+     Capture-to-disk: No
+     Summary: Excellent VT100 emulation; rock-solid Kermit Xfers
+     Merit/UMich: Telecomm/k65v37.arc - latest version
+                  Telecomm/k65doc.arc - documentation
+                  Telecomm/k65src.arc - source code
+
+OmniCom by CDY Consulting
+     Emulates: VT100
+     Text: 80 columns in gr.8
+     File Xfer: XMODEM, Kermit
+     Autodial: No
+     Backscroll buffer: No
+     Capture-to-disk: No
+     Summary: Combination VT100, XMODEM, Kermit; buggy at file Xfers
+     Merit/UMich: Telecomm/omnicom.arc
+
+VT850 B1, shareware by Curtis Laser
+     Emulates: VT100/VT102 (plus complete VT220 keymap)
+     Text: 40 columns in gr.0; 80 col. w/ XEP80
+     File Xfer: None
+     Autodial: No
+     Backscroll buffer: No
+     Capture-to-disk: Yes
+     Summary: Excellent at VT100 on the XEP80; 1200bps top speed
+     Merit/UMich: Telecomm/vt850b1.arc
+
+FlickerTerm 80 0.37, freeware by LonerSoft (Clay Halliwell)
+     Emulates: VT100
+     Text: 80 column via a special Graphics 0 screen (no hardware req'd)
+     File Xfer: None
+     Autodial: No
+     Backscroll buffer: No
+     Capture-to-disk: No
+     Summary: Fastest and most complete VT100 emulation; readability a- 
+    Merit/UMich: Telecomm/ft80v037.arc
+
+Ice-T 1.0 by IceSoft (Itay Chamiel)
+     Emulates: VT100
+     Text: 80 column via a fast-scrolling graphics 8 screen
+     File Xfer: XMODEM download
+     Autodial: No
+     Backscroll buffer: yes (One screen)
+     Capture-to-disk: No
+     Summary: Excellent for high-speed VT100 emulation
+     Merit/UMich: Telecomm/icet.arc
+
+------------------------------
+
+Subject: 11.2) Can I read/write 8-bit Atari disks on an IBM-PC?
+€
+     There are several programs on the archives of this variety.  Note 
+that these require a DOS and disk drive on the Atari end capable of the
+SS/DD 180K format (SpartaDOS, MYDOS, etc.; XF551, Indus GT, etc.).  The
+programs are:
+
+ATARIO by Dave Brandman w/ Kevin White - Reads SS/DD 180K Atari disks.  
+  Merit/UMich: Diskutils/atario21.arc
+
+SpartaRead by Oscar Fowler - Reads SS/DD 180K SpartaDOS disks.
+  Merit/UMich: Diskutils/sr.arc
+
+UTIL by Charles Marslett - Reads/Writes SS/DD 180K Atari disks. Use
+MyUTIL!
+  Merit/UMich: Diskutils/dskutil.arc
+     (Older versions are contained in pcxfer.arc, util.arc, and
+ataridsk.arc)
+
+MyUTIL by Charles Marslett and Mark Vallevand - The latest version!
+  Merit/UMich: Diskutils/myutil.zip
+  PVV: utilities/disk/myutil.zip
+
+------------------------------
+
+Subject: 11.3) Can I read/write MS-DOS disks on an 8-bit Atari?
+
+a) If your highest-capacity floppy drive on your Atari system is the
+Atari 1050, you won't be able to use ATARIO, SpartaRead, or UTIL.  You
+still have the following alternative:
+
+Mule by Rick Cortese - Read/Write 180K MS-DOS disks with an Atari 1050
+drive or equivalent.  Very limited.
+  Merit/UMich: Diskutils/mule.arc,Diskutils/mule.exe, Diskutils/mule.txt
+
+b) SIO2PC, described elsewhere in this FAQ List (section 12.4), can be 
+used to read/write to a hard drive connected to an MS-DOS system.  This 
+can also be a very effective file-transfer solution.
+
+c) The XF551 3.5" Upgrades from Computer Software Services (see the
+companion vendor/developer lst) allow the Atari XF551 disk drive to read
+720K 3.5" MS-DOS disks. 
+
+d) The Floppy Board, the add-on to the Black-Box from Computer Software 
+Services (see the companion vendor/developer list), allows both low 
+density (360K 5.25", 720K 3.5"), and, in the case of the Deluxe 
+Version, high density (1.2M 5.25", 1.44M 3.5") external MS-DOS-standard 
+floppy drives to be used on the Atari.  A utility is included to 
+read/write MS-DOS formatted floppies in all supported densities.
+
+------------------------------
+
+Subject: 11.4) How do I transfer files using a null modem cable?
+
+This section by mailto:cb541@cleveland.Freenet.Edu (James R. Gilbert)
+€
+A:  Simply put, you need a terminal program and an RS 232 port on
+    each computer.  The RS 232 ports need to be connected
+    together using a 'null modem cable'.
+
+    For up to 4800 bps, no flow control lines need be
+    connected.  Just cross the transmit and receive lines
+    and join the grounds together.  (Transmit is pin #2,
+    receive is pin #3 and ground is pin #7 on the 25-pin
+    port.)
+
+    The right hand pin on the 'long' side of a female 'D'
+    connector is #1.  There are 13 holes on this 'long'
+    side, 12 holes on the 'short' side.  The numbers go from
+    #1 on the right to #13 on the left on the 'long' side
+    and from #14 to #25 from right to left on the 'short'
+    side. #25 is closest to being under #13.  A male
+    connector is the mirror image of this.
+
+    Most terminal programs allow a null connection, without a
+    carrier detect.  Notably, '850 Express!' does not.
+    
+    A convenient way to make a null modem cable, up to about
+    30 feet long, is to use two female DB25 connectors and
+    some three or more conductor cable.  Using the two DB25
+    female connectors allows unplugging your modem and
+    plugging in the null modem cable.  This also avoids the
+    confusion of the wide variety of serial port jacks on
+    different computers.  Almost all computers connect into
+    the modem via a DB25 connection.
+
+    The SIO port on the Atari cannot be used directly.  An
+    850 Interface Module, P:R:Connection, Multi I/O, Black
+    Box (by Computer Software Services) or similar device
+    that provides an RS232 port must be used.
+    
+    On the Atari, the port is a female DB9.  So you need a
+    male DB9 to male DB25 modem cable to connect to your
+    modem. So why not use this cable as your null modem
+    cable as well?
+    
+    For higher speed connections, above about 9600 bps on the
+    8-bit, you need the flow control lines.  You also need 
+    a Multi I/O or Black Box, which use the PBI (parallel bus),
+    then you can go higher than 9600 bps.
+
+    Following are pin assignments for a DB25 pin RS 232 C
+    port.
+                 13                       1
+                  o o o o o o o o o o o o o
+                   o o o o o o o o o o o o 
+                  25                     14
+ 
+          (Above is female, male is mirror image.)
+€ 
+1.  Protective Ground        12.  Select Alternate Rate
+2.  Transmit Data            15.  Transmit Clock (sync)
+3.  Receive Data             17.  Receive clock (sync)
+4.  RTS (Request to Send)    20.  Data Terminal Ready
+5.  CTS (Clear to Send)      22.  Ring indicator
+6.  Data Set Ready           23.  Select Alternate Rate
+7.  Signal Ground            24.  Transmit Clock
+8.  Carrier Detect
+    
+    A high speed cable would need not only pins 2 and 3 crossed
+    but also pins 4 and 5 as well as 6 and 8.  Or better
+    yet, make a true 25 wire, straight through cable and use
+    a commercial null modem.  A commercial null modem is
+    just a small device with the correct lines already
+    crossed.
+
+    (DTE = Data Terminal Equipment, i.e., your computer.
+     DCE = Data Communications Equipment, i.e., your modem.)
+
+------------------------------
+
+Subject: 12.1) What 5.25" floppy disk drives are available?
+
+Major contributors to this section:
+mailto:Krishna@max.tiac.net (Glenn M. Saunders)
+mailto:tatar@student.uci.agh.edu.pl (Tomasz M. Tatar)
+mailto:Masstorage@closer.brisnet.org.au (James Bradford)
+
+Manufacturer    Name            Sides/density   Data rate/name/notes
+------------    ----------      --------------- ----------------------
+Atari           810             SS SD           19.2k standard 
+Happy           810             SS SD/DD ?      Warp speed
+Atari           1050            SS SD/ED        19.2k standard 
+Happy           1050            SS SD/ED/DD     Warp speed USDoubler/
+                                                19.2 and 52k. track
+                                                buffering
+Super Archiver  1050            SS SD/ED/DD     Ultra Speed 50+K
+Speedy          1050            SS SD/ED/DD     78K mode (European)
+                                                unknown DOS restrictions
+Supermax        1050            SS SD/ED/DD     19.2k and 52k (ultra
+                                              speed) 
+                                                by Super products. 
+                                                Compatiable with
+                                                superdos   
+                                                and USdoubler
+Atari           XF551           DS SD/ED/DD     38K burst mode usable 
+                                             only 
+                                                with SDX, superdos 5.1,
+                                                turbodos, DOS XE, and
+                                                patched
+                                                spartados 3.2.
+                                                XF DS system now
+                                                considered
+€                                                "standard".
+CSS             XF551           DS SD/ED/DD     USD compatible. Updates
+                                              drive to work better and
+ faster.
+                                                Also 3.5" upgrade
+ available
+Percom          Various/RFD     Various
+                                Any IBM mech
+                                from SS/SD 
+                                5.25 to 720K
+                                3.5"            19.2K standard only
+                                NOTE: no ED     Unique DS system
+Trak            Various         See above       Caching system for
+                                              speedup
+                                                Unknown compatibility in
+                                                fast mode with MYDOS and
+                                                Sparta
+                                                Unique DS system
+Indus           GT              SS SD/ED/DD     Synchromesh mode usable
+                                                with SDX and DOSXL only.
+Astra           Double-D?       DS SD/DD?       standard /LEDs and such
+Rana            1000            SS SD/ED/DD     standard /LEDs and such
+                                                can format disks on a
+                                                stand alone basis
+TOMS            720             DS SD/ED/DD     70000 bps, includes
+                                                parallel
+                                80-track 720 KB Centronics port,
+                                PC's 180/360 KB
+AS              SN-360          DS SD/ED/DD     19200 bps
+TOMS            710             DS SD/ED/DD     70000 bps
+                                80-track 720 KB
+                                PC's 180/360 KB
+LDW             2000            SS SD/ED?/DD?   19200 bps
+LDW             CA-2001         SS SD/DD        up to 38000 bps
+                                ED w/troubles
+LDW             CA-2002         DS SD/ED?/DD    up to 38000 bps
+                                                with SpartaDOS 70000 bps
+
+Detailed descriptions of the TOMS 720, SN-360, TOMS 710, LDW 2000, 
+CA-2001 and CA-2002:
+
+1. TOMS 720
+double head disk drive, 5.25", with mounted interface Centronics,
+chips: CPU 8085, WD2797, PIA 8255 (for handle Centronics), 32 KB ROM, 8
+KB RAMROM contains: OS of drive, MYDOS 4.50 and some utilities (copy,
+format, etc.)ROM is seen by computer as drive D1: (if drive is open),
+and D3: (when drive has number D1:) or D4: (when drive has number D2:).
+It makes possible load DOSfrom ROMdisk during booting system.
+Formats of disks:
+- SS/SD - 40 tracks, 18 sects, 128 bytes = 90 KB
+- SS/ED - 40 tracks, 26 sects, 128 bytes = 130 KB
+- SS/ED - 40 tracks, 18 sects, 256 bytes = 180 KB
+- SS/ID - IBM S-9 - 40 tracks, 9 sects, 512 bytes = 180 KB
+- DS/DD - 40 tracks, 18 sects, 256 bytes = 360 KB
+€- DS/QD - 80 tracks, 18 sects, 256 bytes = 720 KB
+- DS/ID - IBM D-9 - 40 tracks, 9 sects, 512 bytes = 360 KB
+Transmition modes:
+- normal - 19200 bps
+- Turbo - 70000 bps
+- Ultra Speed - 70000 bps
+Also tracks buffering.
+
+2. SN-360
+double head disk drive, 5.25", CPU 8051, controler WD2797
+19200 bps
+Available formats:
+- SS/SD - (FM) single sided, single density - 90 KB
+- SS/ED - (MFM) single sided, enhanced density - 130 KB
+- SS/DD - (MFM) single sided, double density - 180 KB
+- DS/DD - (MFM) double sided, double density - 360 KB
+
+3. TOMS 710
+(The newest polish disk drive and probably the best one)
+Similar to TOMS 720, one more format:
+- double sided, 80 tracks, IBM (720 KB)
+Transmition modes:
+- standard 19200 bps
+- TOMS Turbo (loaded from ROMdisk if drive is open) - 67000 bps
+- Ultra Speed (QMEG-OS, Sparta DOS) - 67000 bps
+Also tracks buffering.
+ROMdisk contain:
+- MYDOS 4.50
+- COPY
+- INIT
+- TURBO - turn on/off TOMS Turbo mode
+- BASIC - turn on/off Atari Basic
+- AUTORUN.SYS - ramdisk
+- README
+Also TOMS Navigator instead of DUP.SYS. It is program similar to Norton
+Commander on PCs.
+IBM-ST copier on additional disk.
+
+4. LDW Super 2000
+single head, 5.25", CPU Z80A, ROM 4 KB, RAM 256 B
+Transmition: 19200 bps or 38000 bps
+Formats:
+- SS/SD - 90 KB
+- SS/ED - 130 KB (with some troubles)
+- SS/DD - 180 KB
+
+5. CA-2001
+single head, 5.25", CPU Z80A, ROM 4 KB, RAM 256 B
+Transmition: 19200 bps or 38000 bps
+Formats:
+- SS/SD - 90 KB
+- SS/ED - 130 KB (with some troubles)
+- SS/DD - 180 KB
+
+€6. CA-2002
+double head, 5.25", CPU 8040, ROM 4 KB, RAM 256 B
+Transmition: 19200 bps (70000 with Sparta DOS)
+Formats:
+- SS/SD - 90 KB
+- SS/ED - 130 KB
+- SS/DD - 180 KB
+- DS/DD - 360 KB
+
+
+Floppy board    various         Any standard    very fast parallel
+                                                DOS-transparent
+                                                Requires Black Box
+                                                DS system configurable
+for
+                                                XF Percom or ATR style
+HDI             various         Any standard    very fast SIO? European
+SWP             ATR-8000        Any standard    standard
+                                except 1.2 and  unique DS system
+                                1.44 meg (HD)
+                      nice Z80 CP/M system in which CP/M drive 
+                      acccess is parallel only thus faster.
+Atari           1450XLD drives  DS SD/ED DD?    standard, requires DOS4
+                                                unusual DS system
+                                                Only prototypes exist
+Atari           XF521           3.5" system     Unreleased
+
+------------------------------
+
+Subject: 12.2) How can I use 3.5" floppy disks with my 8-bit Atari?
+
+to be written.  volunteers?
+
+Amdek
+XF551 upgrades
+Floppy Board
+
+------------------------------
+
+Subject: 12.3) What do I need to connect a hard drive to my 8-bit Atari?
+
+ original by mailto:Krishna@max.tiac.net (Glenn M. Saunders)
+
+Corvus          ?               10 megabytes  Fast but stillrelatively
+                                              slow I/O, kludge through
+                                              joystick ports for 800.
+                                              Rare
+Supra/K-P       N/A             various       Some limitations on drive
+                                              type and size and total
+                                              number of drives in sys.
+FTe             Multi I/O       various       256 byter per sector
+                                              restriction.  256K and
+                                              1 meg ramdisk models.
+                                              Printer and modem, modem
+€                                              will handle 19.2K bps
+CSS             Black Box       various       Will handle all SCSI
+                                              drives.
+                                              Allows 9 drive access for
+                                              MYDOS. Currently the only
+                                              modem interface with
+                                        CTS/RTS
+                                              hardware flow control.
+                                              19.2K ready.
+SWP             ATR-8000     unknown limits  Rare daughterboard for hard
+                                             drives.  I/O is probably 
+                                            fairly slow on this baby and
+                                          there may be DOS restrictions.
+
+------------------------------
+
+Subject: 12.4) How can I use an IBM-PC as a storage device for my Atari?
+
+ Original by Dave Paterson, mailto:d.paterson2@genie.geis.com
+
+SIO2PC is a cable and software combination that lets you use your PC as
+upto 4 drives for your 8-bit.  Drives can be SD, ED, DD or custom sizes
+up to 16 megs.  SIO2PC also lets you redirect the printer output to your
+PCprinter or to a file on the PC.  High speed drives are emulated (a la
+USDoubler).
+ 
+All these functions are transparent at the Atari end; you never notice
+thedifference between SIO2PC and regular drives, except that the SIO2PC
+drivesare faster than any others (except Ramdisks and PBI interface
+drives).
+
+SIO2PC 3.19i is shareware by Nick Kennedy.
+  Merit/UMich: Sio2pc/sio319i.exe
+
+Of importance to SIO2PC users is:
+DcmToDsk, freeware by Jason Duerstock.  It converts most .DCM files into
+SIO2PC .ATR's for use with SIO2PC and PC Xformer.
+  Merit/UMich: Sio2pc/dcm2dsk2.zip
+
+------------------------------
+
+Subject: 13.1) What's the best DOS for the Atari?
+
+     This is a matter of opinion, but general consensus is that all
+8-bit Atariusers should treat themselves to either MYDOS or SpartaDOS
+to appreciate thepower of the system.  MYDOS is modelled after Atari
+DOS 2.0S/2.5, but providessubdirectory and hard-drive support.
+SpartaDOS is a completely differentcommand-line DOS modelled after
+MS-DOS, though it is perfectly capable ofreading all Atari DOS and
+MYDOS disks.  SpartaDOS 3.2g is disk-based; SpartaDOS X 4.21 is 
+cartridge-based and includes many additional features.SpartaDOS is
+available from Fine Tooned Engineering (see companion vendor/developer
+list); MYDOS 4.53/4 is freeware from Wordmark Systems (Charles Marslett
+and Bob Puff).
+€     It is recommended that all 8-bit Atari users own at least DOS 2.5
+forcomplete compatibility with existing software, and then choose
+either SpartaDOSor MYDOS as they see fit.  DOS 2.5, MYDOS and SpartaDOS
+are all available onthe archives.
+  Merit/UMich: Os/dos25.arc (DOS 2.5)
+  Merit/UMich: Fte/fte32g.arc (SpartaDOS)
+  Merit/UMich: Os/mydos453.dcm (MYDOS - latest version)
+               Os/mydos45m.arc (MYDOS - latest complete doc's)
+
+------------------------------
+
+Subject: 13.2) What hardware has Atari created in the 8-bit computer
+line?
+
+Computers:
+400 Personal Computer  (1979) 8-16K, membrane keyboard, 400/800 OS
+800 Personal Computer  (1979) 8-48K, two cartridge slots, 400/800 OS
+1200XL Home Computer   (1982) 64K, early XL OS, F1-F4 keys, 4 LEDs
+600XL Home Computer    (1983) 16-64K, BASIC, PBI, XL OS
+800XL Home Computer    (1983) 64K, BASIC, PBI, XL OS
+800XE Home Computer (1987?)same as 130XE but 64K. Mostly eastern Europe.
+65XE Personal Computer (1985) same as 800XL minus PBI
+130XE Personal Computer(1985) same as 65XE with 128K plus ECI
+XE Game System    (1987) same as 65XE plus Missle Command, detach keybd
+
+Peripherals:
+410 Program Recorder       -Japan and Hong Kong versions
+810 Disk Drive             -SS/SD 90K with DOS 1 or DOS 2.0S,MPI&Tandon
+vers.
+820 Printer                -40 col.
+822 Thermal Printer        -40 col.
+825 80-Column Printer      -req. 850
+830 Acoustic Modem         -300 baud req. 850, with Telelink I
+835 Direct Connect Modem   -300 baud, with Telelink II
+850 Interface Module       -4 9-pin serial, 1 15-pin parallel ports,
+                            beige & black metal versions
+1010 Program Recorder      -Sanyo and Chelco versions
+1020 Color Printer         -40 col., print/plot in 4 colors
+1025 80-Column Printer     -7-pin dot matrix
+1027 Letter-Quality Printer-80 col., letter quality
+1029 Printer               -7-pin dot matrix, same as Commodore MPS-801
+1030 Direct Connect Modem  -300 baud, with ModemLink
+1050 Disk Drive            -SS/ED 128K with DOS 3 or DOS 2.5
+1064                       -64K RAM module for 600XL
+XC11 Program Recorder
+XC12 Program Recorder 
+XM301 Modem                -300 baud, with XE Term
+XMM801 Printer             -80 col.  Ribbon: Mannesman/Tally MS80
+XDM121 Printer             -80 col.letter quality. Ribbon: Silver Reed
+                            CF130
+XF551 Disk Drive           -DS/DD 360K with DOS XE
+XEP80 Interface Module     -80 col. video display and DB25 parallel port
+SX212 Modem                -1200 baud, rarely with SX-Express! package
+
+€Atari 8-bit vaporware computers: (note some are more vaporous than
+                                  others)
+     1200     1200XL internally, many slight cosmetic differences
+     800XLF   800XL incorporating a FREDDY chip (as in the XE's)
+     1250XLD  Earlier concept of the 1450XLD
+     1400XL   800XL plus modem, speech synth.(looks like a 1200XL)
+     1450XL   Earlier concept of the 1450XLD
+     1450XLD  1400XL plus 5.25" floppy drive
+     65XEP    65XE plus 3.5" floppy drive, 5" green monitor
+     65XEM    65XE plus AMIE sound chip
+
+Atari 8-bit vaporware peripherals:(note some are more vaporous than
+                                   others)
+815 Dual Disk Drive     -2 x SS/DD 180K with DOS 2.0D
+1090 XL Expansion System-for PBI, CP/M/MS-DOS/Apple II compatible
+XM128                   -12" green monitor w/ built-in 80-column card
+XC1411                  -composite 14" color monitor
+XF521                   -5.25" floppy drive - 1050 compatible, in XE
+                         style
+XTM201                  -non-impact printer
+XTC201                  -non-impact color printer
+
+------------------------------
+
+Subject: 13.3) What are the power-supply requirements for my Atari 
+               components?
+
+Please let me know if any of this information conflicts with the units 
+you have!
+
+The most important information is the voltage (in volts) required, and
+whether you need a transformer (AC output) or an adapter (DC output).
+Thepower (in watts) and current (in amperes) specifications of the
+originalequipment as presented here should be regarded as minimum
+values. Higher-than-specified power and current capacities are entirely
+usable,and often preferable because such supplies run cooler and last
+longer. 
+
+Power (in watts) = current (in amps) * voltage (in volts)
+
+9 V AC  5.4 VA  (600 mA)  Atari#CO62195  transformer:
+  1030
+
+9 V AC  ???? VA  (??? A)  Atari#CO61516  transformer:
+  1010
+9 V AC  15.3 VA  (1.7 A)  Atari#CO14319  transformer:
+  400,800,822,850,1010,1200XL
+9 V AC  18 VA  (2.0 A)  Atari#CA014748  transformer:
+  400,800,810,822,850,1010,1200XL
+9 V AC  18 VA  (2.0 A)  Atari#CA016804  transformer:
+  400,800,810,822,850,1010,1200XL
+9 V AC  31 VA  (3.4 A)  Atari#CO17945  transformer:
+  400,800,810,822,850,1010,1200XL,1020,1050,XF551,256K FTe MIO
+9 V AC  50 VA  (5.6 A)  Atari#CA017964  transformer:
+€  400,800,810,822,850,1010,1200XL,1020,1050,XF551,256K FTe MIO
+
+9.5 V AC  40 VA  (4.2 A)  Atari#CO61636  transformer:
+  1027
+
+5 V DC  1.0 A  (5.0 W)  Atari#CO70042  adapter:
+  65XE,XE Game System
+5 V DC  1.5 A  (7.5 W)  Atari#CO61982  adapter:
+  600XL,800XL,65XE,130XE,XE Game System
+5 V DC  1.5 A  (7.5 W)  Atari#CA024814  adapter:
+  600XL,800XL,65XE,130XE,XE Games System
+5 V DC  ??? A  (??? W)  Atari#CO81982  adapter:
+  XL/XE
+
+6 V DC  300 mA  (1.8 W)  Atari#???????  adapter:
+  "410P"
+
+9 V DC  500 mA  (4.5 W)  Atari#CO16353  adapter:
+  XEP80,SX212,2600
+9 V DC  500 mA  (4.5 W)  Atari#CA014034  adapter:
+  XEP80,SX212,2600
+
+9.3 V DC  1.93 A  (18 W)  Atari#CO18187  adapter:
+  Indus GT,1 Meg FTe MIO,5200
+11.5 V DC  1.95 A  (33 W)  <- doesn't add up  Atari#CA019141  adapter:
+  Indus GT
+
+5 V / 12 V DC  1.1 A  (5.5 W / 13.2 W)  Atari#CO62297  adapter:
+  1400XL,1450XLD
+
+These draw their power from the SIO +5 V:
+  XM301 (60 mA),XC12;FTe P:R: Connection
+
+These have built-in power supplies (plug directly into the wall):
+  410,815,820,825,1025,1029,XMM801,XDM121
+
+The power supply requirements for the following are still needed:
+??? V DC  ???? A  (???? W)  Atari#CA016751  adapter:
+  830
+??? V DC  ???? A  (???? W)  Atari#CA060535  adapter:
+  835
+XC11 program recorder (no brick needed -> internal or SIO source?)
+
+------------------------------
+
+Subject: 13.4) What are the pinouts for the...?
+
+Serial I/O (Peripheral) Port (all machines):
+   2   4   6   8  10  12
+ 1   3   5   7   9  11  13
+1. Clock Input             8. Motor Control
+2. Clock Output            9. Proceed
+3. Data Input             10. +5/Ready
+4. Ground                 11. Audio Input
+€5. Data Output            12. +12V
+6. Ground                 13. Interrupt
+7. Command
+
+Cartridge Slot (all machines; two on the 800):
+A  B  C  D  E  F  H  J  K  L  M  N  P  R  S
+1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+ 1. ~S4    A. RD4
+ 2. A3     B. GND
+ 3. A2     C. A4
+ 4. A1     D. A5
+ 5. A0     E. A6
+ 6. D4     F. A7
+ 7. D5     H. A8
+ 8. D2     J. A9
+ 9. D1     K. A12
+10. D0     L. D3
+11. D6     M. D7
+12. ~S5    N. A11
+13. +5V    P. A10
+14. RD5    R. R/~W
+15. ~CCTL  S. B02
+
+Enhanced Cartridge Interface (ECI) (130XE and 800XE only):
+A  B  C  D  E  F  H
+1  2  3  4  5  6  7
+A. Reserved   1. ~EXSEL
+B. ~IRQ       2. ~RST
+C. ~HALT      3. ~D1XX
+D. A13        4. ~MPD
+E. A14        5. Audio
+F. A15        6. ~REF
+H. GND        7. +5V
+
+Monitor Jack (all but 400 and XE Game System):
+  3   1
+5       4
+    2
+1. Composite Luminance  (not on 600XL)
+2. Ground
+3. Audio Output
+4. Composite Video
+5. Composite Chroma   (not on 800xl ; grounded on 600xl)
+
+Power Adapter Plug (all but 400, 800):
+  7   6
+3       1
+ 5     4
+    2
+1. +5V
+2. Shield
+3. Ground
+4. +5V
+5. Ground
+€6. +5V
+7. Ground
+
+Controller Port (4 on 400/800, 2 on all others):
+1   2   3   4   5
+  6   7   8   9
+1. (Joystick) Forward Input
+2. (Joystick) Back Input
+3. (Joystick) Left Input
+4. (Joystick) Right Input
+5. B Potentiometer Input
+6. Trigger Input
+7. +5V
+8. Ground
+9. A Potentiometer Input
+
+Parallel Bus Interface (PBI) (600XL and 800XL only):
+1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49
+2 4 6 8 10 12 14 16 18 20 22 24 26 28 30 32 34 36 38 40 42 44 46 48 50
+  1. GND ground                2. External select
+  3. A0 Address output         4. A1
+  5. A2                        6. A3
+  7. A4                        8. A5
+  9. A6                       10. GND
+ 11. A7                       12. A8
+ 13. A9                       14. A10
+ 15. A11                      16. A12
+ 17. A13                      18. A14
+ 19. GND                      20. A15
+ 21. D0 Data (bidirectional)  22. D1
+ 23. D2                       24. D3
+ 25. D4                       26. D5
+ 27. D6                       28. D7
+ 29. GND                      30. GND
+ 31. Phase 2 clock output     32. GND
+ 33. NC Reserved              34. Reset output
+ 35. (IRQ) Interrupt request  36. Ready input
+ 37. NC                       38. External decoder output
+ 39. NC                       40. Refresh output
+ 41. Column address output    42. GND
+ 43. Math pack disable input  44. Row addr strobe
+ 45. GND                      46. Latch read/write out
+ 47. NC (+5v on 600xl only)   48. NC (+5v on 600xl only. used with1064)
+ 49. Audio input              50. GND
+
+ --850 R1-4 pinouts from: mailto:generic@rahul.net (Chris Rosenthal)
+R1: Serial port (850 Interface Module):
+5   4   3   2   1
+  9   8   7   6
+1. Data Terminal Ready (DTR, Ready Out)
+2. Carrier Detect (CRX, In)
+3. Send Data (out)
+4. Receive Data (In)
+5. Signal Ground 
+€6. Data Set Ready (DSR, Ready In)
+7. Request to Send (RTS, Out)
+8. Clear to Send (CTS, In)
+
+R2: Serial port (850 Interface Module):
+5   4   3   2   1
+  9   8   7   6
+1. DTR
+3. Send Data  
+4. Receive Data 
+5. Signal Ground
+6. DSR
+
+R3: Serial port (850 Interface Module):
+5   4   3   2   1
+  9   8   7   6
+1. DTR
+3. Send Data
+4. Receive
+5. Signal Ground
+7. RTS
+8. -8 Volts
+ 
+R4: Serial port (850 Interface Module):
+5   4   3   2   1
+  9   8   7   6
+1. Send Data +
+3. Send Data -
+7. Receive Data +
+9. Receive Data - (20 mA) 
+
+  --850 P: pinout from: Jim Evans, mailto:donor@max.u.washington.edu
+P: Parallel port (850 Interface Module):
+      8  7  6  5  4  3  2  1
+       15 14 13 12 11 10  9
+1. Data Strob
+2. D0
+3. D1
+4. D2
+5. D3
+6. D4
+7. D5
+8. D6
+9.  
+10. Data pins pull up + 5v 
+11. Ground
+12. Fault
+13. Busy
+14. -
+15. D7
+
+P: Parallel port (XEP80 Interface Module):
+    13  12  11  10   9   8   7   6   5   4   3   2   1
+      25  24  23  22  21  20  19  18  17  16  15  14
+€    1. Strobe
+  2-9. Parallel Data
+   10. Not Used
+   11. Busy
+12-17. Not Used
+18-25. Ground
+
+------------------------------
+
+Subject: 13.5) What BBS software can be used on the Atari?
+
+This section by mailto:winston@merk.com (Winston Smith)
+
+Here is the run down of ATARI 6502 8-BIT BBSes that I am aware of:
+ 
+  o  A.M.I.S. BBS --  The A.C.E. Message Information Service.
+                      This BBS was written in BASIC by the Atari
+ComputerEnthusiasts computer club (was it the Michigan chapter?).  It
+includeddesigns for a ring-detector.  You needed a sector editor and
+had toallocate message space by hand, hex byte by hex byte.
+ 
+  o  F.O.R.E.M. BBS --  Friends of Rick E. Moose BBS.
+                        At the time, there were a lot of BBSes around
+called things such as "FORUM-80" and "BULLET-80", ergo the name.  FOREM
+BBSwas the first truly RBBS-like BBS for the ATARI 8-bit.  It was
+programmedin BASIC and was somewhat crashy.  I think that this is the
+great-grandparent of the FOREM-XE BBSes that survive today.
+ 
+  o  ABBCS --  The ANTIC Bulletin Board Construction Set.
+               The user design of the ABBCS was very good.  It sported
+features such as intra-line editors.  Unfortunately, the coding of the
+ABBCS was really poor.  You could practically blow on your keyboard and
+crash this BBS.  The BBS would sometimes crash several times a day.
+ 
+  o  NITE-LITE BBS --  Paul Swanson's BBS with RAM disk.
+                       Paul Swanson was a programmer from the Boston,
+Massachusetts, USA, area.  I'm not sure whether his BBS for the ATARI
+8-bithas been placed into the public domain or not.  This BBS was the
+first tosupport a RAM-disk, which Paul Swanson called a "V:" device for
+"virtualdisk".  This BBS was written in ATARI BASIC and required a
+joystickhardware "dongle" device.  This was notable as being one of the
+first ATARI8-BIT BBSes that could actually go for a week without having
+to berebooted.  Pointers to the message base were kept in an ATARI
+"very longstring" (for which ATARI BASIC is famous).  The BBS would
+only haveproblems (for the most part) if this string became corrupted.
+ 
+  o ATKEEP --  An ATARI 8-BIT version of CITADEL BBS.
+               I believe that AT-KEEP, like FOREM-XE, requires the use
+ofthe commercial BASIC-XE cartridge to run.  This BBS program was very
+popular around Louisiana, USA, from what I understand.
+ 
+  o Benton's SMART BBS --  BBS written in BASIC by Marco Benton.
+                           This program is written entirely in BASIC.It
+expects to be running under a SPARTA-DOS environment.This was a problem
+€until very recently,when SPARTADOS was released into the public domain.
+This BBS program uses a "modem clock string" rather than an R-TIME-8
+cartridge in order to retrieve the current time.  It also comes with an
+ATARI BASIC game door called "Sabotage".
+ 
+  o FOREM-XE --  FOREM using BASIC-XE.
+                 This version of FOREM BBS requires the commercial
+BASIC-XEcartridge in order to run.  It is in the public domain and can
+import andexport messages from the ATARI PRO! BBS EXPRESS-NET (7-BIT
+text only,control ATASCII graphics are reserved for message
+data-structure bytes).FOREM-XE BBS is still currently in use as we
+speak, and may be reached viathe PRO! EXPRESS-NET as long as the
+cross-networking "transnet" is still ineffect.
+ 
+  o The BBS Express  --  PRO! BBS demo program.
+                         This is the public domain version of
+EXPRESS!-BBS,which is the Keith Ledbetter companion project of the
+EXPRESS!-TERMterminal program of days gone by.  I am not familiar with
+this program.  Ithink that it is written in ACTION! and only supports
+XMODEM Checksumtransfers.  I have never called or seen this program
+demonstrated.
+ 
+  o OASIS JUNIOR III --  OASIS BBS demo program.
+                         OASIS JUNIOR III is the -ALL MACHINE LANGUAGE-
+demo version of the OASIS BBS program.  OASIS is very crash-resistant
+andcomes with a "dial out" screen so that the Sysop can use the BBS as
+aterminal program to call and fetch files without having to bring the
+BBSdown and reload a terminal program.  OASIS supports "Door programs"
+whichit refers to as "OASIS PAL modules".  This OASIS demo module comes
+with anexcellent message system.  The OASIS file system is one of the
+mostcomplicated that I have ever seen.  It consists of "file libraries"
+withsuites of "file types".  There is quite a bit of overhead involved
+inperforming a download (which may be a good thing, as it discourages
+filehogs).  There is a commercial version of OASIS called "OASIS IV"
+thatperforms networking.  There was an OASIS network between Boston,
+Massachusets, USA and Murfreesboro(SP?), Tennessee, USA.  Occasionally
+wordof the OASIS IV developers reaches the network from New Zealand or
+Canada.
+ 
+  o Frank Walters BBS --  I know nothing about this BBS except that F.
+                          Walters wrote it.
+ 
+ 
+     OASIS IV, CARINA, and BBS-EXPRESS-PROFESSIONAL! are all commercial
+programs.  I haven't heard anything about OASIS IV and CARINA for a
+while,but PRO!-BBS is still a viable commercial enterprise last that I
+had heard.
+
+------------------------------
+
+Subject: 14.1) What product developers or vendors support the 8-bit
+Atari?
+
+     There are two files available:
+€
+1) Atari 8-Bit Computers: Vendors and Developers
+
+ftp://rtfm.mit.edu/pub/usenet-by-group/news.answers/atari-8-bit/vendev
+http://www.cis.ohio-state.edu/hypertext/faq/usenet/atari-8-bit/vendev/
+faq.html
+news:comp.sys.atari.8bit, news:comp.answers, news:news.answers
+mailto:mcurrent@carleton.edu
+and all other archives of Usenet FAQ lists.
+
+2) "The Official **AC** Vendor List" is maintained by Atari Classics
+magazine's Advertising Editor, Bob Scholar,
+mailto:r.scholar@genie.geis.com.  This list focuses on North America,
+butall sources listed have been personally confirmed by the AC staff. 
+
+------------------------------
+
+Subject: 14.2) Where is my nearest 8-bit Atari BBS?
+
+     The "ATARI CLASSICS Atari Bulletin Board System listing" is
+maintained by Lawrence Estep, AC's Telecommunications Editor,
+mailto:71450.1050@compuserve.com. 
+
+------------------------------
+
+Subject: 14.3) Where is my nearest 8-bit Atari user group?
+
+     An 8-bit Atari user group listing is maintained by Atari Classics
+magazine's Exchange Editor, James King, mailto:KAMARO_KID@delphi.com.
+
+------------------------------
+
+Subject: 14.4) How do I use my new or emulated Atari?
+
+"The Unofficial Atari 8bit Newbie / Stupid Question / Emulator Help FAQ" is
+maintained by Bill Kendrick, mailto:kendrick@sonoma.edu.  You can 
+write to Bill at New Breed Software, 59 Palm Lane, Novato, CA 94945.
+
+------------------------------
+
+Subject: 14.5) What prominent Atarians are reachable by e-mail?
+
+The "Who's Who in the Atari Community E-Mail Directory" listing covers 
+people involved in all of the Atari computing and gaming platforms. This
+file is maintained by Len Stys, SIG Manager of the Cleveland Free-Net
+Atari SIG.  Write to the Atari SIG at 
+mailto:xx004@cleveland.freenet.edu. 
+
+------------------------------
+„End of atari-8-bit/faq€
+------------------------------

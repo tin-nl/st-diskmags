@@ -1,0 +1,296 @@
+0660103030571
+9[........................................................]
+…
+
+TheMaggieInterview-KevCallahan
+
+„
+HiyaKev,canyougiveusthefullsordidbiographicaldetails,name,
+includinganyembarrassingmiddlenames,dateofbirth,placeofbirth
+andsoon?
+
+€FullName:KevinCallahan(nomiddlename)
+
+Born:      12/11/66(veryoldgit)
+Place:     Havant,Hants.
+Currently:Poole,Dorset.
+„
+
+Howdidyougetintocomputers,andwhatwasyourfirstcontactwithan
+Atarimachineofanydescription?
+
+€MyfirstcontactwassomethingcalledanRML-380Zatschool.Veryfew
+peoplehadanyideaaboutandwe(obviously)neededsomegamesforit.
+
+Anywayafterplayingaroundforafewyearsonassortedcomputersthat
+theschoolbought(VideoGeniewasanother)myappetitewaswhettedso
+aftersavingmanymonthsandwithhelpfrommyparentsIboughta
+CommodoreVic-20whenIwasabout14..ThatsummerIspentmostofmy
+timecodinggames(Imusthavebeenverysad)(versionsofBerzerk,
+Space-ChaserandPhoenixwerethemainones).
+
+ThesewerepredominatelywritteninBasicbutwithsmallmachinecode
+routines(noassembler,andPOKEdintomemory)toshiftlargeareasof
+screenquickly.Anywayafterhavingthisforafewyears-onewayor
+anotherIendedupbuyinganAtari1040STe..AnAmigawouldprobably
+havebeentheexpectedpathtotake,butIwantedMIDIportstocontrol
+mysynth.
+„
+
+Whatmotivatedyoutogetintocoding/programming?
+€
+WellI'mactuallya"professional"softwareengineerforaTelecoms
+Company,andsinceI'veplayedcomputer/arcadegamesformostofmy
+lifeIwantedtofigureouthowtowritemyown.Iusuallywritestuff
+inC,C++andPPCassemblernowadays,althoughIhadmessedaround
+writingfirmwarein68kafewyearsago.Themainimpetuscameoneday
+whenIwasplayingRainbowIslandsofallthingsandIstartedtothink
+howI'dimplementplatformcollisiondetection,etc..
+
+AnywayIusuallyseeafriendofmineeveryMonday;whenwesetaside
+theeveningtoplaymultiplayergames,andsoafterplayingDynabusters
+oneday(anditcrashingalot!)IdecidedthiswasthegamethatIwas
+goingtowriteinitially.
+„
+
+WhydidyouparticularlydecidetochoosetheSTe,ratherthanSTFM
+asyourtargetcomputer?
+€
+Theeaseatwhichtheblittercanbeusedtodumpspritesontothe
+screen,theDMAsoundandtheextraJSportswerethemainreasons..I
+wroteEVERYTHINGfromscratchsoIknewhowtooptimiseeverythingas
+muchasIcould.Ihavedifferentspriteroutinesdependingonhowmany
+bitplanesIactuallyneedtouse(iequickerfortheexplosions),ones
+thataremaskedaroundtheedgesandonesthataren't.
+
+„
+Atwhatpointdidyoudecidethatyouwerereadytofacethewider
+worldwithyourprogrammingcreations?
+
+€WellIdecidedaftertwoyearsthatI_must_finishitelsemywork
+wouldhavebeenwasted(despiteplayingthegameatworkandonMondays
+butitwouldbenicetoknowotherpeoplehadplayedit).Thereis
+stillsomuchIcouldputinthegame,butIdecidedonedaythatI'd
+gottoapointwhenitwasallworkingasI'dlikeit.IfIgetenough
+interestI'lldosomemoretoitIthink...Ikeptaddingmoreand
+more.eg.Ifoundkicking/throwinginvisiblebombsworkedwronglysoI
+tweakedthat,andthenIaddedmolotovcocktails,andthenIthough...
+etcetcetc!
+
+„
+WhathasBombamangotthatotherSuperBombermancloneshaven't?
+
+€Lessletters?Wellthere'saquestionbecauseI'venotreallyplayed
+otherversions:-O.
+
+ReallyItriedtoputinasmanypowerupsaspossiblealthoughsince
+releasingitI'vethoughtupsomemore.Thetrickisnottospoilit
+withtoomuchIsuppose.
+
+Asfarasmyversiongoesthoughithas:Somereallycool(original)
+chipmusic:I'vewrittenautilityinCthattakesaMODfile,you
+selecttracksfromcertainblocksandconvertsittochipmusic.MOD
+musicwasgonnatakeuptoomuchCPUtimeasfarasIwasconcerned-
+itwouldprobablyalsomessupsomeoftheinterrupts.
+
+Loadsofpowerups:extrabombs,extrarange,speedups,slowdowns,
+reversals,immunity,invisibility,global-effects,ghost-bombs,
+autolay,shortandlongfuses,kickingbombs,throwingbombs,molotov
+cocktails,megaandminiexplosions,randomeffects,plunger,bonus
+extensions,bonusterminationsandsomemore!Verysmoothandfast
+gameplayunlikeotherswherethemenwalktooslowformyliking.
+
+Multiplesimultaneousexplosions,withno/littleslowdown.Allrunning
+at50fps-verysmoothandeasyjoystickcontrol.
+„
+
+Iheartherewasanearlierversionthatgotreleasedbutpickedup
+verylittleinterest,howwouldyougoaboutgettingyourselfaswidely
+knownaspossiblethistimetoavoidthathappeningagain?
+
+€Yeah,itwascalledBOMBARD(whichwasacrapnameanyway)-twopeople
+registeredit...:-(ButIwasn'tdisheartened(WellIwasreally).
+ThatversionIjustreleasedviaGoodmans,Ithoughtitwouldbenice
+tosupportaPDlibrary;nowIrealisethatputtingitontheinternet
+andmentioningitin"LittleGreenDesktop"andDHS'shomepagesdida
+betterjob.IalsoemailedAtariComputingaboutit..
+
+„
+We'venotheardofyoubefore,haveyoubeenactiveontheAtariscene
+previously,perhapsunderapseudonym,orareyouoneofthoseclassic
+'bedroomcoders'strugglingoninisolation?
+€
+WellI'vebeenusingtheAtariasIsaidforsomeyears(Iboughtone
+ofthefirstones-TOS1.6(or1.06aspeopleliketocallitnow)
+withthemedrezbug(it'sstillinthere!)).
+
+Reallyitwasn'tuntilIgotanoriginal(!)copyofDevpac2(with
+manual)fromafriendwhousedtowritedemosfortheST(nofloppy
+drive,etc)thatIreallystarted.Bombamanismyfirstrelease-it
+tookmesolongtowriteallthebasicroutines,hencethetimeit's
+takentorelease.I'mreusingtheseinmycurrentproject...
+
+Asfora'bedroomcoder'-Ithinkthatwouldbepushingmywifetoo
+far!It'sbadenoughthatmytwochildrenhavetosharearoombecause
+ofmyhobby..!
+„
+
+Ialsoreadinthetextfilewiththegame,thatthereareseveral
+othergameprojectsunderconsideration,couldyoutellusabit
+moreaboutthese,howfarhavetheygot,etc?
+€
+WellI'mworkingononeatthemoment(wellIwasuntilIstartedmy
+house-move)..andhopefullythat'llbefinishedbyXmas(Imayalso
+releaseanXmasversionofBombamanaswell:-)Ijustmanagedtostop
+myselfreleasinga"Teletubbies"Bombaman...!I'dlovetoseethose
+thingsdie!I'dalsoliketorevampthegraphicsandanimation-making
+itabitmoregory(in16or32colours???).
+
+
+„Ialsohearthatyou'vegotaPC,tohelpwithdevelopmentwork,are
+youawareoftheburgeoningSTemulationsceneonthePC,doyousee
+yourselfcodingonanemulatorinthefuture?
+€
+WellthepainwiththeoldSTeiswritingstuffinmediumres-Ihave
+anoldAmstradmonitorwiredup-itworksfinebutI'dprefertouse
+mymonomonitorfordevelopmentbutthenIhavetounplugthis,reset
+that,etc.
+
+„
+Ifyouarefollowingtheemulationscene,whatdoyouthinkofitat
+themoment?
+€
+I'mimpressedbytheemulators-especiallyPacifist,andTOSBOXlooks
+goodbutIcan'tgetthemousetowork...:-(
+
+I'dliketodeveloponthePCactually-onepacifistwindowinlo/med
+resandoneinhires...Can'tdoityetthough.Alsosomeofmycode
+doesn'tseemtobetooimpressedbyemulation-I'lllookintoit-I
+thinkit'stodowithHBLinterruptsthough.
+
+„
+Withreferencetoshareware,areyouawareofregistrationschemes
+suchasCyberstriderandInteractive,wouldyouconsiderusing
+eitherofthesetogainwiderrecognition.
+€
+I'vealwaysconsideredthesetobemorefor'serioussoftware'really.
+
+„
+Wheredoyouseeyourselfinfiveyearstime?
+
+€WellnotcodingforthePCthat'sforsure.ThereasonIdotheAtari
+stuffisbecauseit'sfun!I'vecodedstuffonthePCinthepast(I
+wroteanMPEGMovieplayer/ATMhandlingforaVideoonDemand
+applicationusingADSLtechnology(6Mbpsdownyourcopperphone-line))
+anditwas_not_fun!
+
+„
+Somequickreactionwords,trytheseforsize....
+
+Atari(thecompany)..
+€
+WhatcanIsaythathasn'tbeensaidmanytimesbeforeeh?Theywasted
+somanyopportunities-maybetheysawthePCmenacegrowingand
+decidedtocuttheirlossesandgetout?Eitherwaythereisnoexcuse
+fortheawfulwaytheymarketedtheirproducts.Youcan'tleavethe
+machinestoadvertisethemselves-itworksuptoapoint,but...
+„
+ST..
+€
+Well,whatgreatmachineseh?Iwouldneverhaveimaginedthatthey
+wouldstillbearoundnow.Albeitmorerecentlyovershadowedbythe..
+„
+Falcon..
+€
+WellImustadmitthereseemstobemoresoftwarereleasednowforit
+thanever-althoughalotofitseemstobedemos(impressive,butI
+considerthemabitofawasteoftalent-writesomethingmoreuseful
+maybe?).TheReservoirGodsandwhoeverwrote'Running'seemtobe
+keepingtheplatformalivefromagamingpointofview,andtherelease
+ofmoreandmoreserioussoftwareisobviouslyagoodthingaswell!
+„
+Jaguar..
+
+€Dunnoreally-Ihadafriendwithonethathepickedupverycheap-
+hehadacoupleofgames-Tempest2000andsomeweirdpuzzleone
+(whichwasactually_very_good-somethingtodowithtile-juggling
+fromwhatIremember-anSTeonewouldbequiteeasy..).Stillthere
+wasn'treallyenoughchoiceofgamesavailable(abitliketheN64:-).
+„
+PC..
+€
+AnecessaryevilI'mafraid-I'musingminetodrawallthenew
+graphicsandcreatethesoundfilesI'mafraid-it'sactuallyan
+easierenvironmenttoworkin-despitehatingthewaythey've
+dominatedthecomputermarket.
+„
+Playstation,N64andother'big'consoles..
+€
+Iwastoyingwiththeideaofgettingone-althoughnowI'mgladI
+didn'tthegamesareallgettingvery'samey'now.
+„
+Amiga..
+
+€WellIusedtoenjoytheAtarivsAmigaargumentsalthoughI'dnever
+getinvolvedinsuchcontroversy-Iwouldthinkit'sallveryacademic
+whichisbetter-reallytheAmigaisgoodforgamesandtheAtariis
+betterateverything!!:-D
+„
+TheInternet..
+
+€Veryuseful-Iwishlocalphone-callswerefreethough!!!
+(Hearhear!-Ed)
+„
+Diskmagazines..
+
+€Excellent-althoughImustadmitMaggieistheonlyoneI'veever
+read!(WellapartfromAtariphile).IwouldreadtheothersbutI'd
+liketoseeanoverviewaboutwhat'sonitbeforeIbothered
+downloadingit.
+„
+Demos..
+€
+Nicetoseewhat'spossible-they'vebeenexcellentambassadorsfor
+pushingthelimitsofthemachines-nowgooffandwritesomething
+constructiveaswell!
+„
+CommercialSoftware(Oldstylegames)..
+
+€Wellit'sprettydeadnow-especiallywithPiracybeingsorife..I
+seetwosidestotheargument-oneisthatit'sgoodtoseetheold
+gamesaren'tbeinglostforever,theotheristhatit'sstillillegal!
+Iagreewithbothsides.
+„
+Shareware..
+
+€Reallytheonlywaypeoplearegoingtogetnewsoftwareisviathis
+means.Ensureyouregisteryourinterestasit'stheonlyway
+developersknowthere'sanypointinreleasingnewstuff.
+„
+AtariScene(Deathof?)
+€
+Ihadn'tnoticed.It'sabitquieternowadays,butthepeopleinvolved
+allseemtobeafriendlyandhelpfullot..I'veevenhadhelpforthe
+Amiga-owningpublic..
+„
+AtariScene(Revivalof?)
+
+€Great!fromwhatI'vereadthereseemtobesomepeoplehalf-returning
+totheplatform...I'msurewe'llallbearoundforthenextfewyears!
+„
+Finally,whatistherealmeaningoflife?
+
+€Isthisa_serious_question?I'llansweritasifitis...:-)To
+enjoywhateveryou'redoingandrememberthatyouwillnevergetthis
+timeagain...You'realongtimedead.(Cheerfuleh?).Oritcouldbe
+H'2A...
+„
+(Anyonewhorespondswith'Forty-two'willbeshot!)
+
+Okay,thanksforyourtime!
+€
+Quiteokay!
+…
+Chris/Maggieteam.
+
+€

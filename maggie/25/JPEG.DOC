@@ -1,0 +1,112 @@
+066030202030001132006004004006000
+11
+21
+F0110000001
+9[.............................................................]0010
+Ä
+
+
+                   ÅUsingtheBrainstormJPEGviewer
+                                Ä(tat)
+
+
+
+OneofthebestearlypiecesofFalconsoftwarewastheJPEGcodethat
+Brainstorm,theoriginaldevelopersoftheDSPAssembler,madeto
+depackfiles.Itwassmall,veryfast,andadaptable,butno-oneused
+itbecausetheycouldn'tfindanydocumentation...
+
+...stepforwardafewyears.SinceIwasplanninga96Kdemo,it
+wouldbeusefultohavesomeJPEGcodetostorepicturescompactly.I
+triedtheofficialJPEGgroup'ssourceinC,butthiscompiledto
+about100Kinsizeandmovedslowerthanasuperannuatedsnail,soit
+wasn'tmuchuse.TheonlyotherusefulprogramIhadwasthe
+Brainstormdecoder.Itwasonly9Kinsize,butIhadnoinstructions.
+SoIdecidedtopullitapart.
+
+ThecodeseemstobecopyrightofBrainstorm,butIknowofatleast
+onewell-knownAtarigraphicsprogramwhichhasrippedthecodeoff
+wholesalesoIdon'tseewhywecan't(ifanyonecomesupwithagood
+reason,pleasetellme).Theothergreatadvantageisthatthecore
+codewasstoredasaPC-relativeblock,sowecancopyittoany
+addressanditwillstillwork.
+
+Ondiskissomesourcecodeandtwoversionsofthedecoderwhichyou
+canuseinyourownprograms.OneistheoriginalAUTO-folderversion,
+theotheristhecentralcodewhichcansimplybeincludedinyour
+executablebyusingINCBINortheequivalentinC.Thereisalsosome
+documentationinthesourcecodeonhowtoprogramthedecoder.All
+thedocumentationusesmyownlabels,forthesimplereasonthatIhad
+nootherdocumentationtogoon!
+
+Å                         AUTOFolderdecoder
+Ä
+ÄTheAUTOfolderisthestandardwayofusingthedecoder,butrequires
+thattheprogramhasbeenrunandinstalledalready.Youcanfinditby
+lookingintheCookieJarforthe"_JPG"cookie.Thispointstoasmall
+blockofmemoryinthefollowingformat:
+
+Ver   LONGVersionnumberofthedecoder
+Rout1LONG1.Initialisationandinstallationofthecurrentprocess
+Rout2LONG2.Deinstallation
+Rout3LONG3.Unknown
+       
+Rout4LONG4.Decodingpass1-calculatespicturesizeandmemory
+               requirements
+Rout5LONG5.Decodingpass2
+
+Rout6LONG6.Decodingpass3-outputsthepicturetothespecified
+               channel
+
+
+Weaccessthedriverbycallingtheabove6routines.
+Ifyouaccessthedriverbyincludingtheexecutablecode,Ihave
+suppliedaroutinewhichsimplymimickstheserulesofoperation.
+
+
+Å                       Controllingthedecoder
+Ä
+ForsakeofsimplicityIassumethememoryandsizeofthepictureare
+alreadyknown.Thecodetodepackapictureisgiveninthesupplied
+sourcefile.
+
+Thedriverhasthecapacitytohandleseveralprocessesatthesame
+time,butweshallassumethereisonlyone.Allaccessiscontrolled
+usingabufferabout5Kinsizewhichissuppliedtothedriverin
+registerA0.Offsetsintothisbufferhavemeaningwhichthedriver
+looksat.
+
+Sincethedepackerhandlesmanydifferentinputandoutputtypes,our
+decoderoutinemusttellthedriverwhatsortofdataitexpectsfrom
+thedriver.Theoptionsare:
+Ä
+0000-unused
+0001-8bitoutput(invalidinmostcases)
+0002-16bitoutput,giveninFalcontruecolorformat
+0003-24bitoutput,intheformRRGGBB
+0004-32bitoutput
+
+Mycodemustknowthesizeoftheoutputandsettheequivalentvalue
+"jpgd_pixel_size"tohandletheoutputcorrectly.
+
+Allyouneedtochangeistheroutine"jpgd_receive_pixel"whichtakes
+asinglepixelfromtheJPEGoutputstreamandconvertsittotheform
+youwant.Myexampleroutineconvertsfroma24bitvaluetoa16-bit
+greyscalevaluetooutputonthescreen.
+
+ThisshouldbeenoughtoallowyoutoincludeJPEGsinyourown
+programs.I'msorrythatIcan'tbemoreexplicitthisissuebutI'm
+pushedfortime(sorryCiH)
+
+                                ÅNotesÄ
+
+1.TheBrainstormviewerusesthestandardMALLOCcallstoallocate
+     memorysoyourprogrammustdothesametoavoidproblems.
+2.ThedecoderusestheDSP!Sodon'ttrytodecodeanypictures
+     whileplayingamodulefileforexample
+3.Ifyouhaveanybugs,updatesareavailableat
+     àwww.users.zetnet.co.uk/tattersallÄoremailmeat
+     àtattersall@zetnet.co.ukÄ
+
+tat
+

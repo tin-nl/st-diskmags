@@ -1,0 +1,120 @@
+0660103030571
+9[........................................................]
+Å
+~FlaySIDv3.01~
+Ñ
+BysomeveryniceFrenchpeople!
+Ä
+Thisappearstobeanannualevent..Boymeetsgirlmeets.....Erm,no,
+sorry,justwhenyouthinkit'sgonequietontheSIDemulationfront,
+FlaySIDpopsupwithanewversionatabouttheyearsend..
+
+Thistime,thewaitingFalconowningmassesarerewardedfortheir
+patiencewithversion3.01,otherwiseknownasversion3.0withafew
+lastminutebugsknockedout..
+
+Apartfromthat,arethereanyimprovementstotheoverallpackage..
+Youmightrememberthatitalreadyscorespointsoveritscompetition
+(CreamSID)bybeinghandilyGEM-friendly,andabletoruneitheras
+partofamulti-taskingO/S,orasadeskaccessoryforsingle-TOS
+fans..
+
+FlaySIDandtheCreamplayeralwaysseemedtoberoughlymatchedfor
+fidelityofemulation,buttheCreamplayerhadthatglorious50khz
+surroundsoundmodeasitsmainattraction,whereasFlaySIDpeteredout
+after33khz..WhatnewnessforFlaySIDnow?
+
+Firstly,thefamiliarAudioCD-Playerstyleconsoleisstillthere,
+runnableinany80columnresolutionandbestlookingfrom16colours
+up(butwithawarningthatTruecolourmightbetooslow..)Youcan
+iconifytheconsoletoasmaller'controlsonly'version,butthat
+improvementhasbeeninsinceversion2..
+
+Accordingtotheauthors,theemulationhasbeencleanedup,andalot
+ofbugsremoved,principallyfromabetterunderstandingofhowtheSID
+chipactuallyworks..
+
+Therearetwomajorchangesforversion3,whichtakestheartofSID
+emulationintonewterritoryontheFalcon,firstlytheemulationof
+filtersontheSID..
+
+Lowpassfilters,(withHighandbandpassfilterstofollow)havebeen
+added..Whilstthelackoftheseinpreviousversionshadnotaffected
+thebasicqualityandatmosphereofSIDmusicadversely,implementing
+thesenowaddsanextralayerofsoundfidelity,sowhatyouare
+hearingisprettymuch,say,95%oftheoriginal,asopposedto80-90%
+whichiswhatitwouldhavebeenbefore..ThecharacterofmanySID-
+tuneschanges,andalotofthemoresubtlepartsofatune,lost
+throughalackoffiltering,nowshinethrough..
+
+Secondly,amajorbugwhichaffectedwhitenoisehandlingoncertain
+tuneshasbeenremoved..Withthetestbitrunningcorrectly,partsof
+atunewhichusedvariablewhitenoisecannowbeheardproperlyfor
+thefirsttime..(theintrotuneforthegame'BloodMoney'bySonic
+Graffitispringstomind..)
+
+Sometunesbenefitmorethanothers..Forexample,mostMartinGalway
+tunesarelittleaffectedbythesechanges,butManiacsofNoisemusic
+soundspleasinglydifferent..MorerecentSID-tunesfromrecentdemo
+conventionswhichtendtousetheobscurebitsoftheSIDchiptotry
+togeta'different'sound,alsobenefitfromthisnewversionof
+FlaySIDtoo..
+
+Justtrysometuneswiththefiltersonandofftoseethedifference..
+Withoutthefilters,itisasifsomeoneisplayingwithtooloudand
+distortedaguitaranddrowningoutmuchoftherestoftheband!
+
+Therearealsoseveralotherneatlittletouches,someofwhichwere
+seeninversion2,suchasoscillators,andablue'C64Basic'styled
+statusscreen..
+
+WiththeextraauthenticSID-sound,FlaySIDfinallypullsintothelead
+aheadoftheCreamSIDplayer,althoughtheCreamplayersglorious50
+khzSurround-Soundmodeisdistinctiveandenjoyableonitsown
+merits..We'llhavetoseeifCreamcancomebackwithanewversionof
+theirplayer?
+
+Thereisalsoalotthatishintedatforfutureversions,supportfor
+apossibleSIDhardwarecardproducedbyathirdparty..Evenmore
+mysterious,isthehintedat'TotalC64mode',whichwouldsuggesta
+fullemulationofthatfamous8-Bitcomputer,afirstfortheFalcon..
+FlaySIDisineffect,alreadyapartialemulationincludingtheC64
+ROM,concentratingonthe6502mainCPU,andtheSIDchip..Itwouldbe
+nicetoseeafullC64emulation,whichshouldbefeasible,atleaston
+anacceleratedFalcon,orevenastandardFalconiftrade-offstoget
+reasonablespeedaremadesomewhere..
+
+Goon,youknowyouwantto,guys!
+
+Youcancontacteither:-
+
+DavidCarrere
+MasduCres
+F-30140BoissetetGaujac
+France
+
+Apparently,noaccesstoemailatthepresenttime..
+
+or,email-juergen@tcpip-gmbh.de
+
+whoisincontactwiththeauthor.
+
+Ñ
+Advantages..
+
+MoreorlessfullyfaithfulSIDchipemulationnow..
+Filtersimplemented..
+TestBitwhitenoisebugkilled..
+GEMandMagiCcompatible..
+Prospectsoffuturedevelopment..
+MaybeevenafullC64emulation..
+
+Disadvantages..
+
+Sometunesstillnotquitefastenoughonstandard16mhzFalcon..
+YMemulationapparentlystillunstable..
+No50khzreplay(authorschoice)..
+OnlyworksonaFalcon(orDSPcompatibleclone?)
+
+ÄCiH-Jan'99
+

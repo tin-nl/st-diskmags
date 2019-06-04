@@ -1,0 +1,54 @@
+Hello everybody.
+
+Stello 2.1 othello is out with features such as
+
+ - Works under Gem,  all Atari computers,  all screen  resolutions,  (x 
+   resolution must be at least 640).
+ - Supports Multitos and WINX.
+ - Uses multitasking under Multitos.
+ - Advanced  gameplaying  algoritms,   alfa-beta   minimax,   iterative 
+   deepening,  response  killer  table,  saves game tree and  uses  the 
+   zerowidth minimax modifikation.
+ - One of the best Othello programs in the world.
+ - Background pictures on the board as black/white or color.
+ - RSC files in english, german, french and danish.
+ - Dialogs in windows.
+ - Nice  interface  (3d  buttons  and checkboxes  even  under  old  tos 
+   versions, niceline menus, animation of disc's).
+ - Printing of moves,  board and transscript as ASCII,  GDOS or  Speedo 
+   GDOS.
+ - Export of moves,  board and transcript as ASCII or META  file.  This 
+   means  that  you can take the output and use it in  a  wordprocessor 
+   that  supports import of META files.
+ - You  can  set the size of the output,  (boardsize of 4 -  16  cm)  2 
+   types  of transcript,  (with or without disc's) and turn on/off  the 
+   border text (a b c d e f g h, 1 2 3 4 5 6 7 8)
+ - There  is a (very primitive) fontselector,  and you can  choose  the 
+   output device (printer from 21-30 and meta file from 31-40)
+ - Context sensitive help with St-Guide.
+
+New in Stello 2.1
+
+  - All  menuitems can now be reached via keyboard shortcuts.  The  user 
+    can change the shortcuts by changing the RSC file.
+  - Menu layout changed to be more like the GEM standard. (Gerd Castan)
+  - Mouseform  changes  are now done  inside  a  wind_update(BEG_MCTRL), 
+    wind_update(END_MCTRL) block as they should be. My error :-(
+  - Fewer graf_mouse(OFF), means the mousepointer dosen't flash so much.
+  - Saved endgamelevel settings now used correctly on startup.
+  - German RSC kindly corrected by Thomas Cloer.
+  - Internal  timer uses a system vector instead of the Timer  A  inter-
+    rupt.  This  means that you now can use Stello together  with  other 
+    programs that uses the Timer A interrupt.
+  - Better  communication  with St-Guide  under  Multitos.  (The  memory 
+    protection flag for Stello can now be super instead of global)
+  - Basic Othello Strategies by Colin Springer included in helpfile.
+  - Various minor bugfixes.
+
+More details in the documentation.  Stello is a Shareware game.  I have 
+uploaded   the  game  to  the  following  ftp  sites,   in   the   file 
+STELLO21.LZH. atari.archive.umich.edu, micros.hensa.ac.uk,  
+ftp.cs.tu-berlin.de, ftp.uni-kl.de, ftp.cnam.fr.
+
+                         Happy Othello playing.
+                          Claus J. Pedersen.

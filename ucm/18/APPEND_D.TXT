@@ -1,0 +1,175 @@
+
+ò                          APPENDIX D: ESSENTIAL TOOLS
+
+                                 .:AssemblerS:.
+
+ASSEMBLE (CPU):
+The integrated assembler/editor/debugger from french wizzards Brainstorm. The
+editor is splendid, offering colors in text, standard atari key-combinations
+and online-help. The debugger is based on DEVPAC's, but offers some great
+extra's. The assembler itself however is not as flexible as DEVPAC's and this
+is ofcourse the most important part.
+
+DEVPAC 2.3 (CPU):
+Though this a very old version of this standard assembler, it still
+features 68030 instruction support and has one major advantage over it's
+follow-ups.. The user can interrupt the assembly process. This is handy
+when hundreds of error-messages come flying over the screen for minutes
+and you want to make it stop.
+
+DEVPAC 3.1 (CPU):
+Probably the most used assembler package ever. Features an integrated
+editor, assembler and debugger as well as support for other standard tools. New
+68040 instructions are supported. The debugger of DEVPAC (MON030) is probably
+the most used ever and almost all other monitors are based on this one.
+
+DEVPAC 56K (DSP):
+Only one version of this package was released, but it was kinda dissapointing.
+The assembler offered many features, but was bugridden. Ofcourse the interface
+was the same as it's CPU counterpart, so that was nice for most people. It also
+offers a nice DSP Debugger, but this was also buggy as hell. Perhaps the
+biggest dissapointment was that this DSP edition wasn't incorporated in a new
+update of DEVPAC.
+
+DSPDIT 1.0.7 (DSP):
+A DSP assembler, complete with TURBO-ASSEMBLER like environment. Lacking all
+kinds of basic features, but fast and comfortable. It uses an old version of
+QDSP assembler. You can use it with the new one too.
+
+GFA ASSEMBLER (CPU):
+"If it is from the makers of GFAbasic this must be good!" I can hear you
+saying. Sadly, it ain't that great. It does have a razor-fast editor and a
+unique feature to click on text as a sort of automated FIND-option.
+
+MOTOROLA 56001 ASSEMBLER (DSP):
+Very slow, but offers more functions than a boeing 747 cockpit. And hey, this
+is MOTOROLA stuff, so very complete, concise and stabile. Sadly it's very big,
+has no userinterface, so using it as a tool from within DEVPAC might be a good
+option.
+
+PURE ASSEMBLER (CPU):
+An assembler that offers more options than DEVPAC (!!!!), but sadly it has
+some nasty bugs. Also, the editor and assembler aren't well integrated. Or
+at least not as good as DEVPAC.
+
+QDSP 0.11 (DSP):
+Very fast assembler for the Falcon's 56001 DSP. Can be used with DSPDIT, but
+it offers more functions and fixes a lot of bugs. QDSP itself has no
+userinterface, so use DSPDIT or DEVPAC as a good editor. Still not as
+complete Motorola's DSP assembler.
+
+TURBO ASSEMBLER (CPU):
+A very, very fast assembler. The environment is completely integrated just
+like DEVPAC, but the assembling is much faster. The 68030 and 68040
+instructionsets aren't well supported and also no 68881 support. But
+especially on a basic ST the performance of assembling and editting is so
+much higher and makes this package very well worth considering. Also, TASM
+contains a feature to implode/explode a piece of text to create a better
+overview of the code. Furthermore, it contains direct syntaxerror checking when
+typing in a false statement like in GFA-basic!! Unique stuff!
+The crew .tSCc. made a patched version for the Falcon that supports the
+most important parts of the 68030 instruction set.
+
+                                .:DebuggerS:.
+
+ADEBUG (CPU):
+Based on MON from HiSoft. It offers about the same features, but mostly a
+bit souped up or fixed. The interface is almost the same, so experienced MON-
+user should love this one. It's quite a sturdy piece of kit. Great stuff from
+Brainstorm once again!
+
+BSSDEBUG (CPU):
+Damn! I've never used this one. If anyone can tell something about it, please
+contact me! I only know it's once again a MON-clone with some sexy features. I
+heard it contained features for monitoring DSP, but I think this was just an
+ugly rumour.
+
+BUGABOO (CPU):
+Very different from most interfaces, this is completely unique stuff. It
+reminds me a bit of 8-bit monitors. The interface, might seem awkward and
+outdated (a bit like a basic interpreter from the ATARI XL or C64), but when
+you get to grips with it, it works like a dream.
+This debugger is very stabile. The fun thing is it's reset-proof, so nice
+for use with very weird behaving projects! This is a must for every assembler
+coder!! :)) It's also a fave within the circle of TASM users.
+
+CENTINEL (Falcon/Phenix CPU+DSP):
+Forthcoming debugger from wizards CENTEK. It has once again the same interface
+as MON and that's a big advantage. Great stuff, but as of yet not quite
+complete. It works with all resulotions and setups I've tried. Even under MiNT.
+
+DEVPAC 56K (DSP):
+Contains a weak and buggy ;-) debugger, but it at least offers a
+mousecontrolled GEM-interface.
+
+DSP DEBUG (DSP):
+What can I say, it's the standard DSP debugger. Offers tons of functions and
+the GEM interface is very easy to use. It also offers nifty online help with
+complete DSP instructionset explanation. If you use the Falcon's DSP, please
+use this!! It's the best yet!
+
+MON (CPU):
+This comes standard with DEVPAC 3.1. It's a bit like the standard of all
+debuggers, though it's getting a bit outdated. Still, it offers most things
+you'd expect from a fine debugger. The interface is keyboard-oriented and this
+might seem as a drawback at first, but when you're used to it, it works
+splendid.
+
+PEACEBUG (CPU):
+Hhhmmm.. Haven't tried this very often, but looks like a twinbrother of bugaboo
+to me. Has the same interface as bugaboo as well as most of the features. Oh
+yeah, it has a somewhat different systemfont =)
+
+PURE DEBUGGER (CPU):
+A very fast debugger and also very userfriendly. It offers quite some features,
+but not half as many as MON or any other. Maybe because it was not specificly
+designed as a 680x0 debugger, but also as a C-code debugger. Still, the fast
+mousecontrolled interface is quite something.
+But if you really want power, then this one should be avoided.
+
+TEMPELMON (CPU):
+Wow! Really the strangest monitor/debugger I've ever seen. Development stopped
+way back in 1993, but it still has some features that are very useful compared
+to other monitors. This monitor is a Terminate-and-Stay-Resident program. You
+load it and press a key-combination if you want to monitor a certain
+application's behaviour. Almost a bit like the famous ripper-cartridges from the
+old ST days.
+The monitor is fully configurable to your own needs, but sadly the falcon is not
+supported 100%. The ST and TT are supported very well. This program could come
+in very handy in situations where programs use dirty code. A shame it isn't
+updated anymore. It's really a solid piece of work and opens a new perspective
+for debugging.
+
+                              .:DisassemblerS:.
+
+Well.. most debuggers offer disassembly to disk as well, but it mosty is crap
+code, with no labels put back into the code. So a real dissassembler is a must
+for doing more than only a few tables or routines.
+
+DESERTDRAIN (CPU):
+Very good package that can disassemble into fine sourcefiles most of the time.
+The interface is quite good and it even has colors in text and comments some
+interesting blocks of code it finds. However the dissassembly is quite slow and
+there are a few bugs in the engine. Still I'd call this great stuff, especially
+since you can even configure the tabbing-format to save up huge amounts of
+space.
+
+DISASMLOD (DSP):
+Converts LOD-files into ASM files, but does this very very buggy. Does not
+contain a userinterface and parameters have to be given from the commandline.
+Not such great stuff and I'd really like a better disassembler for the DSP. Oh,
+well, maybe someday..
+
+EASY RIDER 030 (CPU):
+Top stuff! Reverse engineers, hackers, crackers: >>PAY ATTENTION<< This thing
+rules! It is still unbeatable. Fully configurable, very fast and intelligent
+this will accurately dissassemble everything you feed it. It offers support
+for 68030 and 68882 instructionsets, so it is still quite up-to-date. It's
+adaptable for use with DEVPAC, PURE ASM, TURBO ASM, etc. and with some
+fiddling around you can always make it generate good code.
+Only drawback is it requires ST-high or ST-mid resolutions for a correct
+buildup of the screen.
+
+TT DIGGER (CPU):
+Has a nice GEM interface and supports all opcodes, but it's not as configurable
+or intelligent as it's counterparts. A nice effort nevertheless.

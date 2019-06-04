@@ -1,0 +1,146 @@
+-------------------------------------------------------------------------------
+                            Blow your speakers !
+                      Test: Mjuzzak Zerbastel Kit 1.2
+-------------------------------------------------------------------------------
+
+Vielleicht kennt  der Eine oder Andere  unter der werten Leserschaft ja folgene
+Situation : Man  sitzt vor  seinem fetten  Falken mit AD/DA Wandler und 16- Bit
+Soundhardware und  fragt sich, warum man eigentlich immer noch Module schreibt,
+die ja nun beim besten Willen nicht mehr State of Art betreffs der Spurenanzahl
+und Klangqualit„t sind, stammen sie  doch noch aus den  Anfangstagen des Amiga,
+der ja inzwischen auch einen Ehrenplatz im elektronischen  Altersolymp gefunden
+hat - der 500er zumindestens.
+Man wnscht sich irgendwie ein Mehr an Spuren,ein Besser an Klang,ein Einfacher
+an Bedienung ( ein Blonder an Frauen ... Hi EPK ! )
+
+Nun gibt  es aber ein Programm, das  all das fr 75 DM verspricht - das Mjuzzak
+Zerbastel Kit.
+
+Die Facts:
+	- 10 Spuren
+	- 16 Bit Samples
+	- Frei im Stereoraum positionierbare Samples ( ! )
+	- Bis 50 kHz Abspielfrequenz
+	- Sample Editor
+	- soundtracker„hnlicher Editor
+	- Bis zu 42 Samples verwendbar ( mehr passen eh' nicht in 4 MB ...)
+
+Nun, ich habe  dieses nette Tool, bin registrierter User und habe schon mal mit
+dem Autor  geschwafelt, fhle mich also mehr oder weniger pr„destiniert ( nein,
+das hat nichts mit Knaben zu tun ) einen Test zu dem Teil zu schreiben.
+
+Here it is.
+
+L„dt man das Kit, erwartet  einen zun„chst  eine Infobox, die netterweise daran
+erinnert, da man  eine unregistrierte  Version besitzt ( die brigens uneinge-
+schr„nkt l„uft, sieht man von einer Wartepause nach jedem Play ab, was das Edi-
+tieren selbstgeschrieber Songs zur Qual macht).
+
+Anm: Nach erfolgter Registrierung wird der Name des glcklichen in selbiger Box
+     aller Welt kundgetan.
+
+Danach befindet man sich in einem sauberen Gem Programm ( ! ), welches zun„chst
+mal eine  Menleiste  bereith„lt, in der der  interessierte User  Songs/Samples
+laden/speichern/editieren sowie diverse globale Einstellungen vornehmen kann.
+Die GEM-Programmierung bringt es brigens mit sich,da das Kit auch mit Screen-
+blaster u.„. Erweiterungen l„uft.
+
+Zun„chst einmal  sollte man nun  den mitgelieferten Demosong laden. Was bemerkt
+man ?
+
+Es klingt wie vom Tape, sprich: saugeil !
+Es klingt wie vom Tape, sprich: saugeil !!
+Es klingt wie vom Tape, sprich: saugeil !!!
+
+Nach einem  tats„chlich  genialen  Klangerlebnis  versprt  man nun  sicher den
+Drang, sich  selbst am  Editieren eines  eigenen Songs zu versuchen. Wir setzen
+mal kurzerhand  eine erfolgte Registrierung sowie einige vorhandene AVR/DVS 16-
+Bit Samples voraus.
+
+Hat man  seine Samples  geladen und  entert nun den  Editor stellt man zun„chst
+fest, da der  nicht der schnellste  seiner Art ist - GEM sei dank. Aber er tut
+seine Pflicht.
+Tats„chlich kann  man seine S„mbels in ein Schema pressen zum Zwecke des besse-
+ren H”rgenusses  als es vielleicht bei  untransponierten selbigen ein Abspielen
+ohne dergleichen Verrichtungen zur Folge haben k”nnte.
+Und sp„testens beim Aktivieren der 8., 9. und 10. Spur wird sich der Protracker
+verw”hnte Musiker eines Jauchzers nicht erwehren k”nnen.
+Stabil l„uft das alles auch, also Friede, Freude, Eierkuchen ?
+
+Nein, das Teil hat, naturbedingt bei einer V. 1.2 noch einige Haken.
+
+Es gibt  keine Replayroutine, man mu also mit dem Kit abspielen, was ganz okay
+ist, wenn  man  sowieso  alles  auf  Tape schneidet  und an  seine Plattenfirma
+schickt  oder z.B. Videofilme  untertitelt; aber  es is nix  mit Sounddisx oder
+Musikdemos.
+Es gibt kaum Effekte, man mu alles "per Hand" emulieren - z.B. durch geschick-
+tes setzen der Lautst„rke bzw. Frequenzwerte. Ein Frequenzvibrato l„t sich zB.
+mittels der Tune-Option grob nachbilden.
+Der Editor ist l„ngst nicht so komfortabel,wie z.B. im Protracker - dafr l„uft
+der allerdings weder unter NVDI noch mit Screenblaster oder 78 Hz - es hat halt
+alles seine Vor- und Nachteile.
+
+Wenn man  einen Sample setzt, ehe der  vorhergehende auf der Spur fertig ausge-
+spielt wurde, knackt es  mitunter m”rderisch - allerdings  ein Problem, mit dem
+alle  Soundtracker zu  k„mpfen haben, wenn  die Sampleamplitude  so urpl”tzlich
+ver„ndert wird, das ist  prinzipiell bedingt. Nichtsdestotrotz  w„re bei  solch
+einem Programm ein Trick, der das unterdrckt wnschenswert - ansonsten hat man
+zwar klangm„ig UKW-Qualit„t, aber halt bei Gewitterempfang.
+
+Die Option, einen  Sample frei im  Stereoraum zu positionieren ist genial, aber
+wenn man  die Lage fr jeden Eintrag  im Song immer wieder neu eingeben mu, so
+ist das  echt mhsam. Besser w„re  es vielleicht, immer gleich fr einen Sample
+die Lage  zu definieren, an der dieser  Sample dann immer abgespielt wird, egal
+wann und  wo er auftaucht - das Klavier steht nunmal auch in der Realit„t immer
+an derselben Stelle und wird nicht st„ndig auf der Bhne rumgetragen !
+
+Alles in  allem bedient  sich das Kit  nicht ganz so flssig, wie z.B. der Pro-
+tracker.
+
+Der Sampleeditor  ist eher als nette  Zugabe zu betrachten, da er nur sehr ein-
+fache Funktionen  bietet. Man kann bestimmen, ab wann und bis wo ein Sample ge-
+spielt wird. Zudem kann man einen sehr undifferenzierten Loop setzen (praktisch
+nix weiter, als den  Sample noch  mal von  vorn zu spielen, man kann keinen be-
+stimmten Looppunkt festlegen ).
+Wenigstens  eine Option, auch aus  der Mitte  des Samples noch  etwas herauszu-
+schneiden, w„re sinnvoll, vom  gezielten  Boosten/abschw„chen  ganz  bestimmter
+Samplepartien will ich mal gar nicht reden.
+
+Bleibt zu  sagen, da auch  der Sampleeditor  noch drastisch  verbessert werden
+sollte.
+
+Nun sind das  alles Sachen, die nicht  weiter st”ren wrde, wte man, das bald
+eine neue Version auf den Markt kommt, die dann eben besser ist - kann man doch
+nicht gleich am Anfang alles haben,schlielich braucht so ein komplexes Produkt
+seine Entwicklungszeit.
+Leider wird es so eine Version nicht geben.
+Ein Gespr„ch mit einem der Programmautoren ergab, da nur noch eine Version 1.3
+erscheinen wird, die debugged ist, sowie noch  einige Detailverbesserungen ent-
+halten wird.
+Danach wird es nur noch eine kommerzielle Version - n„mlich "Trackcom" von Com-
+po geben, was natrlich das Ende der Sharewareversion bedeuted.
+Trackcom wird tats„chlich drastisch verbessert sein, aber dafr auch 298,- kos-
+ten. Ganze Menge Kies.
+
+Wenigstens werden die Kit-songs kompatibel  zu Trackcom sein - umgekehrt natr-
+lich nicht.
+
+So ist die vorliegende Version 1.2 also mehr oder weniger die Endversion.
+
+Fazit:
+
+Der Editor  ist noch  ertr„glich, der Sampleeditor  ist sehr m„ig, Leuten, die
+vom Protracker  kommen, wird es nicht  ganz leicht fallen, sich an  das Teil zu
+gew”hnen.
+Aber ich  denke, da das  alles wettgemacht  wird durch die  berragende Klang-
+qualit„t des Kits.
+Es sind tats„chlich Sounds m”glich, wie sie keine ( K E I N E ) andere Rechner-
+hardware, die es z.Z. fr diskutablen DM-Einsatz zu kaufen gibt, erzeugen kann,
+ob diese nun von Commodore, IBM oder Apple kommt.
+Wer wirklich ernsthaft semiprofessionelle Musik erzeugen will, der wird um die-
+ses Programm, trotz all seiner Macken, nicht herumkommen.
+
+-------------------------------------------------------------------------------
+                                                Lot / QFT-SC / TNB / 14.04.1994
+-------------------------------------------------------------------------------
+

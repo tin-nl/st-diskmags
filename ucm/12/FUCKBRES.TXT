@@ -1,0 +1,196 @@
+                             :EARchaeopteryx says:
+
+{*f1!FUCK BRESENHAM!{*f0
+
+After that powerful title that could start world war III, you probably expect
+something mindboggling... something cunning.... something like:
+
+A replacement for the bresenham algorithm?!?!
+
+For those  of you that don't  know what the  hell that is, I should say: "And
+you call yourself a coder!" ;-)
+The bresenham algo relies on first calculating a few simple discriminants. In
+the main loop these discriminants added to/subtracted from eachother. This is
+quite  effecient, because  the loop  only consists  of some  simple  and fast
+instructions.
+
+Let's cut  the crap and  get to it. I found out a quite simple algorithm that
+beats the old bresenham to it. It is based on the following incredibly simple
+math >>>> steepness = dX/dY >>>> Where  dX  is  the  difference  between  the
+x-coordinate  of point  1 and point  2 of the line and dY is the same for the
+y-coordinate.
+
+OK, let's  get to the code then, shall we? Here is it in dumb Pascal. And all
+you  speedfreaks: don't  worry, I know  this  isn't neccessarily  faster than
+Bresenham, but the assembler version is!!
+
+------------------------------ òsourcecode 1 ð---------------------------------
+
+Procedure DrawLine(integer: X1, X2, Y1, Y2)
+var
+  X, Y, dX, dY: integer;
+  steepness, d: real;
+begin
+  dX:=X2-X1;
+  dY:=Y2-Y1;
+  if dX > dY then
+{The loop for the situation where dX > dY}
+  begin
+    steepness:=dY/dX
+    d:=Y1;
+    for X:=X1 to X2 do
+    begin
+      PutPixel(X, Trunc(d), 1);  {plot the pixel by using the integer part}
+      d:=d+steepness;            {add steepness to get the new Y}
+    end;
+  end;
+  else
+{The same loop for the situation where dX =< DY}
+  begin
+    steepness:=dX/dY;
+    d:=X1;
+    for Y:=Y1 to Y2 do
+    begin
+      PutPixel(Trunc(d), Y, 1)  {plot the pixel by using the integer part}
+      d:=d+steepness;           {add steepness to get the new X}
+    end;
+  end;
+end;
+
+--------------------------- òend of sourcecode 1 ð-----------------------------
+
+There  it was  in Pascal. Ofcourse  this still  is slow. And  I'm not talking
+about the  normal Pascal compilers that  are crap, but about the instructions
+used. There  is a floating-point  division at  the initilializing part of the
+procedure, so this is quite slow when the line we want to draw is short (i.e.
+the main loop is done only a few times).
+
+The good thing however, is that only very simple instructions are used in the
+main  loop (for..do  statement). And  ofcourse  the  main  loop  is  executed
+everytime  a pixel is  drawn so that mostly  outweights the executing time of
+the initializing part.
+
+The big  difference  with bresenham  algo is  that this  uses  floating-point
+numbers whereas bresenham only uses integers....
+
+...What's that??......I hear a voice screaming from far away....
+
+Y0u  S0d!!  th@t'5  th3  wh0le  p0inT:  N0t  us1nG  3xpeNs1vE  floating-point
+op3raTi0n5!
+
+Now that might  be true, but in the assembler version for the beautiful 680x0
+series  of processors, we  don't need  that  shit!! We  can do it with fairly
+cheap fixed point numbers! HARHAR!
+
+The ñ< Trunc(d) >ð statement from  the Pascal-source  can easily be  translated
+into: ñ< swap d0 >ð on the 68000 :-) Comprendez? Non? Well.. Let's say you have
+a 68000  register like d0. This  contains 32 bits. Now you can divide this up
+into two spaces: the upper 16 bits for the integer part and the lower 16 bits
+for  the fractational  part. What  the ñ< swap >ð instruction does is only swap
+the upper part with lower part so you can use the integer part of the number!
+
+This is more or less the principle my new routine relies on. It uses the same
+technique  as the Pascal  algorithm, but  only now with  a bit of fixed point
+techniques  and  further optimisations. Ofcourse  we can't  get  rid  of  the
+division  instruction, but  we  can  make a ñ< divu.w >ð out of  this with some
+effort.
+
+The routine I'm about to show here has NO CLIPPING so don't do anything weird
+with it and uses Falcon truecolor mode. (320 pixels wide!) It is a subroutine
+that is called by putting some values in the data-/address-registers.
+
+------------------------------- òSourcecode 2ð --------------------------------
+
+* INPUT: d0.w: X1
+*        d1.w: Y1
+*        d2.w: X2
+*        d3.w: Y2
+*        d6.w: highcolor word (color of line)
+*        a0: start of screenaddress
+DRAW_TRUELINE
+        move.l  d2,d4
+        move.l  d3,d5
+        sub.w   d0,d2                   ; / calculate the absolute
+        bpl.s   .ok                     ; | value of the difference
+        neg.w   d2                      ; \ between X1 and X2
+.ok     sub.w   d1,d3                   ; / calculate the absolute
+        bpl.s   .ok2                    ; | value of the difference
+        neg.w   d3                      ; \ between Y1 and Y2
+.ok2    cmp.w   d2,d3
+        bhi.s   .ver
+* Part for dX > dY
+        cmp.w   d0,d4                   ; / Get the
+        bhs.s   .do2                    ; | heighest
+        exg     d0,d4                   ; | X and Y
+        exg     d1,d5                   ; \ in d4.w and d5.w
+.do2    moveq   #10,d2                  ; \put #640
+        lsl.l   #6,d2                   ; /in d2.l (bytes in scanline)
+        sub.w   d0,d4
+        sub.w   d1,d5
+        add.l   d0,d0
+        adda.l  d0,a0
+        mulu.w  d2,d1
+        adda.l  d1,a0
+        tst.w   d5
+        bpl.s   .shit
+        neg.w   d5                      ; / make the
+        neg.l   d2                      ; | dX absolute
+.shit   swap    d5                      ; | and negate the scanline-
+        addq.w  #1,d4                   ; \ offset if needed
+        divu.w  d4,d5                   ; d5.w: steepness
+        moveq   #0,d0
+        subq.w  #1,d4                   ; d4.w: number of times to loop
+
+.lp2    add.w   d5,d0                   ; / check if you need to jump to
+        bcc.s   .mov                    ; \ the next scanline
+        adda.l  d2,a0                   ; jump to the next scanline
+.mov    move.w  d6,(a0)+                ; plot and go to next pixel
+        dbra    d4,.lp2
+        rts
+
+* Part for dX =< dY
+.ver    cmp.w   d0,d4
+        bhs.s   .do
+        exg     d0,d4
+        exg     d1,d5
+.do     moveq   #10,d2                  ; \put #640
+        lsl.l   #6,d2                   ; /in d2.l (bytes in scanline)
+        sub.w   d0,d4
+        sub.w   d1,d5
+        add.l   d0,d0
+        adda.l  d0,a0
+        mulu.w  d2,d1
+        adda.l  d1,a0                   ; a0: address of first pixel
+        tst.w   d5                      ; / make the
+        bpl.s   .shitt                  ; | dY absolute
+        neg.w   d5                      ; | and negate the scanline-
+        neg.l   d2                      ; \ offset if needed
+.shitt  swap    d4
+        addq.w  #1,d5
+        divu.w  d5,d4                   ; d4.w: steepness
+        moveq   #0,d0
+        subq.w  #1,d5                   ; d5.w: number of times to loop
+
+.lp     add.w   d4,d0                   ; / check if you need to jump to
+        bcc.s   .movie                  ; \ the next pixel in the scanline
+        addq.l  #2,a0                   ; go to next pixel in scanline
+.movie  move.w  d6,(a0)                 ; plot the pixel
+        adda.l  d2,a0                   ; go to next scanline
+        dbra    d5,.lp
+        rts
+
+---------------------------- òend of sourcecode 2 ð----------------------------
+
+Well.. There you have it then. I tried this and put it up against some of the
+best versions of bresenham linerouts I had and it still came out victorious!
+
+The  future: This  routine  is almost  as fast  as it gets. There is only two
+things you could do to make it even faster:
+ó1) ðCode specific main loops for special steepnesses. ( steepness<1/8 ,
+   steepness<1/4, etc..) I really want to do this. This could boost the speed
+   by 20-30% (!)
+ó2) ðDraw the line from both ends, so you decrease the number of loops by 50%!
+   But this  looks a  bit awkward if you ask me: you get a little knot in the
+   middle of the line. So this is fast, but not always pretty.
+
+-------------------------------------==================== EarX/fUn =========>

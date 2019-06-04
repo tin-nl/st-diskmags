@@ -1,0 +1,377 @@
+STOS LESSON 4
+
+
+ ******   **      **  *******   *******  ******
+**    **   **    **   **    **  **       **   **
+**          **  **    **    **  **       **   **
+**           ****     *******   *****    ******
+**            **      **    **  **       **   **
+**    **     **       **    **  **       **   **
+ ******     **        *******   *******  **   **
+           ** 
+          **              ******   **     **  **     **  **   **
+                          **   **  **     **  ***    **  **  **
+                          **   **  **     **  ****   **  ** **
+                          ******   **     **  ** **  **  ****
+                          **       **     **  **  ** **  ** **
+                          **       **     **  **   ****  **  **
+                          **         *****    **     **  **   **
+
+-----------------------------------------------------------------
+The Cyberpunks STOS lesson part 4                       (PD) 1992
+-----------------------------------------------------------------
+
+(NOTE: Added 12.06.92
+
+I  have made a new version of the slide prog listed  below,  this 
+new  version is the one on the disk.  The listing below  contains 
+some small bugs,  but they are fixed in the bas file on the disk. 
+The  new version does also have a menu system where you  yourself 
+can chose which picture to view.)
+
+
+First point of todays lesson!  
+
+That music prog given away in DBA 5! well how the **** do you use the
+thing in STOS then? well do the do this way!!
+
+Make some bloody music and save it as a thk file (i think it was thk)
+
+then start STOS (rather obvious really)
+
+then reserve a bank for your music
+
+then bload the music into the bank (bload"jedifun.thk",9)
+
+then write: Call start (bank) 
+
+(the bank in the above and in the following lines are not 'bank' but 
+the number of the bank you bloaded the music into) 
+
+then write: Loke $4d2,start(bank)+8 
+
+you should now hear the lousy bleeps you managed to make, if you are 
+treated with silence then turn up the volume STUPID!!!
+
+to stop the noise (noise=esion, get it!! (just for the tracker fanatics
+that))  write: loke $4d2,0:call start (9)+4
+
+As far as i know this only works if you loads the music into  the 
+prog when running,  if you wants to save the music with the  rest 
+of  the prog then you have to increase some of the  above  values 
+with  28  (i think).  I havent tried to do this so  you  have  to 
+experiment for yourself.  (i tested this music prog last night so 
+i havent had the time to find out more about running it in STOS)
+
+PS:  the  above only works on one a update music,  two  a  update 
+music will most likely go at half speed.
+
+------------------------------------------------------------------
+
+Point Two 
+
+On the disk is the original code for my new slide show, this is a 
+update of the ones i have used earlier on. 
+
+This  version  lacks an option for loading one  specific  picture 
+from the disk as i havent programmed that part yet, but when i do 
+i  shall give you the update.  I might also add more fades  on  a 
+later date (you can add new ones yourself!!) 
+
+A  new  feature is that you can use the GR mode on  NEO  and  PI1 
+pictures. The GR mode zooms up one quarter of a picture then lays 
+a  grid  over  it to remove the blockynes.  A  lot  of  pictures, 
+especially  digi pics,  looks better after  this  treatment,  and 
+you  can now have four pictures in the same space as you had  one 
+earlier on! You can now have more than 100 pictures on one disk!
+
+This is the setup of the file name. 
+
+
+        GR94name.NEO
+
+GR identifies the Grid mode
+
+9 is the number of the Grid to be used, use 1-9 (experiment to figure 
+it out) 
+
+4  is  the  number of images in the picture (use  1-4)  draw  the 
+pictures in the following  order
+
+       1 2   
+       3 4
+
+ 1 is X0,Y0 - X159,Y99
+ 2 is X160,Y0 - X319,Y99
+ 3 is X0,Y100 - X159,Y199
+ 4 is X160,Y100 - X319,Y199
+
+
+name is the name of your picture
+
+NEO is the file format (PAC, NEO or PI1)
+
+
+The  problem now is that if you use a alfa sort all the  GR  pics 
+comes after each other (i didnt think about that when i made it!) 
+
+Warning:  any  picture that starts with GR followed by  a  number 
+between  1-4  and then followed by a number between 1-9  will  be 
+treated as a Grid picture.
+
+
+Warning!! Its so f**king hot outside that i havent the energy to explain 
+how this prog works in detail, be glad i bothered to write something at
+all! I have also taken a couple of extra returns here and there to fit 
+the bas file into the doc.
+
+
+                      - - -  LISTING  - - -
+
+Reserves the necessary screens, standard startup and directory dim
+80 goes to the menu.  
+
+5 reserve as screen 9
+10 reserve as screen 10
+20 reserve as screen 11
+30 reserve as screen 12
+40 reserve as screen 13
+50 reserve as screen 14
+60 key off : hide : flash off : curs off : click off 
+70 dim SLI$(150),T$(1) : mode 0
+80 goto 6000
+
+this bit loads the directory into a dim'ed string (sli$), the reason 
+for this is that the unpack command disturbs the internal dir list. 
+BILDE contains the number of pictures found (bilde is norwegian for 
+picture) if srt=0 in line 360 is 0 then the sli$ dim is sorted
+alphabetically, but this makes all the blank sli$ come first so we 
+have to fix that...  
+
+289 rem
+290 rem -----------------------------------   LOAD DIR   --------
+291 rem
+300 mode 0 : clear key 
+301 for I=0 to 150 : SLI$(I)="" : next I
+310 GR=0 : PAC=0 : BILDE=0 : SLI$(0)=dir first$("*.PAC",-1) :
+if SLI$(0)="" then goto 500
+320 repeat 
+330 inc BILDE
+340 SLI$(BILDE)=dir next$
+350 until SLI$(BILDE)=""
+360 if SRT=0 then sort SLI$(0)
+
+line 400 fixes the problem with the N150 variable, if srt=0 then the 
+loop in line 401 = loop=150-bilde to 150 else it is loop=0 (bilde-bilde)
+to bilde and the problem is solved. Most of the other lines here has 
+rems so, well read the rems...
+  
+
+370 rem
+371 rem ---------------------------------   START SLIDE  ----------
+372 rem
+400 if SRT=0 then N150=150 else N150=BILDE
+401 for LOOP=N150-BILDE to N150
+450 if SLI$(LOOP)="" then goto 490 : rem BUG SECURETY
+460 bload SLI$(LOOP),11 : cls 10 : screen copy 10 to 9 : unpack 11,10 
+: get palette (9)
+465 if left$(SLI$(LOOP),2)="GR" then gosub 5000 : goto 490 : rem GR MODE
+470 if FAD=0 then gosub 4000 else screen copy 10 to physic 
+: get palette (10) : rem FADE
+480 if FAT=0 then gosub 600 : rem WAIT
+485 if upper$(inkey$)="F" then goto 6060
+490 next LOOP : wait 100
+491 wait 100
+
+This is the same as above, but for NEO pictures (the above was for PAC 
+files) Yeah, i know i should have used a variable and thereby have only
+one loop but what the heck...
+
+emh as this file is a bit long i just erased the neo and pi1 part 
+from this text file.
+
+Well the rem says Wait A While so this routine waits a while before it
+loads the next picture, this routine is activated if FAT=0
+
+597 rem
+598 rem ------------------------- WAIT A WHILE --------------
+599 rem
+600 W=0 : repeat 
+610 IN$=upper$(inkey$)
+620 if IN$="Z" then goto 1110
+630 if IN$="S" then goto 2000
+640 if IN$="G" then goto 3000
+645 if IN$="F" then pop : goto 6060
+650 if STP=1 then inc W
+690 until W>=10000 or IN$=" " : clear key : IN$="" : return 
+
+This is the mouse drive zoom where you can chose your own zoom area,
+its taken from the first hidden screen in the S-Extension demo. Partly 
+proged by P.E. of Imagina if i'm not completely wrong..  There are two
+unusual commands here: gr writing and swap, read about them in your 
+manual (if you got one) as this saves me the trouble to explain what 
+xor means...
+
+1000 rem
+1010 rem ----------------------------    ZOOM    ------------------
+1011 rem
+1110 screen copy 10 to back : show on : auto back on 
+1120 limit mouse 0,0 to 319,199 : clear key 
+1150 repeat 
+1151 if inkey$=" " then : hide : gr writing 1 : clear key : goto 600
+1152 until mouse key : X1=x mouse : Y1=y mouse : X2=X1 : Y2=Y1
+1160 rem
+1170 wait 5
+1180 gr writing 3
+1190 repeat 
+1200 box X1,Y1 to X2,Y2
+1210 X2=x mouse : Y2=y mouse
+1220 if X1>X2 then swap X1,X2
+1230 if Y1>Y2 then swap Y1,Y2
+1240 box X1,Y1 to X2,Y2 : M=mouse key
+1250 until M<>0 and X2>X1+10 and Y2>Y1+10 : hide 
+1260 if M=1 and X1+1<X2 and Y1+1<Y2 then zoom X1+1,Y1+1,X2,Y2 
+to 0,0,319,199 else box X1,Y1 to X2,Y2 : M=0 : wait 40
+1270 if mouse key=1 then wait 40 : screen copy 10 to physic :
+screen copy 10 to back : show on : R=1 : clear key : goto 1150 :
+else goto 1270
+
+This is the mega Zoom screen, dont bother with it as the one below is 
+better. I should really change this out with a new routine that uses the
+giga zoom routine, but then again, why bother.... 
+
+1997 rem
+1998 rem --------------------------- MEGA ZOOM 4 SCREENS
+1999 rem
+2000 limit mouse 0,0 to 20,20
+2010 screen copy 10,0,0,160,100 to back,0,0 : zoom back,0,0,160,100 
+to 11,0,0,319,199
+2020 screen copy 10,160,0,320,100 to back,0,0 : zoom back,0,0,160,100 
+to 12,0,0,319,199
+2030 screen copy 10,0,100,160,200 to back,0,0 : zoom back,0,0,160,100 
+to 13,0,0,319,199
+2040 screen copy 10,160,100,320,200 to back,0,0 : zoom back,0,0,160,100 
+to 14,0,0,319,199
+2050 ink 0 : logic=11 : for I=0 to 199 step 2 : draw 0,I to 319,I 
+: next I
+2060 logic=12 : for I=0 to 199 step 2 : draw 0,I to 319,I : next I
+2070 logic=13 : for I=0 to 199 step 2 : draw 0,I to 319,I : next I
+2080 logic=14 : for I=0 to 199 step 2 : draw 0,I to 319,I : next I
+2090 wait vbl : logic=back
+2100 X=x mouse*16 : Y=y mouse*10
+2101 if inkey$=" " then logic=physic : clear key : screen copy 10 
+to physic : goto 600
+2110 screen copy 11,320-X,200-Y,320,200 to logic,0,0
+2120 screen copy 12,0,200-Y,336-X,200 to logic,X,0
+2130 screen copy 13,320-X,0,320,200-Y to logic,0,Y
+2140 screen copy 14,0,0,320-X,200-Y to logic,X,Y
+2150 screen swap : wait vbl 
+2160 goto 2100
+
+This routine is rather neat, it zooms a standard pic into a 4*4 pic, i
+also have one that zooms into a 16*16 pic but i havent included it in
+this slide
+
+Line  3010 limits the mouse to avoid  illegal  values,  3020-3050 
+zooms the picture into 4 screen banks, 3070-3200 is the zoom loop,
+3085 exits if space is pressed, if i should try to explain how the
+calculations in those screencopy lines works on such a warm day i might
+go bananas, so do it yourself or just rip the ***** routine without 
+understanding how it works! i dont care boy!   
+
+3000 rem
+3001 rem  -------------------------- GIGA ZOOM 16 SCREENS -----------
+3002 rem
+3010 limit mouse 0,0 to 60,49
+3020 zoom 10,0,0,80,199 to 11,0,0,319,199
+3030 zoom 10,80,0,160,199 to 12,0,0,319,199
+3040 zoom 10,160,0,240,199 to 13,0,0,319,199
+3050 zoom 10,240,0,319,199 to 14,0,0,319,199
+3060 wait vbl : logic=back : cls back : cls physic
+3070 X=x mouse*16 : Y=(y mouse-50)*-1 : Y=Y*3
+3080 for I=0 to 200 step 4
+3085 if inkey$=" " then logic=physic : screen copy 10 to physic : clear key : goto 600
+3090 screen copy 11,960-X,Y,1280-X,Y+1 to logic,0,I
+3100 screen copy 11,960-X,Y,1280-X,Y+1 to logic,0,I+2
+3110 screen copy 12,640-X,Y,960-X,Y+1 to logic,0,I
+3120 screen copy 12,640-X,Y,960-X,Y+1 to logic,0,I+2
+3130 screen copy 13,320-X,Y,640-X,Y+1 to logic,0,I
+3140 screen copy 13,320-X,Y,640-X,Y+1 to logic,0,I+2
+3150 screen copy 14,0-X,Y,320-X,Y+1 to logic,0,I
+3160 screen copy 14,0-X,Y,320-X,Y+1 to logic,0,I+2
+3170 inc Y
+3180 next I
+3190 screen swap : wait vbl 
+3200 goto 3070
+
+This is the fades, more to be included on a later date. I might put in
+some 1 bit fades using the ACO routine. This routine is activated 
+if FAD=0. The line 4000 picks a fade and goes to it. Each fade starts
+on one of the line numbers in line 4000 and ends in a return.  
+
+To add your own fades simply add the fade code somewhere in  this 
+prog  (preferably right behind the last fade here)  increase  the 
+rnd(15)+1 in line 4000 to rnd(16)+1 and add the line number  your 
+fade  starts  with behind the last line number in line  4000  (PS 
+your fade code has to end with a return)
+
+If  you  hates one of my fades then simply erase  the  code  that 
+contains  that fade and erase its starting line number from  line 
+4000 and decrease the rnd in line 4000 with one
+
+3997 rem
+3998 rem  ----------------------------------   FADE  --------------
+3999 rem
+4000 I=rnd(15)+1 on I goto 4001,4030,4060,4130,4150,4160,4250,4480,4500,
+4520,4540,4560,4580,4600,4620,4640
+4001 fade 5 : wait 60 : cls physic : get palette (10)
+4010 for I=0 to 199 step 2 : screen copy 10,0,I,320,I+1 to physic,0,I 
+: wait vbl : next I
+4020 for I=1 to 199 step 2 : screen copy 10,0,200-I,320,201-I 
+to physic,0,200-I : wait vbl : next I : return 
+4030 fade 5 : wait 60 : cls physic : get palette (10)
+4040 for I=1 to 15 : screen copy 10,320-I*16,200-I*10,320,200 
+to logic,0,0 : wait vbl : next I
+4050 for I=16 to 20 : screen copy 10,320-I*16,200-I*10,320,200 
+to logic,0,0 : next I : return 
+4060 fade 5 : wait 60 : cls physic : get palette (10)
+4070 for I=1 to 10
+4080 for I2=I to 21-I : screen copy 10,I2*16-16,I*10-10,I2*16,I*10 
+to physic,I2*16-16,I*10-10 : next I2
+4090 for I2=I to 19-I : screen copy 10,320-I*16,I2*10,336-I*16,16+I2*10 
+to physic,320-I*16,I2*10 : next I2
+4100 for I2=I-1 to 20-I : screen copy 10,320-I2*16-16,0-I*10+200,
+320-I2*16,100-I*10+210 to physic,320-I2*16-16,210-I*10-10 : next I2
+4110 for I2=I to 19-I : screen copy 10,I*16-16,190-I2*10,I*16,200-I2*10 
+to physic,I*16-16,190-I2*10 : next I2 : next I : return 
+4130 fade 5 : wait 60 : cls physic : get palette (10)
+
+And where the ******* is the rest of this prog????? Beats me mon!!! 
+Something strange is going on here... Ehh let me check this out..
+
+Ehhh it looks like this is it mon,  if the rest of the prog  file 
+is loaded the entire word processor crashes!! Do i know why? NO! 
+
+well  just load the newslide.bas file into STOS a see if you  can 
+understand whats going on, it does have some rems here and there so
+you should understand most of it. 
+
+If i am really nice (which i am NOT!) i might just give away the listing
+for the Net-Mod II intro in the next DBA issue. I might even give away 
+a entire fully working game!! its a Phantom Slayer (Ghost Hunt) clone
+i made for the arcade hall in my Corcon 7 game. 
+
+
+                      See Ya Next Time mon
+
+                      CYBERPUNK OF NETWORK
+
+(due to heavy use of the word Cyberpunk i might change to: CP-3-69) 
+
+
+Note: I have just made a new version of the Net-Mod II intro, its 
+now fast enough to use digi-drum music.  If theres room enough on 
+this  disk  then  you can find a compiled version  of  it  called 
+NETXTIME.PRG and next time you can find the entire code with  DIY 
+sound and gfx, it will be so easy that you dont have to know what 
+Print does to make your own version of it!!!!

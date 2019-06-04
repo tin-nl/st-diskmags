@@ -1,0 +1,91 @@
+0660103030566
+9[....................................................]
+€             "The Demounstures demo" of The TOS-crew
+
+                Reviewed by Corsair of The Giants
+
+Finally  a demo written in Omikron basic again.  The last  one  I 
+saw  was the Tea Party demo of the Double Dutch  Crew.  But  this 
+one is different.  It is pure Omikron basic.  That means that the 
+music is also played by Omikron routines!
+
+Intro:
+After  loading the whole disk(!) and unpacking it,  a  text  with 
+some  credits appear.  A "TOS"-logo built up of rasters is  boun-
+cing over the whole screen and through all borders.
+
+Main menu:
+A labyrinth made of (vertical) rasters appears on the screen.  In 
+the  middle  of  it stands the  "hero"  called  Smiley.  (A  ball 
+containing  a  smile face).  You can move it by using  the  arrow 
+keys.  You  can  enter  a  demo  by  moving  Smiley  through  the 
+labyrinth,  and  pressing  space on a  stripped-coloured  square. 
+Smiley  makes  funny  features  when  crashing  into  a  wall  or 
+something.  In the lower part of the screen,  you see a scrolling 
+message in medium resolution.
+After  choosing  a demo,  it becomes clear that all  screens  are 
+stored  in  memory  and  that the  drive  doesn't  have  to  load 
+anything! (This is great!)
+
+Circle scroller:
+This  is  a  text,  scrolling round a  ball  which  rotates.  The 
+font is one plane and rotates 360 degrees.  Beneath the ball  and 
+the scroller,  you see a nice fractal landscape. You hear mad max 
+music.
+
+S qed screen:
+This is a brainblasting screen!  In the left and right border you 
+see bouncing raster bars.  The upper and low border are  removed. 
+23  Vertical scrollers are moving and distorting over  the  whole 
+screen  (xcept  in  the left&right border).  There  is  a  little 
+swinging "TOS" logo (1 plane) and a TOS-crew logo (1 plane).  You 
+hear a 15 kHz (looped) sample.
+
+The BIG scroller:
+Wow,  this  is REALLY a big scroller.  The scroller is as big  as 
+your  screen without upper and lower border!  It is bouncing  and 
+again you  hear  the looped sample playing.  You must  be  really 
+genious if you can beat diz screen (in basic). I was puzzled....
+
+The raster scroller:
+Also a great piece of coding.  A large scroller made from rasters 
+is  on  the  foreground.  On  the background  are  a  lot  little 
+scrollers  (multiscrollers) with "sinus-movements".  It  contains 
+mad max music.
+
+Intro screen (with digimusix):
+This is the same screen as the intro,  only this time it contains 
+the already known looped sample.
+
+Bender scroller:
+A  sort of tube/barrel scroller.  Many (very fast) scrollers  are 
+moving  round  a  kind of  barrel.  A  (normal)  horizontal  slow 
+scroller is also included.  At the background is a one plane TOS-
+crew logo. You listen to another musix by Mad max.
+
+Hidden screen (you can find it!):
+A  fullscreen!  All  borders  are removed except  for  the  upper 
+border.  You  see a TOS-crew logo surrounded with "TV-snow"  (You 
+see  that kind of snow when you select an empty  channel  on  the 
+TV). The sound is simply some noise.
+
+The monochroom screen:
+A  picture  is diplayed of a spacecraft  in  four  greyscales.  A 
+"pointerscroller"  (technique  of Mr Ni!) if moving up  and  down 
+over the screen. The spacecraft is very well digitized.
+
+My  opinion:  I  think this demo shows you the limits  of  BASIC. 
+Many times I thought:  "How the f.ck did they do that?" like  the 
+BIG scroller,  S qed screen or their fullscreen.  I can only  say 
+that all the basic coders,  but also assembly coders have to take 
+a look at this demo. For basic, the code is incredible!
+
+Demo:        Demounstures
+Group:       TOS-crew
+Made by:     Mr Ni! and Insh_Allah
+Code:        9.75
+Graphics:    6.5 (Sorry guys)
+Music:       7.5
+Originality: 6
+Overall:     7.5 (But the code is VERY good!!!)
+

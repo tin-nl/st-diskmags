@@ -1,0 +1,167 @@
+AtariNOS FAQ
+
+FAQ and WWW by Frank Charlton.
+
+
+
+Frequently Asked Questions about AtariNOS/ka9q
+
+FAQ Version 0.4 30th January 1995
+
+NOTE : This is an  early  version  of  this  FAQ!  All  suggestions  and
+comments are  welcome,   and   should   be   mailed   to   the   address
+support@tachyon.demon.co.uk as soon as possible.
+
+This FAQ is published irregularly, and is maintained by Frank  Charlton.
+Latest text versions  can  be  found  on  the  site  ftp.demon.co.uk  as
+/pub/atari/faq/atarinos.faq or by  emailing  support@tachyon.demon.co.uk
+and requesting it. New editions of this FAQ  will  be  announce  in  the
+newsgroup demon.ip.support.atari as soon as they are available for ftp.
+
+
+1 - Does AtariNOS and the other supplied  software  for  Demon  Internet
+access run under multitasking operating systems for the ST?
+
+MiNT : Yes. We've found that all software  operates  as  standard  under
+MiNT (tested up to version 1.12) without problems, whether  as  standard
+or under TOSWIN. SNEWS however  will  occasionally  behave  erratically,
+with screen output becoming corrupted.
+
+Mag!X/MagiC : Yes, all software works perfectly under  Mag!X.  Actually,
+the software suite becomes easier to use under Mag!X as text can be  cut
+to the clipboard for  later  perusal,  and  MAILER.TOS  will  run  in  a
+separate window so you can reply to email without logging off if  you're
+in a hurry.
+
+Geneva : No, we found that the TOMSHELL batchfile which holds the  whole
+thing together behaves less than perfectly under  Gribnif's  Geneva.  If
+you're happy to run the individual programs without the shell,  they  do
+seem to work. If anyone has experience with NOS and Geneva, please  mail
+support@tachyon.demon.co.uk with details.
+
+2 - I've set my configuration correctly,  and  when  I  logon  my  modem
+connects fine, but I see nothing on screen other  than  a  prompt  which
+says NET
+
+When you hear your modem begin to dial, press the  following  keys:  F10
+and RETURN. You should now see something like:
+
+ATDT5225005 CONNECT 14400 etc... Just wait until NOS has logged  you  in
+with nodename and password, and you'll get another  NET  prompt.  That's
+it, and you're in!
+
+3 - Do I have to use the TOS-based GNOME.TTP editor which  is  supplied?
+Which other editors can I use?
+
+Any well-behaved program which outputs pure ASCII text can be  used.  We
+use  the  shareware  editor  Edith,  and  other  users  employ  Everest,
+Gribnif's STeno and the like.
+
+4 - How do I send email which I have written to people?
+
+You don't - NOS does! When you logon, NOS picks up any mail waiting  for
+you, and sends any you have written out automatically.
+
+5 - Will NOS work with a  28,800  modem  and  the  popular  serial  port
+modification?
+
+Yes, when used with the  serial  post  fix  HSMODEM4.  When  configuring
+MFP.PRG (on the ST), and you come to the  3rd  option,  choose  YES  for
+auto-baud in conjunction with RSVE. Leave everything in your  NOS  setup
+the same, and although NOS thinks it's operating at 19,200, HSMODEM will
+actually drive the serial port  at  38,400  which  is  fine  for  28,800
+connects in most instances. Dial and connect as normal at 28,800.  NOTE:
+No Demon PoPs or vPoPs are available at speeds above 14,400 at  present,
+though it will happen. An English version of HSMODEM4 can  be  found  at
+ftp.demon.co.uk   as   /pub/atari/comms/hsmod4e.tos   (self   extracting
+archive).
+
+6 - Can I use NOS to access the World-Wide Web? Can I do it at all on my
+Atari?
+
+Not at present. NOS is a complete environment, unlike WinSock or  MacTCP
+on other machines which allow external programs to access them.  At  the
+time of writing, NOS can only access the WWW by  using  a  public-access
+webserver via telnet. Two suggested sites to telnet to are telnet.w3.org
+for an easy-to-use browser, or acsis.bham.ac.uk for a  version  of  Lynx
+which you can run remotely. Two possible web-browers  are  planned,  but
+details are sketchy as yet. A  simple  text-based  browser  called  Lynx
+exists for the MiNTnet system, but this isn't recommended  if  you're  a
+raw beginner. MiNTnet, Lynx and others can be obtained from lots of  ftp
+sites,             including             src.doc.ic.ac.uk             in
+/computing/systems/atari/mint/network. WWW support within NOS itself  is
+being worked on, but no date is available for release, so don't  bombard
+either myself or David Nash with mail about it.
+
+7 - Can I access the Internet Relay Chat network via NOS? I can't see  a
+client program for it.
+
+You can access IRC using  a  public-access  server.  Try  the  following
+command: telnet irc.demon.co.uk and follow  the  prompts.  Documentation
+and  tutorials  on  IRC  itself  can  be  found  at  ftp.demon.co.uk  in
+/pub/doc/.
+
+8 - Is there a true Gopher client for NOS?
+
+No. You can use public-access gopher servers via telnet, but be warned -
+most require vt100 or ANSI terminals, and are thus extremely  unreliable
+on the Atari. If anyone has experience which says otherwise, mail us.
+
+9 - The news-server  news.demon.co.uk  seems  very  slow.  Is  there  an
+alternative?
+
+This isn't really the case  any  more.  Upgrades  have  taken  place  to
+news.demon.co.uk and the loading problem is much less of an  issue.  You
+shouldn't have problems with news now.
+
+10 - Does Stuart Coates still maintain the whole  STNETxxx.TOS  package,
+and is he improving the TOS shell which runs the software?
+
+No. Stu no longer has an Atari.  Future  updates  of  the  entire  STNET
+package will be done by me, and we have the  source  to  Stu's  original
+shell. An enhanced TOS version is planned, as is a full  GEM  shell  for
+those who run in a multitasking environment. Details will be  posted  to
+demon.ip.support.atari when they are available.
+
+11 - Which Usenet newsgroups are applicable to us Atari users?
+
+Currently we    have    :    comp.sys.atari.st    comp.sys.atari.st.tech
+comp.sys.atari.st.programmer                     comp.sys.atari.advocacy
+comp.sys.atari.announce demon.ip.support.atari demon.tech.atari
+
+12 - Are there any good ftp sites for Atari ST or Falcon stuff?
+
+Yes, lots. For  a  comprehensive  and  up-to-date  list,  get  the  file
+/pub/atari/faq/ftpsites.faq   from   ftp.demon.co.uk.   This   list   is
+maintained by Mark Smith, and is regularly  updated.  New  versions  are
+available from ftp.demon.co.uk and are posted in  the  comp.sys.atari.st
+newsgroup.
+
+13 - Can I 'grab' text scrolling up the screen to a disk  file  to  read
+later? When I use public access archie servers, information often  zooms
+off the screen before I can write it down.
+
+Do the following: 1. Start your ftp or telnet session as usual. 2. Press
+F10 to switch back to the NET> prompt. 3. Type 'record' (without quotes)
+followed by a filename, i.e. record d:\text\archie.txt and  hit  return.
+Move back to the ftp/telnet session by typing session xx,  where  xx  is
+the number. To check which sessions you have active, type session at the
+NET prompt. 4. Carry out your ftp or telnet as normal. 5. When you quit,
+the entire session is saved to disk. That way  you  can  browse  through
+your archie searches etc. offline to find the files you're looking for.
+
+14 - How do I conduct an Archie search from NOS?
+
+Use a public-access Archie Server. An example for UK users  follows:  1.
+At the NET prompt, start a telnet session with: telnet  src.doc.ic.ac.uk
+2. Follow the on-screen prompts, and when asked for a login  name,  type
+archie and hit return. 3. When you get the  archie.doc.ic.ac.uk>  prompt
+(or similar), you can do  a  simple  substring  search  by  typing  prog
+keyword, where keyword is  the  string  you  wish  to  search  for.  For
+example: prog ka9q (RETURN) will search for  all  files  containing  the
+keyword ka9q. 4.  See  the  above  question  for  details  on  capturing
+sessions to disk. 4. When you've finished searching,  leave  the  archie
+server by typing quit and pressing return.
+
+It's a fairly simple guide, but it'll get you started, and it's  a  nice
+fast Archie Server to use ;-)

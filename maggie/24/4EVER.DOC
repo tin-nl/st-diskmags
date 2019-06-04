@@ -1,0 +1,116 @@
+0660300030480
+11
+2#1
+9[..................................................................]0110
+Å
+-----------------------------------------------------------------------
+                                4 EVER
+
+                         Dead Hackers Society
+-----------------------------------------------------------------------
+Ä
+Over the past year or so, the 4k intro has grown into a real artform.
+It really started to blossom at the  Symposium 96 when the vacuum left
+by the lack of decent big demos  was  filled by a cluster of fantastic
+4ktros. TSCC did some  neat  morphing  wireframe  3D,  Lazer and Inter
+created an incredible texture mapped 3D world and Spirits took the top
+prize with a truly awesome fire  effect  (  and some sad god bothering
+text ).
+
+Sonoulumiszenz may have taken all  the plaudits at the Siliconvention,
+but Llama of TSCC's 4ktro turned  just  as many heads. Bump mapping on
+the ST in 4k - a truly astonishing achievement.
+
+So the tradition of 4ktros  on  the  Falcon is now firmly established.
+The Orneta party in Poland gave demo crews a chance to release more of
+their amazingly compact effects.
+
+At the Maggie office we were all a  bit surprised to hear that DHS had
+released a brilliant 4ktro at this  party.  DHS are one of those crews
+that have been around  since  the  start  of  the  Falcon, but haven't
+really been very productive. Sure, they  have perhaps the best website
+of all the atari crews, but they haven't really been very prolific.
+
+Last years Demolition was a good  demo, without being outstanding. For
+such a large  demo,  it  had  comparitively  few  effects, relying too
+heavily on a rot-zoomer. Demolition kept DHS firmly in the demo coding
+second division, and chances of promotion were looking slim.
+
+DHS just smiled to themselves.  They  knew  they could do better. They
+would show the world how good  they  were. With the release of '4ever'
+they have put all the doubters  to the sword and effortlessly ascended
+into the demo crews premier league.
+
+Isn't this a bold statement? 4ever is just a 4ktro after all.
+
+Wrong. 4ever isn't just a 4ktro. It is the 4ktro. The best 4k intro on
+the Falcon. Ever.
+
+Watching 4ever for the first time is reminiscent of your first viewing
+of the classic Inter/TSCC 96ktro  'Terrorise  Your Soul'. "There can't
+possibly be any more effects" you say, and then there are!
+
+4ever begins with a nice full screen rotzoomer. The demo name and crew
+and printed out onto grey tiles which are overlayed on a background of
+shaded circles. Each word  rotates  and  spins  at  us  for a bit then
+scrolls off.
+
+We are then propelled into the  next  effect - a fantastic bump mapper
+which easily beats the TSCC one. To be fair, DHS have the advantage of
+working in higher colour modes, but even  so  this is the best 4k bump
+mapper ever seen. Its not just  a  tiny  portion of the screen that is
+illuminated, just about every pixel  gets  some effect from the strong
+lightsource ever frame. Great stuff.
+
+I must admit that when I first saw this demo I thought the bump mapper
+would be the only effect and then it would end. Boy, I was so wrong!
+
+A nice tunnel effect then  apears.  This  doesn't  feature one of your
+standard plasma type textures, instead  you  have a nice multi-layered
+construct which a  cylindrical  grid  overlaying  some  shade circles.
+
+Again,  a  very  nice   effect   especially   considering  the  memory
+constraints.
+
+And its still not over.
+
+Next the screen fills with a  flock  of  bobs.  ( a battalion of bobs?
+what is the collective noun for  bobs?  ).  Aha - shadebobs! You think
+smugly. And again you  are  wrong.  The  bobs  rotate  and spin around
+leaving slight trails, but they all  have motion blur on them. Another
+great effect.
+
+Surely this is it.
+
+But no, DHS have saved the best  until  last. Its a tunnel effect. But
+its no ordinary tunnel effect - its a BUMP-MAPPED TUNNEL! And it looks
+absolutely fucking gorgeous. It is at this point that you realise just
+how talented these guys are and  that  you are watching the best 4ktro
+ever.
+
+The demo even ends neatly with the  same rotzoomer as at the beginning
+bearing the legend "The  End".  It  even  quits  perfectly back to the
+desktop. Seamless.
+
+So there we have it. The best  ever  4k intro. DHS have created a demo
+that is quite simply un4gettable.
+
+ÅMr Pink / RGÄ
+
+
+TECH VIEW: Yay! This more like it! DHS come up trumps with a 4K intro 
+that shows really good design in its underlying code. The decision to 
+use the FPU may annoy some quarters, but it's a revelation in the 4K 
+department where difficult calculations can be reduced to just a 
+couple of bytes to precalc all those nasty bits. It also allows a nice 
+smooth and precise rotation since the FPU includes sine tables.
+
+  In fact there are only a few relatively simple routines used in this 
+demo: for example there's a "circle" drawer, a rotater, a tunnel 
+calculator, a bump mapper, a blur effect. Each of these need only 
+occupy a couple of hundred bytes. But the trick is to be able to 
+combine these effects to create new ones (e.g. to pipe the output from 
+the bump mapper into the tunnel effect) and DHS do it brilliantly.
+
+Time to dig my FPU docs out... [tat]
+

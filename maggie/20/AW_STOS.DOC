@@ -1,0 +1,473 @@
+
+                            STOS BASIC
+
+
+There can be very few Atarians that have not come across the word 
+STOS in their computer lifetime. Surrounded by myths and a 
+certain stigma in the programming community, this language has at 
+last come of age and matured into a highly versatile and powerful 
+tool capable of commercial quality products normally only 
+associated with assembler type languages. Unrecognisable from its 
+original incarnation STOS can no longer be classed as a simple 
+game maker.
+
+Originally labelled "The Game Creator", STOS has been through 
+many transitions over the years, the original copyright owners, 
+Mandarin Software no longer support the product, but many third 
+party developers are actively supporting the language. Top Notch 
+Software literally dragged STOS into the nineties with their 
+Misty and Missing Link extensions. Other major upgrades from 
+various programmers include Extra, Control and the recently well 
+received Falcon extensions.
+
+Extensions are upgrades to STOS, adding new commands and in some 
+cases replacing existing commands with a far superior 
+alternative. There are 32 extensions available at this time, 
+together with four currently in production. This constitutes a 
+major revamp to the language. As well as the larger extensions, 
+that will normally consist of between 30 to 60 commands each 
+covering a wide range of subjects, you will also find a whole 
+array of smaller but just as useful extensions. Titles to 
+consider are Cyber the *.SEQ animation player, MIDI includes 
+computer linking commands and of course the many STe extensions 
+that take advantage of the DMA, Blitter and extended palettes as 
+well as other specific commands for the STe.
+
+The Falcon has not been neglected. True colour sprite routines 
+and DSP playback of 4-32 channel MODules at 50kHz 16-bit stereo 
+is enough to make any programmer rush out and buy a Falcon just 
+for the pleasure of using Anthony Jacques STOS Falcon Extension 
+v1.2b. With 4-65536 colour graphic routines, FLI and FLC true 
+colour playback commands as well as full access to the sound 
+system (including DSP processing) this is a must-have extension 
+for any Falcon owning STOS programmer.
+
+TITLE : STOS Falcon Extension v1.2b
+AUTHOR : Anthony Jacques
+DISTRIBUTER: 16/32, Merlin, Goodmans.
+PRICE : Shareware #5
+
+The graphic handling capabilities of STOS have always been the 
+envy of its competitors, unfortunately the terms "slow", "jerky" 
+and "unresponsive" have also been associated with it, the latter 
+comments certainly warranted in earlier examples of STOS games 
+where every man and his dog tried their hand at programming. 
+However the situation has now changed, although it is still 
+possible to knock together a disappointing piece of software. 
+What this series will show you is that you now have the software 
+available to program a commercial quality product that would 
+grace any disk collection.
+
+Before discussing any serious programming techniques we must 
+first put to rest the myths surrounding STOS BASIC,
+
+Slow? Normally attributed to the screen copying commands, these 
+have been replaced many times in various extensions. Fastcopy 
+from the Misty extension proving to be the fastest when using 
+variables to denote source and destination screens. To 
+demonstrate the capabilities of such commands, take an old 
+routine and change all the screencopy commands with the 
+equivalent fastcopy and there will be an instant speed increase. 
+This example works especially well with old demo screens.
+
+Jerky? Sprites and screen scrolling have always had to endure 
+such remarks. The STOS sprite engine has been totally replaced 
+with the Missing Link's extensive Bob and Joey commands. Sprites 
+have the advantage of being simple to use as they are shifted 
+across the screen in real time, but as this takes up a rather 
+large chunk of processor time then it is also their downfall. 
+Bobs and Joeys are pre-shifted then the appropriate images pasted 
+onto the specified screen, this in turn frees up enough processor 
+time to allow more bobs per sprite ratios as well as an increased 
+freedom of movement.
+
+Unresponsive? Again levelled at the STOS sprites, coupled with 
+the Bob commands you now have access to more joystick control, 
+including the twin joystick drivers, STe ports and the seventeen 
+button Jaguar control pad.
+
+Incompatibility? By far the biggest set back in the progress of 
+STOS as a serious programming language, until now, we have always 
+had various forms of fixer programs that had to be distributed to 
+anyone with a TOS version higher than 1.62, however compiled STOS 
+programs can now be fixed before release using the Generic STOS 
+fixer. This program will work for up to 10 OS versions - the 
+tables for these are supplied with the program (1.00, 1.01, 1.02, 
+1.04, 1.06, 1.62, 2.05, 2.06, 4.04, 4.92). There are 4 other OS 
+versions (3.05, 3.06, 4.01 and 4.02) as well as numerous versions 
+of MagiC. The author does not guarantee using this version will 
+successfully fix your program to work on every OS, some 
+programming guidelines have to be followed for a higher rate of 
+success.
+
+TITLE : Generic STOS Fixer v1.00
+AUTHOR : Anthony Jacques
+DISTRIBUTER: Floppyshop
+PRICE : Public Domain
+
+Not content with extensions adding hundreds of new commands to 
+STOS BASIC, we also have the option to add machine code - all 
+high level programming languages can benefit from low level help. 
+STOS can load a machine code routine into a memory bank and call 
+that routine from within a BASIC listing and the option to pass 
+parameters to the code also exists in many examples.
+
+Currently there are 21 documented machine code routines available 
+to STOS users. Examples of these are routines to allow 16kHz MOD 
+playback on a standard ST, Quartet players with FM and STe 
+options, full colour spectrum picture viewers and more recently 
+the ability to load and display *.GIF pictures, the latter of 
+which also accepts pictures larger than the physical screen with 
+the ability to scroll. There are machine code programs that will 
+allow the removal of the upper and lower borders and even one 
+that lets you have complete overscan. 
+
+Assembler code can be added to STOS and indeed it is possible to 
+make true *.APP or *.TTP software. Although labelled the Game 
+Creator, STOS can be used for just about any task on your Atari. 
+There now exist commands, routines and programs that will enable 
+you to totally disguise the fact that STOS has been used. There 
+are commercial and shareware programs in existence today that are 
+fooling even the most experienced atari users who would have 
+otherwise shunned the software untried, merely because it was 
+written in STOS BASIC.
+
+All STOS users should upgrade their language disk now. You should 
+consult your local public domain library, or choose one from the 
+many advertising in these pages and acquire a minimum of three 
+top extensions. Misty and Missing Link are essential to any 
+program that relies on graphics and are especially vital to any 
+game maker. Your actual language disk should already be at 
+version 2.06 and your compiler at version 2.07 - upgrades are 
+freely available from public domain libraries.
+
+Extra has some nice graphical commands, including the PPSC pixel 
+perfect screen copy command that allows chunks of screen to be 
+cut and pasted ignoring the sixteen pixel boundary, but is noted 
+for a more serious approach. The extension now boasts a packer as 
+well as printer control and cookie jar access. With 62 commands 
+to its credit you cannot afford to be without it, along with the 
+Misty and Missing link you will be adding in excess of 132 new 
+commands to your STOS language disk.
+
+As you can see, STOS is now a programming language to be reckoned 
+with and next month I will show you exactly how to get the best 
+out of it. So root out those language disks and order your 
+extensions in time for the next issue's tutorials.
+
+
+Even the internet has been touched by STOS. There is a STOS 
+mailing list where information, help and the latest STOS news can 
+be found. Email: jacquesa@cs.man.ac.uk for details. Incidentally, 
+this is also the Email for information regarding the Falcon 
+extension and generic STOS fixer. Some prolific STOS programmers 
+are on the net and have their own WEB pages where you can 
+download their latest releases, upgrades or simply read about 
+their current projects. All can be linked to from by far the 
+largest STOS specific site on the net at 
+http://www.airtime.co.uk/users/stosser/
+
+No introduction to STOS would be complete without mentioning 
+STOSser Diskzine. Established in April 1993 it is still going 
+strong and currently at issue 26. Every issue is packed to the 
+brim with articles and tutorials as well as BASIC source code for 
+your examination. Contributors include the most experienced STOS 
+programmers as well as extension programmers. There are all 
+manner of articles ranging from idiot guides to adding assembler 
+to your code. The diskzine has recently been handed over to long 
+time contributor Dean (Deano) Sharples, author of the Graphic 
+Adventure Creator series. For more information on STOSser 
+software write to Deano at 27 Turbary Walk, Milnrow, Rochdale, 
+OL16 4JN.
+
+
+                               STOS EXTENSIONS
+               List compiled by Tony Greenwood, December 1995
+
+
+  Extensions are upgrades to STOS BASIC but have the advantage of being 
+choosable?, you can decide what upgrades to use, do not let anyone fool 
+you into believing that the use of extensions is by some way cheating, 
+it isn't, it is how STOS is upgraded, if GFA is upgraded then everyone 
+doesent cry cheat!, Extensions are extra commands for your language that 
+you must learn how to use,
+
+***********************************************************************
+TITLE              STOS 3D
+DISTRIBUTION       commercial 
+FROM               Mandarin
+PRICE              #12.99 ( November 1995 )
+USAGE              As the title suggests it is a tool for 3D 
+programming from within STOS Basic,  Although released some time ago, 
+you  will find little or no examples of this extensions  capabilites, 
+the simple truth being that no one uses it, it is not very good,
+***********************************************************************
+TITLE              BLITTER
+DISTRIBUTION       PD
+FROM               Authors unknown, but available from pdls
+PRICE              /
+USAGE              Utilising the STE Blitter chip,  there are larger  
+STE extensions  that  include Blitter commands along with  other STE  
+specific stuff,
+***********************************************************************
+TITLE              CODETEXT
+DISTRIBUTION       PD
+FROM               Unknown
+PRICE              /
+USAGE              ASCII lister,  unsure  as to what use  this  
+extension would be, but I have included it here because it exists,
+***********************************************************************
+TITLE              COMPACT               
+DISTRIBUTION       Part of STOS Basic package
+FROM               Mandarin
+PRICE              /
+USAGE              Picture  compactor,comes with an ACB but also has 
+commands for very fast packing and unpacking of screens that can  be  
+used from within your programs,
+***********************************************************************
+TITLE              COMPILER
+DISTRIBUTION       Part of STOS Basic package
+FROM               Mandarin
+PRICE              /            
+USAGE              Compiler,without this you can't compile your basic 
+programs, a must for every STOS user, needs Compact ACB,
+***********************************************************************
+TITLE              CONTROL
+DISTRIBUTION       SHAREWARE
+FROM               L.J.Greenhalgh, any pdl
+PRICE              5.00 UKP
+USAGE              Many  varied  commands  including new map/sprite,
+although these dont seem to beas fast as the Missing Link equivalent
+there are however many good points to this extension. 
+switch  construction  routines,  extensive  port   handling commands,  
+border removal and  many  many  more, including a  very  handy  file 
+existing command, recommended,
+***********************************************************************
+TITLE              CYBER
+DISTRIBUTION       PD
+FROM               Andy Cato, and Martin Cubitt,any pdl 
+PRICE              /
+USAGE              For  viewing Cyber.seq files,  a once thought  of 
+impossible task you can now play Cyber.seq files and even accompanying 
+music,
+***********************************************************************
+TITLE              EXTRA
+DISTRIBUTION       PD up to 2.10 then Commercial
+FROM               Martin Cubitt, Top Byte Software
+PRICE              / and 4.99ukp for 3.0 and above
+USAGE              Many varied commands,mainly serious types,recently 
+released as commercial,  however you can still obtain v2.10 as public 
+domain and there is very little difference,this extensions  comes  as  
+highly recommended,  some graphical commands,  cookie jar stuff, disk 
+formatting,  lots  of  disk info commands and a neat   pixel  perfect 
+screen copy  command, something for everyone in here, 
+***********************************************************************
+TITLE              EXTRACT
+DISTRIBUTION       PD
+FROM               GUNTER FELDMANN
+PRICE              /
+USAGE              Will extract and show PC? and IMG files, of course 
+you will need to be in  high resolution to view the  IMG  files, this 
+does work in the interpreter but I never tested the compiled version,  
+from Germany  but with reasonably well translated docs,
+***********************************************************************
+TITLE              FRS
+DISTRIBUTION       PD
+FROM               Ben Riley, STOSSER Diskzine
+PRICE              /
+USAGE              Varied, Interpreter only, no one made the compiler 
+extension and are not likely to,couple of nice commands,  but  pretty 
+useless if you cannot compile, it exists so its on the list,
+***********************************************************************
+TITLE              GBP
+DISTRIBUTION       SHAREWARE
+FROM               GBP Software, all pdls
+PRICE              5.00UKP
+USAGE              Varied. with many varied   commands,most commands 
+found  here have already been used in Extra and Control,but there is
+without doubt some interesting stuff in here, definatly worth a look
+***********************************************************************
+TITLE              ICBIS
+DISTRIBUTION       Unknown
+FROM               Richard Hunt   
+PRICE              Unknown
+USAGE              Seems vo be a complete sprite engine  replacement 
+and the documentation is impressive,
+***********************************************************************
+TITLE              JOYSTICK
+DISTRIBUTION       ? Found on commercial game disk   Cartoon Capers
+FROM               ?
+PRICE              ?
+USAGE              Utilise both ports,one of the original extensions, 
+this  one came on a commercially released STOS game  called  Cartoon  
+Capers, pretty  useless  if  you  have any of the  above  extensions  
+that  include joystick commands,
+***********************************************************************
+TITLE              MAESTRO
+DISTRIBUTION       Commercial
+FROM               Mandarin
+PRICE              12.99 UKP (November 1995)
+USAGE              SAMpled sound player, as suggested  this  is  the 
+extension  for playing sampled sounds,
+***********************************************************************
+TITLE              MIDI
+DISVRIBWTION       ?
+FROM               ?
+PRICE              ?
+USAGE              For MIDI input,  you  need the MIDI equipment  to  
+get anything out of this extension,
+***********************************************************************
+TITLE              MISTY
+DISTRIBUTION       SHAREWARE
+FROM               Top NoTch Software, Goodmans int
+PRICE              5.00 UKP
+USAGE              Demo orientated but something for everyone,this is 
+the first of two biggies from Top Notch software,this extension  went  
+a long way to bringing STOS some credibility in the programming world
+the Misty  Demo has still not been beaten in STOS,but its not all for  
+demo coders  and there  are some excellent  commands for everyone  in  
+there,very highly recommended,
+***********************************************************************
+TITLE              MISSING LINK
+DISTRIBUTION       SHAREWARE
+FROM               Top Notch Software, Goodmans int
+PRICE              15.00 UKP
+USAGE              Games orientated but somethilg for everyone,  This 
+is THE big one. this extension has brought  STOS bang up to  date, no
+matter what yow are doing with  STOS you  must  have  this extension, 
+its  got everything for making games it is unsurpassable, get it NOW!
+***********************************************************************
+TITLE              NO BORDER 2.1
+DISTRIBUTION       PD
+FROM               Orbital Software 
+PRICE             /
+USAGE              Removes top and bottom borders,does as it says but
+can be a bit tempremental,   has  since  been  done  in  the  Control 
+extension, 
+***********************************************************************
+TITLE              NINJA TRACKER
+DISTRIBUTION       PD
+FROM               L.J.Greenhalgh, any pdl
+PRICE              /
+USAGE              Play mods on the STE AT UP TO 21khz and still have 
+some proc'time, an excellent extension,   plays   any  four   channel 
+protracker mod, and chip music
+***********************************************************************
+TITLE              PAUSE
+DISTRIBUTION       PD
+FROM               Anthony Jacques
+PRICE              /
+USAGE              Allows floppy disk systems to use more than one disk, 
+where  a   system  has  too many   extensions   and   Accessories   and 
+Autoexec etc, they can now boot STOS with two diks
+***********************************************************************
+TITLE              QUICK
+DISTRIBUTION       SHAREWARE ( Possibly NOT Supported )
+FROM               Dattrax Software, STOSSER Diskzine
+PRICE              5.00 UKP               
+USAGE              Various commands,  quite  a few very nice commands  
+in this  one,also one of the nicest installation programs,has a nasty  
+bug though, once you have used it,it is then impossible to access the  
+disk, for loading or whatever,( thats on a tos 1.2 ??  ) until a cold 
+boot  has  been  performed, no  permanent  damage is  caused and  the 
+extension can be used so long as you dont want the disk,
+***********************************************************************
+TITLE              RASTER
+DISTRIBUTION       ?
+FROM               ?
+PRICE              ?
+USAGE              For Rasters?,the  missing link  has raster  making 
+commands, along with palette splitting etc, so get that instead,
+***********************************************************************
+TITLE              SQUASH
+DISTRIBUTION       Hmmm came with STOS I think ?
+FROM               ?
+PRICE              ?
+USAGE              Packing banks,screens and others,another original, 
+but its not 100% safe for the banks, its  also  a  little  slow, for 
+packing screens  you should  keep to the compact acb  that uses  the
+Compact ext,
+***********************************************************************
+TITLE              STARS
+DISTRIBUTION       PD
+FROM               Lee Upcraft, any pdl
+PRICE              /.....A Bargain!
+USAGE              Starfield creator,this is an excellent extension, 
+its only feature is the making of starfields,if you want a starfield 
+in  STOS then use this and nothing else,
+***********************************************************************
+TITLE              STE
+DISTRIBUTION       PD
+FROM               P.Yates for Mandarin
+PRICE              /
+USAGE              For ste sound SAMpling commands,
+***********************************************************************
+TITLE              STEEXT
+DISTRIBUTION       SHAREWARE ( Unsupported )
+FROM               Asa Burrows, any pdl
+PRICE              10.00 UKP but dont bother,
+USAGE              Some more STE specific,By Asa Burrows probably one 
+of the most well  known STE extensions,  deals with extended colours, 
+light gun, DAC, hardware scrolling, the registration isn't  supported 
+so the manual is not  available, but later issues of STOSSER diskzine 
+20+  have extensive tutorials by one of the original beta testers,for 
+programming  STOS on the STE then this and  the said  tutorials are a
+must,  STESTOSTERONE  the  STE  specific  STOS  diskzine  is  heighly 
+reccomended for this and any other ste extension,
+***********************************************************************
+TITLE              TRACKER
+DISTRIBUTION       ?
+FROM               any pdl
+PRICE              /
+USAGE              Play ABK files (Mods converted),comes with a whole 
+array of files and three extensions,one for each speed of 7,10,14khz, 
+there  is  a  routine to convert MODS into ABK's ready  for  use with  
+the extensions,  some  quality is lost in  the process,  10khz is the 
+recommended speed  and still leaves enough processor time for a 32x32  
+scroller or a couple of sprites,
+***********************************************************************
+TITLE              TML HELP
+DISTRIBUTION       PD
+FROM               Ijaz Hussain/STOSSER Diskzine
+PRICE              /
+USAGE              Simply type HELP and all the commands will appear,
+will help everyone who cannot remember the correct syntax for most of
+the Missing Link extensions commands
+***********************************************************************
+TITLE              TOME21
+DISTRIBUTION       COMMERCIAL
+FROM               Shadow software
+PRICE              ?, But who cares,
+USAGE              Map making extension, a bigger  flop than STOS 3D, 
+even the demo to show the extension at its best was a joke, keep away 
+( commercial ), not a patch on the Missing Link map commands,
+***********************************************************************
+TITLE              USEFUL
+DISTRIBUTION       PD
+FROM               ?
+PRICE              /
+USAGE              Bits of stuff, but  hard  to see how  they  named  
+it useful,
+***********************************************************************
+TITLE              VIDI
+DISTRIBUTION       PD
+FROM               Rombo Productions
+PRICE              /
+USAGE              For use with VIDI-ST package,so haven't been able 
+to try it out, only a couple of commands in it,
+***********************************************************************
+TITLE              FALCON
+DISTRIBUTION       
+FROM               Anthony Jacques, any pdl
+PRICE
+USAGE              The first extension aimed specifically at STOS on 
+the Falcon, with  some impressive  commands  that will enable you to 
+sample via the DSP along with other impresive sound commands,  pixel 
+perfect sprite detection, and even a true colour sprite engine, 
+***********************************************************************  
+  There are a couple of other extension such ac MON_ST that I just 
+dont have a  clue  what  they are for and I have no  documentation,  
+I  mention  them because they exist,
+
+
+

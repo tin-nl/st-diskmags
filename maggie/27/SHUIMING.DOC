@@ -1,0 +1,102 @@
+
+A little bit of a mail-out from Shuiming Lai.. We've exchanged quite a 
+lot of mail privately, but here are a few bits suitable for public 
+consumption.. Haven't asked you yet mate, hope this is okay? - CiH 
+
+ 
+To: maggieteam@zetnet.co.uk 
+From: lais@zetnet.co.uk (Shiuming Lai) 
+Subject: Atari show
+
+Hi Chris,
+
+Nice to meet you at the show, pity the rest of Maggie team didn't come 
+over to say hello. I look forward to the next issue. It's a real 
+struggle keeping up, there's so much in every issue they take ages to 
+read and I've got various issues on the ST and Falcon. Are they pretty 
+much identical in terms of editorial content?
+
+>They were mostly in the bar!
+
+Oh, right. Did you stay for the after-show party? I couldn't manage - 
+my driver wanted to leave and I had a sore throat from talking all day 
+(over the loud music!)
+
+About Zelda... I loaded it and the intro sample played OK through my 
+Jam PRO box, but as soon as the game started, the sound only came out 
+of the Falcon's built-in outputs. Actually, this was only true *after* 
+using some other program which had obviously set the audio matrix. I 
+believe God Boy resets it, from my testing. 
+
+To refresh your memory, can you persuade Mr Pink to make sound also go 
+to the DSP port for future releases? This way it can be output by any 
+connected external DACs. Saves wear and tear constantly swapping the 
+leads between sockets. It's simply a matter of setting the audio 
+matrix, he'll know how to do it.
+
+By the way, I read MSG's POV raytracing article in Maggie 25; if he has 
+an unaccelerated Falcon his FPU will be running at 16MHz, the 33MHz 
+written on the chip simply means it is rated to run OK at that speed by 
+Motorola. 33MHz is tested by CENTEK to be the only reliable standard 
+for overclocking to 50MHz, as the CT2 does (there is a socket for it, 
+but I'll go through it with you when you see it). So going by rough 
+calculations, if he were to render that scene on the CT2 it would be 
+three times faster than his current F030/FPU machine! (Although 
+admittedly, the floating point performance is not a patch on the 
+68RC040, that thing flies)
+
+-----v-----
+
+Hi Chris!
+
+Argh, I'm working flat-out and there's so much to take in my brain will 
+explode. Furthermore, I've just got off my butt and installed this hot 
+new PC product, Creamware's Pulsar. Hold it right there, before you 
+snap my head off, it's actually a complete operating system in its own 
+right, which happens to be on a PCI card (*so if someone wrote the 
+software, Hades and Milan could use it!), and as expected comes with PC 
+software. 
+
+ *Developers, are you taking note!? - Ed 
+
+This card has four Analog Devices SHARC DSP chips, the current fastest 
+floating point DSPs on the market. I won't bore you, but the software 
+is essentially a CAD program for designing and building virtual 
+synthesizers, multi channel I/O (sampling) and digtial mixing... and 
+the amazing thing is the power of the card, which has such high 
+precision it can emulate classic analogue synths with a level of 
+accuracy that has astonished everyone at all the big music fairs. It's 
+been 7 years in development, we're the first in the country to have it 
+and I've ignored it since they arrived! 
+
+The fact it currently only runs on a PC is irrelevant. The Creamware 
+guys are so clever that they've actually bypassed many of that 
+machine's stupid quirks (their tripleDAT ISA hard disk recording card 
+is one example, everyone said it wouldn't work. It does) Well, enough 
+of that waffle, I'm not even a musician so what would I know! :-)
+
+The technology does fascinate me though, the Creamware stuff is 
+actually very efficient, and they are actively going against Windows NT 
+because they are pissed off with MS moving the goalposts all the time. 
+Pity the PC happens to be the most popular computer else this product 
+could be for Atari :-(
+
+I read your A4000 article in M26, its audio system actually has a very 
+innovative design, which I've simply not seen in any other computer. 
+Technically not the best way of doing things from an audio quality 
+point of view, but it's so different that I can't help but like it! (I 
+used to mock the Archie as a school lad!) 
+
+Basically, it has *one* audio DAC, an 8-bit mu-law flash convertor. To 
+get 8 channels of sound out of this, it uses time-domain multiplexing 
+in the analogue output stage, for summation of the logarithmic sample 
+data (doing this in the digital domain is potentially very messy, 
+unlike with linearly quantized data as used by most digital audio 
+equipment). Depending on the sample period and number of channels 
+playing, an individual digital audio stream can have a sample rate 
+anything up to 333KHz!!! (Compact Disc is 44.1, STE maxes out at 50)
+
+ Regards, 
+ Shiuming
+
+ 

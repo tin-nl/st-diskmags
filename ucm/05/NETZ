@@ -1,0 +1,136 @@
+-------------------------------------------------------------------------------
+                                 0.195 kByte/s
+                   Ein Abend im Netz - mit und ohne x-Windows
+-------------------------------------------------------------------------------
+
+Die Bibliothek  langweilt mich. Es ist mir egal, warum A strafbar ist, nur weil
+B einen Herzinfarkt  erlitt, nachdem A ein kleines  bisschen mit seiner Pistole
+herumfuchtelte und einen Spruch, Marke " Geld oder Leben " abgelassen hat. Aber
+ich habe mir vorgenommen, bis 17.00 Uhr dazubleiben. Wegen des  Gewissens. Aber
+eigentlich habe ich ja keins.
+Langsam, ganz  langsam packe  ich ein. Nur  nichts  anmerken lassen, keiner muû
+mitkriegen, daû ich es nicht kontrollien kann. Denn ich habe es: Die Kraft, die
+dunkle Seite des Seins, das parallele Ich. Das, was nicht brav Jura lernt, son-
+dern  nachts, wenn  es  dunkel  ist, durch  die  labyrinthischen  GÑnge der Uni
+streift, um...
+Ich muû noch in die Mensa. Nicht, daû ich Hunger hÑtte, aber ich weiû, daû mein
+Organismus NÑhrstoffe benîtigt. Ich esse nicht mehr aus einem  kîrperlichen Be-
+dÅrfnis, sondern aus abstrakten Wissen.
+
+Die Uni sehend, beschleunigt  sich mein Puls. Hinein. Suchen. Jemand kînnte mal
+die schwere TÅr îlen - der NÑhrstoffmangel fordert seinen Tribut.
+Die Dungeons des  Kellergeschosses muû ein Rollenspielfan entworfen haben, oder
+ein unfÑhiger Architekt.
+
+Sublevel 1 - Meter unter der OberflÑche
+
+Unauslîschlich hat sich  mir das Schema, welches ich zu gehen habe, eingeprÑgt.
+Links - Links - Links. Die bekackten  Rechner des Ohes/halbe-pools flimmern mir
+mit ihren Winwords entgegen - mîchte mal  wissen, was das hier verloren hat. Im
+Terrapool - Leute. Mist. Ich brauche 3 Rechner.
+Ein Avatar findet  mich, aber er will nicht kÑmpfen, sondern kann mir im Gegen-
+teil wichtige Hinweise geben. Also gut, ich nehme die Terminals. Auf in die Un-
+tiefen der Aix 340.
+
+Hochfahren, Anmelden. Ein  wichtiger Hinweis des  SystemwÑchters: Nicht wieder
+ausschalten, der Server kînnte sonst abstÅrzen.
+TatsÑchlich? Als ob der das nicht so schon dauernd tÑte.
+
+open ftp uni-erlangem.de
+
+Die Connection steht.
+
+Name: anonymous
+Password: crap@ ( hey, das checken die eh nicht ... )
+
+Leider bin ich user Nr. 51. Von 50. Pech.
+Nochmal das Ganze in Stuttgart. Und ...
+
+login ok, guest restrictions apply
+
+cd pub\systems\atari
+cwd command successful
+
+dir
+port command successful
+
+schîn, ein Linux-ordner. Das suche ich. Getting_started - 5.7 MB. Tja, wenn ich
+derartig auffÑllig die Serverplatte vollade, bekomme ich érger mit den Orks von
+der Systemwartung, die immer  wild werden, wenn man mehr als 2 MB saugt. Leider
+bin ich ihnen noch nicht gewachsen.
+Lassen wir es halt.
+
+cd ..
+cwd command successful
+cd MiNT\Filesystems\Minix
+...
+
+Soso, das gute  Minix. Haben wollen. Zwar weiû kein Mensch, wie  es installiert
+wird und wie man es benutzt, aber haben muû man es. Frau auch.
+Schon wegen der langen Nase ( " Was? Dein PC kann keine 32 Zeichen? " )
+
+bin
+type set to I
+binary mode
+hash
+type set to I
+
+get minixfs_vschiessmichtot610.tgz
+port command successful
+opening binary-mode data connection for dingens
+#### ... ####### usw.
+
+soundsoviele kByte transferred in massig sekunden  0.375 kByte/s
+
+Na, da haben wir ja mal wieder einen schnellen Tag erwischt. Ich steh' auf Lei-
+tungen, die kurz  vor dem Zusammenbrechen sind. Bin ich von unserem Telefon ge-
+wîhnt.
+
+Noch ein bisschen  Kleinzeug gezogen, neue Versionen  von diversen Packern und
+MiNT. Schwupp, schon  meckert das  System: viel zu  viel Zeug auf  der Platte.
+Also mal was absaugen, die Platte leeren...
+
+talk request from x
+talk x
+
+Hi, wie geht's, kommst Du heute noch in die MB? was macht ...  lauter belanglo-
+ses Zeug. GeschwÑtz. Wenn man gut drauf ist, kann man es Kommunikation nennen.
+
+...
+
+Warum tue ich das, (...ich bin sÅchtig) warum tun so viele das, (... alle?) was
+ist daran so toll (...daû es Menschen sÅchtig macht)? Ist es das Feeling, Åber-
+all zu sein, in New York, Honululu  und  Merseburg  gleichzeitig - oder  ist es
+einfach bloû, um immer an das neueste Zeug ranzukommen? Ist es bloû Langeweile,
+oder lÑuten wir  hier ein neues Zeitalter ein, mit anderen Regeln, BrÑuchen und
+Kommunikationsformen? Sind wir  bloû  Pickelgesichter, die  auf  konventionelle
+Weise gar keinen  Kontakt mehr finden, die  die Elektronik brauchen, als KrÅcke
+fÅr's Leben und trotzdem nie eine Frau kriegen?
+
+Keiner weiû.
+
+Jedenfalls hÑngen hier  jeden Abend genug Leute rum, bei denen es verdammt noch
+mal so aussieht, als ob sie  das brauchen; sich einen elektronischen Schuû set-
+zen, auf einem Trip sind, der massiv besser wirkt als Gras oder LSD.
+Vielleicht sind es diese Leute, die in wenigen Jahren die Gesellschaft neu bau-
+en, vielleicht wird  es dann eine Gesellschaft  werden, in der alle miteinander
+in Kontakt stehen, in der  Rassen- und Geschlechtsunterschiede  nicht mehr zÑh-
+len. Vielleicht wird es auch eine Gesellschaft von kommunikationsgestîrten, ge-
+fÅhlskalten Egozentrikern.
+
+Keiner weiû.
+
+Ich schleiche mich. Die  System-Orks haben heute nicht  gemeckert, sie sind zu-
+frieden. Ich  habe mein Ziel wieder nicht  erreicht, mein Bewuûtsein  ist nicht
+erweitert. Morgen versuche ich wieder die transzendalen Ebenen eines gemeinsam-
+einsam kommunikativen Nichtseins. Vielleicht  kann ich ja mal eine verwunschene
+Prinzessin retten. Aber wie soll ich sie wachkÅssen?
+
+-------------------------------------------------------------------------------
+                                                                     Lot of tnb
+-------------------------------------------------------------------------------
+
+(Redax: Ehem, verwunschene Prinzessin wachkÅssen? Hm, Nadine ist Dir wohl nicht
+        Prinzessin genug? Beneidenswerter Bursche... :-) Greetz!)
+
+

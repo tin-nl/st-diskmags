@@ -1,0 +1,347 @@
+  Et me revoil… encore pour un article, celui ci vise … vous apprendre comme 
+faire des joli points,  en assembleur, et avec des routines qui tue la mort. 
+Bon voyons comment afficher l'‚l‚ment ‚l‚mentaire  le point.
+
+  La m‚moire vid‚o  repr‚sente ce qui est affich‚ … l'‚cran.  Sur falcon, il 
+existe diff‚rents mode vid‚o, nous allons en aborder seulement deux : le 256 
+couleurs et le True Color.  Le mode 256 couleurs (et le 16,  4,  1 couleurs) 
+est  un  mode compos‚ de plan,  il a aussi la particularit‚ de  poss‚d‚  une 
+palette (un No de couleur :  une couleur d‚finit par la palette). Pour coder 
+256 couleurs diff‚rentes, on peut stocker un pixel sur un octet, soit 8 bits 
+(4 bits :  16 couleurs,  2 bits : 4 couleurs, 1 bit : 1 couleur). La m‚thode 
+la  plus simple pour stocker ces 8 bits est de les regrouper sur  un  octet, 
+mais h‚las,  cela ne se passe pas comme ‡a.  En mode plan,  les pixels  sont 
+regroup‚ par mot (= par plan),  ils sont donc regroup‚ 16 par 16. Chaque mot 
+repr‚sente 1 bit d'information pour 1 pixel, il faut donc 8 mots cons‚cutifs 
+pour  coder  16 pixels en 256 couleurs.  Donc pour connaitre la  couleur  du 
+premier pixel (le plus … gauche) il faut donc : 
+
+mots :         1    2    3    4    5    6    7    8
+15iŠme bit     0    1    0    0    1    1    0    1
+     soit la couleur %10110010 :  178, car le bit le plus fort se trouve sur 
+le dernier mot.  Mais pourquoi le bit No 15? Et bien le bit le plus fort (le 
+15iŠme),  le plus … gauche repr‚sente le pixel le plus … gauche,  … l'‚cran. 
+Donc pour une ligne de 640 points de large,  elle contient 640 octets,  soit 
+40 groupes de 16 pixels,  soit 40 groupements de 8 mots.  Mais notre ‚cran … 
+plus d'une ligne!  Elles sont cod‚es … la suite,  lors qu'il il y a une  qui 
+finit,  la  suivante  commence.  Si  nous  voulons  afficher  le  pixels  de 
+coordonn‚es (320,200) ((X,Y) :  origine (0,0) en haut … gauche), nous devons 
+commencer     …    calculer    l'adresse    de    la    ligne     :     soit 
+adresse_ligne=adresse_ecran+200*640, (une ligne : 640 octets) puis l'adresse 
+du  groupement  de  mot  :   adresse_gmot  =  adresse_ligne+(320/16)*16  (un 
+groupement  de  mot :  16 octets en 256 couleurs).  Pour obtenir  le  No  du 
+groupement,  il  faut  effectuer  une  division  entiŠre  de  X  par  16  (1 
+groupement  regroupe 16 pixels).  Une fois ce No de  groupement  obtenu,  il 
+faut  le multiplier par la taille du groupement (ici 16 octets  :  8*2).  On 
+obtient  donc l'adresse du groupement qui contient le pixel …  modifier.  Il 
+nous  reste  plus qu'… modifier plan par plan le bit du  pixel.  Ce  bit  se 
+d‚termine par le reste de la division entiŠre de X par 16, soit X mod 16, ce 
+qui  nous  donne 0 dans notre exemple (320=20*16+0).  Mais nous  l'avons  vu 
+pr‚c‚demment,  le  pixel  le plus … gauche d'un groupement porte le  No  15, 
+donc,  il  faut transformer le 0 du reste en 15,  de mˆme,  si  nous  avions 
+obtenu 15 comme reste (pixel le plus … droite),  le No de bit aurait ‚t‚  0. 
+Donc : No_de_bit = 15-(X mod 16). R‚capitulatif : 
+
+ - Adresse_ligne = adresse_ecran+Y*640 (640 : largeur d'une ligne)
+ - adresse_gmot  = adresse_ligne+(X/16)*plan*2
+ - No_de_bit     = 15-(X mod 16)
+  Pour un ‚cran avec Z plans,  le principe est le mˆme (il y a simplement la 
+largeur de la ligne … changer : largeur = (largeur_pixel/16)*plan*2).
+
+   Passons au mode True color.  Dans ce mode,  chaque pixel est cod‚ sur  16 
+bits cons‚cutifs :  il n'y a pas de plan!!  Chaque pixels contient lui  mˆme 
+ses  composantes Rouge,  Vert,  Bleu,  il n'y a pas de palette,  elles  sont 
+cod‚es comme suit :  %RRRRRVVVVVVBBBBB. Donc pour une ligne de 640 pixels de 
+large,  soit  1280 octets (1 pixel :  2 octets),  l'adresse de la ligne  est 
+adresse_ligne   =  adresse_ecran+1280*Y.   L'adresse  du  mot/pixel  est   : 
+adresse_mot/pixel = adresse_ligne+2*X. Il ne reste plus qu'… modifier ce mot 
+pour afficher notre point.
+
+   Mais voyons comment changer de r‚solution proprement.  Cette m‚thode  est 
+trŠs simple,  et donc elle ne supporte pas NVDI.  Nous allons donc  utiliser 
+une routine du XBIOS, la routine Setscreen. Voici son appels en assembleur :
+
+     move.w #mode,-(sp)
+     move.w #3,-(sp)
+     move.l #adr_phys,-(sp)
+     move.l #adr_log,-(sp)
+     move.w #5,-(sp)
+     trap #14
+     adda.l #14,sp
+
+
+
+
+
+  Cette fonction … pour paramŠtres : 
+  - mode :  le mot contenant la r‚solution … afficher.  Ce mot  est  compos‚ 
+comme suit :  XXXXXXXFSOPV8NNN
+     - NNN : Nbre de bits par pixels
+             100 : 16 bits/pixels  -> 65536 couleurs (True color)
+             011 : 8 bits/pixels   -> 256 couleurs
+             010 : 4 bits/pixels   -> 16 couleurs
+             001 : 2 bits/pixels   -> 4 couleurs
+             000 : 1 bits/pixels   -> 2 couleurs
+     - 8   : Largeur   1 : 80 colonnes (640 points)
+                       0 : 40 colonnes (320 points)
+     - V   : VGA       1 : moniteur VGA
+                       0 : moniteur TV
+     - P   : PAL       1 : mode PAL
+                       0 : mode NTSC
+     - O   : Overscan  1 : Overscan (impossible sur un moniteur VGA)
+                       0 : pas d'Overscan
+     - F   : Vertical  1 : entrelac‚ (Moniteur RGB)/ double ligne (vga)
+                       0 : non entrelac‚ / simple ligne
+
+     - X   : R‚serv‚
+ParamŠtre suivant : 
+  - adr_phys :  (adresse de l'‚cran physique) adresse de la zone m‚moire qui 
+est affich‚ … l'‚cran.  Cet ‚cran doit avoir une adresse multiple de 4,  car 
+le videl ne dig‚re pas les autres adresses.
+  -  adr_log :  (adresse de l'‚cran logique) adresse de la zone m‚moire  sur 
+lequel  sont  envoy‚  les caract‚res que l'on peut  afficher,  …  l'aide  du 
+Gemdos.  Si  cet ‚cran est diff‚rent du physique,  si l'on  affiche  quelque 
+chose  … l'aide du gemdos,  on ne voit rien … l'‚cran.  Dans nos  routines, 
+l'adresse de l'‚cran physique et logique sont confondus.
+
+   Pour  pouvoir  restituer l'‚cran original,  il faut  donc  connaitre  son 
+adresse  physique et logique,  ainsi que la r‚solution.  Pour  connaitre  la 
+r‚solution, il suffit d'utiliser la fonction Xbios Vsetmode : 
+
+     move.w #-1,-(sp)
+     move.w #$58,-(sp)
+     trap #14
+     adda.l #4,sp
+     * D0 :  contient le mode vid‚o utiliser (mˆme codage que le mot mode de 
+Setscreen)
+Rq. : au lieu de -1, qui signifie demande de r‚solution, si l'on met un mode 
+sur la pile,  on obtient un changement de r‚solution. Le seul hic, c'est que 
+la taille de l'‚cran peut ˆtre plus grande,  donc l'‚cran d‚borde sur de  la 
+m‚moire, qui peut contenir n'importe quoi!
+
+   Pour  obtenir  l'adresse de l'‚cran  physique,  il  suffit  d'appeler  la 
+fonction xbios Physbase, de mˆme avec l'‚cran logique (fonction logbase) : 
+
+
+     move.w #2,-(sp)
+     trap #14
+     adda.l #2,sp 
+     * d0 : adresse de l'‚cran physique
+     move.w #3,-(sp)
+     trap #14
+     adda.l #2,sp
+     * d0 : adresse de l'‚cran logique
+
+  Bon passons … la routine compl‚te : 
+
+* Routine de point en 256 couleurs
+* 640*400 en 256 couleurs
+
+     section TEXT
+* demande de r‚solution
+     move.w #-1,-(sp)
+     move.w #$58,-(sp)        * Vsetmode
+     trap #14
+     adda.l #4,sp
+     move.w d0,ancien_mode
+* adresse physique
+     move.w #2,-(sp)          * Physbase
+     trap #14
+     adda.l #2,sp 
+     move.w d0,ancien_phys
+* adresse logique
+     move.w #3,-(sp)          * Logbase
+     trap #14
+     adda.l #2,sp
+     move.w d0,ancien_log
+
+* Mise en place de la nouvelle r‚solution
+* calcul de l'adresse ‚cran (qui doit ˆtre un mutiple de 4)
+     move.l #ecran+4,d0
+     andi.b #$FC,d0           * il  suffit d'annuler les 2  bits  de  poid 
+                              * faible
+     move.l d0,adr_ecran      * on stocke l'adresse ‚cran
+     move.w #%0000000100101011,-(sp) * entrelac‚/80 colonnes/256 couleurs
+                                     * TV/PAL/pas d'overscan
+     move.w #3,-(sp)
+     move.l d0,-(sp)          * ‚cran physique = ‚cran logique
+     move.l d0,-(sp)
+     move.w #5,-(sp)          * Setscreen
+     trap #14
+     adda.l #14,sp
+
+     move.w #100,d3
+     move.w #50,d4
+     move.w #100,d5
+* appel de la routine de point
+* D0 : X
+* D1 : Y
+* D2 : couleur
+affiche_pts
+     move.w d3,d0
+     move.w d4,d1
+     move.w #100,d2   
+     bsr point           * affiche le point de coordonn‚es (D3, D4)
+     addq.w #1,d3        * passage au point (D3+1, D4+1)
+     addq.w #1,d4        * ce qui nous trace une diagonale!!
+     dbra d5,affiche_pts    
+
+* fin du programme
+* remise en place de la r‚solution
+     move.w ancien_mode,-(sp)
+     move.w #3,-(sp)
+     move.l ancien_phy,-(sp)
+     move.l ancien_log,-(sp)
+     move.w #5,-(sp)
+     trap #14
+     adda.l #14,sp
+
+* retour systŠme
+     move.w #0,-(sp)
+     trap #1
+
+* routine de point en 256 couleurs, 640 points de large
+point
+* recoit en D0 : X, D1 : Y, D2 : couleur
+* modifie D0, D1, D2, D6, D7, A0
+* calcul de l'adresse de la ligne
+     movea.l adr_ecran,a0
+     mulu.w #640,d1      * r‚sultat sur un mot long !!
+     adda.l d1,a0
+* calcul de l'adresse du groupement de mot
+*  Rq.  :  diviser par 16 puis remultiplier par 16,  reviens en entier  …
+* effacer  les  4  bits  de poids faible  (astuce  valable  uniquement  256
+* couleurs, sinon : une bonne divu bien bourrin ferat l'affaire)
+     move.w d0,d1
+     andi.w #$FFFFF0,d1
+     adda.w d1,a0
+* Calcul du No de bit … modifier dans les 8 mots
+* le reste de la division est contenu dans les 4 bits de poids faible
+* valable quelque soit le Nbre de couleurs
+     andi.w #$00000F,d0
+     eori.w #$00000F,d0       * c'est ‚quivalent … (ÝF-1)-d0
+* A0 contient l'adresse du mot qui code le bit le plus faible
+* D0 contient le num‚ro de bit
+* modification plan par plan
+     moveq.w #0,d6            * contient le num‚ro de plan
+point_bc
+     move.w (a0),d1
+* test de la position du bit No D6 de D2 (couleur)
+     btst.b d6,d2
+     beq point_bit_nul
+     * le bit est donc … 1
+     * Mise … 1 du bit No D0 dans D1
+     bset.l d0,d1
+     bra point_s1
+point_bit_nul
+     bclr.l d0,d1
+point_s1
+     * remet le mot en m‚moire
+     move.w d1,(a0)+
+     addq.b #1,d6             * plan suivant
+     cmpi.b #8,d6             * on s'arr‚te au 9iŠme plan!!
+     bne point_bc
+     rts
+
+     section BSS
+     EVEN
+* variable
+* initialisation
+ancien_mode    ds.w 1   
+ancien_phys    ds.l 1
+ancien_log     ds.l 1
+adr_ecran      ds.l 1
+ecran          ds.b 640*400+4
+
+  Et voici la routine pour un petit mode True Color : 
+
+* Routine de point en True Color (640*400)
+
+     section TEXT
+* demande de r‚solution
+     move.w #-1,-(sp)
+     move.w #$58,-(sp)        * Vsetmode
+     trap #14
+     adda.l #4,sp
+     move.w d0,ancien_mode
+* adresse physique
+     move.w #2,-(sp)          * Physbase
+     trap #14
+     adda.l #2,sp 
+     move.w d0,ancien_phys
+* adresse logique
+     move.w #3,-(sp)          * Logbase
+     trap #14
+     adda.l #2,sp
+     move.w d0,ancien_log
+
+* Mise en place de la nouvelle r‚solution
+* calcul de l'adresse ‚cran (qui doit ˆtre un mutiple de 4)
+     move.l #ecran+4,d0
+     andi.b #$FC,d0           * il  suffit d'annuler les 2  bits  de  poid 
+                              * faible
+     move.l d0,adr_ecran      * on stocke l'adresse ‚cran
+     move.w #%0000000100101100,-(sp) * entrelac‚/80 colonnes/65536 couleurs
+                                     * TV/PAL/pas d'overscan
+     move.w #3,-(sp)
+     move.l d0,-(sp)          * ‚cran physique = ‚cran logique
+     move.l d0,-(sp)
+     move.w #5,-(sp)          * Setscreen
+     trap #14
+     adda.l #14,sp
+
+     move.w #100,d3
+     move.w #50,d4
+     move.w #100,d5
+* appel de la routine de point
+* D0 : X
+* D1 : Y
+* D2 : couleur
+affiche_pts
+     move.w d3,d0
+     move.w d4,d1
+     move.w #%0011000011000110,d2   
+     bsr point           * affiche le point de coordonn‚es (D3, D4)
+     addq.w #1,d3        * passage au point (D3+1, D4+1)
+     addq.w #1,d4        * ce qui nous trace une diagonale!!
+     dbra d5,affiche_pts    
+
+* fin du programme
+* remise en place de la r‚solution
+     move.w ancien_mode,-(sp)
+     move.w #3,-(sp)
+     move.l ancien_phy,-(sp)
+     move.l ancien_log,-(sp)
+     move.w #5,-(sp)
+     trap #14
+     adda.l #14,sp
+
+* retour systŠme
+     move.w #0,-(sp)
+     trap #1
+
+* routine de point en 65536 couleurs, 640 points de large
+point
+* recoit en D0 : X, D1 : Y, D2 : couleur
+* modifie D0, D1, A0
+* calcul de l'adresse de la ligne
+     movea.l adr_ecran,a0
+     mulu.w #1280,d1     * r‚sultat sur un mot long !!
+     adda.l d1,a0
+* calcul de l'adresse du mot … modifier
+     lsl.w #1,d0         * multiplication par 2
+     adda.w d0,a0
+* affichage du point
+     move.w d2,(a0)
+     rts
+
+     section BSS
+     EVEN
+* variable
+* initialisation
+ancien_mode    ds.w 1   
+ancien_phys    ds.l 1
+ancien_log     ds.l 1
+adr_ecran      ds.l 1
+ecran          ds.b 640*2*400+4
+

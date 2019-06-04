@@ -1,0 +1,892 @@
+070010303050000140002006006010000
+11
+2Page #1
+F0110000001
+9[...................................................]0110
+ÅâStructuredProgrammingInAssembly!?
+Ä
+Okay,okay,Iknow,Iknow.BORING,right?Well,yes,actually,
+Iamthefirsttoadmitit.Soletmelivenitupbytellinga
+littlestory...
+
+Inmypre-HNDdays,Iwasthe"typical"programmer.Towriteany
+givenprogram,Iwoulddowhatwealldo.Sitdown.Startto
+type.Seewhereyouget.Seetheproblems.Patchhere,bandage
+there,alittle"bra"(orGOTO)hereandtheretogetthings
+working.Soon,you'velosttrackcompletelyofwhattheprogram
+does,especiallythoseannoyinglittlebloodyroutines,which
+you'vegotthreepatcheson,andyoudon'tknowwhatonearth
+theywereputinfor,and...RE-WRITE!Fromthebeginning.Then
+youknowmoreorlesswhereyou'regoing,anddon'tneedsomany
+patches.
+
+YouknowwhatI'mtalkingabout.
+
+Nowadays,however,IhavecompletedmyHNDcourse.Iamfully
+conversantinJSP(JacksonStructuredProgramming)andJSD
+(JacksonSystemDesign).IcanwriteCOBOLprogramsfromagiven
+JSPdiagram.Icanevendesignthesediagramsmyself.So,when
+Isitdowntowriteaprogramtoday,whatdoIdo?Well,exactly
+thesameasbefore,tobehonest.Sitdown,starttyping...
+
+Well,notquite.Yousee,learningaboutÅstructuredÄprogramming
+hasgivenmesomeinsightsintocoding68000,whichIdidn'thave
+before.
+
+Don'tworry;I'mnotgoingtostartexplainingJSPorJSD(you'd
+needabooktoexplainitanyway-oh,andallthebooksare
+eithercraporoutofdate,butusuallyboth).
+
+No.
+
+IshalltellyouabouttheunstructuredstructurewhichIuseto
+hackinassemblynowadays.HackhereistheÑoldfashionedÄ(ie
+morethan10yearsold)meaningoftheword-welloneofthe
+meaningsoftheword;toprogramwithoutstructure-tohack.
+
+Youcanuseafewsimplerulestomakecodingprogramssimplerto
+do,andsimplertodebug.Alsosimplertounderstandwhenyou
+comebacktothemsixmonthslatertoupdatethem,orseehowyou
+solvedaproblembefore.
+
+
+àRule1-UseCommentsÄ
+
+Notreallystructuredprogramming,this,butitisanESSENTIAL
+rule.Onlyonethingisworsethanasourcecodewithno
+comments.AndthatisasourcecodewithcommentsinGerman,and
+Germanlabels(they'reOKifyou'vegotO-levelGerman-I
+haven't).YoushouldaimtowriteacommentafterMOSTofyour
+linesofcode.AndIDON'Tmeanlikethis:
+
+     move.l    d0,d1          ;moved0intod1
+     mulu      #100,d1        ;multiplyd1by100
+Ä     add.l     d1,a0          ;addittoa0
+
+Morelikethis:
+
+     move.l    d0,d1          ;copyrecordnumberintod1
+     mulu      #100,d1        ;x100fortheoffsetinthefile
+     add.l     d1,a0          ;addoffsettostartaddress
+                              ;togetabsoluteaddressofrecord
+
+Soundshorrible?IliteralyhadtoÑforceÄmyselftostartdoing
+this,backin1990orsowhenIfirststartedcodingontheST.
+Afterafewweeks,itbecamesecondnature,andIhavebeen
+complimentedbypeoplewholookedatmysourcecode(well,OK,
+onepersononce,butthenIrarleygetthechancetoshowoff
+sourcecodetoothercoders);theydidn'thavetoworkoutfor
+themselveswhatwasgoingon.IalsofindthatasItypethe
+comments,ithelpstokeepmyaimsclearinmymind;Iknow
+exactlywhereIamatanygivenpointintheprogramming.
+
+Usethe*commentsaswell,todescribethenextpeiceofcode.
+Forexample,rightbeforetheabovecode,wecouldhave:
+
+*workouttheabsoluteaddressoftherecord
+     move.l    d0,d1....
+
+Toseperatemajorblocksofapeiceofcode,uselargeblocksof
+stars:-
+
+***********************************************
+*******RECORDHANDLING******************
+***********************************************
+
+Thismakesthecodeasawholemucheasiertowadethrough.
+
+ForGod'ssake,useblanklinesaswell!Ihaveseensource
+codesinwhichthereisnotonesinglebreakinthesource!
+Christ!Headachetime!Leave1blanklineeverytimeyoufinish
+oneparticularbitofcode.E.G.
+
+     move.l    record_number,d0    ;getrecordnumber
+     bsr       print_rec_no        ;printittothescreen
+
+     move.l    page_no,d0          ;getpageno
+     bsr       print_page_no       ;printit
+
+Andleavemoreblanklineswhenalargersectionends.
+
+Sorrytoharponaboutthis,butitreallygetsmygoat(adults
+likemehavenouseforswearing.It'snotbigandit'snot
+clever.SoIneverswear.Well,notoften.Ok,thenIdo.But
+notwhenI'mf***ingwritingthiss**t,OK?)
+
+
+àRule2-meaningfulnamesÄ
+
+Again,thisisnotreallystructuredprogramming,butitis
+anotherthingwhichreallyannoysmewhenyouseethiskindof
+thing:
+Ä
+     move.l    d0,num1
+     move.l    num17,d4
+     add.l     num8,d4
+     move.l    d4,dummy
+     move.l    d6,useless_label
+     jmp       next_bit
+
+SAYWHATYOUMEAN!ItmakesitSoooomucheasier.Ifthe
+variablenamehastobelong,thensobeit.Oneofmy
+variablesinarecentprogramwascalled"ramdisk_exists".Long?
+fairly.Abitchtotype?Perhaps.Butwhenitcameto
+debugging,IknewEXACTLYwhatwasgoingon!
+
+Also,usethe"_"characterinyourlabels.Don'thavethis:
+
+verylonglabelname
+
+whenitissomuchbettertohave:
+
+very_long_label_name.
+
+Localvariablesarealsoveryuseful.BeforeIdiscoveredthem,
+Iusedtotypethingslike:
+
+     tst.w     d0
+     bmi       error
+
+     ....
+
+next_routine:
+     tst.w     d0
+     bmi       error2
+
+     ...
+
+another_routine:
+     tst.w     d0
+     bmi       oh_god_another_error
+
+Localvariablesaresocalled,becausetheyonlyaffectasmall
+areaofaprogram.Inbetweentwonormallabels.Whenanormal
+labelisdeclared,allthelocalvariablesarewiped.SonowI
+canuse:
+
+     tst.w     d0
+     bmi       .error
+
+
+.error:
+     rts
+
+
+next_routine:
+     tst.w     d0
+     bmi       .error
+
+
+Ä.error:
+     bsr       handle_string_error
+     rts
+
+another_routine:
+     tst.w     d0
+     bmi       .error
+
+
+.error:
+     lea       number_error_message(pc),a0
+     bsr       print_message
+
+
+Asyoucansee,localvariablenamescanoccuroverandover
+againinasourcecode,aslonganormallabelseparatesrepeated
+names.Thisisveryhandy,butdon'tusethemforvitalpartsof
+code,becausetheydon'tshowupinadebugger,exceptasan
+address.Inadebugger,youwillknowwhatthismeans:
+
+AF662     tst.w     d0
+AF664     beq.s     $AF668
+AF666     rts
+AF668     lea       my_message(pc),a0
+AF66C     bsr       print_message
+
+Butacomplicatedroutinecanlookhorribleifithasnolabels!
+
+
+
+àRule3-SubroutinesÄ
+
+Usesubroutineswhereverpossible.Mostprogrammerstendto
+writeonelongbitofcode.Iftheyfindthattheyneedto
+repeatabit,theyjustgoback,cutitout,andpasteitbackat
+thebottomasasub-routine.Insteadofdoingthat,whynottry
+thiskindofthing:
+
+     bsr       get_number_input    ;getinputfromuser
+     bsr       convert_to_binary   ;convertinputtoabinary
+                                  ;number
+     bsr       check_valid         ;checknumberisvalid
+
+Writethe"shell"first.Includeallthesub-routines,withjust
+an"rts"statementinthem.Thenyoucangothroughthecode,
+writingthesub-routinesonebyone.Thishelpsyoutobreakthe
+programdownintosmaller,moremanagablechuncks.Ifyoulike,
+don'tputinsub-routinenamesuntilyouhavecodedthem.That
+way,compileerrorswillshowyouwhatpartshaveyettobe
+coded.
+
+
+EvenifyouonlyeverusetheseroutinesONCE,ithasdistinct
+advantages:
+
+-whendebugging,youcantraceoverroutineswhichare
+workingwithjustonekeypress.Gettothepartwhichisn't
+workingandyoucangothroughthatpartbylookingatthe
+Äsubroutinebitbybit.
+
+-addingcodeiswelleasy.Justtagonthesubroutinesin
+thecorrectplaces.Youdon'thavetoworryifyourcode
+willbeskippedbysomeearlier"bra"instruction,because
+youcanseewherethebrasareeasily.
+
+Eachsectionofcodeshouldconsistonlyofsubroutinesandtests
+untilyougetdowntothelowestlevel.Trytokeepyour
+sectionssmall..
+
+Example
+-------
+
+     bsr  initialise
+     bsr  main_program
+     bsr terminate
+
+initialise:
+     ....
+     rts
+
+main_program:
+     bsr       get_file_name       ;getfilename
+     tst.w     d0
+     bmi.s     .error              ;endiferror
+
+     bsr  load_file                ;loadtheuser'sfile
+     tst.w     d0
+     bmi.s     .error              ;endiferror
+
+     bsr  display_file             ;showthefile
+
+.error:
+     rts
+
+
+get_file_name:
+*getthefilenamethattheuserwantstouse
+
+     lea       prompt_file_message(pc),a0
+     bsr       print_message       ;printtheprompt
+
+     lea       file_name_input(pc),a0
+     bsr       get_input           ;gettheinput
+     rts
+
+
+Youcanseehoweverythingbreaksdownintosmallerandsmaller
+chunks.Writtenlikethis,codeiseasytowrite,andeasyto
+debug.
+
+
+
+àRule4-ReusablesubroutinesÄ
+
+Whenyouwriteasub-routine,youshouldalwaysaimtomakeit
+re-usable.Sothatifyoueverneedtouseitagain,youcando
+Äsowithoutpatching.Forexample,ifIhaveanumberheldatthe
+label"disk_size",andIwantitconvertedtoASCII,theWRONG
+waytowritetheroutinewouldbe:
+
+     bsr       convert_disk_size
+
+     ...
+
+convert_disk_size:
+     move.l    disk_size,d0
+     move.l    #disk_size_string,a0
+     ...
+
+Thecorrectwayislikethis:
+     move.l    disk_size,d0
+     lea       disk_size_string(pc),a0
+     bsr       binary_to_ascii
+     ...
+
+binary_to_ascii:
+*enterthisroutinewithd0asnumbertoconvert
+*anda0aswheretoputthestring
+
+     ...
+
+Asyoucansee,thesecondtypeofcodecouldbere-usedfrom
+anywhere,toconvertANYbinarynumbertoASCII.Thisisavery
+simpleexample,buttheprinciplesholdoutformorecomplex
+routines,suchasconvertingtreesinaRSCfile,sothatthe
+diagramsarecentred.Mysubroutinefordoingthiswillaccept
+theaddressoftheRSCfile,andalistoftreenumberspointed
+tobya0,terminatedwith-1.Sonow,whenIloadaRSCfile,
+allIhavetodois:
+
+     lea       trees_centre_list(pc),a0
+     move.l    rsc_addr,a1
+     bsr       centre_trees
+     ...
+
+trees_centre_list:  dc.w      0,1,3,5
+                    dc.w      -1
+
+AndIwillneverhavetowritethatroutineagain,orevenamend
+it,becauseitispefect!
+
+Someroutineswillhavetobeamended,ofcourse,iftheyneedto
+performotherfunctions.
+
+Bytheway,my"centre_trees"routineusestheuniversalroutine
+whichIuseforcallingtheAES,whichIpassthecommand,anda
+listofdata,soIdon'thavetoputtheblasteddataintothe
+blastedaddresseseveryblastedtime!
+
+
+Anessentialpartofare-usablesubroutineistohaveaclear
+definitionofwhatitdoesatthestart,alongwithdetailsof
+whichregistersshouldcontainwhat,whichregistersarechanged,
+andwhattheywillcontainafterleavingthesubroutine.
+Ä
+E.G.
+
+binary_to_ascii:
+*Enterwith:
+*    d0holdsLongWordbinarynumber
+*    a0holdsaddresstoputstringat
+*registersd0-4aresmashed
+*registera0willbethesameuponreturning
+
+Inthisway,whenyouwanttousethesubroutineagain(3weeks
+later),youdon'thavetohuntthroughcodetofindoutwhatyou
+passedandwhatyougotback.WheneverIleavethisoutor
+forgetabit,itcostsmeaboutfivetotenminuteseachtimeI
+wanttore-useasub-routine.Comparethattothefiveminutes
+ittakestotypethedataout,andyoucanseethesaving.
+
+Theimportantbitcomeswhenyouhavetoremembertochangethose
+detailsifyouchangethesub-routine!
+
+
+àRule5-WHILEloops?!Ä
+
+Can'thavetheseinassembly,canwe?Coursewecan!Andthey
+makelifealoteasier,too.Isupposeithelpstohavea
+knowledgeofJSPorYourdentouseWHILEloopstotheirfull
+advantage(although,asweallknow,YourdenisNOTaStructured
+DesignMethodology,butawaythatprogrammerscanusetowrite
+theirprogramsandTHENdesigntheminthetime-honoured
+fashion).
+
+Awhileloopinassemblyiscodedlikethis:
+
+process_file:
+*Gothroughthefile,linebyline,untilwereachtheend
+*oranerroroccursinprocessing
+
+     move.b    #"n",eof
+     move.b    #"n",error_flag
+
+.while:
+*WHILEnoerrorandnotEOF
+     cmp.b     #"y",eof
+     beq.s     .end_while
+
+     cmp.b     #"y",error_flag
+     beq.s     .end_while
+
+     bsr       process_line
+     bra.s     .while
+.end_while:
+     rts
+
+
+àRule6-ReadAheadsÄ
+
+The"Read-ahead"isabasicJSPconcept.Whenyouneedto
+processanysortofdatayouuseit.Thedatacouldbeatext
+Äfile,oreveninputfromthekeyboard.Thefirstthingyoudois
+readthefirstbitofdata.ThenyouenteraWHILEloop,process
+thedata,andreadthenextdatajustbeforetheend-while.
+
+Example
+-------
+
+get_y_or_n:
+     bsr       read_keyboard  ;getkeypress
+
+.while:
+*WHILEd0isnotYorN
+     cmp.b     #"n",d0
+     beq.s     .end_while     ;endif"n"
+
+     cmp.b     #"y",d0
+     beq.s     .end_while     ;endif"y"
+
+*d0isnotYorN!
+     lea       invalid_keypress(pc),a0
+     bsr       print_message  ;printerrormessage
+
+     bsr       read_keyboard  ;getinputagain
+     bra.s     .while         ;keepgoing
+
+.end_while:
+     rts
+
+read_keyboard:
+     move.w    #7,-(a7)
+     trap      #1             ;getkeypress
+     addq.l    #2,a7
+     rts
+
+
+Asyoucansee,weaccepttheinput.TheWHILEloopdecideswhen
+theinputisOK,andthenleavestheroutine.Iftheinputis
+notOKthenithastobefetchedagain.
+
+What'swrongwithdoingitthe"normal"way?Nothing.Butthis
+wayisstructured,andisactuallylesscomplicatedinthelong
+run.Actually,tobehonest,forsomethingthissimple,Iwould
+probalydoitthe"normal"way!Butyougettheprincipal.
+
+Foramorecomplicatedexample,letmetellyouastoryabouthow
+IusedStructuredPrograming,WHILEloopsandread-aheads.
+
+
+àTheStoryÄ
+
+Iwantedtocompressabitofdata.Now,thisdatahadlotsof
+repetitionsinit,likethis:
+
+     0,0,0,0,1,3,4,5,3,23,5,5,5,5,5,5,0,0,0,0,3,4,5,6,7,2,1,7
+
+Whichcouldsurelybecompressedeasilyenough?Iwasgoingto
+useasimpleprincipleofstringsandblocks,likethis:
+
+Ä1byte(7thbitshowingblockorstring,other7bitsasa
+number"x")
+
+Forablock:
+1byte(showingthevaluetofillwith)
+
+Forastring:
+xbytestoputin.
+
+Sotheabovebitofdatawouldbestoredas:
+
+     4,0       (for40s)
+     128+5,1,3,4,5,3,23(forastingof5bytesandthenthe
+string)
+     6,5       (for65s)
+     128+8,3,4,5,6,7,2,1,7
+
+Nottoohardtowritethecode.
+
+8hourslater...
+
+Didn'twork.
+
+SoIdesigneditusingJSP,codedit.Workedthefirsttime
+(afteracoupleofbugsweresquashed).
+
+ThecodethatIcameupwithusedaread-aheadof3bytes.I
+workedontheprinciplethatablockwouldnotbeasavingifit
+waslessthan3bytesthesame.SoIwantedtocheckthatIhad
+atleast3identicalbytes.Iusedtheregistersd5d6d7always
+toholdthethreebyteswhichhadbeenread.d5wasthe
+"current"byte,andd6andd7were"future"bytes,whichhadnot
+yetbeenofficallyreadfromthefile,butwhichIcoulduseto
+"lookintothefuture",sotospeak.
+
+Theread-aheadatthestartoftheprogramlookedlikethis:
+
+     bsr  read_file
+     bsr  read_file
+     bsr  read_file
+
+andthe"read_file"routinelookedlikethis:
+
+read_file:
+*enterswithd5,d6,d7=lastbytesread
+*returns:
+*a0asnextbyteinfile
+*d5,d6,d7asbytesread
+
+     move.l    pos_in_file,a0      ;getcurrentpositioninfile
+     move.l    length_left,d0      ;andlengthlefttoread
+
+     subq.l    #1,d0          ;1morebyteread
+     beq.s     .eof           ;branchifendoffilereached
+
+*readanotherbyte
+
+*"lose"thecurrentbyteandmovethe"future"bytes
+Ä*towardsthecurrentbyte
+     move.w    d6,d5
+     move.w    d7,d6
+
+*readthenextbyteintod7
+     move.b    (a0)+,d7
+
+*storenewfilepositionandlengthleft
+     move.l    a0,pos_in_file
+     move.l    d0,length_left
+
+     rts
+
+.eof:
+*endoffilereached!
+*don'tbothertostorethenewlengthleftor
+*positioninfile;justputEOFmarkerintod7
+*andshiftthebytesdownwards
+
+     move.w    d6,d5
+     move.w    d7,d6
+     moveq     #-1,d7
+     rts
+
+What'shappening?Well,everytimewereadabyte,the"future"
+bytesaremovedtowardsthecurrentbyteposition(ind5).Ifwe
+havereachedtheendofthefile,then-1ismovedintod7.Next
+timewereadabyte,the-1willmoveintod6andbeputintod7
+again.Thethirdtimeweread,the-1willbeinallthethree
+bytes.Onlywhend5is-1dowedetectandendoffile.
+
+
+Thentherecomesadecision-dowedoablock,orastring?If
+thethreebytesarethesame,wedoablock.Ifnot,wedoa
+string:
+
+*determineblockorstring...
+     cmp.w     d5,d6
+     bne       string
+
+     cmp.w     d6,d7
+     bne       string
+
+block:
+
+Inordertodoablock,wehavetocountthenumberofidentical
+bytes.Todothis,wewrite:
+
+     moveq     #1,d0          ;1bytethesamesofar
+     move.w    d5,d1          ;keepvalueofbyte
+
+     bsr  read_file           ;getnextbyte...
+
+*WHILEnotEOFandbytereadisthesame...
+.while:
+     tst.w     d5
+     bmi       .end_while
+
+Ä     cmp.w     d5,d1
+     bne       .end_while
+
+*anotherbytematches...
+     addq.w    #1,d0
+
+     bsr       read_file      ;getnextbyte
+     bra       .while
+
+.end_while:
+*insertblockintonewdata
+*d0iscounter
+*d1isbytevaluetorepeat
+
+
+Toprocessthestring,however,wemustaddupthenumberof
+bytesthereareinthestring,untilthethreebytesreadarethe
+same,wecometotheendofthefile,orwereachthemaximum
+numberofbytesallowed(127):
+
+     moveq     #1,d0     ;counter
+     pea       (a5)      ;keepaddresswe'reputtingnewdataat
+     addq.l    #1,a5     ;gopastcounterbyte
+
+Wegopastthecounterbyte,becausewedon'tknowhowmanybytes
+therearegoingtobeyet!Wehavetocountthemfirst,and
+mightaswellputtheminaswecountthem,andthencomeback
+andputinthenumberofbytes...
+
+     bsr       read_file      ;getnextbyte
+
+*WHILEnot3thesameANDnotEOFANDcounter<127
+.while:
+     cmp.w     d5,d6
+     bne.s     .not_same      ;OKifbytesnotthesame
+
+     cmp.w     d6,d7
+     beq       .end_while     ;endifall3thesame
+
+.not_same:
+*EOF
+     tst.w     d0
+     bmi       .end_while     ;endifEOFreached
+
+*counter<127
+     cmp.w     #127,d0
+     beq       .end_while     ;endifcounter=127
+
+     addq.w    #1,d0          ;anotherbytefound
+     move.b    d5,(a5)+       ;storeitinnewfile
+
+     bsr       read_file      ;getnextbyte
+     bra       .while
+
+.end_while:
+*nowweputinthecounteratthestartofthelist
+     move.l    (a7)+,a0       ;getstartoflist
+     move.b    d0,(a0)        ;putincountvalue
+Ä
+
+Youcanseehowthestructureworksmuchmoreeasilythanifit
+hadbeencoded"raw".Itisalsoeasiertoupdtae.Ifyouwant
+toaddanotherconditiontotheWHILEloop,youknowwheretoput
+thecondition,andwhereitshouldjumpto.Also,becauethe
+routineforreadingthefileisthesameeverywhere,nomatter
+whereyoujumptointheprogram,youwillalwaysknowthatthe
+filehasbeenreadcorrectly.
+
+
+Theadvantagesofstructuredprogramminginsituationslikethe
+abovearenumerous.Ifyouhavethegutstotryitforyourself,
+thenyouwillsoondiscover(ifyoustickatit),theenormous
+benefits.
+
+Iftheblockhadhadaminimumlengthof,say,10bytes,thenI
+couldnothaveusedtheprincipalofreadingallthebytesinand
+using"future"bytes(whichisabitofacheat,bytheway).
+Instead,IwoulduseÑbactrackingÄ.
+
+
+àBacktrackingÄ
+
+JSPcannotreallyseeintothefutureofafile.Soifwehave
+thesituationofnotknowingwhichoptionweshouldtake,weuse
+backtracking.WefirstÅpositÄ(orassume)thatoneoftheoptions
+istheonewehave.Weprocessthefileunderthisassumption,
+unlesswelearnotherwise.Whenwelearnotherwise,weÅadmitÄour
+mistake,andprocessthefileastheotheroption.WeÅquitÄthe
+originalroutines,andgobackabit.
+
+Itisuptotheprogrammerwhattoposit.IhavechosentoPOSIT
+aBLOCK,asthisappearseasierinmymindatthispoint.
+
+E.G.
+
+     bsr  read_file
+
+*WHILEnotEOF
+.while:
+     tst.w     d7
+     bmi  .end_while
+
+*setupQUITvalues
+     move.b    #"n",quit
+     move.l    file_len,quit_len
+     move.l    file_pos,quit_pos
+     move.w    d7,quit_byte
+
+*assumeit'sablock
+     bsr       posit_block
+
+*didweQUITbecausewefoundaSTRING?
+     cmp.b     #"y",quit
+     bne.s     .no
+
+*yes!soADMITit'sastring...
+Ä*getfilestuffbackintooriginalstate...
+     move.l    quit_len,file_len
+     move.l    quit_pos,file_pos
+     move.w    quit_byte,d7
+
+     bsr       admit_string
+.no:
+
+*readnextbyte
+     bsr       read_file
+     bra  .while
+
+.end_while:
+
+read_file:
+     move.l    file_pos,a0
+     move.b    (a0)+,d7
+     move.l    a0,file_pos
+
+     move.l    file_len,d0
+     subq.l    #1,d0
+     move.l    d0,file_len
+
+     tst.l     d0
+     bne.s     .ok
+
+     moveq     #-1,d7
+.ok:
+     rts
+
+
+posit_block:
+*POSITablock.Quitoutofitifwefindit'snotablock
+
+*storebytevalue
+     move.b    d7,d1
+
+*setcounter
+     moveq     #0,d0
+
+*readnextbyte
+     bsr       read_file
+
+*WHILEcounter<127ANDnotEOFANDbytehasnotchanged
+.while:
+*counter<127
+     cmp.w     #127,d0
+     beq     .end_while
+
+*notEOF
+     tst.w    d7
+     bmi       .end_while
+
+*bytehasnotchanged
+     cmp.b     d7,d1
+     bne       .end_while
+
+*anotherbytethesame!
+Ä     addq.w    #1,d0
+
+     bsr       read_file
+     bra       .while
+
+.end_while:
+*dowehaveenoughbytesthesameforablock?
+     cmp.w     #10,d0
+     bge       .yes
+
+*no!lessthan10bytes!
+     move.b    #"y",quit
+     rts
+
+.yes:
+*insertblocktonewfile...
+
+     bset      #7,d0     ;setblockflag
+     move.b    d0,(a5)+  ;counterin
+     move.b    d7,(a5)+  ;bytevaluein
+     rts
+
+
+NoticeintheoriginalWHILEloopthatIsetquitto"n",and
+thenstorealltherelevantfiledata.Thisisbecausewhenwe
+QUIT,thefilewillhavemovedonabit.Wewanttopickitup
+fromwherewestarted,notfromwhereweQUITfrom.
+
+
+àNoRoomForStructuredProgrammingÄ
+
+Ofcourse,thereisonemajorareathatstructuredprogramming
+letsyoudown.Speed.Withallthosesubroutines,youwillnot
+beabletogetthemostspeedoutoftheprocessor.Formost
+applications,thisdoesnotmatteronejot.Butfordemosand
+games,youneedallthattime.Butyoucanstillprogramina
+structuredway,using....
+
+
+....themacro!Forroutineswhichyouwilloftenneed,butat
+differenttimes,butcannotturnintoasub-routineduetolack
+ofprocessortime,simplyuseamacro,andrepeatwherever
+needed.Theadvantagesofthismethodare:-
+
+-whenwritingthecodeyoudon'tre-typetheroutineover
+andover(youcoulduseblockandpaste,but...)
+
+-...whenyoufindabugintheroutineyouonlyhaveto
+changeitONCE,notwhereveritappearsinthesourcecode.
+
+-thelengthofthesourcecode,asawhole,isshortened,
+and,ofcourse,iseasiertounderstand.
+
+HereareacoupleofexamplesofmacroswhichImightusefrom
+timetotime
+
+
+shift_mem macro
+Ä     movem.l   (a0)+,d0-7
+     movem.l   d0-7,(a1)
+     lea       32(a1),a1 
+     endm
+
+     shift_mem
+     shift_mem
+     shift_mem
+
+print     macro
+     move.l    #\1,a0
+     bsr       print_message
+     endm
+
+
+     print     intro
+     print     version
+     ...
+
+intro:
+     dc.b      27,"EIntrotexthere...",10,13,0
+version:
+     dc.b      "Version1.0",10,13,0
+
+
+Youcanalsouse"rept"insideamacro,aswellas"set".Soif
+youwanttomoveawholeheapofmemoryusingamacro,instead
+of:
+
+     movem.l   (a0)+,d0-7
+     movem.l   d0-7,(a1)
+
+     movem.l   (a0)+,d0-7
+     movem.l   d0-7,32(a1)
+
+     ...
+
+youuse:
+
+shift_mem macro
+
+off  set  0
+
+     rept 100       (orhowevermanyareneeded)
+
+     movem.l   (a0)+,d0-7
+     movem.l   d0-7,off(a1)
+
+off  set  off+32
+     endr
+
+     endm
+
+The"rept","set","macro"and"endm"commandsareusedin
+referencetoDEVPAC.
+
+
+àConclusionÄ
+Ä
+Ihopethatyouwillfindthisdocumentinteresting.Ialsohope
+thatitwillgiveyousomeideasaboutprogramming.Evenifyou
+don'tadoptthestructuredtechniquesIdiscussed,yuomaydecide
+toadoptmorecommentsandspacing,ormorere-usablesub-
+routines.
+
+Ialwayshopethatthegeneralstandardofcodingwillberaised,
+becauseIcomeacrosssomanyslacksourcecodes.Ifwecould
+alladoptsomegeneralproncipals,thenlifeasawholewouldbe
+mucheasier.Ofcourse,JSPistheonlyREALwaytocodeinANY
+language.HereendeththelessonaccordingtoTonyWilliams(the
+StructuredProgrammerandCOBOL[Urgh]useratNeneCollege).
+
+
+
+

@@ -1,0 +1,131 @@
+
+                            SOUND OFF
+                               or
+             SORRY DAVID WHITTIKAR, YOUR TIME IS UP!
+
+By Leon O'Reilly
+
+     Yamaha's 2149F chip was probably the worst piece of musical 
+equipment they have made. It is basically very similar to the AY 
+series of soundchip found in the spectrum and amstrad 8-bits. It 
+gives the user three mono channels of tone or noise, and it's 
+happiest when it's making beeping sounds.
+     If there is one thing about the Amiga that ST owners admire 
+(apart from its phenomanal amount of viruses!) its the brilliant 
+four channel stereo soundchip. ST owners consider their soundchip 
+'average' and the Amiga one 'excellent'. Amiga owners, on the 
+other hand, think they have a very good soundchip, but would rate 
+our chip as 'shite'.
+     Why is there such a distinction between the soundchips? The 
+casual observer would say that the Amiga chip is better as it has 
+one more channel and it broadcasts in stereo. This, infact, isn't 
+the main reason. The two real reasons are the Amiga chips' 
+flexibility - its ability to easily imitate real instruments, and 
+the other is its speed - it has its own custom chip and works at 
+DMA speed using very little processor time.
+     The YM2149F isn't has no co-processors and certainly isn't 
+DMA. This presents little problem when making beepy tunes as used 
+in Ocean's games, but to sound decent a tune has to use samples 
+which take up memory, and more importantly, processor time. The 
+higher quality the samples, the more memory and processor time 
+used. As the STFM lacks hardware scroll and hardware sprites, to 
+get a game running smoothly and at a reasonable speed is hard 
+enough. To add a sampled tune over this is virtually impossible. 
+This doesn't mean samples can't be used in other places.
+     I remember the first game I bought which had a good sampled 
+tune, Super Hang-On by activision. Forget playing the game, I 
+just loaded up the first disk and listened to the music! 
+Brilliant! And it been cleverly coded so it played while the game 
+loaded. The problem came when you pressed space and went on to 
+the next screens which featured awful soundchip tunes. Aaargh.
+     As not much processor time is used in displaying loading 
+pictures, menu/options screen etc., this is when sampled tunes 
+can and should be used. A game which lacks a decent tune here 
+probably lacks a lot more.
+     But what utilities can be used to create these tunes? We 
+are fortunate to have so many. They include:
+
+Quartet: Tricky to operate, uses a lot of processor time, but the 
+         sound is crystal clear - 4 Channel 16Khz. Stereo on STE. 
+
+TCB Tracker: Millions of functions, easy to use, uses very little 
+CPU time, sound quality is tinny. 4 channel 10khz. Stereo on STE.
+
+Noisetracker: Not so many functions as the above, but it is PD. 
+            Can play all amiga modules. Sound quality is similar 
+            to TCB tracker. 4 channel.                     
+
+Coming soon we have the excellent SYNC tracker, no matter what An 
+Cool says, this is the best tracker available on the ST. It can 
+load Amiga, Noisetracker and TCB Tracker mods, you can sample 
+with it if you have a cartridge, it displays modules as a musical 
+score. Brilliant!
+
+     Using these four packages, great tunes can be created for 
+intro screens etc. If we want even better sound, three cartridges 
+have recently been released:
+
+MV16 - From UBiSOFT in frogland - oops, France - comes this very 
+nice cartridge which slots into (surprisingly) the cartridge 
+slot. There will be a music package available for it soon. It 
+gives the user 16 channels of mono sound.
+
+Playback Stereo - For use with quartet, this gives a four channel 
+stereo soundchip. Suitable for use with quartet. Plugs into 
+cartridge slot.
+
+Monster Sound Card - From MPH. Also gives four channel stereo 
+sound. This can be used in conjuncture with TCB tracker 1.2
+
+     With all of these now on the market, it would seem 
+reasonable to expect that we can now get good quality sound in 
+games. Even if you haven't the hardware cartridges, the 
+developers certainly have the software.
+     A lot of good new software releases have good four channel 
+intro tunes, e.g. Powermonger and Speedball 2. The difference 
+between these games comes when you actually begin playing. The 
+in-game sound in Powermonger are all excellent sampled sounds. 
+The in-game sound in speedball 2 consists of dire beeps, 
+Speedball 1 had better in-game sound!
+     The TCB tracker uses very little CPU time, and can be easily 
+used in-game. As many demos have showed us, it is possible to 
+have four channel sound plus tuns happening on screen AND in the 
+borders! I expect decent software houses to use this to produce 
+in-game music.
+     There is a compromise that can be come to. Games like 
+Dungeon Master use occassional samples which really do enhance 
+the atmosphere. Turrican's in-game music is a blend of beeps and 
+a sampled drum track which works perfectly, but then what do you 
+expect from Jochen Hippel.
+     The ST has come in for a lot of unfair criticism for its 
+soundchip. Most people blame Atari for including this chip when 
+they were originally going to include a more expensive FM chip. 
+They take some of the blame, but software developers take the 
+rest of it - they have to learn to take into account the 
+restrictions of the machine they are using. I beleive that now 
+there is no excuse for a game to include nothing but chip based 
+music. Turrican is good example of the game of the future - 4 
+channel tunes on the intro screen and hi-score table (these 
+screens also feature overscan!). The ingame music includes high 
+quality drum samples - but the sprites move smoothly and quickly, 
+the scrolling is almost identical to the Amiga version and there 
+are over 40 colours on screen. I can see future products from 
+this software house using 4 channel sampled music and having 
+better specifications.
+     This is basically a plea to all software developers. The ST 
+soundchip can produce great music, and this should be taken 
+advantage of. If an ST and Amiga version of a game are being 
+produced simultaneously, theres no need for two musicians, just 
+port the intro music over using Noisetracker. It's so simple, yet 
+hardly any software houses do this!
+     I would like to give a special mention to a group of coders 
+who know how important sampled music is and have used it 
+effectively in every one of their releases. They are the assembly 
+line, coders of: Xenon 2, Helter Skelter, E-Motion, Vaxine, 
+Exterminator, Pipemania. All these games feature good sound, even 
+if it is just looped samples.
+     One day Ocean and US Gold will feature stonking four channel 
+tunes in all there games.....it is probably more likely that An 
+Cool's feet will stop sweating continuosly. Ah well, we can all 
+dream....     
+

@@ -1,0 +1,40 @@
+MOTOROLA 68060
+
+(Captured this from the FIDO Amiga International echo!!!)
+---------------------------------------------------------------------------
+
+Intel P5, Motorola 68060 In MPU Forum Limelight. 
+By Jonathan Cassell 
+  
+Burlingame, Calif. - 
+  
+Intel and Motorola engineers last week detailed the superscalar, pipelined 
+architectures of the respective P5 and 68060 microprocessors at the annual 
+Microprocessor Forum here. 
+  
+(P5 decription) 
+  
+Motorola's 060 is a 32-bit processor with a superscalar, pipelined 
+architecture.  It has more than 2 million transitors, using a 0.5-micron, 
+triple-layer metal, 3.3 volt process in a static design.  Performance will 
+be 3.5 times the 25MHz 68040, or about 46 Specmarks, according to Joe 
+Circello, 68000 advanced microprocessor architect for Motorola. 
+  
+Separated in the 060 are instruction caches and data caches; instruction 
+fetch pipelines (with four-stage instruction processor, a physically-mapped 
+8Kbyte instruction cache with four-way self associative, a virtually mapped
+256-entry branch cache and a FIFO instruction buffer), and operand execution
+pipelines (with four-stage operand processor, a physically mapped 8Kbyte 
+data cache with 4-way interleaving and a 4-entry, 32-bit write buffer). 
+  
+The floating point unit - implemented in the execution stage of the operand
+execution pipeline - is compatible with the 040 FPU programming model. 
+Floating point execution times range from 1-24 cycles.  The 060 superscalar
+dispatch algorithm can execute 50 to 60 percent of integer code instructions
+as pairs with existing compilers. 
+  
+The 060 will come in 040-style packaging, with a similiar external bus. 
+The first versions will sample in the second half of 1993, go into production
+in Q1 1994, and run at 50MHz and 66MHz. 
+  
+

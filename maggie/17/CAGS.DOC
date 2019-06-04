@@ -1,0 +1,2131 @@
+06601030305800
+F0110030
+9[........................................................]011
+€
+                        ˆFrequently-Asked Questions
+€
+               ˆ Classic Atari 2600/5200/7800 Game Systems
+
+€                       Seventh Edition 95-01-27
+                         Sixth Edition 95-01-12
+                         Fifth Edition 94-11-29 (5K bigger)
+                        Fourth Edition 94-11-12 (21K bigger)
+                         Third Edition 94-10-29 (30k bigger)
+                        Second Edition 94-10-18
+                         First Edition 92-07-17
+
+
+            Send additions/corrections/comments/money/carts to:
+                Andrew K. Heller (cagsfaq@akh104.rh.psu.edu)
+
+
+  Author's note: Most of this work was stollen from other articles/works
+  that either have appeared on netnews or are available via FTP.
+  So, if you see something in here word for word the way you typed it
+  aren't you proud I didn't have to change a thing! =)
+
+
+
+TABLE OF CONTENTS:
+
+    INTRODUCTION
+0)  Who am I and why do you care?
+
+
+     GENERAL
+1.1) What NetNews groups exist for the CAGS?
+1.2) What Atari 2600/5200/7800 games list exist?
+1.3) What information sites for Atari game machine information exist?
+1.4) What is The 2600 Connection?
+1.5) In the news...
+
+
+     SOFTWARE 
+2.1) Where can I find games for my 2600/5200/7800?
+2.2) What are the best games for the 2600?
+
+2.3) Cartridge quantity:
+2.3.1) What are the most common and rarest 2600 games?
+2.3.2) What are the most common and rarest 5200 games?
+2.3.3) What are the most common and rarest 7800 games?
+2.3.4) What games were available via GameLine services?
+
+2.4) Games and Controllers
+2.4.1) What 2600 or 7800 games used a light gun?
+2.4.2) Which 2600 games used Kid pads/key pads?
+2.4.3) Which 2600 games used paddles?
+2.4.4) How do I fix my paddles?             
+€
+2.5) What is this Starpath CD I keep hearing about?
+2.6) What Easter Eggs (cheats) exist for the 26/52/7800?
+
+2.7) Programming:
+2.7.1) What out there exists to help programmers?
+2.7.2) What is the 7800 encryption algorithm?
+
+2.8) Bugs:
+2.8.1) What's up with 7800 Impossible Mission?
+
+
+     HARDWARE 
+3.1) What different 26/52/7800 models and accessories did Atari make?
+3.1.1) The Atari 2600
+3.1.2) The Atari 5200
+3.1.3) The Atari 7800
+
+3.2) What vaporware hardware is there?
+3.3) How many 2600 clones/emulators were made and by who?
+3.4) What light guns work with the 2600/7800?
+
+3.5)  What add on devices existed for the 26/52/78?
+3.5.1) What add on modules existed for the 2600?
+3.5.2) What add on modules existed for the 5200?
+
+3.6) What are the known specs for the 2600/5200/7800?
+
+3.7) Pinouts
+3.7.1) 2600 and 7800 Joystick pinouts 
+3.7.2) 2600 Cartridge Pinouts and information 
+3.7.3) 5200 Cartridge and Expansion Pinout 
+3.7.4) 7800 Cartridge and Expansion Pinout
+
+3.8) Power supply informatiion 
+
+
+     PROJECTS 
+4.1) Building a switchbox for the 4 port 5200.
+4.2) Composite/audio/chroma/luma output for the Atari 2600
+4.3) Video driver for the 2600/7800
+4.4) Converting Sega controllers to Atari format
+
+
+================================================================
+0)  Who am I and why do you care?
+
+
+   Well, perhaps you don't care.  But anyway, I have always been a big
+Atari nut.  In my earlier youth (I feel old at 23) I was known for being
+able to tell you the product number of any given piece of Atari (non ST)
+hardware.  I also held the high score on the then many Atari bbs's for
+being able to list off memory locations within the 8bit computer OS.
+So, I took all this as a sign to go to college and get a degree in 
+€Computer Engineering with a minor in Computer Science.  
+
+  This is my 5th year at the wonderful Penn (pepsi) State University.
+I will be graduating in May, thank God.  All the work that was done
+on this Faq was done at the expense of other class work.  Well, okay,
+I like saying that, but actually I probably would have found something
+else that was non-academic to take up my time.  However, 
+I decided to stay in my dorm room and finish this up for my
+fellow collectors.  That is one of the advantages of having my own 
+Unix box on the internet . . . hehehe)
+
+  A while ago I found a Classic Atari Game System Faq from 1992.  The      
+project seemed to have fallen apart and I knew that it would be hard
+to actually get a communal effort together to work on this thing so I
+took up the task myself, of course, with the help of contributions from
+the internet.  This is my first big contribution to the world of
+classic systems. 
+
+  I hope this FAQ helps someone....
+
+
+  I want to thank all of the readers out there for their numerous
+suggestions, comments, and information.  Additionally, I would like to
+thankall those people out there for helping me increase my knowledge
+base ofthe Atari world (you know who you are).
+
+
+
+==========================================================
+1.1) What NetNews groups exist for the CAGS?
+
+   Currently there are the following netnews groups with various
+information pertaining to the 26/52/78 systems:
+
+   alt.atari.2600vcs (and its various other clones, .2600 and .2600.vcs)
+   alt.games.video.classic
+   rec.games.video.classic
+   rec.games.video.marketplace  (to buy things of course!)
+
+
+==========================================================
+1.2) What Atari 2600/5200/7800 games list exist?
+
+  There are several game lists available.  Games are listed by
+manufactureror by game title;  some have rarity codes, others have
+prices.  The most widely used lists by collectors are listed here:
+
+1)  VGR (Craig Pell) maintains a gigantic listing of every known game
+    cartridge produced for the Atari 2600 or 7800.  The list contains
+the game's name and manufacturer's model number.  Games are grouped
+ together by the cartridge manufacture and then by product number. 
+
+    To receive a copy of the latest game listing, or to suggest a change or
+    update to the list, send e-mail to VGR at vgriscep@wam.umd.edu.
+€
+2)  The most "generic" list of games, and perhaps the most easy to use
+    are maintained by Dean Dierschow (dean@xocolatl.com).  Current lists
+    are available from wiretap.spies.com under /game_archive/cartList.
+    Games are grouped together by manufacture and then by alphabetical
+    title.
+
+    Entries   File Name      System                            Date
+    -------   ------------   -------------------------------   --------
+      1010    AT2600.LST     Atari 2600                        10/21/94
+        94    AT5200.LST     Atari 5200                        10/21/94
+        69    AT7800.LST     Atari 7800                        10/21/94
+ 
+ 
+    You will also need the file "carts.lst" for important information.
+
+    Dean also has lists for just about every other system in existence.
+
+3)  "The Giant List of 2600 Label Variations" is the list for all of
+    us "sick" collectors who need to tell exactly what carts we own.
+    This list goes into detail.  Here is an excerpt:
+
+    Cosmic Ark                 IA3204            
+        silver label with no picture, "for use with..." in 5 languages
+        silver label with picture 720104-1 Rev A.  1982 entirely to the         
+   
+                right of the picture.
+        silver label with picture 720104-1 Rev A.  right edge of picture    
+                is in the middle of 1982.
+        ??? silver label with no picture
+        Boxed: silver box (c)1982
+
+
+     Send requests to: 
+     John Earney - jearney@farad.elee.calpoly.edu 
+
+
+
+
+
+==========================================================
+1.3) What information sites for Atari game machine information exist?
+
+  Via FTP:  
+
+        1)  aurora.alaska.edu /atari.dir
+
+            2600-PROGRAMMING-2.INFO;1       6/8      3-OCT-1992 
+            2600-PROGRAMMING.INFO;1         90/92    3-OCT-1992 
+            2600CONNECTION.INDEX;1          40/40   18-DEC-1992 
+            CLASSIC-ATARI.FAQ;1             40/40    3-OCT-1992 
+            GIANT-ATARI-2600-7800.LIST;4    175/176  9-MAR-1993
+            INDEX.LKI;4                     2/4     18-JUN-1993  
+            PROG2600-0.DIGEST;1             10/12    3-OCT-1992  
+€            PROG2600-1.DIGEST;1             18/20    3-OCT-1992  
+            PROG2600-2.DIGEST;1             20/20    3-OCT-1992    
+            PROG2600-3.DIGEST;1             229/232  3-JUN-1993 
+            PROGRAM-2600-LIST.WELCOME;5     5/8     18-JUN-1993
+            STELLA.TXT;1                    177/180 18-JUN-1993   
+
+        2)  atari.archive.umich.edu /atari/8bit/Vcs
+            (or amiga.archive.umich.edu /atari/8bit/Vcs)
+            (atari.archive is usually bogged down)
+
+            1094762 Jun 18  1993 2600_doc.zip
+            36939   Jun 18  1993 2600_txt.arc
+            252     Jun 18  1993 aa.8bit.vcs
+            16325   Jun 18  1993 tech2600.arc
+
+        3)  akh104.rh.psu.edu /pub/Oldatari
+
+            This is my own machine.  Most of the stuff here is 
+            just copies of all the other sites dumped together.
+
+
+  Via WWW:
+   
+        1) Classic Video Games Homepage
+           http://www2.ecst.csuchico.edu/~gchance/
+
+        2) VGR's homepage
+           http://www.wam.umd.edu/~vgriscep/
+
+        3) [I know there is more...]
+
+     
+          These sites also carry copies of 2600 instructions.
+
+
+==========================================================
+1.4) What is The 2600 Connection?
+
+  It is a bi-monthly Atari 2600 collector fanzine published by
+Tim Duarte. The 2600 Connection is an excellent source of
+information about Atari video game collecting in general, including
+news, game reviews, interviews, and entertaining anecdotes.
+Rare and collectible games are frequently discussed.  Classified
+ads in the Connection are relevant to all Atari game machines.
+Subscription price is $6 for a year's worth of bi-monthly issues.
+
+To subscribe send a check payable to Timothy Duarte to:
+
+The 2600 Connection
+c/o Tim Duarte
+P.O. Box N664
+Westport, MA  02790-0606
+
+E-Mail: tduarte@umassd.edu
+€
+
+================================================================
+1.5) In the news....
+
+-----
+
+
+   If you own a 7800 and experience some software problems with 2600
+carts, please send me a description of the problem, name of the carts
+that you have problems with, the serial numbers from the bottom of
+your 7800 unit, and if you can, the chip numbers off the IC's inside
+your unit and any numbers on the board itself.  Thank you.
+
+
+==========================================================
+2.1) Where can I find games for my 2600/5200/7800?
+
+      There are still several sources for new game cartridges.
+Mail order firms such as Telegames USA and Best Electronics  are
+probably the best source for new games. They still stock many
+different games cartridges for all the Atari game machines.  Many
+titles they carry are extremely rare and collectible.  Although
+some of the rarer titles in their inventories are dwindling, they
+seem to have good stock of many others. 
+
+      Occasionally some retail stores will still have Atari
+cartridges in stock, although sometimes they are hidden in the
+backroom. One good places to look is toy stores who used to carry
+the Atari, such as Toys 'R Us, Kaybee Toys (formerly Circus 
+World), and Children's Palace (now in bankruptcy).  Another good
+source is discount liquidator stores, such as Toy Liquidators,
+Big Lots/Odd Lots, and Sears Outlets.  These stores typically have huge
+quantities of a limited number of titles, but their discounts are the
+greatest.
+
+      Another excellent source for rare and collectible games is
+the classified ads in The 2600 Connection. The Usenet newsgroups
+are another place to find new and used game cartridges. There are
+frequent postings to both rec.games.video and misc.forsale by
+individuals who have Atari game cartridges for sale.  You might
+also find a rare Atari want-ad in a local newspapers or
+pennysaver.  A better source would likely be the want ads  of a
+local Atari computer user's group newsletter.
+
+     Finally, there are the many good 2600 games and systems
+waiting to be liberated from flea markets, thrift stores, and
+yard sales around the country. Few people will advertise that
+they have Atari games for sale, but if you get out and look
+around, you'll find them.  If you relish the thought of finding
+"a diamond in a dumpster" and you've always liked treasure
+hunting, you may enjoy rumaging through piles of junk to fill
+those elusive gaps in your game list at minimal cost.
+
+€  Also, you may now special order shrinkwrapped Atari 2600 games from
+Radio Shack.  As I understand it, Atari themselves still have some for
+sale.        [Anybody got a list of what they have and how much?]
+
+
+  Best Electronics has several games and parts for the classic
+systems:
+
+   Best Electronics
+   2021 The Alameda, Suite 290
+   San Jose, CA
+   U.S.A. 95126
+   tel: (408) 243-6950
+
+
+Nice selection of 2600/5200/7800 games.  Send $1.00 for catalog to: 
+
+   Video Magic
+   c/o Frank M. Polosky   
+   P.O. Box 9542
+   Pittsburgh, PA.  15223
+
+
+Also, the entire back page of 2600 Connection #24 has 30 vendors.
+
+ ANYBODY HAVE THE POST THAT LISTED ALL OF THESE VENDORS?
+ PLEASE SEND ME A COPY ASAP.
+
+
+
+==========================================================
+2.2) What are the best games for the 2600?
+
+This can be a subjective matter, of course, but Mike Littau conducted
+an informal 2600 games poll on r.g.v. a few years ago, trying to find
+answer this very question.  Here are the results, with some slight
+changes in format:
+
+From: littaum@jacobs.CS.ORST.EDU (Mike Littau)
+Subject: Atari 2600 poll results
+Date: 12 Jun 92 16:49:35 GMT
+
+Here are the results of the atari 2600 poll I conducted:
+
+Best overall 2600 game:         Best original idea for a 2600 game:
+1. Adventure                    1. Pitfall!
+2.(tie) Solaris,Yar's Revenge   2. Adventure
+3. Asteroids                    3. Yar's revenge
+4. River Raid                   4.(tie) Stampede, Kaboom, Kool Aid Man
+
+Best music or sound for a 2600 game:        Best adventure game:
+1. Pitfall II: The Lost Caverns             1. Adventure
+2. Frogger                                  2. Raiders of the Lost Ark
+3.(tie) Haunted House, California Games     3. Haunted House
+€4. Asteroids                                4. Superman
+                                            5. Secret Quest
+ 
+Best action game:                       Best sports game:
+1. Asteroids                            1. Activision Tennis
+2. Demon Attack                         2. Skiing
+3. Missile Command                      3. RealSports Tennis
+4. Warlords                             4.(tie)  Super Football,
+5.(tie) Chopper Command, Moon Patrol     RealSports Football, Activision Boxing
+     
+Best racing game:                       Best graphics for a game:
+1. Indy 500                             1. Solaris
+2. Enduro                               2. Pitfall!
+3.(tie)  Sprintmaster, Grand Prix       3. Moonsweeper
+4.(tie) Barnstorming, Slot Racers       4.(tie) Barnstorming, Demon 
+Attack, River Raid
+
+------------------------------------------
+In addition, The 2600 Connection ran an article on the 2600
+cartridge "Hall of Fame", listing the best classic 2600 games. There
+was an excellent capsule description of each game.  Here is the list:
+
+The 2600 Connection Cartridge Hall of Fame (from issue #10:
+
+Combat                  Asteroids                    Honorable Mention:
+Super Breakout          Centipede (and Millipede)    Draggonfire
+Defender                Donkey Kong (and Jr.)        Demon Attack
+Adventure               Mario Bros.                  Megamania
+Space Invaders          Pitfall! (and II)            HERO
+Missle Command          River Raid (and II)          Rampage
+Pac-Man                 Kaboom                       Miner 2049er
+Ms. Pac-Man             Frogger                      Skatboardin'
+Solaris                 Q*Bert
+
+
+==========================================================
+2.3) What are the most common and rarest games?
+
+The following lists are a quick compilation of what some collectors
+wouldconsider to be the most common and rarest 2600 games.  Neither
+list isexhaustive, they are simply provided as as quick reference.
+
+Those games that are NOT listed as rare are not necessarily common, and
+vice versa.  Many, many, games fall into the "hard to track down"
+catagory.
+
+The following lists ARE contraversial.  Even combat is depending
+on what type of label it has.
+
+It is in the readers best interest to obtain VGR's list and run
+the following commands on it from a unix machine:
+
+grep ' xx ' filename > xx.lst
+
+€Where 'filename' is the name of VGR's list and 'xx' is ER, R, U, C.
+xx.lst will then contain the output of this extraction.
+
+
+==========================================================
+2.3.1) What are the most common and rarest 2600 games?
+
+Common Atari 2600 Games:
+------------------------
+
+    Activision      AX-018       Pitfall!
+    Atari           CX2613       Adventure
+    Atari           CX2649       Asteroids
+    Atari           CX2650       Berzerk (w/ Atari Force #2)
+    Atari           CX2607       Canyon Bomber
+    Atari           CX2676       Centipede
+    Atari           CX2630       Circus Atari
+    Atari           CX2601       Combat
+    Atari           CX2609       Defender (w/ Atari Force #1)
+    Atari           CX2615       Demons To Diamonds
+    Atari           CX2637       Dodge 'Em
+    Atari           CX2674       ET: The Extra Terrestrial
+    Atari           CX2611       Indy 500
+    Atari           CX2638       Missile Command
+    Atari           CX2675       Ms Pac-Man
+    Atari           CX2646       Pac-Man
+    Atari           CX2632       Space Invaders
+    Atari           CX2612       Street Racer
+    Atari           CX2608       Super Breakout
+    Atari           CX2648       Video Pinball
+    Atari           CX2610       Warlords
+    Atari           CX2655       Yar's Revenge
+    Coleco          CO2451       Donkey Kong
+    Imagic          IA3200       Demon Attack
+    M-Network       MT5666       Astroblast
+    M-Network       MT5659       Space Attack
+    Parker Brothers PB5050       Star Wars: The Empire Strikes Back
+    Parker Brothers PB5300       Frogger
+
+
+
+Rare Atari 2600 Games:
+----------------------
+
+Assault
+Atari Video Cube                        Bachelor Party/Gigolo   
+Beat Em & Eat Em/Lady in Wading         Berenstain Bears        
+BMX Airmaster (Atari release)           Boing!
+Bumper Bash                             Burning Dersire/BacheloreteParty
+Cakewalk                                Challenge
+Chase the Chuckwagon                    Chuck Norris SKicks/Ghost Manor
+Chuck Norris Superkicks/Spike's Peak    Color Bar Generator
+Condor Attack                           Cosmic Corridor
+Crazy Climber                           Cubicolor
+€Dishaster                               Double Dragon
+Eli's Ladder                            Gas Hog
+Glib                                    Gravitar (Silver label)
+Great Escape                            Gremlins
+Halloween                               I Want my Mommy
+Knight on the town/Jungle Fever         Kyphus
+Lochjaw                                 MagiCard
+Malagai                                 Mangia
+Marine Wars                             Master Builder
+Math                                    Math Gran Prix (Sears)
+Mr. Do's Castle                         Music Machine
+Obelix                                  Oscar's Trash Race
+Out of Control                          Pele's Championship Soccer
+Pengo                                   Philly Flasher/Cathouse Blues
+PLate Mania                             Pooyan
+Q*Bert's Qubes                          Quadrun
+Rescue Terra I                          River Patrol
+Roin Hood                               Robin Hood/Sir Lancelot
+Roc N Rope                              Rubik's Cube
+sir Lancelot                            Smurfs Save the Day
+Space Monster                           Spider Kong
+Stronghold                              Submarine Commander
+Subterrania                             Surf's Up
+SQ Waterworld                           Texas Chainsaw Massacre
+Time Pilot                              Tomarc the Barbarian
+Tooth Protectors                        Track and Field 
+Tuby Bird                               Up N Down
+Video Jogger                            Video Reflex
+Wall Defender                           X-Man
+Z-Tack
+
+
+==========================================================
+2.3.2) What are the most common and rarest 5200 games?
+
+Common Atari 5200 Games:
+------------------------
+
+    Atari           CX5208       Pac-Man
+    Atari           CX5203       Super Breakout
+
+
+
+Rare Atari 5200 Games:
+----------------------
+    Atari           CX5257       Gremlins
+    Atari           CX5254       Rescue on Factalus  (very rare)
+    Big Five                     Bounty Bob Strikes Back
+    Intellicon                   Meteorites
+    Parker Brothers              Frogger II Threedeep!
+    Parker Brothers              James Bond 007
+    Parker Brothers              Star Wars: Death Star Battle
+    Parker Brothers              Star Wars: The Arcade Game
+
+€
+Prototypes:
+-----------
+    Atari           CX5201       Asteroids 
+    Atari                        Battlezone
+    Atari                        Black Belt
+    Atari                        Jr. Pac-Man
+    Atari                        Last Starfighter
+    Atari                        Looney Tunes Hotel
+    Atari                        Meebzork
+    Atari                        Microgammon
+    Atari                        Millipede
+    Atari                        Miniature Golf
+    Atari           CX5219       Realsports Basketball
+    Atari                        Roadrunner
+    Atari                        Spitfire
+    Atari                        Sport Goofy
+    Atari                        Tempest
+    Atari                        Track and Field
+    Atari                        XARI Arena
+    Atari                        Xevious
+    Imagic                       Fathom
+    Imagic                       Moonsweeper
+
+
+   Spitfire -  It was made available, but was in the very early stages.
+        It supposedly has nice graphically, but there was as of yet no
+        game involved. (atariman@athena.mit.edu (Shane D Shaffer))
+
+   Tempest  -  Sort of playable, never completed.  (Jeff Minter)
+
+   Battlezone - Tough to find (as if any of these are easy)
+
+   Jr. Pac-Man - Just about complete, but it wasn't released
+commercially.
+
+   The Last Starfighter - adapted from the computer Star Raiders II,
+       complete except for the lack of shields.
+
+   Looney Tunes Hotel - Almost complete, but unpolished.
+
+   Meebzork - Has a few bugs that cause freezes and black-outs.
+
+   Millipede - See Jr. Pac-Man
+
+   Miniature Golf - Really stinks.  Very early stages, worse than the
+       2600 version.  It's just a bunch of dots and lines.
+
+   Roadrunner - Almost complete, but no sound.
+
+   Realsports Basketball - scrapped very early.
+
+   Sport Goofy - Mostly complete, but has a few bugs.
+
+€   Track N Field - See Millipede
+
+   Xari Arena - See Battlezone
+
+   Xevious - See Track N Field
+
+   The following 5200 Proto's were available from BEST.  NOTE: WERE!
+
+   Basketball              Track And Field         Gremlins
+   Millipede               The Last Starfighter    Looney Tunes Hotel
+   Sport Goofy             Meebzork 
+   Xevious (works only with 2-port model)
+   Road Runner (Proto they carried had no sound)
+   Miniature Golf (same as Road Runner)
+   Pac-Man Jr. (Works on 4 ports, but works best on 2 port version)
+
+
+==========================================================
+2.3.3) What are the most common and rarest 7800 games?
+
+Common Atari 7800 Games:
+------------------------
+    Atari           CX7805       Galaga
+    Atari           CX7808       Pole Position II
+    Atari           CX7807       Ms. Pac-Man
+
+
+Rare Atari 7800 Games:
+----------------------
+    Absolute        AM-039       Kung Fu Master
+    Activision      AM-050       Double Dragon
+    Activision      AM-049       Rampage
+    Atari           CX7859       Barnyard Blaster
+    Atari           CX7863       Mat Mania Challenge
+    Atari           CX7875       Meltdown
+    Froggo                       Tank Command
+    Froggo                       UFO
+    Froggo                       Water Ski
+
+
+Prototypes (?):
+---------------
+    Atari                        Eidilon, The
+    Atari                        Electro Cop
+    Atari                        KLAX
+    Atari                        Lode Runner
+    Atari                        Night of the Ninja
+    Atari           CX7816       Rescue on Fractalus
+    Atari                        Sentinal
+    Atari                        Sky Fox
+    ?????                        White Water Madness
+    Froggo                       Pyromania
+    Froggo                       Scrapper Story
+    Froggo                       UFO
+€
+
+
+
+==========================================================
+2.3.4) What games were available via GameLine services?
+
+Airlock                 Alien                   Atlantis
+Bank Heist              Bermuda Triangle        Boing
+Bugs                    Cakewalk                China Syndrome
+Coconuts                Commando Raid           Cosmic Ark
+Cosmic Creeps           Cosmic Swarm            Cross Force
+Crypts of Chaos         Deadly Duck             Demolition Herby
+Demon Attack            Dragonfire              The Earth Dies Screaming
+Eggomania               Encounter at L-5        Entombed
+Fantastic Voyage        Fast Food               Fire Fighter
+Flash Gordon            Frankenstein's Monster  Gangster Alley
+Gopher                  Guardian                Infiltrate
+Jawbreaker              King Kong               Lost Luggage
+M.A.D.                  Marauder                M*A*S*H
+Megaforce               Mines of Minos          Moonsweeper
+Name this Game          The Challenge of Nexar  Nightmare
+No Escape               Picnic                  Piece O' Cake
+Planet Patrol           Polaris                 Porky's
+Raft Rider              Ram It                  Revenge of the Beefsteak
+                                                 Tomatoes
+Riddle of the Sphinx    Room of Doom            Save the Whales
+Shark Attack            Shootin' Gallery        Sneak & Peek
+Solar Storm             Space Cavern            Space Jockey
+Space Master            Squeeze Box             Sssnake
+Stargunner              Star Voyager            Tape Worm
+Threshold               Towering Inferno        Trick Shot
+Turmoil                 Warplock                Word Zapper
+Worm War I
+
+
+
+==========================================================
+2.4.1) What 2600 or 7800 games used a light gun?
+
+
+2600:
+-----
+    Atari           CX26183      Sentinel
+
+
+7800:
+-----
+    Atari           CX7855       Alien Brigade
+    Atari           CX7859       Barnyard Blaster
+    Atari           CX7844       Crossbow  (gun or stick)
+    Atari           CX7875       Meltdown
+
+
+€
+==========================================================
+2.4.2)  Which 2600 games used Kid pads/key pads?
+
+A Game of Concentration (Hunt & Scare, Memory Match)
+Alpha Beam with Ernie
+BASIC Programming
+Big Bird's Egg Catch
+Brain Games
+Codebreaker
+Cookie Monster Munch
+MagiCard
+Oscar's Trash Race
+Star Raiders
+
+
+==========================================================
+2.4.3) Which 2600 games used paddles?
+
+Bachelor Party                  Beat Em' & eat Em
+Blackjack                       Breakout (Breakaway IV)
+Bumper Bash                    
+Casino (Poker Plus)             Circus Atari (circus)
+Demons to Diamonds              Eggomania
+Encounter at L-5                Fireball (Supercharger game)
+Guardian
+Kaboom!                         Mangia
+Music Machine                   Night Driver
+Party Mix (Supercharger game)   Piece O Cake
+Solar Storm                     Steeplechase
+Street Racer (Speedway II)      Super Breakout
+Tac-Scan                        Video Olympics (Pong Sports)
+Warlords                        Warplock
+
+
+Canyon Bomber (can also use joysticks to play 2 players at once)
+Indy 500 (used special 360 paddles)
+G.I. Joe Cobra Strike (players 1 & 2 use paddle--player 3 uses joystick)
+
+ 
+==========================================================
+2.4.4) How do I fix my paddles?
+
+  Dirty paddles can cause the player on the screen to jump around 
+in a somewhat random pattern.  One of the better was to clean the
+dirty "pots" is to open them up and spray WD-40 into the area
+around the shaft.  The WD-40 must get inside the unit.  Give a few
+good twists and try playing some games!
+
+
+
+==========================================================
+2.5) What is this Starpath CD I keep hearing about?
+
+€  Currently there is a project that involves putting all the 
+Starpath SuperCharger audio tapes onto a CD.  The author is looking
+for un-released games and PAL versions.  Check out the 2600
+news groups for update information.
+
+
+==========================================================
+2.6) What Easter Eggs (cheats) exist for the 26/52/7800?
+
+   This section has grown rather large and a new version 
+of the cheats faq is available EMAIL from Galen Tatsuo Komatsu.
+The current list size is about 30k.  The previous one posted
+in the FAQ was about 6k.
+
+Request "Send B-TECH" from:
+
+gkomatsu@uhunix.uhcc.hawaii.edu
+ar592@cleveland.freenet.edu
+
+This is NOT a mailserver.  Please give the gentleman some time to
+respondto the request.  Thank you.
+
+
+================================================================
+2.7.1) What out there exists to help programmers?
+
+  For 2600 users there is the "Stella" guide.  It is availabe
+from the FTP sites mentioned in this list.  Atari.archive.umich.edu
+has a modified version of Stella that is postscript format with
+graphs and diagrams.
+
+  For the 7800 there is Harry Dodgson's (dodgson@coyote.cs.umich.edu)
+Monitor Cart plus documentation.  The 250+ pages include a stella guide,
+a 2600 programming manual which is a bit more readable, the Maria specs,
+and the 7800 docs.
+
+
+================================================================
+2.7.2) What is the 7800 encryption algorithm?
+
+   The 7800 uses a data encryption key to determine whether or not the
+7800 cartridge is valid and allows the system to be put in 7800 mode
+as opposed to 2600 mode.  The encryption algorithm is said to be
+proprietary.  Rumors exist, however,  that Atari released the algorithm
+for use on the the Atari ST series of computers.  If anybody has this
+program we would all be very happy to have a look at it.  It is also
+rumored that not many people at Atari know what the algorithm is or
+how to use it anymore.
+
+  It is also rumored that the code was released with the Lynx Dev-Kit
+for Amiga's.  Rumors...rumors...
+
+
+================================================================
+€2.8)  Bugs.
+
+   This section deals with major software/hardware bugs.
+   Anybody know of some more?
+
+
+================================================================
+2.8.1) Whats up with 7800 Impossible Mission?
+
+ 7800 Impossible mission REALLY is impossible.
+ The cart was released with a bug where some of the pieces you need
+ were hidden under computer terminals...YOU CAN'T SEARCH THETERMINALS.
+ This bug was fixed, but I don't think Atari ever released the updated
+ version.
+
+  ghtthing@aol.com (NightThing)
+
+  [Author's Comment:  How does somthing like this happen?]
+
+
+================================================================
+3.1) What different 26/52/7800 models and accessories did Atari make?
+
+Some people not only collect game cartridges, but hardware systems as
+well.  Here is some basic information on the various game systems that
+Atari has made over the years.
+
+
+================================================================
+3.1.1) Atari 2600 and Sears Video Arcade Systems
+
+Atari VCS CX2600 - Original model. Woodgrain and black plastic
+enclosure.
+        Light and heavy weighted plastic. Six silver switches across
+        the upper front panel.   Bundled accessories include two CX40 
+        joysticks,  one CX30 paddle controller, AC adapter, TV switch
+        and a CX2601 Combat game cart.
+
+        Sample wording on label on bottom of unit:
+        "Mfd. by Atari, Inc., Sunnyvale, CA.  Serial # 048181."
+        "Mfd. by Atari-Wong Ltd. in Hong Kong.  Serial # 568213514."
+        "Manufactured for Atari Inc. by TRU Electronic Components 
+         Company in Taiwan.  Model NO: CX-2600 Serial # 81281713"
+
+Sears Tele-Games Video Arcade I - Same as above except external cosmetic
+        differences (the "difficulty" switches  are labeled "skill
+level",
+        switch panel is silver instead of black, woodgrain pattern is
+        different.)
+
+        Sample wording on label on bottom of unit:
+        "Mfd. for Atari Inc. by Dimerco Electronics in Taiwan for sale
+toSears, Roebuck, and Co.  Serial # 82077230."
+
+€Atari VCS 2600A - Revised model.  Externally it is nearly identical to
+he original, except there are four silver switches across the upper
+ frontpanel instead of six.   Internally, the motherboard is a
+simplified one-piece design.
+
+        Sample wording on label on bottom of unit:
+        "Mfd. for Atari, Inc. by TRW Electronic Components Co. in
+Taiwan.
+        Serial # 811510200."
+        "Mfd. for Atari, Inc. by Atari Taiwan Mfing. Corp. in Taiwan.
+        Serial # 827030354."
+
+Sears Tele-Games Video Arcade I(A) - Same as above except external
+     cosmetic differences.
+
+        Sample wording on label on bottom of unit:
+        "Mfd. for Atari Inc. by Dimerco Electronics in Taiwan for sale
+ to Sears, Roebuck, and Co.  Serial # 82299647."
+
+Atari VCS 2600A (black) - Second revised model. Externally it is nearly
+        identical to the 2600A, except the enclosure has a more modern
+        looking "black out" treatment.  The areas of woodgrain on the
+ original models are now simply black plastic.  Internally, the
+ motherboard is a mild revision of the 2600A.
+
+        Sample wording on label on bottom of unit:
+        "Mfd. for Atari, Inc. by Atari Taiwan Mfing. Corp. in Taiwan.
+        Serial # AT831150153."
+
+Sears Tele-Games Video Arcade II - Entirely new model of the 2600
+designedjust for Sears. Black wedge-shaped enclosure, with push
+button switches and LEDs on top panel. Essentially an Atari 7800
+shell.
+   Four joystick connectors on lower front panel with rocker switch.
+   Internally very different from other 2600 models, but
+   still uses the same basic chipset.  Bundled accessories include two
+   combination joystick/paddle controllers, AC adapter, TV switch
+   and a Space Invaders game cart.
+
+        Sample wording on label on bottom of unit:
+        "Sears, Inc. (Atari, Inc.) Serial # SV 392 005539."
+
+Atari 2600 "Jr." - Third revised model.  It is slightly larger than
+        a VHS video tape case.  Some versions have "Jr" stamped onto 
+        the bottom sticker.  Large black buttons.  Power and b/w
+switches slide, while Reset and Game Select are push buttons.
+Jet    black with large metallic silver strip running lengthwise
+        with "Atari 2600" on it.  Marketed as the "Under 50 bux, the
+        fun is back!" machine.  Bundled accessories include one
+joystick,AC adapter, TV switch box, and RCA connecting cable.
+Box is designed as a carrying case with handle and a white section
+        which reads: "This Atari 2600 belongs to:" No bundled cart.
+
+        Sample wording from bottom of unit:
+€        "<Atari Logo>                           Atari 2600
+         ---------------------------------------------------
+         FCC ID: EBA72R2600
+         ATARI CORPORATION
+         MADE IN TAIWAN
+         [FCC wording deleted]
+                         S.N. A1 81 1494278
+         ----------------------------------------------------
+         <Atari logo embossed in plastic> <made in taiwan in plastic>"
+
+         or
+
+        "MANUFACTURED FOR ATARI CORPORATION,
+         BY ATARI TAIWAN MANUFACTURING
+         CORPORATION IN TAIWAN
+         MODEL NO. CX-2600 JR.
+         COVERED BY US PATENT NUMBER
+         4, 122, 422 OTHER PATENTS, AND
+         PATENTS PENDING
+
+                   ----------------
+               S.N.|A1 873 412187 |
+                   ----------------
+
+         <ATARI & FUJI LOGO>      MADE IN TAIWAN"
+
+
+Atari 2600 "Jr." - same as above except silver plate has a larger
+rainbow strip without an embossed border.
+
+
+2600 Accessories
+----------------
+CX20 - Driving controllers for Indy 500 (set of 2)
+CX21 - Video Touch Pad for Star Raiders
+CX22 - Track ball, black top, white base, with round fire buttons
+          and white/yellow ball.
+CX23 - Kid's keyboard controller for Sesame Street titles
+CX30 - Paddle controllers
+CX40 - Joystick
+CX42 - Remote control joysticks (set of 2)
+CX50 - Keyboard controllers (set of 2)
+CX80 - Track ball, all black with wedge shaped fire buttons.
+
+
+All 6 switch Ataris had a large shield casing.  There were at least
+two 6-switch versions:
+ 
+(6-1) The original. The entire bottom half of the console was made of
+      quarter inch thick plastic (~6mm)! Combined with the thick
+      aluminum RF casing, this is the heaviest 2600 ever made. Also,
+      this 2600 has no 2/3 channel select switch. The hole in there on
+      the case and it's marked Channel A/B, but there's no switch inside
+      on the PCB. These consoles came with "01 combat". (1977 models
+€ only)
+ 
+(6-2) The lighter 2600.  No armor plating.  Bottom half of console is
+ made of thin plastic, like the 4 switch models. Channel switch
+now present.  Thick RF shield still present. Plain ol' "combat"
+ included.
+
+4 front switch, woodgrain panel:
+
+Among these are some minor, minor differences. On some, the difficulty
+switches are marked "Expert/Novice" (or was it "Advanced/Beginner"?) and
+others are marked only as "A/B". Rumors persist that the pictures on the
+packaging was different. Pac-Man was the pack-in cart later on. Also, if
+you really want to get picky, some 2600s were made in Taiwan, some in
+HongKong, some in Sunnyvale, (anything else). I've got to go through my
+duplicate 2600s and match all these variations up with the revision
+numbers(A, B, C, D, etc.).
+
+4 front switch, black panel:
+
+   [Need more info]
+
+
+Also, were there color variations in the lettering, the the borderline
+around the switches, and cart slot? I have yellow ones and orange ones
+or is this just fading?
+
+(Bruce James Robert Linley - linley@netcom.com - Amateur radio: KE6EQZ)
+
+
+================================================================
+3.1.2) Atari 5200
+
+Atari CX5200 - Original model.  Four controller connectors on lower
+front panel.  Bundled accessories include two CX-52 controllers, AC
+adapter, CX-522 TV switch, and a SuperBreakout game cart.
+        Sample wording on label on bottom of unit:
+        "Atari, Inc.,  Atari Model No. 5200,  Serial # 0151320 SV-442."
+
+Atari CX5200 - Revised model.  Two controller connectors on lower front
+        panel.  Bundled accessories include two CX-52 controllers, AC
+adapter,TV switch, and a SuperBreakout game cart.
+        Sample wording on label on bottom of unit:
+        "Atari,  Inc.,  Atari Model No. 5200,  Serial # 036412 EP-233."
+
+
+   There are slight cosmetic changes to the shells of the 5200, in 
+particular the base section has seen several versions.  There are at
+leasttwo different bases with hooks for winding up the video cable, and
+at least oneversion without any hooks at all.
+
+5200 Accessories
+----------------
+CX52  - Controller
+€CX53  - Track ball
+CX55  - 2600 cartridge adapter (only for 2 port models or modified 4
+port)
+CX522 - TV switchbox for 4 port models.
+
+
+================================================================
+3.1.3) Atari 7800
+
+Atari CX7800 - Two joystick ports on lower front panel.  Vastly
+modified and enhanced Atari 2600 model.  New chipset (except sound which
+         is the 2600 chip).  Side expansion port for upgrades and
+computer add ons.  Bundled accessories included two CX24 ProLine
+joysticks AC Adapter, switchbox, RCA connecting cable, and Pole Position
+II cartridge.  Plays all 2600 games except 3 or so.
+
+Atari CX7800 - Second Revision.  Expansion port connector removed from
+         mother board but is still etched.  Shelll has indentation of
+         where expansion port was to be. 
+
+Atari CX7800 - Third Revision.  As above but only a small "blemish" mark
+         on shell.
+
+         Some versions will play more 2600 games than the other.  Please
+         note that this incompatability problem only shows up on one or
+         two 2600 cartridges out of the 1000 or so made;  most notably
+         Activision's "Robot Tank."
+
+                [need more information]
+
+
+
+7800 Accessories
+----------------
+CX24 - Proline joystick
+CX78 - European joystick  Gray with yellow/orange fire buttons and
+           mini thumb joystick.
+
+
+==========================================================
+3.2) What vaporware hardware is there?
+
+  
+2600 Computer Keyboard called the "Graduate."
+2600 Voice command system and a "head-mounted-thought" driver
+controller.
+Atari 2700 - Remote control joystick/paddles, heat sensitive console
+buttons.
+Atari 2800 - Sears Super Video Arcade II with "ATARI" logos.
+
+
+
+==========================================================
+3.3) How many 2600 clones/emulators were made and by who?
+€
+Coleco Gemini Video Game - Inexpensive clone 2600 made by Coleco. All
+black,box-shaped enclosure. Six small slide switches on top of front
+        panel. RF modulator port and power adapter port on back panel.
+        Two joystick ports and difficult switches on front panel.
+        Bundled accessories included two dual-joystick/paddle
+        controllers, a 9volt/500ma DC adapter, RF cable, TV switch and
+        Donkey Kong game cart (?).
+
+        Sample wording on label on bottom of unit:
+        "Coleco Gemini VGS - Coleco Ind., Inc., Serial # AG0145189."
+
+
+ColecoVision Expansion Module #1 - Black, 5" x 10", 1 3/4" high in
+front, sloping to 2 3/4" in back.
+
+               _____      a = expansion connector to ColecoVision
+        ______|__a__|__   b = 2600 cart slot
+        |      _____   |  c = color/b+w slide switch
+        |     |__b__|  |  l = left difficulty slide switch
+        |.........     |  r = right difficulty slide switch
+        | clr gr :     |  g = game select push button
+        |________:_____|  r = reset button
+                   ^ ^  <---- joystick ports
+
+        Chips inside are:  "COLECO 73192 E4002" (TIA clone?), SY6507,
+        SY6532.  Curiously, there is an empty space for a 14 pin chip
+        and assorted resistors and capicitors on the right side of the
+        circuit board.  The space for a "Y1" indicates that this was
+        probably intended to be a clock generator.  (Could this board
+        also be intended for standalone use, such as in the VGS?)
+        There is also an adjustment hole on the bottom that turns
+        a potentiometer [probably color control].  The reset button
+        on the main ColecoVision console acts as a hard reset for
+        the expansion module.  The connection to the ColecoVision unit
+        isn't very physically stable, at least not on carpet, resulting
+        in flaky performance.
+
+        Sample wording from bottom label:
+        "ColecoVision [tm]
+         Model No. 2405
+         Coleco Industries, Inc., Amsterdam, NY 12010
+         Serial # A0065820         For service help call:
+         F.C.C. ID# BNV8432405     1+800+842-1225
+         Coleco Industries, Inc.   (Nationwide)
+         Made in U.S.A.            Printed in U.S.A. 74859A"
+        (BTomlin@aol.com)
+
+
+Intellivision System Changer - Made by Mattel, copyright 1983.
+        White, roughly about 5-6" square and 2" high, with a piece
+        sticking out of the left side that fit into the Intellivision
+        cartridge slot.
+            ___________ <-Top face.
+€            |  _____  |
+          __| [__a__] |  a == Atari cartridge slot  b == insert into I2
+         | b          |  c == Game Reset (square button) 
+         |__   cdefg  |  d, f == left and right difficulty (toggles)
+            |_________|  e == Color/B+W toggle switch 
+                         g == Game Select (square button)
+
+         Front face had two standard joystick ports.
+         Known to work with virtually all 2600 carts except those that
+         don't work with other adapters (i.e. those like Space Shuttle 
+         and Starmaster that use standard 2600 hardware functions).
+         Does not work with the "original" (2609) Intellivision Master
+         Component without factory modification. 
+
+         Sample text from bottom, one white label and one orange label:
+         "Model No. 4610  FCC ID: BSU9RD4610  Serial No. 003255"
+         (vsp@netaxs.com)
+
+Commodore VIC-20/2600 game adapter - Rumored to exist.  Was advertised
+        by Protecto in mail order ads in during the 1983 time frame.
+Plugged into VIC expansion connector  and provided 2600 software
+ emulation. Original price, emulation quality, and reliability
+all unknown.
+        [need more information]
+
+
+==========================================================
+3.4) What light guns work with the 2600/7800?
+
+ There is no light-gun made specifically for the 2600 or 7800, however,
+ Atari's light gun (model number XG-1) that came with the XE-Game-System
+ works well. 
+
+ Additionally, Best Electronics has "The Best Lightgun" which
+ works better than Atari's own.
+
+ Antic Magazine  published an article on how to convert a sega
+ master system light gun for use on the Atari's.
+
+ From Antic Magazine, August 1988, Vol. 7, num. 4
+     "First look: Inside the XE Game System: Hardware surprises
+revealed!"
+     by Matthew Ratcliff
+     page 45
+
+   To modify the Sega gun for the Atari, you'll have to cut off
+the incompatible connector. The wires must be stripped back and soldered
+into an Atari joystick connector as follows:
+
+        SEGA GUN                    ATARI JOYSTICK PORT
+        Blue wire                   Pin 1 stick FWD
+        Gray wire                   Pin 6 trigger
+        Green wire                  Pin 7  +5 volts
+        Black wire                  Pin 8 Ground
+€
+   Because of the close fitting connections for the XEGS ports, 
+don't wire in a DB9 female connector that has "ears". Most joysticks
+don't have wires for unused signals, so cutting up an old joystick cable
+may not work. Specifically, an Atari joystick does not need the +5
+volts,so there isn't likely to be a wire connected to Pin 7. However,
+youcan find joystick extension cables at Radio Shack, which have all
+ninepins wired from male to female. Antic disclaims responsibility for
+any damages that might occur during improper implementation of this, or
+any,hardware modification project we publish.
+
+    Once it's all hooked up, you'll notice that gun fires when you
+releasethe trigger, which is annoying. The Sega trigger wiring is the
+oppositeof what the Atari light gun uses. To rewire the trigger switch,
+remove thefive screws (one is under the Sega logo on the side). Find
+the triggermicro-switch with three connections. Wire to the normally
+closed contactsinstead of normally open.
+
+
+==========================================================
+3.5)  The following are interfaces to enhance the a base
+      system's abilities
+
+
+==========================================================
+3.5.1) What add on modules existed for the 2600?
+
+Compumate - 42 key touchpad computer add on from Spectravideo.  Adds
+            16K ROM, 2K RAM, and has BASIC.  Looks like a small keyboard 
+            attatched to a cartridge, which is in turn connected to the
+            joystick ports.  Originally sold for $79.99
+
+Copy Cart - from Vidco, allowed tranfer of a game onto a blank
+cartridge. Battery powered, not all games can be copied
+because of memory limitations.
+
+CVC GameLine - Play games via modem to a networked database. 
+            See Game Doctor in Electronic Games in early '94.
+          
+            [Somebody want to scan this in for me?]
+
+
+Game Selex - from Starplex, allows 9 cartridges to be plugged in at
+            once; turn a dial to choose the game.
+
+Kid Vid Control - Cassette recorder and cartridge interface, additional
+            wire connects recorder to joystick port.  Voices and songs 
+            tell player what to do on screen.  Tape shuts off
+automatically to wait for player input.  3 tapes per game,
+only games were Berenstain Bears and Smurfs Save the Day.
+Made by Coleco.
+
+Personal Game Programmer - By Answer, similar to Game Genie.  
+
+€ROM Scanner - from Marjac, allows 10 cartridges to be plugged in, 
+            press a button to choose game.
+
+Starpath Supercharger - Large cartridge that plugged into the 2600 slot
+            had a cable with standard 1/8" jack for plugging into   
+            tape recorders.  Games came on regular audio cassettes  
+            with previews of upcoming releases.  Added memmory and  
+            graphics(?) to the system.  [need tech specs]  
+
+Video Game Brain - from RGA International Limited.  A multiple cartridge
+           adapter that holds six games to play, and contains 2 dummy
+           slots for additional cart storage.  You select the game
+           you want to play by pushing a button in frot of that 
+           cartridge. 
+
+Videoplexer - ??  Holds 8 games.  [Need more info]
+
+
+==========================================================
+3.5.2) What add on modules existed for the 5200?
+
+The Masterplay Interface - by Electra Concepts.  Allowed the ability
+           to use 2600 controllers with the 5200.  The company
+           also released a game called "Meteorites."  I have seen
+           pictures of this device in the ORIGINAL Electronic
+           Games (or whatever it was called back in 83/84.)
+ 
+           IF ANYBODY HAS ONE OF THESE I WOULD APPRECIATE
+           A SCHEMATIC or the ability to tinker with one  
+           in order to duplicate one!!
+
+
+
+==========================================================
+3.6) What are the known specs for the 2600/5200/7800?
+
+The information here is incomplete in some places, misleading in others,
+and possibly just wrong in other places.
+
+
+Specifications for the Atari 2600/7800
+
+                2600                            7800
+
+CPU:            6507                            6502C (custom,NOT 65C02)
+RAM:            128 Bytes, in VLSI              4K, high speed(mostVRAM)
+ROM:            6K max   ?!?!?!                 52K max
+Cpu Clock:      1.19 MHz                        1.79 MHz
+Graphics Clock: 1.19 MHz                        7.16 MHz
+Slot Config:    Rom access only                 Most CPUlines+vid/audio
+CPU Avail:      less than 50%                   over 90%
+
+
+Notes:
+€1. ROM specs are based on a non-bank select scheme.
+2. Graphics Clock is the master clock used to drive the video chips.
+
+
+                 5200
+
+CPU:             6502C + 3 Custom VLSI's
+RAM:             16K
+ROM:             ? 
+Cpu Clock:       1.79 MHZ
+Graphics Clock:  1.79 MHZ?   
+
+   All 5200 specs are very similar to the Atari 8bit Computer line.
+
+    [For additional info see separate file in this mag!]
+
+==========================================================
+3.7.1) 2600 and 7800 Joystick pinouts:
+
+From: galt%asylum.cs.utah.edu@cs.utah.edu (Greg Alt)
+
+_________________
+\ o5 o4 o3 o2 o1/
+ \ o9 o8 o7 o6 /
+  \___________/
+  
+pin #  2600 control     7800 control
+  1    WHT- Up          WHT- Up
+  2    BLU- Down        BLU- Down
+  3    GRN- Left        GRN- Left
+  4    BRN- Right       BRN- Right
+  5    unused           RED- Button (R)ight (-)
+  6    ORG- Button      ORG- Both buttons (+)
+  7    unused           unused
+  8    BLK- Ground(-)   BLK- Ground(-)
+  9    unused           YLW- Button (L)eft  (-)
+
+
+  
+2600 control (button)
+
+pin 6 ORG(+) --------------()------------BLK(-) pin 8
+                      Button
+
+7800 control (buttons)
+
+                                       /----------YLW(-) pin 9
+                            Button L  /
+                      /---------()---| YLW splits
+                     /                \----/\/\/-----\
+pin 6 ORG(+) -------| ORG splits           520 ohm    |---BLK(-) pin 8
+                     \                /----/\/\/-----/
+                      \---------()---|     520 ohm
+                           Button R   \ RED splits
+€                                       \----------RED(-) pin 5
+
+
+
+Pinout for the 5200 controllers.
+--------------------------------
+
+Pin  Function
+1    Keypad -- right column
+2    Keypad -- middle column
+3    Keypad -- left column
+4    Start, Pause, and Reset common
+5    Keypad -- third row and Reset
+6    Keypad -- second row and Pause
+7    Keypad -- top row and Start
+8    Keypad -- bottom row
+9    Pot common
+10   Horizontal pot (POT0, 2, 4, 6)
+11   Vertical pot (POT1, 3, 5, 7)
+12   5 volts DC
+13   Bottom side buttons (TRIG0, 1, 2, 3)
+14   Top side buttons
+15   0 volts -- ground
+
+
+==========================================================
+3.7.2) 2600 Cartridge Pinouts and information:
+
+The 2600 Cartridge:
+        A standard cartridge contains the equivalent of a 2716 or
+2732/2532with one notable exception: the chip select line is active
+high, not low.The high order address line of the 6507 (A12) is used
+as the chip enable.There was at least one company that used EPROMs
+with a 74LS04 inverter tocompensate for this.
+ 
+The Pinouts:
+Note:   numbers indicate left to right numbering
+ 
+        Top Row                 Bottom Row
+Slot    2716    CPU             2716    CPU
+ 
+1       13      D3              1       A7
+2       14      D4              2       A6
+3       15      D5              3       A5
+4       16      D6              4       A4
+5       17      D7              5       A3
+6       *       A12             6       A2
+7       19      A10             7       A1
+8       NC      A11             8       A0
+9       22      A9              9       D0
+10      23      A8              10      D1
+11      24      +5V             11      D2
+12      12      Shield Ground   NC      Ground
+    * to inverter and back to 18 for chip select
+€
+(Looking at the bottom of the cartridge -- i.e. edge connectors first)
+                        Top
+ D3   D4   D5   D6   D7   A11  A10  A12  A9   A8  +5V   SGND
+--1- --2- --3- --4- --5- --6- --7- --8- --9- -10- -11- -12-
+ GND  D2   D1   D0   A0   A1   A2   A3   A4   A5   A6   A7
+                        Bottom
+
+Dx = Data line x
+Ax = Address line x
++5V = +5 volts
+SGND = Shield Ground
+GND = Ground
+
+Note 1: On both of the cartridges I took apart, GND was also connected
+        to SGND.  Best to make sure that they are wired together.
+
+Note 2: A11 and A12 could be switched.  On both the chips I've checked,
+        A12 was hardwired to +5 volts which leads me to believe that it
+        is the highest address line.  Since I believe that these chips
+        are only 4Kx8 ROMs, this seems logical, since A12 would actually
+        be just the chip enable for ROM (right?).  Only the 2600 info
+        tells differently, and it doesn't give any connection for A11 on
+        the EPROM, so I don't trust it.  Unfortunately, since the 2716
+        EPROM is used as an example, we won't know without actually
+trying one, since the 2716 doesn't really use A11 or A12 and
+either one could be used as a chip enable
+ 
+
+Address
+lines           Memory
+used            Available       EPROM   Memory
+======================================================
+A11             2048            2716    2K
+A12             4096            2732    4K
+A13             8192            2764    8K
+
+    ____________
+    |   2716   |
+A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | VPP [Doesn't matter probably.  +5V]
+A3  | 5     20 | !Output Enable (always on) [GND]
+A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2732   |
+€A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | A11
+A3  | 5     20 | !Output Enable (always on) [GND] / VPP
+A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2764   |
+VPP | 1     28 | VCC [+5 V]
+A12 | 2     27 | !Program Strobe (no connection?) [+5V]
+A7  | 3     26 | No Connection
+A6  | 4     25 | A8
+A5  | 5     24 | A9
+A4  | 6     23 | A11
+A3  | 7     22 | !Output Enable (always on) [GND]
+A2  | 8     21 | A10
+A1  | 9     20 | !Chip Enable (always on) [GND]
+A0  | 10    19 | D7
+D0  | 11    18 | D6
+D1  | 12    17 | D5
+D2  | 13    16 | D4
+GND | 14    15 | D3
+    |__________|
+I also set VPP at +5V for the 2764.
+
+
+==========================================================
+3.7.3)  5200 Cartridge and Expansion Pinout:
+
+
+5200 Cartridge port:
+--------------------
+ 
+             Top                  Bottom
+-----------------------------------------------
+
+D0                       1   36      Interlock
+D1                       2   35      A11
+D2                       3   34      A12
+D3                       4   33      A10
+D4                       5   32      A13
+D5                       6   31      A9
+D6                       7   30      Audio In (2 port)
+D7                       8   29      A8
+Enable 80-8F             9   28      Not Connected
+Enable 40-7F             10  27      A7
+Not Connected            11  26      +5V DC
+€Ground                   12  25      Ground
+Ground                   13  24      Ground (Video In on 2 port)
+Ground (System Clock
+02 on 2 port)            14  23      Ground
+A6                       15  22      A4
+A5                       16  21      A3
+A2                       17  20      A1
+Interlock                18  19      A0
+
+
+
+5200 expansion connector:
+-------------------------
+
+             Top                  Bottom
+-----------------------------------------------
++5V DC                  1   36      +5V DC
+Audio Out (2 port)      2   35      Not connected
+Ground                  3   34      Ground
+R/W Early               4   33      Not connected
+Enable E0-EF            5   32      D7
+D6                      6   31      D5
+D4                      7   30      D3
+D2                      8   29      D1
+D0                      9   28      Ground
+IRQ                     10  27      A0
+Ground                  11  26      A1
+Serial Data In          12  25      A2
+Serial In Clock         13  24      A3
+Serial Out Clock        14  23      A4
+Serial Data Out         15  22      A5
+Audio In                16  21      A6
+A14                     17  20      A7
+System Clock 01         18  19      A11
+
+
+
+==========================================================
+3.7.4) 7800 Cartridge and Expansion Pinout
+
+Cartridge port
+--------------
+1       R/W         17       A15
+2       Halt        18       EAudio
+3       D3          19       A7
+4       D4          20       A6
+5       D5          21       A5
+6       D6          22       A4
+7       D7          23       A3
+8       A12         24       A2
+9       A10         25       A1
+10      A11         26       A0
+11      A9          27       D0
+12      A8          28       D1
+€13      +5V         29       D2
+14      Gnd         30       Gnd
+15      A13         31       IRQ
+16      A14         32       CLK2
+
+
+Expansion port
+--------------
+ Gnd   +5v  CVideo MLum0 Mlum3 Blank OscDis ExtMen Gnd
+--1-- --2--  --3-- --4-- --5-- --6-- --7-- ---8-- --9-- 
+
+-18-- -17--  -16-- -15-- -14-- -13-- -12-- --11-- -10-- 
+ Gnd  Audio   Rdy   MCol MLum2 MLum1 Msync  Clk2  ExtOsc
+
+
+All signals starting with M are Maria signals
+MLum* is 4 bits of luminance - giving 16 shades of each color
+MCol is the color phase angle
+Msync and Blank are Maria combined sync and blanking outputs
+Extmen is an external Maria Enable input
+OscDis disables the 14.31818 MHz master clock and ExtOsc is an input to
+ replace it.
+CVideo is the input to the RF modulator so it includes the modulated
+audio too
+Clk2 is the phase 2 clock from the 6502
+Rdy is an input to the 6502
+
+ Many thanks to Harry Dodgson for the pinouts.
+ I hope there are no errors with my transcription.
+
+
+==========================================================
+3.8) Power supply informatiion:
+
+2600 power supply:
+------------------
+
+Input: 120VAC 60Hz
+Output: 9VDC 500mA
+Polarity: Center +, Outer -
+
+
+From: <kwd1mat@basil.acs.bolton.ac.uk>
+
+One version of the power supply reads...
+
+"  <ATARI FUJI LOGO>
+  PART NO.:CO 18084-319
+      AC/DC ADAPTOR
+  INPUT: AC 240 V#50Hz 9W
+   OUTPUT: DC 9V 500 mA
+  BS415 <Polarity C+, O- diagram>
+FOR USE WITH MODELS CX 2600
+     XEP 80 OR SX212
+€      WB JUN-AUG 87"
+
+
+5200 power supply:
+------------------
+
+Input:  120VAC 60Hz
+Output: 11.5VDC 1.95Amp
+Polarity: Center +, Outer - 
+
+
+7800 power supply:
+------------------
+
+Input: 120VAC 60Hz 15W
+Output: 9VDC 1Amp
+Polarity:
+                     ___
+                -----| |-----
+             -  | o       o | +
+                -------------
+
+
+ [Is this looking into the jack or the power supply?]
+
+If you are handy with a soldering iron, you can get a more standard jack
+and just solder it in parallel with the original connector, then buy a
+power supply at Radio Shack for a few bucks.    
+
+
+==========================================================
+4.1) Building a switchbox for the 4 port 5200.
+
+Where do I hook up the power supply to my 4 port Atari 5200?! 
+
+The early Atari 5200s came with an unusual switchbox which supplied
+powerto the 5200 down the same wire the 5200 uses to send the video
+signal to your TV. The power supply plugged into the switchbox.
+Unfortunately, these switchboxes seem to have gotten lost over the years
+and are difficult tocome by. Newer 5200s (the one with only two
+controller ports) had thepower supply jack on the console itself.
+Fortunately, it is not difficultto construct your own RF/power supply
+box for the 5200. There is onedifference, though. The original 5200
+switchbox would automatically switchfrom your TV antenna/cable to the
+5200 when you turned the console on.With the RF/power box described
+below, you will need to use a standardgame/TV switchbox to accomplish
+this function. 
+
+What do I need to build the RF/Power box? 
+
+The following parts are needed to construct the box. Where applicable, 
+Radio Shack part numbers, and prices, have been provided. You may use 
+another RCA jack in place of the F jack if you wish. I chose to use the 
+F jack to avoid ever accidentally plugging the 5200 and TV cables in
+€backwards, which would result in 11.5 volts DC going into your TV set,
+possibly damaging it. 
+
+RS#       Part                                     Price
+--------  ----------------------------             -----
+270-235   2"x2.75"x1.625" Aluminum Box             $1.99
+274-1563  Coaxial DC power jack                    $1.79
+278-212   Cable TV type F jack (2 pack)            $0.99 (optional,see^)
+274-346   RCA type phono jack (4 pack)             $2.49
+272-131   0.01 uF Ceramic Disc capacitor (2 pack)  $0.59
+          Small metal bolt (1" long, 3/8" diam, approx)
+          22 guage solid wire (14" or so)
+                                             Total $7.85 + local tax
+
+How do I build it? 
+
+Drill holes in the aluminum box for each jack to match the diagram \/.
+The box itself forms the common ground connection to all three jacks. 
+To reduce signal loss and ensure the common ground, I recommend using 
+chrome or gold plated type jacks. 
+
+         F jack (to TV)
+               __ 
++-------------|  |-------------+
+|             |__|             |<--- Aluminum box
+|               |              |
+|               \    0.01uF    |  Solder the leads of the capacitor to
+|                \  _   Capacitor the center pins of the F jack and the
+|                 \/@|         |RCA jack. Make the choke by winding at
+|                  \/          |least 10 turns of 22 guage solid,
+|                   \          |insulated wire around a 3/8" (approx)
+|          Choke     \         |diameter bolt. Wrap tape around the
+|        ---|/////|---\        |completed choke to prevent it from
+|       _L            _L       |unwinding. Strip the insulation off of
++------|  |----------|  |------+each end of the choke leads. Solder the
+       |__|          |__|       leads of the choke to the center pins of
+  DC power jack     RCA jack    the DC power jack and the RCA jack.
+  (to pwr supply)   (to 5200)   Screw the box shut. You're done.
+
+How does it work? 
+
+The capacitor transparently passes the video signal from the 5200 to the 
+TV output jack, while at the same time preventing the DC power from the 
+power supply jack from going into your TV. The choke (inductor)
+transparently passes the the 11.5 volt DC power to the 5200 via the RCA
+jack while at the same time preventing the video signal from escaping
+backdown the power supply wire. The bolt around which the choke is
+wound helpsto increase the choke's inductance to block more of the
+video signal fromgoing back into the power supply than it otherwise
+would. The aluminum box itself helps keep the video signal confined to
+where it belongs to preventpossible interference and to ensure that as
+much of the signal as possible gets to your TV. For this reason, plastic
+boxes are not recommended. 
+
+€Power supply info (if you don't have one). 
+
+The 5200 power supply is 11.5 volts DC @ 1.95 amps and has a standard
+type coaxial plug (center positive 5mm OD, 2.1mm ID). Or you could
+constructone from a transformer, 4 diodes, two capacitors, a resistor,
+a 3A adj. voltage regulator, heat sink, case, and cabling, or find a 12V
+2A power supply and add a diode inline to drop the voltage by 0.5V, but
+that'sanother project! 
+
+(Bruce James Robert Linley  - linley@netcom.com - Amateur radio: KE6EQZ)
+
+
+==========================================================
+4.2) Composite/audio/chroma/luma output for the Atari 2600 
+
+[The following mod if for SOME Jr's.  Please see section end for
+ 2600A update.]
+
+File revision 1.1
+
+After finding my entertainment budget disappear (poor university
+student) I was forced to economize--I dusted off the Ole'2600.
+I figured I would hook it up to my computer monitor, but to my
+dismay there was no composite output on the beast (Atari).
+Determined to overcome, I quickly disassembled it. After some
+poking and prodding around I managed to locate the required
+signals.
+
+Benefits:  No longer require a TV. You no longer require those
+           god-awful switch boxes. No more interference patterns
+           on the screen (from the RF cable being used as a bloody
+           antenna). No longer requires the 100' hookup RF cable.
+           Crisp clear audio etc;
+
+Drawbacks: No longer get to see sister trip in 100' RF cable. No
+           longer get to fall asleep with psychedelic interference
+           patterns on screen. 
+
+
+Materials Required:
+  Phillips screwdriver, a soldering iron, solder, a small piece of
+  wire, 2 or 3 patch cables and a small pair of needle-nose pliers.
+
+
+* The following schematic is for the NEWER model which is sometimes
+  referred to as the "Atari Junior".  The older model is much the
+  same.
+
+
+1-Simply unplug everything from your console, turn it over and
+  remove the 5 screws.
+2-Remove the top and bottom plastic case pieces. When removing the
+  TOP piece carefully pull out the ribbon cable that connects it to
+  the main board.
+€3-You should now have the board (covered by a metal shield) in your
+  hands. Turn it over, you will see little clasps on the edge of the
+  shield that hold it in place. Straighten these with your pliers
+  and you can then remove 2 LARGE shields (One on Bottom of unit,
+  one on Top). The small shield remaining (On Top) covers the RF
+  modulator.
+4-Orient the exposed board into the position that it would normally
+  be in. ie: The way it is when you play (On/Off switch near Top
+  Left).
+5-Look in the LOWER RIGHTHAND AREA of the TOPSIDE (front) of the
+  board. You will see a setup that resembles the schematic below.
+
+                              __________________
+TOPSIDE OF THE BOARD,        |                  |
+LOWER RIGHTHAND CORNER       |O      RF         |
+                             |    MODULATOR     |
+                             |                  |
+                             |__________________|
+
+                                        ------ TP5 (Luma)
+                                        |
+                             _____      V      ___
+                            |     | ||| o ||| | O |
+                            |_____| RRR   RCR |___|
+                                    |||   |||
+                                      ^    ^
+                                      |    |
+                       R41 (Chroma) ---    --- C19 (Audio)
+                       Gold/Red/Grey/Blue      Usually turquoise
+                       Color-banded            colored
+
+NOTE: You can connect the Audio to EITHER side of the Capacitor,
+      the best results are obtained by placing it on the BOTTOM
+      of the Capacitor (as shown).
+
+      The Chroma *MUST* be hooked up to the BOTTOM of the resistor
+      (as shown).  It will NOT work if you hook it to the top of
+      the resistor.
+
+
+To gain Chroma/Luma/Audio output you will need 3 RCA patch cables
+[the kind commonly used with stereos]. Simply solder the cables at
+the required points (Chroma/Luma/Audio) as shown. Remember to GROUND
+ALL cables! ie: solder the GROUND wire [the wire that wraps around
+the inner wire] to any point that the board shield connects to.
+
+To gain Composite/Audio output you need 2 RCA patch cables [the kind
+commonly used with stereos]. Here it gets a little different than
+above. Simply solder a "jumper" [a piece of wire] from R41 (Chroma)
+to TP5 (Luma), then connect a patch cord to TP5 [Presto! you now have
+composite]. Solder the remaining cable to C19 (Audio). Again, remember
+to GROUND all cables. Do *NOT* GROUND the jumper!
+
+Simply re-assemble the unit and you are done. You will find that it
+€is easier to have the newly installed cables exit through the joystick
+port. Alternatively, you could cut a notch in the case for a separate
+exit. Having the cables exit through the RF output is not recommended.
+There will not be enough room (without pinching the cables) to hook up
+the RF cable. Adjust your brightness/contrast. Enjoy!
+
+If you ever wish to adjust your color (chroma) there is a "POT" that
+you can tweek. It can be found near the OFF/ON switch. It is the only
+pot on the left side of the board.
+
+DISCLAIMER:
+
+I can not, and will not, be held responsible for any damages that you
+or your system incur.  This document is provided for informational
+purposes only.
+
+Send all Questions/Comments/Cartridges you are no longer using to:
+
+Thomas Clancy
+1 Hunt's Lane
+St. John's NF, Canada
+A1B 2L2
+
+thom@garfield.cs.mun.ca
+thom@saturn.cs.mun.ca
+thom@morgan.ucs.mun.ca
+
+
+(C)1993 Thomas Clancy
+This article is freely distributable so long as it is not modified.
+It must be distributed in it's entirety.
+
+------
+
+Addendum to Thomas Clancy's composite video mod for the 2600jr. 
+
+These are the locations for the 4 switch model,  CX2600A.
+
+Attach at the places indicated by an asterisk
+
+Audio:    Lower side of C208
+Video:    Upper side of R217 (SYN)
+          Upper side of R210 (COL)
+
+                                                 o
+                                           
+                                               C208
+                                                 *
+
+                                   o * o o o o * o o o  |
+                                             o   o   o  |
+                                   R R R       R        |
+                                   2 2 2       2        |
+       _______________________     2 1 1       1        |     _________
+€      |                       |    8 7 5       0        |     | RF    /
+      >      TIA (A201)       |              o   o   o  |     | MOD.  \
+      |_______________________|    o o o o o o o o o o  | ____|_______/
+________________________________________________________|
+Bottom Edge of motherboard with RF shield removed.
+
+
+According to a schematic I have here for the six switch model, the
+components are in similar locations, and if not the same, a good
+place to start looking for signals would be:
+
+Audio:  C210
+Video:  R221 & R214
+
+tdiaz@coyote.csusm.edu (Tony Diaz)
+ 
+
+==========================================================
+4.3) Video driver for the 2600/7800
+
+
+How to make a video driver suitable for a 2600 or 7800
+
+Parts list:
+
+T1      2SC1815
+R1      2.7K
+R2      150
+R3      68
+L1      180 uH
+L2      2.7 uH
+C1, C2  100 uF 6.3 V
+
+wire list:
+
+R1:1 to Ground
+R1:2 to Video In
+R2:1 to Video In
+R2:2 to T1 base
+R3:1 to Ground
+R3:2 to T1 emitter
+L1:1 to +5V
+L1:2 to T1 collector
+C1:1 to Ground
+C1:2 to T1 collector (positive lead of C1)
+C2:1 to L2:1
+C2:2 to T1 emitter   (positive lead of C2)
+L2:1 to C1:1
+L2:2 to Video Out
+
+                                  +5 Volts
+                                     |
+                                     (
+                                  L1 (
+€                                     (
+                                     |
+                        R2      |/---+---+
+   Video In -------+---^^^------| T1     |     + C2      L2
+                   |            |\       |
+                   |              >>-+---|-------| |----nnn----  Vid>
+                   >                 |   |
+                R1 >                 >   _ +
+                   >              R3 >   - C1
+                   |                 >   |
+                   |                 |   |
+                   +-----------------+---+--- Ground
+
+This is a simple common emitter amplifier.  It is a non-inverting
+currentamplifier and serves here to allow the video signal from the
+game to drivea standard composite monitor with 75 ohm impedance.
+
+In order to prevent the audio from interfering with the video signal,
+themixing oscillator must be disabled on the main circuit board.
+On a 7800, remove the base lead of Q1.  It is located near the RF
+modulator.
+
+The audio doesn't need any extra buffering.
+
+Places to get signals:
+
+1. from RF modulator
+   pin 3 is video
+   pin 1 is ground
+2. from Expansion Interface on 7800
+   pin 1 is ground
+   pin 2 is +5V
+   pin 3 is video
+   pin 17 is audio
+3. from main circuit board
+on a 78000, video and ground are across C7; +5V and audio are across C4
+
+This circuit may not work or be required with all versions of the 2600.
+It is required for the 7800 and the Sears Video Arcade II version of the
+2600.  It is probably not necessary for a 5200. 
+
+(Harry Dodgson Jr.     dodgson@coyote.cs.wmich.edu)
+
+
+==========================================================
+4.4)  Converting Sega controllers to Atari format
+
+
+[Author's note:My genesis controllers work just fine on the 2600 as is.]
+
+
+    Using Sega Genesis Controllers with the Atari 7800 and Atari 2600
+                          (Revision 1.0)
+ 
+€ 
+This Posting explains:
+ 
+1.  How to convert a Sega Genesis Controller to work with the Atari 7800 or
+    Atari 2600.
+2.  Where to purchase a converted Sega Genesis Controller or an adaptor.
+ 
+DOING IT YOURSELF
+ 
+First the Disclaimer.  I am not responsible for:
+1. Any damage done to your Atari 7800 or Atari 2600.
+2. Any damage done to the Sega Genesis Controller.
+3. Any errors in these instructions.
+ 
+This design is free for you to make your own controllers or adaptors.
+Ifyou make controllers or adaptors to sell to other people, I would
+like (nosuprise here) a cut of the profits.  The only other thing I ask
+is that ifmake your own, drop me an email so I get an idea of how many
+people areusing my design.
+ 
+I'm not going to give step by step instructions.  I'm going to assume
+thatthe reader has some basic knowledge of electronics and can figure
+out whatto do with the schematics and info presented here.  I will,
+however, answerquestions if asked.
+ 
+This design works with the Atari 2600 as well as the Atari 7800.  Also,
+anysystem that can use Atari 2600 joysticks, should be able to use this
+design.
+ 
+This design can be put inside a Sega Genesis controller or with the
+addition of two 9 pin connectors, it can be made into an adaptor.  It
+workswith any Sega Genesis controller including those with autofire.
+ 
+Parts List:
+2       3906            PNP Transistor
+2       1K              Resistor
+2       620 Ohms        Resistor
+ 
+For Adaptor only
+1       9 pin Male      Subminiature D connector
+1       9 pin Female    Subminiature D Connector
+ 
+Schematic:
+ 
+Sega B button --> Atari Left Button:
+ 
+                         ____ Atari 6
+              1K      | /
+Sega 6   __/\/\/\/\___|V PNP
+                      |\ 3906
+                        |_______ Atari 5
+                        |
+                        <
+                        < 620 Ohms
+€                        <
+                        |
+                      Atari 8
+ 
+ 
+Sega C button --> Atari Right Button:
+ 
+                         ____ Atari 6
+              1K      | /
+Sega 9   __/\/\/\/\___|V PNP
+                      |\ 3906
+                        |_______ Atari 9
+                        |
+                        <
+                        < 620 Ohms
+                        <
+                        |
+                      Atari 8
+ 
+Sega 1 -------- Atari 1      (Up)
+Sega 2 -------- Atari 2      (Down)
+Sega 3 -------- Atari 3      (Left)
+Sega 4 -------- Atari 4      (Right)
+Sega 8 -------- Atari 8      (Ground)
+ 
+Sega 5 ___.
+          |
+          |---- Atari 7      (+5V)
+Sega 7 ___|
+ 
+Notes:
+ 
+1.  Pins listed as Sega refer to the 9 pin male connector that the Sega
+Controller plugs into.  Pins listed as Atari refer to the 9 pin female
+connector that plugs in the Atari 7800.
+ 
+ 
+
+================================================================
+Updates:
+
+     
+ 3.1.1)  Slight change to 2600 and Jr descriptions.
+
+ 3.8) Addition of power supply label for 2600 Jr.
+  
+  
+================================================================
+Still needed:
+
+Suppliers of modified joysticks/conversion kits.
+
+
+----
+€
+
+End of Classic Atari Video Game FAQ 
+
+
+  End Of Line
+
+
+
+--
+ Carts: 2600 104; 5200 22; 7800 20 (MINT); Lynx 5
+ Systems: 2600A 2; 2600JR 1; Sears SVA2 1; 5200 2; 7800 2; Lynx 1; 800 2;
+          1200XL 1; 600XL 1; 800XL 7, 130XE 1; always lookin' for more.
+ Oh.. and 1 Vectrex with 20 carts, including light pen.
+      WITH 3D IMAGER!!!!!!!
+ ELO listenin', Dr. Pepper, Kool-aid, and Red Devil drinkin', Atari lovin',
+ cags-faq writin', fuji worshiping Ghoull-Man.  heller@akh104.rh.psu.edu
+
+
+
+
+

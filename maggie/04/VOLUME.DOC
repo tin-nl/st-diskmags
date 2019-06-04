@@ -1,0 +1,55 @@
+HOW TO MAKE A SOUND CHANNEL VOLUME INDICATOR BY POWER MAN OF THE WILD BOYS
+--------------------------------------------------------------------------
+
+Chill out guys(why does he always say that?), it's your homeboy Power Man
+chillin' out and ready to tell you how to make a volume indicator. If you
+don't know what this is, then you must be a lamer, so sod off! If you are
+not a lamer and don't know what it is, then it is a graphic on the screen
+which changes according to the volume of one of the sound channels. You
+may have seen this is the Delta Force screen on the Union demo, where balls
+enlarge and shrink according to the volume of the 3 channels. The example
+I have done puts three colours bars on the screen and flashes them in time
+to the music(you can use this music in your own demos, just copy the
+routines SETMUS and ENDMUS, the music is in a file called MUSIC.DAT).
+The source code is a file called VOLUME.S, and VOLUME.PRG is the executable
+file.
+
+I'll briefly explain how it works:
+
+The volume for each of the 3 channels are contained in 3 registers,
+which are numbered 8,9 and 10. To access them, you put the register
+number into location $FFFF8800 like this:
+
+MOVE.B #8,$FFFF8800.W
+
+Location $FFFF8800 now contains the volume of channel A, which is a number
+between 0 and 15. You can get this value in register D0 like this:
+
+MOVE.B $FFFF8800.W,D0
+
+However, if the volume is being controlled by an envelope, you will get
+a value of 0, so you need to set the value if an envelope is being used,
+like this:
+
+	BTST #4,D0	;is it an envelope?
+	BEQ .L1		;if not, piss off
+	MOVE.B #10,D0   ;manually set the volume
+.L1	rest of code
+
+NOTE: The volume can be set to anything, but 10 is a cool number, dude.
+
+You can repeat this for channels B and C. Once you have the volume,
+all you have to do is use this value to locate the corresponding animation
+frame or colour data, the possibilities are endless....
+My example uses the volume values to locate the corresponding colour, and
+then just sets colours 1,2 and 4 to these colours. Simple but very effective.
+
+Well, thats it for now. Look out for my WILD DEMO, coming soon. I need some
+grafix and muzix though(I can't do everything!), so please send me some
+stuff (I'm talking about grafix and muzix!) to:
+
+        The Wild Boys
+        131 Gunnersbury Avenue
+        Acton W3 8LE
+	London
+ 

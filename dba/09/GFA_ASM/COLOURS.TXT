@@ -1,0 +1,240 @@
+COLORSS BY OTM
+
+O.k. picture this: you've just showed your friends your brandnew
+demo/game coded in G.f.a. or assembler and they are all very 
+impressed.
+
+Everybody is there and they are all mumbling through the room 
+"Whow, we'd never thought he would be capable enough of doing 
+these kind of things." So there all impressed until someone 
+presses the space-bar, and your program quits back to the desk-
+top with a black background and black letters.
+
+Your friends still mumble something and suddenly you're all 
+alone. 
+
+So you are one of the many which are capable of creating nice 
+programs but when you want to get back to the desktop you still
+keep those ugly colours you have used in your program.
+
+First of all let us take a look at this program.
+
+****************************************************************
+
+' saving colours in G.f.a.
+'
+ON BREAK GOSUB einde                    ! if anything goes wrong!!!
+ON ERROR GOSUB einde
+RESERVE 30000                           ! give me some memorie
+DIM col%(15)                            ! some variables for the colours
+FOR i%=0 TO 15                          ! save all colours for low rez
+  col%(i%)=DPEEK(&HFF8240+i%*2)         ! get colours directly out of palette
+NEXT i%
+' now let's load us a nice degas piccy
+FILESELECT #"Select Degas Picture","e:\degas\*.pi1","",d$
+IF d$<>"" THEN
+  main                                    ! if d$ contains the name of a pic
+ELSE
+  einde                                   ! if d$ contains nothing ---> quit
+ENDIF
+PROCEDURE main
+  HIDEM                                   ! ome henk is dead
+  log%=XBIOS(3)                           ! get screenaddress
+  rez%=XBIOS(4)                           ! get resolution
+  VOID XBIOS(5,L:-1,L:-1,0)               ! select low rez
+  BLOAD d$,log%-34                        ! load picture in place
+  VOID XBIOS(6,L:log%-32)                 ! init new palette
+  VOID BIOS(2,2)                          ! wait for a key
+  einde                                   ! and quit nice and neatly
+RETURN
+PROCEDURE einde
+  SHOWM                                   ! echt niet!!!
+  FOR i%=0 TO 15
+    SETCOLOR i%,col%(i%)                  ! and restore palette
+  NEXT i%
+  VOID XBIOS(5,L:-1,L:-1,rez%)            ! and set back in old resolution
+  VSYNC                                   ! wait for screen
+  CLS                                     ! you don't want to see the rubbish
+  RESERVE                                 ! and give memorie back
+  EDIT                                    ! and back to the editor or desktop
+RETURN
+
+****************************************************************
+
+So what does this program do???
+
+The program start's saving the colours in the first 
+FOR ... NEXT loop
+It peeks into address &HFF8240 and copies this value into 
+col%(0) then it continues with peeking in address &HFF8242
+{----> &HFF8240 + 2 * 1 (<--- i%) } and it saves this value
+into col%(1) and so on.
+When it is done copying it has copied the folowing addresses:
+&HFF8240 ... &HFF825E which suprisingly contain the
+standard ST-colour palette.
+ 
+First it asks you to load a picture. This is done by using the 
+FILESELECT commando. When the user has selected a picture,
+then it starts loading it at the folowing adress:
+34 bytes behind the screen address. Why 34 bytes behind it 
+you may aks. Good question (answer). The Degas file format
+contains a bit more than only the picture. It contains first
+of all the resolution, than the colour-palette, and than
+the picture data, and when the picture is drawn usinng Degas
+Elite it also contains some animtion information at the end.
+
+O.k. then we init our colours which are positioned 32 bytes 
+behind the screenaddress.
+Now the moment has come to wait for a key-press. This is done
+by using the BIOS-routine called Bconin. Which in this case
+reads a sign from the keyboard. 
+
+And then we clear off restoring the colours, and giving the 
+memorie back.
+
+****************************************************************
+* But what about the assembler-coder
+****************************************************************
+
+Good question, here is their solution.
+
+*****************************************************************
+*                                                               *
+* Saving colours in assembler.                                  *
+* So you won't get those ugly colours you've used in your demo  *
+* back in the desktop.                                          *
+*                                                               *
+* Program coded by O.T.M. of the D.B.A. on 12/04/1993           *
+*                                                               *
+*****************************************************************
+*
+        text
+
+;----------------------------------------------------------------
+; First some inits before we start
+; ---------------------------------------------------------------
+        dc.w    $a00a                   ; ome henk is dead
+
+        clr.l   -(sp)                   ; set up supervisor
+        move.w  #$20,-(sp)
+        trap    #1
+        addq.l  #6,sp
+        move.l  d0,oldstack
+
+        move.w  #3,-(sp)                ; This function returns the 
+        trap    #$e                     ; screenaddress in D0
+        addq.l  #2,sp                   ; tidy stack first
+        move.l  d0,oldscreen
+
+        move.w  #4,-(sp)                ; check resolution
+        trap    #$e                     ; xbios-trap
+        addq.l  #2,sp                   ; tidy stack again.
+        move.w  d0,oldrez               ; 0 ----> low    resolution
+                                        ; 1 ----> medium    " "
+                                        ; 2 ----> high      " "
+        cmp.b   #2,oldrez               ; high ???
+        beq.s   einde                   ; yes -----> quit (black and white)
+
+; ---------------------------------------------------------------
+; Save colours
+; ---------------------------------------------------------------
+
+
+        LEA     COLBUF,A0
+        lea     $FF8240,A1
+        move.w  #15,d0          ; save exactly 16 colours
+savcol:
+        move.w  (a1)+,(a0)+
+        dbf     d0,savcol
+
+
+; ---------------------------------------------------------------
+; O.k. and now we are ready for some real action
+; ---------------------------------------------------------------
+
+        pea     pic+2           ; address of new palette on stack
+        move.w  #6,-(sp)        ; and change the colours
+        trap    #$e             ; xbios-trap
+        addq.l  #6,sp           ; and tidy stack
+
+; ---------------------------------------------------------------
+; Show the picture
+; ---------------------------------------------------------------
+
+        clr.w   -(sp)           ; force low rez
+        move.l  #-1,-(sp)       ; keep old screenaddress
+        move.l  #-1,-(sp)       ; dito
+        move.w  #5,-(sp)        ; set rez
+        trap    #$e
+        lea     $c(sp),sp
+        
+        movea.l oldscreen,a1    ; set a1 
+        lea     pic+34,a0       ; load picture in a0
+        move.l  #7999,d0        ; use d0 as a screencounter
+picture:
+        move.l  (a0)+,(a1)+     ; copy from picture to screen.
+        dbf     d0,picture      ; do until false
+
+        move.w  #7,-(sp)        ; wait for a key
+        trap    #1              ; gemdos-trap
+        addq.l  #2,sp
+einde:
+        move.w  oldrez,-(sp)    ; set back to normal again.
+        move.l  #-1,-(sp)
+        move.l  #-1,-(sp)
+        move.w  #5,-(sp)
+        trap    #$e
+        lea     $c(sp),sp
+
+; -----------------------------------------------------------------
+; * and restore our colours
+; -----------------------------------------------------------------
+
+        LEA     COLBUF,A0
+        lea     $FF8240,A1
+        move.w  #15,d0          ; restore exactly 16 colours
+putcol:
+        move.w  (a0)+,(a1)+
+        dbf     d0,putcol
+
+        move.l  oldstack,-(sp)          ; stack on stack
+        move.w  #$20,-(sp)
+        trap    #1
+        addq.l  #6,sp
+
+        dc.w    $a009                   ; echt niet !!!
+
+        clr.w   -(sp)                   ; and back again 
+        trap    #1                      ; 
+
+        data
+
+pic:    incbin  'e:\degas\*.pi1'
+
+        bss
+
+oldstack:
+        ds.l 1
+oldscreen:
+        ds.l 1
+oldrez: ds.w 1
+COLBUF: DS.B 32
+
+        end
+
+****************************************************************
+
+I gues that this won't be any problem for the assembler coders.
+If you have any problem with the program the best way to 
+clear the program is to get the debugger, and run it step by step
+This way you will see exactly what the computer does.
+
+But be sure to give a correct path to load the picture cause
+else the program will not be assembled!!!!
+
+Well, I think this is enough for today!!!
+
+O.T.M. of the D.B.A. signing off..........
+
+(...retal uoy ees)
+

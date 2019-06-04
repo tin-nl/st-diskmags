@@ -1,0 +1,291 @@
+ATARI WORKS PART 2
+
+  |||  Atari Works Adds Up
+  |||  By: Lyre
+ / | \ GEnie: AEO.3
+       -------------------------------------------------------------------
+
+In the last two issues of AEO, Andreas has provided an overview of
+Atari Works and a review of the word processor portion of the program.
+My review addresses another portion of Atari Works; specifically, the
+spreadsheet and graphing capabilities.
+
+Having re-entered the software development arena, Atari has created
+within Atari Works an integrated suite of productivity tools
+considered by most computer users to be mandatory. Every computer user
+obtains word processor, spreadsheet and database software to address
+their information and communication needs.
+
+Imagine, if you will, that you are a business person and need to
+create a report from some of the data you have in a spreadsheet. To
+transfer the data in years past, you were required to save your
+spreadsheet data, exit the spreadsheet software, enter your word
+processor and import the spreadsheet data. This became necessary as
+more and more computers were utilized to create final versions of
+important business documents.  However, they suffered from an
+inability to produce decent output.  Eventually the use of fonts and
+more sophisticated technology allowed the spreadsheet software itself
+to produce appealing output.
+
+However, the spreadsheet software still lacked the ability to handle
+large amounts of text or complex layouts.
+
+It is the combination of these previously separate tools that makes
+programs like Atari Works so necessary.
+
+The spreadsheet available from within Atari Works utilizes GEM to its
+fullest. The ease of use associated with a graphics environment
+supersedes command lines or the necessity of remembering an endless
+series of key strokes to perform a particular function. When using the
+spreadsheet, every feature you need is available through a hotkey
+combination or through a dialog box available from the menu.
+
+This fundamental difference in program design has a huge impact on
+the average user's ability to become proficient with the Atari Works
+spreadsheet. It makes more sense to be able to click the mouse on a
+cell and be able to edit its content; or to drag the mouse across
+several cells in order to change the cell format. If you need to
+change the size of a column, simply drag the column divider to the new
+location and release the mouse button.
+
+Until the advent of reliable voice recognition and artificial
+intelligence at the consumer level, a graphic environment can not be
+surpassed for ease of use. This is where the beauty of the Atari Works
+spreadsheet makes itself felt. All of the spreadsheet functions are
+available through a hot key or a menu option. Since the mouse is the
+standard means of interacting with programs, the use of these features
+is almost totally intuitive.  Since many users prefer to try software
+out before reading the documentation, software of this calibre is
+particularly appreciated. After all, features that are just a hotkey
+or mouse action away are easily remembered. Working with a deadline,
+such features are worth their weight in gold.
+
+At this point, you are undoubtedly wondering what features are
+present within the spreadsheet. Well, I shall not tease you any
+longer.
+
+The first thing that needs to be said is that Atari Works operates if
+Speedo GDOS is available or not. With Speedo GDOS installed, you can
+take advantage of the Bitstream fonts supplied or any of the
+additional fonts you purchase. Considering the number of programs
+using fonts that are not visually appealing or are too small, this
+feature is particularly useful.  If you do not like the font used,
+Speedo GDOS allows you to replace it without fuss. You can also change
+the size of the font - something particularly useful for the visually
+impaired.
+
+Then there are all of the features available through using the mouse
+on the spreadsheet window itself. As mentioned earlier, you can change
+the width of a cell by dragging the column divider. Dragging it to the
+right increase the size, dragging it to the left decreases the size.
+Alternately a menu option performs the same function. If you need to
+copy the contents of a cell or series of cells, you can do so by
+dragging the mouse across these cells and pressing CONTROL-C. The
+content of numeric cells is taken "as is"; formulas are copied as
+relative cell references so that they automatically adjust themselves
+to account for the new location. However, you can include absolute
+references within a cell, and when copied, these references will be
+maintained.
+
+Obviously this feature is available through the clipboard. The other
+features of the clipboard are also supported - cut, copy, paste and
+clear.
+
+If you need to add a row or column to the spreadsheet, simply
+highlight the row or column that you want moved and press CONTROL-I
+(or alternately use the option under the Edit menu) and the new row or
+column will appear.  In the process, relative cell references are
+adjusted to keep them accurate. If there are several rows or columns
+to add, simply use the mouse to drag across the cells you want to
+insert and press CONTROL-I.  Deleting cells operates in the same
+manner except that you have to choose Clear from the Edit menu.
+
+Bold and underlining are also available through hotkeys so after
+entering data you can immediately change their appearance. Reverting
+to normal text is simply another hotkey away. This allows you to alter
+your spreadsheets look on the fly - and change it back if the results
+are not acceptable.
+
+The mouse can also be used when entering formulas into your
+spreadsheet.  By choosing the Paste Function option from the Edit menu
+a small dialog with a list of functions appears. Having selected the
+appropriate function for your needs, the cell is pre-filled with the
+function you want. The cursor is automatically placed with the
+parenthesis so that you can begin entering the cell references or
+numbers as quickly as possible. For instance, the SUM() function
+appears in a cell as "=SUM()" upon leaving the dialog box. Then, by
+clicking on individual cells a plus sign and the cell reference are
+added. So clicking on A1 causes the formula to appear as "=SUM(A1)",
+clicking on A2 changes this to "=SUM(A1+A2)." You can continue in this
+manner as required. Of course, for groups of cells, there is an easier
+way. Simply click on the upper left cell to start the sum and drag the
+mouse to the lower right cell to end the sum - the formula
+automatically changes to "=SUM(A1:A13)." You can combine these two
+methods also.
+
+For users who are familiar with Excel, you will notice that the
+functions are entered in a similar manner. Being able to use the same
+type of "syntax" as utilized on the IBM and Macintosh platforms makes
+it very easy for users to transfer data to and from their home
+computer. Their are 53 functions available within Atari Works, I have
+included a list and a brief description of these features at the end
+of this article for the truly inquisitive.
+
+Another vitally important aspect of the spreadsheet is the ability to
+import data from other programs. The spreadsheet can import or export
+DBF files as well as tab and comma delimited files. To try this
+feature out, I loaded a few of the databases I created with
+DataManager ST from Timeworks and another file from dbMAN 5.21 from
+VersaSoft. Both imported without any difficulty.
+
+There are any number of other features that I could mention. The
+ability to move cells, go to a particular cell, find the cell with
+particular information, align cell contents left, right or center,
+fill cells, change the type of numerical data (general, currency,
+scientific, etc.) and several more. But then I would run out of space
+to tell you about the graphing capabilities available.
+
+Once you have entered your spreadsheet data, creating graphs based
+upon that information is simple provided that you have set up your
+spreadsheet correctly.
+
+The types of graphs available are broken down into two categories:
+Series and Pie Charts.
+
+Series charts contain line, bar and stack charts since these charts
+are all dependent on several pieces of data on a particular subject.
+The numerical data on this subject represents a series of points in
+the subject's range. An example of this might be charting the sales
+figures of each quarter. Each quarter would represent one point in
+time.
+
+Series charts are created based on the data available in a row or
+series of rows within your spreadsheet. If you have arranged the
+quarters as column headings, then you will need to move them so that
+each quarter's figures are in a row. Otherwise the results of your
+charting attempt will be inappropriate for your requirements.
+
+Pie charts represent a graphic model of the parts of a spreadsheet
+that make up a whole. It allows you to see the how much of your
+business is involved with a particular subject in comparison with
+other aspects of your business. To continue the example used above,
+you could show how much of a particular quarters sales results
+represents the annual sales figures for the company.
+
+Pie charts are derived from data appearing within the columns of your
+spreadsheet.
+
+Creating a chart - assuming it has been laid out correctly in your
+spreadsheet - is very simple. Choose either New Series or New Pie
+from the Chart menu and a dialog box will appear. This dialog is
+different for each category of charts, but in general they allow you
+to specify the cells in your spreadsheet to be used.
+
+In the Series dialog, you choose the type of chart and enter such
+things as the minimum and maximum value of the chart, the column to
+use for labelling your data, the horizontal and vertical headings and
+several others.
+
+In the Pie dialog box, your options are simpler. By entering the
+starting and ending cells, the column to use for labelling your data
+and which row, if any, that you want to have exploded (protruding from
+the rest of the pie chart).
+
+Having set these options, clicking on the "Plot it!" button causes a
+new window to appear which contains the resulting chart. This window
+can be re-size and the window contents will automatically adjust to
+remain as centered as possible within the new window size. This
+includes the graphics (i.e., the chart itself) and the font size used.
+Except in windows that are extremely small, the chart will remain
+fairly legible (it depends on the number of cells that are included
+within the chart).
+
+This automatic adjustment to the chart is extended to alterations in
+the spreadsheet data itself. If you realize that a figure is wrong,
+you can enter the correct value on the spreadsheet and the chart will
+be updated instantly. This can be particularly helpful when dealing
+with data that constantly needs to be altered.
+
+Well, this ends the review of the Atari Works spreadsheet. Hopefully
+this article has increased your understanding of the capabilities of
+the spreadsheet's functionality. In the next issue we will explore
+Atari Works a bit more thoroughly.
+
+But first....
+
+There is one thing that I would like to leave you with; a list of the
+spreadsheet functions available in Atari Works. This list is not
+meant to be fully featured, instead it is meant to make you aware of
+the types of mathematical functions you can utilize in your own
+spreadsheets.  Where there is no description of the function, I could
+not determine an easy way to convey the function. Sorry about that.
+
+Financial Functions:
+FV      Future Value
+IRR     Internal Rate of Return
+NPR     Number of Periods
+NPV     Net Present Value
+PMT     Periodic Payment
+FV      Future Value
+RATE    Interest Rate per Period
+
+Logical Functions:
+AND     Logical And
+CHOOSE      
+FALSE   Logical False
+IF      Determines if a user-definable condition exists
+ISBLANK Determines whether a cell is blank or not
+ISERROR Determines if a user-defined error condition exists
+ISNA    Determines if cell contents is not applicable
+NOT     Logical Not
+OR      Logical Or
+TRUE    Logical True
+
+Mathematical Functions:
+ABS     Absolute value of a number
+EXP     Exponentation
+INT     Integer
+LN      Natural logarithm
+LOG10   Base 10 logarithm of a number
+MOD     Modulus (remainder from division operations)
+PI      Pi
+RAND    Random number between 0 and 0.999...
+ROUND   Rounds to the nearest decimal place
+SIGN    Determines whether a number is positive, negative or null
+SQRT    Square root
+
+Special Purpose Functions:
+ERROR   Establishes an error condition for testing with ISERROR
+HLOOKUP Horizontal Lookup and comparison of cell contents (by row)
+INDEX   Provides the value of a cell from offsets
+LOOKUP  Lookup and comparison of cell contents within a specified range
+MATCH   Determines matching cell values within a specified range
+NA      Establishes an error condition for testing with ISNA
+TYPE    Determines the category of cell contents
+VLOOKUP Vertical Lookup and comparison of cell contents (by column)
+
+Statistical Functions:
+AVERAGE Determines the average value of a series of numbers or a
+specified range
+COUNT   Determines the number of items in a series of numbers or a
+specified range
+MAX     Determines the highest value in a series of numbers or a
+specified range
+STDEV   Determines the standard deviation of a series of numbers or a
+specified range
+SUM     Determines the total of a series of numbers or a specified
+range
+VAR     Determines the variance in a series of numbers or a specified
+range
+
+Trigonometric Functions:
+ACOS    Arccosine of a number (angle in radians)
+ASIN    Arcsine of a number
+ATAN    Arctangent of a number (angle in radians)
+ATAN2   Arctangent of X and Y numbers (angle in radians)
+COS     Cosine of a number (angle in radians)
+DEGREE  Converts an angle in radians to degrees
+RADIANS Converts an angle in degrees to radians
+SIN     Sine of a number (angle in radians)
+TAN     Tangent of a number (angle in radians)
+

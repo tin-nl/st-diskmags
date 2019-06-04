@@ -1,0 +1,222 @@
+ó--------------------------------------------------------------------------------
+                       WOLFENSTEIN 3D for ST - THE FACTS
+ó--------------------------------------------------------------------------------
+
+Hi dudes,
+
+I'd like to take this  chance to advertise the new beta-version of  the upcoming
+Wolfenstein3d port. This  file is very  similar to  the readme.txt provided with
+the last version you might want to download from
+
+http://files.dhs.nu/files_game/wlf3dv01.zip
+
+Please report strange bugs you find to reimund.dratwa@freenet.de as long as they
+are diffrent from the ones yet described here - thanks.
+
+Features up till now:
+
+- quick nibble c2p running at a resolution of 160x80 (double-pixeled)
+- compiled wall-scalers (best choice for non-cache machines)
+- advanced  keyboard-controls (you  may move  into more  than one direction at a
+  time)
+- 32 colors on the screen
+- wall  collision-detection - you  can't  run  through  walls  any more, gliding
+  against them is possible as well
+- multiple textures (up to 255)
+
+watch history for details...
+
+remaining bugs:
+
+- raycaster  seems to  have some  problem with  accuracy  at some outer corners,
+  which you can watch through, hence
+
+- keyboard  handler seems to 'hang' at some points, player keeps moving although
+  a key is released  yet - move  into the same direction the player moves to, in
+  this case
+
+- upon exiting: disk-copying seems to be blocked sometimes keybuffer isn't empty
+  sometimes
+
+
+things to come up with one of the next betas:
+
+- sprites
+
+- door-support
+
+- pushable walls (secret areas)
+
+- "texture/map-from-file-loader" (to keep  the exec-file  small and  to make the
+  gfx easily editable)
+
+- trig-table generator  for lower file-size, atm. they're just precalculated and
+  included
+
+- resizeable gamewindow  to gain  more speed  at slow machines - atm. everything
+  c2p/raycasting-related  is dynamic  yet, nevertheless  you  can't  resize  the
+  window because just like I said I'm still using a fixed table
+
+- triple-buffer  to avoid  flicker on  too fast  machines (using  a vbl-unsynced
+  doublebuffer atm.)
+
+- furtherly optimized  wall scalers (there's  still some  optimization  left for
+  scalers > 64 pixels -> 2-4 byte scaling  could be used at  some places to skip
+  some superfluous memory fetches - hence scalers might look like:
+
+         move.b source(A0),D0       or  move.b  source(A0),D0
+         move.b D0,destination1(A1) or.b D0,destination1(A1)
+         move.b D0,destination2(A1) or.b D0,destination2(A1)
+         move.b D0,destination3(A1) or.b D0,destination3(A1)
+               .              .
+               .              .
+               .              .
+
+  at certain points.
+
+
+requirements/specs.:
+
+- any 1Mb+ ST/e/MST/e/Falcon/TT030 (maybe clones as well)
+- RGB/VGA
+- Fastram-support
+
+usage:
+
+- start it up, wait  until the game screen  has faded in, move around using your
+  cursorkey-block and exit by hitting esc if you're starting to get bored.
+
+
+enjoy,
+
+
+ ray//.tSCc.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+history:
+
+03-11-02
+
+- restarted  work on  this project  after 8 months (!), decided to  rewrite  the
+  whole thing to call it "beta-version" :)
+- title-screen gets diplayed
+- some fading added
+- codetable-nibble  c2p running  in 1.6 vbls on a 8Mhz ST - 50Hz (using the max.
+  160x80 mode)!
+
+-> bug with linedoubling
+-> flawed pixels at some places (faulty c2p-table ??)
+
+03-12-02
+
+* fixed: linedouble-bug
+
+03-13-02
+
+* fixed: flawed  pixel-bug (was  a problem with  negative  offsets -> got  wrong
+  planardata) c2p still runs at 1.6 vbls, phew 8)
+
+03-14-02
+
+- scaler setup routine added
+
+-> missing clipped scalers
+-> bug: scalers don't work at all for some reason
+
+* fixed:  "faulty  scaler-code" (was  some  problem  with  my  brain, actually -
+  scalers worked fine, just got  the wrong jumpaddresses to call them, took me a
+  long time to notice this X) )
+
+03-15-02
+
+- clipped scalers being generated as well now
+- added: fast (an)+ scaler, used if sliceheight=textureheight
+
+03-16-02
+
++ optimized: now there  are 2 sorts  scalers for the even- and for  the odd rows
+  each;
+
+            move.b src_ofs(a0),dest_ofs(a1) ; even scalers
+
+            move.b src_ofs(a0),d0    ; odd scalers
+            or.b   d0,dest_ofs(a1)
+
+-> bug: "even" scalers make the machine crash :/
+-> fast move.b (a0)+,d0 scaler removed temporary
+
+03-17-02
+
+* fixed: even-scaler bug
+
+-> bug: scaler setup  routine  seems  to write out  of table-range  on  the ST -
+   illegal instruction, when calling scalers X(
+
+* fixed: scaler setup bug on the ST (yes, it was a range problem)
+
+- streamlining the  scalers really seems to have improved speed on the ST - time
+  to add a fps counter :)
+- fast move.b (a0)+ scaler added again, everything works out fine now, gosh :)
+- added: distance dependant jumptable - wall scaler setup is complete, finally
+- added: mfp-init/restore crap to get rid of disturbing interrupts
+
+03-18-02
+
+- rewritten: raycaster, much  more streamlined  and complete than the one of the
+  previous alpha-engine - however, it's too late and I'm to tired to include and
+  test it right now, time to sleep Zzz
+
+03-19-02
+
+- raycaster included
+
+-> bug: raycaster displays some buggy looking walls or makes the system crash at
+   some tested map-positions and fa-
+          cings :(
+
+* fixed: one of raycaster's bugs (chunkycolumn-counter didn't get cleared before
+  the loop) - nevertheless it still doesn't work correctly
+
+03-20-02
+
+* completely fixed: raycaster - works correctly without any noticeable bugs now,
+  ray is damn-happy X)
+
+- due to the much more  optimized and streamlined c2p- and scaler-stuff it seems
+  to gain reasonable  speed even on  the ST (as I said a fps-counter is still to
+  be added) if compared to the alpha-version
+- the engine  seems  to run  much  more  relieable  also  on 68030  machines (no
+  disappearing walls etc. like in the first alpha-release anymore)
+- added: faster clear-routine for the chunkybuffer (using movem.l's)
+- added: raster-isr  to split palette  for seperate  floor- and  ceiling-color -
+  this is has to be done  because of the nibble-c2p, so don't wonder why ceiling
+  and floor  reach into  the screenborder - though the statuspanel is allowed to
+  use a seperate  palette now - hence we display 32 screencolors at once - isn't
+  this nice? :)
+- raster-interfering mousemovement swiched off via the ikbd
+
+03-21-02
+
+- added: the blocks' tile  numbers are being  procsessed now, so there're (up to
+  255) diffrent textures that can be mapped onto the walls
+- added: keyboard-handler, it's  possible to move the player around through that
+  maze, finally
+- bug noticed: maybe due to imprecision or any other accuracy problem we're able
+  to look through corners at some angles
+
+03-22-02
+
+- improved: keyboard-handler, you should be able to press 2 keys at once to gain
+  a more flexible player-movement
+
+-> bug: player starts tilting around uncontrolled sometimes
+
+- added: wall collision detection, you can't run through walls any longer
+- extended number  of wall-scalers  to render  walls that are  very close to the
+  player
+
+03-23-02
+
+*release*
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

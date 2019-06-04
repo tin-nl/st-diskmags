@@ -1,0 +1,268 @@
+
+             THE YELLO DEMO ASSEMBLER SOURCE CODE
+                 (Produce your own sample demo)
+                              by Sammy Joe of TLB
+
+First of all,  the source is the code supplied with the ST REplay 
+cartridge,  it has been modified but we would like to thank 2 Bit 
+Systems anyway. Thanks guys for a great sampler.
+ 
+If  you do not understand this article or you can't  be  bothered 
+to  read it but still want to do your own sample demo,  read  the 
+other  DIY article in the PD section which makes it a lot  easier 
+for you to do your own sample demos!!!  
+
+The  reason  why we are releasing the source code for  the  never 
+finished YELLO DEMO is fairly clear, we got bored with  all these 
+bad  quality  sample  demos  written  with  STOS,  BASIC  or  any 
+other language. 
+
+In  this  article I am going to explain to you what you  have  to 
+modify in the source code to have the following  effects:  change 
+the  scrolltext,  change  the  position of the  scroller  on  the 
+screen,  change the sample order,  change the frequency and  some 
+other things.  To do all this, you need NO KNOWLEDGE OF ASSEMBLER 
+whatsoever. 
+
+Before I will begin to explain the source code,  I will tell you, 
+as usual, a bit of the history of the never finished YELLO DEMO.
+
+
+                       THE HISTORY
+
+We had just finished our Power demo.....  We were showing it  off 
+at  some computer show.  We also showed it to 2 Bit  Systems  and 
+they said "There is a show coming up soon, could you guys do as a 
+sample demo ?" Manikin said that we would contact them after  the 
+show. 
+
+Two weeks later,  Manikin came to my house showing off his  first 
+sample demo coded in Assembler.  Yeah, you guessed it, it was the 
+Yello Demo.  It had a nice picture, a scroller along with a 1 meg 
+10  Khz Sample.  We send it to 2 Bit Systems and they  said  that 
+they really like it but that they would prefer it if it also runs 
+on a half meg machine.
+
+SPAZ and Manikin rushed back into there rooms and started working 
+on  a  new demo.  I a few days later,  I heard  somebody  banging 
+against the door and a few seconds later I heard Manikin swearing 
+like hell.  God, you should have seen him, his head was big, very 
+big,  I do not want to exaggerate but it was enormous.  In  other 
+words,  he  was  bigheaded.  His bigheadedness  caused  him  some 
+problems,  like for example walking though doors, I can be pretty 
+painful  when  your head does not fit through  the  door.  (Well, 
+nowadays his head has shrunk back to its normal size and  Manikin 
+is a great grey haired guy!!!).  Anyway, after we finally hired a 
+crane to life him into my room via the window,  he showed me  the 
+demo he came up with,  the MEGABANG DEMO.  For the time being the 
+demo was pretty good. 
+
+After that demo we did not feel like doing any more sample  demos 
+and  we totally forgot about the YELLO DEMO source code.   A  few 
+months  later when I went to Germany I was asked by  MJS  whether 
+or not they could have the source code.  Kind as we are,  we gave 
+it to them and they did the demo.
+
+                                        THE END OF THE HISTORY
+
+
+                         THE ACTUAL SOURCE/PROGRAM
+
+First  of  all  you need two things for using  this  source  code 
+efficiently:
+
+            1. a assembler (we use DEVPAC)
+            2. a paint program that can save pictures in the file
+               format of Degas Elite
+            3. nothing else
+
+Before we start, I advise you to copy all that's necessary onto a 
+seperate  disk  (LOST.FON,   source  code,  picture,  sample  and 
+whatever else the program needs).
+
+If you want to see what you can do with this sorce code, look on
+the disk or in one of the other menus for something called 
+SAMPLE PROGRAM.
+    
+For now I will assume that you have sampled something (Note:  the 
+player prefers Heavy Metal).  If you have,  let's say 5 different 
+sample,  save  them all in one file(you can do that with  Replay) 
+and  write  down how long each sample is and in which  order  you 
+have saved them. 
+
+Now,  in  the assembler source code you have to change  the  name 
+of the sample file to be loaded.  Goto the label FILE (at the end 
+of the source), it should say something like: 
+
+FILE    DC.B "YELLO.SPL",0
+        EVEN
+
+Here you have to change the YELLO.SPL to your own filename.
+Your program will  now load the correct sample
+Go right to the top of the program, where it says FILE LENGTH, 
+type in the length of all the samples together. 
+
+Now, I bet you wonder you one gets really long sample demos, very 
+simple you just repeat,  for example,  your first sample 3 times, 
+then  play your second sample and then play the first one  again. 
+Then you play your 4rd sample twice, repeat the 2nd ones etc....
+Do you know how to do that ?  No,  well it is fairly simple.  Now 
+you  need the file length and in which order you have  saved  the 
+sample, I mean that stuff I asked you to write down earlier on.
+
+SAMPLED
+YELLO0  EQU SAMPLED+45000
+YELLO1  EQU YELLO0+39220
+YELLO15 EQU YELLO1+39285
+YELLO2  EQU YELLO15+115316
+YELLO3  EQU YELLO2+157100
+YELLO4  EQU YELLO3+219048
+YELLO5  EQU YELLO4+76446
+YELLOEND EQU YELLO5+16943
+
+Above you can see, well, what can you see really ? Some words and 
+some numbers, does not say much does it ? 
+Do never change the SAMPLED at the top.  What we are now going to 
+do is, we will name all the samples in this big sample file. 
+Starting  with  the first one,  we called  it  YELLO0,  now  this 
+sample, let's says you wrote down its length as 45000 Bytes. 
+What you now do is,  you write the name of the sample YELLO0  EQU 
+the label of the line above this line. This would look like 
+YELLO0 EQU SAMPLED,  you only thinh yo now have to do is, add the 
+size of your first sample to SAMPLED:
+
+     YELLO0 EQU SAMPLED+45000
+ 
+Basicially  what that means is,  the first sample begins  at  the 
+label SAMPLED and ends at the label SAMPLED plus its own size.
+
+Now for the second sample in your file in would look like this:
+Your new name,  we have called it YELLO1 EQU (that EQU by the way 
+stands for equals) the label in the line above this one,  in this 
+case  it is YELLO0.  This would now look like YELLO1 EQU  YELLO0. 
+Now you must not forget to add the size of your second sample  to 
+YELLO0:
+
+     YELLO1 EQU YELLO0+39220 
+
+You get the idea of it ?  Now you go on naming all the samples in 
+your file. In our case we have named the last file with YELLOEND, 
+you could also have called it YELLO6.
+Now go to the top of the program and type in in the line above 
+FILE LENGTH, the name of your first sample name, in our case that
+would be YELLO0. 
+
+
+This was the hardest bit, when you have changed this succesfully, 
+well done. No to the part where you define which sample should be 
+played when,  where and how often.  Go to the label SAMPLETAB (at 
+the end of the program).  Here you just time in the names of your 
+samples,  if you want the first sampel to be played  twice,  just 
+type the name twice.
+
+SAMPLETAB      DC.L YELLO0,YELLO0,YELLO0,YELLO1,YELLO2,YELLO0,JELLO0
+               DC.L YELLO3,YELLO4,YELLO5,YELLO2,YELLO2,0,0
+
+Now in our case it would play the first sample three  times,  the 
+second sample once, the third sample once and then play the first 
+sampel twice and so on....
+IMPORTANT: DO NOT forget the two 0 at the end of your last sample 
+name!!!!! 
+
+
+Save  your  changes and assemble the program.  If you  are  using 
+DEVPAC,  just press ALT-A and click on the box where it says DISK 
+and typ in the programs name. Then hit Return. 
+
+The program should assemble with 2 warnings or even errors.  They 
+should have something to do with the word 'graphix'. Do not worry 
+about it.
+
+Now you can reset your computer and run the program on the disc.
+
+Hang on,  I just about forgot it,  we have set the sample rate to 
+10 Khz,  if you want to change that,  go to a line where it  says 
+(in the middle of the program): 
+
+     MOVE.L        #2,-(SP)   SET INITIAL FREQUENCY
+
+The  2 indicates the 10 Khz,  change it to 1 and you sample  will 
+play  at  7.5 khz,  change it to 3 and your sample will  play  at 
+15Khz etc.... No problem.
+
+Save your changes,  reset your computer and listen to your sample 
+demo.
+
+
+If  you want to change the scrolltext,  go the the bottom of  the 
+program  where  it says 'scrolline'.  Here you can type  in  your 
+scrolltext. Always put it in inverted commas (") and also type in 
+capital letters.  At the end of your text you must put  $ff.  The 
+whole thing shoud look like this:
+
+scrolline
+               dc.b "    The shortest scrolltext ever !!! ",$ff
+
+
+If you want to move the scrolline to a different position on  the 
+screen,  go to top of the program.  A few lines down,  it  should 
+says something like this:
+                    
+                    move      #2,-(sp)   phys base
+                    trap      #14
+                    addq.l    #2,sp 
+                    add.l     #$5780,phys
+
+This last line here is the important one.  As you probably  know, 
+the  screen in the low resolution has 200 lines (from the top  to 
+the bottom).  Each one of these lines is 160 Bytes long.  Now  in 
+our case,  the scrolline is 140 lines down from the top. What you 
+simple have to do is,  multiply the amount of lines from the  top 
+of  the screen to the position of your scroller by  160.  In  our 
+case  is  would  be
+  
+         140(lines from the top)*160(bytes per line)=22400 
+
+If you convert this number into hex with a calculator, it will be 
+$5780.  You  do not have to convert it into hex !!!!!  You  could 
+simply  type in the 22400.  If you choose to type it in as a  non 
+hex number,  do NOT type in the $.  Your line would have to  look 
+like:
+
+                    add.l     #22400,phys                    
+
+Very simple isn't it.  Now, when incooperating a picture you must 
+leave  32 lines across the screen (from left to right) where  you 
+want the scrolline to be.
+
+
+For  incooperating  the picture,  simply draw  it  (don't  forget 
+to  leave  enough  space for the  scroller),  save  the  pictutre 
+uncompressed on the disk.  Load up the source code and go to  the 
+label where it says:
+                    
+    *graphix        incbin "yello.pi1"
+
+Take the star away and make sure that 'graphix' is right at the 
+beginning of the line. Now change the name.
+
+When you have done that, go right to the top of the source code, 
+take the star away from the line BSR PICTURE . When you now run 
+your sample demo, you will realize that you also have a picture 
+with it.
+
+In order to make it easier for you to change things, I have left 
+2 rows of '**' at the beginning and the end of each thing you can 
+change.
+
+I reckon that that wraps it about up, I hope that this was of 
+some use to you. If you do any sample demos with it, could you 
+please send them to us, we would like to see them.
+
+                    Yours
+
+                         Sammy Joe (Michael Schuessler)
+
+P.S.: The next Issue will contain more and better source code!!!
+
+

@@ -1,0 +1,152 @@
+066010303050000132002006006010000
+11
+2#1
+F0110000001
+9[...................................................]0010
+€                         The Atari Falcon
+
+     On August 21st 1992 ,the Atari Falcon is going to be shown for 
+the  very  first time to buyers.   This machine is a  mean  beast 
+capable  of  many  things  and if all  the  rumours  are  correct 
+programmers, users, demo crews can expect to see some good things 
+appearing for it soon.   So on a basic tone here are a few things 
+about it.  It has :-
+
+          32-bit Motorola 68030 ,   } These 2 processors run
+          24-bit Motorola DSP56001 ,} in parallel with each other.
+
+          1.44Mb HD Disk Drive,
+          4Mb Smart Card Feature,
+
+          Atari Jaguar Technology,
+          Multi-Tasking with ease,                
+
+          32-bit Graphics Display and chips,
+          10-channel Stereo DMA Sound,
+
+          Hardware scrolling in ALL directions,
+          Maybe a Barrel-Shifting Blitter Chip,
+          
+          TOS 3 (maybe),
+          All TT Resolutions,
+          A very low sale price (especially for the chips),
+
+          2 Independent Audio Processors,
+          
+          Special Graphics functions,
+
+          Adaptions for CD-ROMS already built in,
+
+                    The list is endless.
+
+     Firstly onto the Processors.  The 32-bit M68030 will run in
+parallel with the MDSP56001.  Both will run together with the DSP56001
+handling nearly all calculations while the M68030 handles the output.
+But, that's slightly strange isn't it ?  All outputs now have independent
+processors.  One for sound , one for graphics.  So what does this 
+DSP56001 actually do ?   
+
+     It's simple , the DSP56001 stands for Digital Signal Processor and
+this moves at a whacking rate of 27Mhz and internally at 13.5MIPs,
+( Million Instructions Per second ), providing you with fast calculations
+all the time.  So you can let the DSP56001 work on some heavy job , say
+a fractal landscape, while the M68030 handled the plane, 3D, setting up
+the sound and graphics.  Of course the MDSP56001 also handles the new
+32-bit graphics as that needs sheer processing power to manipulate it.
+
+     Not only that, but to stop confusion the DSP56001 has it's OWN
+internal command set, just like the M68030.  This set contains 
+instructions for parallel processing and massive number manipulation.
+€
+     Next on the list is Graphics.  The Falcon implements 32-bit graphics
+which basically means a LOT of COLOUR.  Millions of colours to be precise
+so the DSP56001 controls the maths involved with colouring.  Basically,
+32-bit means :
+
+     ANY PIXEL ON SCREEN CAN BE ANY COLOUR!  NO PALETTE LIMITATIONS!
+
+     And with the TT resolutions and the Falcons new resolutions games,
+demos, art packages are going to be taken to a new high.  Imagine Chaos
+Inc. of Delta Force making a Falcon version of NEOChrome Master ?? Or a
+Falcon version of Punish your Machine (complete with 10-Channel sound).
+     
+     The 1.44Mb High Density Disk Drive will also cause a few stirrs,
+with this the demo crews could even start releasing 2 HD Disk Demos. That
+on a normal ST would span 4 Disks ! 
+
+     The 4Mb Smart Cards are cards that enable you to store information
+on a set of chips contained on the card.  They are the size of credit 
+cards and can be plugged in and removed excactly like a cartridge.  No
+details on price as yet.
+
+     Of course, this wouldn't have been done if Atari hadn't commissioned
+the Jaguar.  As technology and hardware from the Jaguar have been used.
+The Jaguar incidentally is still going to be released.
+
+     Multi-Tasking will be available on GEM allowing you to switch tasks,
+set prioritys etc.  This will blow the lid, hopefully, off that PC 
+multi-tasking environment Windows 3.1.
+
+     Hardware Scrolling is also implemented with ease and together with
+the Blitter, mass sprites and landscapes will be made with ease and best
+of all the 32-bit graphics means nice sprites.  Unless the programmers
+a lazy programmer and the artists are crap.
+
+     The blitter ... Controversial issue this !  When the STE was 
+released NCE released a smear campaign against it getting programmers 
+to say that they thought the blitter was crap because it didn't do 
+Barrel-shifting.  Let me say one thing.  Barrel shifting is basically
+easy to do in software.  Atari may have give in to NCE (and others) and
+they might have placed a Barrel-Shifting Blitter in.  I would be nice if
+they have but if it didn't ... who cares ???
+
+     TOS version 3 maybe in but again this is only a rumour.
+
+     The TT resolutions as well as Falcon resolutions looks like that
+might stay.  If it does serious DTP is taken to a new high on a Mono
+1000+ pixels by 900+ pixels.  But there's more ! The falcon has a total
+of 30 SCREEN MODES !  Imagine trying to access that from destktop's
+Set Preferences ! No news as yet on the resolutions.
+
+     The Price ??? Only, according to Atari, œ550.
+
+     I think everybody in the worlds going to buy this baby.  Its
+€     feature blow everything else off the planet (and I'm a dedicated
+     PC Owner!) This machine WILL put the lid on the Amiga Coffin and
+     for the price it beats everything just on specs for œ's .
+
+     Its rivals are the Commodore Amiga A800 (boo hiss!),
+                        IBM 486DX PC with SVGA (of course),
+                        SUN SPARC Workstations ( who have DSP56001 chips).
+
+                         The Amiga is going to cost the same as the 
+                         Falcon.  But Comodore has to attempt a rival.
+
+                         The other 2 computers cost a LOT !  I spent
+                         œ1000 on a 386DX with Hard Disk etc and VGA
+                         , I only wish the Falcon was released.
+
+     Of course it has all singing, all dancing graphics and sound chips,
+     to do fabby things such as scaling etc but thats a wait and see
+     until the machines released on August 21st 1992.
+
+     Not only that but companies have been working on hardware and
+     software for the Falcon and a CD-ROM drive is ready as is numerous
+     graphics packages for 32-bit, People are updating their software
+     to run with the machines.  And all programs use the DSP56001 for
+     data processing providing no slow-downs.
+
+     Memory is expandable to 16Mb and it still has it's MIDI ports.
+     It's in the same ST/STE casing except the label is different (of
+     course).
+
+     I'm buying one .... I think you should do the same !
+
+                                   Peter Flynn,
+                                     (SoftFront UK),
+
+     Contact address is :  Peter Flynn,
+                           33 Mitchell Street,
+                              Hartlepool,
+                              Cleveland,
+                              TS26 9EZ

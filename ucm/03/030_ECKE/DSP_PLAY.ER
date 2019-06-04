@@ -1,0 +1,51 @@
+ 
+                             ===================
+                             DSP-Backgroundmusic
+                             ===================
+
+Auf der  DCC II  in Dresden  bekam  ich  endlich den  genialen  DSP-Player  von
+bITmASTER of BSW ( Geheiligt sei sein Name. Sein Code komme - auf Disk als auch
+auf Platte... ...naja, danke  jedenfalls. ). Sofort  wurde  mir abverlangt, den
+Player im  Hintergrund laufen  zu lassen, was Dank bITmASTERs sauberer Program-
+mierung kein Problem war. Und nun habe  ich eine Version, die als Acc lÑuft und
+bei der man die Musik auch wieder abschalten kann. Die Features ( bzw. nicht zu
+umgehenden TOS-Probleme ) in KÅrze:
+
+-  lÑuft natÅrlich nur auf Falcon
+
+-  ich mag 3D-Buttons, Farbdialoge  und Icons ( na gut G_BITBLK-Objekte ), auch
+   auf den Volume-Slider bin ich stolz, saû ich 'nen ganzen Tag dran
+
+-  manchmal kann es Probleme geben ( Debugger hÑngen sich mit hoher Wahrschein-
+   lichkeit auf, TurboAss legt meistens(?) die  Musik lahm - danach geht's aber
+   weiter ), da der Player  Timer B braucht. Und dann klemmt hin und wieder ir-
+   gendwie meine Tastatur... Den Effekt sollten Benutzer von Ñlteren Turboéssen
+   kennen, tritt aber nun auch anderswo auf ( z.B. Desktop denkt ESC-Taste dau-
+   ergedrÅckt - da hilft nur alle Fenster mit Maus schlieûen und neu îffnen. Es
+   ist wohl  ein TOS-Bug, da die  Mausroutinen recht  zeitkritisch sind und bei
+   hÑufigen  fremden Interrupts  die Mauspakete  nur halb durchkommen. Und  die
+   kînnen dann auch mal wie die ESC-Taste [ Code $1 ] aussehen... )
+   Und wenn jemand im DSP rumpfuschen will -> vorher natÅrlich Musik aus - wenn
+   ein Programm  lÑuft, kann meistens kein  lÑngeres Modul gespielt werden, als
+   beim Programmstart  schon lief -> je sauberer das  Programm, desto hîher die
+   Chance, daû es doch klappt - von Acc's angeforderter Speicher wird beim Pro-
+   grammende vom TOS freigegeben, also werden wÑhrend des Programmlaufs gestar-
+   tete Module  am Programmende  abgeschaltet --> wollte  ich Ñndern, geht aber
+   nicht so einfach,da sich plîtzlich die Desktop-Auflîsung nicht mehr wechseln
+   lieû
+
+-  der dazu nîtige Mechanismus hÑngt sich in den GEMDOS-Vektor 258 ein und ver-
+   schwindet erst, wenn das Desktop terminiert ( Auflîsungswechsel ). Hier ver-
+   abschiedet  sich auch  das von mir  fÅr den DSP-Player  zusammengepfriemelte
+   Mainvolume aus dem System. Eigentlich sollte es hier kaum Probleme geben, da
+   1. kaum Programme  in dem Vektor  rumspielen und 2. ich  versuchte sauber zu
+   programmieren...
+
+-	bITmASTER hat auch das  Falcon-Volume-Control ( nicht mit  meinem eigenen im
+   Acc zu  verwechseln! ) sauber  programmiert. énderungen  wÑhrend  die  Musik
+   spielt werden am Ende rÅckgÑngig gemacht, sorry...
+
+Tja, das war's. DSP_PLAY.ACC in's  Wurzelverzeichnis  kopieren und  bis zum ab-
+rîcheln TNB-Mod's hîren...
+
+                                                     Apache of tnb / 26.03.1994

@@ -1,0 +1,141 @@
+
+TURBO PASCAL PROGRAMMING FOR BEGINNERS:
+
+If you are a profesional turbo pascal programmer,don't bother
+to read this! However, if you are a novice,this may be useful
+to you.It's not difficult to program in pascal once you get to
+know a little more about it, especially the commands and their
+functions.
+There are different versions of turbo pascal,I'm not sure if
+all the commands of version 2.00 (the one I've got) will work 
+on all other versions aswell.But now,to the programming:
+
+
+At the beginning of every program you have give your program a
+name.
+
+e.g.: Program mathematics;     or:   Program whatever;
+
+The name of the prog. has to be one word only!(And don't forget
+the semicolon!!)
+ 
+As pascal is most suitable for maths ,physics or even chemistry,
+I will later on show you a short and really easy prog to begin
+with.
+
+The second step is to define the variables you are going to use
+and whether they are real or integer.
+
+e.g.: VAR  a,b,c : real;     or:  VAR  a,b,c : integer;
+
+If you have chosen integer variables, you can't later on type in 
+numbers like 1.67483 or - 6 ... .
+(Again, don't forget to put the semicolon after each line! Only 
+on a few occasions you leave it out.)
+
+Now you type " begin " and you can start with the main program.
+
+
+For example,you want to create a maths prog with sums.
+Have a look at this:
+
+Program sum;
+VAR A,B,C : real;
+
+Begin
+writeln(' *** SUM *** ');
+writeln;
+writeln(' Type in a number for A: ');   
+read(A);                                
+writeln(' Type in a number for B: ');
+read(B);
+C:= A+B;
+writeln;
+writeln(' ******  RESULTS  ****** ');
+writeln;
+writeln(' C = ',C:6:2);
+end.
+
+
+" writeln" means the same thing as "print".That what's in the in-
+verted commas is printed on the screen.(Easy,huh?)
+"read" means ... you know what. It reads the number you have chosen.
+The thing at the end "writeln(' C=',C:6:2);" means that the result
+of the sum can be as high as 6 numbers before the comma and two be-
+hind.The "2" is only used for real numbers.Anyhow,it doesn't really
+matter.(The result in this example cannot be higher than 999999.99).
+
+Note that if you type" writeln; " only you leave a space between
+the lines .
+
+At the end of each program you always have to put the three letter
+word "end." at the end,not forgetting the little black dot.
+
+Another little prog:
+
+Program Guess;
+Var a : integer;
+
+Begin
+writeln(' Can you guess my number? ');
+writeln;
+writeln(' What do you think my number is? (Between 1 and 50!)');
+read(a);
+If a=45 then
+writeln(' You have guessed it !!!');
+If a<45 then
+writeln(' You are a loser ');
+If a>45 then
+writeln(' You are a loser ');
+end.
+
+
+This should be easy to understand.This prog allows you to enter
+a number between 1 and 50 .If the number you have chosen
+is wrong, the computer prints " You are a loser " otherwise
+the words " You have guessed it !!! " appears on the screen.
+
+*******************************************************************
+
+If you have got a problem (maybe in physics) to solve ,
+eg.: A car travels at 50 mph .The road is 5 miles. How long does
+     it take?
+
+     In this example you need three variables. V for velocity,
+     t for time and l for the length of the road.
+
+     THE PROGRAM LOOKS LIKE THIS:
+     
+     Program physics;
+     Var v,t,l : real;
+
+     Begin
+     writeln('  ********  PHYSICS  ******** ');
+     writeln;
+     writeln('  Speed of the car: ');
+     read(v);
+     writeln;
+     writeln('  How long is the road? ');
+     read(t);
+     t:=l/v;
+     writeln('  The car travels for ',t:6:2'seconds');
+     end.
+
+
+IF YOU NEED TO HAVE A SQUAREROOT OF A NUMBER SIMPLY WRITE:
+ 
+     A:= SQRT(B+C);
+
+Try to write a program like this, just with different variables
+and terms.
+
+e.g: You want to know the volume of a cube or a tennisball...
+     Write a prog, that when it's finished you just type in
+     the sides of a cube or the radius of your tennisball and
+     the computer tells you its volume!
+
+I guess that's about it for this time I think! 
+
+
+                                        JAN
+   

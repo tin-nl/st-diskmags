@@ -1,0 +1,160 @@
+                                HARDWARE-NEWS
+                               -=============-
+ 
+Nachdem von ATARI selbst  bis jetzt nix weiter in Sachen TOS-Rechnern unternom-
+men wurde und ein Falcon 040, der insbesondere von Anwendern sehnsÅchtig erwar-
+tet wurde,in weite Ferne gerÅckt ist, rumorte es im deutschsprachigen Raum, dem
+Hort der Atari-Anwender, gewaltig.
+Die Ergebnisse  dieser geschÑftigen Do-it-Yourself-Leute  kann man nun  in Form
+von zwei TOS-kompatiblen  öber-Rechnern und  einer PC-Steckkarte bewundern, die
+jeden stinknormalen PC in einen Atari ST verwandelt.
+Doch kommen wir erst zu den eigenstÑndigen Rechnern...
+
+MEDUSA T40
+----------
+ 
+Dieses  Rechner-Monstrum  ist wie ihr  Konkurrent, der EAGLE, fÅr die Power-An-
+beter gedacht  und entsprechend  lesen sich die  Hardware-Daten, aber  auch der
+Preis...
+
+Prozessor       : Motorola 68040
+Taktfrequenz    : 64 MHz
+RAM             : 8 MB auf 2 PS/2-SIMM's
+Massenspeicher  : 3,5" 1,44 MB Floppy & Festplatte
+Grafik          : ET 4000 Colormaster 12+ ISA Grafik-Karte
+Mainboard       : enthÑlt Prozessor, RAM, ROM und 6 Slots fÅr  Erweiterungskar-
+                  ten. Von Haus aus ist die ST/IO-Karte  dabei. Optional kînnen
+                  noch eine VME-Bus-Karte und eine SCSI-Karte geliefert werden.
+                  Desweiteren ist eine Minibus-Karte erhÑltlich.
+ST/IO-Karte     : mit sÑmtlichen Atari-spezifischen Chips
+                  (entspricht einem vollaufgerÅsteten MegaST ohne ROM-Port aber
+                  mit IDE-Festplatten-Anschluû)
+VME-Bus-Karte   : mit VME-Bus, sowie ROM- und DMA-Port ausgerÅstet
+SCSI-Karte      : mit TT-kompatiblem SCSI-1-Port  fÅr CD-ROM, Festplatte, Farb-
+                  scanner
+sonstiges       : TT-Tastatur und Maus,Mini- oder Bigtower-GehÑuse mit Netzteil
+Software        : NVDI, MultiTOS und SCSI-Tools
+Preis           : ca. 5.700 DM
+
+Optional sind auûerdem noch mîglich:
+
+- 16 MB RAM auf 2 PS/2-SIMM's
+- 32 MB RAM auf 2 PS/2-SIMM's
+- 3,5" 2,88 MB Floppy
+
+Hersteller: Medusa Computer Systems
+            (irgendwo in der Schweiz...)
+
+Aufgrund dessen, daû die MEDUSA  in diversen Anwendungen  3 bis 5 mal schneller
+zu Werke  geht als  ein Atari TT, ist sie  fÅr solcherlei Anwendungen  wie CAD,
+Grafik-Verarbeitung, DTP  und  rechenintensive Arbeiten ( Raytracing ) geradezu
+prÑdestiniert. Allerdings kann diese UngetÅm von Rechner nur etwas mit wirklich
+sauber programmierten Anwendungen anfangen.
+Fest steht allerdings, daû diese Maschine  lediglich als  Workstation anzusehen
+ist und dank des  saftigen Preises wohl  nix fÅr den Privat-Anwender sein wird.
+Trotz allem  stellt dieser Rechner derzeit  das Flagschiff der  TOS-kompatiblen
+Rechner dar.
+
+
+EAGLE 030
+---------
+
+Etwas  jÅnger als die  Medusa ist der EAGLE  aus deutschen  Landen, der auf den
+schweizer öberflieger angesetzt wurde. Zwar sind die  technischen Daten derzeit
+noch nicht ganz so brechend  wie die der MEDUSA, aber dafÅr  ist der EAGLE auch
+nicht so teuer wie sein schweizer Konkurrent. Sobald aber die 68040er-Karte dem
+EAGLE auf die  SprÅnge helfen  kann, die derzeit  noch in der  Entwicklung ist,
+wird dem Rechner  aus dem Land der Milkakuh  und LîcherkÑse wohl doch etwas die
+Luft knapp werden... Momentan arbeitet noch ein 68030er in dem EAGLE,allerdings
+kein kastrierter wie im Falcon...
+Die nackten Daten fÅr ein Grundsystem:
+
+Prozessor      : Motorola 68030 (spÑter 68040 oder 68060 > Upgrade)
+Taktfrequenz   : 32 MHz (spÑter 64 MHz > Upgrade)
+Coprozessor    : Motorola 68882-FPU
+RAM            : 4 MB ST-RAM
+Massenspeicher : 3,5" 1,44 MB Floppy & Festplatte
+Grafik         : 640*480*16 bis 1280*960*2
+Mainboard      : enthÑlt "Eagle-Channel"-Bussystem mit 8 Slots fÅr  die Prozes-
+                 sor-Karte  und eine  RAM-Karte mit  Standart-SIMM-Sockel. Des-
+                 weiteren wird eine VME-Bus-Karte mitgeliefert.
+Schnittstellen : 4 * seriell, 2 * parallel, LAN-Port, MIDI-Schnittstelle,
+                 ACSI- & SCSI-Port (beide TT-kompatibel), ROM-Port.
+sonstiges      : Tastatur (TT oder MF2), GehÑuse, Maus
+Betriebssystem : TOS 3.06
+Preis          : Grundversion 3.500 DM incl. Upgrade auf 68040er-Karte
+
+Hersteller     : GE-Soft
+                 Landgrafenstraûe 37-39
+                 53842 Troisdorf
+                 Tel: 02241-406492
+
+Optional sind mîglich:
+ 
+- bis 256 MB TT-RAM
+- bis  14 MB ST-RAM (32 Bit breit)
+- Slot-Sockel zur Erweiterung der Einsteck-Slots auf 12
+- das Aufstecken von anderen Prozessor-Typen auf den Eagle-Bus
+ 
+Der EAGLE ist offener konzipiert  als die MEDUSA. Er  ist ebenfall  Åber dem TT
+anzusiedeln und wohl auch als Alternative zu ihm anzusehen. Er ist zu den meis-
+ten gÑngigen Anwendungen  kompatibel. FÅr Leute mit  Geschwindigkeitsrausch ist
+er in  der momentanen  Version wohl  noch etwas "langsam" aber  auch das Ñndert
+sich sicher in naher Zukunft  und der Kampf der  Titanen kann  beginnen ( EAGLE
+kontra MEDUSA). Auch bin ich mir  sicher, daû durch diese extremen Hardwareein-
+sÑtze  doch wieder etwas  Boden zu den  anderen Systemen  gut gemacht  wird und
+so mancher Mac  oder PC angesichts  solcher massiver  Rechenpower  beschÑmt zur
+Seite schaut...
+
+
+JANUS
+-----
+
+Tja. Der JANUS ist kein Konkurrent von EAGLE oder MEDUSA  sondern eher dazu ge-
+macht, den armen DOS-Besitzern mal vorzufÅhren, was ein richtiger Computer ist.
+Quatsch... :-)
+Beim JANUS  handelt es sich um  eine Steckkarte fÅr den PC,um zwei Rechner-Sys-
+teme  Hardware-mÑûig in einem zu vereinen. Dies ist  kein simpler Emulator son-
+dern ein Rechner im Rechner...
+Die Daten einer JANUS-Karte sehen folgendermaûen aus:
+
+Prozessor      : Motorola 68000
+Taktfrequenz   : 16 MHz
+RAM            : 1 MB (2 SIMM-SteckplÑtze)
+Grafik         : VGA-Karte
+Betriebssystem : TOS 2.06 (2 ROM-Sockel)
+Schnittstelle  : ISA-Bus (auch fÅr EISA und PCI-Systeme geeignet)
+ 
+Optional :
+
+- 4 MB RAM
+- 16 MB RAM
+- Grafik-Karten nach VESA-Standart
+
+Da JANUS  ansonsten die  PC-Hardware-Komponeneten nutzt (Floppy,Festplatte...),
+ist auûer der JANUS-Karte nix weiter nîtig, um mit dem ATARI im PC zu arbeiten.
+Dabei ist dieses  System sogar extrem  kompatibler als  Software-Emulatoren und
+da das Teil  auch noch bis  zu 25 mal schneller  als ein Standart-ST  durch die
+Gegend rammelt ist  es eine sehr  akzeptable Mîglichkeit sich statt einem alten
+ST lediglich die Karte  zu kaufen obwohl diese  derzeit noch stolze 800 DM kos-
+tet... Ein  weiterer Vorteil besteht  darin, daû Leute, die zwangsweise auf die
+DOSe umsteigen mÅssen (aus beruflichen GrÅnden oder so) ihren alten Atari nicht
+ganz missen mÅssen und ihre Soft behalten kînnen um sie auf  dem Mischling ein-
+zusetzen...
+öbrigens  werden von FISCHER COMPUTER SYSTEME  inzwischen fertig aufgebaute so-
+genannte POWER ATARI's  vertrieben, die auf der Janus-Karte  basieren und einem
+das Wasser in die Augen treiben... Das  Angebot reicht von einem 486/DX66 incl.
+Janus 16/32 MHz mit  ettlichem Schnick-Schnack fÅr knapp 3.000 DM bis  zum Pen-
+tium mit 170 MHz...
+
+Als letztes sei  an dieser Stelle noch  erwÑhnt, daû sich weit  am Horizont be-
+reits ein  neuer öberflieger  ankÅndigt! Die MEDUSA T60 (!!!)... Und  was diese
+Maschine dann  machen wird ist  ja wohl klar... schneller geht's dann wohl vor-
+erst nimmer.....
+Also! Dann, auf ein friedliches Zusammenleben der Atari's mit ihren HalbbrÅdern
+und Schwestern und auf das die Familie der TOS-User grîûer werde...
+
+-------------------------------------------------------------------------------
+                                                                 Moondog of tnb
+-------------------------------------------------------------------------------
+

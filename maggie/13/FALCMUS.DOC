@@ -1,0 +1,141 @@
+0660103030566
+9[....................................................]
+Ä
+ÅTheLow-DownoncheapDirect-to-Disksoundrecording
+ÑWinRec1.3ÄvsÑMusicomÄ
+
+ÑObligatorybackgroundbit..Ä
+
+Forafewbriefmomentsin1987,Audiosamplingofreal-world
+sounds,asopposedtochip-generatedsoundshadrealrespect..
+EveryonewasamazedatthoseearlySTgames,givingafullÑfifteen
+secondsÄofrealmusic,asprogrammersusedtolimitedmachine
+memoryonthe8-bitsstruggledtofindwaystofillthe,then
+cavernous360kilobytesofdisk-space..Samplingwasquickand
+easy,andhadmassivenoveltypotentialtosetthenewbreedof
+16-bitsuper-homecomputersapartfromtherest..Afterthose
+earlytriumphantdays,thingsgotabitmoretricky..
+
+Itwasclearthatwithoutextrainvestmentinnewhardware,the
+upperlimitsofthisnewtechniquehadbeenalreadyreached..To
+getanymeaningfulquality,thememoryoverheadon512kmachines
+becameverypainfulveryquickly,theST'srathermakeshift
+soundchipwasnotreallyintendedtohandlereal-worldaudio,and
+lackedessentialfilteringandadjustmenthardware.Samplingdied
+asanoveltyitemveryquickly,apartfromsomebravedemocoders
+withlargerthannormalmachinememories..Programmerssoonfound
+waystofillthesparediskspace,andthenaskformore..
+
+Samplingthenhadaslightly'sad'imagetoit,usuallyasahome-
+madecracklylow-clarityversionofafavouritesongwhichwould
+abruptlycut-outinmid-play...Lackofmemory...Alternative
+methodsofgettingbettersoundontotheSTtookapagefromthe
+Amigabook,andmulti-tracksoundmodulesusinglotsofsmall
+instrumentsamplesbecamepopular...
+
+Latterly,extrahardwaresuchasAVR'sÑReplay16Äbecameavailable,
+allowingmoreprofessionalqualitysoundontheSTataprice,but
+itwasonlywiththelaunchoftheFalcon,withit'sgreatly
+improvedaudiopotential,thatseriousthoughtwasgiventoanew
+generationofsampling/recordingsoftware...TheFalconhaving
+morememory,ausefullybuiltinharddisk(*),andDigitalSignal
+processorlinkedtoDACandADChardwarewithportstogiveaccess
+totheoutsideworld..
+
+(*)WeareNOTtalkingaboutthebasemodelhere!!!
+
+Directtoharddiskrecordingbecameinevitable,tosaytheleast.
+
+ÑThatbitover...Ä
+
+MostprogramsfordirecttoH/Drecordingareintendedfor
+professionalstudiouse,tendtobeoverwhelminglymulti-track,
+andcostupwardsofú150..Therearesomecheaperandsimpler
+contendersforthehome-user'sdisk-space,thetwopre-eminent
+beingÅWinRecÄandÅMusicomÄ....
+
+ÅWinRecÄisaPD/sharewareproduct,presentlyatversion1.3,using
+astandardifslightlyenhancedGEMinterface/menusystem..
+ÅMusicomÄisacommercialproductretailingataroundú45,usinga
+3-D'sculpted'lookinterface.Bothrequirehigherscreen
+resolutionstoruneffectively(youcangetawaywith640x200
+withWinRec,butitlookscrampedandmessy.)
+Å
+WinRecÄhasacontrolsystemthatfavourspre-settingoptions
+beforerecording..Youclickonoptionmenusforsuchthingsas
+DSPeffects(loadedinseparately)frequencykhzrange,file
+format,etc,althoughyoucanadjusttheseoutsideofwhena
+samplefileisplaying..ÅMusicomÄisstrongerinthisarea,
+allowingaccesstoslidercontrolsforDSPeffectsinreal-timein
+certainsituations..
+
+ÅWinRecÄispreferableifyouwanttobeabletorecordmoreon
+limiteddisk-space,asithasthreefileformats,AVR16-bit,its
+ownproprietryDVS16-Bitformat,andaversionofDVSusingthe
+DSP(*)forreal-timecompression/decompression,givingasaving
+of50%overtheequivalentuncompressedsample..Inthiscase,a
+fourorfiveminutesongat25khz16-bitresolutioncan
+comfortablyfitonone15megpartition..Thisputsyouina
+positiontoseriouslyimpresspeoplewhenasongplaysthrough,
+andÑfadesoutandfinishesnormallyÄÑlikeonarecord,y'knowÄ.Å
+MusicomÄisrestrictedtoAVRformat,andlacksanykindofreal-
+timecompressionalthoughitdoeshavetheoptionofeightbit
+monoorstereosamplingifspaceisaproblem,orifyouwantto
+recordDSP-alteredsamplesfortheST...
+
+(*)Sorry,NOTusingtheDSPforreal-timecompression!Thisis
+doneviatheCPUatthemoment..Shouldbemorecarefulinreading
+DOCfilesinfuture...
+
+ÅWinRecÄhasawiderangeofDSPeffects,butthesearenon-
+adjustablewhenrecordingorplayingback,andcannotbeusedwith
+thecompressionoptionatthesametime.ÅMusicomÄhasasmaller
+rangeofeffects,butthesecanbechangedinreal-timeifyouare
+playingthroughtheFalcon,ratherthanrecordingtoHarddisk.
+YoucouldeffectivelyusetheFalconasanon-recordingeffects
+module,anditmaywellbethatanupdateofMusicomshouldhave
+moreDSPeffectsforthispurpose..
+Å
+ÄNeitherpackageallowsyoutoeditorchangesamplesonce
+recorded,althoughÅMusicom2Ä,inprogressatthemomentmaywell
+changethis..
+
+Itreallyisdowntopersonalpreferences,butIpreferÅWinRec'sÄ
+'numerical'methodofpresentingvitalinformation,forexample,
+howmuchhard-diskspaceleft-intermsofsecondsofplaying-
+timeatagivensoundresolution.ÅMusicom'sÄgraphicalmethodusing
+indicatorbarsforelapsedrecordingtimeistoovagueformy
+taste..
+
+Bothgiveverygoodresultsatthehigherendofsampling,
+althoughitisharder(onmystereoatleast)togettheoptimum
+recordinglevelforÅWinRecÄ,whichalsohasamoreprominent
+annoyingmainshuminanyquietbitsofyourrecording(again,
+thismaybedowntoequipment,itmaybeanideatouseaportable
+CD/tapeplayerandavoidmains-drivenHi-Fialtogether..)
+
+Noveltyitems,ÅWinRecÄfeaturesagraphicalspectrumanalyserwhen
+recording,andletsyou'fast-forward'whenplayingback(altering
+thekhzresolutionwhenplayingbackcandothesamething..)
+ÅWinRecÄcanbeusedaspartofamultitaskingsystem,althoughit
+doesconsumeuptotwo-thirdsofavailableCPUtime,soÑBeee
+Carefuloutthere..ÄÅMusicomÄfeaturesit'sownsoftwaregraphic
+Equaliser,andthedreadedÑkaraokeÄoptionwhichletsyousuppress
+thevocalpartofarecording(afterabitoftrialanderror.)
+
+Thesetwoprogramshavedifferentstrengths,anditisdifficult
+torecommendoneovertheother...ÅWinRecÄisbetterforprecise
+recording,inconjunctionwithapause-buttonequippedCDplayer,
+itislessvaguethanÅMusicomÄ,whereyouareunsureifyoureally
+didpressthemousebuttontostartrecordingintime..ÅMusicomÄis
+greatforreal-timetomfoolerywithDSPeffectsandamicrophone
+though..Difficult,isn'tit...
+
+Itallcomesdowntomoney(orlacktherof..)Ifyouhavecashto
+spare,getboth..ifyouarestuckforfunds,goforÅWinRec,Äwhich
+isbloodygoodforasharewareprogram..
+
+(Updatesinthepipeline:-ÅMusicom2Ä,andÅWinBiteÄ...)
+
+(C)CIH-21stAug'93...
+

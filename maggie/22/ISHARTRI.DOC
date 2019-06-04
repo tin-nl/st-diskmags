@@ -1,0 +1,178 @@
+0660103030571
+9[.......................................................]
+
+Borland,            258  
+Brooks,  Frederick, 178,209,249 
+Brown, Jeff,        164,256-57,271-73  
+Bugs  in  NT,       83,138-41,158,171,172,198-200,218,229-30,238-41,
+                    248-55,259-61,265-74"
+
+Extract of the index to the book,"Show-Stopper! The Breakneck Race 
+To Create Windows NT And The Next Generation At Microsoft"  
+by G. Pascal Zachary
+
+
+
+                  Eddies' Cat Un-Interactive presents....
+
+…The Ishar Trilogy Reviewed.
+
+(Which turned into a bit of a rant at the end, I'm afraid.)
+
+France has a  rather  dubious  reputation  with  games  as  far as I'm
+concerned. No one  can  doubt  that  French  games  have  a marvellous
+graphical quality, but the  trouble  is,  they  often put the graphics
+first and gameplay second.
+
+In English, we have a word  for  this- "Psygnosis". However, I'd heard
+good things about the Ishar series of adventures, and as 16/32 Systems
+was selling Ishar 1,2 and 3 combined  for the rather reasonable sum of
+15 quid at the Brum Atari  show,  I  decided  to  buy it. So are these
+games worth œ15? Yes, I suppose so, but there are grave reservations.
+
+All three games proved themselves to  be  rather humdrum in play. Call
+me hyper-critical (as most people do) but  I was not too impressed. As
+far as I'm concerned,  one  of  the  best  ever  ST  games was Dungeon
+Master, and I measure every  RPG  game  against this. The problem with
+the Ishar games is, even  though  they  were  made years after Dungeon
+Master, they have not learnt its' lessons.
+
+Dungeon Master created a  rich  involving  enviroment,  packed full of
+puzzles held together by a tight  sense  of  purpose. It was almost an
+object lesson in good  game  design.  But  in  Ishar  you just tend to
+wander around wondering what's going  on,  or even worse, going around
+in circles killing endlessly regenerating monsters to get money to buy
+a better sword.
+
+All three games are more or less  the same- you must explore a fantasy
+kingdom to overthrow an evil dictator  and return the land to harmony.
+Gameplay consists of  wandering  around  mazes  disguised  as towns or
+mountain trails and spasmodically clicking  on "fight" buttons to kill
+some cardboard-cutout monsters. These games also feature extensive use
+of the old chesnut "take object  A  to  location B and earn reward" to
+pass for involving puzzles. The main differences between the games are
+that Ishar 2 has a much better  user interface than Ishar 1, and Ishar
+3 uses digitised graphics.
+
+In the manual provided it is  explained  that Ishar means "Unknown" in
+the Elven tongue, but I suspect  it  actually means "Disk access". You
+see, in the land of Ishar the  entire  kingdom has been placed under a
+curse of  constant  disk  accessing  and  swapping,  making  half  the
+challenge of these games putting  up  with  all  of this. Worst of the
+bunch is Ishar 3. Every time you go  into a building, you have to swap
+disks and typically wait 30-40  seconds,  the  same  goes for when you
+leave a building too. And  all  you  get  for  this  is a picture of a
+shopkeeper and a sampled tune.
+
+So.... a period  of  waiting  with  not  too  much  at  the  end of it
+..hmmm... it seems Ishar  also  means  "World  Wide  Web" in the Elven
+tongue too.... I suppose the problem  would  be reduced by running the
+games off a hard disk (which you can do in all three), but on a floppy
+disk, I'd say about 30% of the  time playing the game will be consumed
+by disk accessing.
+
+The other big thing that  lessens  these  games  in  my view, are that
+there are lots of conceptual shortcuts  taken in the gameplay. To give
+an example, monsters turn  up  at  random,  literally appearing before
+you. Objects held by a slain  character  vanish into thin air when you
+move from where  that  member  of  the  party  was  killed. Non-player
+characters don't move about independently etc.  Also I don't think the
+first-person view system works  well  in  open  areas, basically, it's
+like wearing blinkers, there is no peripheral vision (you can only see
+straight ahead and not out of the corner of your eye). This works well
+when in a confined space like a dungeon, but on an open plain you tend
+to wander about  missing  stuff  that  you  can't  see  because  it is
+diagonally ahead of you.
+
+Oh yeah, there's  also  some  bugs  too:
+
+Ishar  1: Sometimes after an animation frame, parts of the screen that
+should be restored are not, i.e. buttons do not return to  normal, and
+werewolves seem to sprout two heads. Occasionally the game locks up on
+a disk swap when entering Ewingyl village (rightmost town on the map).
+Now  and again parts  of the view display  appear in the  wrong place, 
+also there's a slight glitch in double-buffered screen display routine
+caused  by  not  fully  clearing  out  the  data  register  used  when 
+translating  the address  of screen  RAM into  the  hardware  register
+format, which is present in all three games.
+
+Ishar 2:  Occasionally some  slight  corruption  of  player  panels if
+clicked on during fighting. One time  the  game locked up, then bombed
+out during a fight with some  guards  by  the bank when a party member
+was near death and I stepped back out of the way.
+
+Ishar 3: Palette splitting  particulary  wobbly.  Very nasty bug where
+mouse buttons lock up and only directional keys work, if during a disk
+swap the game requests another disk  and  won't  wait for you to press
+Return, this means the bug has activated. Only happens very rarely, so
+save your game after doing anything  significant, and before you enter
+another building.
+
+ALL MOANS IS IT? Okay, so how  could these games be improved? I'd like
+to see combat with monsters that was more like a beat'em'up instead of
+sequential button clicking. We could  have characters that moved about
+independently and talked to each  other.  Shops  where you can sell as
+well as buy. The designers  seem  to  have  thought, "bigger game area
+equals better game", not so, all this means is more tedious wandering.
+
+What's important in games is not  the  physical  size of the game area
+but the depth of interaction.  To  use  a  strange analogy, the design
+philosophy behind Ishar is like trying  to increase the value of money
+by making coins bigger.
+
+RECOMMENDED ALTERNATIVES  There are  much  better  games than Ishar in
+this genre. Try Dungeon  Master  &  Chaos  Strikes  Back or Captive or
+Bloodwych. 16/32 are selling  old  and  second  hand  ST games at good
+prices so have a word with them if you're interested.
+
+AND HERE IT ALL DESCENDS INTO A  RANT....  Before I finish, the manual
+for these games inspired  me  to  write  a  few thoughts about piracy,
+here's what's printed at  the  back  of  the  Ishar 3 manual:
+
+"COMPUTER PIRACY Many people have  shared in the design  and marketing
+of  the software  program you are using. This development was financed
+by the results of selling previous games.  Illegal copies of  software
+programs lead to a fall in profits, thus making  prices  rise, harming
+the  consumer and  directly threatening  the world of  video games and 
+their  uses (sic). Apart from the fraudulent  sale of  copies which is 
+very severly punished by law, there is a moral aspect to bare (sic) in
+mind - piracy swells the dole queues!"
+
+After playing these games, the impression I  was left with was that if
+I had paid full price for these i.e. 3x œ25= 75 quid, I would be happy
+to see the entire staff of  Simarils  queuing  up  in a very long dole
+queue indeed. In fact I'd  be  feeling  like  learning to speak French
+(with particular emphasis on  swearing)  and  flying  over the channel
+just to tell these clowns just what I thought of them.
+
+The "piracy makes prices rise"  argument  is  total rubbish - when did
+you last see an announcement to the effect that one software house was
+putting its' prices up? Videogame  prices rise purely because software
+houses all get together and hike the  price up every time a new system
+comes out. I remember reading in  ST  Format  a  few years ago a quote
+from a bloke from  Psygnosis,  saying  that  there  must  be a massive
+piracy ring on the ST as there was  a healthy sale of ST magazines but
+a low sale of ST games.
+
+What he completely overlooked was that:
+
+a) Most games are not that much  cop due to  most videogame  companies
+obsession  with  graphics and licences  instead  of  gameplay.
+
+b)  Standardised  pricing cuts  sales  because there's no relationship
+between quality and price,like there is with almost all other consumer
+goods.
+
+c) There is a hell of a lot more you can do with a computer than  just
+play  games.  I,  for instance, never  bought too  many  games  purely 
+because  I'm  more interested in programming.
+
+Rather than squealing about software piracy, which by its' very nature
+cannot be quantified, software houses should be more concered with the
+many millions of people who find videogames  to be of such low quality
+and poor value for money as to  not  bother with them, _this_ is where
+all the lost revenue is-  the  massive  untapped  market of people who
+want affordable playable games, not the  type of consumer the industry
+is currently obsessed with- the daft  schoolboy  who  sees a game as a
+fashion item to show off to his mates.
+

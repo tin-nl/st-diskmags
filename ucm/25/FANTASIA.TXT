@@ -1,0 +1,112 @@
+Û--------------------------------------------------------------------------------
+                           "Fantasia" by Dune
+Û--------------------------------------------------------------------------------
+
+system ... STfm, STe, STEEM, RGB, 512 KB RAM
+
+credits .. code - Chuck, Corbeau, ST Ghost, Frost, Terence, Zerkman
+           gfx  - Mic
+           msx  - Sector One
+
+size ..... one disk
+
+release .. 12/2oo3, first shown on EIL # 3
+
+Û--------------------------------------------------------------------------------
+
+And here  we have another  late release  of an Error In Line demo  and I have to
+admit, I don't know  what parts are changed and which not since I saw it for the
+first  time over a  half year ago. But  now at  least  the subtitle  of the demo
+matches, a winter tale :)
+
+It's again a selfbooting demo disk, one of  the things we knew from the past and
+that are so damn seldom nowadays and so it starts with a little info screen with
+hints about  copying the  demo and so on and then the effect rain starts, a nice
+vector square  is changing the  screen and a  nice chip tune by DMA SC starts to
+play that somehow  sounds like a medley-remix of some old demo tunes so be right
+prepared for some flashback moments :)
+
+The screen turns  violet, another  vector square  appears changing into a little
+Dune logo, a small gelee ball  comes up, bounces on the logo and makes it swing,
+and  then a vector  object flies  over the screen  while a presents logo scrolls
+upwards on the right border and the screen reveals the title logo screen, a very
+colourfull and  wonderfull drawn picture by Mic, using the  advanced features of
+NeoChrome Master to include more colours via raster palette splits. This feature
+was quite seldom used in demos but I remember some other Dune screens using this
+feature as well if I'm right... It isn't that easy to paint that way, I tried it
+long time ago too, but the result was a laugh :)
+Anyway, well done!
+
+We go on with a vector  tunnel, telling  us that the "Dream just goes on"... and
+we get a  cute picture with  some text and a little girl saying "Hi". It goes on
+with some delayed  splines and a vertical Dune logo scrolls upwards on the right
+border again.
+
+We get some  small picture, telling  us that the  following thing is "oldschool"
+and so  it is, a  big 4 plane  sprite Dune logo, that  transforms  into a vector
+square and finally into a small grey vector cube.
+
+{*i FANTASI1.PI1 m 0 20 0 200}
+
+ÛHell, Corbeau knows how to code 3d stuff!
+
+Ofcourse the  next screen should be "newschool" then, as the nice little picture
+tells us, while  a small sprite  is flying over  the screen, and so we get again
+vector cubes, but  texture mapped ones, and not one, two or three, nope, four of
+them, nice textured and quite fast moving. They fly around  on the screen untill
+only one is left, this one zooms in and stops to move and a gouraud shaded torus
+is coming  up, as this one vanished, the cube starts to movem, gets smaller then
+and starts to distort very smooth. He zooms in again, still  disting, and in the
+end we see the cube together with the gouraud shaded torus.
+Surely a  nice effect  even though it is  stretched  a bit too much and the back
+ground colour is really -not- newschool :)
+
+The next screen looks more stylish  then, showing some animated stuff, saying to
+be the inner  machinery of Fantasia, this  screen looks very strange but somehow
+also very cool, like it.
+
+{*i FANTASI2.PI1 m 0 20 0 200}
+
+ÛHum, very stylish thingie!
+
+Then an Atari logo jumps in on the right side of the screen while the rest of it
+gets filled up with a 4 plane rotating zoomer, that falls  obviously back behind
+the one in the winning demo "Posh" by Checkpoint, but still is nice to look at.
+After all is faded away we see a gelee cube flying around that gets stable  then
+and gets mirrored on a vector square in the end, followed by the credits screen,
+that  shows the names  of the heroes (but not all) of  the demo again in  a nice
+raster coloured picture, followed by a little logo for Sector One that deserve a
+special hi here as they were hard involved in that demo again.
+
+We then  see a vector star flying over the  screen that is followed  by some old
+but always  nice effect, interferences, followed  by  another  nice one, as  the
+screen gets sprayed with dots objects in different styles.
+
+This small screens get followed by a  more complex one, showing a turning ground
+on rasters  and a load of  sprites that  jump around and then move in the way as
+the ground  turns around itself. A bit  hard to describe but nice to look at, as
+well as  the next one, a strange  disted background picture, that gets  shown in
+original style after this.
+
+And then we have reached the end of the demo, showing us a nice blue screen with
+a huge info  scroll and small comic sprite fishes swiming over the screen, looks
+very nice. If you now press space the demo starts again...
+
+What a nice show! But... somehow I  have to admit that I was in hope to see even
+more stuff...
+
+ÒFinal words ... Dune did it again, somehow, and again together with the chaps of
+Ò                Sector One even though the main works are now done by themselves
+Ò                in comparison  with "Odd Stuff"... This demo features a big load
+Ò                of different effects, "old school" and "new school", a very nice
+Ò                soundtrack and a bunch of very well done pictures by an old hero
+Ò                of pixel  painting on  Atari... but, damn, still some "but"... I
+Ò                have to  say that it didn't kicked me from the chair in the  end
+Ò                as it  didn't matched it to  deplace "Odd Stuff" really. Without
+Ò                any doubt  it is a nice  demo but  it misses the  special "whoa"
+Ò                effect, sorry to say so. It features all the things we know from
+Ò                Dune demos, nice design, well  chosen colours, nice  pixels  and
+Ò                good effects but in the end it still misses some special spice..
+
+
+Û_______________________________________________________________ÚmoondogÛ_Úo1/2k4Û___

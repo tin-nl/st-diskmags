@@ -1,0 +1,183 @@
+ _____________________________________________________________________________
+                Kleine Einfhrung in die Programmiersprache "C"
+                      oder besser: "Programmiersprache" C
+
+             von: APACHE ( seines Zeichens "C-Lehrer" von Annett )
+                             fr das TNB-Diskmag
+
+  "Computers are useless. They can only give you answers." ( Pablo Picasso )
+  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+ So, nachdem ich nun mit  meiner zeitweiligen und nervenkostenden "Lehrer"-T„-
+ tigkeit bereits etwas ( d.h. eigentlich ganz sch”n... ) angegeben habe,m”chte
+ ich meine Erfahrungen mit  C  auf verschiedenen  Systemen weitergeben. Aller-
+ dings sollte man diese "Einfhrung" nicht zu ernst nehmen und sie keinesfalls
+ befolgen ( mein Compiler macht das mit meinen Sourcen ebenfalls nicht... )
+
+ Fangen wir einmal an. C ist die  Nachfolgerin der Sprache B und diese die der
+ Sprache A und diese  die der  Sprache @... Sie war  zun„chst  sehr an das Be-
+ triebssystem UNIX gebunden und diente wohl dem Entwickler von  UNIX  als eine 
+ Art strukturierte  Assemblersprache. Das heit genauer, da jener  Entwickler 
+ „uerst schusselig war  und ihm der Compiler das Umrechnen von Feldindizes in
+ effektive Speicheradressen  abnehmen sollte. Genau genommen war es auch nicht
+ nur ein Entwickler,sondern zwei,die auf die wundersch”nen Namen Brian W. Ker-
+ nighan und  Dennis Ritchie h”ren. Das diese  beiden die  Einzigen sind, die C
+ voll und ganz verstehen,sieht man daran,da ihre kommentierten Quelltexte (im
+ allgemeinen "Lehrbuch" genannt...) immer noch das  Beste sein sollen, was der
+ angehende C-Schler lesen kann.
+
+ Irgendwie schaffte es der Virus C sich  ber die Systeme zu verbreiten ( also
+ strenggenommen ist es  ja ein "Trojanisches Pferd" - es entfaltet  seine zer-
+ st”rerische Wirkung n„mlich erst, wenn es von einem arglosen Anwender gestar-
+ tet wurde... ). Es gibt also C zum Beispiel unter UNIX System III,UNIX System
+ V,UNIX System VII,BSD UNIX,LINUX,SINIX,auf dem XT, dem AT,dem  Macintosh, dem
+ NeXT,der SUN,der DEC,dem Amiga,dem C64, dem XL, dem Apple II, dem Archimedes,
+ dem TT,dem 260ST,dem 520ST,dem 520ST+,dem 520STF,dem 520STFM,1040STF,dem 1040
+ STFM,dem 1040STE,dem Mega ST1,dem Mega ST2,dem Mega ST4,dem Mega STE2,dem Me-
+ ga STE4 und sogar auf dem Falcon030,wo es ( trotz DSP,68030 und 16MHz ) nicht 
+ langsamer l„uft als auf dem normalen ST...
+ (Anm.d.Redax: Und nich zu vergessen auf dem 520STE...)
+ Allerdings habe ich ein wichtiges System,auf dem C ( sogar unter UNIX ) exis-
+ tiert,vergessen. Es ist der Dozent  Berger, der bei uns UNIX  und C lehrt. Er
+ ist auch ein lehrreiches Beispiel dafr,da die šbersetzung des selben Quell-
+ textes auf dem  selben System bei  der selben Einstellung des Compilers nicht
+ immer das gleiche Ergebnis liefern mu (genauer: gar nicht liefern darf).
+
+ Dann ist der  C-Programmierer  natrlich auch ein besonderer Typ Mensch. W„h-
+ rend C unter notorischen  Pascal-Freaks als zu wirr und ekelhaft unbersicht-
+ lich sowie schwer erlernbar beschimpft wird,revanchiert sich der C-Freak nach
+ allen Seiten: Basic ist primitiv und unstrukturiert; Assembler barbarisch,un-
+ strukturiert,unkompatibel und nur im Notfall zu verwenden; Pascal ist viel zu
+ pingelig und  unflexibel; Fortran, PL/1 und  Algol veraltet; Lisp  und Prolog 
+ halten sich fr ( knstlich ) intelligent,sind aber ganz einfach nur langsam;
+ ADA ist sowieso was besseres ( und arbeitet daher bei NASA und Pentagon ),ist
+ aber wenigstens die eigene Verwandschaft;Forth ist der Punker und Modula2 der
+ Yuppie und Oberon der  Lord unter den Sprachen... Also ist C noch der einzige
+ normale Geselle unter all diesen Genossen.
+
+ Auerdem zieht  der C-Programmierer kryptisch Abkrzungen vor,verbreitet sei-
+ nen Datentypenbrei  an allen m”glichen  und unm”glichen Stellen: so sind z.B.
+ Dokumentationen nur so von den Begriffen INT, TYPEDEF, CHAR, UNSIGNED und den
+ geschweiften und eckigen  Klammern gespickt. Manchmal zeigen sich die Autoren
+ noch human und erkl„ren, da INT ein Word  und CHAR ein Byte ist und man doch
+ gef„lligst C lernen solle.
+
+ Kommen wir nach diesen  theoretischen Ausflgen zu den praktischen Dingen des
+ C-Alltages. 
+
+ Die Bedienung der  C-Compiler ist  h”chst unterschiedlich. So wird  man unter
+ UNIX einen Quelltext mittels "ED" oder "VI" schreiben ( Masochisten und echte
+ Gurus nehmen "CAT") und dann einfach per "CC file.c" bersetzt. Sollten dabei
+ Fehler auftreten, so kann der Nutzer  schon mal anfangen Zeilen zu z„hlen und
+ zu versuchen,die kryptischen Fehlermeldungen zu entschlsseln. Besser hat man 
+ es da auf einem PC oder dem ST. Auf dem PC gibt es zwar die M”glichkeit soge-
+ nannter "Makefiles" (oder auch "Projekte"), aber das Compile-Kommando liefert
+ (als Grundeinstellung bzw. besondere  Gnade der Entwickler) auch  direkt EXE-
+ oder COM-Files. Anders bei TURBO-C auf dem ST. Dort liefern  Compiler und As-
+ sembler immer nur Objektfiles,die noch durch den Linker gejagt werden mssen.
+ Es steht dazu  zwar das Werkzeug "MAKE *.PRJ" zur  Verfgung, aber welcher C-
+ Lehrling will  auch noch  die PRJ-Sprache lernen? Zum Glck  gibt es irgendwo 
+ auf den Disketten das DEFAULT.PRJ, welches zun„chst unver„ndert benutzt wird.
+ In der Stufe h”heren C-Daseins traut man sich schon,berflssige Libraries zu
+ entfernen. Irgendwann erreicht man  dann auch ein Stadium, in dem man auf das
+ berhmte "#include <stdio.h>" verzichtet, PRJ-Files  aus dem  rmel schttelt 
+ und wegen Fehlermeldungen nicht mehr in Rage ger„t. 
+
+ Nun aber endlich zum  Programmieren selber. In jeder  Programmiersprache gibt
+ es ein paar  meditative Beschw”rungen, die ganz instinktiv an den Programman-
+ fang gestellt werden und die G”tter im Computer beschwichtigen sollen.
+
+ In Basic schrieb man frher:
+   10 REM Das ist ein Programm
+ In Pascal heit es:
+   program xyz;
+   uses crt;
+ Der Assemblerprogrammierer stellt seinem Programm etwas der folgenden Art
+ voran:
+   stacklen EQU $1000
+
+ Allen diesen Konstrukten ist gemeinsam, da man zu Anfang die Bedeutung nicht
+ versteht,und sp„ter ( wenn man wei, da die G”tter eh nur ein M„rchen sind )
+ verzichtet man darauf. Man wundert sich dann h”chstens,warum der Rechner dau-
+ ernd abstrzt und wieso beim Entnehmen  der Diskette Blitze zucken und Donner
+ ert”nt. Aber auch C besitzt so ein Stogebet. Es lautet:
+   #include <stdio.h>
+
+ Der  n„chste markante  Punkt in  einem C-Programm  heit "main()" und ist die  
+ Stelle, an der das  Programm theoretisch beginnt. Allerdings wirft man den C-
+ Programmierern wegen diesem "main" Arroganz und Egoismus vor,weil man zumeist
+ bersieht, da jenes "main" nicht mit  dem deutschen Begriff "mein" identisch
+ ist und h”chstens  zu Lokalpatriotismus  im Raum Hessen  Anla gibt. Auerdem 
+ geben sich die DOSen-Besitzer  mittels "DIR" trotzdem recht weltoffen. Natr-
+ lich sind der ST und  UNIX wieder was  besseres. Ersterer ersetzt "DIR" durch
+ ein einfaches "Klick-Klick", zweiteres durch "LS" und so geben sie sich so in
+ der Tat h”chst knauserig.
+ [ Anmerkung: Gerade habe ich, nach einem Bericht  ber das wundervolle(?) PC-
+ WINDOWS-HYPER-SUPER-DUPER-BASTEL-MULTIMEDIA, mal wieder  MultiTOS  gestartet.
+ Naja. Nach 5 Minuten hab' ich wieder meine Standartoberfl„che genommen.]
+
+ šbrigens sind C-User auch  meistens begeisterte Autofahrer. Man sieht das da-
+ ran,da die Speicherklasse AUTO stets implizit angenommen wird. 
+
+ Aber jetzt spielen wir mal Compiler (was uns vom C-System Berger immer wieder
+ ans Herz gelegt wurde ). Und zwar  spielen wir ganz speziell TURBO-C 2.0. Wir
+ nehmen ein Feld von Integerwerten, die ja bekanntlich  alle 2 Byte lang sind.
+ Um nun die effektive  Adresse eines dieser Feldelemente zu ermitteln, mu man
+ seine Nummer mit zwei  Multiplizieren und  auf die Startadresse addieren. Als 
+ Nebeneffekt bekommt man  so immer  gerade Adressen, welche bei  Wortzugriffen 
+ zwingend n”tig sind. Setzen wir jetzt  einmal die Compileroption fr 68020er-
+ Code. Jetzt beginnen die kleinen  grauen Zellen des Compilers zu rotieren und
+ er sagt sich: Ab dem 68020 k”nnen Wortzugriffe auch auf ungerade Adressen er-
+ folgen. Also lassen wir doch die l„stige Multiplikation mit zwei weg und spa-
+ ren so gleich  noch  Rechenzeit  und Speicherplatz. šbrigens  ist mir  dieses 
+ wirklich passiert... Kann zwar sein,ich habe da noch was bersehen,aber TURBO
+ -C hat scheinbar so Probleme mit Nicht-68000ern, denn die PMMU-Befehle werden
+ auch fehlerhaft bersetzt!!! 
+
+ OOPS!!! So, jetzt ( nach einer Konsultation des Turbo-Debuggers) mu ich mich
+ aber entschuldigen. Es lag an meinem Lieblings-Debugger (Bugaboo) der mit dem
+ 68030 noch schlechter zurechtkommt als mein TURBO-C. ( Aber ich finde den Ab-
+ satz so schnuckelig,da er stehenbleibt.)Also,der Compiler l„t natrlich die
+ Multiplikation mit zwei weg,aber nimmt beim Zugriff auf den Integer einen Be-
+ fehl mit Index-Verdoppelung [ Fr Insider: move.w xx(An,Dm.w*2) ],welcher vom 
+ Bugaboo nicht  korrekt reassembliert  wird. Also,Entschuldigung! Trotzdem ar-
+ beiten Compiler etwa mit oben angedeuteter Logik. Natrlich viel raffinierter
+ und t”dlicher. Am Ende schaffen sie es jedenfalls immer,in Zusammenarbeit mit
+ Debugger,Editor und CPU den Fehler auf den Bediener zu schieben. 
+
+ Nun hat jedes C-System,wie oben angedeutet,so einen Debugger (sprich etwa wie
+ "Tee-Bagger"...). Bei meinem Lieblings- und Standartsystem Turbo-C ist es der
+ Turbo-Debugger. Er l„uft nur in Monochrom und mit GEM und ist in der Lage,auf 
+ C-Ebene ein Source-Level-Debugging  durchzufhren! Leider versagt er bei Sys-
+ temutilities, so da dafr dann  wieder der Desktop-Bomben-Debugger herhalten 
+ mu. Auf dem Falcon  l„uft in der mittleren Aufl”sung allerdings auch der Bu-
+ gaboo und der ist zwar an sich sehr stabil und sicher,dafr ist er aber recht
+ m„kelig und mag auer dem 68000er nicht viel anderes ( wie etwa User... ) Was
+ ist nun mit der vielgelobten systembergreifenden Kompatibilit„t von C? Also,
+ man kann problemlos  einen ST-C-Quelltext  auf einem PC  bersetzen. Man wird
+ h”chstens feststellen, da die OSBIND.H ( bzw. TOS.H ) durch die DOS.H zu er-
+ setzen ist, weiterhin die AES.H und VDI.H ohne GEM sinnlos sind,die EXT.H ist
+ wahlweise durch eine von  ca. 30 anderen *.H's zu erstzen. Dann sind die wun-
+ dersch”nen *.PRJ's berflssig (sie sind zwar m”glich aber ich wette,da beim
+ Versuch einer nichtmanuellen Anpassung ca. 1578% mehr Fehlermeldungen auftre-
+ ten. Auerdem kann C sehr  elegant auf die Systemhardware zugreifen, z.B. auf
+ den Videochip. Dieser  verbirgt sich  dann beim PC hinter einer omin”sen Gra-
+ fikkarte und bei UNIX braucht man gar nicht erst nach Grafik zu suchen...Ein-
+ zig die Fehlermeldungen  sind wirklich kompatibel. So hat mein  Turbo-C-Hand-
+ buch gute Dienste beim C-Lernen (d.h. beim Fehlersuchen)auf dem PC geleistet.
+ 
+ šberhaupt empfehle ich jedem (auch denen,die meinen sie k”nnten C schon),ein-
+ mal einen C-Kurs  an der UNI  mitzumachen ( aber bitte einen "richtigen" Kurs
+ fr sp„tere Informatiker!). Immerhin kann ich durch meine Co-Lehrer-T„tigkeit
+ (nachmittags,d.h. mehr abends fr Annett) inzwischen im Schlaf Ausdrcke aus-
+ werten und entschlsseln wie etwa:
+ *(*erg[p+=x][p1++]+y)+=c>b?(p+p1)>>2:((long(*)())((void*)f)(--x,&y+1,*z++);
+ ACHTUNG! Sowas gibt es wirklich. Obiger Ausdruck wurde mit Hilfe des Compiler
+ entwickelt und ist zul„ssig! Man frage mich aber nicht, was er fr einen Sinn 
+ machen WšRDE, wenn man ihn abarbeitet. So, nachdem nun wohl allen klar gewor-
+ den ist, da der Mensch ohne C-Compiler  kein Mensch ist  und da C berhaupt
+ die Religion der  Zukunft ist,m”chte  ich Sie an dieser Stelle entlassen und
+ hoffe, noch ein paar neue Anh„nger dieser Kunstrichtung gewonnen zu haben. 
+
+       Ihr Dr. hc. ( humoris c = Spa an C ) nons. laber. txt. Apache of TNB
+

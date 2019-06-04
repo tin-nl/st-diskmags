@@ -1,0 +1,400 @@
+
+The last days of Caspian Software!!
+
+This  one comes to us courtesy of Jaguar Explorer Online,  or 'JEO' for 
+short,   an   undead  version  of  the  old  'Atari  Explorer   Online' 
+newsletter..  issue  one contains loads of good text,  quite a bit from 
+the Web pages of Jeff Minter,  more interviews, news of forthcoming Jag 
+games such as this one,  and Iron Soldier II on CD!! It is well worth a 
+read  for  the copious and varied content if you haven't  already  seen 
+it..  JEO  gave  the  okay  to re-use articles  such  as   this  rather 
+illuminating  interview  text,  on the general principles it  was  non-
+profit, and the content was unedited.. 
+
+Well here we go...
+
+ CiH/Maggie, March '97
+
+
+
+  ||  Matthew Gosling 
+  ||  Interview by: Wes Powell 
+\__//  powell@easilink.com 
+      -----------------------------------------------------------------
+
+Out of all of the games that Telegames is releasing, one really catches 
+my   attention...  that's  Zero  5.  From  what  I've  seen,  it  looks 
+sensational. Now,  from what I've read, it sounds great as well.
+
+I  want  to thank Mr.  Gosling for being so kind in letting me do  this  
+interview.
+
+Note:  There  is some adult language at the bottom of this interview as 
+Matthew  gets angry (not at me of course!)
+
+[JEO] First off, who developed Zero 5? What did the team consist of?
+
+[Matthew Gosling] Caspian Software, a tiny development house. In-house, 
+there  were just two of us working full-time: 
+ * Chris Dillon - MD, producer, head honcho 
+ * Matthew Gosling (me!) - programmer
+
+Everyone else on the project was freelance, they were used as they were  
+needed, (some a lot more than others): 
+
+ * Dave Pratt - programmer 
+ * Dave Newman - music & SFX 
+ * James Veal - music & SFX 
+ * Mark Bloomfield - graphics & modeling 
+ * Sean Baggeley - programmer (tools) (also programmed Caspian's  first 
+   game "Rock & Roll Clams" for the ST) 
+ * David Philbedge - bitmap graphics 
+ * Andrew Gisby - technical support,  supplied various graphics,  sound 
+   FX, and  was also the poor sucker who got to do the speech :)   Also 
+   programmed the STe/Falcon original version of Zero 5.
+
+[JEO] Can you tell us a bit about the game's story?
+
+[MG]  There are aliens.  You shoot them.  The general storyline is that 
+you've  got a load of aliens attacking Earth (mold-breaking concept,  I 
+know),  and   Earth  sets  up Defcon (Defense Control),  a  network  of 
+defense  craft  around the  Earth.  All the alien activity  comes  from 
+sector 0-5,  hence the name.  I think  that's roughly it, I had nothing 
+to  do  with  the STe/Falcon version,  and we  chucked  in  a  cut-down 
+storyline for the Jag version fairly late in the  project.
+
+[JEO]  There's been a big discussion about whether or not this game  is 
+on  rails...  from the vid-clip I saw of the game, it looked close. Can 
+you clear  this up?
+
+[MG]  Sort  of.  Basically,  there are 3 completely different styles of 
+game  in   there.  Your mothership is called a HitPak,  and it holds  a 
+small fighter  called a BamBam (stands for Break-Away Mode).  Sometimes 
+you  are in a gun  turret in the HitPak craft,  other times you go into 
+break-away mode and  control the BamBam craft.
+
+The three game types are: 
+ (1) BamBam Space Dogfight 
+ (2) HitPak Gunner Sequence 
+ (3) BamBam Trench Sequence
+I'll go through the 3 in turn.
+
+(1) BamBam Space Dogfight 
+
+In this mode,  you're flying in outer space - you aren't actually GOING  
+anywhere as such, so there is no exploration involved. Aliens attack on 
+pre- set patterns (Atari was touting it as a "Virtual Galaxians"  which 
+is  a pretty  good definition).  You have complete freedom of  rotation 
+with  your ship,  you  can point anywhere you want (flying "out" of the 
+screen if you want).
+
+Example:  If  you see a load of aliens to your left,  and you rotate so 
+you  are  pointing right at them,  you won't actually fly through them, 
+just  closer.  If   you  rotate so you point to the  right,  you  won't 
+completely escape from them,  you'll just move a bit further away (they 
+are always tracking you, and trying  to keep up with you).
+
+When they shoot at you, they hardly EVER miss, so you have to shoot the  
+incoming  fire.  This  is  made  quite easy because when  one  of  your 
+"bullets"  collides with an alien bullet, the alien bullet explodes but 
+yours keeps  going,  so you can easily take out a whole stream of alien 
+bullets with just  one or two of your own.  Collision detection between 
+bullets is tweaked  HEAVILY in the player's favor so you don't have  to 
+be  perfectly  accurate,  you  just have to shoot in roughly the  right 
+direction.
+
+We  went for this style of play because we found that most  3D  polygon 
+shooters  (such as Cybermorph) were based on exploration,  and you have 
+to sort of  wander round for ages trying to find some action. That sort 
+of  game is fine,   but we wanted to do something where all the  action 
+comes to you,  a more  intense blast. Basically we wanted to create the 
+same sort of frantic  blasting action you had in games like Gradius and 
+R-Type, but in 3D.
+
+BTW,  this mode also has an "intelligent" camera,  which moves slightly  
+depending  on which way you're pointing,  and zooms in/out depending on 
+the  action.  For example, if an alien appears somewhere where it can't 
+be seen  (e.g.  "out" of the screen behind the camera), then the camera 
+will zoom out  until the alien is visible.  The player can then see the 
+alien,  rotate  around  to point "out" of the screen at it and blow  it 
+away.
+
+(2) HitPak Gunner Sequence 
+
+In  this mode,  you are in a mothership (a HitPak) which is  constantly 
+drifting   forwards  through space,  with aliens attacking  on  pre-set 
+paths.  You, the  player, are situated in a gun turret on the underside 
+of the ship. Moving the  d-pad will move your sights on the screen, but 
+when you reach the far left or  right side of the screen, continuing to 
+move in that direction will start to  rotate the gun turret around. The 
+angle  of the gun turret can only rotate on  the Y- axis,  but has 360-
+degree freedom. In this sense, I think that means it  is "on rails" not 
+like  Galaxian 3 (where you just guide a 2D crosshair) but   more  like 
+Panzer  Dragoon  where you can rotate your viewpoint  and  shoot  stuff  
+that's coming up behind you, etc.
+
+If  you've seen screenshots (up-to-date ones) you'll see that  when  in 
+the   HitPak gun turret,  there is like a radar screen on the  console, 
+with  2  lines  making a "V" shape.  This shows the player's  field  of 
+view,  and  as  you  rotate  the turret,  the "V" on the  scanner  will 
+rotate.
+
+When you get onto the harder levels,  this gets a bit like Defender, in 
+that  you spend more time watching the scanner than you do watching the 
+main  screen.  When a new alien warps into the area,  you hear a sound, 
+so the first  thing you tend to do is look at the scanner to see  where 
+it is, rotate around  to it and shoot it.
+
+Another thing you should see in the screenshots is that on the scanner, 
+there   are  lots  of small lines around the  outside  of  the  scanner 
+"screen" on the  console.  These give the shield status for your HitPak 
+craft. If a bullet hits  your ship, the part that got hit will have its 
+shield  strength  turned down.   If any one of the shields  goes  below 
+critical,  it's  game  over.  This means  that you have to monitor your 
+shields  closely,  so for example,  if the shields  along the left-hand 
+side of the ship are weakest, then you need to defend  that side of the 
+ship  more,  even if it means taking a bit of damage on the  right-hand 
+side.
+
+As in BamBam mode, you shoot incoming fire from aliens.
+
+(3) BamBam Trench Sequence 
+
+This  mode  crops up three times during the game,  and is a bit like  a 
+cross   between  Tempest  2000 and the bonus stage  on  Sonic  2!  It's 
+completely  on   rails,  a texture-mapped trench/tunnel flies  at  you, 
+(you're  supposed to be  strafing along the top of a huge mothership  - 
+this  is straight out of Star  Wars) and you use left/right  to  rotate 
+around  the  walls.  There  are  some walls  which you  have  to  shoot 
+through,  some  are invincible and must be dodged  around (you can tell 
+these because of how they look,  and the metal "clang"  noise they make 
+when one of your bullets hits them).  Somewhere in the trench  you will 
+come  across  the  reactor  core which you must  blow  up  quickly,  as  
+colliding  with it = instant death (no matter how much shield  strength 
+you  have).
+
+This  section is put in as a bit of eye candy,  and to give the  player  
+something a bit different, which is why we didn't use it too much.
+
+[JEO] Is this game single- or two-player?
+
+[MG] One only. We originally planned to put in a 2-player mode but time  
+didn't allow.
+
+[JEO] Is the ProController supported?
+
+[MG] We were going to, but it became obvious that the Jag was dying, we  
+didn't  think there was any WAY that the 6-button pad would  ever  come 
+out, and  we just didn't have time for it.
+
+[JEO] Can you select different ships?
+
+[MG] No, that's all fixed.
+
+[JEO] Can you tell us something about the different weapons?
+
+[MG] In BamBam mode,  killing a complete wave of aliens without missing 
+any   gives a powerup globe.  You have to point towards it to fly  into 
+it.  The   player  can choose whether they want to take it as a  weapon 
+powerup,  a shield  powerup, or a score bonus. Powering up your weapons 
+makes  your bullets start  to get faster and do more damage,  then they 
+start  to  get bigger,  and  eventually you get to fire four  shots  of 
+super-powered bullets (instead of  two shots of weak small bullets).
+
+You  also have three smart-lazers.  This is like a smart-bomb,  and you 
+are  invincible when you activate it. It makes a blue stream of bullets 
+(a  bit   like  a  bolt  of  lighting)  fly  out  from  your  ship  and 
+automatically lock on to  all the enemies that are active. Its power is 
+spread amongst the aliens, so  using it when there are eight aliens out 
+there  will  do less damage per alien  than if there was only  one  out 
+there.  It automatically destroys all alien  bullets (without absorbing 
+any  of its power) as well.  We usually put in at  least one  virtually 
+impossible wave in the levels somewhere which is your cue  to make  use 
+of your smart-lazer.
+
+There  are no powerups or smart-lazers in HitPak mode.  In Trench mode, 
+it's  like the BamBam dogfight with the exception that you get no smart 
+lazers,  and   you  can't  power up to the stage where  you  fire  four 
+bullets per shot.
+
+[JEO] How many enemies are there? Levels?
+
+[MG]  There  are  15 missions.  Some will be in only one of  the  three 
+modes,   others  combine several of them.  When you complete a mission, 
+the next mission  is "unlocked" (if your cartridge EEPROM works),  same 
+system as in Doom.
+
+[JEO] Are there selectable views?
+
+[MG] No,  there is intelligent camera zooming in BamBam mode,  and also 
+there  are link animations between levels (can't do FMV off a cart!).
+
+[JEO]  I've heard that the game has a driving soundtrack.  What kind of 
+tunes  does the game have, and how big is the selection of tunes?
+
+[MG] There are four tunes, one for the title screen, three in the game. 
+The   music  is  sorta techno-ish.  It's not quite the  same  style  as 
+Tempest 2000, but  it's similar.
+
+The  sound  driver is 8-channel - that's 4 channel music  +  4  channel 
+sound  FX.   There  is also real-time audio filtering;  the user has  a 
+slider control for  bass/treble.
+
+[JEO] How big is the game?
+
+[MG] It's a 2 megabyte cart. I think I read somewhere that it is 4 meg, 
+but  that might just be Telegames trying to justify the $60 price tag.
+
+[JEO] What resolution does the game run in. What color depth?
+
+[MG] 256 colors. Most of the polygons are flat-shaded, so running in 8-
+bit  color gives a blitting speed around twice as fast as 16-bit.
+
+[JEO] Can you tell us how fast the frame rate is?
+
+[MG] It's usually around 30 FPS.  The display is triple buffered, so it 
+can   simulate any frame rate - if we're running just below 30  FPS  we 
+don't have to  drop to 20, it can do 29.
+
+The  frame  rate is limited to a maximum of 30 FPS on  NTSC,  otherwise 
+slowdown  would be too noticeable.  On the PAL version,  we allow it to 
+run  at 50FPS but  not for two consecutive frames,  so the max limit is 
+around  35  FPS  on PAL.  It  needs this,  as the engine stretches  all 
+polygons vertically to keep the  aspect ratio the same as NTSC,  and 25 
+FPS is just slightly too jerky.
+
+The  polygon  performance  is around 20,000 per second  if  I  remember 
+correctly.   That's  when it's around 10% textured,  and with 8-channel 
+sound over the top  (this affects performance).  We used a very fast Z-
+sorting  algorithm.  We found  that Z-buffering is really really  slow; 
+although  Atari  said  Z-buffering was  the fastest way  of  doing  it, 
+unfortunately that's complete crap.  Z-sorting  does mean there's a few 
+polygon glitches, but at least it's not running at 5  FPS =).
+
+[JEO] Are there any special effects in the game?  i.e.  light sourcing,  
+animated textures, etc.
+
+[MG]  There is no lightsourcing.  Some people thought there was gouraud  
+shading,  but this is not even possible in 256 colors, the effect comes 
+from  the high polygon count in BamBam mode,  with subtle color changes 
+between  polygons.
+
+[JEO] How did you pull off those explosions?  How were they made?  They 
+seem to  be somewhat pixelshatter.
+
+[MG]  The Blitter can scale a bitmap out by spreading out the pixels  - 
+it's   quite a straightforward thing for the Blitter to do,  I actually 
+had  the idea  before I saw T2K,  then I was really pissed off that  it 
+had already been done!
+
+The main reasons why we used particle explosions were:
+
+(1) Speed. It doesn't matter how big or small you scale the bitmap, the 
+speed   is only affected by the size of the source image (in  our  case 
+32x32 pixels),  so you can spread the pixels out really wide for a huge 
+explosion without  slowing down.
+
+(2)  Gameplay.  Because of the way that the camera can sort of zoom out 
+(when   in  BamBam mode) when your ship is surrounded by  aliens,  what 
+often happens is  that you shoot "out" of the screen at aliens that lie 
+between  your  ship and  the camera.  If we put a huge solid  explosion 
+there  when  you  took out one of  these aliens,  it  would  completely 
+obstruct the screen and you wouldn't be  able to see what the hell  you 
+were doing. So basically it allows you to still  see what you're doing, 
+as you can see through the explosions.
+
+In  T2K,  it  scaled  up static images (like the "2000" thing  and  the 
+"Excellent"   text),  but what I did was to scale up an animated image. 
+The explosions use  something like 20 frames of animation,  so you have 
+an animated explosion  being particle-exploded at the same time. It's a 
+nice effect.
+
+In BamBam mode,  when you take out an alien, it actually triggers about 
+4  or  5   particle  explosions  on the  same  spot,  but  with  slight 
+differences  in  the   scaling speed,  so each pixel in  the  explosion 
+appears  to  have a "trail" of  about 4 other pixels.  (Wes  says  that 
+sounds awesome)
+
+[JEO] What kinds of improvements were made over the Falcon game?
+
+[MG]  It's a completely different game!  It shares the title,  parts of 
+the   storyline,  and  a few graphics (such as the 8x8 font!),  but  in 
+general  it's  a   different game.  I wasn't even allowed  to  see  the 
+STe/Falcon version when I  first started at Caspian,  in case I got the 
+wrong idea about what was wanted  for the Jag version!
+
+[JEO] How much time was spent on the project?
+
+[MG]  It started towards the end of January '95.  We delivered the beta 
+to  Atari towards the end of February '96.  We then spent about a month 
+waiting to  be paid for the beta,  fixing a few small bugs,  and trying 
+to  tie up a  publishing deal with a giant publisher (I can't say  who) 
+for  a Playstation  version of Zero 5.  This deal fell through  because 
+the  publisher  was  already  handling too many  projects  -  we  could 
+probably  have  done it if we'd waited  for a few months,  but  Caspian 
+just couldn't afford to stay afloat for that  long.
+
+[JEO]  How difficult is it to program a Jaguar game?  Compared to other  
+systems?
+
+[MG] It's really nice.  I came from an Amiga demo coding background, so 
+I  went  straight from Amiga to Jaguar and I was just completely  blown 
+away  by the  hardware.  It's just like an Amiga that's miles better at 
+EVERYTHING.  The  only  thing that caused headaches for me was the  GPU 
+bug  that stops it from running  out of main RAM,  so you have to  keep 
+splitting  code  into  4K segments - that  is a  real  pain,  but  it's 
+necessary if you want your code to perform well.
+
+[JEO] What's this I'm hearing about you guys not getting paid for  this 
+game?  Did you guys get paid salaries for working there?
+
+
+[MG]  All  the  people involved in the project  were  paid  by  Caspian 
+software,  we  all got our salaries.  When I say we didn't get paid,  I 
+mean  that Caspian  software was not paid money owed by Atari  for  the 
+development.
+
+There  was  a milestone due when Atari received the beta  version,  and 
+they   didn't  pay it.  All of a sudden,  they decided that they didn't 
+like  aspects  of  the game that had been in there since day  one,  and 
+unless we completely  change everything they won't accept it as a  beta 
+version.  They kept us  hanging on for a month,  coming back to us with 
+utterly  ridiculous  "bugs"   (there was a very very  small  number  of 
+genuine bugs,  but most of them were  just Atari being stupid),  and in 
+the end, the company couldn't carry on, and  was "put to sleep".
+
+I was laid off, and both me and Chris got new jobs.
+
+A  couple  of months ago,  however,  I got internet access at work,  and 
+nearly   had a heart attack when I saw people on  rec.games.video.atari 
+talking  about   Zero 5 being published by Telegames.  We thought  that 
+someone  must have just  spread some bullsh*t rumor,  but the Telegames 
+website  suggested otherwise.  We  had absolutely NO idea that this had 
+happened,  we were not consulted at all,   and we are still not getting 
+paid for it (Caspian still exists, it never went  into receivership).
+
+Atari still maintains that it was not a beta,  and sold it to Telegames 
+on  the  understanding that it was an unfinished product.  This doesn't 
+stop  Atari  from   getting  a royalty  on  sales  of  the  "unfinished 
+product",  but  that royalty is  so embarrassingly low that if  they're 
+that  f*cking  desperate  then they're  welcome to it  as  far  as  I'm 
+concerned.
+
+There are legal reasons (that I can't go into) as to why Caspian is not 
+suing  the ass off Atari/Telegames.
+
+Hopefully  you can see why the tone of my Usenet post came across as  a 
+bit  angry, you have to understand that I spent a year working flat out 
+(the  latter half of which was working around 12 hours a day,  6-7 days 
+a week) on a  game that never came out, and that is now being published 
+and  cashed  in  on  without any of the people  who  created  it  being 
+consulted in any way. It's  Atari that are the scum here, I don't think 
+that  Telegames  knew the  situation,  they just bought the rights  off 
+Atari.
+
+The  money doesn't really bother me,  it's the principle - but hey  who 
+gives a  sh*t, I got my break into the games industry, Atari is welcome 
+to their $1.50  per cart (oops...).
+
+                                ~~EoF~~
+

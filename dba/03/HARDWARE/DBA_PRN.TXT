@@ -1,0 +1,174 @@
+LC 24-200 QUICK TEST
+
+Printer test: Star LC 24-200 Dot matrix printer
+
+Hello here is small printer test. The Star LC 24-200 comes in two
+series. There is the LC24-200 (black and white), and there is an
+Star LC24-200 colour. It is a very big printer (look in the speci-
+fications for the sizes). It has a very unusual design, but it is 
+a very practical design. It is not so angular as the other 
+Star printers.
+
+It is a very fast printer, but it is also a very noisy printer. 
+The big printer cap silences the printer a lot, but it is then still
+a very noisy  printer. The "Quiet" Mode, helps a lot, but then it doesn't
+print as fast. 
+
+The printer has got a system called EDS (Electronik Dip Switches)
+This means you can set your printer in the way you want to by just
+pressing a few buttons. The printer has got an EPROM - chip for 
+the current settings. 
+
+The users manual is very good. It is illustrated, and it is very 
+surveyable. It contains a few Basic programs for the printer, and 
+of course some character tables. It has some chapters about Trouble-
+shooting and maintenance. It has 157 pages. 
+
+The big advantage of working with this printer is: it emulates very 
+many printerdrivers. Even in the Epson mode I could print some text with
+an IBM - printerdriver. It can even print with printerdrivers for 9-pins
+printers.  
+
+The EDS-mode is very conveniently aranged, but it is too complex to 
+explain without knowing what the control panel looks like. So I won't
+do that. 
+
+It has two self-tests. A long self test, with the current EDS settings,
+and the font types. The short self test gives only the character table.
+
+It has a stay in panel pitch mode. This means that software can not 
+change the chosen pitch.
+
+It has a stay in panel font mode. This means that software can not 
+change the chosen font. 
+
+It has a Hexadecimal dump mode. This is a feature for programmers who
+are debugging printing programs and want to see the actual codes 
+the printer is receiving.
+
+You can move the paper in any way you want to ( Up and down I mean )
+just as you please. 
+You can clear the buffer if you want to. This means you can throw away
+all the information in the memory of the printer. 
+
+
+
+I like using this printer because it is very fast, and I almost never
+have to load a special printerdriver. 
+I don't know what else to write except for the specifications.
+So here they are:
+
+
+                     S P E C I F I C A T I O N S
+
+
+Printing system:                       Serial Impact Dot-matrix
+
+Printing speed                         Pica      Elite
+        High-Speed Draft               222cps    -
+        Draft                          167cps    200cps
+        Letter Quality                 55.5cps   66.7cps
+
+Print direction                        Bidirectional, logic-seeking
+(Text and Graphics)                    Unidirectional, logic-seeking
+                                       (selectable)
+
+Print head                             24 pins
+                                       Life: 200 milion dots
+
+Line spacing                           1/6,1/8,n/60,n/72,n/180,n/216
+                                       n/360 inches
+
+Characters                             ASCII
+                                       International       16 sets(*)
+                                       IBM special
+                                       IBM block graphic
+                                       IBM code page       6 sets(**)
+                                       Download
+
+* USA, France, Germany, England, Denmark I, Sweden, Italy, Spain I,
+  Japan, Norway, Denmark II, Spain II, Latin America, Korea, Irish,
+  Legal
+** #437 (USA), #850 (Multi_Lingual), #860 (Portuguese), #861 (Icelandic),
+   #863 (Canadian French), #865 (Nordic)
+
+Fonts:                                 High Speed Draft
+                                       Draft
+                                       TMS-Roman
+                                       Sanserif
+                                       Courier
+                                       Prestige
+                                       Script
+                                       Optional (Font cartridge.)
+
+Nuber of columns                       CPI
+        Pica                           10        80
+        Elite                          12        96
+        Semi-condensed                 15        120
+        Condensed pica                 17.1      137
+        Condensed elite                20        160
+        Propartional                             Variable
+
+Paper feed                             Friction and rear (push tractor)
+                                       or bottom (pull tractor)
+
+Paper feed speed                       3.4 inches/second max
+
+Paper width                            Cut sheet      4"-11.7"
+                                       Fanfold (continuous):
+                                                      4"-10"
+
+Copies                                 Original + 4 copies (max)
+
+Maximum buffer size
+        Without Download               7Kb (30Kb for Color printer)
+        With Download                  1 line
+
+Emulations                             Epson LQ-860
+                                       IBM Proprinter X24E
+
+Interface                              Centronics parallel (standard)
+                                       RS-232C serial (option)
+
+Ribbon type                            On-carriage, dedicated
+                                       Monochrome (Black only)
+                                       Color (Black, red, blue, violet
+                                       yellow, orange, green)
+
+Ribbon life
+        Monochrome (X24)               2 milion characters (draft pica)
+        Monochrome (LZ24)              4 milion characters (draft pica)
+        Color (X24CL)                  1 milion characters (draft pica)
+
+
+Dimensions                             46.3cm (w)
+                                       35.6cm (d)
+                                       15.6cm (h)
+
+Weight                                 6.6 Kilograms
+
+Power supply                           120V AC,220V AC, 240V AC, 50/60Hz.
+                                       (varies according to the country
+                                       of purchase)
+
+Options                                Automatic sheet feeder (SF-10DQ)
+                                       Serial-Parallel converter (SPC-8K)
+                                       Roll paper holder (RH=10Z)
+                                       Font cartride (FC-1Z,FC-2Z,FC-3Z,
+                                       FC-4Z)
+                                       RAM cartridge (RC-32Z)
+
+
+I think this is enough. 
+
+For questions or remarks write to:
+
+O.T.M. 
+Rembrandtstraat 48
+8331 RP
+The Netherlands.
+
+
+
+Text by O.T.M. of Digital.
+

@@ -1,0 +1,54 @@
+                                GEMIXTE WITZE
+                                -------------
+
+-------------------------------------------------------------------------------
+
+Wieviele Programmierer braucht man, um eine GlÅhbirne zu wechseln?
+Keine, ist ein Hardware-Problem...
+
+-------------------------------------------------------------------------------
+
+Zwei ( natÅrlich autofahrenden ) Nonnen geht auf einer einsamen Straûe das Ben-
+zin aus. In der  NÑhe gibt es  glÅcklicherweise  einen Bauernhof, wo sie Benzin
+bekommen. Der Bauer  hat aber  keinen  Kanister  und  gibt ihnen  deshalb einen
+Nachttopf. Als die  Nonnen gerade  beim  EinfÅllen sind, hÑlt ein Autofahrer an
+und meint: "Ihren Glauben mîchte ich haben!"
+
+-------------------------------------------------------------------------------
+
+Multimedia  mit Atari: Wenn  ich nach Seb's  Verfahren berechnete 3D-Bilder mit
+Tempus Word  ausdrucke und mir  die DruckgerÑusche mit Tims "Tribute to Priest"
+per DSP-Replay versÅûe, weshalb  ich vom "Schweigen der LÑmmer" im TV  rein gar
+nix mehr mitkriege...
+
+-------------------------------------------------------------------------------
+
+Das Atari-Betriebssystem: Ich muûte mir mal die Routine anschauen,die die PrÅf-
+summe fÅr Bootsektoren berechnet - einfache Sache denkt man...
+
+im TOS ( A5 = Adresse des Bootsektors, D6 = Anzahl der Bytes ):
+
+         clr.w    D7
+         bra.s    test
+loop:    add.w    (A5)+,D7
+test:    move.w   D6,D0
+         subq.w   #1,D6
+         tst.w    D0
+         bne.s    loop
+         move.w   D7,D0
+
+Hier nun die Lîsung, die jeder Assemblerprogrammierer anbieten wÅrde:
+
+         clr.w    D0
+         subq.w   #1,D6
+loop:    add.w    (A5)+,D0
+         dbra     D6,loop
+
+Das TOS erweist  sich als typisches C-Compilat. Und sicherlich nicht mal TURBO-
+C, denn im TOS wird ausgiebig die LINK/UNLK-Konstruktion verwendet...
+Jedenfalls  mîchte ich keine andere (evt. zeitkritische) ATARI-Routine sehen...
+Ich empfehle manuelle Nachbearbeitung des Codes!
+
+-------------------------------------------------------------------------------
+
+                                                     Apache of tnb / 27.03.1994

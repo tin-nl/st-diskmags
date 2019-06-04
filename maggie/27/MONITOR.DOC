@@ -1,0 +1,170 @@
+
+
+Resurrecting a SM124
+
+By John Hayward
+
+Warning! monitors produce gazillions of volts which might be a bit 
+lethal.  I don't know lot about the technical parts of a VDU nor do I 
+pretend to.  Parts of a monitor can hold high amounts of current even 
+when off and unplugged for a couple of hours or more.  All information 
+I have provided is based on a common sense and small amount of 
+knowledge.
+
+Guarantee given by John and from Maggie team:- 
+---------------------------------------------- 
+None. tough.
+
+
+I was walking back from a visit to some shops in Portsmouth the other 
+day, and I found a discarded Atari SM124 in someone's front garden.  It 
+was in a terrible state.  The tube was pushed in, the front the case 
+was loose and the cables seemed to be missing.  I took it with me as I 
+already had two working identical monitors and thought it might be 
+useful for spares, or possibly repairable with help from a telly repair 
+shop and some parts from Uncle Brad from Best Electronics in the US of 
+A.
+
+Once home I had it apart, I was pleased to find the tube was not 
+broken, the cables were tucked inside the back of the case, and an 
+envelope with some of the screws.  The back of the case was stamped 
+with its manufacture date: May 1985!  I left the thing dry out (it had 
+got wet as we have had some heavy rain) in the back room much to the 
+displeasure of my parents and I went out to see some friends.
+
+The next day it seemed to be mostly dry and I soaked up some of the 
+remaining damp that was in the case, and found a few extra screws which 
+had got stuck under the main circuit board.   Strangely enough, all the 
+screws mounting the tube had been removed.  As I managed to find three 
+of them I started putting the whole thing back together and put a mains 
+plug on the power cable.  Basically some idiot very badly attempted to 
+fix it themselves and couldn't seperate the board from the tube and the 
+main chassis, and decided to take the whole tube out and cut the wires, 
+got bored and binned it.  I got my perfect working SM124 out of a 
+cupboard and took the back off to guide me where the bits went.
+
+I know very little about electronics and even less about how TVs and 
+monitors work, but I wanted to see at least if I could get the SM back 
+to one whole piece should it be quicker and cheaper for someone 
+professional repair man to look at it.
+
+Then I noticed some had chopped through the line output tranformer (big 
+cabley thing with a sucker on it) and all the wires that led to the 
+tube. :(  After half an hour I came back from a DIY store with some 
+insulation tape and carefully stripped back the insulation from the 
+wires and soldered to the two ends together and sealed it all up with 
+tape.  I realised after successfully mending 3 or 4 wires that some 
+them were too short to be patched together. Out came a box of allsorted 
+gubbins I have kept from computers which had expired, and I managed to 
+find some pieces of cable roughly the same thickness and colour of the 
+original.  
+
+I set upon desoldering the original wires one at a time from the 
+circuit board and replacing them with new ones.  I found a few thicker 
+wires which handle 240 volts to the power switch which I didn't have 
+any the right kind, so this took a mile trip up to Maplins and 75 pence 
+worth of components.  I also ordered a capacitor to replace one which 
+appeared to be partly desoldered from the main PCB which Maplins kindly 
+ordered for me although it only cost 30 pence.
+
+Meanwhile, tidying up the outside involved cleaning up the case with a 
+brillo pad and some kitchen cleaner made it come up shiny.  Some 
+numbers had been written in permenant marker on top of the monitor and 
+this required a rag and some turpentine to rub it off.  I then noticed 
+on the bottom scratched on to the bottom of the case was 'Portsmouth 
+Polytechnic'!  The Poly is now Portsmouth University and they always 
+update and sell off their fleet of computers regulary so it was 
+unlikely to have been stolen.  At this point I was quite pleased now 
+after a lot of hard work the SM124 had only had one minor cracks in its 
+case and now looked a lot better than how it was stuck behind a front 
+garden wall in a Portsmouth main road.
+
+A quick look in Best Electronics catalogue revealed they had every part 
+for an SM124 (and every other Atari monitor) including a complete tube, 
+case shell, line output transformer and other bits.
+
+They also give you hints on repairs as well.  One page mentioned that a 
+capacitor close to the main transformer often gets very hot and burns 
+out, being the most common cause of a rigor mortified SM124. 
+
+Seeing as it would not cost much to try and replace this bit, it was 
+back up to Maplins and I had invested 20p on the capacitor which might 
+of been at fault.  Once soldered in, I proceded to put it back 
+together.
+
+Time for moment of truth.  Once turned on, nothing.  I realised the the 
+wire with the green power LED on the end was mysteriously missing. Then 
+I played around the contrast knob and YES there was a picture!!
+
+I still needed to get two case screws and the green LED wire to go on 
+the front panel, which I am going to buy from Best, along with some 
+bits for another project, as Brad from Best has given me a lot of help 
+and I ought to give him some business in return.
+          
+SM124s were made by Goldstar, they still make monitors but they have 
+changed their name to LG.  Goldstar apparently made monitors under lots 
+of different names.  I have seen Taxan and Epson PC monitors (mono EGA 
+I think) which look the same as an SM124.  This is very useful seeing 
+as they might have the same tubes and other major parts, it would be 
+worth using a perfect working mono EGA monitor (which is worth naff-all 
+anyway) as parts for your beloved Atari unit.  Picture quality, as any 
+owner will tell you is excellent, and certainly agree it knocks spots 
+of a 12" IBM mono VGA unit I have. Generally speaking Atari mono 
+monitors are reliable, as broken ones seem to be a rare occurence.
+
+Atari mono monitors are difficult to buy second hand and they get 
+snapped up very quickly, as they are essential kit as part of a 
+musician's Atari setup.  Second hand ones are rarely under œ50 which is 
+the same as a used SVGA colour monitor, so it's definitely worth 
+getting dead ones fixed and spending a fair bit on parts if necessary.
+
+
+To disembowel an SM124:-
+
+Assuming you have the outer case off, remove two screws from the main 
+board and one where the three control knobs are located.
+
+Very gently, wiggle the board on the back of the tube gently until it 
+comes free.  There is this gum stuff which stops it coming loose which 
+can take a lot of wiggling to get free.
+
+Remove two sets of cables which attach the yoke (coily thing on the 
+back the tube) from the board.  Write down where the cables went so you 
+know how to put them back again.  (I had an identical SM124 working so 
+I could see how it was supposed to go.)
+
+The main board, control knob board and tube PCB should now come free, 
+rest these bits on the left hand side and they can easily be worked 
+on.       
+
+Just out of interest, is the Atari owner who lives in Waverly Road, 
+Portsmouth reading this?  ;)
+
+Also if anyone has a cheap Xtra RAM deluxe board (I don't need SIMMs I 
+can provided those) they want to sell give me a shout on (01705) 832145 
+or johnhayward@zetnet.co.uk   I want to upgrade a 520STFM to be used as 
+a nice music sequencer for somebody.
+
+   -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- 
+
+
+     John Hayward
+
+   Portsmouth, Hampshire, UK
+
+     X    <>    X    <>    X   <>    X    <>    X   <>    X    <>    
+ 
+   -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- 
+
+
+                                FOR SALE
+
+                        Sega Saturn console
+
+With original control pad, Virtua Fighter, manuals all boxed as new.
+
+œ45.00
+
+Add œ7 for courier to most parts of the UK.
+
+

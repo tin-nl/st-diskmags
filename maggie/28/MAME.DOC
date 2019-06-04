@@ -1,0 +1,209 @@
+ 
+Long  after ancient video arcade games have been carted away from  your 
+local  arcade and been quietly dumped or discarded after hardware  they 
+run  on  becomes  senile  or they cease  to  be  profitable,  they  get 
+reincarnated on today's PCs.
+
+John  Hayward  fumbles  around  for  some  20ps  and  gives  his  first 
+impressions on:
+
+ 
+                              ‰~ M.A.M.E. ~
+ 
+
+If you have been keeping up with the emulation scene you must of  heard 
+of  Mame.   Mame  stands for Multi Arcade Machine Emulator and it  does 
+exactly what its name suggests.
+
+
+One coin one play 
+~~~~~~~~~~~~~~~~~ 
+Since seeing a lot of on line resources (as well as a lot of web sites, 
+Mame  now has its own newsgroup and web chat page)  I become  more  and 
+more intrigued to try it out.  As well as DOS and W95 versions, MAME is 
+also  available  for  Win95/98/NT,  Macintosh,  UNIX,  OS/2,  BeOS  and 
+rumoured to be for the Amiga too. (what no Atari?!?)
+
+I've now been suckered into building a PC, a PII Celeron 266 with 32meg 
+RAM, with a currently borrowed 1.7gig disk.
+
+At the moment I only have Tempest,  Zaxxon,  Mr Do,  Gauntlet,  Pacman, 
+Starwars,  Paperboy,  Marble  Madness  and Battlezone.   This will have 
+grown very rapidly by the time you read this!
+
+One  of the great things about Mame it emulates at hardware  level,  so 
+games  that  use Z80,  6502,  6809 or 68000 processors and Yamaha sound 
+chips  (like an ST!) or Pokey sound chips are emulated using  specially 
+written portions of code for chip for extremely accurate emulation.
+
+
+"Red five standing by" (Starwars) 
+~~~~~~~~~~~~~~~~~~~~~~ 
+Mame  (as  the the standard DOS version) can be fiddly to set  up.   as 
+well  as  the  the Mame program zip file,  you need  a  program  called 
+CSDPMI.EXE,  I  don't  know  what it is,  but its some kind  of  memory 
+manager  and its essential to run this before running Mame.   You  will 
+also need ROMs for each of your favourite games.  Basically someone has 
+to  open  the  back  of a real games and nick the  ROM  chips  off  the 
+motherboard  and read them into a PC,  so these are called ROM  images.  
+You have a set of files for each game which is put into a directory.
+
+I  prefer  to use the DOS version,  as emulation really needs  as  much 
+speed  as  you  can  get  and  you  don't  have  conflicts  with  other 
+applications.   To  use  the DOS version of Mame well,  it does help to 
+know  how MS-DOS and batch files work to getting running  well.   There 
+are  a lot of DOS command switches you can use with Mame.  It lets  you 
+alter the screen resolution and sound card settings and other bits  and 
+pieces,  so  writing a batch file for each game is good idea to get the 
+best  results from each game.   There are some front end programs  that 
+run  under  DOS  with Mame that makes it easy to turn on  your  PC  and 
+selecting the game you want to play.
+
+You  will come across certain games that won't work,  that have glitchy 
+sound or runs too slow.  Adding '-frameskip 1' into a batch file I have 
+found makes music and speech play better (especially Gauntlet, Paperboy 
+and  Marble  Madness)  On Missile Command and Zaxxon  the  screen  will 
+distort  and  flicker so you have to add '-noscanlines' to  make  these 
+work. Some games do not work yet and you will just have to wait for the 
+next update of Mame which seems to come out every month or so, as there 
+is  a  large  team of programmers working  on  very  frequent  updates.  
+Unfortunately  one  of  my  all time favourites  Hard  Drivin'  is  not 
+supported yet, so I am eagerly waiting for a driver for this game to be 
+written.
+
+
+"Watch your feet on the steps!" (Indiana Jones) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+Strictly speaking you are not allowed to own ROM images unless you  own 
+the real arcade game,  so the sites that have some or all of the 1,200+ 
+games  supported  by Mame,  have to mention this to protect  themselves 
+from  being  accused  of supplying pirates.   A few  people  have  been 
+selling CDs full of ROMs but as this is not legal so if you want to buy 
+these you'd better look in a Warez newsgroup.  The Mame team do mention 
+the legal stuff about ROM images,  they make it clear that you download 
+Mame,  and you are on your own to track down ROMs and not take the Mame 
+team responsible, as if they were trying to encourage piracy the men in 
+suits  from the arcade companies would do everything to end the  arcade 
+emulation scene like what happened recently with the Ultra HLE Nintendo 
+64 emulator.   Therefore don't email the authors with requests on where 
+to find ROMs, use your imagination and a good search engine. :)
+
+
+There  are some good web sites which have mentioned early  Atari  games 
+like  Asteroids,  Tempest and Starwars that use Vector monitors  (Atari 
+called  them  'XY'  monitors.)  These are  really  weird.   Traditional 
+tellies  and computer monitor tubes use an image made out of dots,  the 
+smaller the dots the nicer the graphics look,  right?   Vector monitors 
+have  the picture built of straight lines,  in a similar fashion to  an 
+oscilloscope.   Asteroids  was  released in 1979 and is the best  known 
+example  of  vector  game.   The monochrome graphics are  made  out  of 
+polygons  and the text and numbers are made of lines,  so you don't see 
+'normal'  graphics  as such,  though there is no blockiness  or  jagged 
+edges and you get a lovely clear picture.  Later games include Tempest, 
+Battlezone  and  Starwars  which  have  colour  vector  screens.  Atari 
+generally  pioneered  vector games,  but Sega did a few but  these  are 
+relatively rare.  
+
+The  Empire  strikes back which was the follow up to Starwars  was  the 
+last ever vector game released around 1985. Operators (the folk who own 
+the  games,  who  jointly  make the money with wherever the  games  are 
+sited)  have found vector games to be unreliable and difficult  to  get 
+spare parts, so sadly vector games are becoming increasing rarer.
+
+The  controls for most games are fairly standard being arrow  keys  and 
+Control and Alt keys for fire and jump or whatever.   Most arcade games 
+have  built in diagnostic software activated by a switch hidden  inside 
+the  unit,  and Mame lets you activate this via a pop up menu when  you 
+press Tab which also lets you rededfine the keys and joystick settings.  
+Standard PC analogue joysticks are supported (I hate them)
+
+
+"Superzapper recharge" (Tempest) 
+~~~~~~~~~~~~~~~~~~~~~~ 
+Is that all there is to Mame?
+
+Its  not the same playing great games on a keyboard on a  boring  beige 
+14" screen is it??
+
+No!!!
+
+Some     enthusiasts    have    taken    one    step    further     and 
+bought/obtained/blagged  a real dead/expired/stripped arcade  unit  and 
+mounted  a PC inside wired up to the screen and controls and  lets  you 
+play the games in a authentic looking unit.
+
+Several  of the many conversions shown on the web have PCs  coupled  to 
+large  screen in TVs,  or 19" VGA monitors (if you can afford it!)  for 
+controls,  some  proper  arcade joysticks and buttons wired up to a  PC 
+gamepad.   One  guy is playing Missile Command with a proper trackball, 
+another  wanted a proper paddle controller for Tempest/Arkanoid  so  he 
+modified  a PC mouse to do this!   One particularly good site showed  a 
+British guy who obtained a empty cabinet and kitted it out himself with 
+a  19"  colour TV coupled to a Pentium 200 with a  graphics  card  with 
+suitable  output  connections,  and an amplifier with large car  stereo 
+speakers to pump out the sound,  and the whole thing resprayed a orangy 
+pink peachy colour the whole thing looked fantastic even though it cost 
+him around œ1,000!!!!
+
+If  I can locate a suitable cabinet this could be fun!!   Hmm,  time to 
+visit the tip I think, although this will probably have to wait until I 
+get my own flat.  :)
+
+
+"Valkerie now has temperary repulsiveness" (Gauntlet) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
+There's no doubt there is now a huge following for the arcade emulation 
+scene.   When  Dave's Arcade page,  a popular web site went down due to 
+request  from the ISP that hosted it,  100 different people offered  to 
+provided  web space to host it!!!   I have also often noticed that some 
+of  the sites that contain ROM images are freqently jammed with  number 
+of users trying downloading games at once.
+
+Its  been  huge fun for me,  considering my local arcades  on  Southsea 
+seafront don't have any games older than 1993, although this week I was 
+in  Ryde  on  the Isle of Wight and passing an  arcade,  and  they  had 
+Asteroids,  Mr Do, Hard Drivin', Ms Pacman and few other old gems, they 
+also  had  Starwars  but it was broken!  :(   I don't  like  all  games 
+though,  I find beat em ups dull,  and I'm not really keen on light gun 
+games.
+
+I've learnt loads about how arcade games work through resources on  the 
+net and there seems to be two types of arcades:  the type with loads of 
+money  to spend on the latest modern games (which are boring) and  sell 
+off the older games when they start to lose popularity,  and the arcade 
+with  old games bought cheap from auctions and the games tend  to  have 
+scruffy  looking  cabinets  and may have the wrong game  in  the  wrong 
+cabinet.
+
+
+High score: 
+~~~~~~~~~~~
+
+Thanks to:
+
+Felice and Pete Augustine who helped me buy a video card for my PC when 
+I was up in Northampton at the NAG meeting.
+
+Steve Smith for lending me the hard disk and Win 98 CD.
+
+Component  Solutions for a reasonable priced PII BX  motherboard  which 
+was only œ43!
+
+Lawrence  'The  Doctor'  who e-mailed me back after I  looked  at  your 
+superb looking custom Mamed cabinet unit.
+
+Dave Smith who helped me with some of the crashes I had.
+
+
+-=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- 
+
+
+  John Hayward
+
+Portsmouth, Hampshire, UK
+
+  X    <>    X    <>    X   <>    X    <>    X   <>    X    <>     
+ 
+-=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- 
+
+ 

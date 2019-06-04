@@ -1,0 +1,627 @@
+0660103030571
+9[........................................................]
+„
+Oohlook,anetgrab!ThisoriginatesfromaPCdemogroup,but
+containsinformationthatwillbeusefultoallyoudemocodersout
+therewhoarestillrepeatingthesamenineideas.Bogofftextured
+wibblytunnels,wewantcastshadowsandwewantthemnow!
+
+Checkoutwww.strangecreations.comforlotsmoreusefulprogramming
+textfiles.MostaregearedtowardsthePCbutstillcontainalotof
+generallyusefulinformation.
+                                            -EdCat
+
+Ps.I'vefoundthatifyouthinkoftheInternetasbeingtotallycrap,
+you'reneverdisappointedwhenitfrequentlyis.
+€
+
+========================================================================
+
+VGOSHADO.TXT-RealtimeShadowFAQ.                
+
+========================================================================
+
+        Writtenby:Vector/Vertigo(BrianCowan)
+             Email:cowan@gold.guate.net
+VertigoWebPage:http://demoscene.interstat.net/~vertigo/
+
+irc:   #coders#vertcode
+
+Revisionhistory:
+
+10/06/97   v0.70Beta-AwesometipsfromMidNight,touchedupthedoc
+04/06/97   v0.60Beta-AddedthetipssectionwithhelpfromStatix
+01/06/97   v0.50Beta-AfewtypofixesandacooltipfromStatix
+30/05/97   v0.10Beta-Initialversion
+
+------------------------------------------------------------------------
+INTRODUCTION
+------------------------------------------------------------------------
+
+Well,forthelast2monthsorsoIhavebeenlayingaroundthehouse,
+forcingmybraintotryandcomeupwiththeperfectshadowalgorithm,
+analgorithmthatworksbeautifullyinhardwareaswellassoftware.An
+algothataddsalmostnooverheadtotheactualrendering,andyields
+perfectresultsonanysurfacewithanytypeoflighting...Andallof
+thisofcoursereal-time.
+
+Iamnotjusttalkingaboutthosedinkyshadowsthatarecastontothe
+floorlikeablackblob,ortheshapeofafewenemies/items.Imeana
+fullyimmersiveexperience,whereallofthelightisobscuredina
+sewer,exceptforthefewslitsfromthegratesabove.Orlightvolumes
+thatfallthroughastainedglasswindowwillcolortheobjectsthat
+passbehindwithallthebeautifulcolorsoftheglass.Yourmouthmust
+bewateringforthisalgo...
+
+Nope,couldn'tcomeupwithone=).ButIhavenoticedonething,the
+net(particularlythedemoscene)alwaystendstofindallthecoolest
+real-timegraphicaltechniquesbeforeanythingelse.Sowhynotmakea
+docexplainingallIcouldfindandcomeupwithaboutthesubject,and
+maybeeveryonewillworktogetherandwewillovercomethepainof
+thesemonotonous3Dworldsandfindtheperfecttechniqueyet...
+
+------------------------------------------------------------------------
+YOUHAVEDEPRESSEDME,TELLMESOMETHINGGOOD
+------------------------------------------------------------------------
+
+Oh,sorryaboutthat.No,allisnotlostatthemoment.Thereare
+severalshadowtechniquesthataretriedandtrue,andyieldvery
+impressiveresults.Infactsomedaringdemoshavehadthiseffectfor
+quitesometime,likeMachinesofMadness/Dubius,orsomeotheroldone
+Ican'trememberwithaflatshaded'hollow'cube.Buttheonethat
+comesmosttomindisSpotlite/Funk,andisinfactanotherthingthat
+inspiredmetowritethisdocinthefirstplace.
+
+SowhatIwilltrytoexplainherearethetechniquesIthinkthese
+demosused,plusafewothersIfound/cameupwiththatmayhavegood
+potentialdependinguponthescene.Iwillalsogiveasortof
+rating/summarytoeachtechniquedealingwith:
+
+-Itscomplexitytocode
+-Overallvisualappeal
+-Speedforlowpolyscenes
+-Speedforhighpolyscenes
+-Goodforhardware
+-Prosandcons
+
+AndanythingelsemymindthatisoverloadedwithPepsidecidestocome
+upwith=).
+
+------------------------------------------------------------------------
+BEFOREWEBEGIN
+------------------------------------------------------------------------
+
+Thisdocdoesassumeyouhavegoodknowledgeof3D,Volumes,and
+rasterizers.Ifyoucan'tgetaZ-BufferedGouraudTexturedtriangle
+going,or3Dclippingandsuch,thenIadviseyougohavefun,learn,
+drinksomePepsi,andcomebacklater.
+
+Finally,thisdocdoesnotdealwithsoftshadows(althoughwithsome
+algos,theycanbe'faked').Nordoesitdealwithpre-generated
+shadowsthroughcachedTexturemaps.Ialsodonotmentionabunchof
+othershadowalgorithmsthatIsawnochanceofworkingreal-time(ray
+tracing)orwerecrapinthefirstplace.Checkoutthereference
+sectionforsomeplaceswhereyoucangetinfoonthese.
+
+Now,forthegoodstuff...(presentedinwhatisIMOworsttobest,but
+readthemall).
+
+========================================================================
+                            *THEALGORITHMS*
+========================================================================
+
+------------------------------------------------------------------------
+LIGHTVOLUMESUBDIVISION
+------------------------------------------------------------------------
+
+Technically,whatyoudointhisalgorithmisdefinea'web'oflight
+volumes.Thesevolumesarecreatedbyformingaconeofeachpolygon
+againstalight,whereoneendiscappedbythepolygon,andtheother
+endcanstretchtoinfinity,orpreferablyendatsomedistance(then
+anypolygonsbeyondthisdistancedonotneedtobeprocessed).
+
+Theconesareformedbyanamountofquadsequaltothenumberofsides
+inthepoly,soatrianglewouldbeformedby3quads,wherethe
+tangenttoeachquadrilateraledgegoesinthedirectionofthelight
+rayagainsttheedgeofthetri.
+
+Nowafteryouhaveallthesevolumes,youclipeverytriagainstthem,
+tofindoutiftheyareinashadowornot.Remembertoclip
+recursively,oryoucan'tgetshadowsinthemiddleoftris.
+
+Rightnowyoumustthinkthatthisis*REALLY*fuckingslow,whichis
+true,butthankfullytherearequiteafewspeedupsandenhancements
+youcantakeadvantageof.
+
+Firstofall,itcomesinhandytonotmakeavolumeforeverypolygon,
+buttodoitforeverysurfacefacingthelight.Soforexample,a
+spheremadeoutoftris,Youwouldmakeabigvolumeformedbythe
+wholespherefacingthelight,withabunchofquadsliningtheedge.
+Bewarnedthough,doingthissurfacebuildingisrathertricky,and
+requiresagoodformofrepresentingthemesh('Wingededge'shoulddo
+nicely).
+
+Andanotherimmediatelyapparentthingisthatyoucansortthepolys
+fronttoback,sothenyoudon'tneedtocheckpolysagainstthe
+volumesofpolysthatareinbackofthem(inthelight,nottheview).
+
+Anotherspeedupistoactuallyprojectthepolysontoa'virtual'light
+screen,thenyoucandoachecktoseewhatpolysarevisibletothe
+light.However,doingthischeckwillonlyworkforspotlights,
+eliminatingoneofthemostusefulthingsofthistechnique,unlessyou
+arewillingtodomultipleprojections.
+
+Somethingveryniceaboutthistechniqueisthatitonlyneedstobe
+doneonceforasceneiftheobjects/lightsdon'tmove,Youcanfly
+aroundandseeitfromanywhere.Plusitaccommodatesmultiplelight
+sourcesveryeasily,andcanhandlelightvolumespassingthrough
+stainedglasswindowifyouaddflagstothepolysforit.
+
+Complexity    =75%
+Visualappeal=95%
+Lowpoly      =60%
+Highpoly     =15%
+Hardware      =98%
+
+Pros-Onlyneededtobebuiltonceforstaticscenes.Muchroomto
+       expandonthistechnique.Easymultiplelightsources.Without
+       projectionmethodwillhandlepointlightsources.Handles
+stained glasswindow.Bestforhardware,fitsnicelyintomost
+3Dengines.
+
+Cons-Don'tletalltheprosswayyou,thisalgois*SLOOOW*,(butcan
+       stillsometimesbedonereal-time).Don'tuseforhighpoly
+scenes, sincetheamountofworkissquaredtotheamountof
+polys.
+
+------------------------------------------------------------------------
+LIGHTVOLUMERASTERIZATION
+------------------------------------------------------------------------
+
+Thistechniqueisaquickdirtyapproachtodoingshadowvolumes,that
+willprobablylookverycrappyifdoneinacomplexscene,butisstill
+anicehackanyways;)
+
+Whatyoudohere,isdividethepolygonsinto'surfaces'thatare
+facingthelight,andprojectquadsthatfallofftheedgesofthe
+surface(seeabove.)Afterthat,foreachquad,giveitaflagifit
+isfacingtheviewerornot.
+
+Afterthis,themethodisverystraightforward.Simplysortthepolys
+backtofront,andincludethelightingquadsintothissortinglist.
+Thenrasterizethesequadsjustlikealltheotherpolys.Ifthequad
+isoneoftheonesthatisfacingawayfromyou,thenmakeeverything
+behinditlighterifitsoneoftheonesfacingtoyou,thenmake
+everythingbehinditdarker.
+
+Thisshouldideallymakeeverypolyinsidetheshadowvolumedark,and
+evenouteverythingoutsidethevolumetothenormalcolor(maybeeven
+leavingacoolshadowhalobecauseoferroracumulation=).
+
+HoweverthisisoneofthoseideasIgotwatchingarepeatof"Married
+WithChildren"(ARGH!Whydidtheycancelthat,Kellywascute!=).So
+actuallyimplementeditprobablylookslikecrap.Butonafewvery
+smalltestsIdidwithasmallamountofpolys,itdidlookacceptable.
+
+    BTW,IguessIshouldmentionthedrawbackstothismethod.First
+off,thesceneobviouslymustbeZ-Buffered.Also,youmusthavea
+perfectsortingalgorithmforthis,orelsethetransparentpolyswill
+overlaysomethingbehind,anditwilllookinterestingtosaytheleast
+;).OrdowhatIdo(Ifzbufferavailable)Anddrawthetransparent
+polysaftertheoriginalrendering.
+
+Finally,theshadowscantbethatdeep,becausewhenyoureachan
+awayshadowplane,ifyouadd20to250(saturated),itwillcometo
+256,butwhenyousubtractbecauseofthefacingyoushadowplane,it
+willnotbetheoriginal250,itwillbe236.
+
+Complexity    =45%
+Visualappeal=35%
+Lowpoly      =90%
+Highpoly     =35%
+Hardware      =95%
+
+Pros-Simple,intuitive,quickanddirty.Easymultiplelightsources,
+       veryeasytranslucentsurfaces,leavesaprettylittle'shadow
+       halo'.
+
+Cons-Probablylookslikecrapinarealscene.Needsgood/weird
+sorting.
+       Willonlyworkwithverysoftshadows,orelsesaturationwill
+make everythingreallycrappy.ReallyAd-Hocalgo.
+
+------------------------------------------------------------------------
+MULTIPLEBITMAPPROJECTION
+------------------------------------------------------------------------
+
+Thisisaniceeasywayofdoingshadows.Basicallywhatyoudohere:
+
+    -Haveabaselightmap.Phongmapsworkwellhere.
+    -Formgroupsofpolysintosurfacesfacingthelight(seeabove.)
+    -Orderthesesurfacesfront-backforthelight
+    -Foreachsurface:
+      +Findthecoordinatesthatthetextureprojectsontoeachvert
+        (normalperspectiveprojectionworksnicely=).
+      +Makeacopyofthepreviouslightmap.Thendrawthecurrent
+        surfaceontoitasblack(orevencoloredtodoastainedglass
+        windoweffect.)Youwillthenusethisnewtextureforthenext
+        surface.
+
+Nowyoumaynotice,whathappensifthetextureistiledacrossapoly?
+Unfortunatelyyouwillhavetomakeanewsoftwaretmapperthat
+saturatesthecoordinatesto0orMAXsothattheydon'toverflow.
+Howeverinhardwaremanycardshavetheoptiontodothis
+automatically,andyoucanmakeathinoutlineontheimagethatyou
+canchroma-key,sothatitistransparent(orusethetextureasan
+alphamapinthefirstplace).
+
+Verysimplebuteffectivetechnique.I'mnotquitesureifitwillwork
+asIhavenotseenitdocumentedanywhere,butmanythankstothecool
+demoRobotnik/Rageforgivingmetheidea.
+
+BTW,thisisactuallyverycrappytodoonhardware,becauseofthe
+shearamountoftextureloadingtodowouldbeimmense.Whichisa
+shamebecauseofthesaturationandchroma-keyandalltheothercool
+stuffhardwareletsusdo...Howeveryoucanstillusethemappingto
+dorealneatspotlightsandprojectionsanyway,evenwithoutthe
+shadows.
+
+   Itisalsoworthnotingthatmakingaccuratelightingwiththis
+methodisveryhardin(RGB)software.Sincelightingisactuallya
+functionofthecolor*light,notanaddition.Soatexelofcolour
+(0..1)'r=.5,g=1,b=.5'andlightintensitiesof'rgb=.5'should
+actuallygive'r=.25,g=.5,b=.5'...andthisiswithoutcounting
+specularity.
+
+Hardwarehastheabilitytodothisatnocost,andyoucandoit
+easilyifyouusepalettedtexturesorapalettedvideomode.Youcan
+howeverdoaquickhackinsoftwarethatdoeslookconvincing.although
+won'tallowpureblacksorwhites.Simplyshiftthesrcanddestpixels
+rightby1,ANDthefinalbitsofRGBoff(for32bititwouldbeAND
+7F7F7F7Fh)andaddthemtogether.
+
+Complexity    =20%
+Visualappeal=70%
+Lowpoly      =70%
+Highpoly     =60%(Slowifmanysurfaces,notpolys)
+Hardware      =20%                                                  
+
+Pros-Fastandeasyforsoftware.Lightscanhavereallycoolshapes
+(like logos,ormovieprojectors).Translucentobjectscanmake
+colored shadowsatalmostnoperformancecost.
+
+Cons-Veryslowforhardwarebecauseofallthetextureloading...
+       hopefullyAGPwillhelpusoutabit.*LOTSOFMEMORY*needed,
+but unfortunatelykeepingthelightmapssmallwillgivealotof
+point samplingartifacts.Multiplelightsareabitch.AGP+
+hardware bilinearaliasingandmultiplepassesshouldhelpall
+theseproblems. Canonlydospotlightwithonepass.
+
+------------------------------------------------------------------------
+TWOPASSZ-BUFFERSHADOWS
+------------------------------------------------------------------------
+
+Theseareperhapsthemostwellknown,triedandtruetypesofshadows.
+Theyarefast,speedvariesalmostlinearlywiththeamountandsizeof
+polys.Andareincrediblyeasy.
+
+Whatyoudoforthisalgorithmissimple,justdrawaZ-Bufferofthe
+worldfromthelight'spointofview.Thenfortheactualcameraview
+attherasterizingstage,grabthecoordsofeachvertexinlightspace
+(XYZ),andinterpolatethemmuchliketexturemapping.Ateachpixel,
+doacheckoftheinterpolatedlightZwiththeZfoundinthelightZ
+bufferattheinterpolatedlightXandY.Ifit'sbehind,thenit'sin
+shadow.Asyousee,thisisalmostexactlylikenormalZ-Buffering,
+excepttheZ-Buffergridpositionistakenfromtheinterpolated
+light'sX/Y,insteadofthepixelplottingposition.
+
+Thisshadowmethodcandefinitelybedonereal-time,ThedemoSpotlite
+byFunkprovesthismethod.Howeveritisveryhardtogetgoingfast
+ifyouwanttosupportandarbitrarynumberoflights.Youcanalsogo
+astepfurtherandmake'softshadows'byincludinganintensityvalue
+withthelightZ-Buffer,andusethisasanalphablend/lightness
+factor.Finally,theLightZ-Bufferinterpolationsideallyshouldbe
+donewithperspectivecorrection,althoughthisissomethingyoumay
+tryskipping,especiallyifyouaredoingmultiplelights.
+
+Thisalgocanbefoundinmostgood3Dbooksifyouwantmore
+informationonit.Also,youcanalwaysdotheZ-Buffercomparesper
+pixelifthisisanon-real-timeapplicationanditsaveryhighpoly
+scene.Also,makesureyourcameracanrendertodifferentsize
+canvases,tobeabletorenderthelight-viewsceneina256*256window
+(recommended)forfastZ-Bufferlocationfinding.
+
+Unfortunately,Z-Buffershaveaverybadaliasingartifactproblem.
+Shadowscanlookverypixelatedifthedifferencebeetweensurfacesis
+largeenough.Also,thiscancausepolysthatareatasharpangleto
+actuallyoccludethemselves.Statixtoldmeaveryinterestingwayof
+solvingthelaterproblemthough,whereyoustoretheaverageofthe2
+nearestpointsintheZ-Buffer.Thisway,thepointistofartooclude
+itself,buttonearastonotocludepolysthatarebehind.
+Unfortunately,Idonotknowafastwayoffindingthesenearest
+points.
+
+Complexity    =25%
+Visualappeal=75%
+Lowpoly      =60%
+Highpoly     =70%
+Hardware      =Impossible                                                  
+
+
+Pros-Veryfastandeasyforsoftware.'Triedincombat'.Lightscan
+       havereallycoolshapes,andfakedsoftshadows.Lowmemory
+       consumption.
+
+Cons-Impossibletodooncurrenthardware(maybenotonprogrammable
+       chipsetsthough).No'true'translucencysincedepthforback
+objects islost.Supportforanarbitraryamountoflightsis
+veryhard. SincetheLightZ-Buffermaybetoosmall,aliasing
+artifactscan easilyarise.
+
+
+------------------------------------------------------------------------
+TWOPASSS-BUFFERMETHOD
+------------------------------------------------------------------------
+
+AperhapsinterestingvariationoftheabovemethodthatIthoughtof,
+isthetwoPassS-Buffer.Ifitactuallyworks,Itmayturnouttobe
+thefastestoverallofthemethodsIhavepresentedinthisdocument.
+Ifyoudon'tknowwhatS-Buffersare,makeshuretograbPaulNettle's
+(Midnight)tutorialoffofHornetonthem.Beforeyouevenattempt
+these,makesureyouhavefastS-Bufferinsertionroutines.
+
+First,buildanormalS-Bufferforthecamera.Thenforeachlight,
+buildaspanlistasviewedfromit.*BUT*youhavetoeitherrotate
+thelightsothattheXaxisalignswiththeXaxisoftheview,or
+buildthespansatanangle.;)
+
+Bynow,Ithinkyouknowwhatwearegoingtodo=).Foreachspanin
+thelightview,converttoviewspaceandplaceintotheaccording
+positionintotheviewS-Bufferlist.ThendoinganormalS-Buffer
+compare,findifthespansorpartsofthemfallbehindthecurrent
+span.Iftheydo,thensimplyreplacethespansunderthem(splitting
+ifnecessary)withashadowtag.Thenwhenyourenderthespans,just
+doachecktoseeiftheyareinshadowornot.
+
+Youshouldalsonotethatyouobviouslydonotneedtorasterizethe
+lightspans,onlybuildthespanlist.Also,thisalgoshouldhandle
+multiplelightswithextremeease.Ofcoursethespansthatyoureplace
+withshadowversionsdon'tneedtheirdeltasrecalculatedoranything.
+Plusifyouhaveknowledgeaboutthehardwareandhowithandles
+deltas,youcando1pixelhightristosimulatespans,andfeeditthe
+pre-calculateddeltas.Ifnot,hopethehardwareisfastenoughtodo
+allthosespansanyway.=)Italsomaybeadvantageoustocompareevery
+viewspantoeachlightinsteadoftheotherwayaround.
+
+Iamstillverysketchyonthismethodthough...firstofall,inmany
+casesitwillprobablylookquiteincorrectbecauseofperspective.The
+lightXspanswillalmostneverbeequaltothecameraXspans,no
+matterhowyourotate.Thisisn'tsonoticeableintheZ-Buffermethod
+becauseitencompassesaverysmallarea,andcanvarywitheachpoly
+insteadofthewholelightview,plusperspectivecorrectioncanbe
+donewiththezbuffermethodtofixanyinnacuracies,butwouldbe
+extremelyweirdandhardwiththeS-Buffermethod,soforsomelight-
+>viewanglesitmaybebettertoresorttoadifferenttechnique.If
+anyonegetsthisoravariationofitworking,Iwouldlovetohear
+fromthem.
+
+Complexity    =85%
+Visualappeal=50%
+Lowpoly      =90%
+Highpoly     =80%
+Hardware      =50%                                                  
+
+Pros-Fastandelegant.ShouldfitintoanyS-Bufferingenginevery
+       nicely.Handlesmultiplelightsextremelyfastandefficient.
+The timetakentolightasceneshouldberatherconstant,no
+matterthe amountofpolys.Mayhavepotentialforimprovement.
+
+Cons-Ithoughtofit,soitprobablydoesn'twork=).Nottried
+       anywhere.Shadowswillprobably'flicker'alotduetospan
+aliasing artifacts.Willonlyworkwithspotlights.No'true'
+translucent objectscastingcolorshadows.
+
+------------------------------------------------------------------------
+POLYGON-IDBUFFERSHADOWS
+------------------------------------------------------------------------
+
+Thismethodisbyfarmyfavoriteofallhere,andwouldn'texistif
+notforagreattipfromMidNight.It'sverysimilartotwopassZ-
+Buffershadows,butissomuchbetterIthoughtitdeservedasection
+allitsown.
+
+Allthatyoudohereissortthepolysbacktofrontlikenormalfor
+thelight.Thenforeachpoly,simply'flatshade'auniquepolyidfor
+itintoabuffer(The16leastsignificantbitsofthetriPTRusually
+workswell).
+
+Thenforthecameraview,interpolatethetriangleinlightspacejust
+liketheZ-Buffermethod(exceptyouDON'TneedinterpolateZanymore).
+Andthenforeachpixel,checktoseeiftheIDinthelightbufferis
+thesameastheIDforthecurrentpoly.Ifitisn't,thenthepixelis
+inshadow.
+
+Asyoucansee,thismethodisextremelyfast,noneedtointerpolateZ
+forthelightbufferincreationorchecking!(Althoughyoucanalways
+useZbuffersifthescenehasmanysortingerrors.)Andit'sactually
+MOREaccuratethanthedualZ-Buffermethod,becausepolyscan'tshadow
+themselves.Also,thismethodcanbeveryeasilyadaptedtothetwo
+passS-Buffermethod.
+
+Ascoolasthismethodis,itstillhasafewdrawbacks...Firstof
+all,objectsthataremarkednottocastshadowswillalwaysbein
+shadow(ifyourengineoffersthatability).However,objectsthatare
+markednottoreceiveshadowswillstillproperlywork.Second,itis
+stillveryslowforanarbitraryamountoflightsbecauseofthelight
+loopinsidetheinner(per-pixel)loop.Butevenwiththis,themethod
+candefinatelybeusedforquitehighpolyworldsinreal-time.=)
+
+Complexity    =10%
+Visualappeal=90%
+Lowpoly      =90%
+Highpoly     =90%
+Hardware      =Impossible                                                  
+
+Pros-Fastestworkingonehere.Evenakidcoulddoit.Lightscan
+       havereallycoolshapes,andfakedsoftshadows.Lowmemory
+       consumption.Nopolys'shadowing'themselves.
+
+Cons-Impossibletodooncurrenthardware(maybenoton
+       programmablechipsetsthough).No'true'translucencysince
+depthfor backobjectsislost.Supportforanarbitraryamount
+oflightsis veryhard.Sincethelight-buffermaybetoosmall,
+aliasing artifactscaneasilyarise.
+
+
+------------------------------------------------------------------------
+TIPS&TRICKS
+------------------------------------------------------------------------
+
+Beforeleavingthissection,I'llputinsomeuniversaltricksthatcan
+giveatremendousspeedboosttothesemethods.
+
+-Don'tprograminQbasicorLingo;)
+
+-Statixremindedmetomentionsomethingveryimportant.Youcanget
+atremendousspeedboostifyouuseconvexobject.Notonlyfor
+shadows,butmanyotherthings(likecollisiondetectionisabreeze
+withthese.)Howaretheseadvantageoustoshadows?First,theycan
+notshadowthemselves.Second,findingtheedgesoftheobjectto
+thelightisveryeasy.Yousimplyflageveryedgeforeveryvisible
+polyithas.Ifithasonly1visibleattachedpoly,thenitsan
+edge.ThirdandmostimportantfortheLightbuffermethods,aconvex
+objectisaconvexpolywhenprojected=).Soyoujustputtheedges
+intoanedgelistinanyorderyouwant,andfillwithwhateverthat
+bufferdesires.Sincetheyareconvexobjects,youdon'tneedto
+worryaboutfillingthepolyexactly...allyouneedtodois'stay
+beetweenthelines'oftheprojectedpoly=).Sonowyour2000tri
+sphereisapieceofcakeforthecputorenderforthelight.
+Obviouslyforthepolygon-idbuffermethod,fillitwithashapeID,
+andfortheZbuffermethod,interpolateZalongtheedgesandinside.
+
+-Iwillmentionthisagain,asIcan'tstressitenough:EXPERIMENT!
+Everymethodhasanalmostinfiniteamountofvariations,NO
+algorithmisperfect.
+
+-Flagsarenice.Don'tprocessobjectsthatwon'tbeaffectedinthe
+view(Unlessitsaonetimetechnique).Rememberyoustillneedto
+processthepolysthatprojectintotheviewvolumethough.
+
+========================================================================
+                           *THELASTWORDS*
+========================================================================
+
+------------------------------------------------------------------------
+THEPERFECTSHADOWALGORITHM
+------------------------------------------------------------------------
+
+Asyoucansee,therearemanyworkingreal-timeshadowalgorithms,
+eachwithitsownspecificstrengthandweakness.Andallofthemhave
+endlessvariations.Unfortunately,noneofthemevencomescloseto
+beingperfect.
+
+Tome,theperfectreal-timeshadowalgorithmisonethat:
+
+   -It's*=FAST=*.
+   -Worksinhardwareaswellassoftware.
+   -Canhandletranslucentaswellasopaquesurfaces.    
+   -Isprecisionperfect.
+   -Isnotresolutiondependant(speedorprecision).
+   -Willworkwithmultiplelights.
+   -Isnot'hardcoded'andfitsnicelyintoa3Denginepipeline.
+   
+Probablytheclosestalgorithmtofilltheabove,isactuallythe
+currentcrappiestone.Thelightvolumesubdivisionmethod.Thegood
+thingisthatthismethoddoeshaveplentyofroomforimprovement,and
+Icanseesomeonecomingupwithafastwayofdoingit(orsomething
+similar)someday.
+
+------------------------------------------------------------------------
+REFERENCESANDOTHERCOOLSTUFF
+------------------------------------------------------------------------
+
+Firstofall,Iwouldliketonameonebookthathashelpedme
+tremendouslyineverythingabout3Dandgraphics.Itactuallyexplains
+whyandhowmosteverythingworks:
+
+   "ComputerGraphicsPrinciplesandPractice"
+   Foley,vanDam,Feiner,Hughes
+   2ndEditioninC
+   ISBN:0-201-84840-6
+
+AnotherBookthatisverygood,andtouchesuponmanypartsthatCGP&P
+skimpsonalittleis:
+
+   "AdvancedAnimationandRenderingTechniques"
+   Mark&AlanWatt.
+   ISBN0-201-54412-1
+
+ManypeoplelikeAARTmorethanCGP&P,althoughIpersonallythinkthat
+CGP&Pisinvaluable.BothbooksarebyAddison-Wesley.
+
+Also,makesuretocheckoutSpotlight/FunkwhichIthinkusesthetwo
+passZ-Buffermethod;Robotnik/Ragewhichappearstousethemultiple
+projectedbitmapmethodorsomethinglikeit;andMachinesOfMadness,
+whichlookslikeitusestheshadowvolumeclipmethod.Theycanallbe
+foundonhornet(ftp.cdrom.com/pub/demos/).
+
+Finally,ifyouarenotonIRC,makesuretogeton!Ihavefoundmany
+peopleonIRCaninvaluablesourceofknowledge,andwouldprobably
+stillbestuckonarotatingflatshadedduckwithoutthem.;)
+
+------------------------------------------------------------------------
+CONCLUSION
+------------------------------------------------------------------------
+
+Thisdocumentwasnotonlywrittentohelpteachpeople,buttoget
+feedbackfromtheworldonhowtoimprovethesemethods.Iamnotreal
+happywithanyofthemandhopethatwecanallworkoutagoodwayof
+doingit.
+
+Allthecontributorstothisdochaveonethingtosay,experimentand
+learntothinkdifferently.Allthesemethodshavemanyvariations,but
+intheend,maybealltheseare"back-ass-ackwards"inthefirstplace.
+
+Ifyoudohaveanymethodorimprovementyouwouldliketoaddtothis
+document,pleasesendittome.Youwillbeofcoursewellacredited
+forit.Also,IhopethatinthenextversionIcanincludeadecent
+workingshadowenginewithcodesothateveryonecanexamine.
+UnfortunatelylatelyIjustdon'thavetime,andIwantedtogetthis
+thingouttherebecauseIdidn'tseeanycomingsoon.Although(If
+thereareanymeshartistsouttherewillingtolendahandinthe
+group,pleasedropmealine!).Butuntilthen,IhopethatIexplained
+themethodswellenoughsothatyoudon'tneedit.Asalways,feedback
+ismuchappreciated,andIwilldefinitelytryandrespondtoall
+emails.Ifyousendanyflames,pleasemakethemconstructive=).
+
+Ifyoudouseanyalgorithmsinhere,orfoundthisdocuseful,please
+emailandtellmeso.=)Itsstufflikethatthatkeepspeoplewriting
+moredocsinthefirstplace.Ofcoursesomegreetsoracknowledgement
+wouldalsobemuchappreciated.=)
+
+                  WithafrumpleinonehandandaPepsiintheother,
+                                                      -Vector/Vertigo
+
+------------------------------------------------------------------------
+GREETSANDCREDITS
+------------------------------------------------------------------------
+
+Currentcontributorstothedoc:
+
+Vector     -(cowan@gold.guate.net)
+Statix     -(AJBE2@hermes.cam.ac.uk)
+MidNight   -(midnight@grafix3d.dyn.ml.org)
+
+Greets:
+
+OhgodIhatethese,Ialwayswanttogreetlike500people(alaFaith
+=).Illkeepitveryshort,thatwayeveryonecanbepissedatme
+insteadofonlyafewpeople:
+
+TimJ(Frumple!),Jcl,sorryIforgottoputyouinthelastdoc=),
+Crow,Leviathan,Vastator,MrData,Gaffer(NASMrocks!),submissive,
+VOR,god,fysx,brazil,Grimace,deepee,Phred,Gooroo,PGM,Zog,
+pGeist,Phoenix,fuzzy,Winghead,Pascal,You,Tachu!,Cuca,And
+everyoneelseinGuatemala=).Ok,greetsaretoolongalready...
+
+Byee!        

@@ -1,0 +1,111 @@
+
+{*f1 THE PHENIX 060{*f0
+
+Here is an official communique about the PHENIX 060.
+This communique will nextly be available too on our WEB site.
+This last one will be updated nextly with the photography of the Phenix 060.
+
+Please, if your receive several times this email, inform us !
+
+Have a nice reading.
+
+*************************************************************
+* CLASS4-CENTEK  NEWS for APRIL-MAY-JUNE *
+*************************************************************
+
+Here is a short brief about what we've been doing last three months...
+
+- CENTEK & CLASS4 teams have joined together in a brand new 21000
+square-feet  work space .
+
+------------------
+SOFTWARE
+------------------
+
+- A SQL core (data-base) was realised by a student who spent three months
+  towards CLASS4.
+
+- Dolmen's ressource (RSC) editor named "FASHION" , one of the major parts of
+  our developper package has been widely enhanced and is very likely to make
+  us do a quantum leap regarding to the look&feel of our softwares, by the
+  intensive use of really NEW objects.
+
+- Two students are actually busy developping a BSD based network system layer.
+
+- PCI-DMA has been tested (used by Ultra-SCSI, Ultra-DMA 33, DSP56301,
+  USB, also by the graphic card , or even by a network card).
+
+- Dolmen's DOS layer now handles properly PC drives (including FAT32
+  drives). Such drives may have a size of more than 1000 GB (in fact
+  nearly infinite because it's simply larger than the largest hard
+  diskdrive !).
+
+- Handling of a proprietary vector fonts manager compatible with
+  QUICKDRAW GX 32-Bit.
+
+- Convertor system from TRUETYPE 2 & GX formats to the internal format.
+
+- Conversion of the 16-Bit coordinates VDI to 32-Bit (like QUICK DRAW GX).
+
+- The VDI of DOLMEN is actually modified to become compatible with NVDI 4
+  (NVDI 5 compatibility is studied).
+
+- Evolution of the FLASH loader program (actual name is PUTFLASH) for the
+  PHENIX 060's FLASH updates (the FLASH is sectorized and the write access
+  is protected by a password).
+
+- Handling of some MAGIC AES objects for better compatibility.
+
+- WDIALOG functions being implemented (see reason above)
+
+- SCSI, IDE & ATAPI devices can now receive the same commands, CECILE does
+  all required translation.
+
+- GDOS & SPEEDOGDOS fonts are now used by Dolmen's AES.
+
+- Some picture file formats have been added in GPIX aes objects :
+  .RAS (Sun raster file)
+  .WMF (Windows Metafile)
+
+- Cecile's CD player now grabs cd tracks in WAV format for better compatibility.
+  (handles different grabbing speeds with jitter control).
+
+- A professional CD recording software has just been started.
+
+- Set up of our OPENGL (1.2) rendering kernel in Dolmen.
+
+- Study of the DMX communication protocol.
+
+-------------------
+HARDWARE
+-------------------
+
+- Optimised routage of the motherboard near the 20-bit AUDIO parts, and
+  on the  PCI & IDE bus
+
+- Added a HE14 connector for 2 fans (one for each 060).
+
+- Added a double programmable-PLL to select bus speed by software
+  (local 060 bus up to 90 MHz & PCI bus up to 50 MHz).
+
+- Debugging of the arbitration logic for the 7 PCI agents.
+
+- Added 5Vcc supply on CPU#B's slot (named SLOT B).
+
+- Increased capacity of 32-Bit FLASH memory from 256 KB up to 1 MB
+  (expandable to 2 MB).
+
+- Tweaks on demand of the motherboards mounter regarding to the size
+  of the pads for the 2.2 uF & 10 uF SMT capacitors.
+
+-----------------------------------
+
+CLASS 4 / CENTEK
+42, rue Delegorgue
+F-62970 COURCELLES-LES-LENS
+FRANCE
+Phone : +33 (0)-3-2-1-409-400
+Fax :     +33 (0)-3-2-1-746-449
+HOTLINE : +33 (0)-3-2-1-746-039
+WEB : www.centek.fr
+

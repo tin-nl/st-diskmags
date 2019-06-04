@@ -1,0 +1,83 @@
+-------------------------------------------------------------------------------
+			     LINE-DRAWING ROUTINES
+-------------------------------------------------------------------------------
+
+Hello people! This is Fredrik Egeberg (deez // Wildfire) writing some words for 
+you  to read. This text  is meant to  show you a  way to draw  lines across the 
+screen... you have to modify it to get something out of it. Sorry about this :)
+
+The topic for today is line-drawing routines. Quite old things you say but it's 
+funny to see how fast you can make it!
+I'm not  sure if  this is the  fastest way to do it in realtime, but  it's sure 
+short and compact!
+
+Before I begin writing the real algorithm (Bresenham) I want to make clear some
+things....
+
+I use this kind of line...
+
+	   P1(x1,y1)
+	   - oooo
+   delta_y |     oooo
+	   |         oooo
+	   -             oooo P2(x2,y2)
+	   |--------------|             delta_x 
+
+(The oooo:s are supposed to be a line...)
+
+P1 is the first point, P2 the second.. and x1,y1 are P1:s coords,
+guess what x2,y2 are!!! :)
+
+delta_x MUST be  greater than  delta_y for this little example! (when writing a 
+real linerout you must do some changes to get the other lines..
+(that's another article :->) )
+
+
+ok, let's go!
+
+delta_x  = 3D x2 - x1
+delta_y = 3D y2 - y1 (if you don't get this, stop reading..)
+
+step = 3D (2 * delta_y) - delta_x
+   x = 3D x1
+   y = 3D y1
+
+here comes the algo.. (in basic/pascal-like form)
+
+---------------------------------plot x,y          : plot a pixel at x,y (quite 
+selfexplaining)
+if step < 0 then step =3D step + (2 * delta_y)
+ else
+begin
+ step =3D step + 2 * (delta_y - delta_x)
+ y =3D y + 1
+end
+x =3D x + 1
+---------------------------------That's it!
+
+Now loop  this section for  delta_x-times. As I wrote earlier in this text this 
+only produce the kind of lines shown above. To make lines where delta_y > delta
+x then  you  have  to  modify it  some. This  routine  is not  only useful  for 
+linedrawing, it can be used also for calculating the edges of a polygon.
+
+But it's too slow!! ------------------It's  not  that  fast  in this  form!! In 
+assembler  you  can  precalc  the 2 * delta_y  and  some  other  small calcs to 
+increase speed..
+
+
+ok people! this  is it then... if you just can't get it then write a mail to me 
+and I'll try to explain it to you..
+
+
+    Fredrik Egeberg   (deez of Wildfire)
+    Hasselgatan 22
+    614 33 S”derk”ping
+    Sweden
+    Tel: 0121-21325
+    deez@algonet.se
+
+some greetz to: Wildfire (esp. deez :->), Toys (TAM you little pervert!!),
+		UCM-team (keep on hacking!), DHS, TSCC
+		And all at #atari!!!
+
+ // deez... (I like those little dots ;-> )

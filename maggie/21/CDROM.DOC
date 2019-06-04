@@ -1,0 +1,257 @@
+
+                                  Maggie 21: Programming/Storage
+
+
+
+                  CD ROMS - STORAGE AND PROGRAMMING
+
+
+
+         CD ROMS: Love  them  or  hate  them,  the  spangling lumps of 
+          silicon are here to stay. And  have  bad PC games recorded on                               
+          them. But how exactly do they  squeeze  all that junk onto CD 
+          in the first place, and get it off again reliably?
+         SEEDY RON: Tat
+
+
+         
+It isn't  often  that  someone  turns  on  their  TV,  sees  the  Open 
+ University, and thinks "Oh! That looks  interesting!" So after a quick 
+ fumble with the video, a programme on the storage and error correction 
+ on CDs is duly recorded, and here are the fruits of that programme and 
+ a little bit of my own research on the maths...
+
+
+
+                              CD BASICS
+
+Most people know that a CD  usually  holds around 70+ minutes of high-
+ quality music, and a CD-Rom for a  PC holds up to around 650 Megabytes 
+ of general purpose data.
+
+Music on a normal CD  is  stereo,  of  16  bit  (2 bytes) quality, and 
+ stored at 44.1 Khz. This would result in 44100 * 2 * 2 = bytes of data 
+ per second, or 176,400 bytes to  be  precise.  Never mind that this is 
+ the entire RAM memory of 3.5  ZX  Spectrums  burnt up every second, or 
+ just over 10 Megabytes  per  minute,  it  means  that 650 Megabytes is 
+ approximately 65  minutes  of  data,  plus  information  on  where the 
+ files/tracks are stored and so on.
+
+Such a lot of data is stored as  zeroes or ones, meaning that each bit 
+ occupies a tiny  space  on  the  CD  surface.  Clearly  reliability of 
+ reading is going to be a problem. First let us see how, in theory, the 
+ CD reads one bit of data:
+
+The laser to read  the  CD  emits  a  single  pure  beam of light that 
+ travels in a wave, and remains  an  exact distance from the surface of 
+ the CD. The difference between a  "pit"  on  the  CD and the "land" is 
+ just under a quarter of  the  wavelength  of  the  beam emitted by the 
+ laser.
+
+          BEAM / RECEPTOR
+               |__|
+                /\ (sine wave)
+                \/                      (Picture-in-text option,
+                /\                       anyone?)
+                \/   ____
+                ÿÿÿÿ|    |ÿÿ CD SURFACE
+                000010000100
+                    |    |
+                Pit  Land Pit
+
+Thus, if at any point the  distance  between laser and surface alters, 
+ the beam that the receptor 'sees' alters too, since the phasing of the 
+ single beam of pure light  transmitted  by  the  laser changes i.e. it 
+ changes from dark to bright, or vice  versa. (Don't worry if you don't 
+ understand phasing  of  waves,  neither  do  I.)  Whenever  the  phase 
+ changes, then the CD device reads a '1' - otherwise a '0' is read.
+
+
+
+
+                             CD PROBLEMS
+
+The theory is fine, the big problem is reading every bit perfectly. An 
+ average CD will hold 650 Megabytes, that's  650 * 8 = 5200 Megabits of 
+ data. If we assume that there is  a  1  in 100,000,000 chance of a bit 
+ being  printed  incorrectly  on   the   CD   when   it  is  made  (not 
+ unreasonable!), then the odds of having  a  perfect  CD is 1 in 3.83 * 
+ 10e22, or 383 with 20 zeroes  after  it.  Not very likely. In fact the 
+ average CD contains ten  of  thousands  of  errors,  so  using it as a 
+ computer storage device in its  most  crude  form would be impossible. 
+ Even CDs would sound exceptionally crackly.  When we take into account 
+ errors caused by fingerprints, for example,  or problems caused by the 
+ CD never spinning exactly in  a  circle,  (ie.  the  hole isn't in the 
+ middle!) then raw music data  would become unlistenable. CD-ROMS would 
+ also be unworkable, almost as  unreliable  as  a Commodore disk drive. 
+ Clearly a form of error-correction is needed.
+
+
+
+                            CD CORRECTIONS
+
+Error correction is one of  the  most  essential  parts of any digital 
+ storage system. One of the most crude  methods of storing data was the 
+ old Commodore 64 tape  cassette  recorders,  where  not  only was data 
+ recorded very s-l-o-w-l-y, it was  also  recorded  TWICE to ensure the 
+ first copy was the same  as  a  second!  Data ports today, for example 
+ printers and modems, use "parity"  bits  to  check each byte to ensure 
+ that each byte contains an even or odd number of ones or zeroes.
+
+On a CD, the method of error  correction comes in two forms. The first 
+ involves checksum  methods,  the  second  concerns  how  the  data  is 
+ organized on the CD itself. Let's start with the checksums...
+
+
+
+
+                             CD CHECKSUMS
+
+Time to get into some theory.  The  use  of checksums is applicable in 
+ all sorts of applications, for example sending data via the Midi port. 
+ However, in most cases a  check  bit  or  check  value is only used to 
+ detect whether an error in transmission  has occurred, and the data is 
+ re-sent. In CD applications such as  music  this is however clearly an 
+ unsatisfactory method, so a more refined process is used, called Reed-
+ Solomon encoding. Not only can  this  process  determine that an error 
+ has occurred, it can also correct it!
+
+
+                       FINITE  FIELD  ARITHMETIC   The   best  way  to 
+ demonstrate this method is by using  a simple example. The method uses 
+ a type of arithmetic, called  "finite  field arithmetic" which differs 
+ from normal maths. You don't really  need  to  know all the theory for 
+ this, but there are two main properties that calculations in FFA have:
+
+- firstly, all values  are  limited.  both addition and multiplication 
+ for a value 'a' will give  a  value  from  0-x, where x is the maximum 
+ number given by reading a value from the  CD. In the case of a CD this 
+ is 0-255, for simplicity's sake we will here use 0-7.
+
+- secondly, for an addition of type (a + b) = z      or
+                a multiplication of type (a * b) = z,
+                where (a<>0) and (b<>0),
+
+then for one value of a, each value of b will give a different result,
+that is, if (a * b)  =  7,  only  one  value  of b will give the right 
+ result for any single value of a. Hence we can also do subtraction and 
+ division. Let's take the  addition  and  multiplication  tables from a 
+ simple example, that of base 7:
+
+    *     0  1  2  3  4  5  6      +     0  1  2  3  4  5  6
+
+    0     0  0  0  0  0  0  0      0     0  1  2  3  4  5  6
+    1     0  1  2  3  4  5  6      1     1  2  3  4  5  6  0
+    2     0  2  4  6  1  3  5      2     2  3  4  5  6  0  1
+    3     0  3  6  2 *5* 1  4      3     3  4  5  6  0  1  2
+    4     0  4  1  5  2  6  3      4     4  5  6  0  1  2  3
+    5     0  5  3  1  6  4  2      5     5  6  0  1  2  3  4
+    6     0  6  5  4  3  2  1      6     6  0  1  2  3  4  5
+
+.. and by using the lookup tables in FFA,
+                        4 * 3 = 5,      [ asterisked above ]
+        therefore:      5 / 3 = 4
+        and:            5 / 4 = 3
+
+these come in very handy for error correction...
+
+
+[Author's note: the  way  FFA  multiplication  tables  are created for 
+ values of 0 to 255 is beyond the scope of this article. That's another 
+ way of saying I don't know either. Addition tables are in fact created 
+ by the use of the  EOR  (exclusive-or)  function...  I now have a book 
+ about coding theory, so  I  can  do  another  article explaining it if 
+ anyone wants?]
+
+
+
+
+
+                         STILL THERE ANYBODY?
+
+That's the wacky stuff out of  the  way.  Now, CDs use a system called 
+ Reed-Solomon codes to do the actual  error correction. For each stream 
+ of x values, the value read off  the  CD should be f(x). After these x 
+ values, two checksums, c(0)  and  c(1)  are  stored. These are created 
+ from the following two equations that must be fulfilled for the values 
+ read:
+
+1)      f(1) + f(2) + .... + f(x) + c(0)   = s
+                                where s=0 if no error has occurred
+
+2)     1f(0) + 2f(2) + .... + xf(x) + c(1) = t
+                                where t=0 if no error has occurred
+
+
+It seems very easy to detect that an error has been caused: simply use 
+ equation (1) to see if  the  total  is  0,  and  if  not, an error has 
+ occurred. However. if there is only  one error, then by using equation 
+ (1) we can see the size of the  error (the checksum will be n, where n 
+ is the magnitude of the error)
+
+Now, here's the clever bit.
+
+So far, we know how big the  error  is, but not its position. Now look 
+ at equation two. Assuming only one  error again, each single value has 
+ been multiplied by its own  position  in  the  list. Hence t should be 
+ equal to s (the magnitude of the error) multiplied by its position!
+
+As an example, let's assume an error  occurs in position 2, in fact it 
+ is 3 too big. Checksum (1) will  give  a  value  of 3, the size of the 
+ error of f(2). Checksum  (2)  will  give  us  6,  since  f(2) has been 
+ multiplied by 2 in the second equation.  Hence take 3 away from item 2 
+ in the list, and the error has been corrected.
+
+
+
+
+                            CD DATA LAYOUT
+
+The use of checksums alone  is  not altogether enough, though. Reading 
+ errors tend to be spread over  consecutive  spans  of the surface of a 
+ CD, so it is likely that on their own, more than one error would occur 
+ over a span of data and  the  checksum  method would fail. As an extra 
+ layer of protection,  interleaving  and  multiple  checksum layers are 
+ used. 
+        To put the data on the disk,  let  us assume that the first 24 
+ units of data are denoted by 'a'  in  the diagrams below, 'b' the next 
+ 24 units. Firstly each set of 24 has 4 checksum values added (shown in 
+ capitals) This is done in a similar fashion to the processes described 
+ above, but here, up to 2 errors  in  the 24 units can be automatically 
+ corrected.
+
+
+
+1) aaaaaaaaaaaaaaaaaaaaaaaaAA 2) bbbbbbbbbbbbbbbbbbbbbbbbBB
+3) ccccccccccccccccccccccccCC 4) ddddddddddddddddddddddddDD  ...
+
+Each set of data is fed through  a delay line of increasing length, so 
+ the data becomes interleaved, and a  new  set of 4 checksums are added 
+ for the next 28 units produced, to  give  a  total of 32 units for the 
+ original 24:
+
+
+1) abcdefghijklmnopqrstuvwxyz1234 2) bcdefghijklmnopqrstuvwxyza1234
+3) cdefghijklmnopqrstuvwxyzab1234 4) defghijklmnopqrstuvwxyzabc1234
+
+
+... which are in turn fed  through  delay lines and interleaved again. 
+ In this way, consecutive units in  the  original  data are at least 24 
+ units apart and data becomes far less susceptible to successive errors 
+ in the data-stream. Since up to  2  errors can be corrected each time, 
+ the algorithms allow data to  be  reliably  read off disc, even though 
+ wide expanses of data to be corrupted.
+
+
+
+
+
+Voila! Now all you have to do is write a version of PacMan which takes 
+ up each byte of that 650 megabytes... (my advice - "Quake" sounds like 
+ a good name...)
+
+
+
+
+
+(C) 1996 Maggie Team

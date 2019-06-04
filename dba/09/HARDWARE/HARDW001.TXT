@@ -1,0 +1,279 @@
+HARDW REGISTER 1
+
+             .---------------------------------------------------.
+             |Atari ST/STe/MSTe/TT/F030 Hardware Register Listing|
+             `---------------------------------------------------'
+
+                             Version 5.0 - 5/15/93
+                                  By Dan Hollis
+                   Copyright (C) 1993 MicroImages Software
+
+------------------------------------------------------------------------------
+This document may only be copied unmodified, in its entirety. This document
+may only be copied freely, and may not be sold. I make no guarantees as to the
+accuracy of this document. I cannot be responsible for the use or misuse of
+information contained within this document. Use at your own risk! In any case,
+every effort has been taken to ensure this document is as complete and
+accurate as possible.
+------------------------------------------------------------------------------
+
+Corrections, additions, or comments should be sent to me. I can be contacted
+at the following addresses:
+
+ForemNet : Dan Hollis @ node 3 (Atari-OH!)
+InterNet : dhollis@bitsink.uucp
+Snail : Dan Hollis
+        P.O. Box 580448
+        Houston, TX 77258
+
+Address Size  Description                        Bits used Read/Write
+-------+-----+--------------------------------------------+----------
+##############ADSPEED Configuration registers             ###########     
+-------|-----|--------------------------------------------|----------
+$F00000|byte |Switch to 16 Mhz                            |W
+$F10000|byte |Switch to 8 Mhz                             |W
+$F20000|byte |Turn on high speed ROM option in 16 Mhz     |W
+$F30000|byte |Turn off high speed ROM option              |W
+$F40000|byte |Unknown                                     |W
+$F50000|byte |Turn off cache while in 16 Mhz              |W
+       |     |   >> Write 0 to an address to set it. <<   |
+-------+-----+--------------------------------------------+----------
+##############ST MMU Controller                           ###########
+-------+-----+--------------------------------------------+----------
+$FF8001|byte |MMU memory configuration         BIT 3 2 1 0|R/W
+       |     |Bank 0 (Bits 3-2)          Bank 1 (Bits 1-0)|
+       |     |00 = 128k                  00 = 128k        |
+       |     |01 = 512k                  01 = 512k        |
+       |     |10 = 2m                    10 = 2m          |
+       |     |11 = reserved              11 = reserved    |
+-------+-----+--------------------------------------------+----------
+##############SHIFTER Video Controller                    ###########
+-------+-----+--------------------------------------------+----------
+$FF8201|byte |Video screen memory position (high byte)    |R/W
+$FF8203|byte |Video screen memory position (mid byte)     |R/W
+$FF820D|byte |Video screen memory position (low byte)     |R/W  (STe)
+$FF8205|byte |Video address pointer (high byte)           |R
+$FF8207|byte |Video address pointer (mid byte)            |R
+$FF8209|byte |Video address pointer (low byte)            |R
+$FF820E|byte |Offset to next line (overrides $ff820f)     |R/W (F030)
+$FF820F|byte |Width of a scanline (width in words-1)      |R/W  (STe)
+$FF8210|word |Width of a scanline (width in words)        |R/W (F030)
+$FF8265|byte |Horizontal scroll register (0-15)           |R/W  (STe)
+-------+-----+--------------------------------------------+----------
+$FF820A|byte |Video synchronization mode           BIT 1 0|R/W
+       |     |                         0=60hz, 1=50hz -' ||
+       |     |            0=internal, 1=external sync ---'|
+-------+-----+--------------------------------------------+----------
+$FF8240|word |Video color palette register 0              |R/W
+    :  |  :  |  :      :       :     :                    | :
+$FF825E|word |Video color palette register 15             |R/W
+       |     |    ST color value  xxR3R2R1xxG3G2G1xxB3B2B1|
+       |     |STe/TT color value  R2R1R0R3G2G1G0G3B2B1B0B3|
+-------+-----+--------------------------------------------+----------
+$FF8260|byte |Shifter resolution                   BIT 1 0|R/W
+       |     |00=320x200x4 bitplanes (16 colors)          |
+       |     |01=640x200x2 bitplanes (4 colors)           |
+       |     |10=640x400x1 bitplane  (1 colors)           |
+$FF8262|byte |TT Shifter resolution              BIT 2 1 0|R/W   (TT)
+       |     |000= 320x200x4 bitplanes (16 colors)        |
+       |     |001= 640x200x2 bitplanes (4 colors)         |
+       |     |010= 640x400x1 bitplane  (2 colors)         |
+       |     |100= 640x480x4 bitplanes (16 colors)        |
+       |     |110=1280x960x1 bitplane  (1 color)          |
+       |     |111= 320x480x8 bitplanes (256 colors)       |
+-------+-----+--------------------------------------------+----------
+$FF827E|???? |STACY Display Driver                        |???(STACY)
+-------+-----+--------------------------------------------+----------
+$FF8400|word |TT Palette #0                               |R/W   (TT)
+ ..... |     |                                            |
+$FF85FE|word |TT Palette #255                             |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+##############Falcon030 VIDEL Video Controller            ###########
+-------+-----+--------------------------------------------+----------
+$FF820E|word |Offset to next line (overrides $ff820f)     |R/W (F030)
+$FF8210|word |VWRAP - Linewidth in words                  |R/W (F030)
+$FF8266|word |SPSHIFT                BIT 8 . . . 4 . . . .|R/W (F030)
+       |     |Truecolour mode -----------'       |        |
+       |     |Bitplane mode ---------------------'        |
+$FF8282|word |HHT - Synchro                               |R/W (F030)
+$FF8284|word |HBB - End of line                           |R/W (F030)
+$FF8286|word |HBE - Start of line                         |R/W (F030)
+$FF8288|word |HDB - Left overscan                         |R/W (F030)
+$FF828A|word |HDE - Right overscan                        |R/W (F030)
+$FF828C|word |HSS - Synchro                               |R/W (F030)
+$FF828E|word |HFS                                         |R/W (F030)
+$FF8290|word |HEE                                         |R/W (F030)
+$FF82A2|word |VFT - Synchro                               |R/W (F030)
+$FF82A4|word |VBB - End of image                          |R/W (F030)
+$FF82A6|word |VBE - Start of image (count in half lines)  |R/W (F030)
+$FF82A8|word |VDB - Top overscan                          |R/W (F030)
+$FF82AA|word |VDE - Bottom overscan                       |R/W (F030)
+$FF82AC|word |VSS - Synchro                               |R/W (F030)
+$FF82C2|word |VCO                                BIT 2 1 0|R/W (F030)
+       |     |Halve pixel width (double pixels) -----' | ||
+       |     |Skip line (interlace) -------------------' ||
+       |     |Line doubling -----------------------------'|
+-------+-----+--------------------------------------------+----------
+##############DMA/WD1772 Disk controller                  ###########
+-------+-----+--------------------------------------------+----------
+$FF8600|     |Reserved                                    |
+$FF8602|     |Reserved                                    |
+$FF8604|word |FDC access/sector count                     |R/W
+$FF8606|word |DMA mode/status                    BIT 2 1 0|R
+       |     |Condition of FDC DATA REQUEST signal --' | ||
+       |     |0=sector count null,1=not null ----------' ||
+       |     |0=no error, 1=DMA error -------------------'|
+$FF8606|word |DMA mode/status        BIT 8 7 6 . 4 3 2 1 .|W
+       |     |0=read FDC/HDC,1=write ----' | | | | | | | ||
+       |     |0=HDC access,1=FDC access ---' | | | | | | ||
+       |     |0=DMA on,1=no DMA -------------' | | | | | ||
+       |     |reserved ------------------------' | | | | ||
+       |     |0=FDC reg,1=sector count reg ------' | | | ||
+       |     |0=FDC access,1=HDC access -----------' | | ||
+       |     |0=pin A1 low, 1=pin A1 high -----------' | ||
+       |     |0=pin A0 low, 1=pin A0 high -------------' ||
+       |     |unused ------------------------------------'|
+$FF8609|byte |DMA base and counter (High byte)            |R/W
+$FF860B|byte |DMA base and counter (Mid byte)             |R/W
+$FF860D|byte |DMA base and counter (Low byte)             |R/W
+-------+-----+--------------------------------------------+----------
+##############TT-SCSI DMA Controller                      ###########
+-------+-----+--------------------------------------------+----------
+$FF8701|byte |TT-SCSI-DMA Address Pointer (Highest byte)  |R/W   (TT)
+$FF8703|byte |TT-SCSI-DMA Address Pointer (High byte)     |R/W   (TT)
+$FF8705|byte |TT-SCSI-DMA Address Pointer (Low byte)      |R/W   (TT)
+$FF8707|byte |TT-SCSI-DMA Address Pointer (Lowest byte)   |R/W   (TT)
+$FF8709|byte |TT-SCSI-DMA Address Counter (Highest byte)  |???   (TT)
+$FF870B|byte |TT-SCSI-DMA Address Counter (High byte)     |???   (TT)
+$FF870D|byte |TT-SCSI-DMA Address Counter (Low byte)      |???   (TT)
+$FF870F|byte |TT-SCSI-DMA Address Counter (Lowest byte)   |???   (TT)
+$FF8710|???? |TT-SCSI-DMA Continue Data Register High Word|R/W   (TT)
+$FF8712|???? |TT-SCSI-DMA Continue Data Register Low Word |R/W   (TT)
+$FF8714|???? |TT-SCSI-DMA Control register                |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+##############TT-SCSI Drive Controller 5380               ###########
+-------+-----+--------------------------------------------+----------
+$FF8781|byte |Contents of SCSI-Data buses                 |R/W   (TT)
+$FF8783|byte |Init-Command Register                       |R/W   (TT)
+$FF8785|byte |Transfer Start Register                     |R/W   (TT)
+$FF8787|byte |Target-Command Register                     |R/W   (TT)
+$FF8789|byte |Bus Status Register                         |R/W   (TT)
+$FF878B|byte |Status Register                             |R/W   (TT)
+$FF878D|byte |Command Data from SCSI-Bus                  |R/W   (TT)
+$FF878F|byte |Reset Interrupts+Parity error/              |R/W   (TT)
+       |     |         Start Init-DMA-Action              |
+-------+-----+--------------------------------------------+----------
+##############YM2149 Sound Chip                           ###########
+-------+-----+--------------------------------------------+----------
+$FF8800|byte |Read data/Register select                   |R/W
+       |     |Port A (register 14)     BIT . 6 5 4 3 2 1 0|
+       |     |Reserved --------------------' | | | | | | ||
+       |     |Monitor jack GPO pin ----------' | | | | | ||
+       |     |Centronics strobe ---------------' | | | | ||
+       |     |RS-232 DTR output -----------------' | | | ||
+       |     |RS-232 RTS output -------------------' | | ||
+       |     |Drive select 1 ------------------------' | ||
+       |     |Drive select 0 --------------------------' ||
+       |     |Drive side select -------------------------'|
+       |     |Port B - (register 15) Parallel port        |
+$FF8802|byte |Write data                                  |W
+-------+-----+--------------------------------------------+----------
+##############DMA Sound System                            ###########
+-------+-----+--------------------------------------------+----------
+$FF8900|byte |Buffer interrupts                BIT 3 2 1 0|R/W (F030)
+       |     |TimerA-Int at end of record buffer --' | | ||
+       |     |TimerA-Int at end of replay buffer ----' | ||
+       |     |MFP-15-Int (I7) at end of record buffer -' ||
+       |     |MFP-15-Int (I7) at end of replay buffer ---'|
+-------+-----+--------------------------------------------+----------
+$FF8901|byte |DMA Control Register     BIT 7 . 5 4 . . 1 0|R/W
+       |     |1=select record register ----+   | |     | ||    (F030) 
+       |     |0=select replay register ----'   | |     | ||    (F030)
+       |     |Loop record buffer --------------' |     | ||    (F030)
+       |     |DMA Record on ---------------------'     | ||    (F030)
+       |     |Loop replay buffer ----------------------' ||     (STe)
+       |     |DMA Replay on -----------------------------'|     (STe)
+-------+-----+--------------------------------------------+----------
+$FF8903|byte |Frame start address (high byte)             |R/W  (STe)
+$FF8905|byte |Frame start address (mid byte)              |R/W  (STe)
+$FF8907|byte |Frame start address (low byte)              |R/W  (STe)
+$FF8909|byte |Frame address counter (high byte)           |R    (STe)
+$FF890b|byte |Frame address counter (mid byte)            |R    (STe)
+$FF890d|byte |Frame address counter (low byte)            |R    (STe)
+$FF890f|byte |Frame end address (high byte)               |R/W  (STe)
+$FF8911|byte |Frame end address (mid byte)                |R/W  (STe)
+$FF8913|byte |Frame end address (low byte)                |R/W  (STe)
+-------+-----+--------------------------------------------+----------
+$FF8920|byte |DMA Track Control            BIT 5 4 . . 1 0|R/W (F030)
+       |     |00 - Set DAC to Track 0 ---------+-+     | ||
+       |     |01 - Set DAC to Track 1 ---------+-+     | ||
+       |     |10 - Set DAC to Track 2 ---------+-+     | ||
+       |     |11 - Set DAC to Track 3 ---------+-'     | ||
+       |     |00 - Play 1 Track -----------------------+-+|
+       |     |01 - Play 2 Tracks ----------------------+-+|
+       |     |10 - Play 3 Tracks ----------------------+-+|
+       |     |11 - Play 4 Tracks ----------------------+-'|
+-------+-----+--------------------------------------------+----------
+$FF8921|byte |Sound mode control       BIT 7 . . . . . 1 0|R/W  (STe)
+       |     |00 - 8 bit Stereo -----------+-+         | ||
+       |     |01 - 16 bit Stereo ----------+-+         | ||    (F030)
+       |     |10 - 8 bit Mono -------------+-'         | ||
+       |     |Frequency control bits                   | ||
+       |     |00=6258hz frequency ---------------------+-+|
+       |     |01=12517hz frequency --------------------+-+|
+       |     |10=25033hz frequency --------------------+-+|
+       |     |11=50066hz frequency --------------------+-'|
+       |     |Samples are always signed. In stereo mode,  |
+       |     |data is arranged in pairs with high pair the|
+       |     |left channel, low pair right channel. Sample|
+       |     |length must ALWAYS be even in either mono or|
+       |     |stereo mode.                                |
+       |     |Example: 8bit Stereo : LRLRLRLRLRLR         |
+       |     |       16 bit Stereo : LLRRLLRRLLRR (F030)  |
+-------+-----+--------------------------------------------+----------
+##############STe Microwire Controller (STe only!)        ###########
+-------+-----+--------------------------------------------+----------
+$FF8922|byte |Microwire data register                     |R/W  (STe)
+$FF8924|byte |Microwire mask register                     |R/W  (STe)
+       |     +--------------------------------------------+
+       |     |Volume/tone controller commands(Address %10)|
+       |     |Master Volume                  10 011 DDDDDD|
+       |     |Left Volume                    10 101 xDDDDD|
+       |     |Right Volume                   10 100 xDDDDD|
+       |     |Treble                         10 010 xxDDDD|
+       |     |Bass                           10 001 xxDDDD|
+       |     |Mixer                          10 000 xxxxDD|
+       |     +--------------------------------------------+
+       |     |Volume/tone controller values               |
+       |     |Master Volume     : 0-40   (0=-80db, 40=0db)|
+       |     |Left/Right Volume : 0-20    (0=80db, 20=0db)|
+       |     |Treble/bass       : 0-12 (0=-12db, 12=+12db)|
+       |     |Mixer             : 0-3 (0=-12db, 1=mix PSG)|
+       |     |                    (2=don't mix,3=reserved)|
+       |     +--------------------------------------------+
+       |     |Procedure:                                  |
+       |     |Set mask register to $7ff                   |
+       |     |Read data register and save original value  |
+       |     |Write data register                         |
+       |     |Compare data register with original value,  |
+       |     |repeat until data register returns to       |
+       |     |original value to ensure data has been sent |
+       |     |over the interface.                         |
+       |     +--------------------------------------------+
+       |     |Interrupts:                                 |
+       |     |Timer A can be set to interrupt at the end  |
+       |     |of a frame. Alternatively, the GPI7 (MFP    |
+       |     |mono detect) can be used to generate        |
+       |     |interrupts thereby freeing up Timer A. In   |
+       |     |this case, the active edge $FFFA03 must be  |
+       |     |set by or-ing the active edge $FFFA03 with  |
+       |     |the contents of $ff8260 as follows:         |
+       |     |$FF8260 = 2 (mono)     or.b  #$80 with edge |
+       |     |$FF8260 = 0,1 (colour) and.b #$7f with edge |
+       |     |This will generate an interrupt at the START|
+       |     |of a frame, instead of at the end as with   |
+       |     |Timer A. To generate an interrupt at the END|
+       |     |of a frame, simply reverse the edge values. |
+-------+-----+--------------------------------------------+----------
+
+

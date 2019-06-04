@@ -1,0 +1,1566 @@
+06601030305800
+F0110030
+9[.......................................................]001
+€
+     
+                        ˆAtari* System Reference manual€
+    
+                            ˆ(c) 1987 By Bob DuHamel€
+     
+     
+                                  Bob Duhamel
+                             6915 Casselberry Way
+                             San Diego, CA  92119
+     
+     
+     
+                *Atari is a registered trademark of Atari Corp.
+                                                         
+
+    CHAPTER 12
+
+
+    Boot software formats
+
+
+There are three ways which programs may be booted (loaded
+automatically upon power-up):
+
+ From the disk drive
+
+ From the cassette recorder
+
+ From a ROM cartridge
+
+
+DISK BOOTED SOFTWARE
+
+The disk drive is the primary source for programs (other than the
+BASIC interpreter in the computer ROM).  A program booted from disk
+must be a machine language program.  Secondly, the program is arranged
+on disk in a different manner from the DOS files.
+
+When the computer is first turned on, it will attempt to read a
+program starting at sector one in disk drive one.  The exceptions are,
+if a cartridge prevents the disk boot process or the [START] key is
+pressed.  The program is expected to use all 128 bytes of each
+sector.
+
+FORMAT OF A DISK BOOTED PROGRAM
+
+A disk booted program begins at sector one on the disk and continues
+in sequence.  The first six bytes of the first sector contain program
+information.  The rest of the bytes contain the program itself.
+
+  Disk boot program header
+
+1st byte  $00  flags, stored in DFLAGS [$0240]
+€$xx  number of sectors used by program
+$xx  address to start load
+$xx
+$xx  initialization address
+6th byte  $xx
+7th byte  $xx  start of program
+
+The flags byte is usually unused and should be zero.
+
+The load address is stored in BOOTAD [$0242,2 (578)].
+
+The initialization address is stored in DOSINI [$000C,2 (12)].
+
+After the program is completely loaded the computer will JSR to the
+address stored in DOSINI for initialization.  It will then jump to the
+address stored in DOSVEC to run the program.
+
+The initialization part of the program should set the
+bottom-of-free-RAM pointer, MEMLO [$02E7,2 (743)], to point to the end
+of the program + 1.  This will protect the program from the computer
+and other programs.  The top-of-user-RAM pointer, APPMHI [$000E,2
+(14)], is also usually set to point to the same address.  This will
+protect the program from the video hardware.  It must also set DOSVEC
+[$000A,2 (10)] to actually point to the run address of the program. 
+The initialization should of course end with and RTS.  With DOSINI and
+DOSVEC properly set, the program will restart up pressing the [SYSTEM
+RESET] key.
+
+Rmember that the load address of  the program should be six bytes
+before where you want the program to reside in memory.  The six byte
+header will load at the specified start address followed by the
+program.
+
+CASSETTE BOOTED SOFTWARE
+
+The cassette boot process is nearly identical to the disk boot
+process.  The processes are so similar that cassette boot programs can
+usually be transferred directly to disk and vice-versa.  The two
+differences are:
+
+The cassette is booted instead of the disk if the [START] key is
+pressed when the power is turned on.
+
+A bug in early operating systems requires the booted program to turn
+off the cassette motor with the following command.
+
+    LDA #$3C
+    STA PACTL [$D302]
+
+CARTRIDGE BOOTED SOFTWARE
+
+The Atari 800 has two cartridge slots.  All other models have only
+one.  The second cartridge slot, slot B on the 800, resides from $8000
+to $9FFF.  The first slot, slot A, resides from $A000 to BFFF.  If a
+€cartridge is inserted in a slot it will disable any RAM in the same
+area.
+
+Slot A, which is present in all models, can reside at the entire 16K
+used by both cartridges in the 800 ($8000 to $BFFF).
+
+Cartridges use the last six bytes for boot information.  In cartridge
+A these bytes are from $BFFA to $BFFF.  In cartridge B they are from
+$9FFA to 9FFF.
+
+last six bytes of a cartridge
+
+   $9FFA or $BFFA   xx   start address
+xx
+00
+xx   flag byte
+xx   init address
+   $9FFF or $BFFF   xx
+
+
+ Flag byte
+
+bit 01 = allow disk boot
+bit 20 = do not start cartridge after init
+bit 71 = cartridge takes control before OS is
+    initialized
+
+The initialization process for the cartridge should be similar to that
+for disk and cassette.  A minimum of an RTS instruction is required.
+
+The third byte of the cartridge tailer is used by the OS to check for
+the presence of a cartridge.  This byte must be zero.
+
+A 16K cartridge will use both cartridge areas and the cartridge B
+tailer area can be used for program code.
+
+THE CARTRIDGE HARDWARE
+
+Most cartridges consist of two ROM chips on a single circuit board. 
+Moreover, both chip sockets have identical pin assignments.  In other
+words, the chips can be switched to opposite sockets and  the
+cartridge will still work.  The difference is in the chips themselves.
+On one chip, the A12 pin acts as an active-low chip select.  On the
+other the A12 pin acts as an active-high chip select.  Therefore the
+state of the A12 pin selects between the two chips.
+
+
+    Cartridge slot pin assignments
+
+   BACK
+
+   111111
+   543210987654321
+   ---------------
+€   ---------------
+   SRPNMLKJHFEDCBA
+
+
+   FRONT
+
+
+1    1 = 16K   A    A13 (16K only)
+2    A3   B    GND
+3    A2   C    A4
+4    A1   D    A5
+5    A0   E    A6
+6    D4   F    A7
+7    D5   H    A8
+8    D8   J    A9   __
+9    D1   K    A12 (CS)/(CS)
+    10    D0   L    D3
+    11    D6 __M    D7
+    12 (CS)    N    A11
+    13    +Vcc P    A10
+    14    +Vcc R    NC
+    15    NC   S    NC
+
+
+The BASIC interpreter resides in the memory used by cartridge A.  In
+400, 800 and 1200XL models, a BASIC cartridge is required to run BASIC
+programs.  On other XL and XE models, inserting a cartridge into the
+slot or pressing the [OPTION] key upon power-up will disable the
+internal BASIC ROM.  If BASIC is disabled without inserting another
+cartridge, the area from $A000 to $BFFF will contain RAM.
+
+
+    Useful data base variables and OS equates
+
+
+APPMHI $000E,2  (14): low limit of screen region
+DOSVEC $000A,2  (10): run and program reset vector
+DOSINI $000C,2  (12): init and reset init
+CARTB  $8000 (32768): start of cartridge B
+CARTA  $A000 (40960): start of cartridge A
+PACTL  $D302 (54018): port A control register   Bit 3
+   controls the cassette motor
+
+    CHAPTER 13
+
+
+THE SERIAL INPUT/OUTPUT INTERFACE (SIO)
+
+
+Most input and output with the Atari computer passes through the
+serial I/O bus.  The SIO interface is rather complicated but you are
+unlikely to need to use it directly.  CIO usually handles SIO for you.
+However, if you want to design your own I/O device and it's associated
+handler, you need to know how to use the SIO.
+€
+SIO transfers data at a rate of 19,200 baud on separate input and
+output lines.  The data is sent one byte at a time, LSB first, in an
+asynchronous format.  There are also clock-in and clock-out lines. 
+There is a signal on the clock-out line but it is not used by any
+present devices.  The clock-in line is available for synchronous
+transfer but is not used by the OS.  The signal on the clock-out line
+goes high at the leading edge of each bit and goes low in the middle
+of each bit.
+
+
+    One byte of SIO data
+
+
++-+ +-+ +-+ +-+ +-+ +-+ +-+ +-+
+| | | | | | | | | | | | | | | |   clock
+  -------------+ +-+ +-+ +-+ +-+ +-+ +-+ +-+ +------
+
+
+  ---------+  +---+   +-------+  +--------
+ |0 | 1 | 0 | 1   1 | 0   0 | 1   data
+ +-------+   +---+  +-------+
+
+   | |
+
+    start bit   stop bit
+
+
+The SIO interface is used much like the resident disk handler.  In
+fact, it uses the same device control block as the resident disk
+handler.  After the control block parameters are set, a JSR is made to
+the SIO entry vector, SIOV, at $E459 (58457).
+
+
+    Device control block (for SIO)
+
+
+DDEVIC [$0300 (768)]
+
+Serial bus I.D.  Set by handler or program.
+
+DUNIT  [$0301 (769)]
+
+Device number if more than one.
+
+DCOMND [$0302 (770)]
+
+Device command byte.
+
+DSTATS [$0303 (771)]
+
+Before the SIO call, this byte tells whether the operation is read,
+write or that there is no data transfer associated with the command. 
+After the call this byte will hold the status (error/no error code) of
+€the operation.
+
+
+DSTATS format before command
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |W|R| not used  |
+    -----------------
+
+If both W and R are 0, there is no data transfer.
+
+DBUFLO [$0304 (772)]
+DBUFHI [$0305 (773)]
+
+Points to the data buffer for either input or output.
+
+DTIMLO [$0306 (774)]
+
+Timeout value (response time limit) in 64/60ths of a second to be set
+by handler or program.
+
+DBYTLO [$0308 (776)]
+DBYTHI [$0309 (777)]
+
+Number of bytes to be transferred, set by handler or program.  This
+parameter is not required if the DSTATS specifies no data transfer.
+
+DAUX1  [$030A (778)]
+DAUX2  [$030B (779)]
+
+These parameters are sent to the device as part of the command frame.
+
+
+USING THE SIO INTERFACE
+
+All commands on the serial bus must originate from the computer.  The
+peripherals will present data on the bus only when commanded to do
+so.
+
+Any operation on the serial bus begins with a five byte command frame.
+
+While the command frame is being sent, the command line of the serial
+connector is 0.
+
+    Command frame format
+
+$xx  DDEVIC
+$xx  DCOMND
+$xx  DAUX1
+$xx  DAUX2
+$xx  checksum
+
+The first four bytes of the command frame come from the device control
+€block.  the checksum is the sum of the other four bytes with the carry
+added back after each addition.
+
+If both R and W of the DSTATS are 0, no data is sent to, or expected
+from the peripheral, after a command frame is sent.  However, the
+device is usually expected to send an ACK byte ($41) after the command
+frame is sent.  If the command frame is invalid, an NAK byte ($4E)
+should be sent.
+
+If the operation is output (W = 1) the computer will send a data frame
+after it receives the ACK of the command frame.  It then expects an
+ACK after the data frame is sent.
+
+If the operation is an input (R = 1) the computer expects a data frame
+from the peripheral after the ACK.  With either input or output, a
+"complete" code ($43) should be sent to the computer when the
+operation is finished.  The "complete" code would follow the ACK of
+the data frame with an output operation.
+
+If the operation is not completed for some reason, the peripheral
+should send an error code ($45) instead of "complete".
+
+  SIO data frame
+
+
+    byte 1$xx\
+    > data bytes
+    byte n$xx/
+    byte n+1   $xx   checksum
+
+   SIO commands
+
+
+READ $52
+WRITE$57
+STATUS    $53
+PUT  $50
+FORMAT    $21
+DOWNLOAD  $20
+READADDR  $54
+READ SPIN $51
+MOTOR ON  $55
+VERIFY
+ SECTOR   $56
+
+
+  Present SIO device I.D.s
+
+
+DISK $31 - $34  (D1 - D4)
+PRINTER   $40
+RS-232-C  $50 - $53  (R1 - R4)
+
+THE SERIAL CONNECTOR
+€
+The serial connectors on the computer and all peripherials are
+identical.  Nearly all peripherials have two serial connectors. 
+Either connector may be used for any connection.  The serial bus is
+designed so that peripherials can be daisy-chained together.  The
+following is a diagram of the serial connector.
+
+
+The serial connector pin-out
+
+
+   1 1
+2 4 6 8 0 2
+-----------
+    /o o o o o o\
+   /o o o o o o o\
+  -----------------
+    1 3 5 7 9 1 1
+    1 3
+
+
+ 1  clock in (to computer)
+ 2  clock out
+ 3  data in
+ 4  GND
+ 5  data out
+ 6  GND
+ 7  command (active low)
+ 8  cassette motor control
+ 9  proceed (active low)
+10  +5V/ready
+11  audio in
+12  +12V (400/800)
+13  interrupt (active low)
+
+Proceed goes to pin 40 (CA1) of the PIA.  It is not used by present
+peripherials.
+
+Interrupt goes to pin 18 (CB1) of the PIA.  It is not used by present
+peripherials.
+
+Pin 10 doubles as a 50mA +5V peripharal power supply and a computer
+ready signal.
+
+
+
+    Useful database variables and OS equates
+
+
+SIOV   $E459 (58457): serial port handler entry
+DDEVIC $0300   (768): device ID
+DUNIT  $0301   (769): device number
+DCOMND $0302   (770): command byte
+DSTATS $0303   (771): status byte
+€DBUFLO $0304   (772): data buffer pointer
+DBUFHI $0305   (773):
+DTIMLO $0306   (774): timout value
+DBYTLO $0308   (776): number of bytes to transfer
+DBYTHI $0309   (777):
+DAUX1  $030A   (778): sent to device
+DAUX2  $030B   (779): sent to device
+
+    CHAPTER 14
+
+
+THE HARDWARE CHIPS
+
+
+The previous chapters described the operating system of the computer. 
+The following chapters will examine the hardware which supports the
+6502 and the hardware's associated software.
+
+THE GTIA CHIP
+
+The GTIA (George's Television Interface Adapter) is the main video
+circuit in the computer.  It controls the following functions.
+
+  GTIA functions
+
+Priority of overlapping objects
+
+Color and brightness, including information from the antic chip.
+
+Player/missile control.
+
+console switches and game control triggers.
+
+THE ANTIC CHIP
+
+The main job of the ANTIC chip is interpreting the display buffer for
+the GTIA chip.  The ANTIC chip is somewhat of a processor in it's own
+right.  The program which runs it is called the display list and
+usually resides just before the display buffer in memory.
+
+The ANTIC chip operates independent of the 6502.  It operates by
+direct memory access (DMA).  The ANTIC chip gives a HALT signal the
+6502, causing the 6502 to give up control of the address bus.  The
+ANTIC chip can then read any data it needs to from memory.
+
+    ANTIC chip functions
+
+DMA (Direct Memory Access) control.
+
+NMI (Non-Maskable Interrupt) control.
+
+LIGHT PEN READING
+
+WSYNC (wait for horizontal sync)
+€
+THE POKEY CHIP
+
+The most important jobs of the POKEY chip are reading the keyboard and
+operating the serial port.  It also has the following functions.
+
+    POKEY chip functions
+
+Keyboard reading.
+
+Serial port.
+
+Pot (game paddles) reading.
+
+Sound generation.
+
+System timers.
+
+IRQ (maskable interrupt) control.
+
+Random number generator.
+
+
+THE PIA CHIP
+
+The PIA (Parallel Interface Adapter) is a commonly used I/O chip.  It
+consists of two 8 bit parallel ports with hand shaking lines.  In the
+Atari, it has the following functions.
+
+
+Game controller port control (bi-directional).
+
+Peripheral control and interrupt lines.
+
+
+
+Registers in the hardware chips are treated as memory addresses.  Many
+of the registers are write only.  These registers cannot be read from
+after they are written to.  Other registers control one function when
+written to and give the status of an entirely different function when
+read from.  Still other registers are strobes.  Any command which
+causes the address of one of these registers to appear on the address
+bus will cause their functions to be performed.
+
+The write only registers have shadow registers in RAM.  Data to be put
+in the registers is usually put into the shadow registers.  The data
+in the shadow registers is automatically moved to the operating
+registers during vertical blank.
+
+For register use and address, see the previous chaptes on the
+associated functions.
+
+    CHAPTER 15
+
+€   DISPLAY LISTS
+
+
+[some of this file was lost...]
+
+
+chip also has a memory scan counter.  This register scans the display
+buffer for data to be interpreted and displayed.  Once loaded, the
+memory scan counter's 4 most significant bits are fixed.  The result
+is that the memory scan counter cannot cross a 4K memory boundary
+(i.e. $AFFF to $B000) without being reloaded.
+
+DISPLAY LIST INSTRUCTIONS
+
+There are three basic instructions in the display list.  The type of
+instruction is determined by bits 0,1,2 and 3 of an instruction byte. 
+The other four bits give auxilliary parameters for the instruction. 
+Bit 7 always enables a display list interrupts (DLIs).
+
+  Display list instruction format
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |I|n|n|n|0|0|0|0|
+    -----------------
+  \   / \ /
+   ---   ------
+    | |
+    | 0 = display blank lines
+    |
+    0-7 = number of blank lines (1-8)
+
+
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |I|W| | |0|0|0|1|
+    -----------------
+  |\ /
+  | ------
+  |   |
+  |   1 = jump (3 byte instruction)
+  |
+  0 = jump and display one blank line
+  1 = jump and wait for vertical blank
+
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |I|R|H|V|M|M|M|M|
+    -----------------
+| | | | \ /
+| | | |  ------
+| | | |    |
+€| | | |    2-F = display one line of graphics in
+| | | |ANTIC mode 2-F
+| | | 1 = horizontal scroll enabled
+| | |
+| | 1 = vertical scroll enabled
+| |
+| 1 = reload memory scan counter with next two bytes
+|
+1 = display list interrupt, all instructions
+
+
+In the display instruction, the ANTIC mode is different from the CIO
+graphics mode.  However, each CIO graphics mode uses a particular
+ANTIC mode.  Below are descriptions of the ANTIC modes with their
+associated graphics (CIO) modes.
+
+
+ANTIC MODE 2 (Graphics 0)
+
+Uses 8 pixel by 8 pixel characters, 40 characters horizontal, 8 TV
+scan lines vertical.  Only one color can be displayed at a time.
+
+ANTIC MODE 3
+
+8 X 10 pixel, Graphics 0 type characters.  This mode requires a custom
+character set.  The advantage is that it allows true decenders.  The
+custom C-set is still 8 X 8 pixels.  Lower-case letters with decenders
+have the bottom row of pixels put on the top row.
+
+  Lower-case "y" for ANTIC mode 3
+
+
+  C-setDisplay
+
+--------------------
+| XXXXX  ||   |
+|   ||   |
+|   ||   |
+| XX  XX || XX  XX |
+| XX  XX || XX  XX |
+| XX  XX || XX  XX |
+|  XXXXX ||  XXXXX |
+|XX ||XX |
+----------| XXXXX  |
+|   |
+----------
+
+
+ANTIC MODE 4 (graphics 12 on XL and XE)
+
+This mode has characters the same size as graphics 0.  However, the
+characters are only 4 X 8 pixels.  This gives only half the horizontal
+resolution of graphics 0.  The advantage is that up to four colors of
+"graphics 0" characters can be displayed at once.  This mode also
+€requires a custom C-set.  Below is a comparison of the normal C-set to
+one which works with the ANTIC 4 mode.
+
+Upper-case "A" for ANTIC modes 2 and 4
+
+  mode 2mode 4
+
+--------------------
+|   ||   |
+|   XX   ||  yy    |
+|  XXXX  ||  yy    |
+| XX  XX ||xx  zz  |
+| XX  XX ||xx  zz  |
+| XXXXXX ||xxyyzz  |
+| XX  XX ||xx  zz  |
+|   ||   |
+--------------------
+
+xx, yy and zz represent two bit binary numbers, controlling one pixel
+each.  These numbers determine which color register a pixel is
+assigned to: (COLOR0, COLOR1, COLOR2 or COLOR3).
+
+ANTIC mode 5
+
+Antic mode five is identical to ANTIC mode 4 except the characters are
+displayed twice as tall.  This makes only 12 lines on the screen.
+
+ANTIC MODE 6 (Graphics 1)
+
+This mode uses 8 X 8 pixel characters except they are displayed twice
+as wide as in ANTIC mode 2.  There are 3 colors available at once but
+only one case (upper or lower) can be displayed at a time.  The data
+base variable CHBAS [$02F4 (756)] controls the character, [$E0 (224) =
+upper-case, $E2 (226) = lower-case]
+
+The color/character is controlled by either the color statement or the
+ATASCII number of the character printed.  Control characters are
+controlled by COLOR0, upper-case characters by COLOR1 and lower-case
+characters by COLOR2.  Remember that all characters print as
+upper-case alpha characters, but of different colors.
+
+ANTIC MODE 7 (Graphics 2)
+
+This mode is identical to mode 6 except the characters are displayed
+twice as tall.  This results in only 12 lines possible on the screen.
+
+ANTIC MODE 8 (Graphics 3)
+
+This is the first graphics (non-character) mode.  This mode, as other
+non-character graphics modes do, uses data in the display buffer as a
+bit map to be displayed.
+
+A command to display in mode 8 will cause the ANTIC chip to read the
+next 10 bytes in the display buffer.  Each pair of bits will control
+€one pixel as in mode 4.  However, the pixels are blocks the same size
+as a Graphics 0 (ANTIC 2) characters.
+
+ANTIC MODE 9 (Graphics 4)
+
+This is similar to ANTIC mode 8 except each byte controls 8 pixels
+(instead of 4) and only one color can be displayed at a time.  The
+pixels are also half the size of those in ANTIC mode 8.
+
+ANTIC MODE A (Graphics 5)
+
+This mode uses 20 bytes per line/command.  As in ANTIC mode 8, each
+pair of bits controls one pixel.  The result is that the pixels are
+the same size as in ANTIC mode 9 but four colors can be displayed at
+once.
+
+ANTIC MODE B (Graphics 6)
+
+As in mode A, there are 8 pixels per byte and only one color.  The
+pixels are half the size as in mode A.
+
+ANTIC MODE C
+
+Like mode B except the pixels are half as tall (only one T.V. line).
+
+ANTIC MODE D (Graphics 7)
+
+40 Bytes per line, each byte controls 4 pixels.  The pixels are 1/4 as
+large as in ANTIC mode 8 (Graphics 3).
+
+ANTIC MODE E (Graphics 15 on XL and XE)
+
+Like mode D except the pixels are half as tall (one T.V. line).  Antic
+mode E is sometimes called Graphics 7.5
+
+ANTIC mode F (Graphics 8, 9, 10 and 11)
+
+This is the highest resolution mode.  Pixels are 1/8 the size of ANTIC
+mode 8 or mode 2 characters.  It uses 40 bytes per line, each byte
+controlling 8 pixels, unless the GTIA chip intervenes.  Only one color
+can be displayed at a time.
+
+
+
+DISPLAY LIST EXAMPLES
+
+When CIO opens a channel to the screen, it sets up the proper display
+list for the ANTIC chip.  The following are the things CIO must handle
+when setting up the display list.
+
+  Display list duties as used by CIO
+
+
+display a certain number of blank lines at the top of the screen.
+€
+Load the memory scan counter with the address of the display data
+buffer.
+
+Display the required number of lines in the required ANTIC mode.
+
+Set up a jump instruction if the display list crosses a 1K memory
+boundary.
+
+Set up a reload-memory-scan-counter instruction if the display data
+buffer crosses a 4K memory boundary.
+
+CIO assumes that the display data buffer will butt against an 8K
+memory boundary.  If a program causes the display buffer to cross a 4K
+boundary (by changing RAMTOP [$006A (106)] to point to an address
+which is not at an 8K boundary) the screen will be scrambled.  This is
+not usually a problem if the graphics mode doesn't require a large
+block of memory.
+
+SAMPLE DISPLAY LIST
+
+Below is an example of a Graphics 0 display list as CIO would set it
+up.
+
+
+ Display list for Graphics 0
+    assuming BASIC starts at $A000
+
+address  instruction explanation
+
+    Dec.   Hex.
+
+$9C20    112    $70 \
+    112    $70  >---- 24 blank lines (8 each command)
+    112    $70 /
+66    $42 ----- load memory scan counter with 
+$9C2464    $40 \__   next two bytes and display one line
+    156    $9C /  \  of ANTIC 2 characters
+ 2    $02 -\ |
+ 2    $02  | \- address of display data buffer
+ 2    $02  |
+ 2    $02  \--- 2nd ANTIC 2 instruction
+
+ -    ---
+
+ 2    $02 ----- 24th ANTIC 2 instruction
+65    $41 \
+32    $20  >---- jump back to start of list
+    156    $9C /
+$9C40    ?????  first byte of display data buffer
+
+    -----
+
+$9FFF    ?????  last byte of buffer
+€
+$A000 start of ROM
+
+A display list for a higher resolution graphics mode would require
+more instructions and might cross a 1K boundary.  It would then
+include a jump instruction to cross the boundary.
+
+MULTIPLE DISPLAYS
+
+It is possible to set up multiple displays and use one at a time.  The
+technique of changing from one display to another is called page
+flipping.  Below is the simplest way to set up two displays.
+
+   setting up two displays
+
+Call a graphics mode through CIO or by using a BASIC GRAPHICS
+command.
+
+Store the display list pointers, SDLSTL and SDLSTH, and the CIO screen
+pointer, SAVMSC [$0058,2 (88)].
+
+Move the start-of-ROM pointer, RAMTOP [$006A (106)] to below the
+current display list.  RAMTOP is a one byte pointer so it changes in
+increments of one page (256 bytes).
+
+make another graphics call as in the first step.
+
+store the new display list pointer and CIO screen pointer.
+
+This will set up two displays, each with it's own display list.  If
+the displays are in the same graphics mode, or you will not make any
+changes in the displays with CIO commands, (PLOT, PRINT, etc.) you can
+flip between the two simply by changing the display list pointer.
+
+If the screens are in the same graphics mode and you want to change
+which one to do CIO commands to, Change the CIO screen pointer, SAVMSC
+[$0058,2 (88)].  This way, you can display one screen while drawing on
+the other.
+
+If you want to do CIO commands to screens of different graphics modes,
+you will have the move RAMTOP and do a graphics call to change
+screens.
+
+If your manipulation of RAMTOP causes the display data buffer to cross
+a 4K boundary, the screen may be scrambled.
+
+DISPLAY LIST INTERRUPTS
+
+DLIs are not used by the operating system.  However, other programs
+can initiate and use them.  Use the following steps to set up display
+list interrupts.
+
+
+  Setting up DLIs
+€
+Set bit 7 of the display list instruction for the line before you want
+the interrupt to occur.  (The interrupt routine should set WSYNC and
+wait for the next line to execute.)
+
+Set bit 7 of NMIEN [$D40E (54286)] to enable DLIs.
+
+Set the DLI routine vector, VDSLST [$0200,2 (512)] to point to your
+machine language DLI routine.
+
+Your DLI routine should set WSYNC [$D40A (54282)].  STA WSYNC will do.
+THis will cause the 6502 to wait for the next horizontal sync.  This
+will keep the DLI routine from changing something in the middle of a
+T.V. line.
+
+The DLI routine must end with an RTI instruction.
+
+SCROLLING
+
+Scrolling is controlled by a combination of scroll position registers,
+and changing the memory scan counter.  Basically, course scrolling is
+done by reloading the memory scan counter and fine scrolling is done
+by changing the scroll registers.
+
+VERTICAL SCROLLING
+
+Vertical scrolling is very simple.  Follow the steps below to set up
+vertical scrolling of graphics.
+
+
+    Steps to use vertical scrolling
+
+Set bit 4 of the first byte of the display list instruction for each
+line to be scrolled.
+
+Put the number of T.V. lines to offset the graphics vertically in the
+vertical scroll register, VSCROL [$D405 (54277)]
+
+The vertical scroll register can offset the graphics upward by 0 - 7
+T.V. lines in the 24 line graphics modes (ANTIC modes 2 and 4).  In 12
+line graphics modes (ANTIC modes 5 and 7) it can vertically offset the
+graphics by 0 - 15 T.V. lines.  To offset the graphics an 8th (or
+16th) line, the scroll register is reset to 0 and the memory scan
+counter is reloaded with the address of the next line of graphics in
+the display data buffer.  If the entire screen is being scrolled, the
+load-memory-scan-counter command (near the beginning of the display
+list) is changed to point to the address of the second line of
+graphics.
+
+HORIZONTAL SCROLLING
+
+Horizontal scrolling works much like vertical scrolling.  It is
+enabled by setting bit 5 of the instruction for each line to be
+scrolled.  The horizontal scroll register, HSCROL [$D404 (54276)],
+€sets the offset.  The small difference is that graphics are moved
+twice as far per change (two graphics 8 pixels instead of one).  Also,
+when HSCROL = 0 the graphics are offset beyond the left edge of the
+screen by 16 color clocks (32 Graphics 8 pixels).  When HSCROL = 15,
+the graphics line is shifted one color clock (2 Graphics 8 pixels) to
+the left of the screen.
+
+The big difference is that the memory scan counter gets messed up. 
+This means that you must use a reload-memory-scan-counter command for
+each line of graphics.  This is a major modification of the display
+list.  It will require you to move and build the list yourself.
+
+The advantage of this is that you can have a scrolling window in a
+large graphics map.  The technique is to move the window by reloading
+the memory scan counter, then fine scrolling to the invisible bytes
+beyond the edges of the screen.
+
+
+    useful data base variables and OS equates
+
+
+SAVMSC $0058,2  (88): pointer to current screen for CIO commands
+RAMTOP $006A   (106): start-of-ROM pointer (MSB only)
+VDSLST $0200,2 (512): DLI vector
+RAMSIZ $02E4   (740): permanent start-of-ROM pointer (MSB only)
+DLISTL $D402 (54274): display list pointer low byte
+DLISTH $D403 (54275):"    high byte
+HSCROL $D404 (54276): horizontal scroll register
+VSCROL $D405 (54277): vertical scroll register
+NMIEN  $D40E (54286): NMI enable (DLIs)
+
+
+ Shadow registers
+
+
+SDLSTL $0230   (560): DLISTL
+SDLSTH $0231   (561): DLISTH
+
+   CHAPTER 16
+
+
+   PLAYER AND MISSILE (PM) GRAPHICS
+
+
+Players and missiles (called sprites on some computers) are movable
+objects which are independent of the normal graphics.
+
+Player and missile graphics are fairly straight forward.  Once the
+computer is set-up for PM graphics, five 8-pixel-wide columns can be
+displayed on the screen.  The horizontal resolution (width of each
+pixel) and the vertical resolution (number of scan lines per pixel)
+are variable.  The horizontal position of each column is determined by
+it's horizontal position register.  Each column is simply a
+representation of a bit map in a certain block of memory.  If you want
+€to draw an object on the screen, you simply put a bit map representing
+it in the proper memory block.  The vertical position of an object is
+determined by the location of it's bit map in memory.  For example, if
+you want to draw a happy face in the middle of the screen, you put a
+happy face bit map in the middle of one of the memory blocks
+controlling one of the columns.
+
+   One column (player) displayed on the screen
+
+
+    ---------- first byte of a block
+    |   |
+    |   |
+------------------------------
+|   |   ||
+|   |   ||
+|   |   ||
+|   |   ||
+|   |   ||
+|   |   ||
+|   |  ++++  | visible  |
+|   | +    + ||
+|   |+ +  + +||
+|   |+ +|  area    |
+|   |++    ++||
+|   |+ ++++ +|--object  |
+|   | +    + |  bit map |
+|   |  ++++  ||
+|   |   ||
+|   |   ||
+|   |   ||
+------------------------------
+    |   |
+    |   |
+    ---------- last byte of a block
+    
+
+
+   Horizontal positions
+
+$00 $30 $CE    $FF
+(0)  (48)    (206) (255)
+ |   |   | |
+ |   Left edge right edge |
+ |    |
+ Far left    far right
+
+
+To move the happy face vertically you would move the entire bit map in
+memory.  To move the happy face horizontally you change the number in
+the horizontal position register for the proper player.
+
+One of the players can be (and often is) split into four columns of
+two pixels wide each.  These columns are then called missiles.  In
+€this case, each missile has it's own horizontal position register.
+
+SETTING UP PM GRAPHICS
+
+PM graphics are enabled by the direct memory access control register,
+DMACTL [$D400 (54272)].  The program using PM graphics will usually
+use the shadow register, SDMCTL [$022F (559)].
+
+  DMACTL (SDMCTL)
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |0|0|  control  |
+    -----------------
+
+ bits
+
+5    1 = enable display list reading
+4    0 = one line player resolution
+1 = two line player resolution
+3    1 = enable four players
+2    1 = enable fifth player or missiles
+ 1 & 0   00 = no background
+    01 = narrow background (128 color clocks,
+    1 color clock equals 2 GRAPHICS 8 pixels)
+    10 = normal background (160 color clocks)
+    11 = wide background (192 color clocks)
+
+Normally, bits 5 and 1 are set to 1.  Bits 4, 3 and 2 are used to
+enable players and/or missiles accordingly.
+
+Once DMACTL is set up for the type of PM graphics to enable, the
+graphics control register, GRACTL [$D01D (53277)], is used to actually
+enable the PM graphics.
+
+ GRACTL
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |not used | | | |
+    -----------------
+
+
+ Bits
+
+2    1 = latch paddle triggers
+1    1 = enable four players
+0    1 = enable fifth player or missiles
+
+If only DMACTL is set up, the ANTIC chip will access memory for PM
+graphics but will not display them.
+
+Next, the memory area used for the PM bit maps must be set.  This
+block must start on a 2K (8 page) boundary if single line resolution
+€is used and a 1K (4 page) boundary for two line resolution.
+
+The page number where the bit map starts is stored in the PM base
+register, PMBASE [$D407 (54279)].  For one line resolution this number
+will be a multiple of 8.  For two line resolution it will be a
+multiple of 4.  PMBASE holds the MSB of the address of the PM bit map.
+The LSB will always be 0 so it need not be specified.
+
+  The PM bit maps
+
+2 line resolution
+128 bytes (1/2 page)
+per player
+
+-----------------   start + 0
+||\
++---------------+ 1-1/2 page
+|| (384 bytes)
++===============+ unused
+||/
++---------------+  +$180 (384)
+|M3 |M2 |M1 |M0 | fifth player or missiles
++===============+  +$200 (512)
+| player 0 map  |
++---------------+  +$280 (640)
+| player 1 map  |
++===============+  +$300 (768)
+| player 2 map  |
++---------------+  +$380 (896)
+| player 3 map  |
++===============+  +$400 (1024)
+
+1 line resolution
+256 bytes (1 page)
+per player
+
+
+-----------------   start + 0
+||\
+++
+||
++===============+
+||  768 bytes
+++
+||  (3 pages)
++===============|
+||  unused
+++
+||/
++===============+  +$300 (768)
+|   |   |   |   | fifth player
++M3 |M2 |M1 |M0 | or missiles
+|   |   |   |   |
++===============+  +$400 (1024)
+€||
++ player 0 map  +
+||
++===============+  +$500 (1280)
+||
++ player 1 map  +
+||
++===============+  +$600 (1536)
+||
++ player 2 map  +
+||
++===============+  +$700 (1792)
+||
++ player 3 map  +
+||
++===============+  +$800 (2048)
+
+
+
+
+
+Example of using P/M graphics in BASIC
+
+0 REM ---LABEL REGISTERS ETC
+10 LINES=2
+20 VERT=120
+22 IF LINES=2 THEN VERT=VERT/2
+30 PM0=1024
+32 IF LINES=2 THEN PM0=PM0/2
+40 HORIZ=120
+50 PCOLR0=704
+60 SDMCTL=559
+70 SIZEP0=53256
+80 HPOSP0=53248
+90 SDMCTL=559
+100 PMRAM=PEEK(106)-16
+110 PMBASE=54279
+120 GRACTL=53277
+130 PMSTART=PMRAM*256+PM0
+200 REM ---SET REGISTERS
+210 POKE SDMCTL,62
+212 IF LINES=2 THEN POKE SDMCTL,46
+220 POKE SIZEP0,1
+230 POKE HPOSP0,HORIZ
+240 POKE PCOLR0,88
+250 POKE PMBASE,PMRAM
+260 POKE GRACTL,3
+300 REM ---DRAW PLAYER
+310 POKE PMSTART+VERT,60
+320 POKE PMSTART+VERT+1,66
+330 POKE PMSTART+VERT+2,165
+340 POKE PMSTART+VERT+3,129
+350 POKE PMSTART+VERT+4,195
+360 POKE PMSTART+VERT+5,189
+€370 POKE PMSTART+VERT+6,66
+380 POKE PMSTART+VERT+7,60
+
+The above program will draw a happy face in about the middle of the
+screen using player 0.  To move the player horizontally, poke a
+different number into HPOSP0.  To draw the player in a different
+vertical position, change VERT.  To use a different player or missile,
+use the memory maps above to find the starting address of the player
+you want to use.  For example, to use player 1 change line 40 to
+PM1=1280.  Then change line 130 to PMSTART=PMRAM*256+PM1.  The
+variable "LINES" determines the vertical resolution.  The number poked
+into SIZEP0 determines the width.
+
+P/M PRIORITY
+
+The priorities of players, missiles and non-P/M graphics can be
+controlled by the PRIOR register [$D10B (53275)] and its shadow
+register, GPRIOR [$26F (623)].  Objects with higher priority will
+appear to move in front of lower priority objects.  The format of
+PRIOR is as follows:
+
+    
+    PRIOR bit assignment
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| | | | | | | | |
+-----------------
+ 1 6 3 1 8 4 2 1
+ 2 4 2 6
+ 8
+
+Bits
+
+   7-6  Control the GTIA graphics modes.
+
+    00 = normal
+    01 = mode 9
+    10 = mode 10
+    11 = mode 11
+
+5    1 = multiple color player enable.  Permits
+    overlapping of players 0 and 1 or
+    2 and 3 with a third color in the
+    overlapped region.
+
+4    1 = fifth player enable.  All missiles
+    will assume the color controlled by
+    COLOR3 [$2C7 (711)].  missiles are
+    positioned together to make the fifth
+    player.
+
+   3-0    Controls the priorities of players, missiles
+and other graphics.  Objects with higher priority will appear to move
+€in front of those with lower priority.
+
+The following chart may need some clarification.  In the chart:
+
+PM0 = player 0 and missile 0
+
+ C0 = COLOR0, plotted graphics controlled
+ by color register 0 in the SETCOLOR
+ command.
+
+ P5 = all four missiles when combined
+ into one player.
+
+BAK = the background, known as COLOR4 or color
+ register 4 in the SETCOLOR command.
+
+  Etc.
+
+ Bits 0-3 of PRIOR and P/M priorities
+
+
+Bit  3=1    2=1    1=1    0=1
+
+ C0C0    PM0    PM0   highest
+ C1C1    PM1    PM1   priority
+PM0C2C0    PM2
+PM1   C3+P5    C1    PM3
+PM2    PM0C2C0
+PM3    PM1   C3+P5    C1
+ C2    PM2    PM2C2
+    C3+P5   PM3    PM3   C3+P5  lowest
+BAK    BAK    BAK    BAK   priority
+
+Only one priority bit can be set at a time.  If more than one priority
+bit is 1, overlapping areas of conflicting priorities will turn
+black.
+
+COLLISIONS
+
+Each player or missile has a register showing overlap (collisions)
+with other objects.  Each player has two registers assigned to it; one
+to detect collisions with other players and one to detect collisions
+with plotted objects.  Likewise each missile has two registers; one to
+detect collisions with players and one to detect collisions with
+plotted objects.  Careful use of these 16 registers can detect any
+type of collision.
+
+Each register uses only the lower 4 bits.  The bits which equal 1 tell
+what the associated object has collided with.  For example, to detect
+collisions of player 1 to other players examine P1PL [$D00D (53261)].
+
+  P1PL, player 1 to player collisions
+
+ 7 6 5 4 3 2 1 0
+€-----------------
+P1PL |unused | | | | |
+-----------------
+    8 4 2 1
+
+3 = 1  collision with player 3
+2 = 1  collision with player 2
+1 = 1  invalid
+0 = 1  collision with player 0
+
+  Etc.
+
+When looking for collisions with plotted objects, the bit number tells
+what color register is assigned to the object the collision was with. 
+For example, to detect collisions between player 1 and plotted objects
+(officially called the play field), P1PF [$D005 (53253)] is used.
+
+   P1PF, player 1 to ploted object collisions
+
+ 7 6 5 4 3 2 1 0
+-----------------
+P1PF |unused | | | | |
+-----------------
+    8 4 2 1
+
+3 = 1  collision with COLOR3
+2 = 1   "   COLOR2
+1 = 1   "   COLOR1
+0 = 1   "   COLOR0
+
+  Etc.
+
+Once a collision occurs it remains indicated in its collision
+register.  To clear out all collision registers, write anything to
+HITCLR [$D01E (53278)].  STA HITCLR or POKE 53278,0 will do.
+
+    Useful database variables and OS equates
+
+
+HPOSP0 $D000(53248): write: horizontal position of player 0
+M0PF""   : read: missile 0 to plotted graphics collisions
+HPOSP1 $D001(53249): write: horizontal position of player 1
+M1PF""   : read: missile 1 to plotted graphics collisions
+HPOSP2 $D002(53250): write: horizontal position of player 2
+M2PF""   : read: missile 2 to plotted graphics collisions
+HPOSP3 $D003(53251): write: horizontal position of player 3
+M3PF""   : read: missile 3 to plotted graphics collisions
+HPOSM0 $D004(53252): write: horizontal position of missile 0
+P0PF""   : read: Player 0 to plotted graphics collisions
+HPOSM1 $D005(53253): write: horizontal position of missile 1
+P1PF""   : read: Player 1 to plotted graphics collisions
+HPOSM2 $D006(53254): write: horizontal position of missile 2
+P2PF""   : read: Player 2 to plotted graphics collisions
+HPOSM3 $D007(53255): write: horizontal position of missile 3
+€P3PF""   : read: Player 3 to plotted graphics collisions
+SIZEP0 $D008(53256): write: size of player 0
+M0PL""   : read: missile 0 to player collisions
+SIZEP1 $D009(53257): write: size of player 1
+M1PL""   : read: missile 1 to player collisions
+SIZEP2 $D00A(53258): write: size of player 2
+M2PL""   : read: missile 2 to player collisions
+SIZEP3 $D00B(53259): write: size of player 3
+M3PL""   : read: missile 3 to player collisions
+SIZEM  $D00C(53260): write: widths for all missiles
+P0PL""   : read: player 0 to other player collisions
+GRAFP0 $D00D(53261): write: player 0 graphics (used by OS)
+P1PL""   : read: player 1 to other player collisions
+GRAPF1 $D00E(53262): write: player 1 graphics
+P2PL""   : read: player 2 to other player collisions
+GRAFP2 $D00F(53263): write: player 2 graphics
+P3PL""   : read: player 3 to other player collisions
+GRAPF3 $D010(53264): write: player 3 graphics
+GRAFM  $D011(53265): write: missile graphics (used by OS)
+COLPM0 $D012(53266): color for player/missile 0
+COLPM1 $D013(53267): color for player/missile 1
+COLPM2 $D014(53268): color for player/missile 2
+COLPM3 $D015(53269): color for player/missile 3
+COLPF0 $D016(53270): color register 0
+COLPF1 $D017(53271): color register 1
+COLPF2 $D018(53272): color register 2
+COLPF3 $D019(53273): color register 3
+COLBK  $D01A(53274): background color (register 4)
+PRIOR  $D01B(53275): priority select, GTIA modes
+GRACTL $D01D(53277): graphics control
+HITCLR $D01E(53278): writing anything clears all collision bits
+DMACTL $D400(54272): direct memory access (DMA) control
+PMBASE $D407(54279): start of P/M memory
+
+ Shadow registers
+
+SDMCTL $022F  (559): DMACTL
+GPRIOR $026F  (623): PRIOR
+PCOLR0 $02C0  (704): COLPM0
+PCOLR1 $02C1  (705): COLPM1
+PCOLR2 $02C2  (706): COLPM2
+PCOLR3 $02C3  (707): COLPM3
+COLOR0 $02C4  (708): COLPF0
+COLOR1 $02C5  (709): COLPF1
+COLOR2 $02C6  (710): COLPF2
+COLOR3 $02C7  (711): COLPF3
+COLOR4 $02C8  (712): COLBK
+
+    CHAPTER 17
+
+
+  SOUND
+
+
+€Generating sound can be very simple.  For simple sounds there are four
+audio channels, each controlled by two control registers.
+
+GENERATING SOUNDS
+
+To generate a sound in channel 1, put the frequency and volume codes
+into the frequency and control registers.  The frequency register for
+channel 1, AUDF1 [$D200 (53760)] can have any number from 0 to $FF
+(255).  0 causes the highest frequency; 255 causes the lowest.  The
+volume/noise (control) register for channel 1, AUDC1 [$D201 (53761)]
+is more complicated.
+
+  Audio channel control (volume/noise) register
+
+   7 6 5 4 3 2 1 0
+  -----------------
+AUDCx  | noise | volume|
+  -----------------
+   1 6 3 1 8 4 2 1
+   2 4 2 6
+   8
+
+The noise bits can have various values.  The best way to learn to use
+them is by experimentation.  The technical details of the polynomial
+counters which generate the noise has little bearing on what is heard.
+The two special values of interest are: $1 (volume+16 in decimal),
+which causes a DC voltage proportional to the volume bits and; $A
+(volume+160), which causes a pure tone (square wave).  The volume bits
+select the relative volume, 0=off.  Therefore, the number, $A8 (168
+[8+160]) in AUDC1, will cause the frequency selected by AUDF1 to be a
+pure tone of medium volume.
+
+In BASIC the dirty work is done fore you.  The SOUND command will do
+all the calculations for you.  The Sound command format is shown
+below.
+
+    The BASIC sound command format
+
+ SOUND channel,frequency,noise,volume
+
+The channel numbers is 0 to 3 instead of 1 to 4. The frequency, 0 to
+255, is put into the frequency register.  The noise is put into the
+high bits of the channel control register with volume in the low bits.
+Therefore...
+
+ SOUND 0,125,10,8
+
+will produce a pure tone of medium frequency and volume in channel 0
+(called channel 1 in assembly language).
+
+ADVANCED SOUND
+
+The Audio Control register, AUDCTL [$D208 (53768)], (not to be
+confused with the four audio channel control registers), adds more
+€control for assembly language programmers.  Again, to go into
+technical details will be less productive than experimentation.
+
+ The audio control register. (AUDCTL)
+
+    7 6 5 4 3 2 1 0
+   -----------------
+ AUDCTL | | | | | | | | |
+   -----------------
+    1 6 3 1 8 4 2 1
+    2 4 2 6
+    8
+
+
+7    0 = 17 bit polynomial noise
+1 =  9 bit below polynomial noise
+6    0 =  clock channel 1 with 64 KHz
+1 =  clock channel 1 with 1.79 MHz
+5    0 =  clock channel 3 with 64 KHz
+1 =  clock channel 3 with 1.79 MHz
+4    0 =  clock channel 2 with 64 KHz
+1 =  clock channel 2 with channel 1
+3    0 =  clock channel 4 with 64 KHz
+1 =  clock channel 4 with channel 3
+2    1 =  insert logical high-pass filter in
+ channel 1, clocked by channel 3
+1    1 =  insert logical high-pass filter in
+ channel 2, clocked by channel 4
+0    0 =  64 KHz main clock
+1 =  16 KHz main clock
+
+All bits of AUDCTL are normally zero.  The BASIC sound command causes
+it to be reset to zero.
+
+By clocking one channel with another, the range can be increased. 
+This essentially allows two channels with twice the range as each of
+the four normal channels.  This is called 16 bit sound.
+
+To calculate exact frequencies, use the following formulas.  The exact
+clock frequencies are also given if more accuracy is needed.  The
+clock frequencies are acquired by dividing the signal from the TV
+color-burst crystal.  This crystal has a frequency of 3.579545 MHz.
+
+Clock frequencies:
+
+1.7897725   MHz    (color-burst/2)
+
+  63.920446 Khz    (color-burst/56)
+
+  15.699759 KHz    (color-burst/228)
+
+Formulas:
+
+
+€ For 1.79 MHz
+
+
+  clockclock
+f = ------------    f = ------------
+    2(AUDFn + 7)   2(AUDFn + 4)
+
+
+ 16 bit8 bit
+
+ AUDFn is the number in the audio frequency register.
+
+
+ For 16 KHz and 64 KHz
+
+
+  clock
+f = ------------
+    2(AUDFn + 1)
+
+
+AUDIO TIMER INTERRUPTS
+
+When the audio timers count down to zero they generate IRQ interrupts
+(if enabled).  The timers can be reset by writing any number to STIMER
+[D209 (53769)].
+
+THE CONSOLE SPEAKER
+
+The console speaker is where key clicks and the cassette signals come
+from.  On XL and XE models this speaker is heard through the TV
+speaker.  It is operated by toggling bit 3 of CONSOL [$D01F (53279). 
+This bit always reads 0 but it is actually set to 1 during vertical
+blank.
+
+
+    Useful data base variables and OS equates
+
+
+CONSOL $D01F(53279): bit 3 controls console speaker
+AUDF1  $D200(53760): Audio frequency 1
+AUDC1  $D201(53761): audio control 1
+AUDF2  $D202(53762): Audio frequency 2
+AUDC2  $D203(53763): audio control 2
+AUDF3  $D204(53764): Audio frequency 3
+AUDC3  $D205(53765): audio control 3
+AUDF4  $D206(53766): Audio frequency 4
+AUDC4  $D207(53767): audio control 4
+AUDCTL $D208(53768): general audio control
+STIMER $D209(53769): audio timer reset
+

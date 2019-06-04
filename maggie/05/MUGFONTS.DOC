@@ -1,0 +1,105 @@
+
+        
+
+        How to use new fonts in your GFA programs by MUG U.K
+        ----------------------------------------------------
+               for:  Maggie 5.0 by The Lost Boys
+               ---------------------------------
+
+
+ Why use fonts - well,  for the simple reason that they neaten up 
+your programs instead of that boring, humdrum ST character set. A 
+nice Macintosh style font,  or even a mini-Times Roman font  just 
+make your amazing program that little bit better !!
+
+  Before I explain the source-code,  the fonts format that  I  am 
+using  are  the  'industry standard' Fontkit format  as  used  by 
+Jeremy  Hughes  in his useful Fontkit range  of  programs.  These 
+programs are available as Public
+
+Domain versions,  or as a full-blown commercial program costing a 
+mere œ20, which will allow you to design Signum, Calamus, GEM and 
+printer fonts,  as well as the fonts that we're interested in for 
+GFA uses.
+
+ There are two file formats required for our purposes,  and these 
+are  the system fonts,  and they have the 'A1*.FON'  &  'A2*.FON' 
+file-prefixes.  These file-formats are for high reslution  (8*16) 
+and low/medium resolution (8*8) screens respectively.
+
+ The following source code is for GFA BASIC v3.5 ONLY,  I managed 
+to get them working once on GFA BASIC v2.xx,  but this was mostly 
+due  to some direct addressing used,  which as  every  programmer 
+knows  is  extremely nasty (according to Atari  anyway  !!).  So, 
+onwards with an explanation of how to set them up,  use them, and 
+get rid of them when you quit your programs.
+
+
+                    Setting Up Your Fonts.
+                    ----------------------
+
+  This just takes three lines of GFA BASIC,  and two of them  are 
+INLINEs !!  And to save any long-winded explanations, here is the 
+listing:-
+        '
+     INLINE mono_font%,4114          ==> High Resolution Font
+     INLINE medium_font%,2066        ==> Low/Medium Resolution Font
+        '
+     font_set                        ==> Install new fonts
+
+
+  The  'font_set' procedure is fairly  easy  to  understand,  and 
+should be left well alone until you decide to mess about with  it 
+yourself !!  Just merge in the procedure into your  program,  and 
+leave it there !!
+
+ OK so far ???  I hope so,  but if you're having any difficulties 
+then  just  look at the completed source code in  the  'PROGRAMS' 
+folder on this Maggie disk.
+
+  Only once you know what you're doing,  you can  start  deleting 
+bits  of  my routines that you do not require if  you're  writing 
+'TOS' programs - ie no alert boxes,  no menu-bars etc.,  then you 
+could  delete  all  the references to setting  up  the  GEM  font 
+addresses.
+
+  And  to  switch  off the user  fonts,  just  call  the  routine 
+'off_font'.  This  call can be made at any time,  but it is  best 
+left  at  the  'bottom of the pile' in  your  quit  routine.  For 
+example:- 
+
+        PROCEDURE kwit
+         SETCOLOR 0,&H777
+         SETCOLOR 3,&H0
+         SETCOLOR 15,&H0
+         CLS
+         off_font
+         EDIT
+        RETURN
+
+  It  would  be a good idea to set the 'ON BREAK'  &  'ON  ERROR' 
+routines  to  point to your quit routine,  as the fonts  will  be 
+turned off in the event of any catastrophe.  If they are not  de-
+installed,  you will find that the file-selector will be replaced 
+by  a  box full of wierd characters because the ST  still  thinks 
+your  font  is  stored  in the INLINEs'  and  these  INLINEs  are 
+overwritten when you return to the GFA BASIC interpreter.
+
+  I have included two different fonts with the source  code,  and 
+they  are the afore-mentioned 'Macintosh' & 'Times  Roman'.  I've 
+included   the  files  for  high  resolution  and   also   medium 
+resolution,  so  there is no excuse for your handy  utilities  to 
+contain a nice, new, easy to read font (how about
+it Michael - a nice new font in Maggie ???) !!
+
+  Well,  I'll  be off now,  as I've got a few  other  programs  & 
+articles I want to write for Maggie.  I know that I promised this 
+before Issue 1 of Maggie,  but I've been busy killing viruses for 
+the last year or so !!!
+
+
+        MUG U.K - 07/03/1991
+
+
+
+

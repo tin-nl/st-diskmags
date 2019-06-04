@@ -1,0 +1,55 @@
+                                                                                {*f0
+------------------------------------------------------------------------------- {*f1
+           INDENTIFILE v1.1                                                     {*f0
+-------------------------------------------------------------------------------
+
+- done by EARchaeopteryx Software / Netherlands
+- for all TOS-compatibles
+- the program is Public Domain
+
+This little utility  should help you  to identify  several files. For  this the
+program searches for extensions and headers in the given files and can also see
+if there is a text included in the files.
+Up to now the program can recognizise the following files:
+
+  file-type                       extension
+
+- 8SVX samples                    (IFF,...)
+- AIFF samples                    (IFF,AIF,etc..)
+- ANBM animations                 (IFF,..)
+- Atari executables               (PRG,TTP,APP,etc..)
+- Atomik packed files
+- AVR samples                     (AVR)
+- BMP pictures                    (BMP)
+- Calamus files                   (CVG,CDK,CFN) 
+  - VectorGraphic
+  - Document
+  - VectorFont
+- GIF pictures                    (GIF)
+  - 87a
+  - 89a
+- ICE packed files
+- ILBM pictures                   (IFF,LBM,BBM,..)
+- JPEG pictures                   (JPG)
+- LZH archives                    (LZH)
+- Mastersound samples             (SAM)
+- MS-DOS executable files         (EXE)
+- Spectrum512 pictures            (SPU,SPC,SPX)
+- STOS bank files                 (MBK)
+- TIFF pictures                   (TIF)
+- WAD files                       (WAD)
+- WAV samples                     (RIF,WAV)
+- WordPerfect documents
+- XIMG pictures                   (IMG)
+- ZIP archives                    (ZIP)
+
+As you can see there aren't many types included up to now but this tool is only
+two months  and so I  think there will be  much more file-types included in the
+future.
+This tool is very usefull if some files don't have an extension.
+I would  like to see  module-formats and  more picture-formats included in this
+utility, especially ST-picture-formats.
+I will not write more  shit here and so  watch out for this program if you need
+something like that....
+
+----------------------------------------------------------------Moondog of tnb-

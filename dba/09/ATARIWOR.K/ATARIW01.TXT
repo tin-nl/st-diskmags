@@ -1,0 +1,319 @@
+ATARI WORKS PART 1
+
+ |||  Atari Works .... Atari's reentry into the software application field.
+ |||  By: Andreas Barbiero
+/ | \ Delphi: ABARBIERO        GEnie: AEO.2
+      ---------------------------------------------------------------------
+
+Atari Works - Professional software development comes in house!
+Program written by Pradip K. Fatehpuria
+
+For a long time, many Atarians have voiced an interest in obtaining a
+comprehensive, multi-function program to handle word processing,
+database needs, spreadsheet manipulation, and telecommunications.
+
+Those needs have been listened to and are about to be filled. Atari
+has personally undertaken this project instead of relying on third
+party developers. With the introduction of SpeedoGDOS (SGDOS) and
+MultiTOS, Atari has placed two new standards into the marketplace, and
+with their integrated package, Atari Works, they are providing a
+program that is compatible with both of these systems and with all
+Atari computers - setting the standard for a new generation of
+software.
+
+Even with the new power of MultiTOS (MTOS), an integrated package is
+still needed. All the functions that a small business (or a large
+family!) requires are available in Atari Works. The user will no
+longer need to rely on several applications which might not talk
+effectively to each other, or even run under MTOS! Compatibility
+between such programs is extremely useful, as anyone who has ever
+wanted to mail merge a database file into a wordprocessor file knows.
+
+Atari Works uses both the new SpeedoGDOS (SGDOS) font scaling
+technology, and MTOS. But even without MTOS or Speedo, Atari Works can
+still multitask its own modules, and can be used as a plain
+nonscalable font wordprocessor. This is a system independent product,
+which can be used by older 68000 STs with four megs, as well as any
+TT030 or Atari Falcon030.
+
+The word processor in Works is possibly the best in its class. It
+incorporates iconified text, margin, and font handling, with basic
+drawing functions and graphic import. A command bar across the top of
+the screen allows one to easily manipulate a highlighted section of
+text, and perform quick italics, underlining, superscript and
+subscript on a font without resorting to loading the specific font
+with the desired text feature.
+
+With a click in the margin bar, you can add margin notes through a
+dialog box. Nice for when you're turning in an article to your
+editor, and you want to flag a section of text! For those with DMA
+sound, Audio Annotation is an option that allows you to attach an
+.AVR sound file to a document. For those lucky enough to run Works on
+an Atari Falcon030, the Audio Annotation file can be generated from
+the Falcon030's microphone input!
+
+Atari Works is not a replacement for a full fledged DTP product like
+Calamus or PageStream, but for someone who wants to product
+professional looking letters and flyers, it is more than sufficient.
+The area of commands in the wordprocessor module tends to be
+reminiscent of PageStream, what with keyboard commands to capitalize a
+block of text, or to make it uppercase or lowercase.
+
+The spelling checker and thesaurus are a delight. You can spell check
+the entire document, or just a highlighted section of text. The
+thesaurus offers definitions of many, many words, and can give you
+synonyms, related terms, and antonyms.
+
+Works combines abilities in text editing, without the fancy fonts or
+graphics, as well as commercially supported fonts numbering in the
+thousands, making it more than just a document processor, but not a
+complete desktop publishing program.
+
+//// More Than A Three Ring Circus
+
+Remember that Atari Works is several programs in one. The spreadsheet
+has all the basic functions you might expect from any spreadsheet, but
+with this one you can use custom fonts, create all kinds of custom
+charts, like pie and bar charts, and cleanly cut the data and place it
+into the wordprocessor. The spreadsheet currently is Excel command
+compatible, although it doesn't read or write Excel compatible files.
+
+If you are lucky enough to have a TT030 with the 19" monochrome
+monitor you can have several full screen text, database, and
+spreadsheet files open at the same time and smoothly cut and paste
+between them. Updating a number in a spreadsheet automatically
+updates any connected graphs - I am still amazed at the nice touches I
+find while exploring Works.
+
+The ability to use all of these features on a regular 68000 ST
+(achieving great results) is fabulous. I am using SpeedoGDOS and Atari
+Works to write this on a MSTe, and the speed is more than usable. I
+honestly was prepared to find a product dog-slow in redraws, but I was
+wrong! I have six megabytes of fonts installed on my system and my
+Deskjet 500 has never been happier!
+
+//// The Future For Works
+
+Atari Works is a program under development, but at this stage, it is
+fully usable. Other options are underway right now, such as a wider
+variety of file import modules and built-in a telecommunications
+module.
+
+What that will be like, I don't know, but Bill Rehbock assured me that
+they are making sure that it has ALL the basic features needed for
+telecommunications, as well as the ability to send faxes, and to
+support a Falcon030's DSP port modem! Bill is very pleased with the
+depth of Works in general, saying online that, "Atari Works has been
+a very good proof of theory regarding the O/S and GEM, and son of a
+gun, it really does work :-)"
+
+IMG support, and more sophisticated graphics handling are expected, as
+well as any other options that the extensive team of beta testers are
+suggesting. In conclusion, this program will provide all Atari users
+with a powerful business application that can be used by home users,
+small businesses, and everyone else who is lucky to have access to an
+Atari computer!
+
+Well, I guess that wraps up this preview of Atari Works. When Version
+1.0 of Works is finished and ready to ship, look for a in-depth
+review of it right here - first - in AEO.
+
+
+
+
+ |||  Atari Works More ......................... And the Word was Written
+ |||  By: Andreas Barbiero
+/ | \ Delphi: ABARBIERO      GEnie: AEO.2
+      -------------------------------------------------------------------
+
+Atari Works is an extremely versatile software package that will run
+on the entire line of Atari computers, from a one megabyte 1040ST, to
+the Atari Falcon030. With two or three Speedo fonts loaded, and a
+small cache set up for them, Atari Works WILL run on one megabyte ST,
+but I would suggest the user have at least two megs, in order that
+more fonts and a larger SpeedoGDOS cache can be used to speed up
+redraws. With two or more megabytes of RAM, your system will have more
+free memory for larger files to be created within Works, and allow
+SpeedoGDOS to run faster. Saying that Atari Works is a totally
+integrated software package, means that its word processor, database,
+spreadsheet, and communications were intended to work together from
+the outset. (maybe it should have been called Gung Ho!) A spreadsheet
+can be set up or imported from one module to another, or a database
+can be used for mailmerge purposes. Charts can be drawn and
+transported at will, and word processor files will be transmittable
+via your send-fax modem in the upcoming terminal module.
+
+AtariWorks can have several database, spreadsheet and wordprocessor
+files open at the same time, so you will want as much RAM as possible
+to work with. Speedo utilizes an efficient caching system for scaling
+fonts, but the more memory you can allocate it the better off you are.
+But no matter what system you are running Atari Works on, from a
+1040ST to an Atari Falcon030, the tools will still be the same and
+offer you the same versatility.
+
+This first module you will talk about is the Atari Works
+wordprocessor. The features of this program are particularly
+interesting to anyone who uses a word processor, and is frustrated by
+the current crop of word processors. The best way to tell you about it
+all is to describe my own experiences. Using Atari Works I converted
+my Caesar game review from a straight ASCII program into a
+professional presentation format, suitable for handing out as a flyer.
+
+<<< See attached screenshot: AW_WORD.PC3 >>>
+
+In order to quickly facilitate access to the command functions, Atari
+Works supports a graphic tool bar across the top of the screen, that
+can be selectively hidden if desired, in order to gain an extra line
+or two on screen display. From left to right, the control boxes are:
+
+ù Page display: A box which displays the page number you are viewing.
+
+ù Page format selector: A drop-down menu of all the different formats
+saved and accessible for on the fly page formats.
+
+ù Text Justification: A set of four buttons which can select left
+justified, right justified, centered, and full justification.
+
+ù Line Spacing: Three buttons selecting, single spacing, one and a half
+line spacing, and double spacing.
+
+ù Tab settings: Four tab settings- left, right, center, and decimal
+tabs.
+
+ù Format Selector: A drop-down menu of all the fonts which you have
+preset and assigned function keys to.
+
+ù Text attributes: Seven buttons allowing you to select normal, bold,
+italic, underline, outline, superscript, and subscript manipulation
+for your text.
+
+ù Graphics: Allows you to draw solid or outline objects to be drawn as a
+metafile in your text file.
+
+As you can see, the tool bar allows fast access to all the important
+features of a word processor, and with a single glance you can tell
+what you are set up to do at any time. The ease of formatting a
+document is fantastic and is so self explanatory that you do not need
+to constantly refer to a manual. Anyone who has used Word Perfect 5.1,
+or any other number of cumbersome word processors on the various
+platforms will appreciate this aspect immediately.
+
+Importation of a ASCII document is simple. Atari Works imports the
+document in the font selected as a default (from the preferences menu)
+quite quickly, even with the notoriously skimpy SpeedoGDOS cache I am
+known to use. ASCII can get tricky at times, especially with documents
+that insist on having a carriage return after each line. Atari Works
+can clear this annoyance by simply selecting all the text (either as a
+block with the mouse, or select all the text with a CONTROL-A) and
+then pressing CONTROL-M. Voila! Carriage returns dismissed!
+
+The first thing I needed to do was change the font to one appropriate
+for a review of a Roman era game. I wanted something reminiscent of
+Roman style text, so I pressed CONTROL-A (select all) and then I hit
+F4, since I had assigned it to a typically Roman font. Hot keys for
+fonts, what a great concept! The entire text file was converted into
+the new font. Using the mouse, I was able to quickly highlight a
+section of text for manipulation. A highlighted block of text can
+easily cut, copied, deleted, pasted, reformatted, etc. In this case I
+wanted to change the title and subtitles into a different font from
+the main body of text. I assigned the title font to F5 and with a few
+quick mouse clicks I was able to highlight the desired text and press
+F5 to change the font once again. Being famous for typos and
+misspellings, I wanted to check things once again, so I ran it through
+the spelling checker. Since words are easily added to the dictionary,
+I have accrued a large personal dictionary, so words that would trip
+up a generic spelling checker are not a problem anymore. There were
+three honest spelling mistakes, and invariably the first suggested
+spelling was the one I needed. Not only is the spell checker fast, it
+also looks for phonetics, or sound alikes, making it a very flexible
+in not only finding mistakes, but fixing them for you too!
+
+Choosing the right words to use is almost as important as making sure
+they are spelled right. Usually I keep a well used Roget's thesaurus
+next to my computer. Even though most of the upscale word processors I
+have used claim to implement a built in thesaurus, invariably they are
+cumbersome and slow. On the PC I had to use at work, the thesaurus
+function took so long to load, that I could go on a coffee run, and
+return in time to start working again! In competition against other
+word processors, the Atari Works thesaurus is unique. For instance
+after I typed the word 'unique' I loaded the Thesaurus, off my
+Syquest44, it took 4 seconds! Highlighting, or placing the cursor at
+the end of a word brings up the word in context with a selection of
+definitions. You can select the one that fits the context of your
+sentence and quickly get a list of synonyms, antonyms, and related
+words. This allows you to use alternate words that are tuned to the
+concepts you are trying to bring across without having to fight the
+program, or guess where the words you are looking for are hidden. You
+can change to the new word by simply clicking on the one you wish to
+use, and hitting return.
+
+<<< See attached screenshot: AW_THES.PC3 >>>
+
+At this point, my wife was delicately reminding me that she was
+waiting to mail this masterpiece, so I reluctantly stopped
+experimenting. (I think she used different terminology, the word
+molasses-brain was used.)
+
+After making sure the text was perfect, I printed it. SpeedoGDOS took
+care of the rest, using the Deskjet driver I had previously set up
+during installation of Speedo. As I watched in anticipation, the text
+emerged onto paper. This was almost too easy. I was happy that I was
+not being paid by the hour for this work!
+
+In my playing around with the program, I found out how Atari Works
+does the basics. Not only does Atari Works support font and page
+layout macros, but the things that every word processor should do is
+implemented also. Headers and footers can be assigned via a simple GEM
+selector: choose the font, pick the size, assign a text attribute, and
+tell the program how far in you want the header/footer to be in on the
+page.
+
+Search and replace is a simply performed action. With some other word
+processors, I have found that if you accidentally start your global
+search at the end of the text, it ends when the text ends. Atari
+Works opens a smaller window with the word you are searching for in a
+block of text for context purposes, and no matter where you start the
+search will go from beginning to end, and around again, as many times
+as you need to.
+
+<<< See attached screenshot: AW_SRCH.PC3 >>>
+
+Anyone who has used Word WriterST is familiar with the F10 key. Every
+time you need to rearrange text in a paragraph after minor editing,
+you have to reach up and hit F10. This sometimes resulted in a less
+than perfect format, paragraphs would get stuck together, left margins
+would change.... you name it. Atari Works handles formatting in real
+time and automatically. Inserting text in the middle of a paragraph is
+fun to watch as the paragraph adapts to your changes. My biggest
+complaint about some graphic word processors was that it took a second
+or two before the text would rearrange itself, making you wait for
+screen redraws to occur before you can see what you document looks
+like. Wait till you see Atari Works!
+
+But the word processor is not just limited to text editing, You can
+draw circles, squares, ovals, and lines of all shapes and with several
+choices as to the thickness of the line. So not only can you emphasize
+text with a font, but you can place it in a box, outlining whatever
+you have to say. GEM metafiles are supported directly for now, and an
+IMG import module is expected in the release version. Atari Works IS
+growing, and changes increasing speed, as well as the functionality of
+the program is an ongoing process. Overall, I have found it to run
+faster than the early version of Calligrapher, and better than
+Microsoft Write for the ST.
+
+In case you haven't gotten what I am aiming at here, ease of use is
+the point I am delicately trying to make with a sledgehammer! Other
+programs may offer different options and features, but for what the
+gritty end of a word processor is, getting text into a usable
+document, Atari Works does this with the best interface I have seen.
+
+In future articles, AEO will describe what it takes to set up a
+spreadsheet and start organizing your data into a functional database.
+In the meantime, if you have any questions, feel free to contact me at
+AEO.2 on GEnie, or ABARBIERO on Delphi.
+
+-------------------------------------------------------------------------
+NOTE: THERE ARE SCREENSHOTS FROM THIS GREAT PROGRAM IN THE DIRECTORY
+      "ATARIWOR.K" BUT THEY ARE .PC3 FORMAT !
+-------------------------------------------------------------------------
+

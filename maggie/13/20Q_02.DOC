@@ -1,0 +1,282 @@
+0660103030566
+9[....................................................]
+
+„Everfeltlikedoingadisk-magcomposedentirelyoftextfiles
+abstractedfrombulletinboards?-IknowIhave!!-CIH...
+€
+„Nottruenottrue!Buthereisanother'unmissable'goodiefor
+anyoneconcernedwithAtarimatters..-TheMaggieTeam..
+€
+Ronnie,
+
+Please accept my apologies for this taking so long to get to you.
+I've been incredibly busy here at Atari, and there is so much to do in
+so little time.   I've taken the liberty of combining a few of the
+questions together since I felt they were best handled by a single
+answer.
+    //////////////////////////////////////////////////////////
+
+Q: We have heard that LlamaZap for the Falcon is finally finished, and
+the code has been sent to Atari US for duplication and packaging.  How
+soon will LlamaZap be on sale in the US and Europe?
+
+From Bob Brodie:  
+Llamazap is still in our software testing group, it has not been
+approved for released yet.  I've been contacted by a UK based magazine
+that tells me that they have spoken to the programmer.  They state
+that the programmer indicated that he's finished with the program.
+Our policies require it to go through an extensive software testing
+program here before it will be released.
+
+In the US, our plans are to bundle at least a couple of the games for
+the Falcon030 with the new controller pad.  Llamazap is a leading
+candidate to be sold in that fashion.  I would expect to see it in the
+fall.  Pricing on the controllers isn't 100% firm right now, but I
+would look for it to be in the $20-30 range.
+
+
+Q: When the Falcon was first announced, there were comments indicating
+that a DSP modem was possible.  Is this still being worked on by
+anyone?
+
+From Bob Brodie:
+Yes it is.  There have been a few problems in getting this product
+implemented, especially at the price/performance point that we want it
+to be done at.  We're working closely with a third party developer to
+make this happen.  I'm confident that it WILL be done, it's just a
+question of when.
+
+
+Q: MultiTOS is reported to be fairly slow on the Falcon.  Is Atari
+working on faster code?  Is the slowness due to slow video routines
+that something like Warp 9 could cure?
+
+From Bob Brodie:
+I've heard all kinds of opinions about how fast (or slow) MultiTOS is.
+It's my impression that people reactions depend on what they've used
+before.  If they had any experience with a Multitasking OS before,
+they probably recognize it to be pretty efficient.  If they
+haven't...they might not be impressed at all.
+
+Certainly we're very interested in seeing updates to MultiTOS.  But
+it's only been shipping for a short period of time, so I don't believe
+it's realistic to expect an update this soon.  Perhaps later this
+year.
+
+Re Warp 9, well...yes and no.  Warp 9 will improve the screen re-draws
+speed, but there is always another sacrifice: compatibility.  This
+isn't a slam against Warp 9, I use it on one of the systems in my
+office here at Atari. The VDI is designed to be what it is, a VIRTUAL
+interface that should work in ANY rez.  Warp 9 doesn't work in any
+rez, which is why it gets upgraded every time we release a new
+machine.
+
+From Bill Rehbock:
+I use NVDI on my Falcon030 daily.  It works great with MultiTOS, and
+I'm very happy.  But, I can hardly wait to be able to use Warp 9!
+
+
+Q: What is the practical number of channels of Direct-to-disk
+recording and playback that the Falcon can support with an SCSI-2
+drive?  I've been hearing that SCSI-2, as fast as it is, isn't fast
+enough for the full eight channels supported by the Falcon.  Also,
+what's the highest channel count using an IDE drive?
+
+From James Grunke:
+The Falcon030 SCSI-2 hardware does have the bandwidth to support 8
+channels of digital audio at 50Khz.  We have done a proof of concept
+here but it is not easy to move that much data, the software must be
+well written.  As well, limitations would include the access speed of
+the external drive.   Applications using SCSI-2 on the Falcon030
+handle digital audio in the following ways:
+
+Available now in Europe with US release pending, Digitape from Trade
+iT uses eight tracks, two for record with the remaining six for
+simultaneous playback, this should work on IDE as well as SCSI-2
+drives.
+
+Available soon, the Steinberg Cubase Audio/Yamaha CBX-D5 system will
+use the SCSI-2 port for its 4 track system.  I understand that you can
+link two 'D-5's to achieve 8 tracks total.  Cubase Audio for Falcon
+(available later this fall) specs show that 4 tracks are used for
+record/playback along with 4 voices of sample playback.
+
+Available now, D2D 4TFX uses 4 tracks via SCSI-2 or IDE drives.
+
+Please contact developers directly for more information.
+
+Q: With current technology, about how many true color video frames per
+second should the Falcon be capable of handling in a video playback
+application?  Is this faster than what Windows video can do these
+days?
+
+From Bill Rehbock:
+There are a lot of variables that have an impact on the answer to your
+question.  It will depend on the exact rez that you are in, and if
+sound is included.  At 320x200, 60 frames per second on a Falcon is
+very doable.  Movies do 30 frames per second (with sound), most
+animated cartoons are running at 12 frames per second, so you can see
+that we're pretty competitive.
+
+Re the comparison versus Windows, again, there are too many variables
+to tell what kind of perfomance to expect. It would depend which
+Windows application you were comparing it to, and what kind of
+hardware Windows was running under.  For example,  the Intel Smart
+Video Recorder playback rate is approximately 20-30 frames per
+seconds.  The price on the card alone is $549 (street price), and
+requires a 25 Mhz 486SX, and includes Intel's Indio video compression
+chip.
+
+
+Q: Now that the Falcon is shipping worldwide, what are the best
+selling, Falcon specific (or Falcon enhanced) applications (the top 3
+or 4 please)? (And if the top three are all MIDI apps, whats the best
+selling non-Midi app)
+
+From Bill Rehbock:  
+We don't require our developers to report there sales to us, so they
+don't.  But MusiCOMM appears to be doing well, as is True Paint,  and
+Atari Works <shameless plug>.  We really like Phoenix Render, but I
+don't think it's selling to well.  On the game side, Ishar is selling
+well, and Transarctica looks terrific.
+
+
+Q: At the most recent shareholders meeting, Sam Tramiel commented that
+although the Falcon030 was not selling as well as anticipated, Atari
+is nonetheless committed to staying in the computer market and that
+there will be additional Falcon models.  Can you please tell us about
+some of the models under consideration?
+
+From Bob Brodie:  
+Sorry, it is not our policy to discuss unannounced products.  I am
+happy to confirm for you that as we stated when we announced the Atari
+Falcon030, there is a new family of computers being produced by Atari.
+The Falcon030 is the first of that family of computers.  I've seen
+prototypes of future machines, and I believe that you'll be pleased
+with the results.
+
+
+Q: In the last question and answer session it was stated that Atari
+plans to tell everyone about the Falcon030 but not until their is
+enough product to meet the demand.  The Jaguar right now is already in
+very hot demand and Atari definitely needs to make sure they can meet
+it, how does Atari plan to do that as customers who can't get the
+product might be turned off and move to another platform?
+
+From Bob Brodie:  
+First of all, it's important to note that we plan to ship initially
+only to New York and San Francisco markets with the initial shipments
+of the Jaguar.  We don't plan on being able to supply ANY of the
+demand outside of those areas.  We're already getting calls from
+potential dealers outside of that area, and we tell them we won't sell
+to them until next year.
+
+One of the ways that we will make sure that people will not get turned
+off is by the extensive coverage that we will have in the magazines.
+We've already seen some write ups by the Jaguar in a few of the gaming
+magazines, and we continue to work very closely with some of the
+biggest mags in the field to ensure their coverage.  I've personally
+spoken to a number of the editors and writers that have seen video
+tape footage of the Jaguar.  Universally, they are thrilled, and very
+excited about the Jaguar.  They want review units _NOW_!  And that I'm
+certain what that really means is that they want to play the machine,
+not just write about it!!
+
+We're being very up front about our sales plans for the Jaguar.
+People will either have to order it from either New York or San
+Francisco based stores, or wait for the product to be available in
+their area.  The level of excitement in the game media is very high,
+and I'm sure that will splash over into the public as well.
+
+
+Q: Finally, When will Atari make public the names of 3rd party
+companies for the Jaguar?
+
+From Bob Brodie:  
+I expect to make some press releases later this month on the Jaguar,
+but I'm not sure exactly when we'll make that one.  Certainly within
+the next 90 days.
+
+
+Q: According to rumors, the Jaguar game machine has some very significant
+technological capabilities.  Is there a public target date for it yet?
+
+From Bob Brodie:  
+The Jaguar definitely has some very significant technological
+capabilities...that's a fact, not a rumor!!
+
+The unit will be available for sale in the fall season in New York and
+San Francisco.
+
+
+Q: If the recently announced numbers of the Atari/IBM deal are to be
+taken at face value, the $500 million figure equates to 2.5 million
+units at a retail price of $200.  How long is the contract with IBM to
+last?  Who will be able to sell the Jaguar (just current Atari
+dealers)?
+
+From Bob Brodie:  The contract with IBM is for 30 months.
+
+Obviously, we're looking toward high volume retail outlets, but
+neither do we want to exclude our dealers that sell our computer
+products.  At this point, I think it's reasonable to assume that the
+dealers will be able to purchase the Jaguar through distributors.
+
+
+Q: The press releases about the new Jaguar relationship with IBM state
+that IBM will be responsible for building and 'distributing' the
+Jaguar? Exactly what is meant by 'distributing?'  Does this mean
+people will be able to order it from IBM, too?  Or will IBM simply
+ship the completed units to whomever Atari tell them to?
+
+From Bob Brodie:  
+Distributing them means that IBM will warehouse and ship the products
+for us.  The orders will still come to Atari, and then we will notify
+IBM whom to ship the product to.  IBM will not be selling the Jaguar.
+
+
+Q: Will there be a Jaguar version of LlamaZap?
+
+From Bob Brodie:  
+We would prefer not to discuss any titles other than what we've
+released in our press releases at this time, sorry.
+
+
+Q: I have gotten conflicting reports concerning the TT030 going back
+into production. If it's true, will it be available to the public?
+I've been trying to buy one, but nobody has any.
+
+From Bob Brodie:  Yes, it will be available again.
+
+Try calling Winners Circle in Berkley, CA.    Their phone number is
+510-845-4814.  I happen to know that they have a new unit in stock as
+of today (8/14/93), as well as a used unit.
+
+
+Q: I was a beta tester for the World Clock program for the Portfolio.
+The testing was finished about a year ago but I haven't seen it
+announced to the public yet.  Whats the status of this program? Atari
+Corp has not announced any new software or peripherals for the
+Portfolio for a long time.  There have been a few rumors but nothing
+concrete about a Portfolio II model.  Is the Portfolio dead?
+
+From Bob Brodie:  
+At this point in time, we are devoting almost all of our energies
+toward the Jaguar.  All Portfolio projects are on hold.
+
+
+Q: We were told a few months ago that ATARI EXPLORER magazine was "under
+review" and that an announcement about its continuing status would be
+made "shortly."  When (if ever) can we expect the next issue?
+
+From Bob Brodie:  
+At the time we made that statement, we were in negoiations to have
+Atari Explorer produced as an out of house publication.  Negotiations
+to have Atari Explorer Magazine restarted as an out of house
+publication have broken down.  While Atari still believes in the
+magazine, it is not profitable at this time, and we cannot afford to
+publish it at a loss.  However, we are very optimistic that with the
+success of the Jaguar, we will be able to renew publishing Explorer
+again.
+
+

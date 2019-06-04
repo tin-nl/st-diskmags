@@ -1,0 +1,433 @@
+  AprŠs le C, voici l'assembleur, et 
+plus  particuliŠrement le  Z80,  heu 
+pardon  le  68030!  (Ah,  ces  temps 
+anciens ou je d‚butais et tout ‚tait 
+si  facile,   une  douce   nostalgie 
+saisit mon coeur ...).  Nous  allons 
+voir comment compte un peti' (ou  un 
+gros) microprocesseur.  Le coeur  de 
+chaque   ordinateur   ne   reconnaŒt 
+(h‚las!!) que deux ‚tats distincts : 
+vrai  ou  faux,  allum‚  ou  ‚teint, 
+jour/nuit,  1 ou 0...    Et  comment 
+qu'on fait pour compter?  Et bien  , 
+lorsque nous comptons,  on compte 0, 
+1,  2,  ..., 8, 9 et puis 10, car on 
+compte en base 10.  Et bien le 68030 
+c'est  pareil,  sauf qu'au  lieu  de 
+compter avec 10 chiffres (0,  ...9), 
+il compte avec 2 chiffres,  le 0  et 
+1, en base 2. Donc on compte : 0, 1, 
+10, 11, 100, 101...
+
+   C'est  bien  beau,  mais  comment 
+qu'on fait pour passer de la base  2 
+… la base 10.  Et bien dans 1975, le 
+premier   chiffre  (1)   doit   ˆtre 
+multipli‚  par 1000  (10*10*10),  le 
+second (9) par 100, le troisiŠme par 
+10,  et  le  dernier par  1,  et  on 
+obtient  le  nombre 1975  (‡a  c'est 
+fort!). Donc on multiplie un chiffre 
+par  une puissance de 10.  Pour  les 
+nombres  en base  2,  c'est  pareil, 
+sauf  que  l'on  multiplie  par  des 
+puissances  de 2.  Par exemple  pour 
+101    (base  2),   cela   donne   : 
+1*2*2+0*2+1*1=5  en  base  10.  Pour 
+faire l'inverse (base 10 -> base 2), 
+c'est un peu plus compliqu‚. Si l'on 
+r‚flichit,  on s'aper‡oit que si  le 
+nombre en base 10 est pair, alors le 
+dernier chiffre en base 2 doit  ˆtre 
+0.  Donc  le dernier chiffre est  le 
+reste  de  la division par 2  de  du 
+nombre   en   base   10.   On   peut 
+recommencer  le  processus  sur   le 
+quotient, etc... Par exemple : 12
+
+12/2= 6*2+0     -> 0
+6/2 = 3*2+0     -> 0
+3/2 = 1*2+1     -> 1
+1/2 = 0*2+1     -> 1
+ 
+   Bah  l…  on  s'arrˆte,   car   le 
+quotient    est   nul.    Donc    la 
+repr‚sentation de 12 en base 2 est : 
+1100   (=1*8+1*4=12).    Un    petit 
+inconv‚nient … ce systŠme,  c'est la 
+longueur  des  nombres  (4  chiffres 
+pour 12). Et si on regroupait 4 bits 
+(car  chaque  0 ou 1  repr‚sente  un 
+bit)   pour  former   une   nouvelle 
+expression,  et  donc  une  nouvelle 
+base, la base 16 :
+
+ 0000 -> 0
+ 0001 -> 1
+ 0010 -> 2   De 0 … 9, ‡a correspond   
+ 0011 -> 3   … la valeur en base 10
+ 0100 -> 4
+ 0101 -> 5
+ 0110 -> 6
+ 0111 -> 7
+ 1000 -> 8
+ 1001 -> 9
+ 1010 -> A  = 10 en base 10
+ 1011 -> B  = 11 en base 10
+ 1100 -> C  = 12 en base 10
+ 1101 -> D  = 13 en base 10
+ 1110 -> E  = 14 en base 10
+ 1111 -> F  = 15 en base 10
+
+   Et  notre 12 de tout  …  l'heure, 
+devient  un  simple C (4  fois  plus 
+court!!).
+
+   Bon  attaquons le vif  du  sujet, 
+not'   pti'   68030   possŠde    des 
+registres.   Les  registres,   c'est 
+comme des boites qui contiennent  le 
+r‚sultat de calcul. Et bien le 68030 
+en  poss‚de  33,  donc  8,  appell‚s 
+registre de donn‚es  (D0,  D1,  ..., 
+D7).  Ces registres de donn‚es  dont 
+une  taille fixe de  32  bits,  mais 
+certains  calculs peuvent  se  faire 
+sur les 16, 8, 1 premiers bits, voir 
+64!!  (sur deux registres,  mais bon 
+vera  ‡a plus tard).  Ces  registres 
+sont tous identiques, et ils servent 
+au  op‚rations  courante  (addition, 
+soustraction,        multiplication, 
+comparaison, op‚ration logique ...).
+
+  A cot‚s des registres de  donn‚es, 
+il y a des registres d'adresses (A0, 
+A1,  A2,  ..., A7). Ces registres au 
+nombres  de  8,   sont  destin‚s   … 
+contenir    l'adresse    de    cases 
+m‚moires,   on   les  appele   aussi 
+pointeur,  car  ils pointe  sur  une 
+case  m‚moire.  Les cases  m‚moires, 
+c'est  une sorte de grande  armoire, 
+avec   plein   de   tiroir   ou   le 
+microprocesseur  range  les  donn‚es 
+dont il a besoin.  Ces cases ont une 
+adresse,  qui  est  sur  32  bits  ( 
+jusqu'…  4 Go de  m‚moire  !!!),  et 
+chaque  case … une taille de 8  bits 
+(le   fameux   octet).   Il   existe 
+cependant  un registre  d'adresse  : 
+A7,  qui une fonction  particuliŠre, 
+c'est le pointeur de pile.  La pile, 
+c'est  une  zone  m‚moire  ou   sont 
+stock‚s  des donn‚es dans  un  ordre 
+pr‚cis :  le premier qui est mis sur 
+la pile, est le dernier retir‚ de la 
+pile  (comme une  pile  d'assiette). 
+Attention,   il   ne  faut   jaimais 
+modifier le contenu du registre  A7, 
+car,  pour planter, il n'y a rien de 
+mieux!!
+
+  Il existe d'autres registres,  qui 
+on des fonctions bien  particuliŠre. 
+Le  registre PC  (Programm  Counter) 
+est   le   registre   qui   contient 
+l'adresse    de   l'instruction    … 
+ex‚cuter, car chaque instruction est 
+stock‚e  en  m‚moire!   ce  registre 
+permet    au   68030    de    suivre 
+correctement  le  d‚roulement   d'un 
+programme.   Il   existe  aussi   un 
+registe,  appel‚ registre des flags. 
+Il contient des flags,  c'est … dire 
+des   drapeaux  qui  indiquent   les 
+caract‚ristiques     de      certain 
+r‚sultat.   Par  exemple,   si  l'on 
+soustrait  deux nombres  ‚gaux  (10-
+10=0),  le r‚sultat est nul,  et  le 
+flag Z est mis. Bon un petit exemple 
+s'impose :
+ 
+     Section Text
+     *  on  indique que  ce  qui  va 
+     * suivre est programme
+     move.w #10,d0
+     move.w #15,d1
+     add.w  d0,d1
+     * fin du programme
+     * retour systŠme
+     move.w #0,-(a7)
+     trap #1
+
+  L'instruction move sert … d‚placer 
+des  donn‚es.  L'instruction  move.w 
+indique  que  les  donn‚es  d‚plac‚e
+sont  de taille Word (.w),  c'est  … 
+dire  2 octetst (16 bits).  Il  peut  
+avoir .l : long (4 octets : 32 bits) 
+et .b : byte (1 octet : 8 bits). Ici 
+la donn‚e est la valeur imm‚diate 10 
+(…  cause  du #)  en  base  10.  Par 
+exemple $10,  repr‚sente 10 en  base 
+16  (hexad‚cimal),  soit 16 en  base 
+10,  %10  repr‚sente 10 en  base  2, 
+soit  2 en base 10.  La syntaxe  des 
+instructions   est   de   la   forme 
+suivante    :     instruction.taille 
+source,    destination.    Donc   la 
+premiŠre ligne donne : 10->d0, c'est 
+… dire que le mot (de poid faible  : 
+les  bits les plus … gauche)  de  d0 
+contient la valeur 10.  De mˆme avec 
+d1, qui contient la valeur 15. 
+
+  L'instruction add est une addition 
+du  style  :  source+destination  -> 
+destination.  Donc la valeur d1 … la 
+fin   de  notre  programme  est   de 
+10+15=25.   Pour   bien  saisir   le 
+fonctionnement  je  vous   conseille 
+l'utilisation  d'un d‚bogueur pas  … 
+pas,   c'est  …  dire  qui   ex‚cute 
+instruction par  instruction.  Quand 
+aux  derniŠres  instructions,  elles 
+servent … rendre la main au systŠme. 
+Le  move.w #0,-(a7),  sert …  mettre 
+sur la pile la valeur  0.  Lorsqu'un 
+registre    d'adresse   est    entre 
+parenthŠses,   ce   n'est  pas   son 
+contenu  que l'on modifie,  mais  le 
+contenu de l'adresse qu'il contient. 
+Par exemple :
+
+ movea.l #$12345678,a2
+     ‚quivalent   de   move,    mais 
+uniquement   pour   les    registres 
+d'adresses
+     -> A2 : $12345678
+ move.w #10,(a2)
+     -> adresse m‚moire  /  contenu
+        $12345678             0
+        $12345679             10
+
+car  il s'agit d'un mot,  donc  deux 
+octets,  deux cases m‚moires.  Et le 
+stockage en m‚moire se fait octet de 
+poid  fort,   ....  octect  de  poid 
+faible.  Ici l'octet de poid  faible 
+vaut 0,  et celui de poid fort  vaut 
+10.  Revenons au move.w #0,-(a7), le 
+- signifie que l'on va retrancher la 
+taille  en  octet  de  l'op‚rande  … 
+l'adresse contenu dans a7, puis l'on 
+va  mettre  la  donn‚e  …  l'adresse 
+contenu dans a7. Soit : 
+        a7   :    $12345678    avant 
+instruction
+ move.w #0,-(a7)
+   ->  a7 : $12345676 (a7-2)
+        adresse m‚moire  /  contenu
+        $12345676             0
+        $12345677             0
+     et    A7   contient    toujours 
+$12345676.
+
+   Ce   systŠme  permet   de   g‚rer 
+correctement des piles.  La derniŠre 
+instruction  :   trap   #1,   permet 
+d'appeler   le   systŠme,   par   la 
+"trappe" 1 du systŠme.  Cette trappe 
+porte un nom : le Gemdos.
+
+  Le Gemdos est compos‚ de plusieurs 
+fonctions.  Chaque fonction porte un 
+num‚ro.  Pour choisir la fonction on 
+"passe"  une  valeur  par  la  pile, 
+c'est  …  dire on met le  num‚ro  de 
+fonction  sur la pile.  Et  bien  la 
+fonction   0  (P_term0)  du   gemdos 
+permet  de  terminer  un  programme, 
+voil… pourquoi le 0 dans le move.
+
+   Mine  de  rien,  nous  avons  vus 
+quatre modes d'adressage :  le  mode 
+imm‚diat dans move.w #10,d0,  ou  la 
+valeur qui va ˆtre mise dans d0  est 
+imm‚diatement     contenut      dans 
+l'instruction.  Le mode  d'adressage 
+indirect par registre d'adresse,  le 
+fameux  (A?),  o— la valeur  est  en 
+m‚moire,  et  qui  est  …  l'adresse 
+contenu dans A?. Le mode d'adressage 
+indirect pr‚d‚cr‚ment‚ :  -(A?), car 
+un d‚cr‚mente A? avec de l'utiliser. 
+Il   faut  raprocher  ce   mode   de 
+l'adressage indirect  postincr‚ment‚ 
+(A?)+,  o—  la valeur est stock‚e  … 
+l'adresse contenu dans A?,  puis  A? 
+est  incr‚ment‚  de  la  taille   de 
+l'op‚rande.  Et celui qui est apparu 
+naturellement l'adressage direct par 
+registre de donn‚es ou d'adresse, le 
+fameux D?  ou A? dans un add.w d1,d2 
+par exemple.  Le clavier me d‚mange, 
+alors un petit exemple r‚capitulatif 
+:
+
+      section TEXT
+
+     * c'est un programme
+     movea.l #donnees,a0
+     * adresse de donnees dans a0
+     move.l #0,d0
+     *  d0 : $00000000 (base 16)
+     add.l (a0)+,d0
+     *  addition du contenu de  (a0) 
+     * avec d0. Ici $BEBECACA
+     * + 0 -> d0
+     *  A0 vaut donnees+4  (addition 
+     * sur un mot long donc 4 octets
+     sub.l       #10,d0       
+     * soustraction  de  la  valeur
+     * imm‚diate 10 a d0
+     * d0=d0-10
+     adda.l #4,a0
+     * addition … A0 de la valeur 4
+     * -> identique … add mais  pour 
+     * les registres d'adresse
+     move.l d0,d1
+     addi.l #125,d1
+     * addi : add avec valeur 
+     * imm‚diate, c'est ‚quivalent …
+     * add.l #125,d1
+     addq.l #2,d0
+     *  ‚quivalent  …  add.l  #2,d0, 
+     * mais travail avec une  valeur 
+     * imm‚diate comprise entre 1 et 
+     * 8
+     move.l d0,resul
+     * Ah,  un nouveau mode
+     * d'adressage.
+     movea.l #resul2,a0
+     move.l d1,(a0)
+     * identique … move.l d0,resul2
+     * fin du programme
+     move.w #0,-(a7)
+     trap #1
+
+     section DATA
+
+     * c'est des donn‚es
+     EVEN
+donnees
+     dc.l $BEBECACA
+
+     section BSS
+
+     EVEN
+resul
+     ds.l 1
+resul2
+     ds.l 1
+
+  Un exemple un peu plus copieux, et 
+qui  ne  fait pas  grand  chose.  Le 
+movea.l   #donnees,a0,   permet   de 
+mettre dans A0 l'adresse de donnees. 
+Donnees est un label,  et un  label, 
+c'est un truc que l'on met n'importe 
+ou,  pour connaŒtre son adresse,  ou 
+sa  valeur.  Donnees  est  une  zone 
+m‚moire   qui  contient  la   valeur 
+$BEBECACA. Pour stocker cette valeur 
+en  m‚moire,   il  faut  indiquer  … 
+l'assembleur,    l'endroit   ou   la 
+mettre.  Il existe une section  TEXT 
+pour le programme,  il existe  aussi 
+une  section DATA pour les  donn‚es, 
+et  aussi une section BSS  pour  les 
+variables.  Pour stocker une valeur, 
+et  aussi  pour savoir  ou  elle  se 
+trouve,  on  place d'abord un  label 
+(ici   donnees),   puis  la   valeur 
+pr‚c‚d‚e de dc.taille (taille :  .l, 
+.w,  .l  :  les mˆmes que  pour  les 
+instructions).   Le   EVEN,   permet 
+d'avoir  une adresse paire,  car  un 
+petit  68030  d‚teste  les  adresses 
+impaires  surtout pour des  mots  et 
+des mots long,  par contre pour  des 
+octets, pas de problŠme. Sur le meme 
+principe,  il y a la section BSS, ou 
+pour r‚server de la place,  il  faut 
+faire un dc.taille puis le nombre de 
+mot long,  mot, octets que l'on veut 
+r‚server.
+
+   Puis il y a  l'instruction  add.l 
+(a0)+,d0,      cette     instruction 
+additionne le contenu point‚ par  A0 
+(A0  pointe sur  donnees),  c'est  … 
+dire $BEBECACA et D0. Le registre A0 
+est postincr‚ment‚, il contient donc 
+donnees+4 (mot long).  Rq.  : A0 est 
+pret … lire d'autre mot long!! Voil… 
+la  puissance des  680x0,  l'art  de 
+combiner  des  instructions  et  des 
+modes   d'adressages.    Ces   modes 
+d'adressages,  on va les appeler des 
+Adresse Effective (bien que pour des 
+valeurs   imm‚diates,   l'expression 
+Adresse ne convient pas), comme dans 
+l'exc‚llent   livre   de   Catherine 
+Vieillefond  :  " Mise en oeuvre  du 
+68030 " (SYBEX).
+
+    L'instruction   sub,   est   une 
+soustraction.   On  soustrait  comme 
+suit  :   destination  -  source  -> 
+destination.  on  peut appliquer  le 
+mˆme  principe que pour  l'addition, 
+en  ce  qui  concerne  les  adresses 
+effectives.  L'instruction addi  est 
+une   addition  ,   mais   il   faut 
+imp‚rativement  que  l'A.E  (adresse 
+effective)  source soit  une  valeur 
+imm‚diate (d'ou son nom  :  addition 
+Imm‚diate).  Il  existe aussi  subi, 
+sur le mˆme principe.  De meme  addq 
+est  aussi une addition avec  valeur 
+imm‚diate,  mais celle-ci doit  ˆtre 
+comprise entre 1 et 8. Pourquoi tant 
+d'instruction (addi, addq) alors que 
+l'instruction    add    peut     les 
+remplacer?  Et bien,  cela tient  en 
+deux  chose,  par exemple la  grosse 
+diff‚rence entre un add.l #1,d0   et 
+addq.l  #1,d0,  c'est la  taille  de 
+l'instruction (respectivement 6 et 2 
+octets)  et aussi au niveaux  de  la 
+rapidit‚   d'ex‚cution   (6   et   2 
+cycles).
+
+   Il nous reste encore  un  nouveau 
+mode   d'adressage,   utilis‚   dans 
+move.l d0,resul.  La destination est 
+une zone m‚moire, dont l'adresse est 
+resul   (c'est  un   label).   C'est 
+‚quivalent   …  la   suite   movea.l 
+#resul,a0  (movea :  move  pour  les 
+registres   d'adresses)  et   move.l 
+d0,(a0).  Bon  voil…  la fin  de  ce 
+premier  article,  qui je pense  est 
+d‚ja  pas mal copieux,  bon code  et 
+bon apprentissage de ce  merveilleux 
+langage qu'est l'assembleur.
+
+
+
+
+                 GolIo JuNioR

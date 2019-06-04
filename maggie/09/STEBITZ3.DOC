@@ -1,0 +1,156 @@
+
+ 
+                    STE Bitz - The Umpteenth Edition 
+               ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+
+As 1991 disappears up it's Mersey Tunnel, what progress on the STE 
+front has been made, if any, we ask..
+
+1991 was not overstocked with new thrills for all of the ST range, 
+there  was a huge gap in the first half of the year,  without any 
+major demo releases,  and definitely very little for the STE, such 
+of these that have reached my notice have been reviewed in earlier 
+editions  of  'Bitz...  Generally,  the prevailing standard of STE 
+stuff,  is  no  better than the DELERIOUS III demo,  reviewed this 
+time last year, it is still the best demo on the STE a year later!
+(If  anybody wishes to dispute this,  then for gawd's sake,  write 
+and let me know!! You haven't so far...)
+
+There  are encouraging signs of change,  which I will discuss in a 
+little while though..
+
+For commercial software, there is even less evidence of the growth 
+of  an  STE  market,  again,  such isolated cases as  VAXINE  were 
+reviewed  when they reached my attention..  There are also stories 
+of the rather forgettable HYDRA where a fully enhanced STE version 
+was turned down on budgetary grounds,  by Domark, perhaps with the 
+move to machines with bigger (1 Meg) memories and D/S drives, will 
+produce a reaction in the STE department also??
+
+Art and music utilities are traditionally more ahead of the  games 
+in using a new model's extra facilities,  indeed, such programs as 
+CANVAS,  DELUXEPAINT,  and  NEO-MASTER  all had the option of 4096 
+colours,  QUARTET 1.5 accessed the DMA chip, and increasingly, the 
+various trackers feature STE stereo modes.. The best featured (And 
+very  hard  to obtain) AUDIO SCULPTURE goes up to the  full  50khz 
+output, and even has provision for a modified STE to output 16-bit 
+sound..
+
+ With  more obscure areas,  such as the analogue joystick ports  on 
+the side of the machine,  a compatible stick has so far,  not been 
+forthcoming..  Atari  are reportedly working on one at the moment, 
+but at the same time,  the Mega-STE does not feature these ports!! 
+Indeed,  the STFM's are better catered for with the release of the 
+analogue  Gravis MouseStick (A touch expensive at  œ70-Odd  pounds 
+though..)
+
+To  move on to the future,  the first set of good news is that the 
+STE will,  from now on,  be very hard to ignore, as the sole base-
+model ST on sale.. A substantial number of machines in use are now 
+STE's  and  are  surely now,  and especially after Xmas,  able  to 
+form  a worthwhile market in its own right..  The second trend  is 
+for  the  bigger memory models to sell well,  one source puts  the 
+proportion of 1040 to 520 machines sold,  as roughly equal, (About 
+50/50..)
+
+
+The second trend (I hope) is for an expansion in the Public Domain 
+sector,  with  not  only machine specific demos growing,  but more 
+famous  crews putting in enhanced features,  such as a DMA  stereo 
+soundtrack, and increased colour pallette, and STE only screens..
+
+The  STUPENDOUS DEMO,  by the Pixel Twins is a good example of the 
+latter  kind of demo,  this will be reviewed properly when a fully 
+working example is received,  but it features several soundtracks, 
+that  clearly  make use of the DMA chip,  and at least  two  (Non-
+working  at  present)  STE-only  screens,  one of  these  being  a 
+DEFENDER-type game..
+
+The SUNDANCE KIDS's MEGABITE DEMO is a machine specific demo,  the 
+following review explains all:-
+
+The  demo starts loading,  to reveal a little cartoon person  with 
+speech bubble saying "Oh good, another Sundance Kid megademo." The 
+intro  screen  loads,  and consists of a large (Non-moving)  logo, 
+other  explanatory text,  and a module played via the TCB  Tracker 
+ STE routines..
+
+1.  The  main  menu,  a very sparse affair,  with a bouncing logo, 
+border  scrolly-text,  and a barrel-scrolled menu-selector for the 
+different screens,  this one is very quiet as there is no music to 
+be found..
+
+2.  The  first  screen,  proper,  the obligatory COLOUR DEMO,  with 
+3200-colour  Rasters,  a  scroll-around-the-screen  logo,  yes,  a 
+scroll  text at t'bottom of screen,  and soundchip music from  the 
+TCB early-model TECHTRON demo in SOWATT..  Try moving the joystick 
+to get some really interesting (And unintended) effects..
+
+3.  DIGITAL,  not  a  lot  happening,  apart  from a  TCB  module, 
+recognisable  as  the  Amiga Wildcopper  tune,  playing,  a  large 
+stationary logo-thing, and some other stuff moving up and down the 
+screen,  also,  a fairly limited use of colours, so a dull-looking 
+screen..
+
+4. HOUSEY, a cross between TECHTRON, and the TLB screen on the OOH 
+CRIKEY demo with the very long German name.  Has loads of 'Acidey' 
+graphix and samples, but not a patch on the original, still, not a 
+bad try..
+
+5. P.D. (Library) ADVERT, a nice gold-coloured PDL logo, scroller, 
+and looping sample,  which corrupts after a while, this is, as you 
+might have guessed, publicity for the WORLD OF WONDERS PDL..
+
+6.  WHO  ARE  WE,  a digi-pic slideshow,  on the lines of the DELTA 
+FORCE  hidden  screen,  with pictures of the two creators of  this 
+demo  for your delight.  The slideshow is controlled by the cursor 
+keys..
+
+
+7.  ROBOCOP 2,  another mini-slideshow,  with a series of samples, 
+some of which are described as possibly offensive by the makers of 
+this  demo,  again,  the  pictures are controlled from the  cursor 
+ keys..
+
+8.  RIPP-EM-OFF,  a  strange  little  game,  which  did  not  work 
+properly, the aim being to declothe one of the coders by answering 
+some questions correctly.????
+
+And that was it,  it is nice to see someone making the effort, but 
+unfortunately  nothing  in  here that was either original,  or not 
+already done better on an STFM, better luck next time...
+
+Finally,  before I go,  a little tip for ESION soundtracker users, 
+it is possible to load and run TCB Tracker Modules in!!  It is not 
+just  AUDIO  SCULPTURE  that has this  capability,  and  the  said 
+modules can be saved as 'normal' noisetracker compatible MOD's. In 
+most  cases,  the end of the tune appears to be 'clipped-of'  with 
+the  loss of some patterns,  but these are still there.  Just move 
+the position indicator forward until the pattern number returns to 
+zero,  you have now reached the end of the module, and can play it 
+in its entirety..
+
+Let's hope there's rather more to write about next year...
+
+Chris H. (C) Dec 1991..
+
+  Bitz Supplement....
+ 
+(A Mystery solved...)
+
+ You may remember in a previous edition of 'Bitz' that I reviewed a 
+four-screen  demo,   of  French  origin,  with  no  indication  of 
+whodunnit?
+
+Krazy Rex of ST-Connexion has written to advise that this demo was 
+coded  for Atari France in 1989-90 when the machine had just  been 
+released  there  to  boast  the  'Enhanced  capabilities  of   the 
+machine..
+
+ At least one Replicant, Dom, was involved in coding, Krazy Rex was 
+the  graphix man who drew the Unicorn picture,  it seems that  the 
+demo  travelled  further than expected..  So now we  know,  cheers 
+Patrick!!
+
+ Chris, 29/1/92...
+

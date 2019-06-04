@@ -1,0 +1,434 @@
+{*f1CORE DESIGN'S PART{*f0
+
+-------------------------------------------------------------------------------
+                   CORE DESIGN - PRESS RELEASE - 18th May 1999
+-------------------------------------------------------------------------------
+
+Firstly I would like to apologise to all concerned for the length of this
+mail! However, this has arisen due to a statement we made concerning the
+lack of expansion through-port on the Centurbo 2 accelerator.
+
+It is apparent that Centek (CLASS 4) took offense to this statement
+although, in our opinion, they have missed the point.
+
+We really do not want to labour this point and hope that Centek's comments,
+and our reply, will be final (I suspect not).
+
+However, it gives us the opportunity to confirm several developments
+concerning Eclipse and Tempest.
+
+ECLIPSE:
+Now in production!
+ Currently being evaluated...
+ - Multiple PCI expansion
+ - 4MB PC2TV card (output to TV!)
+
+TEMPEST:
+PowerPC processor to be utilised - processor speeds up to 266MHz.
+ Currently being evaluated...
+ - USB ports (expandibility for up to 127 peripherals!)
+ - Dual-processor capability
+
+------------------------------------------
+
+Here follows our reply to Centek. Their comments are preceded with '> >' and
+our comments follow.
+
+> >CLASS 4 can't accept this free stupid attack from TITAN !
+
+It isn't an attack - it states two very valid points;
+
+1. Centurbo 2 is not fitted with an expansion port. You confirm this in your
+mail. It is therefore a problem.
+
+2. The reason for omitting the expansion port could suggest a technical
+problem. As you know, fitting the necessary pin headers to allow through
+port expansion costs very little - about 50p (approx. 5 FF or 0.75 Euro).
+
+Surely this is not the reason for omitting them?
+
+Assuming it isn't, there could be some technical reason. We mention on our
+web site; "This is just conjecture [an assumption] but it does suggest
+problems with CT2". We do not say this is definately the case, but we would
+welcome an answer and, if our information is unfounded, we will remove
+mention from our web site.
+
+Our web site states:
+"Due to the high bus speed it may be difficult for expansion boards to
+operate as each card causes a certain load on the address and data buses,
+meaning the Combel and DMA chips might be overloaded."
+
+> >- It is not the first time that Titan send some bad and false
+> >information
+
+So can you tell me what "bad and false information" we've mentioned before?
+
+> >- Never have we fight Titan !
+
+Really? When we distributed Afterburner040 you did not hesitate to criticise
+this highly regarded board. You also try to justify on your web site and in
+previous mailings that an 030 accelerator is better than an 040 by using
+"selective information".
+
+> >- Never have we send an official email with such bad things like those
+> >from Titan !
+
+Perhaps not, but neither have we mentioned any bad things about Centek. We
+state the position as we see it.
+
+> >- We have nothing (I should speak in the past !) againt Titan :
+> >where is a WEB link on our WEB site !
+
+I don't understand what you mean by this, or whether it is relevant.
+
+> >But if Titan wants fight, we are ready and have many things to tell
+
+You seem to have gotten very upset about this without reading the facts
+carefully.
+
+> >Titan products like NEMESIS by exemple !!!
+> >
+> >Is Titan afraid by the CENTurbo 2 to sell the mighty TEMPEST ?
+> >CENTurbo 2 is running and produced : 192 units were already sold !
+
+Well... Nemesis sold far more than that. But in comparison to Centurbo 1
+(not CT2) Nemesis was superior - it cured DMA problems and allowed the full
+bus speed of 25MHz. The reason we no longer produce Nemesis is simply
+because demand had tailed off (understandably) and we needed to concentrate
+on future F-max products such as Eclipse and Tempest. There is no mystery
+about this decision.
+
+I would also like to point out that Nemesis was voted by readers as "Best
+Hardware Add-on" in the Atari Times Awards for 1997 AND 1998. Titan Designs
+were also voted "Best Atari Supporting Company" in 1997.
+
+We are certainly not "afraid" of CT2. As with all hardware developments,
+there is always something else being developed which is better and is the
+natural progression of technology. Perhaps something will supercede Tempest
+in the future - I don't know.
+
+> >And what about the Tempest card ?
+> >
+> >Hum, firstly it was said to us it is a COLDFIRE 5102 board..
+> >Great, but it was said to you it will be 100 % compatible...
+
+You are stating things incorrectly. Tempest with a Coldfire processor was
+100% compatible because it also offered the ability to switch over to 68030
+operation. We also did look at PowerPC at the same time but left our options
+open because 68K emulation software was required.
+
+Tempest also has the ability to run in tandem with the 68030, thereby
+offering dual-processor capability. Perhaps you were not aware of this?
+
+> >EC means NO PMMU AND NO FPU (COPRO) !!!
+
+True. This is one of the reasons for deciding to develop the PowerPC version
+instead - offering up to 266MHz processor speed, up to 256MB SDRAM support,
+and the possibility of USB ports and dual-processor support!
+
+> >The consequence of using a 5102 on an Atari system is direct :
+> >- NO MAGIC
+
+Pardon??? MagiC runs fine without MMU or FPU. It runs quite nicely on a
+standard ST as well.
+
+> >- NO MINT (or MULTI-TOS)
+
+Same again. MiNT and MultiTOS can run without either MMU or FPU.
+
+> >- NO LYNUX
+
+Hmm, Linux now runs without MMU. Our designers have worked on an embedded
+system running Linux that doesn't have an MMU.
+
+> >- NO OUTSIDE and all other virtual memory systems !!!
+
+Do many people really use virtual memory these days? As Tempest will be
+offering memory expansion up to 256MB I doubt whether this is really
+necessary. However our PPC kernel will use virtual memory for the PPC native
+processes.
+
+> >- in general, no MEMORY PROTECTION very needed for inteligent and
+> >serious MULTITASKING OS !!
+
+In general this is true but if, for instance, you run MiNT with memory
+protection on you would see some applications that will not run!
+
+Tempest will therefore support all those OSes mentioned above and has FPU
+and MMU.
+
+> >- NO COPRO --> no POV by example !
+
+Well there are POV versions that do not need FPU! For instance you can run
+POV on a standard ST. There are very few applications that really need
+the FPU. Some applications requiring the FPU rarely need it, for instance
+some demos, and so emulating the FPU running these applications will not
+yield any significant performance decrease.
+
+Tempest with PowerPC has integrated MMU _and_ FPU anyway.
+
+> >- Sure, now are you happy to know that the 5102 at 33 MHz is performing
+> >36 MIPS that is superior to the 68EC040 that is performing only 27 MIPS
+> >at 33 MHz too ??
+
+As we are not continuing with the Coldfire development all this is a bit
+pointless. Tempest (with emulation) should be equivalent to a 50MHz 68040
+processor, or a 100MHz 68030, when used with the 200MHz PPC device.
+
+> >I continue the incredible story of TEMPEST :
+> >Recently (I don't know exactly when because we have surely to never
+> >remind what was TEMPEST before...) you stoped to hear about the stupid
+> >idea of COLDFIRE on the TEMPEST ...
+> >
+> >It is replaced by a POWER PC !
+> >Great, good idea to do like on Amiga market (you should adapt an Amiga
+> >card on the Falcon, it may be quicket to design !).
+> >
+> >The only problem is that you need a software emulator to run the 'atarti
+> >software and OSs.
+
+Yes, so what is the problem...??? There are numerous examples of emulators
+for Atari, Mac and Amiga on various platforms that successfully emulates a
+680x0 cpu at high speed. The emulator we are designing uses highly advanced
+compiler techniques to speed the emulation.
+
+Can you honestly say you have never started development of a project and
+changed your mind part of the way through development?
+
+Our intention has always been to provide powerful hardware and software at
+reasonable prices, Naturally, circumstances change (cost of components,
+introduction of new devices, increase to specification, etc.) which is why
+Tempest development (and others) has evolved this way.
+
+For example, Eclipse was originally designed to support a single PCI slot,
+however we are currently evaluating a method whereby multiple slots can be
+supported at minimal cost.
+
+> >And the worst is that the bad and old TOS and software are in general
+> >bad programmed ! So, it may be an urgent necessity to develop and modify
+> >the general 68000 code emulator to adapt special dedicated routs for a
+> >specific old software ! Hum, great and very big job, guys ! Good luck !
+
+I think not. 68K emulation works very well on Macintosh and PC and we do not
+undertake development of this nature without serious consideration. Besides,
+our emulator is already up and running!
+
+We both agree, though, that software can be badly programmed.
+
+> >Seriously, the radical change of CPU on the TEMPEST proove only one
+> >thing :
+> >This product is only a nice amazing project and no market, no technical
+> >studies was previuosly done !!!
+
+No technical studies done???!!! We find this insulting and ill-informed to
+say the least. By saying this you show a remarkable lack of insight into the
+way our company operates and the amount of preliminary work performed to
+reach the correct result.
+
+> >By example, ask to Titan why they didn't kept the 5102 ??
+
+I really fail to see this - one moment you criticise the 5102, next you
+criticise the PPC and say "ask to Titan why they didn't kept the 5102"! See
+above. These are not _the_ reasons. The PPC gives so much higher
+performance!
+
+It would appear that whatever processor we used, you would find a problem
+with it.
+
+> >My long experince designing the PHENIX computer during the last 2 years
+> >is that it is very important to perfectly know the offer of the
+
+The Phenix? Ah yes, you've been advertising this for some while - similar to
+us advertising Tempest as "a product under development". So why are you
+criticising us for announcing Tempest prior to release, when Phenix was
+announced back in 1997?
+
+Is the Phenix for sale yet? Which processor will it use? Will it run Atari
+applications? If so are you going to use one, or several, 060? I understand
+you have made emulation software for the instructions the 060 does not
+implement?
+
+> >electronical componeent market to do the best choices corresponding to
+> >the price, the market and the needs of the customers you have to follow!
+> >And at last you have to take time to test 100 % the prototyped product
+> >before to produce and sell.
+
+I assume this insight into the computer industry led to using EDO SIMMs on
+CT2 rather than SDRAM DIMMs?
+
+NOTE: Currently, a 32MB SIMM costs nearly the same as a 64MB DIMM! The price
+differential is expected to increase over the months. I'm sure your
+customers would be interested in these facts.
+
+So for virtually the same cost you could buy Tempest with 64MB SDRAM as
+opposed to CT2 with 32MB EDO SIMM.
+
+If you wish to continue the debate about the use of memory, we will
+willingly forward our points, but the continued use of SIMMs really cannot
+be justified these days.
+
+> >If you don't do that, you go to a financial catastroph !
+> >Ask to some reseller in UK like SYSTEM SOLUTIONS what they think about
+> >NEMESIS card !?
+
+System Solutions did not like Nemesis for one very good reason - it competed
+directly with, and offered better performance than BlowUp FX at a vastly
+lower price. I seem to remember BlowUp FX cost 169 pounds, whereas Nemesis
+was introduced at 59.95 pounds (although APEX users were given a 10.00
+rebate!). Fitting BlowUp FX originally cost 69.95 (10.00 more than the
+Nemesis hardware!). In fairness I will admit that BlowUp FX did have the
+advantage of TT-RAM support which would have meant a more expensive PCB,
+build and assembly.
+
+As for the fitting and reliability of Nemesis, we inevitably received a few
+comments from customers due to the complexity of installation. This wasn't
+surprising due to the need to carefully follow the instructions in the
+manual (which some people didn't!). As for the manual it was 40 pages long
+(unprecedented for such an inexpensive hardware product) and I think this
+demonstrates the care and attention we place on all our products.
+
+As for existing Nemesis users we have received many, many messages
+congratulating us on such a fine product.
+
+> >And it is not a CENTEK  speech, it is an expenrienced, respectable
+> >and honnesty distributor's speech ...
+
+But they never sold Nemesis, so how can their comments be valid??? Also they
+are selling Centek hardware! It's like asking a BMW dealer what they think
+about Mercedes! I therefore do not think System Solutions' comments would be
+particularly valid under the circumstances.
+
+> >Keep this in mind each day you are waiting for a product that nobody has
+> >never yet seen ! (take that in your figure, Titan !).
+
+Get your facts right.
+
+Tempest is mentioned as a "product under development". Like Phenix (which
+was (is?) on your web site for some time) we don't claim the product is
+ready. It merely demonstrates our commitment to the Atari market. There is
+nothing wrong with advertising the on-going development of products - many
+companies do this. Don't you?
+
+It also allows people to make informed comment on the project, sometimes
+permitting new features to be included.
+
+> >And now, you have to know that there is no probem with the expansion
+> >connector of the CT2 because there is no more !
+> >The CT2A had a 32-Bit expansion connector that is a extended version of
+> >the Falcon expansion connector.
+> >The presence of this connector was firstly to allow us to plug our
+> >internal parts of the PHENIX future computer to debug and realize the
+> >software drivers !
+
+But this doesn't explain why it is now missing. Can you now state that if
+the revision B cards were fitted with expansion through port, they would
+work with _any_ standard Falcon expansion card, such as Eclipse?
+
+> >In the same time, a complete pin out and hardware documentation was
+> >available on our WEB site to allow hardware developers to do something !
+> >Hey Titan, you never saw this documentation ????!!!
+
+So, why is the expansion port now missing? Can your Rev.B customers solder
+the expansion port onto their CT2 and expect no problems?
+
+> >Hey Titan, explain to all people how it is possible to see on the stand
+> >of CENTEK 2 cards running on the CT2A if "we have a problem with the
+> >expansion connector" like you stupidely told, or would you prefer
+> >English Justice asks you (we will nextly install a mother company in
+> >your country !) ???
+
+If you read the comments properly, you will notice that at no time is it
+stated that this _is_ a problem. It states;
+
+-----------------------------------------
+It has come to our notice the Centurbo2 accelerator is
+no longer supplied with an expansion through port. Needless to say this
+will make it difficult, if not impossible, to fit other expansion boards
+- including Eclipse.
+
+[- This is true. It is a problem for your customers to fit expansion
+cards -]
+
+We are unable to understand the reasoning for this but can make an
+assumption;
+
+[- an assumption means we are guessing there is a problem, not stating that
+there is -]
+
+Due to the high bus speed it may be difficult for expansion boards to
+operate as each card causes a certain load on the address and data buses,
+meaning the Combel and DMA chips might be overloaded.
+
+[- This is a reasonable statement to make. Can you confirm whether or not
+this is correct -]
+
+This is just conjecture but it does suggest problems with the CT2.
+
+[- Conjecture means; our estimation of the [suggested] problem -]
+
+-------------------------------------------
+
+We have been very careful to avoid any legal implications. In fact your
+ill-informed comments are more open to legal action...
+
+> >- we found an other solution to connect the 16-Bit card of the falcon
+> >(EXPOSE, ECLIPSE, etc...) on the CT2 B :
+> >  the card must be installed between the motherboard and the CT2.
+
+Eclipse and Expose are not fitted with a through-port. The reason for this
+is quite simple - we expect accelerator boards to have them included.
+
+NOTE: This is common practice with Falcon expansion cards - we are not the
+only company to do this.
+
+HOWEVER: The circumstances with Accelerator boards is different. As they are
+essentially a computer which replaces the standard 030, expansion ports MUST
+be included.
+
+AND: Tempest can be fitted into a standard Falcon case (although some of the
+metal shielding will need removing) but is still fitted with expansion
+ports. Obviously if Eclipse is also fitted a re-cased Falcon will be
+necessary (we state this on our web site).
+
+> >  There is only a MAL/MAL connector to solder on the card and plug the
+> >CT2 on it.
+
+OK, but likewise: Can the connector can be soldered onto CT2 and the
+expansion card plugged onto it?
+
+It is not reasonable to suggest that accelerator cards should be fitted onto
+expansion cards, or that accelerator cards shouldn't have expansion ports
+included.
+
+> >You CAN buy a CT2 and buy an ECLIPSE card !
+> >The Eclipse card has an expansion connector : so, you have nothing to
+> >solder !
+
+No it doesn't. I think you are referring to the two connectors which allow
+the daughterboard to plug in via ribbon cable.
+
+> >You have not to wait an other accelerator board !
+
+Surely this is a question only users can answer. Tempest offers a far higher
+speed and more expandibility. If people can't wait for this then we don't
+have a problem.
+
+> >If Titan wants again fight Centek, no problem ! Ready to receive...
+
+I'm afraid you have missed the point of our statement. We merely stated the
+expansion port wasn't fitted and assumed there could be a problem. We don't
+therefore consider this to be a "fight", but you obviously do. Our statement
+merely makes people aware of a possible problem.
+
+Let me know if CT2 Rev.B can have the expansion port included and we will
+gladly remove mention of this statement from our web site.
+
+> >And I apologize me for my bad english...
+
+No problem, I understand most of your statement. It's a good thing you
+didn't release this in French though! ;-)
+
+Regards,
+David Encill
+Core Design
+-------------------------------------------------------------------------------

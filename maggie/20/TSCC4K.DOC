@@ -1,0 +1,29 @@
+                              TSCC 4KTRO
+                              ----------
+
+TSCC may be most famous  for  creating  the brilliant DynaBusters, but
+they are also pretty good when  it  comes to programming demos as this
+intro shows.
+
+This 4Ktro is based around 3D  graphics,  something that can be stored
+in quite a compact way unlike  bitmap  graphic.  The intro runs in 256
+colour at a healthy 25 frames per second.
+
+The intro consists of  objects  rotating  and  morphing  over a plasma
+style background.  The  background  is  basically  some  circles being
+variably zoomed in X and Y, but it does the job.
+
+The objects themselves are  very  finely  detailed.  They are all line
+vectors - not filled or shaded. They are made up of loads of point and
+have a small bitplane trail, so they look quite smart.
+
+It begins with a flat polygon mesh  which morphs into a cylinder. This
+then transforms into a glass (fancy a brew, our kid?) then a sphere, a
+torus and finally back into the  mesh. Whilst the objects are rotating
+and morphing, the background zooms about a bit.
+
+The demo is very nicely  put  together,  the objects are well designed
+and everything moves  smoothly.  Its  definitely  one  of  the best 4K
+intros I've seen. The Scy is the limit!
+
+( Words : Mr. Pink )

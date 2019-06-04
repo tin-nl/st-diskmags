@@ -1,0 +1,30 @@
+ 
+                               JAM4.0-Fix
+                               ==========
+
+Nun hat  man einen  Falcon und  freut sich  welche Programme  laufen und welche
+nicht. Aber nach  der ersten Freude, daû der Bekannte gesagt hat, bei ihm lÑuft
+alles bekommt  man spÑtestens einen  Herzschlag, wenn man seine mit JamPack 4.0
+gepackten Programme in  ST-kompatiblen Modi starten will. Hier versagen sie den
+Dienst ( mit einer variablen Anzahl von Bomben )!
+
+Der Grund liegt darin,daû beim ST hinter den 32000 Byte des Bildschirmspeichers
+noch die Differenz zu 32 kByte frei war ( 768 Byte ). Dorthin kopierte der Jam-
+packer beim Entpacken von Executables seine Kopierroutine.
+Der Falcon legt  seine Bildschirme immer genau an das obere Speicherende. Darum
+funktioniert  das Ganze  beim Falcon nur  in Screenmodi mit mehr als 32k groûen
+Bildschirmen. Dann gibt es allerdings einen bunten Streifen im Bild (da, wo der
+Jampacker seine Routine hinschreibt,ist dann ja Bildschirm-Ram - auûer eben bei
+ST-Modi, dort wird versucht, nicht vorhandenes Ram zu beschreiben... ).
+
+Ich habe  nun ein  Proggy ( JAM_FIX.TTP - irgendwo  hier auf  den UC-Disx ) ge-
+schrieben, daû JAM-gepackte  Programme so  patched, daû die  Routine statt nach
+PHYSBASE+$7f00 nach PHYSBASE-$100  geschrieben wird. Damit entfallen  die Bild-
+stîrungen und der Absturz. Auûerdem sollten die 256 Byte unter dem Screen immer
+( d.h. meistens ) frei sein.
+
+Die Bedienung  ist fÅr Falconuser  wohl kein Problem: einfach  das zu patchende
+Proggy auf JAM_FIX.TTP ziehen und staunen...
+
+                                                     Apache of tnb / 23.03.1994
+

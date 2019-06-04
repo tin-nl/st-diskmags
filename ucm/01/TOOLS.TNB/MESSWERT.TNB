@@ -1,0 +1,54 @@
+
+                                MESSWERT
+                                ~~~~~~~~
+                       (Eine Lanze fÅr MESSWERT!)
+
+ Wer mit der Auswertung von mathematischen,chemischen und vor allem physika-
+ lischen Meûdaten zu tun hat,dem sei das PD-PRG "Messwert" an's Herz gelegt.
+ Gemeint sind _nicht_ sog.  Business-Graphiken  wie  Kuchen- oder SÑulendia-
+ gramme. Da gibt es einige andere gute PD-PRGs wie z. B. GEM_CALC, ER_CHART,
+ DATARI und DATOBERT. Auch Funktionsplotter gibt es reichlich.
+ Wenn es aber um das 2D-x,y-Diagramme geht,dann gibt es wohl auf dem ST kei-
+ ne (PD-)Alternative. 
+ Um allerdings das letzte aus dem PRG herauszuholen,sollte man einige Tricks
+ kennen:
+
+ 1. Viele  von den  Hilfsprogrammen  lassen sich nur vom Laufwerk A starten.
+ Mit dem IMP_DAT.PRG  lassen sich  tatsÑchlich fast  beliebige ASCII-Dateien
+ (z.B. die von GEM_CALC erzeugten Blîcke) importieren. Eventuell muû man mit
+ einem Editor vor- bzw. nacharbeiten.
+
+ 2. Da die Hardcopy-Bilder nur das ST-hoch-Format (640*400 Pixel) haben, wo-
+ mit man heute  wirklich keinen Blumentopf gewinnen kann, kann man die Plot-
+ files (*.PLT) mit dem  PRG PLTTOIMG in eine 9 (!) Bildschirme groûe IMG-Da-
+ tei umwandeln. Diese Bitmaps werden z. B. von SIGNUM!3 gelesen.
+ Leider ist PLTTOIMG nicht ganz fehlerfrei.
+ Als Alternative kann man die PLT-Files  auch mit MESSMETA in das GEM-Format
+ ( *.GEM ) konvertieren. GEM-Files sind auflîsungsunabhÑngig, haben aber den
+ Nachteil,daû sie nur von wenigen PRGs geladen werden. Also muû man sie wie-
+ der in irgendein anderes Format ( z. B. mit META_BIT oder KARMA ) umrechnen
+ lassen. Auûerdem gibt es manchmal Probleme mit der Konvertierung:
+ Im Zweifelsfalle hilft es gelegentlich,wenn man in den Header die Grîûe des
+ Bildes eintrÑgt. (Obwohl das PROFIBUCH vorschreibt,die Grîûenangabe sei op-
+ tional, stellen sich manche PRGs sehr kleinlich an,wenn sie an diesen Stel-
+ len nur Nullen vorfinden.)
+
+ 3. Bevor man die Plot-Datei îffnet,sollte man einen "Probelauf" gemacht ha-
+ ben, also alle Eingaben schon einmal durchgefÅhrt haben. 
+ 
+ 4. Wenn man mehr  DAT-Files lÑdt, als  auf den Bildschirm passen, passieren
+ merkwÅrdige Dinge. Abhilfe: Einzeln laden oder passend in Ordner sortieren. 
+
+ 5. Leider  ist MESSWERT _nicht_ auflîsungsunabhÑngig, daher kann man es mit
+ OVERSCAN nur im "off"-Modus betreiben.
+
+ 6. Auch geglÑttete Kurven lassen sich erzeugen: Entweder mit "Kurven gemit-
+ telt" oder durch Umwandeln des Datensatz in eine Funktion,wobei automatisch
+ geglÑttet wird.
+
+ 7. Das "Konkurrenzprogramm"  DATAPLOT ist 1. nicht PD, sondern kostet 25 DM
+ (seufz),und ermîglicht 2. _keine_ "Multiplots" (mehrere Kurven auf der sel-
+ ben Seite). Andererseits ist es auflîungsunabhÑngig und lÑût sich direkt Å-
+ ber Schnittstelle mit einem MeûgerÑt koppeln.
+ 
+                                               by Gnort  

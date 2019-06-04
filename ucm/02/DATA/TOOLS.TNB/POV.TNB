@@ -1,0 +1,44 @@
+            
+                        "PERSISTENCE OF VISION"-RAYTRACER
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ (Anm.d.Redax: Um etwas auf diesen Artikel vorzugreifen,dieses Prog l„uft auch
+               auf ST's etc... Allerdings nicht mit derart qualitativ hochwer-
+               tigen Ergebnissen ( man schaue mal in die STF )....)
+               
+ Als ich nur einen STE hatte, interessierte  ich mich weniger  fr Raytracing.
+ Aber mit dem Falcon kann ich endlich raytracte Bilder  vernnftig darstellen.
+ Also schlug ich beim erstbesten Angebot zu...
+
+ Als ich das Paket  von Moondog bekam, war ich zun„chst  verwundert. Kein Pro-
+ gramm OBJ_EDIT.PRG oder sowas. Stattdessen  nur ein POV68000.TTP und ein paar
+ Utilities zu Anzeigen  der Bilder. Das *.TTP dient dazu, ein Textfile ( soge-
+ nannte Scene-files ) in einer Scene-description-language einzulesen und zu -
+ bersetzen. Als Ergebnis erh„lt man wahlweise ein Targafile,oder 3 Einzelfiles
+ fr Rot-, Grn- und Blauanteil oder (wenn ich  mich nicht t„usche) ein *.DIS-
+ Format ( ich denke beim AMIGA ). Allerdings ist das Targa-Format recht gut zu
+ handhaben.
+
+ Die textartige Erstellung der Szenen kommt meiner Denkweise (dh. als Program-
+ mierer) auf irgend eine Art entgegen. Wenige Tastendrcke k”nnen ganze Bilder
+ „ndern. Auerdem ist der POV-Raytracer PD und auf vielen System zu haben (ich
+ hab mir das Paket inzwischen auch fr unsere RISC 6000 geholt,welche ein bi-
+ chen schneller ist,als der Falcon...). Man ist dadurch in der Lage,die Bilder
+ zu Hause zu entwerfen und  sp„ter auf einem Grorechner die Bilder in 1A-Qua-
+ lit„t zu rendern.
+
+ Die Dokumentation ist  sehr gut (ber 100 Seiten,mit Idealist etwa 25). Einen
+ einzigen Fehler habe ich im Programm gefunden: manche Einstellungen ( z.B die
+ Kamera ) vertragen keine  Integerwerte, also habe ich ein Proggy gecodet, da
+ alle Zahlen in Floats umwandelt. Weiterhin  vertr„gt  sich  da mitgelieferte 
+ VIEW_24B.TTP nur  mit NTSC-Fernsehern. Ich  habe fr  VGA  also  ein  eigenes 
+ VIEWTGA.TTP geschrieben. 
+
+ Im groen und ganzen bin  ich total  begeistert  vom POV-Raytracer. Er bietet 
+ eine gute Alternative zu kommerziellen Programmen,da gerade seine M”glichkei-
+ ten fr Texture-erzeugen sehr umfangreich sind. Sicherlich ist es gew”hnungs-
+ bedrftig, ein Bild aus geometrischen Objekten zu erzeugen, aber es gibt auch
+ die M”glichkeit, Objekte  aus Dreiecken  und Bezierkurven zu erzeugen. Aller-
+ dings soll es dazu externe Utilities geben... 
+
+                                                   Apache of tnb

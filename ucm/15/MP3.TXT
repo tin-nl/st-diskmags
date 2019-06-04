@@ -1,0 +1,218 @@
+
+-------------------------------------------------------------------------------
+	  Windows (sorry for this word) got it! Mac got it ! Unix got it !
+Even Amiga got it! But what? The tool that makes the world a better place -
+a MP3-Player. 
+-------------------------------------------------------------------------------
+
+{*f1 A MP3 PLAYER FOR FALCON{*f0	
+	
+	Petr Stehlik did it again. What ? He surprised the Atari-world with                                              
+another killer-application. After his first strike, a port of a real audio                                              
+player, he offered us the first player/decoder for those lovely little MP3                                              
+files.(Oh baby, music sounds better with you :). 
+	
+	MP3 ? Never heard about it ? Oh boy, in which age do you live ? 
+Here is, especially for you, a short survey about digital audio compressing.
+	
+	Let's imagine the newest smash hit, you've heard on the radio. Now you                                           
+got the inspiration to put it into your computer. Using a simple sampleprogram,                                          
+you will do the job. But, unless you got an extrem big harddisk, you will wonder                                         
+how much space this sample needs. A simple rule tells that one minute music                                             
+requires 10 megabytes of diskspace. So, a normal song with, let's say, 4 minutes                                         
+play-time 'steals' 40 MByte.
+	
+	Since there exists some clever compressing-algorithms, you're able to                                           
+reduce the size of your sample. One of the most famoust and important algorithms                                         
+today are the audio-layers of the well-known MPEG standard. Developed by the
+Fraunhofer Institute, these layers uses the disability of the human hearing to  
+notice gentle noises before and after a loud one and other techniques. The price 
+of this effort is a reduction till 1:14 with still CD-quality. In other words,  
+on a normal CD now is place for up to 14 usual Compact Discs (~200 songs) full  
+of your favourite music. 
+
+	But what does these layers stand for ?
+	
+	As already mentioned, these layers represent the audio-tracks of the    
+MPEG 1 and 2 standards. Each of them contain a higher compressionrate then it's  
+predecessor.
+
+	So, the layer III procduce CD-quality with a rate up to 1:14, whereas   
+layer II achieves 'only' ~1:8 and layer I 1:4.
+
+	MP3 is often misinterpreted as MPEG 3. MPEG 3 was developed as the      
+succesor of MPEG 2 (as another videostream standard), but since it was noticed   
+that MPEG 2 already contains most of MPEG 3's features, it was canceled. So,
+MP3, the audio-layer, is definitly not MPEG 3, the video 'standard'.
+
+	If anybody of you, dear readers, got the taste and want to now more     
+about this topic, i recommend you following links:
+	
+        - ñwww.mp3.comð     (an general survey about the software)
+				related to MP3 (most OSes)
+			and
+			
+        - ówww.iis.fhg.de/departs/amm/layer3/sw/index.htmlð  
+         the Fraunhofer institute, which developed layer III
+														  
+	Let's now focus on the available MP2 and MP3 software for the Atari.
+	
+	There are two excellent	applications to mention, which allow the        
+realtime decoding of MP2 (layer II) streams using the Falcon's DSP. That are    
+the MPEGPLAY by bITmASTER and the MPEG Audio Layer II decoder by NoCrew,
+- supposed newest version is 0.99 - october 1998. Both of these players allow 
+to work , in a multitasking environment, with other programms while playing
+a funky musikstream. 
+	
+	But now, while the above mentioned players are Falcon only, there is a  
+new one, able to work on more hardware. It's name - MPG123. 
+
+	This programm is a port of a freeware UNIX-player, which was also ported 
+to MS-DOS, Linux... ó(http://www.sfs.nphil.uni-tuebingen.de/~hipp/mpg123.html)ð
+	
+	The Atari-version was compiled, by Petr, for 68040 (with FPU) but you   
+can also use it for the 68030+68882 team. So the list of the supported computers 
+should look like :
+				- Falcon + Afterburner (with FPU)
+				- Falcon + any acceleration-card (with FPU)
+				- Falcon (with FPU)
+				- Milan
+				- Hades
+				- ST + 68030 acceleration-card + FPU
+				- TT
+         More about the neccessary speed, later.
+	                     
+	If you want to use the programm as player, the author recommends to run a
+MiNT-based multitasking OS, because it uses the MiNT audio device to send the   
+decompressed data straight into the STe/Falcon DMA or our beloved old Yamaha PSG. 
+Well, if you now think your computer is ready to play MP3s then please answer a  
+simple question : Is your hardware really a 68040/060 and has a STe/Falcon DMA  
+or PSG ?
+		
+	If so, then you're a lucky one and now have fun with your new favourite
+application.
+
+	If the answer is no, I got bad news for you: your Atari has not enough
+power to play MP3s in realtime and, until one day the MiNT audio-device supports 
+the Milan's soundblaster-card, this GILT for Milan-users, too.
+	
+	The decompression of a layer III file is a very timeconsuming process. It
+takes about 20 MIPS per channel. As reported in the Falcon-manual, this machine 
+offers only 3.84 MIPS. Perhaps a Falcon with an Centurbo II accelerator is able  
+to play songs with 4-times downsampling and mono ( = 11 kHz instead of normaly  
+44.1 kHz and stereo ). Could sound awful but may work ( is there anybody who    
+could test it? ).
+	
+	Well, before you now start to cry I got a cookie for you:
+	
+	MPG123 has the feature to write the output-stream into the standard     
+outputinstead of into the audio device. You only need a decent shell-tool like   
+bash-,	korn-, or bourneshell ( personally I use the excellent Mupfel-shell      
+which is part of the Gemini desktop-package). In an Unix-like shell, the        
+standard-output	denotes the screen you will see, but could also send any        
+information into a file on your harddisk.
+
+	By the way, in the readme file, which comes along with the player, it    
+is stated you would need MiNT, but fortunately it works with MagiC, too. You do  
+not even need a multitasking OS. I've tested it under plain TOS. It worked, too. 
+If you use MPG123 as a decoder, you actually only need a shell ( and a huge HD,  
+remember the 1:14 ratio ).  
+
+	The file, the music was written in, is an headerless raw-file format.   
+This can easily converted into any other audioformat by such tools as 525 or 
+SOX. SOX, for example, is a ported shell-using programm, too. Now you got the   
+possibility to 	write a batchfile, that could automaticly decode a MP3 by using  
+MPG123 ( btw, it does not matter if it's a MPEG1 layer or a MPEG2 ), write it to 
+disc, convert it to WAV and thereafter play it using SWAV or an equal TOS sound 
+player.
+	
+	Now, as promised, some words about the performance, tested on my 32 MHz  
+Falcon. After I managed the problem with the shell-tool ( later some hints ),
+I started the program to decode a song I've found on a CD. I worked with some    
+other programs while MPG123 was decoding, multitasking makes it possible.  But,  
+after 4 hours of endless waiting, I stopped this process. Next day I tried      
+another strategy. I gave the program the highest priority and used one 
+of these speed-up screen-savers. Then it worked. Surprise, surprise. This
+time MPG123 needed only 2 hours ( !! ), with best quality ( 44.1 kHz, stereo).
+
+         To save some time you can use the downsampling switch, this reduces the 
+sound quality, or you buy a faster Atari. Cool alternatives.   
+	        
+	Let's take a closer look at the Amiga. A friend, who is owning an
+Amiga 1200 with a 68030/50 MHz turbocard, showed me a MP3 player on this  
+machine. This player was capable to play a sound file in realtime, with down-
+sampling, in a good quality. But the surprising thing to me was, he could still
+use his computer. Well, it was slowed down, but he could use it. I wonder, how
+this player could be so fast on a machine, comparable to a Centurbo II accelerated
+Falcon. I suppose, the player was written in highly optimised assembler. 
+With this idea in mind, I started to search for information on the Internet.
+There I found a library called Mpega, which the most Mp3 players for Amiga are
+based on. The library itself contains of linkable binary sources for 68030+68882 
+and 68040. Since these processors are exactly the same as in Atari computers, I  
+wonder, if someone could convert it to the Atari.
+	
+	Well, now a short description of the supplied options.
+	
+	Mpg123 is, as stated, a commandoline driven tool. To start a song, you  
+only type into your shell:
+	
+			 mpg123.ttp e:\music\cool_song.mp3
+	
+	Or something like this. But remember, this only works with much power   
+ and MiNT. Otherwise, to use just the decoder ( any OS ), you start it with :
+	
+			 mpg123.ttp -s cool_song.mp3 > cool_song.raw
+   							 
+  This induce the player to write the music to standard-output and the shell
+  to send standard-out into the given raw file. This could be the most used
+  feature on smaller machines.
+  
+  Furthermore you need to know :
+  
+ 	-v  displays the frame numbers during decoding.
+        -2, -4 Performs a downsampling of ratio 2:1 										 (22 kHz) or 4:1 (11 kHz)
+ 	-0, -1 Decode only channel 0 (left) or 
+  	       channel 1 (right), stereo MPEG streams 
+  													 only
+
+  This should be the most interessting options. There are a lot more like
+ special effects ( i.e. half-, doublespeed ) or playing directly from Internet. 
+ If you got the right power, there should be enough stuff to play  with.
+  
+  As promised, I want to offer you some hints, that simplify the daily
+  work with this cool program:
+  
+  1. Always use the -v switch if you decode into a file. This allows you to 
+  	  check if the decoder is still working ( otherwise you have to guess, 
+  	  believe me ) and estimate how long the process needs.
+  	  
+  2. To convert the sample from raw to wav with 525, you have to give some data.
+     The program needs following informations about the raw file:
+     
+     					- frequency: 44100 or 22050 or 11025
+     					  (depends on the -2, -4 switches, you've used)
+     					  
+     					- format: Stereo Signed 16 Motorola 
+     					  
+  3. On unaccelerated Falcons, while decoding the music use a speedup           
+     screensaver.
+     This will save a little time. There should be some programs around, that   
+     could do the trick, i.e. "Blow Up Soft" or "Twilight".
+     
+  Finally there should be ratings, let's go.
+  
+  Pro:
+  - as the first MP3-player/converter it earns an originalitybonus
+  - many useful options
+  - serves a wide range of Atari computers 
+  - plays all kinds of MP-files
+  
+  Contra:
+  - no frontend
+  - needs a shell
+  - slow ( well, MP3 needs much power, but it's still slow )
+  - no direct DMA output	     	  								  
+										
+  Ratings:
+  slow Atari ........... fast Atari
+	55%                    75%		     

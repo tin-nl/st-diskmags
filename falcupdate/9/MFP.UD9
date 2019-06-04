@@ -1,0 +1,182 @@
+* Yet more techy stuff.. sorry about this for you  non-coders,  but  now
+you have this wealth of information isn't it about time you  started  to
+learn to use it???
+
+- RiCH
+
+
+                             The Mfp Data Sheet
+                             ==================
+
+Register 1      ---  GPIP (general purpose i/o port)  ---     $fffffa01
+
+This is the data register for the 8-bit ports, where data from the port
+  bits is sent and read.
+
+Register 2        ---  AER (active edge register)  ---        $fffffa03
+
+When ports bits  are used for input, this register  dictates wether the
+  interrupt  will be a low high or a high low  conversion. Zero is used
+  in the high low change, one for low high.
+
+Register 3       ---  DDR (data direction register)  ---      $fffffa05
+
+When a DDR bit equals 0, the  corresponding pin becomes an input, and a
+  1 makes  it an output.  Port bit positions are  influenced by AER and
+  DDR bits.
+
+Register 4,5   IER A, IER B (Interrupt Enable Register)    $fffffa07/09
+
+Every  interrupt  source of the MFP  can be  seperately switched on and
+  off.  With a total of 16  sources, two 8-bit  registers are needed to
+  control  them.  If a 1 has  been  written to IER A or  IER B then the
+  corresponding channel is enabled (turned on). Conversely, a zero dis-
+  ables the  channel.  If it comes upon a closed  channel  caused by an
+  interrupt, the MFP will completely ignore it.
+
+IER A   Bit 7   I/O port bit 7 (highest priority)
+        Bit 6   I/O port bit 6
+        Bit 5   Timer A
+        Bit 4   Recieve Buffer Full     (RS232)
+        Bit 3   Recieve error
+        Bit 2   Sender Buffer Empty
+        Bit 1   Sender Error
+        Bit 0   Timer B                 (H-Blank)
+
+IRA B   Bit 7   I/O port bit 5
+        Bit 6   I/O port bit 4
+        Bit 5   Timer C
+        Bit 4   Timer D
+        Bit 3   I/O port bit 3
+        Bit 2   I/O port bit 2
+        Bit 1   I/O port bit 1
+        Bit 0   I/O port bit 0
+
+This bit arrangement applies to the IPR, IMR, ISR registers below:
+
+Registers 6,7   IPR A, IPR B (Interrupt pending register)  $fffffa0b/0d
+
+When an interrupt occurs on a open channel,  the appropriate bit in the
+  interrupt pending register is set to one.  When working with a system
+  that alows  vector  creation,  this bit will be  cleared when the MFP
+  puts the vector number on the data bus.  If this isn't possible,  the
+  IPR must be cleared using the software. To clear a bit, a byte in the
+  MFP will show the location of the specific bit. (Not Relavent for ST)
+
+Registers 8,9   ISR A/B (Interrupt in service register)   $fffffa0f/a11
+
+The function of these  registers is  somewhat complicated,  and depends
+  upon bit 3 of register 12 (Vector register).  This is an S-Bit, which
+  determines wether the MFP is working in " Software end of interrupt "
+  (SEI) mode of in "Automatic end of interrupt" (AEI) mode.
+AEI mode clears the IPR bit,  when the processor gets the vector number
+  from the MFP during an IACK (Interrupt Acknowledge).  The Appropriate
+  In Service bit is  cleared at the same time.  Now a new interrupt can
+  occur, even when the previous interrupt hasn't finished it's work.
+SEI mode sets the  corresponding ISR bit  when the vector number of the
+  interrupt is  requested by the  CPU.  At the interrupt routines' end,
+  the bit designated within the MFP must be cleared. As long as the ISR
+  bit is set, all attempts of lower priority are masked out by the MFP.
+  Once the pending bit of the active channel is cleared, the same  sort
+  of interrupt can occur a second time, and interrupts of a lesser pri-
+  ority can occur as well.
+
+Registers 10,11   IMR A, IMR B (Interrupt Mask Register)  $fffffa13/a15
+
+Individual interrupt sources switched  on by the IER can be masked with
+  the help of this  register.  That means that the  interrupt is recog-
+  nised from within  and is signaled  in the IPR,  even if the IRQ line
+  remains high.
+
+Registers 12              VR ( Vector Register )              $fffffa17
+
+In the case of interrupts, the MFP can generate a vector number corres-
+  ponding to the interrupt source  requested by the processor during an
+  IACK cycle.  All 16 interrupt  channels have their own vectors,  with
+  their priorities coded into the bottom four bits of the vector number
+  (the upper four bits are copied from the vector register). These bits
+  must be set into VR, therefore. Bit 3 of the VR is the S-Bit. If this
+  bit is set (as in the ST),  then the MFP operates in SEI mode, clear-
+  ing the bit results in AEI mode.
+
+Regsiters 13,14  TACR, TBCR (Timer A/B control registers) $fffffa19/a1b
+
+These registers set the operating  mode of timers A and B.  Both regis-
+  ters use the 4th thro  7th bits.  Bits 0 to 3 determine the operating
+  mode of each timer.
+
+  Value 15      Pulse Extension mode, /200
+        14        "     "      "  , /100
+        13        "     "      "  , /64
+        12        "     "      "  , /50
+        11        "     "      "  , /16
+        10        "     "      "  , /10
+        9         "     "      "  , /4
+        8       Event Count Down Mode   (Hardware connection)
+        7       Delay Mode, /200
+        6         "    "  , /100
+        5         "    "  , /64
+        4         "    "  , /50
+        3         "    "  , /16
+        2         "    "  , /10
+        1         "    "  , /4
+        0       Timer Stop
+
+Register 15         TCDCR (Timer C/D control register)        $fffffa1d
+
+Timers C and D are available  only in delay mode,  this means that only
+  one byte is needed to control both timers. The control information is
+  programmed into the lower three bits of the nibbles. Bits 0 to 2 con-
+  trol timer D,  with timer C using  bits 4 to 6.  Bits 3 and 7 have no
+  function. The table above shows the bit arrangments for the different
+  delay modes.
+
+Registers 16-19  TADDR (Timer A to D data registers) $fffffa1f/21/23/25
+
+These registers are decremented every timer event, when this value is 1
+  an interrupt  is trigged.  By putting one in  here an  interrupt will
+  occur every timer event.
+
+MFP Interrupt Levels On The ST
+
+Level   Assignment
+
+  15    Monochrome Detect
+  14    RS-232 Ring Indicator
+  13    System Clock (Timer A) (not on ste?!?)
+  12    RS-232 Receive Buffer Full
+  11      "    Receive Error
+  10      "    Transmit Buffer Empty
+  9       "    Transmit Error
+  8     Hsync - Scan Line Return Counter (Timer B)
+  7     FDC DMA
+  6     Keyboard and MIDI ACIAs
+  5     200 Hz System Timer (Timer C)
+  4     RS-232 Baud Rate Generator (Timer D)
+  3     Unused
+  2     RS-232 CTS
+  1       "    DCD
+  0     Centronics Busy
+
+
+                           MFP Timer Frequencys
+                           ====================
+
+Timer Base Frequency = 2457600 Hz
+
+In      /4      Mode    =       614400 Hz
+ "      /10      "       =       245760 Hz
+ "      /16      "       =       153600 Hz
+ "      /50      "       =       49152  Hz
+ "      /64      "       =       38400  Hz
+ "      /100     "      =       24576  Hz
+ "      /200     "      =       12288  Hz
+
+Then devide by data bit e.g
+
+        move.b  #1,$fffffa19.w
+        move.b  #50,$fffffa1f.w
+
+This gives 614400/50 = 12288 Hz
+
+

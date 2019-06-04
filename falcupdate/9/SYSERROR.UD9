@@ -1,0 +1,69 @@
+* The programming trip continues....
+
+-----------------------------------------------------------------------
+               System Errors  [Exceptions, Bios, Gemdos]
+-----------------------------------------------------------------------
+
+Processor Exceptions:
+--------- -----------
+
+Bombs Address Name                 Meaning
+  2     $08   Bus error            Access to protected or nonexsistant
+                                   memory
+  3     $0c   Address error        .w/.l access at odd address
+  4     $10   Illegal instruction  pc hit garbage
+  5     $14   Divide by zero       for error handling
+  6     $18   Chk                  caused by chk instruction
+  7     $1c   Trapv                caused by trapv instruction
+  8     $20   Privilege Violation  need to be in SuperVisior mode
+
+Bios Error Numbers:
+---- ----- --------
+No.  Error             Comment
+
+  0  OK                No error
+- 1  Error             the OS doesn't know what went wrong
+- 2  Drive not ready   disc drive not connected or busy
+- 3  unknown command   disc drive can't perform function
+- 4  crc error         crc is incorrect on sector
+- 5  bad request       bad info passed by program
+- 6  seek error        track doesn't exist
+- 7  unknown media     disc's bootsector is corrupt
+- 8  sector not found  -
+- 9  no paper          ->printer
+-10  write error
+-11  read error
+-12  general error     see 1
+-13  write protected   -
+-14  media change      disc swap
+-15  unknown device    drive number requested not know
+-16  bad sectors       formatt showed bad sectors
+-17  drive empty       -
+
+Gemdos Error Numbers:
+------ ----- --------
+No.  Error             Comment
+
+-32  invalid function     function doesn't exist
+-33  file not found
+-34  path not found       all or part of passed dir. doesn't exist
+-35  too many open files  to many files OPEN'ed
+-36  access impossible    problem using Gemdos
+-37  invalid handle       handle passed is not an OPEN file
+-38  wrong rez            program won't work in current rez
+-39  not enough memory    -
+-40  invalid memory block returning a memory blk that gemdos doesn't
+                          recognise
+-41  disc full            -
+-42  not enough memory    see -39
+-43  unknown              an error
+-44  unknown              "    "
+-45  unknown              "    "
+-46  invalid drive        unknown drive
+-47  invalid operation    bad data passed to functioin
+-48  unknown              see -43
+-49  no more files        see -35
+-64  range error          number is to big to be stored correctly
+-65  internal error       general OS problem
+-66  invalid prog format  normally never returned (-35 used)
+-67  setblock failure        "       "      "     (-39 used)

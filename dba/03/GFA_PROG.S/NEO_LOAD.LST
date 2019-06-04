@@ -1,0 +1,14 @@
+' *************************************************************************
+' *                  Small Neo Chrome picture loader                      *
+' *                         made in GFA basic                             *
+' *                    By Bonus Software of the DBA                       *
+' *************************************************************************
+'
+OPEN "i",#1,"a:\kid.neo"        ! open picture file...
+dummy$=INPUT$(4,#1)             ! skip resolution info...
+a$=INPUT$(32,#1)                ! read color info (16 colors)
+VOID XBIOS(6,L:VARPTR(a$))      ! setup colors...
+dummy$=INPUT$(92,#1)            ! skip animation info 128 bytes (92=128-4-32)
+BGET #1,XBIOS(2),32000          ! get the picture info
+CLOSE #1                        ! close picture file
+VOID INP(2)                     ! get key.

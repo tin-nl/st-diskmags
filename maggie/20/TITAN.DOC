@@ -1,0 +1,284 @@
+
+Hi Chris,
+
+A bundle of Gembench reports for Afterburner and Nemesis, plus the last Press
+Release.
+
+Happy reading!
+
+Cheers,    Dave.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+NEMESIS - PRESS RELEASE
+from Black Scorpion Software Ltd
+
+Black Scorpion's new hardware accelerator, Nemesis, is making great progress and
+should be ready to ship towards the end of May/early June. Nemesis has been
+designed specifically to support the entire APEX range of software programs,
+i.e. Media, Intro, and the forthcoming APEX 3 and APEX Audio.
+
+Although price has not been finalised, we expect it to be no more than #39.95
+(incl. VAT & carriage) to existing APEX Media/Intro users. Non-APEX users can
+expect to pay a further #10.00. The price has risen by #10.00 due to an extra
+Clock Oscillator being included into the design (now switchable up to 48MHz) to
+ensure total compatibility with all properly written Atari software.
+
+Provisional Specification
+Bus - 24MHz - faster than most other accelerators and enables APEX 3 to achieve
+640x480 (or higher), true-colour, non-interlaced on a VGA monitor. The higher
+Bus speed should also allow Expose' frame rates of 25fps at 256x160!
+CPU - 24MHz - a lower CPU speed ensures total reliability. Exceeding 32MHz can
+prove unreliable in any case.
+FPU - switchable between 24MHz and 48MHz - to ensure compatibility with
+different processors, i.e. FPUs rated at 16MHz may not 'take the strain'.
+DSP - 48MHz - much more important to APEX than CPU speed, as all versions of
+APEX are mainly machine-coded for the DSP.
+
+As you can see we have concentrated on reliability and have still managed to
+produce an accelerator which exceeds the specification of many of its
+competitors and, in addition, achieves a price which makes it totally affordable
+to anyone!
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+AFTERBURNER
+from Titan Designs Ltd
+
+TITAN DESIGNS have recently been appointed as the official UK distributor for
+the Afterburner040 Falcon accelerator.
+
+The Afterburner040 can be supplied with either a 68LC040 or full 68RC040
+processor. The main difference between the 'LC' and 'RC' versions is that the
+higher spec processor comes with an internal 68882 maths co-processor.
+
+PRICES (for the UK, incl. VAT & carriage)
+
+68LC040    - #449.00
+68RC040   - #539.00
+
+Afterburner040 gives an enormous increase in sheer processing power and is very
+compatible with a wide range of software - existing APEX Media/Intro users can
+also upgrade free of charge to v2.2 for an amended version of the when they
+purchase an Afterburner040.
+
+Black Scorpion Software, in conjunction with Titan Designs, will also be
+evaluating the possibility of running both the NEMESIS accelerator *WITH* the
+AFTERBURNER to increase the CPU, Bus and DSP speeds even further!
+
+AFTERBURNER TECH SPEC
+- Motorola 68040 or 68LC040 CPU producing 32/64MHz
+- Two 72-pin SIMM sockets for optional memory expansion up to 128MB Fast-RAM
+- Falcon Bus throughport for Expose, Screeneye, FalconSpeed, etc.
+
+Although a larger case will be required, Titan Designs will also be handling the
+new C-Lab Falcon Mk.X case upgrades which are ideal for use with the
+Afterburner040. More details on the Mk.X case upgrades when available.
+
+MEMORY PRICES
+New lower prices on memory is making that Falcon upgrade an even more realistic
+proposition. All prices quoted are for 72-pin, 70ns (or faster) devices, which
+are fully compatible with Afterburner, and incl. VAT & carriage.
+
+4MB - #37.00
+8MB - #75.00
+16MB - #149.00
+
+Falcon 14MB upgrade board - #39.95
+
+This means, of course, that a 16MB upgrade for the Falcon is now well below
+#300! But, as an added incentive, we will supply both 16MB SIMM and the Falcon
+upgrade board for only #279.00.
+
+NEW - 28.8K MODEMS!
+Titan Designs are spreading the Web! We can now supply 28.8Kbps modems with full
+BABT and CE approval, and compatible with the Atari, for only #169.00.
+
+If your pocket doesn't stretch this far, then we can supply a 14.4Kbps modem
+(again with BABT & CE approval) for a mere #109.00.
+
+If you have any queries about this e-mail-shot, please do not hesitate to
+contact David Encill (for Titan Designs or Black Scorpion Software) on
+100345.2350@compuserve.com - as you probably know from past experiences, we do
+respond very quickly!
+
+Tel: +44 (0)121-693 6669
+Fax: +44 (0)121-414 1630
+
+6 Witherford Way
+Selly Oak
+Birmingham B29 4AX
+U.K.
+
+
+---------------------------------------------------------------------------
+
+
+NEMESIS BENCHMARKS
+
+The first is 32MHz operation (standard), followed by 40MHz and 48MHz. You will
+notice a few things;
+
+1. No FPU is present - This is because an FPU wasn't present :-)
+2. Blitter not present - Disabling the Blitter is necessary to make Nemesis
+work.
+3. NVDI is present - Most people will probably have this anyway, but some of the
+utilities for Nemesis need it installed, at present, for safety. This will
+probably change for the full production version.
+
+GEM Bench v3.25    copyright (c) Ofir Gal 10.9.93
+=================================================
+Falcon 030 TOS 4.01, MiNT not present
+Blitter not present, NVDI 3.02 present
+Video Mode = 640 * 480 * 16 Colours
+FPU not present
+Run and Malloc from STRAM
+Reference = F030
+
+
+Nemesis = OFF
+
+GEM Dialog Box:             2.105    185%
+VDI Text:                   0.745    514%
+VDI Text Effects:           2.405    345%
+VDI Small Text:             1.225    347%
+VDI Graphics:               4.455    208%
+GEM Window:                 1.525    100%
+Integer Division:           3.105     99%
+Float Math:                 6.175     86%
+RAM Access:                 2.500     88%
+ROM Access:                 2.125    109%
+Blitting:                   7.785     14%
+VDI Scroll:                 4.290     66%
+Justified Text:             3.360    107%
+VDI Enquire:                0.830    207%
+
+Average:                             176%
+Graphics:                            209%
+CPU:                                  95%
+
+============================================
+Nemesis = 40MHz
+
+GEM Dialog Box:             1.625    240%
+VDI Text:                   0.575    666%
+VDI Text Effects:           1.860    446%
+VDI Small Text:             0.950    448%
+VDI Graphics:               3.435    270%
+GEM Window:                 1.175    129%
+Integer Division:           2.480    124%
+Float Math:                 4.730    112%
+RAM Access:                 1.935    113%
+ROM Access:                 1.735    133%
+Blitting:                   5.970     19%
+VDI Scroll:                 3.275     87%
+Justified Text:             2.585    140%
+VDI Enquire:                0.635    270%
+
+Average:                             228%
+Graphics:                            271%
+CPU:                                 120%
+
+============================================
+Nemesis = 48MHz
+
+GEM Dialog Box:             1.330    293%
+VDI Text:                   0.465    824%
+VDI Text Effects:           1.515    547%
+VDI Small Text:             0.775    549%
+VDI Graphics:               2.790    332%
+GEM Window:                 0.940    162%
+Integer Division:           2.060    150%
+Float Math:                 3.830    139%
+RAM Access:                 1.555    141%
+ROM Access:                 1.395    166%
+Blitting:                   5.000     23%
+VDI Scroll:                 2.645    107%
+Justified Text:             2.095    173%
+VDI Enquire:                0.515    333%
+
+Average:                             281%
+Graphics:                            334%
+CPU:                                 149%
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AFTERBURNER/NEMESIS
+
+Gembench results
+
+============================================
+AFTERBURNER040 @ 16.5/33/66MHz
+Standard Falcon
+============================================
+Falcon 030 TOS 4.04
+AES v3.40
+GEMDOS v0.48
+MiNT not present
+Blitter not present
+NVDI 2.51 present
+Video Mode: 640*480*2
+FPU cookie value=$80000 (68040 internal)
+Run and Malloc from FastRAM
+Ref: F030 + FPU, 640*480*2
+============================================
+GEM Dialog Box:             0.770    454%
+VDI Text:                   0.200   1700%
+VDI Text Effects:           0.410   1826%
+VDI Small Text:             0.250   1500%
+VDI Graphics:               1.045    835%
+GEM Window:                 0.535    261%
+Integer Division:           0.910    340%
+Float Math:                 0.095    357%
+RAM Access:                 0.215   1023%
+ROM Access:                 0.220    954%
+Blitting:                   0.875    128%
+VDI Scroll:                 1.140    231%
+Justified Text:             0.920    354%
+VDI Enquire:                0.110   1436%
+New Dialogs:                0.905    491%
+============================================
+Graphics:                            837%
+CPU:                                 668%
+Average:                             792%
+
+============================================
+AFTERBURNER040 @ 20/40/80MHz
+Nemesis fitted and running with 20MHz bus
+============================================
+Falcon 030 TOS 4.04
+AES v3.40
+GEMDOS v0.48
+MiNT not present
+Blitter not present
+NVDI 2.51 present
+Video Mode: 640*480*2
+FPU cookie value=$80000 (68040 internal)
+Run and Malloc from FastRAM
+Ref: F030 + FPU, 640*480*2
+============================================
+GEM Dialog Box:             0.690    507%
+VDI Text:                   0.175   1942%
+VDI Text Effects:           0.365   2052%
+VDI Small Text:             0.225   1666%
+VDI Graphics:               0.920    948%
+GEM Window:                 0.485    288%
+Integer Division:           0.750    413%
+Float Math:                 0.080    425%
+RAM Access:                 0.180   1222%
+ROM Access:                 0.180   1166%
+Blitting:                   0.770    145%
+VDI Scroll:                 1.030    256%
+Justified Text:             0.835    390%
+VDI Enquire:                0.095   1663%
+New Dialogs:                0.800    556%
+============================================
+Graphics:                            946%
+CPU:                                 806%
+Average:                             909%
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+

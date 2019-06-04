@@ -1,0 +1,121 @@
+ó--------------------------------------------------------------------------------
+                            PREVIEW - "DGEM vo.14"
+ó--------------------------------------------------------------------------------
+
+system ... high  end  machines, Falcon, TT, Milan  or something, offering  a min
+           res. of 64o*4oo*16 and XBIOS sound, loads of RAM, RGB and VGA
+
+size ..... 1,4 MB
+
+genre .... its... DUNGEON MASTER!
+
+status ... freeware/abandonware
+
+creator .. Rajah Lone of Renaissance / France
+
+ó--------------------------------------------------------------------------------
+
+On the hunt for  more actual game releases  I stumbled over this project that is
+still stuck  into very early  stages. The makers have one  thing in mind, making
+the fabulous ñDUNGEON MASTERð running in òGEM environmentð. I really  have to say it
+at first, I can't follow them in this point and you can read later here why...
+
+You all know ñDUNGEON MASTERð, the cool  role  playing game  by FTL, released back
+in 1988 where it  brought a revolution  to role play gaming because of its great
+grafix and ò3D bitmap dungeonsð  that were òmiles aheadð  from all other releases at
+this time and that has  set ònew standardsð, also  because of it's òrealtime fights
+in this 3D environment.
+
+So ñDUNGEON MASTERð has inspired a lot of other people and more or less it was the
+game that  recreated the whole genre... and, after all, it was òdevelopped on the
+òATARI STð. But what I have to say here, I think all people that started on the ST
+were stumbled somewhen over that great  game and also I was  sitting many nights
+in front of the screen  to crush monsters  and to search  for Lord Chaos down in
+the deep dungeons, I liked the òcute grafixð and the òcool atmosphereð that the game
+spread into the room, esp. if it's damn silent and dark :)
+
+Anyway, ñDUNGEON MASTER 2ð was never ported to the ST (at least I got it for my PC
+niaarg, niaaarg) and in the meantime it lost its attraction, esp. since I played
+ñISHARð and so on on the Falcon. I have to admit that I never used to play big RPG
+games on my PC. More or less my RPG fanatism ended up on the Falcon.
+
+But as I  stumbled over this  snippets about ñ"DGEM"ð the  old hack'n'slayer in me
+came back to life again and I leeched the game to  check it out. After  I copied
+all the stuff onto my Falcon, I already saw that this game isn't thought for the
+ST, since  there  it only  would run from  harddisk and since it  is possible to
+start it from ST LOW but appears as òunplayable  in that resolutionð  as well as a
+start in less than 16 colours is impossible, the game turned  out to be only for
+machines that offer resolutions  of ò64o * 4oo * 16ð, such  as Falcon, TT or maybe
+an STe with grafix card.
+
+How the whole thing would like on ST LOW resolution you can check below...
+
+{*i DGEM1.PI1 m 0 20 0 200}
+
+My next try to load  the game wasn't finished  with success as well  since short
+before the long  loading time of  the grafix, the  machine was  crying  for more
+memory (!), so 14 MB aren't  enough, even if I had  booted the machine  in plain
+modus without any auto folder programs and  ACC's?! Naaa, not  at all, since the
+FOLDER300.PRG was  able to solve the problem  and then it  even was  loadable in
+full set environment with NVDI and so on.
+
+After all and about the third or fourth  try the game was loaded, offering a GEM
+environment and a small game window, showing the 3d perspective of  the game and
+a small  other window, offering the  control buttons  for the  movement. Nothing
+more... except some  pseudo styling on  the edges of  the screen. Naaah, not  so
+stylish :)
+
+Ok, I checked out very fast that the òmovement runs fine and slickð and so you can
+already wander around, go  up and downstairs, open  and close dors, use triggers
+and teleporters... but nothing  more. The character selection screen isn't right
+implemented so far as well as those grafix are missing. There are no baddies and
+real gameplay implemented so far, just remember, it is a very early preview...
+
+And since there is nothing more to do here, I played around a bit with the stuff
+in the menues. There is already a save option implemented, but so far it is, arr
+... let me say, a bit useless. There is  an online help  as well, but  therefore
+òyou have must installed STguide firstð or you have to look into the empty oven...
+
+Other options offering the possibility to  resize the game window in 3 steps, it
+depends on the resolution you have chosen. As I had  it running in 64o*48o*16 it
+offered also a doublesized window but then the game play is, err... knocked out.
+The òscreenupdates are damn slowð now, even with NVDI and so I don't wanted to try
+out the other option then, argl... even if it is a  fine feature, only  with the
+limitation that the  original 16 colour  grafix aren't  going to be  better in a
+bigger and big pixeled game window...
+
+What else? Yeps, before  I forget, the  òsound is already  implementedð and so you
+can listen to the  original samples out of the game, such as open/closing doors,
+the famous "ouch" while running against a wall and so on. :)
+
+Is there more to add? No, and so I will write a short round up then...
+
+ñ"DGEM"ð is surely a nice try to  port ñDUNGEON MASTERð into GEM environment and the
+few GEM òhardcore playersð it is maybe something to wait for... if... yes, if they
+have a real  powerful machine. The  òpure minimumð  is a Falcon in  hires  with 16
+colours at least and NVDI installed and, not  to forget with more than 4 MB RAM.
+But here you get only the normal size windows to run in  a good speed, if you're
+willing to get a doublesized gamingscreen you  will knock out your bird as well,
+if you don't own some ògood acceleration  cardð... and so I have to say that I for
+myself don't get the point right. Only for this I wont look out for the game, to
+play a windowed ñDUNGEON MASTERð without  any specials, then I can switch on my ST
+and play the original game there.
+
+Btw... the game is  announced to run under  multitasking environments like óMAGIC
+and óMiNTð but since I haven't installed  any of them I wasn't able to test it out
+but remembering the memory and speed problem it can and surely will be that your
+machine goes much more down into  the knees then, esp. since then  it is more or
+less a need to use  and even better  resolution with 256 colours for example, or
+your screencolours will be mixed up in a crude way.
+
+So what? If  you're a ñDUNGEON MASTER -AND- GEM/Magic/MiNT fanaticð, riding a òhigh
+òend machineð, you should watch out for this game. I will take a look from time to
+time in this direction, too, but I have to admit that I don't wait for this game
+port really as I'm no GEM fanatic and would play it on my old ST in original...
+
+Last but not least I have some URL here, where you can find out more...
+
+óhttp://membres.lycos.fr/nef/
+
+.tSCc.                                                         moondog . o5/2k2
+ó--------------------------------------------------------------------------------

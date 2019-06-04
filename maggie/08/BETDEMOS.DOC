@@ -1,0 +1,60 @@
+
+
+What I hate most about ST-demos and never said before...
+--------------------------------------------------------
+
+         (Criticism and ideas for better demos)
+
+         An article by New Mode of Delta Force
+
+
+I hate :
+--------
+
+- Demos that refuse to work on four meg ST's (because when you
+  clear the whole memory (till $400000) on a four meg ST you'll
+  get a buserror)
+- Resetdemos you can't exit with the second reset
+- Demos with greetings and memberlists in every single screen
+  (except in guest-screens)
+- Demos without a menu. If you want to see the last screen,
+  you'll have to load through all other screens before.
+- Demos that put back the selector on the first line and not
+  on the last selected screen
+- Too slow scrollers
+- Using ripped graphics with the wrong palette (many used the
+  Knighthawks-font with the colors in the wrong direction which
+  made the antialiasing look very crappy)
+- Demos running in more than one vbl (except 3D-stuff)
+- Trash in the lower border because the screen height is too low
+- Having to reload the mainmenu every time on more than halfmeg ST's
+- Using slow depackers
+- Flickering rasters
+- Boring fullscreens just to have a fullscreen
+- Intros where you can't abort, and have to wait for a long time
+- Always the same screens (no more "bigscrollers" and techtron-demos
+  please!!!). Originality is the most important thing nowadays!
+- Demos that don't switch down from 60HZ to 50HZ because the coders
+  think 50HZ is default. But some guys have a 60HZ-switch in their
+  patched roms.
+- Switching unsychronised to 50HZ. That will cause syncerrors on some
+  ST's. Just do a vsync before...
+- Demos where you have to enter disk-info on your own when you copy it.
+  (Just write the info in the bootsectors please)
+
+Ideas and tips:
+---------------
+
+- If you have a minigame as a mainmenu, please do an optional little
+  menu (if you press 'HELP') where you can select all screens very fast
+- Use ICE-Packer, it's by far the best packer in every domain
+- Optional reset with CONTROL-ALTERNATE-DELETE in every screen (for all
+  the poor MEGA-ST users)
+- If you have an internal copy program, make it work on monochrome
+  monitors (it will appear if you boot in monochrome-mode). Many guys
+  copy their demos in shops where they don't have a color-monitor, and
+  so they aren't able to copy a demo without a monochrome-copy
+- If you have a joystick-controlled mainmenu, do a keyboard-control too
+
+
+

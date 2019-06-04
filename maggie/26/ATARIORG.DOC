@@ -1,0 +1,291 @@
+0660103030571
+9[........................................................]
+‚______________________________________________________________________
+----------------------------------------------------------------------
+€…HotNewsaboutAtariorg!€
+‚----------------------------------------------------------------------
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+„
+Atari.org-theAimsandObjectives
+
+Firstdraft:31stJuly1998
+LastModification:6:15PMTuesday,August04,1998
+Authors:RichardDavey
+€
+Contents
+
+1.Welcome
+2.Whoisinvolved?
+3.Whatistheobjectiveofatari.org?
+4.Doesthatincludeemulators?
+5.Whatserviceswillatari.orgprovide?
+5.1Amanda
+5.2Freesub-domains
+5.3Freeemailforwarding
+5.4Freepop3emailaccounts
+5.5Freemailinglists
+5.6Freewebsitehosting
+5.7Low-costwebsitehosting
+5.8Bannerexchange
+5.9CGIscripts
+5.10Submissionscript*NEW*
+5.11Eventscalendar*NEW*
+5.12ClassifiedAdverts*NEW*
+6.0TermsandConditions
+7.0Requiredassistance*UPDATED*
+8.0Releaseschedule
+
+
+1.Welcome!
+Youhavereceivedthisbecauseyouhaveexpressedaninterestin
+helpingoutwiththeatari.orgproject.Someofyoumayalreadybe
+contributingwhileothersareyettobeinvolvedfully.Ifyouno
+longerwishtobeconsideredpartofthegroupthenpleaseletmeknow
+assoonaspossible.
+
+2.Whoisinvolved?
+Atpresentthefollowingpeopleareactivelyinvolvedwithatari.org:
+
+RichardDavey-Sitecoordinator;Web&DNSServerAdministration
+AndersEriksson-Falconscenecontentprovider;Newsprovider
+PericaJovanovic-Graphicdesign,HTML
+MartinLyons-MailServerAdministration
+BarrySchut-LynxandJaguarcontentprovider
+OliverHeun-5200/7800contentprovider
+
+Ifyournameisnotonthislist,it'snotbecausewe'veforgotten
+aboutyou,it'sbecauseyouhaven'texpressedaparticularareain
+whichyouwouldliketohelp.
+
+3.Whatistheobjectiveofatari.org?
+Quitesimply-tobecomethelargestresourceontheInternetforall
+Atarirelatedinformation.Wewillnotbeconstrainedbytypeof
+computeroremulator,wewishtoliterallycoverallaspectsthatAtari
+embraced.Fromthegamestothecomputerstothearcademachinestothe
+ideologybehindital
+
+l.PictureitasbeinglikeYahoo,butdedicatedtoAtari.
+
+4.Doesthatincludeemulators?
+YES!WhenIsaideveryaspectofAtari,Imeantit.Italsoincludes
+suchdiversefieldsas"Atariinthemovies"ortheband"AtariTeenage
+Riot".Yougetthepicturenow?!
+
+5.Whatserviceswillatari.orgprovide?
+Manyandvaried!Weaimtocollectallthe"free"servicesaspossible
+andofferthemfromoneatari-centricplace.Seebelowforspecific
+details.
+
+5.1Amanda.
+OurcorefocuswillbeonAmanda.Amanda(AtariMaterialAndNostalgia
+DatabaseArchive)isaMySQLdatabaseinterfacedtoviaphp/fiand
+perl.Whenfullyoperationalshewillholdthedatausedinthesearch
+enginethatistobetheheartofatari.org.Eachcontentproviderwill
+beresponsibleformaintainingtheirownsectionofAmanda.Theywill
+haveaccesstoherinordertomodifyexistingrecords,removedefunct
+linksandaddnewentries.IfsomeoneaddsaURLforsomethinginyour
+area,Amandawillletyouknowaboutit.
+
+5.2Freesub-domains.
+Wearecurrentlyofferingfreesub-domainsofatari.org.Thereisno
+chargeforthisserviceandonlyacoupleofrestrictions.(1)You
+cannotrequesta"generic"sub-domain.Forexampleyoucan'thave
+"games.atari.org".(2)Youcan'trequestasub-domainthatisthename
+ofacompanythatisstilltradingoraproducttheyproduce,for
+example"calamus.atari.org"wouldberefused.(3)Thesub-domainhasto
+pointtoawebsite(orftpsite)thathasAtarirelevantcontent,and
+Imeanmorethanjustmentionthewordonceortwice!
+
+Thesub-domaincanpointtoeitheraURLoranIPaddress,butyoumust
+specifywhichyourequire.IfyouhaveastaticIPaddress(oraserver
+withastaticIP)thenwecanaliasthatsub-domaintoit.Thereare
+nolimitsontheamountofsub-domainsyoucanhave,withinreason.But
+theymustpointtoindividualsitesordistinctlydifferentpartsof
+thesamesite.Theonlyexceptiontothisaredemocrewswherethey
+mightdesiretheabbreviationfortheircrewandthefullname(i.e.
+rg.atari.organdreservoirgods.atari.org)orasoftwarehouse
+requestingasub-domainforatitleofaprogramthey'vedeveloped.
+
+ThisserviceisprovidedinconjunctionwithKalibaNetlink
+(http://www.kaliba.net).
+
+5.3Freeemailforwarding.
+Wewillshortly(i.e.aweek)beinthepositiontoofferfreeemail
+forwarding.Thisbasicallymeansthatyoucanhaveyourname@atari.org
+forwardedtoamailboxofyourchoice.Thisisafreeserviceandonly
+tworestrictionsapply:(1)Youcannothaveagenericnameorterm-
+thingslike"falcon@atari.org"or"john@atari.org"areoutofthe
+question.Wewillrequirethatpeoplewantingtousetheirnamesshould
+useaformatsimilarto"richard.davey@atari.org"or"richd@atari.org".
+(2)Youmaynotrequestanaliasthatmightberequriedbyanexisting
+company/product,againcalamus@atari.orgisoutofthequestion(unless
+youhappentobeDMC).
+
+ThisserviceisprovidedinconjunctionwithDNANetworks
+(http://www.d-n-a.net)
+
+5.4FreePOP3emailaccounts.
+Inaverysimilarroletothefreeemailforwardingwewillalsobe
+providingpop3emailaccounts.Thismeansyourownuniqueusernameand
+passwordforamailboxthatreceivesmailaddressedtoyou@atari.org.
+Exactlythesamerulesasemailforwardingapplytothisservicebut
+theadditionaloneisthatwewillprobablyenforcealimitonthesize
+ofthemailbox.POP3accountshaveaweb-basedadministrationinterface
+tothem.
+
+ThisserviceisprovidedinconjunctionwithDNANetworks
+(http://www.d-n-a.net)
+
+5.5FreeMailingLists
+Yourownmoderatedorfree-formmailinglisttodowithAtaritopics.
+Upto100subscribersperlistatpresent,fullyweb-basedmanagement
+interface.Thelistsarestillbeingtestedbutshouldbeavailable
+shortly,thefirstbeingthedev-list@atari.orgfordevelopersonly.
+
+ThisserviceisprovidedinconjunctionwithDNANetworks
+(http://www.d-n-a.net)
+
+5.6Freewebsitehosting.
+Thisisaverygreyareaatthemoment.Wewishtoofferfreeweb
+hostingtoAtarirelatedsitesseekinganewhome,howeverwedon't
+wishtobecomea"FortuneCity"or"Geocities"oftheAtariworld-the
+problembeingthatpeoplewillfillupthespacewithdiskimages,etc.
+Soweareconsideringofferingfreewebpagehostingbutonlyaccepting
+.html,.gifand.jpegfiletypes-allotherswillbeerased(ormust
+belinkedtooff-site).Thisistoprotectourserverfromoverloadand
+getitdoingwhatitdoesbest-servewebpages.Atpresentwewill
+havetouseaCGIscripttoallowpeopletouploadtheirfiles,no
+directtelnet/ftpaccesscanbeprovided.Sotheywillneedabrowser
+capableofuploadingfiles.Thisisabitofapainbutthereisno
+work-aroundrightnow.
+
+5.7Low-costwebsitehosting
+Foraveryminimalfee(i.e.£3UKpoundspermonth)wewillallow
+peopletohave10megsofspaceonthewebserver,theirownsub-domain,
+emailaddressandfulldirectFTPaccesstotheaccount.Theyalsoget
+100megsworthofbandwidthperday(about3Gigpermonth)anddaily
+logfiles.Chargedtoacreditcard.Moreadvancedaccountsare
+available(withCGIsupport,extradiskquotaandextrabandwidth).A
+gooddealthough-for£36ukpoundstheygetfull*fast*hostingfora
+wholeyear.
+
+ThisserviceisprovidedinconjunctionwithPairNetworks
+(http://www.pair.com)andAtari.org
+
+5.8BannerExchange
+Atari.orgwilloperateit'sownbannerexchangesystem.Userswillbe
+allowedtoaddtheirbannertotheexchangeforfree,providingthey
+displaythebannerontheirpagesomewhere.Itwillworkinthesame
+wayasLinkExchangeorHyperbannerdoes.
+
+ThisserviceisprovidedbyAtari.org
+
+5.9CGIScripts
+Wewilloffervariousfreescriptsforuseonatari.orgaffiliateweb
+sites.Scriptssuchasaform-mailscriptorbulletinboard(like
+FujiBBS)willbeavailablefreeofchargeandunliketheonesavailable
+onthe'nettoday-they*won't*carrymassesofbanneradvertising!
+WewillalsoofferafreehitcounterthatusestheoriginalGEMfont
+(asseenonLGD).Otherscriptideasarewelcome.
+
+ThisserviceisprovidedbyAtari.org
+
+5.10SubmissionScript
+Wewillofferasectiononatari.orgthatallowspeopletosubmittheir
+newwebsitestosomeofthelargersearchenginesaround.Itwillalso
+offeradviceandtipsongettingtheirsitesproperlyrankedand
+indexed.
+
+5.11EventsCalendar
+Muchlikewehaverunning(butun-used)onLGDwewilladdanevents
+calendar.Peoplewillbeabletoaddtheirowneventstoitanditwill
+beabletolinktootherwebsitesforfurtherinformation.Itwill
+listALLAtarirelatedeventsfromtheshowinLasVegastotheDemo
+parties,etc.
+
+5.12ClassifiedAdverts
+Wewilloperateaclassifiedadvertssectionforthosewishingto
+buy/sell/exchangeAtarihardware,softwareandgeneralmemorabilia.It
+willbebrokendownintocategoryandtheywillhavetospecifytheir
+countryandiftheyarewillingtoshipoverseas.Contactwillbemade
+betweenthetwointerestedparties,notviaatari.org.
+
+6.0TermsandConditions
+Therearenotmanyofthese,buttheoneswehavewewanttoenforce.
+ThesiteMUSTbeAtarirelated.Nomatterhowvagueithastobe
+relatedtoAtari'sandwemeanmorethanasimple"Iusedtoownan
+ST".WhentheAtari.orgbutton(usual85x60oddpixelsize)hasbeen
+designed,anysitewithanatari.orgsubdomainmustdisplayitontheir
+pagesomewhere.Thisbuttonmustlinkbacktothemainatari.orgweb
+site.
+
+Theatari.orgadministratorsdecisionisfinalregardingtheuseofan
+atari.orgsub-domain.Ifwefeelthatthecontentofthesitedoes
+nothingtoenhancetheatari.orgdomainwewillremoveit.Wewillnot
+tolerate"hacks"or"cracks"sitesthatcarrypiracytoolsfor
+_current_AtariorPCsoftware(oranyothercomputerforthatmatter).
+Alsoifwefindthatanyoftheatari.orgservicesinwhatevercapacity
+arebeingmis-used,wewillrevokethem.Thisdecisionisnotopento
+debate,ourchoiceinthematterisfinal.Usersshouldbemadeaware
+thatourservicesareapriviledge,notaright,andalthoughwewill
+dothebesttohelpshouldanythinggowrongwewillnottolerate
+complaintsorabuse.
+
+7.0RequiredAssistance
+Aswellaspeoplelookingaftertheirownpartofatari.org(content
+providers)wealsoneedvolunteersforthefollowingtasks:
+
+Domainnameadministrator
+Thispersonwillreceivetherequestsforsub-domainsfromtheweb
+site.Theywillthenvisitthesiteandcheckthatithascontent
+relevanttotherequestedsub-domain.Iftheyfeelit'ssuitable,they
+thenfilloutaformontheAdminpartofatari.orgwhichwillcreate
+thesub-domainautomatically.Iftheydon'tfeelthesub-domainis
+suitable,theywillemailthepersonrequestingitandtellthemwhyor
+throwitopenfordebateontheadminmailinglist.
+
+Supportstaff
+Soundsironicdoesn'tit?!Butyeswe'llneedsupportstaff.Tosupport
+thedomainnames,CGIscripts,bannerscript,etc.Anyquestion
+relatingtoatari.org.Atpresenttheideaistohaveamailinglist
+thatonlythesupportstaffaresubscribedto,someonesendsaquestion
+andthewholelistgetsit.Thensomeonecanreply(withthereply
+copiedtothelistsowecancollectthemtobuildupaFAQFileand
+seewhat'sansweredandwhatisoutstanding).Ifsomeonehasabetter
+wayofdoingthis,pleasesayso.
+
+BulletinEditor
+Whenatari.orgisinfullflowwewanttoproduceaweeklybulletin,
+sentviaemail,thatwilllisteverythingthathaseitherbeenaddedto
+thesiteornewsandinformationfromtheAtariworld.Mostofthis
+willbeautomated,butweneedaneditorresponsibleforbringingit
+alltogetherandsendingitouttothesubscriberson-time.
+
+Translationstaff
+Wewanttoofferthemainatari.orgsiteinseveraldifferent
+languages.Theindexpage,thesupportpages,etcshouldbeofferedin
+atleastEnglish,German,French,Swedish,ItalianandSpanish.If
+someonecanhelpoutwithtranslatingthetextonceit'sfinished,that
+wouldbeideal.
+
+8.0Releaseschedule
+Thefollowingservicesarealreadyoperational:
+
+Sub-domains
+Emailforwarding
+POP3emailboxes
+MailingLists
+Websitehosting(freeonly)
+
+Stillindevelopment
+
+Theatari.orgwebsite,thefirstdraftsfromPericalookstunning.
+Expectthissitetoreallyrockpeoplesboats.Amanda.Theweb
+interfacetotheaboveservices-i.e.automatingtherequestingof
+them.Thegraphicsforthebuttonsandbannerexchange.TheCGIscript
+forsettingupbulletinboardsandalsoforhitcounters.
+
+Atpresentalothingesoncompletingthelookandfeelofthewebsite
+andalsoincodingAmanda.
+
+

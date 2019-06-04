@@ -1,0 +1,170 @@
+
+**********************************************************************
+
+                       MAGGIE PROGRAMMING FORUM
+
+                    WITH MR. PINK / RESERVOIR GODS
+
+**********************************************************************
+
+
+Greetings devpac  deviants  and  welcome  to  another  installment  of
+"Maggie Programmer Forum"  essential  reading  for  all  atari coders.
+"It's good to talk" advises Bob Hoskins, so lets "talk"!
+
+Our first letter  is  from  regular  Maggie  correspondant Ed "Scally"
+Cleveland, who believes he has uncovered  the magical voodoo that lies
+behind Atari's extended joystick ports.
+
+"The secret", Ed informs us "is in the use of bytes not words".
+Instead of all accessing to the  hardware  addresses being as word, Ed
+has instead read and written bytes where appropriate.
+
+This gets rid of the  problem  which  caused  some key combinations to
+cancel each other out.
+
+Here is the new routine.
+Original code by Mr. Pink, fix by Ed Cleveland.
+
+
+read_powerpad_a:
+        lea     $ffff9200.w,a0  ;extended port address (read only)
+        lea     2(a0),a1        ;extended port address (read/write)
+        moveq   #0,d2           ;clear  d2  -  it   will  contain  key
+information
+
+        move.w  #$fffe,(a1)     ;write mask
+        move.b  (a1),d0         ;read directional data BYTE
+        move.w  (a0),d3         ;read fire_a/pause data
+        not.w   d0              ;invert bits (0->1)
+        move.w  d0,d1           ;save directional data
+        lsr.w   d3              ;check bit 0 (pause data)
+        bcs.s   no_pause_a      ;if set, pause is not pressed
+        bset    #13,d2          ;pause is pressed so set pause bit
+no_pause_a:
+        lsr.w   d3              ;check bit 1 (fire a data)
+        bcs.s   no_firea_a      ;if set, fire is not pressed
+        bset    #7,d1           ;fire_a is pressed, so set fire_a bit
+no_firea_a:
+        move.w  #$fffd,(a1)     ;write mask
+        move.b  (a1),d0         ;read key data
+        move.w  (a0),d3         ;read fire data
+        not.w   d0              ;invert bits (0->1)
+        btst    #1,d3           ;check fire_b
+        bne.s   no_fireb_a      ;if set, fire_b is not pressed
+        bset    #6,d1           ;fire_b is pressed, set relevant bit
+no_fireb_a:
+        and.w   #%1111,d0       ;mask off unwanted data
+        or.w    d0,d2           ;store in key word
+
+        move.w  #$fffb,(a1)     ;write mask
+        move.b  (a1),d0         ;read key data
+        move.w  (a0),d3         ;read fire data
+        not.w   d0              ;invert bits (0->1)
+        btst    #1,d3           ;check for fire_c
+        bne.s   no_firec_a      ;if set, fire_c is not pressed
+        bset    #5,d1           ;fire_c is pressed, set relevant bit
+no_firec_a:
+        lsl.w   #4,d0           ;shift key data into bits 4-7
+        and.w   #%11110000,d0   ;mask off unwanted data
+        or.w    d0,d2           ;store in key word
+
+        move.w  #$fff7,(a1)     ;write mask
+        move.b  (a1),d0         ;read key data
+        move.w  (a0),d3         ;read fire data
+        not.w   d0              ;invert bits (0->1)
+        btst    #1,d3           ;check for option
+        bne.s   no_option_a     ;if set, option is not pressed
+        bset    #12,d2          ;set option bit
+no_option_a:
+        lsl.w   #8,d0
+        and.w   #%111100000000,d0       ;mask off unwanted bits
+        or.w    d0,d2           ;store key data
+        move.b  d1,jp1_dir      ;save   directional+fire    data    in
+variable
+        move.w  d2,jp1_key      ;save key data in variable
+        rts
+
+
+
+read_powerpad_b:
+        lea     $ffff9200.w,a0  ;extended port address (read only)
+        lea     2(a0),a1        ;extended port address (read/write)
+        moveq   #0,d2           ;clear  d2  -  it   will  contain  key
+information
+        move.w  #$ffef,(a1)     ;write mask
+        move.b  (a1),d0         ;read directional data BYTE
+        move.w  (a0),d3         ;read fire_a/pause data
+        not.w   d0              ;invert bits (0->1)
+        move.w  d0,d1           ;save directional data
+        lsr.w   #4,d1           ;shift into low bits (0-3)
+        and.w   #%1111,d1       ;mask off unwanted data
+        btst    #2,d3           ;check bit 2 (pause data)
+        bne.s   no_pause_b      ;if set, pause is not pressed
+        bset    #13,d2          ;pause is pressed so set pause bit
+no_pause_b:
+        btst    #3,d3           ;check bit 3 (fire a data)
+        bne.s   no_firea_b      ;if set, fire is not pressed
+        bset    #7,d1           ;fire_a is pressed, so set fire_a bit
+no_firea_b:
+        move.w  #$ffdf,(a1)     ;write mask
+        move.b  (a1),d0         ;read key data
+        move.w  (a0),d3         ;read fire data
+        not.w   d0              ;invert bits (0->1)
+        btst    #3,d3           ;check fire_b
+        bne.s   no_fireb_b      ;if set, fire_b is not pressed
+        bset    #6,d1           ;fire_b is pressed, set relevant bit
+no_fireb_b:
+        lsr.w   #4,d0           ;shift key data into bits 0-3
+        and.w   #%1111,d0       ;mask off unwanted data
+        or.w    d0,d2           ;store in key word
+
+        move.w  #$ffbf,(a1)     ;write mask
+        move.b  (a1),d0         ;read key data
+        move.w  (a0),d3         ;read fire data
+        not.w   d0              ;invert bits (0->1)
+        btst    #3,d3           ;check for fire_c
+        bne.s   no_firec_b      ;if set, fire_c is not pressed
+        bset    #5,d1           ;fire_c is pressed, set relevant bit
+no_firec_b:
+        and.w   #%11110000,d0   ;mask off unwanted data
+        or.w    d0,d2           ;store in key word
+
+        move.w  #$ff7f,(a1)     ;write mask
+        move.b  (a1),d0         ;read key data
+        move.w  (a0),d3         ;read fire data
+        not.w   d0              ;invert bits (0->1)
+        btst    #3,d3           ;check for option
+        bne.s   no_option_b     ;if set, option is not pressed
+        bset    #12,d2          ;set option bit
+no_option_b:
+        lsl.w   #4,d0           ;shift key data into bits 8-11
+        and.w   #%111100000000,d0       ;mask off unwanted bits
+        or.w    d0,d2           ;store key data
+        move.b  d1,jp2_dir      ;save   directional+fire    data    in
+variable
+        move.w  d2,jp2_key      ;save key data in variable
+        rts
+
+
+
+jp1_dir:        ds.b    1
+jp2_dir:        ds.b    1
+jp1_key:        ds.w    1
+jp2_key:        ds.w    1
+
+
+
+This code should also be featured in the goodies folder on the disk.
+
+
+In the next issue of "Maggie Programming  Forum" we will show you have
+to read the new Team-Tap 4-player powerpad extenders!
+
+
+If you have a programming problem, if  no-one else can help you, maybe
+you can hire "The MPF Team" (sound  of machine gun fire and screeching
+of car tyres).
+
+-> Leon O'Reilly. Cwm Isaf. Abermule. Welshpool. Powys. SY15 6JL. UK
+

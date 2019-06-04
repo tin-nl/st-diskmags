@@ -1,0 +1,36 @@
+PRINTING FALCON
+~ORGANIC.FIL~
+
+Yep we're back again on the Falcon in GFA Basic. If you are using GFA 
+basic version 3.6 TT you won't have that much trouble. But even this 
+version isn't without problems. Ever tried to send something to your 
+printer with LPRINT or LLIST ???. If you don't, well I can tell you 
+one thing, IT DOESN'T WORK. 
+
+So now you know, but what can you/we do about it ??? Do not fear, help 
+is near as always. We made you a small listing you can use in your own 
+programmes if you are using the printer.
+
+'
+nprint("Here stands your text you want to print"+CHR$(13)+CHR$(10))
+'
+PROCEDURE nprint(s$)   
+  LOCAL t%
+  FOR t%=1 TO LEN(s$)
+    OUT 0,ASC(MID$(s$,t%,1))
+  NEXT t%
+RETURN
+'
+Easy enough I would say, but here is still some comment. The procedure
+nprint(s$) prints the string you send with it as a parameter. S$ could
+be anything you want it to be, but why the CHR$(13) and CHR$(10) ???
+Simple the CHR$(13) is a return at the end of the line and CHR$(10) is 
+a line feed for the printer. 
+
+This small but helpful routine is now also build in the Magazine in 
+the PRINTER OPTIONS. In number 9 it didn't work but we discovered that 
+after the release...
+
+Bonus Software
+~BLEU.PAL~
+

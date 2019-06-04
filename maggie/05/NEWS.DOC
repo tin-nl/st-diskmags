@@ -1,0 +1,120 @@
+
+                   ----------------
+                   -GERENERAL NEWS-
+                   ----------------
+                              by Michael Schuessler and others
+
+     This  section will deals with news from software  companies, 
+demo crews and whatever else is going on in the scene. 
+
+
+THE SCENCE AND ITS PACKERS:
+---------------------------
+And now......
+
+A new packer will be developed soon, it will be based around one of
+AXE's latest packers (ICE or FIRE), but will be GEM based as is 
+the latest version of Automation packer 2.51
+
+The main advantage of putting the packer into this shell, is that
+it then gives you the option to chunk or lump pack programs.
+
+An explanation of chunk and lump packing is required here (especially
+for magazine reviewers... yes you michael). Chunk packing is only of
+use if you have a program which reads in data files (especially random
+access ones). If you have a data file of say 100k length, and the
+program only wants to read the first 5k of this file, a normal pack
+routine would have to load in all 100k, then depack all 100k just to
+get the 5k that it wanted. With the chunk packer, you can load your
+data in as low as 4k chunks, so that to get 5k back, you would only 
+need to load and depack 8k instead of 100k. It is unlikely in the first
+case that your program would have allowed you a file buffer of 100k
+in which to load files, whereas with chunk you only need a 4k buffer.
+
+Lump packing is basically the same as chunk packing, but instead of
+leaving say 100 files on the disk, which could be very small, and
+wasting disk space due to unused cluster sectors. You can join all
+of the files on the disk together, then pack it as a chunk file.
+When you load back from this lump file, the program will ask for a
+certain file, the lump loader will look in the lump file, pick out
+which chunk to load (the one containing the file) and depack it.
+Using this method can save you a lot of disk space. If the disk has
+many small files, then you can get greater pack results because
+instead of packing one small file at a time, you can pack 20 or
+30 small files at the same time, and get the benefits of size reduction
+if some of the files have similar patterns. It also uses much less
+directory space, and has no cluster wastage (A file which is 50 bytes
+in length wastes 984 bytes of disk space).
+
+Another development is that of our hacking cartridge (or should I
+say debugging tool). At the moment you can break into any program
+(sorry andy!!), and either step through code, or save out any
+data in memory to dos files (without re-initialising the tos..
+ha ha ultimate ripper). It is also undetactable and thanks to
+atari (who put the cartridge check in front of the reset vector)
+impossible to stop. Pick any well know difficult to hack demo,
+European demos, cuddly demos... click... hello... nice music..
+nice code... 
+
+whats next... filled 3D I guess... see ya later. EGB.
+
+
+SOFTWARE COMPANY NEWS
+---------------------
+
+     GFA Data Media are releasing a few new programs in the  near 
+future  like  :  GFA  Draft  plus  3.13  (translated  by  Michael 
+Schuessler  into English),  GFA G Shell,  GFA Assembler  (the  UK 
+version),  Digigram Track 24 v1, Digigram Bigband v and GFA Basic 
+Windows  3.  GFA  are also releasing a new version of  GFA  Basic 
+which uses the TT to its full extend. 
+
+     Electronic  Arts are more and more specialising in  products 
+on the Sega Mega Drive. They have now converted 2 games which are 
+PGA  Tour Golf and James Pond.  According to their leaflet it  is 
+going  rather well for them at the present and they have made  an 
+increase in profit.
+
+
+NEW DEMO RELEASES
+-----------------
+
+     The OVERLANDERS are working on a new demo which is called LA 
+VENTURE DEMO and it will probably come on two discs.  The screens 
+on  the demo will be by people like NAOS,  ST CNX,  TOTAL  VISION 
+INC. and many many more. 
+
+     The  Pendragons have also been working on the  demo  section 
+lately,  they are probably the first famous demo crew to  present 
+an  STE ONLY demo.  This demo will have guest screens  by  groups 
+like the Overlanders.
+
+MPH AND THE RIPPER
+------------------
+     You  might  be  able to remember that  I  was  praising  the 
+Ultimate Ripper by the Replicants in the last issue of Maggie.  I 
+am still saying that it is rather a good product for the price of 
+œ25  BUT the distributors have changed.  MPH were supposed to  do 
+the selling here in the UK and in a few other countries but  then 
+something  changed.  Apparently  the software  for  the  Ultimate 
+Ripper  was  written by the Medway Boys and then  stolen  by  the 
+Replicants  and anyway to cut a long story  short,  everybody  is 
+suing  everybody to have the rights to sell  this  product.   MPH 
+PULLED OUT STRAIGHT AWAY OUT and left the fight to the others. By 
+the  looks of it Power Computing are selling it now and they  are 
+not  doing a good job at it.  When we spoke to them at  the  last 
+show and mentioned a few problems we had when using their product 
+they  told us to get lost because their customers would  not  buy 
+their  product.  In  a few other respects they  were  also  quite 
+unfriendly.
+
+
+     
+     This  is  it now for all the latest news,  I hope  that  you 
+found  them intersting.  In case you know of any computer  gossip 
+like AN Cool and his sheep please let us know !!!
+
+                    Michael Schuessler
+
+ 
+

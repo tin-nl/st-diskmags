@@ -1,0 +1,172 @@
+ 
+
+8000800001\WEBWIZ.IMG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                (v3.10)
+
+                          by Cadenza Software
+
+I  picked up this one at the recent Stafford Atari Show,  as I  thought 
+that  'doing'  HTML and web pages might come in useful at  some  point, 
+when I start to get ideas for a web site. 
+
+Well, one day....
+
+Until  that happens though,  a little play-around with what is on offer 
+might come in useful, so that is what I did.
+
+Matthew Bacon,  the main programmer behind Web Wizard,  set out to make 
+construction  of web pages as easy as possible to the uninitiated,  the 
+person  who  has no prior experience of HTML at all.  In  its  simplest 
+form,  Web  Wizard  sets  out  to automate,  as much as  possible,  the 
+ production of reasonable quality web pages.
+
+The package comes on three disks,  which can be copied onto hard drive, 
+or  backed  up onto other floppies,  if you are still running a  floppy 
+only system. System requirements aren't over-demanding. Even a half-meg 
+machine  can  be  used.  The  only  provisio is a  640  x  400  minimum 
+resolution display. Of course, the more kit you've got, the better this 
+package is to use. 
+
+There  is  quite a lot of material for the three disks,  including  the 
+main   page   constructor   program,   frame  and   table   constructor 
+applications, assorted tools, a good many examples, and a comprehensive 
+tutorial  for when you are ready to learn what those funny little  tags 
+and things that make up HTML actually mean. For a show special price of 
+10 ukp, this is already looking like good value for money.
+
+No printed manual though,  but there are ascii, and hypertext documents 
+for  the  instructions,  the  latter including  full  colour  graphical 
+examples.  These  are generally helpful,  except where the operation of 
+the program seems to depart a little bit from the instructions?
+
+So,  we take the plunge and start to build a web page.  To do this,  we 
+access  the  page builder proggie,  otherwise known as the 'wizard',  a 
+carry-over from PeeCee jargon.
+
+The  whole  process is taken step-by-step,  starting with the level  of 
+expertise.  'Expert'  allows  you  pretty  much  total  access  to  the 
+different  parts  of the program,  where 'novice' denies you access  to 
+things  like defining an image file to go into the document.  You  will 
+tend to discard the 'novice' setting very quickly.
+
+Titles  are  a very serious business,  where you have to call your  web 
+page something, and decide how big that 'something' is going to be, and 
+how  it  is to be displayed.  There is an option to play an audio  MIDI 
+file, if you want to.
+
+Colours  are next,  select the right combination of text and background 
+ colours. Swamp green on puke yellow, not good. Alternatively, dig out a 
+handy background image to load in and tile over.
+
+Headings and sub-headings,  make an impact,  shout to the world who you 
+are, what you stand for!
+
+The body text page is next,  this is a biggie, this needs a pre-written 
+ascii text file, you have done one of those, haven't you?
+
+Oh well, come back in a bit.....
+
+Hello  again,  load in your pre-prepared text file,  choose from one or 
+two columns,  left, right or centre justification, to retain the layout 
+of  the text,  force carriage return or paragraph on empty line.  Well, 
+ nearly  keep the layout of the text intact,  but we'll come back to that 
+in a bit.
+
+Another good bit next,  include an image within your page.  This can be 
+anything JPG GIF,  or PNG (the last one only supported by CAB 2.8).  It 
+can also be any size,  and allows you to set up an alternative textfile 
+for  those  people  who run around with graphics  'off',  and  even  to 
+specify a link from the image.
+
+It is a little bit restrictive,  as it only allows the one image within 
+the body of the page,  and that is always near the top of the document. 
+To get multiple images on a page, you are going to have to get down and 
+dirty  with  real HTML commands in a plain text editor.  To  a  certain 
+extent, this applies to the package as a whole.
+
+There is provision to put in links. These are displayed near the bottom 
+of your Web Wizard created page,  and finally, there is the facility to 
+put in name/email address, and date last updated/created.
+
+There are also Table Wizard and Frame Wizard programs included with the 
+package, and I openly admit to not having got as far as those as yet. A 
+cursory examination suggests that it offers similar ease of use to  the 
+main program.
+ 
+The  other  major  component of Web Wizard,  is the  HTML  tutorial,  a 
+complete A-Z,  both in hypertext format,  and with handy HTML examples. 
+With  the rather pre-determined method of building pages in Web  Wizard 
+itself,  it  is  clear  that  every encouragement  is  being  given  to 
+encourage   the  user  to  experiment  further,   and  outside  of  the 
+limitations of the program.
+
+The  package  is well presented as a whole,  with one or two quirks  in 
+operation, at least on my system? Web Wizard generates a 'wizard' file, 
+or project file to go with your specimen HTML page, at least whilst you 
+are constructing or updating it.  A handy feature, but one which seemed 
+to  be  unwilling to load in,  unless I dragged and dropped the  wizard 
+file  onto  the main proggy file.  Not a standard way of getting it  to 
+work, I'm sure?
+
+I  would find it a bit rigid in certain areas.  I've already  mentioned 
+the 'one page, one image' rule a bit earlier. I also found it less than 
+helpful when throwing textfiles at it.  You are unable, as far as I can 
+tell,  to  keep  textfiles  exactly  as your  text  editor  left  them, 
+especially if you like neat left  and  right hand justification.  You can 
+get  good results from using the program,  but to really customise your 
+web page to its utmost, you are staring at the HTML A - Z again.
+
+The  good news is that this program is still being actively  developed, 
+and new versions, including a WYSIWYG 'on the fly' HTML page generator, 
+are in the works. At the moment, under single TOS, you have to exit the 
+main program,  load up a web browser,  to check the end result. It is a 
+bit  easier  with a multi-tasking O/S.  It would also be nice to get  a 
+little bit more flexibility in certain areas, and an option to leave an 
+ASCII text in the layout it came in,  is a number one priority.  (Or at 
+least,  to  be  able  to totally ignore the justification  option  from 
+within the program?)
+
+Web  Wizard  is a good 'starter pack' for generating  web  pages,  some 
+competent results can be obtained from it,  but you are soon looking at 
+manual  HTML  editing  to go further  than  the  strictly  standardised 
+ layouts. This is where the tutorial material comes in useful though!
+ 
+ Advantages..
+Easy to understand interface.
+Can get worthwhile results quickly, if you accept format limitations.
+Masses of supplementary material, tutorials etc.
+Includes frame and table making programs.
+Actively being developed.
+Good value for money.
+The author (Matthew Bacon) is a genuinely nice bloke!
+(Errm, does this last one count? - Ed) 
+
+ Disadvantages..
+Quirky operation in one or two places.
+Textfile handling a case of over-nannying?
+One page, one image.
+And one set of links.
+All in the same place each time.
+Soon have to manually HTML edit to break out of limitations above.
+
+
+   CiH Dec '00 - (Wow! A millenium typo bug!)
+

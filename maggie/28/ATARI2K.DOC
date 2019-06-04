@@ -1,0 +1,262 @@
+====================================================================== 
+feature
+
+                      Atari In The New Millennium
+
+                                                               pink/rg 
+======================================================================
+
+It's a new year. It's  a  new  millennium.  A time for new beginnings, 
+fresh starts, resolutions, fireworks. But  what  is the future for the 
+atari scene in the new century.
+
+On the face of it, things look bleak. 1999 was not a good year for our 
+beloved atari. Some famous figures quit  the scene. There were no real 
+ground  breaking  demos  on  the  Falcon.  Those  perpetually  delayed 
+projects continued to be delayed.
+
+But 99 wasn't without its highlights.  There was a re-emergence of the 
+ST scene, with some brilliant demos  being released. The EIL party was 
+an absolute triumph ( thanks again to all the organisers ).
+
+But productivity  was  at  an  all  time  low.  RG  produced virtually 
+nothing. Even the ever reliable DHS weren't running at full steam, and 
+their release were not of  the  same  quality as their ground breaking 
+1998 productions.
+
+Although people were quiet, they were still hanging in there. They may 
+not have so much free time, they may  appear  on IRC less - but in the 
+background projects are being  worked  on.  I  expect to be pleasantly 
+surprised by some releases in the forthcoming year.   (Such as something  
+ from RG themselves perhaps?! - Wondering what the hell is going on Ed) 
+
+One of the problems is that whilst  other technology has marched on at 
+an alarming rate, the atari scene has virtually stood still. In 1988 I 
+was running an 8mhz system, who would  have thought that come the year 
+2000 I would only be running a  16mhz  system. I still have no PC, and 
+ have no intention of  buying  one.  But  I  would  dearly  love a more 
+powerful atari system.
+
+Centek have toyed with  our  emotions  by  promising  us the world and 
+snatching it all away at the last minute. There have been powerful but 
+expensive computers like the Hades that have only limited appeal.
+
+For those wanting a new atari system for the new millennium, there are 
+currently three choices:
+
+PHENIX 260
+
+The phoenix is a  legendary  bird,  and  this company's computers seem 
+more and more  like  fables.  They  are  difficult  to  contact, their 
+website is rarely updated and they don't seem to be very professional. 
+
+Having said that, they have an absolutely superb design for a computer 
+and if they were ever to get round to manufacturing it, you would be a 
+fool to miss out. 
+
+The original phenix design seems  to  be  dead and buried. When Centek 
+merged with Class4, it seems that  the laser company nicked the Dolmen 
+programmers and the o/s  couldn't  possibly  be finished. The hardware 
+was finished,  but  without  an  operating  system  it  was  virtually 
+useless. 
+
+The idea behind the Phenix 260  is  to  take an established o/s (MINT) 
+and configure it for new hardware.
+
+SPECS
+
+CPU   :      68060 @ 83 MHz ( 125 mips )
+        or 2x68060 @ 83 MHz ( 250 mips )
+
+BUS   : 32 bits @ 83mhz ( 256MB/sec )
+
+SLOTS : AGP 3.3V
+         PCI 3.3V/5V 32bit @ 33mhz ( 132 MB/sec )
+
+RAM   : SDRAM  @ 83MHz ( 166 MB/sec )
+        ESDRAM @ 83MHz ( 221 MB/sec )
+
+The machine comes with the following hardware:
+
+* Internal ZIP drive ( 100 MB ) 
+* 32 MB of SDRAM 
+* AGP Rage Pro 3D Card 
+* 6.4 GB Ultra DMA Hard Drive 
+* CD-ROM drive 
+* PS/2 Mouse & Keyboard 
+* ATX Mini Tower
+
+Price:  with 1x68060  913 Euros
+        with 2x68060 1142 Euros
+
+PLUS
+
+This machine is hugely capable.  Sure,  it  lacks  a DSP, but when you 
+have two 060s one of them can perform all the tasks a DSP could and is 
+a lot easier to program! It would  also have access to the entirety of 
+main RAM, negating the bottleneck problems of DSP memory transfers.
+
+The 68060 is a brilliant processor,  and  its performance ( 125 MIPS ) 
+is astonishing when you consider the Falcon's 030 runs at 3.84 MIPS!
+
+The bus is a full 32 bits and the data transfer rate is fast.
+
+MINUS
+
+There appears to  be  no  soundchip?  I  suppose  you  could  fit a PC 
+soundcard to it, but it would be better if one came as standard.
+
+The biggest drawback is that it  comes from Centek. We've been waiting 
+four years for a  computer  from  them,  and  now  the  signs are less 
+ promising  than  ever.  This  computer  is  highly  unlikely  to  ever 
+materialise, which is a shame because it's great.
+
+
+MILAN 060
+
+When Milan Computers introduced  their  Milan040,  it  was  met with a 
+muted response from the atari scene.  Sure,  an  040 is nice - but not 
+nice enough. We need a  bigger  leap  in  performance to tempt us away 
+from our Falcons.
+
+The other problem with the Milan040  is that it was very dad-oriented. 
+Whilst Centek promised us cool features like  dual CPUs and a DSP, the 
+Milan was just a bog standard atari clone  in a box. There was not too 
+much for demo &  games  coders  to  get  excited  about.  But with the 
+Milan060, they seem to have rectified the situation.
+
+SPECS
+
+CPU      :   68060 @ 66 MHz
+           ( 68060 @ 80 MHz under development )
+
+RAM      : 64 MB of SDRAM @ 66/80 Mhz
+
+HD       : 10 GB Hard Drive
+
+SOUND    : SoundBlaster SB64 ( PCI )
+
+GRAPHICS :  ATI Mach 64 - 4 MB VideoRam
+          ( expandable to 10 MB )
+
+FLOPPY   : 1.44 MB
+
+CD-ROM   : 40xSpeed CD-ROM drive
+
+SLOTS    : 2 x IDE
+           3 x serial
+            1 x parallel
+           2 x USB
+           3 x ISA
+           4 x PCI
+
+O/S      : MagiC & jinnee
+
+SUMMARY
+
+This is an extremely well  specced  atari  box. Unlike the Phenix, its 
+not trying to do anything clever  -  the  emphasis here is on solidity 
+rather than experimentation.  Unlike  the  phenix,  this computer will 
+probably actually get released.
+
+Again, this uses a 68060. If it uses  the current speed of 66 MHz that 
+would be more than respectable, but  it  would  be great if they could 
+get the 80 MHz versions working.
+
+64MB of RAM should be enough for most Atari applications (!), and with 
+10 GB hard drive you could probably  store all the atari software ever 
+made!
+
+There are a good amount of  slots  for  adding extra peripherals - the 
+USB slot is a smart addition.
+
+Whilst 4 MB of video  ram  may  seem  small  in today's world, that is 
+still equivalent to the entirety  of  standard Falcon memory! Even the 
+PlayStation2 has only 4 MB of video ram!
+
+The main plus is that Milan are  a computer that get things done. They 
+may not be underground, cool, scene or be anything more than glorified 
+box shifters. But they  do  deliver  the  goods,  and  at a reasonable 
+price.
+
+The Milan060 has the capability to  be  a  great computer for the demo 
+and games scene. It has a fast  CPU,  lots  of RAM and a nice graphics 
+chip. It has everything going for it.
+ 
+
+SILICON FRUIT RIORED
+
+What in the Wide World  of  Sport  is Silicon Fruit's RioRed? Although 
+this name may be unfamiliar to  most  readers, it has the potential to 
+be the biggest of the three.
+
+Silicon Fruit are  a  internet  based  company  -  there employees are 
+scattered across the world. Their aim is to provide a computer that is 
+a genuine alternative to the PCs and  MACs  of this world. So what has 
+that got to do with the atari scene?
+
+The fact is that the  people  who  are  designing the hardware for the 
+RioRed are none other than Centek.  The architecture is similar to the 
+Phenix, and there is a chance  that  MiNT  may be one of the operating 
+systems that ships with it.
+
+For now, let's just drool over the specs:
+
+CPU : 2 x G4 @ 450 MHz ( 1500 MIPS )
+
+DSP : Texas Instruments DSP
+
+RAM : 64 MB
+
+SLOTS : 4 x PCI @ 33 MHz ( 32 bit )
+        2 x PCI @ 66 MHz ( 64 bit )
+        1 x AGP ( 3.3V )
+        1 x PCI IDE
+        1 x PCI USB
+
+The PowerPC G4 is an awesome processor, and to have two of them in one 
+machine AND a DSP is unheard  of.  Both  G4s  have a 2 MB Level2 cache 
+attached to them with a massive 1.8 GB/sec bandwidth.
+
+The performance of this machine is  better  than any PC on the market. 
+ It would even give the DreamCast  and  PSX2  a run for its money. It's 
+truly awesome. So what's the catch?
+
+The first problem is that its  not  specifically an atari machine, and 
+is likely to ship with linux. Silicon  Fruit  are going for as large a 
+market share as possible so they  want  to appeal to Amiga freaks, Mac 
+users and disgruntled windoze sufferers.  MiNT  is still a possibility 
+at some point though.
+
+The main problem is that Centek  are  designing the hardware, and they 
+are company whose name has  become  synonymous with the words "vapour" 
+and "ware".
+
+If the RioRed ever  appears  then  this  will  be  a seriously awesome 
+machine. Lets hope Silicon Fruit don't slip on a banana skin.
+
+OVERALL
+
+Three contenders. Three players. Only one victor. Who is going to take 
+the mantle of 'atari machine for the next millennium'. 
+
+By just examining the stats it  has  to be the RioRed. Its performance 
+is staggering, and it will gain support  from a broad range of people. 
+But its not a true atari machine. The best 'atari-like' machine is the 
+Phenix - the machine that the  Falcon  should  have been. But its past 
+has been shaky and its future looks bleak.
+
+The surprise winner  of  'Maggie  Machine  for  the  Millenium' is the 
+Milan060. It's not as radical, or  as  exciting as the other machines. 
+Its not got the  cool  features  of  the  Phenix  or  the power of the 
+RioRed. It has no DSP. It hasn't  got the underground cool of Centek's 
+productions. 
+
+The Milan060 wins because it is  stable,  solid and actually likely to 
+get produced. It is the most  atari-oriented machine of the three, and 
+the 68060 is a nice processor.
+
+ So if you are looking to upgrade in the near future, get a Milan060. 
+Should the Phenix or RioRed  ever  turn  up, they are definitely worth 
+getting hold of, but why wait for Godot when the Milan-nium is here?
+

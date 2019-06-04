@@ -1,0 +1,133 @@
+CODING
+~ATARI.FIL~
+In this text I (O.T.M.) will try to explain to you a bit of what
+goes round in a coder's mind.
+
+First something on languages. When I started coding for about
+two or three years ago, and I began in a language called G.f.a. 
+It's a very powerfull language as you maybe know. And for someone 
+who doesn't know his computer it's a very good language.
+
+You can experiment a lot, and at most times G.f.a. only gives a
+complaint, and a few messages if you do something out of order, but
+it isn't very likely to crash. So at most times when a program
+doesn't work good, and it seems to have destroyed a bit of your 
+memorie, you could always return to the editor, and save your 
+program.
+
+But when you learn more, and more, and your using a lot of memorie, 
+it can result in a "Hanging" Computer. So eventually you will learn
+to save your program first, and then run it. (To see what damage
+it does.) 
+
+G.f.a. has an interperter, this means that if you have coded anything
+you can see it immediatly. So for the normal hous garden and kitchen
+use it is very powerfull. For instance: last year I attended a new
+school on which I study to become an elektrotechnical engineer.
+This means that for mathematics I had to draw some sinuses and 
+cosinuses. But as I had never done such a thing I wouldn't know
+how the basic-forms would go like. so this is what I did in the
+beginning: when the teacher gave us homework, I would take
+the formula's and fed those into G.f.a. See what it should 
+look like, take a few points, recalculate those on my calculater
+and then draw the figure.
+
+This all seems a bit innefficient, but it was the perfect way
+for me to learn this type of mathematics. According to the
+rest of the students in my class I understood the basics far more
+earlier then the rest. This all just by being busy with G.f.a. and
+try to explain why!!!
+
+When I understood the basics I wrote a little program which could
+draw sinuses, cosinuses and tangens when you give the formula to the
+computer. I intended it to be as a little extra help when I had a lot
+of homework so that I could give the formula's to the computer and
+then copy the drawings instead of thinking them out by myself.
+
+When I had finished the program I had been busy so much with these forms
+that I never needed it again. So when another person had a bit of a 
+problem with it, and asked if he could come over for a little help
+I used the program to explain it to him.
+
+So as you can see you can very easaly solve basic-problems with the
+G.f.a. Ah, well if it's that easy, we can write us a megademo and
+we'll be famous in no time. No!! It maybe very easy to use,but
+it is not perfect. If you would like to write a complex demo 
+the main problem would be in G.f.a. that you'll loose the cpu-time
+like hell. Even the most simple commands take quite a lot of
+processor-time.
+
+So if you would like to write a demo in G.f.a. you would have
+to look at it in a different point of view. You must think of 
+good running routines which don't take much processor-time.
+
+What about assembler, it's very fast isn't it. Yes, but it is
+also very complex. When I first wrote an assembler-program I
+used all the standard routine's from Atari, like the line-A
+routine's etc... But this all didn't give me any time-profits.
+
+I remember writing a smal program which played some chip-musix,
+and while the music was playing I'd use the xbios call 28 to
+read the volume and tone of the music. I had used  the standard
+Line-A routine from Atari, and that was all there was. 
+At first I couldn't get it going but with a little help from 
+K.G.E. who helped me debug it, I finally got it going. Only
+6 lines where shown and it already didn't run in the sync.
+This means that the computer couldn't run it in time that the
+screen was build. 
+
+So back to G.f.a. which could do it quite easy with it's own line
+routines. But I couldn't let the assembler go just by the fact
+that the first program I'd written could be done in assembler.
+
+And now when I look back to it I can do a lot more in Assembler.
+For instance I have written a program today that reads the
+volume and tone of the music, and displays it at the end of the
+screen, and then the program scrolls it over the whole screen.
+In other word's I scroll half of the screen, and I even have
+more than the half of the cpu-time left to do another thing.
+This program runs on every St/Ste/TT or Falcon (But that depends
+on the musix I run on it.)
+
+You cannot do such things in G.f.a. and let it be compatible with
+the whole St-range without letting it run out of the Sync.
+
+But there is another thing due which I like coding in assembler more
+than G.f.a. If you are busy with it it is very unlikely that it runs
+in the first time, so you are constantly busy with your program, and
+you are twisting your mind inside-out just to get it working 
+properly. You are constantly puzzling with routines to get it working
+just a little bit better, and constantly optimizing your routines.
+
+Sometimes when you have written a piece of code, and if you didn't
+commented well, and you are looking at it a week later, you are
+busy puzzling again. You often ask yourself afterward, how did I
+do that or how could anybody possibly think of such a thing. 
+
+Very often the solution of a problem is so nearby that you don't
+see it. When I'm coding in assembler I am more eager to get something
+running than I ever was in basic. If something doesn't work you
+run it step by step in the debugger, and can often see you
+have made the most silly mistakes, and than you have to start all
+over again with the next mistake.
+
+Sonic told me last time he was here, that I am now busy with getting
+deeper and deeper into the materie. I think he's right, and he doesn't
+have any knowledge of coding. But the more you know about the
+computer the powerfull the assembler is. 
+
+I now can see I really am making some progress in assembler-coding, and
+to me it just get's more fun. 
+
+But I have got to quit now, I have spend enough time behind my
+computer the last few days. (These days where mainly coding till
+3 o' clock in the morning, sleeping a bit, and than start coding
+again. But this was due to the fact that I had thought of a new 
+routine and I could make some very powerfull programs with it.
+(Poor Devpack))
+
+Yours, O.T.M. of the D.B.A.
+
+P.S. Happy codings in which language you use wat-so-ever.
+~GREY_RED.PAL~ 
+

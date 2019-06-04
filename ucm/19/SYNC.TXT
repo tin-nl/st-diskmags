@@ -1,0 +1,196 @@
+
+{*f1SYNC{*f0
+
+ó                            The true story (v1.0)
+ò                            *********************
+
+If this is the first time you hear of a demo group called "Sync", you should 
+stop reading right now and have a look at the following demos:
+
+Swedish New Year 1      (Original version doesn't boot on TOS >1.02, Hackbears 
+                        compilation works) 
+Whattaheck              (Umm, nope - we didn't send our screen in in time)
+SoWatt                  (our screen doesn't work on STe)
+Swedish New Year 2      (one of our screens doesn't work on STe)
+
+... we did release more than this, but not much. Anyway, back to the story :
+
+Once upon a time, in the eastern part of southern Sweden (in the city of 
+Ängelholm) MrMac and Pylon X makes a few bouncing raster-bars. This is back in 
+the ancient times of 1987 (same year as TEX release their 1st demoscreens) and 
+that is also the beginning of Sync. Joining these two Sync-founders right away 
+is a classmate of Pylon X, called Boozter. You'll see these three in the photo 
+in Swedish New Year 1 (first photo of crewmembers in a demo  on the Atari?). We 
+do however lack one person now, the fourth person in the photo, namely Redhead.
+
+For the ones who know a bit more about Sync, this is when everything takes off. 
+MrMac and Pylon X meets Redhead at a party "somewhere in Skåne, maybe Klippan. 
+(MrMac)" and he immediately joins up. So, looking at the photo in SNYD1 you have 
+(from left to right): MrMac, Boozter, Pylon X and Redhead SNYD1 is released in 
+01/01-89, that is 6 days before The Union Demo, and almost a year after B.I.G 
+Demo. Sync's screen contains what some would call the first tracker-replay on 
+the ST, but I haven't been able to verify that. After all, The Amiga Demo was 
+released much earlier. 
+
+We'll take a break from Sync here, and start talking about two other almost 
+completely unknown groups. Have a look in the Whattaheck demo again, but this 
+time look for a screen by AAC (Anti Amiga Crew) instead (that screen, btw, 
+earned the following remark from TFE/Omega: "That's not a demo!!"). The members 
+of AAC were Mega and Jee, and they also lived in Skone (Malm). At one party 
+(Örkelljunga, we believe) they met a group called PWC (ProWare Crew) - another 
+totally unknown group that consisted of two members called Red Fox and TALK. 
+These two groups discovered that their basic ST-coding knowledge was about the 
+same, and they both managed to get the secret behind "Sync-locking " (timing the 
+CPU to the videoraster) from - yes - Sync, at that party. Red Fox knew Redhead 
+beforehand, and had bugged him a lot on how to make demos in GFA Basic (yes PWC  
+actually did release a GFA Basic demo called "StarDemo". Formatted to 84 tracks  
+11 sectors, it wasn't widely copied ... only a few drives could write it). AAC 
+also released a GFA Basic demo, called "Hits of -88" together with their buddy 
+Jay of Jihad Systems. It had a small intro in assembler though.  
+
+As it happened, AAC and PWC joined together in a group called SMILE. At this 
+time, everyone coded some 68000 ASM with Devpac, and TALK changed name to 
+BlueSTar.  Red Fox also made a fullscreen now, which at the time was one of     
+the very first, at least in Sweden. Before  SMILE could release anything though, 
+Redhead phoned them up and offered them membership in Sync. This is, as far as 
+we  can make out, in the summer of -89. Cuddly Demos had just been released and  
+a big party was coming up in August.
+
+That party SoWatt was released - where Redhead officially announced PWC as being 
+members of Sync. AAC wasn't mentioned, probably because there were some problems 
+with the internal organisation. The "old" people in Sync wanted some more 
+coders, a graphician and  a musician. BlueSTar, while also a coder, was a good 
+graphics artist and was "allowed" in. Red Fox and Mega were coders, no problem 
+there. Jee (who now changed nick to 7an) couldn't decide what to do, and didn't  
+join Sync until later - when we all discovered that he indeed was the great 
+musician we wanted! In the meantime 7an joined up with a guy called Jim and did  
+some weird stuff. Anyone who's met a Sync member knows we're always doing weird  
+stuff :)
+
+We're now in the late summer of -89 and things are happening. Read the 
+scrolltext in SoWatt, and you will see talk about "the Synchron Demo". No, this  
+is not the little screen with disting graphics some demo collections have listed 
+as being the Synchron Demo (two such small screens were made by MrMc in late -88 
+beginning of -89) - the Synchron Demo was *huge*. Cuddly Demos is famous, but 
+even TCB themselves mention in their scroller that they expect it to soon be    
+"broken". They're talking about the Synchron Demo - the huge collection of 
+fantastic screens Redhead (mostly) had been working on for several months. 
+Quote from the SoWatt scroller: "THE SIZE OF THE DEMO AT THE TIME OF THIS 
+COPYPARTY WAS TWENTYONE SCREENS OF WHICH FIVE WERE FULLSCREENS THREE SCREENS 
+INCLUDED SAMPLING SYNTHESEIZERS OR DIGISOUND  THERE  IS ANOTHER SPREADPOINT 
+CONVERSION AND AN AMIGA DEMO CALLED SNURKEL AS FAR AS I KNOW MADE BY DEF AM AND  
+THE SILENTS ALSO AS FAR AS I KNOW" - Redhead.
+
+He also mentions that we've failed to release this demo for the third time when
+we said we would, and that we won't make a new committment. Sadly, it was never 
+released. Not a single screen. Other crews in Sweden had seen the work in 
+progress though, and that's why Sync got greetings like the one in TCBs 
+mainscroller in SoWatt - "the second [sic] best crew in Sweden - Sync".
+
+Talking about Swedish crews here, we must remember that Sync, TCB and Omega had
+a lot of contact with each other. A lot of demo-tricks were brainstormed by     
+these groups - most noticeably the incredible sync-scroller (at that time      
+referred to in Sweden as "hardware-scrolling") which was a co-operation venture
+between several persons (Nick/TCB, Redhead/Sync - sorry Omega, can't remember 
+if TFE or HAQ helped out here!)
+
+This co-operation of course lead to another New Year demo, namely (surprise!) 
+Swedish New Year 89-90 (SNYD2). This time, Omega had prepared themselves, and 
+both put the demo together, wrote a great mainmenu and 3 screens. TCB did a 
+rather lame (sorry An Cool!) screen, but considering they said in SoWatt that 
+they wouldn't do any more demos, that's ok. Sync showed off with two screens 
+that upped the standards in ST demo coding a bit - the Red Sector conversion 
+inspired crews like Equinox to years later try (and succeed) to beat that 
+effect. The screen had a great tracker-replay routine, something Sync began to
+get famous for in these days. The other Sync screen was the best scroller done 
+to date, a fullscreen syncscrolling *huge* scrolltext with a parallax scrolling
+background (which, btw, was drawn by a guy referred to as Nibbel by everyone in 
+Sync. He insisted on being called "Fresh of TLT of Automation" - but judging 
+from his size we think Nibbel was more appropriate!)
+
+SNYD2 is however also, sadly, the last the public got to see of Sync really. Of 
+course things didn't stop here. We were still coding like mad. Redhead was very
+busy what had once been a conversion of Noisetracker (we met Mahoney and Kaktus,
+M.K. in .mods you know?) at a party in Furulund and Redhead just _had_ to make 
+a good tracker for the ST. Called Soundtracker ST in the beginning, it changed 
+name to Audio Sculpture when he realised this was something that would be 
+commercially sold.
+
+Red Fox left the Atari scene completely somewhere between -90 and -92 to do 
+stupid teenage activities like getting drunk, laid and kicking people's heads  
+off. The rest of Sync went to the big ST News convention in Holland - where 
+Redhead and MrMac (who had now joined him in working on Audio Sculpture) met a 
+person called Zae. This is where the AS development kicked in at full speed and 
+Redhead and MrMac moved to France to do full time work on it. To make a long 
+story short - yes, Audio Sculpture was sold. Redhead/MrMac got some (but _very_ 
+little) money back from it, and then the reseller went broke. This was in 90/91
+and no, the version of Audio Sculpture you've seen (v2.4) isn't at all as 
+advanced as the internal versions we had in Sync - blame the reseller.
+
+Sync wasn't holding together very well at this time, everyone did their own 
+stuff. BlueSTar and MrMac began writing an STe game -halfway finished but never
+completed. Red Fox changed nick to Troed and cracked games for Elite (short 
+period) and I.C.S (longer period). Mega worked on a program called Light 
+Sculpture. No Sync stuff gets released - though Red Fox got an intro out which 
+contains a few fast routines, but in -92 stuff from -89 doesn't impress anyone. 
+MrMac fools around with Megadrive home-development. Redhead plays with an ATW800
+and makes a pre-emptive multitasking shell with full GU and scaleable fonts for 
+the ST .. in 31kb assembler. Then everyone suddenly has an urge to get educated ... 
+
+MrMac began studying at the University of Karlskrona/Ronneby, Computer Engineer. 
+Red Fox studied for a Machine Engineer. BlueSTar studied for a Computer 
+Engineer. Pylon X studied for a Software Engineer (also at the Univ of KNA/RBY) 
+- and Red Fox decided to have two educations and joined MrMac and Plon X in 
+Ronneby, also as a Software Engineer. 7an moved to USA (where he now, even 
+though being the youngest member of Sync, is a happy father). Mega studied for  
+Computer Engineer. Redhead studied on and off, but being the true hacker-coder 
+he is he later joined up with some Omega, Electra and TCB members at a game 
+company called GameDesign Sweden instead.
+
+òThe saga ends ?
+
+Maybe. In -96/-97 BlueSTar got nostalgic, and created "Sync - Official Nostalgy" 
+(www.sync.st). In -00, Red Fox got nostalgic, and is at the moment writing this 
+little text.
+
+Red Fox is also actively trying to get everything still on disks at the homes of 
+various Sync members onto the safe rescue of harddrives and cd-roms. As 
+explained above, Sync produced a HUGE quantity of demoscreens, versions of Audio 
+Sculpture, other programs (Light Sculpture, FiskGen, DisAsm) and even some half 
+working games. Yes, if we find anything stable enough to release we'll do so.
+
+What's already in the works is to try to fix the sad statistics for the released 
+Sync screens. As written above, two of the ones we managed to release does not  
+work on STe. That has been taken care of now - while not released yet (as with  
+everything Sync ever did) Red Fox has a disk with the SoWatt and SNYD2 
+fullscreens which works on both ST and STe. Expect to see this released ... ...  
+... soon.
+
+ñCurrent status of Sync :
+
+Redhead, developer		- Game Design Sweden (www.gamedesign.se)
+Red Fox, software engineer	- Symbian (Swedish office) (www.symbian.com)
+BlueSTar, usability engineer	- Nokia (www.nokia.com)
+MrMac, object leader		- Ericsson Mobile (www.ericsson.com) also see 
+                                  www.programmersheaven.com 
+7an, senior systems engineer	- Cumulus Media (www.cumulus.com)
+Pylon X, System management	- Ericsson Software Technology 
+                                  (www.ericsson.com) 
+Mega, system design engineer	- SwitchCore (www.switchcore.com)
+
+Greetings to:
+
+TCB (you won, really)
+Omega (great guys)
+Electra (too bad you weren't there in the beginning!)
+TEX (you started it all - thanx!)
+
+... and to the rest of the scene, you know who you are. I can be found in 
+#atariscne and #atariswe on IRCNet for as long as my nostalgia kick stays - go   
+there to get personal greetings from me, my memory is clearing up :) Also don't  
+forget to visit www.sync.st and write in our guestbook. If you want to reach us  
+all, try emailing sync@sync.st. To email us individually, do some guesswork ;)
+
+ñRed Fox / Sync signing off ... 
+
+wrap

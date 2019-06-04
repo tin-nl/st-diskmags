@@ -1,0 +1,130 @@
+NEW EASY RASTERS 
+
+ RASTERS IN GfA-BASIC
+
+by JEDI of SECTOR ONE from THE HEAVY KILLERS
+
+
+
+
+Rasters look always fine. Moreover they're very easy to code in assembly and
+don't take an important part of the precious machine time. It's why they're
+so used in the demos. But in GfA-Basic, it isn't as easy as that and rasters
+take losta time. In dis language, you must wait until a position of the
+screen have been scanned and then set colors at each line. And of course,
+you must wait until the aimed line starts and you can easily guess, that dis
+technic takes lotsa machine time. Anyway, dis is what we had to do in the
+"Kidney Bean Demo", the "Bee Forol Demo" and what I did in my guest-screen
+of the "Just For Fun Demo - part B" 'coz dese demo are in pure GfA-Basic.
+But if you ever want to code a screen in dis language, but also with some
+assembly routines, the easiest, the greatest, the fastest, the cleanest, in
+a word the best way to do it is using a short assembly module. Dis is what
+D.B.A is doing in all their GfA-Productions that need rasters.
+So, here is an assembly rasters-routine, quite easy to use in your own GfA-
+productions. Let me tell ya how to use it. First, put it into a buffer.Then,
+initialize another buffer that will be containing the different colors you'd
+like to give to one of the coulour-register in respective order. Don't
+forget that each data must be a word ( two bytes ). Then, use the following
+line : ~C:routine_address%(color register,rastering rate,L:adr.buffer)
+- routine_address%: address of the assembly routine
+- rastering rate: size of a rasterline
+- adr.buffer: address of the buffer containing the datas of the colors.
+To disable the rasters, just call the routine a second time ( there's no use
+giving parameters... )
+
+Anyway, if you don't understand that very well, just load the file called
+"RASTEREX.LST" and launch it...  
+
+Here is the assembly sourcecode of the routine. It was already assembled
+and put on the disk ( "STRASTER.INL" ).
+
+Note: You'd better disable the mouse ( OUT 4,&12 ) to get the best
+stability of the rasters. You can also clear the MFP main-register
+( SPOKE &FFFFFA09,0 )
+
+
+
+
+************************ The Assembly Source ( Genst ) *********************
+
+        movem.l a0/a1,-(sp)                     Save registers
+        btst #3,$fffffa1b.w                     Is the routine already
+        bne restore                             present ? => restore
+        movea.w 12(sp),a0                       Color register...
+        adda.w a0,a0                            ...*2...
+        lea $ffff8240(a0),a0                    ...+$ffff8240
+        lea hbl+6(pc),a1                        Self-modified code !
+        move 14(sp),frq-hbl-4(a1)               Rastering rate  
+        move.l 16(sp),buffer-hbl-6(a1)          Base of the buffer
+        move.w a0,(a1)                          Palette register
+        subq.l #4,a1                            a1-4=hbl+2=addq address 
+        move.l a1,inc-hbl(a1)                   put it in inc+2
+        sf $fffffa1b.w                          stop the timer B
+        lea saves(pc),a0                        saving buffer
+        move.l $120.w,(a0)+                     old timer B vector
+        lea $fffffa09.w,a1                      MFP vector              
+        move.b (a1),(a0)+                       save the old one
+        andi.b #$df,(a1)                        disable some interrupts
+        lea $fffffa07.w,a1                      The same thing...
+        move.b (a1),(a0)+                       ...with dis...
+        bset #0,(a1)                            ...register...
+        lea $fffffa13.w,a1                      ...and also...
+        move.b (a1),(a0)                        ...for dis...
+        bset #0,(a1)                            ...one
+        lea $118.w,a1                           Key vector
+        lea key(pc),a0                          New key routine
+        move.l (a1),keyjmp-key+2(a0)            But jump to the old one..
+        move.l a0,(a1)                          anyway...
+        lea $70.w,a1                            VBL interrupt vector
+        lea vbl(pc),a0                          New VBL routine
+        move.l (a1),vbljmp-vbl+2(a0)            But jump to the old one..
+        move.l a0,(a1)                          anyway...
+        bra.s sector1                           End of the inits 
+        
+vbl     sf $fffffa1b.w                          Stop the timer B
+frq     move.b #0,$fffffa21.w                   Set its frequency
+        move.b #8,$fffffa1b.w                   And let's start !
+        pea (a0)                                Save a0
+        lea hbl(pc),a0                          Our timer B routine
+        move.l a0,$120.w                        Placed in the vector
+        move.l buffer(pc),2(a0)                 Loop each VBL
+        move.l (sp)+,a0                         Pop a0
+vbljmp  jmp 0                                   Jump to the old VBL
+        
+hbl     move 0,$0.w                             Put the chosen color
+inc     addq.l #2,0                             Next color
+        bclr #0,$fffffa0f.w                     End of dis routine
+        rte                                     Come back
+        
+key     move #$2500,sr                          Disable some interrupts
+keyjmp  jmp 0                                   But exec the old rout
+        
+restore sf $fffffa1b.w                          Stop the timer B
+        lea saves(pc),a0                        Saving address
+        move.l (a0)+,$120.w                     Old timer B vector
+        move.b (a0)+,$fffffa09.w                Finally, there isn't...
+        move.b (a0)+,$fffffa07.w                ..anything better than..
+        move.b (a0),$fffffa13.w                 ...the good old things !
+        move.l keyjmp+2(pc),$118.w              Old key vector
+        move.l vbljmp+2(pc),$70.w               Old VBL vector
+sector1 movem.l (sp)+,a0/a1                     Old registers
+        rts                                     And old PC !
+        
+buffer  dc.l 0                                  Address of the buffer
+saves   ds.l 2                                  To put old values... 
+
+
+
+
+Well, that's all for dis article...See yaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa !!!!!
+
+
+JEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDI
+EDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJ
+DIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJE
+IJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJED
+JEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDI
+EDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJ
+DIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJE
+IJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJEDIJED
+

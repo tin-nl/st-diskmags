@@ -1,0 +1,120 @@
+
+
+              NEC MultiSpin 2Xi CD-ROM Drive..
+
+And just how do you review a CD-ROM drive??
+
+Well,  erm,  it's this box-like thing which you put CDs into,  and 
+there you go..
+
+But seriously folks, the MultiSpin is a double speed drive, as the 
+name implies,  it has a base audio CD playback speed/data transfer 
+rate  of  150kb per second..  This it has in common with a lot  of 
+earlier  single speed drives,  such as the Apple SCSI single speed 
+model which is still popular with a lot of Atari folk.. The double 
+speed  part  literally 'doubles' the transfer rate  to  300kb  per 
+second..  This  is more useful if you wish to 'play' directly from 
+the  drive  for such things as animations and video  data..  At  a 
+push,  and with the right software,  it can be treated in the same 
+manner  as  a big but slow hard drive,  albeit one that cannot  be 
+written to..  To get a reasonable approximation of hard drive-like 
+transfer  rates,  you  would be looking at one of the  newer  quad 
+speed CD drives, approaching 600kb/sec..
+
+A quick digression on drive speeds to pad out the review..
+
+Single  speed  - 150kb/sec - slow,  really only useful if you  are 
+using  CD  ROMs  as an archive or long term  storage  to  transfer 
+specific  data to a faster hard drive when required..  Having said 
+that  though,  we  did  get reasonable results for  FLI  animation 
+playback on an Apple single speed device using an early version of 
+the Apex Media FLI animation viewer..
+
+Double speed - 300kb/sec - middling, acceptable animation playback 
+rates, and at the bottom end for performance if treated as a read-
+only  hard  drive  - The Autowaschen Verboten  demo  ran  off  one 
+collection  disk,  but experienced some music synching and  timing 
+problems..  This  drive  option is probably the best one for  most 
+typical  Atari owners requirements..  It is somewhat cheaper  than 
+going for the next one up, which is..
+
+Quad  Speed - 600kb/sec - fast,  the currently favoured option for 
+most  new CD-ROM drives..  More of a compulsory requirement for PC 
+owners where the majority of games now come on CD-ROMs,  and speed 
+and  access  times are real issues there..  Less vital  for  Atari 
+owners  who  can get along with single or double speed  drives  as 
+there  are  only  two games (to date?) which come on  CD  for  the 
+Falcon..  Animations expected to run flawlessly off these.. Do you 
+really need to pay the extra cash though??
+
+Even faster ones,  six, eight and ten times speed.. For the person 
+who  needs  something  suitable to sit  alongside  their  200  mhz 
+Pentium PC..  More the sort of kit which is a tedious conversation 
+piece for your consumer-goods bedazzled mates, than of real use to 
+most  Atari people..  Still if anyone does have an  Atari-specific 
+application that can make use of such a high-spec drive??
+ 
+Digression over, what of the thing itself?
+
+The  MultiSpin comes as a 'bare' drive which needs to  be  slotted 
+into another external box of some kind..  The FAQ on Atari CD-ROMs 
+does  advise that this type of drive does go well with  a  PC-like 
+tower  case,  fitting  into  the sort of space where a  5.25  inch 
+floppy drive would have gone in,  in yesteryear..  The alternative 
+is a hard-drive type external case and bezel,  in my case provided 
+for  me by Mark and Dave hardware procurement services  inc..  The 
+case design is a very solid one, supplied by RS Components..
+
+Controls  are  very  simple,  a button to front load the  unit,  a 
+simple  tray  (no caddy) to put the CD on,  press the  button,  or 
+gently  nudge  the tray lid to get it to close,  and off you  go.. 
+There  are also two busy lights to indicate that a disk  is  being 
+read  or spinning up to full speed..  Also on there is a headphone 
+socket and volume control for audio CD use..
+
+The rear features audio,  power, and of course, SCSI connections.. 
+The  device  is  quite happily included in  any  'chain'  of  SCSI 
+devices,  coming after the external hard drive..  This should work 
+with  any  of the current CD-ROM drivers available for the  ST  or 
+Falcon,  in  this case,  ExtenDOS does the business quite happily, 
+filling  in  where  TOS does not deign to go,  and  including  the 
+MultiSpin in, as a normal part of the desktop..
+
+The  drive  is compatible with the common ISO9660 High  Sierra  PC 
+compatible  format,   and  is  also  Photo  CD  (TM)  multisession 
+compatible as well..  What actually runs off it depends on how the 
+disks  themselves  are mastered..  Some software will happily  run 
+straight off it,  other software will crash..  A lot of disks tend 
+to  archive  their data anyway,  so these have to be  unZIPped  or 
+unARCed  in  any case,  and no,  STZIP and Kobold do not work with 
+ExtenDOS, it seems..
+
+If  the appropriate audio players are included,  then it can  also 
+play audio CDs as well..
+
+It  even comes with a brief,  and to the point manual,  printed in 
+several  languages,  most  of the setting up and  trouble-shooting 
+sections  do  seem  to  be specific to  PC  owners,  although  the 
+information  about  the general layout of the drive is  useful  to 
+anyone.. If you already have an external SCSI hard drive, then the 
+included  SCSI ribbon cable connector is sufficient,  otherwise if 
+this is your first venture into the world of SCSI,  a SCSI to SCSI 
+2   adaptor   cable  is  needed,   and  these  are  never   cheap, 
+unfortunately..
+
+If  you  are  looking  for a CD-ROM  at  a  reasonable  price  and 
+specification, this one is worth looking at.. If you know what you 
+are  doing,  or  know someone else who does..  This is a  solution 
+which  needed a bit of work with reference to the  external  case, 
+and  the  software to drive the device is an extra  item  too..  I 
+managed to come in at a price of under œ120 to get it running, but 
+a lot of that was down to local suppliers working in my favour..
+
+If  you  are looking for something a bit more  'pre-packaged'  and 
+guaranteed hassle free, than something like the Aiwa ACD-300 drive 
+is  available  from the better known Atari hardware vendors  at  a 
+shade less than œ200 for a similarly specc'd double speed drive..
+
+(C) CiH - Nov '95..
+
+

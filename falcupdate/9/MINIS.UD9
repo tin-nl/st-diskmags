@@ -1,0 +1,532 @@
+* This is a list with  mini-reviews  of  some  of  the  new(ish)  Falcon
+applications. They are taken from Hensa (thanks Danny) and I  think  sum
+up the programs quite well, all of them are available from the  FOG  PDL
+but I have left the original Hensa path and file name intact incase  you
+have 'net access.
+
+The (E) or (G) denotes the language, ie English, German, etc.
+
+===========================================
+WAX DIRECT TO DISK PROFESSIONAL EDITION (E)
+===========================================
+
+Direct to disk recording.
+
+Features:
+- Loop option on single track selection
+- Selectric multiple selection compatible
+- Allows text files with list of tracks to replay (.LT)
+- Handles multiple formats list of tracks
+- Handles/saves DVS compatible file format
+- Mathematical analysis and distortion calculation
+- Optional Pseudo stereo replay for mono tracks
+
+Extras:
+- 100% GEM and assembler
+- Ultra fast cache routines
+- Can be used as either ACC or APP
+- Can be driven by GEM messages
+
+File size: 69895
+
+It's online as file micros/atari/falcon/a/a086/wd2d_pro2.zip
+
+================================================
+BOBTRACKER 1.0 Eight channel MOD file player (E)
+================================================
+
+Advanced MODfile player.
+
+Features:
+    - 50Khz, 16-Bit stereo sound
+    - DSP multiplexer takes very little CPU time
+    - Handles most 4/6/8 channel modules
+    - Advanced DSP sound enhancement (VIBRANCE,ANTI-ALIAS,AMBIENCE)
+    - Real BASS and TREBLE control/boosting
+    - SURROUND SOUND support !
+    - Spectrum Analyser and Ocilloscope displays
+    - Full volume/balance control
+    - Powerful PLAYLIST system with timed shuffle
+      and random song picking.
+    - GEM interface with Falcon AES enhancements, keyboard macros
+      and context sensitive help.
+    - Works as a stand alone program or intelligent accessory
+    - MultiTOS compatible
+    - Enhanced MultiTOS features (Drag & Drop, Iconify, App Terminate)
+    - Extended command line & runtime command support from
+      external programs.
+
+File size: 58394
+
+It's ShareWare, online as file micros/atari/falcon/a/a087/bobtrack.lzh
+
+===================================================
+DEVPAC FALCON LIBRARY 6.0 Assembler subroutines (E)
+===================================================
+
+This is an assembler library for the Atari Falcon. It includes a lot  of
+subroutines which most assembler programmers  use  quite  frequently  as
+well as some less frequently used graphic routines.  For  everything  to
+work properly use Devpac 3 with ignore multiple  includes  active.  Most
+things will probably work nice with Devpac 2 too.
+
+Included in the package is a  Falcon  Video  Creator,  which  saves  the
+current screen as a Falcon Video File. This resolution can  then  easily
+be set from within your own programs. Only resolution and frequency data
+is saved.
+
+Changes fron previous held version: 
+
++ A routine to draw true colour sprites created using Spooky Sprites is
+  now included. 
++ A correction in the FV format description. 
++ New FV vga files made by Anthony Jacques. 
++ Code for jagpad reading included. 
++ Improved FV editor.
+
+File size: 96503
+
+It's online as file micros/atari/falcon/a/a063/falclib6.lzh
+and replaces the previously held version.
+
+=================================================
+KALEIDO 1.0 Colour icon editor for 256 colour (E)
+=================================================
+
+Kaleido is a colour icon editor for the Atari Falcon computer and works
+in RGB (TV) or VGA.
+
+Kaleido will only work in 256 colours with a resolution of 320*200 or
+320*240.
+
+Kaleido Options.
+    16 colour drawing tools
+        Two colour selection ( left & right mouse button )
+        Line , K-line & Ray-line.
+        Rectangular frame.
+        Filled rectangle.
+        Circlar frame.
+        Filled circle.
+        Fill.
+        Scroll in 4 directions.
+        Cut & paste.
+        Vertical & horizontal flip.
+        Clockwise & anti-clockwise rotation.
+        Vertical & horizontal mirror.
+        Colour swap.
+        Erase icon picture.
+        Undo last selected function.
+    Icon grabbing from pictures.
+        Uncompressed Degas picture formats.
+        Iff picture format.
+        MS-Windows BMP format.
+    Icon grabbing from any file source.
+        colour Plane alignment.
+        Screen width reduction.
+        16 colour, 4 colour & mono selection.
+        PC screen format colour selection.
+    Gem icon functions.
+        Add or delete.
+        Copy Icons ( normal,selected or mono )
+        Name icons.
+        Drive letter positioning.
+        Mask copying.
+    Programme Functionality.
+        RGB (TV) or VGA detection.
+        Full online intelligent help functions.
+        Full icon display ( normal, selected, mono, mask & desktop )
+        Enlarged editing grid.
+        Fast update speeds.
+        Simple to Use.
+
+File size: 40398
+
+It's ShareWare, online as file micros/atari/falcon/a/a088/kaleido.lzh
+
+===================================
+SHOWER 1.0 Views graphics files (E)
+===================================
+
+Shower is a simple, fast and easy to use Pictureviewer. It works on both
+RGB and VGA-monitors. It should work  without  problems  on  accelerated
+Falcons, but will probably get problems with graphics-cards.  Resolution
+enhancers like Blow Up should work without a problem though.
+
+SUPPORTED FILEFORMATS
+---------------------
+
+Shower supports the following fileformats:
+
+.ART        Art Director
+.BMP        PC-Bitmap (still buggy and only 256-color pictures)
+.DOO/.MUR   Doodle/Object Editor Mural (same fileformat)
+.GIF        Compuserve Graphics Interchange Format
+.IFF        IFF
+.IMG        GEM Bit Image (including XIMG)
+.MAC/.MPT   MacPaint
+.NEO        Neochrome
+.PC1        Degas Low-res compressed
+.PC2        Degas Mid-res compressed
+.PC3        Degas Hi-res compressed
+.PI1        Degas Low-res
+.PI2        Degas Mid-res
+.PI3        Degas Hi-res
+.PI9        Extended Degas (320*240 in 256 colors)
+.RAG        RAG-D!
+.RAW        Persistence of Vision (POV) Raytracer output.
+.TRU            IndyPaint (only pictures with "Indy"-header, no blocks)
+
+[Ed. Very nice. I especially liked the picture enlargement function by
+just a mouse click...and then you can scroll around the picture with no
+loss of speed. I hope the next release supports TIFF though. ]
+
+File size: 11188
+
+It's online as file micros/atari/falcon/a/a090/shower10.lzh
+
+===================================
+STOOP 1.04 Boot manager program (E)
+===================================
+
+Stoop is a boot manager for the Atari Falcon. It has its  own  graphical
+interface and uses the mouse for most operations  though  it  does  make
+some use of the keyboard.
+
+Stoop can :
+
+- Be used to determine which AUTO programs, accessories, CPX modules
+  and NEWDESK.INF files should be active when starting up or re-booting. 
+- Control other types of file (e.g. GDOS ASSIGN.SYS files) to a maximum
+  of 20 different types.
+- Display up to 512 file names in each of 20 boards. These boards have
+  to be paged to view all of the file names, but paging buttons will
+  only appear when they are necessary.
+- Either change the extension of a file name to make it
+  active/inactive, e.g. ACX is changed to ACC and vice versa, (the file
+  may be also moved to another folder at the same time) this can be
+  done for a maximum of 254 files per file type. Or a single file can
+  copied and renamed to a specific name, e.g. C:\AUTO\STOOP\GENERAL.INF
+  may become NEWDESK.INF.
+- Make groups of files which may be selected or de-selected by a single
+  button press, to a maximum of 50 files per board per group, and since
+  there is a maximum of 20 boards a maximum of 1000 files can be assigned
+  per group.
+- Control the screen resolution of the desktop that appears after
+  booting, including starting up in ST compatible screens, without having
+  to use a specific NEWDESK.INF file.
+- Change the application the desktop runs after boot-up.
+- Store often used start-up configurations on buttons, to a maximum of
+  27. 
+- Copy, delete and move folders and files, and also rename files,
+  using its own file selector.
+- Re-order the contents of the AUTO folder.
+- Hide files from itself so that they cannot be selected/de-selected
+  for boot-up by error. Up to 50 files can be hidden.
+- Be easily configured while running from the AUTO folder.
+- Pass parameters to applications that are to be auto-booted.
+
+File size: 130697
+
+It's ShareWare, online as file micros/atari/falcon/a/a091/stoop104.zip
+
+============================================================
+PLAYWAVE 1 Simple WAV player...picks closest sample rate (E)
+============================================================
+
+Drop a single .WAV file onto the .TTP and the .WAV will be played.  Pass
+-h for help (tho' there's not much help  to  be  honest).  Pass  -v  for
+verbose mode. You might not find this very interesting.
+
+Playwave.ttp picks the closest Falcon sample rate to play the .WAV  file
+at, then sample repeats to get the sample frequency correct.  Well  it's
+close enough for most purposes. Due to the conversion  from  one  sample
+rate to another playwave.ttp can be quite processor  intensive.  If  you
+use verbose mode on a 16Mh Falcon in >4 colours you may get  hickups  in
+the audio.
+
+File size: 15002
+
+It's online as file micros/atari/falcon/a/a092/plwav100.zip
+
+===========================================
+FLICTC 4.6 True colour FLI/FLC player (E/G)
+===========================================
+
+This is a _fast_ player for animations in .FLI/.FLC-format.
+Documentation and program now in German and in English.
+
+The program runs in all HiColor-resolutions (Atari calls them True
+Color...), with 320x200 pixels or bigger on a 68020/030/040 machine
+with Falcon video- hardware, at the moment this is the Falcon 030.
+
+advantages:
+-fast, most of the animations run at original speed, i.e. as fast as on
+ a 486DX...
+-FLIs will be played directly from disk if necessary, i.e. file size is
+ only limited by the capacity of your drive
+-plays up to 608 frames per second (ran with <-v=0 -t=0 HANDS.FLI> on a
+ Falcon with 40MHz cpu, 20MHz bus, 320x200 dots, 66.3Hz)
+-compatible, all tested animations ran correctly (and there _are_ some
+ traps!)
+-can be driven via command line
+-can be installed as a desktop icon: just drag a movie file on the
+ icon, drop it, and enjoy!
+-switches to HiColor automatically (works fine with screen resolution
+ enhancements)
+-flicker free because of optional double buffering
+-optimized code for 68000/68020
+-automatic detection of the videohardware's word format
+ (Motorola/Intel)(optional)
+-quietmode (no text outputs)
+-pausing
+-adjustable brightness
+-freeware
+
+disadvantages:
+-not a GEM program
+-directly accesses the screen memory
+-should have problems with MultiTOS because of this
+-doesn't support color cycling (which is not used in any .FLI known to
+ me)
+-animation size is limited by screen resolution
+
+File size: 75987
+
+It's online as file micros/atari/falcon/a/a041/flictc46.lzh
+and replaces the previously held version.
+
+=============================================
+LAMERBRAIN DENTRO Graphics and sound demo (E)
+=============================================
+
+A fairly average demo with above average music.  Starts with title pictures and
+music, followed by:
+
+- Rotating starfield with letters made out of dots flying towards you
+- Greetings picture
+- Rotating sprite moving in a wave pattern with a trailing sprites following it
+- Three fractals calulated and overlaid on each other
+- Flying through tunnel made up of dots
+- Hi-res picture (not very good)
+- Concentric circles zoom and distortion
+- Several oriental influenced pictures scaled
+- Three more overlaid fractals
+- End hi-res picture including the credits
+
+[Ed. Doesn't support VGA screens. Thanks go to Mark Smith for providing
+the description above.]
+
+File size: 504097
+
+It's online as file micros/atari/falcon/a/a066/lb.lzh
+
+=========================================
+FLI-TC 4.1 True colour FLI/FLC player (E)
+=========================================
+
+This is a _fast_ player for animations in .FLI/.FLC-format.
+Documentation now in German and in English.
+
+The program runs in all HiColor-resolutions (Atari calls them True
+Color...), with 320x200 pixels or bigger on a 68020/030/040 machine
+with Falcon video- hardware, at the moment this is the Falcon 030.
+
+advantages:
+-fast, most of the animations run at original speed, i.e. as fast as on a 
+ 486DX...
+-FLIs will be played directly from disk if necessary, i.e. file size is only
+ limited by the capacity of your drive
+-plays up to 608 frames per second (ran with <-v=0 -t=0 HANDS.FLI> on a Falcon
+ with 40MHz cpu, 20MHz bus, 320x200 dots, 66.3Hz)
+-compatible, all tested animations ran correctly (and there _are_ some traps!)
+-can be driven via command line
+-can be installed as a desktop icon: just drag a movie file on the icon, drop
+ it, and enjoy!
+-runs in every (sufficient) HiColor resolution
+-works with Screenblaster and NVDI
+-freeware
+
+disadvantages:
+-not a GEM program
+-directly accesses the screen memory
+-should have problems with MultiTOS because of this
+-only works in HiColor
+-doesn't support color cycling (which is not used in any .FLI known to me)
+-animation size is limited by screen resolution
+
+[Ed. Changes from last version are documented in German. This program
+comes in bot German, and English.]
+
+File size: 62050
+
+It's online as file micros/atari/falcon/a/a041/flictc41.lzh
+and replaces the previously held version.
+
+============================================================
+TOS 4.04 PATCH FILE 1.0 Patch TOS, and blow onto EPROM (E/G)
+============================================================
+
+The patch file is only applicable to the TOS 4.04 of the Atari
+Falcon030. If you alter the patch file in order to patch a different
+TOS version, you'll get everything but a running system. The addresses
+are relocated to TOS 4.04 so you have no chance to get it to work with
+other TOSes than 4.04.
+
+Features
+
+   IDE-Timeout shortened  (faster booting from SCSI or floppy disk)
+   Initiator Identification (SCSI device no 7 (For Bus Arbitration))
+   Original 'bomb images' can be replaced
+   Printer timeout (Centronics) can be altered
+   Fastload for floppies (try it!)
+   No Floppy B check -> shorter boot time
+   Grow/Shrinkboxes can be switched off
+   ATARI logo (boot screen) can be replaced
+   Hardcopy paper feed (ST-High rez) adjusted to NEC/EPSON printers
+   Pseta sign (ASCII 128) is replaced (German ss sign)
+
+Patch program to use the patchfile is included, or you may use Egale.
+
+File size: 68786
+
+It's online as file micros/atari/falcon/a/a071/tp404v10.lzh
+
+===============================================
+APEX MEDIA DEMO Image processing system (E/F/G)
+===============================================
+
+The official Apex Demo. Comes in three languages...English, German and
+French. All saving is disabled, but everything else works.
+
+[Ed. Very impressive]
+
+File size: 560437
+
+It's online as file micros/atari/falcon/a/a072/apexdemo.zip
+
+===============================================
+PLAYMPEG 0.70 Play MPEG files on the Falcon (E)
+===============================================
+
+Play MPEG files on your Falcon.
+
+Changes from previous version:
+
+v0.70
+- MPEGS are now played direct from hard disk - almost no speed decrease.
+- Screen save/restore tweaked
+
+Package comes with a small utility to parse MPEG-1 compatible video streams
+and return information which is easily attainable. This is called InfoMPEG, and
+is at v1.0. Written by another person.
+
+InfoMPEG was written to provide a quick and convenient way of constructing
+charts containing various details on MPEG streams, allowing comparisons to
+easily be made.  It can also be used simply to find out the pixel resolution
+and types of frames in a stream (can do so almost instantly).
+
+File size: 28585
+
+It's ShareWare, online as file micros/atari/falcon/a/a047/plaympeg070.zip
+and replaces the previously held version.
+
+======================================================
+PHOENIX OBJECT RENDERER 2.0 DEMO Falcon/TT version (E)
+======================================================
+
+This program is a disabled demo of Lexicor's Phoenix Object Renderer 
+V2.00. The animation features of the program have been disabled, and
+any  rendered images will be created with numerous blank horizontal
+bands  through the image.
+
+File size: 245888
+
+It's online as file micros/atari/falcon/a/a074/phoenix2-030.zip
+
+======================================================
+FALCON SCREEN DUMP 1.1 Dump the screen into a file (G)
+======================================================
+
+A screen dump program. It can be started from the desktop, and
+redirects the desktops hardcopy function keys (ALT+HELP) to a disk
+file. Screen dumps are resolution independant as long as there is
+enough free disk space, and the file is created on the same drive that
+this program is started from. The file is saved in unpacked
+screenformat. A colour pallete may be appended if the current
+resolution has 4 or more colours (Magic FPAL, xbios 94/94)
+
+The package also comes with a utility program XIMGSAVE, to convert the
+screendumps to the more popular XIMG format. The program prompts for
+the resolution and the number of planes of the screen dump.
+
+File size: 71430
+
+It's online as file micros/atari/falcon/a/a076/ximgdum1.lzh
+
+==============================================
+NEON DEMO Texture mapped animation creator (G)
+==============================================
+
+Demo of a Texture mapped 3D image creator. The program can extrude and
+rotate solid objects, map 2D pics to 3D objects and create the
+necessary ambient environment.
+
+Requires the Falcon to have an FPU.
+
+File sizes: 596669
+
+It's online as file micros/atari/falcon/a/a079/neon_demo.lzh
+
+==========================================================
+MUSIC ANALYZER, 1995, Shows incoming sound graphically (E)
+==========================================================
+
+A simple program that shows the incoming sound as 2 stereo vu-metres, 2
+14-band spectrum analyzers and 2 scopes. It has the sourcecodes
+included.
+
+File size: 99976
+
+It's online as file micros/atari/falcon/a/a082/m_analyz.zip
+
+=========================================================
+BACKGROUND-MUSIC 3 Play MOD files in the background (E/G)
+=========================================================
+
+A module player using bITmASTERs replay. Allows you to play music in
+the background. Features are:
+
++ Support for many module formats: 4-channel Protracker and
+  startrekker, 8-channel Octalyser and Digital, and Tritron
+  Fasttracker.
++ Plays modules packed with Pack-Ice and JAM-Pack
++ Options for Surround sound and interpolation
++ Runs in the background, and takes up only 8% of CPU time for
+  4-channel and 14% for 8-channel music
++ Built-in fader
+
+File size: 18414
+
+It's online as file micros/atari/falcon/a/a083/dsp_play.lzh
+
+========================================================
+QUICK DSP ASSEMBLER 0.04 Motorolla 56K DSP assembler (E)
+========================================================
+
+This program was done because the assembler given by ATARI is too slow.
+As nobody else tried to make one in assembly, the author did. This
+assembler is nearly 30 times faster than ASM56000.TTP+DSPLNK+CLD2LOD.
+It is 20 times smaller too, and this version isn't really 20 times
+slower.
+
+This program is not supposed to replace ASM56000.TTP coded in C by
+Motorola.
+
+Often, when you make a mistake, the program doesn't tell you, and
+correct it, as it's easier that way: the author wanted to code as fast
+as possible a version able to assemble a program, but, be patient, and
+wait for a next version.
+
+File size: 12875
+
+It's online as file micros/atari/falcon/a/a084/qdsp_asm.zip

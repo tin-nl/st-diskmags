@@ -1,0 +1,109 @@
+ó--------------------------------------------------------------------------------
+                    NEWS IN THE ATARI RELATED EMULATION SCENE
+ó--------------------------------------------------------------------------------
+
+There are again some quite interesting movements in the emulation scene, but not
+only in  emulating  different  Atari machines  on PC, no, also  emulating  other
+machines on  Atari... Here comes  a bunch of news  and snippets about the latest
+developments.
+
+ó--------------------------------------------------------------------------------
+
+                           Atari ST emulators for PC
+                          ò---------------------------
+
+After a wave of emulation projects  in the past, featuring ñ"PaCifiST"ð, ñ"TOSBOX"ð,
+ñ"Echo"ð or ñ"Winston"ð in the  freeware and a  lot of tries in the commercial area,
+today only two major projects are left... at least atm.
+
+ñSTEEMð reached version ñ2.4ð and turns out to be  THE emulator for games and demos,
+running the most  special STE  demos and  games as  well. It supports fullscreen
+modes, DMA sound and so on, and, overall, it even runs in quite reasonable speed
+on older PC systems (Pentium MMX and PCI grafix card  for example). The extremly
+good  compatibility and  high quality sound output, and  not to forget  the easy
+control brought me to the point to check out ST stuff more on that machine since
+it makes it much  easier for me to get  screenshots as well  as realtime reviews
+(writing about the production in another window while it runs in its own...).
+òhttp://steem.atari.org
+
+ñSAINTð meanwhile  started as  demo specialised  emulation reached ñv1.2oð but still
+falls back behind ñSTEEMð, even if it is  called to be "THE" emulator for demos...
+at least  this hype was  set by the  programmers, James Boulton and Leonard from
+Oxygene.
+Still a  big bunch of demos that  are running well on  ñSTEEMð causing problems on
+ñSAINTð... so it is  still the worse  choice for emulating an Atari on PC. As said
+above, I for myself prefer ñSTEEMð...
+òhttp://saint.atari.org
+
+Apart from those important emulations there are much more around. Interesting is
+the free release of ñGEMULATOR 2oooð in version ñ8.o3ð this year but I have to admit
+that I didn't checked it out so far.
+
+As it seems all other real emulations  in the freeware area are stopped, such as
+ñTOSBOXð, ñWinSTon/STewð, ñEchoð, ñFaSTð, ñTOS2WINð and not to forget ñPaCifiSTð...
+
+ó--------------------------------------------------------------------------------
+
+                             Jaguar Emulation for PC
+                            ò-------------------------
+
+After all here it comes, the first running emulation for the Atari Jaguar. After
+older projects  were skipped  or frozen (just like JAGULATOR), this one works in
+the end, it's called ñ"PROJECT TEMPEST"ð and on the related  homepage you can find
+screenshots of games that are running on this emulation.
+Atm, PT has reached already version o.15 and games  like ZOOL 2, TEMPEST 2ooo as
+well as DRAGON - THE BRUCE LEE STORY are said to run on the emulation.
+Unfortunately you have to pay a big price since the emulation is damn hungry for
+fast and  new hardware, absolute minimum system should be a PC with at least 8oo
+MHz and at least 128 MB RAM but a system with at least doubled specs should only
+be able to make the games run in reasonable speed...
+Anyway, I will have an eye on the movements there...
+
+Update... vo.2o reached!
+
+ó--------------------------------------------------------------------------------
+
+                          Gameboy Emulation on ST/Falcon
+                         ò--------------------------------
+
+Apart from the things above  this should be really  interesting for Atarians. In
+fact there are now two emulators for the GAMEBOY around.
+
+The latest  thing that  popped up  is the ñ"GNUBOY"ð, but this crosscompiled GNU C
+thing  has so many  drawbacks that I  don't see a  deeper sense behind it. It is
+called to  emulate the normal  GAMEBOY as well  as the  GAMEBOY COLOR and, it is
+said to need a  strong hardware. Maybe I have to mention that this port is done,
+again, by DATA of TRIO, who  is responsible  for DOOM  engines  and QUAKE engine
+ports to the Falcon as well.
+Since  the Falcon is the  strongest thing  I own I  tried to start SUPER MARIO 2
+there and what should I say, after  I loaded the ROM file the screen turns black
+and stood black for a while. But  hell, after one minute or something, the title
+picture is build  up on the  screen! I hear a  crusting noise that reminds me to
+some DSP error and the machine locks up. End of adventure.
+After seeing how long the  emulator needed to load the  ROM file and how long he
+needed to build  up the intro  picture I doubt  that this emulation project will
+make any sense, at least  not on o3o-Machines, maybe  at least a o4o or even o6o
+processor  will be needed to run this emulation... And at this points I'm out of
+order.
+
+The second  project is the ñ"STEMBOY"ð from  Bodo Wenzel, his  project reached the
+version 3.3o and  should run on ST  as well, but leaving  out sound emulation at
+all so far. Unfortunately I didn't got this thing to run only one time, I always
+get bombs, two or three and finally my machine bombs me out and I have to reset.
+This happened several times and  in different resolutions  mainly as I wanted to
+load a ROM file, it doesn't matter if it was a leeched or the supplied one...
+
+ó--------------------------------------------------------------------------------
+
+Thats it for the moment. Atm, I have no idea how the development is going on the
+ñC16/+4ð emulation the Paranoia gang is working on and the sense is quite doubtful
+in my eyes as well, but  we will  see what happens  when a first  public release
+will hit the streets.
+
+As you can see at these few snippets, there are still some  movements around and
+with the  latest try  to emulate the  GAMEBOY on  the ST/Falcon  also  into that
+emulation area on  our own machines  comes back some life. At next I will try to
+search for the problems that  caused the bomb outs of  ñSTEMBOYð and when I get it
+to run properly, I will check it out deeper for the next UCM...
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_ò1o/2k2ó_

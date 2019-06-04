@@ -1,0 +1,197 @@
+
+Maggie 23: New Shell
+
+
+                A new ST Maggie Shell: Planned design
+
+                          Steven Tattersall
+
+
+
+One of the great 'selling' points of Maggie as a disk magazine has 
+always been the shell system it used. The Delta Force shell was 
+released in 1990 and was (at the time) a great leap forward compared 
+to the other shells around. Smooth scrolling, varied text, a 
+colourful cover picture screen and some great music made it one of 
+the all-time favourite shell systems on the ST.
+
+However, although it has stood the test of time well, I think it has 
+become a bit dated over the years. In the age of HTML and web-
+magazines, the text engine looks a bit tired, and even other disk 
+magazines on the Amiga and PC (spit) have brought in new features. In 
+addition, not every Atari user wants to use the standard TOS any 
+more: indeed there is a growing user base who use ST emulators. This 
+includes certain STOS game writers, I hear. Allegedly.
+
+As a result, I am planning to remake the Maggie shell, using as much 
+of the (reliable) original code as possible, to drag it kicking and 
+screaming towards the 21st century. This article is intended as an 
+outline overall design of what I have planned at the moment.
+
+So, we want your suggestions! Recently we had a couple of people who 
+complained that they wanted to read the articles from the GEM 
+desktop, or had problems with the interface. Therefore I want to 
+address some of these points in a revised magazine design. But if 
+there’s anything else you want to get off your chest, write to me. 
+There are still lots of little bits of the ST shell that I personally 
+find really annoying, so I'm sure there must be something.
+
+Before I start, if you want to send comments, here is my address:
+
+        Steven Tattersall
+        6 Derwent Drive
+        Littleborough
+        Lancs OL15 0BT
+
+Or you can e-mail me at: s.j.tattersall@cms.salford.ac.uk
+
+
+I especially want to hear from people who use non-TOS Ataris, so we 
+can sort out how to cater for you. This section of the readership 
+appears to be growing..
+
+
+
+                          1. Overall Design
+
+As usual at the ever-caring Maggie, the first consideration in the 
+design of the ST shell is 'who is going to use the ST shell?' The 
+answer to this is basically "people who can't use Mr. Pink's Falcon 
+shell" which falls into 3 categories:
+
+1. People still with STs
+2. People with non-TOS/ non-standard Falcons
+3. People running ST emulators
+
+In trying to strike a balance between the three, I propose:
+
+- A standard ST shell (possibly with extra features for expanded 
+Ataris) This should be quick and responsive even on 520STFMs.
+
+- Some (GEM-based?) utilities that allow the articles and pictures to 
+be used by people who can't get the shell working
+
+Most of the work will have to be done in the shell itself: it will 
+still have to be *both* colour and mono compatible for normal STs. 
+This limits quite severely what we can do with the design, but still 
+leaves a fair amount of room for alteration.
+
+One other consideration is the storage of the data and articles on 
+disk. Until this issue, all the files were stored individually. This 
+wasted a lot of disk space, so now (as of issue 23) we have 
+introduced one large linkfile, saving an average of 20-30K of disk 
+space each issue. However, this causes problems for people who can't 
+use the shell at all. Part 4 will address this in a bit more detail.
+
+
+
+
+                         2. Front End Design
+
+Some revamping of the front end was done a few months ago (issue 21 
+onwards) and I don't propose to alter it much. I still like the idea 
+of the 'issue-defining cover pic' as CiH calls it, so the shell shall 
+stay in its present two-part form.
+
+However some tweaks should be brought in, eg.
+
+? Keyboard control of all features,
+? A possible 'extract' of the contents of the highlighted article 
+appearing at the bottom of the screen,
+? A different screen fade effect (at last!),
+? Possible a slight alteration of the graphics to reflect the new 
+design more,
+? New article-loading routines.
+
+
+                        3. Text Viewer Design
+
+Of all the parts of the shell, this is the one that needs revamping 
+the most. Those shades of blue are very nice, but 7 years is long 
+enough!
+
+So what needs changing?
+
+- Text area. The text displayer is very fast, but in my opinion too 
+much of the screen is taken up by the border, meaning that the 
+text itself often looks a bit cluttered. I propose changing the 
+visible text area to 72 x 25 characters (ie. 576 x 200 in medium 
+resolution) which lets you see more on each page and changes the 
+screen format to give more of a newspaper-style layout. This is a 
+lot easier to read, so less eyestrain after reading your fave mag 
+(?) for hours.. The left column of the screen would be used for an 
+issue-defining logo and some of the controls.
+
+- Revised text-handling. The First-Word-Plus file format will be 
+retained because it is still reasonably standard on the Atari and 
+includes some good text-handling features. However, Headings and 
+Subheadings should be added (using the Superscript/Subscript 
+styles?) In addition, there should definitely be a picture-in-text 
+option because this allows both a breakup of the text, and lets me 
+include pictures in the programming articles. The format of the 
+in-text images will be medium resolution IMG files, like 1st Word 
+Plus already handles.
+
+- Text Sectioning and Movement. One thing that always annoys me 
+about most text displayers is moving around the text area by 
+pages. Maggie is better than many in that it scrolls by line 
+rather than page, but surely it would be better to include an 
+(invisible) special character to denote the start of a logical 
+section of the text? Then using the left and right cursors would 
+move to the previous/next section. Or would this annoy you?
+
+- Controls. Keyboard controls would be revised (eg. Using 
+shift+cursors instead of control+cursors to move a page up/down) 
+The buttons/icons for controlling movement would be all in the 
+left-hand panel of the screen, only appearing when you (a) pressed 
+a certain key or (b) moved the mouse to the left hand side of the 
+screen. 'Dragging' of the text area would result in the text 
+scrolling etc. More details than this have yet to be finalised.
+
+
+
+
+
+
+                          4. Other Utilities
+
+This is intended for those who prefer GEM/ non-TOS readers. By 
+providing some sort of utility so you can get at the files, you can 
+easily read the articles by using 1st Word or 1st Word Plus, avoiding 
+the need to write a GEM-based displayer!
+
+The sort of utility I have in mind is a GEMDOS system patch, so that 
+by selecting the data linkfile, all the files in the linkfile (apart 
+from the hidden articles!) appear transparent to the system you are 
+working on. The other alternative is to unpack all the files in the 
+linkfile and save them to a target destination (not exactly suitable 
+for floppy drive systems, but they will probably use the ST shell)
+
+In case some people don't have a version of First Word, then we could 
+also do a little converter to make ASCII files. The final utility 
+would be to display the articles' low-resolution pictures as used in 
+the current ST shell in some kind of GEM format.
+
+If anyone comes up with an alternative to this then please let me 
+know.
+
+
+                            5. Conclusion
+
+OK, that's all the suggestions I have to make. Any other views will 
+be welcomed. And if you don't have your say, I can't cater for your 
+views..
+
+
+
+
+Steve Tattersall
+16th April 1997
+
+
+
+
+
+
+
+

@@ -1,0 +1,299 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0010
+€
+Nemesis!
+
+Mattspendsanintimateafternoonwithanakedmotherboard
+
+AlthoughChrishasalreadyreviewedtheNemesisboardinMaggie23.
+I'lltellyouhowIgotoninstallingNemesisformyself.
+
+Ifyouarethesortofpersonwhowincesatthesightofanaked
+motherboardthenIstronglyadviseyoutohavetheNemesisboard
+installedforyou.SeeingasI'mabitofatightwadIdecidedI'd
+savemyselfafewbobandinstallitmyself.Havinggatheredtogethera
+fewofthenecessaryitemsneededIwentaboutdismemberingmybeloved
+Falcon.
+
+BeforeIgoanyfurtherIsuggestthatyouhavealookatthe
+READ_ME.TXTfileonthediskthatcamewithNemesis.Thiscontains
+correctionsandupdatesthatdonotappearinthemanual.Readthem
+throughandpencilthemintothemanual.Someofthemarequitemajor
+updatesandmayhelpyououtlater.
+
+Halfanhourandacupoftealaterthereitwas,themotherboard.Very
+dustyandcoveredinteastains(oops!).AtthispointIdecidedthat
+itwasagoodtimetogivemyFalconawelldeservedclean.Havingdone
+thatitwasontothetrickybit...
+
+Firstofallthebufferboardwasfitted.Thisentailsremoving3very
+smallsurfacemountedresistorsandsolderingwirestosomeofthe
+exposedpads.Powerandearthleadsarealsosoldered.Havingdonethis
+Ire-assembledmyFalconandturnediton.Hurray,itstillworks,time
+forafag...
+
+NextupwasaddingtheDMAbufferline.Ihadreadthroughthemanual
+beforeI'dstarted,andthiswasthebitIwasdreading.Thisinvolved
+cuttingaverysmalltrackfromtheDMAchipandsolderingawireanda
+capacitortoit.Fiveminuteslaterandalotofblobbysolderingit
+wasdone.Timetore-assembleandturnonagain.Tomysurpriseit
+€stillworks,timeforacupoftea.
+
+Havingdecidedtore-housethefantothemetalshieldingontopofthe
+powersupplyIremoveditfromthemotherboardalongwiththemounting
+bracket.TheholethatwasleftwasthenewrestingplaceforNemesis.
+Aquicksquirtwithahotgluegunanditwastheretostay.It'sat
+loteasierthanbendingpaperclipsandsolderingNemesistothe
+motherboardItellyou.Talkingofhotglueguns,Iusedminetoglue
+allthewirestothemotherboardaswell.It'saloteasierthanusing
+Sellotapeoratubeofglue,whichalwaystakesagestodry.
+
+Ifyouarewonderinghowtomaketheholeforthefaninthemetal
+shieldingmayIrecommendtryingatankcutter!?orifyoudon'tknow
+whatoneofthoseistryusingaholesaw.It'soneofthosethingsyou
+putontheendofapowerdrill,itcomescompletewith7bladesand
+youuseifformakingholesinwoodorplastic.Seeingasweareonly
+cuttingthinmetalplateitdoesthejobjustaswell.Thebestbitof
+allisoneofthebladesisformakingholes38mmindiameter,justthe
+rightsizethatisneeded.
+
+AfterconnectingseveralearthleadstotheNemesisboarditwasonto
+thenextpartoftheinstallationprocess.Itentailsmaking
+connectionstotheMIDIandIKBDchips.Bothchipshavetohavea
+coupleoflegscut,bridgedbyapieceofwireandthenconnectedto
+oneofthewiresfromtheNemesisboard.Averygoodpieceof
+informationhereistousesomesmallwirecutterstocutthelegs.I
+usedaStanleyknifetocutthem,andwasveryluckyindeednottocut
+oneofthesmalltracksthatarepresentunderbothofthechips.So
+consideryourselfwarned,USEsmallwirecutters!
+
+Afterremovinganinductorandsolderingafewmorewirestothe
+motherboarditwastimetotestagain.Aquickre-assemblyandaflick
+ofthepowerswitchhadmyFalconsplutterbackintolife.Phew!!
+
+Thenextpartoftheinstallationweretheswitchinglinesandthemain
+partoftheaccelerationmodsforNemesis.Thiswasallprettystraight
+forwardandonlymeantsolderingafewwireshereandthere.
+€
+BeforeIcouldcontinuetotestwhatIhadjustdoneIhadtofitthe
+RGB/VGAswitch.Youonlyhavetofitthisifyouarelikeme,notaVGA
+owner.Butit'sagoodideatofititanywayevenifyoudoownone.
+Justthink,ifyourVGAmonitordoesawobblythenyoucanstilluse
+yourFalcononanRGBmonitor,oratelevisionifyoureallyhaveto.
+
+Aftercuttingasmalltrackonthemotherboard,addingaresistorand
+solderingafewwireshereandtheretheswitchwasconnected.Drilling
+aholeinthecasegavetheswitchanewpermanenthomewhichdidn't
+looktoooutofplace.
+
+Anotheroptionalfixinthemanualinvolvedremovingacoupleof
+inductorsandreplacingthemwithresistors.Thissolvesaproblemof
+tiny'flecks'thatcansometimesbeapparentonVGAmonitors,mostly
+thecheapones.It'sworthwhiledoingthisfixnomatterwhattypeof
+monitoryouown.Havingdonethatitwastimetotesttheinstallation
+sofar.Gawdblimeymissus,itstillworks.
+
+HavingloadedandrunalltheprogramsIfindthatNemesisisworking
+likeitshoulddo.IfIwantedtoIcouldfinishtheinstallationnow,
+butthereareacouplemoremodificationsthatIcanstillmake.
+FirstlyIcoulddouble-clocktheFPUandmakethatfaster.I'vegotone
+fittedinmyFalconbutIdidn'tbother.Thenextmodificationis
+acceleratingtheDSP.
+
+BeforeIcontinueI'lltellyouthatIhadtriedoutafewprograms
+beforeIdidthisnextmodandfoundtheydidn'tworkproperly.Itmore
+thanlikelyhadsomethingtodowiththeFalconrunningatan
+acceleratedspeedandtheDSPrunningnormally.SoIstronglyadvise
+havingthisnextmodificationdone.
+
+ThemodificationinvolvescuttingatrackfromtheDSPtoacrystal
+oscillatorandconnectingawirefromtheNemesisboardtoit.This
+seemedsimpleenoughuntilIfoundoutaneasierwaytodoit.Ispoke
+toDavidEncillaboutthisandhesaidhe'dprobablyputitinthenext
+re-printofthemanual.
+€
+Thisiswhatyoudo..
+
+Insteadofcuttingthetrackfromthefrompin74oftheDSPchip(U38)
+andthebottomrightsolderpadofthecrystaloscillator(U37)turn
+theboardover.HavingdonethatlocateresistorR176.Totheleftof
+theresistoryouwillsee6symmetricalsolderpads,thisisthe
+undersideof(U37).2ofthesepadsareconnectedbyathintrack,cut
+thistrackinstead.
+
+See below
+                    *          *          *
+                                    O
+                                 O
+        C154 |ÿÿÿÿ| O           O
+              ÿÿÿÿ                      O
+                                                   R176
+                    *          *-ÿÿÿÿÿÿÿÿ-*      |ÿ|ÿÿ|ÿ|
+                                    ^             ÿ ÿÿ ÿ
+                       CUT THIS TRACK             O------------------O
+                                            O       O              O
+                                 O                     O--------O
+
+
+TurnthemotherboardoverandsoldertheyellowwirefromtheNemesis
+boardtothebottomrightsolderpadofU37.Havingdonethatthe
+installationprocessiscomplete.It'sjustamatterofrebuildingthe
+Falconandfiguringoutwhyyou'vegot2screwsleftover.
+
+Onlycarryoutthemodificationthiswayifthepartofthemotherboard
+youhaveactuallylooksliketheoneabove.Therehavebeseveral
+revisionsoftheFalconMotherboardandyoursmaynotbethesameas
+mine,whichisarevisionAtype.
+
+TESTRESULTS
+
+Afterfinallyscrewingallthebitsbacktogetheritwastimetotest
+€outthisnewpieceofequipmentnestlinginsidemyFalcon.Afteradig
+aroundinmydiskcollectionIfinallyunearthedacopyofGembench.
+Afterabitofdiskswappingandgeneralmuckingarounditwasupand
+running.
+
+Duetodifferenttolerancelevelsinthecomponentsatthetimeof
+manufacturenotallFalcon'swillreturnthesamepercentagesgiven
+below.GembenchisthebestbenchmarkprogramgoingbutIfeelthatit
+doesgivesomespuriousresultsconcerningtheFalcon.Sotocombat
+thisIonlyuseditfortimingpurposes.
+
+Havingcollectedthetimesforallthetestsinallthe3resolutionsI
+thensetaboutcompilingthemusingmytrustyoldcalculator.Ifound
+thisamoreaccuratewaythanjustusingGembench.Forallyou
+technicallymindedanoraksouttherehereisarundownofmymachine
+andthetests,whichIfeelareatruerepresentationofthetotal
+speedincreaseyouwillgetfrominstallingtheNemesisboard.
+
+14MBFALCON030TESTNo.1)GEMDialogbox
+2)VDIText
+TOS4.013)VDITextEffects
+AESv3.314)VDISmallText
+GEMDOSv0.485)VDIGraphics
+MiNTnotinstalled6)GEMWindow
+Blitterenabled7)IntegerDivision
+NVDInotpresent8)FloatMath
+FPUinstalled9)RamAccess
+RunandMallocfromSTRAM10)RomAccess
+Videomodes640*400*211)Blitting
+---640*400*1612)VDIScroll
+---640*400*25613)JustifiedText
+14)VDIEnquire
+15)NewDialogs
+
+|NEMESIS48hz|MAGICONLY|MAGIC+NEMESIS|
+|--------------------|--------------------|--------------------|
+|COLOUR(S)|COLOUR(S)|COLOUR(S)|
+€TEST||||
+No.|216256|216256|216256|
+-------|--------------------------------------------------------------|
+1|147%|139%|133%|309%|257%|215%|476%|388%|338%|
+2|144%|134%|127%|266%|303%|342%|398%|461%|527%|
+3|145%|139%|135%|429%|341%|324%|644%|519%|501%|
+4|148%|143%|138%|404%|437%|476%|607%|672%|729%|
+5|149%|145%|143%|368%|279%|253%|554%|443%|392%|
+6|142%|128%|122%|191%|113%|94%|289%|175%|147%|
+7|150%|150%|151%|100%|100%|100%|151%|150%|151%|
+8|150%|152%|155%|100%|100%|100%|144%|143%|159%|
+9|156%|159%|157%|103%|102%|99%|156%|159%|162%|
+10|156%|156%|152%|111%|106%|99%|169%|164%|161%|
+11|114%|104%|103%|58%|46%|40%|88%|70%|62%|
+12|125%|110%|107%|173%|151%|142%|261%|232%|224%|
+13|140%|125%|119%|188%|176%|168%|281%|270%|262%|
+14|150%|150%|153%|231%|231%|230%|334%|348%|355%|
+15|147%|140%|135%|228%|179%|146%|346%|269%|231%|
+-----------------------------------------------------------------------
+DISPLAY|141%|132%|129%|259%|228%|221%|389%|350%|343%|
+----------------------------------------------------------------
+AVERAGE|~~~~134%~~~~|~~~~236%~~~~|~~~~361%~~~~|
+-----------------------------------------------------------------------
+C.P.U.|153%|154%|154%|103%|102%|99%|155%|154%|158%|
+----------------------------------------------------------------
+AVERAGE|~~~~154%~~~~|~~~~101%~~~~|~~~~156%~~~~|
+-----------------------------------------------------------------------
+TOTAL|144%|138%|135%|217%|195%|188%|326%|297%|293%|
+----------------------------------------------------------------
+AVERAGE|~~~~139%~~~~|~~~~200%~~~~|~~~~305%~~~~|
+-----------------------------------------------------------------------
+
+SowhatdoesitallmeaninplainEnglish.Thefirst3columnsdoes
+showthatNemesis,takingall3colourresolutionsintoaccountgives
+youatotaloverallspeedimprovementof39%,verygoodindeed,
+consideringthatitisacceleratingtheFalconwithitsclunky(agood
+awordasany)TOSandGEM.
+€
+Thenext3columnsshowhowaffectiveareplacementoperatingsystem
+canbe.IwouldrecommendMagictoanyonewhoasked.It'sjustlike
+havingareplacementdesktop,withanacceleratorthrowninfor
+nothing.That'sallverywellIhearyoucry,butwhathasitgottodo
+withNemesis.Well,justtakealookatthelast3columns.Ifyoutake
+allthe3colourresolutionsintoaccountyou'llseeanaveragetotal
+speedincreaseof305%.Fornormalpeoplethatmeansit'sover3times
+asfastasyournormalFalcon!
+
+Now,ifyouareoneofthoseluckypeoplewhohavegotloadsofmoney
+tospareandcanaffordallthesoftwareunderthesun.AddNVDItothe
+aboveequationandyouwillimproveperformanceyetagain.SadlyI
+sufferfromlongpocketsandshortarmsyndromeatthemomentandcan't
+affordtobuyit.
+
+PLUS POINTS
+
+Very cheap, give up smoking for a month and buy one.              wWw
+Fitting service available if you are a spaz at soldering.        /   \
+You'll get work done a whole lot quicker.                       [ o o ]
+Compatibility with over 90% of software.                         | ' |
+                                                                 \ÿ-ÿ/
+                                                                  ÿÿÿ
+
+MINUS POINTS
+
+A cold boot is often needed to clear the RGB patch.               wWw
+If you D.I.Y. and you bust your Falcon.                          /_ _\
+Opening the case invalidates the warranty. Ha Ha Ha.            [ o o ]
+Incompatibility with the 10% of software that I want to run.     | ' |
+                                                                 \-ÿ-/
+                                                                  ÿÿÿ
+
+              _______________    _______________    ______   ___
+             /  _________   /\  /  ____________/\  / __  /\ /  /\
+            /  /\_______/  / / /  /\___________\/ / /\/ / //  / /
+€           /  /_/______/  / / /  /_/_________    /  ÿÿ / //  / /
+          /___________   / / /  _________   /\   \ÿÿÿÿÿ\//  / /______
+          \__________/  / / /  /\_______/  / /    ÿÿÿÿÿÿ/  / // __  /\
+                    /  / / /  / /      /  / /          /  / // /\/ / /
+       /ÿÿÿÿÿÿÿÿÿÿÿÿ  / / /   ÿÿÿÿÿÿÿÿÿ  / /          /  / //  ÿÿ / /
+       \ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ\/  \ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ\/           \ÿÿ\/ \ÿÿÿÿÿ\/
+        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ    ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ             ÿÿÿ   ÿÿÿÿÿÿ
+
+NowthatdeservesaMAGGIEGOLDMEDALLIONAWARD.
+
+IfyouarereallyinterestedingettingaNemesisacceleratorforyour
+FalconthencontactTitanDesignsattheaddressbelow.Theyalsooffer
+afullfittingserviceifyou'renothappywithdoingityourself.
+
+TitanDesignsLtdTel:+44(0)121-693-6669
+6WitherfordWayFax:+44(0)121-414-1630
+SellyOakE-mail:100345.23500@compuserve.com
+BirminghamWeb:http://ourworld.compuserve.com/homepages
+B294AX/titanweb/
+U.K.
+
+ForanalternativeplacetogetyourNemesisboardssuppliedandfitted
+tryTheUpgradeShopattheaddressbelow.Theycanusuallysupplyand
+fitaboardforyouinthesamedayforcallers,butyoumustphone
+first.
+
+TheUpgradeShopTel:+44(0)1625-503-448
+Unit6,VentureHouse
+CrossStreet
+Macclesfield
+Cheshire
+SK117PG
+U.K.
+
+

@@ -1,0 +1,1457 @@
+06601030305800
+1
+2#
+F0110030
+9[........................................................]001
+€
+continued...
+
+Date: 25 Nov 1992 11:02:56 +0200
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re:  2600 Emulation
+
+A few more points:
+
+Yes, the average 6502 instruction takes about 3 cycles (the total
+range is 2 to 7).  But you still need the emulator to operate with
+single cycle granularity in order to emulate the hardware properly.
+The 6502 emulator is the easy part, even considering that most
+(no?) current emulators don't worry about all the nit-picky extra
+cycle cases.  I could get one up and running, in 386 assembly
+language, in a few days.  In a week I could have it optimized to
+the bone.  Forgetting about address decoding for hardware registers
+(which might do special things upon access) it shouldn't take more
+than 25 or so instructions to emulate a single 6502 opcode.  It
+might be lower, but remember that almost all instructions, even
+LDA, affect the flags.
+
+The killer is figuring out and emulating exactly what goes on inside
+the TIA.  You are only supposed to be able to hit certain registers
+at certain times.  If you don't follow these guidelines, then
+*something* happens but who knows exactly what.  Lots of games
+rely on these weird effects and you have to be able to handle them.
+A state-level emulation of the hardware is the only way to handle
+this.
+
+Remember too that there are some timers that have to be handled
+as well.  Also remember that most of the PCs interrupts need
+to be killed, including the keyboard, so things don't get messed
+up.
+
+Perhaps a more moderate goal to start with would be to emulate
+the simple games which use the 2600 hardware the way it was
+originally intended:  Combat, Air/Sea Battle, Adventure, Street
+Racer, Space War, Indy 500, etc.  Other simple appearing games
+like Space Invaders really aren't that simple at all.
+
+BTW, I have heard from a reliable source that a PC version
+of Adventure is on the way--not an emulation, but a total
+rewrite in 8086 assembly language.  It's supposed to include
+all the original rooms and game variations, plus lots of
+additional new stuff and territory.  The additions are all
+in the spirit of the original.  I can't wait.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 25 Nov 1992 11:12:05 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: Re:  2600 Emulation
+€
+>Perhaps a more moderate goal to start with would be to emulate
+>the simple games which use the 2600 the way it was orginally
+>intended: Combat ...
+
+That would seem to be the best way to do it...  Once that was
+working, then it would be possible to worry about weird cases.
+I imagine combat would be one of the best ones to use as a 
+test, and once we got that working, we could see what other
+games work and why others don't and attack those problems.
+
+I wonder how many games really use weird hardware effects
+instead of just doing some complex software tricks to 
+make full use of the hardware.  Games that used crazy software
+tricks would work just fine...  
+
+I think this emulator will be something that will last a long
+time, so if it takes 10 years of being passed around to different
+programmers before it actually works with every game, that would
+be ok.  And a simple version that works with the less crazy
+games shouldn't be that difficult.
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 25 Nov 1992 11:19:08 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: Re:  2600 Emulation
+
+>Remember too that there are some timers that have to be handled
+>as well.  Also remember that most of the PCs interrupts need
+>to be killed, including the keyboard, so things don't get messed
+>up.
+
+The timers should be easy, since you can simulate the clock ticks
+in software, adding to the timers when necessary.  You won't
+really have to worry about the PC interrupts, except for the 
+sound and possibly the graphics.  Since we would just be emulating
+the machine, it wouldn't matter if it went too fast and too slow
+periodically, as long as it generally went the correct speed.
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 25 Nov 1992 13:44:28 +0200
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re:  2600 Emulation
+
+> Since we would just be emulating
+> the machine, it wouldn't matter if it went too fast and too slow
+€> periodically, as long as it generally went the correct speed.
+
+But it *does* matter.  There are lots of games that use precise
+timing for important graphic effects.  Those that use players
+for the background, come to mind.  Mess up the timing and the
+whole background will jitter.
+
+Hey everyone, I'm not as negative as I sound--I'm basically
+just playing devil's advocate to show the difficulty of this
+project.  Something to note is that there are very few PC
+games which have the fluidity and rapid full-screen motion
+of 2600 games.  There are some nice action games, but most
+don't run at 60 fps or are restricted in some way.  I realize
+this will change with better hardware (local bus video, notably),
+but in a way a 2600 emulator on a PC is like trying to emulate
+a CD player using a tape deck.
+
+[BTW, I think there are some people on this list that have
+moved.  Every time I send something out I get a few returned
+messages.]
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 25 Nov 1992 20:11:31 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: Re:  2600 Emulation
+
+The reason I said that speed doesn't matter is that the emulation
+is not strictly "real-time".  The simulated 6502 clock will not
+be based off the 80x86 clock.  Since the 6502 clock is done in
+software, it can speed up or slow down with no effect other than
+speeding up or slowing down the game.
+
+My idea is that displaying each line will not be controlled by
+an interupt, but it will be called once the 6502 emulator says
+that enough cycles have gone by.  So if the game has some
+instructions that are implemented in an inefficient way, the
+game will slow down during those and speed up during others.
+Also, it won't actually update each line as it goes... it will
+update them in an off-screen page and then flip once the whole
+page has been drawn...
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 10 Dec 1992 10:01:03 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: finals... yuck.
+
+I'm just finishing up thw quarter, so I won't have time to mess 
+with the emulator for a couple weeks, but I thought I'd let you
+€know that the CPU emulator will be no problem.  I've posted to
+alt.emulators.ibmpc.apple2 and there are a lot of 6502 emulators
+to choose from, and it sounds like at least some of them 
+accurately keep track of the number of cycles.
+
+Also, I've been looking into weird VGA modes, and it sounds like
+a 160x500+x256 color mode should be possible, though I haven't
+figured it out exactly yet.  After finals, I'll look into how 
+fast I can fill lines with player0/1, missile0/1, etc...
+
+I've seen a few other people that are interested in writing an
+emulator, and some of them sound like they know what they are
+talking about.  Does anyone have a short file telling people 
+how to add themselves to this list?  We might want to post it
+to alt.games.video.classic and alt.emulators.ibmpc.apple2.
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 10 Dec 1992 10:53:33 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: graphics speedup idea
+
+I was just thinking...  You should be able to keep an array that 
+has all of the necessary stella registers for each scanline,
+then when you go to redraw the screen, check to see if the 
+scanline will look exactly the same and only draw it if it
+changes.  The memory and time overhead might make this impractical,
+but it is somehting to think about. 
+
+How can people be added to this list?  Whoever is in charge of
+that sort of thing, here is the address of someone that wants on
+and is interested in doing an X-windows emulator:
+ wms@ssd.intel.com
+
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 10 Dec 1992 08:57:39 +0000
+From: the 'special FX' guy <FXMLK@acad3.alaska.edu>
+Subject: Re: news Usenet groups
+
+Well, here's the welcome message that goes out to all new people that
+I add to the list.  I just realized that very ancient (That would be
+you,Greg) members of this mailing list probably never got a copy.
+
+Also, is Ted (Are you there?) still archiving the list?  I've been
+trying to keep a copy of all articles going through here, and
+I will put them in the ftp directory later this week if no one else
+€is archiving the list.
+
+-Mike
+(Welcome message follows)
+
+Mailing-list for programming the Atari-2600
+Welcome!
+
+This is the permanent home for the mailing list on programming the Atari 2600.
+
+"program-2600-list@raven.alaska.edu" is the address to post to the
+mailing list.
+
+"program-2600-request@raven.alaska.edu" is the address which handles
+administrative requests (subscribing/unsubscribing/address
+changes/administrative comments/problems with the mailing list).
+Sending a message to me (FXMLK@acad3.alaska.edu) will also work for
+administrative details.
+
+Ted Drude (drudetb@infonode.ingr.com) will be archiving the list into
+digests.  If you would rather just receive periodic digests than
+subscribeto the list, let us know.
+
+2600 programming files are archived on acad3.alaska.edu on anonymous
+ftp.
+
+The directory is "uacn:[sxlib.atari]" (It's a VAX/VMS machine :-)
+"cd atari" should also work.
+
+Files can be downloaded into the "incoming" directory, but be sure to
+let me know if you do so (so I can move them to the atari directory).
+Files in the "atari" directory are read-only.
+
+The atari directory contains the following:
+INTRO.LKT                       Introduction and purpose to the Atari
+                               directory
+INDEX.LKI                       Index of files in the atari directory
+CLASSIC-ATARI.FAQ               Proposed FAQ for classic-atari mailing
+                               list.
+GIANT-ATARI-2600-7800.LIST      List of known Atari 2600/7800 software.
+2600-PROGRAMMING.INFO           The original 2600 information from
+                              internet.
+2600-PROGRAMMING-2.INFO         New information from the mailing list.
+PROG2600-0.DIGEST               Digests of the programming mailing list.
+PROG2600-1.DIGEST
+PROG2600-2.DIGEST
+PROGRAM-2600-LIST.WELCOME       This message/file.
+However, you should always look in INDEX.LKI for a current listing of
+thedirectory's contents.
+
+If you do not have access to ftp, you can send me a mail message, and
+I will forward the file to you.  (compressed in your favorite format,
+and uuencoded)
+
+€-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 10 Dec 1992 15:34:45 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+Subject: program vs. emulate
+
+How many people are on this list to learn to program the 2600, versus
+the people who are here with the intent of writing a software emulator
+for another machine?
+
+(I'm in the latter category.)
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 11 Dec 1992 11:58:37 +1900
+From: wigs@yoyo.cc.monash.edu.au (Aaron Wigley)
+Subject: Re: program vs. emulate
+
+Quantum Seep Wrote:
+> How many people are on this list to learn to program the 2600, versus
+> the people who are here with the intent of writing a software emulator
+> for another machine?
+
+I'm largely interested in learning the machine architecture, and then
+programming it. Back home, I have a 70 year old grandfather, and several
+relations, who have bought themselves, and play madly, the Atari 2600.
+(My Grandfathers favorite game is River Raid :)
+
+Aaron Wigley,
+wigs@yoyo.cc.monash.edu.au
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 11 Dec 1992 11:15:05 +0800
+From: Ross <ross@dcs.warwick.ac.uk>
+Subject: Re: program vs. emulate
+
+> [kopnicky writes...]
+> 
+> How many people are on this list to learn to program the 2600, versus
+> the people who are here with the intent of writing a software emulator
+€> for another machine?
+> 
+> (I'm in the latter category.)
+
+My major interest is in getting a useable emulator going, because I 
+know that my PC, or future PC's will outlive my Atari. (One died on me
+a few weeks back, but I managed to get another - I can see it getting
+harder to find them in the future - It's been nearly a year since I last
+found another cartridge, they're hard to find in the UK...)
+So if I can get an emulator going, and the hardware to upload
+cartridges, then I'll be a happy camper. Of course, then I'd love to try
+to programone - I want to make a cartridge which lets you select
+messages which can be left on the screen - "Back in 5 minutes" type
+things! Besideswanting the emulator simply to keep the thing alive, in
+a sense, I thinkthat any software development must be easier on an
+emulator too.
+
+Ross
+
+________________________________________________________     _________    ____
+He's not really dead while we remember him.               -)[_________==
+Who, Bones ?                   ===========          ____====///_   _\\_____
+Spock, dammit Jim, Spock !    || ross@dcs ||       <____________> '--------''
+Spock who ?                    ===========              ''''
+_____________________________________"Captain, we've lost horizontal hold !"__
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 12 Dec 1992 17:06:18 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+Subject: emulating 2600
+
+OK, like many here, I know all about 6502 ML, but very little about
+the architecture of the 2600.  I have several pages of info describing
+it, and it's a bit confusing.  First of all, it seems that all of the
+custom chip registers start at the beginning of zero page, and that
+the registers are different depending on whether you read or write to
+them.  There's nothing odd about this, I just want to make sure this
+is correct.  Secondly, some of the registers make sense, but many of
+them leave me completely lost.  I don't see any registers whatsoever
+which allow you to specify what the players/missles look like!  And
+what's the deal with the playfield vs. background?  You can specify
+half the line to be playfield, and the other half background, or what?
+        The whole system seems to be based on vertical and horizontal
+beam timing.  Apparently, while the system isn't drawing the screen,
+you have time for calculations, but when then screen is being drawn,
+you only have ~6 instructions per line in which to set the appropriate
+registers for that line's graphics.  Approximately 6 instructions?
+How many CLOCK cycles?
+        In terms of emulating the 2600, the CPU emulation seems fairly
+straightforward, and of course the sound is easy.  It's the graphics
+and the timing that cause the problems.  The question is, do you use
+the real horizontal/vertical timing signals to control your program,
+€and use sprites to render your players/missles/balls, or do you do you
+fake your timing signals and render in a virtual buffer (using
+double-buffering)?  The former would certainly simplify collision
+detection quite a bit, and would make timing natural.  However, the
+system would be more robust in the latter case.  It's also possible
+that if your system is too slow to emulate 6 6507 instructions during
+the horizontal blanking interval, you're hosed.
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 12 Dec 1992 16:45:22 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: emulating 2600
+
+First, I suggest reading through the file several times and looking
+at the sample code that came with it.  Step through it to see 
+exactly what is going on.  Then play a bunch of 2600 games to see
+how it looks like things were done...
+
+>I have several pages of info describing
+>it, and it's a bit confusing.  First of all, it seems that all of the
+>custom chip registers start at the beginning of zero page, and that
+>the registers are different depending on whether you read or write to
+>them.  There's nothing odd about this, I just want to make sure this
+>is correct.  
+
+Yep, 00-0D are read to get collision and input info, but they have
+completely different uses for writing.
+
+>Secondly, some of the registers make sense, but many of
+>them leave me completely lost.  I don't see any registers whatsoever
+>which allow you to specify what the players/missles look like! 
+
+That one stumped me for a bit...  The Grp0 and Grp1 (1B,1C) are where 
+you put a single line bitmap for player0 and player1.  You specify
+8 pixels (with 160 horizontal).  You also specify the colour of that
+line in Colup0/1 (06,07).  Then you can reverse the bitmap by setting
+the Refp0/1 (0B,0C) registers.  And then there are the Nusiz0/1 (04,05)
+registers which let you set the size and number (remember 3 little
+biplanes vs. 1 big biplane in comabt?  That's how they did it).
+
+>And
+>what's the deal with the playfield vs. background?  You can specify
+>half the line to be playfield, and the other half background, or what?
+
+Ok, for playfield, you put the bitmap in Pf0-2 (0D-0F), which gives
+€you 20 bits.  Since the playfield uses pixels that are 4 clocks wide,
+you have 40 playfield pixels per line.  The first half of the playfield
+is just the 20 bits specified in Pf0-2, and the second half is either
+the first half copied or reflected; this is controlled in Ctrlpf (0A).
+
+The background is set using Colubk (09), and it is the color of all 
+of the parts of the line that aren't covered with playfield, players,
+ball, missiles.
+
+>        The whole system seems to be based on vertical and horizontal
+>beam timing.  Apparently, while the system isn't drawing the screen,
+>you have time for calculations, but when then screen is being drawn,
+>you only have ~6 instructions per line in which to set the appropriate
+>registers for that line's graphics.  Approximately 6 instructions?
+>How many CLOCK cycles?
+
+You can calculate it by looking at the amount of time a horizontal
+retrace is and the amount of time one clock cycle is.
+
+>        In terms of emulating the 2600, the CPU emulation seems fairly
+>straightforward, and of course the sound is easy.  It's the graphics
+>and the timing that cause the problems.  The question is, do you use
+>the real horizontal/vertical timing signals to control your program,
+>and use sprites to render your players/missles/balls, or do you do you
+>fake your timing signals and render in a virtual buffer (using
+>double-buffering)? 
+
+First, you can only do one scanline at a time, so sprites are out.
+Also, trying to get the timing exactly right would be basically
+impossible, so it is necessary to count simulated clock ticks in the 
+CPU emulator and once enough ticks have gone by, call a function that
+looks at all of the registers and fills one line with player, ball, etc.
+graphics.  Once all of the scanlines have been done, you flip the
+graphics pages to display the current screen.  
+
+> The former would certainly simplify collision
+>detection quite a bit, and would make timing natural.  However, the
+>system would be more robust in the latter case.  It's also possible
+>that if your system is too slow to emulate 6 6507 instructions during
+>the horizontal blanking interval, you're hosed.
+
+It is important to remember that this isn't going to be a strictly
+"real-time" emulator.  If it is run on a very slow system, the 
+screen update will be much less than 60Hz, and a faster system might
+do slightly better than 60Hz.
+
+
+Now, I have a few questions to anyone...
+
+How do Resp0,Resp1,Resm0,Resm1,Resbl work?  Apparently they set the
+initial position of the object (which needs to be done somewhere) so
+that the horizontal motion counters will have some place to move the
+objects from.  My question is where does it put the object?  It 
+sounds like it is a very timing related thing.
+€
+The other question is what do the Vertical delay registers do?  It
+sounds like these are used to repeat the object one more line so that
+you can get more computation per line (losing vertical resolution).
+Is that right?
+
+Greg
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 13 Dec 1992 23:06:13 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+Subject: beam sync
+
+OK, here's what I don't get about the 2600.  The video beam runs its
+route 60 times per second, right?  It traces each line horizontally,
+with a little retrace time inbetween, and then it goes back to the top
+of the screen.  So how can the 2600's CPU control vertical retrace
+through registers?  There are specific registers for turning on/off
+vertical blanking and vertical sync.  I looked at an example, and it
+looked like it basically waited for horizontal sync, then started
+vertical blank, then started vertical sync, then waited (using a
+timer) for a certain amount of time, then ended vertical sync, and
+vertical blank, then waited for horizontal sync, and started writing
+each line, waiting for horizontal sync inbetween (using a latch, not a
+timer).  Then after it has counted out 228 lines, it loops back to the
+vertical blank bit.
+        So I don't get it.  I can understand waiting for horizontal
+sync, but shouldn't you also want to wait for vertical sync, not
+attempt to "create" it yourself?  What if you didn't wait the right
+amount of time using the timer?  Would it start the first raster line
+in the middle of the screen?  How do you know exactly what the correct
+times are to wait?
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 13 Dec 1992 23:53:08 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+Subject: bitmaps
+
+According to what I understand about bitmaps on the 2600, you can
+specify 20 blocks of 4 pixels each for a line, and these will be drawn
+on the left half of the line.  Then you can select whether you want
+the other half to reflect the left half or duplicate it.  You have one
+color register for the playfield for the entire line.  If this is
+€true, how can something like Pac-Man work, which has dots that you eat
+up, which aren't always symmetrical on the opposite side?  How about
+Q-Bert, where you can jump on squares that can turn different colors,
+even though they are on the same line.  In fact, there are only 4
+color registers total for each line (playfield, background, and each
+player).  But sometimes Q-Bert has more than 4 colors on a single
+line.  Case in point:  the background is black, the square you are on
+is yellow, another square on the line is blue, you are orange, and
+Coily, also on the same raster line, is purple.
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 14 Dec 1992 08:40:52 +0200
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re: bitmaps
+
+> According to what I understand about bitmaps on the 2600, you can
+> specify 20 blocks of 4 pixels each for a line, and these will be drawn
+> on the left half of the line.  Then you can select whether you want
+> the other half to reflect the left half or duplicate it.  You have one
+> color register for the playfield for the entire line.  If this is
+> true, how can something like Pac-Man work, which has dots that you eat
+> up, which aren't always symmetrical on the opposite side?  How about
+> Q-Bert, where you can jump on squares that can turn different colors,
+> even though they are on the same line.
+
+The 2600 hardware was designed to play certain kinds of games--stuff
+like Combat, Air/Sea Battle, Space War, etc.  These games use the
+hardwareat face value, the way it was originally intended.  These are
+the onlysorts of games the hardware designers ever had in mind.  The
+2600 infofile is geared toward this sort of thing.
+
+You don't *have* to program the 2600 in this straightforward manner,
+though.The hardware is very general.  What's to prevent you from
+changing theplayfield color _while_ the playfield is being drawn?
+After you hit theregister, the color will be changed immediately
+giving two colors per line.You can do this with just about any of
+the registers.  There are severalgames out there with six digits of
+score on a single line--that's not possibleusing straightforward
+techniques.  (To give just one example.)
+
+The trick here is that when a register hit in the middle of a line
+takes effect depends on when the store instruction gets executed-it
+actually depends on all previous instructions on the line.  Yep,
+cycle counting.
+
+€=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 15 Dec 1992 02:26:28 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+Subject: Re: beam sync
+
+In response to Landon Dyer:
+
+So you're telling me that the processor can actually force the video
+beam to return to the upper left corner of the display?  Wow.  Well,
+let me get this straight.  You start vertical blanking.  Then you
+start vertical sync.  Then you have to wait for the beam to get to the
+upper left corner, which would take different amounts of time,
+depending on where you interrupted it.  So how do you know when it's
+gotten there?  Or does it just hang around there until you tell it it
+can start going again (end vertical sync)?
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 15 Dec 1992 02:33:04 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+Subject: Re:  bitmaps (fwd)
+
+> From landon@apple.com Mon Dec 14 08:21:36 1992
+> Date: Mon, 14 Dec 92 06:21:32 -0800
+> From: Landon Dyer <landon@apple.com>
+> Message-Id: <9212141421.AA11986@apple.com>
+> To: kopnicky@owlnet.rice.edu
+> Subject: Re:  bitmaps
+> 
+>   well, you have 72 clocks across the screen.  you load the bitmap
+> register near the beginning of the line and do other stuff (you're
+> carefully counting the clocks in the "other" stuff).  at the
+>appropriate moment you put new values in the bitmap registers (and
+> color registers,and so forth).  with certain h/w constraints you
+>can cause the moveable objects to appear more than once horizontally
+> by stuffing the position registers on the fly.  (colors are one of
+>the things most easily changed during the hscan).
+> 
+> -landon
+> 
+
+Interesting.  So what exactly causes the "flashing" effect noticable
+in many programs?  For example, in Frogger, when there are a lot of
+players on the same line, and they flicker.  I have some idea as to
+€why this occurs, but I'm not sure.
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 18 Dec 1992 16:10:21 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: graphics mode
+
+I've been talking to Cyberman in private email, and it turns out I was
+confused about how the 2600 deals with interlace.  I hadn't really
+thoughtabout it, so I assumed the 2600 would have full 525 vertical
+resolution.Duh. Since the 2600 just forgets about the interlace, it has
+only 262vertical resolution, and some of that isn't actually used. So a
+160x240graphics mode should be close to perfect (dropping off 11 lines
+on the topand bottom).  Getting something closer to 262 might be
+better, since theremight be a small amount of useful stuff in the top
+and bottom 11 lines,but I don't think so.  
+
+So, if anyone has heard of a way to do a 160x240x256 mode on a VGA card
+let us know.  I'm going to look into it very soon.  Once I get the mode
+going, I can start to work on some benchmarks to see what kind of speed
+we can reasonably get on an average VGA card.  Then I will start work
+on the graphics part of the emulator.
+
+Does someone want to take the CPU emulation part of the project?  There
+is C source code for several 6502 emulators out there, and I have some
+pointers to some of them.  I guess someone in the know should pick a
+goodone and get started on turning it into a 6507 emulator.  Then,
+maybework on some stubs for the graphics, sound and input.  For now I
+think weshould work on getting the CPU and the graphics working, using
+simplekeyboard input for the joystick/switch input.  Then once we get
+that working, we could throw in the sound and input.
+
+Another question I had is who is on this list?  We should do some sort
+ofroll-call to see who is interested in the emulator, and what part of
+theemulator they want to work on.
+
+Another thing to think about is getting a library of ROM images.  There 
+are some legal questions, and hopefully we can get permission from most
+of the cartridge manufacturers.  Assuming we can fix that up, I have
+about200 cartridges that can be put in the library. 
+
+And this brings up another problem.  The 2k and 4k cartridges will be
+simple to do, but the 6k cartridges and ones with RAM will be trickier.
+I assume we will need to develop some kind of header for each ROM image
+that says whether it is 2,4, or 6k whether or not it has RAM, as well
+€as the bank-switching method if it is 6k (assuming different companies 
+used different techniques) and the method it used for RAM if it has any.
+Also, it would be good to have it contain info about what kind of
+controllerit uses, along with the name, company and product number, and
+possiblya one line description.  Anyway, something to think about.  For
+now we areonly concerned with the simple 2k and 4k cartridges that
+don't use weirdhardware tricks.
+
+And does someone want to type up a nice explanation of how the different
+graphics registers work together?  This would be good to add to the 
+big file about programming the 2600.  Something similar to the message I
+did a week or so ago, only more polished and in-depth. 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 18 Dec 1992 15:21:07 +0000
+From: wms@iwarp.intel.com (William Shubert)
+Subject: graphics mode
+
+>Another question I had is who is on this list?  We should do some sort
+of
+>roll-call to see who is interested in the emulator, and what part of
+the
+>emulator they want to work on.
+   Roll call?  OK, I'm primarily interested in making a Unix/X11 port.
+Thismay have some SERIOUS performance problems, but it should be
+doable.  FirstI plan on gotting a CPU emulator going (should be easy if
+I can find a
+public domain one that I like, which means one that is flexible enough
+to
+add hooks for the rest of the hardware and FAST...if I can't find one
+I'll
+write my own) then the graphics.  If the graphics can be done fast
+enough,
+I'll add the input and sound.  I don't plan on starting until January or
+February of 1993.
+                                -Bill (wms@ssd.intel.com)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: Sat, 19 Dec 92 16:34:44 WST
+From: John West <john@mackerel.gu.uwa.edu.au>
+Subject: Re: graphics mode
+
+>Does someone want to take the CPU emulation part of the project?  There
+>is C source code for several 6502 emulators out there, and I have some
+>pointers to some of them.  I guess someone in the know should pick a
+good
+>one and get started on turning it into a 6507 emulator.
+
+I'll help. I'm not going to volunteer to do it all, as I don't know any
+80?86 assembly. Here's some ideas anyway:
+€- Turning a 6502 emulator into a 6507 emulator is easy - simply rip out
+all of the interrupt handling (that would clean it up a lot), and AND
+all addresses with 8191.
+- An interesting way of handling the interpreting is to have 2 separate
+copies of memory (there's only 8K total anyway). One has a byte for each
+location, storing the actual value. The other contains a pointer to a
+routine that would emulate the instruction having that opcode. On reset,
+and whenever a location is modified, this will point to an 'I don't
+know'
+routine, which will look at the opcode, find the appropriate routine, 
+and
+replace the pointer. The first time the instruction is executed, it 
+will
+have to run around tables looking for the routine, but after that it 
+can
+go straight there. If the location is data, not code, then it will 
+never
+even try to work out how to do it.
+- Remember - the 80?86 and the 6502 are both little-endian
+- ALU flags. This is probably best done lazily. Simply store the 80?86
+status register after each instruction, and only try to determine the
+6502 one when it is actually needed. This only happens on BRK, PHP, 
+PLP.
+Branches and various arithmetic operations are only concerned about 
+values
+of particular flags, not the exact pattern of bits within the register.
+These instructions can just look at the stored 80?86 flags.
+
+> Another question I had is who is on this list?  We should do some sort of
+> roll-call to see who is interested in the emulator, and what part of 
+the
+> emulator they want to work on.
+
+Me for one. As I said, I'll help on the 6502 emulation, but we're going
+ to
+need someone who is good at 80?86. I've got a good description of the
+operation of the 6502 if it will help - exactly what it is doing on each
+cycle. It may be important for the timing of the graphics (which cycle 
+does
+it do that store on? How many pixels across was it?)
+ 
+John West
+For the humour impaired: Insert a :-) after every third word
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 19 Dec 1992 14:31:17 +0800
+From: Ross <ross@dcs.warwick.ac.uk>
+Subject: Re: graphics mode
+
+Firstly, please excuse any typing mistakes - I'm working from a PC
+with the wrong terminal emulation, so I can't delete...
+
+€As for the roll call, please count me in, although I'm very busty 
+(that should read busy!) this year. (I'm in my final year now.)
+I can help with C sourcing, or better still, I'd be happy to scour the 
+articles and make some kind of summary of what has been goping (going)
+ on
+recently. (I can't start for a couple of weeks - Christmas vacation has
+just begun, I'm off home where I have no access, unless I can get my
+modem working one day, but that's another stoyr (stoyr oh no! story!)
+
+Anyway, this is Ross wishing everyone a good Christmas/whatever, 
+and hope to hear from y'all next year. Bye!
+
+Ross
+
+________________________________________________________     _________    ____
+He's not really dead while we remember him.               -)[_________==
+Who, Bones ?                   ===========          ____====///_   _\\_____
+Spock, dammit Jim, Spock !    || ross@dcs ||       <____________> '--------''
+Spock who ?                    ===========              ''''
+_____________________________________"Captain, we've lost horizontal hold !"__
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 19 Dec 1992 16:17:26 +0400
+From: "Hugh Eaves, (804) 371-8754" <HLEAVES@ruby.vcu.edu>
+Subject: Roll Call
+
+Well, I 'm new to this list. I subscribed specifically because I'm 
+interested
+in working on the emulator project. So count me in. I'm fluent in 6502
+assembler, 80x86 assembler, and C. I don't have much specific experience with
+programming the 2600 system but if the specs are available I can write
+ the
+code. I'm willing to work on any part of this project. We are definitely going
+to need a project manager to do this. Has someone already assumed this
+ role?
+
+-Hugh
+
+*******************************************************************************
+** Hugh L. Eaves                      ** Internet: hleaves@ruby.vcu.edu      **
+** Medical College of Virginia        ** Bitnet: hleaves@vcuruby             **
+** Department of Human Genetics       ** Voice: (804) 371-8754               **
+***************** All non-incendiary communication welcome! *******************
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 19 Dec 1992 16:57:52 +0200
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re: graphics mode
+
+> And this brings up another problem.  The 2k and 4k cartridges will be
+€> simple to do, but the 6k cartridges and ones with RAM will be 
+trickier.
+> I assume we will need to develop some kind of header for each ROM
+image
+> that says whether it is 2,4, or 6k whether or not it has RAM, as well
+> as the bank-switching method if it is 6k
+
+There are cartridges larger than 6K.  Up to 32K, I believe.  Some
+of these used additional hardware for bank-switching.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 21 Dec 1992 01:21:46 +0300
+From: toz!cyberman@acsu.buffalo.edu (Cyberman)
+Subject: RAM ROMS and other things
+
+Ok an in Circuit emulator is doable
+What i need are full schematics.
+OF the 2600
+and cartridge types.
+We probably want to emulate them all.
+
+Did I here the 6507 DIDN'T have interupts?
+GAG that could make things tough. 
+Unless we can directly control the 2600 cpu clock
+we cold have problems.  Basically we need to be able 
+to stop the CPU at a vertical retrace.  That way we won't cause 
+or monitor/TV to SCREAM OW! :)
+
+So we may have to have some way of gating the CPU clock.
+(HACK Time!)
+For emulating RAM and ROM we may need to PROTECT areas of the
+RAM from writting and of course find out ANY possible bank switch
+ing schemes used.  SIGH.
+hehehe
+
+Cyberman/Stephen - looking in to getting a 2600.
+
+///////////////////////////////////////////////////////////////////////////
+
+Like this is my Mail sig, with a few stupid qoutes I like:
+"Pardon me do you have any Grey Poupon?"
+"He's dead Jim."
+"If at first you don't succeed, don't parachute."
+"Where's the Peace?"
+"Pepsi - that gotta throw up drink!"
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 12 Jan 1993 11:15:19 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+€Subject: graphics mode (fwd)
+
+> From wms@iwarp.intel.com Fri Dec 18 17:21:40 1992
+> Date: Fri, 18 Dec 92 15:21:07 PST
+> From: wms@iwarp.intel.com (William Shubert)
+> Message-Id: <9212182321.AA21743@e26.iwarp.intel.com>
+> To: galt@peruvian.cs.utah.edu
+> Cc: program-2600-list@raven.alaska.edu
+> In-Reply-To: Greg Alt's message of Fri, 18 Dec 92 16:10:21 -0700 <9212182310.AA16416@peruvian.cs.utah.edu>
+> Subject: graphics mode
+> 
+> >Another question I had is who is on this list?  We should do some
+ sort of
+> >roll-call to see who is interested in the emulator, and what part of
+ the
+> >emulator they want to work on.
+
+I'm interested in doing an emulator for the Amiga using ECS chips.  I
+don't have much time, so I don't know if I'll actually get around to
+this or not, and I haven't done much graphics programming on the Amiga
+yet (the most I did was a Mandelbrot renderer), but I'd still like to
+collect information so that I can at least think about it.  I have
+lists of 6502 instructions and am familiar with 6502 assembly, but not
+68000 assembly, so I would be programming in C.  I suppose we might
+all be able to use a common CPU emulator core, provided that we all
+used C.  That part seems fairly simple... just use a jump table for
+instructions, and use a global PC so that the function can read in the
+required arguments according to bit-filtered addressing modes.  So one
+function can be used for an instruction, and one subroutine for each
+addressing mode, or a switch, depending on what's faster and more
+efficient.  Keep in mind, though, that a general purpose 6502 emulator
+would not be able to assume that the endianness of the 6502 is the
+same as that of the computer the emulator is running on.  The 6502
+uses low-byte/high-byte format, and Motorola uses high-byte/low-byte.
+Intel uses low-byte/high-byte.
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 16 Mar 1993 14:28:19 +0800
+From: Ross <ross@dcs.warwick.ac.uk>
+Subject: 2600 ROMS archived...
+
+Okay, is the rumour true - does anyone know of an archive carrying 
+the data from 2600 cartridges? (I heard about it on a newsgroup, sorry
+I can't remember which.)
+
+€Things have been quiet here recently - re. the emulator, I've been 
+looking at what has been done, and if the ZX Spectrum emulator is
+anything to go by (runs twice as fast as the original on my new PC)
+then I don't see why we couldn't get one going.
+
+Can someone make an image of a rom? I suggest Combat - I can't imagine
+anyone getting upset about this one floating around. 
+
+The end is in sight! We *WILL* be able to emulate the 2600, as fast 
+as the original. Imagine - never having to worry about your old box 
+dying!
+
+On a separate note, I've been told that US carts are the same as UK 
+ones, so if anyone has any spares that are common over there - chances 
+are they are rarer here, so please offer me some! 
+
+If anyone wants them, I have Defender, Video Chess and Combat all going
+spare for the price of the postage, but I would really like to swap 
+them
+for something if possible.
+
+Here's to breathing some new life into the group.
+
+Ross
+
+
+
+
+________________________________________________________     _________    ____
+He's not really dead while we remember him.               -)[_________==
+Who, Bones ?                   ===========          ____====///_   _\\_____
+Spock, dammit Jim, Spock !    || ross@dcs ||       <____________> '--------''
+Spock who ?                    ===========              ''''
+_____________________________________"Captain, we've lost horizontal hold !"__
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 16 Mar 1993 14:21:13 +0100
+From: galt@asylum.cs.utah.edu (Greg Alt)
+Subject: Re:  2600 ROMS archived...
+
+>Okay, is the rumour true - does anyone know of an archive carrying 
+>the data from 2600 cartridges? (I heard about it on a newsgroup, sorry
+>I can't remember which.)
+
+I think that rumor was started by me when I said that it wouldn't
+be very difficult to build a cartridge faker for the 2600 using a
+C64.  I know someone who has done this, and he also has a large number
+of cartridges on disk (100 or so).  I have not been able to contact
+him though...  I would much rather use a PC to do the cartridge
+faker, or even have an emulator.
+
+I'm sorry I haven't put any time into the emulator this quarter...
+€I got a TA job, and between that, classes, and work on a video game
+I'm writing, I had 0 time.  If someone wants to take the initiative,
+they can start work on the 6507 emulator.  Several people expressed
+interest (and they said they knew enough to do it).  If you can get 
+together and convert a 6502 emulator and put some hooks in for the
+graphics (keep track of clock counts and figure out where the
+graphics clocks come in (the graphics clock is a few times faster 
+than the CPU clock if I remember correctly), then the graphics 
+people (me and other interested/knowledgeable people) can start
+doing the graphics emulation.
+
+For now, you can pretend the registers are just normal memory, but
+make it easy for the graphics people to put some kind of "switch
+(address)"
+statement to do graphics/io functions for the stores and loads.
+
+I'd like to get a simple text version going first.  Instead of
+displaying each line, it will have a line of text describing it.
+(position/color of everything, etc.)  then once that seems to be 
+going well, implement the graphics functions.  
+
+I plan on getting a 486DX2-66Mhz with local-bus video soon, so I think
+speed is going to be less of a concern (you can get such a system
+for $3000 from Gateway).  Also, I might wait for the DX3-99Mhz systems
+to come out (should be this spring or summer).  By next year, these
+systems should be cheap enough than anyone can pick one up (like 386sx
+machines are now).  At 66Mhz, we'd get 200 million instructions per
+second vs. less than 1 million instructions on the 2600 (about 3
+instructions per second at 1.7 MHz?)  Also, with local-bus video,
+you can get about 20 million pixels per second.  We will be doing
+about 320x240 which is only 76800 pixels.  That gives us room to
+do about 260 screen updates per second.  Now it is true that these
+are top speeds that aren't usually reached, but we only need 
+2 million pixels per second to get a 30Hz screen update.  
+
+So, it might not be fast enough on a 386, but a 486 with local-bus
+video should do just fine.  I know that few people have such systems,
+but in a year or two, they will be the near-obsolete cheapos that
+386sx's are now.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 16 Mar 1993 17:35:41 +0200
+From: kopnicky@owlnet.rice.edu (Quantum Seep)
+Subject: Emulating 6507
+
+There are two reasonable ways of emulating the 6507, in my opinion.
+One is to treat the ML of your machine as a "microprogramming
+language" for the 6507, and thus structure the 6507 emulator as any
+microprogrammed processor.  It would be easier than designing a
+processor, though, because of the great flexibility of the
+microprogramming language.
+        Instead of interpreting 6507 ML, a viable alternative would be
+€to "compile" it into the ML of your target machine.  This would grant
+a speedup as opcode interpretation wouldn't have to be done on the
+fly.  However this could make timing and video access more difficult.
+
++----------------------------Ren & Stimpy--------------------------------+
+| "Psst. Hey Guido. It's all so clear to me now. I'm the keeper of the   |
+| cheese. And you're the lemon merchant. Get it? And he knows it. That's |
+| why he's gonna kill us. So we gotta beat it. Yeah. Before he lets      |
+| loose the marmosets on us! Don't worry, little missy! I'll save you!"  |
++--------------- Quantum Seep -- kopnicky@owlnet.rice.edu ---------------+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 17 Mar 1993 16:59:49 +0100
+From: galt@asylum.cs.utah.edu (Greg Alt)
+Subject: choices
+
+G44@delphi.com says:
+>Jeez, I could care less about using the brute force of a thousand 
+dollar plus system to emul
+>a $25 2600 system, sheesh.
+>I would think doing it with an ATARI 8-bit would be much cheaper and
+ much easier.
+>Since they ARE related.
+
+
+The problem that others have mentioned is that the 8-bit machines are
+ different
+enough to cause problems.  Also, the CPU is not any faster (the atari
+ 8-bits are
+at 1.7 MHz too, aren't they?), so you don't have enough time to take
+ care of things.
+
+I'd like to write it for a 486 because soon everyone with a computer 
+will have 
+something as good or better than a 486.  Also, storing several hundred
+ games on
+a harddrive is much easier than several floppies for the atari 8bits.  
+
+I would like to see a 2600 emulator that is as portable as possible, so
+ that it
+can last for a long time.  I would prefer doing an X version, but X is
+ much too
+slow for what we need to do.
+
+Also, while I want to develop for the 486, it will still run on a 
+386SX-16MHz,
+though it would probably be too slow.  After we get it going, we might
+ try to
+tighten it up, maybe cut some corners, and maybe it will work on low-end
+ 386s
+(new low-end 386s can be bought for under $1000, and used ones for 
+around $500,
+€so this isn't really too bad)  Besides, 5 years from now, you will be
+ able to
+pick up obsolete 486s for cheap.
+
+
+But if anyone wants to do an emulator for any other system, go for it.
+  The
+more the better.
+
+A while back, there were some people interested in doing the CPU 
+emulator part
+of the project.  If you are still around, say something...  If someone
+ can send
+me some good 6507 emulator code, I will start making the appropriate
+ hooks for
+graphics.  I don't really want to do much on the graphics code until I
+ know
+what I'm going to hook into.
+
+Greg
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 16 May 1993 15:51:24 +0200
+From: galt@asylum.cs.utah.edu (Greg Alt)
+Subject: hello out there...
+
+Someone recently mentioned that they already have a good 6507 emulator.
+It was either here or on r.g.v.c.  If you are on this list, let us know
+what you have.
+
+Anyway, I think I have a good idea about how to connect the graphics to
+ the 
+CPU emulator.  Basically, whenever there is a store command that tries
+ to 
+update a graphics register, just put that attempt onto a queue.  The
+ queue 
+would take records that have the register, the value to be stored, and
+ the 
+time (in clock ticks since last retrace or something like that).  Then,
+ in the 
+main loop, there would be a check to see if there have been enough 
+clock ticks 
+since the last vertical retrace.  If there have been, then the clock 
+tick 
+counter would be set to 0, and a function would be called that would
+ update the 
+whole screen based on the graphics queue.  To do this, it would step 
+through 
+the queue one scan-line at a time (by looking at the time values), and
+ draw 
+each line in off-screen memory.  Once the whole screen is "drawn", the
+ the 
+€active and visible pages would be flipped to display the updated 
+screen, and 
+then it would return back to the CPU emulator.  This idea has the 
+advantage 
+that all of the information for a given scan-line is saved, so we could
+ start 
+by only allowing one update per register per scanline, and once that
+ was 
+working, we could add code to deal with changing a register more than
+ once in 
+a scanline.
+
+The heart of the whole graphics part is the code to update one line of
+ the
+display.  This would have to look at the past values of the registers
+ and the
+new values from the queue and position the 2 players/missiles, the ball, and
+the playfield.  It would also have to update the collision registers.
+
+Hmmm...  Actually, it might be a bit trickier than this, since we have
+ to
+deal with the program checking for collisions while it is drawing
+ scanlines,
+so somehow the collision registers would have to be updated as it
+ goes...
+One solution would be to only figure out the collisions when asked,
+ and
+compute this as it goes (i.e. when the program checks the collision 
+registers
+with a load, call a function that determines the current collision
+ info).
+This wouldn't have to be done every scan-line, so the additional 
+overhead
+might not be that bad.
+
+But before we can do any of this stuff, we need a working 6507 emulator.
+Preferably one that is very fast and keeps an accurate count of cycles.  So,
+any luck yet with this part of it?
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 24 May 1993 18:50:10 +0400
+From: bvf@tiamat.umd.umich.edu (Joshua Thompson)
+Subject: The emulator (what else?)
+
+Has anyone looked at the 6502 emulators available in the form of several
+Apple II emulation packages?  There's at least one for Unix and one for
+MS-DOS, the former being written in fairly portable C.
+
+Moving from 6502 to 6507 is basically a matter of reducing the address
+space from 64k to 8k.  I'd be happy to help on this part of the 
+emulator,
+as I am an experienced programmer in 6502/65816 assembly language.
+€
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 24 May 1993 17:14:56 +0200
+From: galt@asylum.cs.utah.edu (Greg Alt)
+Subject: Re:  The emulator (what else?)
+
+>Has anyone looked at the 6502 emulators available in the form of 
+several
+>Apple II emulation packages?  There's at least one for Unix and one 
+for
+>MS-DOS, the former being written in fairly portable C.
+>
+>Moving from 6502 to 6507 is basically a matter of reducing the address
+>space from 64k to 8k.  I'd be happy to help on this part of the 
+emulator,
+>as I am an experienced programmer in 6502/65816 assembly language.
+
+There have been a bunch of people that have said they already have a
+ 6507
+emulator or would be willing to write one, but I haven't actually seen 
+one
+yet, so go for it.  If someone else on the list is working on a 6507 
+emulator, speak up and maybe you two could work together.
+
+Let us know about any progress you make.
+
+Greg
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 28 May 1993 01:01 +0100
+From: George Phillips <phillips@cs.ubc.ca>
+Subject: prototype 2600 emulator
+
+Well, I couldn't handle just reading over the 2600 programming
+information sheets so I started working on an emulator.  I needed
+some programs to run so I grabbed the 65c02 assembler from the Apple ][
+kermit distribution.  I then pulled out the example programs from
+the programming information sheet (clrdemo.asm, billboard.asm and
+combat.asm) and edited them until the assembler was happy.  I had
+to add tons of "$" to the hex constants in combat.asm and it's likely
+I missed a few so beware.
+
+The specifics of the TIA puzzled me a bit so I asked around for some
+NTSC documentation and read it until I was clear about line/vertical
+syncs/blanks and the gritty timing details.
+
+I then hacked up a 6507 emulator, wrote some code to load as65c02
+output and put in just enough TIA and RIOT glue to (apparently)
+get clrdemo.asm working.
+
+€I also figured I'd want to know what combat actually looks like so
+I bought a combat cartridge and looked it over on my 7800.
+
+There are three tar format archives containing
+source code and the fruits of my efforts to date:
+
+        asm.tar.z       a 65c02 assembler
+        prog.tar.z      some sample 2600 programs in 6507 assembler
+        emu.tar.z       a (non-realtime) 2600 emulator
+
+You can find them on ftp.cs.ubc.ca in /pub/pickup/2600.
+You'll have to build the assembler and use it to create input
+files for the 2600 emulator.  The files are gzip compressed but
+you can get our FTP server to automatically uncompress them for
+you by getting "asm.tar" instead of "asm.tar.z".
+
+I figured you'd want to look over the stuff I've done even though
+the files will become out of date quickly.  The FTP area I've put
+them in is temporary and I wouldn't recommend putting this stuff
+in a permanent place ('cept maybe the assembler).  I'm away for
+the weekend but after that I expect I'll be hacking the stuff
+pretty heavily.
+
+I've already learned some stuff beyond what the 2600-programming.info
+file says.  Maybe I'll start a simulator's guide to the 2600 to
+describe this stuff.  Right now I know more about NTSC timing, what
+role the RIOT timer plays, a good idea on how to do colour conversion
+and the relative speeds of things.  Still have a few questions about
+player/missile positioning, but I'm hoping an examination of the
+combat code will reveal that.
+
+Pretty rough stuff, but a start.  Grab it and have a look.  I can
+see why a (say) Apple ][ 6502 emulator to 2600 6507 emulator is
+a bit of a tough move.  Your Apple ][ emulator will check memory
+references because of the cards (up in to $C000ish range), but it
+will never catch them in the zero page since it knows there's no
+memory mapped stuff there.  But that's about all there is in the 2600
+so the silly thing has to check every memory read and write except
+program counter fetches and even then I fear some crazy 2600 programmer
+has successfully jumped into the memory mapped registers for an
+extra special effect.
+
+Here's the emulator README:
+
+This is an Atari 2600 VCS simulator.  It was written me, George 
+Phillips.
+I used some stuff from Rick Skrenta's UNIX Apple ][ simulator (disasm.c
+is a nearly straight copy and I used his 6502 simulation as a guide
+for the 6507 simulator).
+
+It runs under X windows and currently requires a colour display.  I
+compiled it on a Sun Sparcstation IPC running Sun OS 4.1.1 and X11R5
+with gcc version 2.2.2.
+
+€It has a number of limitations:
+
+        - doesn't run in real time (not even close)
+        - simulation is far from complete
+        - the colours are just not right
+        - new code; contains bugs -- guaranteed
+
+So why bother?  First, it provides a starting point for work on a 
+real-time
+emulator.  Even though it is so slow (reliability and accuracy over 
+speed
+was my goal), there are a few ideas that I think will be important in
+ the
+real-time version.  Second, it can (will?) be used as a reference
+implementation for faster versions.  There's two benefits here.  This
+version could be run in lockstep with a real-time version to verify 
+that
+it is getting all the right answers.  I did this recently to test a 
+fast
+80386 assembler Z-80 emulator.  The reference Z-80 emulator was written
+in C and was quite slow, but running the two in lockstep and comparing
+the registers after each instruction was an excellent way to find bugs.
+This version can also be used as a reference in the sense of stating
+unambiguously how the 2600 stuff works.  Text descriptions always leave
+out something while the C code will state it clearly.  Third, it is
+a way to find out more about the 2600 hardware.  I doubt we'll ever
+find a complete description of the 2600, but by running code on this
+simulator with its nice environment (single stepping, etc.) we can
+furthur refine how 2600 game code expects the 2600 to work.  Fourth,
+I had some questions on how the stuff all fit together and the easiest
+way to find out was to grind some code and start single stepping.
+Already I think my understanding of 2600 hardware has improved.
+
+So how do you use the darn thing?  Well, just run vcs with the name
+of an output file from as65c02.  The code should start at $1000 as
+that's where vcs will start executing.  It can run in a singlestepping
+mode or not depending on what value of the singlestep variable you
+compile in (yeah, a run-time switch real soon, please).  It should
+then proceed to do its thing which will likely be pretty boring.
+
+I haven't tested the thing much.  It does something which may be
+the right thing with clrdemo.asm.  I haven't checked it closely.
+I'm going to make it work on billboard.asm (not even tried yet) and
+then I'll move on to combat.asm.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 28 May 1993 11:43:18 +0300
+From: payson@cs.wisc.edu ( Payson)
+Subject: My 2600 programming efforts
+
+Well, I just did my first successful 2600 cartridge yesterday.  No it
+ wasn't
+€COLORDMO or BILBOARD as I couldn't get either of those to work quite
+ right
+[I didn't regard the EPROMs I did of 'em successful].  My cartridge
+ basically
+displays a color-bar pattern, but different from COLORDMO; it's a 8x16
+ grid
+of colors with luminance going across and chroma going down, surrounded
+ by
+a grey border and flashing one of the playfield registers every frame
+ so I
+could see where the colorbars lined up with the playfield.
+
+My calculations suggest that there are 71 pixels clocked between the
+ start of
+the instruction following STA 2 and the first pixel coming on the screen [71
+pixels = 23 clock cycles]  Can anyone else confirm this?  Otherwise, I 
+think
+I've got the timings figured out EXCEPT that I don't understand how one
+operates sprites, and have no idea what the event horizons for them are.
+Has anyone out there done any programming of sprites and such who could
+provide assistance?  Thanks much.
+
+ -- John
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Date: 28 May 1993 11:46:40 +0300
+From: payson@cs.wisc.edu ( Payson)
+Subject: Also... what are good assemblers...
+
+I need to assemble 6502/7 code on my PC.  I have the ASSEMBLR.ZIP 
+archive
+which contained an assembler which looked nice except [1] couldn't 
+compile
+it under Turbo C, and [2] used leading zeros for hex constants.  I also
+ have
+A65 [PseudoSam] but it [1] prefixes hex constants with H' and [2] Does
+ not
+support, as far as I can tell, include files.  I'd like an assembler
+ which
+uses the normal 6502-nomenclature $ for hex, % for binary, etc., and
+ supports
+include files (macros would be nice too).  Any recommendations?
+
+
+
+

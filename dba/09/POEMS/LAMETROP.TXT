@@ -1,0 +1,307 @@
+MUSIC IN LAMETROP
+
+MUSIC IN LAMETROP
+
+                         ___________________
+This is a review of the  \ZUUL MEGA-DENTRO./
+                          \               /
+This time I'll speak of the\  SOUNDCHIP  / music part in it...
+                            \ ''''''''' /
+Pardon ?    My name ?!  ... / J O V I S \ of course.
+                           /  """""""""  \
+--------------------------/---------------\------------------------------------
+-
+  This single-disk dentro needed about 6 months
+to be released on April '93...
+  But what we don't know is that the musics are
+home-made productions and really unpublished ones.    xXx
+                                                      X!X
+I made the tunes in a very big and long work !        X!X
+With - 41 minutes of listening time,                  X!X
+     - 674 patterns ( ! )                             X!X
+     - 500 Ko only for the score                      "X"
+I bet it's a never seen record...
+                                                      xXx
+                                                      "X"
+Yes, the 'BIG DEMO' from TEX had more listening time,
+but the musics were slower and very looped conversions !!
+
+In the 'LAMETROP' the instruments are less (!) good ...
+Although there is some buzzing bass sounds, the quality
+is not as good as the ones in Mad Max' oldest voicesets.
+ Why ?   Three reasons :
+1. Mad Max (and the others later) has great noises 'n' drums !
+ > Insigna editor's one (used in the LameTrop) are shit ! 
+2. Mad Max has better wave notes !
+ > I couldn't use them only by pressing and waiting the sound
+   because I wanted upto 8 channels without any arpeggio !
+3. Mad Max makes his musics clear !
+ > I have put the tempo two and often four times faster than
+   all the tunes we hear even now !  (A big work !)
+   That's why you often hear some very short blip-blop sounds
+   in my musics.  Forget them and count the channels !
+
+Adding that the musics are 'synchron' with the screens,
+ you'll understand that ZUUL (and I) did a good job !
+
+
+You want to know how to separate a voice into more (5?) channels ?
+Like me ?!  You'll have to work  V  E R Y VERY VeRy very hard ...
+But you can!
+I haven't got the time to explain all these tricks, sorry !
+
+But if you want to  then rip my -tiny aah!ah! -  muzikz !
+
+Remember:  Insigna TSS_6 is really NOT fantastic !
+         Try to use it like me ( speed: E ) or get another tracker !
+                                              You know which one ...
+                                               _
+-  If you wanna GET IN TOUCH WITH ME (jovis)    \
+   see in the - DRAWINS WITH TEXT - article.     > JOVIS (Hi!)
+   ( I know a lot about graphism as well...)   _/
+                                               _
+- If you wanna GET IN TOUCH WITH  ZUUL (H.Q.)   \
+  or get the LAMETROP (frenchies add stamps!)    > ZUUL (H.Q.)
+  then write to  XORF in - Z U U L - article.  _/
+
+
+Hey !   I wanna give you a little GIFT (little ?!) ...
+-------------------------------------------------------------------------------
+-
+     ********************
+ ****************************
+*****  A   M U S I C  !  *****
+ ****************************
+     ********************
+on the DSP Motorola 56001 ( 16 Channels Hi-Fi Stereo able )
+""""""""""""""""""""""""" ( and lot more at the same time )
+                          ( like speaking and depacking...)
+ legally 'ripped' on ...
+.--------------------------------------------------------.b
+!                                                        !r
+!   NNNN     NNN          XXX     XXXX  TTTTTTTTTTT TM   !o
+!    N NN     N            XXX     XX   T   TTT   T      !u
+!    N  NN    N   eeeee      XX  XX         TTT          !g
+!    N   NN   N  eee  ee      XXXX          TTT          !h
+!    N    NN  N  eeeeeee     XX  XX         TTT          !t
+!    N     NN N  eee       XX     XXX       TTT          !
+!   NNN      NN   eeeeee  XXXX     XXX     TTTTT         !b
+!                                                        !y
+'--------------------------------------------------------'  jovis
+(This song is played by a SCOREFILE readed in real time !)
+
+Let's imagine we're on this fabulous machine...
+We edit the file in this marvelous 1120 x 832 PostScript Display...
+And then we listen to this real CD quality music !
+
+Even if this tune doesn't give -16- voices  at the same time,
+and represents only a little sample of what is able this DSP,
+I think the FALCON  will not be better  than the NeXT, though
+it'll use some good easy tracker...  But try to make me lie !
+
+I can't imagine a better sound than the one I heard on the NeXT.
+               ( I compare with the KORG M1... )
+
+          DSP is great, FALCON too, the BOTH surely !...
+
+                But the NeXT still be the best !
+              Look at the Phaleon Giga-Demo intro.
+                    (from Next of course.)
+_______________________________________________________________________________
+_
+info tempo:40;
+part singer;
+part cello1;
+part cello2;
+part wind1;
+part wind2;
+singer synthPatch:"DBWave2vi" synthPatchCount:1;
+cello1 synthPatch:"DBFm1vi" synthPatchCount:1;
+cello2 synthPatch:"DBFm1vi" synthPatchCount:1;
+wind1 synthPatch:"DBFm1vi" synthPatchCount:1 rvibAmp:0.06 svibAmp:0;
+wind2 synthPatch:"DBFm1vi" synthPatchCount:1 rvibAmp:0.06 svibAmp:0;
+
+
+/* THE LADY OF TWILIGHT - by Michael McNabb  ( Just an extract ! -jovis- )
+
+   This score demonstrates the use of the wavetable-interpolation instrument
+   DBWave2vi, and the wavetable-database FM instrument DBFm1vi.
+
+   The singing voice accomplishes smooth slurs by panning between
+   wavetables while performing a glissando.  The transitions use the
+   portamento feature, which causes envelopes to procede directly to the second
+   point of an envelope when a new noteOn interrupts a sounding note without
+   an intervening noteOff.
+
+   The 'cello sound uses frequency modulation to add timbral expression to 
+   the otherwise-static 'cello wavetable, primarily during the attack and
+   swell portions of the notes.
+
+   Feel free to copy and modify this example.
+*/
+envelope ampFn1  =  [(0,0)(.2,0)(.4,-3dB,1.5)(.55,-5dB)(3,0dB,3)(5,-4dB,2)|
+                     (5.18,0,1)(5.19,0,.5)];
+envelope ampFn2  =  [(0,-4dB)(.2,-4dB)(.4,-3dB,1.5)(.55,-5dB)(3,0dB,3)(5,-6dB,3
+)
+|
+                     (5.18,0,1)(5.19,0,.5)];
+envelope ampFn3  =  [(0,-4dB)(.3,-4dB)(3,0dB,3)(5,-4dB,2)|
+                     (5.2,-28dB,2)(5.4,0,.9)];
+envelope ampFn4  =  [(0,0)(.2,0)(.4,-6dB,1.5)(.55,-9dB)(4,0dB,3)(6,-3dB,2)|
+                     (6.2,-28dB,2)(7.5,-45dB,1.5)(9,0,1)];
+envelope frqFn0   =  [(0,0)(.2,0)];
+envelope frqFn01  =  [(0,0)(.2,1)];
+envelope frqFn10  =  [(0,1)(.2,0)];
+envelope intFn0  =  [(0,0)(.2,0)];
+envelope intFn01 =  [(0,0)(.2,1)];
+envelope intFn10 =  [(0,1)(.2,0)];
+envelope intFn2  =  [(0,0)(1,0)(5,1,4)];
+
+envelope ampFn5 =  [(0,0)(.2,-3dB,1)(.4,-7dB)(4.5,0dB,3)(5.5,0dB,2)(7,-6dB,5)|
+                    (7.18,0,1)(7.19,0,.5)];
+envelope ampFn6 =  [(0,0)(.2,-4dB,1)(.35,-7dB)(5.5,0dB,3)(6.5,0dB,2)(8,-9dB,5)|
+                    (8.2,-28dB,2)(9.8,0)(10,0,.5)];
+envelope indFn5 =  [(0,1)(.03,1)(.4,.0)(4.5,0.5,3)(5.5,0.5,2)(7,0,5)|(7.19,0.8,
+2
+)];
+envelope indFn6 =  [(0,1)(.03,1)(.4,.0)(5.5,0.5,3)(6.5,0.5,2)(8,0,5)|(8.19,0.8,
+2
+)];
+
+envelope ampFn7  = [(0,0)(.015,1,1.2)(4,1)|(4.2,-28dB,2)(5.8,0.0,1.7)(6,0,.5)];
+envelope frqFn7  = [(0,1)(.015,1,1.5)(1,1)];
+envelope indFn7  = [(0,1)(.015,.2)(.3,1)];
+envelope indFn8  = [(0,0)(.02,1)(.03,.7)(.3,.2)];
+
+noteTagRange = 1 to 5; // optional
+
+BEGIN;
+
+singer  (noteUpdate) waveLen:128.000 svibAmp0:.003 svibAmp1:.011
+   rvibAmp:.006 bearing:.000 synthPatchCount:1;
+t 0.800;
+singer (noteOn,1) freq0:466.164 freq1:466.164 freqEnv:frqFn0 amp:-12dB
+   ampEnv:ampFn1 waveform0:"0SU" waveform1:"SU" waveformEnv:intFn0
+   freqAtt:.200 waveformAtt:.200 svibFreq0:3.125 svibFreq1:4.630;
+t 1.000;
+singer (noteUpdate,1) controlChange:1 controlVal:0;
+cello1  (noteUpdate) waveform:"VCS" m1Ratio:4.000 m1Ind0:.000 rvibAmp:.003
+   svibAmp1:.011 bearing:.000 synthPatchCount:1;
+t 1.001;
+cello1 (noteOn,2) freq:138.591 amp:-21dB ampEnv:ampFn5 waveLen:128
+   m1Ind1:.170 m1IndEnv:indFn5 svibFreq1:4.109;
+cello2  (noteUpdate) waveform:"VCS" m1Ratio:3.000 m1Ind0:.000 rvibAmp:.003
+   svibAmp1:.011 bearing:45.000 synthPatchCount:1;
+t 1.002;
+cello2 (noteOn,3) freq:139.561 amp:-21dB ampEnv:ampFn5 waveLen:128
+   m1Ind1:.200 m1IndEnv:indFn5 svibFreq1:5.265;
+wind1  (noteUpdate) freqEnv:frqFn7 ampEnv:ampFn7 waveform:"CL"
+   waveLen:128.000 m1Ratio:2.000 m1IndEnv:indFn7 rvibAmp:.006
+   synthPatchCount:1 svibAmp:0;
+t 1.003;
+wind1 (noteOn,4) freq:329.628 amp:-30.0dB m1Ind:.032 bearing:-45;
+wind2  (noteUpdate) freqEnv:frqFn7 ampEnv:ampFn7 waveform:"EH"
+   waveLen:128.000 m1Ratio:3.000 m1IndEnv:indFn8 rvibAmp:.006
+   synthPatchCount:1 svibAmp:0;
+t 1.010;
+wind2 (noteOn,5) freq:415.305 amp:-28.5dB m1Ind:.016 bearing:0;
+t 1.046;
+wind1 (noteOn,4) freq:369.994 amp:-30.0dB m1Ind:.032;
+t 1.058;
+wind2 (noteOn,5) freq:493.883 amp:-28.5dB m1Ind:.016 bearing:-1;
+t 1.117;
+wind1 (noteOn,4) freq:329.628 amp:-29.9dB m1Ind:.032 bearing:-44;
+t 1.119;
+wind2 (noteOn,5) freq:415.305 amp:-28.4dB m1Ind:.016 bearing:-2;
+t 1.150;
+singer (noteUpdate,1) controlChange:1 controlVal:19;
+t 1.157;
+wind1 (noteOn,4) freq:369.994 amp:-29.9dB m1Ind:.032;
+t 1.167;
+wind2 (noteOn,5) freq:493.883 amp:-28.4dB m1Ind:.016;
+t 1.217;
+wind1 (noteOn,4) freq:329.628 amp:-29.8dB m1Ind:.032 bearing:-43;
+t 1.220;
+wind2 (noteOn,5) freq:415.305 amp:-28.3dB m1Ind:.016 bearing:-3;
+t 1.271;
+wind2 (noteOn,5) freq:493.883;
+t 1.277;
+wind1 (noteOn,4) freq:369.994 amp:-29.8dB m1Ind:.032;
+t 1.300;
+singer (noteUpdate,1) controlChange:1 controlVal:38;
+t 1.311;
+wind2 (noteOn,5) freq:415.305 amp:-28.3dB m1Ind:.016 bearing:-4;
+t 1.335;
+wind1 (noteOn,4) freq:329.628 amp:-29.7dB m1Ind:.033 bearing:-42;
+t 1.373;
+wind2 (noteOn,5) freq:493.883 amp:-28.2dB m1Ind:.016 bearing:-5;
+t 1.378;
+wind1 (noteOn,4) freq:369.994 amp:-29.7dB m1Ind:.033;
+t 1.423;
+wind2 (noteOn,5) freq:415.305 amp:-28.2dB m1Ind:.016;
+t 1.438;
+wind1 (noteOn,4) freq:329.628 amp:-29.7dB m1Ind:.033 bearing:-41;
+t 1.450;
+singer (noteUpdate,1) controlChange:1 controlVal:56;
+t 1.479;
+wind2 (noteOn,5) freq:493.883 amp:-28.2dB m1Ind:.016 bearing:-6;
+t 1.499;
+wind1 (noteOn,4) freq:369.994 amp:-29.6dB m1Ind:.033 bearing:-40;
+t 1.538;
+wind2 (noteOn,5) freq:415.305 amp:-28.1dB m1Ind:.017;
+t 1.554;
+wind1 (noteOn,4) freq:329.628 amp:-29.6dB m1Ind:.033;
+t 1.599;
+wind2 (noteOn,5) freq:493.883 amp:-28.1dB m1Ind:.017 bearing:-7;
+t 1.600;
+singer (noteUpdate,1) controlChange:1 controlVal:75;
+t 1.603;
+wind1 (noteOn,4) freq:369.994 amp:-29.5dB m1Ind:.033 bearing:-39;
+t 1.668;
+wind2 (noteOn,5) freq:415.305 amp:-28.0dB m1Ind:.017 bearing:-8;
+t 1.673;
+wind1 (noteOn,4) freq:329.628 amp:-29.5dB m1Ind:.034 bearing:-38;
+t 1.714;
+wind1 (noteOn,4) freq:369.994 amp:-29.5dB m1Ind:.034;
+t 1.720;
+wind2 (noteOn,5) freq:493.883 amp:-28.0dB m1Ind:.017;
+t 1.750;
+singer (noteUpdate,1) controlChange:1 controlVal:93;
+t 1.778;
+wind2 (noteOn,5) freq:415.305 bearing:-9;
+t 1.780;
+wind1 (noteOn,4) freq:329.628 amp:-29.4dB m1Ind:.034 bearing:-37;
+t 1.831;
+wind2 (noteOn,5) freq:493.883 amp:-27.9dB m1Ind:.017 bearing:-10;
+t 1.840;
+wind1 (noteOn,4) freq:369.994 amp:-29.4dB m1Ind:.034;
+t 1.897;
+wind1 (noteOn,4) freq:329.628 amp:-29.3dB m1Ind:.034 bearing:-36;
+t 1.900;
+singer (noteUpdate,1) controlChange:1 controlVal:102;
+...
+...
+... A LOT (!!!) like above ... ( Thanks to the MIDI input )
+...
+...
+t 45.401;
+wind1 (noteOff,4);
+t 45.402;
+wind2 (noteOff,5);
+t 45.403;
+cello1 (noteOff,2);
+t 45.411;
+cello2 (noteOff,3);
+t 45.434;
+singer (noteOff,1);
+END;
+_______________________________________________________________________________
+_
+ Isn't that great, a NeXT ?!!   Buy one and understand...
+(FALCON would sound pretty good all the same and it's CHEAPER !!!)
+
+
+JOVIS IN DA  MAG IX  DBA.  Thanks BONUS for the TSS musics.
+                           You're so kind that I want
+ (No smurf,rap nor tag!)   everyone to know so !
+  

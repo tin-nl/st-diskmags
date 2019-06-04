@@ -1,0 +1,130 @@
+0660103030571
+9[........................................................]
+
+…T e k n o b a l l   P r e v i e w  
+
+ Some notes on another genre revivial..
+
+Last issue's review of Kakanoid was clearly the first breaking of a new 
+wave of games based on that old Atari Corp inspired favourite, 
+Breakout.. I fact, I wonder why it took so long for people to try to 
+surpass the beautifully designed and coded official Atari effort, that 
+was given away *free* in their Falcon software pack.. An act of hugely 
+overwhelming generosity for which we are all truly grateful for..
+
+Wobbly GEM-based game fans may well be disppointed with this latest 
+attempt at doing a good breakout game.. For example, it features a 
+smart custom drawn front end, a rotating ball sort of intro, and a 
+smart techno sound track kicks in.. Not good if you like your games to 
+look like the Atari desktop.. We move onto a smart options screen, 
+glimpsing the credits and high score screens., More high quality 
+work in evidence.. Surely the (ex) Atari people who gave us their 
+seminal version of Breakout are spinning in their cheap plywood coffins 
+by now..
+
+The main game itself must be a disappointment as you are presented with 
+a lavishly drawn main game screen with loads of coloured bricks to 
+knock out.. This is not quite as lavishly drawn as the other major 
+Falcon bat and brick effort 'MultiBriques', but it is not very far off, 
+and scores over that game in a number of other ways.. The quality of 
+work is very high, and up to the standard required for a good current 
+Falcon game..
+
+Sonically, this game is brilliant, the full version promising several 
+multi-channel soundtracks of the highest quality (See the technical 
+notes below as to how this is done.. Something very similar to what 
+Maggie uses for the Falcon shell in fact.. Added to the constant music 
+are the normal sampled sound effects, metallic clunks, pings and 
+explosions, all nicely understated.. Major event changes, such as 
+power-ups are announced by a clearly sampled (and English, according to 
+the blurb) female voice..
+
+Where this gets out and walks over all the others, especially the Atari 
+version, is in the uniquely thought out power-ups and variations on the 
+basic game.. A lot of new ground was covered by Arkanoid all those 
+years ago, and is repeated here, with vari-patterned bricks, bricks 
+that take several hits to be demolished, awkward angles for the ball to 
+get to, and a range of power-ups to enhance your bat..
+
+A lot of the 'usual' ones are there, sticky bat to retain and redirect 
+the ball, longer and shorter bats, a gun to shoot the blocks (on 
+certain levels) and so on.. Teknoball takes things quite a bit further 
+with such things as an extra ball (some levels tend to have these sort 
+of powerups fall in sequence, so you can end up with several balls in 
+the air at once) a 'magnetic' bat where the balls are attracted to your 
+bat by a mysterious magnetic force, which is usefull for some levels 
+with awkward corners where you can direct the ball to a certain 
+extent.. Another one unique to this game is a 'freeze' option where you 
+freeze the ball in midair, and collect any power-ups coming down the 
+screen.. This game also has a 'smart bomb' option, which is very useful 
+on certain levels.. These are deployed with the right hand mouse 
+button, and depend on where the ball is at the time.. They are 
+replenished in a randomly dropping power-up sort of fashion..
+
+These power-ups come in handy for other reasons, as on level four of 
+the demo version,. a certain amount of blasting-based action enters the 
+picture. A large boulder like construction bobs up and down the screen, 
+so in addition to catching your own ball, you are having to avoid, or 
+shoot, or bomb these large and lethal objects as well.. A bomb is 
+pretty conclusive, but a gun takes a few shots to get rid of them.. But 
+then they split into smaller and smaller components, a la Asteroids as 
+well!! At this point, things get pretty hairy..
+
+After about five or so levels, you also get an end of level guardian, 
+which can be disposed of by a number of methods, depending on what 
+you've got to hand..
+
+All in all, a challenging and enjoyable Arkanoid clone for the Falcon, 
+with a lot of unique twists of its own.. The best news is that it is a 
+very reasonable 60 FF or equivalent to register as shareware (About Ten 
+UKP) (See below for the address)
+
+Finally, some information from the author to conclude with..
+
+(C) CiH, Nov '96 (up to this point)
+
+-------------------------------------------------------------------------
+   Some technical notes that could interest someone.
+
+-The  whole  game  is  coded  in 68000 assembly language. It is 20800
+lines  long,  plus  generated  code  for  the  sprites. The code isnt
+perfect, but I'm tired...
+
+-The  soundtrack  rout have been coded by Laurent de Soras (Dumbo/big
+noz) for the Graoumf Tracker, an EXCELLENT shareware tracker. It uses
+the DSP, and the quality is 16 bits stereo at 50 khz of course.
+
+-The  musics  uses from 4 to 8 voices, and the sound fxs use 6 voices.
+So 14 voices of sound.
+
+-The game runs in one vbl on any kind of monitor.howewer on VGA there
+might  be  slowdowns  in shoot'em'up parts. Slowndowns are one of the
+easiest things to obtain on a standard Falcon. (sigh):-(
+
+-Sprites  collisions  are  made  to  pixel  precision.  They  use the
+blitter.  To  know  more  about this technic please see the HTC 3, by
+EKO. (Patrice Mandin article)
+
+-The  generated  code  is based on routs first seen inside the french
+mag 'ST magazine'.
+
+NB  :  50 megs to install the W(omiting system)indow 95! I just can't
+believe  it!  In 40 megs I've installed a complete Linux distribution
+with C++, and so on... Thanks Micros.ft. In fact I'm not concerned as
+I  don't have (and DONT want to have) a PC. But, Atarians, let's have
+a  minute  of  silence  for  all PC users, that ruin themselves for a
+crappy system.
+
+That's all folks!
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+Contact address below..
+
+Ognibene Pascal
+Cit‚ Universitaire St Antoine
+Chambre 1224
+69 chemin de St Antoine
+06200 Nice
+France
+E-mail : ognibene@eea.unice.fr
+

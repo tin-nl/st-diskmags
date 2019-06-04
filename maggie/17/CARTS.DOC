@@ -1,0 +1,367 @@
+06601030305800
+1
+2#
+F0110030
+9[........................................................]001
+ˆCartridge List€
+
+Key:
+
+Name -
+        (p) Prototype
+
+Manufacturer -
+        20) 20th Century
+        AC) Activision
+        AT) AtariSoft
+        BC) Bit Corp.
+        BR) Broderbund
+        CB) CBS
+        CO) Coleco
+        EP) Epyx
+        FP) Fisher Price
+        FS) First Star
+        IM) Imagic
+        IN) Interphase
+        KO) Konami
+        MA) Mattel
+        MF) Micro Fun
+        OD) Odyssey
+        PB) Parker Brothers
+        PP) Personal Peripherals
+        PR) Probe 2000
+        SE) Sega
+        SI) SierraVision
+        SP) Spinnaker
+        ST) Starpath
+        SU) Sunrise
+        SV) Spectravideo
+        SY) Sydney
+        TG) Telegames
+        TI) Tigervision
+        XO) Xonox
+
+Yr - Year of Release
+
+Number - Part Number
+
+Cn (controller) -
+      C)  Standard ColecoVision Controller -or- Super Action Controller
+      D)  Driving Controller
+      Do) Driving Controller (optional)
+      P)  Super Sketch Pad (Personal Peripherals)
+      R)  Roller Controller
+      Ro) Roller Controller (optional)
+      S)  Super Action Controllers -only-
+      So) Super Action Controller (optional)
+      The default is Standard Coleco -or- Super Action Controller.
+
+K (memory, in kilobytes) -
+€      16) 16KB ROM
+      32) 32KB ROM
+
+O (overlay) -
+      X) Overlay Exists for Standard Controller
+      Y) Overlay Exists for Super Action Controller
+      Z) Overlay Exists for Standard Controller _and_ Super Action
+           Controller
+
+Rare (rarity) -
+        C)  Common
+        U)  Uncommon
+        R)  Rare
+        VR) Very Rare
+        ER) Extremely Rare
+        NA) Not Available
+
+Rate (rating) -
+        1) Awful
+        2) Poor
+        3) OK
+        4) Good
+        5) Very Good
+
+        Format: Rating/# of people rating.
+                For example, 3.3/4 would mean 4 people had rated the
+                cartridge, with an average rating of 3.3.
+
+
+
+ˆCarts known to exist€
+
+Name                        Manuf.  Yr  Number  Cn  K   O  Rare  Rate
+=======================================================================
+2010: The Graphic Action Game   CO  84  2618        32  X  R     3.8/5
+A.E. (p)                        CO                         ER         
+ADAM Demo Cartridge (p)         CO                         ER         
+Alcazar the Forgotten Fortress  TG      TC-201      32     VR         
+Alphabet Zoo                    SP  83  ABC-CV      16     VR    3.0/2
+Amazing Bumpman                 TG                  16     VR         
+Antarctic Adventure             CO  84  2429        16     R     4.0/4
+Aquattack                       IN  84  2-004       16     VR    3.0/1
+Artillery Duel                  XO  83  99022       16     R     4.7/3
+B.C.'s Quest for Tires          SI  83  OTL-902     16     U     4.0/6
+B.C.'s Quest for Tires II:      CO  84  2863        32     R     3.5/4
+    Grog's Revenge
+Beamrider                       AC  83  VS-003      16     U     4.8/4
+Blockade Runner                 IN  84  2-002       16     R     2.5/4
+Boulder Dash                    TG      TC203       16     VR         
+Brainstrainers                  CO      2696        16     VR    2.0/1
+Buck Rogers Planet of Zoom      CO  83  2615        32     R     2.7/3
+Bump 'n' Jump                   CO  84  2440    Do  32     U     3.5/4
+Bump 'n' Jump (p)               MA                  16     ER         
+Burgertime                      CO  84  2430        16     U     4.0/5
+€Cabbage Patch Kids              CO  84  2682        16     C     3.0/5
+    Adventure in the Park
+Cabbage Patch Kids Adventure    CO                  16     ER
+    in the Park (p)
+Cabbage Patch Kids Picture Show CO  84  2600        32  X  R     2.0/3
+Campaign '84                    SU  83  1604        16     VR    3.3/3
+Carnival                        CO  82  2445        16     C     3.3/6
+Centipede                       AT  83  70004   Ro  16     U     4.0/5
+Choplifter!                     CO  84  2690        16     VR    3.8/4
+Chuck Norris Superkicks         XO  83              16     VR    3.0/1
+Congo Bongo                     CO  84  2669        32     R     3.5/4
+Cosmic Avenger                  CO  82  2434        16     C     3.0/8
+Cosmic Crisis                   BC      PG901       16     ER
+Cosmic Crisis                   TG                  16     VR
+Dam Busters, The                CO  84  2686        32  X  R     2.5/2
+Dance Fantasy                   FP      DCF         16     VR    2.0/1
+Decathlon                       AC  83  VS-006      16     U     3.5/6
+Defender                        AT  83  70002       32     R     3.7/7
+Destructor                      CO  83  2602    D   32     U     2.8/5
+Dr. Seuss: Fix-Up the Mix-Up    CO  84  2699        16  X  VR    3.0/3
+    Puzzler
+Donkey Kong                     CO  82  2411               C     3.5/8
+Donkey Kong Junior              CO  83  2601        16     C     4.0/6
+Dragonfire                      IM      O6611       16     R
+Dukes of Hazzard                CO  84  2607    D   32     VR    2.0/2
+Evolution                       SY  83              16     R     4.0/1
+Facemaker                       SP      FMK-CV      16  X  R     1.0/2
+Fall Guy (p)                    20              Do  16     ER
+Fathom                          IM      O6205       16     VR
+Final Test Cartridge            CO                  16     ER    2.0/1
+Flipper Slipper                 SV      SE291       16     VR
+Fortune Builder                 CO  84  2681        32  X  R     4.3/4
+Fraction Fever                  SP  83  FRF-CV      16     VR    2.3/3
+Frantic Freddie                 SV      SE232       16     R
+Frenzy                          CO  84  2613        32     R     4.2/6
+Frogger                         PB  83  9830        16     R     3.7/3
+Frogger II Threedeep!           PB  84  9990        16     VR    2.8/5
+Front Line                      CO  83  2650    S   32  Y  U     2.8/5
+Galaxian                        AT  83  70006       32     R     4.5/2
+Gateway to Apshai               EP  84  610R        16     R     3.4/5
+Gorf                            CO  83  2449        16     C     3.3/8
+Gust Buster                     SU      1601        16     VR    2.0/2
+Gyruss                          PB  84  9980        16     R     4.2/5
+H.E.R.O.                        AC      VS-005      16     R     5.0/4
+Heist, The                      MF  83  MCL520      32     R     3.5/4
+Illusions                       CO  84  2621        16     R     3.3/3
+It's Only Rock 'n' Roll         XO      99062       16     VR    1.0/1
+James Bond 007                  PB  83  9900        16     VR    2.5/2
+Juke Box                        SP      JUK-CV      16     VR    2.0/1
+Jumpman Junior                  EP      590R        16     R     4.8/5
+Jungle Hunt                     AT      70007       32     VR    3.5/2
+Ken Uston Blackjack / Poker     CO  82  2439            X  U     2.5/4
+Keystone Kapers                 AC  84  VS-004      16     R     2.7/3
+Kung Fu Superkicks              TG  83              16     R     3.0/1
+€Lady Bug                        CO  82  2433        16     C     4.3/8
+Learning with Leeper            SI      LLL-901     16     VR    3.0/1
+Linking Logic                   FP  84  LNL         16     VR    3.0/1
+Logic Levels                    FP      LLV         16     VR
+Looping                         CO  83  2603        16     C     3.2/6
+M*A*S*H                         20                  16     ER
+Make-A-Face                     SP                  16  X  ER    1.0/1
+Memory Manor                    FP      MEM         16     VR    3.0/1
+Meteoric Shower                 BC  86              16     NA    3.0/2
+Miner 2049er                    MF  83  MCL521      32     U     3.8/6
+Mr. Do!                         CO  83  2622        32     C     4.0/7
+Mr. Do!'s Castle                PB      9820        16     VR    4.5/2
+Monkey Academy                  CO  84  2694        32     R     3.3/3
+Montezuma's Revenge             PB  84  9660        16     R     4.4/5
+Moonsweeper                     IM  83  O6207       16     U     3.7/3
+Motocross Racer                 XO      99026       16     VR
+Mountain King                   SU  84  1605        16     R     3.3/3
+Mouse Trap                      CO  82  2419        16  X  C     3.5/6
+Music Box Demo (p)              CO                  32     ER
+Nova Blast                      IM  83  O6607       32     R     3.3/3
+Oil's Well                      SI  83  OWL-901     16     R     3.8/4
+Omega Race                      CO  83  2448    Ro  16     U     3.9/7
+One-On-One                      MF  84              32     VR    3.0/1
+Pepper II                       CO  83  2605        16     U     3.5/6
+Pitfall!                        AC  83  VS-001      16     U     3.3/4
+Pitfall II                      AC  84  VS-008      16     R     4.0/1
+Pitstop                         EP  83  600R    Do  16     U     3.0/6
+Popeye                          PB  83  9810        16     C     3.3/8
+Porky's (p)                     20                         ER
+Power Grabber (p)               SY                         ER
+Q*Bert                          PB  83  9800               C     4.0/6
+Q*Bert's Qubes                  PB      9950        16     ER    5.0/1
+Quest for Quintana Roo          SU  83  1603        16     R     3.7/3
+River Raid                      AC  84  VS-002      16     R     3.6/5
+Robin Hood                      XO  83  99023       16     VR    4.0/2
+Roc 'n Rope                     CO  84  2668        32     U     3.7/3
+Rock 'n' Bolt                   TG      TC-202      16     ER
+Rocky Super Action Boxing       CO  83  2606    S   32  Y  C     3.4/5
+Rolloverture                    SU      1602        16     VR    3.0/1
+Root Beer Tapper                CO  84  2616        32     R     3.6/5
+Sammy Lightfoot                 SI      SLL-901     16     VR    3.0/2
+Schtroumpfs                     CB                  16     VR    3.4/5
+Schtroumpfs                     CO                  16     VR    3.4/5
+Sector Alpha                    SV      SE220       32     VR    2.5/2
+Sewer Sam                       IN  84  2-001       32     VR    3.3/3
+Sir Lancelot                    XO  83  99024       16     VR    3.0/2
+Sketch Master                   PP      G2500   P          ER
+Skiing                          TG                  16     VR
+Slither                         CO  83  2492    R   16     C     4.2/6
+Slurpy                          XO      99061       16     VR    2.5/2
+Smurf Paint 'n' Play Workshop   CO  84  2697        32  X  R     2.0/2
+Smurf Rescue in Gargamel's      CO  82  2443        16     C     3.4/5
+    Castle
+Space Fury                      CO  82  2415        16     C     2.5/6
+€Space Panic                     CO  82  2447        16     C     2.9/7
+Spectron                        SV  83  SE234       16     R     3.5/2
+Spy Hunter                      CO  84  2617    So  32  Z  VR    4.4/5
+Squish'em Sam                   IN  84  2-003       16     R     4.0/1
+Star Trek: Strategic            CO  84  2680    So  32  Y  VR    4.0/7
+    Operations Simulator
+Star Wars: The Arcade Game      PB  84  9940        16     U     3.5/6
+Strike It                       TG                  16     VR
+Subroc                          CO  83  2614        32     U     2.7/7
+Super Action Baseball           CO  83  2491    S   32  Y  C     3.2/6
+Super Action Football           CO  83  2422    S   32  Y  C     3.0/3
+Super Action Soccer             CO                  32     VR
+Super Cobra                     PB  83  9850        16     R     2.7/3
+Super Controller Test Cartridge CO                         ER
+Super Cross Force               SV      SE237       16     R     3.3/3
+Super Front Line Demo (p)       CO                         ER
+Tank Wars                       BC      PG902       16     ER
+Tank Wars                       TG                  16     VR
+Tarzan                          CO  84  2632        32     R     3.0/5
+Telly Turtle                    CO      2698        16     R     2.0/2
+Threshold                       SI  83  THQ903      16     VR    3.0/2
+Time Pilot                      CO  83  2633        16     U     2.6/5
+Tomarc the Barbarian            XO      99025       16     ER
+Tournament Tennis               IM  84  O6030       32     VR    3.0/1
+Tournament Tennis               TG                  32     R     3.0/1
+Tunnels & Trolls (p)            CO      2441        32     ER
+Turbo                           CO  82  2413    D   16     C     2.7/6
+Tutankham                       PB  83  9840        16     U     3.7/3
+Up 'n Down                      SE  84  009-21      16     VR    4.7/3
+Venture                         CO  82  2417        16     C     3.9/8
+Victory                         CO  83  2446    R   32     U     3.0/4
+Video Hustler (p)               KO                  16     ER
+War Games                       CO  84  2632    R   32  X  U     3.9/7
+War Room                        PR  83  2153CL  Ro  32  X  U     4.3/6
+Wing War                        IM  83  O6209       16     R     4.0/3
+Wiz Math                        SI      WML-900     16     VR
+Word Feud                       XO      99060       16     VR
+Yolk's on You (p)               20                  16     ER    3.0/1
+Zaxxon                          CO  82  2435        32     C     3.4/7
+Zenji                           AC  84  VS-007      16     VR    5.0/1
+
+
+ˆCarts believed -not- to exist€
+
+Coleco was infamous for not putting out advertised cartridges. Several
+of the carts were shown in the catalogue that came with the Coleco
+Vision.It is not known if the screen shots shown were simple artist
+renditions,or if somewhere an actual demo or prototype of the
+cartridges exist. - JC
+
+The following cartridges, put out by the listed manufacturer,
+reportedlydo not exist, even as a prototype or demo cart.  If you have
+any solidevidence of their existence, please let us know.
+
+€Name                         Manuf.  Number  Notes
+========================================================================
+005                             CO           (Unreleased)
+9 to 5                          20           (Unreleased)
+Air Defense                     OD   2153CL  (War Room by PR?)
+Alcazar the Forgotten Fortress  AC           (Only Telegames release)
+Apple Cider Spider              SI           (Unreleased)
+Aquatron                        IN           (Unreleased)
+Armoured Assault                SV   SE232   (Unreleased)
+Astro Chase                     PB   9860    (Unreleased)
+Barbados Booty                  PB           (Unreleased)
+Boulder Dash                    FS           (Only Telegames release)
+Bung the Juggler                SY           (Wiz game - never finished)
+Cabbage Patch Playground        CO           (Unreleased)
+Capture the Flag                CO           (Unreleased)
+Caverns and Creatures           OD   2147CL  (Unreleased)
+Chess Challenger                CO   2438    (Unreleased)
+Choplifter!                     BR           (Only Coleco release)
+Circus Charlie                  PB           (Unreleased)
+Crash Dive                      PB   66013   (Unreleased)
+Crisis Mountain                 MF           (Unreleased)
+Destruction Derby               CO           (Destructor?)
+Dimensional Puzzles             CO           (Unreleased)
+Dino Eggs                       MF           (Unreleased)
+Domino Man                      CB   80013   (Unreleased)
+Donkey Kong 3                   CO           (Unreleased)
+Dot to Dot Zot!                 SY           (Unreleased)
+Dracula                         CO   2608    (Unreleased)
+Dragon's Lair                   CO           (Unreleased)
+Dragonstomper                   ST   6400    (Unreleased)
+The Earth Dies Screaming        20           (Unreleased)
+Escape From the Mindmaster      ST   6200    (Unreleased)
+Flashpoint                      OD   2148CL  (Unreleased)
+Globe Grabber                   MF           (Unreleased)
+Grog!                           SY           (Working title for B.C. II)
+Head to Head Baseball           CO   2423    (Super Action BB instead)
+Head to Head Football           CO   2422    (Super Action FB instead)
+Horse Racing                    CO   2442    (Unreleased)
+Jawbreaker                      SI           (Unreleased)
+Joust                           AT           (Unreleased)
+Lord of the Dungeon             PR           (Unreleased)
+Lunar Leeper                    SI           (Unreleased)
+M.A.S.H. II                     PB   66015   (Unreleased)
+Maddenness                      CB   80122   (Unreleased)
+Master Builder                  SV   SE233   (Unreleased)
+Masters of the Universe         MA           (Unreleased)
+Mr. Cool                        SI           (Unreleased)
+Mr. Turtle                      CO   2432    (Unreleased)
+Mountain King                   CB           (Only Sunrise release)
+Necromancer                     CO           (Unreleased)
+Number Bumper                   SU           (Unreleased)
+Pac-Man                         AT           (Unreleased)
+Pastfinder                      AC           (Unreleased)
+Phaser Patrol                   ST   6100    (Unreleased)
+€Phoenix                         CO           (Unreleased)
+Pink Panther                    PR   2152CL  (Unreleased)
+Pole Position                   AT           (Unreleased)
+Power Lords                     PR   2149CL  (Unreleased)
+Rainbow Walker                  CO           (Unreleased)
+Rip Cord                        CO   2431    (Unreleased)
+Rock 'n' Bolt                   AC           (Only Telegames release)
+Round Up                        CO           (Unreleased)
+Satan's Hollow                  CB           (Unreleased)
+Scraper Caper                   TI           (Unreleased)
+Short Circuit                   MF           (Unreleased)
+Side Trak                       CO   2418    (Unreleased)
+Silicon Warrior                 EP           (Unreleased)
+Skiing                          CO   2436    (Only Telegames release)
+Smurf Plan and Learn            CO   2444    (Unreleased)
+Smurfette's Birthday            CO   2444    (Unreleased)
+Spacemaster X-7                 20           (Unreleased)
+Spectar                         CO   2421    (Unreleased)
+Spook Maze                      SY           (Working title for Wiz Math)
+Stunt Flyer                     SI           (Unreleased)
+Summer Games                    EP           (Unreleased)
+Super Action Soccer             CB           (Only Coleco release exists)
+Sword & the Sorcerer            CO   2619    (Unreleased)
+Tac-Scan                        CO   2635    (Unreleased)
+Temple of Apshai                EP           (Unreleased)
+Time Runner                     MF           (Unreleased)
+Toy Bizarre                     AC           (Unreleased)
+Wild Western                    CO           (Unreleased)
+Wings                           CB           (Unreleased)
+Wizard of Id's Adventure        SY           (Unreleased)
+The Wizard of Oz                CO   2636    (Unreleased)
+Wizard of Wor                   CB   2421    (Unreleased)
+Wiz Lab                         SY           (Unreleased)
+Wiz Music                       SY           (Unreleased)
+Wiz Type                        SY           (Unreleased)
+Wiz Words                       SY           (Unreleased)
+Wiz World                       SY           (Unreleased)
+Wrath of Quintana Roo           SU           (Unreleased)

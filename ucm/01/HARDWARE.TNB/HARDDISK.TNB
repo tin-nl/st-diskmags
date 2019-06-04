@@ -1,0 +1,92 @@
+                              
+                              HARDDISK TIPS
+                              ~~~~~~~~~~~~~
+
+ Sobald man  eine hat, weiû man  nicht, wie man je ohne hat arbeiten kînnen:
+ Die Festplatte. Eine Anschaffung, die sich fÅr jeden lohnt, der nicht _nur_
+ mit dem ST spielt ( da sich die wenigsten ST-Spiele auf der HD installieren
+ lassen).
+ Leider nicht ganz billig. 
+ Tips: Mit 50 MB kommt  man sehr gut hin, mehr schadet nicht und kostet kaum
+ mehr. Wenn mîglich die leiseste Platte kaufen, man glaubt es nicht,wie sehr
+ einen das LÅftergerÑusch stîren kann, vor allem beim Schreiben.
+ Die mitgelieferte Software ( Plattentreiber, zumeist Backup-PRG und etliche
+ Hilfsprogramme ) ist immer  sehr gut. ( Mein Plattemtreiber hatte nicht die
+ Mîglichkeit, von jeder Partition zu booten, was mich  anfangs geÑrgert hat.
+ Aber wer will das eigentlich?) 
+ Wer eine Harddisk  kauft, sollte _unbedingt_ ein TOS>=1.4 benutzen, mit den
+ alten TOS-Varianten lÑuft die Platte sehr laaaaaangsam! Auûerdem zeigt sich
+ gerade hier oft der berÅhmt-berÅchtigte 40-Ordner-Fehler.
+ Noch was: Viele STs,vor allem die 1040er,sollten mit einem mîglichst kurzen
+ DMA-Kabel mit der Harddisk verbunden werden,da sonst merkwÅrdige Dinge pas-
+ sieren. Wenn also beim Festplattenbetrieb z. B. auftritt:  
+ PRGs starten  gelegentlich  nicht oder der  Bildschirm wird schwarz oder es
+ kommt die Meldung "TOS-Fehler 35"
+ - dann sollte man eventuell mal ein kÅrzeres Kabel benutzen. NatÅrlich kann
+ obige Stîrung auch von Viren, defekten Dateien etc. stammen.
+ Eine batteriegepufferte Hardwareuhr gibt es bei einigen Platten gleich mit-
+ geliefert. Muû nicht sein, ist aber praktisch.
+ öber die Vorteile und Risiken von Softwarecaches kînnte man ein ganzes Buch
+ schreiben, das muû  jeder fÅr  sich entscheiden. Hardwarecaches  sind m. W.
+ nach sicher.
+ Zumeist wird auch in den Betriebsanleitungen darauf hingewiesen: Man sollte
+ sich die Einteilung ( Partionierung ) der Platte vorher genau Åberlegen, da
+ énderungen nur schwer mîglich sind. 
+
+ Im PD-(SW)-Bereich gibt es ebenfalls viele gute Programme fÅr die Harddisk:
+
+ Ohne BOOTSELEKTOR geht es wohl nicht. Er erlaubt es, die ACCs und AUTO-ord-
+ nerPRGs beliebig  auszuwÑhlen. Er sollte  als erstes PRG in den AUTO-Ordner
+ kopiert werden. Bei TOS>=1.4 (s. o.) kann man (Åber "Arbeit sichern","Auto-
+ start") Åber das DESKTOP.INF auch ein GEM-PRG automatisch starten.
+ Wenn der Bootselektor  auch die  Mîglichkeit zur  Auswahl von verschiedenen
+ DESKTOP.INFs bietet,kann man nach dem Booten sofort in die gewÅnschten PRGs
+ komplett mit passenden ACCs etc., springen.
+ Beispiele: TUBS, AUTOSEL, S_BOOT
+
+ HARDDISKOPTIMIERER ordnen die durch  Kopieren und Lîschen nicht mehr zusam-
+ menhÑngenden  DateibruchstÅcke ( Cluster ) neu, so  daû die  Dateien wieder 
+ schneller gelesen werden kînnen. (Die GrÅnde fÅr diese "Zersplitterung" und
+ die Gefahren beim Optimieren sollen hier nicht erîrtert werden.)
+ Beispiel: HDPACK 
+
+ BACKUP-PRGs schreiben  die Daten von der Festplatte auf Disketten, damit im
+ Falle des GAUs (z. B. Headcrash, Schreibkopf schrammt auf die Platte ) noch
+ eine Sicherheitskopie vorhanden ist. Schon Disketten sind nicht 100% sicher
+ wie wohl schon jeder festgestellt hat. Auf Festplatten sollte man sich aber
+ noch weniger verlassen.
+ Nun ist aber das Kopieren von z. B. 30 MB  kein VergnÅgen: Ca. 40 Disketten
+ (bin zu faul, es genau  auszurechnen ( 30/0.72 bzw. 30/.88 ) zu formatieren
+ und zu beschreiben, ist nicht  gerade meine  Vorstellung von einem lustigen
+ Abend. Daher benutzen fast alle BACKUP-PRGs "Tricks": Sie schreiben die Da-
+ ten trackweise ( schneller ) und/oder  sie "packen" die Daten. Dadurch wird
+ die lÑstige Arbeit verkÅrzt.
+ Beispiele: F_BACKUP, TURTLE, VAULT
+
+ FILEFINDER: Da man leicht vergiût, wo sich  eine bestimmte Datei im Ordner-
+ gewirr versteckt, gibt es PRGs, die diese  Sucharbeit Åbernehmen. Wer jetzt
+ lÑchelt, hat keine HD oder sie noch nicht lange.
+ Beispiel: FFF, WO_IST
+
+ CACHES: Dienen zum  Beschleunigen  der Harddisk. Sie halten  einen Teil der
+ Daten im RAM, auf das noch schneller als auf  die Platte zugegriffen werden
+ kann.
+ Beispiele: ?? 
+
+ (Anm. d. Redax: Vielleicht T-CACHE 6.0?)
+
+ ACC_PRGs: Normalerweise  werden die ACCs aus dem obersten Pfad ( Wurzelver-
+ zeichnis) des Bootlaufwerks geladen. Mit den PRGs kann man nun die ACCs aus
+ einem bestimmtem Ordner (SYSTEM oder ACC) laden lassen.
+ Vorteil: Im Wurzelverzeichnis herrscht Ordnung.
+ Nachteil: Die Bootselektoren (s.o.) erwarten i. A. auch die ACCs im Wurzel-
+           verzeichnis.
+ Beispiel: ACC
+
+ SHELLS: Damit sind  PRGs gemeint, die andere starten. Es gibt z. B. solche,
+ von denen  man auf Knopfdruck  bestimmte PrGs starten kann, ohne sich durch
+ die Fenster hindurchzuklicken.
+ Bespiel: GEMINI, TERADESK
+
+                                             by Gnort
+     

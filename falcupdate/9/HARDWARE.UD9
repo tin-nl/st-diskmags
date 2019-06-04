@@ -1,0 +1,100 @@
+
+								==========================
+								STE/F030 Extended Hardware
+								==========================
+
+Very quick guide to hardware scrolling:
+
+for vertical scrolling use $ff820D. This allows you to  set  the  screen
+address to any even address, thus allowing you to move the screen up  or
+down by lines. To do infinite scrolling you'll need 2  screens  (well  4
+for double buffering but that's not to  hard).  Scroll  the  screen  and
+update the new segment. Now copy the new segment to the bit that's  just
+dissappeared off the top. Then when you reach the  end  of  the  secound
+screen you reset to the first  screen  and  all  the  scrolled  info  is
+already there. If you want to scroll up or down you can  use  3  screens
+and go either way.
+
+Horizontal scrolling: For this you need to use two of the new  registers
+$ff820f and $ff8265: My memorys a bit fuzzy on this so  you'll  need  to
+experiment. $ff820f is the over length line  register.  This  tells  the
+video shifter how many extra words are need past the end of the line  to
+get to the next line.
+
+If you make your screen 168 bytes wide, and  $ff8265  (fine  scroll)  is
+zero then this register should be four. Because you need to skip 4 words
+to get to the next line. If $ff8265 is <> 0 then the  value  in  $ff8265
+should be zero. If you're wondering why, just think of it this way. When
+it isn't fine scrolling the video chip won't access the next four  words
+because it isn't drawing from them, while if it is fine  scrolling  then
+it does access them and the v.a.p will be incremented. This is a  stupid
+feature really but not at all  difficult  to  work  around,  just  check
+hscroll for being zero.
+
+Multi directional scrolling: Tricky! I haven't worked out how  to  do  8
+way hardware scrolling without major clugding so far.  If  you  use  the
+infinite scrolling technique to update the screen then when  you  change
+scroll directions in certain circumstances (  i.e  when  you  reach  the
+boundarys of scroll screens ) you have to switch back to a  screen  area
+with no or wrong information on it. Now you can update that area in  one
+go, but it'll cause jerks in the scrolling as you take up loads  of  cpu
+time...
+
+Any way that's a brief guild to hardware scrolling. Unless you're trying
+to do multi direction scrolling it's quit sraight foward.  The  hardware
+scrolling also work on the falcon, so you  can  make  your  game  falcon
+compatible quite easerly, if you know some one with a falcon of course.
+
+DMA Sound
+
+The DMA sound chip on the Ste allows you to play 8  bit  mono  or  stero
+sound samples, with out having to do any strenous coding  of  interrupts
+or other unpleasent stuff. As you probabliy know, the replay  frequencys
+are (approx.) 6, 12.5, 25 & 50 Khz. You can only play single samples  at
+fixed frequencies, with just basic code, but you can write  routines  to
+mix samples and change their frequency. However  doing  this  means  you
+need to take cpu time, to mix the samples. A four channel sample  player
+(ie a mod music player) can take any thing from 95% down  to  about  15%
+cpu time depending on the replay  frequency,  and  other  factors,  like
+volume control and mulitplexing.
+
+I recommend you get the protracker 1.2a replay routine coded  by  Griff,
+available, from a good ftp site near you (I'll put it here  when  I  can
+get onto a ftp).
+
+Extended Palette
+
+The extended palette is the simplest of the ste's features  to  use  and
+just involves adding  another  bit  to  the  color  information  in  the
+hardware register. Where you have XXXX XRRR XGGG XBBB you now have:
+
+XXXX rRRR gGGG bBBB - Where RGB are the normal bits for the  ST  palette
+information and rgb are the LEAST signifcant bits of the  Ste's  palette
+information.
+
+Thus the intensity list from brightest (top) to  lowest  (bottom)  looks
+like this:
+
+   15 
+   7 
+   14 
+   6 
+   13 
+   5 
+   12 
+   4 
+   11 
+   3 
+   10 
+   2 
+   9 
+   1 
+   8 
+   0 
+
+To convert a number in range 0 to 15 to ste palette information, simply do: 
+
+        asr.w   #1,d0      shift color right and get lsb into carry register
+        bcc.s   .no_lsb    branch if carry clear
+        bset    #3,d0      set bit 3 as there is a leat significant bit
+.no_lsb

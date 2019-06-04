@@ -1,0 +1,98 @@
+
+ò                         APPENDIX C: SUGGESTED READING
+
+                    ...  .                               . ...
+                   /       /   / //==---------==\\ \   \      \
+                  <:: : : <   < <<  :PaperworK:  >> >   >  : ::>
+                   \.. . . \   \ \\==---------==// /   / .  ../
+
+TITLE                                |       AUTHOR | PUBLISHER |      ISBN
+-------------------------------------+--------------+-----------+-----------
+Introducing to ATARI ST machine code |              |   ZZ soft |
+-------------------------------------+--------------+-----------+-----------
+An excellent book for beginning assembly coders. Explains alot about the
+basics of 68000 assembler and how to communicate with TOS/GEM. Sadly, only
+the first 100 pages are global and the rest is all focussed on GEM coding
+and not at games or demos at all. Also, this book is quite old, so only
+the STe and TT are dealt with.
+-------------------------------------+--------------+-------------+---------
+Selbst Spiele programmieren          | K.D. Pollack | Heim Verlag |
+-------------------------------------+--------------+-------------+---------
+A completely brilliant book that shows very detailed how to develop a
+complete shoot 'em up in GFAbasic and continues with 680x0 assembler code.
+Loads of tips and tricks for demo/game code are presented. Many hardware
+bits of the ST, TT and Falcon030 are explained.
+This book is probably the best tutorial to game/demo coding I've seen so
+far. Only a pitty it's in German.
+-------------------------------------+--------------+-------------+---------
+ATARI ST/TT Profibuch                |    Jankowski |             |
+-------------------------------------+--------------+-------------+---------
+Absolutely smashing hardware reference to make every other obsolete. 1400
+pages of detailed and 100% (ok, 99.9) correct information about every part of
+the ST(e) and TT hardware you want to know about. Nothing about the Falcon,
+though.
+-------------------------------------+--------------+-------------+---------
+ATARI Compendium                     |              |      HiSoft |
+-------------------------------------+--------------+-------------+---------
+Very big and complete reference of the ATARI operating system. Also gives
+information about the hardware registers, but this is not complete and
+bit inconcise. But the reference of the OS is very good and even shows how
+to implement every call and it's ceaveats.
+-------------------------------------+--------------+-------------+---------
+Realtime 3d graphics                 | Andrew Tyler |             |
+-------------------------------------+--------------+-------------+---------
+I think the only book that handles 3d-graphics. I haven't got it myself, but I
+have parts of it on various coverdisks from the old ST-User magazine. it dealt
+with basic stuff such as flatshading polygons, backface culling. Also some
+harder stuff such as polygon pattern maps. All in assembler so very cool, but
+sadly this hasn't been available in a long time.
+
+                    ...  .                               . ...
+                   /       /   / //==---------==\\ \   \      \
+                  <:: : : <   < <<  :TextfileS:  >> >   >  : ::>
+                   \.. . . \   \ \\==---------==// /   / .  ../
+
+Most textfiles can be get from the big atari archives on the internet. Some
+others are a bit rare and I am even considering contacting the authors to ask
+if I can bundle their work with this book.
+
+TITLE        |       AUTHOR |
+-------------+--------------+
+MOTOROLA.DOC |       ARTtbl |
+-------------+--------------+
+Great reference for the 68030 processor. Shows exact timings and detailed
+explanation of all it's instructions and addressingmodes.
+-------------+--------------+
+HARD.TXT     |  Beweise/DNS |
+-------------+--------------+
+Very complete hardware reference. Shows about all the hardware registers in the
+(Mega-)ST(e), TT and Falcon030. No suggestions on how to use them or ceaveats.
+-------------+--------------+
+RAMRAT.TXT   |       CENTEK |
+-------------+--------------+
+Very exact information about how fast the Falcon's memory and video are and how
+these coincise. Since this stuff is almost unknown, you'd better get your hands
+on this if you're a real clockcycle freak.
+-------------+--------------+
+TECH_REF.TXT |        ATARI |
+-------------+--------------+
+Gives a good view of the old STs architecture. Alot can be learned from this.
+Especially how the CPU, RAM, videochips and the rest of the system hang
+toghether. Good as a referenceguide as well.
+-------------+--------------+
+HOWTODSP.TXT |  R.J. Ridder |
+-------------+--------------+
+Very good doc for beginners with the Falcon's DSP. Shows a structured approach
+to getting to grips with it and when to use it and when not.
+-------------+--------------+
+FASTIPOL.HTM |     Dynacore |
+-------------+--------------+
+Good explanation of how to do one of the most used looping techniques in demo-
+effect/3d history. It's used in lineroutines, texturemapping, gouraudshading,
+phongshading and then some more.
+-------------+--------------+
+3DROT.TXT (?)|  lithium/vla |
+-------------+--------------+
+Good explanation on all basic math in 3d graphics. The author is/was a PC
+dude, but the info is platform independent.
+

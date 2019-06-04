@@ -1,0 +1,81 @@
+ó--------------------------------------------------------------------------------
+                            "CENTAURI" by .tSCc.
+ó--------------------------------------------------------------------------------
+
+system... STfm, STe, Falcon, 512 KB RAM, RGB
+
+size..... 38 KB
+
+credits.. code - dynacore
+                 llama
+                 ray
+          grfx - gizmo
+                 unseen fate
+          musx - mc laser
+
+ó--------------------------------------------------------------------------------
+
+The never ending story was finished?! Yep, finally...
+
+Today (17.3.) I  got a mail containing the final version of ñ"CENTAURI"ð, .tSCc.'s
+contribution  to the ó"STNICCC2k C64 TIMES REVISITED COMPETITION"ð (what the hell)
+that just means that the contributions don't have to be bigger than 38 KB...
+
+As known, our intro ñ"CENTAURI"ð reached just the second and last place against an
+ORIC intro  done by  DBUG. Maybe just  known to the  sirius guys, the  intro was
+announced to be ready latest at XMAS... but  nothing happened. And the time goes
+bye and nothing was in sight.
+
+Untill  now, and you  can believe me, I was  anxious to see that  thingie all my
+group mates were  talking about but  I never saw a byte  of. Furthermore I hoped
+for some brainblasting stuff because 6 people  were involved in it, wow! Even if
+I don't know how many people  we will need to make a big demo then, I packed the
+thingie onto a disk and started to check it out on my STe.
+
+ñCENTAURIð starts with the  boot'n'ready  sequence of  the C64, saying 38611 bytes
+RAM free, loading ñCENTAURIð. A sid music by òMC Laserð starts to play and the first
+effect comes up, a texture mapped tunnel, not  filling the  whole screen, with a
+small tSCc logo in the upper left corner. Quiet ok, but with the time the tunnel
+mania on ST should has reached its peak long times ago...
+
+{*i centaur2.pi1 m 0 20 0 199}
+
+Anyway, it goes on  with a Centauri logo, bumpmapped in yellow/red colours, also
+good looking but we've seen it before as well but it makes place for a nicer efx
+then, an environment  mapped vector  thingie, accompanied by  some girlish pixel
+works by òGIZMOð. This is surely  the top-effect of the intro, because  it is more
+or less the last one.
+
+{*i centauri.pi1 m 0 20 0 199}
+
+Last but not least the credits part comes  up, listing the  involved people with
+some  dark blue hexagonal vector areas  that turning  around in the  background.
+Then the music goes over  into a steady  buzzing noise  and after pressing space
+the intro turns back to GEM (locking up the Falcon btw...).
+
+That's it and I don't want to wait too long for the final words...
+
+ò...the last words...
+
+This small intro is a nice life sign  from our band, no  question, but it surely
+isn't the burner  someone maybe was waiting for. It  features several nice "new-
+school-effex" but doesn't blows any  brain away. Ok, there are  just 38 KB space
+and if you think  to music and pixel work, there isn't much you could include at
+all, but I for myself thought I would see a bit more. The musical score is quiet
+nice and I like it more than MC Laser's tune for the ñ"Apocalypse"ð demo. The grfx
+are ok too. Last but not least I have to mention that I miss some more design.
+There is some fading stuff but no real transitions at all... òmeuh!
+Well, just leech it somewhere and check it out...
+
+ó--------------------------------------------------------------------------------
+originality...  7o % - not a blast, mostly already seen stuff.
+effex.........  75 % - tunnel, bumpmapper, nice environment mapped vectors!
+grafix........  65 % - some pixeled stuff, quiet ok.
+musix.........  8o % - good chip tune.
+design........  6o % - colours and fading is ok, but I miss a lot more...
+ó--------------------------------------------------------------------------------
+all in one ...  7o % - A nice comeback for .tSCc....
+ó--------------------------------------------------------------------------------
+
+.tSCc.  like the phoenix from the ashes                                  moondog
+ó--------------------------------------------------------------------------------

@@ -1,0 +1,137 @@
+SC1224 TO JAG
+
+Hi!  I connected a SC1224 to my Jag by following the docs included
+in the newsgroup.  It was fairly easy, and I only made 1 mistake.
+(I corrected it, it was my fault, and everything is fine.)
+
+It works fantastic!  There is a slight amount of "wavyness" over
+the picture, but it could be because my cable is 6 feet long,
+and isn't shielded.
+
+I've never seen the Jag have a sharper picture, or brighter colors.
+The SC1224 seems to be the perfect monitor.
+
+The sound is fantastic piped through my home stereo. 
+
+It's pretty easy to make the cable.  I had an extra connector
+for my color monitor, and bought the edge connector and ribbon
+cable from Radio Shack.
+
+Here are the two articles I used when building my cable:
+
+
+>From aspect@cats.ucsc.edu Sun Dec 12 18:42:49 PST 1993
+
+
+Well, I downloaded the .GIF on Jaguar Video cables, but my account will not
+let me do any binary uploading... :(  However, I Asciified it a bit, so here
+goes:
+
+(Da pic is in da magazine ED.)
+(I don't know if this info is still copyright AEO or not...)
+
+-----------------------------------------------------------------
+                  _PINOUTS_FOR_JAGUAR_(P1)_
+
+      01A 02A 03A 04A 05A 06A 07A 08A 09A 10A 11A 12A
+       |   |   |   |   |   |   |   |   |   |   |   |
+      --- --- --- --- --- --- --- --- --- --- --- ---
+
+      --- --- --- --- --- --- --- --- --- --- --- ---
+       |   |   |   |   |   |   |   |   |   |   |   | 
+      01B 02B 03B 04B 05B 06B 07B 08B 09B 10B 11B 12B
+
++----+--------+--------------+----+-----+
+|conn|  PIN   |    SIGNAL    |conn| PIN |
++----+--------+--------------+----+-----+
+| P2 | CENTER |  RIGHT AUDIO | P1 | 01B |
+| P2 |  SHELL |    GROUND    | P1 | 02B |
++----+--------+--------------+----+-----+
+| P3 | CENTER |  LEFT AUDIO  | P1 | 01A |
+| P3 |  SHELL |    GROUND    | P1 | 02A |
++----+--------+--------------+----+-----+
+
+
+>From sqt2717@acfcluster.nyu.edu Tue Nov 30 15:03:50 PST 1993
+
+I pulled this from someone named Jim on Compuserv.
+> 
+> This is the final pin-out on the Jaguar A/V port.
+> 
+> 
+> I have tested with RGB, composite, and SVHS monitors and works great!!!
+> 
+> 
+> The TboxU I made has a SVHS (mini-din) jack, SVHS RCA jacks (for
+> Commodore monitors), composite video RCA jack, Atari RGB port w/  audio
+> (looks great on the SC 1224), standard RGB jack, audio (L/R) RCA jacks,
+> 1/8S headphone jack.
+> 
+> 
+> Did I go overboard?  Yes!
+> 
+> 
+> I AM NOT RESPONSIBLE FOR IRRESPONSIBLE PEOPLE!!
+> DO NOT OPEN THE JAGUAR, OR THE WARRANTY WILL BE VOIDED!!
+> 
+> 
+> 
+>                  Top
+> 
+> 23  21  19  17  15  13  11  9   7   5   3   1
+> _____________________________________________
+> _____________________________________________
+> 24  22  20  18  16  14  12  10  8   6   4   2
+> 
+>                Bottom
+> 1 -
+> 2 -
+> 3 -
+> 4 -  Composite Color
+> 5 -
+> 6 -  Ground
+> 7 -
+> 8 -  Ground
+> 9 -  Chroma (SVHS)
+> 10-  Luminance (SVHS)
+> 11-  Green (RGB)
+> 12-  Ground
+> 13-  Vertical Sync (RGB)
+> 14-
+> 15-  Blue (RGB)
+> 16-  Horizontal Sync (RGB)
+> 17-  Ground
+> 18-  Red (RGB)
+> 19-
+> 20-  Ground
+> 21-  Ground
+> 22-  Ground
+> 23-  Audio (L or R)
+> 24-  Audio (L or R)
+> 
+> I cannot personally vouch for this but I may go ahead and attempt it.
+> 
+> -Jim
+>  
+
+
+That's all the info you need for the Jaguar end.  The ST
+end can be found in ST Internals, or in your manual for the ST.
+If you need that info, I can look it up.
+
+Here is what I found online about the ST end:
+
+  Red  Green  Blue  Monochrome  HorSync  VertSync  Ground  MonoDetect
+   7     6     10       11         9        12       13        4
+
+  Atari ST, STE or MEGA STE side (number as in operating manual)
+
+I believe the connector looks like this on the ST:
+(This is from my memory, you should definitely look it up.)
+
+1 2  3  4
+5 6  7  8
+9 10 11 12
+   13
+
+Ax

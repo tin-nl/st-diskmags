@@ -1,0 +1,125 @@
+ó--------------------------------------------------------------------------------
+                                   MEGASTAR
+ó--------------------------------------------------------------------------------
+
+system...... ST/STe, 512 KB RAM, RGB, Joystick
+
+developper.. ASM Software/Germany
+
+genre....... shot'em'up
+
+release..... o8/2k2
+
+homepage.... òhttp://home.tu-clausthal.de/~ifmar/asmsoftware/megastar.html
+
+ó--------------------------------------------------------------------------------
+
+As I red the  headline on  the DHS BBS I was  quite surprised, to see a new game
+release for the ST, furthermore  a shot'em'up and last  but not least by someone
+who was completely unknown to me so far.
+
+So I leeched  the little file  and checked out what comes along there... It is a
+game that was created using the òSEUCKð, the Shot'em'up Construction Kit, and this
+is already the first hit  into my stomach  since so far there weren't much games
+created with this tool that you can call a success.
+
+But anyway, I started the  game and was introduced by a titlescreen that doesn't
+gives too much away, does its  job but is  far away from  being a rocker  on the
+pixels area. There is no title music or something, just  silence. So I connected
+my Joystick again (that was  laying around in a box for some time now) and, yes,
+the firebutton still works!
+
+After  a short  loading screen  that finally  reveals  the used  òSEUCKð (here the
+version from Palace Software, later it was distributed by Gremlin if I'm right),
+you find yourself  back in the game  and the little sprite flying around is your
+space fighter. The game seems to play in space... endless widths...
+
+It doesn't tooks  long and the first  waves of enemies are popping up, the first
+ones doesn't fire on you, are just flying around too, later on they're appearing
+in different waves, every  enemy type comes  up in a special  formation onto the
+screen but firing  always in the same  directions, not  on you esp. so the enemy
+intelligence isn't that big, or better, not available.
+Later on  some "ground stations" (if  this  is possible  in space) are appearing
+too, firing bullets  in different directions over the screen in a very high rate
+and last but not least there are some in-level bosses as well.
+
+As I mentioned  above, ñthere isn't  something you can call A.I.ð, all enemies are
+acting in  a very special  way and after a few  tries you know where you have to
+fly to avoid collisions  and to avoid to get into their fire. To be honest, this
+isn't a real  drawback here since  it turns out that there are sometimes so many
+bullets of the  enemies around  on the screen that  you really have to take care
+where you're flying since only one hit is enough to kill your ship. But on other
+places it gets a bit boring to see the enemy fighters flying around and ignoring
+you at all.
+
+Ok, that's for the game itself, let's take a closer look onto the technics...
+ñThe gfx are  on a quite low  levelð. The sprites aren't eye catching, the colours
+aren't a pleasure  as well, ñit  looks very, very poorð, to say the truth. I think
+the screenshot reveals all.
+
+{*i megasta2.pi1 m 0 20 0 200}
+
+òDo you see the baddies?
+
+On the sound/fx  side there isn't  much to add too, the sound consists only of a
+few chip noises of  really lowest quality  and it reminds  hard to some games of
+1986 or 1987 or something... ñbeeep, beeep, bep, bep, plush...
+
+The rest  of the game  does its job  therefore. It is playable, even  if the big
+ammount of enemy waves on the screen makes it from time to time a bit unfair, so
+I never matched  it to reach a higher level (if there are any). Also the dead by
+one hit isn't  state of the art and reminds me hard to that ñdamn unfair ò"Raiden"
+game from Atari. ñTherefore the controls are ok and doing their job well...
+
+Furthermore you  have also a ñtwo  player optionð  included where you are fighting
+the aliens on one screen together.
+Last but not  least there seems  to be ñno hiscore tableð included that lowers the
+motivation to start the game again very much (as the sparse presentation does as
+well).
+
+Before I come  to my final words (of destruction, hehe) I want to add that I had
+a nice chat with  the maker on #atariscne  lately that opened  my eyes about the
+òSEUCKð a bit more and  I have to admit  that this  tool makes  it hard  to create
+anything  precious. The features  of the òSEUCKð are so damn limited that it seems
+to be more a pain in the ass to create something with it.
+Since it isn't  possible to  load in external  grafix files as well as to create
+common gfx files  with the build  in editor, it is quite hard to create stunning
+pixels with  it, or you have  to be a damn  masochist who  even works with Degas
+Elite (hehehe) and likes the simple editor functions in òSEUCKð as well...
+
+So the main  problem isn't  the lack of  creativity and skills of the makers but
+more the  lack of features of  òSEUCKð that are responsible of the fact that there
+weren't resonable games created with òSEUCKð at all.
+
+ñFinal words... òMEGASTARñ is at one  hand one of the very few shot'em'up games for
+ñ               the ST that  appeared over  the last  years at  all. But òMEGASTAR
+ñ               surely  isn't a mega  game, the  limited  features  of  òSEUCKñ are
+ñ               breaking the  neck of this creation right at the beginning. Sound
+ñ               and grafix are  of a damn low  quality level, but the sound alone
+ñ               is the deepest point in this game at all. The gameplay is ok even
+ñ               if the number  of enemy bullets  on the screen  sometimes and the
+ñ               fact that  you're dying with  the first hit, makes the game a bit
+ñ               unfair at some  moments. The controls  are ok  but therefore  the
+ñ               òSEUCKñ limits  are lowering the motivation, besides the bad grafix
+ñ               and sound  also  the  lack  of  game  features  like  a  saveable
+ñ               highscore  list or  some missing  features  like power ups in the
+ñ               game itself, aren't making you mad to play it... After all it was
+ñ               a try... the game  runs, we had something to check out and that's
+ñ               all... maybe  some hardcore  gamblers  will play  it from time to
+ñ               time (as  I did) but  this doesn't  changes anything  on the  low
+ñ               level quality that makes it unattractive for gamblers.
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals .....ð  2o % ñ- Arf...
+ñaudio .......ð  1o % ñ- Bleep, bep, plush...
+ñcontrols ....ð  8o % ñ- runs well
+ñidea ........ð  1o % ñ- a shot'em'up game...
+ñmotivation ..ð  3o % ñ- sometimes too unfair, gfx/snd quality lowers all!
+
+ó___ðoveralló_____ð3oó_ð%ó_____________________________________________________________
+
+After all  we will see  what the next  game by ASM SOFTWARE will  bring us since
+there is something in the pipeline... and after all it just can be better...
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_òo9/2k2ó_

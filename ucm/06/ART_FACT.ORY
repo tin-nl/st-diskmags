@@ -1,0 +1,163 @@
+                                           **;
+                                           ***.
+                                        *********
+                      .*******;.**.******.'***'
+                     ,***'  '*** ****'  '** ***,
+                    ,***'    *** ***.       '**,   .***
+                    ***. .** *** '***       '***, .***'
+                    ******** ***  ***,       '********
+                    '******' '**  '***         '****'
+ 
+    .*********.                   **;
+    ***'   '***                   ***.
+    '***.                         *********
+   *********  .*******.    .*****,'***'                  **.*****. ***     ***
+     ***,   ,***'  '***  ,***' *** ***,         ,******, ****' '** ***,    ***
+     '***, ,***'    *** ,***       '***   .*** ,***''***,***,      '***   ,***
+     '***, ***. .** *** ***   .***  ***, .***' ***'  '***'***       ***,  ;**'
+      '***,******** *** *********'  '********  ********** ***,      '***, ***
+      '***,'******' '** '*******'     '****'   '********' '***       '******'
+       '***                                                      **,   ,***'
+        '**,                                                     ***, ,***'
+                                                                 '******'
+                             > ucm art-magazine <
+             ____    _ _ _ _  _ _ _ .__  ___. .__ .__.__
+             \  /    | |( )|  | |(|)| '  '|'| ||_)| '|      /\
+              \/     | )| ||  | |||||_    | |_||\ |_ |_    /__\
+                     (/ (_)(__(_)| |(__   ) | || )(__(__
+
+Hi, Hallo und Willkommen...
+---------------------------
+ 
+...zum dritten Teil der ART FACTORY, der Kunstecke des Undercover-Zines, welche
+diesmal zum  ersten Mal in  deutsch abgefaût  wurde. Gleich zu  Beginn will ich
+noch  etwas richtigstellen: in  der 4. Ausgabe des  UCM hatte ich einen Malpro-
+gramm-Test geschrieben, bei dem DelmPaint als absoluter Sieger hervorging. Nun,
+mittlerweile habe ich meine Einstellung dazu geÑndert!
+Mit DelmPaint  kann man  kein vernÅnftiges  Bild malen, da  es einige  nicht zu
+Åbersehende  Fehler hat (die Lupe  ist ja sooo  doof!) und der  Coder  des Pro-
+gramms, Mr.Coke of Avena sich  auch nach zweimaligem Anschreiben nicht bequemt,
+mal zurÅckzuschreiben. Somit bin  ich nun wieder, als  stolzer Falcon-Grafiker,
+zu Crackart zurÅckgekehrt. DelmPaint wÑre zwar im Vergleich zu den anderen Mal-
+programm die  einzige Alternative, durch den ganzen  Programmaufbau wird dieser
+Bonus aber wieder  verschenkt (schade !). Vielleicht  wird ja Apache's  Malpro-
+gramm WARPAINT etwas besser handhabbar....
+ 
+Ein Hauptthema  dieser Ausgabe soll  es sein, Euch meine  Dithertechnik  vorzu-
+stellen. ( wobei "meine  Dithertechnik"  wohl  etwas  vermessen  klingt ) Unter
+Dithern versteht man das Malen  eines Farbverlaufes zwischen zwei oder mehreren
+Farben, indem man  geschickt Pixel  setzt. Um das Ganze  etwas zu verdeutlichen
+nehme ich mir den Zeichensatz zu Hilfe:
+ 
+                   "*" steht in diesem Text fÅr Pixel gesetzt
+                   " " steht fÅr nichtgesetzter Pixel
+ 
+ .___________________________.
+ |                           |  Hier sind also zwei  FarbflÑchen, sagen wir mal
+ |                           |  die obere ist schwarz und die untere weiû. Wenn
+ |                           |  dies so in einem Logo malt, sieht  das ziemlich
+ |                           |  mieû aus, besonders wenn  zwei, vom Farbton her
+ |***************************|  vîllig   unterschiedliche   Farben  aufeinander
+ |***************************|  treffen. Doch schlaue Grafiker entdeckten einen
+ |***************************|  Trick, wie  man einen etwas  sanfteren öbergang
+ |***************************|  malen kann...
+ (***************************)
+ 
+ .___________________________.
+ |                           |
+ |                           |  Sie setzten einfach  schachbrettartig immer je-
+ |                           |  zweiten Pixel in einer Linie. Das mag auf ange-
+ |                           |  schlossenen  Fernsehern  noch gut  aussehen und
+ | * * * * * * * * * * * * * |  auch ich habe so  angefangen. Als ich  mir dann
+ |* * * * * * * * * * * * * *|  aber  einen Monitor  kaufte, erkannte  ich, daû
+ |***************************|  diese Technik  doch nicht das  Beste ist, zumal
+ |***************************|  immernoch  allzu  deutlich  die Trennungslinien
+ (***************************)  sieht.
+ 
+Allerdings hatte  ich keine Idee, wie  man das  Problem lîsen  konnte, bis ich,
+etwa zur gleichen Zeit, Bilder von jM5/ex-A.M. und NiKo/MJJ sah, die einer vîl-
+lig neuen Dithertechnik zugrunde lagen. Das ganze sah (besonders bei NiKo) ver-
+dammt nach  Floyd-Steinberg  aus, aber es war tatsÑchlich  per Hand gemalt! Ich
+schaute mir diese  Bilder dann genauer an  und versuchte  mich an  dieser neuen
+Technik, bis nach vielen erfolglosen Versuchen "der Knoten platzte" - und heute
+wird jedes Bild damit gedithert.
+ 
+Hier nun die einzelnen Schritte als Bilder nebst ErklÑrung:
+ 
+ 1.
+ .___________________________.
+ |                           |
+ |                           |  Als erstes werden wieder 2 bis 4 Linien mit dem
+ |                           |  gewîhnlichen Schachbrettmuster gedithert. Dabei
+ |* * * * * * * * * * * * * *|  muû bei runden FlÑchen daran gedacht werden,daû
+ | * * * * * * * * * * * * * |  der Kîrper  seine Form  in  etwa  beibehÑlt und
+ |***************************|  nicht verkantet !
+ |***************************|
+ (***************************)
+ 
+ 2.
+ .___________________________.
+ |   *                       |
+ |  * *   * *             *  |  Nun werden Punkte nach der unteren Farbe in das
+ | *       *   *   *   *   * |  obere  Farbfeld  gesetzt. Beachtet hierbei, daû
+ |* * * * * * * * * * * * * *|  alle  Pixel mit der  unteren Farbe diagonal er-
+ | * * * * * * * * * * * * * |  reichbar sein mÅssen (O=original, *=neuer P.)
+ |***************************|              * *                   *
+ |***************************|  nur so ! ->  O   niemals so ! -> *O*
+ (***************************)              * *                   *
+
+ 3.
+ .___________________________.
+ |   *                       |
+ |  * *   * *             *  |  Selbiges wird nun auch mit der  oberen Farbe an
+ | *       *   *   *   *   * |  der  unteren  FlÑche  gemacht. Dabei  gilt  das
+ |* * * * * * * * * * * * * *|  Gleiche wie bei 2. !
+ | * * * * * * * * * * * * * |
+ |*** **** ***** ** ** **** *|
+ |** ********** * ***** * ***|
+ (*** **************** ******)
+ 
+ 4.
+ .___________________________.
+ |   *                       |
+ |  * *   * *             *  |  Der Lîwenanteil ist jetzt schon  geschafft. Nun
+ | *       *   *   *   *   * |  werden auf beiden  Seiten die Punkte  entfernt,
+ |* * *   * *   *   * *   * *|  die darauf hindeuten, daû es sich  ursprÅnglich
+ | * * * * * * * * * * * * * |  einmal  um 2  schachbrettgeditherte Linien han-
+ |*** * ** * *** ** ** **** *|  delte. Dieser Schritt  ist relativ  einfach, da
+ |** ********** * ***** * ***|  man nur auf das Original zu blicken braucht.
+ (*** **************** ******)
+ 
+ 5.
+ .___________________________.
+ | *    *        *         * |
+ |        *           *      |
+ |   *  *       *      *     |  Als  letzten  Schritt  werden "wild" und  unge-
+ |  * *   * *       *     *  |  ordnet oben und unten Punkte gesetzt. Dabei muû
+ | *       *   * * *   *   * |  nicht  darauf  geachtet  werden , ob  diese  im
+ |* * *   * *   *   * *   * *|  "Schachbrett"liegen  oder nicht. Das  einzig zu
+ | * * * * * * * * * * * * * |  beachtende  ist  hierbei, daû  die  Anzahl  der
+ |*** * ** * *** ** ** **** *|  Pixel nach  oben bzw. unten hin  weniger werden
+ |** ********** * ***** * ***|  (eigentlich  logisch). Nun noch  ÅberprÅfen, ob
+ |*** ******* ******** ******|  Pixel NICHT so zusammenliegen: ** *. Falls die-
+ |* ****** ******** ****** **|  ser Fall eintritt diese           *  Pixel
+ (** ******** ********* *****)  erasen. Fertig!
+ 
+Wichtig ist  noch, daû bei  Farben, die sehr nah  aneinander liegen eine dieser
+Farben einen grelleren  Ton bekommen muû, damit  man besser arbeiten kann. Wenn
+man mit dem Vorgang fertig ist, muû diese Farbe dann einfachin die Ausgangsfar-
+be zurÅckgebracht werden.
+FÅr die  Profis (obwohl  die das  ja eh' alles  schon kennen ;): Es wirkt immer
+gut, wenn man ganze HintergrÅnde (bspw. eines Logos) in diesem Stil dithert.
+Schaut Euch einfach mal  das UCM-Loadingpic der Ausgabe 4 an. In diesem Hinter-
+grund habe ich genau dieses gemacht - und der Erfolg ist erstaunlich.
+FÅr  Freax: witzig, aber  verdammt  anstrengend ist bspw. auch, kleine Figuren,
+Buchstaben und andere Dinge in dieses Dithermuster zu bringen. Ich habe das be-
+reits mit dem Schriftzug "tnb" und einem MÑnnchen  mit erhobenem Zeigefinger(!)
+geschafft. Also dann: malt ab jetzt immer so, obwohl es lÑnger dauert; die Leu-
+te, die Eure Grafiken sehen werden angenehm Åberrascht sein!
+ 
+-------------------------------------------------------------------------------
+                                   69 - stay naughty!  m.O.d. of tnb / 18.04.95
+-------------------------------------------------------------------------------
+en

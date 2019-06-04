@@ -1,0 +1,136 @@
+
+                             ‰FalcDoom v0.21
+ 
+†                          By Patrice Mandin 
+ 
+It's 'Doom', it's back, and it's exactly as we know and remember it!
+
+You may recall a preview,  some Maggies ago, of a hopeful contender in 
+the  'who is going to be first to do 'Doom' on the Falcon' race.  With 
+strong competition from Bad Mood, and with original interpretations of 
+the  genre,  such  as 'Running',  anticipation was high that the  DSP-
+assisted  engine  by a strangely familiar Data of Trio,  was going  to 
+come in at first place to completion.
+
+Since  then,  'Running'  has arrived,  been reviewed,  and is currently 
+getting the level-by-level treatment (thanks Matt!) Bad Mood seems  to 
+have gone off in a final terminal sulk,  and  that would seem to be it 
+for now?
+
+But  wait,  ID Software went all the way to making the 'Doom'  sources 
+freely  available,  so  it  isn't surprising that someone is  doing  a 
+'FalcDoom'  off  of these.  It is to Data of Trio,  or Patrice Mandin, 
+that we are turning to applaud, as the man who has taken on this job.
+
+There  are  a  number  of differences from  the  optimised  DSP  based 
+original.
+
+Firstly,  this  is  more or less a straight port-over of the  original 
+'Doom' source from the PC.  This version is Motorola 68k friendly, but 
+not  going  anywhere near the DSP.  If you have a base 16 mhz  Falcon, 
+this has repercussions, more of which in a bit. However, it also means 
+that  this  version  can  be  successfully  adapted  for  other  Atari 
+computers  and  clone machines capable of a higher colour mode  and  a 
+reasonable turn of speed.  So,  until 'Running',  the Milan edition is 
+ready  for  spring of next year,  this is the best chance of a  decent 
+game on that platform.
+
+Secondly,  when I booted it up,  this wasn't just a walk-through level 
+demonstrator,  it was the full game. It was 'Doom', on my Falcon, such 
+a  simple  sentence,  such a significance!  Enemies were present,  and 
+spitting  fire,  and  when I fired and re-cocked the shotgun  for  the 
+first time, ah bliss!!
+
+Thirdly,  there  is  some  sound.  The sampled sound effects  are  all 
+included, but not the music, which is all in MIDI file format, and was 
+of  debatable  quality anyway.  The tunes are available as a  separate 
+file, if you have something MIDI compatible plugged in.
+
+So we have a fully working 'Doom' game on the Falcy,  how well does it 
+run?
+
+I started with it going on my Centurbo 2 based 'Fast' Falcon. This was 
+a sensible idea.  The framerate was good,  not perfect,  but certainly 
+playable,  and on the quick side.  To compare,  it would be worse than 
+'Running', which is a native Falcon production, with DSP code, but not 
+too  far  off,  and about as good as,  maybe better than,  'Lasers and 
+Men',  which was also a native Falcon game,  with DSP code! (Comparing 
+these all on a 50 mhz CT2, of course...)
+
+I then tried it at 16 mhz....
+
+This was not sensible, it moved, but only just. The frame rate dropped 
+right   down   to   'Lasers  and  Men'   levels,   with   considerable 
+frameskipping.  I'm  sure  some  brave  people  have  managed  to  get 
+somewhere with it like this,  but I gave up very quickly. In this sort 
+of case,  DSP code may well make a considerable difference,  but it is 
+unclear  if any further development of that side is taking  place,  as 
+Patrice  seems  to be catering more for generic higher end  Atari  TOS 
+clones?  I'm  sure  this would fly on the Milan?  I am also sure there 
+will be more updates,  even from the time of this review,  to the time 
+of  issue  release,  and these will be optimising further,  where they 
+can.
+
+Think 'Frontier' on the ST, and you have an idea of how 'Doom' on a 16 
+mhz falcy feels! Even with a low detail mode selected, this still felt 
+slow.
+
+Funny bugs and glitches?  The game was generally stable, but there was 
+the  odd  glitchy screen,  most noticeably on the between  level  menu 
+screens.
+
+There  is also an occasional keyboard bug,  with 'sticky'  directional 
+keys,  if  you use the keyboard to move your player around the  level. 
+This  is a very minor point though,  as you can use a Jagpad (yes!) to 
+get around the game instead.
+
+I needn't tell you what the game itself is about,  but this is clearly 
+the 22-carat golden original,  that launched a thousand imitators. All 
+that is needed is a compatible WAD file,  the shareware version can be 
+downloaded  from a link on Matt Smith's homepage  www.shack.atari.org, 
+and  it  isn't too big.  The latest version of Doom,  can be  obtained 
+either  from the Dead Hackers pages,  or Patrice's own home page.  The 
+latter has more links for other bigger WAD files. This game engine can 
+run  all  the various WAD files available,  from the  basic  shareware 
+version, right through to Doom 2.
+
+Not to forget the versions of 'Heretic',  'Descent',and 'Hexen',  that 
+he  is  preparing  to  unleash on a  stunned  Atari  world,  (probably 
+doubling  the  number  of first perspective  games  available  on  the 
+Falcon!)  I'm  not even going to mention the up and  coming  Atarified 
+version  of 'Quake',  which will really only be a sensible proposition 
+on something '040 based and upwards.
+
+When I was playing it, my unhurried approach, picking off the bad guys 
+as  they  came  towards  me,  paid off handsomely.  Best not  to  rush 
+headlong into these things!
+
+All in all,  Patrice has done the Atari community a very great service 
+by finally porting over this classic, and very much messed around with 
+by all sorts of people,  game to the Atari TOS platform.  Now all I've  
+got  to  do,  is  get the keys to my time machine to go  back  to  the 
+Stafford Atari Show,  and pick up that CD-ROM of Simpsons-based add-on 
+Wadfiles I missed getting, the first time around!
+
+Next step, the multiplayer Deathmatch option?
+
+Do say, "It's here at last!"
+
+Don't say "Will using the Blitter help in any way?"
+
+
+ Ratings.. 
+
+ Graphics:-  It's Doom! 'Nuff said really.
+
+ Sound:-  It's Doom!! All the good bits, without the cheesy muzac.
+
+ Playability:-   It's  really Doom!!  Tired and sluggish on  a  standard 
+Falcy,  but  feels  much better on CT2.  Should perform well on  other 
+accelerators and faster MC68k instruction sets too.
+
+ Overall:-  You're Doom(ed) unless you get it!
+
+ CiH, Nov '99
+
+ 

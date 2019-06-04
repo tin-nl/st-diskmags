@@ -1,0 +1,134 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0010
+€
+…GotoHades!
+€
+
+25Aout1997,22H
+
+PleaseexcusemypoorEnglish
+
+HelloGuysoftheMaggieteam!
+
+IjustreceivedMaggiev2,2andamsorrythatyourdiskmagdontrunon
+Hades.Itdidn'trunbecauseitwasIcepacked.Filespackedthatway
+usuallyneedtobedepackedfirst,butIdiditanditrefusetostart
+too,nowIdon'tknowwhyitrefusetostart.ButIhopethatthenext
+issueofyoumagwillrunonHadestoo,andIwillhelpyouasmuchas
+Icanforthat.
+
+WhatHadesdon'tlikeandwhy
+-----------------------------
+
+Icepacker:itcausethecomputertostayonGemloadscreenwith
+processorlookinghaltedaftermousedisappeared.Nocrashmessage
+(Hadesusesadebuggercrashmessagewithstackandregistersshown
+insteadofbombs).
+
+Idon'tknowwhy.
+
+ToavoidthatyoushouldusethePFXpackerasitworkwellonanyTos-
+compatible(asfarIknow).Youwillfindmyreleaseonthisdisk,but
+ifyouownanewerone,Iwouldbehappyifyousendittome.
+
+Programmswhomovesthephysicalscreenanywhereincomputer'sram:
+evenifthedisplayissometimespossiblewithHades.accsettedon
+'screenumlenkung',itdon'tworkeverytimes.
+
+Why:becausethephysicalscreenisonthegraphiccard,whocan
+displayonlyherRAM.Soyoumustwriteinittoshowsomething.The
+€screenadressisalwaysthesame,evenifyouplacethegraphiccardon
+PCIslot1orelse.Butthelogicalscreencanbeplacedeverywhere.
+NotethatVSYNC(xbios87?)functiondon'twork,peopleshouldgetit
+directlyonthecard'sregister...ifyouareoneoftheluckypeople
+whoknowtheadresseswherePOKEshouldbedonetochangethescreen
+mode,getthevsyncsignal,etc.Ifyouhaveinformationsabout
+hardwareadressesontheET4000orbetter:ET6000,PLEASESENDTHEMTO
+ME(myadresseonbottom).Asyouguessit,dealersrefusetogiveus
+anyinformationaboutthegraphiccardinorderthanwereobligedto
+buytheirgraphicdrivers...
+
+Note:ifyousetthelogicalscreenatadifferentplacethanthe
+physicalone,rememberthatPRINTsalwaysgoestothephysicalandGEM
+outputsalwaysgoestothelogicalscreen.Logicalscreencanbeplaced
+anywhereinram,butit'sfastertoplaceitongraphiccard'sram...
+
+NoST,Falcon,orTTformatorcopyprogrammworksbecauseofthenew
+WD37C65floppycontroler.For19sectorspertrackyoumustuse
+FORMAT19.PRGwhoworkswellonHades.Untillnowthereisnosoftware
+toformatDDdiskwithotherthan9sectorspertrackormorethan19
+sectorsonHD...butevenifTOS3,6canformatuntil2,9MoEDdiskit
+seemsnottakingcareofbootsectorinformationsandcontinuetowrite
+orsave512bytepersectors.AnybodyknowshowtoperformEDdisk?
+
+Afreeadvice:BUYTHEMOTHERCARDONLY(andbuythe68040/60
+somewhereelseifyoucan)andmountallyourself.ThiswayFrench
+peoplearesparing6000FRF!
+
+Noteon1august1977:Xilinxram-controllernumbered7areableto
+useEDOramsimms(source:dealer).ButIdidn'tcheckit.
+
+Serial1portdidn'tworkonanyHades,probablyanhardwarebug.
+
+IDEcd-romdrivesarenotrecognisedbyanydrivers.Thedealer
+Godefroydemaupoureplythat"youmustbuyaSCSIcd-romdrivea[his]
+shop".Butwhataboutmynewlast-gnrationIDEcd-romdrive?"Remove
+itandplaycd-audioonit!"
+€
+Beforethatagoodsoundblasterdriverisreleased,peopleonHades
+mustusethegoodNATRACKERandhearMODsontheyamahaat40Mhz.It's
+notsobadasit'sagoodtracker.
+
+Formodeming:theHadesTOS3,06keepTOSbugsonserialportsbut
+multipliedbythespeedofthecomputer.SoweMUSTuseHarun
+Scheutzow'sHSMODA.WiththosedriverswefeelthepoweroftheHades
+evenwithoutcaches.Tips:DON'TUSEUSRoboticsmodembecausethey
+worksmadlyadloosedatawhengettinghot...andtheygethotafter2
+hoursmax.Ilostimportantmessageswhenlivinghomewiththatmodem
+forrecievingcalls.ButeveniftheHadesowntwo68901andevenif
+oneissupposedtodrivethemodem2port,youmustuseDRVINandESCC
+only.
+
+TheFPUcookyisn'trecognisedbysoftwareswitha68060,andifyou
+useNVDI2,50ormoreyoushouldusethesoftwareFPUwhocomewiththe
+computer.WithmytestsCPU'sfpuisfasterthansoftware'sone.
+Medusa'ssoftwareFPUhavenoeffectonanHades,evenforthesame
+processor.
+
+AfterreadingthiscomestheopinionofaHadesowner:it'sagood
+computer,andtheabilityofeasilyremovingthe15Mhzquarzoscillator
+andputa30Mhzone(!ifyoureallyneedhighspeedonly!asitis
+fastenoughwiththe15Mhz)giveacomfortablereserveofpower(i.e.:
+forraytracing).TheHadeshassomehardwaremistakeswhoare
+unacceptableonsuchanexpensivecomputer.Onhadesisnofanexept
+thepower'sone:ifaradiatorisgoodenoughfora15mhzCPU,afan
+shouldbeplacedforcoolingallotherstuff(graphiccardorthose
+littlechipsnearISAports.Ididit,butothersdon'tandthereHades
+didn'tdied(tillnow...).
+
+Asusualsoftwarescomesfromusers:OMEGA7(maybenotfinalname)is
+a3Dgame,andthe'formateurNanderthalien'maybeapowerfullformater
+onHades.
+
+FromGg(Paris)
+€
+„Wellthanksfortheinputonthispowerfulmachine,itmaybeusefulto
+produceabiggercompatibilitylist,suchastheonewedidforthe
+FalconAfterburnercardsinthelastissue..Asforanyfuturechanges
+totheMaggieshelltotaketheHadesintoaccount,thatisinthe
+handsofourcoder,Tat..Anotherpossiblewayoutofthisdilemmamay
+wellbetheforthcomingwebsite/HTMLproject,whichshouldgiveyou
+accesstoallpastandcurrentissuesofMaggieinagenuinelyportable
+format..
+
+ProvidingthereisaWebBrowserthatworksonHades,ofcourse..
+
+Allthebestfornow..
+
+CiH..
+
+
+

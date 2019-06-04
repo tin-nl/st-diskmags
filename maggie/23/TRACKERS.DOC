@@ -1,0 +1,106 @@
+
+                   NoiseTracker Special Things!
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Yeah, Yeah, Trackers are Dead, Trackers are S*iT, but they are nice!
+ 
+ It's surprising how many people don't know what all the attributes 
+ are for NoiseTracker/Protracker 2 (Kev!)...NOT Graoumf tracker it has 
+ loads of different ones but it tells you inside the program, most 
+ 4/8 channel trackers are as helpful as a bear with a sore head waking 
+ up during winter and just stung by a wasp!...which is why I'm writing 
+ this out, so print it out and make your .MODs sound nicer.
+
+ 0xy - (Normal Play) 
+       Arpeggio                        x - first halfnote add
+                                       y - seconds
+
+ 1xx - Slide Up                       xx - speed 
+
+ 2xx - Slide Down                     xx - speed 
+
+ 3xx - Tone portamento                xx - up/down speed 
+
+ 4xy - Vibrato                         x - speed 
+                                       y - depth
+ 5xy - Tone Portamento + Volslide      x - up speed 
+                                       y - down speed
+ 6xy - Vibrato + Volslide              x - up volume speed
+                                       y - down volume speed
+ 7xy - Tremolo                         x - speed
+                                       y - depth
+ 8xx - Not Used!
+
+ 9xx - Sample offset                  xx - offset
+       (Kev's & My personal favorite!)
+ Axy - Volumeslide                     x - up speed
+                                       y - down speed
+ Bxx - Position jump                  xx - pattern number
+
+ Cxx - Volume                         xx - volume
+
+ Dxx - Break goto next position
+
+ Exx - Extended things!
+ E0x - Set filter on/off (Not used on STe)
+ E1x - Fineslide up                    x - step       
+ E2x - Fineslide down                  x - step       
+ E3x - Glissando control               0 - off       
+                                       1 - on
+ E4x - Vibrato waveform                0 - sine
+                                       1 - ramp down
+                                       2 - square
+ E5x - Set finetune                    x - finetune (*$?#ing obviously)
+ 
+ E6x - Loop                            0 - set position
+                                       x - times
+ E7x - Set tremolo waveform            0 - sine
+                                       1 - ramp down
+                                       2 - square
+ E8x - Not used!
+
+ E9x - Retrig note play                x - times
+
+ EAx - Fine volume up                  x - add
+ 
+ EBx - Fine volume down                x - subtract
+
+ ECx - Note cut at x vblanks           x - vblank
+
+ EDx - Delay x vblanks                 x - vblank
+
+ EEx - Pattern delay                   x - speed
+
+ EFx - Invert loop                     x - speed
+
+ Fxx - Speed 00-1F                     x - speed
+
+
+ Tips...
+ ~~~~~~~
+ 
+  The difference between Vibrato and tremolo is marginal and it depends
+ on the sample being used, try playing with the different waveforms...
+
+ Protracker 2 on the Falcon030 DOES NOT like when you put a value over
+ either 10 or 1F, I can't remember which but it goes really slow which
+ it is supposed to and then say you change the speed back to F03, it
+ is slower than normal i.e. that of F06, so I guess it must be a bug !
+
+ As I type this in I was looking at all the ones I have never used, but
+ some of them don't do anything!, well on the 030 version they don't, so
+ I won't go into those now !!!!
+
+ right, ok, that's it for today, 
+
+ MSG
+
+ 
+ p.s. feel free / expensive to mail me, about music, demos, anything...
+ 
+ MSG1css@bolton.ac.uk
+
+ 
+ p.p.s. and don't forget the RESERVOIR GODS MAISON PAGE:
+
+ http://www.acs.bolton.ac.uk/~msg1css/maison.htm 

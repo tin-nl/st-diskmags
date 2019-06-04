@@ -1,0 +1,1189 @@
+											*********
+											SCSI FAQ:
+											*********
+
+Frequently Asked Questions for comp.periphs.scsi
+
+FAQ history:
+Created by Johnathan Vail (vail@prepress.pps.com) from articles
+submitted to him by comp.periph.scsi readers.
+Maintained by Johnathan Vail until November 1993.
+
+Current Editor: Gary Field (garyf@wang.com)
+
+Last Modified: April 15, 1995
+
+Where to get the latest copy of this FAQ:
+  The comp.periphs.scsi FAQ is posted to Usenet during the first week
+  of each month. In addition, a recent version can be obtained
+  via anonymous ftp from:
+  ftp.wang.com:
+      garyf/scsi/scsi-faq.part*
+  OR
+  rtfm.mit.edu:
+      pub/usenet-by-group/comp.periphs.scsi/comp.periphs.scsi_FAQ_part_*
+  OR
+  via World Wide Web (WWW):
+  http://www.cis.ohio-state.edu/hypertext/faq/usenet/scsi-faq/
+  OR
+  (an old version but in HTML format)
+  http://alpha.med.pitt.edu:9000/LINK/SCSI_FAQ.html
+
+Master Table of contents:
+
+Part 1
+    What is SCSI ?
+    How should I lay out my SCSI bus? What should I avoid?
+    Where do I put the terminators?
+    Where should the adapter card be placed?
+    Is it possible for two computers to access the same SCSI disks?
+    What is the problem with the Adaptec 1542C and external cables?
+    Where can I get SCSICNTL.EXE and other Adaptec files?
+    What is the difference between the Adaptec 1542A and 1542B?
+    What are the differences between the Adaptec 1542B and the 1542C?
+    What are the differences between the 1542C and the 1542CF?
+    What kinds of Optical Drives are available?
+    Where can I FTP/download SCSI documents and information?
+    Where can I get SCSI documents?
+    Where can I get information on various disk drives and controllers?
+    How can I contact Adaptec?
+    What is the telephone number of Archive Corporation?
+    How can I contact Corel?
+    What is the telephone number of Fujitsu?
+    What is the address and telephone number for Quantum?
+    How can I contact Seagate?
+    How can I contact Conner Peripherals?
+    How can I contact Maxtor?
+    What is the number for NCR?
+    What is the number for Philips?
+    How can I contact Symbios Logic?
+    How can I contact UltraStor?
+    What is the address and telephone number of Wangtek?
+    What is the address and telephone number of Western Digital?
+    What is the phone number of DPT?
+    What is the phone number of Future Domain ?
+    How can I contact Micropolis ?
+    What is FAST SCSI?
+    SCSI terminators should measure 136 ohms?
+    Can someone explain the difference between 'normal' and differential scsi?
+    What are the pinouts for differential SCSI?
+    What are the pinouts for SCSI connectors?
+
+
+Part 2
+    What is the difference between SCSI-1 and SCSI-2?
+    What is the difference between SCSI-2 and SCSI-3?
+    Is SYNCHRONOUS faster than ASYNCHRONOUS?
+    Is the 53C90 Faster than spec?
+    What are the jumpers on my Conner drive?
+    What are the jumpers for my Wangtek 5150 drive?
+    What is CAM?
+    What is FPT (Termination)?
+    What is Active Termination?
+    Why Is Active Termination Better?
+    How can I tell whether an unmarked terminator is active or passive?
+    Why is SCSI more expensive than IDE?
+    What is Plug and Play SCSI?
+    Where can I get drivers (ASPI and other) for the WD7000 FASST2 host adapter?
+    What if I have a drive larger than a gigabyte (1024MB) ?
+    My SCSI bus works, but is not reliable. What should I look at?
+    Where can I find information about programming using the ASPI
+          interface from DOS and Windows?
+------------------------------------------------------------------------------
+
+====
+QUESTION: What is SCSI?
+ANSWER From: LSD, L.J.Sak@Kub. Edited by Gary Field
+====
+
+SCSI stands for Small Computer Systems Interface. It's a standard for
+connecting peripherals to your computer via a standard hardware interface,
+which uses standard SCSI commands. The SCSI standard can be divided into
+SCSI (SCSI1) and SCSI2 (SCSI wide and SCSI wide and fast).
+SCSI2 is the most recent version of the SCSI command specification and
+allows for scanners, hard disk drives, CD-ROM players, tapes [and many other
+devices] to connect.
+SCSI is becoming a popular standard. More and more computers use it daily.
+(e.g. ATARI Falcon and TT, expensive MS-PC's, Amiga, Apples and many others)
+
+
+====
+Question: How should I lay out my SCSI bus? What should I avoid?
+Question: Where do I put the terminators?
+Question: Where should the adapter card be placed?
+Answers From: Nick Kralevich <nickkral@cory.eecs.berkeley.edu>
+	     edited by Gary Field (garyf@wang.com)
+====
+
+One confusing thing about SCSI is what the SCSI bus is supposed to look 
+like, and how devices should be placed on the bus.
+
+The SCSI bus MUST run continuously from one device to another, like this:
+
+  DEVICE A --------- DEVICE B --------- DEVICE C -------- DEVICE D
+
+Where device A, B, C, and D can either be internal or external
+devices.  
+
+The devices on the SCSI bus should have at least 4 to 6 inches of cable between
+devices. This is to satisfy the SCSI-2 requirement that "stubs" be placed
+at least .1 meters apart. Some devices that have a lot of internal wiring
+between the connector and the SCSI chip can look like a "stub" or bus
+discontinuity. The reason for all these requirements is that a SCSI bus is
+really 18 "transmission lines" in the wave theory sense. A pulse propagating
+along it will "reflect" from any part of the transmission that is different
+from the rest of it. These relections add and subtract in odd combinations and
+cause the original pulse to be distorted and corrupted. The terminators
+"absorb" the energy from the pulses and prevent relections from the ends of
+the bus. They do this because they (hopefully) have the same impedance as
+the rest of the transmission line.
+
+The SCSI bus must not have any "Y" shape cabling.  For example, setting up 
+a cable that looks like this is NOT allowed:
+
+             DEVICE B
+                  \ 
+                   \
+                    \
+                     >------------- DEVICE C ----------- DEVICE D
+                    /
+                  /
+                /
+            DEVICE A
+
+
+Where do I put the terminators?
+
+Termination must be present at two and ONLY two positions on the SCSI
+bus, at the beginning of the SCSI bus, and at the end of the SCSI bus.
+There must be no more than two, and no less than two, terminators
+on the bus.
+
+Termination must occur within 4 inches (.1 meter) of the ends of the
+SCSI bus.
+
+The following ARE acceptable:
+
+     +------------+----------+-----------+-----------+---------+
+     |            |          |           |           |         |
+  DEVICE A     Unconnected Unconnected Unconnected DEVICE B   DEVICE C 
+ Terminated                                               (adapter -Terminated)
+
+     +------------+----------+-----------+-----------+---------+
+     |            |          |           |           |         |
+  DEVICE A  Unconnected  DEVICE B  Unconnected  Unconnected  DEVICE C  
+ Terminated              (adapter)                           Terminated
+
+     +------------+----------+-----------+-----------+---------+
+     |            |          |           |           |         |
+  Terminated   DEVICE A  DEVICE B  Unconnected  Unconnected  DEVICE C
+               (adapter)                                     Terminated
+
+The following ARE NOT allowed:
+
+     +------------+----------+-----------+-----------+---------+
+     |            |          |           |           |         |
+  DEVICE A     DEVICE B   DEVICE C    Unconnected Unconnected Unconnected  
+ Terminated    (adapter)  Terminated
+
+     +------------+----------+-----------+-----------+---------+
+     |            |          |           |           |         |
+ Unconnected   DEVICE A     DEVICE B   DEVICE C   Unconnected Unconnected
+              Terminated    (adapter)  Terminated
+
+
+Where Should I place the SCSI adapter on the SCSI bus?
+
+The placement of the SCSI adapter card can be on the end, at the beginning,
+or somewhere in the middle of the SCSI bus.
+Quite frankly, placement of the controller card isn't special.
+The adapter card is just another device on the SCSI bus.
+As long as the rules above and in other sections of this FAQ are followed,
+there should be no problem placing the adapter card anywhere on the SCSI bus.
+
+However, if you place the adapter card somewhere in the middle of
+the SCSI bus, you must be sure to disable termination on the adapter card.
+As noted previously, a SCSI device is only allowed to have terminations
+if it's at the end of the bus. Only two terminators are allowed to terminate
+the SCSI bus, one at each end.
+
+One last note: It doesn't make any difference where each SCSI ID is placed
+along the bus. It only matters that no two devices have the same ID. Don't
+forget that the adapter has an ID too. (Usually ID 7).
+
+
+====
+QUESTION: Is it possible for two computers to access the same SCSI disks?
+ANSWER From: burke@seachg.uucp (Michael Burke)
+====
+
+Yes, two (or more) systems can be on the same scsi bus as scsi disk and
+tape drives. As long as the scsi requirements are met - cable lengths,
+termination and type - the devices can share the scsi bus.
+
+The question should be - Are there any O/S' that will allow the sharing of
+file systems? It would not make sense for two hosts to go about treating
+shared disks as if they owned the device. Data would be destroyed pretty
+quickly.
+
+On the issue of tape devices, however, O/S' tend to give exclusive usage
+to an application. In this way, tape drives can be shared much more easily.
+
+Disks can be best shared by having two (or more) partitions on a disk. Each
+host "owning" its own file system.
+
+
+====
+QUESTION: What is the problem with the Adaptec 1542C and external cables?
+ANSWER From: Scot Stelter, Adaptec  (Product Manager for the AHA-1540)
+====
+
+Several articles lately have cited the importance of SCSI-2-compliant
+cables when cabling SCSI bus subsystems.  Perhaps the most accurate
+and technically detailed one was published in Computer Technology
+Review in March (Volume XIII, No. 3. PP. 6).  In short, it explains
+the double-clocking mechanism that can occur due to cables whose
+impedance falls below the 90-Ohm SCSI-2 spec.  Steep edge speeds on
+the REQ and ACK lines of the SCSI bus exacerbate the problem, but
+non-compliant cables are the root cause. Both LAN TIMES in the US
+(5/24/93, page 115) and CT Magazine in Germany (7/93, page 18) cite
+this cable problem.
+
+In an extensive survey of cables available in the US and Europe, we
+found that more than half of the cables available have single-ended
+impedances in the 65 to 80 Ohm range -- below the 90 to 132 Ohms
+specified in the SCSI-2 spec.  It seems that some (not all) cable
+vendors do not understand the specification, describing their cables
+as SCSI-2 compliant when they are not.  A common misconception is that
+SCSI-2 means a high-density connector.  In fact, there are several
+connector options.  I have published a technical bulletin that
+summarizes the critical requirements (TB 001, April 1993). An artifact
+of its faster design left the AHA-1540C with faster edge-speeds than
+its predecessor, the AHA-1540B.  As I have said, this can exacerbate
+the effect of bad cables.  This explains why some users could get
+their AHA-1540B to work when an early AHA-1540C might not.
+Essentially, the 1540B was more forgiving than the early 1540Cs.  Good
+cables fixed the problem, but unfortunately for the user, good cables
+are hard to find.
+
+After surveying the cable market and many of our customers, we decided
+that bad cables were going to be here for a while, and we had to make
+the 1540C as forgiving as the 1540B was.  At the end of April we made
+a change to the AHA-1540C that involved using a passive filter to
+reduce the slew rate of the ACK line, the signal that the host adapter
+drives during normal data transfers.  Extensive testing with many
+intentionally illegal configurations confirms that we succeeded. Prior
+to release, we tested the AHA-1540C with over 200 peripherals, systems
+and demanding software programs with no failures.  Then, a second team
+retested the AHA-1540C across a wild combination of temperatures,
+humidities and other stresses.  This testing gives me confidence that
+the AHA-1540 line continues to serve as the gold standard for SCSI
+compatibility.
+
+
+====
+QUESTION: What is the difference between the Adaptec 1542A and 1542B?
+ANSWER From: fishman@panix.com (Harvey Fishman)
+====
+
+The AHA-1542A is obsolete and no longer supported by Adaptec.  They
+stopped providing firmware upgrades at some level prior to the equivalence
+to the 3.10 level of the AHA-1542B firmware.  I am not sure just where
+though.  The present latest AHA-1542B firmware is version 3.20, and
+supports drives up to 8GB under MS-DOS.
+
+
+====
+QUESTION: What are the differences between the Adaptec 1542B and the 1542C?
+ANSWER from: Terry Kennedy (terry@spcvxa.spc.edu)
+====
+
+The 1542C is an an updated model which replaces the 1542B. The 1542C features
+jumperless setup, having only 8 DIP switches. All other configuration options
+are set using the 1542C's built-in BIOS configuration utility. Configurable
+features not found on the 1542B are:
+
+  o Ability to enable/disable sync negotiation on a per-ID basis (the 1542B
+    could only do it for all ID's on the SCSI bus)
+  o Ability to send "start unit" commands on a per-ID basis
+  o BIOS works with alternate I/O port settings on the adapter
+  o Ability to boot from ID's other than 0
+  o Software-selectable termination
+  o Software-selectable geometry translation
+  o Additional DMA speeds of 3.3 and 10 MB/sec
+
+Additionally, the 1542C uses a Z80 CPU and 8Kb buffer instead of an 8085 and
+2Kb buffer as on the 1542B.
+
+
+====
+QUESTION: What are the differences between the 1542C and the 1542CF?
+ANSWER from: Terry Kennedy (terry@spcvxa.spc.edu)
+====
+
+The 1542CF includes all of the 1542C features, and adds "Fast" SCSI operation,
+providing SCSI data rates of up to 10MB/sec (compared with an upper limit of
+5MB/sec on the 1542C). This is unrelated to the host DMA rate. It also has a
+software-configurable address for the floppy controller and a "self-healing"
+fuse for termination power.
+
+
+====
+QUESTION: Where can I get SCSICNTL.EXE and other Adaptec files?
+ANSWER From: randy@psg.com (Randy Bush)
+        and  Timothy Hu timhu@ico.isc.com
+====
+
+New files from Roy as follows:
+
+ftp.psg.com:~/pub/adaptec/...
+
+-rw-rw-r--  1 randy    staff      110689 Feb 25 00:29 SCSICNTL.EXE.Z
+-rw-rw-r--  1 randy    staff      368640 Feb 25 00:27 adse.dd
+-rw-rw-r--  1 randy    staff        1959 Feb 25 00:25 adse.dd.readme
+-rw-rw-r--  1 randy    staff       17896 Feb 25 00:37 list
+-rw-rw-r--  1 randy    staff       99545 Feb 25 00:20 os2drv.zip
+-rw-rw-r--  1 randy    staff       70801 Feb 25 00:20 scsi_drv.Z
+-rw-rw-r--  1 randy    staff       66508 Feb 25 00:24 scsi_drv.readm
+-rw-rw-r--  1 randy    staff      118697 Feb 25 00:17 update.pkg.Z
+
+
+You can get the ASPI specs from Adaptec's Bulletin Board (408)945-7727.
+
+[editor] You can also get ASPI spec's from Adaptec's WWW server.
+
+====
+QUESTION: What kinds of Optical Drives are available?
+ANSWER From: joungwoo@mensa.usc.edu (John Kim)
+====
+
+As I promised I am posting the summary of what I learned about 128mb optical
+drives through many kind replies and some effort on my part. The purpose of
+this informal survey was to aid people (starting from myself) in deciding on
+which 128mb optical drive to buy.
+
+When I posted my questions, it was done only on comp.mac.sys.hardware and
+forgot to do the same also on comp.arch.storage and comp.periphs.scsi where
+are less traffic than c.m.s.h. However, as a Macintosh owner myself, this
+survey was biased toward the Mac world and the mail order houses mentioned
+specializes in Mac-related products, although the below mentioned optical
+drives might be usable also with non-Mac platforms (Sun, NeXT,
+PC-compatibles).
+
+My questions were:
+
+o what kind of drive you bought from whom at what price 
+o what drive mechanism (MOST, Epson, Fujitsu, Sony, ...) it uses
+o how fast it is in terms of average seek time & data transfer rate
+o how noisy the drive is
+o how large and heavy the drive is
+o what drive formatting program (eg, FWB or Silver Lining) you use what its
+  goods/bads 
+o the quality of the service of the seller (mail order company, retail store,
+  etc.) 
+
+
+Summary
+
+In general, these days, some magneto-optical (MO) drives seem to be
+almost as fast as (if not faster than) ordinary hard drives (HD). The
+access time of fastest 128MB MO drives (around 30ms) are slower than
+average HD's access time (15ms) but the transfer rate seems to be
+about the same (764KBytes/sec) or not much slower. The advantages of
+the MO drives over the HDs are that your storage space is almost
+limitless, expandable at a relatively cheap price ($40/120MB = 34
+cents/MB) compared to $1/MB rate of HDs or that of SyQuest drives, and
+the life of the media is very long (they say it's 30 years or
+rewritable 100,000 times.)
+
+Fijitsu 128 REM Portable: At this moment, to my knowledge, 128 MByte
+optical drives based on Fujitsu mechanism seems to be the fastest,
+roughly having average seek time of 30ms and average transfer rate of
+768KBytes/sec. Another good thing about this Fujitsu drive is that it
+is more compact in size than previous 128mb optical drives, ie,
+"portable". I don't know how Fujitsu mechanism (FM) is different from
+Epson mechanism (EM) and how FM provides a similar performance at a
+cheaper price in a smaller frame. Maybe using split-head
+implementation to make the read-write head lighter? Could anybody post
+info on this? One person tells me that the eject mechanism is too
+strong, sometimes shooting the cartridge out making them land on the
+floor. He says Fujitsu told him that the FM's coming out in April will
+have gentler eject.
+
+Epson: The next fastest (or maybe just about the same speed) are Epson
+mechanism (EM) drives, having average access time of 34ms and transfer rate of
+768KB/sec.  These achieve faster speed compared to other old mechanisms by
+having a higher rpm (3600rpm vs. past 2400 rpm).
+
+Slower ones: Other mechanisms (Sony, Panasonic, etc.) seem to have
+been dominating the optical drive market before FM and EM's advent.
+These have a typical access rate of ~45ms.  I don't know if now there
+are new implementations that make them perform better then FM and EM.
+Maybe someone can tell us.
+
+Noise Level: One thing to consider might be noise of the drive. Different
+mechanisms may have typical noise level, but one thing sure is that different
+resellers/companys' drive's noise level differs even for the same drive
+mechanism, eg, Sony. It looks like different casing produces different noise
+levels? (Could someone confirm/disconfirm this aspect?)  Base on the report
+in Nov '92 issue of MacWorld, the noise level of MacDirect, MacProduct and
+DGR 128mb MO drives seem to be OK or quite quiet.
+
+This issue of MacWorld deals with removable media drives (optical drives of
+various capacity, SyQuest, Bernoulli and Flopticals) and you can get some
+idea on what the differences among different drive mechanisms are.
+
+Formatting Software: Another thing to consider is what kind of media
+formatting software you will use. All companys (or mail order places) seemed
+to provide for free formatting program with their drives. I don't have the
+details on this. But an inefficient formatting can result in slow drive
+performance. The most popular one used to be FWB's Hard Disk Toolkit but
+Anubis (advertised to improve performance up to 35% [compared to what?]) is
+beginning to be used also. I don't know if all formatting program and the
+drive hardware allows to have read and write verify off but by having these
+turned off you can obtain significant speed boost at the risk of less secure
+data transfer. MacWorld's report warned that drives from some companys don't
+let you turn on/off the verify. In the worst case, some come with verify off
+and no option to toggle it back to ON.
+
+256mb MO drives: In general these have better transfer rate (1.23MB/sec) and
+a little slower access time (35ms). I feel that this capacity will soon be
+the next standard. These drives are able to also read/write 128mb cartridges
+and 256mb will soon be new ANSI and ISO standard. I once heard from a
+saleperson at a mail order place that these are not reliable yet and he saw
+many they sold came back with complaints. This may be a non-general instance
+on a typical drive mechanism (seems to be MOST mechanism). Personally, I feel
+128mb is accomodating enough for personal usage at home unless you are
+dealing with very large data files (eg, large graphic images).
+
+
+
+
+====
+QUESTION: Where can I FTP/download SCSI documents and information?
+ANSWER From: news@mgse.UUCP (News Administator)
+====
+
+
+Last Changed:	Thu Sep 24 23:31:09 CDT 1992 (New BBS Phone number)
+
+This is a periodic posting of information about some of the archives at
+ftp.cs.tulane.edu and the available files from the SCSI-BBS, including
+SCSI, ESDI, IPI, and Fiber Channel documents from the standards committees.
+
+These files are available for FTP from ftp.cs.tulane.edu in the directory
+pub/scsi. Files are stored in file areas as they are found in the BBS with
+each area having a file named 'files.bbs' that tells what each file is. The
+file pub/scsi/index.Z list each file area, its descriptions and its files.
+
+Thanks to John Lohmeyer of NCR, a majority of the SCSI related files from the
+SCSI BBS are now available for anonymous ftp. These files were sent to me by
+Mr. Lohmeyer at his expense so that more people would have access to them.
+The SCSI BBS (719-574-0424) contains a large amount of data relating to SCSI,
+and ESDI as well as SCSI-2, IPI, and Fiber Channel, as well as the last
+revision of the SCSI-1 standard before it went to publication by ANSI.
+
+Most of the files in the SCSI archive are either archived with the ZIP utility
+or compressed with the 'compress' program. Most of the text files are stored
+as Wordstar word processing files. PKzip for PC/MS-DOS is included in the 
+archive to allow users to break up the .ZIP files, and the PC/MS-DOS binaries
+and .C source are also in the archive to convert the Wordstar documents to
+ASCII text.
+
+[Added by Gary Field Dec 21,1993]
+There is also a lot of good information at ncrinfo.ncr.com
+(apparently this site has been renamed since AT&T bought NCR - see below)
+
+ANSWER From: A little birdie told me.
+====
+This information server is maintained by AT&T Global Information Solutions Co. 
+(formerly NCR Corp.) in the hope of returning some value to the Internet 
+community.  It contains information about NCR products, and also 
+about computing-related topics in which AT&T Global Information 
+Solutions as a company, or individuals therein, have interest and 
+expertise.   The same information is accessible from ncrinfo.attgis.com 
+by anonymous ftp, gopher, or www.  Ncrinfo uses gn, the gopher/http 
+server developed by John Franks (Northwestern U).                              
+
+If you have questions or comments about specific topics, 
+contact the following help addresses:                                   
+
+ for ncrchips, <ncr.chips@ftcollinsco.ncr.com> also see Symbios Logic                                
+ for parallel, <parallel@ncrinfo.attgis.com>                
+ for standards, <standards@ncrinfo.attgis.com>                                 
+
+ For other problems, questions, suggestions concerning ncrinfo, contact:       
+
+ Peter Marks  <marks@ncrinfo.attgis.com>  (206)489-0501
+
+====
+QUESTION: Where can I get SCSI documents?
+ANSWER #1 From: kev@hpcpbla.bri.hp.com (Kevin Jones)
+         and jmatrow@donald.WichitaKS.NCR.COM (John Matrow
+====
+
+The only literature that I'm aware of is:                  
+
+  The SCSI specification: Available from:
+
+      Global Engineering Documents
+      15 Inverness Way East
+      Englewood Co  80112-5704
+      (800) 854-7179
+	SCSI-1: X3.131-1986
+	SCSI-2: X3.131-199x
+	SCSI-3 X3T9.2/91-010R4 Working Draft
+
+(Global Engineering Documentation in Irvine, CA (714)261-1455??)
+
+
+SCSI-1: Doc # X3.131-1986 from ANSI, 1430 Broadway, NY, NY 10018
+
+
+IN-DEPTH EXPLORATION OF SCSI can be obtained from
+Solution Technology, Attn: SCSI Publications, POB 104, Boulder Creek,
+CA 95006, (408)338-4285, FAX (408)338-4374
+
+THE SCSI ENCYLOPEDIA and the SCSI BENCH REFERENCE can be obtained from
+ENDL Publishing, 14426 Black Walnut Ct., Saratoga, CA 95090,
+(408)867-6642, FAX (408)867-2115
+
+SCSI: UNDERSTANDING THE SMALL COMPUTER SYSTEM INTERFACE was published
+by Prentice-Hall, ISBN 0-13-796855-8 (Seems to be out of print)
+
+
+ANSWER #2 From: Gary Field (garyf@wang.com)
+
+A neat little book called "Basics of SCSI" second edition, was sent to me
+free of charge by Ancot Corporation, Menlo Park, CA (415) 322-5322.
+It gives a simplified description of how most aspects of the SCSI bus work
+and includes some discussion of SCSI-2 issues.
+
+ANSWER #3 From: Runar Jorgensen (runar.jorgensen@fys.uio.no)
+
+There was a two part article in Byte Magazine. The first part was in Feb 1990
+issue, p. 267-274 and the second was in Mar 1990 issue, p. 291-298.
+Another two part article appeared in Byte in May 1986 and June 1986.
+
+
+====
+QUESTION: Where can I get information on various disk drives and controllers?
+ANSWER: ekrieger@quasar.xs4all.nl (Eric Krieger) (Updated Sep. 30, 1994)
+====
+
+        Drive and Controller Guide,  Version 4.3
+
+   THEREF(tm) is a comprehensive Directory of Hard Drives, Floppy Drives,
+Optical Drives, and Drive Controllers & Host Adapters.  It is designed to
+help the novice and pro alike with integration problems and system setups.
+
+   Information is provided in two handy formats; Portrait mode, for those
+who prefer a normal book-binding type print format, and(or) do not have a
+printer with Landscape capability.  And Landscape mode, for those who pre-
+fer a computer-printout type format.
+
+   For printing, a Laserjet is preferred, but not necessary, and setup
+info is provided.  For viewing, LIST(tm) by Vernon Buerg, will provide an
+excellent result, and allow text searches for finding specific models.
+
+By F. Robert Falbo
+
+
+Due many reports about the unavailablity of this file/archive I made
+sure that the file does exist at the following site:
+
+ftp.funet.fi
+
+you should find the archive at:
+
+/pub/doc/hardware/harddisks/theref43.tar.gz
+/pub/doc/hardware/harddisks/theref43.readme
+
+(In that directory-path there is also a sub-directory Seagate, where
+you also can find info/files about Seagate-drives).
+
+Before you actually get this file, be sure to get/read the file
+/README.FILETYPES since it explains the used file-extension and which
+(de-)archiver should be used (and where to find/get them!).
+
+Note:  In the archive there are files containing Extended ASCII or
+       ANSI characters (mostly used with IBM- and compatible PC's),
+       so it may be a bit unreadable when reading it on non-PC
+       systems, or without using a proper Characterset/Font!
+
+
+====
+QUESTION: How can I contact Adaptec?
+ANSWER From: jcaples@netcom.com (Jon D Caples)
+====
+
+	408 945-8600	Main number
+	800 959 7274	tech support
+	800 442 7274	orders, doc, new bios, etc.
+	408 945-7727 	BBS
+
+	Adaptec's general inquiry number, 800-959-7274, affords access
+	to a FAX-based information retrieval system.  In order to
+	preserve the accuracy of this information, I won't go into details
+	about how to use it (since Adaptec may change things without telling 
+	me :).
+
+	For those outside the CAN-US area, or local to Adaptec the direct 
+	FAX info number is (408) 957-7150.
+
+	There are three general topics as of this writing:
+
+		General Information 
+		Sales Information 
+		Technical Information
+
+	Give it a call and request the directory!  As of this writing
+	there are over 130 documents available.  You need a touchtone phone
+	and the fax number.  You'll also be asked for an extension number to 
+	stamp on the FAX which will be used to identify the recipient.
+
+
+[editor] As of July 1993 Adaptec bought Trantor.
+Try (800) 872-6867 (TRA-NTOR)
+
+World Wide Web (WWW) URL:
+	http://www.adaptec.com
+
+====
+QUESTION: What is the telephone number of Archive Corporation?
+ANSWER From: jdp@caleb.UUCP (Jim Pritchett)
+====
+Archive Corporation          (800) 537 2248
+     Tech Support            (800) 227 6296
+	FAX		     (408) 456-4903 (faxback)
+	FAX		     (408) 456-4974 (general)
+[Archive was bought by Conner in 1993 - Gary Field]
+
+====
+QUESTION: How can I contact Corel?
+ANSWER From: Gary Field (garyf@wang.com)
+====
+
+Main Number: (800) 772-6735
+Tech. Support: (613) 728-1010
+
+
+====
+QUESTION: What is the telephone number of Fujitsu?
+ANSWER From: Ken Porter (72420.2436@compuserve.com)
+====
+Fujitsu FactsLine FAX Back service (408) 428-0456
+	A six page catalog of available documents can be ordered.
+
+====
+QUESTION: What is the address and telephone number for Quantum?
+ANSWER From: kmartine@qntm.com (Kevin Martinez)
+====
+
+Quantum Corporation
+500 McCarthy Blvd.
+Milpitas, CA
+95035
+
+Technical Support Telephone Numbers:
+
+800 826-8022   Main Technical Support Number
+408 894-3282   Technical Support Fax
+408 894-3214   Technical Support BBS V.32 8N1
+408 434-9262   Technical Support for Plus Development Products
+408 894-4000   Main Quantum Phone number
+
+
+
+
+====
+QUESTION: How can I contact Seagate?
+ANSWER From: landis@sugs.tware.com (Hale Landis)
+====
+
+Here are the numbers for Seagate's Technical Support.
+
+SeaBOARD - Bulletin Board System available 24 hours.  Use 8 data
+           bits, no parity, 1 stop bit (8-N-1).
+
+   USA/Canada  408-438-8771    9600 baud*
+   England     44-62-847-8011  9600 baud*
+   Germany     49-89-140-9331  2400 baud*
+   Singapore   65-292-6973     9600 baud*
+   Australia   61-2-756-2359   9600 baud*
+
+   * - Maximum baud rate supported.
+
+SeaFAX 408-438-2620
+
+   Use a touch-tone phone to have information returned to you via
+   FAX.  Available 24 hours.
+
+Technical Support Fax 408-438-8137
+
+   FAX your questions or comments 24 hours.  Responses are sent
+   between 8:00AM and 5:00PM PST Monday through Friday.
+
+SeaFONE 408-438-8222
+
+   Provides recorded information 24 hours or talk to a technical
+   specialist between 8:00AM to 5:00PM PST Monday through Friday.
+
+SeaTDD 408-438-5382
+
+   Using a Telecommunications Device for the Deaf, you can send
+   questions or comments 24 hours or have a dialog with a
+   technical support specialist between 8:00AM and 5:00PM PST
+   Monday through Friday.
+
+
+
+====
+QUESTION: How can I contact Conner Peripherals?
+ANSWER From: ekrieger@quasar.hacktic.nl (Eric Krieger)
+update From: jnavas@ccnet.com (John Navas)
+update From: Oliver Meyer <oliver@POOL.informatik.rwth-aachen.de>
+====
+
+CONNER PERIPHERALS, Incorporated
+3081 Zanker Road
+San Jose   CA  95134
+
+	  (800)426-6637 1-800-4CONNER
+
+PAY LINE: (408)456-4500
+          (408)456-3200
+Tech Supp:(408)456-3388
+FAX LINE: (408)456-4784
+BBS LINE: (408)456-4415
+
+Conner European Technical Support:
+    Telephone: +44-1294-315333
+    Telefax: +44-1294-315262
+From USA + Canada:
+    FaxBack: +44-1294-315205
+    BBS: +44-1294-315265
+
+====
+QUESTION: How can I contact Maxtor?
+ANSWER From: David G North (D_North@tditx.com)
+====
+
+Main Number: (800) 262-9867
+ftp site: ftp.maxtor.com (New!)
+
+====
+QUESTION: What is the number for NCR?
+ANSWER From: gkendall@ncr-mpd.FtCollinsCO.NCR.COM (Guy Kendall)
+====
+
+For data manuals for any NCR chips, please call 800-334-5454 or
+719-630-3384.
+See Symbios Logic
+
+
+====
+QUESTION: What is the address and telephone number for Philips?
+ANSWER From: S. C. Mentzer (smentzer@anes.hmc.psu.edu)
+====
+
+Philips Consumer Electronics Co.
+One Philips Drive
+Knoxville, TN 37914-1810
+(615) 521-4316
+(615) 521-4891 (FAX)
+
+====
+QUESTION: How can I contact Symbios Logic?
+Answer From: Symbios Logic
+====
+
+The latest Symbios Logic PCI-SCSI drivers and documentation are available on 
+
+the Symbios Logic BBS at (719) 573-3562 or the FTP.SYMBIOS.COM anonymous
+FTP site. The NCRINFO.NCR.COM site still contains standards and
+other information.
+
+For literature on any Symbios Logic product please contact:
+
+Phone: (800) 334-5454
+               (719) 536-3300
+Fax:      (719) 536-3301
+Internet: literature@symbios.com
+
+Technical Support:
+
+Hotline: (719) 573-3016
+Internet: ncr.chips@FtCollinsCO.NCR.COM
+
+====
+QUESTION: How can I contact UltraStor?
+Answer From: Ultrastor
+====
+
+     UltraStor Corporation
+     13766 Alton Parkway suite 144
+     Irvine, CA 92718
+
+     General   	    (714) 581-4100
+     Tech. Support  (714) 581-4016
+     FAX   	    (714) 581-4102
+     BBS   	    (714) 581-4125
+
+     email:	ultrastor@primenet.com
+     finger:    ustor@primenet.com
+     ftp:       ftp.primenet.com:users/u/ustor
+
+Rob McKinley (mckinley@spss.com) writes that UltraStor is now out of Chapter 11.
+
+
+====
+QUESTION: What is the address and telephone number of WANGTEK?
+ANSWER From: "Terry Kennedy, Operations Mgr" <uunet!spcvxa.spc.edu!TERRY>
+====
+
+Wangtek can be reached at:
+
+  WANGTEK Incorporated
+  41 Moreland Road
+  Simi Valley, CA 93065
+  (805) 583-5255 [voice]
+  (805) 583-8249 [FAX]
+  (805) 582-3370 [BBS] now changed to 582-3620
+
+  WANGTEK-Europe
+  Unit 1A, Apollo House
+  Calleva Industrial Park
+  Aldermaston, Reading
+  RG7 4QW England
+  (44) 734-811463 [voice]
+  (44) 734-816076 [FAX]
+  851-848135 [telex]
+
+More Info from: Peter Dyballa (pete@riese.thi.informatik.uni-frankfurt.de)
+Wangtek is now owned by Rexon. Try looking at ftp.rexon.com. They apparently
+also have a BBS: (805) 582-3620.
+
+
+====
+QUESTION: What is the address and telephone number of Western Digital?
+ANSWER From: uunet!whale.st.usm.edu!rniess (Rick Niess)
+====
+
+    1-714-753-1068  Western Digital
+    1-714-756-8176  Western Digital
+    1-714-753-1234  Western Digital
+    1200/2400 baud:    714-753-1234
+    9600 baud (Hayes): 714-753-1068
+
+
+====
+QUESTION: What is the phone number of DPT?
+ANSWER: From: nglhs@alf.uib.no
+====
+
+voice: (407) 830-5522
+FAX:   (407) 260-5366
+
+====
+QUESTION: What is the phone number of Future Domain?
+ANSWER: From: garyf@wang.com (Gary Field)
+====
+
+voice: (714) 253-0400
+Tech. Support: (714) 253-0440 (For all countries - no foreign tech. support
+			       offices)Foreign callers should mention that
+			       they are calling internationally when they
+			       call in.
+BBS: (714) 253-0432
+
+====
+QUESTION: How can I contact Micropolis?
+ANSWER: From: Richard Ravich (Richard_Ravich@microp.com)
+====
+
+Tech Support: (818) 709-3325
+email:Richard_Ravich@microp.com
+
+====
+QUESTION: what is FAST SCSI?
+ANSWER From: kev@hpcpbla.bri.hp.com (Kevin Jones)
+====
+
+There are 2 handshaking modes on the SCSI bus, used for transferring data:
+ASYNCHRONOUS and SYNCHRONOUS. ASYNCHRONOUS is a classic Req/Ack handshake.
+SYNCHRONOUS is "sort of" Req/Ack, only it allows you to issue multiple 
+Req's before receiving Ack's. What this means in practice is that 
+SYNCHRONOUS transfers are approx 3 times faster than ASYNCHRONOUS.
+
+SCSI1 allowed asynchronous transfers at up to 1.5 Mbytes/Sec and 
+synchronous transfers at up to 5.0 Mbytes/Sec.
+
+SCSI2 had some of the timing margins "shaved" in order that faster handshaking
+could occur. The result is that asynchronous transfers can run at up to
+3.0 Mbytes/Sec and synchronous transfers at up to 10.0 Mbytes/Sec. 
+The term "FAST" is generally applied to a SCSI device which can do 
+syncrhonous transfers at speeds in excess of 5.0 Mbytes/Sec. This term can
+only be applied to SCSI2 devices since SCSI1 didn't have the timing margins
+that allow for FAST transfers.
+
+
+
+  
+ 
+
+
+====
+QUESTION: SCSI terminators should measure 136 ohms?
+ANSWER From: stevel@coos.dartmouth.edu (Steve Ligett)
+====
+
+Yes, that is what you should measure.  Let's see how that is so.  The
+terminator contains 18 220-ohm resistors from signals to termpower, and
+18 330-ohm resistors from those signals to ground.  I've drawn that
+below:
+
+termpower--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+220 ohms-> R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R
+           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+signals -> o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o
+           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+330 ohms-> R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R
+           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+ground   --+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+
+When you measure from any one signal to termpower, you aren't measuring
+that resistor in isolation, you are measuring that resistor IN PARALLEL
+with the combination of the corresponding 330 ohm resistor plus 17
+220+330 ohm resistor pairs in series.  I've redrawn the schematic to
+make this easier to see:
+
+termpower--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+
+           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+           |  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R <- 220 ohms
+           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+           |  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o  o
+           |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+           |  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R  R <- 330 ohms
+  220 ohms R  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+           |  +--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+--+-- ground
+           |  |
+           |  R <-- 330 ohms
+           |  /
+signal ->  o-/
+
+<our resistor><--------- other stuff that's in parallel ---------->
+
+We're trying to measure that one resistor from a signal to termpower,
+but there's a ton of other stuff in parallel.  The resistance of that
+"stuff" is 330 + 550/17 ohms (the 330 ohm resistor, in series with a
+parallel combination of 17 550 ohm resistors).  The general formula for
+the equivalent of two resistances in parallel is r1*r2/(r1+r2).
+Whipping out my trusty spreadsheet, I find that the "stuff" has a
+resistance of about 362 ohms, and that in parallel with 220 ohms is
+about 137 ohms.
+
+
+
+
+====
+QUESTION: Can someone explain to me the difference between 'normal' scsi
+           and differential scsi?
+ANSWER From: ralf@wpi.WPI.EDU (Ralph Valentino)
+====
+
+"Normal" SCSI is also called "Single-ended" SCSI.  For each signal
+that needs to be sent across the bus, there exists a wire to carry it.
+With differential SCSI, for each signal that needs to be sent across
+the bus, there exists a pair of wires to carry it.  The first in this
+pair carries the same type of signal the single-ended SCSI carries.
+The second in this pair, however, carries its logical inversion.  The
+receiver takes the difference of the pair (thus the name
+differential), which makes it less susceptible to noise and allows for
+greater cable length.
+
+
+
+
+====
+QUESTION: What are the pinouts for differential SCSI?
+ANSWER From: ralf@wpi.WPI.EDU (Ralph Valentino)
+====
+
+                Differential SCSI Connector Pinouts
+
+_____________________________________  _____________________________________
+| SCSI  |         | MINI  |         |  | SCSI  |        | MINI  |          |
+| SIGNAL| DD-50P  | MICRO | DD-50SA |  | SIGNAL| DD-50P | MICRO | DD-50SA  |
+------------------------------------  -------------------------------------
+| -GND  |    2    |  26   |   34    |  | (open)|    1    |   1   |    1    |
+| -DB(0)|    4    |  27   |    2    |  | +DB(0)|    3    |   2   |   18    |
+| -DB(1)|    6    |  28   |   19    |  | +DB(1)|    5    |   3   |   35    |
+| -DB(2)|    8    |  29   |   36    |  | +DB(2)|    7    |   4   |    3    |
+| -DB(3)|   10    |  30   |    4    |  | +DB(3)|    9    |   5   |   20    |
+| -DB(4)|   12    |  31   |   21    |  | +DB(4)|   11    |   6   |   37    |
+| -DB(5)|   14    |  32   |   38    |  | +DB(5)|   13    |   7   |    5    |
+| -DB(6)|   16    |  33   |    6    |  | +DB(6)|   15    |   8   |   22    |
+| -DB(7)|   18    |  34   |   23    |  | +DB(7)|   17    |   9   |   39    |
+| -DB(P)|   20    |  35   |   40    |  | +DB(P)|   19    |  10   |    7    |
+|  GND  |   22    |  36   |    8    |  |DIFSENS|   21    |  11   |   24    |
+|  GND  |   24    |  37   |   25    |  |  GND  |   23    |  12   |   41    |
+|TERMPWR|   26    |  38   |   42    |  |TERMPWR|   25    |  13   |    9    |
+|  GND  |   28    |  39   |   10    |  |  GND  |   27    |  14   |   26    |
+| -ATN  |   30    |  40   |   27    |  | +ATN  |   29    |  15   |   43    |
+|  GND  |   32    |  41   |   44    |  |  GND  |   31    |  16   |   11    |
+| -BSY  |   34    |  42   |   12    |  | +BSY  |   33    |  17   |   28    |
+| -ACK  |   36    |  43   |   29    |  | +ACK  |   35    |  18   |   45    |
+| -RST  |   38    |  44   |   46    |  | +RST  |   37    |  19   |   13    |
+| -MSG  |   40    |  45   |   14    |  | +MSG  |   39    |  20   |   30    |
+| -SEL  |   42    |  46   |   31    |  | +SEL  |   41    |  21   |   47    |
+| -C/D  |   44    |  47   |   48    |  | +C/D  |   43    |  22   |   15    |
+| -REQ  |   46    |  48   |   16    |  | +REQ  |   45    |  23   |   32    |
+| -I/O  |   48    |  49   |   33    |  | +I/O  |   47    |  24   |   49    |
+|  GND  |   50    |  50   |   50    |  |  GND  |   49    |  25   |   17    |
+----------------------------------------------------------------------------
+
+Please note that I can only verify the DD-50P connector.  The Mini
+Micro and DD-50SA pinout above is a pin for pin mapping from the SCSI
+pinout in the FAQ.
+
+How to tell if you have a single ended or differential drive:
+	- Use an ohm meter to check the resistance between pins 21 & 22.
+	  On a single ended system, they should both be tied together 
+          and tied to GND.  On the differential drive, they should
+          be open or have a significant resistance between them.  Note
+          that most drives today are single ended so you usually only
+          have to worry about this with old drives scavenged from
+          other systems.
+
+[ Editor's note: The preceeding comment about differential drives being old
+  is not valid. Differential drives are less common than single-ended ones,
+  because they are mainly used only where longer cable runs are necessary,
+  and they are not generally used in PCs, but state of the art drives are
+  available with differential interfaces. Generally only the higher
+  performance drives have a differential option because of the added cost.
+   - Gary Field ]
+
+====
+QUESTION: What are the pinouts for SCSI connectors?
+ANSWER From: snively@scsi.Eng.Sun.COM (Bob Snively)
+====
+
+Originally dated May 23, 1990
+
+The connector families described by the drawings have standard 
+pin numberings which are described the same way by all vendors
+that I have encountered.  The SCSI-2 specification identifies the
+standard numbering, using that convention.  It happened to be
+documented by AMP, but all the vendors use the same convention.
+
+The following diagrams have the outline drawings of connector 
+sockets at the bottom.  This is really for reference only, because
+the connector sockets and plugs are both specified as to their
+numbering and usually are labeled.
+
+There are some minor problems in naming the microconnector conductor
+pairs, which I have corrected in the enclosed diagram.  All the conductor
+pairs of the Mini-Micro (High Density) connector are in fact passed
+through on the cables.  SCSI-2 defines the RSR (Reserved) lines as
+maybe ground or maybe open, but they are still passed through the cable.
+Most present standard SCSI devices will ground those lines.
+
+--------------------  microSCSI to SCSI Diagram   ---------------------------
+
+
+                       SCSI Connector Pinouts
+
+_____________________________________  _____________________________________
+| SCSI  |         | MINI  |         |  | SCSI  |        | MINI  |          |
+| SIGNAL| DD-50P  | MICRO | DD-50SA |  | SIGNAL| DD-50P | MICRO | DD-50SA  |
+------------------------------------  -------------------------------------
+| -DB(0)|    2    |  26   |   34    |  |  GND  |    1    |   1   |    1    |
+| -DB(1)|    4    |  27   |    2    |  |  GND  |    3    |   2   |   18    |
+| -DB(2)|    6    |  28   |   19    |  |  GND  |    5    |   3   |   35    |
+| -DB(3)|    8    |  29   |   36    |  |  GND  |    7    |   4   |    3    |
+| -DB(4)|   10    |  30   |    4    |  |  GND  |    9    |   5   |   20    |
+| -DB(5)|   12    |  31   |   21    |  |  GND  |   11    |   6   |   37    |
+| -DB(6)|   14    |  32   |   38    |  |  GND  |   13    |   7   |    5    |
+| -DB(7)|   16    |  33   |    6    |  |  GND  |   15    |   8   |   22    |
+| -DB(P)|   18    |  34   |   23    |  |  GND  |   17    |   9   |   39    |
+|  GND  |   20    |  35   |   40    |  |  GND  |   19    |  10   |    7    |
+|  GND  |   22    |  36   |    8    |  |  GND  |   21    |  11   |   24    |
+|  RSR  |   24    |  37   |   25    |  |  RSR  |   23    |  12   |   41    |
+|TERMPWR|   26    |  38   |   42    |  |  OPEN |   25    |  13   |    9    |
+|  RSR  |   28    |  39   |   10    |  |  RSR  |   27    |  14   |   26    |
+|  GND  |   30    |  40   |   27    |  |  GND  |   29    |  15   |   43    |
+| -ATN  |   32    |  41   |   44    |  |  GND  |   31    |  16   |   11    |
+|  GND  |   34    |  42   |   12    |  |  GND  |   33    |  17   |   28    |
+|  BSY  |   36    |  43   |   29    |  |  GND  |   35    |  18   |   45    |
+| -ACK  |   38    |  44   |   46    |  |  GND  |   37    |  19   |   13    |
+| -RST  |   40    |  45   |   14    |  |  GND  |   39    |  20   |   30    |
+| -MSG  |   42    |  46   |   31    |  |  GND  |   41    |  21   |   47    |
+| -SEL  |   44    |  47   |   48    |  |  GND  |   43    |  22   |   15    |
+| -C/D  |   46    |  48   |   16    |  |  GND  |   45    |  23   |   32    |
+| -REQ  |   48    |  49   |   33    |  |  GND  |   47    |  24   |   49    |
+| -I/O  |   50    |  50   |   50    |  |  GND  |   49    |  25   |   17    |
+----------------------------------------------------------------------------
+ 
+ * NC = NOT CONNECTED
+ 
+ CONNECTOR TYPES:
+                                  DD-50SA
+                        ________________________            MINI-MICRO
+       DD-50P          |   -------------------  |      _____________________
+    ______________     |17 \o o o o o o o o o/1 |     |  _________________ |
+ 49| o o o o o o |1    | 33 \ o o o o o o o /18 |     |25\ o o o o o o o /1|
+ 50| o o o o o o |2    |  50 \o o o o o o o/ 34 |     | 50\o o o o o o o/26|
+   ---------------     |      -------------     |     |   --------------   |
+                       --------------------------     ----------------------
+ 
+(VIEWED FROM FACE OF CONNECTOR -  USE VENDOR NUMBERING SYSTEM AS SPECIFIED)
+
+
+ANSWER From: Gary Field (garyf@wang.com)
+
+                    Macintosh Plus SCSI Connector Pinouts
+
+Note that this connector is NON COMPLIANT WITH ANY SCSI STANDARD!
+The grounding is insufficient and does not allow for proper twisted-pair
+transmission line implementation. It is recommended that a short adapter cable
+be used to convert to the more common Centronics style 50 pin connection
+rather than extend the 25 pin connection any further than necessary.
+The Macintosh Plus used a NCR 5380 SCSI chip controlled by the MC68000 
+processor.
+___________________
+| SCSI  |         |
+| SIGNAL| DB-25S  |
++-----------------+			DB-25S (female)
+| -DB(0)|    8    |	       _____________________________
+| -DB(1)|    21   |	     13\ o o o o o o o o o o o o o /1
+| -DB(2)|    22   |	      25\ o o o o o o o o o o o o /14
+| -DB(3)|    10   |	         ------------------------   
+| -DB(4)|    23   |		View from rear of computer.
+| -DB(5)|    11   |
+| -DB(6)|    12   |
+| -DB(7)|    13   |
+| -DB(P)|    20   |
+|  GND  | 7,9,14  |
+|  GND  |16,18,24 |
+| -ATN  |    17   |
+|  BSY  |    6    |
+| -ACK  |    5    |
+| -RST  |    4    |
+| -MSG  |    2    |
+| -SEL  |    19   |
+| -C/D  |    15   |
+| -REQ  |    1    |
+| -I/O  |    3    |
++-----------------+
+Pin 25 is NOT CONNECTED in the Mac implementation. Some Future Domain clones
+connect TERMPWR to pin 25, but are otherwise the same.
+ 
+
+
+--
+--/*   Gary A. Field - WA1GRC, Wang Labs M/S 019-72B, 1 Industrial Ave      
+   Lowell, MA 01851-5161,  (508) 967-2514, email: garyf@wiis.wang.com, EST5EDT
+	Keyboard Defective: Press F1 to continue                             */
+

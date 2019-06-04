@@ -1,0 +1,206 @@
+Here we have another collection of little demo releases...
+
+Û--------------------------------------------------------------------------------
+                           "The Debut" by ASM Software
+Û--------------------------------------------------------------------------------
+
+system .. ST, STe, Falcon, TT, RGB, STeem
+
+credits . code - Simon Sunnyboy
+          gfx  - Simon Sunnyboy
+          msx  - Jess of Overlanders
+
+size .... 42 KB
+
+release . o7/2oo3
+
+url ..... Òhttp://www.asmsoftware.de
+
+Û--------------------------------------------------------------------------------
+
+Simon Sunnyboy is  crawling around on  the  Atari scene since  some time now. He
+brought us some little games stuff  so far, most known  should be his SEUCK shot
+em up we tested in a previous UCM.
+
+I saw his  first demo activities  in the  beginning of this  year if  I remember
+right. He tried to code some intro for the Construct Crew he had joined later on
+but somehow we never saw something precious in the end. And he left the band...
+
+Now I was a bit  surprised to see that  little intro. Ok, right here, it isn't a
+smasher, is no record breaker  and no style kicker. It's  damn old schoolish and
+surely a matter of taste. It brings some rasterstuff, a disting logo, some text-
+displayer and sound analyzers, looks like it was made in the late eighties. Also
+the intro sequence with the "In the beginning there was darkness..." sounds well
+known to me ;)
+
+If you have red  the whole stuff like why he did the intro and the greetings and
+stuff, the screen changes to some picture and ends and you find yourself back on
+the desktop.
+
+As said, don't wait for revolutionary  effects. The grafix aren't asskicking too
+and the music sounds some way strange even tough I like Jess' tunes but it seems
+as some bits are missing, or am I wrong?
+
+ÒWhat to say, nice  to see you  entering the demo  scene now, and  even those old
+Òschoolish bits are showing that you  can do something more than  just displaying
+Òpictures and write scrolltexts ;)
+
+Û--------------------------------------------------------------------------------
+                         "Paracon 5 Invitro" by Paranoia
+Û--------------------------------------------------------------------------------
+
+system .. ST, STe, Falcon, 1 MB RAM, RGB, STeem
+
+credits . code - Paranoid
+          msx  - Luebke
+          gfx  - Paranoid, TNT
+
+size .... 35 KB
+
+release . 11/2oo3
+
+url ..... Úhttp://paracon.atari.org
+
+Û--------------------------------------------------------------------------------
+
+Unbelievable, the 5th issue  of the little  Party series, organized  by Paranoia
+takes place in a few days... and  again, Paranoia announcing  their little event
+with a small invitation intro, and again I will not be there :/
+
+Somehow the little Paranoia  invitros are  some kind of  status bar, showing the
+latest  skills of  Paranoid and  so it's always  interesting  to see how  he has
+developped his coding style.
+
+This time the demo starts with a shaking "paranoia" logo on black background and
+a small chip music with a bit blippblopper  touch but somehow I know it already,
+and you know why? It's a recycled one, already used in another Paracon invitro.
+
+The intro itself features more or less just one effect in  several forms, so you
+can see combinated ground/floor mappers in differend colours, sometimes swinging
+or moving in different directions. In front of this some scroller tells us stuff
+about the party itself, gives greetings and credits.
+
+{*i PARACON.PI1 m 0 20 0 200}
+
+You can leave the intro while pressing the "Space" bar...
+
+ÒSo what about the  final impression? A very small intro with a  nice main effect
+Òand several  recycled parts (the scroller font and the music), so it lacks a bit
+Òof  originality. No bad  intro at all, I like  the shaking  Paranoia logo in the
+Òintro and the effect looks ok, but after all it's just a small intro and nothing
+Òmore... interesting  for collectors  but no highlight  in the rows of the 2k3 ST
+Òreleases...
+
+Û--------------------------------------------------------------------------------
+                             "Website Intro" by Paradize
+Û--------------------------------------------------------------------------------
+
+system .. ST, STe, Falcon, TT, RGB, STeem
+
+credits . code - Simon Sunnyboy
+          gfx  - Simon Sunnyboy
+          msx  - Veggy of Crusaders
+
+size .... 43 KB
+
+release . 12/o3
+
+url ..... Úhttp://paradize.atari.org
+
+Û--------------------------------------------------------------------------------
+
+As "Raider" is called "Twix" now, The Coolest Paradise is known as Paradize from
+now on. And Simon Sunnyboy is  on board and  we get something  different as just
+another humble slideshow. How things change, no?
+
+This small intro starts with something that sounds  like an sampled announcement
+or do I have  something with my ears? We then see  a Paradize logo  that proudly
+presents us some... textdisplayer and scrolltext.
+
+The style of those things has  a bit changed  since the  last Sunnyboy intro and
+looks a bit more homogenous  now, the grafix aren't bad and the chip sound seems
+to be a damn old  one and I have  to admit I  haven't  heard it  so  far and the
+composer is unknown to me, so it seems to come from another system then?! Anyway
+it's old but not bad at all.
+
+If  all things  were displayed, just  like why  they changed  the name, credits,
+greetings, memberstate, smalltalk and stuff the intro ends automatically and you
+find yourself back on the desktop again.
+
+ÒOk, what to  say, technically no real improvements, but the style was a bit more
+Òdevelopped but without breaking any limits or something. The intro just does its
+Òjob and is some little  alternation  to the  former output by  Paradize. Fans of
+Òcool record breakers and  style orgies should  make a bow  around it, all others
+Òcan take it for a try.
+
+ÒWe wait for the first real demo then...
+
+Û--------------------------------------------------------------------------------
+                            "3D Fullscreen" by Oxygene
+Û--------------------------------------------------------------------------------
+
+system .. STe, 1 MB RAM, RGB, STeem
+
+credits . code - Leonard
+          msx  - Big Alec of Delta Force
+
+size .... 11 KB
+
+release . 12/2oo3
+
+url ..... Úhttp://leonard.atari.org
+
+Û--------------------------------------------------------------------------------
+
+Leonard did it again, you  could say... did what? Digging  out some old stuff to
+feed the hype. This  screen shows  his first STE coding bits, at least he claims
+that. But... how old is it then? As we  know even  the O-Demo  featured some STE
+screens and that was released in 1992. In the end it does not play a role.
+
+The screen  shows some blue vector object, flying around  on the screen ignoring
+all known borders. Also the little informations are written over all borders and
+so we look at a nice fullscreen. There isn't much more to say about, just as the
+screen features a nice  chipmusic by Big Alec  and shows  the usual style of the
+big era of ST demos... and goes clean back to desktop.
+
+ÒSurely a nice screen, but no real "whoa" effect after all the late ST demo stuff
+Òwe saw over the last years.
+
+Û--------------------------------------------------------------------------------
+                       "Xmastro" by Yescrew & MJJ Prod
+Û--------------------------------------------------------------------------------
+
+system .. STfm, STe, STEEM, 512 KB RAM, RGB
+
+credits . code - Swe
+          gfx  - C-Rem
+          msx  - Ajt, Ben Daglish, XiA
+
+size .... 19 KB
+
+release . 12/2oo3
+
+Û--------------------------------------------------------------------------------
+
+This little prod was disqualified for the DHS Xmas 15 KB Music competition as it
+didn't fit into  the size rules. It  was released  anyway and  brings us another
+small music demo, even  though it seems to  be ended up in a  slightly different
+way as Swe didn't got musix and must use old tunes instead.
+
+So what do we get, a simple snow world in a glass, you  know those little things
+you have  to shake to  see snow or  stars tumbling  around? The snow is slightly
+animated in here and a small horizonal scrolly is telling the usual stuff.
+The used musix are in parts quite old, such as from AJT of Hemoroids or the tune
+by Ben Daglish, but I like them anyway, esp. the funny one by Excellence In Art.
+
+ÒWhat to say more, just a little xmas intro  and not to forget, the first YesCrew
+Òscreen since long times again...
+
+Û--------------------------------------------------------------------------------
+
+As you  can see  on those  numerous releases, intros  and single screens seem to
+stay in  the trend again, the  question  is why... to kick out some old sources?
+Why  the power to release  a real dentro/demo  is vanished? Dunno... I just know
+that demo packers would have dreamed of such releases to fill their disx...
+
+Û_______________________________________________________________ÚmoondogÛ_Úo2/2k4Û___

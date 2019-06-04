@@ -1,0 +1,185 @@
+VIEW!.TTP IN GFA
+
+        A quick shell for 'View!' and other command-line based programs
+        ---------------------------------------------------------------
+
+                              Article by: MUG U.K¿
+                              --------------------
+
+
+This issues article on GFA BASIC by myself will be for a small 'shell'
+program that runs the 'VIEW!' program which was written by Wizzcat.  You
+should also be able to adapt the very basic source code into a shell
+utility of your own afterwards !!
+
+'View!' is a small and compact document reader.  Its special feature is
+that the text is viewed using the top and bottom borders and also has a
+very fast text-scrolling speed.  Use the cursors up and down to view the
+text and hitting UNDO returns you to the desktop.  That was how you used
+it and the filename you wanted to read was typed in at the .TTP prompt.
+This would be OK if you knew exactly where the file was and also if there
+was only one file that you wanted to read.
+
+What if you wanted to read several files or you couldn't quite remember
+the filename ??  Enter 'Quick View' by MUG U.K¿ - the no frills shell for
+'View!' by Wizzcat.
+
+Simply select the drive and path where 'View!' exists, then select any
+ASCII file you want to read by way of your file-selector.  There are no
+other options, other than what you add to the source code yourself.
+
+Talking of the source code, let's have a look at it .....
+
+----------------------------------------------------------------------------
+' +-------------------------------+
+' | Quick View! Shell by MUG U.K¿ |
+' |                               |
+' |      For DBA Magazine #7      |
+' |                               |
+' |   (c) MUG U.K¿ - 30/10/1992   |
+' +-------------------------------+
+'
+$E+
+'
+' This first section deals with finding the location of 'VIEW.TTP'
+' and holding it in 'view$'
+'
+CLS
+PRINT AT(29,1);"Please find 'VIEW!.TTP'"
+FILESELECT CHR$(65+GEMDOS(25))+":\*.TTP","",view$
+'
+IF view$=""                ! User wants out !!
+  ALERT 0,"Cancel Selected!",1," Bye Bye ",d|
+  EDIT
+ENDIF
+'
+dr$=LEFT$(view$,3)         ! Remeber current drive
+'
+' This is the main loop.  You click on a file, and View! displays it.
+' If you click on Cancel, you exit the program !!
+'
+redo:
+CLS
+PRINT AT(29,1);"Quick View! Shell by MUG U.K¿"   ! I love ego-tripping !!
+PRINT AT(31,2);"Press 'UNDO' to leave View!"
+FILESELECT dr$+"*.*","",file$
+'
+IF file$=""             ! Bye Bye
+  EDIT
+ENDIF
+'
+IF NOT EXIST(file$)
+  ALERT 0,"File not found !!",1," Retry | Cancel ",d|
+  IF d|=1
+    GOTO redo
+  ELSE
+    EDIT
+  ENDIF
+ENDIF
+'
+' The next section runs 'VIEW.TTP' and sends it the name of the file that
+' you have selected.  You can access any .TTP file in this way.
+'
+' View! uses the colour value $FF8242 as its' viewing colour.  I change this
+' to black, but you can alter it to whatever you require.  You can set-up
+' your own viewing palette if you want, but don't forget to restore it after
+' you have exited VIEW!
+'
+SETCOLOR 1,0
+RESERVE 100
+CLS
+PRINT "Viewing ";file$
+EXEC 0,view$," "+file$,""      ! Call 'VIEW.TTP' with file to read
+RESERVE
+SETCOLOR 1,&H700               ! Restore $FF8242 to original GEM colour of red
+'
+' We now set the new drive path (can be improved, but I can't be bothered)
+' and go back to the file-selector
+'
+dr$=LEFT$(file$,3)
+GOTO redo
+
+----------------------------------------------------------------------------
+You can access packed files quite easily by way of a TSR (Terminate and
+Stay Resident) program that most packers have.  Sentry Packer v2.05 and
+Atomik v3.5 have such programs.  If you run these before you run this
+shell, then the files will be depacked and viewed.  Alternatively you can
+adapt this shell to call up a TSR depacker before it asks you to find
+View! etc. etc.
+
+The space before the 'file$' variable in the 'EXEC 0 ... etc.' line is
+very important.  This space is used to hold how many characters (upto 127)
+are in the command line.  If the space was not put there, then the first
+character of 'file$' would be assumed to be the length of the command line !!
+
+The interesting point to notice is that this source code can be made into
+shells for other .TTP files.
+
+For example, on DBA Magazine #6 there was a MODPLAY.APP program by The
+Pixel Twins.  If you alter my source code to call up this program and
+ask the user to select a Noisetracker .MOD file, you have got a shell
+program of your very own.
+
+Another example is the ICE Packer v2.40 which can be called up via the
+command-line.  For example:-
+
+FOR f&=1 TO 3
+  READ file$
+  RESERVE 100
+  EXEC 0,"ice_2_4.prg"," $1n"+file$,""  ! Pack as Data
+  RESERVE
+NEXT f&
+CHDIR "\"
+'
+DATA "e:\temp\spheres\s7"
+DATA "e:\temp\spheres\s8"
+DATA "e:\temp\spheres\s9"
+
+The above example calls ICE Packer v2.40 three times and sends a different
+file each time.  This is handy in that you can add more files to this
+source code and leave ICE v2.40 to do its packing whilst you find something
+better to do.  I suggest you read the ICE Packer documentation as to what
+the '$1n' means and alter it to your own needs.
+
+Here ends this issues routines.  It can be improved in many ways, but as this
+is just an example, I shall leave it at that.
+
+Now go on and write your own shell program for your favourite .TTP !!
+
+
+Contacting MUG U.K¿
+-------------------
+
+On a totally different note I am publishing my home address for anyone in
+the world to write to me because due to the recession going on in this
+country (and also the rest of the world!) my mates computer shop has had to
+close down.  Therefore I do not have a postal address where I can check
+the incoming mail and ignore the letters from total arseholes or people I
+don't want to continually write to me/ring me up !!
+
+So for the first time, here is my home address:-
+
+"Anncott"
+Hylas Lane
+Rhuddlan
+Clwyd
+LL18 5AG
+Wales
+United Kingdom
+
+As usual with the old Broadsword Computers address - if any arseholes write
+to me asking for pirated software or contacts to swap pirated software
+I will forward their letter onto FAST.
+
+My interests are GFA programming (mainly utilities), learning 68000 and
+writing routines in 68000 for GFA, swapping the latest demos and other Public
+Domain stuff.  I am a member of The Source Demo CD group, so if you have any
+demos you want us to pack or release on a menu then please send them in files
+to the above address as well.
+
+I think that is all for now.  See you all - until the next GFA article
+I write for the DBA Magazine !!
+
+
+MUG U.K¿ - 31/10/1992
+

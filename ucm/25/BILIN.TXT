@@ -1,0 +1,115 @@
+
+         the smart way of applying bilinear filtering on 680x0s
+      ó------------------------------------------------------------
+
+haven't you ever been  bothered by the  way your  textures' pixels get zoomed in
+to chunky and ugly squares in your usual  rotozoom-, texturemapping- or whatever
+screen on  large scales?  sure, this is a very unpleasant visual effect but some
+people say you  are forced to  use a plain  unfiltered mapper up to a 68030 cpu,
+unless  you  want  to  go  for  dsp acceleration  or  away from a  realtime demo
+application. now  in  fact, there  is  a  quite  easy  method of  improving  the
+situation which has become common  on today's  3d accelerated  (peecee) hardware
+not available on our fancy  machines - the technique i'm trying to talk about is
+known as "bilinear filtering".
+it works out by interpolating colorareas between adjacent texels into horizontal
+and vertical  directions, hence  the  name "BIlinear". usually  this  involves 4
+multiplications  per  pixel as  each color  must be  weighted  according  to the
+distance to the 4 texels surrounding  it which  explains  why this is a no-no on
+every 680x0 suffering from cycle intensive mul-instructions (even try to imagine
+working  in  truecolor  where  you'd  have to  independantly  interpolate  color
+channels).
+someone might  come up with  the idea to use a huge fractmul-lut which of course
+is possible but is not a very elegant solution, imho.
+personally  i've decided for a much simpler and easier implementation which even
+works with arbitrary colordepths an palettes, additionaly...now isn't that nice?
+ah  yes, sure, "how does that work", you  might  ask - easy: simply  apply  some
+noisy  dithering  emulating  a  smooth color  gradient between  otherwise  badly
+contrasting texels. changing the  amplitude of  your noise  you can  even freely
+adjust the "filters" blurdepth *for free*.
+
+for instance take this familiar situation, a standard rotozoomer
+(assuming fixedpoint math, pseudo c-style code comin' up):
+
+   for (y=0;y<yres;y++)
+   {
+      u = tu; v = tv;
+
+      for (x=0;x<xres;x++)
+      {
+         (*screen++) = tex[(int)v<<textureshift+(int)u]
+         u += du;  // interpolate along scanline
+         v += dv;
+      }
+
+      tu += dv; // interpolate between scanlines
+      tv -= du;
+   }
+
+
+for a bilinear  filtered version you'd need to additionally interpolate "between
+the pixels" by weightning with subpixel accuracy as mentioned above.
+this can  be faked with  the help of  our little  dithering idea. a pseudo noise
+function can be implemented in form of a little matrix getting  initialized with
+random "distortion" values...depending  on the  amplitude of  these you can  in/
+decrease the filter's strength. your rotozoomer becomes:
+(assume a 8*8 noise matrix)
+
+  for (y=0;y<yres;y++)
+   {
+      u = tu; v = tv;
+
+      for (x=0;x<xres;x++)
+      {
+         nu = u + noisemat[x&7<<3+y&7]; // add some noise
+         nv = v + noisemat[y&7<<3+x&7];
+
+         (*screen++) = tex[(int)nv<<textureshift+(int)nu]
+         u += du;  // interpolate along scanline
+         v += dv;
+      }
+
+      tu += dv; // interpolate between scanlines
+      tv -= du;
+   }
+
+
+voila, and there's  your fakie bilinearly filtered rotozoomer...check it out, it
+gives nice results, especially with noise  values in the range of the fractions'
+magnitude.
+to keep  uneccessary  modulos/and's out  of your  innerloop  you can  expand the
+noisematrix  to  xres*n values  maybe  using  individual  values  for u and v to
+increase the ditherings' quality.
+in assembler i have something like this for my innerloop
+(assume 8.8 fixedpoint accuracy)
+
+
+; d0.l = UUuuVVvv
+; d1.l = DUduDvDv
+; d2.l = 0
+; d4.w = length-1
+; a0.l -> noisematrix[length*n*2] (reset after n rows)
+; a1.l -> Texture (16 bpp in this case)
+; a2.l -> Screen
+
+.innerloop    move.l d0,d2
+              add.l  (a0)+,d2   ; nuv = uv + (*noise++)
+              move.l d2,d3
+              rol.l  #8,d3      ; Get u into lo byte of d3
+              move.b d3,d2
+              move.w (a1,d2.l*2),(a2)+ ; Paint pixel
+
+              add.l  d1,d0      ; uv += Duv
+
+              dbra   d4,.innerloop
+
+
+pretty tight for this sort of "low budget software filtering", ain't it?
+of course, this  isn't as fast  as it gets, just unroll it to the 030s cache and
+play  around  with  addx interpolation  and  you'll end up  in something  like a
+"state-of-the-art mapper", soon. now  go and  have fun using and extending  this
+stuff.
+
+that's  all i  have to say  for now, if you  have questions  regarding the given
+examples in particular just reach me via: ray(at)atari(dot)org
+
+ñray logging off as OG Dratwa a.D. just having left the army, finally :)     2k4

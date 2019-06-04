@@ -1,0 +1,137 @@
+    
+        Datodynamik oder die Anwendung thermodynamischer Methoden auf die
+                                   Informatik!
+        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+ Auflage 3 / Oktober 1993
+
+ Vorwort:
+ Die folgenden šberlegungen waren fr einen Moment fast ernstzunehmen,aber sie
+ sind viel zu diskmag-m„ig,als da sich ihre Verballhornung nicht lohnen wr-
+ de. Ich bitte den Leser blo, mich nicht fr  wissenschaftlich unterbemittelt
+ oder berkandidelt zu halten. Bestenfalls  die Bezeichnung "Freak" im ( posi-
+ tivsten ) Sinne fr "Verrckter" lasse  ich gelten. šber dem Ganzen steht so-
+ wieso die Parole des "Anhalters": KEINE PANIK!
+
+ Vorwort zur 2. Auflage:
+ In diesem Moment bietet sich die  Weiterverbreitung dieses Machwerkes an, und
+ ich habe mich dazu durchgerungen,einige wenige Verbesserungen vorzunehmen und
+ die Vorw”rter zu dichten.
+
+ Vorwort zur 3. Auflage:
+ Jetzt endlich ist der Moment gekommen,da Machwerk zu verbreiten. Und zwar im
+ TNB-Mag "Undercover" 
+
+   ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+ Bei n„herer Besch„ftigung mit Thermodynamik und Informatik stellt man schnell
+ fest, da sich beide Fachgebiete  sehr „hneln. So werde ich im folgenden auch
+ darlegen, wie in beiden Bereichen mit Recht (?) die gleichen Begriffe verwen-
+ det werden k”nnen.
+ Zuerst sind die prim„ren Zustandsgr”en zu definieren:
+
+ Q   =   W„rme      =   Datenmenge
+ T   =   Temperatur =   Verh„ltnis Datenmenge/Datengr”e
+ m   =   Masse      =   Speichergr”e des Mediums
+ V   =   Volumen    =   real vorhandene Speichereinheiten
+ RHO =   Dichte     =   Speichermenge je Volumeneinheit
+
+ Die Datenmenge ist dabei  nicht mit der Speichergr”e zu verwechseln. Die Da-
+ tenmenge ist eine abstrakte Angabe,die die Menge der tats„chlich auf den Mas-
+ senspeichern befindlichen Daten beschreibt. Die Unterschiede und Zusammenh„n-
+ ge zwischen Q, V, m, T und RHO lassen sich am besten an einem Beispiel erl„u-
+ tern. Sind auf einer 720kByte-Diskette 100kByte Daten so gepackt,da sie 50k-
+ Byte einnehmen,so ist
+
+ V   =     1 ( Diskette )
+ T   =   100 kByte /  50 kByte = 2
+ m   =   720 kByte
+ Q   =   100 kByte
+ RHO =   720 kByte / 100 kByte = 7.2
+
+ V ist somit die anschauliche Gr”e des k”rperlich vorhandenen Speichers. 
+ m beschreibt die F„higkeit dieses Speichers, Daten aufzunehmen.
+ Q ist schlielich  die Zahl der  vorhandenen Daten, egal ob sie  gepackt oder 
+ nicht vorliegen. Ihre Verteilung  in der Masse des  Speichers ist deshalb un-
+ wichtig, wird aber durch die Temperatur beschrieben.
+
+ Nach dieser einleitenden  Definition der Grundgr”en  kann ich nun zur Erkl„-
+ rung der wichtigsten Thermodynamischen Gesetze bezogen auf die Welt der Daten
+ kommen.
+
+ 1. Hauptsatz:
+ ÿÿÿÿÿÿÿÿÿÿÿÿÿ
+ Die Summe der inneren und „ueren Daten eines Speichers ist konstant.
+
+ Da heit, da Daten nicht entstehen oder verschwinden k”nnen ( Wenigstens in
+ Ihrem Ged„chtnis bleibt  IMMER  eine Spur zurck... ). Allerding ist eine Um-
+ wandlung der Daten  ineinander m”glich. Ein Perpetuum mobile  erster Art  ist
+ unm”glich ( d.h. es gibt kein Programm, da von selbst in alle Ewigkeit Daten
+ erzeugt )
+
+ 2. Hauptsatz:
+ ÿÿÿÿÿÿÿÿÿÿÿÿÿ
+ Datentransport findet  stets in der Richtung  von der hohen Konzentration zur
+ geringen Konzentration statt.
+
+ Bei Betrachtung des  2. Hauptsatzes kam es zur  Einfhrung des  Begriffes der 
+ Entropie. Die Entropie gibt den Grad der Unordnung eines Systems an. Von zwei
+ Systemen hat das die h”here Entropie, da den wahrscheinlicheren Zustand hat.
+ Somit folgt, da die Entropie  immer dann steigt, wenn ein System einen wahr-
+ scheinlicheren  Zustand annimmt. Unter Einbeziehung  des 2. Hauptsatzes folgt 
+ daher, das der šbergang von der niedrigen zur hohen Konzentration nicht abso-
+ lut unm”glich ist,sondern nur „uerst unwahrscheinlich.
+
+ Die obigen Betrachtungen  bedeuten nun fr die Swapper-Praxis folgendes. Eine
+ bestimmte Datenmenge  entsteht nie von selbst. Es mu immer ein Autausch der
+ "inneren" Datenmenge einer Disksammlung mit der "„ueren" Datenmenge erfolgen
+ ( 1. Hauptsatz ). Dabei ist es wahrscheinlicher,von einem Freak mit einer um-
+ fangreichen Sammlung (hohe Konzentration) neue Soft zu erhalten,als von einem
+ Freak mit kleiner Soft-Sammlung (geringe Konzentration). Dabei ist allerdings
+ ein gewisser Energieaufwand  in Form von Kontaktaufnahme  n”tig. In der Disk-
+ sammlung angekommen, bestreben die Daten  eine m”glichst gleichm„ige Vertei-
+ lung,um dem Zustand h”chster Entropie nahezukommen. Eine Sortierung der Daten
+ ist nur mit einer knstlichen  Entropieverminderung und einer damit einherge-
+ henden Energieaufwendung in Form von Stre zu erreichen.
+ Es gibt einen  bisher nur als  Gedankenexperiment  existierenden Effekt. Ent-
+ sprechend der  durch die Entropie  bestimmten Wahrscheinlichkeit kann ein Me-
+ tallstck sich abkhlen  und hochspringen. Die  Wahrscheinlichkeit betr„gt so
+ etwa 10 hoch 20 bis 40. šbertr„gt  man diese Tatsache  in den Bereich der In-
+ formatik, so dr„ngt sich folgende Vermutung auf: Daten k”nnen spontan neuent-
+ stehen, dabei verschwinden  aber andere. Im Idealfall auf  der gleichen Disk,
+ meistens aber auf  verschiedenen Disks. Die  verschwundenen Daten sind unles-
+ bar, sie drfen weder 0- noch 1-Bits haben ( dann w„ren es ja wieder Daten ). 
+ Sollte der  Leser mit  diesem Ph„nomen  konfrontiert sein, bitte ich ihn, mir 
+ beide Disks fr wissenschaftliche Versuche zuzusenden. 
+ Ich bin gespannt, was im Speicher steht,nachdem mittels ReadTrack eine solche
+ Disk gelesen wurde. Entweder  ist DMA-Count=0 oder  die irrealen Daten stehen 
+ zwischen den Bytes  oder der dritte Zustand  bedeutet soviel wie die Entwick-
+ lung des Hyperraumes vor  200 Millionen Jahren oder die Entdeckung von intel-
+ ligentem Leben im Sternensystem SOL vor 2 Millionen Jahren (3. Planet / huma-
+ noide Rasse / minderbemittelt - brigens die gleiche Sorte wie im sogenannten
+ Paradies unter Leitung BOGs ). Meine Vermutungen  k”nnten sich natrlich auch 
+ als Sackgasse erweisen  und die  Disk verliert  zwar ihre Daten, springt aber
+ einfach hoch ( also Vorsicht, wenn die  Disks springen - sie sind  dann dabei
+ Daten zu verlieren ). Der Versuch im Bereich der Thermodynamik (mit Abkhlung
+ statt Datenverlust ) kann  aber mit Disks  durchgefhrt werden, wenn man sich
+ einen sogenannten Freezer besorgt.(im Notfall reicht ein simpler Khlschrank)
+
+ Damit m”chte ich auch schlieen um den geneigten Leser nicht intellektuell zu
+ ber... „h unterfordern. Man mag sich an folgende Literatur halten:
+
+ [1] Para-, Meta-, Nega-, Nonsensphysik: Ein Handbuch. Stroppe, 1996, Volk und
+     Kissen, Seite ß7 bis ß11.
+
+ [2] Hitchhikers Guide To The Galaxy. Autorenkollektiv, ca. immer, Intergalak-
+     tischer Verlag auf  Ursa Minor, erh„ltlich  bei Ford Prefect ( bei Arthur
+     Dent oder Zaphod Beeblebrox fragen )
+
+ [3] Metzler-Physik SII: Metzler. 1989 Irgend ein Wessi-Verlag, Seiten egal.
+
+ [4] Pannickes gesammelte Reden (von Apache geh”rt,aber nicht aufgeschrieben):
+     Lehrer Phys. Inf. Spez. Pannicke.  1989 - 1992, verlegt im Bcherschrank,
+     0 Seiten.
+
+ [5] Simon, Erik: "W" und "E" in: Mondphantome;zu finden in wohl allen Biblio-
+     theken...
+
+ Hochachtungsvoll Ihr Proc. Dr. Dr. Phys. humoris causa A. Pache ( of tnb )
+ 

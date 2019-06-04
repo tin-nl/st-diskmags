@@ -1,0 +1,140 @@
+TRAK-BALL TO MOUSE
+
+
+TRACKER MOUSE OR "How to re-build your trak-ball to a ST mouse"
+
+Yee, well here is a real good one. I use a trak-ball instead of a mouse
+almost since i have an ST and i can tell you once you worked with it you
+don t wanna a mouse anymore...
+
+The advantage of the trak-ball is that it doesn't roll of the table, stands
+where ever,can be used when ever.By that i mean you don't have to use a free
+piece of table to move the mouse arrow around. Take it in your hands an away
+you go. It also needs less care, you don't have to clean it every week cause
+it's so dirty it won't move. The cable connected to it will not break that 
+often (lots of people seem to manage to break the cable more then once),
+to say won't break at all.
+
+So if you really want,  you can make your trak ball from the old Atari XL 
+work on the ST. BUT you must have at least a soldering iron and a bit of 
+technic feeling to do this. If you mis one of the above you better let some
+one else make it for you. We won't take any responsibility if anything goes 
+wrong and your ST goes up in smoke !!!.
+
+WHAT YOU NEED FOR THIS RE_BUILDING...
+
+- A real Atari trak-ball
+- A soldering-bolt
+- Some solder
+- A screw driver to unscrew the case of the trak ball
+- A Stanley knife or pocket knife.
+- A new cable (With at least 8 of the 9 pins connected in the plug !!)
+  the old one isn't good anymore cause it only has 7 connected.
+- A multi power meter or if you don't have one 2 pieces of wire a little 1.5
+  volt lamp an a 1.5 volt battery will do.
+
+
+Oke you're still reading so now it's up to you. In the folder/ unter the but
+ton
+"PICTURES" on this disk ia a picture called "TRAKMOUS". This picture is a
+diagram of how to connect the new cable to your trak_ball.
+
+The best thing you can do is print the text or the picture on the printer,
+and then begin with the re-building. 
+
+PART 1  Open the trak ball...
+
+Oke now turn the trak ball over, so the ball is on the table. Now remove
+the rubber feets, cause they are hidding the screws. You can do this by
+gently pressing the screwdriver against it for the side. If there all off
+then you can unscrew the screws. If they are all unscrewed turn the trak
+ball over again, so the ball comes up again. WATCH that the screws don t 
+fall on the floor !!!!. Now you can open the hatch by lifting it.
+
+If everything is oke you will see something like it is drawn on the TRAK
+MOUS picture. You can also see that the old cable of the trak ball is
+connected by plugs. You can remove them by lifting the print a bit up
+and push the plugs off. The cable is now loose. 
+
+Now you are arived to a bit tricky part. You will now have to pop the
+switch loose, the one with TB and JS standing op it. Inside the trak
+ball you can see to clips keeping it on his place. You must now bend 
+the case a bit so the switch can come up. I know , it seems tricky and
+yes it is but it can be don...
+
+If you have popped out the switch the cable can be removed.
+
+Part 2 The new cable..
+
+Yes Well if everything is oke you have bought a new joystick cable
+and on one end there is a connector and on the other side a bunch of
+colored wirses. Now comes, what color wire belongs to what pin ????
+Is the red one pin 9 or 4 or....
+
+Well now you have to use the multi meter or the wire, battery and lamp
+If you have a multi meter, you can put in on OHMS, if not you must make
+something first...
+
+Take the soldering iron, heat it up. Take the piece of wire and the lamp.
+Atache the piece of wire on the end of the lamp, the little black point,
+and solder it. Take another piece of wire an atache it to the side of
+the lamp, the gold liking part. Well if you have don that take the 1.5
+volt battery and atache the wire to the battery, and solder it..
+Well now you have made your own meter, a bit primitiev but it will work.
+How ??? well by puting the end thats left into the connector,and take
+one of the cable wires. If the lamp burns that the right on and you
+can write it down, if it doesn t burn try another one. Just as simple is 
+that.
+For the multi meter it goes the same, put one of the pins into the con
+nector and the other one to one of the cables wire. If you have a see
+the arrow move its the right one and else try another one.
+
+For example write it down like:
+ pin1 = red wire
+ pin2 = yellow wire
+ etc...
+
+If you  have had them all on paper the take a closer look at the picture
+There is a piece of text on which wire goes to which place on the print.
+But first put the cable trough the case, later it won t fit anymore.
+Then take the print and solder the wires on the right place on the print
+ and keep good looking on the picture.
+
+Special note: Number 8 thats a special one. After you solderd it on the 
+root you have to cut the root that is there behind the piece you solderd
+or else the two buttons will still function as one. By cutting the root
+they will act like to different buttons.
+Number 9 and 10 well these two are atached to the pins pointing out of the
+print.
+
+If you have don all this, it testing time. Check before you plug the conne
+ctor in if nothing hits another, and i mean pieces of wire making contact
+were they should not. Now you can test it.
+
+The best thing you can do is typing the GFA listing in that stand below.
+Its easy, if the left button is pressed the MOUSEK will be 1 if the right
+button is presse MOUSEK will be 2 and pressing both will give 3.
+Moving the ball around will make that the MOUSEX and MOUSEY change.
+
+GFA BASIC
+
+DO
+ PRINT AT(1,1);MOUSEX, MOUSEY, MOUSEK
+ SHOWM
+LOOP  
+
+If everything works you can put it together, if not check every wire
+if its good atached, check if the connector is insert good, and check
+if you took the right colored piece of wires and soldered it to the right
+place on the print...
+
+Well thats it i really hope you will enjoy your trak mouse, and
+see you next time in the HARDWARE item...
+
+                                        BONUS SOFTWARE..,
+
+P.s. its on your own risk, making this, so be carefull !!
+
+
+ 
+

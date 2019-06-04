@@ -1,0 +1,90 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[....................................................]0010
+€
+
+              /\/\OTOROLA PROGRAMMER'S REFERENCE MANUAL
+             /    \ -----------------------------------
+
+
+A review by Leon O'Reilly
+
+The first thing a budding  assembly  programmer  needs  to know is the
+instruction set. Most  Atari  specific  reference  books  give  this a
+cursory overview, but this  usually  no  more  than  two  pages with a
+sentence detailing each instruction, preceded by the get out clause 'a
+more detailed look at this instruction set is out of the range of this
+book'. So where better  to  look  for  information than Motorola's own
+book?
+
+The Programmer's Reference manual  contains  information on the entire
+68K family (except the shit-hot 68060), which includes microprocessors
+(68000, 68EC000, 68HC00, 68008, 68010, 68020, 68EC020, 68030, 68EC030,
+68040,  68LC040,  68EC040,  68330,  68340),  memory  management  units
+(68851) and floating point co-processors (68881 & 68882).
+
+Chapter 1 acts as introduction to the fundamentals of the 68K family -
+the  data  and  address  register,  program  counter,  condition  code
+registers, these will be very  familiar  to  anyone who has dabbled in
+68K. Not  so  familiar  will  be  the  details  on  the  corresponding
+registers of the floating point processors.  Also  new to most will be
+the Vector Base Register  (which  specifies  the  start address of the
+exception table), Alternate function  code  registers (which allow you
+to access up to  8  4-gigabyte  address  spaces), ACU Status register,
+Transparent Translation/Access  Control  Register,  data  formats  and
+organization of data in memory.
+
+Chapter 2 covers all the  addressing  modes  of  the chips, and things
+have changed quite a bit since the humble 68000, so there is some very
+useful info here for those new  to  the  68030. One of the most useful
+aspects of the new addressing modes  is  the  facility to scale a data
+€register without changing its contents -  very handy for table access.
+For example  'move.l (A0,d0.w*4),d1'  will  move  a  long from A0+D0*4
+without the contents of d0 being changed.
+
+Chapter 3 gives a summary of the instruction set, clustered in sets of
+similar instructions.
+
+The real meat of the book comes in the fourth chapter with the integer
+instructions. For each instruction there are details on the operation,
+assembler syntax, the  condition  codes  it  affects,  the instruction
+format, instruction fields and  a  relatively  detailed description of
+its operation. A couple of  example  pieces  of  code with the effects
+they have on registers and memory would have been very handy.
+
+Chapter  5  has  the  same  format,  but  covers  the  floating  point
+instructions,  chapter  6  details  the  privileged  instructions  and
+chapter 7 covers  the  instructions  of  the  CPU32  whilst  the final
+chapter gives an instruction format summary.
+
+There are three appendix chapters, the first giving another summary of
+processor instructions, including a  table  showing which instructions
+are supported  by  which  processors.  Appendix  B  details  exception
+processing with details of the  exception  vectors and exception stack
+frames for the different processors.
+
+Appendix C gives the outline  of  the  'S-Record'  format - a standard
+format for transportation of data between computers.
+
+The glaring omission from this book  is instruction timings, which are
+critical information for coders. The  processor specific books covered
+by Motorola do cover this and  I  would  recommend that you buy one of
+those instead  of  this  if  you  intend  to  work  intensely  on  one
+processors alone. However, the book on the  68030 appears to be out of
+print at the moment (If anyone can  hold  of a copy, get in touch with
+Maggie at the usual address!). For people  wanting to develop on an ST
+and a Falcon this book can be highly useful.
+
+€Like most reference books, this  misses some vital information, whilst
+other bits of information are repeated more  than movies on Sky. A lot
+of reference books have appalling indexes, this book doesn't fall into
+that trap, it wilfully  abandons  the  notion  of indexes. However, it
+does have a very complete chapter listing at the beginning, but really
+indexes are essential for books of this type.
+
+If you can't get hold of  Motorola's  68030  manual, this book forms a
+useful, if not perfect, substitute. If  you  want to get hold of copy,
+the best people to get in touch  with  are  HiSoft and it will set you
+back about 15 quid.

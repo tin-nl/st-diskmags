@@ -1,0 +1,143 @@
+0660103030565
+1
+2#
+9[...................................................]011
+€
+‰SUPERCOMPUTER?€
+byTaFf
+
+ˆSupercomputers:ABriefHistory
+
+€InthemeterogicalofficeinBracknell(UK)livesaCrayT3eMPP
+the3rdmostpowerfulcomputerintheworld,sportingarather
+sexytotalof840processorscapableofwhackingoutmillionsof
+calculationspersecond.Asystemlikethiscosts1.2million
+pounds(andthat'salottazeros,ker-ching!).Whatisallthis
+rawcomputingpowerusedfor?(Dramaticpause)Theweather,the
+soddingweather.....andnotforplayingQuake:(
+
+"Sohowdoesitwork?"Ihearyoumutterecstatically,wellI
+shallexplain(whetheryoulikeitornot).Imaginetheglobeis
+splitupintosmallareas,thousandsofthem(zulus?)eachhaving
+dataonpressure,tempurature,windspeed,andalltheother
+thingsweatherpersonsgoonabout(Doesanyoneactually
+understandthesatellitephotos?)Themoresections,themore
+accurate,andslowerthesimulationwillrun(Thinkofitasa
+verysoupedupversionofthatoldchessnut'TheGameofLife'.
+
+Sotheoreticallythemoreproccessorsyouslapin(parallel
+style)thefasterthesimulationwillrun,aseachprocessor
+performscalculationsononlyafewsections.Thatisthebeauty
+ofparallelprocessing,butwewillreturntothatlater.
+
+Meanwhileletusgrabthewheel,sticksomeclassictunesonthe
+stereo,andtakeadrivedownthehighwaythatissupercomputer
+history.
+
+Sowhatisasupercomputer?Well"TheComputerTechnology
+Dictionary"fromAcedemicPressdescribesasumpercomputeras
+'anycomputerthatisoneofthelargest,fastestandmost
+powerfulavailableatanygiventime'.Aniceconclusive
+definitionIbelieve.....Hmmm.
+
+ThefirstsupercomputerwastheIBM704whichfirstwaddledonto
+thescenewaybackin1955(yeptheydidhavecomputers,andno
+theywerenotpoweredbycoal)capableof5,000floatingpoint
+operationspersecond(Flops).Itsoundshardtobelieve,butby
+todaysstandards,it'spitiful.Thenin1962theUKstarted
+productionofitsownsupercomputer(Hurrah)capableof
+delivering200,000Flops(AsyoucanseetheIntelrevolutiondid
+notinventtheconceptofoperationspeedsincreasinginleaps
+andbounds).
+
+Itisinteresting(tosome)tonotethatthiswasthefirst
+systemtoutilisevirtualmemoryandpipelines.
+
+Multitaskingwasunheardofuntil1967whenGeneAmdahlput
+forwardthetheoryofparallelprocessingbutitwasnotuntil
+1979thatthefirstparallelcomputerwasbuiltbyICLcalledDPA
+(DistributedProcessorArray)andhadbegunlifeonthedrawing
+boardfiveyearsearlier.
+
+1988.ItisatthispointthatthePCrevolutioncameintofull
+swing,sowewillignoremostthingsMicrosoftandIntelrelated.
+
+Let'sfastforward>>
+
+In1992,afourprocessorsystemfromNECwasproducedandwas
+thefirstcomputertoexecuteataspeedof20,000millionFlops.
+
+Withinthenextfouryearstheworldsawthefirstsystemcapable
+ofachievingoneTeraFlop.TheIntel(Boo)ASCIRed
+supercomputerhascontinuedtobedeveloped,andnowuses9,152
+PentiumProprocessorswithatheoreticalmaximumspeedof1.8
+TeraFlops.
+
+WhathasthistodowithSTs?WhathasthistodowithaDIY
+supercomputer?Whathasthistodowithme?Ihearyoumumble
+despondently.Well...erm...totellyouthetruthabsolutely
+nothingbutitisgoodtohavealittleknowledgeof
+supercomputerhistoryincaseyouareeverasked:)
+
+TheDIYSupercomputer
+---------------------
+WhatiswidleyregardedasthefirstDIYsupercomputerwas
+createdinthehallowedhallsofMIT(cleverdickcentral
+...erm...whatexactlyisacleverdick)andwasnamedBeowulf
+aftertheliturarymasterpiece(Beowulfwouldgoontobecomethe
+generictermforthistypeofmachine)
+
+ThefirstBeowulfwascompletedin1995andconsistedof16
+mediumspec.486DX/4'susingethernetcards(twoofthem)to
+provideinterprocessorcommunication.Witheachindividualsystem
+runningacopyofeveryone'ssecondfavouratefreewareOS,Linux.
+Thisallowedthecommunicationtotaketheformofstandardlinux
+ethernetcalls.ThissystemwasthenusedtoperformanN-body
+gravitationalsimulation.
+
+Thesimulationwasusedtocalculatethegravitationalchangesof
+astarforminganinterstellarcloud,andthenlatertocalculate
+thefragmentationoftheShoemakerLevycomet.
+
+ˆDIYAtaribasedsoupercomputerorthemomentyouhaveallbeen
+waitingfor
+€
+WARNING:TECHNICALBIT
+
+ABeowulfsetupconsistsofacontrollingmachineandasetof
+routeranddatanodes.Thecontrollingmachineistheonlyone
+thatwillappearasanexternalnetworkandisusedtoinitiate
+theparallelprocessing.ThecommunicationisviaEthernet
+connections.Eachrouternodeisresponsiblefordistributingthe
+parallelapplicationtothedatanodes,initialisingthestart
+conditionsandthenpassingdatabackandforthalongthenetwork
+links.
+
+
+
+.Networkforuseraccess(optional)
+/|\
+|-----------------
+|ControlmachineKey:----leadsto
+      |       --------+--------     multiplenodes
+      ----------------+
++------------+--------+----------+
+||'
+---------------------------------------------
+Routernode1         Routernode2       Routernoden
+-------+-------------------------------------
++------------+--------------+--------------+
+||||
+---------------------------------------------------
+Datanode1  Datanode2Datanode3Datanode4
+----------------------------------------------------
+
+UsingmodernAtariSoftwareandhardwaresuchastheFalconorTT
+withtheirLANsockets,andsoftwaresuchasLinux68000asystem
+notdissimilartotheBeowulf(above)couldbetheoretically
+constructed.Thequestionisofcourse....wouldyouwanttoo:)
+
+
+†(BasedonanarticlefromPCProAug.'98€†)€
+
+

@@ -1,0 +1,1600 @@
+06601030305800
+F0110030
+9[........................................................]001
+€
+     
+                        ˆAtari* System Reference manual€
+    
+                            ˆ(c) 1987 By Bob DuHamel€
+     
+     
+                                  Bob Duhamel
+                             6915 Casselberry Way
+                             San Diego, CA  92119
+     
+     
+     
+                *Atari is a registered trademark of Atari Corp.
+                                                                          
+
+
+  This manual contains highly technical information.  Such information
+  is provided for those who know how to use it.  To understand the
+  advanced information you are expected to know 6502 assembly language. 
+  If you are new to programming, concentrate on the parts which discuss
+  BASIC commands.
+     
+  Addresses are usually given in both hexadecimal and decimal numbers. 
+  The operating system equate names are given in capital letters with
+  the address following in brackets.  The decimal address is in
+  parenthsis within the brackets.  For example:
+     
+      DOSVEC [$000A,2 (10)]
+     
+      name     hex     dec
+     
+  The ",2" after the hexadecimal number means that this address requires
+  two bytes to hold its' information.  Any address called a "vector"
+  uses two bytes whether noted or not.
+     
+  Control registers and some other bytes of memory are shown in the
+  following format
+     
+                                Register format
+     
+           7 6 5 4 3 2 1 0
+          -----------------
+          |               |
+          -----------------
+           1 6 3 1 8 4 2 1
+           2 4 2 6
+           8
+     
+  The numbers on top are the bit numbers.  Bit 7 is the Most Significant
+  Bit (MSB) and bit 0 is the Least Significant bit (LSB).  The numbers
+  on the bottom are the bit weights.  These are useful when changing
+  memory with decimal numbers, as you would in BASIC.  For example, to
+  set bit 4 of a register to 1, without changing any other bits you
+€  would add 16 to the decimal number already in the register.  To reset
+  the same bit to 0, you would subtract 16 from the number in the
+  register.  This is exactly what the command GRAPHICS 8+16 does.  It
+  sets bits 3 and 4 of a graphics mode control register.
+     
+  MSB and LSB may also mean Most Significant Byte or Least Significant
+  Byte, depending on context.
+                                                                          
+     
+                                   CONTENTS
+
+
+      1   THE CENTRAL INPUT/OUTPUT UTILITY, (CIO)
+     
+      2   THE DISK OPERATING SYSTEM (D:)
+     
+      3   USING THE DOS 2 UTILITIES  (DUP.SYS)
+     
+      4   THE CASSETTE HANDLER (C:)
+     
+      5   THE KEYBOARD HANDLER (K:)
+     
+      6   PRINTER HANDLER (P:)
+     
+      7   SCREEN EDITOR (E:)
+     
+      8   THE DISPLAY HANDLER (S:)
+     
+      9   THE RESIDENT DISK HANDLER
+     
+     10   SYSTEM INTERRUPTS
+     
+     11   THE FLOATING POINT ARITHMETIC PACKAGE
+     
+     12   BOOT SOFTWARE FORMATS
+     
+     13   THE SERIAL INPUT/OUTPUT INTERFACE (SIO)
+     
+     14   THE HARDWARE CHIPS
+     
+     15   DISPLAY LISTS
+     
+     16   PLAYER AND MISSILE (PM) GRAPHICS
+     
+     17   SOUND
+     
+     18   THE JOYSTICK PORTS
+     
+     19   MISC
+     
+     20   THE XL AND XE MODELS
+
+                                   CHAPTER 1
+     
+€     
+                    THE CENTRAL INPUT/OUTPUT UTILITY, (CIO)
+     
+     
+          The ATARI computer uses a very easy-to-use input and output
+     system called the Central Input/Output utility, or CIO.  Nearly all
+     input or output passes through this utility.
+     
+  CIO uses eight "channels" as paths for I/O.  There are not really
+  separate channels for I/O but the computer acts as if there were. 
+  Each channel is controlled by a 16 byte block of memory called an
+  Input/Output Control Block or IOCB.  The channels are used by putting
+  the proper numbers in the proper IOCB bytes then jumping to the CIO
+  routine.  In BASIC, complete I/O operations can be as easy as typing a
+  command such as LPRINT.  In this case BASIC does all the work for
+  you.
+     
+     THE CIO CHANNELS
+     
+     There are eight CIO channels, numbered from 0 to 7.  In BASIC some
+     channels are reserved for BASIC's use.
+     
+     
+                         BASIC CIO channel assignments
+     
+      Channel   0    Permanently assigned to the screen editor
+                6    Used for graphics commands
+                7    Used for the Cassette, disk and printer
+     
+     
+  Channels 6 and 7 are free to use when they are not being used by
+  BASIC.  With machine language, all of the channels are available to
+  the programmer.
+     
+     THE IOCB STRUCTURE 
+     
+  The IOCB for channel zero starts at address $0340 (decimal 832).  This
+  is the only address you need to know.  Indexing from this address is
+  used to find all of the other bytes.  Below are the names and uses of
+  the IOCB bytes.
+     
+                             IOCB bytes and uses:
+     
+     
+     ADDRESS   NAME      EXPLANATION
+     
+     
+      $0340    ICHID    handler Identifier
+      $0341    ICDNO    device number (disk)
+      $0342    ICCOM    command
+      $0343    ICSTA    status
+      $0344    ICBAL    buffer address (low byte)
+      $0345    ICBAH    buffer address (high byte)
+      $0346    ICPTL    address of put byte
+€      $0347    ICPTH     routine (used by BASIC)
+      $0348    ICBLL    buffer length (low byte)
+      $0349    ICBLH    buffer length (high byte)
+      $034A    ICAX1    auxiliary information
+      $034B    ICAX2    -
+      $034C    ICAX3    the remaining auxiliary
+      $034D    ICAX4    bytes are rarely used
+      $034E    ICAX5    -
+      $034F    ICAX6    -
+     
+     
+     ICHID
+     
+  When a channel is open, the handler I.D. contains an index to the
+  handler table.  The handler table (to be discussed later) holds the
+  address of the device handling routines.  When the channel is closed
+  ICHID contains $FF.
+     
+     ICDNO
+     
+  The device number is used to distinguish between multiple devices with
+  the same name, such as disk drives.
+     
+     ICCOM
+     
+     The command byte tells CIO what operation to perform.
+     
+                               CIO command codes
+     
+     
+                    HEX       DEC
+     
+     
+         +Open      $03         3
+         +close     $0C        12
+          get       $07         7
+          put       $09        11
+          input     $05         5
+          print     $09         9
+         +status
+          request   $0D        13
+        +*special  >$0D       >13
+     
+     
+        + command may be made to a closed channel
+        * device specific commands
+     
+     
+     ICSTA
+     
+  The status byte contains an error code if something goes wrong.  If
+  bit 7 is 0 there have been no errors.
+     
+     ICBAL and ICBAH
+€     
+  Before a channel is opened, the buffer address bytes are set point to
+  the block of memory which contains the name of the device the channel
+  is to be opened to.  Before actual input or output these bytes are set
+  to point to the block of memory where the I/O data is stored or is to
+  be stored.
+     
+     ICPTL and ICPTH
+     
+  The put routine pointer is set by CIO to point to the handlers'
+  put-byte routine.  When the channel is closed the pointer points to
+  the IOCB-closed routine.  This pointer is only used by BASIC.
+     
+     ICBLL and ICBLH
+     
+  The buffer length bytes show the number of bytes in the block of
+  memory used to store the input or output data.  (See ICBAL and ICBAH.)
+  If the amount of data read during an input operation is less than the
+  length of the buffer, the number of bytes actually read will be put in
+  ICBLL and ICBLH by CIO.
+     
+     ICAX1 through ICAX6
+     
+  The auxiliary information bytes are used to give CIO or the device any
+  special information needed.
+
+
+     OPENNING A CIO CHANNEL
+     
+  Before using a CIO channel it must be assigned to an I/O device.  In
+  machine language you start by putting the channel number in the four
+  high bits of the 6502 X register (X = $30 for channel three).  Next
+  you place the necessary codes (parameters) into IOCB 0 indexed by X. 
+  The X register will cause the numbers to be offset in memory by 16
+  times the channel number.  This puts the numbers into the correct IOCB
+  instead of IOCB 0.  Below are the parameters used to open a channel.
+     
+                           Channel-open parameters:
+     
+      ICCOM     open code
+      ICBAL     address of device name
+      ICBAH      in memory
+      ICAX1     direction code
+      ICAX2     zero
+     
+     The direction code byte in ICAX1 takes on the following format:
+     
+                      ICAX1 format for opening a channel
+     
+                  7 6 5 4 3 2 1 0
+                 -----------------
+      ICAX1      |        W R    |
+                 -----------------
+                          8 4 2 1
+€     
+      W   1 = open for output (write)
+      R   1 = open for input (read)
+     
+     ICAX1 may have the following data
+     
+                              CIO direction codes
+     
+           HEX    DEC  operation
+     
+           $04    4   input
+           $08    8   output
+           $0C   12   input and output (cannot change the length
+                      of a disk file)
+     
+  ICBAL and ICBAH point to the device name stored in memory.  The device
+  and file name must be followed by 0 or $9B (decimal 155).
+    
+  Once the parameters are set, jumping (JSR) to the CIO vector
+     
+  (CIOV) at address $E456 (58454) will cause the channel to be opened. 
+  In the following example a basic knowledge of assembly language is
+  assumed.
+     
+                  Routine to open channel 1 to the keyboard:
+     
+            ICHID = $0340
+            ICCOM = ICHID+2
+            ICAX1 = ICHID+10
+            ICAX2 = ICHID+11
+            IOCB1 = $10      channel in four high bits
+            CIOV  = $E456
+            OPEN  = $03
+            OREAD = $04 ;open for input
+            ERROR = (address of error handling routine)
+           ;
+      START LDX IOCB1
+            LDA OPEN
+            STA ICCOM,X
+            LDA <NAME
+            STA ICBAL,X
+            LDA >NAME
+            STA ICBAH,X
+            LDA OREAD
+            STA ICAX1,X
+            LDA #0
+            STA ICAX2,X
+            JSR CIOV
+            BPL OK
+            JMP ERROR
+           ;
+      NAME  .BYTE "K:",$9B
+      OK    (program continues here)
+     
+€     
+     To open a CIO channel in BASIC the OPEN command is used.  
+     
+                          BASIC OPEN command format:
+     
+        OPEN #channel,aux1,aux2,device:file name
+     
+     
+        aux1 = direction code
+        aux2 = special code
+     
+     
+     To open channel 1 to the keyboard in BASIC Type:
+     
+     
+      OPEN #1,4,0,"K:"
+     
+     
+  The third parameter, aux2, is a rarely used special parameter.  One
+  use is to keep the screen from erasing when changing graphics modes.
+    
+  The fourth parameter is the device to open the channel to.  It may be
+  either a string in quotes or a string variable.
+     
+
+                               CIO device names
+     
+     
+          C   cassette recorder
+         *D   disk drive
+          E   screen editor
+          K   Keyboard
+          P   printer
+         *R   RS 232 I/O port
+          S   screen handler
+     
+     
+         * Uses a non-resident handler loaded by the device at
+           power-up.
+     
+     
+    The device name must usually be followed by a colon.  With the disk
+    drive a file name is expected after the device name.  The screen
+    handler is used for graphics.  The screen editor uses both the
+    keyboard handler and the screen handler to work between the keyboard
+    and screen.
+                                                                           
+
+     USING AN OPEN CHANNEL
+     
+     Once a channel is opened to a device you have several options:
+     
+     INPUT:  (ICCOM = $05)
+     
+€     The computer reads data from the device until a carriage-return is
+     read (decimal number 155, hex $9B) or the end of the file (EOF) is
+     reached.  A carriage return is also known as an End-Of-Line or EOL. 
+     The IOCB input parameters are:
+     
+                            IOCB input parameters:
+     
+      ICCOM    get record code
+      ICBAL    address of buffer to
+      ICBAH     store the data in
+      ICBLL    length of the data
+      ICALH     buffer
+     
+     The following routine demonstrates the input command in assembly
+     language.  Some of the equates are in the channel openning example
+     above.
+     
+                                Input routine:
+     
+             GETREC = $05
+             BUFF   = (address to store data at)
+             BUFLEN = (number of bytes available at storage address)
+            :
+             LDX IOCB1
+             LDA GETREC
+             STA ICCOM,X
+             LDA < BUFF
+             STA ICBAL,X
+             LDA > BUFF
+             STA ICBAH,X
+             LDA < BUFLEN
+             STA ICBLL,X
+             LDA > BUFLEN
+             STA ICBLH,X
+             JSR CIOV
+             BPL OK2
+             JMP ERROR
+            :
+      OK2    (continues if no errors)
+     
+  If the data retrieved is shorter than the prepared buffer, the number
+  of bytes actually read will be put into ICBLL and ICBLH.
+     
+     In BASIC, the INPUT command is used.
+     
+                          BASIC INPUT command format:
+     
+
+      INPUT #channel,string variable
+     
+                                      or
+     
+      INPUT #channel,arithmetic variable
+     
+€                                 For example:
+     
+      INPUT #1,IN$
+     
+  The above commands will cause the data from the device to be put into
+  the specified buffer (IN$ in the BASIC example) until an EOL is
+  reached.  If the INPUT statement is used again, without closing the
+  channel, the computer will get more data from the device until another
+  EOL is read or the end of the file is reached.  The new data will
+  write over the old data in the input string or buffer.  If an
+  arithmetic variable is used, only numbers can be input.
+     
+     PRINT:  (ICCOM = $09)
+     
+  In assembly language the print command is identical to the input
+  command.  The only difference is that the PUTREC code ($09) is stored
+  in ICCOM.  Of course the buffer bytes of the IOCB then specify the
+  block of memory to be output from rather than input to.  With the
+  print command, EOLs within the string or buffer are ignored but an EOL
+  is placed at the end of the data when sent to the device.
+     
+  In BASIC, the PRINT command is used like INPUT except you want to use
+  a semicolon instead of a comma to separate parameters.  For example:
+     
+      PRINT #1;OUT$
+     
+                                      or
+     
+      PRINT #1;"HELLO"
+     
+  If you use a comma, ten space characters will be sent before the
+  string.
+   
+  If the print command is used again, without closing the channel, the
+  new data will be appended to the end of the data previously sent.  Old
+  data will not be written over.
+     
+     GET:  (ICCOM = $07)
+     
+     In BASIC this command inputs a single byte of data from the device. 
+     EOLs are ignored.  In BASIC, GET is used like INPUT except an
+     arithmetic variable must be used.  For example:
+     
+      GET #1,IN
+     
+     If the get command is used again the next byte from the device will be
+     read.  If the end of a file is reached an error will occur.
+
+     
+  There is no command in BASIC to input an entire file without stopping
+  at each EOL.  If you wish to ignore EOLs while reading a file to a
+  string, you must use the GET command.  Each byte of data is then put
+  into the string by the program.
+     
+€     EXAMPLE:
+     
+      10 OPEN #1,4,0,"D:TEST"
+      20 TRAP 60:REM GOES TO LINE 60 WHEN END OF FILE ERROR OCCURS
+      30 GET #1,IN
+      40 IN$(LEN(IN$)+1)=CHR$(IN)
+      50 GOTO 30
+      60 CLOSE #1
+     
+     
+  In assembly language, the get command can be used to get any number of
+  bytes from the device.  It works just as INPUT does except EOLs are
+  ignored.
+     
+                           IOCB get-byte parameters:
+     
+      ICCOM    get-character (single byte) code
+      ICBAL   \
+      ICBAH    same as in input
+      ICBLL
+      ICBAH   /
+     
+  Other than the ICCOM code (GETCHR = $07) this command is identical to
+  the input command.
+     
+     PUT:  (ICCOM = $0B)
+     
+  In BASIC, PUT is the opposite of GET.  It outputs a single byte from a
+  variable to the device.  PUT is used the same as GET.  For example:
+     
+      PUT #1,OUT
+     
+  In assembly language, the command byte of the IOCB is loaded with the
+  put-character code (PUTCHR = $0B).  Otherwise the PUT command is
+  identical to GET.
+     
+     CLOSING A CHANNEL
+     
+  Closing a channel frees it for use by another device or for changing
+  parameters.  In assembly language the close code is put into the
+  command byte of the IOCB then the CIOV call is made.
+     
+                              IOCB close command:
+     
+            CLOSE = $0C
+           :
+            LDX IOCB1
+            LDA CLOSE
+            STA ICCOM,X
+            JSR CIOV
+     
+     In BASIC, use the CLOSE command followed by the channel number.
+     
+      CLOSE #1
+€     
+  With the disk drive, the file name is not put into the directory until
+  the channel is closed.
+     
+     THE DEVICE TABLE
+     
+  CIO uses a jump table located at $031A (794).  When a CIO call is
+  made, CIO searches the table for the one-byte device name.  The two
+  bytes following the device name contain the address of the device
+  handler's vector table.  CIO searches the device table from the end,
+  $033D (829) to the beginning.  This way, if a custom handler has ben
+  substituted for a resident handler, the custom handler will be found
+  first.  (custom handlers cannot be inserted directly in the place of
+  resident handlers in the device table.)
+     
+  Each handler has its' own vector table.  This vector table is 16 bytes
+  long.  The two-byte vectors point to the various handler routines. 
+  The vectors are stored in the vector table in the following order:
+     
+                          Handler vector table order
+     
+          open
+          close
+          get byte
+          put byte
+          get stat
+          special
+          JMP init code (3 bytes)
+     
+     The open routine should validate the ICAX parameters and check for
+     illegal commands.
+     
+  The close routine should send any remaining data in the buffer to the
+  device, mark the End-Of-File and update any directories, etc.
+     
+  The get byte routine should get a byte from the device or the handler
+  buffer and put it in the 6502 A register.  Handlers with long timouts
+  must monitor the break key flag and put a $80 in the 6502 Y register
+  if the [BREAK] key is pressed.
+     
+  The put byte routine should send the byte in the 6502 A register to
+  the device or handler buffer.  If the buffer fills, it should be sent
+  to the device.  BASIC can call the put byte routine without using
+  CIO.
+     
+  The get status routine may get 4 bytes of status information from the
+  device and put them in DVSTAT [$02EA] to DVSTAT+3.
+     
+  For special commands the handler must examine the command byte and
+  find the proper routine entry point.
+     
+     In all cases the status (error code) of the operation should be put in
+     the 6502 Y register.
+     
+€  To be compatible with all versions of the operating system, the
+  handler must redirect DOSINI [$000C,2 (12)] for initialization upon
+  reset.  This initialization must restore the vectors in the handler
+  vector table and jump to the origional DOSINI vector.
+     
+     SPECIAL COMMANDS
+     
+  Some devices have special CIO commands.  These are known as device
+  specific commands.  In assembly language these commands are executed
+  just as any other CIO command is.  In BASIC the XIO command is used. 
+  An example of the XIO command is:
+    
+      XIO command code #channel,aux1,aux2,device:file name
+     
+     To open a channel with the XIO command instead of the OPEN command
+     use:
+     
+      XIO 3 #1,4,0,"K:"
+     
+     Note that the above command is identical to the OPEN command except
+     "XIO 3" is used instead of "OPEN".  Also note that $03 is the IOCB
+     open code for ICCOM.
+     
+     
+     
+                   Useful database variables and  OS equates
+     
+     DOSINI $000C,2       (12): initialization vector
+     BRKKEY $0011         (17): break key flag
+     ICHID  $0340        (832): start of IOCBs
+     ICDNO  $0341        (833):
+     ICCOM  $0342        (834):
+     ICSTA  $0343        (835):
+     ICBAL  $0344        (836):
+     ICBAH  $0345        (837):
+     ICPTL  $0346        (838):
+     ICPTH  $0347        (839):
+     ICBLL  $0348        (840):
+     ICBLH  $0349        (841):
+     ICAX1  $034A        (842):
+     ICAX2  $034B        (843):
+     HATABS $031A,16     (794): device handler table
+     CIOV   $E456      (58454): CIO entry vector
+
+                                   CHAPTER 2
+     
+     
+                        THE DISK OPERATING SYSTEM (D:)
+     
+     
+  The disk operating system program (DOS) is also called the file
+  management system (FMS).  DOS is not a permanent part of the computer,
+  it is loaded in upon power-up if a disk drive is attached to the
+  computer.
+€     
+  When the computer is turned on, one of the first things it does is
+  send a request to the disk drive to load DOS into the computer.  This
+  startup operation is called booting.  The word boot is short for
+  bootstrapping -- the start-up process of early computers.  The term
+  comes from "lifting one's self by one's boot straps".
+     
+  Anytime the disk boots, the computer tries to read a program starting
+  at sector 1 and continuing in sequence.  If the disk has DOS on it,
+  the first three sectors, called the boot record, have a program which
+  loads the DOS.SYS file.  If there is no DOS.SYS file on the disk the
+  computer will display:
+     
+     
+       -------------------- 
+      | BOOT ERROR         |
+      | BOOT ERROR         |
+      | BOOT ERROR         |
+      | BOOT ERROR         |
+      | BOOT ERROR         |
+      | BOOT ERROR         |
+      |   (etc.)           |
+      |                    |
+      |                    |
+       -------------------- 
+     
+     
+  When a disk is formatted, the drive read/write head passes over the
+  entire disk and puts magnetic marks on it.  These marks divide the
+  disk into 32 concentric tracks.  With DOS 2.0 each track is divided
+  into 18 sectors, each holding 128 bytes of data.  With DOS 2.5 there
+  are 32 sectors per track giving a total of 1,024 sectors.
+     
+  Each sector on the disk is marked with a reference number from 1 to
+  720.  Unfortunately, the writers of DOS 2.0 didn't know this so they
+  wrote the DOS to use sectors numbered from 0 to 719.  As a result, DOS
+  2.0 cannot access sector 720.  The designers of the disk drive were
+  the guilty party in this case.  It is normal to number from 0 in
+  computers.  With DOS 2.5, sectors 720 - 1,024 can be accessed
+  normally.
+     
+  Sector 720 can be accessed using the computer's resident disk handler.
+  Some software writers use sector 720 to hide special information to
+  make their programs difficult to copy.
+     
+     
+     DOS 2 SECTOR ASSIGNMENTS
+     
+     Sectors 1 through 3 are called the boot record.  They contain a
+     program which loads the DOS.SYS file into memory. 
+     
+  Sector 360 is called the Volume Table of Contents or VTOC.  The main
+  purpose of the VTOC is to keep track of what sectors are occupied. 
+  Bytes 3 and 4 of the VTOC tell how many sectors are available. 
+€  Starting at byte 10 is the Volume Bit Map.  Each byte in the VBM tells
+  the status of eight sectors.  If a bit is a 1 the sector is available.
+  If a bit is a 0 the sector is occupied.
+     
+     Sectors 361 through 368 contain the disk directory.  Each directory
+     sector holds eight file names.  The first byte of a file name is
+     called the flag byte.  It tells the status of that file.
+     
+     
+                             Directory flag byte.
+     
+           7 6 5 4 3 2 1 0
+          -----------------
+          |   flag byte   |
+          -----------------
+     
+     Bits: 7    1 = file deleted
+           6    1 = file in use
+           5    1 = file locked
+           0    1 = open for output
+     
+     
+     The next two bytes tell how many sectors are in the file.  The two
+     bytes after them tell the starting sector of the file.  The last 11
+     bytes contain the file name.
+     
+     Sector 720 cannot be accessed with DOS 2.0.
+     
+  The boot record, VTOC, directory and sector 720 use 13 sectors.  This
+  leaves 707 sectors for storing files with DOS 2.0.
+     
+  Each file sector has 125 bytes of data.  The last three bytes tell how
+  many bytes of the sector are used, what directory entry the sector
+  belongs to and which sector is next in the file.
+     
+                             File sector structure
+     
+           7 6 5 4 3 2 1 0
+          -----------------
+          |     data      | byte 0
+          - -           - -
+          |     bytes     | byte 124
+          -----------------
+          | Dir. No.  |hi | byte 125
+          -----------------
+          |forward pointer| byte 126
+          -----------------
+          |S| byte count  | byte 127
+          -----------------
+     
+          hi = high 2 bits of forward pointer
+           S = Short sector flag. 1 = short sector (End Of File)
+     
+     
+€  If the directory number does not match the order of the file name in
+  the directory, an error 167 (file number mismatch) will occur.
+     
+     
+  As a file is written to an empty disk it is put in consecutive
+  sectors, 125 bytes at a time.  After the file is written, the VTOC and
+  directory are updated.  When new files are written they also use
+  consecutive sectors.
+     
+  When a file is deleted the status bit of the directory is changed to
+  show that the file has been deleted.  DOS then tracks the file, sector
+  by sector, to find what sectors are used.  Finally the VTOC is updated
+  to show that the deleted file's sectors are available for new files. 
+  The file is not erased from the disk; only the VTOC and directory are
+  changed.
+     
+  When a file is deleted, an "island" of free sectors may be left on the
+  disk.  When a new file is then written to the disk it will first use
+  these new free sectors.  When the island is used up, DOS will skip
+  over the occupied sectors to the next free sector.  This is the reason
+  for the sector link.  A file can end up with it's sectors scattered
+  all over a disk.  It can be complicated but it's efficient.
+                                                                           
+
+
+
+                              DISK FILE STRUCTURE
+     
+     The first few bytes of a file may tell DOS or another program what
+     kind of file it is.  These information bytes are called a header.
+     
+  A text file is any file which has no header.  A listed BASIC program
+  is a type of text file.  A letter from a word processor is another.
+     
+  A binary load file is a file intended to load to a specific address in
+  memory.  The first two bytes of a binary load file are decimal 255. 
+  The next two bytes hold the address at which the file is to load.  The
+  last two header bytes tell the ending address for the file.  If the
+  file is a program and is to run automatically, the initialization and
+  run address are appended to the end of the file.
+     
+     
+                            binary load file header
+     
+     
+           Decimal        Hexadecimal
+     
+             255  identifier   FF
+             255               FF
+               0     start     00
+               7               07
+              15      end      FF
+               8               08
+     
+€     
+  The above file would load at address $0700 (1792 decimal) and end at
+  address $08FF (2063).  If a binary load file has initialization and
+  run address appended to it they take on the following format:
+     
+     
+                              Init and run tailer
+     
+        CHR   Decimal        Hexadecimal
+     
+     
+                              init address format
+     
+     
+        [b]     226  identifier  E2
+          |       2              02
+        [c]     227              E3
+          |       2              02
+                  n    address   nn
+                  n              nn
+     
+                              run address format
+     
+     
+      [diamond] 224  identifier  E0
+
+          |       2              02
+        [a]     225              E1
+          |       2              02
+                  n    address   nn
+                  n              nn
+     
+      [ ]=inverse video
+     
+     
+  A program which doesn't need special initialization can be run at the
+  init address.  Otherwise, an RTS instruction is expected at the end of
+  the initialization section.  The computer will then jump to the run
+  address if specified.
+     
+     
+     INSIDE THE COMPUTER
+     
+  DOS uses the computer's CIO utility.  When a DOS disk is booted a
+  non-resident handler is loaded into memory.  A new handler name, D, is
+  then added to the handler table.  When CIO is called with a device
+  name of D: or Dn:, CIO will search the handler table for that device
+  name.  If the 'D' is found, the next two bytes in the table point to
+  the DOS entry address.
+     
+     DOS FILE NAME CONVENTIONS
+     
+  DOS is unique among CIO handlers in that it requires an eight
+  character file name to follow the device name.  This file name may be
+€  followed by a period and then a three character extender.
+     
+     
+     EXAMPLES: D:TEST, D2:FIREMAN, D:VENTURE.EXE, D:CHAPTER.001
+     
+     
+     The D2: is used for drive number two if present.
+     
+     The file name must use upper-case letters or numbers.  The first
+     character must always be a letter.  
+     WILD CARDS
+     
+     The characters * and ? may be used as wild cards.  * means any
+     combination of characters and ? means any single character.
+     
+     
+     EXAMPLES: D:P*           any file beginning with P and
+                               without an extender
+               D:*.EXE        any file with the extender .EXE
+               D:*.*          any file.
+               D:F?REMAN      one unknown character,
+                               FIREMAN or FOREMAN will match
+     
+     
+     Wild cards can only be used to load, delete, lock and unlock files. 
+
+     When loading a file using wild cards, only the first matching file
+     will be loaded.
+     
+     When renaming a file, both the new and old names are expected after
+     the device name.
+     
+     EXAMPLE: D:OLDNAME.BAS,NEWNAME.BAS
+     
+     To format a disk, only the device name (D: or Dn:) is needed.
+     
+     
+     USING DOS
+     
+     When a CIO channel is opened to the disk drive it must actually be
+     opened to a specific file on the disk.  The device name in the open
+     command must be followed by a file name.
+     
+     When a channel is opened to the disk, two special parameters may be
+     used in ICAX1.
+     
+                             ICAX1 for disk open:
+     
+               7 6 5 4 3 2 1 0
+              -----------------
+              |        W R D A|
+              -----------------
+     
+      D   1 = open to read the directory instead of a file
+€      A   1 = append data to the end of the file
+     
+     This gives the following extra ICAX1 options.
+     
+                         Disk specific ICAX1 options:
+     
+     
+          HEX       DEC
+     
+          $06         6       open to read directory
+          $09         9       output, append to the end of an
+                              existing file
+     
+     
+     READING THE DIRECTORY
+     
+  When the directory is read, each file name is treated as if it were
+  followed by an EOL.  A loop must be used to read all of the file names
+  in the directory.  The last entry read is the free sector count. 
+  After it is read, another read operation will result in an End-Of-File
+  error.
+     
+  The disk drive has a number of device specific commands other than the
+  regular CIO commands.  From BASIC the XIO command is used to access
+  these commands.  The XIO command allows you to directly load the IOCBs
+  from BASIC.  Each parameter of the XIO command places values in
+  certain bytes of an IOCB.
+     
+     
+                              XIO command format:
+     
+     
+      XIO command channel,aux1,aux2,device:file name
+     
+     
+  Note that the parameters resemble the BASIC OPEN command.  The BASIC
+  OPEN command is identical to it's equivalent XIO command.
+     
+     
+                   XIO commands specific to the disk drive.
+     
+     RENAME    XIO  $20   (32)
+     DELETE    XIO  $21   (33)
+     LOCK      XIO  $23   (35)
+     UNLOCK    XIO  $24   (36)
+     POINT     XIO  $25   (37)
+     NOTE      XIO  $26   (38)
+     FORMAT    XIO  $FE  (254)
+     
+     
+     EXAMPLES:
+     
+      XIO 33 #1,0,0,"D:JUNK" = delete file named D:JUNK
+      XIO 32 #1,0,0,"D:OLD,NEW" = change name of D:OLD to D:NEW
+€     
+     
+  NOTE and POINT can also be used directly from BASIC.  NOTE finds the
+  current position of the read/write head on the disk.  POINT moves the
+  read/write head to the desired position.
+     
+     USING NOTE AND POINT
+     
+     The command format for NOTE and POINT is as follows:
+     
+     
+      NOTE \
+            channel,sector,byte
+      POINT/
+     
+     
+     EXAMPLE:
+     
+     
+      NOTE #1,SECT,BYTE
+     
+     
+  BASIC requires the sector and byte parameters in both commands to be
+  variables.  Fixed numbers cannot be used.  If you try to do a POINT to
+  a sector outside the file the channel is open to, a point error will
+  occur.  Care may need to be taken to be sure the file being accessed
+  is in contiguous sectors on the disk.  If it is not, it will be
+  difficult to know where to do points to.
+     
+  One use of NOTE is to use the command immediately after opening a
+  channel to a disk file.  After the NOTE command, the parameter
+  variables contain the coordinates of the first byte of the file.  They
+  can then be used as a reference for the POINT command.
+     
+  In assembly language, ICAX3 and ICAX4 are used for the sector number
+  (lsb,msb).  ICAX5 is used for the byte number.
+     
+     STATUS REQUEST
+     
+     If the status request command is used, one of the following values
+     will be found in ICSTA and the 6502 Y register.
+     
+     
+          HEX       DEC
+     
+          $01         1       OK
+          $A7       167       file locked
+          $AA       170       file not found
+
+                                   CHAPTER 3
+     
+     
+                      USING THE DOS 2 UTILITIES (DUP.SYS)
+     
+€     
+     If you boot a DOS disk with no cartridge in the slot or with BASIC
+     disabled (by holding the OPTION key), DOS will try to load the file
+     named DUP.SYS.  This is the disk utility file.  When using BASIC,
+     typing DOS [RETURN] will load the DUP.SYS file.  When the utilities
+     are loaded the menu will appear on the screen.
+     
+                            THE DOS UTILITIES MENU
+     
+     DISK OPERATING SYSTEM II VERSION 2.0S
+     COPYRIGHT 1980 ATARI
+     
+     A. DISK DIRECTORY  I. FORMAT DISK
+     B. RUN CARTRIDGE   J. DUPLICATE DISK
+     C. COPY FILE       K. BINARY SAVE
+     D. DELETE FILE(S)  L. BINARY LOAD
+     E. RENAME FILE     M. RUN AT ADDRESS
+     F. LOCK FILE       N. CREATE MEM.SAV
+     G. UNLOCK FILE     O. DUPLICATE DISK
+     H. WRITE DOS FILES 
+     
+     SELECT ITEM OR [RETURN] FOR MENU
+     
+     
+     [A] DIRECTORY
+     
+     After pressing [A] [RETURN] you will get the prompt:
+     
+      DIRECTORY--SEARCH SPEC,LIST FILE?
+     
+  If you want to see the entire directory just press [RETURN] again.  If
+  you wish, you may type in a specific file name (D: is optional) or
+  wild cards to search for.  If you specify a search spec only matching
+  files will be displayed.
+     
+  If you want, you can have the directory sent to another device.  To do
+  this type a comma and the device name.  For example, if you type ,P:
+  the directory will be sent to the printer.
+     
+     [B] RUN CARTRIDGE
+     
+     If a cartridge was inserted or BASIC was not disabled when the
+     computer was turned on, [B] [RETURN] will run that cartridge or
+     BASIC.
+     
+     [C] COPY FILE
+     
+  This option will copy a file to another part of the same disk (with a
+  different file name) or copy from one disk drive to another.  When you
+  press [C] [RETURN] you will be given the prompt:
+     
+      COPY--FROM,TO
+     
+     Type the devices and file names separated by a comma.
+€     
+     
+                                   EXAMPLES:
+     
+                                FOREMAN,FIREMAN
+     
+                                      or
+     
+                                D1:TEST,D2:TEST
+     
+     
+  The first example will copy to the same disk.  The second example will
+  copy from disk drive one to disk drive two.
+     
+  If you want to have the first file appended to the end of the second
+  file type /A after the file names.
+     
+     
+                                   EXAMPLE:
+     
+                           RUNMENU.EXE,AUTORUN.SYS/A
+     
+     
+  If the files are binary load files, this will cause both files to be
+  saved as one file.  When the load command is used they will both be
+  loaded and run.
+     
+     [D] DELETE FILE(S)
+     
+     After pressing [D] [RETURN] you will get the prompt:
+     
+      DELETE FILE SPEC
+     
+     After typing the file name you will be asked to confirm the file to
+     delete.
+     
+      DELETE FILE SPEC
+      DELETE-D1:JUNK ARE YOU SURE?
+     
+  Press [Y] if the correct file is displayed.  If you use wild cards you
+  will be asked to confirm each matching file.
+     
+     [E] RENAME
+     
+     Upon typing [E] [RETURN] you will be given the prompt:
+     
+      RENAME-GIVE OLD NAME,NEW
+
+     Type the file name you want to change and the new name separated by a
+     comma.
+     
+     
+                                   EXAMPLE:
+     
+€                                  COLT,HORSE
+     
+     
+  WARNING!  Do not rename a file to a name which already exists on the
+  disk.  You will end up with a duplicate file name and will not be able
+  to access one of them.  Attempting to rename or delete one of them
+  will rename or delete both.  The only way to fix a duplicate file name
+  is with a sector editor or other special utility.
+     
+     [F] LOCK FILE
+     
+     A locked file cannot be written to, renamed or deleted.  To lock a
+     file type [F] [RETURN].  You will get the prompt:
+     
+      WHAT FILE TO LOCK?
+     
+     Type the file name you want to lock.  Wild cards will cause all
+     matching files to be locked.
+     
+     [G] UNLOCK FILE
+     
+     Used the same as lock.
+     
+     [H] WRITE DOS FILES
+     
+     This option will write the DOS.SYS and DUP.SYS files to a formatted
+     disk.  When you type [H] [RETURN] you will receive the prompt:
+     
+      DRIVE TO WRITE DOS FILES TO?
+     
+  Type the number of the drive.  If the drive contains a formatted disk
+  the dos files will be written to it.
+     
+     [I] FORMAT DISK
+     
+     This option formats a new disk or erases a disk with files on it. 
+     Typing [I] [RETURN] will get you the prompt:
+     
+      WHICH DRIVE TO FORMAT
+     
+  Be sure you have the correct disk in the proper drive then type the
+  drive number.  It is impossible to recover files on a disk formatted
+  by accident.
+     
+  While the disk is being formatted the drive will check to be sure the
+  disk is formatted correctly.  If not, the drive attempt to format the
+  disk again.  If the disk is defective the drive will not finish the
+  formatting process.
+     
+     [J] DUPLICATE DISK
+    
+  This option will copy an entire disk except for sectors listed as free
+  in the VTOC.  Some programs are copy-proofed by changing the VTOC to
+  show that some occupied sectors are empty.  For such disks, a program
+€  which copies the entire disk is needed.
+     
+  When you press [J] [RETURN] you will be given the prompt:
+     
+      DUP DISK--SOURCE,DEST DRIVES?
+     
+  If you are using only one disk drive, type 1,1.  If you have only one
+  drive you will be told when to swap disks.
+     
+     [K] BINARY SAVE
+     
+  This option saves a block of memory as a binary load file.  When you
+  type [K] [RETURN] you will be given the prompt:
+     
+      SAVE-GIVE FILE,START,END(,INIT,RUN)
+     
+     Type the desired file name and a comma.  Now type the start and end
+     addresses of the memory block to be saved, in hexadecimal numbers,
+     separated by commas.  If the file is a program which is to
+     automatically run when loaded, give the initialization address, if
+     needed, then the run address.
+     
+                                   EXAMPLE:
+     
+     
+                           CHASE.EXE,0700,09FF,,0700
+     
+     
+  This will save the block of memory from address 0700 to 09FF.  The
+  program is not initialized before running so there is no address typed
+  after the third comma.  When the program is loaded the computer will
+  jump to address 0700, as specified in the last parameter, to run the
+  program.
+     
+     [L] BINARY LOAD
+     
+     To load a binary file type [L] [RETURN]. You will get the Prompt:
+     
+      LOAD FROM WHAT FILE?
+     
+     Type the file name and the file will be loaded.  If wild cards are
+     used, only the first matching file will be loaded.
+     
+     [M] RUN AT ADDRESS
+
+     Typing [M] [RETURN] will get the prompt:
+     
+      RUN FROM WHAT ADDRESS?
+     
+     Type the hexadecimal address of the program you want to run.
+     
+     [N] CREATE MEM.SAV
+     
+  A MEM.SAV file is used by BASIC and some other programs to save the
+€  part of memory which the DUP.SYS file loads into.  If there is no
+  MEM.SAV file on the disk when you go to the DOS utilities, you will
+  loose that part of memory.  With BASIC you will loose your program.
+     
+     When you type [N] [RETURN] you will get the prompt:
+     
+      TYPE Y TO CREATE MEM.SAV
+     
+     Typing [Y] [RETURN] will create a MEM.SAV file on the disk in drive
+     one.
+     
+     [O] DUPLICATE FILE
+     
+     This option is used to copy a file from one disk to another, using
+     only one disk drive.  When you type [O] [RETURN] you will get the
+     prompt:
+     
+      NAME OF FILE TO MOVE?
+     
+     If you use wild cards you will be asked to swap disks for each
+     matching file.
+     
+     
+     DOS 2.5 also has option:
+     
+     [P] FORMAT SINGLE
+     
+  DOS 2.5 normally formats disks to use "enhanced" density.  This option
+  will format a disk in single density for use with the 810 drive.
+     
+  DOS 2.5 also has some special utilities on the master disk.  Use the
+  binary load option to run them.
+     
+     RAMDISK.SYS
+     
+  This program will cause the extra bank of memory in the 130XE to act
+  like a disk drive (called D8:).  If this program is on the disk it
+  will automatically run.  It need not be renamed to AUTORUN.SYS.
+     
+     COPY32.COM
+     
+     Copies DOS 3 files to DOS 2.
+     
+     DISKFIX.COM
+     
+     Can make certain "repairs" to a disk, such as restoring deleted
+     files.
+     
+     SETUP.COM
+     
+     Used to change the default configuration of DOS.
+     
+     AUTORUN.SYS (DOS 2.0 and 2.5)
+     
+€  This program is needed to operate the RS-232 ports on the 850
+  interface.  If you don't want this program to automatically load when
+  you boot with the master disk, rename the file to RS232.
+     
+     SPECIAL DOS INFORMATION
+     
+  When DOS is in memory, changes can be made to the DOS program.  These
+  changes can be made by poking the changes into memory.  If you want to
+  make the changes permanent, you can type DOS [RETURN] to load the
+  utilities.  From the utilities menu you can use the write DOS files
+  option to save the changes on disk.  Some of the useful changes you
+  can make follow.
+     
+     
+      POKE 1913,80
+     
+     This turns off the write verify and speeds up disk writing.
+     
+     
+      POKE 1913,87
+     
+     This turns write verify on
+     
+     
+      POKE 5903,42
+      POKE 5904,46
+      POKE 5905,82
+      POKE 5906,85
+      POKE 5907,78
+      POKE 5908,155
+     
+     This causes any binary file with the extender .RUN to be loaded
+     automatically when the computer is turned on.
+     
+     
+      POKE 5903,65
+      POKE 5904,85
+      POKE 5905,84
+      POKE 5906,79
+      POKE 5907,82
+      POKE 5908,85
+     
+     This returns the DOS to normal, Automatically loading files named
+     AUTORUN.SYS.
+     
+     
+         DOS 2.0            DOS 2.5
+     
+                         POKE 3772,255
+      POKE 3818,64       POKE 3774,64 
+      POKE 3822,123      POKE 3778,123
+     
+  This will cause DOS to accept lower-case as well as upper-case letters
+  in file names.  It will also now accept @,[,\,],^ and _ .
+€     
+     
+                         POKE 3772,223
+      POKE 3818,65       POKE 3774,65 
+      POKE 3822,91       POKE 3778,91 
+     
+  This will change DOS back to normal, accepting only upper-case letters
+  and numbers.
+
+                                   CHAPTER 4
+     
+     
+                           THE CASSETTE HANDLER (C:)
+     
+     
+  The cassette handler sends data to the cassette recorder in blocks of
+  128 bytes each.  The blocks are sent in the following format:
+     
+     
+                            Cassette record format
+     
+               -----------------
+               |0 1 0 1 0 1 0 1|  speed measurement bytes
+               -----------------
+               |0 1 0 1 0 1 0 1|
+               -----------------
+               | control byte  |
+               -----------------
+               |      128      |
+               =     data      =
+               |     bytes     |
+               -----------------
+               |   checksum    |  handled by SIO
+               -----------------
+     
+     
+     The control byte may have one of the following values.
+     
+       $FC  (252)   record is full.
+     
+       $FA  (250)   partly full, next record is EOF.
+     
+       $FE  (254)   EOF record, data section is all zeroes.
+     
+     
+  The cassette handler has two modes of operation.  The first mode uses
+  only a short gap between records.  It is called the no IRG
+  (interrecord gaps) mode.  The second mode uses longer gaps between
+  records and is called the IRG mode.  In the IRG mode the computer may
+  stop the cassette recorder between records for processing data.
+     
+  When a channel is opened to the cassette recorder, bit 7 of ICAUX2 may
+  be set to 1 (ICAX2 = $80 (128)).  This will cause the cassette to use
+  the no IRG mode.
+€     
+  A cassette file starts with a 20 second mark tone.  This tone is
+  followed by the file records with 128 data bytes each.  The final
+  record is an End-Of-File record.
+     
+  The cassette is a straight-forward read/write device.  There are no
+  special functions other than those common to other CIO devices.
+
+  The cassette motor is controlled by one of the controller port control
+  registers.  If bit 3 of PACTL [$D302 (54018)] is 0 then the cassette
+  motor is on.  The following BASIC commands will turn the cassette
+  motor on and off.
+     
+     
+                            Cassette motor control.
+     
+     
+       POKE 54018,PEEK(54018)-8    motor on
+       POKE 54018,PEEK(54018)+8    motor off
+     
+     
+                   Useful data base variables and OS equates
+     
+     
+     PACTL  $D302          (54018): port A control register, bit 4
+                                    controls cassette motor
+
+                                   CHAPTER 5
+     
+     
+                           THE KEYBOARD HANDLER (K:)
+     
+     
+  The keyboard is a read only device and therefore the keyboard handler
+  has no output functions.
+     
+  The keyboard handler reads the keys as ATASCII codes.  Each key is
+  represented by one byte of data.  Therefore, each time a key is
+  pressed the data is treated as a byte of data just as data from any
+  other device is.  The only difference is that the computer must wait
+  for the operator to press the keys as it reads the data.
+     
+  Whenever a key is pressed an IRQ interrupt is generated by the
+  keyboard reading hardware.  The internal code (not ATASCII) for the
+  key just pressed is then stored in CH [$02FC (764)].  The code is then
+  compared with the prior key code in CH1 [$02F2 (754)].  If the code in
+  CH1 is different from the code in CH, the key is accepted.  The code
+  is then converted to ATASCII, and placed in the database variable
+  ATACHR [$02FB (763)].  On XL and XE models, KEYDEF [$0079,2 (121)]
+  points to the key-code-to-ATASCII conversion table.  (This address is
+  used by the the screen handler in 400/800 models).
+    
+     If the code in CH1 is the same as the code in CH, the new key code
+     will not be accepted unless the key debounce timer, KEYDEL [$02F1
+€     (753)] is 0.
+     
+  When CIO is told to do an input operation from the keyboard, CH is
+  checked to see if a key has been pressed.  If CIO finds $FF (255) in
+  CH, it waits until a key is pressed.  If CH is not $FF, a key has been
+  pressed and the ATASCII code for that key is taken from ATACHR.  CH is
+  then set to $FF.
+     
+     The data in CH is in the following format.
+     
+                               Key code format:
+     
+     
+               7 6 5 4 3 2 1 0
+              -----------------
+              |C|S| key code  |
+              -----------------
+     
+      C   1 = [CTRL] key is pressed
+      S   1 = [SHIFT] key is pressed
+     
+  Anytime a key is pressed, CH is loaded with the key code.  CH will
+  hold the code until the computer is commanded to read the keyboard. 
+  Sometimes the computer will read a key which was pressed long ago.  If
+  you want to prevent this, load CH with $FF before reading the
+  keyboard.  (In BASIC use POKE 764,255.)  This will clear out any old
+  key pressings.
+     
+     
+                             Special function keys
+     
+     
+          [CTRL][1]      screen output start/stop
+          [CTRL][2]      BELL
+          [CTRL][3]      Generates End-Of-File status
+          [/|\]
+        or
+         [/]            inverse video toggle
+          [CAPS LOWER]   sets lower case
+          [CTRL][CAPS]   sets CTRL lock
+          [SHIFT][CAPS]  sets caps lock
+     
+     KEYBOARD REPEAT DELAY AND RATE CONTROL
+     
+  On the XL and XE, KRPDEL [$02D9 (729)] determines the delay before the
+  key repeat begins.  The value of this byte is the number of vertical
+  blanks (1/60th second each) to delay.  KEYREP [$02DA (730)] determines
+  the repeat rate in vertical blanks.
+     
+     KEYBOARD CLICK
+     
+  The keyboard click of the XL/XE is heard through the TV speaker.  The
+  click may be turned off by putting $FF in NOCLIK [$02DB (731)].
+     
+€     NON-HANDLER, NON-CIO KEYS
+     
+     The [OPTION], [SELECT] and [START] keys are read from the console
+     switch register, CONSOL [$D01F (53279)].
+     
+                          The console switch register
+     
+                7  6  5  4  3  2  1  0
+               -------------------------
+      CONSOL   |0 |0 |0 |0 |SP|OP|SE|ST|
+               -------------------------
+                            8  4  2  1
+     
+     
+         ST  0 = [START]
+         SE  0 = [SELECT]
+         OP  0 = [OPTION]
+         SP  Console speaker.  set to 1 during vertical blank.
+               toggleing this bit operates the speaker (which
+               is heard through the TV on XL/XE models).
+               This bit always reads 0
+     
+  The [HELP] key on XL and XE models is read from HELPFG, [$02DC (732)].
+  This address is latched and must be reset to zero after being read.
+     
+
+                            The [HELP] key register
+     
+                 7 6 5 4 3 2 1 0
+                -----------------
+      HELPFG    |C S 0 H 0 0 0 H|
+                -----------------
+                 1 6 3 1 8 4 2 1
+                 2 4 2 6
+                 8 
+     
+     
+          H  1 = [HELP] (bits 0 and 4)
+          S  1 = [SHIFT]
+          C  1 = [CONTROL]
+     
+     
+     
+                   Useful database variables and OS equates
+     
+     
+     KEYDEF $0079,2     (121): key code coversion table vector (XL/XE)
+     KRPDEL $02D9       (729): delay before key repeat (XL/XE)
+     KEYREP $02DA       (730): key repeat rate (XL/XE)
+     NOCLIK $02DB       (731): $FF turns off key click (XL/XE)
+     HELPFG $02DC       (732): [HELP] key (XL/XE)
+     ATACHR $02FB       (763): ATASCII Code for last key
+     CH     $02FC       (764): keycode, $FF if no key has been pressed
+     BRKKEY $0011        (17): break key flag, 0 = break key pressed
+€     SRTIMR $022B       (555): Key delay and repeat timer
+     SHFLOK $02BE       (702): SHIFT/CTRL lock flag
+     $00       = lower case
+     $40 (64)  = upper case lock
+     $80 (128) = CTRL lock
+     INVFLG $02B6     (694): inverse video flag, non-zero = inverse
+     CONSOL $D01F     (53279): start, select and option keys
+     IRQEN  $D20E     (53774): IRQ interrupt enable
+     bit 7 enables [BREAK]
+     bit 6 enables other keys
+     
+     
+                               shadow registers
+     
+     
+     POKMSK $0010        (16): IRQEN shadow
+
+                                   CHAPTER 6
+     
+     
+                           THE PRINTER HANDLER (P:)
+     
+     
+  The printer is a write only device so the printer handler has no input
+  functions.  The printer handler has no special functions other than
+  the CIO functions common to all other devices.
+     
+  Although many printers have special functions, the printer handler has
+  no control over them.  See your printer manual for information on
+  special functions.
+

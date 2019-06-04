@@ -1,0 +1,160 @@
+
+                     - The TEA PARTY DEMO -
+                   from the DOUBLE DUTCH CREW
+                                             
+               Reviewed by Dogue de Mauve from OVR
+
+
+After the ULTIMATE GFA DEMO, we received lotsa messages saying:
+"Hey, guys, stop kidding! This is NO basic! Even in ASM, I cannot 
+do it" (most of those critics were bad programmers!).
+I  hope  that these two cool dudes from DDC won't have  the  same 
+problem  'coz their demo is probably one of the very  best  basic 
+demos ever made on ST.
+Yes,  you  read it right,  this is a BASIC  demo,  programmed  in 
+OMIKRON basic,  to be precise.  I do not know OMIKRON as well  as 
+I'm  supposed to know GFA but I can tell you that these guys  use 
+it in a very impressive way...
+
+The  version of the "TEA PARTY DEMO" I tested was  a  (pre)release 
+version and most of the screens had no musax yet. So I won't tell 
+you a lot about musix in this review but I guess that the screens 
+will be even better using some great Hippel or Count Zero sound.
+
+So, let's run the demo...
+
+After a few seconds, the first intro screen appears. I think it's 
+very nice and looks very much like an ASM screen,  although  it's 
+quite  easy to code.  The first time HOMEBOY showed it to  me,  I 
+thought  it was Assembler and asked him if "this was the  OMIKRON 
+demo or what?".  This screen uses steady rasters, which are quite 
+uneasy to do in basic (no interruptions, remember!).
+
+Then you get the second intro,  which features a distorting  logo 
+saying "TEA PARTY DEMO",  the "melting" names of the DDC guys and 
+a  scrolling  greay  ground.  It  doesn't  look  very  good  but, 
+suddenly,  a big car (looks like a pink cadillac!) appears,  with 
+HOMEBOY  &  FLYGUY in it.  The two boys greet  you  and  continue 
+driving. The animated graphix are quite nice and very funny ("you 
+cannot imagine how accurate these actually are!").
+
+Next stop: the MAIN MENU. I must say I like it very much. There's 
+a  very good music (which I didn't manage to  identify).  At  the 
+bottom  of the screen,  there's a four-bitplanes scroller and  at 
+the top, a (very well designed) picture of an ATARI 1040 ST. Each 
+demoscreen  is shown as a different disk and you can scroll  them 
+up to choose the demo you want to see.  This is,  to my  mind,  a 
+very good and original idea and well programmed.  The great thing 
+is when you select a demo.  The disk enters the drive and you can 
+hear  the typical "click" of the drive closing system  while  the 
+drive led lights.  Simple but very well coded and I just love the 
+"click" (exactly the same that on my old single-sided drive).
+
+The  screen  loads  and depack quite fast.  I  think  it's  quite 
+important to note that even the packer/depacker was programmed in 
+OMIKRON basic,  which is NOT something easy to do.  And if you've 
+got a 1040 ST, you'll see that the MAIN MENU is resident.
+These  are details but this kind of details makes the  difference 
+between a "good" and an "excellent" demo.
+
+The first screen is the VIDEO screen.  Once again,  here's a nice 
+music (a bit short,  perhaps).  You can see a computer screen put 
+on  a  kind of Hi-Fi music player  (with  little  equalizers).  A 
+scroller passes on the screen,  announcing various digi pics from 
+the  members of DDC,  the kind of tea they drink (that's the  TEA 
+PARTY DEMO,  remember!), the kind of women they live with (wow! I 
+would  like to have such charwomen!),  their town - ALMERE -  and 
+many other things (including their own handsome, gorgeous faces).
+This screen has nothing "brainblasting" but is very clean and the 
+scroller is very funny to read...
+
+The second screen is called WAVES. It features some very nice and 
+impossible to describe graphic effects (some stars moving  around 
+two  bars).  There's a scroller with nice fonts and a grey  plate 
+scrolling  with some message on it.  This screen as good  graphix 
+but runs in 25Hz and may look too "jerky".
+
+The  third screen is the COLOR BURST.  This features very  steady 
+(pseudo) rasters under a big TEA logo.  It runs in 60Hz only  and 
+doesn't look very impressive but I guess that other OMIKRON basic 
+programmers may wonder how they made it.
+
+The fourth one is MEM SCROLLER. It's a very large & very fast (16 
+pixels)  scrolltext (with its reflection) running between  two 
+Y-distorting OMIKRON logos.  Although the scroll is not very easy 
+to read, this screen is very good for basic and has a nice music, 
+too.
+
+The fifth screen is the FLYGUY STRIKES BACK screen.   It's one of 
+my  favourite  in this demo since I find it impressive  and  very 
+clever.  At the beginning,  there's a simple 1 bitplane scroller, 
+soon followed by a 2 biplanes DDC logo on the whole screen. Then, 
+a  very  nice  2  bitplanes  brown  "rocky"  background  appears, 
+scrolling  on  the  whole screen.  1 biplane +  2  biplanes  +  2 
+bitplanes = 5 bitplanes.  But... the ST has only 4 bitplanes!!! I 
+told you it was very clever! More: there are various effects with 
+the  scrolline.  It goes in front and then behind the  DDC  logo, 
+then you can see the background through it and so on...
+
+After  that,  you've got the SINUS SCROLLER.  It features a  nice 
+moving ground (using color shifting).  The top half of the screen 
+features a city under the rising sun.  And there's,  of course, a 
+one  bitplane scroller,  which dists in nice  sinus  waves.  Once 
+again,  this is something quite uneasy to programm in basic  (and 
+in 50Hz, of course!).
+
+The  seventh  screen  is  the  BIG  SCROLL.  It's  a  very  small 
+scroller...  huh...  sorry... It's a HUGE scroller (made by small 
+blocks  of dots) on almost the whole screen,  with  lotsa  colors 
+running through it.  A bit like our big scroller in the  ULTIMATE 
+GFA DEMO, with more colors but simple graphix...
+
+The  following  demo is the 1 SONG.  It's a QUARTET demo  with  a 
+clean  digi-song  played  from  OMIKRON.   There  are  no   other 
+animations,  which is quite normal since the QUARTET player takes 
+the whole VBL to play the digisounds.
+
+The nineth screen is the ARNOLD screen.  It was made by a  friend 
+of  the  DDC  called Arnold SCHWARTZENEGGER  (or  something  like 
+that).  I guess it will work on 1040 only but it looks good. It's 
+basically a sequence of a very nice film which you can move using 
+the  cursor keys.  The picture themselves are well digitized  (in 
+orange-yellow  colors) and features,  I think,  FLYGUY using  his 
+special TEA-THROWER to send some tea-bags to his friend HOMEBOY.
+You  will  also notice the tea-pot cooking  behind  him  (beware, 
+FLYGUY,  it seems to be VERY hot!  Ah,  ah!).  By the way, you'll 
+discover that FLYGUY has lotsa muscles (he's a very tough guy!).
+
+The last screen is called "LAST SCREEN" (right name!).  I have to 
+admit that it's my favourite screen in the demo.  I find it  very 
+impressive.  It looks a bit like our SPREADPOINT II but there are 
+more small scrollers and a big colorful DDC logo separated in two 
+parts  which moves to the left and to the right.  This screen  is 
+technically brilliant and looks quite stunning. I hope there will 
+also be a good muzak to enhance it...
+
+Ok.  Finally,  I  would like to say that this demo is  very  well 
+finished.  All the coding is clean and there are no bugs  (sounds 
+logical but even the CUDDLY DEMOS have some little "bugs"). To my 
+mind, this is a truely positive point.
+The graphix are also quite good (some are even very nice) and the 
+ideas  of some screens are original,  which is a  very  important 
+quality. 
+And,  last but not least,  the scrollers are often funny and very 
+well written in real english.  More: the two DDC members are very 
+cool  guys (I met them on the STNICCC in Holland where they  come 
+from) - Hey, HOMEBOY & FLYGUY, send me the money now! -
+
+Once again, this demo is PURE basic code but looks great. the 
+only ASM routine used is to play the drive "click" in the main 
+menu.
+
+So,  even if you're a tough ASM coder,  you should take a look at 
+the TEA PARTY DEMO, I'm sure you won't regret it!
+
+                         See you later, have fun with MAGGIE 5.0!
+
+                                                   Dogue de Mauve
+
+
+

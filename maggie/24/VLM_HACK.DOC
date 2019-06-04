@@ -1,0 +1,244 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0010
+€
+||HackingtheVLM
+||By:Jeff"Yak"Minter
+\__//net.yak@yak.net
+----------------------------------------------------------------
+=-=-=-=-=-=-=-=-=-=-=-=-=
+////ABriefIntroduction
+=-=-=-=-=-=-=-=-=-=-=-=-=
+
+////TheGoodNews
+ThereisabackdoorleftintheVLMwhichallowstheusertogetatthe
+editmodethatwasusedtocreatethebanksofVLMeffects.Youcanget
+inthereandroll-your-ownFX,andit'snothardtocomeupwithstuff
+thatisa*lot*betterthanmanyofthedefaultFX.
+
+////TheBadNews
+Thereisnoprovisionforsavingyourhacks.Theyareentirely
+transient,andyoucanwavethembye-byeassoonasyouswitchto
+anotherFXbank-andunfortunately,wheneveryouopenthelidofthe
+ToilettochangetheCD,itswitchesbanksintoaspecialJaguar-logo
+bank,andit'sbye-byehacks.Bummer,Iwishitdidn'tdothat,'coz
+otherwiseI'djustleavemyVLMonallthetimeandevolve9banks
+worthoftophacks...
+
+Also,theeditinterfaceisbuggyandprettyuser-hostile;it'sgotno
+error-checkingandit'spossibletocrashtheVLM,orslowitdowntoa
+crawl,ifyoutweakcertainparametersoutofrange.Hell,itwasnever
+intendedforend-users,onlyforusebyacertainderangedbovine.
+
+////WhyBotherThen?
+Becauseit'sfun.Becauseifyou'reinterested,youcanfindoutalot
+abouthowtheVLMworks.BecausealotofthedefaultFXarefairly
+non-optimal,largely'cozatthetimeIwasdesigningthebanksIhad
+pneumoniaandwasfeelinglikesh*t,andIalwaysfindthatImake
+betterFXwhenIfeelgood.Andalthoughyoucan'tsavethehacks,you
+candowhatIdo,andkeepatapeintheVCRandlaydownsomevid
+wheneveryoucomeupwithaparticularlyniceone.
+€
+////HowDoIGetThere?
+Easy.Selecttheeffectyouwanttobaseyourhackon.Then,inVLM-
+mode,holddown*,1,3,0ontheJaggicontrolpad.Thisshouldbringup
+amenucalledSpectrumandTriggers.That'snotitthough-thatwas
+justaredherringtoconfusepeoplelookingforthehack;-).While
+ontheSpectrumandTriggersscreen,pressup,down,up,down...8
+times(sothecursorwrapsfromTrigger1toTrigger5andbackagain
+8x)andthenthedisplaywillchangetoEditMode.Atthatpoint
+you'rein.
+
+////WhatDoIDoWhenIGetThereThen?
+Okay,firstithelpstohavesomeideaofwhatisgoingoninsideany
+particularVLMsetting.Eachindividualsettingconsistsofuptosix
+effects,eachofwhichcantakeash*tloadofparameters,whichdefine
+howthateffectchangesovertime.Parameterscanbeattachedto
+waveformgenerators,tousercontrolfromthejoypad,ortothe
+spectrumtriggerstocreateanaudio-responsiveeffect.
+
+ThemostcommontypesofeffectyouwillseeintheVLMare:
+
+[]DigitalVideoFeedbackarea:DVFiswhatgivesyouallthosecool
+swirlyscreen-fillingpatternsandpersistencefields.Itis,however,
+quiteanexpensiveeffectintermsofprocpower(oneisthrowing
+ratheralotofpixelsarounddoingscaledrotatesoftheentire
+screen)...ifyoucanlivewithasmallerDVFareaonsomeofthe
+effectsthespeedandresponsivenessofmanyoftheeffectscanbe
+greatlyenhanced.Ihaveawholenewclassof60HzfeedbackFXthatI
+couldkickmyselffornotputtinginthedefaultbanks...
+
+[]DrawSpectrumAsIntensities:Thisbasicallyplotstheoutputofthe
+FFTthroughthesymmetrygenerator.Onitsown,orcombinedwithDVF,
+thisisagoodsettingtouseforeffectsthatyouwanttobe
+preciselyaudio-reactive.PutitoversomeniceDVForapersistence
+field,llovely.
+
+[]DrawaRingofPixels:Doesjustthat,throughthesymgenerator,
+€withvariousparametersappliedsoyoucanchangephases,numberof
+points,pixelsize,etc...averyversatilething,simplethoughit
+is.
+
+[]DrawPlasma:Drawsatileofplasmaonthescreen.Usefulfor
+puttinginthemiddleofaniceDVFfieldasasourceeffect.Canbe
+programmedtoflashontriggerbandeventstoo.Tryhooking
+oscillatorsuptotheXYpositionwhenit'sina60HzDVFfield-
+yummy.
+
+Emptyslotscannotbeedited.TimewaswhenpushingBonanemptyslot
+wouldbringuptwopagesworthofFXthatyoucouldbuildinthere,but
+sadlythatcameout.IwishIhadnevertakenitoutnow.Damn,andI
+wishIhadnotremovedSaveBankeither...
+
+Thereareafewothers,starfieldsandthelike.Playwiththem.Some
+ofthemarequitecool.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+////FiddlingAroundWithStuff
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WhenyoupressBtoeditaneffect,youarepresentedwiththree
+choices-Editsourcefunction,whichallowsyoutoseeandtweakthe
+parametersthatmakeupthebasisoftheeffect;Editsymmetry
+generator,whichallowsyoutotwiddlewiththesymgenerator,for
+effectsthatgothroughthatpipe(notallFXdo-DVFandtheplasma
+don'tusethesymgenatall,sochangingstuffontheirsymgenerator
+pagesdoesnothinguseful);andEditSourceWaves.Eacheffecthas8
+programmablewaveformgeneratorswhichcanbeattachedtoanyofthe
+parametersdefiningtheeffectorthesymmetry.EditSourceWavesis
+whereyougotoadjustthespeed,waveformetcofthewaveform
+generators.
+
+////EditSourceFunction
+Ifyouenterthismenu,youwillbepresentedwithalistofthe
+variableswhichcontrolhowthateffectisdisplayed.InaDVF
+effect'sSourceFunctionmenu,forexample,youwillseeparameters
+€controllingtheWindowSize,Scale,RotateAngle,etc.Youarefreeto
+cursoraroundthismenu,twiddlethevalues,andseewhathappensto
+thedisplay.(IthelpstohaveaCDplayingwhileyoufiddle,sothat
+alltheeffectsareactiveandyoucanseewhatyouaredoing).
+
+Menuitemswith(X,Y)afterthemrepresentpairsofvariables.Whenyou
+selectavariabletoedit,youwillbepresentedwithaslider,a2-way
+slider,apositionmarker,orcrosshairs,dependingontheeffect.Just
+usethejoypadtochangethevalues.Anythingyouchangewillstay
+changedforthelifeofyourhack(thatisuntilyouchangebanksor
+opentheToilet).
+
+Whileeditingavariable,youmayseethemessage'Press*toAttach
+Waveforms'.Ifyoupress*,ittakesyoutotheAttachWaveforms
+screen,whichhasatotallycrappyandconfusingUI,butwhichis
+nonethelessthekeytothecooleraspectsofVLMusage.Itworksin
+conjunctionwiththeWaveformEditpage,andinasaneandrational
+world,wouldhavebeenintegratedinwiththatpage.
+
+Thewonderfully-informativeAttachWaveformsscreenpresentstworows
+ofthenumbers1-8.Thetoprowrepresentswaveformgeneratorslinked
+tothisvariable.Ifoneormoreofthesenumbersarehighlighted,it
+meanstherearegeneratorsalreadylinkedtothisvariable.
+
+Youcanattachordetachageneratortothevariablebypressingthe
+correspondingnumberkey1-8.Youcanattachasmanygeneratorsasyou
+like-theresultantwaveformisthesumofalltheinputwaveforms.
+
+Youalsocanadjusttheamplitudeofthewaveformhere.Dismally,there
+isnodisplayactuallyshowingyoutheamplitude-youjusthaveto
+watchthedisplaytoseetheresultandkindafishabout.Also,for
+someinanereason,ifthewaveformisattachedtoanX-componentyou
+adjusttheamplitudewithleft/right,andifitisaYcomponentyou
+useupanddown.IthinkIwasplanningtoputinanactualdisplayof
+thewaveformshere,butIgotillandneverfinisheditoff.Asitis,
+it'ssuckyandcounterintuitive.Ohwell...
+
+€Thebottomrowof8numbersallowsyoutomodulatetheattached
+waveform(s)withtheoutputofanenvelopegeneratedbyanyofthe
+fivespectrumtriggergenerators.Youpress#,thenthenumberofthe
+trigger1-5(6,7and8areforthethreejoypadbuttons)totoggle
+thetriggerattach.Andforsomereason,likeitwasneverproperly
+debugged,whenyoutoggleatriggeroff,oftenthedigitinthebottom
+rowwillnotde-highlight.Oops.
+
+Afteryouhaveattachedwaveforms,youwillprobablywanttomoseyon
+overtothe...
+
+////EditSourceWavesMenu
+Here,youcanselectawaveformgeneratorbycursoringupanddown.
+Whilethecursorisonagenerator,thatwaveisdisplayedintheblue
+box.YoucanincreaseordecreasethefrequencywithAandC,andslip
+thephasebyLeft/Right.Youcanchangethewavetypebypressinga
+numberonthenumericpad.UserXandUserYtranslatetothe
+'position'controlledbythejoypadinVLMInteractivemode.
+
+////EditSymmetryGenerator
+Averyinterestingplacetobeforallthoseparticleeffectsand
+anythingelsethatgoesthroughthesymgenerator.Inthismenuyou
+cantwiddle,attachwaveformstoandgenerallypissaboutwith
+everythingtodowithsymmetry.
+
+Thesymgeneratorusestwobasickindsofsymmetry,planar8-way
+reflection,whichisquick,androtational,whichisverynicebut
+considerablyslower.Thetwotypescanbecombined.Manyoftheitems
+ontheSymmetrypageonlyapplytoRotationalsymmetry,andwillhave
+noeffectifRotationalisswitchedoff.
+
+YousetthesymtypesundertheSymmetryTypemenu,notsurprisingly.
+Pressing9onthispagetogglesrotationalsymoffandon,anddueto
+quitepossiblythesamebugasontheWaveformAttachscreen,often
+the'9'inthemiddlewillbeincorrectlyhighlighted.It'susually
+prettyobviouswhenrotationalisonthough.Keys1-8toggleonand
+offtheplanesofthe8-waysymmetry.Setupyourtypes,andthengo
+€andhaveafiddlewiththeparametersasintheEditSourceFunction
+mode.
+
+Sinceyoucan'taddordeleteeffects,thenatureofyourhackswillbe
+inpartdefinedbywhateffecttypesareinthebankyouchooseto
+edit,soifyouwanttodoalotofDVFstuff,trybank3or4,andif
+youlikeparticles,bank1or2,andsoon.Youcanswitchbetween,
+andhack,alleffectswithinabank,but*ifyouchangebankstheyare
+lost*.Becareful!
+
+And,basically,therewehaveit(asIsaidtoFlossieasIledher
+intotheconcealingdarknessofthesheep-shed).Enoughstufftoget
+youstartedplayingaboutwithVLMediting.Apologiesforthecrappy
+UI,butIneverhadtimetoreallybringituptoscratchbeforeIgot
+thatbloodypneumonia.Asitisitwasaboutayearbetweenfinishing
+theVLMcodeandthereleaseoftheCD-ROM,andIwishIhadbeenable
+tospendafewmoremonthsatit.BoththeFXandtheeditmodecould
+havebeenalotnicer!Ohwell,nexttime...I'vealreadygotsome
+awesomestuffrunningon[closeshismuzzleandremembersthethree
+lettersN,DandA];-)
+
+Andohyeah,Ibettermention:
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+////CAVEATS:HereBeBugs'n'Beasties!
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+TheerrorcheckingontheUIisatbestsuckyandatworstnonexistent.
+ItisquitepossibletoeitherchokeuptheVLMwithsomeincredibly
+intensivesymmodethatwillhaveitdoingoneframeperSunday,and
+youcanevenkillitwithanhonesttoGhu,thank-you-and-goodnight,
+little-silicon-legs-in-the-aircrash.Thereareafewdangerareas
+whichIshallwarnyouofnow:
+
+[]PositioningaDVFwindowtoofarofftheedgeofthescreencankill
+thesystem
+
+[]AttachingwaveformstoDVFwindowsizeandpositioncanbefatal.
+€Lookout!
+
+[]AttachingwaveformstotheRotationalSymmetryOrdercancauseitto
+wraptonegative,whichtranslatestosomethinggreaterthan32767,
+which,asasymorder,willcausethesystemtochokemostheinously.
+Won'tkillit,buttheframeratewillbemeasuredinminutesper
+framehehe...
+
+Don'tworry,killingthesystemwillnotdoanypermanentdamage.The
+defaultbanksaretuckedawaysnuginROMandwillberestoredwhenyou
+restartthesystem,nomatterhowbadlyyoutakeitdown.
+
+Well,Ishallgoandpostthisnow...havefunandHappyHacking!
+
+\
+(:-)-theBeastlyBoanthrope
+/

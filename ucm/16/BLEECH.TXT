@@ -1,0 +1,126 @@
+ 
+ {*f1BLECH!!{*f0
+
+ Tidy coding? Ever heard of it? In times like these with multiple atari machines
+ (and clones) that are all different, it might be worth considering. Now with
+ more and more people upgrading with acceleratorboards, it is essential.
+
+ EARX of FUN gets down to clean things up (and hopefully not introduce some extra
+ bugs while he's at it :))
+
+ First of all the general rules:
+
+ * Save all hardware registers before you run the main program and after running
+   restore them all. Good examples are video/audio and interrupt settings.
+ * All the memory you want to use you should reserve first. Either use BSS or
+   Malloc() to do this. Using memory beyond your programs scope often doesn't
+   cause trouble in singleTOS, but it does for sure in MiNT and Magic. One extra
+   you should avoid as well is using low memory as spare space! Alot of old ST
+   programs tend to do this which will hang the Falcon and TT straight away.
+ * Never use Line A. It might be of use in extreme situations such as 128
+   bytros, but can cause severe problems all around. Atari adviced not to use
+   Line A since the introduction of the TT and still people do it.
+ * Avoid selfmodifying code. Not all selfmodifying code should be avoided. I
+   agree it sometimes is a must. The kind you should avoid is changing the code
+   you loop through in the same loop! This causes the 030 and forth to make
+   errors. Selfmodifying code can be allowed in most cases where you first build
+   a complete routine and then run it (i.e. C2P routines!).
+
+ Ò1) Falcon (also called Falcy by some of freaks)
+
+ This machine had it's share of problems from the start. A buggy XBIOS,
+ undocumented hardware andsoforth made it harder for coders to know what they
+ were doing. The result was mostly trial and error situations and an attitude
+ like "if it runs on my own machine, it's good".
+
+ Today people finally understand the bugs in the system and now know the
+ hardware registers Atari hid from them. There is info on all of this. But there
+ is another problem. The accelerators falcon owners use also cause alot of
+ trouble. Be it software or hardware extras.. They all tend to cause some
+ compatibility flaws.
+
+ The following are important to get demos/games running on a maximum amount of
+ Falcon's.
+
+ ÒVÚGÛA support:
+
+ eventhough RGB modes might be less stressful on the bus and hence free up CPU
+ time, many lardasses don't like hooking their falcon up to a TV again. Also VGA
+ 100Hz modes actually eat less bustime than VGA 50Hz/60Hz modes. VGA 100 even has
+ the advantage of true hardware doublepixels!!!
+
+ Even more important is the failure of RGB modes with accelerators. Many
+ extensions such as screenblaster, blowup, nemesis and centurbo all cause RGB
+ modes to fail.
+
+ ÚVIDEL registers (fixed by sage/escape):
+
+ Please check out the great article MrPink wrote in Maggie27. This contains
+ perfect resolution switching for all modes. Even 2 colour ones and ST modes!
+
+ ÚDSP handshaking:
+
+ The transferrate between CPU<->DSP (much used for demo-effects) can boosted alot
+ when not polling if the CPU or DSP is ready (this is called handshaking). Leave
+ the hadshake out and you will gain speed. But with a different DSP clock (40MHz,
+ 50MHz) this is very problematic. When the DSP sends the next word to the CPU,
+ the CPU might not have fetched the first one. This means there is data loss!
+
+ The solution can be putting handshaking back in (slower on normal Falcon), or
+ only using handshake on accelerated DSPs. There is also a good trick where you
+ can do onw handshake only once every 4 or 8 words. This seems to work fine.
+
+ ÚTTRAM (mxalloc()):
+
+ When you are the lucky owner of TT RAM in your Falcon this becomes a must (thanx
+ to evl/dhs for these tips). You can ofcourse activate TTRAM bits in the
+ executable file. The usage of these bits and the call is as follows:
+
+ Set all the TT bits ON. This can be done with lots of tools and also the THING
+ desktop. In your program you can use the mxalloc() to specificly only allocate
+ STRAM for both SDMA and VIDEL buffers. Mxalloc() returns an address you should
+ store. Every other buffer can simply be held in TTRAM, which is done automaticly
+ when the TT bits are on.
+
+ Ò2) ST progs compatibilty with Falcon, TT, Hades, Milan, etc.
+
+ If you use your own videoroutines (i.e. you create a fast game or a demo) in
+ your ST program, you can forget Milan and Hades compatibility. Milan and Hades
+ are GEM clones!!! They have a 680x0 yes, and TOS compatible stuff too, but they
+ aren't hardware compatible in any way.
+
+ If you program something for every TOS clone ever made, you should use either
+ character based display with the traditional GEMDOS. A more suitable alternative
+ to games is GEM programming. GEM programming is not as easy as GEMDOS and
+ ofcourse GEM can be very slow on a standard ST.
+
+ A more interesting subject is coding for REAL atari's. This way you can still
+ use the features of the ST (direct video access), YM2149, STe sound, etc. If you
+ want to do this you should understand:
+
+ * Many people still have the old 1MB 1040ST (not STE!), so no blitter, no DMA
+   sound.
+ * TT's don't have a blitter!
+ * On TT and Falcon you can't open borders. The videochips don't have the same
+   undocumented features as the old STs!
+ * TT's can't run bootable disks. Please use normal executable files.
+ * Falcon lacks YM2149 shadowregisters. Means some soundroutines don't work.
+ * Falcon has no microwireinterface like the STe and TT.
+ * Every boosted ST or newer atari has a higher clockfrequency which means hard
+   syncing to clockcycles isn't possible anymore! This technique was often used
+   for getting over 16 colours on screen (SPEC512, photochrome) and 50fps
+   horizontal scrolling on a basic ST.
+ * Most importantly Falcon and TT have a different memorymap from the ST. So
+   poking stuff in low-memory where it isn't allowed, will most definetely crash
+ the machines.
+
+ As a consequence, you mostly have to test on which ATARI you are running. The
+ blitterroutines will work on STe and Falcon, but crash on the TT. This isn't the
+ worst part. The soundroutines are much more annoying. The Falcon misses some
+ YM2149 features and some pins on this chip are now even used to put the IDE and
+ speaker on/off.
+
+ Have fun coding all tidy and stuff! (most coders now think: "Yeah, right!
+ Sucker!" ;-PP)
+
+ ============================================================= EARX/FUN 1999 ====

@@ -1,0 +1,842 @@
+06601030305800
+F0110030
+9[.........................................................]001
+€
+                                Welcome to:
+                        +---------------------------+
+                        | ˆThe Unofficial Atari 8bit€ |
+                        |  ˆNew User, Emulator Help€  |
+                        |            ˆFAQ€            |
+    Rev.0.7             |                           |           Rev.0.7
+                        |     By ŒBill Kendrick€      |
+                        |       Revision 0.7        |
+                        |     January 17, 1995      |
+                        +---------------------------+
+
+[ Differences from Rev.0.5: Corrected descriptions of Atari computers;
+  Corrected PC Xformer 3.0 dealer list; listed where Mule and Util 
+  can be found]
+[ Differences from Rev.0.6: Updated Branch Always Software information ]
+
+PLEASE also refer to: MyDOS 4.5x documents, SIO2PC documents,
+  XFormer documents, and the Atari 8-bit F.A.Q.
+
+For general help (hardware, magazines, etc.) please check the Official
+Atari 8-bit FAQ file:
+  From: Michael Current <MCURRENT@carleton.edu>
+  Where to get the latest copy of the Atari 8-Bit Computers 
+  Frequently Asked Questions List:
+
+  ftp://rtfm.mit.edu/pub/usenet-by-group/news.answers/atari-8-bit/faq
+    (and many other FTP sites that archive Usenet FAQ Lists)
+http://www.cis.ohio-state.edu/hypertext/faq/usenet/atari-8-bit/faq/
+faq.html
+  news:comp.sys.atari.8bit, news:comp.answers, news:news.answers
+
+  or, send a message to mailto:mail-server@rtfm.mit.edu that says:
+
+    send usenet/news.answers/atari-8-bit/faq
+    quit
+
+  Finally, you can always ask Michael for a copy at
+  mailto:mcurrent@carleton.edu
+
+Summary of Atari 8-bit's an emulated 8-bit Atari's:
+  
+  Atari 8-bit computers were produced between 1979 and 1987.  The
+  major models released were the:
+    
+    400 - 8K-16K, 400/800 OS, CTIA or GTIA graphics (depends when made)
+    800 - 8K-16K-48K, 400/800 OS, CTIA or GTIA graphics (depends when
+made)
+    1200XL - 64K, 1200XL OS, GTIA graphics
+    600XL - 16K, XL OS, GTIA graphics
+    800XL - 64K, XL OS, GTIA graphics
+    65XE - 64K, XL OS, GTIA graphics
+    130XE - 128K, XL OS, GTIA graphics
+    XEGS (Game System) - 64K, XEGS OS, GTIA graphics (Had Missile
+€Command)
+
+  All of the XL's except the 1200XL had BASIC installed on ROM.  BASIC
+ can be purchased on cartridge for the 400/800/1200XL's.
+
+    Branch Always Software are the creators of:
+      ST Xformer (Atari 8-bit emulator for ST's), Quick ST, Quick Index,
+      Gemulator (Atari ST emulator for PC's), and PC Xformer (Atari
+8-bit emulator for PC's).
+
+    ST Xformer 2.0 and 2.5 released for the Atari ST 16-bit machines.
+      Very limited.  Now public domain (used to be commercial).
+    PC Xformer 2.0 and 2.5 released for IBM PC machines.  2.0 is limited
+      and supports only 800 OS.  Both public domain (were always PD).
+    PC Xformer 3.0 released for IBM PC machines.  Supports all OSes,
+320K RAM, and best of all, player/missile collision detection
+(which MANY games use!)
+
+Graphics:
+  
+The Atari has maximum resolution of 320 x 192 (standard,
+non-overscanned screen) x 2 colors.  160 x 192 x 4, 160 x 192 x 2,
+160 x 96 x 4, 160 x 96 x 2, 80 x 48 x 4, 80 x 48 x 2, 40 x 48 x 4
+graphics are also supported.  40 x 24 x 256-character (128 normal,
+128 inverse, character set indirection available) text mode is
+standard (2 colors).
+40 x 24 x 128-multi-colored-character (4 colors per character allowed,
+    the other 128 characters have 4th changed into a color 5) and
+    40 x 12 x 128-multi-colored-character screen modes are available.
+GTIA graphics support 80 x 192 x 16 shade-only, 80 x 192 x 16 hue-only,
+    and 80 x 192 x 9 color screen modes.
+Normal (bordered), narrow (underscanned), and wide (overscanned) screen
+    modes are available.
+Screen modes can be mixed (by lines) down the screen using the Display
+    List (a program which is executed by the ANTIC graphics chip every
+    screen refresh (60 times per second on real NTSC Ataris).
+Fine scrolling (both vertical and horizontal) can be enabled on any
+    line on the screen.
+All other screen attributes (color, player/missile horizontal position,
+   screen width, player/missile/playfield priority, etc.) can be ajusted
+   at any point down the screen via a "Display List Interrupt."
+Four 8-bit wide, 128 or 256 byte high single color players, and four
+  2-bit wide, 128 or 256 byte high single color missiles are available.
+  A mode to combine the 4 missiles into a 5th 8-bit wide player is also
+  available, as is a mode to XOR colors or blacken out colors when
+players overlap (good for making three colors out of two players!)
+Players and missiles have adjustable priority and collision detection
+(which is not supported by the PC Xformer 2.0 and 2.5 and ST Xformer
+programs).
+
+Sound:
+  
+  Four voices of 8-bit pitch-resolution, 4-bit volume-resolution,
+    8-distortion sound can be produced.  2 voices (1 and 2, and/or 3 and
+€ 4)can be combined to make 16-bit pitch-resolution.  Also 4-bit
+volume-only modes can be enabled for digitally sampled sound replay.
+  A fifth "voice" is produced by the internal speaker on Atari 400/800's
+    (for keyclick and buzzer) and in the XL's and XE's this was
+    (fortunately!) rerouted through the normal audio output, and the
+    keyclick can be disabled.
+
+Objective of this file:
+     
+     At the time of its release (mid 1994), much discussion went on in
+thecomp.sys.atari.8bit Usenet newsgroup about the Atari 8bit emulator
+forIBM/MSDOS based computers, the PC Xformer 2.0 (XF2 for short). Many
+people in the 8-bit community had gotten, well, fed up with the
+XF2-basedquestions which did not pertain to them, or to the really dumb
+questionswhich were in fact understandable to new or rusty Atari 8-bit
+users, buthad just gotten on the nerves of some of the
+comp.sys.atari.8bitreaders/digest subscribers.
+     This file was created to reduce the number of 'newbie' and XF2
+questions.  Now it's becoming a fairly good reference (and got me the
+jobof writing the commerical 3.0 release's documents!).
+     This FAQ will present answers to simple questions like "how do I
+turnoff BASIC" (a good answer to that of course is, READ THE FRIGGIN'
+MANUAL)and "how do I get a disk directory?" (which is less obvious on
+Atari 8-bits, err.. MOST 8-bits <grin>).
+     It will also direct people who are unaware of the large amount of
+Atari8-bit support (NOT NECESSARILY EMULATOR SUPPORT) and perhaps
+become asupplement for the many official and unofficial files floating
+around thenet (like the official FAQ, the Vendor/Developer List, the
+Who's Who list,etc.).
+     Since revision 0.4 of this file, PC Xformer 2.5, a replacement for
+2.0,and 3.0, the first commercial release, have been released.  It is
+assumedthat the reader has the latest versions of PC Xformer (2.5 or
+3.0), althoughif you have 3.0, I must say, those documents are great!
+(If you don't getthe joke, look at the name of the author of the
+manual, and look at my name.)
+
+---===  Xformer Questions:  ===---
+
+Q.1) What does "READY" mean?
+A.1) This is the Atari BASIC prompt. See below for hints on Atari BASIC.
+
+
+Q.2) Why doesn't this program load?
+A.2.1) The program may not work under the Atari 800 Operating System, it
+ may require the XL/XE Operating System.  Be sure you're in 800XL or
+130XEmode.  (130XE mode is only supported by XF3.0, not 2.5, but
+there is no real difference in the operating systems.)
+A.2.2) It may not work under the XL/XE Operating System (rare cases),
+switch to 800 mode.
+A.2.3) Be sure you turned BASIC off before trying to load it if it
+cannot run with BASIC on.
+A.2.4) It might be a BASIC game!  Be sure you're in BASIC and use the
+BASIC "RUN" or "LOAD" (and then "RUN") command.  Also, be sure it
+works with the BASIC you have.  Some programs only run in BASIC XL or
+€XE (which are both cartridge-based BASIC's not currently supported by
+       the Xformer), and some run with TurboBASIC XL (disk-based).
+A.2.5) It may just refuse to run on the emulator.
+
+
+Q.3) How do I turn off BASIC?
+A.3) To toggle BASIC on and off, press [SHIFT]-[F10] ([F10] is [RESET],
+note: on a real Atari 8-bit, [SHIFT]-[RESET] does not have this effect).
+
+
+Q.4) Why doesn't this game/program run correctly?
+A.4.1) It may use player/missle collision detection which is not
+supported on the XF2.5.  You might have to shell out the $29.95 for 3.0!
+A.4.2) (See Question 2).
+
+
+Q.5) How do I exit XF and return to DOS?
+A.5) Press [F5].  Note: this does NOT temporarily 'shell' or 'jump' to 
+MSDOS.
+
+
+Q.6) How do I get to Atari DOS?
+A.6.1) In BASIC, type "DOS" at the "READY" prompt.
+A.6.2) Reboot without BASIC on.
+A.6.3) Be sure you have a DOS-bootable disk image as the first MSDOS
+   parameter after the "XFORMER" command.  (DOS25.XFD andMYDOS45.ATR
+   are both DOS boot-disk-images and are both in the XF25.ZIP file or
+   on your XF3 disk).
+
+
+Q.7) How do I use MSDOS files with XFormer?
+A.7.1) Add the files to the command line and use them as their
+respective drives (be sure the first drive is a DOS-bootable disk
+image). Example:  XFORMER MYDOS45.ATR filename.ext
+When booted the Atari will have two drives, D1: will be the MyDOS
+4.50 disk image and D2: will be a write-protected disk which contains
+only the file "filename.ext".  Note: there are bugs in XFormer which
+make accessing files from different directories a bit hard, just use
+the MOVE (or COPY and DEL) commands in MSDOS to get the file to the
+Directory where you call XFORMER from.
+A.7.2) Use the MSDOS program S2PC (S2PC.ARC available in the Utilities
+ directory at the UMICH archives) which allows you to access files
+ within a MyDOS/compatible .ATR disk image without using an SIO2PC
+ or the XFormer.  S2PC let's you read, write, delete, change directory,
+ and view the directory of a MyDOS/compatible .ATR disk image.  It
+ can be used via command-line parameters from MSDOS, or as a menu.
+A.7.3) If you can, use the MSDOS program ATARIMG, which is much like
+S2PC but has a nicer, more graphical (less-menu driven) interface.
+ (Unfortunately, this doesn't run on all IBM's!)
+
+
+Q.8) Just what ARE .ATR and .XFD files?
+A.8.1) Refer to the XFormer and SIO2PC manuals for details on these
+     files.
+€A.8.2) Simply put, they are Atari disks, stored as files which are as
+ big as the disk they represent (an 88k disk image will use 88k on the
+ IBM).  .ATR files are used by SIO2PC (see below) as well as the
+ XFormer (and the S2PC program mentioned above).  .XFD files are used
+ by ST Xformer (the Atari 8-bit emulator for Atari ST's) and PC
+ Xformer (XF2,XF25,XF3).
+
+
+Q.9) What's SIO2PC?
+A.9.1) Refer to the XFormer and SIO2PC manuals for details on this
+     program.
+A.9.2) This is a program which runs on IBM/compatibles which, with the
+use of a simple (and relatively inexpensive) cable, makes the IBM act
+ as though it were an Atari disk drive.  (Up to four drives, actually).
+ It uses disk image files (.ATR's) and can also let the Atari access
+ single IBM files (much like XFormer does) as a single file all alone
+ in its own disk.  It also currently allows Print-Thru (all access to
+ the Atari "P:" (printer) device can be redirected to the IBM's printer,
+ screen, or MSDOS file; different translations/conversions are
+ user-defined when the Print-Thru mode is turned on).  Finally, with
+ the use of two programs on the Atari 8-bit (the only two programs
+ that currently have anything to do with SIO2PC that have been written
+ (to my knowledge) for the Atari 8-bit), the IBM can be controlled
+ remotely (commands are sent from the Atari, typing on the IBM is not
+ necessary) and files can be sent directly to the IBM's drives.
+
+
+Note: The following sections will simply discuss Atari BASIC, the Atari
+OS,and Atari DOS 2.5 and MyDOS 4.5x (because these topics seem the
+most relevant to the less-knowledged/experienced XFormer users).
+
+---===  Getting around on the Atari: DOS and OS ===---
+I. AtariDOS and MyDOS QuickReference:
+
+MyDOS (4.50 and 4.53) presents the user with the following commands:
+
+[*]     Disk directory of current directory (like "dir *.*" in MSDOS)
+[1]-[9] Disk directory of a disk drive (like "dir a:\*.*"- "dir i:\*.*")
+[A]     Disk directory (like "dir <?>" and optional output destination)
+[B]     Quit to cartridge
+[C]     Copy file(s) ("<source>,<destination>" copies from one place or
+        disk to another, just "<source>" copies from one place on one
+disk in a drive to the same place on another disk in the same
+drive (asks for swapping))
+[D]     Delete file(s) (add "/N" to delete without being prompted first)
+        (add ">*.*" or ":*.*" after a subdirectory name to delete the
+        files within it.  A subdirectory name alone will delete the
+        subdirectory (if it is empty and unlocked)).  (Acts like both
+        "del" and "rd" in MSDOS.)
+[E]     Rename file(s) (renaming multiple files is allowed, BECAREFUL).
+        (like "ren <old> <new>" in MSDOS - with MyDOS, use "," between
+        old and new masks.)
+[F]     Locks file(s) from overwrite, deletion and appending (like
+        "attrib +r <mask>" in MSDOS.)
+€[G]     Unlocks file(s) (returns them to their default state).
+[H]     Writes DOS files to a disk (this creates a disk which boots with
+        the current version of MyDOS you are using and also has the menu
+        file "DUP.SYS" on it as well). (This is like "sys"(?) in MSDOS.)
+[I]     Formats a disk (add "/N" after the drive number to do a
+quick-formatof an already-formatted disk (ie, just a very fast
+delete "*.*").
+[J]     Duplicate disk (copies an entire disk, including boot sector,
+        when using XFormer, it's much quicker to just copy one .XFD or
+.ATR to another).
+[K]     Make binary file: saves memory and makes it binary-loadable.
+See [L].
+[L]     Load binary file: loads a compiled program.  (like "<filename>"
+ inMSDOS, except any ".EXE", ".COM", ".OBJ", etc. is still
+required.)
+[M]     Run at address.  Mainly for advanced users.  Reboot is "E477",
+        reset is "E474" (these are the hex values of the addresses where
+        the routines to reboot and reset are.)
+[N]     MEM.SAV: when this is on, whenever you go to DOS (from BASIC,
+        for example) it will write what is in memory to a file "MEM.SAV"
+        so that when DUP.SYS (the menu) loads it isn't lost forever.
+        When you exit DUP.SYS with the "B: Run Cartridge" command,
+MEM.SAVis reloaded and the environment should be as it was when
+ you left.It's probably quicker to simply "SAVE" your programs(if
+ in a language) which aren't nearly as big as all of the memory
+that MEM.SAV saves.
+[O]     Options: this presents the user with some options.  Mainly for
+        advanced users or special setups.  See the MyDOS docs for
+details.
+[P]     Set density.  Forces a drive to be recognized at a certain
+density if MyDOS can't figure it out. (??)
+[Q]     Make a subdirectory. (like "md" or "mkdir" in MSDOS).
+[R] Set default directory. (like "cd" in MSDOS and "cwd" in SpartaDOS)
+   This makes "D:" now the same as a subdirectory or other drive.
+  ie, "D2:" will make all calls to "D:" act as though they are to
+  "D2:" instead.  Some programs when prompting for filenames do not
+  add "D:" to the beginning if one is not present, they add "D1:".
+  If you don't trust a program to look to "D:" instead of "D1:" and
+  you want it to look to some place OTHER than "D1:" (ie, where "D:"
+  is pointing which could be a VERY long path list), just add "D:"
+  to the beginning.  ALSO, some programs don't even ADD "D:"'s if they
+  aren't in the filenames you give and may give errors (138, for
+  example: device not present, ie, if you said "TESTFILE.DAT" it
+  may think you want "T:" instead of "D:TESTFILE.DAT").
+[S]   Set ramdisk number.  This is also under [O]ptions.
+[V]  Verify writes.  This is also under [O]ptions.  When Verify is on,
+     writes will be slower but 100% reliable.  With it off, writes will
+     be much faster but possibly not as reliable (on bad disks, for
+     example).  Default is off.
+
+AtariDOS presents the user with the following commands which are
+identicalto MyDOS's commands: A,B,C(no swaping),D,E,F,G,H,I(some
+densities),J,K,L,M,N
+
+€AtariDOS 2.5 presents the user with the following commands not present
+ornot the same as MyDOS's commands:
+[O] Duplicate file.  This is used to copy a file from one disk to
+anotherusing only one drive. (In MyDOS, giving just a source will make
+ [C]opy act like DOS 2's Duplicate.)
+[P] Format Single.  In DOS 2.5, this is used to format 88k (SD)
+    disks.  To format an Enhanced Density (127k) disk, just use [I].
+    In DOS 2.0, [I] is the only format option and only handles 88k.
+    (I may be wrong, but I have never had a Double Density drive under
+    Atari DOS 2.0 or 2.5!)
+
+II. General DOS and OS questions:
+
+Q.1) How do I access the disk drives?
+A.1) First, you need to have booted with a DOS.  All but one DOS is on
+     disk (SpartaDOS X is on cartridge).  When the Atari boots up, it
+     does some of its 'boot-up stuff' which includes looking for a
+     disk drive connected and turned on which is set up as drive #1.
+     It then begins to load from the disk's "boot sector".  If none
+     exists or there's a nasty error on the disk, you get the
+     "BOOT ERROR" notice until the error is fixed.  (On SpartaDOS disks,
+     even non-bootable disks have a boot sector, but all the boot
+     sector is is a small program which displays a 'not a boot disk'
+     error).
+     To end the digression, the answer to 'how do I access the disk
+     drives' starts with 'you must boot the Atari with a DOS'.  Check
+     the 8-bit FAQ and the UMICH and other FTP archives for lists of
+     DOSes available for Ataris, but the most used are Atari DOS (for
+     compatibility with almost ALL older software), MyDOS (for an
+     Atari DOS compatible high-end DOS), and SpartaDOS (for a very
+     high-end DOS which looks much like MS-DOS but unfortunately
+     cannont run all software which runs fine with Atari DOS and
+     MyDOS.)  Note: SpartaDOS does NOT run on Atari 400's and 800's
+     (except the cartridge versions and I believe disk version 1.1).
+     Now that you have a DOS loaded, the Atari understands the
+     "D:" device (see below for Atari devices).  Since there is more
+     than one disk drive, you have to be able to tell them apart.
+     The Atari uses numbers when it has more than one of the same
+     device, so "D1:" is drive 1, "D2:" is drive 2, "D3:" is drive 3,
+     etc.!
+     After the "D:" device name comes the filename.  Of the most used
+     DOSes, only MyDOS supports lowercase letters in filenames, but
+     since most programs force uppercase entry for filenames, nobody
+     really seems to use lowercase in their filenames.
+
+
+Q.2) How do I copy things from one place to another?
+A.2) Atari DOS and MyDOS give you the "C" command in their menu
+     interface.  When it asks for a source and destination, you can
+     use wildcards (* and ? like in most other DOSes) to copy more
+     than one file at a time.  You can also present no destination
+     so that a file can be copied from one disk in drive 1 to another
+     disk in drive 1, for example, and the DOS will ask you to insert
+     each disk.
+€
+
+Q.3) What are subdirectories?
+A.3) Subdirectories are places where files go which are just like the
+     normal directory of a disk, except the they happen to be WITHIN
+     that normal directory, or even another subdirectory.  For example,
+     you can have your disk divided up into the "GAMES" files, the
+     "GRAPHICS" files and the "SOUNDS" files.  A directory of the disk
+     (the "root" or "base" or "trunk" directory) will simply list the
+     three subdirectories, "GAMES", "GRAPHICS" and "SOUNDS".  Then,
+     if you ask for a directory listing of the "GAMES" subdirectory,
+     you will see the files (and perhaps other subdirectories) within
+     the "GAMES" directory.  Think of it as a tree.  For people familiar
+     with Macintoshes, "Folders" are simply subdirectories.  A window
+     which appears when you open a "Disk" Icon is the "root", and all
+     of the "Folders" within it have more windows in them which also
+     have file and folder icons.
+     Here's a comparison to using subdirectories on different DOSes
+                    root  'GAMES'   'SPACE' within 'GAMES'
+       AtariDOS      D:     n/a              n/a
+       MyDOS         D:   D:GAMES:     D:GAMES:SPACE:
+       SpartaDOS     D:   D:GAMES>     D:GAMES>SPACE>
+       MSDOS (IBM)   \    \GAMES\       \GAMES\SPACE\
+     Note, only Atari DOS would be using drive 1 here, all other DOSes
+     are not necessarily using drive 1, and MyDOS and SpartaDOS may
+     already 'be within' a subdirectory.
+     In MyDOS and SpartaDOS (and MSDOS), you can change the 'current'
+     or 'default' directory to a different place (a different drive or
+     a subdirectory).  "D:" can stand for "D1:" (like AtariDOS always
+     does) or "D2:GAMES:SPACE:"!  PLEASE READ THE MYDOS DOCUMENTS FOR
+     DETAILS ON THIS!
+
+
+Q.4) What does "P:", "E:", "K:", etc. mean?
+A.4) As stated before, the Atari has devices.  "D:" is added when a
+     bootable disk in drive 1 is read.  Other exist as well:
+       C:   cassette - readable and writeable, no filenames
+     D:   disk drive - readable, writeable, random access, directory,
+          files, multiple devices (up to 9 on MyDOS and newer SpartaDOS,
+          8 on AtariDOS)
+       E:   editior - readable, writeable.  This is how input from the
+            keyboard and output to the screen is normally handled.  If
+            you wish to type a small file up by hand and have it sent to
+            the printer or a file, use "E:" as the source.
+    G:   graphics - writeable.  This is not built into the Operating
+         System but must be loaded.  This is an Epson-compatible printer
+         driver which can easily dump graphics.
+       K:   keyboard - readable.  This is just the keyboard.  Input from
+            it is not 'echoed' back like with the "E:ditor".
+    M:   multi-mouse - readable, writeable?  This is not built into the
+         Operating System but must be loaded.  This is a handler which
+         runs in the background and accepts input from either a mouse,
+         a joystick or a touch-tablet and displays a mouse pointer on
+         the screen.
+€      P:   printer - writeable.  Send data to this and it will appear
+           on the printer.  You can print files (documents, etc.) by
+           using "P:" as the destination.  The Atari XL/XE OSes support
+           "P1:" and "P2:", although I believe this usage is rare.
+     R:   RS232 - readable, writeable, concurrent mode.  This is not
+          built in to the Operating System, but is loaded.  It supports
+          modems.  The Atari 850 Interface has it's "R: handler"
+          'built-in', which means the Atari also looks for an 850 (or
+          other compatible interface) and receives the "R: handler" code
+          from it.  Other interfaces and the Atari 'direct-connect'
+          modems require a file to be loaded which contains the "R:"
+          code.  "R1:" and "R2:" is also supported, but also its usage
+          seems rare.
+      W:   Windowing (screens) - readable, writeable.  This is a graphics
+           8 graphical windowing driver (rarely used, unfortunately!).
+           It must of course be loaded as well.
+    Z:   RTime8 clock - readable, writeable.  This is also not built
+         in to the OS, but loaded.  This is loaded from disk and lets
+         the user access the "RTime8" real time, battery-backed up clock
+         for the Atari 8-bit.  (This is a cartridge-based device).
+         I am unaware of any "Z:" clone which let's you set the Atari
+         internal (non-real time, non-battery-backed-up) clock if you
+         do not have an RTime8, although I'd love to see one! <hint!!>
+
+
+Q.5) How do I print something from DOS?
+A.6) As stated above, just use the "C"opy command, then use the file
+     you wish to print as the 'source', and "P:" as the 'destination'.
+     Example:  "D1:DOCUMENT.TXT,P:"
+
+
+---===  Getting around on the Atari: BASIC ===---
+
+Q.1) What does "READY" mean?
+A.1) Again, this is simply the prompt that Atari BASIC (and most older
+     BASIC's) presents the user when it is in "Immediate" mode.
+     Entering a command will cause it to act immediately.
+     Entering a line number and then a command will place that line into
+     the current program.
+     Entering a line number alone will remove that line from the current
+     program.
+     To start a program, use the "RUN" command.
+     To erase a program, use the "NEW" command.
+     To clear variables, strings and arrays, use the "CLR" command.
+     To load a program, use the "LOAD" command followed by a filename
+     (see \/).To load and run a program, use the "RUN" command followed
+     by a filename.
+     To save a program, use the "SAVE" command followed by a filename.
+     To list a program, use the "LIST" command followed by an optional
+     start and end set of lines seperated by commas.
+
+
+Q.2) Where can I learn Atari BASIC?
+A.2) A (set of) file(s) will be created explaining all of Atari (and
+€Turbo) BASIC's commands and their usage.  (A larger file may be
+produced which will be based on examples provided in the Atari BASIC
+Reference Manual). (As of Jan. 7, 1995, these particular files do not
+ exist).
+
+
+Q.3) How do I quit BASIC?
+A.3.1) Type "DOS" to quit BASIC and return to DOS.
+A.3.2) Type "BYE" to quit BASIC and exit to the OS's "bye" routines
+       (Atari Memo Pad on 400/800's, Atari Rainbow on 1200XL's, and
+       Self Test on other XL's and XE's). (Note: On 1200XL's, use [HELP]
+       to go to the Self Test when the Atari Rainbow appears).
+A.3.3) For XFormer users,remember,[SHIFT]+[F10] reboots & toggles BASIC.
+
+
+Q.4) Why don't strings work?
+A.4) Strings must be "dimensioned" like arrays in Atari BASIC.  Strings
+ are special character arrays.  See the BASIC usage/etc. files mentioned
+ in the answer to question 2.  Simply put, to make a string that will
+ accept up to "#" character, use  DIM <name>$(#)  .  Example:
+ DIM A$(10)  - now A$ can contain between 0 and 10 characters.
+
+
+Q.5) How do I make graphics?
+A.5) Use the "GRAPHICS" command to switch between the following screen
+modes:
+ (Note: All modes except 0, 9, 10 and 11 have four lines of 40 x 24 x 2
+ sized text covering the bottom of the screen.  Add "16" to the mode
+ number to remove this window (but do not make any PRINTs or PUTs to
+ the standard output otherwise a GRAPHICS 0 screen will appear))
+ (Note: Add "32" to the mode number to keep the screen from clearing
+ when it appears.  One problem, however, all screens overlay each other
+ so unless you only use certain modes at certain times, parts of some
+ screens will become (or start out) with 'garbage' on them.)
+     0    40 x 24 x 2 text
+     1    20 x 24 x 5 text
+     2    20 x 12 x 5 text
+     3    40 x 24 x 4 graphics
+     4    80 x 48 x 2 graphics
+     5    80 x 48 x 4 graphics
+     6   160 x 96 x 2 graphics
+     7   160 x 96 x 4 graphics
+     8   320 x 192 x 4 graphics
+     9    80 x 192 x 16 luminence-only graphics
+    10    80 x 192 x 9 graphics
+    11    80 x 192 x 16 hue-only graphics
+    12    40 x 24 x 4-colored text
+    13    40 x 12 x 4-colored text
+    14   160 x 192 x 2 graphics
+    15   160 x 192 x 4 graphics
+  Commands available in Atari BASIC for manipulating simple graphics
+  include:
+    PLOT x,y      POSITION x,y    COLOR c (c=color or character value)
+    DRAWTO x,y    LOCATE x,y,r  (where r is where result will be stored)
+€    SETCOLOR c,h,l  (c=palette location, h=hue, l=lum)
+  Colors:
+    COLOR command colors are not identical to SETCOLOR command colors:
+      COLOR 0  will draw using the background color, set with
+                SETCOLOR 4,hue,lum
+        COLOR 1  will draw using color "0", set with
+                  SETCOLOR 0,hue,lum
+         COLOR 2  will draw using color "1", set with
+                  SETCOLOR 1,hue,lum
+         COLOR 3  will draw using color "2", set with
+                  SETCOLOR 2,hue,lum
+      Except in GRAPHICS mode 10, where COLORs 0, 1, 2, and 3 must be
+        POKEd into memory locations 704, 705, 706 and 707 (the
+        player/missle graphics color locations).  Examples of this will
+        be presented in the BASIC usage files.  (Sorry)
+
+
+Q.6) How do I make sound on the Atari
+A.6) Remember, XFormer 2.5 doesn't support sound!  (XF3.0 does)
+     But anyway, in Atari BASIC:
+       SOUND c,p,d,v
+       c=channel (0-3)
+       p=pitch (0-255)
+       d=distortion (0,2,4,6,8,10,12 or 14)
+       v=volume (0-15)
+ The buzzer character is CHR$(253) aka [CONTROL]+[2] (NOT [CONTROL]+[G])
+
+
+Q.7) How do I move the cursor and edit?
+A.7) The Atari "E:" device (standard input/output which is the "editor")
+     allows the following characters for editing:
+
+Key:             AtASCII #:      Use:
+Atari              none    Turn inverse on/off (Atari 400/800 kybds)
+Inverse [Triangle] none    Turn inverse on/off (Atari XL/XE kybds)
+CAPS               none    Turns caps-mode to lowercase (400/800 OS)
+CAPS               none    Toggles caps-mode from upper to lower (XL/XE)
+Sh-CAPS            none    Turns caps-mode to uppercase (all OSes)
+Ct-CAPS            none    Turns caps-mode to [Control]-[Lock] (all)
+Up ([^-])           28     Move cursor up
+Down ([^=])         29     Move cursor down
+Left ([^+])         30     Move cursor left
+Right ([^*])        31     Move cursor right
+Space               32     Move cursor right (overwrites w/Space char)
+BackSpace           126    Move cursor left (deletes previous char)
+Delete ([ShBkspc])  156    Deletes a (logical) line (1-3 physical lines)
+Insert ([Sh>])      157    Inserts a physical line
+Ct-Delete ([^Bksp]) 254    Deletes char under cursor, pulls rest left
+Ct-Insert ([^>])    255    Inserts space under cursor, pushes rest right
+ClearScn ([^<])     125    Clears screen
+Bell ([^2])         253    Sounds buzzer
+TAB                 127    Moves cursor to next TABstop
+ClrTAB ([^TAB])     158    Clears any TABstop under cursor
+SetTAB ([ShTAB])    159    Sets a TABstop under cursor
+€ESC                  27    Sets ESCape (next edit char after is shown,
+                           not done, non-edit chars shown (like normal))
+RETURN              155    Sends End Of Line (moves cursor to lowerleft
+                           of next line, accepts input)
+Note: Inverse characters have values of the normal version of the
+characters plus 128.  (The only non-viewable inverse character is
+inverse-ESC, or what would be the [ESC],[RETURN] combination.  The
+character exists, but must be set into screen RAM by hand.  Oh well,
+at least you still have 255 easily viewable characters! <grin>)
+
+
+Q.8) How do I make the editor characters appear
+A.8.1) As shown above, you must have an ESC sent before them.
+When simply entering text, type [ESC] then the edit key and the
+character for that edit key should appear.
+When entering text in a PRINT statement, you must have it send an
+ESC beforehand, so first type [ESC],[ESC] to make an ESCape character
+appear, then type [ESC] then the edit key and the character for that
+edit key should appear.  When the PRINT statement is executed, the
+first ESCape (which you typed as two [ESC]'s) will make the editor
+SHOW the following character (even if it is an edit character), then
+the character which you entered (with [ESC] and then the edit key)
+will make that character appear.  This makes it difficult to align
+a set of PRINT statements which make a multi-line picture or menu
+which uses viewed edit keys.  It is probably best to have all of the
+lines in your program with the PRINT statements that can fit visible
+on the screen, then edit them (without putting any of the ESCape
+characters in, then when the picture looks like how you want it on
+the screen, move the cursor to on top of each edit-key character and
+press [Control]+[>] (Control-Insert).  A blank space should appear
+under the cursor and the rest of the line should move right.  Now,
+type [ESC],[ESC] and an ESCape edit-key character should appear
+where the blank space was.  When you are finished doing that for
+each line with those PRINTs in it, BE SURE TO ENTER THEM INTO THE
+PROGRAM BY PRESSING [RETURN] ON EACH OF THOSE LINES!  Whew!
+A.8.2) Set the memory location 766 to 1 with the command "POKE 766,1"
+to turn on the no-edit mode (ALL characters except End Of Lines
+will appear, even ClearScreens!)  When you want to go back into
+normal mode, set the location back to "0" with "POKE 766,0".
+
+
+Q.9) What's with the colors changing?
+A.9) THIS, MY FRIEND, IS THE FIRST EVER SCREEN SAVER!  This is called
+"Attract mode" as was used on the Atari 2600 and Atari 400/800/XL/XE
+series (and probably on the 5200 and 7800 but I cannot confirm this).
+When a key hasn't been pressed for 7 or 9 (depending on OS, model, etc)
+minutes, the screen colors begin changing, thus protecting your TV
+or monitor from having a static image burned on it.
+To turn this mode off, press a key, or, if within a program, use the
+command "POKE 77,0" at least once every few minutes (IF the screen is
+active, otherwise turning it off would be kinda useless).
+To turn it on, wait 7 or 9 minutes without pressing a key or having
+location "77" set to "0", or set location "77" to "128" with
+"POKE 77,128", voila! instant attract mode!
+€
+
+Q.10) How do I access 'devices' on the Atari?
+A.10) The following commands are available to Atari BASIC's (and also
+ variations on these are available in most other Atari languages!):
+  OPEN #a,b,c,d$    Opens channel 'a' for access to 'd$' in mode 'b'
+                    with auxillary mode 'c'.  Channel 'a' must be
+                    free or a 'Channel already open' (129) error
+                    occurs.  Examples:
+                     OPEN #1,4,0,"K:" - input from keyboard
+                     OPEN #2,8,0,"P:" - output to printer
+                     OPEN #3,12,0,"D:FILE" - random access to disk
+                     OPEN #4,9,0,"D:DATA" - append-output to disk
+                     OPEN #5,13,0,"R:" - concurrent to RS232 (modem)
+                     OPEN #6,6,0,"D:*.TXT" - directory access to disk
+                     (reads directory of "*.TXT" mask)
+  CLOSE #a          Closes channel 'a' (freeing it for use)
+  GET #a,b          Reads a byte from channel 'a' and stores it in 'b'
+ PUT #a,b          Puts byte 'b' onto channel 'a'
+  INPUT #a,b$       Reads a string (up to 255 bytes and a REQUIRED
+                    'end of line' (character 155)) from channel 'a'
+                   and stores it in 'b$'
+  INPUT #a,b        Reads a string (up to 255 bytes and a REQUIRED
+                    'end of line' (character 155)) from channel 'a'
+                    and stores the numeric value of it in 'b'
+  PRINT #a,<stuff>  Just like the normal BASIC PRINT statement, but
+                    sends the information to channel 'a' (semicolons,
+                    comas, and mixed types are of course allowed).
+  STATUS #a,b       Reads the error 'status' of channel 'a' and stores
+                    it in 'b'
+  XIO a,#b,c,d,e$   General I/O call.  This a little complicated and
+    may be expanded upon in a future revision.  Just be aware of the
+    following:
+    a - command
+    b - channel to use (usually must be free)
+    c - auxillary mode 1
+          d - auxillary mode 2
+          e$ - file or device to act upon
+        Examples:
+          XIO 32,#1,0,0,"D:FILE,OLDFILE" - renames file
+          XIO 33,#1,0,0,"D:OLDFILE" - DELETES file
+      XIO 34,#1,0,0,"D:GAMES" - creates a directory in My- & Sparta-DOS
+          XIO 35,#1,0,0,"D:NEWFILE" - locks a file from over-write and
+            deletion
+          XIO 36,#1,0,0,"D:NEWFILE" - UNlocks a locked file
+          XIO 40,#1,4,0,"D:PROG.OBJ" - loads and runs a binary file
+            (like "L" in Atari and MyDOS)
+          XIO 40,#1,5,0,"D:PROG.OBJ" - loads a binary file
+            (like "L" in Atari and MyDOS with the "/N" option)
+          XIO 41,#1,0,0,"D:GAMES" - changes default directory that
+            drive/subdirectory (all calls to "D:" will now occur within
+            that drive/directory)
+         XIO 254,#1,0,0,"D2:" - FORMAT a disk (in Atari DOS 2.5, this is
+           format 'enhanced', to format 'single' density, use XIO 253)
+€            (in MyDOS, this is format, but not 'enhanced', use
+      XIO 253,#<channel>,1,0,"D<drive>:" for format a drive in enhanced
+            mode).
+   NOTE: 39 and 40 are the same.  Also note the useage of AUX1 in the
+          "XIO 40" example.
+
+
+---===  Getting Atari files to an IBM:  ===---
+
+Q.1) How can I read Atari disks on my IBM?
+ _______
+[ note: ] Someone please give more details or corrections here!  Thanx!
+ ~~~~~~~
+A.1.1) If you have double-density Atari disks, you can use the program
+ "Util" on the IBM which can read double-density Atari disks.  Please
+  see the Atari 8-bit FAQ for more details.
+A.1.2) If you have an Atari 1050 disk drive,you can use the program MULE
+to copy files, one file at a time, 20k chunks at a time, from the
+Atari to the IBM.  You first must format a 180k disk on your IBM,
+the run MULE on your Atari to get a file onto the MULE disk, then
+run MULE on the IBM to get the file onto the IBM.  Tedious, isn't
+it?  MULE wasn't meant to be a fully-functional program, just a
+demo to show that this was even possible.
+A.1.3) If you're fortunate to have a Black Box interface on your Atari,
+you can get an external IBM drive and the Black Box's add-on, the
+Floppy-Board and simply copy files from your Atari disks or hard
+drive(s) onto IBM disks via the floppy board, then load them up
+on your IBM.
+
+
+Q.2) Ok, I can't do any of that, now what?
+A.2.1) You can use SIO2PC, which is a program for IBM's which turns your
+    IBM into a set of Atari disk drives.  You need the SIO2PC cable
+       (which you can purchase, assembled or unassembled, or buy parts
+    and build it yourself) and the SIO2PC software (available at UMICH).
+       Connect your IBM to your Atari, load SIO2PC, and then run the
+       program FILE2PC on the Atari to transfer files to the IBM's hard
+    drive.  Or instead create a disk image within SIO2PC and copy files
+       from one disk (a real Atari floppy) to another (the SIO2PC image)
+   with the Atari or MyDOS "C"opy command.  If you want to extract files
+     out of the SIO2PC disk image file and store them on your IBM's hard
+      drive or floppies as single files, either again use FILE2PC or use
+       S2PC, an IBM program which can extract files from or add files to
+       MyDOS-compatible SIO2PC disk images!
+A.2.2) You can use two modems to download files from your Atari 8-bit.
+A.2.3) If you don't necessarily want files that you already have on your
+       Atari 8-bit, you can download files from the huge collection
+       available at FTP sites and Atari 8-bit supporting bulletin boards
+       and save them onto your IBM.
+A.2.4) If you have only one modem, so you can't connect both your Atari
+       8-bit and your IBM together via modems, you can do it via null-
+       modem, OR you can upload files from your Atari to some bulletin
+       board or account you have access to, and then connect the modem
+       to your IBM and download the files.
+€
+
+Q.3) Is there any easier way to get Disk Communicator (Atari disk image)
+     files to and from SIO2PC disk images or PC Xformer XFD disk images
+ other than using Disk Communicator 3.2 on my Atari!  I mean, both files
+     are disk images!  They're both on my PC's hard drive!  <cry>
+     (AND NOTE: DiskComm. doesn't like SIO2PC a lot of the time anyway!)
+A.3.1) Yes!  There's a new IBM program out called DCM2DSK.
+    (Why "DSK" and not "ATR"?  To keep people from getting confused with
+     the ATR-8000(?))  The current version is '2' and it's available at
+      UMich's archives and probably elsewhere.  Filename: "DCM2DSK2.ZIP" in
+       the SIO2PC directory.
+A.3.2) There's also a new program which converts DCM's to XFD's.  I need to
+       look at it myself first before I can describe it (or someone help
+       me, please?)
+
+---===  Where to get or FTP files mentioned in this FAQ:  ===---
+  
+The PC Xformer 2.0 and 2.5 can be downloaded from the "ftp.clark.net"
+FTPSite:
+    Directory/file-path: systems/msdos/emulators/xf25.zip (or xf2.zip)
+  
+  PC Xformer 3.0 can be purchased for $29.95 (prices may vary) from:
+
+    U.S.A.
+    ======
+    American Technavisions  510-352-3787, fax 510-352-9227
+    B & C Computervisions   408-986-9960, fax 408-986-9968
+    Mid Cities Computers    310-867-0626, fax 310-920-8933
+    Rising Star Computers   800-252-2787, fax 513-254-7970
+    Toad Computers          800-448-8623, fax 410-544-1329
+
+    Germany
+    =======
+    Atari Bit Byter User Club    +49 02366-39623 (same for fax)
+    KE-Soft                      +49 06181 87539, fax: +49 06181 83436
+
+    United Kingdom
+    ==============
+    Micro Discount          +44 021 353 5730, +44 021 352 1669
+    
+    or directly from Branch Always Software: (USA)
+      14150 N.E. 20th Street, Ste 302, Belleuve, WA 98007.
+      1-206-369-5513, fax 1-206-885-5893
+      e-mail: BraSoft@aol.com
+  
+The following programs are availabel at the "archive.umich.edu" FTPsite:
+  SIO2PC: atari/8bit/sio2pc/*.* (all files are SIO2PC/utility files)
+  Mule: atari/8bit/Diskutils/mule.com (Atari), mule.exe (IBM), mule.txt
+  Util: atari/8bit/Utilities/myutil.zip (IBM)
+
+AGAIN, >>> PLEASE <<< CHECK OUT THESE OTHER FILES:
+  ATARI 8-BIT FAQ
+  PC XFORMER DOCUMENTS
+€  MYDOS DOCUMENTS
+  SIO2PC DOCUMENTS
+
+Thanx!
+
+Contacts:
+
+I (Bill Kendrick) can be contacted at:
+  mailto:kendrick@vax.sonoma.edu,
+  or on the "comp.sys.atari.8bit" and "comp.emulators.misc" newsgroups,
+  or New Breed Software, 59 Palm Lane, Novato, CA 94945-2574 USA.
+
+Darek Mihocka, the author of the PC Xformer can be contacted at:
+  mailto:BraSoft@aol.com
+  or on the "comp.sys.atari.8bit" and "comp,emulators.misc" and
+    other newsgroups,
+  or Branch Always Software, 14150 N.E. 20th Street, Ste 302, Belleuve,
+    WA 98007 USA.
+
+Micheal Current, keeper of the Atari 8-bit FAQ files can be contacted
+at:  mailto:mcurrent@carleton.edu,
+  or on the "comp.sys.atari.8bit" newsgroup.
+
+PLEASE add questions and report any mistakes or bugs to me ASAP.
+
+-bill
+
+
+

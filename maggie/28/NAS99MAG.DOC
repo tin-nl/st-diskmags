@@ -1,0 +1,202 @@
+ 
+‰
+                       ‰Live at NAS 1999 by Q-Funk
+
+ 
+ Abstract 
+
+How  happening  is the Atari scene,  nowadays,  when it comes to  club-
+sponsored  exhibitions and gatherings?   Of course,  everyone remembers 
+those  days  when every major city hosted an Atari Fest  of  some  sort 
+which  typically  attracted hundreds or,  in some cases,  thousands  of 
+Atari  fanatics  to discover the latest software releases  or  hardware 
+hacks,  but  it  often  seems the last time those happened  was  Before 
+Christ...
+
+Obviously,  the  glorious days are long gone,  but there are still some 
+dedicated user groups who recite the Reboot according to Sam Tramiel en 
+masse and the Swedish Atari Club is one of the most visibles  remaining 
+to day, thanks largely to its resourceful organiser Mille Babic.
+
+This  year's  Nordic Atari Show's theme was:   Networking.   During the 
+June 11-13 weekend, various people (including yours truly) demonstrated 
+how  practical  one's  aging  ST,  TT or Falcon can be,  when  used  in 
+conjunction with other platforms within an Intranet and what advantages 
+some of the TOS networking software has over its flashier competition.
+
+My  own  tentatively scheduled presentation was:   Networking with  NMD 
+using  MiNTnet  and Unix servers.   Unfortunately,  thanks to the  nice 
+folks  at  the Finnish customs,  the Riebl Ethernet card I had  ordered 
+from  Best Electronics arrived just minutes after my departure from  my 
+hometown.   Said the text message on my mobile,  delivered on the train 
+to Helsinki:
+
+
+10-Jun-99 13:50:53 Tomi, You just received a box of something from Best 
+Electronics, USA.
+
+
+This meant that the networking part of my speech would have to be  left 
+out.... @#$! voi Perkele Jumalauta!!!  [*snip* Sorry, no Finnish humour 
+allowed here]
+
+
+ Export 
+
+The  outgoing  trip  in itself was pretty uneventful:   I ran  into  my 
+dayjob's  marketing director in Helsinki Central and met  the  Fishpool 
+guys  for  a quick snack,  then joined #atari fanatic Pahartik  on  the 
+ferry  to Stockholm where we then took the train to the  Swedish  west-
+coast city of Goumlteborg.
+
+
+ Memorable quotes: 
+
+Setok:  "There's really only one type of girls you're likely to meet on 
+Silja [ferry] Lines: the ritsy, posh Swedish babe."
+
+Pahartik:   "Remember that "posh" female we saw yesterday? I heard some 
+funny  noises  coming out of the women's bathroom near  the  disco  and 
+there  she  was,  mumbling something like 'OK,  you can come out honey, 
+there's nobody here!'"
+
+Q-Funk:   "Man! Forget about the sterile design and crawly speed of the 
+Finnish Pendolino or the tight seats of the Canadian LRC, those Swedish 
+X2000  trains are the quintessence of Scandianvian comfort and  design.  
+Where can I buy one?"
+
+
+ Login 
+
+We  arrived in Goumlteborg early-afternoon and met up  with  organizers 
+Mille Babic, Jonas M&ouml;ller Nielsen and Erik Haumlill after a rather 
+pleasant  10-minute  tramway  ride  through a  downtown  area  that  is 
+currently undergoing MAJOR reconstruction (Mille later told us that  it 
+was the very last weekend for those trams, prior to a complete overhaul 
+of  the  nearest  terminal that is expected to last until  the  end  of 
+summer - lucky us, NAS happened before the deadline!).
+
+After  unpacking my TT and Pahartik's SparcStation IPC,  we headed  out 
+for a curry in company of another SAK member and then wasted the better 
+part  of the evening trying to get a PPP connection between my  TT  and 
+Kenneth  Medin's  STinG  subnet (using null-modem),  but  all  attempts 
+failed  miserably (but mummy,  it works fine using MiNTnet machines  at 
+home?!) which made him comment later:  "Hey,  I'm gonna start an ISP of 
+my own and call it SLIPNET.  It's free for any MiNTnet user who manages 
+to get it runing!"
+
+Voi vittu @#$%!.... [Censored by Net Nanny]
+
+
+ Config 
+
+Anyhow,  my revenge came the following day,  when I closed an afternoon 
+of MiNTnet seminars by introducing the concepts behind my new  upcoming 
+MiNT distribution,  NMD (New MiNT Distribution - but Jonas said "Oh, we 
+thought it meant NAS MiNT Distribution!" *grin*)
+
+I started by first brushing an historical overview of the previous  TAF 
+and  KGMD  distributions and then explained the reasons why  one  would 
+prefer  NMD,  then  veered off into a complete Unix 101 course  on  the 
+filesystem  hierarchy  that morphed into a full expose on the  FHS  2.0 
+standard implemented in NMD.
+
+
+ Reboot 
+
+Now,  children,  normally,  Unkle Funk is rather well-behaved but,  for 
+some  reason,  things  got slightly out of hands,  as he went on waxing 
+poetic  about  the merits of an "old,  obsolete,  deprecated ST running 
+MiNT  virtual consoles with Pine or Mutt to access the Internet over  a 
+clean,  sharp,  user-friendly hi-resolution SM124 that one can purchase 
+from the local pawn shop or flea market for a mere $20 bucks along with 
+its  accompanying ST (batteries not included) ..." and compared  it  to 
+"those brilliant Millenium 333 GHz running Windows 1901 for this  oh-so 
+fast networked Quake game that your eyes cannot see the players  moving 
+on  the screen,  because the graphics card has "only" 128 MB of  MPEG-5 
+video RAM..."
+
+This  eventually went off-track completely,  as I mumbled over how many 
+years it took me to find one place to get myself the hardware I need to 
+keep my Atari productive (graphics card, Ethernet adapter, etc.) and as 
+to  why some MagiC applications I love could not be  N.AES-friendly  or 
+vice-versa...  mostly  how  the  lack  of current  standards  on  Atari 
+(compared  to Finder / Mac-PPP or Windows / Winsock,  which are cast in 
+concrete and determined by a central authority) make it this much  more 
+difficult for people to write a piece of software that will work on any 
+remaining TOS system on the planet.
+
+Apparently,  it raised many open issues about the lacking compatibility 
+between  STinG,  MiNTnet  and  I-Connect  and how  this  restricts  the 
+selection  of  Internet clients one gets,  because the authors have  to 
+make  a  choice about which AES and TCP/IP they  will  support.   Sure, 
+there  are the ATACK brothers who take the time to make separate  STinG 
+and  MiNTnet  versions,  but  most authors cannot be bothered  so  this 
+leaves the user with a difficult choice as well.
+
+Anyhow,  the  point was well-taken by the attending crowd and my speech 
+ended gracefuly, but still... sleep deprivation or something... I could 
+have been better prepared, I suppose. *grin*
+
+
+ Syslog 
+
+After many years of reading someone's e-mails, IRC chats and newsposts, 
+it's  always nice to finally put a face to a familiar name and NAS  was 
+no exception. For the first time, I had the chance to meet the likes of 
+Mille  Babic,  Martin Graiter and several new IRC #atari regulars  that 
+poped  in since a couple of years and a few other people we  befriended 
+with (unfortunately, STinG co-author Ronald Andersson was missing).
+
+Other items worth mentioning were:
+
+ A couple of heavily souped-up Hades 060 (Hi Erik and Jonas!).
+ Quite a few TTs with various VME gizmos installed.
+ Lots of ST gear for sale (everyone and myself rushed in  to  purchase 
+ some brand new Scandinavian MEGA-ST keyboards Jan Persson had for sale 
+ - at 95 SEK, it was a bargain I just couldn't pass up!).
+ Several recased Falcons on which really cool demo coding was performed
+ by the Nature crew (heid & aring!).
+ SAK's brilliant barcode-based ID card system, for an easier visitor
+ login/logout procedure.
+
+
+ Lint 
+
+Looking  back,  I  think  I  actually  enjoyed  NAS  much  better  than 
+Alternative Party, mainly because this time I had my TT to thinker with 
+(and  write this article,  between the sightseeing and chatting  bits), 
+while  I  basically  came empty-handed with just  a  backpack  full  of 
+clothes at ALT.
+
+Also,  as  the Reservoir Gods' experience proves (they decided to  code 
+their  amazing Frogger clone "Bugger!" after playing the original  game 
+at ALT), a lot of inspiration comes out of these gatherings and NAS was 
+no  exception.  Look for the results in the installation package of NMD 
+"coming  soon to an FTP site near you;  check your local newsgroup  for 
+upload times."
+
+Otherwise,  the  crowd there was friendly and generous,  the train ride 
+really fun and the variety of restaurants found within walking distance 
+utterly  cool.  Finding  that brand new Scandinavian MEGA keyboard  was 
+also  God  sent,  given I nowadays need those extra vowels on  a  daily 
+basis.
+
+Pahartik  also  enjoyed the trip quite a bit,  especially the  tax-free 
+shops  on  the  ferry (quiz:   what does a Finn always  buys  in  large 
+quantities,  in  order  to  initiate  "party" mode?)  and  the  Krishna 
+restaurant where we ate on Saturday (me thinks of a long time ago, in a 
+country far,  far away,  where he used to enjoy the prasadam on a daily 
+basis and God saw it and thought it was Funky).
+
+
+ Logout
+
+ Anyhow,  too bad the Brits couldn't make it,  but watch for more Maggie 
+reports over the next Finnish gathering in their Atari Computing column 
+and in this e-zine.
+
+Moikka! ;-)
+
+Q.
+

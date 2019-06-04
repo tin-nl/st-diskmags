@@ -1,0 +1,226 @@
+0660302020370
+1
+2
+9        [.....................................................]001
+„
+                                        Maggie 24: Demo Programming€
+
+
+                              "THE BLOB"
+                          €Steven Tattersall
+
+
+
+One of the newer-style demo effects is that of "blobs", where there 
+are two or more amorphous shaped objects which distort when they come 
+into proximity with one another (see the ST intro for this edition of 
+Maggie for instance). More advanced demos, especially on the PC, have 
+this effect in 3 dimensions, but here we'll concern ourselves with the 
+"simple" 2D version.
+
+
+
+
+
+                          PRINCIPLE OF BLOBS€
+
+The idea behind blobs is not a new one, but is quite tricky to 
+visualise at first. The best analogy is that of clouds. Clouds are in 
+essence just like blobs - they are made up of water vapour, and when 
+the amount of water vapour in our cloud reaches a certain level, it 
+becomes visible to us. Below this level there is still a certain level 
+of water vapour, but we cannot see it.
+
+Now imagine that another cloud comes along and merges with our first 
+cloud. Both have their own levels of water vapour at given points. Now 
+it is possible that there are areas in these two clouds where two 
+water levels that were previously invisible now overlap. The water 
+levels combine to give a new level which now becomes invisble. As the 
+two clouds pass through one another we see a continuously-changing 
+pattern.
+
+Exactly the same principle is used in the code to produce blobs. At 
+any given point we simply sum the "densities" of all the elements in 
+our system and plot the outcome.
+
+
+
+
+
+                            DEFINING BLOBS€
+
+We can define the blob by means of a "density function". When we 
+define the blob at point (x,y) - where (x=0,y=0) is the centre of the 
+blob - we can use a formula to define the density at that point.
+
+The density value is each case will range from 0 to 1. A value of 0 
+means that at this point there will be no effect from the blob. A 
+value of 1 is the maximum density allowed: when summing our densities, 
+any resultant value above 1 will simply be treated as 1.
+
+
+For the sake of simplicity and prettiness, we will only model our 
+process around circular blobs. First we choose a value ˆmax_r€ for the 
+maximum radius of the blob. This is the distance from the centre 
+further than which the blob will have no effect at all.
+
+Now we can apply our algorithm to determine the density at each point 
+of our blob. In simple pseudocode, this is:
+
+„        !------------------------------------------------------------
+        ! x and y are the co-ordinate values given as input
+
+        LET distance = sqr ( x*x + y*y) !Calc distance from centre
+        IF distance > max_r THEN
+          LET density = 0               !Outside max_r, density=0
+        ELSE
+          LET fraction = (distance/max_r)
+                                        !Convert distance to the
+                                        !range 0 to 1
+          LET density = (1-fraction^2) ^ 4
+                                        !calculate density function
+        ENDIF
+        !------------------------------------------------------------
+                                Fig 1. Simple density function€
+
+
+The line "LET density = (1-fraction^2) ^ 4" is the interesting one.
+
+Firstly, it takes the value ˆfraction€ and firstly converts it to a 
+value equal to 1 at the very centre of the blob and 0 at the edge of 
+ˆmax_r€, but the function tails off increasingly quickly as we reach the 
+outer reaches of the blob.
+
+Secondly, the second part of this assignment statement accentuates the 
+tail-off of density as we reach the outside even more. This is to give 
+a smoother effect when two or more blobs combine.
+
+Some of you might wonder why the power used here is "^4" rather than 
+"^2" This is because we are working in two dimensions rather than 
+three. Without going into the maths too deeply, our model here is a 
+two-dimensional cross-section of a 3D model, so repeating the squaring 
+of our density function is a simple way of reducing the calculations 
+to 2 dimensions.
+
+
+
+
+                             USING BLOBS€
+
+The supplied code for this algorithm is written in GFA basic 
+(BLOB1.LST). It is a simple example which uses the above code as a 
+function - FN blob(x%,y%) - to convert orthogonal x and y into a 
+density for two blobs at each point on the screen. It then sums these 
+densities, caps them so the sum is less than one and plots a colour 
+for the corresponding value.
+
+
+
+
+
+                         FASTER BLOB, FASTER€
+
+There are several ways of optimizing this function for use in assembly 
+or some other lower level language. Our function above uses the "sqr" 
+square root function to calculate the distance from the centre of the 
+blob. By replacing "ˆdistance€" with a new variable "ˆdistance_squared€" 
+we produce a revised function:
+
+„        !------------------------------------------------------------
+        ! x and y are the co-ordinate values given as input
+        LET distance_squared = x*x + y*y
+        IF distance_squared > max_r*max_r THEN
+          LET density = 0               !Outside max_r, density=0
+        ELSE
+          LET fraction_squared = (distance_squared/max_r/max_r)
+          LET density = (1-fraction_squared) ^ 4
+                                        !calculate density function
+        ENDIF
+        !------------------------------------------------------------
+                                Fig 2. Revised density function.€
+
+This is also available in "BLOB2" to show that it gives the same 
+result.
+
+Note the use of "fraction_squared" as a result of the substitutions.
+This is because
+
+        fraction = distance
+                   --------
+                    max_r
+
+but:    distance_squared = distance.distance = distance   distance
+        ----------------   -----------------   -------- . --------
+          max_r . max_r       max_r.max_r        max_r      max_r
+
+(Basic GCSE Maths, apparently)
+
+ - which is equal to "fraction" squared.
+
+
+
+
+
+
+
+                          BLOBS IN ASSEMBLER€
+
+Now the function is more or less ready to be converted into assembler, 
+since the function nearly now only uses integers. We need to now 
+change the range of "fraction" and "fraction_squared" to get something 
+really useable.
+
+Here are the original lines we need to change:
+
+„          LET fraction_squared = (distance_squared/max_r/max_r)
+          LET density = (1-fraction_squared) ^ 4€
+
+ˆfraction_squared€ still ranges from 0 to 1. If we make it range from, 
+say 0 to 255 by multiplying ˆdistance_squared€ by 256 before we start - 
+not unreasonable for assembler - the result in "ˆdensity€" will range 
+from 0 to 256^4-1 (ie a long word value in assembler)
+
+„          LET fraction_squared = 256*distance_squared/max_r/max_r)
+          LET density = (1-fraction_squared)^4€
+
+We now have the whole function in a format useable in assembler:
+
+„        !------------------------------------------------------------
+        ! x and y are the co-ordinate values given as input
+        LET distance_squared = x*x + y*y
+        IF distance_squared > max_r*max_r THEN
+          LET density = 0               !Outside max_r, density=0
+        ELSE
+          LET fraction_squared = 256*distance_squared/max_r/max_r)
+          LET density = (1-fraction_squared)^4
+                                        !calculate density function
+        ENDIF
+        !------------------------------------------------------------
+                        Fig 3. Assembler-useable density function.€
+
+
+Once this is written in assembler, we can store the blob as a table 
+and simply add two or more tables together to create animated blobs. 
+If I have time in the coming week there will be a small ST intro to 
+this issue of Maggie which does this in realtime.
+
+
+
+Steven Tattersall
+12/10/97
+
+email: tat@avena.com //  s.j.tattersall@cms.salford.ac.uk
+or write c/o Maggie Towers
+
+
+
+Reference:
+
+1.      „POV (Persistence of Vision) Raytracer€ Documentation and 
+        sourcecode.ˆ
+        €This describes a blob function in 3 dimensions only, but 
+        contains lots of handy hints.
+        Available from ˆhttp://www.povray.com€ and in most PD libraries.
+
+
+

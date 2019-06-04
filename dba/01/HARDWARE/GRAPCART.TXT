@@ -1,0 +1,73 @@
+SPECIAL GRAPHIC CART
+
+Mat screen C32, the module graphiccart.
+
+The C32 matscreen is a graphiccart that is build up from several
+small carts. So this time you don't have to buy things you don't
+want to use (yet). There is a basic model to make the first jump
+into the system easy. Later on you can build it as expancieve and
+big as you want (and can afford). The spectrum of 640 x 400 until
+800 x 600 in 256 colors or 1280 x 960 in 16 colors, or even 1664 x
+1200 in mono will confince you.
+
+* For the VME slot on the TT there is the new C32-VME made.
+  There is 1 Mb RAM with EG and it can be used for Mono with 110Mhz
+  or 160 Mhz with analog or ECL monitors.
+* The C32-ST is the basic version with 256 Kb DRAM onboard and kann be
+  used in an Atari Mega ST. You also can use it on an TT but then you
+  will need an adaptor.
+* 512 Kb RAM can be obtained by putting in 256 Kb memeory modules.
+* The 1 Mb RAm option supply's you enough memory to make hardware windows
+  The 1 Mb module will contain the hole 1Mb memory from the ST.
+* The EG option (Erweiterte Grafik or Expanded Graphic) works on a
+  pixeltact time of 50 Mhz for high resolutions or higher monitor freq.
+  You can only use it if you have 1 Mb or more. An even futher 110 Mhz
+  tactfreq. will give you the option mono 1280 x 960 for ECL monitors.
+* Super mono will be avaiable by a 160 Mhz EG.
+* 256 greytinges kann be made with an 8 bit pallette.
+* Optional is an Mathematic processor MC 68881.
+* Something really fantastic: Real 3-d pictures with a special "shutter
+  glasses".
+* The videocompatible resolution of 768 x 576 on 14 Mhz and 50 Hz inter-
+  laced is possible with 16 colors and 256 Kb RAm or with 256 colors
+  with 512 Kb or more.
+* The Genlock option makes it possible to make combinations of video
+  and computergraphics.
+* Because of the use of the 82786 from Intel these carts are almost
+  universal usable. It supports different resolutions (video to High res)
+  uses from 1 bit to 8 bits per pixel and it has very fast graphicfunc-
+  tions, hardware windows and zoom options. The pixelfreq. is selectable
+  from 14,25 and 28 Mhz to optional 50, 110 or 160 Mhz.
+* All these functions are selectable in software, so no dipswiching.
+* All GEM programms you already use are also working with the new
+  VDI driver. The ST must have a blitter and a TOS version 1.4 and up.
+
+Tech. info.
+
+Controller  Mhz  Resolution  Screenfreq  Screen     Colors   Best
+                                         structure           Monitor
+----------------------------------------------------------------------
+ C32-256Kb  28   600 x 400   85 Hz       N. interl  256     14" multifreq
+            25   800 x 600   60 Hz       interl.     16     14" or 16"
+                                                                Multifreq
+
+C32-512Kb   28   640 x 480   80 Hz       N.interl   256     14" Multifreq
+            28   800 x 600   50 Hz       N.interl   256     16" Multifreq 
+
+C32-1Mb     28   640 x 480   80 Hz       N.interl   256     14" Multifreq
+            28   864 x 608   95 Hz       interl     256     14" or 16"
+                                                                Multifreq
+EG-Opt.     50   800 x 600   70 Hz       N.interl    16     16" Multifreq
+(Expanded   50  1280 x 960   62 Hz       interl      16     20" Multifreq  
+ graphics)  50  1280 x1024   58 Hz       interl      16     20" Multifreq
+           110  1280 x 960   66 Hz       N.interl    Mono   19" ECL Mono
+ 
+Super Mono 160  1280 x1024   85 Hz       N.interl    Mono   21" EIZO 6500
+           160  1664 x1200   60 Hz       N.interl    Mono   21" EIZO 6500
+
+
+So here is a lot of info for ower CAD an Graphic people among use.
+I am sorry but i couldn't get any prices yet...
+                                               
+                                                Bonus Software
+          

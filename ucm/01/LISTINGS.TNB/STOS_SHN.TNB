@@ -1,0 +1,120 @@
+
+                       STOS-SEITE AUS DER SHN 7/93
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ Hier kommt nun wie  versprochen das  Listing aus dem  Schweden-Mag. Nur zur
+ kurzen Information, es geht um einen Multi-Scroller. Auerdem ist die STOS-
+ Extension "MISTY" erforderlich. Ihr findet sie (wie sollte es anders sein?)
+ mit auf dieser Disk. Wie bereits erw„hnt, habe ich die Texte original ber-
+ nommen und darunter ( soweit es meine Schwedisch-Kenntnisse, meine Zeit und
+ mein W”rterbuch zugelassen haben ) die deutschen  šbersetzungen in Klammern
+ belassen.
+ Also dann,fangen wir an:
+
+  10 key off : curs off : flash off : hide : mode 0 : click off
+
+ STOS-initieringar,fixar uppl”sning & s†n't (som vanligt)!
+ [ STOS-Initialisierung,Aufl”sung einstellen... ]
+
+  20 dim ADR(32),IMX(360),IMY(360),IMG(360)
+  30 reserve as work 10,5120
+  40 unpack 5,back
+  50 BP=0 : X=0 : Y=0 : A=0
+
+ rad 20 fixar till n†gra variabler med ett visst antal positioner;rad 30 re-
+ serverar en bit minne till en figur vi skall an v„nda;rad 40-50 packar upp
+ bilden och fixar nollv„rden f”r n†gra variabler! bilden best†r av tre st.
+ likadana figurer (32*32 stora) bredvid varandra h”gst upp i v„nstra h”rnet.
+ [ In Zeile 20  werden Variablen  werden festgesetzt. In Zeile 30 wird 1 Bit
+   Speicherplatz fr eine Figur, die verwendet werden soll,reserviert. Zeile
+   40 bis 50 packen das Bild aus  und setzen Nullwerte von verschiedenen Va-
+   riablen fest. Das Bild besteht aus 3 gleichen  Figuren ( 32*32 gro ) die 
+   nebeneinander in der linken oberen Ecke sind. ] (ich wrde meinen,es geht
+   um einen Font...)
+
+  60 for B=0 to 31
+  70 ADR(B)=BP+(X/16*8)+(Y*160)
+  80 skopy 11,back,32,0,64,32,start(10)+ADR(B),0,0
+  90 BP=BP+2 : if BP>6 then BP=0 : X=X+32 : if X>=320 then X=0 : Y=Y+32
+ 100 screen copy back,-1,0,95,32 to back,0,0
+ 110 ink 0 : draw 0,0 to 0,32
+ 120 next B
+
+ rad 60-120 g”r om 32 g†nger (for...next) och g†r i kort ut p† att man l„g-
+ ger in en enbitplansbild scrollad en pixel †t h”ger p† en position i minnet
+ Positionen sparas „ven i en variabel f”r att kunna anv„ndas senare!
+ [ Zeile 60 bis 120 wird um die 32 Mal eine For...Next-Schleife gemacht und
+   e geht kurz darum,wie man ein 1Bit-Plan-Bild im Speicher einen Pixel h”-
+   her scrollt. Mit dieser Position kann man eine Variable sparen,die man
+   sp„ter anwenden kann. ]
+
+ 130 for I=0 to 359
+ 140 X=sin(rad(I*2))*10 : Y=cos(rad(I*3))*14
+ 150 XS=XS+X : YS = YS+Y
+ 160 IMX(I)=XS mod 32 : IMY(I)=YS mod 32 : IMG(I)=XS mod 32
+ 170 next I
+
+ Detta „r principen hur man ber„knar en sinus/cosinus kurva,fast inte riktig
+ Multiscrollern kr„ver v„ldigt sm† tal f”r att v„lja r„tt figur ur minnet,om
+ man  vill ha tex. ett gungande logo g”r s† h„r: "y(i)=sin(rad(I*3))*30+30"
+ eller likn.=> st”rre kurva!
+ [ Hier die Grunds„tze zum  Berechnen einer  Sinus/Cosinus-Kurve, allerdings
+   nicht ganz richtig. Es ist  sehr schwierig  den Multiscroller mit kleinen
+   Zahlen zu berechnen um die richtige Figur im Speicher zu w„hlen, wenn man
+   zum Beispiel noch ein Schwabbel-Logo  haben will wie hier: ( siehe oben )
+   oder gleich => groe Kurve! (das letzte verstehe ich nicht ganz...) ]
+  
+ 180 logic=back
+ 190 cls back : cls physic
+ 200 palette $0,$700 : get palette (logic) : wait vbl
+ 210 mouseoff : POS=0 : s10=start(10)
+
+ rad 180-210 fixar till paletten,st„nger av musen och fixar n†gra variabler
+ till!
+ [ Zeile 180 bis 210 stellen die Palette ein, schalten die Maus aus und set-
+   zen noch diverse Variablen fest. ]
+
+ H„r kommer loopen!
+ [ Hier kommt der Loop! (kicher,h„tte ich wohl nicht bersetzen brauchen! ]
+
+ 220 inc POS : if POS>359 then POS=0
+ 230 X=IMX(POS) : Y=IMY(POS) : Y2=32-Y : LG=logic
+ 240 skopy 11,s10+ADR(X),0,0,32,Y2,LG,0,Y
+ 250 if Y>0 then skopy 11,s10+ADR(X),0,Y2,32,32,LG,0,0
+ 260 skopy 1,LG,0,0,32,32,LG,32,0
+ 270 skopy 1,LG,0,0,64,32,LG,64,0
+ 280 skopy 1,LG,0,0,64,32,LG,128,0
+ 290 skopy 1,LG,0,0,64,32,LG,192,0
+ 300 skopy 1,LG,0,0,64,32,LG,256,0
+ 310 skopy 1,LG,0,0,320,32,LG,0,32
+ 320 skopy 1,LG,0,0,320,64,LG,0,64
+ 330 skopy 1,LG,0,0,320,64,LG,0,128
+ 340 screen swap : doke $FF8240,0 : wait vbl : doke $FF8240,$200
+ 350 if hardkey=57 then mouseon : clear key : default : end
+ 360 goto 220
+
+ rad 220-360 beh”ver igentlingen inte s† mycket f”rklaring,det handlar bara
+ om att man ”kar positionen i sinuskurvan med en position varje vbl och p†
+ s† s„tt f†r ett nytt v„rde. Sedan kopierar man ut figuren ur minnet,f”r att
+ till sist t„cka hela sk„rmen!"LG=logic" m†ste st† i loopen,anmars ser det
+ konstigt ut n„r man screen swappar! Har du inte tillg†ng till kompilatorn
+ s† kan du ju f”rs”ka kopiera ut figuren till ett mindre omr†de! Her hela
+ listningen!
+ [ Zeile 220 bis 360 bedrfen eigentlich keiner groen Erkl„rungen. Es han-
+   delt sich darum, wie man die Positionen in der Sinuskurve erweitert/ver-
+   gr”ert mit den Positionen  jedes VBL und wie man die neuen Werte setzt.
+   Dann, wie man die Figur aus  dem Speicher kopiert um sie zuletzt auf dem 
+   ganzen Bildschirm zu zeigen! "LG=logic" mu im  Loop stehen, da es sonst
+   merkwrdig aussieht, wenn man den Screen tauscht! Wenn ihr keinen Zugang
+   zum Compiler habt, k”nnt ihr versuchen, die Figur in einen kleineren Be-
+   reich zu kopieren ] (was immer das bedeuten mag...).
+ Hier das ganze Listing! (Anm.d.Redax: Nee,nee! Ich habe doch kein Rad ab!
+ Ich glaube es ist nicht zu viel verlangt,da sich die Interessierten die
+ Listing-Teile aus dem Text selber zusammensammeln (drfte ja wohl nicht so
+ schwer sein!))
+
+ F”rklaringar till kommandona finns i Mistymanualen (finns i installations-
+ programmet)!
+ [ Die Erkl„rungen zu den Kommandos findet ihr im Misty-Handbuch! ]
+ 
+                                       Moondog of tnb

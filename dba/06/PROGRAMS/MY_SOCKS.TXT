@@ -1,0 +1,69 @@
+CRACKED SOCKS ?
+
+
+           How I cracked 'My Socks Are Weapons' Dentro by Legacy
+           -----------------------------------------------------
+
+
+If you think that this article is going to tell you how to rip other
+demos and put them into files, then you are very mistaken.  What I have
+done is strike it lucky with one of my usual 'what happens if ....'
+sessions which occur late at night (in this case I had just been to
+see "Don't Tell Mom The Babysitter's Dead" at the cinema !!) when I
+am supposed to be doing something else (eg. revising or programming my
+Professional Virus Killer !!).
+
+I recently received this demo (thanks to TGA from NPG) and I was impressed.
+I have only seen one other 'dentro', and that was by Hemoroids.  This dentro
+shows off some nice effects with a funky module playing in the background.
+I don't know if there are any enhancements on the STE, as I do not own one.
+
+Anyway, back to the article.  I had loaded this demo several times to check
+my own personal copy, plus all the others that I had sent to friends and
+contacts around the world !!  I noticed that as the screen was black,
+the all-too-familiar 'hertz-overload' noise was emitting from my speaker.
+This generally is a sign that the authors of the demo do not want some
+lamer poking around their code - I was not interested in their code, just
+curious in general !!  After all, what would I have any interest in a demo
+written in 68000, when I am a GFA BASIC programmer ??
+
+Seeing as my trusty Ultimate Ripper was plugged in, I switched it on and
+started to scan low down in the STs' memory ($80000 onwards) looking for
+some bootsector code to follow.
+
+I found the code and searched for any JMP calls.  I found a few here and
+there and traced them until I eventually found the magic jump I was
+looking for (any jokes about wizards and rabbits will be left out !!).
+
+The jump was to address $DDA (or $80DDA for Ultimate Ripper owners !!).
+I looked at this address, followed it through using the text monitor and
+I found a little sign.  About 220 bytes from this address, I found the
+word 'ATM5', which is the packer header for Atomic v3.5 by Altair/MCS.
+Searching a few bytes forward revealed the packed data.  By looking at
+the header, which is 3 longwords, I found out how long this packed
+data was.  I jumped to this address to check the length of the packed
+data, then I saved a block of memory to disk from address $80DDA to 
+the end of the packed file.
+
+The next job was to find an appropriate bit of source code that I had
+adapted from some brainy demo-cracker, which I have included with this
+article.
+
+Basically, this source code can be used with any piece of raw data that
+runs from a particular address that your ST wouldn't normally want you
+to access !!  Simply alter the relocation addresses and the 'jmp'
+address and (providing your addresses are OK), your piece of code should
+run happily as if nothing was wrong.
+
+The last thing to do was assemble the source code to disk, run it (without
+any hard-drives switched on, just in case) and cross your fingers !!
+
+As you can see when you load the demo, the text appears, you press a key,
+the colours flash a bit, the blue screen means that the relocation is
+done and then you wait a few seconds for the code to unpack and run.
+
+I hope you enjoyed this article, and I apologise to Legacy for using your
+excellent dentro as an example.  I hope you won't be offended !!
+
+MUG U.K¿ - 30/6/1992
+

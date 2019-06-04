@@ -1,0 +1,65 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0110
+ 
+Here is an indication of how  to  run various Falcon programs on 68040 
+machines. The information was exclusively supplied to Maggie by Markus 
+Binder who  has  been  conducting  experiments  on  his  turbo charged 
+Falcon.
+
+() = try both YES/NO or ON/OFF
+Programm:           D-Cache  I-Cache   PRG in FastRAM  Use FastRAM 
+------------------------------------------------------------------ 
+                   (data-cache and instruction-cache)
+ 
+Falcon Demos 
+------------ 
+124 Beers later:    ON       OFF       NO              YES 
+Arrival/Passion:    ON       ON        NO              YES 
+Bound          :    ON       ON        NO              YES 
+Camera         :    ON       OFF       NO              YES 
+Cool           :    ON       ON        NO              YES 
+Crime          :    ON       ON        NO              YES 
+Distorded Dream:    ON       ON        YES             YES 
+Flight 1-3 DSP :    ON       ON        NO              YES 
+FF-Demo        :    ON       ON        NO              YES 
+Frac DSP       :    ON       ON        YES             YES 
+Geotech        :    ON       ON        NO              YES 
+Humans         :    ON       ON        NO              YES 
+Intel          :    ON       ON        NO              YES 
+Joint Venture  :    ON       ON        NO              YES 
+Killer         :    ON       ON        NO              NO 
+Left Donut Demo:    ON       OFF       NO              YES 
+Moktar         :    ON       OFF       YES             YES 
+Pentagonia     :    ON       ON        YES             YES 
+Plasma 30      :    ON       ON        NO              YES 
+Plasma 50      :    ON       ON        NO              YES 
+Speeder        :    ON       OFF       NO              YES 
+Sphere         :    ON       ON        NO              YES 
+Terminal       :    ON       OFF       YES             YES 
+Waiwala        :    ON       ON        NO              YES
+ 
+Falcon & ST-Games 
+----------------- 
+Dynabuster+    :    ON       OFF       NO              NO 
+Frontier Elite2:    ON       OFF       YES             YES 
+NeoN Grafix    :    ON      (OFF)      YES             YES 
+Obsession      :    ON       ON        NO              YES 
+Skyfall+       :    ON       ON        NO              YES 
+Starball       :    ON       ON        NO              YES 
+Starflight     :    ON       ON        NO              YES 
+Wotanoid       :    ON       ON        NO              YES
+ 
+Others: 
+------- 
+CAD 3D 2.0     :    ON       ON        YES             NO 
+Cyber Sculpt   :    ON       ON        YES             NO
+
+ 
+For any question contact: Markus Binder 
+                         Schumannstrae 17 
+                         40789 Monheim am Rhein 
+                         GERMANY
+

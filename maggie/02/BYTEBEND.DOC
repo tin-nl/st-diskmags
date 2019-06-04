@@ -1,0 +1,111 @@
+                        Byte - Bending
+
+                By Christophe of The Watchmen
+
+
+     And lo, the mighty   Lost    Boys came upon the Earth and 
+didst slay all her tiny and unintelligent life forms. From the 
+dust and the debris arose a young coder.  He had the face of a 
+golden fish, the body of a tank, and the nob of a rhinocerous.
+
+     He  pulled  from under his belt a small square  of  blue, 
+inscribed  with  the immortal words "Hisoft DevpacST  for  the 
+Atari ST."
+
+     A bolt of lightning split into two and by his sides  soon 
+stood  the  two  other immortals who were to  follow  him  and 
+respect him.  One was gifted with the ability to draw Smileys, 
+and the other couldst Easily destroy an enemy's mind,  with  a 
+short  burst  of his killer "Sale Of  The  Centuary  (Nicholas 
+BLOODY Parsons!) musak."
+
+     The three were soon to become known as The Watchmen,  and 
+their  wild and crazy antics were to become heard of  far  and 
+wide.
+
+     One fine day,  a bunch of dirty crackers called New Order 
+dared to slag off The Watchmen's Byte - Bender, saying that it 
+was far too slow and complex.
+
+      But deep inside those bad people  knew that they were in
+fact a load of utter shite,  and The Watchmen had the  fastest 
+code  on the machine that was the fabled Atari ST.  They  knew 
+that  they  must  get  their  dirty  little  mits  upon  their 
+adversaries' positively sexual source code.
+
+  So here it is! Especially for Our Good Buddies New Order.
+
+
+     If you have ever seen our DEF CON ONE demo (Why not?) you 
+would  have  been stunned by the incredible  3  bitplane  byte 
+bender which scrolled smoothly along on the title screen.
+
+     The way it works is incredible complex, and is beyond the 
+scope  of  this  magazine - so bugger off  you  smarmy  little 
+farts.
+
+
+
+       Oh, all right then, I'll attempt to explain it.
+
+
+     Firstly,  the  actual text (you know,  the bit  that  you 
+type) is converted to a form that can be used by the demo. Its 
+not  really that difficult to understand,  so I'll tell you  a 
+bit about it.  Firstly,  any punctuation is checked  for,  and 
+changed  to  fit the font.  The punctation  and  numbers  come 
+towards the end of the font,  and so it has to be frigged with 
+so that the program can find it.
+
+     After  that,  the number $41 (the Ascii code for "A")  is 
+subtracted from the whole font, and thats that.
+
+     All this bollocks is done before the program is saved  to 
+the disk (ie I've got the program and you haven't) so you will 
+have to code your own little routine to do this.
+
+                      Inside the demo code...
+
+     The  source  code and all the accompanying stuff  can  be 
+found in the "BYTEBEND.TWM" folder,  and needs to be taken out 
+of whatever other folders it's in.
+
+     This is where it starts to get really manic.  The font is 
+first  rearranged into little strips of 8 pixels or  1  byte's 
+width  (Byte  Bender  - geddit?) and sorted  around  till  the 
+program is happy with what it's done.  After that, the text is 
+converted  again  (!) to the absolute address of  each  strip. 
+This means that each byte of text goes to 4 longwords of  text 
+table.  This  is  fine until you realise that a 2k  text  file 
+becomes 32k long after this bit. And you wondered why the text 
+on the DEF CON ONE loader was short!
+
+     The  program then buggers the colours and screen about  a 
+bit,  and sets up a vbl system interrupt to do the  scrolling, 
+and colour splits.
+
+              Here comes the boring bit to code.     
+
+     A  total  of 40 seperate routines (320/8) are  needed  to 
+draw the characters. It reads the y position out of the table, 
+and adds it to the screen position,  and then leaps off to yet 
+another  routine  which  actually draws  the  graphic  to  the 
+screen, and then back for the next 8 pixel strip.
+
+     After all 40 strips are done,  the text and ypos pointers 
+are incremented, and then the interrupt exits and gets on with 
+loading the demo.
+
+
+
+     I  would just like to point out I don't really think  New 
+Order are crap.  (Thanks for the Limited Edition Disk you gave 
+us at the Atari 90's show lads!)
+
+
+  Christophe The Sexy One Out Of The Watchmen (Wot Are Good)
+
+
+                            _oOo_
+
+

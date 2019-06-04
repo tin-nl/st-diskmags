@@ -1,0 +1,225 @@
+
+ò                          CHAPTER 10 : ATARI HARDWARE
+
+As you might have read in the precious chapters the Atari hardware (video,
+audio, I/O, etc.) can be used in two ways:
+1) By using the OS-calls supplied by BIOS, GEMDOS and XBIOS.
+2) By using the hardwareregister in highmemory directly.
+
+Using the hardware directly is always faster, because the OS-routines are
+incredibly slow and often not flexible enough. For games and demos it's
+always a better solution to use the hardware directly.
+
+Only for a few purposes the OS need still be used:
+* I/O (loading and saving)
+* memoryallocation (reserving ST-RAM and reserving temporary buffers)
+
+For serious applications using the hardware directly is definitely more of a
+risk, since these need to be far more stabile. The hardwareregisters have
+been modified in almost every Atari throughout the years and this causes
+major incompatibility.
+
+This is the main reason for old ST games not working on TT or Falcon (or any
+clone, cos these have completely different hardware). Nicely written ST-
+applications only using textdisplay or GEM, will work on every ATARI and
+even clones.
+
+But this chapter is only dedicated to how to use the hardwareregisters. So
+let's get down to bussiness. I will explain the ST and Falcon specific
+hardwareregisters here. The TT was never used for games or demos and coders
+always used OS-calls (well, Jeff Minter did a TT version of Mutant Camels
+and there was a great StarWars demo).
+
+ST registers:
+
+Most ST registers are still aboard every Atari (megaST, (mega)STe, TT,
+Falcon) and there aren't that many. They are used for basic stuff such as
+reading or installing a new screenaddress, modifying the pallette of the
+screen, switching the three resolutions, etc. Furthermore there's stuff like
+getting blip & blop sounds out of the YM2149 and reading mouse/joystick/
+keyboard.
+
+* Screenbaseaddress:
+
+Games use two or three screenbuffers and you have to use new locations for
+those. So you need to save and restore the systems screenaddress and kick in
+your own. This is done by addressing the screenbase registers:
+
+screenbase high: $ffff8201
+                 This specifies the high byte of the screenbase-address.
+
+screenbase mid:  $ffff8203
+                 This specifies the middle byte of the screenbase-address.
+
+screenbase low:  $ffff820d
+                 This specifies the low byte of the screenbase-address.
+                 This is only avaibable on (mega)STe, TT and Falcon!
+
+You can read and write to all these registers but is required to write in
+the following order: high, mid, low. Otherwise the address won't be put in
+correctly!
+
+The address is 24bits and so you can see the screen can only be located in
+the ST-RAM: the first 16MB of RAM. On a basic ST you must always set the
+address on a 256byte boundary because is has no lowbyte register.
+
+The low register is only handy is when want to do hardware scrolling. On the
+STe you can set addresses on 2byte boundaries. The Falcon has to settle for
+4byte boundaries and the TT for 8byte ones. It's recommended to stay off the
+lowbyte unless you want to do hardwarescroll, because setting the screen
+will then work on all Atari's.
+
+* ST Palette:
+
+The ST palette is used in ST-low and ST-medium resolutions. They are 16
+words containing red,green and blue intensities.
+
+$ffff8240: ____rRRRgGGGbBBB
+.........
+$ffff825e:
+
+Chapter 2 explains how these work exaclty. The basic ST support only 9 bits
+colorcodes (512), whilst the (mega)STe, TT and Falcon support 12 bits
+(4096).
+
+The good thing about the ST-palette is that you can change it very fast. You
+can give every scanline a different palette, by using some clever tricks.
+
+* YM2149 soundchip:
+
+The previous registers are all easily programmable (i.e. one register always
+has one function). The sounchip is not so easy to access. It relies on
+selecting registers with one selector-register.
+
+$ffff8800: writing = registerselect (0-15)
+           reading = read data from selected register
+$ffff8802: write data to selected register
+
+So writing a number to $ffff8800 will cause a select on one of the internal
+registers:
+0 =  PSG_APITCHLOW
+1 =  PSG_BPITCHHIGH
+2 =  PSG_BPITCHLOW
+3 =  PSG_BPITCHHIGH
+4 =  PSG_CPITCHLOW
+5 =  PSG_CPITCHHIGH
+6 =  PSG_NOISEPITCH
+7 =  PSG_MODULATION
+8 =  PSG_AVOLUME
+9 =  PSG_BVOLUME
+10 = PSG_CVOLUME
+11 = PSG_FREQLOW
+12 = PSG_FREQHIGH
+13 = PSG_ENVELOPE
+14 = PORT A
+15 = PORT B
+
+The first 14 registers can be used for normal soundprogramming. Things like
+changing frequency, volume, waveformtype, noisegeneration are included. The
+Yammy is not hard to program once you've got a good interruptroutine able
+to access all these bits, but the Yammy doesn't sound very impressive. Only
+the elite of musicians can get great stuff out of it.
+
+For non-musicians the last two registers are important! PORT A is used for
+all kinds of purposes. With it you can select between diskdrives and check
+the printer status. On falcon you can turn off the internal speaker, IDE-
+drive and reset the DSP.
+
+PORT B is used to read/write from/to the parallel port (aka centronics or
+printerport).
+
+* Multi Function Peripheral:
+
+I see this as the nastiest piece of work in the basic ST. The MFP has got
+tons of registers that can be used to program interrupts and communicate
+with hardware such as the keyboard/mouse/joystick and monitor detect,
+RS232 control, midi, etc.
+
+Only keyboard/mouse/joystick and timer B/C I'll talk about here. The only
+100% correct way to get keyboard/mouse info either to use GEM (AES) calls
+or write your own IKBD interruptroutine. Using GEM is slow, requires
+memory and doesn't support the joystick. Coding your own routine is a very
+tricky afair.
+
+The MFP has many registers which workings can be quite extreme in some
+cases. I'm not going further into it and I refer to the ProfiBuch which
+contains all information you'd ever want to know about coding the MFP.
+
+* Intelligent KeyBoarD proccessor (ACIA):
+
+This is the chip that sends interrupt signals to the MFP when a key is
+pressed or the mouse and joystick are moved. You can also "poll" from it.
+Which means you can directly ask it's status by accessing a hardware
+register. This is only useful for reading the keyboard.
+
+Polling for the mouse or joystick is virtually impossible. You need to
+install your own interrupt-routine at address $118 for that.
+
+$fffffc00: IKBD command-register
+
+This allows you to change the modi of the keyboard/mouse/joystick. You can
+for instance set the mouse-information to relative offsets or absolute
+offsets.
+
+$fffffc02: IKBD data-register
+
+From here you can read a byte that represents a keycode. If you use an
+interrupt you can also use it to figure out if the mouse/joystick status
+is changed.
+
+Eventhough these are only two registers, the IKBD isn't that easy to code.
+To initialize it you must switch off interrupts, put a few bytes on the
+command-register, install your own $118 routine that does the reading from
+the data-register whenever something happens. These can be packets of 5
+bytes in a row. And there are a lot of different possible packets.
+
+Enhanced joystick ports (STe/Falcon):
+
+These are much easier to use than the IKBD. But this is becuase the enhanced
+joystickports are quite new stuff. In 1990 they were first used. Probably it
+was quite expensive to fit many directly mapped registers into the first ST.
+The STe has these ports and they are far superior to the old joystick ports.
+(and easy to reach as well :))
+
+It's strange noone wanted to use these in the beginning.. Maybe because
+Atari never made joysticks for them in the beginning? Who knows ;-) Paddles
+and lightpens can also be connected to them, but the problem was that this
+can of apparatus is rare. Only in 1994 ATARI started making the Jaguar
+Joypads (quite sturdy and excellent control).
+
+$ffff9200: Joyad buttons
+$ffff9202: Joypad movement
+$ffff9210: Paddle0 position
+$ffff9212: Paddle1 position
+$ffff9214: Paddle2 position
+$ffff9216: Paddle3 position
+$ffff9220: Lightpen X
+$ffff9222: Lightpen Y
+
+All these registers can simply be polled. As far as I know there isn't an
+OS-call to get the values of these registers for you, but who cares. All
+registers are full-words and aren't overlapped in any way (luckily).
+
+For nowadays game-coding it's best to poll the registers every VBL. Only
+every animation frame could not be exact enough. Also you can ignore the
+paddle and lightpen position registers. The jagpad doesn't use any of these.
+
+Hardware scrolling registers ((mega) STe/TT/Falcon):
+
+Since the STe (1990) every ATARI is equipped with hardware scrolling.
+Hardware scrolling is pixelwise scrolling by using the lowbyte screenbase
+register and some more interesting registers.
+
+
+
+
+Enhanced joy ports:    Ports on the side of the STe and Falcon which jaguar
+                       pads can be connected to.
+Hardware scrolling:    Pixelwise scrolling with almost 0% CPU-time. Can be
+                       done by writing to a few registers every VBL.
+Joypad:                Jaguar joypad. Has 3 firebuttons, a direction-pad,
+                       select and option buttons as well as 12 general
+                       purpose buttons.
+Polling:               Reading from a hardwareregister in normal
+                       programflow (NOT from within an interrupt!)
+

@@ -1,0 +1,165 @@
+--------------------------------------------------------------------------------
+                    Power Pc - The Ultimate Microprocessor!
+--------------------------------------------------------------------------------
+
+Welcome to dis article on the best microprocessor around, the Power Pc.
+First of all some history! In 1993, Apple wanted to change all the conception of
+his Macintoshs. To  make this, it has  to  use  another type of  Microprocessor.
+The great generation of 680x0 was good, but don't permit a new way of computing.
+The Risc technology was the solution.
+
+So Apple asked Motorola about its Risc Microprocessor. But it was not so good to
+make a new revolutionnary computer.
+In 1991, IBM began the PowerProject. It was to make a new Microprocessor family.
+But to get low production cost, IBM asked  Motorola  to merge in the project and
+its  old  demon: Apple  to  use  the new  generation of  Microprocessor  on  the
+Macintosh platform.
+
+IBM own  the  best (I think) laboratories  for  new  technologies  research. The
+Motorola and IBM Risc technologies were mixed up to make the Power Pc 601.
+It  was using  the  instruction  set  on  the  IBM  old  Risc and  the  Motorola
+architecture. After this, the  603 and the  very great 604 were made, with  some
+optimization  wich  gave  the 604e, 604ex (=mach 5, 350mhz in 1997), 603e, 603ev
+(0.26).
+The latest  Power Pc is  the 750 (also called G3, for Generation 3) which  beats
+the Pentium II  at a lower frequence!!! (Yes a G3 at 266 is better than a PII at
+300! And think that the G3 at 300 exists!)
+
+The PPC are not only  better than  Intel in Specint95 & Specfp95 result but also
+on other  important  points: a Pentium II  is about 10  times bigger than a PPC,
+uses 47 Watts while PPC 750 uses 5,7 Watts! This result comes from the fact that
+the PPC  has a better  optimization in conception and owns a better  instruction
+set and more registers.
+Okay this is just a simple  introduction. Do not  shame me if some specific info
+are not mentioned, or some others are a bit simplists.
+
+1) 32 Bit or 64 Bit.
+
+The PPC is 32 bit or 64 Bit  implemented. Majority - PPC 601, 603, 604 - is 32
+Bit. 64 Bit is used in IBM calculator generaly.
+
+2) The registers.
+
+The Power Pc is composed by:
+Gpr00 To Gpr31: 32 General  Registers (!!): they can be used  as data  register,
+                adresses registers, etc... they are like  dx and  ax at the same
+                time.
+Fpr00 To Fpr31: 32 Floating Registers: they  are  used for  Floating  Point Unit
+                operation.
+Lr:             Link Register: used to link to a branch rout.
+Cr:             Condition Register. Guess what?
+Ctr:            Count Register, idem.
+Xer:            Exeption Register, used  to  store  special  Bit  after  special
+                instruction. (Wow!)
+Fpscr:          Floating State & Control Register, Xer+Cr for floating  and some
+                controls  to allows special floating operation like  division by
+                zero!!!
+
+3) Data implemantation.
+
+The data type defears from 680x0 Microprocessors.
+
+Byte               8  Bit =B On 68000 Half-Word
+                  16  Bit =W On 68000 Word
+                  32  Bit =L On 68000 Double-Word
+                  64  Bit             Quad-Word
+                 128  Bit (!!!)
+
+The Byte range is big endian default (like  680x0). But  it can be little endian
+set  for  compatibility with  Intel shit. (But it will be stored with a specific
+way in memory, but it is an other story..)
+
+The PPC is a Risc. So don't search .W or .B to set  the lenght  of data  used in
+each instruction. You have one instruction for each data lenght! But majority of
+the instruction own a B, W, D in his syntax for coders information.
+For example: Divw  R0,R1,R2    divides R2 by R1 and store  result in R0  in word
+data Divd  R0,R1,R2.
+
+Same thing but for doubleword registers. As you  see Divd uses a doubleword data
+register. This is only allowed in 64 Bit implementation.
+
+4) The Opcodes.
+
+The instruction set is  multi-registers use. That is to  say that you  can use 3
+registers in the same instruction for example. Some instructions use more.
+For Example:  Add R0,R1,R2   put the result of the addition of R1  and R2 in R0.
+Yes! The order of registers is not the same as 680x0 one in some instructions.
+
+5) Adressing modes.
+
+You have lots  of adressing  mode. But the  syntax is not the same  as the 680x0
+ones. Don't think you will be able to make (R0.W*R1.L)!
+On Risc environement, the adressing mode is in the instruction.
+Example:
+On 68000: Move.W  D0,0(A0)
+On PPC:   Sth     R1,0(R2);(H For Halfword=16; A Word On Ppc=32b)
+
+On 68000: Move.B  D0,(A0)+  ;D0->(A0) Then A0=A0+1
+On PPC:   Stbu    R0,1(R1)  ;R0->(R1) Then R1=R1+1 (store byte and update)
+
+Stop! Have  you  note it? R2=R2+1 but  can be 2 ou higher. It gives in 68000:
+          Move.Bd0,(A0)
+          Add.L#2,A0
+There is also another solution:
+          Stbux    R0,R1,R2 ;R0->(R1+R2) Then  R1=R1+R2 (store  byte  and update
+                   indexed)
+In 68000: Move.Bd0,(A0,D0.L) Add.Ld0,A0
+
+See it? Cool no?
+
+6) Integer instructions.
+
+PPC owns  a lot  of  instruction  really  impressive. In  fact  to  all "Normal"
+instructions of every Microprocessor, exotic instructions are present.
+For Examples: Sthbrx  R0,R1,R2  store halfword  with byte  inversion and  update
+                                indexed.
+Gives In 68000:  Move.W   D0,(A0,D0.L)
+                 Add.L    D0,A0
+                 Move.L   D0,-(Sp)
+                 Move.B   1(A0),D0
+                 Move.B   (A0),1(A0)
+                 Move.B   D0,(A0)
+                 Move.L    (Sp)+,D0    ;Impressive, no?
+
+In rotation instruction lots possibilities are allowed, with mask, etc...
+Rlwnm   R1,R1,5,23,65 ;Bit left word rotation and 1 mask from Bit 6 to 23
+(Result Can Be Store In Other Register)
+Gives In 68000:   Rol.L     #5,D0
+                  And.L     #%00000000011111111111111111100000,D0
+
+7) Floating instruction.
+
+PPC includes a Floating Point Unit with powerful instruction. It had majority of
+mathematical basic operation, from the basic mul to the square and rounded.
+The 32 floating  registers  may let you  imagine  the power. But I will tell you
+about in my next article!! :-(
+
+8) Machines.
+
+What machines use this  incredible  Microprocessor? Well a lot of! The first are
+the Power Macintosh. Yes  a lot of you will tell me "No, you can't make demos on
+it, you can't this, you can this..."
+That's... false! You can write in memory where  you want: on the  screen, in the
+sound card,... Everything is possible like on the ST!
+If some  of you  are Macintosh users  and don't  know where to find  demos (Yes,
+there are demos on the Mac!), and trick & coding sites on the Net, E-Mail me!
+With Apple you can find  tons of  configurations. The second is  the BeBox. This
+great machine is not sold actually. But you can  now buy its cool Os -Be Os- for
+the Macintosh or PC.
+The third is the Amiga. You can find several  cards including a PPC 604e at more
+than 166Mhz. Amiga Technology and others want to make a new Amiga computer  with
+several PPC 604e (or 750). I can tell you that this will be powerfull!
+Atari clones: Perhaps? I hope. I don't know why all people making great projects
+like Centek  still want to  use Motorola 68040 or 060! The PPC 604e  or 603e are
+still available. Motorola still produce Macintosh clone cards which are cheap!
+You can  put Atari Os  instead of  the Apple ROM! It  includes  PCI Bus, Crystal
+Soundchip (the  standard on Mac), Ati Rage Video Card, Ide & Scsi Port. I really
+don't understand. You will ask "What about the Compatibility?"
+The PPC are  so much powerfull that you have a complete 68040 emulation in Apple
+Os. You have the speed of a 040 at 25 Mhz. Why not on an Atari PPC Machine?
+
+Okay... That's the end of the first part. Next time we will speak about FPU, and
+I will show you some heavy code!
+
+------------------------------------------------------------ Jace of STKnights -
+- jace.stk@runnet.com - http://www.runnet.com/stknights/ -----------------------

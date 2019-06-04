@@ -1,0 +1,150 @@
+-=---------------------------+++++++++++++++++++++++++#########################
+                       LAMERS HEAVEN - ST BUMP-MAPPING
+#############################+++++++++++++++++++++++++-----------------------=-
+
+ST Bump-mapping explained...
+
+Ok, boys'n girls  this time  it's me (Llama/.tSCc.) writing the coding tips for
+the  Undercover mag. I  hope you like  the stuff I'm  explaining here  in a few
+words. I won't give you a whole source but with these tips  you should at least
+understand my little 4ktro-contribution to the Siliconvention'97...
+As I am  mainly an ST-coder, and my bump-mapper was purely done on an STF, some
+optimization-tips  are really  related to this machine and the 'optimized' code
+may be slower on other machines than the code before those 'optimizations' =3D)
+
+>Ok..., don't talk so much crap, Llama...
+
+Well, let's start  with the principles  of this so-called bump-mapping (the 2D-
+Version of it). The  basic  method  is a bit  like ray-tracing: just  imagine a
+bumpy  surface which is  lightened by a  single light-source... To  calculate a
+picture by the ray-tracing-method all you have to do is to calculate  a virtual
+ray  trough every  pixel of  the screen  which is  reflected by the surface and
+points  in  the  direction  of the  light-source. According  to the  difference
+between the reflected  ray and the light-source the pixel  has to be lighter or
+darker...
+
+>And there  we have  our  first  problem: how  do we  calculate  the difference
+>between a ray and the light-source?
+
+Ok, *YOU* might  know how  these types  of calculations are simply made, but at
+least *I* don't know  how! But  don't worry... You  don't have  to use a 'real'
+sphere-like  light-source. You  can also  use a  simple  projection  on a  flat
+surface  of it - which is just a two-dimensional bitmap of some 'circles' going
+from nearly black (outer circles) to a light color (inner circles). If  you put
+this bitmap in your virtual world exactly parallel to the bumpy surface you are
+looking at, and behind  your 'camera-position' you  get nearly the  same result
+like the real sphere-like light-source.
+
+
+(seen from above:)
+
+-----~~~~~~~~~~~~~~~~~~---------  <- bumpy surface
+	  /\      |      /
+	 /   \    |    /  <- 'rays'
+	/      \  |  /
+   /         <o>  <- Eye/Camera
+  /  <- reflected ray
+--------------------------------  <- our 2D-light-source
+
+
+This 2D-light-source can easily be stored in a table or an array.
+
+
+>Ok, but how do we calculate the deflection of the ray at the bumpy surface?
+
+Nothing simpler  than that! The  bumpy surface  is also just a  table with some
+values (the 'heights' of the surface at all positions).
+So you can  calculate just the height-deltas of some neighboured positions in x
+and y direction  to have values for the steepness of the surface in both (x and
+y) directions of a position.
+For the  calculation of the rays we do also some simplifications: We handle all
+rays as being  parallel. This  has the advantage that we don't need any vector-
+arithmetic  at all! And the  two deflection  values (one  for x and  one for y)
+bring about the same reaction on any single ray of the screen!
+
+>Hmm... sounds all a bit confusing... So what do we have to do effectively?
+
+We  don't have to do  very much =3D)  Actually we  just have  to precalculate a
+table  with the  deflection-values  as offsets  to pixels  of the light-source-
+table. This is explained above. And as the  bump-surface is not changed  in any
+way  while the  effect is  shown this can  really be precalculated! To show the
+actual  effect we  just have to  take those precalculated offsets to the light-
+source-table, read out the color stored in this table and put them on screen.
+To animate  the light-source  we just have to 'scroll' the start-address of the
+light-source-table... That's really all!!! Simple, he?
+
+>But how do we set so much pixels on an STF in normal plane mode at this speed?
+
+That's  really a problem of  the STs video-modes - as there is no packed-pixel-
+style  video-mode like on PCs (or the TC-Mode of the falcon) you have to change
+4 words (Planes) to set one single pixel.
+But you should already know this problem!  =3D)
+A general  tip for this problem is the movep-command! With this command you can
+split a  long-word to  2 long-words  with just  using every  second byte of the
+destination... just take a look at some 68000-documentation!
+So you  have to use 2 movep-commands to set all pixels of the first word of all
+4 planes. The contents of the long-word which is splitted by movep=
+
+to all 4 planes is really simply arranged. Just one byte of the long for either
+the low-byte or the high-byte of the 4 planes.
+
+
+:8bit:    :8bit:    :8bit:    :8bit:      1st long - splitted by movep
+:--16bit--:--16bit--:--16bit--:--16bit--: 1st words of the 4 Planes
+	 :8bit:    :8bit:    :8bit:    :8bit: 2nd long - splitted by 2nd movep
+
+So we can  put 8 Pixels together in a  data-register and throw  them on screen.
+For each pixel you simply have to get a long with only the 4 relevant bits set,
+shift  it and OR it to  the data-register. Or alternatively  you can simply use
+some pre-shifted tables.
+
+
+Another nice method to optimize effects like the bump-mapper is self-generating
+modificating  code. It's just  that the ST has no cache so there's no advantage
+to use small code with a lot of dbra-commands...
+So why not use a really fat (approx 100k!!!) code which has no dbras? You would
+not have any extra-clock-cycles for the dbra-commands and you could  also spare
+one table-access!!!
+
+After all  those optimizations I used basically the following lines of code for
+the bump-mapper:
+(I use a 2x2 pixel 'mode')
+
+; a0-a3: 4 preshifted versions of the light-source-table
+; a4: points to the screen-memory
+; $1234 etc: the offsets
+
+	...
+
+	move.l  $1234(a0),d0
+	or.l    $2345(a1),d0
+	or.l    $3456(a2),d0
+	or.l    $4567(a3),d0
+	movep.l d0,0(a4)
+	movep.l d0,160(a4)  ; doubles the lines
+
+	move.l  $5678(a0),d0
+	or.l    $6789(a1),d0
+	or.l    $7890(a2),d0
+	or.l    $890a(a3),d0
+	movep.l d0,1(a4)
+	movep.l d0,161(a4)
+
+	...
+
+These few  lines calculate 8  different 'rays' and display the (doubled) pixels
+on screen! Now  you have only to  copy these lines of code a few thousand times
+and alter the offsets of all commands...
+Just a piece of hardcore-optimization! =3D)
+
+Ok, that's all  for today! I hope you understood at least some basic things. If
+you have any  questions or  want to talk about  some other effects just write a
+mail to:
+
+m.schwalb@liebig.gi.he.schule.de
+
+My real-world-addy can be found in any newer .tSCc.-production...
+
+have phun!
+
+-=-------------------------+++++++++++++++++++++++++###########################

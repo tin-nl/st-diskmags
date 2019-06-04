@@ -1,0 +1,187 @@
+
+            ‰THE PHENIX, CENTEK, AND ALL THAT, AN ANNOUNCEMENT
+  
+This  announcement  was  not written by Centek but  by  Yann  Lossouarn 
+lossouarn.yann@free.fr,  who  is independent from Centek and  contacted 
+Rodolphe CZUBA by phone. 
+
+---------------------------------------------------------------------------- 
+
+The  main piece of news in the Atari world this month  revolves  around 
+Centek.  Rumors  are  spreading  over the web and on Usenet  about  the 
+cancellation  of  the Phenix project and the launch of the  Phenix  260 
+project. 
+
+ It is urgent for Centek to publish an official statement. 
+
+ Rodolphe  CZUBA,  who  was obviously affected by the recent events  has 
+entrusted  me  with  the  writing  of  this  announcement  to  maintain 
+neutrality in the description of events that are emotionally charged. I 
+hope this choice will help avoid any controversy (unlike what  happened 
+in the past) 
+ 
+  History.. 
+ 
+A  few months ago (April 99) Centek and Class4 announced their  merging 
+to form a new company that would keep the name Class4. The goal of this 
+operation  was to get easier financing to allow Centek's developers  to 
+devote  their energy to the Phenix project and speed up the release  of 
+this  long-awaited  machine. 
+
+  Reasons for the cancellation of the Phenix project..
+  
+Reality  was  different.  Even though the development of  the  Phenix's 
+hardware  was on track, it was not the case for "Dolmen", its operating 
+system.  The  three developers responsible for writing Dolmen gradually 
+chose  not  to  finish it and to spend more time  working  on  Class4's 
+business  (laser shows).   Without these developers' work,  the project 
+was in a critical situation,   which lead Rodolphe CZUBA to drop it (at 
+least in its original form) 
+ 
+  Centek goes out of business..
+
+ The  search for the financing necessary to complete the integration  of 
+Centek's  products was never completed,  or never started according  to 
+Rodolphe,  and  therefore  the  merging was never effective.  With  the 
+Phenix  project being phased out,  there is no reason for Centek to  go 
+on.  Rodolphe  CZUBA and his former collaborators chose to close  their 
+business. 
+
+Some equipment belonging to the company will be put up for sale 
+ 
+  Future or no future, that's the question.. 
+ 
+The cut out of the Phenix project might leave some of you feeling  that 
+the trust they had in Centek has been betrayed. 
+
+First of all,  Rodolphe CZUBA has no intention of 'disappearing' and he 
+will  support  the products he has developed such as the  CENTurbo  II. 
+Falke  Verlag  in  Germany might soon produce  this  accelerating  card 
+again,  under  a  licensing agreement.   
+
+A  DSP  56301 + 20-Bit Audio (or better !) PCI card  derived  from  the 
+Phenix could be created for the Milan. 
+
+As  of the software that was developed,  there is a lot of  uncertainty 
+about  its  future.  Will their authors support them?  Nothing is  more 
+doubtful  as they seem to have become uninterested in the Atari  cause. 
+It  could  be interesting if they would give them to the  community  so 
+that  others  could  possibly follow up.   
+
+You might think that this announcement is just a long list of bad news, 
+don't you?  As strange as it may seem, I would say that it is the exact 
+opposite. A very happy ending seems to be in reach.   
+
+  ... and the answer is : future !!! 
+
+I  would like to say that what is about to follow may seem  implausible 
+to  many  even to the most credulous.  But I verified  the  information 
+given  to  me by Rodolphe CZUBA the best I could and my  conclusion  is 
+that  the  project  mentioned  in the  following  lines  is  absolutely 
+serious.  In  the  past few months,  Rodolphe realized that the  Phenix 
+project was taking a bad turn :  the enthusiasm of developers was going 
+downward and the financing was late. 
+
+Since  he  was  committed  to delivering the  Phenix  to  Atarists,  in 
+September  '99,  Rodolphe  looked  for some contacts to find  money  to 
+produce  the Phenix 260,  using MiNT as the OS in case Dolmen would not 
+be ready. 
+
+These  contacts (in particular a long time friend of Rodolphe) got  him 
+in  touch  with American business angels.  They were very  enthusiastic 
+about  the  Phenix  motherboard (hand routed  by  Rodolphe  CZUBA)  and 
+decided  to  start a new project for which Rodolphe CZUBA would  be  in 
+charge  of  designing a new and extremely  different  motherboard:  the 
+RioRed  G4.  The project would be handled by a new company based in the 
+United  States in Richardson TX,  and named "Silicon Fruit".  RioRed is 
+the  name of a variety of grapefruit,  which is the symbol of Texas and 
+grows in the Rio Grande area. 
+ 
+ Here is a summary of the specifications: 
+
+  - CPU :  2 type 1 slots that can both host a card with a 450 MHz  G4 
+   PowerPC, and 2 Mb of L2 cache memory @ 225 MHz  
+ - 4 32 bit / 33 MHz PCI slots (133 Mo/s in burst mode) 
+ - 2 64 bit / 66 MHz PCI slots  (528 Mo/s in burst mode)
+ - IDE UltraDMA 66 controller (4 periphericals)
+ - 1  AGP  slot  - 4 USB ports
+ - 4 100 MHz SDRAM slots (up to 1  Go,  800 Mo/s) 
+ 
+ It will also be possible to add a PCI card with a very powerful 1  GIPS 
+Texas  Instruments DSP. 
+ 
+The basic system provided with the machine will be a Linux distribution 
+(maybe YellowDog optimized for the machine's hardware). 
+ 
+There  are  also talks with Be Inc to port BeOs for the  RioRed.  Other 
+alternative  systems  are  being  considered such as  QNX  and  -  very 
+interesting  for  the  Atari scene - MiNT.  A port,  or the use  of  an 
+emulator under Linux are  being considered. 
+
+Fifty   prototypes   of  the  machine  (called  Metanium)   should   be 
+manufactured  before  the end of the second quarter of  2000.  A  first 
+batch  of  2,000  machines should then be put up for  sale.  The  bi-G4 
+version  should  be priced "between a PowerMac G4 bi-proc  and  a  high 
+range  PC).  Distribution  will be limited to sales over the  Internet. 
+Rodolphe  is currently finishing the design of the first  prototype  in 
+collaboration with a software developer in charge of writing a PPC BIOS 
+that would allow booting from an Iomega ZIP drive. 
+
+A  forum  is  open so that people interested in the  project  can  have 
+contacts with developers and investors. 
+
+  Conclusion.. 
+
+The  idea  of  an  'open'  PowerPC  platform  on  which  a  variety  of 
+alternative  systems  could  be  available  is  extremely   attractive. 
+Individuals interested in purchasing a machine or willing to take  part 
+in  the development / port of software should make themselves known  in 
+the discussion forum or to the members of the project. Prototypes might 
+be provided to developers for free. 
+ 
+  Wait 'n see..  
+ 
+-----------------------------------------------------------------------
+NB  :  The  Phenix  260  has  not been shelved  but  may  be  developed 
+personally by  Rodolphe as a 'hobby'.   
+------------------------------------------------------------------------
+ 
+Yann Lossouarn / Falk'Asso   
+
+  
+If you would like to check the information yourself,  here is a list of 
+links: 
+ 
+  Silicon-Fruit web site: 
+ http://www.siliconfruit.com 
+ 
+ Information on the G4 processor: 
+ http://ebus.mot-sps.com/ProdCat/psp/0,1250,MPC7400~98654,00.html 
+ 
+ Information on the DSP 320C6711 : 
+ http://www.ti.com/sc/docs/products/dsp/tms320c6711.html 
+ 
+ Information about the Linux distribution "YellowDog" : 
+ http://www.yellowdoglinux.com/ 
+ 
+ Article published in the online magazine GXNetwork : 
+ http://targetpc.gxnetwork.com/hardware/motherboards/siliconfruit/ 
+ 
+ Article (german) published in the online magazine MACNEWS : 
+ http://www.macnews.de/index.shtml?/news_artikel/applecube/rio_17_01991
+ .shtml 
+
+ Address for the forum : 
+ http://www.egroups.com/group/siliconfruit/ 
+ 
+ Article from the forum about porting MiNT for the RioRed : 
+ http://www.egroups.com/group/siliconfruit/4.html 
+ 
+ Article from the forum about porting BeOS for the RioRed : 
+ http://www.egroups.com/group/siliconfruit/8.html 
+ 
+ Article from the forum about porting the Phenix motherboard  designed 
+ by "one of the developers": 
+
+ http://www.egroups.com/group/siliconfruit/56.html
+

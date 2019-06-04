@@ -1,0 +1,154 @@
+ó--------------------------------------------------------------------------------
+             ACE(demo) - a realtime MIDI synthesizer for Falcon 030.
+ó--------------------------------------------------------------------------------
+
+I remember the  very first day's of the Falcon. Coders got mad due to the of the
+internal  Falcon DSP. I've  read a  lot about  people who  announced things like
+software modems, voicemail systems, hi-speed data  links, neuronal networks and,
+and, and,... ...and multichannel realtime synthesizers for MIDI use.
+
+Nearly nothing  of that was  releasd during  the last ten years. But now... "New
+Beat" released "ACE". ACE is a  realtime software synthesizer, designed  for use
+as a MIDI device! And we've tested the actual demo version, of course!
+
+The ACE-Demo archive is very small in size (about 320KBytes). Quickly depacked &
+started... ACE comes  with it's own - non GEM - userInterface. There is a screen
+with a lot of knobs, small buttons, something like a "bargraph" at the center of
+the screen and a huge (temporary) empty area at the bottom of the screen. On the
+top-right is a small message window.
+
+Ok, let's load the  Demosong... but hmmm... where  is it? There  is nothing like
+that (of course). ACE is NOT a sequencer  or something  like that! There  are NO
+functions  for recording  or playing  songs! It's a synth... not (much) more and
+not less. It's a bit like having a 19" MIDI device.
+
+So you need a  MIDI keyboard or another  computer (or both) to make  some music.
+OK, you  can also  use your  Falcon keyboard to "trigger" sounds, but  this only
+usefull for testing your sounds and not for playing them.
+
+Ok, so I've switched  on my little  MIDI-keyboard... Load a first bank (that's a
+collection of 16 sounds) and pressed the "middle C"...
+Uhhhh... a very nice  arppegio sound to hear... most of the others sounds great,
+too. I was really  impressed by the output  quality and I spend houres listening
+to the prepared soundbanks.
+
+Now it's  time for some  first experiments, so I  took a closer  look to all the
+knobs.
+
+At the left is a planel for the oscillators. You can choose between "SAMPLE" and
+"WAVE" there.
+
+In "Wave"-mode 2  oscillators are  aviable. There  are 4 waveforms to select for
+every  of  your oscillators. There's  a (fine)tune- and a  levelknob  for  every
+oscillator. Both  osci's can  be independantly  transposed for +/-48 octaves(!),
+too.
+On the planel's bottom are 3 more buttons: "NORMAL", "MERGE" and "RINGMOD". This
+are the mixmodes.
+Now click on the  lower left  planel "EDIT" on the "PATCH"-button. So you got an
+"OVERVIEW" window at the screens bottom. This is a very usefull feature, because
+you can see  the waveform you  create with the oscillators (with realtimeupdate,
+of course).
+It's easy to  create "swinging/vibrating" sounds (by "detuning" the oscillators)
+with this "optic feedback".
+In "SAMPLE"-mode you  can load a sample (AVR or WAV). Samples can be finetuned &
+transposed, too. There  is also a  level-knob  and some  buttons  to set  up the
+samplestart, -loop and -end points. At the
+"Overview"-window you can see, scroll & zoom your sample.
+
+Now we have a "basic" waveform... created  by the oscillators or a loaded sample
+... and now the real fun begin!
+
+On the  right  side is  a "VCF"-planel (= Voltage  Controlled  Filter). Here are
+several  knobs  for  adjusting  your  "attack", "decay", "sustain" and "release"
+time. These are parameters which define a so called "ADSR-Envenlope".
+The  envenlope  here is  not the  tone-envenlope, its an  OWN envenlope  for the
+filters!! And there are the "Resonance" and "Cutoff" knobs, too...
+...and these are real-cool knobs, maybe they are the most important for a "real-
+synth-sound".
+
+-=>YOU NEED TO PLAY AROUND WITH THEM!!<=-
+
+The knobs/filters  react in realtime and works with oscillator and with samples,
+too!! It's quite  funny to get a small speechsample or something and use it with
+the cutoff and resonance filters, too.
+
+To the right  of the VCF-planel  is a VCA-planel (Voltage Controlled Amplifier).
+There are 4 knobs to control the ADSR-envenlope (here it's the tone-envenlope).
+
+To the next  cool thing... the  LFO (Low Frequency Oscillator). A  cool section,
+but this needs a bit more experimenting to recognize how it works.
+It's an  oscillator  with a  low (adjustable)  frequency  (about 0.5-10Hz) which
+controls your oscillators, osc.levels and/or your filters. There are 6 waveforms
+to select. A great  unit to modify  your sound, esp. if used  with the VCA. It's
+also possible to use this with your keyboard's "Modulation"-button/wheel!
+This feature can  be activated at  the "CTRL"-section, on the very right side of
+the screen. Here it's  possible to adjust the pitchbending (controlled with your
+MIDI-keyboard's pichtbend-wheel!).
+
+Now let's go  to the "STEP MODULATOR". This  is really a  great Idea. I've never
+heard about something  similar before (but I'm not a musican...). This is like a
+small sequencer for single sound's!
+This look's a bit  like a bargraph with 32 vertical bars. Every bar represents a
+"controler-value".
+There are 5 "curves" to modify. The first  curve is controlling the VCF-filters,
+one for  every oscillator and  one to control each oscillator's level-curve! You
+can easy define  your own curves by moving the bars up and down with your mouse.
+There  are 15  preset  curves, too. These curves  can also be  controlled with a
+speed knob. Here you can easy create complex sound's and small phrases.
+
+But some things  could be done better here. I missed something like a display or
+something, which  shows you the  actual value, you're  modify. Same goes for the
+"speed" knob. It would  be great to have  a display which shows the "speedvalue"
+(preferably in "BPM"...).
+
+Left from  the "Step modulator" is a  small "OUTPUT"-planel. Here you can adjust
+your sound's panorama-position, reverbration and delay.
+
+Under this  is the "EDIT" section. I already  described the "Edit-Patch" window.
+Now we'll  explore the "MASTER"-Unit: Here  you can find  the global parameters.
+There are the  master-settings for  delay and  reverb, master  volume and even a
+tune-knob(!) for  adjusting  the  ACE-sound  output  to the  rest of  your audio
+equipement.
+A BPM-display (or a  "delay-in-seconds"  display) for the delay-setting would be
+great here, too.
+
+There are  also buttons to toggle between the internal Falcon DAC and a external
+DAC. There are  4 DAC-clock's (33/44/48/50kHz) aviable, too. But  we're  using a
+demoversion only, so all functions in this section are locked. Same goes for the
+voices-setting below. For the ACE-demo there are only 2 voices (16 voices in the
+full version) aviable.
+
+Now to the  last section: The "MULTI"-editor. You  can splitt your MIDI-keyboard
+(for playing  several  sounds  with  1 keyboard) here, set  up midi-channels and
+other  important  stuff... but  this  can't  be  tested  here  because  it is  a
+demoversion only.
+
+Conclusion:
+
+The ACE-demoversion  shows that  ACE is a very powerfull software for Falcon. It
+features all tools to create cool synth-sounds and also a very special tool (the
+step modulator) for  creating complex  sounds. The  user-interface is simple and
+fast - no needless graphical  effects, no  faked "design knobs/buttons/led's" or
+something - it's designed for a good "workflow".
+But some "small things" are missing. A BPM  display for  the step-modulator  and
+the master-delay. Maybe a simple peakmeter at the "Master"-section.
+Very important: The MIDI-functios  work fine  and fast, too - I didn't heard any
+delay's - But I missed the interpretation  of PROGRAM_CHANGE (select a new sound
+via MIDI) events.
+
+The most  worse  thing  is the  high price  of 79 Euro. I  accept  that ACE is a
+really fine software and cost a lot of work - but who should buy it for 79 Euro?
+I showed ACE to a professional audio engineer and to a prof. studio musican.
+Both were impressed & surprised  by the soundquality  and the fine workflow, but
+both mentioned it's too expensive. Nearly all studios/musicans use PC's or MAC's
+today, and softsynths  for them are aviable for the same price - and are useable
+as plugin and/or  offering good  sound librarys  of all classic synths and, and,
+and..
+For "normal" Falconiers the price is to high... something about 25 Euro would be
+great, 40 Euro would be a "fair" price I think.
+
+Scene musicans should wait for the tracker version of ACE, which is announced in
+ACE's readme.
+
+                                                                   remo williams
+ó--------------------------------------------------------------------------------

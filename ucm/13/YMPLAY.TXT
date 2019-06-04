@@ -1,0 +1,87 @@
+--------------------------------------------------------------------------------
+                  ñ"YM PLAYER vo.3"ð by óTHE BEASTð of òTYPHOON
+--------------------------------------------------------------------------------
+ò________________________________________________________________________________
+ò _______________   _____________  _________     /
+ò/   ____ __/   /__/  _     / _  \ \ __/   /_   / ðmachines:ñ st/e
+ò\__/ __  \_   __  \_/  /\  \_/  / / \_   __/__ \ ðspecials:ñ 512kb/rgb
+ò/    \/  /    \/  /    \/  /    \/  /    \/   \ \ð credits:ñ code - the beast
+ò\____    \____    \____    \____    \____     / /
+ó====ðAò\___/ó===ðBò\___/ó===ðOò\___/ó===ðUò\___/ó===ðTò\_md/ó=ò/
+ò________________________________________________________________________________
+
+Maybe you know the YM files, maybe not. YM means  Yamaha and so  you should know
+that those files are  chipmusics, composed  on machines  using the YM chip, just
+like the ATARI ST, the AMSTRAD CPC and other machines.
+
+"Hey!" might you say "we already have a lot of different players around, playing
+all those  files! For what another, special one?!"... Yep, you're  right  at the
+one hand. But you  have to know  that YM's are files converted  for replaying on
+the PC! So at the one  hand it's still useless to  code this player, but as it's
+the fact that there are a lot of this sounds  around, why not using  them on the
+machines where they're coming from too?! So we have a player for  many different
+tunes, ONE player... Maybe you remember the problems, many different  chip sound
+player had in the past. They were  never compatible to all the  tunes around and
+again and again problems accured. So we now have one  player for one format. And
+finally we have tons of converted sounds in the Inet, maybe some sounds  too who
+no one  knows  anymore. And it  opens also  the big  area of CPC sounds  for our
+machines too!
+
+Could be a good idea? Yep... if it would be so  easy as it was  thought... there
+are even of the YM sounds  several ones around and on this problem also this new
+player could fail.
+
+Ok, this one is in a very  early state of  development, just vo.3 and written in
+GFA basic, but it already runs with different  YM formats, just  like YM4!, YM5!
+and YM6! but there are still some formats around he can't replay, but I think we
+can hope for this in the future.
+
+Therefor the player lacks under this early state of  development, and especially
+if you know the player ñ"SOUNDMACHINE"ð... btw... check out the review of this big
+and massive chip sound player too:
+
+>--> SOUNDMACHINE v3.3 <--<                                                         {*\SOUNDM.TXT}
+
+...you're a bit disappointed  by the simple outfit. After starting the  player a
+file selector box appears and you have the  possibility to  choose one YM sound,
+but only one... to replay  another you must start the whole thing  again because
+it exits after stopping.
+There is no shell included (ñ"SOUNDMACHINE"ð, by the same coder! runs  fully under
+GEM!), you just have some  informations displayed  on the  screen, just like the
+name of  the file, the  lenght  of the  file, the VBL number, the header  of the
+replayed file, informations about the song and the author.
+The player  don't recognizes  the screen resolution  and on hires he replays the
+songs with 7o Hz  and this  sounds shitty! So  start it only on RGB (5o Hz). And
+btw... also ñ"SOUNDMACHINE"ð doesn't recognizes the resolution  too and  runs only
+with 5o Hz.
+
+I don't know if the player runs on Falcon because I don't had the possibility to
+check it out and there is  nothing mentioned about the configuration and systems
+in the small read me file.
+Therefor the player already  recognizes several Atari packers, just like ñAtomikð,
+ñSpeed Packerð and ñICE Packerð. Unfortunately  it doesn't  replay LHA packed files,
+at least  up to now and  the author is  searching for some help, just  like LZH-
+routines (the files are fucking big) and routs to replay other YM formats.
+Effects just like Sid voices and digidrums can't be replayed too.
+So... what's  left? A nice  first step  into a new  direction. It's  without any
+doubt a good idea to open the big data pools step by step for the Atari machines
+too and I must say that there aren't enough people around, forcing this.
+But if you want to help the author... get in touch with the him:
+
+ó               thebeast@caramail.com    or    thebeast@rtel.fr
+
+òConclusionð: This very  early version  isn't very  comfortable... it  should  run
+            under GEM or  come with  a whole  own  shell at  all. But I  have to
+            mention that in this very early state there is not much to expect.
+            The utility  runs without problems and to take a first look into the
+            world of other chip sounds, esp. from the CPC it's a good thing.
+            Anyway I hope for  a shell and the  including of other  effects too,
+            just like the mentioned things above. At the moment I don't have any
+            idea which version is the latest but up to now I don't got a new one
+            and so there isn't more to write about.
+            Very positive is the possibility to replay packed  tunes because the
+            original files are too big to store a lot of them.
+
+--------------------------------------------------------------------------------
+ ó.no retreat and no surrender.                         òmoondogð . ópoets of decay
+-----------------------------------------------------------------------1o-o9-98-

@@ -1,0 +1,369 @@
+HARDDISKS 2
+~LEGO.FIL~   ~RED.PAL~        
+
+                                                                   10
+
+           
+
+           Dit levert meteen een aantal andere grote voordelen op. De 
+           doorvoersnelheid kan omhoog en er kunnen 4 apparaten aangestuurd 
+           worden. 
+           
+
+           De doorvoersnelheid kan opgevoerd worden van 5 Megabit per 
+           seconde naar 13 tot 16 Megabit per seconde. Later zelfs naar 20 
+           Megabit per seconde. Dit alles is afhankelijk van de bus. (Vesa   
+           local bus of PCI) 
+           
+
+           Doorvoermogelijkheden van 11 Megabit per seconde zijn nu al 
+           mogelijk door middel van speciale buffer-technieken. Alhoewel EIDE
+           een aardig eindje in de richting komt van SCSI is het er nog niet 
+           helemaal.
+           
+
+           Bij SCSI (Small Computer System Interface) heb je de problemen    
+           niet die optreden bij IDE. SCSI is vooral op komen zetten na de   
+           komst van de CD-ROM speler. 
+           
+
+           Bij SCSI is het mogelijk 7 verschillende apparaten aan te sturen  
+           met 1 controller kaart. De apparaten worden net als bij een       
+           netwerk in een soort van kring aangesloten. Door elk apparaat een 
+           ander identificatie-nummer te geven weet de controller het juiste 
+           apparaat aan te sturen. 
+          
+
+           Het grote voordeel van SCSI is dat het in principe niet uitmaakt  
+           wat voor apparaat er "aangehangen" wordt. Zolang het maar een 
+           SCSI-interface heeft kan het door de controller bestuurt worden. 
+           
+
+           Het grote nadeel dat SCSI tot voor kort had was dat het installe- 
+           ren niet altijd van een leien dakje ging. Er moet een stuurbestand
+           met verschillende parameters worden geladen. In de beginjaren     
+           wilde dit nog wel eens tot conflicten leiden. 
+           
+
+           Iedere SCSI-fabrikant had zo'n beetje zijn eigen idee van een SCSI
+           stuurbestand. En deze verschillende stuurbestanden konden het toch
+           niet altijd met elkaar vinden. 
+           
+
+           De laatste tijd is echter door toedoen van de fabrikant Adaptec   
+           een standaard ontstaan, die een oplossing biedt voor deze wild    
+           groei. Wanneer u een ASPI stuurbestand (Adaptec of Advanced SCSI  
+           Program Interface) laadt, dan kunt u in principe allerlei randap- 
+           paratuur door elkaar gebruiken.
+           
+
+                                                                   11
+
+           
+
+                   4. De aanschaf van een Harddisk
+
+
+           Bij de aanschaf van een harddisk moeten we op de capaciteit       
+           letten, maar dat is niet het enige wat belangrijk is bij een      
+           harddisk. De snelheid is ook erg belangrijk. 
+           
+
+           Om programma's en gegevens snel te kunnen laden moet de harddisk 
+           over een lage gemiddelde toegangstijd beschikken. Deze tijd wordt 
+           weergegeven in milliseconden. De maatstaf die men hiervoor over
+           het algemeen gebruikt is:
+
+           * Slecht      Meer dan 65 ms
+
+           * Matig       rond de 40 ms
+
+           * Goed        rond de 25 ms
+
+           * Erg goed    onder de 17 ms.
+
+
+           De zogenaamde overdrachtssnelheid geeft aan hoeveel gegevens in 
+           een bepaald tijdsbestek van de harddisk naar het werkgeheugen van 
+           de computer kunnen worden verstuurd. Naast de gemiddelde 
+           toegangstijd is deze factor doorslaggevend voor de prestaties van 
+           een harddisk.
+           
+
+           De overdrachtssnelheid staat aangegeven in Megabits per seconde en
+           bepaalt dus het aantal bits dat per seconde kan worden uitgewis-  
+           seld tussen harddisk en werkgeheugen. De overdrachtssnelheid hangt
+           niet alleen af van de harddisk, maar ook van de gebruikte control-
+           ler.
+           
+
+           Bij een harddisk waarvan de controller is aangesloten op de       
+           ISA-bus is een overdrachtssnelheid van 500 Kb per seconde vrij    
+           gebruikelijk. Met ESDI-controllers zijn technisch echter ook al   
+           snelheden mogelijk van 1,8 Mb per seconde en hoger.
+           
+
+           De interleave-factor geeft aan hoe vaak een schijf om zijn as     
+           draait voordat alle sectoren van een (1) enkel spoor zijn gelezen.
+           Optimaal is uiteraard dat een schijf daarvoor slechts 1 keer hoeft
+           rond te draaien. Op grond van een aantal factoren, bijvoorbeeld de
+           overdrachtssnelheid en de werksnelheid van de processor, is dat   
+           een moeilijk haalbaar ideaal.
+           
+
+           De interleave-factor bepaalt de logische volgorde van de 
+           afzonderlijke sectoren op de harddisk. Met de juiste software kan 
+           men de interleave-factor veranderen. Zodat deze factor zo is, dat 
+           de computer de harde schijf nog net kan bijhouden.
+           
+
+           De fabrikant voorziet een harddisk meestal van de fabriek uit al  
+           met een interleave factor. Soms wordt deze factor ook aangegeven  
+           op de harddisk. 
+           
+
+           Een interleave factor van 1:1 houdt in dat de schijf een keer moet
+           ronddraaien voordat een spoor volledig is ingelezen. Bij een      
+           factor van 1:3 houdt dit in dat de schijf drie keer moet rond-    
+           draaien voordat het spoor in zijn geheel is gelezen. De factoren  
+           1:6 en 1:12 zijn verder ook nog wel gebruikelijk.
+
+
+                                                                   12
+
+           
+
+           Een harddisk die gebruik maakt van thin film media is over het 
+           algemeen ook veel sneller dan de conventionele harddisk met een 
+           dikkere magnetische laag.
+           
+
+           Verder is het ook wel belangrijk dat een harddisk niet te veel    
+           lawaai maakt. Het is misschien niet het belangrijkste criterium,  
+           maar het kan knap vervelend zijn als een harddisk veel lawaai     
+           maakt.
+           
+
+           Een voice coil harddisk is over het algemeen vrij stil. Deze is in
+           ieder geval een stuk stiller dan een harddisk met stappenmotor.   
+           Over het algemeen gaat een voice coil harddisk ook langer mee dan 
+           een harddisk met stappenmotor. Dit heeft te maken met het verschil
+           in constructie (Zie hoofdstuk 3). Een voice coil harddisk is soms 
+           te herkennen aan een oneven aantal koppen (Zie ook hoofdstuk 3).
+           
+
+           Iets wat ook wel vrij belangrijk kan zijn, vooral als de computer 
+           zo af en toe nog wel eens wordt verplaatst, is een harddisk met 
+           autoparking. 
+           
+
+           Als een harddisk geen stroom meer krijgt, dus als de computer is 
+           uitgeschakeld, houden de schijven op te draaien. De lees- en 
+           schrijfkoppen hangen dan ergens boven het oppervlak van de 
+           schijven. 
+           
+
+           Door stoten kan het gebeuren dat de koppen met de schijf in 
+           aanraking komen en er gegevens verloren gaan. Ook als u de 
+           computer inschakelt dreigt er gevaar. Door de spanningspieken bij 
+           het inschakelen kunnen delen van de harddisk worden gemagneti-    
+           seerd. Die delen worden vervolgens gewist.
+           
+
+           Daarom is het zeer aan te raden de lees- en schrijfkoppen te      
+           parkeren voordat de computer uitgeschakeld wordt. Dit is helemaal 
+           van belang als de computer vervoert wordt. 
+           
+
+           Er zijn programma's in de omloop die dit voor u doen. Tegenwoordig
+           echter is dit niet meer nodig. De meeste harddisks verplaatsen de 
+           koppen naar een positie waar ze geen schade meer kunnen aanrichten
+           nadat de computer is uitgezet.
+           
+
+           Nadat de computer is uitgezet draaien de schijven nog even door. 
+           Daarbij wordt stroom gegenereerd. Het automatische parkeerproces 
+           gebruikt die stroom om de stappenmotor aan te drijven die de lees-
+           en schrijfkoppen vervolgens naar de parkeerpositie (Het midden van
+           de schijf) verplaatst.
+           
+
+                                                                   13
+
+           
+
+           Tegenwoordig maken ook steeds meer harddisks gebruik van de 
+           zogenaamde zone bit recording. Dit is ontwikkeld om een betere 
+           opslagcapaciteit te bereiken. 
+           
+
+           Meestal bevat elk spoor van de harddisk dezelfde hoeveelheid 
+           gegevens. Het aantal sectoren per spoor is dus gelijk op de       
+           binnenste en buitenste sporen. Dat komt erop neer dat de schrijf- 
+           dichtheid op de binnenste sporen veel hoger is.
+           
+
+           Omdat de kwaliteit van de magnetische laag over de hele schijf    
+           toch gelijk is, is dezelfde schrijfdichtheid ook te bereiken op de
+           buitenste sporen. Hetzelfde wordt ook gedaan met CD's. 
+           
+
+           Door zone bit recording toe te passen verdeelt de fabrikant de    
+           schijf in meerdere gebieden. In het binnenste gebied, waar de 
+           schrijfdichtheid het hoogst is, wordt het kleinste aantal sectoren
+           per spoor gebruikt. 
+           
+
+           In het middelste gebied stijgt het aantal sectoren per spoor en 
+           daardoor ook de schrijfdichteid en de opslagcapaciteit. Op        
+           dezelfde manier worden ook de buitenste sporen aangepast.
+           
+
+           Harddisk-fabrikant Seagate werkt tegenwoordig aan een harddisk met
+           615 cilinders. Voor de buitenste sporen geldt een indeling van 52 
+           sectoren per spoor, voor de middelste 39 sectoren per spoor en    
+           voor de binnenste 26 sectoren per spoor. 
+           
+
+           Hierdoor bereikt Seagate 30 procent meer opslagcapaciteit. Alleen 
+           het beheer wordt iets ingewikkelder.
+           
+
+           Dit laatste wordt door de harddisk-fabrikant natuurlijk niet 
+           opgegeven. Want het maakt de klant toch niet uit hoe de harddisk 
+           ingedeeld wordt, als er maar wordt voldaan aan de juiste hoeveel-  
+           heid opslagcapaciteit. 
+           
+
+           Wat de fabrikant over het algemeen wel opgeeft is de shock-rating.
+           Een harddisk is slechts beperkt bestand tegen stoten. Natuurlijk 
+           proberen de fabrikanten hun harddisks zo robuust mogelijk te      
+           maken, maar het is technisch onmogelijk een harddisk helemaal     
+           schokbestendig te maken.
+           
+
+           Vandaar dat door de fabrikanten een schokbestendigheidsfactor     
+           wordt opgegeven. Hiermee geeft de fabrikant aan welke belastingen 
+           de harddisk in rust en in bedrijf kan ondergaan zonder schade op  
+           te lopen.
+           
+
+           De shock-rating wordt aangegeven in G. Een (1) G (gravitatie) is 1
+           keer de aantrekkingskracht van de aarde. Meestal verdraagt een 
+           harddisk in bedrijf stoten van 10 G en in rust stoten tot 20 G    
+           zonder dat er gegevens verloren gaan.
+           
+
+                                                                   14
+
+           
+
+           Harddisks in draagbare computers moeten uiteraard een grotere 
+           schokbestendigheid hebben dan die in desktops. Mocht het zo zijn  
+           dat er bij aankoop keuze is tussen twee harddisks, dan verdient de
+           harddisk met de hoogste shock rating de aanbeveling. Deze is over 
+           het algemeen het veiligst.
+        
+
+           De harddisk-fabrikant geeft over het algemeen ook wel de MTBF op. 
+           Wat houdt dit nu in? Het is mogelijk op te geven wanneer er 
+           mogelijk fouten gaan optreden op een harddisk. 
+           
+
+           De fabrikanten van harddisks vermelden de gemiddelde tijdsduur van
+           foutloos werken met een bepaalde harddisk in de eenheid MTBF. Dit 
+           staat voor Mean Time Between Failures. 
+           
+
+           Een MTBF van 40.000 betekent er pas een mechanische of een 
+           elektrische fout te verwachten is na 40.000 uur. Deze tijd gaat in
+           nadat de harddisk nieuw in gebruik is genomen. Bovengenoemd 
+           aantal uren komt neer op ongeveer 4,5 jaar. 
+           
+
+           De MTBF is echter wel een gemiddelde waarde. Het kan zo zijn dat 
+           een harddisk met een MTBF van 40.000 pas na 10 jaar de geest 
+           geeft. Het kan ook echter zo zijn dat de harddisk na 10 uur er al 
+           voorgoed mee ophoudt. De meeste harddisks hebben een 
+           MTBF-waarde tussen de 20.000 en de 40.000 uur.
+           
+
+           Als er een fout is opgetreden, laat men de harddisk repareren. Met
+           de MTTR,  Mean Time To Repair, bepalen de fabrikanten de tijd die 
+           nodig is om de defecte harddisk te repareren. 
+           
+
+           De MTTR-waarde geeft dus aan hoe lang een monteur met de reparatie
+           bezig is. De meest harddisks hebben een MTTR van ongeveer een half
+           uur.
+           
+
+           Een Conner of Quantum harddisk blinkt uit door grote betrouwbaar- 
+           heid, geringe geluidsproduktie en een laag stroomverbruik. Een    
+           lager stroomverbruik betekent tevens minder warmteontwikkeling,   
+           waardoor een geregelde koeling minder vaak aangesproken hoeft te  
+           worden.
+           
+
+           Goede harddisks (dit is ook in de prijs te merken) zijn: Quantum, 
+           Conner en Maxtor.
+
+           Redelijke harddisks zijn onder andere: NEC, Micropolis, Imprimis, 
+           Microscience, Rodime, Miniscribe en Seagate.
+           
+
+                                                                   15
+
+           
+
+                            5. Samenvatting.
+
+
+           Dit verslag ging over harddisks. Ik heb gekozen voor dit verslag 
+           omdat een harddisk tegenwoordig tot de standaard-uitrusting       
+           behoort. Tevens vond ik het voor mezelf wel een interessant       
+           onderwerp omdat ik bij mijn nieuwe stage plek bij Jonkers Data    
+           nogal regelmatig met verschillende harddisks in aanraking kom.
+           
+
+           Hoofdstuk twee was een wat algemeen hoofdstuk. Hierin werd 
+           uitgelegd hoe een harddisk grofweg gemaakt wordt. Tevens werd in 
+           dit hoofdstuk kennis gemaakt met verschillende controllers zoals: 
+           IDE, SCSI enz...
+           
+
+           Hoofdstuk drie ging wat dieper in op de harddisk. Zo werd in dit 
+           hoofdstuk uitgelegd wat de voor en nadelen waren van IDE, EIDE en 
+           SCSI. Tevens werd in dit hoofdstuk termen als voice coil en 
+           Winchester koppen uitgelegd.
+           
+
+           Hoofdstuk vier behandelde de aanschaf van een harddisk. "Wat is 
+           belangrijk?" en "Waar moet je op letten?" werd voor het grootste 
+           gedeelte in dit hoofdstuk uitgelegd. Tevens heb ik in dit hoofd-  
+           stuk nog wat termen verklaard die belangrijk zijn bij de aanschaf 
+           van een harddisk. Zo heb ik in dit hoofdstuk bijvoorbeeld uitge-  
+           legd wat de kreten MTBF en MTTR inhouden.
+           
+
+           
+           
+
+                             Bronvermelding.
+
+                                    
+
+           Data Beckers Nederland, Het grote Harddisk boek, 1e druk, Utrecht,
+           1990
+
+           Peter Smit. "De harddisk intern Een harddisk voor iedereen", Atari
+           ST Nieuws, 4 (1991), p. 23 - 25.
+
+           Dirk Peeters en Josef Schildermans, "Keiharde Opslag", Computer ! 
+           Totaal, 4 (1995), p. 29 - 37
+
+ ~BRIEF2.BLK~
+
+
+
+

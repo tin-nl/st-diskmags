@@ -1,0 +1,141 @@
+
+                            THE MAKING OF TAUTOLOGY
+                            -----------------------
+
+       - a behind the scenes account of the creation of a Falcon game -
+
+                    ( words by Mr. Pink of Reservoir Gods )
+
+
+        In the five years I  owned  my  STFM  I  rarely  felt the need to create
+games. Sure, I  dabbled  about  in  STOS  and  GFA  but  never  created anything
+substantial. The nearest I  came  was  the  still  unreleased  "Big Ron's Soccer
+Manager", which is  unfortunately  anchored  in  the  glory  days  of my beloved
+Sheffield Wednesday FC. I also drew the graphics, including the footballer's leg
+which everyone mistakes for a hoover.
+
+        The ST scene was so vibrant, there  was  so much being released, so many
+games and demos I was happy to  be  a  passive  consumer and enjoy the fruits of
+others. But when I bought my Falcon I realised the situation was different.
+
+        The year was 1993.  Atari  had  seen  the  future  and  it  was a 32 bit
+computer with amazing graphics and sound  capabilities. And it looked remarkably
+like an ST. And I wanted one. And due to the marvels of market economics and the
+postal service, several hundred coins were exchanged for a lump of plastic. This
+arrived in the obligatory cardboard box  one summer morning. After marvelling at
+a couple of nice demos ("Terminal  Fuckup", Doug Little's efforts, erm, "Lines")
+I turned my  attention  to  the  games  side  of  things  (or "the entertainment
+software experience" as Atari would like use to call it.)
+
+        After two minutes  of  playing  Atari's  bundled  free  "games"  (in the
+loosest possible sense of the word)  I  decided  there was room for improvement.
+There weren't a great deal  of  Falcon  developers  at  the  time,  and a lot of
+companies had already shelved their Falcon  projects  to  work on the Jaguar. If
+the Falcon was to stay flying it needed all  the help it could get. I decided to
+form a game making crew and write some decent software for my favourite bird.
+
+        One of my favourite games at the  time was Match-It on the Syntax Terror
+demo by Delta Force. Ripley and I were  hooked  on it and we fought over my STFM
+to play it. This was a  bit  stupid  seeing  as  we  had a spanking new computer
+sitting unused. A light bulb appeared above my  head  "race - i got an idea!" We
+decided to convert this game to the Falcon.
+
+        At the time I had  virtually  no  documentation  about the Falcon. I had
+some  very  brief  docs  listing  some   of  the  new  hardware  addresses  with
+explanations in French, and something similar  in  German, but I couldn't really
+follow it.
+
+        I called Atari  UK  with  the  intention  of  purchasing  some developer
+information for the Falcon. Big mistake. The first person I spoke didn't seem to
+know what a Falcon was.  I  was  informed  that  I  would  have  to speak to the
+enigmatic "Alistar Bodin", but no he wasn't there at the moment.
+
+        After a week of trying to get hold of Mr. Bodin, I was finally told "Mr.
+Bodin will be away for the rest of the month as he is pregnant". At this point I
+decided to give up. Cliches involving "blood" and "stone" came to mind.
+
+        I still wasn't sure how  to  access  the  extended graphics modes of the
+Falcon. I had done some poking around  with  some registers and got overscan and
+interlace, but I had not  figured  out  how  to  fully set resolution and colour
+mode. I hacked about in the XBIOS but the setscreen call seemed very convoluted.
+Fortunately, help was at hand.
+
+        I received a game preview that was  going to answer my prayers. The game
+was "Vreath" by the Independent, and all  the preview did was display a picture,
+and that was precisely all I needed.  I  dissassembled  the small bit of code in
+the preview and quickly assertained which  routine set the screen and "borrowed"
+it. Hurrah! At last I could  set  the  screen in True Colour mode, unfortunately
+only in 384 x 240 mode in RGB. Still, better than nothing.
+
+        I had Devpac and a fair knowledge of 68000 so I started work on the game
+logic. I didn't really know much about the extra 68030 instructions so I decided
+it was best just to avoid them as much as possible.
+
+        Ripley and Sparhead 3 -  the  graphics  artists  -  were  in a far worse
+position than me. We  wanted  True  Colour  graphics  and  at  the time the only
+package capable of creating  16-bit  colour  was  HiSoft god-awful "True Paint",
+possibly the worst graphics package  ever  created.  I heard nothing but moaning
+from Ripley during the months we  worked  on  this  game.  Plus at that time she
+didn't have a Falcon and had to do  all  her graphics on my machine which slowed
+down development.
+
+        I quickly realised that  there  was  a  desperate  need  for a good true
+colour art  package,  so  ideas  for  the  creation  of  God-Paint  were already
+beginning to formulate.
+
+        As much as I loved "Match-It", I felt it would benefit from the addition
+an extra dimension. I am a big fan  of  multiplayer games, a human player has an
+unpredictability a computer can never recreate.  Plus it is much more satisfying
+to trounce a mate than a CPU. We  decided Match-It would have a split screen two
+player mode.
+
+        We would also have two different  tile  sets.  SH3 drew one based on the
+traditional Mah-jong set as used in Match-It. Ripley, on the other hand, created
+an original set.
+
+        SH3 drew a series of excellent intro pictures. As I soon realised it was
+impractial to fade true colour  pictures  on  the  Falcon  (this was before true
+colour fading had been invented!) I  coded  a  fade between routine that bore an
+unfortunate resemblence to the STOS "appear" command.
+
+        We also decided it would be  a  good  idea  to  have a saving high score
+table as this would give you some incentive to go for bigger and bigger scores.
+
+        I can't remember  exactly  when  we  decided  on  the  name "Tautology",
+although I would guess it was in  the  later  stages of development. It seemed a
+fitting name, we didn't want to  call  this  game "Match-It Falcon" or something
+similarly dull.
+
+        One of the final additions to the  game  was the music. I found a Falcon
+tracker routine by CYLAB of TPN which I used. I rummaged around for the smallest
+tuneful module I could find.
+
+        On its completion we wanted as many Falcon owners as possible to see the
+game and we sent to about a dozen scene names. Not many wrote back! Looking back
+I am not really surprised,  the  game  itself  wasn't  very good. It didn't work
+properly on VGA, you could only  play  it  on  joystick  - it didn't support any
+other control method. As this type of game is  best suited to a mouse this was a
+serious omission. The general presentation was  quite  poor. We knew we could do
+better.
+
+        We got a very  long  e-mail  from  Richard  Karsmakers detailing all the
+faults with Tautology, and all the  areas  where  it could be improved. I wasn't
+happy with the code so I  decided  to  recode  the whole thing from scratch, add
+some great new graphics  and  a  spanking  new  tune  from  SH3.  This was to be
+Tautology II and the dawning of a new  age of games from the Reservoir Gods. But
+this was to come later...
+
+        The  feedback  we  got  from  Tautology   was  Brian  Eno-esque  in  its
+minimalism. We got one postcard. Yes, one. This was from Dan of Lazer and it was
+very encouraging and it made us more determined to do a lot better next time.
+
+        To be honest I don't play Tautology anymore. Since we wrote Tautology II
+the original has seemed somewhat redundant. I view it with slight affection, but
+also with some embarassment as its faults  and  bugs are so self evident. But as
+the packed file is only 80k, it is worth its weight in bytes.
+
+        Tautology one was finally released in April 1994.
+
+        It would be one year before its successor appeared.
+
+

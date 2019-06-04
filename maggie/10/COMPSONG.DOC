@@ -1,0 +1,2452 @@
+
+ 
+
+                     COMPUTER SONGS AND POEMS
+                     =====<version  1.2>=====
+
+    (Song and poem parodies with computer related subjects)
+
+
+collected & reformatted by Stefan Haenssgen <hanssgen@ira.uka.de>
+
+
+The entries are formatted as follows, seperated by "@"s :
+
+Title    : The title of the parody
+Original : The title of the original
+Group    : The one(s) who performed the original
+Author   : Author of the parody
+Info     : Additional Comments by the Author
+Song     : The Parody itself
+
+
+I'd like to thank the following people for their contributions,
+suggestions and error corrections (in alphabetical order)
+
+ Rob Beukers <rob@dutetvd.et.tudelft.nl>
+ Nelson Bishop <nelson@natinst.com>
+ Tony Duell <ard@siva.bris.ac.uk>
+ Axel Eble <Axel.Eble@imbi.uni-freiburg.de>
+ Martin Emmerich <me@grmbl.uucp>
+ Uli Fraus <fraus@forwiss.uni-passau.de>
+ Charlie Gibbs <Charlie_Gibbs@mindlink.bc.ca>
+ Andreas Gustafsson <gson@spiderman.cs.hut.fi>
+ Evan Kirshenbaum <evan@hplerk.hpl.hp.com>
+ Thomas Koenig <ib09@rz.uni-karlsruhe.de>
+ Adrian Mariano <adrian@u.washington.edu>
+ Colin McCormack <colinm@extro.ucc.su.oz.au>
+ Ove Ruben R Olsen <rubenro@viggo.blh.no>
+ Robert E. Seastroms <rs@ai.mit.edu>
+ George Sicherman <windmill.att.com!gls>
+ Boas Simon <boas@uni-paderborn.de>
+ Ignatios Souvatzis <souva@aibn53.mpifr-bonn.mpg.de>
+ Russell Street <russells@ccu1.aukuni.ac.nz>
+ The Unknown User <unknown@ucscb.ucsc.edu>
+ Martin Welk <mw@pandora.ruhr.sub.org>
+ Alan Winston <winston@ssrl01.slac.stanford.edu>
+ <snarler%maple.decnet@pine.circa.ufl.edu>
+ <dscatl!daysinns!alanf@gatech.edu>
+
+This collection contains the following songs:
+
+ 0x0d2c
+ A Better Model
+ A is for Apple
+ Addicted To Vi
+ The Alternative Wall
+ An Irish CPU
+ Another Glitch in the Call
+ Another One
+ A Time for DWIM
+ BBN Superlisp
+ Berkeley 4.3
+ Boot It
+ Both Ways, Now
+ The Boys of HP
+ Core dumped blues
+ CRASH! goes the System
+ CRAY-S's coolant
+ Cycles For Nothing
+ The Day Bell System Died
+ DECman
+ The Disks of UNIX
+ Don't Call From Home
+ Don't Have a Conniption
+ Emacs Wizard
+ Every Cycle is Sacred
+ Fork()ing on a Sun
+ Friend of the System
+ Gateway To Heaven
+ HACKADU
+ The Hacker Song
+ The HACTRN
+ I Could Have Tooled All Night
+ I'm Typing Backwards for Christmas
+ I Want a New Bug
+ I am the very model of a Genius Computational
+ Into the Tube
+ JES The mighty system
+ Just remember that you're flying o'er a disk pack....
+ Lambda Bound
+ Leavin' Fed'ral Express
+ Little PC
+ The Maven
+ My Favorite Hacks
+ Mr. Bossman
+ My Data are Over the Ocean
+ My Favourite Things
+ Please Release Me
+ Ode to Amy (or: The Frontend Shuffle)
+ PLIate's Dream
+ The Programmer's Blues
+ Puff the Fractal Dragon
+ Rawhide
+ Script for a Hacker's Tear
+ SIGHUP Blues
+ Software for Nothing
+ Socket Man
+ Song of the Certified Data Processor
+ The Sound of FORTRAN
+ The Sounds of Silence
+ Structured Programmer's Soliloquy
+ The Swapper
+ Take me Down to the SunLab
+ Tap My Wire
+ That was the HASP my friend
+ The 12 computerised days of Xmas
+ These are are a Few of Our Favorite Machines
+ Treekiller
+ UNIBUS
+ UNIX
+ Unix Man
+ Unix Wizard
+ VAX Raphosdy
+ Waiting for The Sun
+ The Wall 2
+ What is a Hacker?
+ When I was a lad
+ When you try to get work from the data network
+ The Worm before Christmas
+ Write in C
+ Yellow Subroutine
+
+
+One final remark: I collect postcards, so if you like this file
+and think I deserve a small favour, how aboud sending me a nice
+postcard? 8-)  I'd appreciate it very much! Really!
+My address is:
+  Stefan Haenssgen
+  Seubertstr. 13
+  W-7500 Karlsruhe 1
+  Germany
+
+
+PS:  This file (and future updates) is also available via
+     anonymous FTP at iraun1.ira.uka.de (129.13.10.90) in
+                      /pub/doc/computersongs-1.2.Z
+
+PPS: (So much for "One final remark" ;-)  Comments, suggestions,
+     further contributions and error corrections are always
+     welcome!
+
+
+...and here we go:
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : 0x0d2c
+Original : ?
+Group    : ?
+Author   : Bill Mitchell <mitchell@mdd.comm.mot.com>
+Intro    : 
+Song     : 
+
+
+               0x0d2c
+               ------
+    
+      May all your signals trap
+    May your references be bounded
+           All memory aligned
+       Floats to ints be rounded
+    
+    Remember....
+    
+          Nonzero is TRUE
+            ++ adds one
+       Arrays start with [0]
+        NULL points to none
+    
+        For octal use zero
+          0x means in hex
+            use = to set
+         and == for a test
+    
+        Use -> for a pointer
+         a dot if it's not
+          ?: is confusing
+          use this a lot
+    
+        a.out is your program
+        there's no 'u' in foobar
+       and char (*(*x())[])() is
+     a function returning a pointer
+        to an array of pointers
+      to functions returning a char
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : A Better Model
+Original : A Modern Major-General
+Group    : Gilbert and Sullivan
+Author   : Steven Levine at Apollo Computer
+Intro    : 
+Song     : 
+     
+                            A Better Model
+                            ==============
+                 by Steven Levine at Apollo Computer
+                         Submitted by "Spam"
+             Sung to the tune of "A Modern Major-General"
+                       by Gilbert and Sullivan
+     
+
+I've built a better model than the one at Data General
+For data bases vegetable, animal, and mineral
+My OS handles CPUs with multiplexed duality;
+My PL/1 compiler shows impressive functionality.
+My storage system's better than magnetic core polarity,
+You never have to bother checking out a bit for parity;
+There isn't any reason to install non-static floor matting;
+My disk drive has capacity for variable formatting.
+
+Chorus:  His disk drive has capacity for variable formatting,
+         His disk drive has capacity for variable formatting,
+         His disk drive has capacity for variable format-formatting.
+
+I feel compelled to mention what I know to be a gloating point:
+There's lots of room in memory for variables floating-point,
+Which shows for input vegetable, animal, and mineral
+I've built a better model than the one at Data General.
+
+Cho:  Which shows for input vegetable, animal, and mineral
+      He's built a better model than the one at Data General.
+
+The IBM new home computer's nothing more than germinal;
+At Prime they still have trouble with an interactive terminal;
+While Tandy's done a lousy job with operations Boolean,
+At Wang the byte capacity's too small to fit a coolie in.
+Intel's mid-year finances are something of the trouble sort;
+The Timex Sinclar crashes when you implement a bubble sort.
+All DEC investors soon will find they haven't spent their money well;
+And need I even mention Nixdorf, Univac, or Honeywell?
+
+Cho:  And need he even mention Nixdorf, Univac, or Honeywell?
+      And need he even mention Nixdorf, Univac, or Honeywell?
+      And need he even mention Nixdorf, Univac, or Honey-Honeywell?
+
+By striving to eliminate all source code that's repetitive
+I've brought my benchmark standings to results that are competitive.
+In short, for input vegetable, animal, and mineral
+I've built a better model than the one at Data General.
+
+Cho:  In short for input vegetable, animal, and mineral
+      He's built a better model than the one at Data General.
+
+In fact when I've a floppy of a maximum diameter,
+When I can call a subroutine of infinite parameter,
+When I can point to registers and keep their current map around,
+And when I can prevent the need for mystifying wraparound,
+When I can update record blocks with minimum of suffering,
+And when I can afford to use a hundred K for buffering,
+When I've performed a matrix sort and tested the addition rate,
+You'll marvel at the speed of my asynchronous transmission rate.
+
+Cho:
+You'll marvel at the speed of his asynchronous transmission rate,
+You'll marvel at the speed of his asynchronous transmission rate,
+You'll marvel at the speed of his asynchronous transmission-mission rate.
+
+Though all my better programs that self-reference recursively
+Have only been obtained through expert spying, done subversively,
+But still for input vegetable, animal, and mineral,
+I've built a better model than the one at Data General.
+
+Cho:  But still for input vegetable, animal, and mineral,
+      He's built a better model than the one at Data General.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : A is for Apple
+Original : A is for Apple
+Group    : Traditional
+Author   : Douglas Spencer
+Intro    : 
+Song     : 
+
+
+A is for Apple
+
+by Douglas Spencer
+Computer Systems Administrator,  Anderman and Co Ltd
+
+
+    A is for APPLE who sent us our Macs,
+    D is for DEC, and they sold us a Vax.
+    C is the language in which we write source,
+and B is our sort, which is BROKEN, of course.
+
+    E is an ERROR when code is compiled,
+    F is a FORK for creating a child,
+    G is the GETTY that sits on the line,
+and H is a HANGUP whic:^?{^Zo^?{bD^]NO CARRIER
+
+    I is the INTERCONNECTION of kit,
+    J is the JOY when the cables all fit.
+    K is for KERMIT, to copy a file,
+and L are the LINES that we drop all the while.
+
+    M is the MODEM we use from our home,
+    N are the NIGHTS which we spend on the 'phone,
+    O is the OUTPUT we get from the host,
+and P are the 'PHONE BILLS we get in the post.
+
+    Q for SIGQUIT makes our process abort,
+    R is the REASON sigquit should be caught.
+    S is the SIGNAL we catch and ignore,
+and T is the TRAP which we miss, and dump core.
+
+    U is for UNIX -- I hope that is clear,
+    V is the VISUAL editor here.
+    W stands for the WINDOWS we use,
+and X for the windowing system we choose.
+
+    Y is for YACC, quite a specialist tool,
+    Z for the snores from the programming pool.
+    Written while waiting while dinner was cooking
+
+submitted by chiyo to funny@looking.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Addicted To Vi
+Original : Addicted To Love
+Group    : Robert Palmer
+Author   : Chuck Musciano <chuck@trantor.harris-atd.com>
+Intro    : After thinking about that poor wretch who has become addicted to vi,
+           I was inspired to compose the following ditty, sung to the
+           tune of "Addicted To Love" by Robert Palmer.
+           As you sing this, it may help the effect to imagine a dozen
+           women, all of whom resemble Bill Joy, dressed in black and 
+           dancing sinuously.
+Song     : 
+
+
+Addicted To Vi
+(with apologies to Robert Palmer)
+
+You press the keys with no effect,
+Your mode is not correct.
+The screen blurs, your fingers shake;
+You forgot to press escape.
+Can't insert, can't delete,
+Cursor keys won't repeat.
+You try to quit, but can't leave,
+An extra "bang" is all you need.
+
+You think it's neat to type an "a" or an "i"--
+Oh yeah?
+You won't look at emacs, no you'd just rather die
+You know you're gonna have to face it;
+You're addicted to vi!
+
+You edit files one at a time;
+That doesn't seem too out of line?
+You don't think of keys to bind--
+A meta key would blow your mind.
+H, J, K, L?  You're not annoyed?
+Expressions must be a Joy!
+Just press "f", or is it "t"?
+Maybe "n", or just "g"?
+
+Oh--You think it's neat to type an "a" or an "i"--
+Oh yeah?
+You won't look at emacs, no you'd just rather die
+You know you're gonna have to face it;
+You're addicted to vi!
+
+Might as well face it,
+You're addicted to vi!
+You press the keys without effect,
+Your life is now a wreck.
+What a waste!  Such a shame!
+And all you have is vi to blame.
+
+Oh--You think it's neat to type an "a" or an "i"--
+Oh yeah?
+You won't look at emacs, no you'd just rather die
+You know you're gonna have to face it;
+You're addicted to vi!
+
+Might as well face it,
+You're addicted to vi!
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : The Alternative Wall
+Original : The Wall
+Group    : Pink Floyd
+Author   : ?
+Intro    : Here's a set of pseudosongs which is the result of several
+           long drunken nights talking on a bulletin board between 
+           London & Aberystwyth (220+ miles apart)... circa 1988.
+Song     : 
+
+                          The Alternative Wall:-
+
+ Established by:-  Anarchy, Atropos, White,
+    Roadrunner>>>++>>, & Giant Hogweed.
+
+Nobody On
+---------
+
+I got keyboard corns on my fingers,
+I got a Ethernet Pad for a brain,
+I got a VDU to prop up my mortal remains.
+
+My programs always fail,
+I got a strong urge to MAIL
+But I got no-one to MAIL to,
+MAIL to,
+MAIL to..
+
+Oh, babe, when I send down the phone,
+There's still nobody on...
+
+                      The Alternative Wall, Part Two.
+
+Does anybody here remember DEC?
+Remember how the manual
+Was useless to me
+In every way.
+
+UNIX, what has become of you?
+Can any other O/S be quite as slow as you...
+
+                     The Alternative Wall, Part Three.
+
+The Trial
+---------
+
+Good Morning, ROOT, your honour,
+The dump will plainly show the user who now stands before you
+Was caught red-handed in the system
+Crudely hacking in a truly vicious nature
+This will not do!
+CALL THE LOGFILE!
+
+"I always said he'd come to no good didn't I, ROOT, your honour,
+If they let me have my way I'd have him banned from the VAX!
+But my hands were tied,
+The bleeding hearts and artists
+Not to mention the Dave Prices
+Wouldn't let me throw him off!"
+
+-- Dedicated to Atropos The Wanderer.
+
+                        The Alternative Wall, Part Four.
+
+The UNIX Login Software
+-----------------------
+
+Is there anybody out there?
+
+(repeat ad nauseam)
+
+                        The Alternative Wall, Part Five.
+
+One of My Hacks
+---------------
+Log onto the system
+On that lurid green screen
+You'll find there's no response!
+
+Don't look so frightened,
+this is just a passing crash,
+One of my bad hacks!
+
+Would you like to watch TV,
+Well, that's no use to me
+I want to watch you squirm
+As you try to get logged on!
+
+Do you want to call the OPS,
+Do you think it's time I stopped?
+Why are you running away?
+
+                       The Alternative Wall, Part Six.
+
+Filled Up Spaces / What Shall We Do Now?
+----------------------------------------
+
+What shall we use to trash
+The filled up spaces on the archive tape?
+
+How should I hack and leave no traces,
+How shall the system completely fall?
+
+                      The Alternative Wall, Part Seven.
+
+Uncomfortably Numb
+------------------
+Hello, is there anybody on here?
+I'm here but can you see me?
+Is there anyone at home?
+C'mon now, I hear that MIST is down,
+I can ease the pain, maybe bring it up again.
+
+Relax, I need some information first,
+Just the basic facts, have you hacked the system Snurt?
+
+There is no shell, your call is clearing,
+The distant chips smoke on the breadboard,
+You are only coming through off pads,
+Your fingers move but I can't see what you're typing.
+
+When I was a child I caught a virus,
+My filebase swelled just like two balloons
+Now I've got that feeling once again,
+I can't explai(core dumped), you would not understand,
+This is not how I am.
+I have become uncomfortably numb.
+
+                      The Alternative Wall, Part Eight.
+
+In a Flash
+----------
+So ya
+Thought ya
+Might like to
+Go to the show
+To feel the thrill of board hacking,
+That luminescent glow.
+
+I've got some bad news for you, sunshine
+OPS not around, 'cos Node 5 is down,
+And they sent us along, they've gone to the bar,
+And we're going to find out who you guys
+Really are.
+
+Have we got any oppos on the system tonight?
+Grep 'em up against the wall.
+There's one on Bullet,
+He don't look right to me,
+Grep him up agaist the wall.
+That one's called Badger,
+And that one's Tyrone,
+Who let all this riffraff on their own;
+There's one smoking a joint and
+Another with sandals?
+If I had my way
+I'd have all of you shot.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : An Irish CPU
+Original : An Irish Ballad
+Group    : Tom Lehrer
+Author   : Sarah Elizabeth Miller
+Intro    : 
+Song     : 
+
+         AN IRISH CPU
+     (to An Irish Ballad by Tom Lehrer)
+         by Sarah Elizabeth Miller
+
+About a CPU I sing,
+Sing rickity, tickity, tin.
+About a CPU I sing
+Who sat around compi-a-ling
+And wouldn't do another thing
+For anyone else logged in, logged in,
+For anyone else logged in.
+
+Old programs it would just ignore,
+Sing rickity, tickity, tin.
+Old programs it would just ignore
+And leave them rotting in the core,
+Not caring what they all were for
+Except those in "user/bin", "user/bin",
+Except those in "user/bin".
+
+This CPU was lots of fun,
+Sing rickity, tickity, tin.
+This CPU was lots of fun
+Until one wanted programs run
+And if one tried to get them done
+It typed back "You're not logged in, logged in."
+It typed back "You're not logged in."
+
+Long processes it would not do,
+Sing rickity, tickity, tin.
+Long processes it would not do
+And, rather than to run them through,
+Would ask to have some Irish stew
+And a couple of cases of gin, of gin,
+And a couple of cases of gin.
+
+And then it would raise hellish toasts,
+Sing rickity, tickity, tin.
+And then it would raise hellish toasts
+And make a few obnoxious boasts,
+Not only could it drink the most,
+It knew many more ways to sin, to sin.
+It knew many more ways to sin.
+
+To prove its point to all the world,
+Sing rickity, tickity, tin.
+To prove its point to all the world
+It let the magtape fall in curls
+And wrap around some foxy girl
+And slowly rewind her in, her in,
+And slowly rewind her in.
+
+This sordid tale I won't prolong,
+Sing rickity, tickity, tin.
+This sordid tale I won't prolong
+And, if you do not enjoy my song,
+You've got Abe to blame if it's too long.
+He should never have let me begin, begin.
+He should never have let me begin.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Another Glitch in the Call
+Original : Another Brick in the Wall
+Group    : Pink Floyd
+Author   : Knappy 8350428 @ UWAVM
+Intro    : 
+Song     : 
+
+                      Another Glitch in the Call
+                      ==========================
+            (Sung to the tune of a similar Pink Floyd song.)
+                (Contributed By Knappy 8350428 @ UWAVM)
+ 
+     We don't need no indirection
+     We don't need no flow control
+     No data typing or declarations
+        Hey!  You!  Leave those lists alone!
+     Chorus:  
+        All in all, it's just a pure-LISP function call.
+     We don't need no side effect-ing
+     We don't need no scope control
+     No global variables for execution
+        Hey!  You!  Leave those args alone!
+     (Chorus)
+     We don't need no allocation
+     We don't need no special nodes
+     No dark bit-flipping in the functions
+        Hey!  You!  Leave those bits alone!
+     (Chorus)
+     We don't need no compilation
+     We don't need no load control
+     No link edit for external bindings
+        Hey!  You!  Leave that source alone!
+     (Chorus, and repeat) 
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Another One
+Original : ?
+Group    : ?
+Author   : ?
+Intro    : Not quite the usual parody, but nice for all UNIX fans
+           among us :-)
+Song     : 
+
+
+better !pout !cry
+better watchout
+lpr why
+santa claus <north pole >town
+
+cat /etc/passwd >list
+ncheck list 
+ncheck list
+cat list | grep naughty >nogiftlist
+cat list | grep nice >giftlist
+santa claus <north pole > town
+
+who | grep sleeping
+who | grep awake
+who | egrep 'bad|good'
+for (goodness sake) {
+ be good
+}
+
+    better !pout !cry
+    better watchout
+    lpr why
+    santa claus <north pole >town
+
+    cat /etc/passwd >list
+    ncheck list 
+    ncheck list
+    cat list | grep naughty >nogiftlist
+    cat list | grep nice >giftlist
+    santa claus <north pole > town
+
+    who | grep sleeping
+    who | grep awake
+    who | grep bad || good
+    for (goodness sake) { be good; }
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : A Time for DWIM
+Original : A Time for Us
+Group    : theme song from Romeo and Juliet
+Author   : Guy L. Steele Jr.
+Intro    : 
+Song     : 
+
+                 A Time for DWIM
+
+           [to be sung to the tune of
+                  A Time for Us
+       (theme song from Romeo and Juliet)]
+
+
+A time for DWIM
+There'll never be;
+   No clever code
+   This losing mode
+Can UNDO for me.
+
+This "golden hope"
+(To be denied)
+   Could never
+Correctly fix the bugs my programs hide.
+
+A way for bugs
+There'll never be
+To fix with generality.
+
+So to this DWIM
+Let's say farewell;
+   The crocks therein
+   Prove it can't win
+And ring its knell:
+
+Do What I Mean
+Is just a ruse --
+   It really
+Means only: Fix How Teitelman doth Lose!
+
+
+                -- The Great Quux
+                     (with apologies to
+                        Rota, Kusik, and Snyder)
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : BBN Superlisp
+Original : Jesus Christ Superstar
+Group    : from Jesus Christ Superstar
+Author   : Guy L. Steele Jr.
+Intro    : 
+Song     : 
+
+            BBN Superlisp
+
+           [to be sung to the tune of
+             Jesus Christ Superstar]
+
+
+Every time I look at you I don't understand
+Why you think "Do What I Mean" is so cool and grand;
+You'd have managed better if you'd thought it through,
+Why'd you pick such an awkward way your bugs to undo?
+Your hairy feature will not be the last revolution,
+It's clear "Mean What I Do" is the ultimate solution!
+
+Don't you get me wrong,
+Don't you get me wrong,
+Don't you get me wrong, now,
+Don't you get me wrong,
+I only want to hack,
+I only want to hack,
+I only want to hack,
+I only want to hack.
+
+BBN! BBN! Some people think you're the living end!
+BBN! BBN! Some people think you're the living end!
+BBN! SuperLISP! Can "Do What I Mean" measure up to this?
+BBN! SuperLISP! Can "Do What I Mean" measure up to this?
+
+Tell us what you think about your friends at the top,
+Who d'you think besides yourself's the pick of the crop?
+Is LISP 1.5 where it's at? Is it where you are?
+Does Stanford's LISP have features too or is that just PR?
+Do you have the breakpoint scheme that MACLISP is known for,
+Or is that just the kind of kludge the user's on his own for?
+
+Don't you get me wrong,
+Don't you get me wrong,
+Don't you get me wrong, now,
+Don't you get me wrong,
+I only want to hack,
+I only want to hack,
+I only want to hack,
+I only want to hack.
+
+BBN! BBN! Some people think you're the living end!
+BBN! BBN! Some people think you're the living end!
+BBN! SuperLISP! Can "Do What I Mean" measure up to this?
+BBN! SuperLISP! Can "Do What I Mean" measure up to this?
+
+
+                        -- The Great Quux
+                             (with apologies to
+                                Rice and Webber)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Berkeley 4.3
+Original : Yellow Submarine
+Group    : Beatles
+Author   : Jim Finnis
+Intro    : [fragment]
+Song     :
+  In the RAM
+  where I was forked,
+  lived a ROM,
+  who sailed the C...
+
+  And he told,
+  me of his life,
+  in the Berkeley,
+  4.3...
+
+  We all live in the Berkeley 4.3,
+  Berkeley 4.3, Berkeley 4.3.
+  We all live in the Berkeley 4.3,
+  Berkeley 4.3, Berkeley 4.3.
+
+    ((c) White the Wizard productions Ltd, 1987)
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Boot It
+Original : Beat it
+Group    : Michael Jackson
+Author   : ?
+Intro    : 
+Song     : 
+
+   
+Boot It
+
+
+You're processing some words when your keyboard goes dead, 
+Ten pages in the buffer, should have gone to bed, 
+The system just crashed, but don't lose your head,
+Just BOOT IT, just BOOT IT.   
+
+
+Better think fast, better do what you can,
+Read the manual or call your system man, 
+Don't want to fall behind in the race with Japan, 
+
+So BOOT IT,   
+
+Get the system manager to   BOOT IT,     BOOT IT, 
+Even though you'd rather shoot it. 
+Don't be upset, it's only some glitch. 
+All that you do is flip a little switch. 
+
+BOOT IT,     BOOT IT, 
+
+Get right down and restitute it.
+Don't get excited, all is not lost. 
+CP/M, UNIX or MS/DOS Just BOOT IT, boot it, boot it, boot it...         
+
+You gotta have your printout for the meeting at two, 
+The system says your jobs at the head of the queue, 
+Right then the thing dies but you know what to do, BOOT IT.   
+
+You always get so worried when the system runs slow, 
+And when it finally crashes, 
+man you feel so low, 
+But computers make mistakes (they're only human you know) 
+So BOOT IT,   Call the local guru to   BOOT IT,     BOOT IT, 
+Go ahead re-institute it. 
+If you're not lucky, 
+get the book off the shelf, 
+But if you are, it'll do itself. 
+BOOT IT,     BOOT IT, 
+Then go find the guy who screwed it! 
+Operating systems are built to bounce back, 
+Whether it's a Cray or a Radio Shack.   
+
+BOOT IT,     BOOT IT                   
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Both Ways, Now
+Original : Both Sides, Now
+Group    : Joni Mitchell
+Author   : Guy L. Steele Jr.
+Intro    : 
+Song     : 
+
+              Both Ways, Now
+
+           [to be sung to the tune of
+                Both Sides, Now]
+
+
+Decimal digits in a row,
+Just set the dials and let 'er go.
+The ENIAC was grossly slow --
+    I used to code that way,
+But then this Fortran came along;
+I danced and sang a happy song:
+So natural -- what could go wrong?
+    I little knew, that day!
+I've looked at Fortran both ways, now,
+At II and IV, and still somehow,
+It's rows of numbers I recall;
+I really don't know Fortran at all.
+
+Fortran IV is real good stuff,
+But business hackers have it tough;
+For them this Fortran's not enough --
+    Then Cobol saved the day!
+But now I sing a sad refrain;
+This Cobol loss is no one's gain,
+And writing programs is a pain
+    (I get writer's cramp that way!)
+I've looked at Cobol both ways, now,
+I code in it, and still somehow,
+It's FORMAT statements I recall;
+I really don't know Cobol at all.
+
+Cobol will for business do;
+Accounts and payroll make it through
+(And bills for zero dollars too --
+    I get them every day!)
+But those who hack symbolic frobs
+Cannot make do with Cobol jobs,
+And now I sing through anguished sobs,
+    But Lisp is here to stay.
+I've looked at Lisp code both ways, now,
+At lambda forms, and still somehow,
+It's Cobol statements I recall;
+I really don't know Lisp at all.
+
+
+                -- The Great Quux
+                     (with apologies to
+                        Joni Mitchell)
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : The Boys of HP
+Original : The Boys of Summer
+Group    : Don Henley
+Author   : Adam Sah <aos@max.physics.sunysb.edu>
+Intro    : This reminds me of something we printed here in C.S.
+           Major Magazine regarding our beloved Hewlett-Packard 300
+           Series...
+Song     : 
+
+The Boys of HP (sung to the tune 'The Boys of Summer' by Don Henley)
+--------------
+                             (csfs1 = Comp. Sci File Server 1)
+Nobody in the room
+no cursor on the screen
+I feel it in the air
+'csfs1 not responding'
+empty disk, empty screen,
+the server goes down alone
+I was logged into my account
+and I know you have no phone.
+
+I can see it
+the workstation's collecting dust
+You've got your 'console long:'
+and your blank screen, baby.
+And I can tell you
+I'll never get my source by dawn
+once the boys from HP have gone.
+
+I'll never forget those night.
+I wonder if I ever got to sleep?
+Remember how you made me crazy
+Remember how _you_ made _me_ scream?
+I don't understand what happened to my source
+If I can't ever get it back,
+I'm sure you have no remorse.
+
+I can see it
+the system crashing on me
+you've got your pinstriped suit
+and your corporate paranoia, baby.
+And I can tell you
+my love for this will still be strong
+after the boys of HP have gone
+
+Out in the corridors I saw
+    a bunch of lost programmers
+A little voice inside my head say,
+    "Don't buy more,
+     you should never buy more"
+I thought I knew where my source was
+What did I know?
+Those servers are gone forever,
+I should just let them go, but-
+
+I can see it-
+your drives eating my work
+You've got that salesman's pitch
+and your demo running baby.
+and I can tell you-
+my love for CS will still be strong
+even after the boys from HP have gone.
+
+(c) 1991 by Adam Sah
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Core dumped blues
+Original : ?
+Group    : ?
+Author   : ?
+Intro    : (from Fortune file on IBM RISC 6000)
+Song     : 
+
+
+Well, my terminal's locked up, and I ain't got no Mail
+ And I can't recall the last time my Program didn't fail;
+I've got stacks in my structs, I've got array in my queues,
+ I've got the : Segmentation violation -- Core dumped blues.
+
+If you think that's nice that you get what you C,
+ Then go : illogical statment with your whole family,
+'Cause the Supreme Court ain't the only place with : Bus error views.
+ I've got the : Segmentation violatien -- Core dumped blues.
+
+On a PDP-11, life should be a breeze,
+ But with VAXen in the house even magnetic tape would freeze,
+Now you might think that unlike VAXen I'd know who I abuse,
+ I've got the : Segmentation violation -- Core dumped blues.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : CRASH! goes the System
+Original : POP goes the weasel
+Group    : ?
+Author   : ?
+Intro    :  Here's one my father wrote some years ago.  It used to hang
+            on the door to the computer room in building 2 at Goddard
+            Space Flight Center (NASA).
+Song     : 
+
+  CRASH! goes the System
+
+ Two specks of dust on a Winchester disk
+ No use to hope you missed them
+ That's the way computing goes--
+ CRASH! goes the system.
+
+ Go exchange the circuit boards
+ Try and use your wisdom
+ No way will you catch that bug--
+ CRASH! goes the system.
+
+ Our pride and joy has features galore
+ It takes a day to list them
+ And none of them can be used any more--
+ CRASH! goes the system.
+ 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : CRAY-S's coolant
+Original : Octopusse's Garden
+Group    : Beatles
+Author   : aem@aber.ac.uk (Alec David Muffett)
+Intro    : [fragment]
+Song     :
+
+  I'd like to be
+  under the sea,
+  in a CRAY1-S's coolant in the shade
+
+  This freon gas
+  will freeze my ass,
+  in a CRAY1-S's coolant in the shade...
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Cycles For Nothing
+Original : Money For Nothing
+Group    : Dire Straits
+Author   : Matt Crawford <matt@oddjob.uchicago.edu>
+Intro    : 
+Song     :
+
+  Cycles For Nothing
+
+(i want my
+ i want my
+ i want my X-MP!)
+
+Now look at them yo-yo's that's
+ the way you do it
+You run the fortran on the X-MP
+That ain't hackin' that's the way
+ you do it
+Cycles for nothin', gigabits for free
+Now that ain't hackin' that's the way
+ you do it
+Lemme tell ya them guys ain't dumb
+Maybe Monte Carlo on a three-quark
+ system
+Maybe design a little neutron bomb
+
+ We gotta install microwave uplinks
+ Custom fuzzballs for everyone
+ We gotta link up DDS circuits
+ BERT and loopback tests to run
+
+See the kid professor with the blue
+ jeans and the necktie
+Yeah buddy that's his own hair
+That kid professor got his Nobel
+ prize now
+That kid professor he's a millionaire
+
+ We gotta install microwave uplinks
+ Custom fuzzballs for everyone
+ We gotta link up DDS circuits
+ BERT and loopback tests to run
+
+I shoulda stuck to writing in fortran
+I shoulda kept that old 029
+Look at that output, he got it stacked
+ up to the ceilin'
+I bet he ain't read one line
+And in there, what's that?
+ A hundred postdocs?
+Bangin' on the keyboards like some
+ chimpanzees
+That ain't hackin' that's the way you
+ do it
+Cycles for nothin', gigabits for free
+
+ We gotta install microwave uplinks
+ Custom fuzzballs for everyone
+ We gotta link up DDS circuits
+ BERT and loopback tests to run
+
+
+  by Matt Crawford
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : The Day Bell System Died
+Original : American Pie
+Group    : Don Mclean
+Author   : Lauren Weinstein <vortex!lauren@LBL-CSAM>
+Intro    : Greetings.  With the massive changes now taking place in the 
+           telecommunications industry, we're all being inundated with
+           seemingly endless news items and points of information
+           regarding the various effects now beginning to take place. 
+           However, one important element has been missing: a song!
+           Since the great Tom Lehrer has retired from the composing
+           world, I will now attempt to fill this void with my own
+           light-hearted, non-serious look at a possible future of
+           telecommunications.  This work is entirely satirical, and
+           none of its lyrics are meant to be interpreted in a 
+           non-satirical manner.  The song should be sung to the tune
+           of Don Mclean's classic "American Pie". I call my version
+           "The Day Bell System Died"...
+Song     : 
+     *==================================*
+     * Notice: This is a satirical work *
+     *==================================*
+
+                 "The Day Bell System Died"         
+
+              Lyrics Copyright (C) 1983 by Lauren Weinstein   
+                                              
+                   (To the tune of "American Pie")
+       (With apologies to Don McLean)
+   
+  ARPA: vortex!lauren@LBL-CSAM
+  UUCP: {decvax, ihnp4, harpo, ucbvax!lbl-csam, randvax}!vortex!lauren
+
+
+Long, long, time ago,
+I can still remember,
+When the local calls were "free".
+And I knew if I paid my bill,
+And never wished them any ill,
+That the phone company would let me be...
+
+But Uncle Sam said he knew better,
+Split 'em up, for all and ever!
+We'll foster competition:
+It's good capital-ism!
+
+I can't remember if I cried,
+When my phone bill first tripled in size.
+But something touched me deep inside,
+The day... Bell System... died.
+
+And we were singing...
+
+Bye, bye, Ma Bell, why did you die?
+We get static from Sprint and echo from MCI,
+"Our local calls have us in hock!" we all cry.
+Oh Ma Bell why did you have to die?
+Ma Bell why did you have to die?
+
+Is your office Step by Step,
+Or have you gotten some Crossbar yet?
+Everybody used to ask...
+Oh, is TSPS coming soon?
+IDDD will be a boon!
+And, I hope to get a Touch-Tone phone, real soon...
+
+The color phones are really neat,
+And direct dialing can't be beat!
+My area code is "low":
+The prestige way to go!
+
+Oh, they just raised phone booths to a dime!
+Well, I suppose it's about time.
+I remember how the payphones chimed,
+The day... Bell System... died.
+
+And we were singing...
+
+Bye, bye, Ma Bell, why did you die?
+We get static from Sprint and echo from MCI,
+"Our local calls have us in hock!" we all cry.
+Oh Ma Bell why did you have to die?
+Ma Bell why did you have to die?
+
+Back then we were all at one rate,
+Phone installs didn't cause debate,
+About who'd put which wire where...
+Installers came right out to you,
+No "phone stores" with their ballyhoo,
+And 411 was free, seemed very fair!
+
+But FCC wanted it seems,
+To let others skim long-distance creams,
+No matter 'bout the locals,
+They're mostly all just yokels!
+
+And so one day it came to pass,
+That the great Bell System did collapse,
+In rubble now, we all do mass,
+The day... Bell System... died.
+
+So bye, bye, Ma Bell, why did you die?
+We get static from Sprint and echo from MCI,
+"Our local calls have us in hock!" we all cry.
+Oh Ma Bell why did you have to die?
+Ma Bell why did you have to die?
+
+I drove on out to Murray Hill,
+To see Bell Labs, some time to kill,
+But the sign there said the Labs were gone.
+I went back to my old CO,
+Where I'd had my phone lines, years ago,
+But it was empty, dark, and ever so forlorn...
+
+No relays pulsed,
+No data crooned,
+No MF tones did play their tunes,
+There wasn't a word spoken,
+All carrier paths were broken...
+
+And so that's how it all occurred,
+Microwave horns just nests for birds,
+Everything became so absurd,
+The day... Bell System... died.
+
+So bye, bye, Ma Bell, why did you die?
+We get static from Sprint and echo from MCI,
+"Our local calls have us in hock!" we all cry.
+Oh Ma Bell why did you have to die?
+Ma Bell why did you have to die?
+
+We were singing:
+
+Bye, bye, Ma Bell, why did you die?
+We get static from Sprint and echo from MCI,
+"Our local calls have us in hock!" we all cry.
+Oh Ma Bell why did you have to die?
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : DECman
+Original : Gasman
+Group    : Flanders and Swann
+Author   : Tony Duell
+Intro    : This is dedicated to all those who called out DEC
+           field service for a simple problem, and wished you hadn't..
+Song     : 
+
+
+It was on a Monday morning
+The DEC man came to call,
+My system wouldn't boot
+There was no prompt at all
+He pulled out all my SPC's
+To try a new backplane
+And I had to get the hardware guys 
+to put them back again
+  Oh it all makes work for field service men to do!
+
+It was on a Tuesday morning
+The hardware man came round
+He soldered and he fiddled 
+And he said 'Look what I've found'
+'Your ECOs are years behind'
+'But I'll put it all to rights'
+Then he shorted out the power supply
+and out went all the lights
+  Oh it all makes work for field service men to do! 
+
+It was on a Wednesday morning 
+The power supply came
+'It's newer and it's better'
+'But it works just the same'
+He could not fit the unit
+without stripping half the rack
+then he dropped my boot HDA
+so He called Peripherals back
+  Oh it all makes work for field service men to do!
+
+It was on a Thursday morning 
+The HDA came along
+with a blocklist and a cable
+and a list of what goes wrong
+He put it into my drive
+It took no time at all
+But I had to get the software guys
+to come and re-install
+  Oh it all makes work for field service men to do
+
+It was on a Friday morning
+That Software made a start
+With BACKUP and SYSGEN
+He configured every part
+Every track and every sector
+But I found when he was gone
+He had overwritten the boot track
+and I couldn't turn it on
+
+  On saturday and Sunday They do no work at all
+  So It was on a Monday morning that the DEC man came to call
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : The Disks of UNIX
+Original : Sound of Silence
+Group    : Simon and Garfunkel
+Author   : ? Malcolm Dickinson <CLARINET@YALEVMX>
+Intro    : 
+Song     : 
+
+     
+                          The Disks of UNIX
+                          =================
+          Submitted by Malcolm Dickinson <CLARINET@YALEVMX>
+               Sung to the Tune of "Sounds of Silence"
+                        by Simon and Garfunkel
+     
+Hello comix my old friend.
+I've come to program you again.
+because a student softly creeping,
+guessed my password while I was sleeping.
+And the programs
+with just remnants in my brain,
+don't remain,
+upon the disks... of UNIX.
+     
+In flick'ring lights I type along.
+Load my program, what was wrong?
+Letters haloed by my squinting,
+at the program that I was lint-ing.
+For my eyes were blurred
+by the flash of the cathode beam,
+term'nal screen,
+and all the C... on UNIX.
+     
+And in the fuzzy light I saw
+10,000 hackers, maybe more:
+Hackers staring without blinking,
+hackers typing without thinking.
+Hackers writing code
+that programs never shared.
+(No one dared,
+disturb the disks... of UNIX.)
+     
+"Fools," said I, "you do not know.
+Kludges make the d.u. grow.
+Comment functions that I might read them.
+Update man-files 'cause I might need them."
+But my words
+like unread printout fell,
+(Oh well...)
+An echo,
+On the disks... of UNIX.
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Don't Call From Home
+Original : The Man's Too Strong
+Group    : Dire Straits
+Author   : Jonathon Luning <LUNJONT@YALEVMX>
+Intro    : 
+Song     : 
+
+     
+                         Don't Call From Home
+                         ====================
+                 by Jonathon Luning <LUNJONT@YALEVMX>
+              Sung to the Tune of "The Man's Too Strong"
+                           by Dire Straits
+     
+            I'm just an ageing hacker-boy
+            And in the days I used to play
+            And I've called the tune
+            To many a system's ruin.
+            Now they say I am a real criminal
+            And I'm hiding away.
+            Just one more terminal session.
+     
+            I have simplified robbery
+            With my PCs.
+            I have called in the money
+            And it's now overseas.
+            I have re-written bank accounts
+            With thousands on my books;
+            Made up identities
+            Without changing my looks.
+     
+            And I can still hear the touch-tones
+            And the clicks on the phone.
+            Don't call too long.
+            Don't call from home.
+     
+            Well I've cracked IBM
+            And I've cracked NSA
+            And I've cracked every network
+            In the whole USA.
+            I have called out on Sprint
+            And from any payphone;
+            Billed to people
+            I never have known.
+     
+            And I can still hear the touch-tones
+            And the clicks on the phone.
+            Don't call too long.
+            Don't call from home.
+     
+            Well the sun comes in my office
+            And they all did hear him say
+            "You're really too much for us,
+            You're worth more than we can pay.
+            You may still hear from Burroughs
+            But I ask you now today:
+            Won't you please work with us
+            At the good old CIA?"
+            Now I run all surveillance
+            From LA to Kremlin's dome.
+            Don't call too long.
+            Don't call from home.
+     
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Don't Have a Conniption
+Original : Walk Like an Egyptian
+Group    : Bangles
+Author   : Brent C.J. Britton
+Intro    : 
+Song     : 
+     
+                       Don't Have a Conniption
+                       =======================
+                        by Brent C.J. Britton
+             Sung to the tune of "Walk Like an Egyptian"
+                            by the Bangles
+     
+           All the system ops in this place,
+           They monitor me, just for fun.
+           If I logon here,
+           (ohwayoh)
+           They force me off 'fore my profile runs.
+     
+           'Cause I have a reputation
+           For doing things which I shouldn't be,
+           Like running CHATS,
+           (ohwayoh)
+           And bootlegging Lotus-123.
+     
+           So you see, when they yell at me, I say,
+           (wayohwayoh, wayohwayoh)
+           "Don't have a conniption..."
+     
+           Found how to change all my privs;
+           I didn't know that I broke a rule.
+           I forced the op,
+           (ohwayoh)
+           I dropped the link, then I purged the spool.
+     
+           All the sys ops, so sick of me,
+           They don't let my databases run.
+           I broke CP,
+           (ohwayoh)
+           They had a big fat connip-tion.
+     
+           When they NOLOG my account, I say
+           (wayohwayoh, wayohwayoh)
+           "Don't have a conniption..."
+     
+           They've hated me since I stored
+           Inside the real PSW.
+           We crashed hard you know,
+           (ohwayoh)
+           I guess I forgot a bit or two.
+     
+           If you want to find software cops,
+           They're hanging out in the software shops.
+           They kick your pants,
+           (ohwayoh)
+           And give the boot to your VMBLOCK.
+     
+           I ran my Turing Machine;
+           Another one was assembl'in.
+           And it crunched all night,
+           (ohwayoh)
+           The system op had connip'tions.
+     
+           To software cops in the software shops, I say
+           (wayohwayoh, wayohwayoh)
+           "Don't have a conniption..."
+           "Don't have a conniption."
+     
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Emacs Wizard
+Original : Pinball Wizard
+Group    : The Who
+Author   : ?
+Intro    : Complete with formatting and all :-)
+Song     : 
+
+\documentstyle[twocolumn,12pt]{article}
+
+\begin{document}
+
+\begin{verse}
+
+
+Ever since I was a young boy\\
+I've played with each O.S.\\
+From Unix down to Kronos \\
+I've crashed them I confess\\
+But I ain't seen nothing like him\\
+Not even in VMS\\
+That set-mark and bind kid\\
+Sure strokes a mean Emacs.
+
+He sits there never blinking\\
+Becomes part of the machine\\
+Controls with either pinkie\\
+A virtual typing stream\\
+He optimizes keystrokes\\
+Swamps your Microvax\\
+That set-mark and bind kid\\
+Sure strokes a mean Emacs.
+
+He's an Emacs wizard \\
+Without a binding list\\
+An Emacs wizard \\
+s' got such a calloused wrist.
+
+How do you think he does it? I don't know!\\
+What makes him so good?
+\newpage
+
+He ain't got no distractions\\
+He refuses warning bells\\
+He heeds no cursor flashing\\
+Plays by sense of smell\\
+He never needs to undo\\
+Knows all of Stallman's hacks\\
+That set-mark and bind kid\\
+Sure strokes a mean Emacs.
+
+I thought I was \\
+The keyboard-macro  kid\\
+But I just handed\\
+My Emacs crown to him.
+
+Even my usual bindings\\
+He prefixed all my best\\
+His disciples feed him Coke\\
+And he just does the rest\\
+He's got super-meta-fingers\\
+Never hits the cracks\\
+That set-mark and bind kid\\
+Sure strokes a mean Emacs.
+
+\end{verse}
+\end{document}
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Every Cycle is Sacred
+Original : Every Sperm is Sacred
+Group    : Monty Python (Meaning of Life)
+Author   : Tony Duell  <ard@siva.bris.ac.uk>
+Intro    : 
+Song     : 
+
+
+There are Suns in this world, there are Apples,
+There are Sequents and Goulds and then,
+There are those who clone I B M, BUT
+I've never been one of them.
+
+For I'm an 11/45
+and have been since the day I was made
+And the one thing they say about PDP's is
+They'll run no matter what they said,
+You don't have to be in a six-footer,
+You don't have to have a 9-slot backplane
+You don't have to have Memory Management,
+You're booted the moment DCLO came, For
+
+Every Cycle is Sacred,
+Every Cycle is Great,
+If a cycle gets wasted,
+DEC gets quite irate!
+
+{Repeat}
+
+Let the others waste them,
+On floating-point multiply
+DEC shall make them pay for
+Each add able to be skipped by.
+
+Every cycle is wanted
+Every cycle is good
+Every cycle is needed
+In your neighbourhood
+
+Intel, Sun and Zilog
+Branch their's just anywhere
+DEC loves those who write
+Their Microcode with more care
+
+Every cycle is useful
+Every cycle is fine
+DEC saves everybody's
+Time and Time and Time.
+
+Other systems waste theirs
+while fetching o'er t'backplane
+DEC shall strike them down for
+each cycle thats run in vain
+
+Every cycle is sacred,
+Every cycle is great,
+If a cycle gets wasted,
+DEC GETS QUITE IRATE!!!
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Fork()ing on a Sun
+Original : Seasons in the Sun
+Group    : Terry Jacks
+Author   : aem@aber.ac.uk (Alec David Muffett)
+Intro    : Here's a little ditty I penned back in 1987 when I was first
+           getting to grips with IP (and killing the machine at the same time).
+           If you don't recognise the words well enough to get the tune, you
+           weren't born...  as for pronunciation, pronounce "vi" as
+           "vye" - that way, the song scans properly.  No flames,
+           please... 
+           The chorus is a wonderful thing to sing in pubs (bars)
+           when you and a group of hackers get together, because it
+           is eminently recognisable, but no-one outside your group
+           will have the foggiest idea what you're on about...
+           [fragment]
+Song     :
+
+  Goodbye my shell, it's hard to "vi",
+  I cannot socket(), even though I try,
+  Everything keeps going wrong...
+  It needs a bind() to carry on,
+  Proc' table's been full for too long.
+
+ Chorus:
+  We had Joy, We had fun,
+  We were fork()ing on a Sun,
+  but the joy is all gone,
+  'til the processes are Done [1].
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Friend of the System
+Original : Friend of the Devil
+Group    : Jerry Garcia & Robert Hunter
+Author   : Larry Stone <STONE@YALECS>
+Intro    : 
+Song     : 
+     
+                         Friend of the System
+                         ====================
+                    By Larry Stone <STONE@YALECS>
+             Submitted by Jeff Brandenburg <BRAND@VTCS1>
+              Sung to the tune of "Friend of the Devil"
+                   by Jerry Garcia & Robert Hunter
+     
+  I logged on to the Ed-VAX, left a trail of coffee grounds.
+  Didn't get to sleep that night 'til the morning came around.
+     
+Chorus:
+  Said I'll run my program but it will take some time;
+  A friend of the System is a friend of mine.
+  If I get done before daylight,
+  I just might write some code tonight.
+     
+  Ran into the System, baby, and it tried to blow me off.
+  Spent the evening learning Pascal but still all it does is scoff!
+     
+(chorus)
+     
+  I tried to run the editor, but the System caught me there;
+  It took my FORTRAN program and it vanished in the air!
+     
+(chorus)
+     
+  Got two reasons why I stay awake each night and day;
+  The first one's name I can't pronounce, but he is my TA.
+  The second one's my college Dean, 'cause I'm about to fail!
+  She says if I don't pass C.S. I won't be long at Yale.
+     
+  Got a program in T-Lisp, baby, and one in FORTRAN IV.
+  The first one has a hundred bugs but the other one has more!
+     
+(chorus)
+     
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Gateway To Heaven
+Original : Stairway To Heaven
+Group    : Led Zeppelin
+Author   : EileenET Tronolone <et@sctc.af.mil>
+Intro    : I just had to send it in, fellas. I'm sorry. I could not
+           let all that stuff go by and not send it in.
+Song     : 
+
+
+Gateway To Heaven
+
+There's a lady who knows
+All the systems and nodes
+And she's byteing a Gateway to Heaven
+She telnets there, she knows
+All the ports have been closed
+With a nerd she can get
+Files she came for
+
+Woohoohoo
+Woo Hoo Hoo HooHoo
+And she's byteing a Gateway to Heaven
+There's an motd
+But she wants to be sure
+Cos she knows sometimes hosts have
+Two domains
+In a path by the NIC
+There's a burdvax that pings
+Sometimes all of our flames
+are cross-posted
+
+Woohoohoo
+Woo Hoo Hoo HooHoo
+And she's byteing a Gateway to Heaven
+And it's processed by root
+Unix Labs will reboot
+NCR will then listen to reason
+And a prompt will respawn
+For those yet to logon
+And the networks will echo much faster
+
+Woohoohoo
+Woo Hoo Hoo HooHoo
+And she's byteing a Gateway to Heaven
+If there's a lookup in your netstat
+don't be .alarmed now
+it's just a pinging from the link queen
+Yes there are two routes you can type in
+but in the long run
+there's still time to change the net you're on
+(I hope so!)
+
+And as we find stuff to download
+We ftp and we chmod
+There was a sysadm we know
+Who changed the server to her own
+She had root privs and she used chown
+She hacked out on the DDN
+And if you tail her stdin
+Then you will find what you had lost
+And get it back with cpio
+To be a hack and not to scroll...
+
+And she's byteing a Gateway to Heaven
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : HACKADU
+Original : Xanadu
+Group    : Samuel Taylor Coleridge
+Author   : Stuart McLure Cracraft
+Intro    : 
+Song     : 
+
+
+ HACKADU
+
+In Hackadu did Hackers Few
+  An awesome program-hack command:
+Where 20, the sacred system, grew
+Through monitors nobody knew
+  Down during the great demand.
+Always twice two months to newer release
+With TTY's and EMACS to bring the peace:
+And here was software smothered by edit-line effects,
+Where many a bureaucrat sauntered across the land,
+And where MSG/TELNET/FTP were ancient as TENEX,
+Constricting winning spots into the bland.
+
+But oh! those abiding Hackers Few were cunning
+And lept the heights of unimaginable lossage!
+A savage place; as daemonical and sinning
+as e'er which plastered a screen with "%DECSYSTEM-20 Not Winning"
+B'fore users exchausted from the barfage!
+And from this chaos, with irresistable force,
+As if this thing were itself the Source,
+A mighty idea came glistening to Hackers Fewest
+Amid whose logic the sinning 20 burst
+Huge fragments of scheduler flung forth like rebounding netmail,
+Or chaffy words beneath the BLT's flail:
+And 'mid this stupendous destruction at once and forever
+It flung up the 20 to permanently sever.
+Pages and pages of listings the burning grew
+Through structures and directories in the Coup,
+Then reached the sources known to few,
+And slaughtered in tumult the offending mass:
+And 'mid this tumult Hackers Few heard from afar
+Ancestral systems declaring war!
+
+    The shadows of the program-hack
+    Floated strongly on the net;
+    Where was heard the anguished cry of the Sack
+    From which they inferred they'd win, they bet.
+A true war of Hackers Few against Timesharing,
+With the ancestors of the 20 battling forth with infinite daring!
+
+    A 10 with a mighty cpu
+    In this battle the Hackers Few espied:
+    It was a DEC original that knew,
+    That once the Hackers Few irresistibly grew,
+    It would forever be banned to limbo.
+    Could it wreak havoc upon the Few?
+    With its powerful CPU?
+    To such a deep satisfaction the answer is no,
+That with a slice of their sword through its board,
+The Hackers Few did clobber its bagbiting cord,
+To realize the Source, the Idea, the Solution!
+And all the users who saw this mighty battle raging,
+And shrieked, Tsk! Tsk!
+While the 10s' and 20s' flashed screens, their crashing disks!
+The Few weaved a carnage about this awful outpouring,
+And closed the 10s' and 20s' eyes,
+For the Hackers Few had earlier fed upon the lies
+And now had drunk the milk of Personal Computing.
+
+
+   Stuart McLure Cracraft
+      (with apologies to Samuel Taylor Coleridge)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : The Hacker Song
+Original : Put Another Nickel In
+Group    : ?
+Author   : Chesire Catalyst
+Intro    : 
+Song     : 
+
+Put another password in,
+Bomb it out and try again.
+Try to get past logging in,
+We're hacking, hacking, hacking.
+
+Try his first wife's maiden name.
+This is more than just a game.
+It's real fun, but just the same,
+It's hacking, hacking, hacking.
+
+Sys-call, let's try sys-call.
+Remember, that great bug from version 3,
+Of R S X, It's here!  Whoopie!
+
+Put another sys-call in,
+Run those passwords out and then,
+Dial back up, we're logging in.
+It's hacking, hacking, hacking!
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : The HACTRN
+Original : The Raven
+Group    : Edgar Allan Poe
+Author   : Guy L. Steele Jr.
+Intro    : [a bit longish - sth]
+Notes for those not familar with the terms in this poem:
+
+TTY ("titty") = any terminal, not necessarily a teletype (in this case,
+ a CRT); in particular, a terminal associated with and in control
+ of a job tree (see "DDT" below).  The terminal may be passed up
+ and down the job tree; at any point in time only one job in the
+ tree may use the tree's TTY. When ^Z is typed on the TTY, the
+ system intervenes, stopping the job which has the TTY, and
+ interrupts that job's superior in the tree, which may then grab
+ the TTY from the inferior job.
+
+DDT ("dee dee tee") = HACTRN ("hack-tran") = top level debugging and job
+ controlling procedure, capable of controlling up to eight
+ simultaneous jobs (which may themselves be DDTs!) and performing
+ other miscellaneous functions. HACTRN specifically denotes a
+ DDT at the top of a job tree, while DDT is the more general
+ term.  The two terms refer to the same job in the poem, and are
+ thus treated as synonymous.  Note that DDT requires its subjobs
+ to have unique names for obvious reasons;  hence the concern
+ over seven jobs all named FOO.
+
+PEEK = a program similar to the SYSTAT of certain PDP-10 monitor systems
+ of dubious quality. PEEK is actually much more versatile, giving
+ information in any of some dozen modes, such a job status,
+ DECtape status, Arpanet sockets, terminal status, and scheduler
+ variables and statistics.  It also has provisions for
+ maintaining a continuously updated display on a CRT, and for
+ line printer usage.
+
+TECO ("teeko") = text editor and corrector (that is, the good version of
+ several versions of TECO which are floating around).
+
+:KILL ("colon kill") = message typed out by DDT whenever it kills a
+ subjob.  Note that subjobs, if running, may request DDT to kill
+ themselves.  If the job does not have the TTY when it makes such
+ a request, DDT merely rings the TTY's bell (which on the CRT in
+ the poem above is a particularly obnoxious flavor of "beep"),
+ and prints nothing until you ascend to DDT, and perhaps type  J
+ (see below).
+
+LOCK = utility program, which interprets the particular command "nKILL"
+ to mean "please bring the time-sharing system down in n minutes"
+ (where it is required that n 5).  The system will then go down
+ at the prescribed time unless the request is countermanded with
+ a "REVIVE" request.
+
+ITS = Incompatible Timesharing System, the good timesharing system for
+ the PDP-10.
+
+DSKDMP ("disk dump") = program used to, among other things, bootstrap
+ ITS into a running state.
+
+  = "altmode"; read it as such to preserve the meter.
+
+  V = command to DDT, requesting it to print out the names of all its
+ subjobs.
+
+ J = command to DDT, asking that it select the job which has requested
+ attention so that it may be dealt with.  DDT responds
+ "jobname J" so that you will know which job it was.
+
+^Z ("control zee") = command to ITS to stop the job which currently has
+ the TTY, and interrupt the next higher job in the job tree.
+ Ordinarily this has the effect of returning to DDT.
+
+0/ ("zero slash") = command to DDT, asking it to print out the contents
+ of location zero of the selected subjob.  This operation is
+ theoretically transparent to the subjob itself.
+
+RMS = Richard M. Stallman, who does an admirable job of keeping DDT, as
+ well as many other programs, relatively bug-free.
+
+(C) Copyright 1973, 1974 Guy L. Steele Jr.  All rights reserved.
+
+Song     : 
+
+
+   The HACTRN
+
+Once before a console dreary, while I programmed, weak and weary,
+Over many a curious program which did TECO's buffer fill, --
+While I pondered, nearly sleeping, suddenly there came a feeping,
+As of something gently beeping, beeping with my console's bell.
+"'Tis my DDT," I muttered, "feeping on my console's bell:
+ Once it feeped, and now is still."
+
+Ah, distinctly I remember that dark night in bleak December,
+And each separate glowing symbol danced before me, bright and chill.
+Eagerly I wished the morrow; vainly I had sought to borrow
+From my HACTRN aid for sorrow -- sorrow for the bugs which fill --
+For the strange unknown and nameless bugs which ever all my programs
+fill --
+ Bugs which now I searched for still.
+
+And the coughing, whirring, gritty fan I heard inside my TTY
+Made me with fantastic terrors never known before to thrill;
+So that now, to still the beating of my heart I stood repeating,
+"'Tis some interrupt entreating DDT to signal me --
+Some strange interrupt entreating DDT to signal me --
+ Its importance surely nil."
+
+Presently my soul grew stronger: hesitating then no longer
+I decided that I would respond to this strange program's call;
+TECO, which I then attended, to my soul more strength extended;
+With ^Z I ascended, going to my DDT --
+  V I typed, and answered soon my DDT --
+ TECO there, and that was all!
+
+Dumbly at my console peering, as I sat there, wondering, fearing,
+Doubting now that any interrupt was ever there to call;
+But the silence was unbroken, and my HACTRN gave no token,
+And the only sound there spoken from my TTY's whirring fan --
+The low and rough and distant sound came from my TTY's whirring fan --
+ TECO there, and that was all.
+
+Back into my TECO going, with my pounding heart now slowing,
+Soon again I heard a feeping, somewhat louder than before.
+"Surely," said I, "surely this is some strange bug of RMS's
+Which an interrupt professes, though I have no other job;
+Let me then ask DDT if it thinks there's another job --
+ 'Tis a bug, and nothing more!"
+
+Again I went up to my HACTRN while cold shivers up my back ran
+  V I typed, my jobs now once more to display.
+Only TECO was there listed; though my trembling heart resisted
+Yet I willed my hand, insisted,  J to quickly type --
+To answer this bold query DDT did hesitantly type
+ A ghostly "FOOBAR J".
+
+From   V protected, now, this phantom job, selected
+Gave no clue to why it had invoked that former beeping shrill.
+"Though," I said, "you're no inferior, I shall act as your superior
+And examine your interior, this strange matter to explore."
+Then I typed a 0/ this matter further to explore --
+ Quoth the HACTRN, ":KILL".
+
+Much I worried -- this outrageous bug might prove to be contagious,
+Though thus far it had not seemed to do my TECO any ill:
+For we cannot help concurring such a bug would cause a stirring,
+Feeping on a console whirring, disappearing then from sight --
+An evanescent mystery subjob disappearing then from sight
+ With no clue but ":KILL"!
+
+But my HACTRN, swapping, running, gave no further sign of cunning
+By this unknown phantom, which was in a thirty second sleep;
+None of this I comprehended; to my TECO I descended,
+And in terror I pretended that the bug had gone away --
+I pretended that for good the mystery bug had gone away --
+ When my console gave a feep.
+
+Now I quickly, hoping, praying, started up a PEEK displaying
+All the the jobs and subjobs there which did the system fill:
+What I found was quite unpleasant, for there was no FOOBAR present:
+Only TECO was there present, underneath my DDT;
+I quit the PEEK, and "FOOBAR J" typed out my DDT --
+ Then quoth the HACTRN, ":KILL".
+
+But -- this FOOBAR now beguiling all my sad soul into smiling --
+I tightly grinned, determined that this glitch should cause nobody ill;
+Now, into my armchair sinking, I betook myself to linking
+Fancy unto fancy, thinking why this unknown phantom job --
+Why this grim, ungainly, ghastly, gaunt, and unknown phantom job
+ Feeped and did a ":KILL".
+
+This I sat engaged in guessing, but conceived no thought expressing
+How a phantom job could sound those strange and ghostly beeps;
+This and more I sat divining, with my head at ease reclining,
+With the symbols coldly shining at me from the CRT,
+With the bright, sharp symbols coldly shining on the CRT --
+ Which suddenly gave seven feeps!
+
+Then methought the air grew denser, filled with clouds which
+grew immenser,
+As when under darkened daylight thick and stormy weather brews;
+With some bit of hesitation stemming from my trepidation
+Again I typed that incantation finding out how much I'd lose --
+  V I typed again to find how much I'd lose --
+ TECO there, and seven FOOs!
+
+"Job!" said I, "with ghostly manner! -- subjob still, if LISP
+or PLANNER!
+Whether accident, or feeping as another hacker wills!
+Tell me now why I am losing, why my HACTRN you're abusing,
+Which no doubt is of your choosing: echo truly on my screen!"
+Then DDT as if in answer echoed quickly on my screen,
+ Typing seven ":KILLs".
+
+"Job!" said I, "with ghostly manner! -- subjob still, if LISP
+or PLANNER!
+By the ITS above us which the DSKDMP doth fulfill,
+I shall be the system's saviour: I shall mend your crude behaviour,
+I shall halt your strange behaviour, and thee from the system lock!"
+Madly, wildly laughing I made DDT invoke a LOCK,
+ And quickly typed thereat -- "5KILL"!
+
+"Be this now our sign of parting, phantom job!" I shrieked, upstarting,
+As my HACTRN now informed me ITS was going down in 5:00.
+"You have run your last instruction and performed your final function!"
+But, refuting this deduction HACTRN then my TTY grabbed --
+To type out yet another message HACTRN now my TTY grabbed --
+ Quoth the HACTRN, "ITS REVIVED!"
+
+And the FOOBAR, never sleeping, still is beeping, still is beeping
+On the glaring console out from which I cannot even log!
+And other happenings yet stranger indicate inherent danger
+When bugs too easily derange or mung the programs of machines;
+When programs too "intelligent" start taking over the machines:
+ Is this the end of AutoProg?
+
+    -- The Great Quux
+         (with apologies to
+     Edgar Allan Poe)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : I Could Have Tooled All Night
+Original : I Could Have Danced All Night
+Group    : from My Fair Lady
+Author   : Guy L. Steele Jr.
+Intro    : 
+Song     : 
+
+         I Could Have Tooled All Night
+
+           [to be sung to the tune of
+          I Could Have Danced All Night
+               from My Fair Lady]
+
+
+Tool! Tool! I feel like such a fool!
+All term I goofed off; I can't catch up now!
+Sleep! Sleep! I've got to get some sleep!
+Tooling wouldn't help me anyhow!
+
+I could have tooled all night,
+   I could have tooled all night,
+      and still have tooled some more;
+I could have been absurd,
+   Learned all my Latin verbs,
+      It wouldn't raise my score.
+I can't remember all those theorems,
+      And all those facts from my mind flee --
+I only know exams,
+   Are why one usually crams,
+     But tooling never could help me!
+
+I could have tooled all night,
+   I could have tooled all night,
+      And memorized each book;
+I only now regret,
+   My sections never met,
+      And lectures I forsook.
+I cross my fingers now in terror,
+      I only hope some luck's with me --
+But had I tooled or not,
+   I'd still be on the spot,
+      My goofing off deserves the E!
+
+
+                        -- The Great Quux
+                             (with apologies to
+                                Lerner and Loewe)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : I'm Typing Backwards for Christmas
+Original : I'm walking Backwards for Christmas
+Group    : Spike Milligan and another
+Author   : Russell Street <russells@ccu1.aukuni.ac.nz>
+Intro    : 
+Song     : 
+
+I'm Typing Backwards for Christmas
+----------------------------------
+(Adapted from "I'm walking Backwards for Christmas",
+ by Spike Milligan and another.)
+Adaption by Russell Street (russells@ccu1.aukuni.ac.nz)
+
+
+I'm typing backwards for Christmas,
+Across the TCP/IP,
+I'm typing backwards for Christmas,
+It's the only thing for me.
+
+I've tried posting sideways,
+And mailing to the front,
+But people just look at it,
+And say it's a publicity stunt.
+
+I'm typing backwards for Christmas,
+To prove that I love you.
+
+
+An imigrantal telnet, loved an Irish inetd
+From Dublin University's VAX.
+He longed for her XONs,
+But spurned his charms,
+And connected with a former socket.
+
+She left the telnet by himself, on his own
+All alone, EWOULDBLOCKing
+And sadly he dreamed, or at least that's the
+ way it seemed, buddy,
+That an angel quieted him....
+An angel quieted the same.
+
+<eerily>
+
+I'm typing backwards for Christmas,
+Across the TCP/IP.
+I'm typing backwards for Christmas,
+It's the finest thing for me.
+
+<normal>
+And so I've tried posting sideways,
+And mailing to the front.
+But people just flamed, and said,
+"It's a publicity stunt".
+
+So I'm typing backwards for Christmas
+To prove that I love you.
+
+<play out>
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : I Want a New Bug
+Original : I Want a New Drug
+Group    : Huey Lewis and the News
+Author   : Nelson Bishop <nelson@natinst.com>
+Intro    : 
+Song     : 
+
+
+I Want a New Bug
+(To the tune of: I Want a New Drug,  Huey Lewis and the News)
+
+I want a new bug.
+One I don't have to fix.
+One that wont make me crash my disks.
+Or make me use menu picks
+
+I want a new bug
+One I don't have to dread.
+One that wont turn the cursor black
+Or make my graph too red.
+
+Chorus:
+One that wont make me nervous
+Wonderin' what to do.
+One that makes me feel
+Like I feel when I'm all through.
+When I'm all done and through.
+
+I want a new bug.
+One that wont kill.
+One that wont thrash too much
+Or end in a Nil.
+
+I want a new bug.
+One that wont go away.
+One that wont keep me up all night.
+One that wont make me work all day.
+
+(Chorus)
+
+I want a new bug.
+One that wont show.
+One that wont make it run too fast.
+One that wont make it run too slow.
+
+I want a new bug.
+One with no doubt.
+One that wont spin the disk too much
+Or make me use break out.
+
+(Chorus)
+ 
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : I am the very model of a Genius Computational
+Original : I am the very model of a modern major-general
+Group    : Gilbert & Sullivan
+Author   : (First seen at Cambridge, England?)
+Intro    : 
+Song     : 
+
+I am the very model of a genius computational:
+At writing of assembler code I really am sensational.
+I'm not afraid of SVC's, to macros I am much attached;
+Load modules I make elegant, well optimised, DEBUGged and PATCHed.
+
+I know the different languages: in Fortran and BCPL,
+In Algol, Snobol, PL/I, in Lisp and Cobol I excel.
+Numerical analysis? My algorithms make y' gape!
+I read my favourite novels in editions punched on paper tape.
+
+I'm very good at file control - my DCB's are always right.
+My use of ZED's so subtle, people stay to watch me half the night.
+I know what's wrong with the machine if it's not operational -
+And thus I am the model of a genius computational!
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Title    : Into the Tube
+Original : Into The Groove
+Group    : Madonna
+Author   : Mike Portuesi <rainwalker@drycas>
+Intro    : 
+Song     : 
+     
+                            Into the Tube
+                            =============
+                 by Mike Portuesi <rainwalker@drycas>
+                Sung to the tune of "Into The Groove"
+                              by Madonna
+     
+And you can hack,
+For computation.
+Come on,
+It's waiting...
+     
+Chorus:
+Stare into the tube,
+Boy, you've got to prove
+Your subroutine.
+RS-232,
+And full duplex too,
+With no parity.
+     
+Hacking can be such a revelation,
+When you can find your missing declaration.
+It might be running if the code is right;
+I hope to fix a major bug tonight.
+     
+Only when I'm hacking can I feel this free.
+At night I buy some Coke,
+And hack till after three.
+I'm tired of all those GOTO's by themselves.
+Tonight, I want to write
+with IF-THEN-ELSE!
+     
+(chorus)
+     
+You've got to type NEW
+in a special way,
+Or else it won't clear
+Out your first array.
+Don't try to run it with your memory size.
+I've got an error on the hard disk drive.
+     
+Only when I'm hacking,
+Can I feel this free.
+At night I buy some Coke,
+And hack till after three.
+I'm tired of all those GOTO's by themselves.
+Tonight, I want to write
+with IF-THEN-ELSE!
+     
+(chorus)
+     
+Live out your fantasy,
+Written in C.
+Just let those macros
+Set you free.
+Touch my BREAK key,
+In real time.
+Now I'm not on line.
+     
+(chorus)
+     
+Only when I'm hacking,
+Can I feel this free.
+At night I buy some Coke,
+And hack till after three.
+I'm tired of all those GOTO's by themselves.
+Tonight, I want to write
+with IF-THEN-ELSE!
+     
+Live out your fantasy,
+Written in C.
+Just let those macros
+Set you free.
+Touch my BREAK key,
+In real time.
+Now I'm not on line,
+Now I'm not on line,
+Now I'm not on line,
+Now I'm not on line (nasal, like Madonna)
+Now I'm not on line.
+     
+(repeat chorus - fade out)
+
+

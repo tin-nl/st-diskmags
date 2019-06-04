@@ -1,0 +1,62 @@
+
+                             VIEW GIF V. 1.20
+                             ~~~~~~~~~~~~~~~~
+
+ Bei View GIF handelt es sich um ein Programm,welches Grafik-Formate anderer
+ Rechner-Systeme einlesen und konvertieren kann.
+ Beim konvertieren kann man dabei auf momentan 2 M”glichkeiten zurckgreifen
+ zum einen darauf, alle einzulesenden Bilder in Graustufen darzustellen oder
+ zum anderen, sie auf 16 Farben herunter zu konvertieren. Die 2. M”glichkeit
+ wird in Anbetracht der F„higkeit GIF-Bilder mit beispielsweise  256  Farben
+ einzuladen,von kaum einem benutzt werden, da die Grafiken dann nur noch ein
+ Schatten ihrer selbst sind. Das konvertieren in Graustufen ist dem in jedem
+ Falle vorzuziehen.
+ Das Programm kann folgende Bild-Formate lesen: .NEO (Neochrome),PI1 (Degas)
+ F4 (Fastload,keine Ahnung,was das sein soll),GIF (nur 87a!!),IFF (Amiga und
+ PC-Format), LBM (Amiga und PC-Format), MAC (Macintosh-Bilder) und CP8 (PC).
+ Allerdings mu ich bei den Formaten schon ein klein wenig meckern,da dieses
+ Programm nur einen winzigen Bruchteil der  IFF  und LBM-Formate lesen kann.
+ Insbesondere fr Leute, die viele Grafiken vom Amiga importieren wollen,ist
+ das Programm nicht so gut geeignet , da die dauernde Anzeige "Chunk Format"
+ schnell nerven kann.
+ Dafr sieht ein Teil der 32-Farben-Bilder,die vom Amiga konvertiert werden,
+ sehr gut aus. Ein kleines Beispiel findet Ihr im Menpunkt "Graphixx" unter
+ dem Bild "EOB2",welches ein Screen-Shot des Spieles "Eye of the Beholder 2"
+ ist.
+ Bei den PC-Bildern, insbesondere den GIF's, sieht es schon nichtmehr so gut
+ aus. Im Farbmodus sind die Bilder fast "ungeniebar" , fehlen doch immerhin
+ 240  Farben. Da k”nnen  selbst die besten  Dithering-Verfahren  nichts mehr
+ dran „ndern. Schade eigentlich.  Wie gesagt lohnt sich hier nur die Konver-
+ tierung in Graustufen.
+ Bei Bildern im LBM-Format mute ich feststellen, da das Programm nicht ein
+ einziges von denen , die mir zur Verfgung standen (20 Stck) lesen konnte.
+ Ich habe gleichermaen PC und Amiga-LBM's verwendet.  Der Hammer dabei war,
+ da die  PC-LBM-Bilder  in EGA-Grafik ( 16 Farben ) und einer Aufl”sung von
+ 320 * 200 Pixeln vorlagen. Diese konnte ich ohne Probleme, nach Umbenennung
+ in IFF sogar in NeoChrome Master einladen.
+ Leider hatte ich keine Bilder der anderen Formate zur Verfgung.
+ Abspeichern kann das Programm im GIF, NEO und PI1-Format.  Insbesondere bei
+ šbergroen GIF-Bilder stellte das Programm die Option zur Verfgung,die Pix
+ in Ausschnitten  abzuspeichern.  Diese Option ist angesichts der  Gr”e der
+ meisten GIF-Bilder auch unbedingt erforderlich,da sie sonst in kein Format,
+ da der ST lesen kann umgespeichert werden k”nnen.  Leider gibt es aber auf
+ dem ST kaum ein Malprogramm , was derart groe Bilder verarbeiten kann, wo-
+ durch an ein zusammensetzen der Bilder in einem anderen Programm und an ein
+ Abspeichern,z.Bsp. in X-IMG,nicht zu denken ist.
+ Meiner Meinung nach , ist die Idee fr dieses Programm nicht schlecht.  Ich
+ wrde aber denjenigen , die nur ein paar Bilder konvertieren wollen ,um sie
+ sich anzuschauen, lieber zu dem Programm "Photochrome" raten, welches durch
+ das Zusatz-Prg.  "GIF2RAW"  auch an GIF oder besser an RAW-Files herankommt
+ und diese in diversen Aufl”sungen darstellen und abspeichern kann.  Mittels
+ Slide-Show-Programm kann man sich dann die konvertierten  Bilder auf seinem
+ ST zu gemte fhren , und das nicht in nur 16 Farben sondern in bis zu meh-
+ reren tausend Farben (STE),je nach Ur-Format des Bildes. 
+ Dabei ist allerdings  wieder zu beachten, da die Bilder dann nicht weiter-
+ verarbeitet werden k”nnen,zumindest nur in „uerst geringen Maen. Wer also
+ Pix von anderen Rechnern anschauen will, sollte zu  Photochrome greifen und
+ alle, die noch was mit den Pix vorhaben, mssen wohl oder bel mit View-Gif
+ Vorlieb nehmen.
+ Fr View GIF w„re ein verst„rkter Ausbau in Richtung  IFF-Format wnschens-
+ wert,da die momentan lesbaren IFF-Formate schlichtweg zu mager sind.
+
+                               by Moondog of tnb

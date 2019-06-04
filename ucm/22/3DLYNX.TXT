@@ -1,0 +1,76 @@
+ó--------------------------------------------------------------------------------
+                             3D ENGINES ON THE LYNX
+ó--------------------------------------------------------------------------------
+
+As on every bigger  Atari system, it doesn't matter what system at all, also the
+hardcore of  the ñLYNXð scene  is going to  check out what  is possible in kind of
+real 3D games on  Atari's handheld. After there  are playable 3d games featuring
+texture  mapping on ST, Falcon and Jaguar, finally the LYNX seems to be the last
+frontier.
+
+The few tries to give the ñLYNXð a 3d game broke in very early stages, furthermore
+all of  them didn't  featured any  real 3d  texturemapping. The  only commercial
+attempts  were ò"Eye Of The Beholder"ð and ò"Alien vs. Predator"ð and  both  brought
+blockscrolling bitmap scenarios to the ñLYNXð only.
+
+So it was only a  question of time untill the ñLYNXð underground was going to work
+on real 3D engines for that system.
+
+The most known  programmer was  óMatthias Dominð who already released a first test
+screen  of  his 3D engine, called ò"The Corridor"ð. This  screen  features  just a
+corridor or  at least  some routine that  gives the impression to move through a
+corridor since you can change the view only a bit but cannot turn around at all.
+The whole thing  uses texture mapping  in 4 colours on the walls and plain blue/
+purple floor  and ceiling. It runs  in one frame at 5-6 vbls and is fairly fast,
+but after all it's just a very first screen and since this one is 4 years old by
+now it seems that he stopped the work on this engine.
+
+Therefore he released another texture mapping engine on the multigame ROM called
+ò"S.I.M.I.S"ð but up to now it wasn't possible  to get an image of that ROM or the
+3D engine as stand-alone. So I can just mention it as another  try but can't say
+anything about the features and quality of that engine at all.
+
+The next public project is called ò"3D Lynx"ð and the only earnest try to create a
+texture mapped  3d game on the ñLYNXð. It comes from óNick Christopoulosð and óAndrew
+óMayð. This little thingie features a small intro sequence that shows what kind of
+game the programmers have in mind, since it reminds a bit to "Wolfenstein 3D".
+ò"3D Lynx"ð offers  us a real  3D engine, with  rooms and  corridors  you can walk
+through  and  even  some  bitmap  sprites "running"  around  with  NO  animation
+sequences, just  zooming  in  and out. While  ò"The Corridor"ð seems  to  run in a
+noticable  speed this  engine is  awful slow, even if the walls featuring just 2
+colours this  time. Therefore the  bitmap sprites featuring about 1o colours and
+looking quite ok.
+Anyway... since  it is only a "run around" show it shows that the ñLYNXð is really
+hard on his  frontiers and you must think that there are still a lot of steps to
+a real  game are missing  here, so there  is no sound  and no game action so far
+implemented  and I think if  those things  would be  added the whole thing would
+stay as slideshow. Even if you kick the ñHANDYð to 2oo % emulation  speed there is
+not happening  much and  please remember  that you can't  speed up your original
+ñLYNXð like the ñHANDYð...
+
+But that wasn't  all since there is a 4th engine around and in my eyes it is the
+most powerful 3D engine on the ñLYNXð at all. It isn't  titled and  surely thought
+to show  the possibilities  only. As well as ò"3D LYNX"ð it is a "real" engine and
+you can move through rooms and corridors and turn around completely.
+The most remarkable thing  is that the textures  are using 8 colours and at this
+the engine  is as fast  as ò"3D Lynx"ð, maybe  even a bit faster. But therefore it
+doesn't uses  the whole screen  but only about 3/4 of the screen. Anyway, of all
+things in that direction  released so  far, this one impressed me most, since it
+uses very atmospheric  colours and a quite  reasonable speed, if you can call it
+so... and so it shows best how a 3d game on the ñLYNXð could look like.
+
+Hu... what is left  to say? Up to now it seems as the ñLYNXð can't offer the power
+for texture mapping  engines that will make  it possible to create games for the
+ñLYNXð and I mean ó-playable-ð games  and no slideshows. The works done so far shows
+that there  are  movements in  that  direction  but  either the  coders have not
+optimized  their codes to the  edge or the ñLYNXð  has simply not the power to let
+such engines run. The problem is also that the ñLYNXð is a quiet seldom system for
+homebrewers in comparison with the Atari computer range and so it doesn't offers
+that big bunch of coders forcing their little machines to do marvellous things.
+Anyway, even if I  don't own a  ñLYNXð by myself so far, the ñHANDYð emulation on PC
+made me  some kind of  curious about  the movements  of the small ñLYNXð scene and
+several games  are really fun to play and so I will try to hold my eyes open for
+new bits and bytes on that sector...
+
+stay tuned...                                                   moondog . o3/2k2
+ó--------------------------------------------------------------------------------

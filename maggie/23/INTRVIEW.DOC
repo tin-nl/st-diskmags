@@ -1,0 +1,59 @@
+
+                        A interview with MW-Elektronik
+
+                           about the Afterburner040
+                                 
+                          done 1996 by Markus Binder
+                          (before I bought the 040)
+
+
+
+question: Is it possible so switch back to the original 68030 CPU with a
+          Afterburner040 Falcon?
+
+MW      : Yes and no. We know someone who made it possible to switch back
+          to the 68030 for his own Falcon. We don't know if this works
+          correctly. It may be possible, but the more important thing is:
+          The producer of the Afterburner - they have the rights about it -
+          don't want to allow the option to switch back.
+
+question: But I think this would be very important for a Falcon user who
+          want's to get the 040. Now I have first to think about which 
+          programs may be working on the 040.
+
+          Now I would like to know how important the FastRAM for the 040
+          Falcon is. I personally think it's only expensive.
+
+MW      : 32 Megabyte FastRAM cost 300 DM. That's not too much money.
+          Remember that the FastRAM has 14 times the performance than
+          the old ST-RAM. In standard applications you get normally
+          8 times the performance. If you're working with big pictures
+          the FastRAM is very useful.
+
+question: How much FastRAM can I use with the Afterburner?
+
+MW      : Well, if you're a user of MagiC 4, the maximum FastRAM is
+          32 Megabyte. Without MagiC you're able to use up to 128
+          Megabytes. For MagiC 4 we've a special program to install
+          into the auto folder.
+
+question: How many programs are still working on the 68040?
+
+MW      : There're some programs wich have problems, but most PRGs
+          are working correctly. We were also able to run some games.
+
+question: Is the DSP still working with Afterburner040? I have got
+          a Eagle Sonic 32 Mhz 030 speeder at the moment and this
+          has its problems with DSP and FPU.
+
+MW      : Yes, the DSP is working. Some DSP programs had its problems
+          because the CPU was faster than the DSP. In fact of this we
+          increased the DSP to 50 Mhz, and now there're no longer
+          problems with DSP-use.
+
+question: Please tell me something about the internal FPU of the 68040.
+          Is the internal FPU automatically used by the 040?
+
+MW      : The internal FPU is used by programs wich need a old 68881/2
+          FPU. Other programs don't use the internal FPU. You need
+          the AB40_FPU.PRG to use the internal FPU.

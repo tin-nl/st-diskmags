@@ -1,0 +1,325 @@
+ATARI CD-ROM SUMMARY 7
+~DROPS.FIL~ 
+viewit2.arc     17      View PrintMaster graphic libraries.
+viewsttt.lzh    23      Views gifs, imgs, etc. and lets you resize at will
+walls.lzh       150     Animated spectrum demo.  Needs anispec. 
+watch_it.zip    18      Pic viewer for all versions of TOS
+xmas_avs.lzh    450     Chirtmas AVS scene.  Needs avsplyr.
+xpmconv.lzh     16      Converts X PixMap to NEOchrome and vice versa
+zoom.zoo        17      Zooms in on pixels. DA.
+zplotter.arc    38      Plots 3D equations.
+
+============================================================================-
+Info:           (A directory of how-to's, guides, etc.)
+
+aa_faq.txt    - How to ftp at 3am w/o you being there
+guideto.ftp   - A beginner's guide to ft
+csastfaq.zoo  - Welcome to Comp.sys.atari.st FAQ
+tcpip.faq     - The SLIP protocol, courtesy dackerma@magnus.acs.
+                ohio-state.e-du
+gemcdrom.lzh  - info on the competition :-)
+gemcdrom.txt  - ditto
+
+============================================================================-
+Jaguar:
+
+avpfin.jpg      292     JPG of digitised AvP pics from various mags
+tempst01.lzh    58      GIF/JPG pics from "Tempest 2000" 
+tempst02.lzh    30              "
+tempst04.lzh    30              "
+tempst05.lzh    24              "
+tempst06.lzh    21              "
+tempst08.lzh    47              "
+tempst09.lzh    44              "
+tempst10.lzh    23              "
+tempst12.lzh    49              "
+tempst13.lzh    28              "
+
+============================================================================-
+Languages:
+
+0index          ??      The damn thing you're reading right now 
+a68.arc         26      68000 assembler (old)   
+abcst.arc       217     The complete abc language for the st.
+ana_m2_1.arc    108     ANA Modula2 compiler part1
+ana_m2_2.arc    144     ANA Modula2 compiler part2      
+ana_m2_3.arc    73      ANA Modula2 compiler part3      
+ana_m2_4.arc    157     ANA Modula2 compiler part4      
+ana_m2_5.arc    69      The emacs editor for the above 4 files.
+apl68000.arc    95      Apl for the st.
+aplws.arc       78      Apl stuff for apl68000 ???
+asxbin.zoo      346     ASxxxx assembler.
+asxsrc.arc      145     Sources for the above (yes, it is arc'd)
+bcf.lzh         189     A fortran release for the st.
+c68_443b.lzh    173     Port of c386/68 v4.4 ANSI C compiler to TOS
+clisp-c.zoo     1118    C-LISP, C version. Not as fast as assemb. version.
+clisp-e.arc     350     C-Lisp in English, assembly language version.
+clisp.zoo       394     C-Lisp port for the st.  With examples and minor docs
+clispdoc.zoo    3       Introductory text to Clisp.
+dl_exsrc.zoo    15      Some of dLibs' utility routines, ported to the
+MiNTlibs
+dl_extra.zoo    7       Source code for dl_extra.zoo
+dumpaout.lzh    10      Displays contents of a GNU a.out object module
+elan1v5.arc     226     Elan language.  Good for learning to program    
+elisp.zoo       108     Lisp for the st.
+tasm1_7.lzh     262     English verson of Turbo Assembler.
+f2c.zoo         245     Translates fortran code to C code
+f68k.zoo        256     Forth package for the ST from J"org.
+f77.lzh         15      Front end to bcf.lzh.
+firstbas.lzh    22      Remember learn. basic in 6th grade? Relive it now...
+fixes.arc       16      ???
+fools.lzh       68      Fools lisp interpreter?
+forst.zoo       110     Forth for the ST
+forth_83.zoo    234     Forth_83 for the ST
+fplib10b.arc    11      old floating point sozobon c library    
+fplib20.arc     39      newer floating point sozobon c library
+gemenv.lzh      22      Set up environment variables at GEM desktop
+gemfsc18.lzh    95      GemFast 1.8 source (AES/VDI libraries)
+gemfst18.lzh    108     GemFast 1.8 binaries & docs (AES/VDI libraries)
+gemfxm18.lzh    32      GemFast 1.8 example programs (AES/VDI libraries)
+gfaro2.lzh      27      GFA Basic run only v.2
+gfaxpert.lzh    256     extensive text file/manual for GFA BASIC 3.0    
+glisp.zoo       55      another implementation of lisp.
+gst2gnu         13      Converts DRI/GST object modules to GNU a.out format
+hsc140.lzh      475     Heat-and-Serve C.  Binaries, docs, libraries. V 1.40
+icon2.arc       16      Some sort of icon acc.
+icon8_fx.arc    80      Allows icon sources, compiled under gcc & fixes bug
+iconv8_e.arc    316     Icon language version 8, execuatables
+iconv8_l.arc    340     Icon language version 8, library
+iconv8_s.arc    706     Icon language version 8, interpeter sources
+iwpl.zip        83      Imaginary Worlds, system for writing text adventures 
+j_41_st.zoo     123     APL for the ST, port by Scott
+j51.lzh         135     APL-like language for the ST
+j62atari.zoo    110     J - an APL-like language - version 6.2 for the ST
+lambda.arc      60      Lambda calculus program 
+lambdoc.arc     41      Docs for lambda
+mjc2.arc        213     Mark Johnson's C compiler v2.0 (very outdated)
+modula.zoo      310     Modula for the st.
+modula2.zoo     331     Modula2 for the st.
+motasm.zoo      94      Motorola Cross assembler        
+motasms.zoo     40      Sources for motorola cross assembler
+
+Languages/Nasm20:
+0readme         1       Readme file explaing what you need and what you get
+nasm20b.zoo     230     Binaries for Nasty assembler v.2.0, a 6502 cross
+nasm20s.zoo     322     compiler for the ST.  Source in nasm20s.zoo.
+
+ops5.arc        38      ???
+osbind.arc      8       ???
+p2cbin.zip      276     Pascal to C translator, binaries.
+p2csrc.zip      488     Pascal to C translator, sources.
+pascalii.arc    32      Cheesy great pascal compiler. It doesn't work for me
+pcl-src.zoo     637     Subset of CLOS, works with clisp-c (C version)
+pp_demo.zoo     468     Demo of Pure Pascal compiler.
+prolog68.zoo    202     v.0.94 of Jens Kilian's prolog68 for ST/TT/Falcon
+sbprolog.zoo    614     SBProlog 3.1 Interpreter and compiler           
+scm4c4.tar.gz   156     Scm 4, a Scheme interpreter.  (Sources)
+scm4c4st.zip    68      Binaries and change files for scm.
+slperl.zoo      165     Source changes for Atari version of perl 4.035 
+
+Sozo2:
+ scbin20.lzh    149     Sozobon 2 binaries
+ scdoc20.lzh    34      Sozobon docs
+ scsrc20.lzh    206     Sozobon 2.0 sources
+
+sozobon1.zoo    260     A particular release of sozobon, part1
+sozobon2.zoo    303     The same particular release of sozobon, part2
+sozodlib.arc    35      The very updated dlib for sozobon.
+sozoinit.zoo    3       Some sort of sozo accessory?
+sozosun.zoo     14      Directions for cross compiling on your favorite sun.
+stoberon.zip    171     ST version of Oberon compiler.
+stosers.zip     73      A collection of STOS utilities & enhancements
+stosfx30.zip    48      Fixes STOS programs to run on all TOS'es > 1.62
+stosup26.lzh    192     Upgrade for stos.  
+tinybas.arc     14      Tiny basic.  See firstbas.lzhh
+toyprologdoc.arc 50     Toy prolog docs. (english)
+tperl.zoo       155     Perl 4.035 for TOS using Bammi's latest source
+turboass.lzh    285     Turbo assembler for st.
+
+Xlisp2.1:
+ xldist00.zoo   98      Minimum package, xkisp.ttp, init.lsp, and readme
+ xldist01.zoo   84      *.lsp xlisp source stepper, debugger, etc.
+ xldist02.zoo   156     C source code for xlisp.ttp
+ xlimpl.doz     10      Xlisp interpreter manual 
+ xlispdoc.psz   90      Postscript docs
+ xlispdoc.tez   48      Xlisp docs withour underlines
+ xlispdoc.txz   56      Same as above, with underlines to show changes
+ xloop.doz      10      Xlisp object tutorial
+ xlrefdoc.z     135     Tim Mikkelsens Xlisp reference (the reference)
+
+xlisplsp.arc    25      Lisp examples for xlisp 
+xlispsrc.arc    109     Source for xlisp.
+xlispst.arc     99      Lisp interpreter 
+xlspedit.arc    7       Lisp editor written in lisp
+xprolog.arc     55      xprolog interpreter for the st  
+xschem28.lzh    139     Todd's xscheme port.
+xscheme.arc     113     Port of scheme, MIT enhancd lisp dialect        
+xschm22st.taz   176     Compressed, tar archive of bin and src for xscheme22
+
+============================================================================-
+Lists:
+
+Gem:     The GEM-standards email-list, as detailed in ST-review
+Mint:    The MiNT email-list. Responsible for design and implementation of
+MiNT.
+
+============================================================================-
+Lynx:
+
+24mhzhck.zoo    2       Hack to boost speed of Lynx I (from Portable Addicti-
+on) 
+0index          2       This great work of contemporary literature
+hyprstck        310     Lynx Hypercard Stack for Mac, incredible!
+billteds.zoo    9       Walk through of Bill & Ted's Excellent Adventure
+cheats.zoo      43      A list of cheats, passwords and other stuff
+chipschl.zoo    216     Notes on Chip's Challenge (in postscript)
+lynx_faq.zoo    13      FAQ about the lynx
+lynx_rt.zoo     25      Roundtable from GEnie about the lynx
+reviews.zoo     102     Robert Jung's reviews of Lynx games
+uselynx.ps.Z    245
+uselynx.rtf.Z   173     Usenet Lynx Guide in PostScript, RTF and Word 2.0
+form
+uselynx.zoo     136
+
+============================================================================-
+Magazines:
+
+0index         1      This file.
+cn.zip         5      Info on Current Notes magazine
+stzine.zoo     165    Lets you create diskmags. Example included. Shareware.
+
+The following magazines may be found in the subdirectories:
+
+Aeo           - Atari Explorer Online
+Cain          - Online Newsletter from Cleveland FreeNet
+Diskmags      - Various disk magazines, including:
+  Digidisk    - Digital Disk magazine
+  Goldbug
+  Scriba      - Scriba Communis Responsi diskmagazine
+  Stnews
+  Stoser
+  Stunn
+  PB          - "Pure Bullocks"
+  HP Source
+Portadd       - Portable Addiction
+Str           - ST Report
+Znet          - ST Znet
+
+============================================================================-
+Minix:
+This directory contains files to upgrade ST Minix to the current versions.
+
+The file st1.1.tar.Z contains some fixes to bring your system up to a less
+buggy version 1.1.
+
+The up1510* files will bring your 1.1 system up to 1.5.10. You need a hard
+drive to perform the upgrade. Retrieve and read up1510.doc first, then get
+the two compressed tar files up1510[ab].tar.Z.
+
+============================================================================
+Mint:
+
+0index         ???    This index.
+0readme.1st           A short description of MiNT
+Applications/         Applications that require MiNT to work properly
+Application/NetPbm/   Portable Bitmap for MiNT
+NetPBM.txt     3      Important info on using these packages
+docs.tgz       78     Documentation, including LaTeX man pages
+lib.tgz        181    Gcc lib and headers files, if you want to use in prgs
+man.tgz        70     Man pages
+pbm.tgz        213    Portable bitmap binaries
+pbm020.tgz     226    Portable bitmap binaries for TT/Falcon
+pgm.tgz        160    Portable greymap binaries
+pgm020.tgz     185    Portable greymap binaries for TT/Falcon 
+pnm.tgz        570    Portable anymap binaries
+pnm020.tgz     529    I'm sensing a pattern here
+ppm.tgz        766    Portable pixmap binaries 
+ppm020.tgz     730    You guessed.
+ss133st.zoo    131    A port of the SS spreadsheet based on curses to MiNT
+Devices/              Installable MiNT devices
+lpdev.zoo      26     Buffered and intterupt based Centronics port driver
+modm0dev.zoo   74     Dial in and dial out devices for MiNT, v1.0
+multi-raw.lzh  12     D.Gymer's raw floppy device hacked to work as a .XDD
+ps0.tar.gz     11     modified ps0 to act as .XDD loadable device driver
+ps0.zoo        12     a raw floppy disk device for MiNT.
+Distrib_kit/          MiNT/GCC/mgr/utils installation kit for those who
+                      want to get up and running fast. Due to be upgraded
+                      at Christmas.
+Editors/              Some editors compiled for use with MiNT
+elvis17.zoo    344    Mint friendly elvis (vi clone)
+emacsrc.tgz    649    Mint Emacs, v.18.59 sources
+mjovebin.zoo   286    Doug's jove port for mint.  Bins and docs.
+mjovesrc.zoo   467    Doug's source for his jove port.
+mntemacs.zoo   508    Source code for GNU Emacs
+mntemcsb.zoo   382    Binaries for GNU Emacs v. 18.57
+st-emacs.tar.z 600    Use GNU zip to decompress.  Emacs 18.59 for ST &
+MiNT.
+Filesystems/          Installable file systems (XFS) for MiNT
+cdrom07.zip    8      CDROM.XFS for MiNT >1.04
+mfs10tst.zoo   27     Mfs 6.10 updates
+mfs609b.zoo    79     Binaries for Minix Filesystem 6.09
+mfs609s.zoo    112    Source for Minix Filesystem 6.09
+mfs610b.zoo    93     Binaries for Minix Filesystem 6.10
+mfs610s.zoo    116    Source for Minix Filesystem 6.10
+mfsdefrg.zoo   98     Port of Linux defragger for Minix Filesystem
+mfsfm09b.zoo   43     Marcus' file selector for MiNT
+ofake.zoo      11     Drive system that acts like drive u: (defauls to o:)
+ramfs.zoo      22     Thierry's ram disk file system for MiNT
+Gcc/                  GCC and related utils, base-relative for MiNT
+bgas138p4.zoo  56     Gas for MiNT, 1.38p4.
+bmake363.zoo   107    Make for MiNT, 3.63.
+mfgcc258.zoo   1705   Binaries for Gcc 2.58 for Falcon running mint
+mg++253b.zoo   577    G++ for Mint, ver2.53, binaries only.
+mgcc253b.zoo   511    Gcc 2.53 binaries for MiNT.
+graphics/             Graphics stuff
+Lib/                  Compiler libraries supporting MiNT
+gdbm171.zoo    374    GNU database management library, binaries
+mintlib44-lattice.zoo 638 MiNT Library PL44, binary distribution, Lattice C
+mlib33d.zoo    27     Diffs for MiNT library PL 32 -> PL 33
+mlib34d.zoo    13     Diffs for MiNT library PL 33 -> PL 34
+mlib34pc.zoo   65     MiNT Library PL34, binary distribution, Pure C
+mlib34tc.zoo   59     MiNT Library PL34, binary distribution, Turbo C
+mlib35d.zoo    38     Diffs for MiNT library PL 34 -> PL 35
+mlib36d.zoo    17     Diffs for MiNT library PL 35 -> PL 36
+mlib37d.zoo    26     Diffs for MiNT library PL 36 -> PL 37
+mlib38d.zoo    15     Diffs for MiNT library PL 37 -> PL 38
+mlib39d.zoo    26     Diffs for MiNT library PL 38 -> PL 39
+mlib40d.zoo    6      Diffs for MiNT library PL 39 -> PL 40
+mlib41d.zoo    9      Diffs for MiNT library PL 40 -> PL 41
+mlib42d.zoo    37     Diffs for MiNT library PL 41 -> PL 42
+mlib43d.zoo    8      Diffs for MiNT library PL 42 -> PL 43
+mlib44d.zoo    38     Diffs for MiNT library PL 43 -> PL 44
+mnthlb44a.zoo  86     Sozobon MiNT library, v44
+mntinc43.zoo   117    Include files for MiNT library PL 43
+mntinc44.zoo   118    Include files for MiNT library PL 44
+mntlib44.zoo   464    MiNT library source code, patch level 44
+mntolb44.zoo   314    MiNT library bin. (for GCC), requires mntinc44- .zoo
+pcosbind.zoo   39     Library of TOS/MiNT bindings for Turbo/Pure C 
+Mgr/MGR window manager and related files
+VDImgr.zoo     1201   New version, uses VDI instead of Line-A calls. This
+                      archive contains the mgrdemos, mgrterm, rmgr as well.
+atarimgr.zoo   431    MGR: graphical windowing system originally developed
+                      for Unix. Runs in any resolution, the higher the better
+mgr.zoo        234    Updated MGR binary, with a few bug fixes
+mgrdemos.zoo   622    Demos and utility programs that run under MGR.
+mgrterm.zoo    40     Terminal for mgr
+rmgr.arc       25     Howard's remote windows manager.        
+Sparcmgr/             Original Sparc MGR distribution, in several zoo files,
+                      atari diffs are relative to this
+demo1.zoo     311     demos
+demo2.zoo     407     more demos
+demo3.zoo     351     even more demos
+doc.zoo       133     man pages, etc.
+font.zoo      138     fonts
+icon.zoo      46      icons
+lib.zoo       59      libraries
+menu.zoo      1       menu stuff
+misc.zoo      45      miscellaneous stuff
+src.zoo       524     main source code
+Mint/Network/fingerd.tgz    
+              24      Fingerd for MiNT + MintNet
+ftp-01.tgz    193     Ftp/ftpd for MiNT + MintNet.
+gopher-2.012.tgz 256  Gopher client for MiNT + MintNet
+inetd-01.tgz   45     Pl1 of Internet Super Server.  Needs net-xxx.tgz       
+ 
+END OF PART 7

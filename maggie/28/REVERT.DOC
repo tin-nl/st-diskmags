@@ -1,0 +1,94 @@
+ 
+                   ----------=[ rEVERTANt ]=----------
+ 
+                                By Cobra
+ 
+This  was one of the bravest demo entries to come out of the  Error  in 
+Line  party.  Note,  not  the strangest from that party,  but definitely 
+marks out of ten for sheer courage in attempting what they did.
+
+Boot  up  and wait awhile.  About the sort of time that you think  your 
+Falcon has crashed and you are reaching for the reset button, something 
+stirs onscreen.  A few quick title graphics,  in time with the haunting 
+angel chorus music.
+     
+The main demo starts quietly enough with a texture-tunnel beloved of so 
+many Dead Hackers productions. A nice texture is thrown into the mix by 
+Agent T, it is smooth enough, nothing exceptional.
+
+It's  then the GIANT SPINY BALL time with the proper title credits  for 
+the  demo.  This  is  a very slow but huge and gorgeously  coloured  3D 
+object, with various skilfully done credits overlaying it. The style is 
+not so much like a normal ST or Falcon demo, as we've become accustomed 
+to, but instead it is a lot more like a current PC or Amiga demo. "Like 
+an MTV Video", as someone might have once said.
+
+Yes,  there is a 3D virtual world engine in there.  It is also plodding 
+on a 16 mhz '030 processor.  Surely it would rock on a Power PC Falcon? 
+But we have to make do with what is available.
+
+The virtual world engine reaches a climax with the 'flowerscape' scene, 
+a  segment of landscape with the central feature of a beautifully  done 
+plant  or  flower  in amongst an array of abstract 3D  objects.  It  is 
+pushing  around 1300 polygons and assorted textures around.  That would 
+be a breeze if this was a Dreamcast,  but this is a humble 16 mhz chip, 
+and that is shown in the (lack of) speed here.  Still, it is refreshing 
+to see something a sight more artistic than the usual parade of  single 
+object based scenarios.
+ 
+There  are  a  number  of single object screens,  and  this  engine  is 
+noticeably under a lot less strain then. 
+
+There  is also a very nice static graphic,  and whirly effect revealing 
+it, well done to GFX man Orbital!
+
+The other set-piece climax,  at a 'mere' 600 polygons or faces,  is the 
+'hands'  scene,  with  hands  reflecting  into an  infinite  series  of 
+mirrors.  Like  the  'flowerscape' scene before,  another 3D world that 
+reflects a lot more imagination than most stock 3D design attempts.
+
+A final single object, a bendy torus thing, then the demo dumps us back 
+out  onto  the desktop,  a failing remembered from their previous  demo 
+'Generation  Gap' released at the beginning of the year.  An endscreen, 
+no matter how humble, would have been ever so welcome.
+
+The music was a departure from normal practice, a very long sample file 
+converted  from an .XM module,  for lack of a decent .XM player on  the 
+Falcon,  we are told. This is almost certainly the reason why this demo 
+is a memory-ravenous 14 meg grabber.
+
+I  did  also  run  this under the extra  performance  afforded  by  the 
+Centurbo  2  accelerator.  This  demo ran perfectly,  even on a 100  hz 
+capable VGA monitor. A plus point for an RGB only demo! The improvement 
+was  very noticeable,  if not fantastic,  for the update rate on the 3D 
+world.  The frame rate was running something in excess on one frame per 
+second  on the more complex scenes,  and approaching respectability  on 
+the  lesser screens.  No use had been made of the DSP for updating,  or 
+the  FastRAM  in  the accelerator.  It is interesting  to  compare  and 
+contrast the 3D engine in this demo, with Tat's work on a comprehensive 
+3D world engine for the discontinued 'Binliner' demo.
+
+If  Cobra  do  start making use of the DSP,  or  better  optimising  of 
+accelerator-friendly   features   such  as  FastRAM  for   their   next 
+production,  then  some wicked kick-ass proper 3D scenes are just about 
+within reach! Go for it, and good luck!
+ 
+Before I forget, ENDSCREEN NEXT TIME PLEASE!
+
+As I said at the start of this review, marks out of ten for courage!
+ 
+Ratings..
+
+Effects:-  80% -  Higher marks for better imagination and artistry  than 
+usual. Let down a bit by slow implementation.
+ 
+Graphics:-  85%  -  Extremely cool 'in da house'  static  graphics,  and 
+tasteful 3D objects.
+ 
+Music:- 83% -  Haunting and beautiful tune,  anyone got the original .XM 
+file?
+ 
+Overall:- 80%  - Better with an accelerator really.
+
+CiH - Oct '99
+

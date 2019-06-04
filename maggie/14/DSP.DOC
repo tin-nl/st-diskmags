@@ -1,0 +1,157 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[....................................................]0010
+€
+                DIGITAL SIGNAL PROCESSOR USER'S MANUAL
+                --------------------------------------
+
+Review by LEON O'REILLY
+
+        With the advent of the Falcon, the new buzzword is DSP. If you
+ever speak to a Falcon  owner  you  will  notice that every third word
+they utter is 'DSP', yet few  people  know  very much about this chip.
+Information seems to be sparse, and  few  programmers have yet used it
+to any extent in  their  productions  (apart  from  a couple of module
+playback routines that only scratch the surface of the chip).
+
+        The DSP in the Falcon is  the  56001, clocked at 32Mhz (that's
+running at  an  impressive  16Mips).  Programmers  drool  at  the mere
+thought of it, but scratch  their  heads  as  they realise that such a
+chip was never  mentioned  in  'ST  Internals'.  In  the  scramble for
+documentation about the  DSP,  you  shouldn't  look  any  further than
+Motorola's own book on the subject (and who could possibly know more).
+
+        This is a very  technical  book  and  will  only  be of use to
+programmers, specifically those  with  a  prior  knowledge of assembly
+language. Unlike ST  Internals  this  book  is  well  laid  out with a
+comprehensive index. Its eleven  chapters  cover  the chip design, bus
+structures and instruction set extensively.
+
+        The introduction tells  us  that  the  chip  was  conceived to
+execute DSP algorithms as quickly as possible, but points out that due
+to the flexibility of the  chip  it  can  be  also used for many other
+things   such    as    numeric    processing    (vectors,   matrixes),
+telecommunication, image processing, 3-D rendering, speech processing,
+digital video amongst many others.
+
+        The second chapter covers  the  bus  structure  -  the DSP can
+address four different types of memory,  program memory, on-chip X and
+Y memory and external memory, and has 4 bi-directional 24-bit buses to
+handle this.
+€
+        The third chapter covers memory  spaces,  specifically X and Y
+memory. Each of these are  static  memory  for  fast  access. On the X
+memory ROM you have positive  Mu-law  and A-law expansion tables (used
+mainly in telecommunication applications) whilst  on  the Y memory ROM
+you have a full four quadrant sine wave table.
+
+        The data arithmetic logic unit is under scrutiny in the fourth
+section. This can be treated as 24, 48 or 56-bit. It discusses the use
+of the  registers,  the  MAC  and  logic  unit  and  gives  some brief
+examples. The DSP has four 24-bit data registers (which can be treated
+independently or as two 48-bit registers). There are also six data ALU
+registers which can form two general purpose 56 bit accumulators.
+
+        The fifth chapter covers the AGU and addressing modes. The DSP
+has eight 16-bit address registers (odd  for  those  of used to 32 bit
+registers on the 680x0 series), but  X  and Y memory are 16-bit. There
+are also eight 16-bit offset  registers  which can contain values used
+to increment or decrement address registers.  On  top of this you have
+eight 16-bit modifier  registers  which  define  the  type  of address
+arithmetic  to  be   performed   for   addressing  mode  calculations.
+Alternatively you can just use them for storage. Each address register
+has its own offset register and modifier register.
+
+        Most of the addressing modes of the DSP will be familiar, they
+are just slight  variations  on  the  680x0  modes.  You  have address
+register indirect, postincrement by  offset register, postdecrement by
+offset register,  index  by  offset  register,  predecrement  by  one,
+postdecrement by one and  postincrement  by  one. The address modifier
+types are also discussed here.
+
+        Chapter six covers the program controller, a subject made more
+complex by  some  of  the  DSP's  more  interesting  instructions. The
+program controller is made up of the program counter, status register,
+loop address, loop counter, stack pointer, operating mode register and
+also the system stack. All registers are r/w for debugging purposes.
+There is also a  discussion  of  the  interrupts  and  a list of their
+€addresses. The bits of  the  status  register  (carry, overflow, zero,
+negative, unnormalized,  extension,  limit,  reserved  (*3), interrupt
+mask, scaling mode,  trace  mode  and  loop  flag)  are explained with
+specific reference to mathematical operations. The different operating
+modes are shown, and the other registers of the program controller are
+also scrutinised.
+
+        With the introduction of the  instruction set in chapter seven
+things start living up. Different  memory  references  are look at and
+again addressing modes are discussed.  The instructions are split into
+arithmetic  instructions   (25),   logical   instructions   (11),  bit
+manipulating   instructions   (4),   loop   instructions   (2),   move
+instructions (5) and program control  instructions (17). They are only
+skimmed over as they are covered in depth in later chapters.
+
+        Chapter 9  documents  processing  states  -  telling  you  the
+effects of interrupts and the  like.  The  most important part of this
+chapter is the description of the  instruction pipeline which works on
+the principle  that  instruction  one  is  fetched,  and  whilst being
+decoded  the  second  instruction   is   fetched,   whilst  the  first
+instruction is being executed the second  is being decoded and a third
+is being fetched. This makes for quick operation but means you have to
+be careful in your coding techniques, for example if you are using the
+same register in subsequent instructions  -  it won't be updated until
+the instruction after because of  the  pipeline effect. Interrupts are
+again discussed and we get the list of interrupt addresses (again).
+
+        The final three chapters discuss ports A, B and C respectively
+which can  be  used  for  memory  expansion,  device  control,  or  as
+connection to other DSPs.  These  chapters  are  more for the hardware
+buffs and those considering designing computer systems around the DSP.
+
+        Appendix A is worth buying the  book for alone. Running to 264
+pages it is a complete description of  the instruction set. There is a
+very brief description of the  parallel  move  - a lot of instructions
+support a parallel instruction, so the DSP can be adding two registers
+whilst shifting some data  across  X  memory  for example. Section A.5
+€('Parallel Move Descriptions')  is  unfortunately  brief  -  only five
+lines half of which are telling you  to  refer to section A.6 for more
+information. However, section A.6 simply refers  you back to A.5 for a
+'complete discussion of parallel moves'.  Maybe  I'm just picky, but I
+wouldn't call two sentences a complete discussion.
+
+        There is a table of  all  the  instructions and marks by which
+bits on the status register they set/clear  (if any), then we are into
+the full description  of  the  instruction  set.  For each instruction
+there is the assembler syntax,  indication  if  it supports a parallel
+move, a description, an example (in  source  code, with the effects on
+sections of  memory  and  registers  shown),  an  explanation  of  the
+example, a list of  all  the  condition  codes  affected  and why, the
+opcode, instruction fields,  timing  and  memory  space required. What
+more could you possibly want? This  is  followed  by a couple of pages
+explaining how to  work  out  instruction  timings  and an instruction
+timings table,  a  parallel  move  table  and  further  timing tables.
+Instruction sequence restrictions are  then  listed (particularly with
+reference to DO and ENDO, and finally instruction coding is covered.
+
+        Appendix B gives us the results  of some benchmark tests which
+mean little to most  of  us  (did  you  know  that  an 8-pole cascaded
+transpose biquad IIR  filter  at  385.7  kHz  takes  70  clock cycles?
+Fascinate your friends at parties!)  and  also  some very brief source
+code examples.
+
+        Appendix C covers some of  the DSP software, documentation and
+books available. As a fair number  of  them  are pretty old, they will
+only be of interest to  those  who  wish  to  use  the chip for actual
+digital signal processing not more interesting tasks.
+
+        Overall this book  is  invaluable  to  the  Falcon programmer,
+reaching almost ST Internals  like  status.  Although  some things are
+repeated too much (the problems  with  DO, instruction pipelining) and
+some not given  enough  coverage  (parallel  moves),  it  gives  you a
+complete insight into  the  working  of  the  chip  and  gives you the
+motivation to start programming it. Now  all  we  need is a decent DSP
+€assembler...
+
+If you are interested in getting this book contact HiSoft - the damage
+is just over a tenner and it is well worth it.

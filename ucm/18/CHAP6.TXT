@@ -1,0 +1,826 @@
+ò                                                           __
+ò                           /\                       /\    /\_\
+ò                          /  \                     /  \   \/_/
+ò                    __   <ðó  CHAPTER 6 : REAL GRAPHICSðò  >
+ò                   /\_\   \  /                     \  /
+ò                   \/_/    \/                       \/
+
+Doing a few pixelplots should be a piece of cake now. You can draw a few
+sprites on the screen and got some tricks to do flickerless animation. Think
+you're ready for the real bussiness? Visual effects like glenzing,
+shadebobs, plasma, or even texturemapped vectors, bumpmapping, waterbasins,
+motionblurring and more sexy things?
+
+Well... I hope to explain at least a few of them in here. There are a lot of
+good documents on any effect you can imagine, only a pitty they're mostly
+for another machine or a tad too theoretical.
+
+Let's begin with the beginning. A long long time ago in a distant galaxy,
+there lived a folk worthy of coding ST machines in assembly. This was in the
+legendary era known as the "EiGThiEs". The ancient wisemen coded fast
+sprites, bytebending scrollers, 3 layer paralaxing stars and more of such
+things.
+
+The trick in those days was mostly to get some welldrawn graphics, nice
+sound from a crappy noisechip know as the Yammy and everything moving as
+fast as the monitor or TV could display it (50 or 60 frames/sec.))
+
+The most well known routines from this age must be the preshifted sprite and
+the horizontal scroller. Simple stuff actually... The real challenge was to
+hardcode a specific spriteroutine for every spritesize, kick the borders of
+the screen out and reach 320*270 and maybe even do some fullscreen scrolling
+at 50fps. Now that's much harder.
+
+Paralaxing stars:
+
+This is probably the simplest effect in demo history. Well.. Ok, maybe
+fading a pallette is a bit simpler. =) But let's start with this first.
+Paralaxing stars aren't any more than a few horizontally moving dots that
+represent different depthlayers of stars.
+
+The background is black like the vast emptyness of deep space. You could
+make it glowy purple too, but that's not the point =) The upper layer of
+stars moves fastest. Every star in this layer moves 100 pixels a second or
+more. This has the brightest color. Preferably white. The lower layers have
+darkers colors and all move a bit slower one by one.
+
+The basics are:
+
+* A pixelplotter routine that can do some colors. Could be 15, but you
+  really only need four and it'll look quite fresh. (1 color on every
+  bitplane). You'll also need this routine to clear previously drawn dots,
+  otherwise all dots will smear all over the place.
+
+* One bitplane dot plotting routine for ST-LOW.
+* INPUT: d0.w: x coordinate
+*        d1.w: y coordinate
+*        a0: start of screenaddress (add 2, 4, 6 to get other bitplanes)
+        move.w  d0,d2                           * Backup x-coordinate.
+        andi.w  #$fff0,d0                       * Calculate bitplane.
+        sub.w   d0,d2                           * / Calculate
+        subi.w  #15,d2                          * | bitnumber
+        neg.w   d2                              * \ in bitplane.
+        mulu.w  #160,d1                         * y-coord -> y_offset
+        lsr.w   #1,d0                           * x-offset.
+        add.w   d0,d1                           * Calculate screenoffset.
+        move.w  (a0,d1.l),d0                    * Get bitplane word.
+        bset    d2,d0                           * Activate the bit.
+        move.w  d0,(a0,d1.l)                    * Put the word back.
+
+* A random routine to give the illusion of a true natural bunch of stars.
+  This is best done with the upper layer having not so many stars and the
+  lower ones having an increasing amount. Creating the table with stars is
+  only done in the beginning.
+
+* INPUT: d7.w: number of stars in layer
+*        a0: address of starlayertable
+        subq.w  #1,d7                           * Initialize for dbra.
+        move.w  d7,(a0)+                        * Store counter.
+        move.l  #$3e8f356b,d0                   * Just as a startvalue.
+
+* Calculate a new random value.
+loop:   move.l  d0,d1                           * Store d0 temporarily.
+        mulu.w  d0,d0                           * Multiply d0*d0.
+        eor.l   d1,d0                           * Exclusive OR it.
+        addq.l  #7,d0                           * Add constant to it.
+
+* Calculate a starposition.
+        moveq   #0,d2                           * Clear d2.l.
+        move.w  d0,d2                           * Copy number in lowword.
+        divu.w  #320,d2                         * / Get num MOD 320
+        swap    d2                              * \ in d2.w.
+        move.w  d2,(a0)+                        * Store the x-coordinate.
+        move.l  d0,d2                           * / Copy 2nd
+        sub.w   d2,d2                           * | number
+        swap    d2                              * \ into d2.w.
+        divu.w  #200,d2                         * / Get num MOD 200
+        swap    d2                              * \ in d2.w.
+        move.w  d2,(a0)+                        * Store the y-coordinate.
+        dbra    d7,loop                         * Loop until all stars done.
+
+* A routine that moves the stars and wraps them around the screen again when
+  they reach the screenside. Top layer moves fastest, lower layers move
+  slower.
+
+* Here we move the toplayer from right to left:
+
+        move.w  (a0)+,d7                        * Get dbra counter in d7.w.
+
+loop:   subq.w  #3,(a0)                         * Move x left 3 pixels.
+        bpl.s   x_ok                            * / Wrap around if
+        addi.w  #320,(a0)                       * \ x became negative.
+x_ok:   addq    #4,a0                           * Goto next staraddress.
+        dbra    d7,loop                         * Loop until stars done.
+
+* And here we move the 2nd layer from right to left:
+
+        move.w  (a0)+,d7                        * Get dbra counter in d7.w.
+
+loop:   subq.w  #2,(a0)                         * Move x left 2 pixels.
+        bpl.s   x_ok                            * / Wrap around if
+        addi.w  #320,(a0)                       * \ x became negative.
+x_ok:   addq    #4,a0                           * Goto next staraddress.
+        dbra    d7,loop                         * Loop until stars done.
+
+* Some normal housekeeping stuff like screeninstalling, switching to ST-LOW,
+  VBL-syncing, screen swapping.
+
+Bitplane sprites:
+
+Let's start with a simple spriteroutine for the ST's 4bitplane mode. We want
+to draw a 16*16 sprite in 16 colours and we want the background masked off.
+If you don't understand what I'm talking about, let me explain:
+
+Say we want a three legged space alien drawn on screen over a bitmap
+backdrop. You might say: But a three legged space alien is a highly
+irregular shape and if we test for every pixel in the sprite if is must be
+drawn the whole thing will get exceedingly slow. We want to draw a simple
+16*16 block by moving loads of words in one go and very little tests if we
+should overlap the background or not.
+
+How do we do this? Well the bitplanes come in handy here as strange as it
+might sound to a beginner... Besides the bitmapdata the sprite also contains
+maskdata. A mask defines where the background should be overlapped in the
+16*16 field.
+          ____
+         /     bItmApdatA (4 bitplanes)
+SprIte>-*
+         \____ MasKdaTa (one bitplane)
+
+Now by using AND-operations (as you might have remembered from chapter 1) we
+put the mask over the screen to prepare for painting the bitmapdata to
+finish off the whole bussiness. The painting itself is done with an OR.
+
+Here's an example with that shows a 8*8 part of the screen.
+
+                                  ********
+                                  ********
+.step 1: our screen.              ********
+                                  ********
+                                  ********
+                                  ********
+
+
+                                  ********
+                                  **** ***
+.step 2: the mask ANDED onto it.  ***   **
+                                  **     *
+                                  ** * * *
+                                  ********
+
+
+                                  ********
+                                  ****^***
+.step 3: the rest ORRED onto it.  ***/ \**
+                                  **/ O \*
+                                  **v v v*
+                                  ********
+
+Now... What will the code for all this look like? Let's take a simplified
+approach first of all. Because of the tricky nature of bitplanes it's
+easiest (and fastest) to plot on positions where the x-coordinate is a
+multiple of 16 (0,16,32,48,64,80,96,...). Also sprites must always have
+width of those same proportions too!
+
+Let's have the code for this spriteroutine:
+
+* Draws a 4 bitplane sprite on a 16 pixel boundary. This routine is for
+* 320*200 ST-LOW.
+* INPUT: d0.w: x position of sprite on screen (left side)
+*        d1.w: y position of sprite on screen (top side)
+*        d6.w: number of 16pixel X blocks to do
+*        d7.w: number of Y lines to to
+*        a0: address of maskdata
+*        a1: address of bitmapdata
+*        a2: screen start address
+DRAW_4BPLSPRITE:
+        lsr.w   #1,d0                           * / Add x-position to
+        adda.w  d0,a2                           * \ screenaddress.
+        mulu.w  #160,d1                         * / Add y-position to
+        adda.l  d1,a2                           * \ screenaddress.
+        move.w  d6,d1                           * / Prepare
+        lsl.w   #3,d1                           * | offset
+        sub.w   d1,d0                           * | to
+        moveq   #0,d4                           * | next
+        move.w  d0,d4                           * \ screenline.
+        subq.w  #1,d7                           * Adjust for dbra.
+        subq.w  #1,d6                           * Adjust for dbra.
+        move.w  d6,d5                           * Backup xloopcount in d5.w.
+
+yloop:
+
+xloop:  move.w  (a0)+,d0                        * Get 16pixel mask in d0.w.
+        and.w   d0,(a2)+                        * Mask bitplane 0.
+        and.w   d0,(a2)+                        * Mask bitplane 1.
+        and.w   d0,(a2)+                        * Mask bitplane 2.
+        and.w   d0,(a2)+                        * Mask bitplane 3.
+        or.w    (a1)+,(a2)+                     * Paint bitplane 0.
+        or.w    (a1)+,(a2)+                     * Paint bitplane 1.
+        or.w    (a1)+,(a2)+                     * Paint bitplane 2.
+        or.w    (a1)+,(a2)+                     * Paint bitplane 3.
+        dbra    d6,xloop                        * Loop until blocks done.
+
+        adda.l  d4,a2                           * Goto next screenline.
+        move.w  d5,d6                           * Restore xloop counter.
+        dbra    d7,yloop                        * Loop until lines done.
+        rts
+
+
+Well.. is basicly all. Just call it with a bsr/jsr and with all the
+registers prepared and it paints to screen.
+
+But this isn't exactly a cool routine. It might be reasonably fast and
+flexible, but ofcourse we want our sprites to able to paint at every
+x-position.
+
+This is where the nasty part of the bitplanes comes in. When not plotting on
+16pixel boundaries, your mask/bitmap data needs to be shifted to right a
+bit. This is best illustrated with a little example: We want to OR some
+bitmapdata onto screen at an irregular x-coordinate. Let's take 3 for x.
+
+_- step 1 -_ nothing happened yet.. the screen is completely clear.
+
+bitmapdata btiplane 0 1 2 3:
+0000111100001111 0000111100001111 0000111100001111 0000111100001111
+
+screendata bitplane 0 1 2 3:
+0000000000000000 0000000000000000 0000000000000000 0000000000000000
+screendata bitplane 4 5 6 7:
+0000000000000000 0000000000000000 0000000000000000 0000000000000000
+
+_- step 2 -_ let's shift and draw bitplane 0 of the bitmapdata.
+
+screendata bitplane 0 1 2 3:
+0000000111100001 0000000000000000 0000000000000000 0000000000000000
+screendata bitplane 4 5 6 7:
+1110000111100000 0000000000000000 0000000000000000 0000000000000000
+
+Get it?? The first WORD in the bitmapdata must be shifted 3 to right. It
+must be copied in bitplane 0 of the screen overspill copied in bitplane 4 of
+the screen. If you don't get it you might want to take a peek at chapter 1
+for the layout of the bitplanes, etc.
+
+_- step 3,4,5 -_ do the same for the other bitplanes
+
+screendata bitplane 0 1 2 3:
+0000000111100001 0000000111100001 0000000111100001 0000000111100001
+screendata bitplane 4 5 6 7:
+1110000111100000 1110000111100000 1110000111100000 1110000111100000
+
+So now you know this, how do we create a spriteroutine with this kind of
+shifting stuff?? Well.. Believe it or not, we can simply take our last
+routine and put in some shift-instructions (shock, horror!).
+
+* Draws a 4 bitplane sprite at any position on screen. This routine is for
+* 320*200 ST-LOW.
+* INPUT: d0.w: x position of sprite on screen (left side)
+*        d1.w: y position of sprite on screen (top side)
+*        d6.w: number of 16pixel X blocks to do
+*        d7.w: number of Y lines to to
+*        a0: address of maskdata
+*        a1: address of bitmapdata
+*        a2: screen start address
+DRAW_4BPLSPRITE:
+        move.w  d0,d2                           * / Calculate the
+        andi.w  #%111111110000,d0               * | number of bits
+        sub.w   d0,d2                           * \ to shift right.
+        lsr.w   #1,d0                           * / Add x-position to
+        adda.w  d0,a2                           * \ screenaddress.
+        mulu.w  #160,d1                         * / Add y-position to
+        adda.l  d1,a2                           * \ screenaddress.
+        move.w  d6,d1                           * / Prepare
+        lsl.w   #3,d1                           * | offset
+        move.l  #160,d4                         * | to next
+        sub.w   d1,d4                           * \ screenline.
+        subq.w  #1,d7                           * Adjust for dbra.
+        subq.w  #1,d6                           * Adjust for dbra.
+        move.w  d6,d5                           * Backup xloopcount in d5.w.
+        moveq   #16,d1                          * Size of two chunks.
+
+yloop:
+
+xloop:  moveq   #$ffffffff,d0                   * Prepare for maskshifting.
+        move.w  (a0)+,d0                        * Get 16pixel mask in d0.w.
+        ror.l   d2,d0                           * Shift it!
+        and.w   d0,(a2)+                        * Mask bitplane 0.
+        and.w   d0,(a2)+                        * Mask bitplane 1.
+        and.w   d0,(a2)+                        * Mask bitplane 2.
+        and.w   d0,(a2)+                        * Mask bitplane 3.
+        swap    d0                              * Get overspill in loword.
+        and.w   d0,(a2)+                        * Mask overspill bitplane 0.
+        and.w   d0,(a2)+                        * Mask overspill bitplane 1.
+        and.w   d0,(a2)+                        * Mask overspill bitplane 2.
+        and.w   d0,(a2)+                        * Mask overspill bitplane 3.
+        suba.l  d1,a2                           * Return to blockstart.
+        REPT    4                               * Asm directive: repeat code
+        moveq   #0,d0                           * Prepare for bitmapshifting.
+        move.w  (a1)+,d0                        * Get bitplaneword in d0.w.
+        ror.l   d2,d0                           * Shift it.
+        or.w    d0,(a2)+                        * Paint bitplane 0.
+        swap    d0                              * Get overspill in loword.
+        or.w    d0,6(a2)                        * Paint overspillbitplane 0.
+        ENDR
+        dbra    d6,xloop                        * Loop until blocks done.
+
+        adda.l  d4,a2                           * Goto next screenline.
+        move.w  d5,d6                           * Restore xloop counter.
+        dbra    d7,yloop                        * Loop until lines done.
+        rts
+
+Well.. That's all there is to a ST spriteroutine. Ok, ok.. Then there are
+issues such as clipping (what to do when the sprite reaches the
+screensides). And ofcourse it's always a matter of how fast the code is. But
+the code in it's current form is basicly the standard for most ST-games.
+
+I'm not going to give hints on clipping, cos there must be other examples in
+this chapter besides sprites. I can however say that there is one way to
+make the routine faster. It's called pre-shifting. Quite obviously this
+involves precalculating blocks for all 16 possible shifts. This does take up
+quite some amount of memory. Almost 16 times as much to be exact. Not very
+reccomendable for very many big sprites if you've only got <800KB free on
+your basic ST.
+
+Then there is the blitter on the (mega) STe and Falcon as well. This does
+quite a good job at realtime shifting, but I'm not telling more about that
+now. The point is that such a routine is the start of the complete graphical
+foundation of a ST-game or demo.
+
+Scrollers:
+
+Due to popular demand this is also included here. I'll deal with a
+horizontal scroller, which is actually more difficult than the vertical one.
+Why? Because of shifting again. All the letters in the scroller are basicly
+a bunch of sprites-on-a-rope.
+
+Scrollers can be big, small, fast or slow. But a basic ST is still fast
+enough update any kind of horizontal scroll in 50fps. Scrollers with big
+fonts mostly move faster over the screen. I'll explain why here:
+
+There are a few ways to get scrolling fast:
+1) Choose a small font. (less stuff to draw onscreen)
+2) Use preshifting. (Saves you from realtime shifting.)
+3) Use only a few (even one) bitplane. (less stuff to draw)
+4) Move the scroller on 8-pixel boundaries. (No shifting at all!)
+
+You can choose any of the first three options and implement them how you
+want but if you want really big fonts moving in 50fps, option 4 is a must!
+This will get the scroller moving kinda speedy, though... 50*8 = 400 pixels
+per second! For lower speeds you'll need shifting routines.
+
+So, now you know what kinds there are and why those fast scrollers are so
+common in oldschool demos. Let's continue with the requirements for this
+effect:
+
+1) A fontbitmap. Characters must have fixed widths of preferably 8, 16,
+   24, 32, etc. pixels. This enables easy lookup of an ASCII-code in the
+   bitmap. Also note that you must keep all character is ASCII order too!!
+2) A scroller-routine. This reads the text from a textbuffer with ASCII
+   characters, looks these up in the bitmapbuffer and paints the bitmaps
+   onscreen. Doing this for every character every frame is a slow and
+   painful afair. Much better is to move the previously drawn scroller left
+   one bit (a few pixels) and only draw a new part in the right corner.
+
+Now we got that cleared up it's time for an example.. I'll explain a fast
+scroller which uses a 8*8 1-bitplane font. I left out saving and getting
+screenaddresses, changing resolution, etc. to save up some space here.
+
+* [=>>> Funky 1bit scrolleR <<<=] *
+
+        bsr     DRAW_FIRSTSCROLLER
+
+mainloop:
+        bsr     DRAW_SCROLUPDATE
+* Swap screens here.
+        bra     mainloop
+
+DRAW_SCROLLUPDATE:
+* First copy the previous scroller left 8 pixels on the actual screen.
+* This is done by copying from the physical to the logical screen.
+        movea.l logical_screen,a0               * a0 = logical screenaddress
+        movea.l physical_screen,a1              * a1 = physical screenaddress
+        addq    #1,a1                           * next charposition
+        moveq   #8-1,d7                         * 8 lines in character
+
+yloop:  REPT    40-1                            * screenblocks todo
+        move.b  (a1),(a0)+                      * Copy next to actual.
+        addq    #8-1,a1                         * Increase to next block.
+        move.b  (a1)+,(a0)                      * Copy next to actual.
+        addq    #8-1,a0                         * Increase to next block.
+        ENDR
+        move.b  (a1),(a0)                       * Do last character.
+        addq    #8,a1                           * next screenline
+        addq    #8,a0                           * next screenline
+        dbra    d7,yloop                        * until screenlines done
+
+* Now draw the new character on the right side of the screen.
+        movea.l logical_screen,a0               * a0 = logical screenaddress
+        lea     160-7(a0),a0                    * last charposition
+        lea     font_dat,a1                     * a1 = fontbuffer-address
+        lea     scroll_txt,a2                   * a2 = scrolltext-address
+        adda.w  textposition,a2                 * Get actual textaddress
+        moveq   #0,d0                           * / Calculate offset
+        move.b  (a2)+,d0                        * | into
+        lsl.l   #3,d0                           * \ fontbuffer.
+        adda.l  d0,a1
+        move.b  (a1)+,(a0)                      * Draw first line.
+        move.b  (a1)+,160(a0)                   * Draw second.
+        move.b  (a1)+,320(a0)                   * Draw third..
+        move.b  (a1)+,480(a0)                   * etc....
+        move.b  (a1)+,640(a0)
+        move.b  (a1)+,800(a0)
+        move.b  (a1)+,960(a0)
+        move.b  (a1)+,1120(a0)
+        addq.w  #1,textposition			* Update textposition.
+	tst.b	(a2)				* Test next character.
+        beq.s   null                            * If nullchar > go out!
+        rts
+null:   clr.w   textposition                    * Wrap scroller!
+        rts
+
+        DATA
+
+textposition:
+        DC.W    0                               * Start at character 0.
+
+* Nullterminated text. (0-character denotes end-of-text)
+scroll_txt:                                     
+        DC.B    "Hello, this is just your average lame scroller! "
+        DC.B    "Most writers would have written loads of bollocks in here... "
+        DC.B    "Maybe I should do the same???? "
+        DC.B    "Naaahhh... Let's wrap it up.... =)              ",0
+        EVEN
+
+font_dat:
+        INCBIN  FONT.DAT
+
+* [=>>> End of funky 1bit scrolleR <<<=] *
+
+Using only 1 bitplane to paint to you can achieve nice tricks know as
+glenzing and fake motionblur. How do these work??
+
+Glenzing:
+
+Glenzing is the effect seen in demos as Grotesque and then some more. It's
+the thing where the polygons in an object overlap eachother and blend
+eachothers colors. Every polygon has it's own base color. There can only be
+as many basecolor as there are bitplanes. In ST-LOW that's 4.
+
+When a polygon is plotted it's plotted on the bitplane of it's basecolor (so
+0, 1, 2 or 3  in the STs case). And then all we need to know more is how to
+make a good palette for this effect.
+
+The ST has 4 bitplanes that make up 2^4 = 16 colors. In these colors you
+must put one backgroundcolor, the four basecolors and the other colors which
+are combinations of the basecolors. If this sounds a bit dazzling let me
+give you some hints:
+
+pallette color | description
+---------------+------------------------------------------
+0000 - 00      | backgroundcolor, can be anything you like
+0001 - 01      | *basecolor 0, only bitplane 0 is active
+0010 - 02      | *basecolor 1, only bitplane 1 is active
+0011 - 03      | basecolors 0 and 1 mixed toghether
+0100 - 04      | *basecolor 2, only bitplane 2 is active
+0101 - 05      | basecolors 0 and 2 mixed toghether
+0110 - 06      | basecolors 1 and 2 mixed toghether
+0111 - 07      | basecolors 0, 1 and 2 mixed toghether
+1000 - 08      | *basecolor 3, only bitplane 3 is active
+1001 - 09      | basecolors 0 and 3 mixed toghether
+1010 - 10      | basecolors 1 and 3 mixed toghether
+1011 - 11      | basecolors 0, 1 and 3 mixed toghether
+1100 - 12      | basecolors 2 and 3 mixed toghether
+1101 - 13      | basecolors 0, 2 and 3 mixed toghether
+1110 - 14      | basecolors 1, 2 and 3 mixed toghether
+1111 - 15      | basecolors 0, 1, 2 and 3 mixed toghether
+
+So that's that. A good idea might be to take primary colors for the
+basecolors. Hehe, who's a afraid of red, green, yellow and blue, and for the
+other colors take those colors mixed toghether. This will give a real DiSc0-
+like effect =)
+
+Fake motion-blurring:
+
+Again this is not so hard.. Mostly used with wireframe 3d objects to give
+them some extra twist. You could also apply the same to 1 bitplane sprites.
+I have never actually implemented this effect, but it doesn't sound that
+hard to do.
+
+The trick is to draw your wireframe object on a different plane everytime.
+So, frame one you draw one plane 0, frame 2 on plane 1, frame 3 on plane 2,
+frame 4 on plane 3 and then start over again. Ofcourse you delete the
+previously drawn lines in the active bitplane everytime!!
+
+Basicly this is just cycling with which bitplane to draw on. But we aren't
+there just yet! To get the trick done we need some pallette cycling as well.
+We want to see that the wireframe drawn last time is actually faded to black
+(or whatever backgroundcolor you had in mind) a bit more.
+
+This word "palettecycling" might be a bit innaccurate since we do more of a
+complete rearranging of the palette instead of just cycling. In every color
+where bitplane 0 is active, the 1st color (white) must be set.
+
+The "actual" bitplane has the highest priority, so every color that has a 1
+for this bitplane should be white. The other colors should be dealth with by
+looking at which other bitplanes are used in them. They are given the color
+of the used bitplane with the highest priority. So how are these priorities:
+
+For every cycle through the bitplanes there is one situation:
+
+                 actual (white)
+                 |
+                 v
+cycle 0: highest 0, 1, 2, 3 lowest
+
+cycle 1: highest 3, 0, 1, 2 lowest
+
+cycle 2: highest 2, 3, 0, 1 lowest
+
+cycle 3: highest 1, 2, 3, 0 lowest
+
+I'm not going to give every palette for each of those situations.. Just for
+cycle 0.
+
+pallette color | color (highest priority bitplane)
+---------------+------------------------------------------
+0000 - 00      | backgroundcolor, we'll make this black
+0001 - 01      | white (bitplane 0)
+0010 - 02      | dark grey (bitplane 1)
+0011 - 03      | white (bitplane 0)
+0100 - 04      | mid grey (bitplane 2)
+0101 - 05      | white (bitplane 0)
+0110 - 06      | mid grey (bitplane 2)
+0111 - 07      | white (bitplane 0)
+1000 - 08      | light grey (bitplane 3)
+1001 - 09      | white (bitplane 0)
+1010 - 10      | light grey (bitplane 3)
+1011 - 11      | white (bitplane 0)
+1100 - 12      | light grey (bitplane 3)
+1101 - 13      | white (bitplane 0)
+1110 - 14      | light grey (bitplane 3)
+1111 - 15      | white (bitplane 0)
+
+Ok, hope you get this. It's best to precalculate all 4 for these palettes,
+so that you can kick them into the hardware palette-registers the fast way.
+
+Let's round up the requirements for this effect:
+
+1) Some 1bitplane painting routines (wireframe 3d, 1bitplane sprites, etc).
+   These must be able to plot to each one of the 4 bitplanes. If you want
+   double-buffering the routines must be able to draw to both screenbuffer
+   at the same time!!
+2) Gradiated pallettes. One for each cycle.
+3) Some additions to the painting routines. One routine must be able to
+   delete all the previously drawn stuff from the actual bitplane.
+
+Syncscrolling, 512 color plasma, etc:
+
+If you understand this you might be asking how ST-coders managed to do stuff
+like fullscreen horizontal scrolling in 50 fps. Believe me! You don't want
+to know ;-) Most of these effects rely on nanosecond syncing (using the
+CPUclock to get the timing right) to fuck up the hardware into doing
+impossible things.
+
+Yep, that's right.. Mostly this doesn't work on anything less than a basic
+ST(e). Because TTs, mega STe's, Falcon's and tuned STs have different
+CPUclocks it won't work anymore. It's too bad, but I'm not going into these
+routines, eventhough they were kinda cool and squished every last drop out
+of a simple 8MHz ST.
+
+If people like to write me about these effects, I will include more info
+about these, especially since I don't have that much information. It's not
+good to code like this, but it is however nice to see what is possible with
+a simple machine. Just look what they forced that poor C64 and 800XL into
+doing =)
+
+Falcon effects:
+
+Ofcourse there are more ST effects.. I haven't really spoken about the
+hardwarescrolling on the STe, but I think it would be nice to dedicate the
+second part of this chapter to falcon effects. Many people own a falcon
+today and there are a lot of new interesting effects for it.
+
+Texturemapping, phongshading, envmapping:
+
+Probably the most overrated effects ever. They are ofcourse based on simpler
+3d engines you could also make on the ST (flatshaded polygons). I'm not
+going into constructing a complete 3d-engine as this is a subject big enough
+to get it's own complete tutorial.
+
+Well.. Ok, I'll show only a bit of the basic 3d stuff:
+
+realtime rendering of an object:
+1) Rotate points of the object. This is always done with sine-martix stuff.
+2) Position and perspectivate (3d->2d) object.
+3) Sort all the polygons/triangles in the object. Remove polygons that are
+   facing backwards (=backface culling).
+4) Paint all the triangles.
+
+Not much detail, I know.. But going deeper into each step leaves one with
+too much questions and I'm too lazy and all =)
+
+The only thing that is differenciates texturemapping engines from flatshaded
+engines is that they have different polygon/triangle painting routines. The
+rest is virtually the same. So envmapping might seem really cool, but infact
+it isn't a marvellous achievement.
+
+The paintingroutine is basicly a routine that draws horizontal scanlines
+between the edges it has. A triangle has only 3 edges and hence is an ideal
+shape for a painting routine. 4-sided polygons are mostly a pain in the ass
+to make a fast routine for. If your 3d routines allow triangles and polygons
+at the same time, this mostly brings some extra overhead to the whole thing.
+
+So, I'm only giving some explanation on triangles here.
+
+Basic textured triangle painting routine:
+
+1) Output edgetables for both the left and right side of the triangle. This
+   is the most tricky part. One side is spit up into two parts. The slope of
+   this edge changes one time. You have to look on which side this occurs.
+   drawing into the edgetables is simply interpolating every X-coordinate
+   (and texturecoordinates) for every Y.
+2) Draw a horizontal textured line, using interpolation, between each of the
+   edgetable entries. This requires calculating the two textureslopes
+   everytime! And we're not even talking perspective correction here. I'll
+   leave that completely since it's too hard for a basic falcon and we
+   mostly use low resolutions.
+
+Y  | left side:   | right side:
+---+--------------+---------------
+0  | X0, TX0, TY0 | X1, TX1, TY1
+1  | X0, TX0, TY0 | X1, TX1, TY1
+2  | ...          | ....
+3  | ..           | ..
+
+As you can see all this interpolating can get heavy. Espececially when using
+texture dimensions not equal to powers of two. Take this advice: always use
+powers of two when texturing and preferably 256*256, so that the TX can be
+one byte and the TY can be one byte.
+
+Still, the interpolating could be slow. You don't need that much
+optimisation for interpolating the trianglesides, but for interpolating
+between those sides every scanline needs to be damn fast. Luckily, the
+interpolation algorithms for 256*256 textures got really fast a few years
+ago thanx to our amiga friends.
+
+Interpolating is explained a whole lot better in a particular document by
+Dynacore/.tSCc. but I'll at least try to explain a bit about it in here.
+
+* TX: X texturecoordinate integer part (8 bit)
+* tx: X texturecoordinate fractional part (8 bit)
+* TY: Y texturecoordinate integer part (8 bit)
+* ty: Y texturecoordinate fractional part (8 bit)
+* SX: X textureslope integer part (8 bit)
+* sx: X textureslope fractional part (8 bit)
+* SY: Y textureslope integer part (8 bit)
+* sy: Y textureslope fractional part (8 bit)
+* d1.l: $00000000
+* d0.l: $tx__TYty
+* d2.l: $______TX
+* d3.l: $sx__SYsy
+* d4.l: $______SX
+* a0: address of middle of 256*256 highcolor texturemap
+* a1: address of current screenposition.
+
+        move.w  d0,d1                           * Get TY in highbyte.
+        move.b  d2,d1                           * Get TX in lowbyte.
+        move.w  (a0,d1.l*2),(a1)+               * Use TY,TX to move pixel.
+        add.l   d3,d0                           * / Interpolate next TY
+        addx.b  d4,d2                           * \ and next TX.
+
+This is one loop-iteration. It looks confusing? That's right, it is
+confusing, and fast too! =) Ofcourse this loop relies on first calculating
+the slopes fixedpoint slopes (8 bit integer part, 8 bit fractional part) and
+start texturecoordinates.
+
+To make things a little more extra fast (and tricky) these need to be
+rotated around a bit. The SY:sy and TY:ty can be put next to eachother in
+the lowword of a dataregister. You can simply add these toghether and TY
+always is in the right place. The highbyte indicates from which textureline
+to read and the lowbyte indicates from which pixel in that line to read.
+
+The more tricky part is the "addx.b" instruction. It's not so common, but it
+is fast and helps alot in this particular case. What it does is check if the
+eXtend bit in the status register is actived. If so, it adds an extra 1 to
+the destination register. Ofcourse it always adds the source to the
+destination as well.
+
+In this case the source is the integer part of the slope (SX) and the
+destination is the integer part of the actual coordinate (TX). What sets the
+eXtend bit is the previous "add.l" instruction. Since this isn't only the
+addition of SY:sy with TY:ty, it's also the addition of the sx with tx. Look
+closely at the highest bytes of d0.l and d2.l and you see what I mean.
+
+So if this overflows, the eXtend bit is set and the "addx" adds an extra 1
+to TX! This way everything is in the best possible place for direct usage.
+Seeing this trick used made my mouth water! It gave me goosepimples, it sent
+shivers down my spine! <!STOP!> Ok, I'll cut the crap =)
+
+This is a good routine, but I can still imagine you don't understand it that
+well. In that case I refer to Dynacore's article (in UCM13 and on the .tSCc.
+homepage of funky ASCII drawings).
+
+A roundup... For a texturemapping set of innerloops you need:
+
+1) Some instructions to fetch X0, TX0, TY0, X1, TX1, TY1 from the
+   edgetables. Also some instructions to rotate these around a bit for
+   preparing for the 5 instr/pix texturemapping. X0 is added to the
+   screenaddress, and the slopes are calulated from (TX1-TX0)/(X1-X0) and
+   (TY1-TY0)/(TX1-TX0).
+2) Now just loop as many times as TX1-TX0.
+
+This is one of my scanlineloops:
+
+drawtxtlineloop:
+        movem.w        (a1)+,d0/d1/d2/d3/d4/d6         * Fetch start-/end-values.
+* d0.l: X1 (extend word) d1.l: TX1 (extend word) d2.l: TY1 (extend word)
+* d3.l: X2 (extend word) d4.l: TX2 (extend word) d6.l: TY2 (extend word)
+        lea     (a0,d0.l*2),a0                  * Get screenoffset.
+        sub.l   d1,d4                           * d4.l: dTX
+        sub.l   d2,d6                           * d6.l: dTY
+        lsl.w   #8,d2                           * / Prepare values for
+        asl.l   #8,d4                           * | fixed-point
+        asl.l   #8,d6                           * \ divisions.
+        sub.w   d0,d3                           * d3.w: dX
+        bmi.s   rts                             * If no pixels todo >out!
+        beq.s   onepix                          * Don't divide if 1 pixel.
+        divs.w  d3,d4                           * Calculate TX-slope.
+        divs.w  d3,d6                           * Calculate TY-slope.
+onepix: rol.l   #8,d6                           * / Prepare slopes
+        move.b  d4,d6                           * | and offsets for
+        rol.l   #8,d6                           * | the addx-loop..
+        eor.b   d6,d6                           * |
+        swap    d6                              * |
+        lsr.w   #8,d4                           * \
+        moveq   #0,d5                           * Clear offsetvalue.
+plotpixloop:
+        move.w  d2,d5
+        move.b  d1,d5
+        move.w  (a2,d5.l*2),(a0)+
+        add.l   d6,d2
+        addx.b  d4,d1
+        dbra    d3,plotpixloop                  * until pixels done
+        adda.l  a5,a6                           * / Move to next
+        movea.l a6,a0                           * \ scanline.
+        dbra    d7,drawtxtlineloop              * until scanlines done
+rts:    rts
+
+A good tip is not to recalculate the slopes every scanline, but only once
+for every triangle. Much faster and if well implemented, just as accurate!!
+=)
+
+Environmentmapping, phongshading:
+
+Mostly the same nowadays. And they are, VERY SIMPLE much to everyone's
+suprise. Environment mapping is basicly texturemapping all over again, but
+this time every point in the object has a normalvector and the X and Y
+components of these are used as the texturecoordinates! Dead sneaky, but
+very effective. It almost looks like the reflection used in raytracing
+engines!
+
+Phongshading can be used in combination with envmapping. Just make a little
+highlight in the 256*256 texture and there's your phong spot. There's isn't
+anything to it at all.
+
+Bumpmapping (rumpmapping =)):
+
+There is an incredible amount of math behind this effect. Scared? Don't be!
+This effect has been optimised so long and often that there is completely
+ZERO math involved in it today! You could do all kinds of raytracing
+algorithms and more bullshit, but in the end it all comes down to this (big
+thanx to evl for explaining this effect):
+
+* A bitmapped highcolor lightsource. Make this 256*256 again. Put the
+  highlight in the middle.
+* An offsetmap made from a picture (any size you want) by a precalcing
+  bumpmap transformer:
+
+* INPUT: a0: address of bumpmap (destination)
+*        a1: address of bitmap (source)
+
+        move.w  #ysize-1,d7                     * Prepare to loop yres times.
+
+yloop:  move.w  #xsize-1,d6                     * Prepare to loop xres times.
+
+xloop:  move.b  (a1),d0                         * / Calculate difference in
+        sub.b   2(a1),d0                        * \ x direction (=dx).
+        bpl.s   skip1                           * / Make
+        neg.b   d0                              * | dx
+skip1:  asr.b   #1,d0                           * \ positive.
+        move.b  d0,(a0)+                        * Store dx in bumpmap.
+        move.b  (a1),d0                         * / Calculate difference in
+        sub.b   xsize*2(a1),d0                  * \ y direction (=dy).
+        bpl.s   skip2                           * / Make
+        neg.b   d0                              * | dy
+skip2:  asr.b   #1,d0                           * \ positive.
+        move.b  d0,(a0)+                        * Store dy in bumpmap.
+        addq    #1,a1                           * Next pixel in bitmap.
+        dbra    d6,xloop                        * Loop xres times.
+
+        dbra    d7,yloop                        * Loop yres times.
+
+* A routine that does nothing more than this, looped over and over:
+
+        move.w  (a0)+,d0                        * Get next bumpmapoffset.
+        move.w  (a1,d0.l*2),(a2)+               * Plot next pixel to screen.
+        addq    #2,a1                           * next position in lightsource
+

@@ -1,0 +1,288 @@
+--------------------------------------------------------------------------------
+                             fastInterpolation 
+--------------------------------------------------------------------------------
+
+Okay, here  I tell you  some  techniques of how  to sum  up fix-point-values and
+get the integer-value  of  it quite  fast, which  is the  basic  loop  of  every
+interpolation-task,  e.g. for  your  polygon-routine,  your  gouraud-shading  or
+rotozoomer, or for your mod-replay-routine or, or, or....
+And I will only discuss the main-loop,  not how  to initialize the values, which
+basically depends on the tasks you  need it for. You can  ether divide using the
+div-opcodes (slow) or by using a table which all possible results (should be the
+fastest - but  can need  big amounts  of  memory) - or the  symbiosis (with less
+accuracy of course): A table with all possible 1/x and the mul-instruction...
+
+A very rough and little introduction to fixed-point-representation:
+
+
+1.234 is the same as 1234/1000; so fixed-point  means in this context  that 1234
+actually means 1.234, because the value is just  1000 times bigger  than the one
+you want to represent.
+
+As computers  work with the  binary system, it's logical to use not the decimal-
+system  there, but something like  <nobr>2 ^  x</nobr> as the basis, which means
+1.234 should be <nobr>1.234*65536  ~ 80871</nobr> - hard to read for humans, but
+easier (say faster) for computers due to the shift-operator.
+
+A multiplication  with fixedpoint  looks like  this: <nobr>1234 * 1234 = 1522756
+( = 1.522756);</nobr>  You see, the point moved another thousand to the left, so
+you have  to rescale your fixpoint-value after a  multiplication by  shifting to
+the right (dividing by thousand  in this  example). Same  goes for the division,
+but you need to shift before  you divide, due to the  fact that you would lose a
+lot more of accuracy by doing it the other way...
+
+
+(wrong) 1522 / 1234 = 1*1000 = 1000
+(right) 1522000 / 1234 = 1257
+
+To minimize  rounding-errors  you should  use a higher  scaling-factor  than the
+value  you want  to represent, as you can see: 1000 is  good enough  if you just
+want  the integer, but  for two  digits behind  the point  it starts  to  be too
+inaccurate.
+
+And now for the implementation
+
+The  basic  kind  of  routine  works  with 16bit-accuracy (high-word  represents
+integer-value, low-word the fraction) and looks like this  (just for the ease of
+understanding):
+   
+
+loop:
+   add.l   D1,D0     ;Add stepwidth
+   swap    D0        ;swap hi- and low-word
+   move.w  D0,(A0)+  ;output the integer-value
+   swap    D0
+        
+   dbra    D7,loop   ;repeat this many times
+  
+
+
+ D0 = $0001 2000 = 1.125
+ D1 = $0001 6000 = 1.375
+
+ Looped:
+ D0 = $0001 8000 = 1.5
+ D0 = $0002 E000 = 2.875
+ D0 = $0004 4000 = 4.25
+ D0 = $0005 A000 = 5.625 
+
+Well, those  two nasty "swap", there must be a  way to get rid  of them... Hell,
+yes! Just  think of the  Extension/Carry-Flag, which  is always set  if your add
+creates  an overflow, which means: if you use  16bit, the  carry-flag is  set if
+your sum  is bigger than 65535 (or $FFFF in hex), this gives you the possibility
+to calc with virtually endless accuracy...
+
+With this in mind we write: 
+   
+
+loop:
+   add.w   D3,D2     ;add the fractions
+   addx.w  D1,D0     ;and sum overflow 
+                     ;with the integer-part
+   move.w  D0,(A0)+  ;output
+
+   dbra    D7,loop   ;repeat this many times
+  
+
+
+ D0 = $0001 : D2 = $2000 = 1.125 
+ D1 = $0001 : D3 = $6000 = 1.325
+
+ Looped:
+ D3 = $(0)8000 (+$6000)
+ D0 = $(0)0001 (+$0001+(0))
+ 
+ D3 = $(0)E000 (+$6000)
+ D0 = $(0)0002 (+$0001+(0))
+
+ D3 = $(1)4000 (+$6000)
+ D0 = $(0)0004 (+$0001+(1))
+
+ D3 = $(0)A000 (+$6000)
+ D0 = $(0)0005 (+$0001+(0))
+
+Well, as you can see this needs just three opcodes, but the drawback is, it also
+needs two more registers. So, you can use an address-register to keep more data-
+registers free (as many manipulations are only possible or are faster if you use
+data-registers), but still it simply wastes registers.
+
+So someone came up with this idea: You swap your 16-bit-fixpoint-representation,
+so that  you have the fractions in the hi-word and the integer in the  low-word.
+Now you can add the long onto itself and then you  have the  carry-bit added the
+next time (be  sure there is no instruction in between changing the X-Flag!); it
+means you have basically the same but it's a single instruction delayed.
+So what? Just  add an initial fraction-add and you have a nice  two-intructions-
+loop:}
+   
+
+
+   sub.w   D1,D0    ;prepare for init
+   add.l   D1,D0    ;get initial X-Flag set
+
+loop:
+                    ;add the fractions(hi)
+   addx.l  D1,D0    ;and integer(low)-pair
+   move.w  D0,(A0)+ ;output the value
+                    ;move doesn't change X-Flag!
+   dbra    D7,loop  ;repeat this many times
+  
+
+
+ D0 = $2000 0001 = 1.125
+ D1 = $6000 0001 = 1.375
+
+ Init:
+ D0 = $(?)2000 0000 (-D1.w) 
+ D0 = $(0)8000 0001 (+D1.l)
+
+ Looped:
+ D0 = $(0)E000 0000
+ D0 = $(1)4000 0002
+ D0 = $(0)A000 0004
+ D0 = $(1)0000 0005
+
+Really nice, isn't it?
+Oh, you doubt this works also with negative values?
+
+Well, yes, every negative value modifies the fractional part  every time you add
+it to your sum. But knowing this you can decrease the fraction of your add-value
+by one, or you just  ignore it, as it gives you just an error  of 1/65536th each
+time, this  means, you  must  do the  loop 65536  times to  change your  desired
+integer  by one (or  if you  use <nobr>trunc(value+0.5)</nobr> it happens  after
+32678 times) - a really  big number of  iterations, so  I doubt the  handling of
+this is really necessary. 
+   
+
+   
+   tst.w   D1       ;negative?
+   bpl.s   notneg
+   sub.l   #$010000,D1 ;then decrease frac.
+notneg:
+
+   sub.w   D1,D0    ;prepare for init
+   add.l   D1,D0    ;get initial X-Flag set
+
+loop:
+   addx.l  D1,D0    ;add frac(hi) and int(low)
+   move.w  D0,(A0)+ ;output the value
+        
+   dbra    D7,loop  ;repeat this many times
+
+
+So, is there a way to speed this up even further?
+
+Well, just take the old "unrolled-loop"-trick into account:
+Why not leaving out the dbra-command and save that execution-time?
+   
+
+
+   tst.w   D1       ;negative?
+   bpl.s   notneg
+   sub.l   #$010000,D1 ;then decrease frac.
+notneg:
+
+   neg.w   D7       ;Offset to the end of the REPT-Block
+   add.w   D7,D7
+   add.w   D7,D7    ;*4
+   lea     jump_in(PC),A0
+                    ;before X-Flag init because "add"
+                    ;will ruin the X-Flag
+
+   sub.w   D1,D0    ;prepare for init
+   add.l   D1,D0    ;get initial X-Flag set
+
+   jmp     -4(A0,D7.w) ;Go!
+   
+   REPT    4096
+   addx.l  D1,D0    ;add frac(hi) and int(low)
+   move.w  D0,(A0)+ ;output the value
+   ENDR
+jump_in:
+
+Not much to say about it.
+Both  instructions  inside  the  loop  are  two  bytes  long, this  means, every
+instruction-pair  is 4 bytes long, so jump back from  the end of your  unrolled-
+loop  to the 'D7'th instruction-pair  and you got  it. I doubt I  really have to
+mention  that: Your maximum number of iterations is limited  to the size of your
+unrolled loop, just look at the source and you know...
+
+
+
+On Falcon  with it's 68030 and the small 256-Bytes-Cache  you cannot  unroll the
+loop  completely, so  it would  work  out like this (D7  isn't handled dbra-like
+anymore!):
+   
+
+
+   tst.w   D1       ;negative?
+   bpl.s   notneg
+   sub.l   #$010000,D1 ;then decrease frac.
+notneg:
+
+   moveq   #$1F,D6  ;Mask-Value
+   and.w   D7,D6    ;Mask out 0-31
+   lsr.w   #5,D7    ;/32
+   neg.w   D6       ;Offset to end of REPT-block
+                    ;before X-Flag init because "neg"
+                    ;will ruin the X-Flag
+   
+   sub.w   D1,D0    ;prepare for init
+   add.l   D1,D0    ;get initial X-Flag set
+   
+   jmp     jump_in(PC,D6.w*4) ;Go!
+loop:
+   REPT    32
+   addx.l  D1,D0    ;add frac(hi) and int(low)
+   move.w  D0,(A0)+ ;output the value
+   ENDR
+jump_in:
+   dbra    D7,loop
+
+Yes, quite bloated, but the benefits are obvious!
+
+
+
+Alright, think  about  two interpolations  within  the  same  loop,  say  for  a
+rotozoomer...
+
+Yes, hardly possible, just keep the delay in mind and the  fact that you have to
+mix up your values to get a useful offset without destroying the X-Flag!
+
+But there  is a great (and  hardly accurate  but devilish fast) solution to this
+problem. You use 8-bit-fixpoint and mix the two variables together, just look at
+the  code-example below, think about  all the  explainations  above and  then it
+should be clear how it works:
+   
+
+
+;The bytes of the 32bit-Registers D0 and D1 are 
+;initialised to the following representation:
+;   xf|00|yi|yf
+;where x and y are the two 8-bit-fixedpoint-values
+;and f stands for the fractional part 
+;and i for the integer
+;D3.b and D2.b are just the integer part of the x-value
+;A1.l points to a 256x256-Pixels-Truecolor-Grafic
+
+loop:
+
+   add.l   D1,D0    ;add xf|00|yi|yf
+   addx.b  D3,D2    ;add xi
+   
+   move.w  D0,D4    ;D4 = yi|yf
+   move.b  D2,D4    ;D4 = yi|xi
+                    ;reads like: y*256+x
+   move.w  (A1,D4.w*2),(A0)+ ;output the pixel
+
+   dbra    D7,loop  ;repeat this many times
+
+Yes, five instructions do the work.
+
+Okay, all those code-snippets aren't runable as stand-alone-routines, but if you
+understand what is done, and why, then you are at a good point to become a great
+68K-assembler-coder.
+
+                             .-------------------------------------------------.
+.----------------------------| dynaCore/.tHE .sIRIUS .cYBERNETICS .cORPORATION |
+| andreas_john@tesla.inka.de |-------------------------------------------------'
+'----------------------------'

@@ -1,0 +1,118 @@
+066030202030000132006004004006000
+11
+21
+F0110030001
+9[............................................................]0010
+
+Maggie 22: Programming
+
+
+                          Maggie 21 ST intro
+
+                        + source code on disk
+
+
+As is becoming a bit of a tradition, you will have noticed the Maggie 
+team's cunning method of using up surplus disk space by bolting an 
+intro onto an issue, then using up even more by sticking the source 
+code on the issue after that. Here's how the ST intro on issue 21 was 
+done by Tat:
+
+The idea of doing an ST intro was sparked by seeing the stuff that 
+Cream had recently managed to squeeze out of an ST in their "Things 
+that make you go..." demo. A wave of nostalgia for the old warhorse 
+sitting in my cupboard made me start bashing some Falcon and PC 
+conversions out of it, and the ST intro was the result. There are only 
+2 effects: the tunnel and the "washing machine" effect, so here's how 
+they were done:-
+
+
+                            1. The Tunnel
+
+The tunnel is a very simple effect: the problem is how to give it a 
+decent speed on the ST. All we have is a very simple table, calculated 
+in GFA Basic: we calculate an offset into the background pattern, and 
+copy the relevant pixels in a stream onto the screen. To get the 
+impression of movement, we move along the background pattern and the 
+tunnel appears to zoom forward. So on a Falcon the code would looks 
+something like this:
+
+.loop:
+        move.w  (a0)+,d0                ;fetch offset from table
+        move.l  (a1,d0.l*4),(a2)+       ;copy onto screen (2 words)
+        dbf     d1,.loop                ;next pixel
+
+
+Doing this on an ST is a *lot* harder. For one thing we must use 
+bitplanes (see the article on ST Demos elsewhere this issue) and 
+second we cannot use the cache to speed up the loop.
+
+To get the necessary speed, a huge long routine is self-written before 
+the effect starts. This gets all the table offsets, makes 4 copies of 
+the graphics each shifted by 2 pixels, and occupies about 100K of 
+memory. All the necessary offsets are then "hard-coded" into this huge 
+routine. This saves extra data fetches on the ST to squeeze that last 
+ounce of speed from it. Look at the source code for a fuller 
+explanation; it also gives the cycle timings for a normal ST.
+
+As a result the demo doesn't run at anywhere near full speed on a 
+Falcon, because the instruction and data caches are useless since the 
+routines are so big. The forthcoming section on sprites in ST demos 
+will cover the idea of hard-coding and self-modifying code more fully.
+
+
+
+
+                   2. The "Washing Machine" Effect
+
+The second effect works in a way very similar to the tunnel. Each 
+point on the screen is given two values, a "ring" number depending on 
+how far away from the centre of the screen it is, and a "ring angle" 
+which increases as we move round this ring. Then for each pixel we 
+find the ring and angle, increase the angle and ring with some 
+distortion effects, then look up the graphics. These graphics are also 
+split into concentric rings, so finding the relevant graphics is a 
+simple lookup case.
+
+Again the effect pre-writes a huge routine to do this to save speed on 
+an ST. Also there are a couple of cunning tricks involving registers 
+that hardened coders might like to look at...
+
+1. To get more effective wrapping and memory management, each ring is 
+made up of 256 bytes. Looping round the ring is merely as case of 
+add.b rather than adding an extra instruction to limit the data.
+
+2. The routine draws the screen using the MOVEP instruction (extremely 
+handy for bitplane routines!) The way this works is to place 
+individual bytes at (a0), 2(a0) 4(a0) and 6(a0) ie. here on different 
+bitplanes. Also when combining the 4 chunks of pixels together to 
+create an 8 pixels block, the whole graphic can be held in one 
+longword data register. Very neat.
+
+
+
+
+                            3. The Design
+
+This took much longer than the coding to get right. The wobbly 
+patterns are made by overlaying two patterns distorting at different 
+speeds, the font is stolen from Windows 3.1 and the fade routine is a 
+total killer to write without losing your marbles.
+
+
+
+
+... and that's it. Play around with the source code: it's (amazingly) 
+fairly easy to read, although there are a couple of data declarations 
+that overlap - otherwise the intro won't work on a standard 512K ST. 
+Feel free to use any of the code for any purpose....
+
+
+
+
+Steve Tattersall [tat]
+6 Derwent Drive
+Littleborough
+Lancs OL15 0BT
+s.j.tattersall@cms.salford.ac.uk
+

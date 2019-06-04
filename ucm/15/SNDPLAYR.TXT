@@ -1,0 +1,180 @@
+ ----------------------------------------------------------------------------
+     ñSNDPlayer 1.0ð by òozk/ASSEMsoftð and òEvil/DHSð (1998) [óAny STð]
+ ----------------------------------------------------------------------------
+ 
+The òFalconð-owners are blessed with a powerful machine when it comes
+to sound. Even òSingleTOSð-users can listen to all kinds of ñmodsð using
+the excellent Megaplayer and any kind of ñSIDð using the excellent FlaySID.
+But on the ST, the options seemed dull.
+ñModð-replay, even on the STE, slows the system down too much and besides
+ñmodsð or probably some very old ñX32ð, there wasn't any option of bringing
+music to the desktop.
+
+That is odd.
+The internet is full of ñYMð-files, music from óAtari STò-games ð or
+ò-demosð, which can be played using òPCð-YM players.
+So why shouldn't people play them on the Atari where they came from ?
+
+This where the ñSNDPlayerð enters the stage.
+In comparison to version ñ0.3ð, the previous version, the whole program
+has been rewritten and redesigned. It is -typical for òozkð- 100% GEM
+without any tricks. Even its funky layout is an ordinary GEM-rsc-file.
+
+ñWhat is an òSND-fileñ ?
+òSNDPlayerð plays ñSNDð files, not ñYMðs. In contrast to ñYMðs, ñSNDð-files
+are being played directly on the òAtari STð soundchip, the òYM 2149ð, they
+are more or less a generalized format of all the òAtarið-soundplayers from
+òMad Max, Count Zero, Big Alec, Scavenger, Jessð etc.
+In contrast to that, the ñYMð-format saves the state of the (emulated)
+óYMð-chip in regular periods of time, so replaying òYMð-files is CPU-time
+consuming.
+Since this is unnecessary on original òAtarið-computers - they do have
+a òYM2149ð and the ò68000ð to feed the soundchip with information, playing
+the very compact òSNDð-files is almost done in no CPU-time at all.
+Additionally, to create the òSNDð-files you can use the ripped music from
+the ñgamesð or ñdemosð they appear in. To collect the òYMð-files you have
+to run an emulator and more or less "log" the data that is being written
+into the òYMð of the emulation.
+Since almost any piece of music ever written on the òSTð has been ripped
+somewhere, you only need to convert them into the more generalized òSNDð-
+format. Not a simple task sometimes, but possible.
+
+ñThe basic function of the SNDPlayerð
+The òSNDPlayerð looks and works like a ñCD-ð or ñModð-player.
+It has a ñstop, pause, play, eject, fast forwardð button and a ñ+ð and ñ-ð
+key to select the track to play.
+With ñejectð you load a file, òSNDPlayerð then displays the number of
+"tracks" available in this file, its memory usage, its name, author, ripper
+and converter. Pressing the ñPlayð button will start replay, ñStopð will
+stop the replay, pressing ñPauseð once will pause the replay, pressing
+ñPauseð again will continue replay.
+The ñforwardð button doubles the speed of replay as long as the button
+is pressed. The ñ+ð-button jumps to the next track in the list, the ñ-ð
+button goes back one track.
+Additionally, you have a ñtimerð that keeps track of the time the current
+track is being played as well as the overall time òSNDPlayerð has been
+active.
+There is also a ñcloseð button which closes the window under ñSingleð-TOS
+and terminates the òSNDPlayerð under a multitasking environment. A ñreduceð-
+button reduces the òSNDPlayerð-window to the title-bar and an ñaboutð-button
+opens an additional window that displays the credits.
+
+ñPros and Cons of the SND-formatð
+The ñSNDð-format has been explored and developed by ñBDCannibalð of òAurað
+and he also has a lot of ñSND-filesð on his homepage as well as a simple
+replayer, the ñMadplay.ttpð.
+Since òSNDPlayer 0.3ð the format has been slightly changed and the files
+the òSNDPlayer 0.3ð refused to play are now being played by the version 1.0
+without any major problems.
+Playing an ñSNDñ-file uses only very little memory - up to 200kb including
+the òSNDPlayerð and a LARGE SND-file - normally its more modest.
+It is also very modest when it comes to CPU-time. Usually, playing an ñSNDð-
+file takes less than 1% CPU-time, even on simple òSTðs.
+Yet almost all famous tunes by almost all famous composers can be replayed
+using òSNDPlayerð on almost any Atari compatible system, no matter, what
+Atari you run on what monitor at what speed.
+Of course it has its disadvantages as well.
+Whoever tried to run a game on the SM124 knows what i'm talking about.
+Most - or almost ñanyð - music that sounds good are hooked up on the VBL.
+The VBL is executed 50 times a second on RGB monitors, but not on the
+SM 124 or VGA-monitors for òFalconð and òTTð-users. Music-files that are
+being synchronized by the VBL usually are not being replayed with the
+correct speed or even crash.
+The whole idea of òSNDð takes 2 approaches at once to this:
+- The replayer is being modified and hooked up a programmed òMFPð-interrupt
+  instead of the VBL
+- The replayer tries to check if the music uses the VBL on startup and
+  prevents the system from crashing.
+
+The first approach is a general one, but some tunes, for example tunes that
+use ñDigidrumsð and tunes from Scavenger and Jess and almost any tune from
+Tao do not allow being hooked up on the òMFPð easily - they remain unpatched
+and can only be played using a 50 Hz Monitor.
+The second approach has been implemented into the òSNDPlayer 1.0ð and
+usually aborts the replay before the System crashes. The Player window
+has an extra ñVBLð-line for this, which reports if the VBL is being used
+or not. In case you replay a tune that does, òSNDPlayerð usually aborts
+saying "What ? No crash ?" - Pressing the play button again will start the
+tune though, but you can't say you haven't been warned.
+
+Both approaches are not perfect, but considering the amount of players
+and editors used from Mad Max, Big Alec, An Cool, Jess, Tao, Scavenger
+etc. and the game-musicians Dave Whittaker, Ben Daglish etc., it's
+obvious that it is impossible to control all the parameters.
+Seeing this, òSNDPlayerð does a pretty good job. ñOzkð offers a file
+for download which only features "patched" ñSNDð-files that can be
+replayed on almost ANY Atari ANYWHERE.
+
+ñSNDPlayer in everyday lifeð
+òSNDPlayerð looks good and is functional. It uses very little memory and
+can be started as an óACCð for òSingleTOSð.
+It does exactly what it is supposed to do, play music on every òAtarið
+anytime anywhere.
+It really does a great job there. A simple 1040 STf is already enough to
+play those fantastic Mad Max-tunes again, and a TT or a Falcon isn't even
+better there.
+And who doesn't like all the famous tunes from the famous games or demos.
+Big Alec's remix of the Sanxion-Loader. Jess' Do you speak russian ?.
+Mad Max' Chambers of Shaolin music. Count Zero's Gigadist-music.
+Music from the games 9 lives, Bubble Bobble, Blood Money, Killing game
+show, Grand Monaco Grand Prix, Live and Let die ...
+The list is endless, and òSNDPlayerð finally allows even a 1040 STf
+user to play them on the desktop, uncomplicated, easy.
+
+To put it in a nutshell:
+òSNDPlayer 1.0ð is superb.
+
+ñConsð
+Of course òSNDPlayerð has a few disadvantages, too.
+First of all, some tunes just don't run and even the òSNDPlayerð can't
+prevent the system from crashing. I hardly wonder about this, the
+advanced players like the ones from Tao or Scavenger are not suitable
+to run them on the desktop, independant of the VBL. Usually, those
+replayers were intended to be used in SuperVisor mode with almost a
+complete computer at their disposal, not on the desktop with limited
+possibilities and even no VBL to use.
+Those tunes just can not be played on the desktop.
+Besides, ñozkð offers a package with a lot of music files that do run
+on the Falcon, the TT without using the VBL - and this package already
+contains most files from most of the popular chipmusicians on the òSTð - 
+unfortunately not from ñTao or Scavyñ, but like i said above, their ñPSIDð-
+player is not suitable for this way of replay.
+
+Second, òSNDPlayerð has some problems with some harddisk-drivers.
+It sometimes hangs up HuSHi and especially the òFalcon IDEð disk suffers
+badly from some tunes - The Falcon likes to hang up when playing tunes from
+Count Zero or Jess and accessing the IDE drive at the same time.
+Again, i hardly wonder. Whoever tried to play a game on the Falcon using
+ñBackwardð knows that the IDE port is exactly where some of the typical
+music-replayers seemed to be accessing - IDE disk malfunctions were quite
+common. It is again obvious that the òSNDPlayerð tries to ditch that but
+can't eliminate the problem completely.
+
+Finally, if you run òSNDPlayerð as an Accessory on ñSingleTOSð, it
+opens on system-startup. ñozkð didn't implement the "Am i an ACC"-request
+on startup so it is being started automatically. This however is just
+cosmetical. òSNDPlayerð works fine on ñSingleTOSð, too and the window
+allows to be closed and opened again without interrupting replay.
+However, in contrast to ñMegaPlayerð or ñFlaySIDð, the replay of the
+òSNDPlayerð stops as soon as you start another program - òSNDPlayerð can
+therefore only be started from within a running program, like a 
+wordprocessor or a graphics package, but not before starting this program.
+This has to do with reserving memory.
+Well, since i seem to be the last one who adores ñSingleTOSð, i guess
+this really is a minor problem for a minority.
+
+ñConclusionð
+òSNDPlayerð is one hell of a small utility. It brightens up your desktop,
+it's more fun to work with a tune from the good old òYM2149ð, it costs
+almost no memory and no CPU-time, how much better can it get ?
+While typing this article, i have been listening to several tunes from
+Mad Max, Count Zero and Jess and i love them all.
+I wouldn't want to miss òSNDPlayerð anymore.
+
+A really great program for any Atari user.
+
+
+
+-------------------------------> The Paranoid
+                                 Paranoia
+                                 The Lunatic Asylum <------------------------

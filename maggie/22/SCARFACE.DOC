@@ -1,0 +1,126 @@
+0660103030571
+9[........................................................]
+
+
+ÅS c a r f a c e  
+'Most Wanted' Demo
+
+This not inconsiderable effort which falls within the 'very large 
+dentro' or 'megademo' class, recently came from the hands of various 
+French people in a hitherto unheard of combination called Scarface.. 
+One pretty famous name in there is an individual called Nullos, thought 
+to have left DNT and the Falcon..  Some of his work, particularly in 
+the second part of the demo is in here though, so tales of his deadness 
+can be ruled out, at least for the moment..
+
+Starting it up is an exercise in defying strangeness, as there are 
+three .prg files in the folder, but only the middle one actually leads 
+to success.. It is usually a good idea to keep as much memory to one 
+side as possible as well.. However, from there, it is all 
+straightforward and rather enjoyable..
+
+The first bit is a fairly standard logo procession, including one which 
+tells you where the demo was first released (Place to Be Convention, 
+from memory..) At the same time, a funky guitar based soundtrack kicks 
+in, and shopping mall security guards all over the world suddenly rush 
+across the aisle, kicking over carefully pre-placed cardboard boxes in 
+a frenzy of Starsky and Hutch-mania in time to this soundtrack (See 
+Maggie 19 'In the Trashcan' if you can't work out what I'm on about..)
+
+The first proper effect follows from there, as a very smart and fast 
+gouraud shaded space ship flies across the screen at all kinds of 
+angles, pushing the essential '3D-ness' to the max.. At the same time, 
+a sparse but well laid out starfield is twisting in time with it, 
+giving an illusion of very great smoothness and speed..
+
+The next bit is in the well presented but seen it before category as 
+well, as a shaded heart-shaped polygon spins around, and another logo 
+lurks uneasily in the top left hand corner.. Before we are too long 
+into this screen, a whole bunch of other 3-D objects come to join in 
+the fun, and attach themselves to the heart-shaped object, making a 
+complex 3-D object that defies an easy description.. The odd still 
+picture makes an appearance in this demo, and the one that follows this 
+effect is that of an interlaced hi-res screen of a crouching and rather 
+cat-like female.. Some brief credits with a starfield follow..
+
+Next up is a 3-D textured pyramid, which seems to be reflecting the 
+patterns on two flat plates on the top and bottom of the screen..
+
+Heading towards the mid-point of the demo, we are given yet more 
+objects and effects of a 3-D persuasion, only these are rather more 
+current in nature.. Various objects are environment mapped to give a 
+complex truecolour shade effect, we even get a kettle, as well as the 
+traditional doughnuts and ninja throwing stars.. Nice understated blue 
+background, and nice tv-like border as well..
+
+The next effect is also a fairly new, or at least rarely seen one as 
+well.. This is a box-like polygon, but with one side open, and giving 
+the impression that there are several other smaller and smaller boxes 
+in there, stacked in a 'russian doll' like fashion.. This one is 
+twisting and turning, and all the other boxes spin around in their own 
+way, trying to keep up, as well.. Not too bad!!
+
+An abrupt kicking in of a new soundtrack announces the second part of 
+the demo.. This starts simply, with a fullscreen/ spinning big cube 
+combination, which slowly evolves into a spinning big box with 
+truecolour shades on it, then a smaller box which seems to warp for a 
+bit, then goes back to bigness and has various patterns forming inside 
+it to give more complex colour transformations..
+
+The final full effect is a bloody excellent rotate and zoom.. Oh no, 
+you cry, not an effect from the very earliest days of Falcon demos, but 
+this one is better than all the rest.. It starts off all blurry, and 
+you are momentarily deceived into thinking that a plasma tunnel or 
+texture tunnel is coming into play. The zoom bit comes in, and you 
+realise that it is a rotate n' zoom after all.. But there are no jaggy 
+bits!! Some kind of interpolation or blur effect makes it look nicer 
+when you zoom close up.. A bit later on, it wobbles and warps as well..
+
+A good note to finish on, as the end credits bustle in..
+
+
+TECH VIEW: Two similar demos - this and Joint Venture - grace our 
+pages this issue, where the demo is a collection of coder's old 
+effects libraries stuck together.  Of the two, "Most Wanted" is 
+probably the one more at the cutting edge in programming, despite the 
+dodgy gfx and sound. The final effects by Nullos are all DSP-based and 
+very nice. The first rgb cube is done by merely interpolating all 3 
+values using the DSP - he then ruins the effect with the dodgy second 
+part (where the colours on the left and right side of each polygon 
+always remain constant.)
+
+The rotating zoomer is a truly nice bit of coding, since it 
+interpolates between the individual pixels of the bitmap. There are 
+three ways to do this - (a) using a huge pre-interpolated graphic, as 
+on the end zoomer of the Avena FB3 demo (b) doing proper interpolation 
+with the DSP or (c) doing a gouraud-interpolation along part of a 
+scanline when the consecutive pixels of the rotated screen remain at 
+the same pixel of the bitmap. Got that? Either way it's very nice.
+
+The other effects show originality too, the gouraud graphics use a 
+moire-shading technique involving a carry bit to give a smoother 
+interpolation effect, but look a bit slow. More interesting objects 
+though, but a few sorting and visible-surface errors tend to spoil 
+this a bit. A touch of "phong" too. Overall a very good show. A bit 
+more work and this could have been really classy. [tat]
+
+
+
+ÅRatings..
+
+Graphix:- 85% - Nothing really great here, although very nicely 
+presented and slickly moved around.. Some still screens, logos etc, 
+seemed to be higher resolution but only limited colours??
+
+ÅSonix:- 80% - Competent 'funky soundtracks, both of them..
+
+ÅGee-Whiz:- 89% - Some things old, more things new.. Some nice and 
+noteworthy variations on the 3-D theme, and that excellently done 
+rotate and zoomer at the end..
+
+ÅOverall:- 87% - A pretty standard 'good' Falcon demo with some 
+outstanding individual bits..
+
+ (C) CiH - Dec '96
+ Å 
+

@@ -1,0 +1,213 @@
+
+ò                            APPENDIX A: BITS AND BYTES
+
+A very important part of coding is keeping track of the required memory, be
+it internal registers of the CPU, RAM, ROM or diskspace. In a machine
+everything is calculated in BYTES. And these bytes consist of eight smaller
+buggers known as bits.
+
+A bit can store either a 0 or a 1:
+
+1 bit           {0, 1}
+                (this is two possibilities folks.. =))
+
+Combining two bits gives a total of 4 posibilities:
+
+2 bits          {00, 01, 10, 11}
+                (2^2 = four possibilities)
+
+So if a byte contains 8 bits and try out all possible combinations with
+zeroes and ones, this would give:
+
+byte (= 8 bits) {00000000, 00000001, 00000010, ....., 11111110, 11111111}
+                (2^8 = 256 possibilities)
+
+The 680x0 series can also work with units called WORD and LONGWORD (also
+called LONG). In the 680x0 a WORD consists of two bytes and a longword
+consists of four bytes.
+
+The 680x0 can look at number in two particular ways when testing/comparing
+values: SIGNED or UNSIGNED. In signed-mode, the highest bit in a number is
+reserved as a SIGN indicating plus or minus.
+
+         +------+------+----------------+---------------------------+
+         | UNIT | BITS | UNSIGNED RANGE |              SIGNED RANGE |
+         +------+------+----------------+---------------------------+
+         | BYTE |    8 |            256 |               -128 - +127 |
+         +------+------+----------------+---------------------------+
+         | WORD |   16 |          65536 |           -32768 - +32767 |
+         +------+------+----------------+---------------------------+
+         | LONG |   32 |     4294967296 | -2147483648 - +2147483647 |
+         +------+------+----------------+---------------------------+
+
+Now.. If you want to store a variable that can reach values upto 320 for
+instance (number of pixels in an ST-low screenline), you can't use a BYTE,
+because a byte can only hold 0-255. You'd have to go for a WORD.
+
+Let's say you want to store a coordinate of somekind and this should be able
+to reach from -50000 upto 50000. Then you can't fit this anymore into a WORD
+(just look at the figure underneath SIGNED RANGE) and you'll have to settle
+for a LONG.
+
+It's often the case that graphics have dimensions like 256*256 or 32*16 or
+whatever. Why? Well.. Those values are all powers of 2.
+
+2^4 =  16
+2^5 =  32
+2^8 = 256
+
+See? And these values are alot easier and faster to work with compared to other
+numbers. .....
+
+All units can be put through various logical operations such as AND, OR, XOR,
+NOT and then some more. The most simplest is probably NOT: This simple inverts
+all bits. So all ones are turned into zeroes and the other way round.
+
+                  00000000        01010101        00001111
+
+                     ||              ||              ||
+               > LOGICAL NOT < > LOGICAL NOT < > LOGICAL NOT <
+                     ||              ||              ||
+                     \/              \/              \/
+
+                  11111111        10101010        11110000
+
+Unlike NOT, AND and OR require two value's as input. Because they are a bit
+harder to comprehend we'll give some logic tables with BIT-units first.
+
+AND | 0 | 1                                                      OR | 0 | 1
+----+---+---                                                     ---+---+---
+  0 | 0 | 0                                                       0 | 0 | 1
+----+---+---                                                     ---+---+---
+  1 | 0 | 1                                                       1 | 1 | 1
+
+The AND-operation only outputs 1 if both input bits are 1, else it outputs 0.
+You could say it requires both input1 >AND< input2 to be 1 in order to output a
+1. The OR-operation requires only one of the input to be 1.
+
+Now a logical OR/AND on a unit like a byte, word, long is simply the bitwise
+operation done for all 8/16/32 bits. This means the first bit of a byte is
+ANDED/ORRED with the same bit in another byte.
+
+10101010                      00001111                     00111100
+   \/                            \/                           \/
+   OR====> 11111111              OR====> 00001111             OR====> 11111100
+   /\                            /\                           /\
+01010101                      00001111                     11110000
+
+10101010                      00001111                     00111100
+   \/                            \/                           \/
+  AND====> 00000000             AND====> 00001111            AND====> 00110000
+   /\                            /\                           /\
+01010101                      00001111                     11110000
+
+You can ofcourse do the same for words or longs.
+
+Ok, let's get counting with binary numbers, shall we? ("Why do you call me
+count? Because I count! Bwuahahahaha!".. Thanx to Rich Davey for that one =))
+
+In order to understand binary numbers you must first know that every bit can
+be 0 or 1 and the 1 always refers to a unique value. The lowest (rightmost) bit
+has value 2^0 = 1, the one after that 2^1 = 2, the next one 2^2 = 4, etc. Let's
+write it out with an examples of a byte.
+
+1
+2 6 3 1
+8 4 2 6 8 4 2 1
+
+0 0 0 0 0 0 0 1 = 128*0 + 64*0 + 32*0 + 16*0 + 8*0 + 4*0 + 2*0 + 1*1 =   1
+
+0 0 0 0 0 0 1 0 = 128*0 + 64*0 + 32*0 + 16*0 + 8*0 + 4*0 + 2*1 + 1*0 =   2
+
+0 0 0 0 0 0 1 1 = 128*0 + 64*0 + 32*0 + 16*0 + 8*0 + 4*0 + 2*1 + 1*1 =   3
+
+....
+
+0 1 0 1 0 1 1 1 = 128*0 + 64*1 + 32*0 + 16*1 + 8*0 + 4*1 + 2*1 + 1*1 = 83
+
+......
+
+1 0 1 1 1 0 1 1 = 128*1 + 64*0 + 32*1 + 16*1 + 8*1 + 4*0 + 2*1 + 1*1 = 187
+
+.....
+
+1 1 1 1 1 1 1 1 = 128*1 + 64*1 + 32*1 + 16*1 + 8*1 + 4*1 + 2*1 + 1*1 = 255
+
+We ofcouse want the option to deal with negative values as well. How do we do
+that?
+
+The SIGNED and UNSIGNED numbertypes come in handy here. UNSIGNED means you can
+only have positive values. Such like the ones, we've just dealt with. UNSIGNED
+is the one where you use the hightest (leftmost) bit as a SIGN indicating
+negative or positive.
+
+In all processors the numbers are implemented so that they can be handled as
+SIGNED or UNSIGNED at any time. For instance the smallest negative number -1 can
+also be seen as the highest UNSIGNED number (255 in byte, 65335 in word, etc).
+
+Anyway, let's give some more examples. This is how SIGNED numbers work:
+
++
+/ 6 3 1
+- 4 2 6 8 4 2 1
+
+0 1 1 1 1 1 1 1 = (0*-128) + 64*1 + 32*1 + 16*1 + 8*1 + 4*1 * 2*1 1*1 = 127
+
+1 1 1 1 1 1 1 1 = (1*-128) + 64*1 + 32*1 + 16*1 + 8*1 + 4*1 * 2*1 1*1 = -1
+
+1 0 0 0 0 0 0 0 = (1*-128) + 64*0 + 32*0 + 16*0 + 8*0 + 4*0 * 2*0 1*0 = -128
+
+Not too much trouble to understand, is it? Adding and subtracting might be a
+bit more difficult, but once you understand it's even easier than working with
+decimal numbers. Every digit can only have two values as opposed to ten in
+decimal calculus. The basis is understanding when a digit overflows. This
+happens when the decimal digit surpasses 9 and when the binary digit surpasses
+1. When a digit is overflown you must add 1 extra to the next digit.
+
+00000000
+00000001
+-------- +
+00000001 (easy as pie.)
+
+00000001
+00000001
+-------- +
+00000010 (lowest digit overflows, 1 extra is added to the next!)
+
+00001011
+00000001
+-------- +
+00001100 (lowest digit overflows, 1 extra is added to the next, this overflows
+          again)
+
+The nice thing is this operation is exactly the same for unsiged as well as
+signed values. I could explain subtracting here as well, but I think all this
+calculus stuff is not meant for this tutorial, but for a schoolbook.
+
+One more thing that used very frequently in assemblers and debuggers (as well
+as C-- and other yech languages) is the hexadecimal notation. You might have
+noticed binary numbers can be somewhat long to write down. You need 8 digits
+for a byte, 16 for a word and a nasty 32 for a long. Not very nice when you
+have to type all that into you assembler.
+
+The hexadecimal notation is basicly used because it is very close to our own
+decimal notation. Every digit ranges from 0,1,2..9,a,b,c,d,e,f, so it has the a
+bit larger range than decimal notation AND it is very easy to convert from and
+to binary, because one digit contains exactly 4 binary digits.
+
+00000000 (binary) = 00 (hexadecimal)
+11111111 (binary) = ff (hexadecimal)
+01111111 (binary) = 7f (hexadecimal)
+01000110 (binary) = 46 (hexadecimal)
+
+Also you have the ASCII notation, in which every digit (or character)
+represents one byte with the range from 0-255. This is only nice in working
+with textstrings.
+
+In motorola assembler (68K, 65xx, 56K, PPC) they are indicated like this:
+
+12345     (normal decimal, no extra indicator)
+%11001100 (binary, a "%" character)
+$1a       (hexadecimal, a dollarsign)
+"HI"      (ASCII, quotation marks)
+

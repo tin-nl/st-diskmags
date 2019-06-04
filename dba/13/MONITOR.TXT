@@ -1,0 +1,112 @@
+MONITORS
+~WAVE.FIL~
+                    -<[({ Falcon Video Subsystems })]>- 
+ 
+Bwuuaahh, boring. Some stupid article on monitors. But this is one with a 
+difference: I won't bore you with exact technical details of thousands of 
+different monitors, I will just try to make clear what is really important 
+for your demands. 
+ 
+ 
+FIRST CHOICE: RGB OR VGA? 
+------------------------- 
+If you only play games and watch demos, you could settle for a RGB monitor 
+or a high-quality TV set with SCART interface. Always try a screen before 
+you buy it (I've seen people buying a twice as cheap TV as they intended to 
+because it had a much clearer display). Don't look at the brand on the box, 
+but make sure the display tube is from a good brand (e.g. SONY, PHILIPS or 
+NOKIA) and beware of the dirt cheap manufacturers like GoldStar and so on. 
+Also make sure you get a 'full' SCART interface (with separate Red, Green 
+and Blue), or at least make sure you can trade the screen in if it doesn't 
+sport this. 
+ 
+If you use your Falcon professionally (or at least pretend to do so) do not 
+settle for anything less than a VGA monitor minimally. 
+ 
+ 
+WHAT TYPE OF VGA? 
+----------------- 
+Most people think that VGA is VGA. They do not realise that there are 
+several types of displays which are all called ???-VGA, which all differ. 
+I'll discuss the most important ones here. 
+ 
+-> Fixed frequency (PS/2) VGA 
+This standard was invented by IBM way back in the eighties. At the time, 
+640 by 480 by 256 (w*h*c) was very innovative, and IBM was one of the first 
+to re-use the analogue techniques which were abandoned before in EGA and 
+CGA. In order to make the screen payable, IBM decided to give the screen a 
+fixed frequency (31.5 kHz) for highres and lowres. When VGA was born, 
+things like adjustable video hardware didn't exist and therefore there 
+simply was no need for more frequencies. There is, however, one slight 
+problem with this technique. After using one of these monitors for a while, 
+the screen tends to get distorted (the pincushion effect) and this looks 
+real silly (look at an office where computers were introduced about 7 years 
+ago, you'll understand what I mean). Today, this type of monitor is only 
+produced in the Far East and it is meant to be cheap and nothing else. I 
+would never advise you to buy one of these. Because of their fixed 
+frequency, you can never go any further than 640*480 pixels. This kind of 
+monitor is only advisable if you don't and won't have any money, and you 
+really need the VGA resolution. Otherwise, buy an TV or a real monitor. 
+ 
+->VESA SuperVGA normal 
+This standard was invented as a expansion to the normal VGA, conceived by 
+the Video Electronics Standardization Association (also known from their PC 
+local bus technology). It's only improvement is a higher resolution (800 by 
+600 by 256) at another fixed frequency (35 kHz). The same comment applies 
+here as with the standard VGA, although the pincushion effect gets even 
+worse if you manage to use the higher resolution. But as far as I know you 
+can't use it on the Falcon. 
+ 
+->Non-VESA SuperVGA highres 
+About now you should start to think what isn't bad. Well, this is 
+reasonable performance we're talking about. The non-VESA standard was 
+introduced by the Taiwanese PC-builders who didn't want to pay a 8514 
+license to IBM in order to use a highres screen display on their PC's. I 
+will skip the 8514 standard (it was meant to be VGA II) because of it's 
+obsolence and similarity with this standard. The *real* SuperVGA standard 
+means you can display 1024 by 768 pixels *without* interlace. Most screens 
+produced for this standard are multisync, but with a narrow frequency 
+bandwidth. This means they can display anything from normal VGA up to 1024 
+by 768. Usually this means a frequency bandwidth of about 31 kHz to 45 kHz. 
+You can use a few higher resolutions with your Falcon (e.g. 800 by 600) and 
+this type of screen will certainly fit for most of the tasks you'd want to 
+use it for. There are just a few problems left, like for instance that most 
+models in this range don't sport pincushion control or colortone. Neither 
+do they have a memory system for different screensizes and adjustments 
+(auto adjust).  
+ 
+->Real Multisync 
+Way back in the eighties, the Japanese firm NEC started a revolution in 
+video technology by releasing the first multisync monitor. The main 
+advantage of this system was that it would adjust to whatever signal you'd 
+feed it. Over the years, specifications have improved immensely. There's 
+just one disadvantage: the price. If you don't have, say, 1100 guilders (DM 
+1000, 3300FF) to spend, the performance won't improve enough to justify the 
+extra cost. You'd better buy a SuperVGA then. It's senseless to give you 
+specifications now, because they differ from screen to screen. I will give 
+you the specifications of my own screen, because I've never found anything 
+that it won't display (except the 2048 by 1536 we fed it from a Mac at the 
+local print shop). You can go for these specifications, or try the screen 
+of your choice with your own Falcon and screen programs. Here goes: 
+ 
+Tube manufacturer : Sony Electric  
+Type              : Black Trinitron Hollow FlatSquare NonGlare 
+Size              : 15" visual 
+Control Type      : Digital, with Pincushion and memory 
+Dot Pitch         : 0.26 
+Refresh Rate      : 50 to 110 Hz 
+Horizontal Freq.  : 28 to 72 kHz 
+Video Bandwidth   : 87 mHz 
+ 
+I don't think you'd need much more, except for size maybe. But you could 
+settle for less, because things like colortone control are just for very 
+critical purposes, not likely to be used by the 'normal' user. 
+ 
+If you've got any questions, remarks or Pinkeltje stories, you *could* 
+write to: 
+Havoc / Giants 
+Ravenstraat 4 
+6909 DV Babberich 
+The Netherlands 
+ 
+But then again, you could also forget about it. 

@@ -1,0 +1,36 @@
+              Ein kleiner Tip fÅr die MUPFEL-Shell unter Gemini
+              -------------------------------------------------
+ 
+Obwohl ich  das Hantieren mit TTPs und Shells hasse, fÅr  manche Dinge sind sie
+wirklich  praktisch. Vor allem  hat MUPFEL den  unschÑtzbaren Vorteil, daû  man
+Pfadnamen  direkt  aus den anderen GEMINI-Fenstern "rÅberziehen" kann.  (Es ist
+lÑstig, wenn eine Shell nicht  das richtige macht, weil man  sich irgendwo ver-
+tippt hat.)
+Wenn man von  seinen freundlichen  Contacts selbstentpackende Programme (*.TOS)
+bekommt, ist das  Åbliche Procedere so: TOS-File auf  die Ram-Disk (oder Parti-
+tion) kopieren, starten und  entpacken  lassen, testem und  dann (wenn das neue
+Programm was taugt) auf eine Disk kopieren, TOS-File lîschen.
+Dies hat den  Nachteil, daû das  TOS-File wertvollen Speicherplatz auf der Ram-
+Disk verbraucht. Viel eleganter geht das mit der MUPFEL:
+Das Zauberwort  heiût "Standardpfad". Also, nehmen wir an, man hÑtte auf A: das
+selbstentpackende DINGSDA.TOS sowie eine Ram-Disk M:. Jetzt  aktiviert man  das
+MUPFEL-Console-Fenster. Man  tippt jetzt "m:" oder "cd m:"  (RETURN) ein. Jetzt
+liegt der Standardpfad auf M:. Dann zieht man den Pfadnamen aus dem  Laufwerks-
+fenster von A: auf das MUPFEL-Fenster (oder tippt ihn ein ;-)).  Jetzt (aus dem
+aktiven MUPFEL-Fenster!) mit (RETURN) das Entpacken starten.
+Voila - es wird fein sÑuberlich von A: nach M: entpackt.
+Man spart das Kopieren und Lîschen des TOS-Files.
+Das ganze mÅûte  auch mit 2  Laufwerken (Entpacken von A: nach B:) klappen, was
+ich allerdings  nicht  testen konnte. Man  kann das  ganze auch  im Hintergrund
+unter MinT (MINTSHEL) machen, sollte dann aber sowohl Quell- als auch Ziellauf-
+werk nicht zwischendurch behelligen.
+Da manche  zu wenig Speicher fÅr GEMINI oder  MinT haben, habe  ich ein kleines
+Programm geschrieben, das ebenfalls eine solche Umlenkung durchfÅhrt.
+Mîglicherweise liegt sie dem Magazin bei.
+
+(Redax: Jawoll! Findet ihr natÅrlich auf der Stuffdisk! Thanx Gnort!)
+
+-------------------------------------------------------------------------------
+                                                                          Gnort
+-------------------------------------------------------------------------------
+tat

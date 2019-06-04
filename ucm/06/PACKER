@@ -1,0 +1,175 @@
+ 
+                      DER ULTIMATIVE FILE-PACKER-VERGLEICH
+                     --------------------------------------
+
+Hier habe ich mir mal etwas sehr aufwendiges vorgenommen. Ich habe hier etliche
+File-Packer  fÅr den  ST und Falcon  miteinander verglichen. Damit keiner durch
+irgendwelche eingebauten Features Åbervorteilt wird, habe ich verschieden File-
+Typen gepackt, als da wÑren: .NEO, .MOD, .PRG, .RSC und .TXT Files.
+Ich habe von jedem Packer die neueste Version, soweit ich diese habe, verwendet
+und diese  gleich mit auf Falcon-KompatibilitÑt getestet. Es sind  viele Oldies
+dabei, die aber teilweise nicht mal  schlechte Packraten aufweisen. In wie weit
+die einzelnen Packer von  anderen Programmen supportet oder unterstÅtzt werden,
+sei erstmal dahingestellt...
+Doch bevor wir zu den erzielten, mehr oder minder guten Ergebnissen kommen, zu-
+erst die Info's zu den Packern...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Getestete Packer
+----------------
+
+Atomik Cruncher Version 3.50
+- Coder   : Altair of Vmax / MCA
+- Release : 27.01.1992
+- Falcon  : nein
+
+Automation Compacter Version 5.0.1
+- Coder   : Bob of The Subhumans In Turkey & Axe of Superior
+- Release : --.--.1991
+- Falcon  : nein
+
+JAM - Packer Version 4.00
+- Coder   : Andrew & Tim Knipe
+- Release : 17.06.1991
+- Falcon  : nein
+
+Pack - Fire Version 2.01
+- Coder   : Axe of Superior
+- Release : 19.02.1990
+- Falcon  : ja
+
+Pack - Ice Version 2.40
+- Coder   : Axe of Superior
+- Release : 14.08.1991
+- Falcon  : ja
+(ich habe auch eine Version 2.9d, welche ich allerdings versumst habe)
+
+PFX-Packer Version 1.6d
+- Coder   : Thomas Quester
+- Release : --.--.1991
+- Falcon  : ja
+
+Pompey Pirates Packer Version 1.9a
+- Coder   : J.P.M. of The Pompey Pirates
+- Release : --.--.1991
+- Falcon  : nein
+
+Q-Pack Version 3.20
+- Coder   : John M. Phillips
+- Release : 16.05.1990
+- Falcon  : ja
+
+Sentry Packer Version 2.20
+- Coder   : Eagle of Sentry
+- Release : 01.05.1995
+- Falcon  : ja
+
+Shrink Version 1.00
+- Coder   : Till Bubeck
+- Release : --.--.1989
+- Falcon  : ja
+
+Speed-Packer Version 3.00
+- Coder   : The Firehawks
+- Release : 10.10.1992
+- Falcon  : nein
+
+Toxic Packer Version 3.00
+- Coder   : NTM of The Replicants
+- Release : 12.08.1990
+- Falcon  : nein
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Test-Ergebnisse
+---------------
+
+
+Name des Packers           PRG-File   NEO-File   MOD-File   RSC-File   TXT-File
+-------------------------------------------------------------------------------
+OriginallÑnge der Files    85.302 b   32.128 b   50.616 b   22.222 b   34.006 b
+-------------------------------------------------------------------------------
+Atomik Cruncher      3.50  43.196 b   14.732 b   31.388 b    7.390 b    9.198 b
+Automation Compacter 5.01  46.462 b   15.866 b   32.784 b    7.961 b   10.145 b
+JAM-Packer           4.00  45.239 b   14.827 b     (**)      7.605 b    8.815 b
+Pack - Fire          2.01  45.682 b   15.801 b   33.313 b    7.563 b    9.678 b
+Pack - Ice           2.40  46.068 b   15.866 b   32.784 b    7.961 b   10.145 b
+PFX - Packer         1.6d  49.498 b   17.126 b   38.050 b    9.464 b   11.432 b
+Pompey Pirates Pack  1.9a  46.280 b   15.846 b   33.708 b    8.084 b   10.268 b
+Q-Pack               3.20  56.878 b   19.424 b   43.924 b   11.596 b   13.624 b
+Sentry               2.20  48.957 b   16.831 b   32.488 b    8.799 b   11.778 b
+Shrink               1.00  45.192 b   14.785 b   31.646 b    7.594 b    8.774 b
+Speed-Packer (*)     3.00  45.072 b   17.480 b   33.336 b   10.214 b   11.621 b
+
+Auûer Wertung lief, da die Files nach dem Packen grîûer waren als vorher (?):
+
+Toxic Packer         3.00  87.414 b   34.240 b   52.728 b   24.334 b   36.118 b
+
+(*)  - unter Hinzunahme des  Auto-Depack-Files, ohne jenes die Daten nicht mehr
+       entpackt werden kînnen.
+(**) - der JAM-Packer kann keine MOD-Files packen, ohne sie nicht zu zerstîren
+
+Diese Liste ist weiû Gott nicht  komplett und ich hÑtte gern noch andere Packer
+mit einbezogen, doch viele von den Ñlteren Kollegen habe ich einfach nicht mehr
+hier auf meinen Disx. Ich  hatte dabei  besonders an den  Happy-Computer-Packer
+und dergleichen  mehr gedacht. Doch diese Liste da oben dÅrften  wohl alles was
+Rang und Namen hat, berÅcksichtigt haben...
+Trotzdem  aber hier  noch eine Auflistung  diverser Packer, die  ebenfalls noch
+mehr oder  minder verwendet  werden. Dabei  handelt es  sich zumeist  um Ñltere
+Versionen der  oben aufgefÅhrten  Packer, die allerdings meist  zu den hier ge-
+testeten kompatibel sind.
+Ok, zu den weiterhin am meisten frequentierten Packern, insbesondere auf dem ST
+gehîren:
+
+Atomik Cruncher - Version 3.30
+
+Automation Compacter - Version 2.51
+
+JAM Packer - Version 3.00
+
+Pack Ice - Versionen 2.20 - 2.31
+
+Sentry Packer - Versionen 2.05 - 2.11 (letztere ist nicht ST-kompatibel)
+
+Speed Packer - Version 2.00
+
+Ein Teil dieser Ñlteren Versionen wird auch von anderen Programmen unterstÅtzt,
+wobei hier insbesondere Ripper und Modul-Player zu erwÑhnen wÑren.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Zusammenfassung
+---------------
+
+Der mit Abstand beste File-Packer auf dem ST, der rundherum einsetzbar ist, ist
+wohl der  ATOMIK-Cruncher, welcher sich nur in der Disziplin  des Texte-packens
+gegenÅber dem SHRINK-Packer und dem JAM-Packer geschlagen geben muûte.
+Da der ATOMIK-Packer aber nicht voll auf dem Falcon einsetzbar ist, bleibt hier
+der Blick auf dem uralten SHRINK-Packer  hÑngen. Er hat im Durchschnitt die 2.-
+besten  Ergebnisse geliefert, ist  aber von daher mit Vorsicht zu genieûen bzw.
+unbrauchbar, da keine Sourcen meiner Kopie  begelegt waren. Programm-Files kîn-
+nen allerdings ohne weiteres gepackt werden.
+Da der JAM-Packer ohne Patch auf dem Falcon ebenfalls unbrauchbar ist, muû sich
+der  Pack-Interessierte  wohl  zwischen FIRE- und ICE-Pack  entscheiden, welche
+beide sehr gut arbeiten. Der  FIRE-Pack in fast  allen  Disziplinen  sogar noch
+eine Spur  besser als der ICE. Die letzte Alternative  zu den  beiden wÑre dann
+noch der SENTRY-Packer, welcher jetzt in  hÅbscher Shell daher kommt und insbe-
+sondere bei den Modul-Packereien den  beiden Packer von Axe/Superior ebenbÅrtig
+ist. Der Rest ist fÅr Falcon-Besitzer uninteressant.
+Der SPEED-Packer dÅrfte fÅr ST-Besitzer  von grîûerem Interesse sein, da er re-
+lative gute bis sehr gute  Pack-Ergebnisse erzielt und auch komplette Disx ein-
+packen  kann, die  mittels installiertem Auto-Depacker  nach der  Aktion vîllig
+normal weiter verwendet werden kînnen.
+Im Endeffekt  liegt es natÅrlich  an euch, welche Packer ihr fÅr was verwendet.
+Ich wollte diesen Vergleich schon seit lÑngerem druchziehen, angeregt durch ein
+paar Demos/CD's  in denen geschrieben stand, daû die  Disx gerappelt voll wÑren
+und daher der eine oder  andere Abstrich  bei den Intros  gemacht werden mÅûte.
+HÑtten  die Leute  sich auch mal  andere Packer zur  Brust genommen, hÑtten sie
+meist mehrere tausend Bytes freimachen kînnen...
+
+... Wir haben  auûer dem  Toxic, Q-Pack und PFX-Packer alle  anderen getesteten
+Packer dieser Ausgabe beigefÅgt.
+-------------------------------------------------------------------------------
+                                                                 Moondog of tnb
+-------------------------------------------------------------------------------
+ o

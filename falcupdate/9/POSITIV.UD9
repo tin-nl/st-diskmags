@@ -1,0 +1,293 @@
+                           Positive Image
+
+                       PRESS RELEASE 7th June 1995
+
+ Positive Image - Professional Image Processing for the ST/e, TT and
+Falcon Floppyshop are proud to announce the forthcoming release of
+Positive Image,a high end image processing tool developed primarily
+for the Atari TT and Falcon 030.  Positive Image has come about as a
+result of extensive research into  professional  photographic  image 
+retouching  packages  on non-Atari machines. The result is an image
+processing studio, such as has never before been seen running on
+Atari computers!
+
+Positive  Image is primarily aimed at TT and Falcon owners as it
+makes full use of the extra hardware capabilities built into these
+machines, especially the  DSP  on the Falcon.  The blitter (if
+present) is also used to maximum effect.  There  are  two versions of
+Positive Image,  one  for  68000 based ST/e's  the other for 68030
+machines (including PAK 68/3 accelerated ST/e's and Apple Macintoshes
+running MagiC Mac).  The basic 68000 version contains all  the 
+features  of its big brother,  being limited only  by  the slower
+processor speed and lower resolution displays.  If your ST/e,  TT or 
+Falcon has a processor accelerator or graphic card fitted, this too
+will be used to its fullest capabilities.
+
+Positive  Image is the ONLY GEM based image processing program to
+allow the editing  of 24-bit True Colour graphics on an ordinary ST
+in any resolution including  low res!).  A high spec system is not
+necessary in order to run Positive  Image,  but the program will take
+full advantage of the increased processing  power if it is there! 
+The following is a list of the program's main features:-
+
+System Compatibility
+
+*  Minimum requirements:  1 Meg of RAM only, but we recommended 4 Meg
+of RAM (or more) and a hard drive for serious use.
+
+*   Supports all screen resolutions (including ST low res) on the 
+ST/e,  TT and  Falcon including overscan,  all virtual screen drivers
+and the various resolution  boosters  such as Autoswitch Overscan on
+the ST  and  all knownhardware and software resolution boosters on
+the Falcon 030.
+
+*  Compatible with all official releases of TOS (1.0,  1.2,  1.4,
+1.6, 1.62, 2.05, 2.06, 3.05, 3.06, 4.01, 4.02, 4.04) and the
+developer version of 4.92.
+
+*  Fully compatible with GDOS 1.1,  AMC GDOS, FontGDOS, FSM GDOS,
+SpeedoGDOS v4, SpeedoGDOS v5 and NVDI 3 with regard to both font and
+printer support.
+
+*  Compliant with all 100% GEM compatible graphics cards.
+
+*  Fully compatible with MagiC Mac.
+
+*  Supplied in two versions for the different models in the Atari
+range. The basic  program  runs on any Atari and the 68030 version
+runs  on  any 68030 system but takes advantage of the DSP in the
+Falcon.
+
+Multi-Tasking Features
+
+*  Fully compatible with Multi-TOS, Geneva and MagiC.
+
+*  Supports the extended AES messages from Multi-TOS, WinX, Geneva
+and MagiC 3.
+  
+*  Supports the Xacc protocol for sending messages between programs.
+
+*  Support for Multi-TOS and MagiC 3's drag and drop protocol whereby
+a group of images are dragged onto an open window and all loaded in a
+single operation.
+
+General Features
+
+*   Extensive  file  support  allows the following  graphic  formats 
+to  be imported:  AIM,  Degas,  Windows  and OS/2  Bitmap,  EZ-Art 
+Pro,  GIF, IFF (including Deluxe Paint ST,  standard HAM,  high res
+HAM,  HAM6, HAM8, HAM12 and  24-bit HAM),  IMG (including HyperPaint
+X-IMG and conventional X-IMG), InShape,  JPEG,  MTV Raytrace, 
+NeoChrome, PC Paintbrush, Photochrome, Prism Paint,  True Paint, 
+Spectrum 512 (both 50hz and 60hz pictures), TrueVision
+Targa, TIFF v6 (including CCITT fax and JPEG support) and Tiny.
+
+*  Saves out in most popular formats including GIF,  TIFF,  BMP, 
+TGA, XIMG, EZA, P?1 and NEO amongst others.
+
+*   Comprehensive file information (filename,  format,  compression 
+method, dimensions, memory required, memory free) given when loading
+images.
+
+*  Handles conversions between monochrome,  16 colour, 256 colour,
+Greyscale and  True  Colour,  performing colour quantisation or 
+palette boosting  as necessary.
+
+*  Colour selection compliant with both RGB and CYM standards.
+
+*  Supports separate editing of the red, green and blue channels with
+colour images.  This feature is also of use to owners of monochrome
+inkjet printers as they can swap over cartridges and print a colour
+picture in three passes! 
+
+*  All images are stored internally in 24-bit format and all
+operations are carried out on the 24-bit representation held in
+memory.  This ensures that the  same  quality  results  are obtained
+whether  pictures  are edited  in monochrome or True Colour.
+
+*  Uses tiling to redraw only the parts of an image that have been 
+changed.
+This is in addition to the fact the Positive Image's full screen
+redraws arefaster than any other Atari image processing package.
+
+*  Images can be intelligently rescaled and anti-aliased to suit the
+size of your  paper  (or the dimensions of your choice provided they
+do  not exceed that of your paper!). Realistically you can print out
+an image at up to 400% of its original size at 300dpi without any
+noticeable loss of quality.
+
+*   Optionally  uses  windowed  dialogues  which may  be  moved  to 
+a more convenient location when work is being obscured.  Access to
+the menu bar  or other  GEM applications is also supported when
+running under Multi-TOS with this feature enabled.
+
+*  Multiple dialogues can be open at the same time and you can move 
+between them freely,  even under single-tasking TOS.  In fact
+different tools can be active  for  different  images  and  Positive 
+Image  always  remembers the currently selected tool for the
+appropriate image!
+
+*   Includes its own virtual memory feature which runs on any Atari 
+with  a hard  drive.  Positive Image is also fully compatible with TT
+Fast  RAM and virtual memory drivers on the TT and Falcon such as
+Outside.
+
+*  Supports multiple loading of up to five images at once from the
+Selectric file  selector  and  inserts  the  filemasks  for supported
+ formats into Selectric's list of masks. These features are also
+available to users of the Freedom file selector.
+
+*  Makes use of the GEM Clipboard for cutting and pasting of blocks.
+
+*  Fast loading and saving of files, especially GIF, TIFF and JPEG
+formats.
+
+*  Loading of JPEG images as either TrueColour, Greyscale, 256 or 16
+colour.
+
+*  Includes built-in context-sensitive Help
+
+*  Keyboard shortcuts available for all menu options.
+
+*  Iconification of images to maximise desk space.
+
+*   Floating  toolbar with short tool descriptions being  displayed 
+as  you hover over their icons.
+
+*  GDOS fonts may be unloaded when not in use, in order to save
+memory.
+
+*  Includes two built-in vector fonts for those who do not wish to
+use GDOS.
+
+*   Powerful  block  handling features include the choice  of  11 
+different overlay methods with user definable transparency feature. 
+
+Falcon Specific Features
+
+*  3D graphic interface.
+
+*  Compatible with 32Mhz accelerators, probably 40Mhz too!
+
+*   Fast  DSP code handles most processor intensive operations such 
+as re-scaling, rotating, filtering, dithering and such like.
+
+*  Works on both VGA and RGB monitors as well as ordinary TV sets.
+
+*   Fully  compatible  with ScreenBlaster  BlowUp030  and  other 
+resolution enhancers.
+
+Printer Support
+
+*  Fully supports printing from any version of GDOS or SpeedoGDOS.
+
+*   Also  includes  its  own printer drivers  as  an  alternative  to
+those available with the various GDOS versions.
+
+*   Non-GDOS based printer support includes all 9-pin and 24-pin 
+Epson and IBM models (colour and mono),  Canon BJ10,  HP DeskJet
+(colour and mono), HP LaserJet  (colour and mono),  IBM ProPrinter, 
+Epson Stylus  and Postscript printers (colour and mono).
+
+*  Supports half-toning,  random dithering and Floyd-Steinberg
+dithering  as options to use when printing out.
+
+*   Uses  data compression when printing to HP DeskJets to  reduce 
+printing time.
+
+*  Images can be printed to disk if memory is low.  These files can
+then  be double-clicked from the GEM Desktop and sent directly to the
+printer.
+
+*  Can export images in PostScript format.
+
+*  Our printer configuration editor allows you to create your own
+drivers to allow for new models coming onto the market.
+
+Image Processing Features
+
+*   All  the  usual tools such  as  Brightness/Contrast,  Contrast 
+Stretch, Negate,  Threshold,  Histogram  and  Equalise are present as
+ well  as many revolutionary new ones.
+
+*   Images  can  be  rotated to any angle in either  a  clockwise  or
+anti-clockwise direction to an accuracy of one degree. Uses DSP on
+the Falcon.
+
+*  Real-time mirroring of images.
+
+*  Comes supplied with six commonly used image processing filters
+(including smooth, sharpen and remove noise) built-in.
+
+*   Allows  the  user to create his/her own external filters  for 
+use with Positive  Image.  The  package  includes about a  dozen 
+useful pre-defined external filters including Blur, Emboss, Erode and
+Vibrate.
+
+*  Supports 256 level (8-bit) masking. Includes a configurable
+gradient tool to aid mask creation.
+
+*  Allows processing of user defined rectangular,  circular, 
+elliptical and bezier  area  definitions within Greyscale and True 
+Colour  images without affecting other areas of the image.
+
+*   Pixel  precise  area selection of any shape supported by  use  of
+Alpha Channel handling.
+
+Image Retouching Features
+
+As well as having a powerful compliment of image processing tools, 
+Positive Image  includes a number of localised retouching tools with 
+user definable brush  size and shape.  These are for the main part, 
+similar in concept  to those found in any standard graphics package, 
+but further enhanced to fully exploit the image processing
+capabilities of Positive Image.  The retouching tools are as
+follows:-
+
+*   Sharpen/Blur  -  A dual purpose tool which applies  a  local 
+high pass sharpen (or blur) filter to the pixel beneath the mouse. 
+The area affected is directly related to your chosen brush size.
+
+*  Dodge/Burn - A dual purpose tool which lightens or darkens each
+pixel  in the area beneath the mouse, when used on Greyscale or True
+Colour images.
+
+*  Eraser - Erases any given area using a 15x15 pixel block.
+
+*   Fill - A standard fill tool as found in most graphics packages
+but with user control over opacity, fade and strength.
+
+*  Spraycan - A traditional airbrush tool with the added advantage
+that you can set opacity, fade and strength to suit.
+
+*   Paint - A standard painting tool which applies you chosen colour
+to the image relative to the size and shape of your selected brush. 
+Like Fill, you control the opacity, fade and strength of this tool.
+
+*   Pencil - Identical to paint except that it always works at single
+pixel level, regardless of the size of the brush.
+
+*  Rubber Stamp - A multi-purpose cloning tool.
+
+All  retouching tools may be used in Positive Image's variable zoom
+mode  to ensure pixel precise accuracy,
+
+Price and Availability
+
+Despite incorporating a wealth of professional features such as never
+before seen on Atari computers,  Positive Image will NOT be
+over-priced and placed outside the reach of the hobbyist user, as is
+the case with most software of this calibre.  The final cost has yet
+to be set but will definitely be under 80.  The  program  is  nearing
+completion and is  currently  going through rigorous beta testing. 
+The manual is at an advanced stage.  No release date has yet been set
+but it is expected to be late summer 1995.
+
+Contact:- Floppyshop, PO Box 273, Aberdeen AB9 8SJ. Tel:\Fax: (01224)
+586208
+
+Steve Delaney says:- "Grrr! I'll get you Douglas Little, you took my
+Chroma away from me (SNIFF!)" (Thingy)
+
+
+

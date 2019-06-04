@@ -1,0 +1,173 @@
+
+                          Digital Music
+                          -------------
+
+Theme : Music on the 16 bits (Atari ST Mainly!)
+By    : T.K.
+Date  : Mid April 91
+
+Well, I think it is safe to say that everyone who will end up reading 
+this is quite familiar with at least one of the following:
+
+Mad Max (Jochen Hippel)
+Rob Hubbard
+Count Zero
+David Whitaker
+Soundtracker/Noisetracker
+Quartet
+
+Music is one of the most expanding aspects of the computer world, and I 
+don't doubt that by the time you do read this, there will be a new and 
+better product just released.  I will attempt to review some areas of 
+the music industry which are currently available.
+
+I will start with the most interesting subject to me, which is 
+Soundchip Music (Synthesised).  This type of music has been the most 
+common on the Atari ST up to know, and has varied hugely depending on 
+the composer and the time which it was written.  Tunes from the older 8 
+bit machines have been converted to the ST and the Amiga so that the 
+fantastic tunes would not vanish, but would continue to give atmosphere 
+to games and demo's.
+Each computer has it's own capabilities for producing soundchip sound 
+and the ST was not blessed with the built in waveforms and volume 
+control that other computers offered.  This however is not the end of 
+the story.  The beauty of having control over the frequencies and other 
+elements of a sound with the power of the computer is that the 
+programmer can create his/her sound.  It has to be said that Mad Max 
+has been the front runner of this type of creation and the results are 
+amazing.
+
+If you are to take control of a tone to make your own unique sound, or 
+to create a sound that most suits the tune you are writing, you have the 
+power to do it with a soundchip.  It all depends on how far you want to 
+go! If you start sending kilobytes of information to a soundchip you 
+will be able to create lifelike sounds of real instruments.  This is 
+normally done with the aid of a sampler, which captures the information 
+you need, then all you need to do is thrust it back at the soundchip to 
+emulate that sound.  As this needs so much data being pumped very fast 
+it is not easily manipulated and takes up most or all of the processors 
+time.  So what you have left is to just send small changes to the sound 
+every now and again (Every now and again could mean 200 times a second 
+to a processor) and let the soundchip create a audible tone to those 
+changes.  Sometimes these changes are automatically done by the 
+soundchip and hence the built in waveforms on computers like the C64.  
+The standard ST soundchip (YM2149) is not capable of creating waveforms 
+like frequency modulation on it's own, so you have to do it.  
+Unfortunately (Correct me Jochen if I am wrong!), other elements like 
+volume control cannot be altered to give more settings than the 
+standard set, so this a drawback.
+
+So after all that, you are left with a fast and efficient way of 
+producing tunes on your computer.  But are you satisfied?  Some people 
+(Commonly an Amiga owner) will say "what's that tinny/tinkely sound" 
+after hearing his/her 4 channel guitar sample.  If it's a typical Mad 
+Max or Count Zero soundtrack you could turn round and say "Oh! that's 
+just a virtual 5 channel piece of music with frequency modulation, a 
+unique snare and bass drum sound, and a fantastic tune which someone 
+took a great deal of time composing and researching.  How's your 10 
+second sample which was taken from a common instrument?"
+
+My conclusion is this: Soundchip sound is not necessarily limited to the 
+built in capabilities of the soundchip, but you have to work to produce 
+sounds which are not defaultly available.  Very little processor time is 
+needed and you can create not just a tune, but the sounds as well!
+
+The types of programs that are available for this type of sound are 
+Music Studio and Music Construction Set which do not offer much more 
+than the soundchip can.  There is currently a program which will let you 
+use the BAT cartridge (MV16) to it's potential, but I have not seen 
+this.  I also have not seen one for the STE's soundchip but I have 
+started to write one!
+
+
+I will move on now to the world of Sampled Music which is currently 
+expanding so fast that I will probably be out of date.
+
+It has to be said that the Amiga has been in the past the main computer 
+to use samples of instruments in tunes for general use.  Sampled sound 
+just means that the sound is taken from the outside world and is 
+converted into data for the computer to store.  This data is used to 
+produce a sound which is extremely near to the real sound.  This method 
+works by constantly monitoring the sound as it is played with the use of 
+a sampler.  Each time the sound is monitored, a part of it's frequencies 
+are converted into numbers.  These frequencies are the key to the 
+quality of a sample.  If a sample is taken at 10 khz then you can be 
+sure of capturing most of the sound's frequencies from 1hz to 5khz (Half 
+of the sample speed).  The human ear can distinguish between sounds up 
+to about 22 khz, so to capture a sound to it's full quality you have to 
+sample at 44 khz (eg. a CD holds samples at 44.1 khz).  The number's 
+which are received through the sampler can range in BIT's, the more 
+BIT's the better the quality again.  The ST and Amiga typically sample 
+at 8 BIT's and I think CD's are at 32 Bit's.
+
+Samples have three major disadvantages:
+
+They take up huge amounts of memory proportional to the quality (The 
+higher the quality, the more memory!).
+
+They need fast processors to feed back the data through the computer to 
+reproduce the sound.
+
+They are not easily manipulated.
+
+
+The Amiga has the ability to leave all the processing to a custom chip 
+so that it is free to do other things Amiga's do (eg. play a game, or 
+demo, or play a game).  It still has the two other restrictions though.
+Also because the Amiga cannot hope to play sounds at 44 khz and at 32 
+bits it has a filter.  The filter is there to dull out the impurities in 
+the sound, left by the low quality sample.
+
+The ST has not seen much of the 4 channel soundtracker type music that 
+the Amiga has, in the past, because of it's lack of the custom chip that 
+the Amiga has.  THIS IS NOW VERY MUCH DIFFERENT!
+
+With the skill of people like An Cool the time in which it takes the ST 
+to produce samples has decreased dramatically and now has taken a big 
+role on the ST.  With quality products like TCB Soundtracker, 
+Noisetracker, Quartet and various other soundtrackers, the ST looks like 
+it now has the option to use such music.  Obviously the STE will have 
+the more power in all aspects of the sound produced on an Atari over the 
+STfm.
+
+Another way of helping the ST to produce better sampled sound is to get 
+a cartridge.  These are the ones which I know of:
+
+ST Replay, ProSound, MV16, Playback, MPH Cartridge.
+
+Unfortunately these are not compatible with each other, so each 
+program has to have replay routines for all of the above to appeal to 
+all owners.
+
+My Conclusion: Sampled music usually appeals to more people than 
+Soundchip music because of it's familiar sounds and it's ease of use if 
+you have a tracker program.  It uses huge amounts of memory and can use 
+lots of processor time.  Because of the memory restrictions you can 
+easily get bored of a tune because of the lack of different instruments.  
+There are quite a few cartridge's around and it's starting to get like a 
+PC market (Next we will be saying "Got this great game, it's Replay and 
+ProSound compatible", "Shame I've got the MPH Cartridge").  You could of 
+course buy them all!
+
+
+Personally I like the Mad Max approach to the Soundchip/Sample dilemma, 
+and have at least one channel being samples while the other two are new 
+created soundchip waveforms.
+
+Well this seem's to be the end of this article so I will finish by 
+saying that all this information is just what I have learned through 
+experience but some of it could be wrong, so if you know of anything 
+else that I could use for my Soundchip program for the STE, or want to 
+correct me on something then please contact me.
+
+Hi (Greets) to Mungo, The Maggie Team, Warlock, Frozen Ghost, and 
+definitely to Mad Max and Count Zero.
+
+
+                      ****************************
+                           T.K. of Dentrassi
+                            35 Hugin Avenue
+                               ST. Peters
+                                  Kent
+                                CT10 3HP
+

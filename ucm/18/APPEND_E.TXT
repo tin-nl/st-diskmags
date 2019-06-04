@@ -1,0 +1,18 @@
+
+ò                         APPENDIX E : SOURCE EXAMPLES
+
+To make life a little easier the code in this book is illustrated by these
+files:
+
+st singlebuffer:     SINGLBUF.S <done>
+st doublebuffer:     DOUBLBUF.S <done>
+st screenclearer:    STCLR.S    <done>
+st pixelplotter:     STPIX.S    <done>
+ste/falc sounds:     STESPL.S   <done>
+st starfield:        STSTAR.S   <done>
+st sprites:          STSPRITE.S <done>
+st scroller          STSCROLL.S <done>
+falcon pixelplotter: FALCPIX.S  <done>
+falcon sprites       FALCSPR.S  <unfinished>
+falcon texturemap    FALCTEXT.S <unfinished>
+falcon bumpmap       FALCBUMP.S <unfinished>

@@ -1,0 +1,189 @@
+* Anyone out there using Persistance of Vision Raytracer?
+
+Well this sneak snippet shows what's being implemented into the soon  to
+be released POV 3.0.
+
+Look out for the POV CD-ROM review next issue (as and when I receive the
+CD!)
+
+- RiCH
+
+Many of you are curious about what will be  in  POV-Ray  3.0.  The  list
+below describes  features  we  have  already  implemented.  Unless  some
+terrible design flaw is uncovered they will  be  in  3.0.  There  is  an
+extensive list of other features we  hope  to  add  but  those  features
+haven't been coded yet. We absolutely will  not  say  what  is  on  this
+additional list. Note that the "yet-to-be-written"  list  is  nearly  as
+long as thelist below. As items are finalized we may update this  public
+list.
+
+We are not currently looking for additional features to add. Please save
+your suggestions for 4.0 until 3.0 is released. It's not that  we  don't
+care, but if we don't stop adding stuff to 3.0 soon then it'll never get
+done. the absolute soonest you can expect to see 3.0  released  will  be
+late summer of 1995. It could easily take longer.  Note  that  the  more
+people ask us `When will POV-Ray 3.0 be ready and what  will  it  have?'
+the less time we have to work on it.
+
+FEATURES ALREADY IMPLEMENTED AND GUARANTEED TO BE IN 3.0
+
+1. New command-line and option features. 
+      Eliminated +T case sensitive switch. 
+      Eliminated sub-options of +V switch. Changed when +SR, +SC, +ER, +EC take
+      effect when using fractional values. For example: +W320 +SR0.1 +W640 used
+      to result in +SR32 now late binding results in +SR64. 
+      Order of specifying switches no longer hurts. 
+      Now +B0 or -B0 turns off a previous +Bnnn setting. Formerly any +B setting
+      could not be overridden once set. Now it can be. 
+      Modified +Xnnn command-line switch to only check for keypress every nnn
+      pixels. 
+      Options may now be set in an .INI file with commands such as 
+      "This_Option = value". 
+      Old command-line switches and .DEF files still supported. 
+      Both switches and INI options may be specified in files, on command-line
+      or in POVRAYOPT environment variable. 
+      DEF and INI files may be nested up to 10 levels. 
+
+2. New math functions. 
+      The following functions have been added to the expression parser. These
+      return float values. 
+
+      abs(A) absolute values of A 
+
+      atan2(X,Y) arc-tangent in radians 
+
+      ceil (A) round up to next integer 
+
+      clock value of +K switch 
+
+      cos (A) cosine of A 
+
+      degrees (A) convert from rads to degs 
+
+      div (A, B) integer part (A/B) 
+
+      exp (A) e-to-the A power 
+
+      int (A) integer part of A 
+
+      log (A) base e logarithm of A 
+
+      max (A, B) maximum of A and B 
+
+      min (A, B) minimum of A and B 
+
+      mod (A, B) the remainder of A/B 
+
+      pi constant 3.14159... 
+
+      pow (A, B) raise A to the B power 
+
+      radians (A) convert degs to rads 
+
+      sqrt (A) square root of A 
+
+      vdot (V1, V2) dot product 
+
+      vlength (V1) length of vector 
+
+      version value of version 
+
+      These return vector values... 
+
+      vaxis_rotate (V1,V2,D) rotate point V1 by D degrees about arbitrary axis
+      V2 (not just coordinate axes) 
+
+      vcross (V1,V2) cross product 
+
+      vnormalize (V) scale to unit length 
+
+      vrotate(V1, V2) rotate point V1 about coordinate axes by amount of
+      degrees. 
+
+      Relational expressions and operators implemented. (A=B) (A>B) Note:
+      Relational expressions MUST be in parentheses. 
+      Logical expressions and operators. ! (A) (A&B) (A | B) 
+      Conditional expressions. (COND) ?A:B if COND then value is A else B. 
+      Math expressions apply to colors as well as floats and vectors. 
+
+3. New texture features 
+      All pigment types (wood, marble etc.) may be used as normal types 
+      All normal types (bumpes, waves etc.) may be used as pigment types 
+      New pigment & normal patter types: brick, crackle, spiral1 & spiral2 (with
+      number of arms adjustable), quilted (with parameters control0 and
+      control1) 
+      New pigment_map allows pigment patterns to consist of a blend of pigment
+      patterns rather then just a blend of solid color 
+      New normal_map allows normal patterns to consist of a blend of other
+      normal patterns 
+      New slope_map allows shaping of the wave forms of most normal types 
+      Choice of wave forms for many pigments ans normals. Types: ramp_wave,
+      triangle_wave, sine_wave, scallop_wave. For example wood and marble
+      pigment used to be forced to use triangle_wave with pattern from 0.0 to
+      0.5 then reversing from 0.5 to 1.0. Now can be overridden wiht ramp_wave 
+      New iridescence finish with turbulence and other parameters 
+      New directional ambient light doesn't cast shadows 
+      Specify number of waves for waves and ripples patterns 
+      Improved color calculation for metallic surfaces 
+
+4. Atmospheric effects 
+      New fog types 
+      Rainbows 
+      Skyblend backgrounds 
+
+5. New object primitives 
+      Blob components may be sphere or cylinder. Old sphere-only syntax still
+      supported 
+      Blob components may be individually textured, translated, rotated and
+      scaled 
+      New lathe primitive creates object by rotating polygon about the y-axis.
+      Optional curved edges 
+      New surface of revolution primitive. Create object by rotating curve about
+      y-axis 
+      New polygon primitive. Any number of sides 
+      New prism primitive. Extrude a polygon. Optional curved edges. Optional
+      tapering 
+      New extruded text object created from truetype fonts with proportional
+      spacing and kerning 
+      New superquadric ellipsoids for rounded boxes, cylinders and other
+      interesting shapes 
+
+6. New Speed improvements 
+      New light buffer and vista buffer speed-up from FTPOV (Note: FTPOV author
+      Dieter Bayer joined POV-Ray Team) 
+      Shadow rays faster when object has no transparency 
+      Internal bounding of blob components and other blob speed improvements 
+      New Autmoatic Depth Control stops tracing reflected or transmitted rays
+      when those rays contribution drops below a threshold value 
+      Optionally remove manual bounded_by when auto bounding may perform better.
+      Especially useful for old scenes with lots of manual bounds 
+      Improved handling of infinite primitives in bounding 
+      Improved auto-bounding of torus primitive 
+      Improved quartic and polynomial root solving 
+      Improved CSG bounding 
+      Improved clipped quadric bounding 
+      Faster normal calculation of smooth triangles 
+      Faster disc functions with tighter bounds 
+
+7. Camera features 
+      New camera types: orthographic, fisheye, omnimax, panoramic,
+      ultra_wide_angle, cylindrical (four types) 
+      Focal blur to simulate depth of field 
+      Camera ray normal patterns for bumpy, wavy etc. lens effects 
+      Bug fixes in old camera 
+
+8. Ouput features 
+      Improved parse error messages with echo of lines leading up to the error 
+      Re-designed status, render, and statistic output 
+      Internal reorganization of all text I/O functions and memory allocation to
+      ease porting to GUI environments 
+      Compressed Targa now supported via +FC switch 
+
+9. Misc. language improvements 
+      The sturm keyword can be turned off with "sturm 0" 
+      Made "color" keyword optional everywhere except old style color maps 
+
+10. Animation support 
+
+      Not yet implemented but guaranteed to be in 3.0 
+

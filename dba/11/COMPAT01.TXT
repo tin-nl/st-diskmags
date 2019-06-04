@@ -1,0 +1,332 @@
+ST ON FALCON 1
+~ATARI.FIL~
+                         ~FALCON.BLK~
+
+
+
+
+
+
+                        FALCON 030 - LIST OF GAMES
+                        ==========================
+
+                        Compiled by Heiko Hartmann
+                   zcam1121@rpool4.rus.uni-stuttgart.de
+                           Last Update: 02/11/94
+                               Titles: 470
+
+ST: Status. "PD" - Public Domain, Freeware, Postcardware etc.
+            "SH" - Shareware, Dongleware, Poolware etc.
+            "C1" - Commercial, newer games (full-prize).
+            "C2" - Commercial, older games (some of them reappeared in
+                   Compilations, others are available as low-budget games,
+                   many of them aren't available any more).
+
+C: Compatiblity. "-" - The game does never run on F030.
+                 "+" - The game runs with ST-Emulators like Backward etc.
+                 "!" - The game runs without modifications (in ST-Low)!
+                 Falcon games and some GEM based games may run in higher
+                 resolutions.
+
+MHZ: Mhz-rate of 68030 (and Blitter). "8"  - 68030 with 8 MHz.
+                                      "16" - 68030 with 16 MHz.
+     This row (and the following) aren't important for games with
+     Compatibility = "!". These are the switches for the ST-Emulators.
+
+DC: Data cache. "-" - Data cache OFF.
+                "+" - You can leave the Data cache switched ON.
+
+AC: Adress cache. "-" - Data cache OFF.
+                  "+" - You can leave the Data cache switched ON.
+
+STE: STE-Bus-Mode. "-" - STE-Bus-Mode is not needed.
+                   "+" - STE-Bus-Mode must be switched ON.
+
+SND: Sound. "-" - The game has no sound on F030.
+            "+" - The game has slightly distorted sound with ST-Emulation.
+            "!" - No problems with sound on F030.
+
+HD?: Harddisk installation?. "+" - The game can be installed on HD.
+                             "-" - HD-Installation is not possible.
+
+A "?" means: unknown.
+
+
+NAME                  ST  C  MHZ  DC  AC STE SND HD?
+----------------------------------------------------------------------------
+1943                  C2  !   -   -   -   -   !   ?
+3D Pool               C1  +   16  +   +   +   !   ?   50 Hz only!
+8-Ball                C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Afterburner           C2  -                       ?
+Airball               C2  -                       ?
+Airborn Ranger        C2  -                       ?
+Airbus A320 USA       C1  !   -   -   -   -   !   +   RGB only!
+Air Warrior           PD  !   -   -   -   -   !   +   ST-Med (Genie-Online)
+Alien Syndrome        C2  !   -   -   -   -   !   ?
+Alternate Real.: City C2  !   -   -   -   -   !   ?
+Amberstar             C1  -                       +
+Anals of Rome         C2  !   -   -   -   -   !   ?
+Ancient Art of War    C1  +   ?   ?   ?   ?   !   ?   (switches unknown)
+Another World         C1  +   16  +   +   +   +   +
+Aquanaut              C2  -                       ?
+Archer Macleans Pool  C1  +   16  ?   ?   +   !   ?
+Archipelagos          C2  -                       ?
+Arkanoid              C2  -                       ?
+Arkanoid II           C2  +   -   -   -   -   !   -   (switches unknown)
+Armor Geddon          C2  -                       ?
+Attack of Mutant Cam. SH  +   16  +   +   +   !   +
+Auto Duel             ??  !   -   -   -   -   !   ?
+Baal                  C2  +   16  ?   ?   +   !   ?
+Backlash              C2  +   8   -   -   +   !   ?
+Badlands              C2  !   -   -   -   -   !   ?
+Ballerburg            SH  !   -   -   -   -   !   +   (german)
+Bang!                 ??  !   -   -   -   -   !   ?
+Barbarian             C2  +   16  +   +   +   !   ?   Palace!
+Bard's Tale           C2  +   16  +   +   +   !   +
+Batman                C2  -                       ?
+Battle for the Throne ??  !   -   -   -   -   !   ?
+Battle Hawks 1942     C2  -                       -
+Battletech            C2  !   -   -   -   -   !   ?
+Battlezone            C2  !   -   -   -   -   !   ?
+Better Dead Th. Alien C2  !   -   -   -   -   !   ?
+Beyond Zork           C2  +   8   -   -   +   !   ?
+Bionic Commando       C2  -                       ?
+Blackhole             PD  !   -   -   -   -   !   +   Falcon game. VGA only.
+Black Lamp            C2  -                       ?
+Blastaball            C2  -                       ?
+Block Out
+Blood Money           C2  +   ?   ?   ?   +   !   ?   (switches unknown)
+Bloodwych             C1  !   -   -   -   -   !   ?
+Blue Max              C1  +   16  ?   ?   ?   !   ?   (switches unknown)
+Bomb Jack             C2  +   16  ?   ?   +   !   ?
+Bombuzal              C2  +   16  ?   ?   +   !   ?   Line F - Emulation
+Borodino              C2  !   -   -   -   -   !   ?   fast!
+Boulderdash           C2  !   -   -   -   -   !   -
+Breach                C2  !   -   -   -   -   !   ?
+Breach 2              C2  -                       ?
+Breaknoid             ??  !   -   -   -   -   !   ?
+Bubble Bobble         C2  -                       ?
+Bubble Trouble        C2  !   -   -   -   -   !   ?
+Buggy Boy             C2  !   -   -   -   -   !   ?   fast!
+Bureaucrazy           C2  !   -   -   -   -   !   +
+Cadaver               C1  +   ?   ?   ?   +   !   ?   (switches unknown)
+Caesar                SH  !   -   -   -   -   !   +   (german)
+California Games II   C1  !   -   -   -   -   !   -
+Campaign              C1  !   -   -   -   -   !   +
+Captain Blood         C2  -                       ?
+Captive               C2  -                       ?
+Carrier Command       C2  +   16  -   -   +   !   +   Move PMMU & Screenadress
+Challenge Golf        ??  -                       ?
+Champions. Wrestling  C2  -                       ?
+Chaos Engine          C1  -                       -
+Chaos Strikes Back    C1  !   -   -   -   -   !   +
+Chess Champion 2175   C1  !   -   -   -   -   !   ?
+Chessmaster 2000      C2  -                       ?
+Chopper X             C2  !   -   -   -   -   !   ?
+Chronoquest           C2  +   16  ?   ?   +   !   ?
+Chronos               C2  -                       ?
+Chuckie Egg           C2  !   -   -   -   -   !   +
+Circus Attractions    C2  -                       ?
+Civilization          C1  !   -   -   -   -   !   +   newer, patched version!
+Cloud Kingdoms        C1  +   ?   ?   ?   ?   ?   ?   (switches unknown)
+Cold Revenge          SH  !   -   -   -   -   !   +
+Colonial Conquest     C2  !   -   -   -   -   !   +   GEM
+Colums                SH  !   -   -   -   -   !   +   Falcon game. RGB only.
+Conquest              SH  !   -   -   -   -   !   +   GEM
+Cosmic Pirates        C2  -                       ?
+Crackdown             C2  +   ?   ?   ?   ?   ?   ?   (switches unknown)
+Cracked               C2  -                       ?
+Crafton & Xunk        C2  -                       ?
+Crash Garrett         C2  !   -   -   -   -   !   ?
+Creatures             C1  -                       -
+Crystal Castles       C2  !   -   -   -   -   !   +
+Crystal Cave          PD  -                       +   Monochrome (german)
+Cudlee's Quest        C1  +   16  +   +   +   !   ?
+Curse of the Azure B. C1  !   -   -   -   -   !   +
+Cutthroats            C2  !   -   -   -   -   !   ?
+Cyberdrome            C2  !   -   -   -   -   !   ?
+Cybernetix            SH  +   16  +   +   +   !   +
+Cybernoid             C2  !   -   -   -   -   !   ?
+Cybernoid II          C2  -                       ?
+Dark Castle           C2  !   -   -   -   -   !   ?
+DC Snowball Fight     PD  +   16  +   +   +   !   +
+Deadline              C2  !   -   -   -   -   !   +
+Deathbringer          C2  !   -   -   -   -   !   ?
+Defender of the Crown C2  -                       ?
+Deflektor             C2  -                       ?
+Deja Vu               C2  !   -   -   -   -   !   +
+Demolition Man        C1  !   -   -   -   -   !   ?
+Demon's Winter        C2  !   -   -   -   -   !   ?
+Des Lasers et les Hom.SH  !   -   -   -   -   !   +   Falcon game. Demo.
+Desolator             C2  -                       ?
+Double Dragon         C2  -                       ?
+Drachen               PD  !   -   -   -   -   !   +   (german)
+Dragon Breed          C1  +   ?   ?   ?   ?   ?   ?   (switches unknown)
+Dragonflight          C1  -                       +
+Dragons of Flame      C2  -                       ?
+Dungeon Master        C1  !   -   -   -   -   !   ?
+Dynablasters          C1  +   ?   ?   ?   ?   ?   ?   (switches unknown)
+Eco                   C2  !   -   -   -   -   !   ?
+Elf II                C1  +   16  ?   ?   +   !   ?
+Eliminator            C2  -                       ?
+Elite                 C2  !   -   -   -   -   !   ?
+Elite II - Frontier   C1  !   -   -   -   -   !   +
+Empire                C2  !   -   -   -   -   !   +   V2.0, ST-Med/High
+Empire Strikes Back   C2  -                       ?
+Enchanted Land        C2  -                       -
+Enduro Racer          C2  !   -   -   -   -   !   ?
+Escape                PD  !   -   -   -   -   !   +   (german)
+Exolon                C2  !   -   -   -   -   !   ?
+Extensor              C2  !   -   -   -   -   !   ?   Wrong colors!
+F15 Strike Eagle      C2  -                       ?
+F16 Falcon            C1  -                       ?   :-(
+F19 Stealth Fighter   C1  +   ?   ?   ?   +   !   ?   (switches unknown)
+F29 Retaliator        C2  -                       ?
+Falctron              ??  !   -   -   -   -   !   ?   Falcon game.
+Fighter Bomber        C1  -                       ?
+Fire Brigade          C2  !   -   -   -   -   !   ?   fast!
+Fish                  C2  !   -   -   -   -   !   +
+Flames of Freedom     C2  !   -   -   -   -   !   ?
+Flight Simulator II   C2  !   -   -   -   -   !   ?
+Formel 1 ST           SH  -                       +
+Formula One GP        C1  +   16  ?   ?   ?   !   +   (switches unknown)
+Foundation Waste      C2  !   -   -   -   -   !   ?
+Frogger               PD  -                       +
+Full Metal Planete    C2  +   16  ?   ?   +   +   -
+Galdragon's Domain    C2  +   16  ?   ?   +   !   ?
+Gauntlet II           C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Gauntlet III          C2  +   16  ?   ?   +   !   ?
+GFL Champ. Baseball   C2  +   16  ?   ?   +   !   ?
+Ghosts & Goblins      C1  +   ?   ?   ?   +   ?   ?   (switches unknown)
+GNU-Chess             PD  !   -   -   -   -   !   +   GEM
+Gobliiins             C2  -                       ?
+Gobliins 2            C1  +   16  -   -   +   +   -
+Gods                  C1  +   8   -   -   +   !   ?
+Goldrunner            C2  !   -   -   -   -   !   -
+Goldrush              C2  !   -   -   -   -   !   +
+Grand Prix 500cc      C2  -                       ?
+Great Battles         C2  !   -   -   -   -   !   ?
+Great Courts II       C1  +   16  +   +   +   +   +
+Great Giana Sisters   C2  -                       ?
+Gremlins              C2  +   8   -   -   +   !   ?
+Guild of Thieves      C2  !   -   -   -   -   !   +
+Gunship               C1  +   16  +   +   +   !   +   Old Screenadress
+HacMan II             SH  !   -   -   -   -   !   +
+Hardball              C2  -                       ?
+Hardcore (Demo)       SH  +   16  +   +   +   !   +   Waaah!
+Harrier Assault       C2  !   -   -   -   -   !   ?
+Hawkeye               C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Heroes of the Lance   C2  !   -   -   -   -   !   ?
+Heroquest             C2  +   8   -   -   +   !   ?
+Hillsfar              C2  !   -   -   -   -   !   ?
+Hitchhikers Guide to..C2  !   -   -   -   -   !   +
+Hole in One           C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Hollywood Hyinx       C2  !   -   -   -   -   !   ?
+Hostages              C2  -                       ?
+Hoyles Book o.Games I C2  !   -   -   -   -   !   ?   fast!
+Huang Shi             SH  !   -   -   -   -   !   +   Monochrome (german)
+Hunter                C1  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Hunt for Red October  C2  +   16  +   +   +   !   ?
+Ikari Warriors        C2  !   -   -   -   -   !   ?   Speaker turns on...
+Imperium              C1  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Imperium (Shareware)  SH  !   -   -   -   -   !   +   (german)
+Impossible Mission    C2  -                       ?
+Impossible Mission II C2  -                       ?
+Indiana Jones (Adv)   C1  !   -   -   -   -   !   +
+Indiana Jones (Action)C2  -                       ?
+Infidel               C2  !   -   -   -   -   !   ?
+Infinity 1            C1  !   -   -   -   -   !   ?
+Insectoid 512         ??  +   16  +   +   +   !   ?
+Int. Karate +         C2  -                       -
+Int. Sports Challenge C1  !   -   -   -   -   !   -
+Interphase            C2  +   8   -   -   +   !   -   Flickering Colors!
+Invaders              PD  -                       +
+Ishar                 C1  !   -   -   -   -   !   +   Falcon version.
+Ishar II              C1  !   -   -   -   -   !   +   Falcon version.
+James Pond 2: RoboCod C1  -                       ?
+Jet                   C2  !   -   -   -   -   !   +
+Joe Blade             C2  !   -   -   -   -   !   ?
+Journey to Center o.E.C2  !   -   -   -   -   !   ?   fast!
+Joust 1.01            PD  !   -   -   -   -   !   +
+Karate Kid            C2  +   8   -   -   +   !   ?
+Kick Off 2            C1  +   16  +   +   +   !   ?   8 MHz recommended
+Kid Gloves 2          C2  +   16  ?   ?   +   !   ?
+Kid Kong              ??  +   8   -   -   +   !   ?   Any Backward options
+Killing Cloud         C1  -                       ?
+Kings Quest IV        C2  !   -   -   -   -   !   +
+Klax                  C2  !   -   -   -   -   !   ?
+Klondike              C2  !   -   -   -   -   !   ?
+Knightmare            C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Knight Orc            C2  +   16  ?   ?   +   !   ?
+Knights of the Sky    C1  !   -   -   -   -   !   +   fast!
+Kong                  SH  +   ?   ?   ?   ?   !   +   (switches unknown)
+Lands of Havoc        C2  -                       ?
+Larry I               C2  !   -   -   -   -   !   +
+Larry II              C1  !   -   -   -   -   !   +
+Last Arcadian         PD  +   16  -   -   +   !   +   8 MHz recommended
+Leaderboard Golf      C2  !   -   -   -   -   !   ?
+Leather Goddesses o.P.C2  !   -   -   -   -   !   +
+Leathernecks          C2  -                       ?
+Legend of Faerghail   C2  !   -   -   -   -   !   +
+Legend of the Sword   C2  +   16  ?   ?   +   !   ?
+Lemmings              C1  +   8   -   -   +   !   -   Timer A
+Lemmings II (Tribes)  C1  +   8   -   -   +   !   -   Move PMMU & Screenadress
+Lethal Weapon         C1  !   -   -   -   -   !   -
+Liberator             C2  !   -   -   -   -   !   ?
+Life & Death          C2  !   -   -   -   -   !   ?
+Llamatron             SH  !   8   -   -   +   !   +
+Loc. Crisslefridge    PD  -                       +
+Lombard RAC Rally     C2  +   8   -   -   +   !   ?   Best compatibility!
+Loom                  C2  !   -   -   -   -   !   +
+Lost Patrol           C2  !   -   -   -   -   !   ?
+Lotus Esprit Turbo C. C2  -                       ?
+Lotus Esprit T.C. 2   C2  -                       ?
+Lotus Esprit T.C. 3   C1  +   ?   ?   ?   ?   ?   ?   (switches unknown)
+Lure of the Temptress C1  -                       ?
+M1 Tank Platoon       C2  +   8   -   -   +   !   ?   Best Compatibility
+Mad Dog Williams      C2  !   -   -   -   -   !   ?
+Madtris               SH  !   -   -   -   -   !   +   Falcon game. RGB only.
+Magic Boy             C1  +   8   -   -   +   -   ?
+Major Motion          C2  !   -   -   -   -   !   ?   8 Mhz recommended
+Maniac Mansion        C2  !   -   -   -   -   !   +
+Mariant               PD  !   -   -   -   -   !   +
+Masterblazer          C2  -                       -
+McMinos               SH  !   -   -   -   -   !   +   (german)
+Megalomania           C2  -                       ?
+Megaroids             PD  !   -   -   -   -   !   +
+Megatron              PD  !   -   -   -   -   !   +
+Menace                C2  -                       ?
+Mercenary             C2  -                       ?
+Metal Mutant          C2  +   8   -   -   +   !   ?   Timer A
+Metrocross            C2  !   -   -   -   -   !   -   Graphic problems
+MidiMaze              SH  !   -   -   -   -   !   +
+MidiMaze II           SH  !   -   -   -   -   !   +   Erase the music file!
+Midwinter II          C2  -                       ?
+Mig 29 Superfulcrum   C1  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Millenium 2.2         C1  -                       ?
+Mini F1               SH  !   -   -   -   -   !   -   Falcon game.
+Missile Command       C2  !   -   -   -   -   !   +
+Mission Elevator      C2  !   -   -   -   -   !   ?   fast!
+Mission Genocide      ??  !   -   -   -   -   !   ?   8 MHz recommended
+Molecule              PD  !   -   -   -   -   !   +
+Mont.Pythons F.Circus C2  +   16  ?   ?   +   !   ?
+Moon Patrol           C2  !   -   -   -   -   !   +
+Moonmist              C2  !   -   -   -   -   !   +
+Moonshine Racers      C1  +   16  ?   ?   +   !   ?   fast!
+Mortville Manor       C2  !   -   -   -   -   !   ?
+Mrs. Munchie          ??  +   16  +   +   +   !   ?
+Mythos                SH  !   -   -   -   -   !   +   (german)
+Nebulos               C2  -                       ?
+Nethack               PD  !   -   -   -   -   !   +   GEM
+Nigel Mansell's W.C.  C1  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Ninja Mission         ??  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Nitro                 C2  +   16  ?   ?   ?   !   -
+No Limit 2            SH  !   -   -   -   -   !   +
+No Second Prize       C1  +   ?   ?   ?   +   !   ?   (switches unknown)
+North Sea Inferno     C2  !   -   -   -   -   !   ?   fast!
+North & South         C2  +   16  -   -   +   !   -
+Northstar             C2  !   -   -   -   -   !   ?
+
+END OF PART 1
+PART 2 IS ALSO IN THIS SUBMENU
+~BLEU.PAL~

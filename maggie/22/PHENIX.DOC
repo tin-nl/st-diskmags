@@ -1,0 +1,234 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0110
+ 
+********************************************************************** 
+                           CENTEK PHENIX 
+********************************************************************** 
+                       PREVIEWED BY MR. PINK 
+**********************************************************************
+ 
+1986: The Atari ST launched. Officially the best 16 bit computer. 
+1993: The Atari Falcon launched. Everyone's favourite 32 bit computer. 
+1997: The next generation...the "Phenix" promises to take us there.
+The Centek Phenix is a brand  new  Atari compatible computer made by a 
+very innovative  company  in  France.  They  have  studied  the Falcon 
+architecture  and  worked  out  where  the  problems  and  performance 
+hindering areas are and ironed  them  out.  The have designed an Atari 
+compatible super-computer. It is literally bursting with power.
+You don't believe me? Just look at the specs:
+ 
+---------------------------------------------------------------------- 
+PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX: 
+----------------------------------------------------------------------
+Motorola MC68040 (66 Mhz) or MC68060 (120 Mhz) CPU
+
+33 Mhz, 32 bits (data and address) PCI bus
+
+Interlaced 64 bits RAM (ext. up to 128 Mb, with 32 bits SIMM)
+
+64  Kb  Flash EPROM, integrating the new OS (Dolmen) kernel, allowing 
+fast software updates
+
+Backward compatibility with the TOS's AES
+
+Motorola 56302 (code compatible with 56001), 66 Mhz (-> 66 MIPS) with 
+
+6 DMA 32 bits channels
+
+26 pins DSP interface (Falcon compatible) for Audio-numeric interfaces
+
+Internal slot for a second 56302 DSP
+
+IOP  683xx,  controlling  4  serial  ports,  1  parallel  port,  and 
+integrating  2  independent DMA 32 bits channels (max transfer rate : 
+44 Mb/s)
+
+Fast SCSI 2 Wide (16 bits) controller, 32 bits DMA (max transfer rate 
+: 20 Mb/s)
+
+Hi-fi speech synthetizer
+
+3 32 bits PCI slots
+
+PCI Video board. 2 types, fit with 2 Mb Video RAM : 
+  Matrox Mystique (1280 x 1024, 16M colours) -> large public 
+  Matrox Millennium (1600 x 1200, 16M colours) -> professionals
+
+2 slots for Audio/MIDI boards. 2 types : 
+  16  bits,  2 in / 4 out with Surround CODEC (Falcon compatible) -> 
+large public 
+  24 bits, 8 in / 8 out + S/PDIF -> professionals
+
+2 040/060 Direct Processor slots, for future extensions (PC emulation 
+board, RAM board, diagnostic board...)
+
+Standard PC 105 keys keyboard
+
+Standard 3 buttons PC mouse (9600 bps)
+
+Tower / Desktop case
+
+Nice,   isn't  it ? This machine is like a Falcon, but without all the 
+bottlenecks which were slowing down everything  in it. Even the faster 
+chip  of  the  Falcon  (DSP)  is  literally a snail, compared with the 
+Phenix's one...
+
+Falcon 030        Phenix            Notes
+16 bits bus       32 bits bus       2 times wider.
+16 Mhz bus        33 Mhz bus        2 times faster.
+16 Mhz 030        66 Mhz 040        At least 4 times faster
+32 Mhz 56001      66 Mhz 56302      At least 4 times faster 
+2 cycle > 1 inst. 1 cycle > 1 inst.
+
+Non-DMA DSP       DMA DSP           The CPU is not forced anymore to 
+                                   feed  up the DSP through the Host 
+                                   port,  as  it  can access the RAM 
+                                   alone,  to  load  its  data  and 
+                                   code...
+
+Video access      DMA video access  The RAM is more available for 
+
+made on the       made by the gfx   useful tasks... 
+
+ST-RAM            board.
+
+No 3D-dedicated   Matrox Mystique   Mapping, gouraud shading, 
+
+hardware          Matrox Millennium z-buffering3D in 640 x 480 x 65K 
+                                   colours at 30 fps rate...
+
+  Shortly  :  the  faster  CPU  won't have to worry about feeding the 
+faster  56001  compatible  DSP,  which  will  use  its  brand new DMA 
+capabilities to transfer data and code from/toward the faster RAM... 
+The  DMA  channels  of  the  56302  are  making  it really usable for 
+'serious  applications',  like  raytracing,  as the 56001 RAM was too 
+slow  to contain this kind of application's large routines. The 683xx 
+controller can also be used as a super 32 bits DMA Blitter...
+
+  Now, the Operating System : Dolmen !
+
+  Currently  under  development,  it is a new multitasking OS, which 
+will  be  stored  on the computer's hard-disk. The great advantage of 
+this  : it can (and will !) be updated easily and on a regular basis. 
+You won't have to load hundreds of patches at the boot to fix bugs of 
+the in-ROM OS... The reason why Centek's developers wanted to develop 
+another  OS  from  scratch  is  that  they  wanted it to be perfectly 
+designed  for  the machine, not simply adapted, like the modified TOS 
+on the Hades, or MagiC!, which is really unstable...
+
+Some details : 
+  - full assembly coded ! -> faster than light ! 
+
+  - 'pre-emptive' multi-task 
+
+  - general memory protection with efficient error 'repairing'... 
+
+  - Centek  Control  Panel,  with  unlimited easy-to-create forms 
+(size and number) 
+
+  - AES compatibility 
+
+  - Ultra-ergonomic desktop, with integrated features for fast file 
+copy,  hypertext  editor  (for  applications  in-line documentation), 
+visual control of system parameters... 
+
+  - A  lot  of  memory  available for applications (Centek hope the 
+system kernel to fit into a 64Kb EPROM) 
+
+  - External drivers based system (for graphic boards, and so on...) 
+
+  - a  'Resume'  feature, allowing the user to save the context. On 
+next  boot, he will be back in this context within seconds... I'm not 
+sure,  but this option will perhaps be usable for games and demos, so 
+that  it  automatically  saves the context before loading, and it can 
+then  do  everything  it wants with all the memory free, though being 
+able to come back to the desktop properly... :) 
+
+  - A lot of other features...
+
+  Moreover, the developers are very open minded to suggestions about 
+what shall be Dolmen so, if you have ideas you'd like to communicate, 
+they'll  be  happy  to  take note of it, and to implement it, if they 
+find it interesting. I often speak with them, and they really seem to 
+be competent...
+
+First configuration :
+
+68040, 1 Go SCSI 2 hard disk, SCSI 2 CD-ROM X4, 8 Mo RAM, Matrox 
+Mystic. Price less than 10.000 FF (~1250 ). No information if for 
+this price, this configuration includes a monitor.
+
+---------------------------------------------------------------------- 
+PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX:PHENIX 
+----------------------------------------------------------------------
+
+First I must thank  Daniel  of  New  Beat  Developments for sending us 
+these  statistics.  Additional  information   by   Hades   of  Tool  8 
+technologies. The comments are by Yann Loussarn.
+
+Here is my opinon of the machine.
+
+Starting with CPU:
+
+The good news is that it is  a  Motorola.  The 68040 is a very similar 
+chip to the 030 that we  all  know  and love. The instruction sets are 
+virtually identical (apart from some extra Cache controlling commmands 
+on the '40) but the 68040 does have the advantage of having a built in 
+FPU. There is also a nifty  MOVE16  which  moves 16 bytes of data with 
+one command!
+
+Althought similar, the '040 is vastly more powerful chip than the '030 
+check the performance (and expense) of  boards such as the Afterburner 
+'040. When you also consider  the  fact  the  the Centek's 040 will be 
+running at  an  amazing  66mhz,  there  is  no  doubting  the  central 
+powerhouse that this machine is based on.
+
+There is also the 120Mhz 68060 option, but I imagine this machine will 
+be a lot more expensive, and fit  more  into the serious market as the 
+TT did. One  for  the  Calamus  users  perhaps.  But  if  this  one is 
+reasonably priced, then people may opt  for  the extra power. A 120Mhz 
+68060? This is almost criminally fast!
+
+Fortunately these jet propelled processed  aren't  let down by a wimpy 
+bus architecture. There is a nice 33Mhz  32bit bus for all the data to 
+travel down. Here is an analogy - whilst the Falcon data has to travel 
+down a windy  B  road,  the  Phenix's  data  can  roar  down  a 4 lane 
+autobahn!
+
+One aspect of the Falcon  that  people  didn't  complain about was the 
+DSP.This was because it was an extraordinarily fast and powerful chip. 
+But Centek have decided it was too  slow (!) and are replacing it with 
+a 66Mhz 56302. This is  over  twice  as  fast  as the original chip! I 
+don't know how much memory the chip  has  on  board, as the 96K of the 
+56001 was always a serious limitation, as was the fact that you had to 
+transmit all data through the slow  8  bit  bus connecting the DSP and 
+CPU.
+
+But this is a problem no longer!  The DSP can access main memory! This 
+is such a liberating factor. If the only the Falcon's DSP could access 
+main memory, it would be twice as  powerful a machine. Not only is the 
+Centek's DSP more powerful, but  it  is  not limited by Atari's stupid 
+bus architecture.
+
+The new operating system also sounds nice, especially the fact that it 
+is coded in assembly which  means  that  it  will whip along. The only 
+drawback is  if  they  decide  to  introduce  machine  with  different 
+processors (PowerPC, Dec alpha) then  they  will  have to re-write the 
+O/S.
+
+The only draw back I can  see  with  this  machine  is that it is a PC 
+case. I have always like the ST/Falcon case (despite its crap joystick 
+ports) as it has a charm in its crude way, plus it is very portable.
+I have never been tempted to buy a PC, but I have always realised that 
+there will come a time when I  want something with more power than the 
+Falcon. The Phenix seems to be the  ideal machine. If this is released 
+for the promised price in the autumn,  I  will be first on the list to 
+buy one.
+
+The Phenix seems a fantastic  machine,  and  if enough creative people 
+buy one  then  we  can  make  another  great  scene  on  another great 
+computer. Atari is dead, long live the atari compatible!
+

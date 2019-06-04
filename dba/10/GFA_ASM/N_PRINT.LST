@@ -1,0 +1,8 @@
+nprint("Hallo allemaal"+CHR$(13)+CHR$(10))
+'
+PROCEDURE nprint(s$)
+  LOCAL t%
+  FOR t%=1 TO LEN(s$)
+    OUT 0,ASC(MID$(s$,t%,1))
+  NEXT t%
+RETURN

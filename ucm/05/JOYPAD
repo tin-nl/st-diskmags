@@ -1,0 +1,103 @@
+ 
+                      Jaguar-Joypads an Falcon 030 und 1040STE
+                      ========================================
+
+Kurz nach Kauf eines Jaguars mute  ich natrlich herausfinden, wie das zugeh”-
+rige Joypad sich am  Falcon benutzen l„t. Im folgenden nun die Fakten, die ich
+herausgefunden habe.
+
+Obwohl es bei gleichzeitiger Benutzung von Screenblaster und Joy-Pad keine Pro-
+bleme gab, hier eine (vielleicht berflssige) WARNUNG:
+
+###############################################################################
+
+Das Joypad  ist ein  Ger„t, von dem nicht  nur Werte am Joyport gelesen werden,
+sondern dem auch Signale gesendet werden mssen. Bis jetzt haben meine Versuche
+noch zu keiner St”rung des  Screenblasters gefhrt (der  Schreibzugriff auf den
+Joyport schreibt gleichzeitig auf BEIDE Ports - je vier Bits ).
+
+Auch k”nnten  theoretisch Kurzschlsse  auftreten, wenn  ein Ger„t am Port z.B.
+Low (d.h. Masse) anlegt, der  Computer aber  zur gleichen  Zeit  versucht, High
+(also +5V) zu schreiben. Dieses Problem k”nnte mit Open-Collector-Schaltkreisen
+umgangen werde, die statt High mit +5V zu repr„sentieren den Ausgang unbeschal-
+tet  lassen. Allerdings  mten, damit diese  Manahme wirkt, beide  Seiten mit
+solchen Schaltkreisen ausgestattet sein. Und ich habe den  dringenden Verdacht,
+da der  Bufferbaustein im  STE/Falcon sowieso  kein Open-Collector-Schaltkreis
+ist. Aber  der Rechner  sollte im  Falle eines  Kurzschlusses  eigentlich einen
+Reset durchfhren - und im  schlimmsten aller  F„lle sollte h”chstens der (m.E.
+billige) Bufferschaltkreis betroffen sein.
+
+Also nochmal: In Spielen nur dann die Jaguar-Pad-Option benutzen, wenn wirklich
+ein Pad am Port ist (und nicht irgendwelchen anderen Sachen).
+
+###############################################################################
+
+Nun aber  zu den  erfreulicheren  Sachen. Zuerst  die  innere  Verdrahtung  des
+Joypads:
+
+          ( 0 ) ( 1 ) ( 2 ) ( 3 )   <--- Eing„nge
+            |     |     |     |
+            |     |     |     |           Ausg„nge:
+     rechts |     | 1   | 2   | 3
+            *-----*-----*-----*-----------(  3 )
+            |     |     |     |
+      links |     | 4   | 5   | 6
+            *-----*-----*-----*-----------(  2 )
+            |     |     |     |
+     runter |     | 7   | 8   | 9
+            *-----*-----*-----*-----------(  1 )
+            |     |     |     |
+       hoch |     | *   | 0   | #
+            *-----*-----*-----*-----------(  0 )
+            |     |     |     |
+            | A   | B   | C   | Option
+            *-----*-----*-----*-----------( F1 )
+            |
+            | Pause
+            *-----------------------------( F0 )
+
+Im Wort an der Adresse $FFFF9202 spiegelt sich das folgendermaen wieder:
+
+Bit  0 -  3:  Eing„nge Joy-Pad A
+Bit  4 -  7:  Eing„nge Joy-Pad B
+Bit  8 - 11:  Ausg„nge Joy-Pad A
+Bit 12 - 15:  Ausg„nge Joy-Pad B
+
+Und in $FFFF9200 finden sich dann noch die fehlenden Bits:
+
+Bit 0:  F0  Joy-Pad A
+Bit 1:  F1  Joy-Pad A
+Bit 2:  F0  Joy-Pad B
+Bit 3:  F1  Joy-Pad B
+
+Um eine Eingangsleitung  des Joy-Pads zu selektieren, mu das entsprechende Bit
+im Wort $FFFF9202 gel”scht  werden (falls man  nur ein Pad abfragen m”chte, em-
+pfiehlt es sich, die Bits des unbenutzten Joy-Pads gesetzt zu lassen). Nach der
+Selektion steht die aktuelle Information in beiden Registern zur Verfgung.
+Programmtechnisch geht man etwa so vor:
+
+         .
+         .
+      move.w   #$fe,$ffff9202.w     Leitung 0 selektieren
+      move.w   $ffff9202.w,d0       Ausg„nge 0-3
+      move.w   #$fe,$ffff9202.w     Leitung 0 selektieren
+      move.w   $ffff9200.w,d1       Ausg„nge F0 - F1
+      bsr.s    auswert_0
+      move.w   #$fd,$ffff9202.w     Leitung 1 selektieren usw.
+         .
+         .
+
+Man beachte, da JEDER  Lesezugriff auf  $FFFF9202 den Port  wieder auf Eingabe
+programmiert, also ALLE Spalten des Joy-Pads deselektiert. Somit  mu vor JEDEM
+Lesezugriff auf das Pad erst einmal eine Leitung selektiert werden.
+
+Literatur:
+----------
+Jankowski/Rabich/Reschke:  ATARI ST/STE/TT Profibuch, 10. Auflage
+                           Anhang J - Die Hardware des STE
+                           Seite 1287 - 1290
+
+-------------------------------------------------------------------------------
+                                                                  Apache of tnb
+-------------------------------------------------------------------------------
+ach

@@ -1,0 +1,235 @@
+
+ò                          CHAPTER 3 : CODING SOUND
+
+
+This little part is aimed at the DMA-sound of the STe and newer machines.
+I diliberately chose to skip the Yamaha soundchip, because this is
+actually a bit more diffcult than the DMA-chip. The old Yammy can only
+produce crap sound anyway... (though what some people got out of that thing
+is incredible!!) Take a peek at chapter 11 to find out a bit more about the
+Yammy there.
+
+Let's say we want something like a sample of an explosion coming out of
+your speakers/monitor. What do you need:
+
+* a signed 8-bit sample at 12.5, 25 or 50 KHz
+* an STe or better (TT/Falcon)
+* a piece of assembly code to control the DMA chip
+
+I just suppose you all have the required machine, otherwise you can just
+skip this chapter. You can get samples anywhere and convert them to the
+above specifications. Now you need to include the sample in your code like
+this:
+
+sample:   INCBIN         D:\SOUNDS\EXPLO.SPL
+^         ^              ^
+|         |              |
+labelname actual command path/name of sample
+
+This will include the binairy data of the file into the assembled
+executable. It's quite easy and you can do it with pictures, sprites and
+text too.
+OK, now you need the rest of the code. First you need to include the
+supervisor-mode routines listed in chapter 1. In order to access the DMA-
+chip you'll need to be in supervisor-mode.
+Now comes the important part. The actual controlling of the DMA-chip and
+getting it to play our sample. The chip is represented by various hardware-
+registers that are located in high memory. I'll explain some here:
+
+$ffff8900: DMA-control register. This is a word that contains bits that can
+be set that let the chip begin to play a sample or loop a sample. Here's
+the exact layout:
+
+               +------- bit 1: loop sample (1=on 0=off)
+               |+------ bit 0: play sample (1=on 0=off)
+               ||
++----------------+
+|iiiixxxxxxxxxxlp|
++----------------+
+ ||||
+bits 12 to 15:
+interrupt thingies (not really interesting for us)
+
+Note: I've not included the falcon-extended bits. I just want to show you
+the basics and not all the details.
+
+$ffff8921: sound-mode control register. This is a byte that contains the
+bits that control the replay frequency and stereo/mono stuff.
+
+       ++--11 = 50 KHz
+       ++--10 = 25 KHz
+       ++--01 = 12.5 KHz
+       ++--00 = 6.25 KHz
+       ||
++--------+
+|sxxxxxff|
++--------+
+ |
+bit 7: stereo/mono select (1=mono 0=stereo)
+
+$ffff8903: frame start address - high byte: contains bits 16 to 23 of the
+24 bits sample beginaddress.
+$ffff8905: frame start address - mid byte: Same as high byte only for bits
+8 to 15.
+$ffff8907: frame start address - low byte: Same as high byte only for bits
+0 to 7.
+
+$ffff890f: frame end address - high byte: contains bits 16 to 23 of the
+24 bits sample endaddress.
+$ffff8911: frame end address - mid byte: Same as high byte only for bits
+8 to 15.
+$ffff8913: frame end address - low byte: Same as high byte only for bits
+0 to 7.
+
+Now that I've explained all the usefull registers let's get on with the
+code. First I need to note that in order to play the sample you need to give
+the frame-end-address-register the endaddress of your sample. You get the
+address by doing this:
+
+sample: INCBIN  D:\SOUND\ARSEWIPE.SPL
+end:
+
+That's right! Simply put a label behind your incbin and there you have it!
+Now let's get on with the rest of the code:
+
+* First we set the sound-mode control register. We set it to mono, 25 KHz.
+* We set bit 7, set the bit 1 and clear bit 0.
+        andi.b  #%11111110,$ffff8921
+        ori.b   #%10000010,$ffff8921
+* Then we set the startaddress
+        move.l  #sample,d0              * Move startaddress into d0.
+        swap    d0                      * Bring the high byte in d0.b.
+* I moved the high byte into d0.b because first of all we MUST do the high
+* byte!
+        move.b  d0,$ffff8903            * Move the high byte of the address.
+* Then we do the mid byte of the address.
+        rol.l   #8,d0                   * Bring the mid byte in d0.b.
+        move.b  d0,$ffff8905            * Move the mid byte of the address.
+* Finally, we do the low byte.
+        rol.l   #8,d0                   * Bring the low byte in d0.b.
+        move.b  d0,$ffff8907            * Move the low byte of the address.
+* OK, the startaddress is done, now for the endaddress.
+* It's basicly the same as the startaddress, but with a different label and
+* different registers.
+        move.l  #end,d0                 * Move endaddress into d0.
+        swap    d0                      * Bring the high byte in d0.b.
+* I moved the high byte into d0.b because first of all we MUST do the high
+* byte!
+        move.b  d0,$ffff890f            * Move the high byte of the address
+* Then we do the mid byte of the address.
+        rol.l   #8,d0                   * Bring the mid byte in d0.b.
+        move.b  d0,$ffff8911            * Move the mid byte of the address.
+* Finally, we do the low byte.
+        rol.l   #8,d0                   * Bring the low byte in d0.b.
+        move.b  d0,$ffff8913            * Move the low byte of the address.
+* Now to trigger the playback of the sample.
+* We set bit 0 to trigger playback and clear bit 1 to turn looping off.
+        andi.w  #%1111111111111101,$ffff8900
+        ori.w   #%0000000000000001,$ffff8900
+
+That's it! You replayed a sample. This is so simple! Just compare it to
+a system like a PC.
+About the order of high/mid/low bytes: the DMA-chip expects you to first
+do the high one and later on the lower ones. Otherwise it just won't work!
+
+There you have it. But now I'm gonna go a bit deeper into the whole thing.
+If you think you're up to editing samples with programs you can continue
+reading....
+
+OK, that's all very nice, but what if we want two or maybe four channel
+sound just like in those groovy MOD-thingies. Then you need to mix a few
+samples together. What you do is average every byte in the samples and
+make a new sample of it.
+Hold on, stop, stop, whats goin' on here! Oh, you don't understand, I'll
+explain a bit better. Every sample consists of load of bytes. Each byte
+represents the heigth of the soundwave at a certain moment. Like this:
+
+This is a normal soundwave(in a funky ASCII drawing):
+
+   --               ^
+  /  \              | amplitudo (heigth of soundwave)
+ /    \             |
+|------|------      ---> time
+        \    /
+         \  /
+          --
+
+Now if you sample this you get the following bytes:
+
+$00,$28,$50,$7f,$7f,$50,$28,$00,-$28,-$50,-$80,-$80,-$50,-$28,$00
+
+Every byte simply represents the amplitudo at each interval. OK, that's the
+basics of sampling. But now you want to mix. The only thing you need to do
+now is add the amplitudo's of the samples to eachother and divide them
+through the number of channels your using. Suppose you wanted to mix two
+channels together:
+
+amplitudo of sample 1 at interval 0 = $34
+amplitudo of sample 2 at interval 0 = $1a
+
+Now you add them together: $34 + $1a = $4d (just some hexa-calculation)
+                                           (if you don't know what that)
+                                           (is, please skip this theory!)
+
+Now divide it by the number of channels: $4d/2 = $27
+
+Now do this for every byte in the samples and you have your mixed sample
+that you can easily playback with your DMA. The practical aproach to this
+would look like:
+
+        move.l  #sample1,a0             * Move startaddress of spl1 into a0.
+        move.l  #sample2,a1             * Move startaddress of spl2 into a1.
+        move.l  #d_sample,a2            * Move  " of destination spl into a2.
+        move.w  #10000-1,d7             * Suppose the samples have 10000 bytes.
+        moveq   #0,d1                   * Clear d1 for use as adding register.
+        moveq   #0,d0                   * Clear d0 for use as adding register.
+loop:   move.b  (a0)+,d0                * Put amplitudo of spl1 in d0.
+        move.b  (a1)+,d1                * Put amplitudo of spl2 in d1.
+        add.b   d1,d0                   * Add them.
+        lsr.w   #1,d0                   * Divide it by 2 (shift 1 bit right).
+        move.b  d0,(a2)+                * Move result in destination sample.
+        dbra    d7,loop                 * Loop 10000 times.
+
+Now you can put your playback routine underneath this and give it the
+start/end-addresses of d_sample and there you have it!!
+Some of you might be curious why I clear the registers first. Well, when
+you add like $60 and $40 it should make $a0, right? Well, a byte cannot
+hold this! You simply need an extra bit. But if this bit should happen to be
+1 you'd get wrong results:
+
+This is the situation with bit 8 cleared:
+
+$60 + $40 = $a0
+$a0/2= $50
+
+This is the situation when bit 8 accidently isn't cleared:
+
+bit 8 set!!
+ |
+$160 + $40 = $1a0
+$1a0/2 = $208 (The byte can only contain the
+               first two digits so you get $08!!)
+
+As you can see the accidental being set of this can be catastrophic! Now
+I've explained it... Phew, That's I guess.. I could have explained more
+about frequencies, but would take up even more space and time. I'd like to
+keep it a bit more basical. The summary:
+
+Amplitudo:             heigth of a soundwave at a certain interval. In a
+                       sample this is represented with a numerical value.
+DMA-chip:              Soundchip in STe or higher that can play one 8-bit
+                       stereo or mono sample at a time
+DMA-registers:         Registers you control the DMA-chip with. They are
+                       located in high memory and you need supervisor-mode
+                       to access them.
+Funky ASCII drawing:   A bunch of ASCII characters put next to eachother by
+                       somekind of moron who calls it a drawing or even
+                       'art'.
+Incbin:                Easy way to include binairy data (sample, text, etc.)
+                       into your executable file (PRG,TOS,APP,etc.)
+Mixing:                Making more samples in to one sample by averaging
+                       all the bytes.
+Sample:                A string of amplitudo values.
+YM2149:                Also known as the "Yammy". The oldest soundchip of the
+                       ST. Basicly outdated when the ST was released. Can
+                       produce some blips and blops and other noise.

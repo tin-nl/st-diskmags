@@ -1,0 +1,183 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[.......................................................]0010
+ 
+[O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O]
+                                 -BREAK OUT- 
+                               By Thomas Haines
+[O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O][O]
+ 
+    THREE! TWO! ONE! ZERO!  BREAK  OUT  [By  Thomas Haines] has 
+arrived!  Hurr- wait a minute... ( [a musing  thoughtful  silence 
+ensues] Break Out.. Breakout.. Arkanoid, Batty, Brick-out, Multi-
+Briques, Arkanoid II - the Revenge of Doh, Gem Breakout..) hmmm.. that 
+name seems familiar.  Breakout.  B r e a k  o u t.  Yes, and even 
+after that *dramatic* countdown, I  feel somewhat let down because 
+it's YET another Breakout clone.  And what a bobbins game it is.
+
+    Lets begin with the title.  'Break Out by Thomas Haines' (sick of 
+it yet?). It's not exactly the most catchy,  original  title  ever to 
+grace a Falcon Game. But the space between 'Break' and  'Out',  I  
+think,  is an original addition, a change from the  old,  well-flogged  
+'Breakout'  roll-off-the-tongue-style.  But separating 'break' and 
+'out' may be  Thomas  Haines'  only break (Oh please -Ed) from 
+tradition.  This is  not  the  Great  Escape,  this  is  not  even 
+Cops 'n' Robbers, this is in fact Break Out - a bat, a ball, some 
+bricks et voila!... 
+
+   ..Break O 
+            u 
+             t 
+             t 
+         .   t  . 
+       .   . t     . 
+         .\ .t ./. 
+           .\t/ . 
+    Before we are  flung,  kicking  and  screaming,  into  the  
+'game',  we are *treated* to an intro.  And what an  intro.   A 
+scanned picture of a sunset over the sea, with a black,  thin  and  
+very  unantialiased  logo,  is drawn onto the screen with a sort of  
+circular,  clockwise  wipe.  *Truly* beautiful.  Then, in sync with 
+the music (ripped from the  Plastikk demo) a 3,2,1,0 countdown ensues, 
+perhaps in a pathetic attempt  to  create  some  tension,  or  maybe 
+to load the 'effect'.  This effect is three rotating 2D vector 
+squares, spinning inside each other, with a blue pacman chomping 
+jerkily  in  the middle.  Why Pacman has made an appearance is a 
+little unclear.  The coder  may  have hoped to throw a net of illusion 
+across our impressionable eyeballs,  thinking  we would be confused 
+and forget that the game is actually called Break Out.  However, he 
+does not succeed and the whole effect just increases the feeling  that 
+this game is passe and was probably played by bored cavemen, with a 
+rock and the bones of their last meal.
+
+    Okay, intro over we hit space and are unceremoniously thrust into 
+the thick of the game.  Our senses revolt at the  sight that greets 
+us.  Yes, it's our old favourite, the uninvited visitor: the Gem Fill, 
+splendidly resplendent in white. We now wonder if Mr. Haines is  
+actually  trying  to create the atmosphere of an ancient Atari  FREE  
+Gem  game  special,  because  he  is  certainly succeeding. [Except 
+that everyone knew when Atari  made  crap  games they were actually 
+only calling a double bluff to outfox Bill Gates and get him to copy 
+the games and so kill Microsoft off from inside.  Or something.]
+
+    There are two different tiles which  you  must  hit  with the 
+ball.  One of them is white and filled  with  a   bobbly  Gem  Fill  
+(this tile needs two hits (usually, but there are some bugs))  and  
+the  other is an insipid maroon colour which hardly shows up against  
+the  background.   And talking of the background, it's that old 
+favourite scanned true colour picture of a mountain and some water 
+used in the Camera demo  by  Sentry  and  an  Impulse  demo called 
+Angest.. well 'hackneyed' seems to be Thomas Haines' middle  name,  so 
+I guess we shouldn't be surprised.
+
+    The bat is a crude lump,  filled  with  the  oh  so delicate white 
+Gem Fill (cycling as well this time ..mmmmm mmm)  and  the  ball is a 
+hideous lurid green colour.  It all brings a new meaning to the 
+phrase: 'assaulting the senses'.
+
+    So, onto the game itself.. it starts with  the ball on the bat, 
+right mouse button releases it and left  mouse  button  pauses  the  
+game  .. ?!!  The bat's movement is very sensitive, so we  are  soon  
+being treated to the legend: 'Life Lost'.  "One down, only two more to 
+be endured," we mutter.
+
+    The bounce of the ball is so consistent that as the game draws to 
+a close - there being perhaps two or three tiles  left  - it becomes 
+very difficult to hit them and whether anyone can be bothered to  
+spend the time needed to achieve the completion of the level is highly 
+doubtful.  I was reaching for the reset button when I remembered my 
+obligation as  a  games  reviewer and the sacrifices I must make for  
+the  greater  good,  so  on  I  battled..  (that  is  battled  with my 
+eyelids..).
+
+    Eventually the level was completed  and  I  was rewarded with a 
+fanfare-ish sample and some  words  so  mundane  that  I've  forgotten  
+them,  but they were probably akin to: You Win!  And that was that.  
+The first level turned out to be the one and only level.  But we 
+should  at  least thank the coder for putting us out of our misery 
+reasonably quickly  and  not prolonging our suffering any more than he 
+already has by being born.
+
+    So, you may think  the  review  ends  here.   But  you  would  be 
+SO wrong. Because there is more to Thomas Haines' Break Out than 
+merely one level, done on a ripped background, with Gem filled tiles 
+and repetitive samples which give you a headache after ten seconds 
+because... 
+
+  ...there is an option to create  your  own  Break Out levels!  
+However I fear that Mr. Haines must have been somewhat shy of this 
+feature because I only found it out after extensive  reading  and  
+deciphering  of  the readme_1st text which comes with the game (in 
+which  you  will  also  find  a  short story which ON NO ACCOUNT 
+should you read).  In this text we  are told that button 'c' will 
+access the level editor, and should be pressed on the 'intro' part 
+(which incidentally, the game reverts to when you have  lost  all  
+your lives).  So I duly played and lost a game of Break Out and then   
+waited  for the intro to reappear.  After an unreasonable delay it 
+crept  back  guiltily,  doubly  so  because  I  had to sit through the 
+*exciting* countdown bit again.  So finally when Pacman was restored 
+to his place of honour I pressed 'c'.
+
+I waited.
+
+I waited some more.
+
+I pressed 'c' a second time.   Still  Pacman chomped away undisturbed, 
+musing on the nuances of his life as a minor character in a minus 
+game.
+
+
+
+
+
+
+
+ 
+[Some time later.]
+
+A ha!  Mr. Pink has just had the idea  that maybe 'Caps Lock' has been 
+turned on and the code is not recognising a  capital  'C'  as the 
+requisite small 'c'.  If so, it must be a nice VGA  specific  bug  
+[with  the game] because on Mr. Pink's nice RGB Atari monitor he 
+doesn't  have  any  trouble (apart from that caused by the 
+aforementioned game).
+
+    Pressing 'Caps Lock', then 'c' meets with success, but I'm afraid 
+this game has already failed its test on grounds of being completely 
+bobbins.
+
+    The Break Out 'level  editor'  is  no  slick  Reservoir Gods' 
+Double Bobble Editor.  It has obviously been bundled together  as  a 
+last gasp resort to spice up a done-to-death game and is more crude  
+than the entire repertoire of the Viz cast in the eyes of  Mary  
+Whitehouse.   Right  mouse  button cycles through the three available 
+tiles, (one of which is  a  blank tile to delete with) which are 
+displayed at the bottom right corner of the screen and that memorable 
+green ball makes a reappearance as the mouse pointer.   You draw 
+whatever design takes your fancy, then 'Return' will save the  new  
+level  to  disk (it actually saves over Thomas' original level. 
+**What** a shame.)  and  then  you play it.  You can see the fruits of 
+my effort as well as  my  verdict  on this game by clicking on the 
+little SEE PIC icon.  Go on, you know  you  want to, [as The Divine 
+Comedy might have said].
+
+ 
+H  H I GGG  H  H SSSS 
+HHHH I G    HHHH SS 
+H  H I G  G H  H   SS 
+H  H I GGGG H  H SSSS
+o ...um...
+ 
+L    OOOO W   W SSSS 
+L    O  O W   W SS 
+L    O  O W W W   SS 
+LLLL OOOO WW WW SSSS
+[Oh God I can't be bothered, so I'll burn in hell but what's new?] 
+o EVERYTHING.
+ 
+People who wish to get  hold  of  a  copy  of  this  game  are  
+advised to see a psychiatrist.
+-------------------------------------------------------------------------------- 
+Ripley/Reservoir Gods. 

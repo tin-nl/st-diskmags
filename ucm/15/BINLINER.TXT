@@ -1,0 +1,145 @@
+ ------------------------------------------------------------------------------
+           ñBuggy Binliner previewð by òTat/Avenað (1998/99) ó[Falcon]ð
+-------------------------------------------------------------------------------
+
+If you read the member's description of the Avena homepage (www.avena.com),
+you'll read that Tat can code all night looking for a solution and remains
+successful although looking quite undead.
+And that is exactly what Tat currently behaves like: ñUndeadð.
+
+In some role-playing games, ñundeadð characters are a positive addition to
+the party as they feature special powers, in some games they are worthless
+cannon fodder.
+I still don't know which of these two options count for òTatð so i unpacked
+his Binliner-preview and had a look.
+
+The archive contains ó4ð files, a short òreadmeð, saying nothing more that
+Tat is working hard for his job and that therefore cleaning up the code
+might take a while, he also gives an eMail address (òtat.work@avena.comð and
+òtat@avena.comð, i guess the first one is an alias for his address at work,
+the second one an alias for his zetnet-account) - Perhaps he would still
+like to have some ñfeedbackð ? - and the executables ñfreakyð, ñworshipð
+and ñlandscapeð.
+They all require to be executed on an RGB monitor and òTatð claims them all
+to be very buggy.
+
+Let's start with ñfreakyð.
+This demo-preview is very hard to describe. In case you have seen the movie
+óblack holeð, imagine the "black hole" depicted in this movie, filling the
+whole screen, textured with red/pink/blue-textures, twisting, bending
+inwards, upwards, inside out and upside down.
+I guess the name for this part of the demo - ñfreakyð - fits quite well.
+Well, the textures are being bent rather smoothly, it looks like about
+20 frames per second. The whole screen stays filled with textures and
+there are quite a lot of polygons on the screen.
+A twisted and weird effect, hard to describe, but technically without a
+doubt very good.
+
+So, what's contained in the file ñworshipð ?
+Imagine this scene. A dark, gloomy sky, a very high, but small platform,
+a circle of humanoids that rotate and in the center of the circle another
+humanoid that doesn't move. Between the rotating humanoids, small, glowing
+spheres are being exchanged.
+If you can't imagine this, have a look at ñworshipð. The humanoids are
+polygon objects that are being environment mapped and - like most of
+òTatð's 3D objects - they are rather round and all edges are smooth.
+The small glowing spheres, lightflares, moving in elipsoid pathes are
+supposed to move between the circumstanding humanoids - and this is where
+i think òTatð talks about óbugsð - do not move between them but around
+the center-humanoid in some way.
+Again, the refresh rate of this scene is high, around 25 fps, and every-
+thing moves nice and smooth again.
+The viewer is being transported around and over the scene, is being
+zoomed in and zoomed out again. The floor of course features a texture
+as well and even the sky - if it is one - is being bent according to
+the angle the viewer is currently looking.
+
+And finally - òlandscapeð.
+This one is easy to describe - It's a 3D ñlandscapeð.
+In contrast to popular voxelspace-engines, this one consists of polygons
+which are being textured and lightshaded, so faces being zoomed out of
+view fade into darkness.
+Although the polygon-faces are rather large most of the time, there are
+quite some polygons on screen simultanously, especially as the "weirder"
+parts of the landscape are being brought onto the screen.
+òTatð says that this part is "ñfuggy as buckð", although it works quite
+well. The viewer is being moved óthroughð a few mountains, but otherwise,
+i didn't spot any bugs.
+The texture looks rather simply, a grey texture without large contrasts,
+so it's hard to estimate the resolution of the textures. Again, the
+engine seems to work in 25 or even more Herz, everything moves smoothly
+about the screen.
+The viewer is not being rotated in larger scales and especially not
+around the y-axis, it's like flying in a plane with fixed position
+relative to the horizon.
+
+These 3 ñlittle previewsð (170 kb zipped) really beat everything i have
+seen on the òFalconð so far when it comes to ñPolygonsð and ñTexturesð.
+If you thought, Sonolumineszenz was impossible to top, think again.
+These previews do not only beat everything i have seen yet, they also
+beat my highest expectations i ever had regarding ñ3Dð-effects on the
+òFalconð.
+First, òTatð's texture-mapping routine seems to be the best one. I have
+hardly seen so many faces being textures with such a lovely refresh rate
+than in ñfreakyð. A lot of textures on a lot of polygons simulataneously
+together with a relatively high resolution.
+Second, òTatð's environment-mapping routine rules as well. Take a look
+at the humanoids in the ñworshipð-screen and you'll agree. They move
+smoothly, they don't feature harsh edges and yet òTatð still has enough
+CPU time to move those lightflares and bent the sky-texture according
+to the viewer's angle.
+And finally, òTatð's landscape-engine - although roughly just a specialised
+form of his ñtexture-mappingð-routine, beats all other efforts in this
+direction as well. Smooth movement, high resolution and yet quite a number
+of faces on the screen at once.
+
+So my message to everyone who wants to have a glimpse of what òTatð is
+really capable of, get this preview and have a look.
+The 3 parts are nicely designed as well, the textures look good and
+fit into the scenes very well.
+
+óEpilogueð
+Some nasty words have been written against Tat in the last issue of this
+magazine, some which i can understand, some which i can and will not
+understand. As long as we don't know the true reasons why òTatð decided
+to drop all his work on ñBinLinerð, we should all rather be quiet instead
+of spitting out insults against him.
+Because, when seeing those screens we see one thing for sure: The one
+who has suffered most from òTatð's dissappearance is òTatð himself.
+These previews show clearly that òTatð is a god when it comes to texturing
+polygons and have weird ideas about what to do with them. ñBinLinerð would
+have beaten ñSonoluminszenzð lefthanded and once again proved what an
+enourmous potential the òFalconð still has that has yet been undiscovered.
+òTatð must have spent hours and hours of setting up tables, debugging his
+texture-engine, digging deep in the óDSPð-hardware, timing the effects
+and optimising his algorithms. Therefore, óheð lost the most when he
+decided to cancel that project.
+òAgent tð and òmOdð may have felt pretty pissed off when òTatð decided
+to leave, but i can hardly imagine how pissed off òTatð himself must
+have been feeling to even consider dropping a project like this.
+
+However, òTatð is gone and the last email he sent me said "ñNo chanceð"
+about a possible return.
+Therefore, these 3 screens will stay the last sign of òTatð's powers
+on the Falcon concerning polygon-techniques.
+We should probably see this as an encouragement. The ñBinLinerð-preview
+shows what potential there is in the Falcon, what there is still left
+to do, what there still is possible on the machine, what this bird can be
+made to do when someone unfolds its wings.
+
+
+So, this is what the òundead Tatð released, probably because some were
+nagging at him about releasing the source-code, probably just because
+he wanted us to have a look of what he has been up to.
+I don't think he released it with the intention to show us what we are
+missing now that he left - that wouldn't mix with his last message on
+his óAtarið-related homepage.
+
+I rather think it should show that ñundeadð coders are still good for
+a surprise - like in a good role-playing game ...
+
+
+
+                                                       The Paranoid
+                                          Paranoia - The Lunatic Asylum
+

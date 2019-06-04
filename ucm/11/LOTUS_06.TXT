@@ -1,0 +1,134 @@
+-----------------------------------------------------------------------------
+     ...quotations of famous people about UnderCover Magascene (#002)...
+
+                               BILL GATES:
+                           UNDERCOVER IS GREAT!
+                       HOW ABOUT A WINDOWS VERSION?
+
+
+                       NATURE (ATARI DIVISION;SE)
+
+{*f1- REEKING RUBBER -{*f0
+
+  ____ ________ ________ ______
+ !____!    _   |    _   |  _   | -[system]- fo3o/rgb/vga
+ |    |   |/   |   !/___! |/   | -[crediz]- Henrik Gilda    (code/gfx)
+ |    |   |    |   ___|   !    |....        Torbj”rn Gilda  (code/gfx)
+ !____!___!____!___!  !________!   :        Daniel Persson  (msx)
+                           :.......:        Bitmaster/TCE   (replayer)
+
+On 27th of  december 1997 another  preview of a  game with work-title "Lotus"
+appeared in the  scene-download-sites  all over Europe. This  time it is vo.6
+and finally it  is possible for me to test it, because it now runs on RGB/TV,
+too.
+
+...do you  still remember  maybe the  best racing-games  on atARi, the "LOTUS
+ESPRIT TURBO CHALLENGE"-series? British software-house GREMLIN released three
+parts of it  during 199o-1993 and  they were  real smashs! In middle of 1997,
+two motivated  Swedish guys no  one heard of before started to code a game in
+the same style. And the production seems to make big steps...
+
+In comparison  to the  earlier version  which I  saw only  for a few moments,
+version o.6 has a lot of  improvements. After  starting the  preview-package,
+which is already  about 2 megabytes in size, a road appears on screen. In its
+middle we can see a car just like in the original versions. The background is
+filled with a nice  truecolor-scan, showing a  landscape with mountains and a
+lot of  wood. A yellow time-counter  is displayed in  the lower right part of
+the screen, indicating  how much  time is left for  finishing the stage. From
+time to time other cars come driving down the road. ..so let's start driving.
+
+Hmm, start driving. The  README-text that  was enclosed  to the  package says
+that the car  might be controlable by three different methods: with joystick,
+keyboard and Jaguar-pad. So let's try it...
+
+Humm, pretty strange! The car  doesn't move from  its original place. Not one
+step forward. Not by clicking on the arrows of the keyboard (it only moves to
+the left and  the right), not by pressing some of the control pads' keys with
+trembeling  fingers. Just  no reaction but  a timid move  to the left or  the
+right.
+
+But hey! Doesn't the whole thing look  a bit buggy at all? The  authors wrote
+something about sound during the race. But there are only some strange noises
+coming out of my boxes. And  the START-banner over  the racing-stage flickers
+in some  strange manner, too. So...let's say that the version is a bit buggy,
+and therefor we cannot move forward. Bad, but not too bad; I guess the reason
+for not working is my old Falcon having only TOS 4.o1 and a SKUNK-accelerator
+and being buggy with a lot of Swedish productions (Hi Evil!;).
+
+...but then...some days  later I checked out the version once more and tested
+every single  key and controlling-possibility. And  I found  out that the car
+can accelerate  by pressing  the right  mousekey. Unfortunately  the car only
+drives  maybe 5 seconds till  it passes a "START"-banner. Then the whole game
+stops and a quite good module is played. So, the bug wasn't at the beginning,
+but I would say that the bug is here, because the game doesn't go on, it just
+stopped after driving 1o meters. Puhhh...
+
+
+In further versions of this game, some more sceneries such as forest, winter,
+desert, tropics, city and much more will be implemented. The DSP is used just
+for the sound-replayer at the moment. (the one by Bitmaster/TCE, of coz; btw:
+they want  you, BITMASTER, to  contact them for  some reason!! so if you read
+this, grab a pen!)
+
+Finally, the guys of NATURE have  one BIG PROBLEM: they need a graphician who
+could style some of the races' objects. Here's what they wrote in the README-
+file:
+
+"One thing that takes unnecessary huge amounts of time when creating games is
+ usually the graphics. That applies to  this case also, and since time is one
+ of the things we  don't have in unlimited  supply, we would be very grateful
+ if you  (yes, Y.O.U) helped us a bit.
+ If you think  you can draw  reasonably nice  trees and other objects  by the
+ road,  or raytrace  them, then please  send them to my E-mail address and we
+ will see if  they will  suite the game. If  you draw something please use at
+ least  65536  colours, preferrably  the .F16, .TIF or .TGA  formats (if  TGA
+ please use 24bit uncompressed). Try to keep the objects in the same scale. I
+ mean, so that  there won't be a tree that's smaller than the road signs, for
+ example. The curve  signs are 4ox4o  when they are closest to the car, which
+ is about  half the width  and height  of the car. You  only have to draw one
+ picture of any one object (of course the biggest one), we'll scale them down
+ later. Another thing to  keep in mind is not to draw too long shadows on the
+ objects. The shadow  should be  right below the  object, and not stretch too
+ much in any direction. To more clearly  see what I mean study the objects in
+ the original  Lotus III, for  example. We  also happily  accept .3DS or .3D2
+ files (at  least  2ooo faces) of  cars, so  that we can  raytrace  them. All
+ contributors will be listed in the credits in contributing order."
+
+So if you want  to paint or  raytrace something  for this  game-project, just
+write to one of the following adresses:
+
+                           Henrik and Torbj”rn Gilda
+                                 Prinsgatan 3c
+                                 541 31 Sk”vde
+                                    Sweden
+
+                           E-mail: hencox@hotmail.com
+            Homepage: www.update.uu.se/~yomat/hencox/welcome.html
+      (Pease note that the e-mail address on those pages is not correct)
+
+
+Unfortunately  LOTUS vo.6 is a bit buggy (or at  least the racing-time is far
+too short), so we  were not  able to  test it  in areal  racing-mode. We even
+checked it on a  VGA-monitor for  several times, but didn't succeed to get it
+working fine. Nevertheless, LOTUS  looks really  promising and we are anxious
+waiting to check out new preview-versions!
+-------------------------------------------------- 25-o1-98 - mOd of .tSCc. -
+
+UPDATE:
+
+On 6th of  february 1997  another debugged preview of this game was released.
+It is V0.71 and from this version on called "REEKING RUBBER".
+NATURE removed the nice scanned background picture (which I liked most in the
+old  version  because  it gave  a good  atmosphere!) and put some not so cool
+looking handdrawn mountains to this place.
+But the most important point is that you can drive a track with your car now.
+The car is  quite good to control and the track already showed a lot of power
+the  game-engine has. There  were already  hills and valleys, checkpoints and
+opponents. Even  if there are  a lot of things to  do (e.g. replace that ugly
+car by  a good handdrawn  one, making  some  white lines  to the  motorway, a
+shadow under the car  and motor-noises) it  can already be said that "REEKING
+RUBBER" will be the best car-racing game for the Falcon...
+
+        Leech this version from: www.algonet.se/~monalisa/
+
+-----------------------------------------------------------------------------

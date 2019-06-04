@@ -1,0 +1,277 @@
+06601030305800
+1
+2#
+F0110030
+9[........................................................]001
+€
+ˆColecoVision Specs€
+
+             Resolution: 256 x 192
+                    CPU: Z-80A
+                   Bits: 8
+                  Speed: 3.58 MHz
+                    RAM: 16K
+Video Display Processor: Texas Instruments TMS9918A/TMS9928A
+                                           (Same as TI 99/4A)
+                Sprites: 32 multi-color
+                 Colors: 16 (4 per sprite)
+                  Sound: 4 channel monowith squarewave and white noise.
+          Cartridge ROM: 16K/32K
+
+What really distinguished the ColecoVision from other systems of the era
+was its 32 sprite capability.  It made it easier to design sprite
+intensive games like Slither.
+
+Scrolling on the Coleco was sort of chunky because they did not have
+specialhardware for scrolling like the Atari units did - but some games
+(notablyJungle Hunt and Defender) _do_ manage to scroll well, so there
+was asoftware workaround of some kind.
+
+All Coleco cartridges, and many third party titles, incorporated a
+patience-testing twelve second delay before the game select screen
+showedup. Before ColecoVision reached the marketplace, Coleco invested
+heavily in advertising for the system, building up significant demand.
+Theproblem was software support.  Few programmers knew the Coleco
+Vision'squirky assembly language, and there wasn't time to train more.
+So theengineers at Coleco designed an emulator that allowed progammers
+to codein a far more common and well known language, Pascal.  Coleco
+then hiredprogrammers familiar with Pascal to design software for the
+Colecovision,and thus wereable to provide software to meet the demand.
+The onlyproblem with the scheme was the twelve second delay the
+emulator causedwhile starting up.  Clearly not every company to put out
+cartridges forthe system used thisemulator, though, since cartridges
+put out by ParkerBrothers, Activision, Micro Fun, and others do not
+exhibit thecharacteristic delay.  - JC, 08, 10
+
+
+ˆHardware List€
+
+Key:
+
+Manufacturer -
+        AM) Amiga
+        CB) CBS Electronics
+        CE) Championship Electronics
+        CO) Coleco
+        HS) High Score
+        PP) Personal Peripherals
+        PS) Pusher Sales
+        SV) Spectravideo
+€        TG) Telegames
+        WI) Wico
+
+ˆHardware known to exist€
+
+Name                                   Manuf.   Number  Comes With...
+========================================================================
+Champ Adapter                              CE   CA-340
+CBS ColecoVision                           CB           Donkey Kong
+ColecoVision                               CO           Donkey Kong
+Co-Stickler                                PS
+Expansion Module #1 (2600 Adapter)         CO   2405
+Expansion Module #1 Adapter                CO
+Expansion Module #2 (Driving Controller)   CO   2413    Turbo
+Expansion Module #3 (Adam Computer)        CO           Buck Rogers
+Grabber Balls                              HS
+Joystick, ColecoVision                     WI
+Perma Power Battery Eliminator/AC Adapter  CO   2298
+Personal Arcade                            TG           Meteoric Shower
+Power Stick                                AM
+Quickshot III Deluxe                       SV
+Roller Controller                          CO   2492    Slither
+Super Action Controllers                   CO   2491    SABaseball
+Super Sketch Pad                           PP           Sketch Master
+
+
+ˆHardware believed -not- to exist€
+
+Expansion Module #3 (Super Game Module) by Coleco.
+
+With 30K RAM and 128K "microwafers" shaped like miniature diskettes.The
+games were to have intermissions, high-score lists, and extralevels. It
+was to be packaged with Super Donkey Kong, and other titles mentioned
+were Super Buck Rogers and Super Gorf.  It could have been an excellent
+addition to the ColecoVision system allowing you to play your old carts
+and the new Super Games, but Coleco decided to turn it into the ADAM
+computer. - JC
+
+The Super Game module was supposedly the Coleco optical disk drive.  It
+used a magento-optical format called CED.  In an interview with Ralph
+Baer, who worked on this system, he said it was really zippy and in some
+respects better than CDROM. - 11
+
+C.E.D. stands for Capacitance Electronic Disk system, and was pioneered
+by RCA.  RCA used this technology in all of there CED video disk
+players,which competed with the Laserdisc format until 1985 when RCA
+discontinuedall of its players. Coleco chose the CED format because RCA
+could createa computer controllable random access machine that was very
+affordable.The Coleco CED system would have come with two major
+components: the Coleco"controller" Module (#3) that plugs into the
+front of the system, andthe RCA/COLECO CED player that connected to the
+Module and the T.V. set.Reportedly the price would be around $395-$495
+for a complete set-up.Interestingly, the Coleco CED system would still
+play all of RCA'smovie and music video disks, which was a big selling
+€point for RCA.So you would have a Video Quality arcade system, and
+movie player - allin one.
+
+From Video Games and Computer Entertainment, June 1991:
+
+'Talk of the future reminds Baer of the aborted, ahead-of-its-time 
+project he launched in 1982.  The ideal interface, the Colecovision 
+video game console and an RCA CED player.  "Things advanced to the 
+point that RCA actually made a few CED peripherals.  Then along came the
+ADAM computer and ended it all.  What I'd like to see is not going to
+happen."  He'd like to see CED revived, instead of the industry going to
+CD.  He worries that CD will fail to deliver the full-motion video that
+people expect.' - 12
+
+ColecoVision (THE ORIGINAL VERSION) by Coleco.
+
+Remember seeing the first "glimpses" of the ColecoVision system in
+Electronic Games magazine?  The first pictures of the system showeda
+much more attractive looking system than what we got as a finalproduct.
+The system itself had a white faceplate where the ColecoVisionlogo
+appears now and the controllers were very different.  They had blueside
+buttons, orange pound and star keys on the keypad, and the finger
+rollersthat were later introduced on the Super Controllers.
+
+The finger rollers, which were to have been located between the keypad
+and joystick, were supposed to be available for use as either speed
+controllers, or as a paddle controller.  They were dropped at the last
+minute, though if you open up a controller you can see the schematic for
+it on the circuit board. - 07
+
+Intellivision Adapter by Coleco.
+
+Coleco had plans for an adapter that would play Intellivision
+cartridges.Supposedly there are several working prototypes of this
+adapter that wereshown at electronic shows. If Coleco would have only
+gone through withproduction, the ColecoVision would have been able to
+play Intellivision,2600, and ColecoVision cartridges! - JC
+
+Modem by AT&T/Coleco.
+
+Not to be confused with the ADAM modem, which does exist.
+
+An article in Newsweek, September 19, 1983, on page 69 announced the
+following:
+
+'American Telephone and Telegraph Co. and Donkey Kong?  An unlikely
+combination, perhaps, but one that became a reality last week when the
+venerable communications giant hooked up with Coleco Industries, the
+videogame maker, in a join effort to make entertainment software
+available by telephone to 25 million owners of video games and home
+computers.'
+
+'Under the plan, AT&T and Coleco will develop a "modem", an electronic
+device that will connect a home computer or video game by telephone to
+€a central data base.  Coleco will supply the software programs, suchas
+Donkey Kong or two of its other popular video games, Smurf andZaxxon.
+The service will be offered sometime next year for about $20a month;
+the modem is expected to cost $100.' - 13
+
+Sensory Grip Controller by Coleco.
+
+The Super Action Controllers were supposed to have a sensory feature,so
+that when (for example) Rocky threw a punch in Super Action Boxing,you
+would feel it in the handle. - 13
+
+
+ˆUsingAtariControlerstiththeColecoVision€
+
+Atari Touch Pad / Children's Controller / Star Raiders Controller -
+
+    The following buttons and/or combinations of buttons correspond to
+    various inputs on the ColecoVision:
+
+    DESIRED      PRESS THIS ON 
+    COLECO KEY   ATARI TOUCH PAD 
+    -----------------------------------------------
+      1          * position     
+      2          7 position
+      3          1 + * + 7.  The 7 may not be necessary. 
+      4          1 + 4 + 7 + *.
+      5          4 + 7. 
+      6          1
+      7
+      8
+      9
+      *          4 + *
+      0          1 + 4
+      #          1 + 7
+    Left button  
+    Right button 1 + 3, or 4 + 6, or 7 + 9, or * + #. - 20
+ 
+
+ˆOtherHardwareInfo€
+
+CBS ColecoVision -
+
+Looks and operates just like my 'standard' ColecoVisions, but the
+metallic faceplates are different.  On top, it says "1 / 0" instead of
+"Off / On", and the front plate reads:
+
+________________________________________________________________________
+CBS  Coleco   Video Game/Home Computer System     [expansion slot]   CBS
+     Vision                                                      
+Electronics
+________________________________________________________________________
+
+CBS Electronics bought out the Coleco rights when Coleco bit the bullet.
+They marketed mostly in Europe. You can find most if not all of the
+€Colecogames with a CBS label. They are all or mostly all PAL games.
+However,since the Colecovision doesn't care, it doesn't matter. Plug
+them in andthey play like NTSC! - 20, 22
+
+
+Champ Adapter -
+
+A near exact duplicate of the Coleco Keypad, minus the upper half that
+contains the joystick.  Instead it has a 9-pin slot so you can plug
+in your favorite joystick and still have use of the keypad.  It also
+can double as a joystick extension cable since the Champ Adapter cable
+is 6' long. - JC
+
+
+Co-Stickler -
+
+Plastic "snap" on joysticks for the standard ColecoVision 
+controllers. - JH
+
+
+Expansion Module #1 -
+    
+The following Atari 2600 cartridges are incompatible with the 2600 
+Adapter:
+
+Texas Chainsaw Massacre - JH
+All Tigervision titles - 19 (but Miner 2049'er works - JH)
+All Supercharger games - 19
+
+
+Expansion Module #1 Adapter -
+
+This device plugs into Expansion Module #1 (2600 Adapter) to allow
+some Atari 2600 cartridges which have compatibility problems to be
+played.  Supposedly it was only sent through the mail to those
+customers who called Coleco with complaints of 2600 cartridge
+problems. - JC
+
+
+Grabber Balls -
+
+They're red balls of a stick that snap on the ColecoVision controller,
+making it more arcade-style.  Work *fantastic* when locked into the
+Roller Controller, and played with Robotron on the 7800. - JC
+
+
+Perma Power Battery Eliminator/AC Adapter -
+
+Replaces the batteries in Expansion Module #2 (Driving Controller) - JC
+
+
+Roller Controller -
+
+To use the Roller Controller on a game which doesn't require its use
+€(such as Centipede or Omega Rage), leave the Joystick/Roller switch
+in the Joystick position. - JH

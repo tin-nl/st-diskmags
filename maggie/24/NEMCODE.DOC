@@ -1,0 +1,294 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0010
+€
+------------------------------------------------------------------------
+NEMESISCODING
+BYMRPINKOFRESERVOIRGODS
+------------------------------------------------------------------------
+ThefirstthingyouwilldowhenyouhaveyourNemesisfittedis
+fireupyourfavouritegamesanddemosandthenbouncearoundwithglee
+astheyrunatamuchnippierpace.Youwillthenassemblesomeof
+yournon-optimisedroutinesandchucklemanicallyastheynowrunina
+frame.Youwillthendancearoundyourdamsontreewithacrazed
+expressiononyourfacesingingthehitsofAlanisMorisetteina
+falsettotone.
+
+Butthen-disaster!Someofyourvideoroutinesnowseemtosend
+thescreenhaywire!Thejoystickportseemstohavegoneloopy!
+WhyaretherefourdifferentprogramsforcontrollingtheNemesis?
+HowinthewideworldofsportdoIprogramtheNemesis?
+
+FearnotasyourintrepidMaggiereportersareheretouncoverthe
+darksecretsoftheNemesis.
+
+ItbeganonarainynightinScotland.DougLittlewassittingin
+apileofthistlesplayinghisbagpipes(Maggiereaderswillknow
+thatthisiswhatscottishpeopledo)whenaloudcrackof
+thunderinterruptedhistrainofthought.Anightmarishapparition
+appearedbeforehim."IamtheDevil!"heroared,"andifyoutrade
+meyousoulIwillbewillingtohelpyoumaketheFalconsofthe
+worldrunabitfaster!".Dougknewagooddealwhenheheardone.
+"AlrightthenMrEncill."hesaidtothegingerbearededone,pulling
+outasmallrectangularPCBfromunderhiskilt.Thefaustianpactwas
+signed.
+
+ThefirstthingtonoteaboutNemesisisthatthereisno
+hardwaremethodavailablefordetectingthepresenceofnemesis.
+Insteadthecookiejarmustbeexaminedtoseeifnemesisisinstalled.
+Nemesisownersshouldensurethattheyhavetheprogram'NEMESIS.PRG'
+intheirautofolder.Allthisdoesisaddanentrytothecookie
+€jar.
+
+Formoreinformationaboutthecookiejar,refertothearticle
+"THECOOKIEREPORT",elsewhereinthisissueofmaggie.
+
+ThecookiethatNEMESIS.PRGplacesinthejariscalled'Nspd'(
+longword$4e737064.Theinformationforthiscookiecancontainone
+ofthreedifferentvalues:
+
+0NemesisOff
+1NemesisLo
+2NemesisHi
+
+Youshouldreadthenemesisvalueatthestartofyourprogramand
+ensureyouresetittothisvaluewhenyouexit.Whenmodifyingthe
+nemesisspeed,itisgoodprogrammingpracticetoalsoalterthe
+nemesiscookietoreflectthenewstateofthehardware.
+
+Thenemesishardwireishard-wiredintothekeyboardchip,andyou
+cancontrolitbysendingvaluetotheACIA.Allaccesstothe
+Nemesisismadethroughtwohardwareregister:
+$fffffc00
+$fffffc04
+
+Thesearethekeyboardcontrolregisterandmidicontrolregister.As
+youcanimagine,programsthatdolotsoftrickythingswiththese
+registerscanendupaccidentlychangingthenemesisconfiguration
+sobecarefuloutthere!
+
+ThenemesisswitchingisdonebyfirstwritingtwovaluestoMIDI
+control,thentwovaluestokeyboardcontrol.Athreeisfirstwritten
+toeachregister,thentheappropriatedatavalueiswritten.
+
+HereisaquickexampletosetNemesisintoLOmode:
+move.b#$3,$fffffc04
+move.b#-$6b,$fffffc04
+move.b#$3,$fffffc00
+€move.b#-$2a,$ffffc00
+etvoila!WearenowcruisinginNemLOmode!
+Hereisatableofvaluesfornemesiscontrol:
+---------------------------------
+|MODE|$FFFFFC04|$FFFFFC00|
+---------------------------------
+|Off|-$6b|-$6a|
+|Lo|-$6b|-$2a|
+|Hi|-$2b|-$2a|
+---------------------------------
+
+UnfortunatelytheFalcon'sBlitterchipbecomesunstableat
+speedsofover18mhz,sowhenswitchingNemesisonitisnecessaryto
+switchtheblitterbackdownto8mhzmode(soiteffectivelybecomes
+10mhzonNemesisLOand12MhzonNemesisHI).Ifyouswitchthe
+Nemesisoff,remembertoswitchtheblitterbackinto16mhzmode.
+
+Toturnblitterinto8mhzmode:
+bclr.b#2,$ffff8007
+Toswitchbackinto16mhzmode:
+bset.b#2,$ffff8007
+Unsurprisingly,theNemesisisn'tatitsfastestwhenthe68030isin
+8mhzmode,soensurethe030isatfullspeed!
+Toswitchthe68030into16mhzmode:
+bset.b#0,$ffff8007
+
+ThemainproblemyouwillhavewithNemesisistheold'screen-
+goes-bonkers'problem.Thisisoftenremediedbyswitchingthathelpful
+newswitchonthesideofyourfalconorrunningtheexcellentRAGE!
+patch.
+
+Butwhatisattherootofallthisscreenbasedwibbling?Well,
+nemesisdoesn'tlikecertaindot-clockvaluesonRGBscreenmodes.
+
+Er,pardon?
+
+Well,putsimply,ifyouareinanRGBresolutionwithNemesisrunning
+€youmustensurethatbit#2of$ffff82C1issetatalltimes.So
+you'regoingtohavetomakesomechangestoyourvideolibraryto
+ensureyourvideoroutinessetthisbit!
+
+EssentiallywhatpatcheslikeNEM_RGBandRAGE!doisensurethat
+thisbitisseteverytimethevideomodeischanged.
+
+Butitsnotquiteassimpleasthat-nonNemesismachineshatehaving
+bit2of$ffff82C1set!SodoacheckforNemesis(viathecookie
+jar)andRGB(viathehardwareregisterorXbioscall)beforesetting
+thisbit!
+
+AnotherproblemwithNemesisisduetothefactitlinksinwiththe
+keyboardchip.Itcanaffectyourjoystickscausingjoystickroutines
+toreceivegarbleddata.Thisonlyhappensonasmallminorityof
+machines,butminefallsintothatunhappybunch.
+
+Whathappensisthatanyroutinethatreadsthejoystickswillfind
+thattheupbitisalwaysset.Inoticedthisinthemainmenusof
+SkyFallandDoubleBobble2000-aftertheNemesisinstallationthe
+cursorjustdriftedtothetopofthescreen.
+
+Thebestwaytogetroundthisistoensurethatessentialpartsof
+games(suchasmenus)arenotjoystickcontrolled!Makejoysticks
+anoptionalextrathathavetobephysicallyturnedonelsewhereinthe
+menusystem.
+
+Youcouldincludeasmallroutineatthestartofyourprogramthat
+continuespollsthejoysticksforacoupleofseconds.Ifitreadsa
+continoussignalinonedirectionitknowsthejoystickhavegone
+bonkersandyoushouldn'tusethem.
+
+UnfortuntelyI'vefoundnowayroundmyJoystickproblemapart
+fromwritingpatchestodisabletheminthegamesIlike.Any
+suggestionswouldbewelcomed!
+
+Herefollowsanextractfrommyassemblylibrary.
+€
+Itincludesroutinestoreadthenemesiscookie,setthenemesis
+cookie,setthenemesismodeandensurevideochipdoesn'tdoa'ronald
+reagan'.
+
+Thecodeisprettyselfexplanatory-althoughnotallthecalled
+routinesarehere(theyarefunctionsfromotherpartsofmylibrary
+).
+
+rlvc_wait_vblsimplywaitsfortheverticalblank.
+rlvc_install_vbl_routineplacesasubroutineintomyvblqueue.
+rlsc_monitor_typeisavariablecontainingthemonitortype(2forVGA).
+
+ImustadmitIcheatabit-insteadofmodifyingallmyvideolibrary,
+IsimplystickaroutineontheVBLtoensurethatthedot-clock
+alwayshasthewritesetting.Thisroutineisonlyinstalledifthe
+machineisinRGBmodewithNemesisinstalled.
+
+AtthestartofmyprogramsIcallrlnem_nemesis_constructor.
+
+WhenI'mreadytogoReservoir-Gods-Bye-ByesIcall
+rlnem_nemesis_deconstructor.
+
+rlnem_nemesis_constructor
+bsrrlnem_read_nemesis_cookie
+move.ld0,rlnem_old_nemesis_mode
+tst.ld0
+bmi.no_nem
+cmp.w#2,rlsc_monitor_type(a0)
+beq.s.no_nem
+learlnem_rgb_vbl,a0
+jsrrlvc_install_vbl_routine
+.no_nemrts
+rlnem_nemesis_deconstructor
+move.lrlnem_old_nemesis_mode,d0
+bsrrlnem_set_nemesis_mode
+learlnem_rgb_vbl,a0
+€jsrrlvc_remove_vbl_routine
+rts
+rlnem_set_nemesis_mode
+move.ld0,-(a7)
+and.w#3,d0
+jsr([rlnem_nemesis_routs,d0.w*4])
+move.l(a7)+,d0
+rts
+rlnem_nemesis_routs
+dc.lrlnem_nemesis_off
+dc.lrlnem_nemesis_lo
+dc.lrlnem_nemesis_hi
+dc.lrlnem_nemesis_off
+rlnem_nemesis_off:
+movem.la0,-(a7)
+bsrrlnem_set_nemesis_rgb
+jsrrlvc_wait_vbl
+movea.w#$fc04,a0
+move.b#3,(a0)
+move.b#-$6b,(a0)
+subq.w#4,a0
+move.b#3,(a0)
+move.b#-$6a,(a0)
+bset#0,$ffff8007.w;6803016mhz
+bset#2,$ffff8007.w;blitter16mhz
+move.l(a7)+,a0
+rts
+rlnem_nemesis_lo:
+movem.la0,-(a7)
+bsrrlnem_set_nemesis_rgb
+jsrrlvc_wait_vbl
+movea.w#$fc04,a0
+move.b#3,(a0)
+move.b#-$6b,(a0)
+subq.w#4,a0
+move.b#3,(a0)
+move.b#-$2a,(a0)
+€bset.b#0,$ffff8007.w;6803016mhz
+bclr.b#2,$ffff8007.w;blitter8mhz
+move.l(a7)+,a0
+rts
+rlnem_nemesis_hi:
+movem.la0,-(a7)
+bsrrlnem_set_nemesis_rgb
+jsrrlvc_wait_vbl
+movea.w#$fc04,a0
+move.b#3,(a0)
+move.b#-$2b,(a0)
+subq.w#4,a0
+move.b#3,(a0)
+move.b#-$2a,(a0)
+bclr.b#2,$ffff8007.w;blitter8mhz
+move.l(a7)+,a0
+rts
+rlnem_read_nemesis_cookie:
+movem.ld1/a0,-(a7)
+movea.l$5a0.w,a0
+move.l#$4e737064,d0
+bra.s.first
+.checkcmp.ld0,d1
+beq.s.found
+addq.w#8,a0
+.firstmove.l(a0),d1
+bne.s.check
+moveq#-1,d0
+movem.l(a7)+,a0/d1
+rts
+.foundmove.l4(a0),d0
+movem.l(a7)+,a0/d1
+rts
+rlnem_write_nemesis_cookie:
+movem.ld0-d2/a0,-(a7)
+movea.l$5a0.w,a0
+move.l#$4e737064,d2
+€bra.s.first
+.checkcmp.ld2,d1
+beq.s.found
+addq.w#8,a0
+.firstmove.l(a0),d1
+bne.s.check
+movem.l(a7)+,d0-d2/a0
+rts
+.foundmove.ld0,4(a0)
+movem.l(a7)+,d0-d2/a0
+rts
+rlnem_set_nemesis_rgb
+move.la0,-(a7)
+bsrrlnem_read_nemesis_cookie
+bne.vga
+learlsc_screen_space,a0
+cmp.w#2,rlsc_monitor_type(a0)
+beq.s.vga
+btst.b#2,$ffff82c1.w
+bne.s.vga
+bset.b#2,$ffff82c1.w
+.vgamove.l(a7)+,a0
+rts
+rlnem_rgb_vbl:
+btst.b#2,$ffff82c1.w
+bne.s.vga
+bset.b#2,$ffff82c1.w
+.vgarts
+rlnem_old_nemesis_mode:dc.l0
+

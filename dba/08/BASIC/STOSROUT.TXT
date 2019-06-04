@@ -1,0 +1,25 @@
+NO BORDERS
+
+Do you also hate those fucking borders?  Well, with this little routine
+you can remove the borders in STOS basic.  First the source, and after
+that a little explanation for those who wants to.
+
+10  wait vbl : for T= 0 to 242 : next T : poke $FF820A,0 :
+    poke $FF820A,2 : if peek ($FFFCo2) <> 57 then goto 10
+
+
+That's all!!! Now a little explanation:
+
+1  Wait until the last scanline on the screen;
+2  change Herz;
+3  wait a bit;
+4  change back again.
+
+Note: this routine needs a lot of processor time, so don't try to make
+      a big demoscreen with modules etc. on the STf with this routine !!
+      If you made something nice with this or another source in one of
+      the STOS corners, send it to D.B.A. magazine and maybe other people
+      can learn of it.
+
+                 -----  Fox of Micro Mania  -----
+

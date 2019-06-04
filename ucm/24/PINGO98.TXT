@@ -1,0 +1,112 @@
+ó--------------------------------------------------------------------------------
+                       "PINGO '98" by PICK'N'PAY COMPUTERS
+ó--------------------------------------------------------------------------------
+
+system .... Falcon, 4 MB RAM, RGB, VGA
+
+credits ... code - kod of germs
+            grfx - kod of germs
+            msx  - arpo of charon
+
+release ... o3/98
+
+url........ http://mitglied.lycos.de/mipran/atari_tos.html
+
+ó--------------------------------------------------------------------------------
+
+Here comes another quite unknown release by KOD of GERMS, or better ARGE MIPRAN,
+what  ever this should  mean... we also can  say PICK'N'PAY COMPUTERS. I have no
+clue what of those 3 is right as all are mentioned, splitted image, eh? :)
+
+ñ"PINGO'98"ð is obviously  another conversion  of a ñ8bit gameð, originally known as
+ñ"Pengo"ð or ñ"Pingo"ð. The aim  of the game is quite simple. Your running around as
+penguin in a playfield and you have to kill the baddies that are running around.
+To kill them you have different possibilities, so  at the beginning of the game,
+the baddies are still frozen in an ice block that is displayed as brown blinking
+one. If you  run fast enough over to  it and pick  on it with your beak, the ice
+block and the enemy are destroyed. You also can pick on one of the blocks and it
+will slide untill it will hit the enemy or another block or the edge of the play
+field. If an enemy is hit, it is  destroyed or captured in the block, so you can
+pick the block and destroy him.
+
+Another possibility is  to pick onto  the edge of the  playfield. If an enemy is
+running along the same edge, it will be frozen for short  time and you just have
+to run over it. All other contact with the enemies has to be avoided as òyou will
+òalways die if you get in touch with them.
+
+So the aim of the game is clear, òkill the enemies to reach the next stage...ð And
+since this is already all, let's take a closer look onto the game itself.
+
+The game starts with a colourful picture  showing an icy  landscape and also the
+menu for the two different game modes. While this picture is displayed, a module
+is replayed but I have  heard it before  somewhere. As the author  is stating in
+the readme file he has taken both, the picture and the module, from some CD ROM.
+
+{*i PINGO1.PI1 m 0 20 0 200}
+
+ñThe title screen... so far so good (...)
+
+òThis version is an unfinished oneð and maybe we  will never get hold of the final
+one as this was  already finished  in March 1998, nearly 5 years ago...
+
+The problem is now that  this version  just features an òone-to-one conversionð of
+the 8bit version, arf, and not the  announced truecolor version, even if I think
+I saw much more colourfull screenshots on the homepage of the author but since I
+can't verify this anymore I can't say more about it here... too bad.
+
+Ok, one-to-one 8bit conversion means that the grafix are converted straight away
+from this version and so òthe playfield looks awfully colourless...ð After all the
+playfield  uses just  ò6 coloursð while the  game runs in  truecolour  mode as the
+author states  in the readme  file... arg! The sprites are quite big but òawfully
+bad animatedð with maybe 2 or 3 animation steps. Furthermore the sprite collision
+detection  seems not to work  properly as  well as  it seems as  the sprites are
+masked in some strange way. òSo for the eyes the game is a real pain...
+
+{*i PINGO2.PI1 m 0 20 0 200}
+
+ñHow to waste truecolor grafix ability...
+
+There are no sound fx included, but you can listen to an original module done by
+the guy mentioned in the info part  above, but that is of  a òquite mediocreð, not
+to say, òbad qualityð, òboring  style and quite oldschoolishð, but still better than
+nothing at all.
+
+You can control your penguin with  the joystick, òthat works quite okð since there
+isn't much you can do wrong here.
+
+On top of the  screen the number of lifes left is displayed as well your current
+score... It seems as no highscore or  something like  that is included as if you
+loose all your lifes you start again from the first level while  your score will
+be deleted... this point isn't a real motivation pusher as well.
+
+So there is nothing left to write about here... as only the...
+
+ñ...final words... PINGO'98 is called to be a conversion of a 8bit game and looks
+ñ                  like it, converted one to one. To be honest, I still don't see
+ñ                  the point to do such stuff on a machine that offers truecolour
+ñ                  mode and enough power for better resolutions  and more sprites
+ñ                  on the screen that can be much better animated as well.
+ñ                  At least the sound does its  job, if we don't take a look onto
+ñ                  the fact that fx are completely missing and the quality of the
+ñ                  used modules is only mediocre.
+ñ                  The controls are doing  their job but in the  end this doesn't
+ñ                  helps to avoid it to kick that game into the ton. A truecolour
+ñ                  version surely would have been interesting and also the use of
+ñ                  motivation risers as save able highscore and  maybe some extra
+ñ                  gimmicks... but there isn't anything on board of those. So you
+ñ                  missed much so far...
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals .....ð  1o % ñ- 6 colours on the play screen... hicolour intro picture
+ñaudio .......ð  5o % ñ- 2 different module soundtracks of mediocre quality, no fx
+ñcontrols ....ð  9o % ñ- controlled via joystick, does it's job good
+ñidea ........ð  5o % ñ- so far I can't remember another conversion of this game
+ñmotivation ..ð  1o % ñ- the awfully visuals kicking down any motivation
+
+ó___ðoveralló_____ð42ó_ð%ó_____________________________________________________________
+
+ñWith a few further works it would be possible to make something out of this game
+ñconcept, but in the current version you can forget it...
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_ò11/2k2ó_

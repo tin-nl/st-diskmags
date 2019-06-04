@@ -1,0 +1,96 @@
+{*f1SENTRY PACKER{*f0
+
+   ñ------------------------ A short review ------------------------ð
+
+Reviewing a packer, hmm.. how is it done? I mean, either is does what you
+ask of it or not right? Well, almost..  Most files (esp. demos/intros)
+needs to be packed, atleast to make sure a fast download from the
+internet, which then leads to shorter time spent online and you save
+some money :)
+
+Demos like 4k's and 96k's are very depending on the packer, as it sometimes
+is very close to the given byte-limit. 4k intro are preferably programmed to
+be relocateable to get rid of some extra code in the program to do that.
+That makes them very dependent on the packer.
+
+The Sentry Packer looks exactly like the previous 2.2 version, even the
+date of release is the same, 1st August, 1995. The only difference in the
+interface seems to be the version number. However, the difference between
+2.2 and 2.3 are huge!
+
+I only had time to test to files, one was a 479kb big demoscreen by me, the
+other one was a 410kb 4channel module.
+
+The author (Frans van Nispen) states in the included textfile that 2.3
+includes ADPCM for samples and modules, otherwise it seems to be the same
+algorithm as 2.2. Frans also writes that the new improved algorithm for
+samples and modules should reduce the size of a 4 channel mod to about
+30-45%.
+
+As you can see from the diagram below it doesnt differ anything between 2.2
+and 2.3, as comparison I included results from Atomik 3.6 and ICE-pack 2.40
+The new routines for samplepacking is VERY improved, the new 2.3 version
+is about 60% size compared to version 2.2!!
+
+
+479kb [application]
+                       Sentry   Sentry   Atomik ICE-pack
+                          2.2      2.3      3.6     2.40
+---------------------------------------------------------
+Time                |    24s |    24s |   6m6s |  8m36s |
+                    |        |        |        |        |
+Size                |   41kb |   41kb |   31kb |   38kb |
+
+The difference in speed is enormous when you compare sentry with some
+of the other popular packers, Sentry is lightyears ahead! But, we should
+remember that out of these packers, Sentry is the newest one and ICE-pack
+(my own personal favourite) is from 1991, the Atomik version I had si from
+1993, but this doesnt change the fact that Sentry is by far the fastest.
+When it comes to applications, the speed isn't really the main thing, the
+size of the compressed file is more important, and as Atomik is the best
+I'd choose that one before the others, even if you have to wait about 15
+times as long :)
+
+
+
+410kb [std. 4channel module]
+                       Sentry   Sentry   Atomik ICE-pack
+                          2.2      2.3      3.6     2.40
+---------------------------------------------------------
+Time                |  3m19s |  1m58s |  2m45s |  1m10s |
+                    |        |        |        |        |
+Size                |  304kb |  184kb |  307kb |  325kb |
+
+Here we can see that sentry isn't the fastest one, but it sure has the
+best compress ratio! There isn't a very big difference between Sentry2.2,
+Atomik3.6 and ICE-pack 2.40, they all end up a little bit above 300kb,
+out of 410kb. A pretty good number you say, nope.. not compared to
+Sentry2.3! And it is also very fast!
+
+Conclusions:
+------------
+The only improvments from version 2.2 seems to be the added routines for
+compressing samples, but what a difference!
+Compared to the other packers Sentry still doesn't compress executeable
+files as good as Atomik or ICE-packer but it sure does it WAY faster.
+It does however a great job to samples and modules.
+For exectuteable file I will still use Atomik or ICE-packer, as they
+compress better, processing modfiles is another thing though, here I will
+most likely start using Sentry.
+
+
+Disclaimer:
+-----------
+This review was done in a hurry, I didnt have no time to compress smaller
+exec. files like 4k's and so, this is where it really shows if a packer is
+worth using for demo-sceners.
+The different packers gives you different default values for settings.
+In this test I have used the suggestions given by the program (default),
+that's why it might differ a bit if you "optimize" the settings for each
+file to compress.
+
+I have not rated this program as I really couldn't find a way to rate a
+packer :)
+
+regards,
+/Fredrik Egeberg (deez of Mind-design)

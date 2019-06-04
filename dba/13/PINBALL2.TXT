@@ -1,0 +1,180 @@
+PINBALL NO LIMIT2
+
+                           ----------------
+                              NO LIMIT 2    (VERSION 1.01  27.6.1994)
+                           ----------------
+                                                                     
+This one of the three pinball games we test this time. There are a lot 
+of these kind of games out for the Falcon so there must be something 
+to it after all. I personally think it is because of the fact that 
+there are several of pinball machines on the PC which most of the time 
+look and play great ( that is if you like these kind of games).
+
+So let's tell what we have here to play with...
+
+I tested No Limit 2 on a Falcon with an RGB monitor connected ( but 
+it also works with an VGA monitor on it !!!! Great because many 
+programmers do forget this option) and with several ACC installed
+(So no clean start...). The game starts with a kind of alert box with
+3 boxes in it saying in German: 
+  
+                REGISTRIERUNG   ( Same as register )
+                SPIELEN         ( Play the game )
+                ABBRUCH         ( Quit ) 
+
+I choose SPIELEN because I wanted to play this game. But before I was 
+able to play there was a title picture (looks like and 256 color picture
+to me) showed stating the name of the game and a piece of sampled music.
+Pressing the spacebar I got into the selection menu containing:
+
+             --------------------------------------
+             F1  Start game
+             F2  1 Player  ( up to 4 can play !!)
+             F3  Highscores
+             --------------------------------------
+             Falcon option
+             F4 Music On   (can also be turned off)
+             --------------------------------------
+             F9 Quit  (You can always try that one)
+
+After you have selected the number of players you must choose F1 and 
+of you go. But before you start you must know the Game logic:
+
+ *Bonus:      Hit the targets in the upper screen to multiply the bonus.
+              Use Shift-keys to move the lights.
+              
+ *Jackpot:    Six times you have to pass the left track to open the
+              jackpot.
+ 
+ *Targets:    After hitting a lot of targets you can enter the lock to
+              get additional events
+ 
+ *Extraball:  In special moments you have to pass the left track. The
+              blue arrows will be lightened. Do this three times and 
+              you will get the extraball.
+  
+Okay now you know what to do so lets start.The first thing you will see
+the is what you see below. These are screenshots of the view you get 
+(just a few colors disabled but there isn't much color anyway !!!)
+~PIN1.BLK~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~PIN2.BLK~
+
+
+
+
+
+
+
+                  This is the pinball machine in it's 
+                  full length. About 500 lines big in
+                  about 16 colors (well 16 color mode
+                  is chosen but not all 16 are really
+                  used as I discoverd).
+
+
+                  The Keys:
+ 
+                  *SHIFT keys to control the paddles 
+                  *ALTERNATE key to pull the plunger
+                  *SPACE for nudge ( could cause TILT )
+                  *ESCAPE to quit the game
+                  *P for pausing the game
+
+
+
+~PIN3.BLK~
+                  
+  
+  
+  
+  
+  
+  
+
+
+ 
+
+
+
+
+Okay the game itself. For one I like to play pinball, the real and 
+many of the computer versions. But this one, well it could be better. 
+Why ? The whole thing is a bit on the bouncing side, by that I mean it 
+almost looks as if the machine is shaking around the ball and not the 
+outer way around. As soon as the ball moves a litte up the whole 
+machine moves up. This makes the game very restless. Better would be to 
+wait to a certain point and than move the machine (just a tip like in 
+Starball). Further more there aren't that many objects to bounce 
+against or to get points. There should be more action and colors. But 
+don't fear, the future will bring more according to the programmers 
+like: 
+      - multiballs
+      - improved graphics
+      - reduction of the source-code using efficient packer
+      - score display with graphic effects
+      - ramps & different levels
+      - tracker sound
+      - 16bit sound with Falcon (using DSP 56001)
+      - use of new screen resolutions (Falcon)
+      - new features like magnets, multiballs
+      - ...
+
+      so not all hope is lost. No Limit II can be a good game but the 
+version isn't.  But this is the first version of No Limit II that runs
+on coloured STEs,TTs and Falcons. One Megabyte is required.
+
+ 
+Further ideas are welcomed!
+
+
+         Coding                     : Andreas Krober
+         Graphics and Sounds        : Harald Bender
+         Physics                    : Patrice Petong
+         Additional Code            : Patrice Petong, Harald Bender
+
+The quality of further versions and the speed of the publication will depend
+on users resonance. So please get registered and pay the registration fee.
+
+The product is SHAREWARE ! If you like it, please send 20 DM or 10 
+POUNDS (in european countries) or 30 DM or 15 US$ (in other countries)
+to the following address:
+
+
+                           Andreas Krober
+                           Trautenauerstr. 21
+                           44225 Dortmund
+                           Germany
+
+                      Mausnet: Andreas Krober @ DO
+
+
+This fee contains the authorized use of demo program and a free update
+which will be sent after the completion of the new version.Next versions
+will need a software-key. You will get this, too.
+ 
+Review done by Bonus Software
+

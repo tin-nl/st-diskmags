@@ -1,0 +1,187 @@
+                              o REALM OF DEPTH o
+
+                            [ A DEMO BY HYDROXID ]
+
+This review is a  bit  late.  Actually,  quite  a  lot  late  and  I must first
+apologise to all those nice  French  chaps  from  OH- who have been complaining
+about its non-appearance. Any later and we'd  start making ST Format look up to
+date.
+
+RoD (as it shall henceforth be known) arrived  on my doorstep almost a year ago
+during the middle of the Reservoir Gods 1995 convention. We loaded it up and it
+promptly  crashed.  Attempts  to  load  it  on  all  the  Falcons  present  had
+unpredictable effects - it seemed to  just  display a "DISK ERROR" graphic when
+there obviously wasn't a disk error. Still it  was nice to see that someone had
+gone to the trouble of drawing the logo.
+
+After a bit of hacking through the  code  we discovered the problem was that it
+needed memory. Humungous  amounts  of  memory  infact.  I  coded  a reset based
+autoloader for the specific purpose (see  the now legendary "God-Load", used by
+literally two people all around the  world).  If  you  want to run this demo, I
+strongly advise that you get hold of this program.
+
+Right, so the memory is free and your MShrinks stop grumbling, the demo can go.
+It begins, as is traditional, with a  logo. This an exceptionally nice rendered
+hyrdoxid logo displayed  in  high  resolution  (interlace).  This  stays on the
+screen for some time whilst  all  the  relevant  data  is loaded. It then waves
+goodbye with a smooth fadeout, the music kicks in and the demo begins.
+
+In case you were in any  doubt  of  the  origins  of this logo, the next screen
+informs you in the conventionally unsubtle  way. Yes, its the tricolour (that's
+the French Flag, Windows-95 users!). This is made  up of lots of dots and has a
+nice sinewave distortion effect on it.  This  wibbles about the screen shouting
+"We are French. Everyone else is bastards". Probably.
+
+A RoD logo scrolls on.  Some  bubbles  float  up  the screen, these distort and
+magnify the background. A similar effect can  be  seen at the end of EKO's "Are
+You Experienced" demo. The background picture  is  a little dark so this effect
+doesn't come out quite as  well  as  it  could.  Still,  I'm  a big advocate of
+bubbles in any form.  You  can  make  great  games  them,  for example (..snip!
+Blatant product placement removed. -Ed)
+
+Another logo informs us  that  this  is  a  new  production.  Which is a pretty
+pointless thing to say, as every production  is new when it is released, unless
+the programmers have some sort of time  travelling facility. You could say that
+this message is Tautological, which reminds  me of another game... (snip! Anti-
+puzzle-game-Ed). Besides, this production is no  longer new. It would have been
+cool if the demo checked the Falcon's clock, and after a certain date displayed
+"An Old Production" logo, and eventually  "An  Antique Production - Hugh Scully
+Take Note."
+
+We now have one of  the  highlights,  at  least  in  the  comedic sense. Yes, a
+picture of a muscular men wielding weapons  scrolls on.  He is also wearing the
+tightest trousers known to man.  Perhaps  they  are  de rigeur amongst the high
+society in gay Paris, but they really do bring a tear to the eye. No wonder the
+muscly bloke has a large grin on his face.
+
+An Intel Inside logo is now displayed. Just when you are starting to worry that
+your computer has transformed into a Pentium  and you are calculating the money
+you will have to spend "upgrading"  it  every  week,  a warning siren sound and
+someone starts taking pot shots  at  the  logo.  A  the gun shot sounds, bullet
+holes appear in the  logo  -  nicely  done.  Once  the  logo has taken critical
+damage, a "Motorola Inside" flashes on. Nicely done, our kid.
+
+Another  picture  appears,  this   one   informing   you   that  there  is  "No
+Mapping/Gouraud (Not Yet)". If all  demos  had  to  detail all the effects that
+weren't included then we spend more  time  reading lists than watching effects.
+Unless it is a Lazer demo of course, in which you age four years by the time it
+ends.
+
+So, here we are, eagerly anticipating the non-gouraud, non-mapping effects. You
+are hoping for some non-fire effects,  and  some non-star tunnel effects too as
+these have definitely become cliches amongst  the  demo scene. You will be both
+happy and disappointed.
+
+Another effect  that  makes  an  unwelcome  reappearance  is  the  old spinning
+bitplane circles. You know the one.  There  are  some circles that rotate about
+and when they overlap they create  a  new  colour.  Since  we last saw this old
+chum, he seems to have  aged  badly.  He  is  not  quite in the retirement home
+shouting "DRINK! GIRLS! ARSE", but he  is  well  on  his way. The thing is that
+this effect doesn't run in a frame all  the time. The arthritis must be playing
+up.
+
+We are now presented with a great  piece  of graphics drawn by Nitrik. A single
+polygon face spins and rotates  over,  eventually  expanding  to fill the whole
+screen and another good picture scrolls  in.  Our  old  pal, the circle (son of
+sine and cosine, a close relative of Pi) appears, but seems to be going through
+puberty as all sorts of unsightly body  hair have sprouted from him. The circle
+zooms in as the spikes around it do  a y axis rotation. Quite a straightforward
+effect, but nicely done, and quite original too.
+
+The next picture is probably the best in the  demo - it is a fantastic image of
+an underwater city.  It  looks  very  smart  indeed.  The  fading  out  is also
+exquisite.
+
+Remember the no-mapping/gouraud? Remember the non-committal to "no-startunnel"?
+Well this is why. Yes,  its  a  star-tunnel.  Perhaps  it  has gone so far past
+cliche that  they  are  being  ironic.  Somehow  I  think  not.  This  isn't  a
+particularly bad example of a star tunnel (or Dottus Maximus as they were known
+by the Roman civilisation that created them) nor is it a particularly good one.
+It is in a repetitive loop and you  don't  really feel like you are flying down
+it. Roll on the next effect.
+
+Here come the "greets",  the  section  of  any  demo  that  is most despised by
+magazine writers, so it can't be  that  bad.  Hydroxid  have put more effort in
+than most in this section. The greets rotate and spin down the screen, there is
+a spline with a bitplane trail  and  rastered slimer type thing. Thankfully you
+don't have to read all the  greetings  every  time  you watch the demo, you can
+simply press space to get to the next section.
+
+The next effect is one of the  best  in  the  demo.  It is a sort of jelly-dot-
+polygon (cue baffled silence). Let me  explain.  The  polygon edges are made of
+blue dots, but they are not  straight  line  -  they have some sort of sinewave
+distortion through them. They  leave  a  trail  of  polygon dot lines of lesser
+intensity. Very nice. The only thing that spoils this effect is the bugs in the
+dot drawer when the objects  reach  the  left  side  of  the screen (a clipping
+error?) were random dot lines seem  to  be  displayed. Otherwise full marks for
+this nice little effect.
+
+Some more conventional 3D shapes are  now  displayed.  Yes its the 3D cube, but
+this time its nice and big, although its size doesn't really compensate for the
+lack of colours. Yes, its just  flat-shaded,  but the faces are lightsourced. A
+3D triangle shape then appears, again the faces lightsourced. This isn't really
+cutting edge in these days of phong  shading and environment mapping, but its a
+start.
+
+We have another picture - this time it  is a Manga style image. Even though the
+picture is small, the screen is  set  into  interlace  mode - I suppose this is
+"design". Nice picture though.
+
+
+The next screen looks very nice -  but that's because it has been pre-rendered.
+An animation of texture mapped spaceship spins  round - obviously created in 3D
+studio. Anyone who remembers the superb "Overdose" demo by Aggression on the ST
+will have seen a similar screen. Still, it looks smart.
+
+We now have a new module as the end-part has descended on us. Here we have some
+slimers, some graphics in  the  background  and  some  scrolling one plane text
+giving us information. If you are sneaky you  can type in a code here to access
+the hidden screen. And no, I'm  not  telling  you  what  it  is, but it will be
+revealed in a future issue of maggie.  Lets  just  say it has been mentioned in
+this article!
+
+After the credits have finished, a blue sinewave distorting scroller scrolls up
+the screen giving you lots of  useful  information. This is effectively the end
+of the road if you don't know the code.
+
+The hidden screen is a real delight. It  is  a chance to wallow ear-deep in ST-
+based nostalgia. Yes, its a collection  of  top  tunes  from the cheery days of
+yamaha sound. And it is testament to the skills of those old musicians who made
+that ungainly lump of metal  sing  like  a nightingale (erm.. Over-The-Top-ed).
+These tunes are better than at least one  of the modules featured on this demo-
+FACT! The screen itself has  a  sinewave  distorting  hyrdoxid logo at the top,
+some hardware scrolling text in the  centre  which  contains all the tunes, and
+three rastered volumes bars at the bottom. ST city!
+
+The tunes themselves come courtesy of David "Whistling" Wittaker, Count "Famous
+Parents" Zero and Big "Don't Mention The  War"  Alec. And they are all corkers.
+Well  most  of  them.  Wittaker  bleeps  through  such  classics  as  "Menace",
+"Speedball", "Weird Dreams", "Cosmic  Pirates",  "Obliterator"  and the comicly
+misspelt "Warth Of The Demon". Count 0  hits us with some banging tunes, whilst
+techno uberlord Alec opts for the timer a based SID-voice cuts. Rinsin'!
+
+OK, it's sentimental and if you never  owned  an  ST you will just scratch your
+head in bewilderment, but for those  of  us  who  remember the demos and intros
+that used these tunes will be crying with joy.
+
+So there we have it, Hyrdoxid's  first  major  Falcon demo. It is obviously the
+work of old ST coders - a lot of  effects  look like ST ones just tarted up for
+the Falcon, just like the early DNT-Crew  demos.  It is saved by some wonderful
+graphics, good presentation and some nice tunes. None of the effects, taken out
+of context, are stunningly impressive, but as a whole the demo works - it seems
+to become more than just the sum of its  parts. It is a worthy debut, and shows
+potential.
+
+With Realm Of Depth, Hyrdoxid have clambered  into  the shallow end of the demo
+creating pool, but they have every intention  of  forging their way to the more
+challenging deep end. They are definitely a  crew  to keep your eye on, as they
+should be soon be near the  top  of  the  table challenging for the demo making
+crown.
+
+If you haven't got this demo yet,  it  is  well worth splashing out for it. You
+must sea it! It is shore to  be  one  of  your favourite debut demos! This demo
+really made waves when it came  out!  Ooh crikey water scorcher! (That's enough
+crap water based puns. Ed.)
+
+
+o Words - ( Mr. Pink  / Reservoir Gods )

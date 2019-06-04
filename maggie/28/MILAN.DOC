@@ -1,0 +1,187 @@
+ 
+                           The Milan 040  
+                           by Kev Davies 
+
+Hailed  as  the first third generation Atari compatible  platform,  the 
+Milan  caused much excitement in the Atari camp.  Partially because  it 
+was the first  new Atari based machine for quite some time,  but mostly 
+because everyone in the know was waiting ( and waiting...) for Centek's 
+Falcon  clone.  Milan  however beat Centek to the punch and produced  a 
+machine that not only held its own in the specs.  department,  but also 
+looked incredibly sleek when purchased fully assembled. 
+
+In  fact,   most initially raved over the looks of the machine than the 
+actual performance.  In any other industry this is commonplace, however 
+up until recently it was unheard of for an Atari compatible  production 
+model  to  look  good (we all remember the  hype  about  the  prototype 
+Falcons  being housed in PC style desktops!) When the  Falcons  finally 
+made it into production we were left with the grey doorstop). But looks 
+aside, is the Milan any good?
+
+After  much messing about I finally got hold of  a pre-assembled  Milan 
+(a  self-assembly  kit is also available,  but as I did not get one  of 
+these  I cannot possibly comment on them and can only point you in  the 
+direction  of Atari Computing Issue 11 and Joe Connor's review (He's  a 
+braver man than I)).
+
+So to the hardware....
+
+The  Milan  sports a Motorola MC 68040 which I have to  admit  looks  a 
+little  disappointing on paper as in todays market place the 060  would 
+have  looked  a lot better,  at least on paper,  and may have given the 
+Medusa machines a run for their money. The operating system does run at 
+a  lightning pace and the screen updates make you wonder why  you  ever 
+had  to  part with cash for a screen accelerator in the past.  We  will 
+examine the OS later.
+
+As 'external' available ports go,  we are almost spoilt for choice with 
+ an  unprecedented three COM ports,  as well as the more usual  parallel 
+printer  ports,  PC  keyboard,  and mouse ports.  However the absence of 
+standard  MIDI  and sound terminals (available on card) and  SCSI  port 
+(also  available on card)  could be considered a glaring omission,  but 
+as  they  are  available  as the proverbial  optional  extras  I'm  not 
+inclined to quibble. As 'internal' connectors are concerned, oh boy, we 
+have:
+
+(deep inhale)
+
+3x ISA slots 
+4x PCI-slots 
+4x EDO-RAM slots  (huge memory upgrades possible.... now  
+                        where are those SIMMS :>  ) 
+2x IDE ports (Primary and secondary)
+
+(Gasp!)
+
+The  Milan does score points for architecture using PC  standard  slots 
+allowing  for easy hardware development.  The motherboard is incredibly 
+neat  and appears to be  of the highest build quality.  It does however 
+seem a little sparse, but do not be fooled, the hardware that is on the 
+board can perform any operation you may desire, and if it does not just 
+wait  for  the card.  I imagine the sparse motherboard could  appear  a 
+little  disappointing  initially,  to  those  who  purchased  the  self 
+assembly kit. Remember, looks can be deceiving. 
+
+With this kind of upgrade potential and the sudden burst of energy that 
+is currently  in the Milan development camp it will not be long  before 
+most  Milan owners will have heavily personalised individual  machines. 
+We are all waiting for those all-important Power PC and Falcon emulator 
+cards  then Milan owners can really kick some serious computing arse.
+
+Speaking (or should that be typing) of upgrades a great idea is the TOS 
+4.5  ( an advanced version of TOS 4 seen on the Falcons)  living  on  a 
+'Flash  Eprom'.  The upshot of this is that the operating system can be 
+uploaded to the Eprom by running a software package available from  the 
+ Milan  website,  no  more  chip based upgrades (hurrah).  This leads me 
+nicely to the  operating system. 
+
+The  GEM  for all intents and purposes IS the GEM  available  with  the 
+Falcon with a few additions such as cache controls and a lot more video 
+modes than you could shake a very large stick at,  ranging from ST-High 
+through  to  True Colour SVGA modes.  With all these video modes it  is 
+very  easy  to create a few spare DESKTOP.INF files to  cope  with  the 
+various  screen  sizes  and desktop icon positions.  Once  however  you 
+discover  MING,  the GEM standard TOS,  GEM becomes a thing of the past 
+(no pun intended). 
+
+MING  is  the Milan's version of the ever popular  desktop  replacement 
+"Thing",  with a few noticeable tweaks here and there. For those of you 
+who  have used "Thing" at some point know what to expect,  for those of 
+you  who haven't you are in for a treat,  as Thing/Ming is as close  to 
+desktop  perfection  as you can get,  taking the best aspects of  other 
+interface  environments  tweaking them,  and amalgamating them into the 
+GEM  environment,   giving  Thing/Ming a familiar feel,  although it is 
+vastly  superior to the standard desktops that have been  available  to 
+date.
+
+To complement all this operational grunt the so called Milan MultiOS is 
+provided on CD-ROM (as is all the  packaged software) Milan MultiOS  is 
+a  Milan  compatible  version of  MultiTOS  unfortunately  (showing  my 
+MultiTOS ignorance),  I cannot get MultiOS to work so I cannot possibly 
+comment, at the moment only dream of true hispeed Multitasking :( .
+
+As  for  the  packaged software I was a little  disappointed  as  early 
+reports  indicated  a  mass  of  well  known  internet  and  productive 
+software.  Don't  get  me wrong for the most part the software that  is 
+packaged  is  good,  however  some  titles that  were  reported  to  be 
+available simply are not. 
+
+So  enough of my moaning about what should or might have been,  what IS 
+packaged?  Well firstly,  we have HD Driver 7, certainly in my mind the 
+best  driver software available at the time of purchase.  Possibly  the 
+ most well known package is Papyrus. Unfortunately to those who struggle 
+with  their  German,  (you know what is coming don't you),   it is  the 
+German Home version (Home= a few minor limitations).  A full version of 
+ST-Guide  is  available and guess what?  Yep,  the German version.   The 
+Smurf image manipulation package is available as a Home version,  Guess 
+what?   It's  the German version (I see a pattern forming here).  QED a 
+very competent text editor,  German version.  CAB demo,  Geman version. 
+SPIN the PD CD-ROM driver, Not in German :). 
+
+Long  term Atarians are used to fathoming German programs.  However  if 
+Milan  intend to target 'others' they had better look to releasing  the 
+software packages in other language versions as well.  All the software 
+is  useful  as  long  as  you are willing to  put  in  the  effort  and 
+experiment.  As an aside I would like to see Mario Bencroft's GEM based 
+Pacman game packed in as the standard small game,  as it is blinding on 
+the high-speed GEM environment that the Milan provides.
+
+In  Conclusion   there  is not a lot to say other than  the  Milan  has 
+replaced  my  Falcon  as  my main machine,  and  given  time  and  more 
+compatible  software,  I  am sure it is a platform that WILL get a  lot 
+more support before too long. 
+
+For information on available hardware/software I suggest you visit  the 
+Milan web site at 
+ 
+http\\: www.milan-computer.com 
+or email info@milan-computer.com
+ 
+ What follows are test indexes performed by GEMBENCH 4.03
+
+COMPARED TO A FALCON 
+================================== 
+GEM Dialog Box:         0.430   1558% 
+VDI Text:               0.215   3465% 
+VDI Text Effects:       0.425   3447% 
+VDI Small Text:         0.295   2101% 
+VDI Graphics:           1.545   1080% 
+ GEM Window:             0.400    937% 
+Integer Division:       1.200    259% 
+Float Math:             0.180    230% 
+RAM Access:             0.355    907% 
+ROM Access:             0.360    625% 
+Blitting:               1.590    547% 
+VDI Scroll:             2.195    683% 
+Justified Text:         0.770   1233% 
+VDI Enquire:            0.185   1108% 
+New Dialogs:            0.730   1171% 
+================================== 
+Graphics:               1575% 
+CPU:                    505% 
+Average:                1290% 
+==================================
+
+COMPARED TO A TT 
+================================== 
+GEM Dialog Box:         0.430    733% 
+VDI Text:               0.215   2018% 
+VDI Text Effects:       0.425   1700% 
+VDI Small Text:         0.295   1383% 
+VDI Graphics:           1.550    378% 
+GEM Window:             0.400    255% 
+Integer Division:       1.200    128% 
+Float Math:             0.185    127% 
+RAM Access:             0.360    361% 
+ROM Access:             0.355    400% 
+Blitting:               1.585    107% 
+VDI Scroll:             2.190    130% 
+Justified Text:         0.770    516% 
+VDI Enquire:            0.185    589% 
+New Dialogs:            0.720    452% 
+================================== 
+Graphics:               751% 
+CPU:                    254% 
+Average:                618% 
+ ==================================
+

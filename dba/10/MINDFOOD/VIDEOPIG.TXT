@@ -1,0 +1,100 @@
+SAVING VIDEO TODAY
+
+                          J P E G   and   M P E G
+                         '"""""""' ''''' '"""""""'
+ |   |ith the DCT Ampex, the digital Beta Sony, or even the virtual editing
+ |   | stations like Avid or Lightworks, one has the problem of the picture
+ | ^ | compressing. Among the different existing systems, JPEG and MPEG are
+ |/ \| widely used as ISO 's standard. This organization has developped two
+working crews: the JPEG (Joint Photographic Expert Group), created at first
+for static images and the MPEG (Moving Picture Expert Group) for the video.
+    Concerning sound part of MPEG, the MUSICAM system was keeped: only know
+that many american firms like Texas, Motorola or Analog Device have started
+to produce circuits using modes 1 and 2 out of the three in MUSICAM system.
+
+
+  J P E G : FROM PICTURE TO ANIMATION
+  """""""
+The basic principle of JPEG consists in using the limited characters of the
+human eye in order to save on datas. Thus, the fact that we are less sensi-
+tive to the colour variations than to the bright changes, allows algorithms
+to erase some datas without our knowledge, and to get the graphics 10 up to
+25 times less greedy than the original one.
+In fact the start picture is decomposed in little sub-images of 8x8 points.
+On each sub-image, we put a DCT (Discreet Cosinus Transformee) device which
+may be compared to the Fourier's transformee (FFT) - in spectral analysises
+for sound. So we get a 8x8 frame of which we extract the first point (1,1),
+which will serve as average value, reference according to which we fill the
+other 63 points of this frame.
+Let's take the case of a whole red zone; the first -up and left- point will
+be given the value corresponding with the red colour whereas all the others
+will be expressed by noughts. Then it'll be easy to save on datas, by digi-
+tizing with a classic compressing algorithm (Huffman). Using european video
+signals, we'll thus have 25 processings of this type per one second !
+
+
+                            M P E G   V I D E O
+ _____                     '"""""""' '"""""""""'
+   |  he MPEG standard's task is to detect the repetitions, and the gaps of
+   |   time in a sequence of an animated picture.  Speaking clearly, within
+   |   a filmed scene where the scenery is fixed but where the actors move,
+the algorithm will be able to save on datas relative to a digitalization of
+this scenery since it remains the same, and will try to report all the dis-
+placements by methods of analysis and deduction. Each image is thus divided
+into little sub-pictures like for JPEG. After this the algorithm can detect
+the sub-images which are relatively the same amongst the pictures which are
+following, and preceding the concerned image. Moreover, the system will not
+digitalize all the pictures, and some of them will be created by interpola-
+tion, thanks to the analysis of the nearing images. So, the more predictive
+the sequence will be (zoom and travelling), the more satisfying the results
+will get. However it is easier to predict when we know the past and future,
+and this type of process remains difficult in realtime operations, since it
+needs a high power of calculation, and of predictive analysis, which can go
+in time past the amount of pictures to be compressed. Nethertheless if this
+converting time is taken on the transfer, the compression's rate may be gi-
+gantic and the quality of the image perfect, hence a great thrift of datas.
+
+
+
+NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/NEWS/
+
+
+* APPLE  QUICK TIME  MOVIE  FORMAT
+     Apple keeps on developing its modulary standard of files, for stockage
+and exchange of  film-library  datas  (sound, video  and text):  QuickTime.
+     Thanks to the software  Image Compression Manager, the coding  becomes
+independant from a hardware  or a dedicated driver, and the user can handle
+the sound or the compressed pictures as easily as for text or graphic. Like
+for the ASCII in  the text editing, this new norm of file  should allow the
+exchanges with compatible PCs, for Apple makes itself the development under
+Windows.
+
+* D.O.N.  NIKON
+     Nikon promotes a DON 12" ultrafast of 4 Go, particularly fitted to the
+stockage of the digit video and the sound.
+The transfer's capacity of the the driver SCSI announced by the builder is:
+1.43 MB/sec.
+
+* After the greedy LCD(,STN,TFT) and plasma panels, after the technology of
+  the laser (-electroluminousness- weak Blue colour), the French firm PIXEL
+  is developping the new 'Micropoint' extra-flat screen! This technology is
+  easier than the TFT one (Thin Film Transistor), and much more thrifty...!
+  It's called FED (Field Emission Display) and works like the RVB-sets. But
+  even if the quality is nearly as great as a TV-set, we should wait for 10
+  years to buy such a screen of 1m diagonal. It's 10000 micropoints/mm2 ...
+
+* WARNER MUSIC is going to spread in Europe its Mini Disc famous in the USA.
+
+* SONY AND NINTENDO collaborate to the creation of a new CD-ROM's standard.
+
+
+ > You noticed the clean organization of the texts (jovis thanks U) ?
+---------------------------------------------------------------------------
+:   Marc Salama, translated from 'Video-Son-Pro #112' (OVU-mag), may '93  :
+---------------------------------------------------------------------------
+Contact me -jovis-. I'm waiting for you: clean hot gfx, .TRI.MOD.4V on STf.
+The disks are always sent back to you and you can speak to Zuul through me.
+
+        * jovis *
+    DESCAVES PHILIPPE     7, RUE VICTOR-HUGO     95440 ECOUEN     FRANCE
+

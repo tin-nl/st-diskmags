@@ -1,0 +1,174 @@
+{*i sm1.pi1 m 0 20 0 200}
+
+--------------------------------------------------------------------------------
+                    "SOUNDMACHINE v3.3" by THE BEAST of TYPHOON
+--------------------------------------------------------------------------------                    
+________________________________________________________________________________
+ _______________   _____________  _________     /
+/   ____ __/   /__/  _     / _  \ \ __/   /_   / machines: st/e/fo3o
+\__/ __  \_   __  \_/  /\  \_/  / / \_   __/__ \ specials: 512kb/rgb/vga/mono
+/    \/  /    \/  /    \/  /    \/  /    \/   \ \ credits: code - the beast
+\____    \____    \____    \____    \____     / /        
+====A\___/===B\___/===O\___/===U\___/===T\_md/=/
+________________________________________________________________________________
+
+"SOUNDMACHINE" is another chip music player, written by The Beast of Typhoon. He
+is working  on this little  utility since years now (if I'm  right). In times as
+some people  are working on SID players to replay songs  of the C64 and so on it
+is a bit  surprising that  there is still  someone who's working on a player for
+all the Atari ST chip sound formats.
+
+Many people tried it so  far but if  I remember no one matched it  to create the
+"final" player at all. There were a lot of good tries  done, just like  the good
+old "RISK PLAYER", the ".tnb. CHIP SOUND PLAYER" or the "FANTASY PLAYER". All of
+them recognized  many different music formats and packing routines too. Esp. the
+first two players could be something like the grandpa of "SOUNDMACHINE", because
+they were GEM players too...
+
+But those players  never reached a  higher state, they suffered under the not so
+good  state of  the bands, just like  RISK as not  active anymore  or .tnb. as a
+bunch of  pure chaotics. And the work on both players stopped in 1993/1994. They
+even were not debugged with a big effort  and suffered under the many  bugs too,
+locking up the system again and again.
+
+Now with "SOUNDMACHINE" the try to make an ultimate player for ST and Falcon was
+brought back to life  and so  it's not  false to give  the second  line "The New
+Generation Of Players" in the info box of the started utility.
+
+This new tool, made by the hyperactive ST fanatics from France, TYPHOON, isn't a
+pure player but read more about it very below. Meanwhile the  local ST scenes in
+many countries are only present with some small intros or  demos the guys in our
+neighbour  country still releasing a lot  of other stuff  too, BESIDES the demo-
+stuff. In comparison with other bands  all over Europe  the french  bands have a
+lot  more  active members, mainly  working on  projects alone for  themselve, at
+least  the  coders... Not  only TYPHOON is working  on such  tools and utilities
+stuff, just remember the guys of SECTOR ONE too... their  productions also reach
+some kind of semi-professional quality.
+Maybe the reason for this is founded on the fact that  the french freax are much
+more  involved in  the so-called  professional  scene too, just think  about the
+CenTek  projects (Adrenaline & EXA)... Anyway, they're still good for the one or
+other surprise... just like with "SOUNDMACHINE".
+
+At first this tool is a chip-music player (can replay about 40 different formats
+on ST!!!), at second  it is able  to  recognize a lot  of music  files (about 70
+different formats) and at third it is able to found out new formats too and save
+them in an own format. For this you have the possibility to check the headers of
+the files you want to replay or recognize.
+But at first to the recognize/replay function.
+
+"SOUNDMACHINE" recognizes, as said above, MUCH more musics as all players so far
+and can replay also a lot of them... Here comes a list...
+
+-P- means "can be played"
+
+Alastair Brimble                     -P- (chip)
+Ben Daglish                          -P- (chip)
+Big Alec of Delta Force^Offbeat      -P- (chip/sid)
+Blipp Blopper                        -P- (chip)
+ChipMon 2 / Scavenger of Synergy         (sid)
+Chrispy Noodle of BBC                -P- (chip)
+Cound Zero of Electronic Images      -P- (chip/sid)
+David Whittaker                      -P- (chip)
+ENS                                      (chip)
+Epic of Misfits Software             -P- (chip)
+FFT of Next                          -P- (chip)
+Grazey of PHF Soundrelocator         -P- (chip)
+Insignia Trisound Sequencer          -P- (halftrack)
+Lap of Next (old and new format)     -P- (chip)
+Lotus of Hotline                     -P- (halftrack)
+Ltk of Mystic                            (chip)
+Lynx Trisound                        -P- (halftrack)
+Mad Max of TEX (old format)              (chip)
+Mad Max of TEX (new format)          -P- (chip)
+Mad Max of TEX (digidrum musix)          (halftrack)
+Megatizer                            -P- (chip/halftrack/sid)
+Millenium Brothers                   -P- (chip)
+Music Mon                            -P- (chip)
+Nexus of The Wild Boys               -P- (chip)
+Newline                              -P- (chip)
+Pop                                  -P- (chip)
+PSG Tracker                              (chip/halftrack)
+Sean Conran                          -P- (chip)
+Sid Sound Designer / No More of AM   -P- (sid)
+SNDH / BDC of Aura                   -P- (chip/sid/halftrack)
+Sound Machine                        -P- (chip/sid/halftrack)
+Tao of ACF^Cream                     -P- (chip/sid/halftrack)
+TriMod v2.1/v2.5 / Lynx              -P- (halftrack)
+Undead                               -P- (chip)
+Wally Beben                              (chip)
+Xenex                                -P- (chip)
+XLR8 / Iso of Sentry                 -P- (chip)
+YM / Leonard of Oxygene              -P- (chip)
+Zound Dragger                        -P- (chip)
+
+Module formats and digitized sounds
+
+Amiga Module, DBE Tracker, Digital Tracker, DMA module, Graoumf Tracker, Quartet
+Sounds, Scream Tracker and TCB Tracker
+
+A lot of samples can be recognized too, but I don't want to list them here.
+Unfortunately (more or less) samples and tracker musics can't be played with the
+"SOUNDMACHINE" but as written in the doc-file  there are  enough and  maybe much
+better players around for these files.
+
+Therefor "SOUNDMACHINE" offers a very usefull NEW function. You can  also try to
+replay unknown  chip sound formats! Even if the program can  recognize more than
+70 different formats  there are still musics around no one has a real idea of it
+how to replay  them. So you can  try it  with "SOUNDMACHINE" but you  have to be
+very carefully  because the system can crash  very hard if  you don't  chose the
+right options/offsets. And unfortunately the program  will crash  also on Falcon
+very often, even  if you're  using "BACKWARDS" or so on... but  it runs  on this
+machine.
+
+But back to the  unknown music formats. If you have found out  the right offsets
+for replay them in the right way you can save them in a build in format, the own
+"SOUNDMACHINE" format. So you can replay them at least with this  tool and maybe
+there are sources around who allow it to use them with this format.
+Ofcourse you can save any other music in  the "SOUNDMACHINE" format too and last
+but not least  you can extract  them again, this means that the  program adds at
+first some  bytes to  the music file  to recognize it as own  format  and if you
+extract  it, to use it with another player or so on, you have the  original file
+again...
+
+Ok... furthermore there  is also a file included with the description of the new
+"SOUNDMACHINE" format, besides long and detailed doc files in french and english
+too.
+
+As said above  the tool runs under GEM but with the limitation  that only on RGB
+with 50 Hz the replay  speed is original and this isn't so good. Ok, no one seem
+to use  monochrome only today but it sucks a bit to  change the monitors all the
+time and for a GEM program it would be cool if it  would run in  ALL resolutions
+WITHOUT problems. It's the same problem with the new player of the programmer,
+the YM-player... just check out my review of this very new player at:
+>--> YM PLAYER vo.3 <--<                                                            {*\YMPLAY.TXT}
+
+For a beginner this tool is maybe a bit overloaded on the  first look, because a
+lot of buttons and offsets  are displayed on the mainscreen. Maybe  a separation
+of  the  replay-function  and of  the recognize-function, extract/save  function
+would  be nice, because  a little change without any  idea of  it and  the whole
+thing is locking up your machine. The mainmenu looks like this...
+
+{*i sm2.pi1 m 0 20 0 200}
+
+But with a little bit of time you will surely find a way to use the functions in
+the way it used to be.
+
+Conclusion: In comparison with the older version I saw months ago the player has
+            made big steps! Without any doubt it  is the best  developped player
+            at all at the moment, at least on the  chipsound area. For this fact
+            we can just forget the little bugs, esp. because also the old replay
+            utilities never  were bugfree at all and crashed a lot more often as
+            "SOUNDMACHINE". I would prefer  the option  to use it as background-
+            player too and it isn't  sooo difficult  as The Beast is  writing in
+            the docs, because the RISK player was running in the background. Ok,
+            it is the problem with  the crashs there  and for this it could be a
+            bit problematic but  at least the  possibility to  use a few "not so
+            critical" formats as background music on the ST would be cool!
+            Anyway... if you're still working on the ST and want  to enjoy a lot
+            of old and new musics or you have  files on ripped  you can't replay
+            with anything on your disk or  harddisk, just get "SOUNDMACHINE" and
+            try it again... maybe it will manage it?!
+            
+--------------------------------------------------------------------------------
+ .no retreat and no surrender.                         moondog . poets of decay
+---------------------------------------------------------------------17-o9-1998-

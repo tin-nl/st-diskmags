@@ -1,0 +1,37 @@
+JUST BALLS SCREEN
+
+
+THE JUST BALLS SCREEN FROM THE JUST FUN DEMO PART I !!!!!!
+
+As i promised in issue 4 of the magazine i have here a screen of the Just
+Fun demo. It isn't the original version cause it would take to much space
+but the main idea and technic is the same.
+
+In the folder GFA\ASM there are three files that if you put them togheter
+will form the complete demo.
+The files are: JUSTBALL.LST
+               PICTURE .PI1
+               MUSIC   .THK
+
+The picture and music you must includ in the source.
+How to do that ??? Simple, first choose MERGE and load JUSTBALL.LST in
+the GFA Basic. The inlines aren't included because it is an .LST file.
+If you save it after you included all the other files and save it as 
+a .GFA files the INLINE lines won't be lost !.Then go to
+the line INLINE letter%. Press HELP and L. The fileselector will pop up
+and you can choose the file PICTURE.PI1.
+It now will be included. You must do the same with the MUSIC.
+
+After that the demo is ready and you can run it. I hope you like it and
+learn a bit of it. It isn't the best demop ever made, okay, but it has some
+nice tricks in it. The complete prg is filled with comment on almost every
+line so it should be easy enough to understand what it does.
+
+If you have some nice small prg's/demo's or what ever send them in, cause 
+we cant do all the GFA listing's !!!
+
+Hope to see some of your work/comment soon until the may the GFA be with you
+
+
+                                                        Bonus Software..
+         

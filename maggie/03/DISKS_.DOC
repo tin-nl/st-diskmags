@@ -1,0 +1,121 @@
+
+                  For DEMOS MAKERS, and the others !
+
+            ***  ** **  ***  ***    **   * *  ***        *  *  *  
+             *   * * *  * *  *  *  *  *  * *  *         *  *  *   
+             *   *   *  **   ***   *  *  * *  **       *  *  *    
+             *   *   *  *    *  *  *  *  * *  *                   
+            ***  *   *  *    *  *   **    *   ***    *  *  *      
+           ***************************************                
+                                                               
+                            #####   ###   ####   #  #    ####        
+                            #    #   #   #       # #    #
+             your           #    #   #    ####   ##      ####        
+                            #    #   #        #  # #         #       
+                            #    #   #        #  #  #        #       
+                            #####   ###  #####   #   #  #####   
+
+
+     This "picture" was made with the TEXT GRAPHIST v1.0  by DAD
+       
+
+
+
+
+
+     I had written this text because I'm fed up with disks which are 
+organized like "a souk" "un bordel" or "a brothel" !. I will use a 
+word which is not in my Harrap's French/English dictionnary : 
+OPTIMIZE, for the novices I'll not give a definition, and I say us: 
+READ ALL THIS TEXT !.
+
+     Let's go, now ! :
+     Optimize is very important, because when you distribute your 
+demo, it will be used and watched by a lot of people, if your demo 
+loads slowly it will do waste time to a lot of st guys, and, it's so 
+boring to wait when your computer is loading !...
+     My first advice is: put this little word: LOADING, somewhere on 
+the screen, when the computer is ... . Admit it's very easy !.
+
+     Format :
+     The better format is 80 tracks, 10 sectors. Why not 82 tracks ? 
+ because some drives ( I got one ) can't write or read these 2 last 
+tracks !!!, then they can't watch programs which are here and they 
+can't copy correctly your demo !. 11 sectors slow down speed 
+loading, and it's less reliable.
+I had some problems to format disks with fastcopy ( write error ) 
+the disks was too cheap !, then I used "Format" option ( by clicking 
+on "Fast format option" ).
+
+     Get some bytes free :
+     Never forget that AUTOMATION packer v2.31r packs fast with F5 
+key ( and it's very sufficient ) and can depack ( Lost Boys for 
+example should pack the files which are in the PROGRAMING folder ! 
+).
+
+     Files Allocation Table :
+     How to get speed loading ( drive don't lost time to move ! ), 
+and to permit easy repairing ( Disc doctor ). When you have finished 
+your demo, format a 80t 10s disk then copy it the files which will 
+been first loaded ( A:\AUTO\*.*, then DESKTOP.INF, the main menu, 
+and the others ), then the files will been at the start of the disk, 
+admit it's more clean. A good utilitie to observe fat is CLUSFAT ( 
+in french language ) sold 95 Francs at "LA BOUTIQUE DE PRESSIMAGE" 
+of ST-MAGAZINE ( the best french ST magazine ). This program draw 
+the fat !, like LOCKSMITH 6.0 on my death APPLE 2c...
+     ( About locksmith: it's a pity, I can't find a very good copy 
+program like this one ( only "Better coppy" have a good displaying 
+of the development of the copy. )
+     When you copy a disk with fastcopy 3 with "get used sectors" 
+option, if you see on the display window that some tracks are not 
+read, this disk isn't optimized. A disk where your develop programs 
+never can be optimzed because you are alrealdy writing or erasing 
+files.
+
+     Here's the end :
+     If you have a main menu ( in a utilities compilation for 
+example ), copy it in a HELP.BAK folder, it's the prg the most 
+important, and if there is some error in it, and the disk is 
+unusable generally. 
+     Don't forget to protect your boot sector against viruses. I 
+call you back that "Dr Satan" anti virus don't work on STE ( it 
+always find a virus ! ). I think the best boot secteur is the Virus 
+Killer Omikron v2.0. When you boot with this disk, it search in 
+memory if a virus is present. If there is one ( Ghost virus is 
+detected ) it asks to you: Clear the ram ? ( and if you type Yes, it 
+BLAST this fucking ghost virus ). Flexdisc the resident ramdisk is 
+always detected ( no it's not a virus ! ), of course you should not 
+clear the ram when you have installed this wonderfull utility. 
+Omikron killer always exist in .prg form, it takes about 500 bytes 
+and it is very usefull ( hard disk owner for examples, or in the 
+auto folder of Flexdisc ).
+ 
+     Now some advertissing : do you have got the "MAIS VOUS ETES FOU 
+!" demo ?. Sampled muzex for 1040 st, and 2 dancers that you can 
+control ( numpad keys ), the disk also contains the lyrics. For the 
+french : pour l'obtenir, prends ton minitel, 3614 RTEL2, ecris … 
+BENNY lis son repondeur, et fais ce qui y est indique.
+     Have you ever used "IMPACT UTILITIES" ?, there is the best 
+utility  program I know, the version 2.7 is actually the last. 
+     Do you know "TEXT GRAPHIST" ?, it's a new soft to make text 
+logos, or text graphisms ( more difficult ), whithout an more easyly 
+than a text editor. v1.0 is freeware.
+     Have you got "SASHO" v1.2 ?, it allows you to hear fastly your 
+samples ( .SPL ). v1.2 is freeware.
+     
+
+     This text was typed with LE REDACTEUR v1.90 f, and translated 
+to 1st WORD+. Don't forget all these advices, and tell them to your 
+friends, you'll contribute to the improvement of the ST software.
+            
+     August 30th 1990, South West of France ( at 1 km of the beach, 
+I'm on holidays with my ST ! ), DAD from IMPACT, my crew is included 
+in TSG. TSG contains also FUZION, and HMD. Long life to TSG !.
+IMPACT members are : me ( coder and all which can do on the ST ( 
+sampling, .MODs, scanning, texts, ... ), SUNSET ( swapper and 
+graphist ), TOXIC ( swapper ), AXIOM ( asm coder ), HELRAIZER ( I 
+never know how to write his surname !, graphist ), KAISER ( swapper 
+). Sorry for the foltts.
+     Contact IMPACT or DAD, in France: 3614 code BISTRO, euh non ! 
+RTEL2 puis, BAL  IMPACT  ou  DAD ST.
+ 

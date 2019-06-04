@@ -1,0 +1,12 @@
+MAIL GFX TEXT
+                       G R A F I X   C O R N E R 
+                      =========================== 
+
+Are you good in making graphics? Well, send all your work to us and 
+we will insert it in the pictures corner. You may draw everything you 
+want. Also logo's (D.B.A. or your own) and fonts. If we think we can 
+use something of your work for D.B.A. intro's or demo's, then we will 
+contact you. So send your own graphics to us, and we will place it in 
+a next issue of this magazine. I am looking forward to see some nice work!
+
+Greetings from Ecto 1 of D.B.A.                      

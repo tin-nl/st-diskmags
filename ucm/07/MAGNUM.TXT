@@ -1,0 +1,86 @@
+ {*f1
+      Die Magnum-Fast-RAM Karte
+      ------------------------- {*f0
+
+Der Sinn:
+---------
+
+Durch die st„ndig  sinkenden RAM Preise auf dem PC-Markt und durch die Entwick-
+lung dieser PS/2-Modulkarte ist  es jetzt vielen Falcon-Besitzern m”glich , ihr
+(meist) 4 MB 'groes' RAM sehr gnstig  zu erweitern. Dies ist sicherlich nicht
+sinnvoll wenn  man nur Demos  und Spiele auf  seinem  Rechner 'f„hrt', da diese
+sich  sowieso  auf 'nur' 4 MB beschr„nken (hier  hat sich glcklicherweise noch
+nicht der Resourcenverschwendungswahn der PC-Programmierer bemerkbar gemacht).
+Fr alle anderen ist  es sicher eine  šberlegung wert, aber vor allem dann wenn
+man sich etwas n„her mit Anwendungssoftware besch„ftigt. Besonders unter Multi-
+taskingbetriebssystemen ist unser 4096 KB-Falcon schnell am oberen RAM-Ende.
+Aber auch unter dem normalen TOS hat mehr RAM einige Vorteile:
+-PhotoCD-Bilder in h”herer Aufl”sung anschauen
+  (1024*1536 Pixel in 24 Bit=4,7 MB!)
+-Dokumente in DIN A4 bearbeiten
+-speicherhungrige Acc 'parallel' laufen lassen u.s.w.
+
+Soviel zum Sinn der RAM-Erweiterung und weiter mit dem Einbau.
+
+Der Einbau:
+-----------
+
+Bevor wir  mit dem wichtigstem beginnen, sollten wir  uns erst mal klar darber
+werden, was wir uns eigentlich gekauft haben, denn die Magnum-Karte wird momen-
+tan in 3 Ausbaustufen ver„uert:
+- ohne RAM, dies ist  zu empfehlen wenn man billiger an PS/2- Module kommt (die
+  Preise „ndern sich t„glich)
+- mit 4 MB RAM
+- mit 8 MB RAM, da fr die 8 MB nur geringfgig  mehr verlangt wird, sollte man
+  sich fr diese Variante entscheiden
+
+Gut, da ich mich fr die 8 MB Version entschieden habe, werde ich mich ab jetzt
+nur noch auf diese beziehen. Der Einbau ist aber bei den 3 Varianten gleich, da
+sie sich ja nur im RAM unterscheiden.
+
+Der Einbau  dieser Karte  setzt brigens  kein Elektronikstudium voraus (da ich
+auf diesem Gebiet  absoluter Laie bin, kann ich mich dafr verbrgen), die ein-
+zigen Voraussetzungen  sind nur  ein ruhiges H„ndchen, innere  Gelassenheit und
+ein unerschtterlicher Glaube an seine eigene Leistungsf„higkeit.
+Achja, gut w„ren noch:
+- keine Garantie mehr auf den Falcon
+- Schraubenzieher
+- eine schmale Zange oder eine Schere
+und
+- m”glichst keinen  Screenblaster inside, dann  wird's n„mlich  richtig popelig
+  (mit l”ten und so was)
+
+Soweit so gut, aber jetzt...
+
+Anfangs ist  es sicherlich  sinnvoll den Falcon erst  einmal zu ”ffnen, was uns
+ATARI durch clever  positionierte  Schr„ubchen  besonders  einfach  macht. Hier
+sollte man allerdings auf die Schrauben verzichten, welche die Floppy halten.
+Der zweite Schritt  ist es das obere  Abschirmblech zu  entfernen. Ab nun bitte
+respektvollen Abstand zum Netzteil, man kann ja nie wissen!
+Ich will  jetzt das Ganze  etwas verkrzen, da der Beipackzettel  wirklich aus-
+fhrlich auf die  Montage eingeht. Hier  bleiben keine Wnsche offen. Erg„nzend
+w„re noch zu  sagen, da man beim aufstecken  der Karte auf die beiden Pfosten-
+leisten wirklich aufpassen sollte. Man  sollte sich  hier etwas Zeit lassen, da
+man leicht die vielfach vorhandenen Kontakte verbiegt.
+
+Jetzt noch ein Tip zum Testen des Einbaus:
+Startet man das mitgelieferte 'Magnum.PRG' von Disk, so erh„lt man eine Fehler-
+meldung. Kopiert man es  aber in den AUTO-Ordner so funktioniert die Ram-Erwei-
+terung (jedenfalls bei mir). H„tte  ich das  gleich probiert, h„tte ich mir ein
+zweimaliges Einbauen sparen k”nnen. Na ja.
+
+Noch ein Tip zum Zusammenbau des Rechners:
+Man  sollte die  Anschluleitung  des internen  Lautsprechers wieder aufsetzen,
+sonst ist nix mit Bum Bum. Tja,ich habs vergessen. Aber manche st”rt ja das Ge-
+kr„chze aus den Plasteschalen, auch 'ne M”glichkeit seine Ohren zu schonen.
+
+----------------------------------------------------------------Steffen Thomas-
+
+
+
+PS... Es gibt neue Preise! Die Card kostet bei DDD nur noch 266 DM mit 4 MB bzw
+      344 DM mit 8 MB bestckt...
+
+PS2... Es gibt im brigens  noch alternativen... so die Vantage 2000 RAM-Karte,
+       die mit  72pin-Simms bestckt wird, zwar  nicht den ST-Speicher  erh„lt,
+       dafr aber billiger ist (16 MB fr 339 DM!)

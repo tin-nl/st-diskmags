@@ -1,0 +1,222 @@
+
+ò                        .-<-.                       .->-.
+ò                        |   |                       |   |
+ò                        vðó  CHAPTER 5 : EXTREME LOOPINGðò  v
+ò                        |   |                       |   |
+ò                        '->-'                       '-<-'
+
+If you've coded some good solid loops and think they are as fast as they can
+possibly get, then you might be wrong. It's always amazing to see how awkward
+structures can make your code more readable and maybe even accelerate your
+code. A large category of these structures are special loops or replacements
+for them. Some other structures or methods for structurising can be found in
+chapter 8.
+
+Instruction cache:
+
+Since the 68020 arrived, the CPUs have had cache. This is a small piece of
+very fast memory that buffers small parts of the RAM. The RAM-access if
+ofcourse slow and also remember that instructions need to be fetched from
+here!!
+
+If you could put a loop completely in cache you could eliminate all
+waitstates for waiting for a words and happily go on. The 68020's cache
+isn't that efficient and only the 68030 and on have efficient instruction
+caching.
+
+The 68030 offers to put a small loop (max. 256 bytes) completely in it's
+instruction cache! The 68040 and 68060 can do the same for max. 4KB!! (which
+is always more than enough for assembler).
+
+So it was actually faster on ST to completely unroll the whole loop until
+half your RAM was full, now it is faster to keep it under 256 bytes. This is
+funny, because keeping loops small makes them more readable as well as
+faster now! =)
+
+But beware: only doing small loop of under 10 bytes, say 3 or 4 times is
+basicly slower than unrolling it on 68030/040/060!!!
+
+Effective dbra: (Is that one of those pushup Dbra's?? =))
+
+When working with bit-by-bit operations the dbra instruction can be more
+than a convenience. We know that "dbra" uses one data-register as it's
+counter and updates this every loopcycle. Now if we could use this counter
+for other purposes we would do it. right?
+
+Ok ok, not always. We know that using the counter as a memoryindex is slow
+compared to used post-/pre- incremented addressing ( (an)+ -(an) ). But when
+working with bitfields in a data-register the counter does come in handy
+indeed.
+
+A good example is looking for the highest bit that is 1 in a longword.
+
+* d0.l: 32bits long bitfield
+        moveq   #32-1,d7                        * Set count to highest bit.
+
+loop:   btst    d7,d0                           * Test current bit.
+        bne.s   found                           * If bit is 1 -> found!
+        dbra    d7,loop                         * Until d7 is -1.
+found:
+
+Dbcc loops:
+
+Only in some innerloops this can be very handy. When you want to terminate a
+certain loop after you've found something interesting or else it loops a
+maximum amount of times, this is a good solution. A good example is reading
+from a string of characters, until you've done 256 or you've found the
+NULL-character.
+
+A "dbcc" intruction is very similar to the "dbra" instruction. The only
+difference being that it also "falls through" (i.e. doesn't reloop) when it the
+conditioncode it expects is found.
+
+Let's adapt our previous "dbra" example to use a dbcc-instruction:
+
+* d0.l: 32bits long bitfield
+        moveq   #32-1,d7                        * Set count to highest bit.
+
+loop:   btst    d7,d0                           * Test current bit.
+        dbeq    d7,loop                         * Until bit is 1 or d7 is -1.
+found:
+
+An example of getting the length of a string with dbeq:
+
+* INPUT: a0: startaddress of string
+        move.w  #256-1,d7                       * Loop a maximum of 256 times.
+loop:   tst.b   (a0)+                           * Test if this is a NULL.
+        dbeq    d7,loop                         * Reloop until NULL max times.
+
+At the end of this loop you can actually test if the string was NULL terminated
+or that it exceeded 256 characters. If d7.w contains -1 then maximum was
+exceeded. Ofcourse you can also check how many characters are done, by
+calculating the difference from the initial loopcounter like so:
+
+        subi.w  #256,d7                         * Get difference from origin.
+        neg.w   d7                              * Make it positive.
+
+Jumptrees:
+
+A really good technique that is used to replace flexible-length innerloops with
+"dbra". It relies on unrolling the loop a couple of times. This is called the
+"tree". The trick is to jump in this tree at the right position, so that you
+the good number of iterations are done.
+
+This is ofcourse much faster than the overhead of the dbra-instruction
+everytime a loop is processed. On ST you can make these trees as big as you
+want. And only one jump-instruction on a total of maybe 10 iterations is
+already neglegible. On the 68030 you should keep in mind that the tree must
+always be under 256 bytes if you want all this to be executed from the cache.
+
+There's one more drawback for both ST newer machines: The iteration must
+preferably have a size that is equal to 2^x! Otherwise a somewhat more costly
+multiply instuction must be done instead of a simple shift to index the
+position in the tree.
+
+Let's have an example for drawing a variably sized horizontal line on the
+ST. It's done per 16 pixels:
+
+* INPUT: d0.w: number of pixels in line.
+*        a0: screenaddress
+        moveq   #$ffffffff,d1                   * Put colorcode in d1.l.
+        add.w   d0,d0                           * / Multiply d0.w
+        add.w   d0,d0                           * \ with 4.
+        neg.w   d0                              * d0.w = -d0.w
+        jmp     endjumptree(pc,d0.w)            * Jump in the tree.
+        REPT    20                              * Repeat code 20 times.
+        move.l  d1,(a0)+                        * / Paint next 16 pixels
+        move.l  d1,(a0)+                        * \ color 15.
+        ENDR                                    * Indicate end of repeatcode.
+endjumptree:
+
+The jumptree is great because once you've got your index into the tree you
+don't have recalculate the index anymore or restore it like in "dbra"-loop.
+
+Jumptables:
+
+These are a replacement for a long line of compares on a code (for Pascal/C--
+users: a "case" or "switch" statement). Especially stuff like handling the
+keycodes from the keyboard is an important issue. Many other situations are
+suited to implement as a jumptable.
+
+For instance we want to execute little subroutines for a few different
+keycodes:
+
+* INPUT: d0.b: keycode
+compare0:
+        cmpi.b  #$39,d0
+        bne.s   compare1
+        bra     TERMINATE_PROGRAM
+compare1:
+        cmpi.b  #1,d0
+        bne.s   compare2
+        bra     TERMINATE_PROGRAM
+compare2:
+        cmpi.b  #$4e,d0
+        bne.s   compare3
+        bra     MOVE_PLAYERFORWARD
+compare3:
+        cmpi.b  #$4a,d0
+        bne.s   compare4
+        bra     MOVE_PLAYERBACKWARD
+compare4:
+        cmpi.b  #$4b,d0
+        bne.s   compare5
+        bra     MOVE_PLAYERLEFT
+compare5:
+        cmpi.b  #$4d,d0
+        bne.s   compare6
+        bra     MOVE_PLAYERRIGHT
+compare6:
+        cmpi.b  #$48,d0
+        bne.s   compare7
+        bra     INC_PLAYERSPEED
+compare7:
+        cmpi.b  #$50,d0
+        beq     DEC_PLAYERSPEED
+        rts
+
+The bestcase scenerio in this example is the code is identified with the
+first compare. The worstcase is, it isn't identified at all and all 8
+compares are done for nothing. And you can imagine you may want to identify
+more keys as well...
+
+Ofcourse the code gets bigger and less readable and hard to upgrade
+everytime as a code is added. The solution to this is the jumptable. But
+it's only handy when over 6 codes need to be identified and the codes don't
+have a big range (like keyboard codes).
+
+A jumptable is a table with "bra.w" instructions to your little subroutines.
+These are 4 bytes in size. You jump into the jumptable with a "jsr"-
+instruction at jumptable-startaddress + code*4.
+
+* INPUT: d0.b: keycode.
+        moveq   #0,d1                           * / Calculate
+        move.b  d0,d1                           * | offset
+        add.l   d1,d1                           * | in
+        add.l   d1,d1                           * \ jumptable.
+        jsr     jumptable(pc,d1.l)              * Jump in the table.
+
+jumptable:
+        bra.w   dummy                           * Code 0 points to a "rts".
+        bra.w   ..
+        bra.w   ...
+        bra.w   ..
+        ...
+
+dummy:  rts
+
+Note that all entries must be branches to subroutines (i.e. they must always
+be terminated with a "rts" instruction). Also note that every code that
+doesn't need to be processed must be pointed to a dummy instruction!
+
+This solution is more readable and allows the coder to seperate code from
+data. So this is easier to upgrade and quite alot faster. If tables get too
+big you can always put in a few normal compared to choose between various
+jumptables.
+
+A jumptable is an excellent solution to unreadable chunks of code and quite
+fast at that too! But a jumptable will most definetely cause cache misses
+and hence needs to be avoided when using a loop to process codes over and
+over.
+
+This brings us to the end of this chapter.

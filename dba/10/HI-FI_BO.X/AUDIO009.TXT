@@ -1,0 +1,318 @@
+AUDIO FAQ 9
+
+16.0 Wire
+ More than any other topic, speaker cables and equipment 
+ interconnects seem to use up rec.audio bandwidth echoing the 
+ same theoretical arguments, testimonials, and opinions.  
+ Controversy can be stimulating, educational, and also amusing.  
+ Please try to keep postings aimed at one of those three goals, 
+ and avoid the insults and emotion.  Also, try to avoid
+ echoing a common position or principle, as described below.
+
+16.1 Do speaker cables matter?
+ To avoid confusion and repetition, here is some terminology.
+ Cables are connectors attached to wires. Wires generally 
+ have multiple conductors optionally surrounded by a shield and 
+ outer insulating covering. Cables can introduce noise into the 
+ signal, act as a filter (and thus change the frequency response 
+ of the system), and provide nonlinearities from improper 
+ (intermittent/loose) connections to or between the connectors.
+
+ It is quite scientifically conceivable that some cables do 
+ cause a difference in sound, because of the differences in DC 
+ resistance, interconductor capacitance, and connector attachment 
+ alone.  The effects of exotic conductor weaving and materials 
+ are not so well established.  In general, these effects (once 
+ we eliminate DC resistance), seem to be small. However, if your 
+ system is at least fairly good, then some folks have observed 
+ (although not in an experimental, double-blind sense) 
+ significant differences in system performance with different 
+ cables. The effects are said to be quite system specific; the 
+ only real guideline is to try them and see which ones seem to 
+ sound better in your system. 
+
+ Roughly speaking, the price ranges for speaker cables is low 
+ (under $1/ft), medium (under $6-8/ft), and high (up to $100/ft 
+ and more). Try to arrange it so you can trial such cables; at 
+ several hundred dollars per set, experiments can be expensive.
+
+ In any system or experiment, it is essential that the 
+ differences between cables be separated from the 
+ differences between connectors.
+
+ You should have an EXTREMELY solid connection between cable and
+ speaker.  Speakers operate at very low impedances, so that bad
+ connections will create significant artifacts or signal losses 
+ at any power level.  For example, if the connection has a linear 
+ resistance of just 1 ohm, the speaker damping factor will be 
+ dramatically reduced, making bass muddy.  If the connection 
+ contains imperfect metal oxides, then a slightly rectifying 
+ junction will block the signal, producing compression, 
+ distortion, and other non-linear effects.
+
+16.2 What speaker cables are available and how good are they?
+ There is a wide range of speaker wire available, ranging from
+ 30ga zip cord (-$.10/ft) to exotic wires costing over $300/ft.
+ The material used ranges from copper to oxygen-free copper 
+ (OFC) to silver. (There are a bunch of others as well.) 
+
+ Oxygen-free copper is probably NOT any different from common
+ copper in sound.  If you hear a difference between two cables,
+ it is not a difference between oxygen-free and common copper.
+
+ Resistance may be significant for speaker cables.  The higher
+ the resistance, the more the cable will affect the sound, all
+ else equal.  The resistance characteristic of metals is called 
+ resistivity.  The resistivity of copper is 1.7 microohm-cm.
+ Silver is very slightly lower, 1.6.  Gold is a bit higher, 2.4.
+
+ Silver and gold are different from copper in other ways than
+ resistivity.  Gold does not oxidize in normal environments,
+ so gold contacts will not need periodic cleaning and will not
+ create rectifying junctions.  Silver will oxidize, but the
+ oxide of silver is conductive, so oxidized silver will still
+ make good contact.  Copper oxide is a bad conductor.  Oxidized
+ copper contacts may insulate, may conduct, or may rectify.
+ Copper is a bad material for cable terminals, but this may or
+ may not mean anything for the conductor itself.
+
+16.3 What can I use for budget speaker cables?
+ First, a few words on terminology.  Wire is sized by AWG or BS
+ gauge number.  Larger numbers represent smaller wire.  AWG 40
+ (also called 40 gauge) is as fine as human hair.  AWG 12 is 2mm
+ or .081" diameter.  Some wire is classified as solid, because it
+ contains one strand per conductor.  Other wire is called
+ stranded, because it consists of many strands per conductor.
+ Stranded wire is far more flexible than solid wire.  Most wire
+ is made from drawn copper.  Some wire is sold that is claimed to
+ be made with a process that produces oxygen-free copper.
+ Oxygen-free copper has a different metallurgical structure than
+ common copper and may or may not conduct current better.
+
+ Some critical listeners have reported excellent sound from large
+ diameter solid copper wire, such as home wiring "Romex 12-2".
+ At least one expert has said that common 18-gauge solid copper
+ hook-up wire sold by Radio Shack also works very well.  Also
+ recommended on a budget is Sound King wire, a 12 gauge oxygen
+ free copper stranded cable.  This is available from MCM
+ Electronics for $.39/ft.
+
+ The scientific literature indicates that small gauge wire
+ generally sounds worse than large gauge.  Resistance-related
+ effects of the cable can be eliminated by using at least 12
+ gauge wire, particularly for long runs.  Of course, shorter 
+ runs are always preferred, because they come much closer to 
+ the ideal zero-length wire, with no resistance, no 
+ capacitance, no inductance, and no change in signal.
+
+16.4 What can I use for budget speaker connectors?
+ The worst connectors are push-down, or spring terminals.  Screw 
+ terminals with solid copper wire are much better.  Gold-plated 
+ binding posts and gold spade lugs are inexpensive by audiophile 
+ standards and are extremely stable.  Binding posts with spade 
+ lugs can be tightened to get a very good mechanical joint, and 
+ may offer the lowest electrical resistance of any connector.
+
+ Gold plated banana plugs and jacks are very good speaker 
+ terminals.  Good ones are more expensive than gold spade lugs, 
+ however, they also provide a bigger area of contact, and are 
+ more convenient when you must frequently reconfigure the system.  
+ Banana plugs should be periodically monitored for corrosion and 
+ loss of spring tension.  Monster offers a banana-plug connector 
+ with an expanding center pin that forms an even better 
+ connection than common gold banana plugs.  At approximately $25 
+ per pair, the Monster banana plugs aren't a budget connector.
+
+ All else equal, connectors with gold surfaces are better than
+ connectors with any other surface.  This is for two reasons.  
+ First, gold is extremely inert, meaning that unless gold is 
+ exposed to very harsh chemicals or harsh vapors, it will not 
+ corrode or oxidize.  It will remain a pure, low-resistance 
+ conductor.  Second, gold is quite soft, so that if a 
+ gold-plated connector is squeezed between two metal 
+ surfaces, it will deform slightly to fill scratches and 
+ voids, giving a very broad, low-resistance contact area.
+
+ Corrosion of connectors is often a problem.  Gold-plated 
+ terminals and connectors somewhat avoid this problem; 
+ problems with other connectors can be mitigated by 
+ unplugging and replugging the connector on a regular basis, 
+ cleaning the contact areas with a pencil eraser, or by 
+ using a contact enhancer such as Cramolin or Tweek.  When 
+ you use a contact enhancer, be very sure to follow the 
+ directions, and avoid spreading enhancer about your equipment.
+
+16.5 What about interconnects, such as the cable between tuner and amp?
+ Line-level interconnects conduct smaller signals than speaker
+ cables; the typical signal ranges from -2V to +2V (the CD
+ output standard) with currents in the microamps (the 
+ corresponding values for speaker cables attached to a largish 
+ power amp might be -70V to +70V and currents of many amps).  
+ Line-level interconnects can be divided into single-ended (or 
+ unbalanced), and balanced interconnects.  Home audio is almost 
+ always single-ended interconnects.
+
+ Single-ended interconnects almost always use a form of the 
+ RCA connector (or phono plug). RCA plugs form fair to poor 
+ connections that degrade with time as corrosion works into the 
+ metal-metal contact and as the spring tension of the connectors 
+ relax.  Gold-plating reduces the effect of corrosion and locking 
+ RCA connectors solve most of the mechanical problems.  However, 
+ these premium phono connectors are rare and expensive.  For 
+ example, a gold-plated Vampire locking RCA plug costs 
+ approximately $23/pair.  If RCA connectors weren't a de facto 
+ standard, we'd recommend against them.
+
+ Unbalanced interconnect wires vary in geometry, material and 
+ price.  Cheaper wires have a single conductor (normally 
+ stranded) and a shield and cost $.20-$2/ft. Medium (complexity 
+ and price) wires have two conductors (often arranged as a 
+ twisted pair) surrounded by a shield and cost from about 
+ $3-$20/ft.  Exotic wires have all sorts of geometries and 
+ materials (such as stranded silver conductors, or ribbon cable 
+ braided around a core, or in one extreme case, a tube filled 
+ with mercury!).  Prices may be as high as $200-$300/ft.
+
+ Balanced interconnects have three conductors: two for the signal 
+ one for ground, and additionally a shield.  The standard 
+ connector for balanced cable is the ITT/Cannon XLR connector, 
+ which is quite good mechanically (they lock).  Equivalent 
+ connectors are also available from Switchcraft, Neutrik, and 
+ other vendors.  If you have to run cables longer than 12 feet or 
+ 4 meters, the greater noise immunity of balanced interconnects 
+ is often a good idea. For this reason, balanced connectors are 
+ standard equipment in professional installations such as 
+ studios, public address systems, and broadcast stations.  There 
+ is not much variation in balanced cables.  The three brands 
+ mentioned above are known to be rugged, high quality and 
+ moderately priced. Slightly weaker imported connectors are 
+ available, but they aren't dramatically cheaper.
+
+ For most systems, the most important aspect of a cable are
+ the mechanical reliability of the connectors; in particular, 
+ the joint between connector and wire, and the joint between
+ connector and socket. Typically, interconnect cables are 
+ short.  It is worth getting just the right length; cables 
+ often come in .5 meter increments.  With quite good systems, 
+ some people observe differences in sound between various 
+ interconnects. This is quite system-specific and the same 
+ advice as given above applies: try several brands.  Most 
+ good dealers will loan interconnects for home evaluation.
+
+ In cables where the shield does not carry the signal or ground, 
+ the shield is normally only connected to ground at one end. 
+ In systems where there are significant differences between 
+ ground levels on various components, it may make a difference 
+ which way such cables are connected.  Typically, the end where 
+ the shield is grounded should be at the source of the signal.  
+ Often, such cable has arrows on it pointing in the direction of 
+ the signal flow.  In any case, try both orientations.
+
+ There are many objective reasons why cables might cause 
+ differences in sound by interacting with the drivers in the 
+ signal sources as well as by providing non-linear effects in the 
+ RCA connector.  Most of these effects are again related to 
+ interconductor capacitance and resistance, and the quality of 
+ the shielding provided by the "shield" conductor.  In balanced 
+ cables the quality of the "twisted pair" inside the shield is 
+ also important.  One might note that a shield protects from only 
+ capacitively coupled interference, and not from any magnetic 
+ field interference.  The twisted pair in a balanced line provide 
+ some magnetic rejection, as does steel conduit.  However, steel 
+ conduit has other characteristics which make it undesirable for 
+ audio in general.
+
+16.6 What about Phono Interconnects:
+ Phono interconnects are part of the link between a cartridge on 
+ a turntable and a preamp (or head amp or receiver). They are a 
+ special case of line-level interconnects because the signal is 
+ much lower, typically 1 to 50 millivolts.  They are also 
+ intended to operate into a higher impedance, typically 47K ohms, 
+ and form part of the capacitive load for the cartridge.
+
+ The low signal levels mean that the shielding of the cable, and 
+ the presence of a separate drain/shield are more important, as 
+ is a good ground.  A separate solid ground should come along 
+ with the cable as a separate lead co-routed with the cable.
+
+ In addition, the low signal levels make a good solid connection
+ to and through the connectors MUCH more important, because of 
+ the greater sensitivity to low-level nonlinearities.
+
+ Wire capacitance is often ignored in line-level interconnects;
+ however, in a phono interconnect, it may constitute half of the 
+ total capacitive load of the cartridge. Obviously, then, two 
+ cables with significantly different capacitances should sound 
+ differently.  In this sense, the "right" cable for one cartridge 
+ may be too low or high in capacitance for another cartridge.
+ 
+ For low-impedance cartridges (most moving coil cartridges),
+ the wire must have low resistance to prevent cartridge unloading 
+ and frequency-dependent signal loss. In addition, as the 
+ signal levels are quite low, shielding is important. 
+
+ Unfortunately, copper shields do not block stray magnetic 
+ fields, so in the case of phono cables, careful routing may be 
+ even more effective at reducing hum than special wire.
+
+16.7 Is there really a difference in digital interconnects?
+ There are now three kinds of digital interconnects that connect
+ transports to D/A converters: coax, plastic fiber (Toslink) and 
+ glass fiber (AT&T ST).  In theory, these should sound EXACTLY 
+ the same (bits are bits).  However, this assumes good circuit 
+ design (in particular, the clock recovery circuits of the DAC, 
+ and careful consideration of electronic noise) which may be 
+ compromised because of cost considerations or ignorance.  Note: 
+ different signaling schemes are used on plastic and glass fiber. 
+
+ In any case, some people claim to hear a difference; 
+ of those who do, most seem to prefer the glass fiber.  
+ However, the technology of fast digital data transmission 
+ in consumer electronics is evolving very quickly now.  
+ Any specific recommendation should be treated with 
+ suspicion until the industry matures.
+
+16.8 Can I make very good interconnects myself?
+ Yes.  You will need to be the judge of whether or not they
+ are as good as $100 interconnects, but it is easy to make
+ interconnects that are better than the $2.00 set which comes 
+ with new equipment.
+
+ There are two necessary ingredients: two-conductor shielded
+ cable and RCA connectors.  There is a lot of debate over what
+ is the best cable, but in general, the lower the capacitance
+ per foot, the better.  Choice of insulation is harder.  There
+ may be an advantage to polypropylene or teflon over polyester
+ or rubber, but even that is debatable.  If you are buying wire
+ from an electronics distributor, some have successfully used
+ Belden 1192A microphone cable.  It is rubber insulated, so very 
+ flexible.  Another recommended cable is Belden 8451.  This is
+ a polypropylene cable with foil shield.  Finally, consider
+ Belden 89182.  This is foamed teflon insulated, so very low
+ capacitance, and foil shielded.  If you plan to make a long
+ cable, this low capacitance cable may be the best choice.
+
+ There is also a variety of RCA connectors available.  A 
+ good connector would be gold plated and machined to tight 
+ tolerances.  A poorer connector will not fit as well, will 
+ make poorer contact as the connecting surface oxides, and 
+ will lose its springiness with use.  
+
+ When wiring the cable to the connector, use one wire for 
+ signal, (the tip of the RCA connector) and one wire for 
+ ground (the shell or outer conductor of the RCA connector).  
+
+ Some cables use a foil shield which is difficult to solder.  
+ These cables typically have a drain wire parallel to the foil
+ which can be used for soldering.  Others use a braided shield.
+
+ Regardless of which type of wire you have, connect the shield
+ or the shield drain wire to ground on only ONE SIDE.  This will
+ stop noise picked up by the shield from causing ground noise.
+
+ It can be a touchy job soldering RCA connectors.  Before 
+ you use your new cables, check with an ohmmeter or 
+ a continuity tester to make sure that you have not 
+ accidentally sorted the signal and ground leads together, 
+ either with a stray drop of solder or a loose wire strand.
+

@@ -1,0 +1,102 @@
+
+       ----------------------------------------------------------
+        
+                                 IT
+                        b y    s h a d o w s
+
+       ----------------------------------------------------------
+
+The  Siliconvention  was  distinctive in having  a  large  scale  Polish 
+presence  representing  the Falcon for the first  time..  Ignis  brought 
+their  rather strange school of 'design' with them,  and indeed we cover 
+this  elsewhere..  Shadows  had  their  day with  a  well  deserved  and 
+creditable  demo,  which was only ever unfortunately going to be  second 
+place against Tat's two-years-in-the-waiting DSP powered masterpiece..
+
+The textfile that goes with the demo pleads with you to make  allowances 
+as no DSP code is used..  Thus warned,  we plunge in to the main program 
+file,  having been forewarned that it tends to like a 256 colour mode or 
+something similar first..
+
+The  first bit is a part that went slightly wrong..  Many people thought 
+the  profusion of strange scrunched interference patterns onscreen  were 
+parts  of the decrunching process,  there may even have been one or  two 
+deluded  individuals who thought that it was a demo effect  in  itself.. 
+However,  remembering  a  small  preview of some animated  objects  that 
+Shadows sent to us, the code-literate members of Maggie are able to tell 
+me  that  it  is  an animation set into  the  wrong  video  mode..  Even 
+stranger, there is nothing they can do to put it right?
+
+The music is playing from the start, a sort of fast techno-y affair, but 
+not too brash.. A choral or orchestral outburst announces the appearance 
+of  the title screen,  a very smart sunburst background setting for  the 
+title itself..
+
+The first effect follows smartly on with a truecolour dragon picture  in 
+a  slightly  coarse pixellated resolution..  This is to  accentuate  the 
+bumpmap  effect  that  splashes all over it,  as a bright  light  source 
+dazzles onto the screen..
+
+There follows some of the non-DSP based coding that Shadows were so keen 
+to  warn us about,  as a series of 3-D objects appear..  We start with a 
+sluggish  multicoloured  torus,  so far,  nothing too great..  Then they 
+start  to make a determined effort with a bunch of objects that  can  be 
+best  described as abstract sculptures made from twisted metal  tubing.. 
+The  frame rate drops to a crawl with this large mass on screen,  but we 
+say  top  marks  for  trying  something  different  from  the   drearily 
+'compulsory'  toruses and cubes seen in a hundred and one  Falcon  demos 
+down the years.. The same spirit of determination is seen in the complex 
+textured  and very large 3-D vase that is the final object in this  part 
+of the demo..  Oh,  and they were doing this against a proper background 
+as well..
+
+Another  bumpmap  with  a  pretty  picture  distorted  into  wavy  lumpy 
+patterns, more of an invisible effect, apart from what you see affecting 
+the picture..
+
+It's  tunnel time next,  as Shadows assault our senses with a couple  of 
+these  well-tried troupers..  The first is a larger-than-screen  virtual 
+effort,  the  mouth  of which spins in and out of view..  The second  is 
+a more traditional representative of the genre, and stays exactly in the 
+centre  of  the  screen where it should be..  Made up of a  plasma  type 
+texture radiating out from the centre and all..
+
+For  the  final  major  effect,  Shadows get a  bit  cheeky  with  their 
+bumpmapping,  giving  us a 3-D rotating and possibly zooming bumpmap  to 
+finish  with (see tech-view for a more informed insight  which  suggests 
+this  is an 18 carat gold-plated original effect for the  Falcon!)  That 
+done, a final 'Vote us' piccy and greets screen to finish..
+
+TECH VIEW by Tat: So the Poles are back again.. This demo contains some 
+very nice technical  bits,  such  as  the  3D  bump-mapping  (the first 
+released on the  Falcon?)  and  the  other  two  bump-mapping  effects.
+However,  most  are spoiled by having quite a slow frame rate.  This is 
+especially true for all the 3D object parts;  indeed  it's hard to tell 
+exactly what some of the effects are.  Maybe doublescan or removing the
+background would help. And please only change the  colour palette while
+the screen is not being displayed!
+
+This is a real shame because the 16-year-old coder  - yes, sixteen - is
+really  talented  and  extremely  quick at turning out these demos (how 
+does he do it?) I just hope he can switch to the DSP, because if so, we
+have a potential "best ever" demo coder in Yonek..
+
+Ratings..
+
+Graphics:- 84% - Profusion of nicely drawn originals and lovely  looking 
+3-D objects.. One of the better looking demos around..
+
+Sonix:-  83% - A good soundtrack lending itself well to the  changes  in 
+mood in the demo..
+
+Gee-Whiz:-  90%  - The coder has great ambition here,  perhaps  slightly 
+ahead of his ability to realise it fully at the moment.. Great bumpmaps, 
+and nice, if slow, 3D as well..
+
+Overall:-  87% - A good demo by Shadows,  not quite there with the  very 
+best as yet,  but surely,  not too long now before they are? Keep up the 
+good work guys!
+
+ CiH, May '97
+  
+

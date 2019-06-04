@@ -1,0 +1,93 @@
+ CLEAR 400000,10240
+ POKE $FF820A,2
+ IPL 7
+ A= MEMORY(339455)
+ A=A+255
+ A=A AND $FFFF00
+ B=A
+ A=A+32000
+ PRINT "f"
+ CLS
+ PALETTE 7,$660,$700,$701,$702,$703,$704,$705,$706,$707,$710,$720,$730,$740,$750,0
+ XBIOS (,5,L B,L -1,0)
+ TEXT COLOR =2
+ TEXT HEIGHT =4
+ TEXT STYLE =O
+ FOR D=1 TO 25
+  FOR C=0 TO 19
+    TEXT C*16+4,D*8-2,""
+  NEXT C
+ NEXT D
+ MODE =2
+ TEXT HEIGHT =31
+ FOR D=1 TO 6
+  FOR C=0 TO 19
+    TEXT STYLE =1
+    TEXT COLOR =1
+    TEXT C*16,D*32-5, CHR$(C+20*D+12)
+    TEXT STYLE =0
+    TEXT COLOR = RND(13)+3
+    TEXT C*16,D*32-5, CHR$(C+20*D+12)
+  NEXT C
+ NEXT D
+ DIM E(16)
+ DIM F(16)
+ FOR C=0 TO 16
+  F(C)=A+C*19200
+  E(C)=F(C)+13758
+ NEXT C
+ A=F(15)+32000
+ G=A+10240
+ SWAP F(16),F(0)
+ XBIOS (,5,L A,L -1,-1)
+ TEXT COLOR =2
+ TEXT HEIGHT =6
+ TEXT 0,6,"TOS"
+ BITBLT 0,0,24,8 TO G
+ PRINT @(0,0);" ";
+ H$="Hi everybody. This is a little fucky scroll-message, I don't want"
+ H$=H$+" to type any more. CU, Mr Ni! says Bye. Now here's the font: "
+ FOR C=32 TO 152
+  H$=H$+ CHR$(C)
+ NEXT C
+ DIM I( LEN(H$)+1)
+ FOR C=1 TO LEN(H$)
+  I(C)= ASC( MID$(H$,C,1))-32
+ NEXT C
+ FOR C=1 TO LEN(H$)
+  D=I(C)
+  Z=D\20
+  D=(D MOD 20)*8+Z*5120
+  I(C)=D+B
+ NEXT C
+ J%=148
+ K%=72
+ L!=0
+ M!=0
+ REPEAT
+  L%= LEN(H$)-1
+  FOR X%=1 TO L%
+    FOR O%=0 TO 4800 STEP 160
+      MEMORY_MOVE I(X%)+O%+160,8 TO A+8+O%
+    NEXT O%
+    FOR P%=0 TO 15
+      WVBL
+      XBIOS (,5,L A,L F(P%+1),-1)
+      MEMORY_MOVE E(P%)+8,4800 TO E(P%)
+      FOR O%=160 TO 4800 STEP 160
+        MEMORY_MOVE A+O%,8 TO E(P%)-6+O%
+      NEXT O%
+      BITBLT 1,1,31,32 TO 0,1,31,32
+      XBIOS (,5,L F(P%),L -1,-1)
+      L!=L!+.01
+      M!=M!+.02212323
+      BITBLT G TO 148+148* SIN(L!),36+36* COS(M!),24,8
+      IF P%=1 THEN
+        XBIOS (,5,L F(16),L -1,-1)
+        BITBLT G TO 148+148* SIN(L!-.01),36+36* COS(M!-.02),24,8
+      ENDIF
+    NEXT P%
+  NEXT X%
+ UNTIL 0
+ END
+

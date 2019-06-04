@@ -1,0 +1,111 @@
+DOS AND NOVELL
+
+--------------------------------------------------------------
+            IS THERE MORE BETWEEN DOS AND NOVELL ?
+                 -again an article by Slimer-
+--------------------------------------------------------------
+
+What's this ??
+Well, in this article I'm going to give you a few (useful?)
+tips about MS-Dos and some Novell commands.
+Many Atari users have a lot to do with PC's at their work and
+for those who are a little familiar with both MS-Dos and
+Novell I have a few thingies.
+Not all these tips are positive but hey I'am a real Atari
+freak so you can't expect me to stay fair al the time.
+
+--------------------------------------------------------------
+
+MS-Dos,
+
+* If you want to DELete something you always must type
+  Y or N.
+  Well how about this command : echo Y | del *.*
+  
+  Warning please be shure that you use a disk with useless
+  data on it, otherwise your screwded !
+
+  Note: the Y can ofcourse also be N and the caracter between
+  the Y and del is the caracter above the \ key on your PC    
+  keyboard.
+
+
+* People know that the command DIR will give you a list       
+  of everything on a disk.
+  But not many know that you can do more with this command. 
+
+Example,
+
+You are for instance in the the subdirectory C:\public\house\junk
+and you want to see the main directory C:\ without leaving the
+current subdirectory your in, then you can try this,
+
+
+DIR .... : This command will show the main directory while    
+           your still in C:\public\house\junk\msdos
+
+DIR ...  : This command however will let you see for instance
+           de directory of C:\public\house and so on.
+
+Just play around with it and it will get clear to you.
+
+
+Novell,
+
+  If you work on a novell network and you like to know some   
+  useful Novell commands then read on,
+
+
+* If you like to know how many network drives there are 
+  available you can use the command : MAP
+
+
+* When you type USERLIST you get the names of all the people  
+  who are logged in on the server.
+
+
+* Infront of those names are the station numbers which you can use to send
+  messages to.
+  You can use the following command to send a sentence to another station,
+
+  SEND " ********************** " to XX
+
+  Warning: the station numbers will change everytime when 
+  somebody logs in.
+  Note: the ***** is the sentence you want to send and the XX
+  is the number of the station you want to send the message to.
+ 
+
+* With the command CASTOFF your computer refuses to accept    
+  those message's from other people.
+  CASTON will turn recieving back on again.
+
+* The command WHOAMI will give you a roundup of information   
+  about yourself.
+  When you put /A behind it you will get the complete list.
+  
+
+* But if you want to know it all, you just have to type HELP  
+  or NFOLIO to the infobase with Novell commands in it.
+  Sometimes you have to search for the .NFO files, you just
+  have to look in the public directories (simply search
+  some different network drives) and you will get a "link"     
+  when it is found.
+ 
+* If you read the NFOLIO please study the MAPPINGS and you
+  can go places where others can't come.
+
+--------------------------------------------------------------
+
+We of the D.B.A. are not responsible for possible damage
+coming from wrong use of these commands.
+ 
+P.S. Beware of remote console watchers like HotLook and others.
+     These programmes allow the supervisor to look over your shoulder when
+     your working on your PC.
+     With Norton Utils you can check for these programmes (look for tiny
+     resident programmes).
+     By the way, Hotlook isn't able to "look" when your working in Lotus 123.
+     Lotus will probably fail to boot when somebody is watching you with
+     HotLook or crash (it might be an indication that somebody's looking).
+

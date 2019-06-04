@@ -1,0 +1,83 @@
+                      DSP - "Der Springende Punkt" im Falcon
+                      ======================================
+
+Letzens fragte  mich unsere  Mag-Redax ( Moondog ): "Ich bin gefragt worden, ob
+wir nicht mal was Åber den DSP schreiben kînnten. WÑr  das nicht was fÅr dich?"
+Sofort wehrte  ich ab: "Nee, nee  du. Da wende  dich mal  an bITmASTER, der hat
+Ahnung."
+Eric's Antwort: "Ach was. Das  soll doch  nichts Åber  Programmierung sein. Nur
+so, was man damit machen kann..."
+
+Also denn:
+
+Vielleicht  sollte ich die  Frage mal etwas anders  stellen:  Warum haben trotz
+"MagicMac" und hîherer Apple-Power noch so viele Leute einen Falcon?
+Folgende Mîglichkeiten:
+
+1. nach dem Kauf des Falcons ist das Geld alle
+2. der Falcon hat  ein recht gutes  Soundsystem, welches - in der Grundausstat-
+   tung  16-Bit-Stereo-DMA-Sound  und  Samplefrequenzen  bis 50kHz bietet sowie
+   einen  eingebauten  A/D-Wandler (D/A-Wandlung  intern nur  fÅr einen Stereo-
+   kanal)
+ - mit geringem Aufwand  hardwareseitig erweitert werden kann (externe Taktver-
+   sorgung zur Bearbeitung von CD- und DAT-Signalen (44kHz bzw. 48kHz), externe
+   A/D- oder D/A-Wandler von hîherer QualitÑt u.a.)
+ - durch den in das Soundsubsystem eingebunden DSP frei programmierbar ist  und
+   in dieser Hinsicht jede PC-Soundkarte  schlÑgt (evt. mit Ausnahme der Gravis
+   Ultra Sound... )
+
+Somit  wÑren wir  endlich beim DSP  angelangt. Mancher mag  nun sagen, auch die
+NeXT-Workstations haben  einen DSP eingebaut. Aber dort  hat der DSP nur 8k RAM
+(habe ich mal irgendwo gelesen...), wÑhrend er im Falcon 96k spendiert bekam.
+Auch wird der  F030-DSP mit 32MHz  betrieben, wÑhrend kurioserweise der MC68030
+mit 16MHz vor sich  hin dÅmpelt. Des  weiteren kann  der DSP des  Falcon vîllig
+frei benutzt werden. öber  ein serielles  Interface ist  er mit dem  Rechnerbus
+verbunden  und kann so mit Programmen  jeder Art geladen werden. Es gibt  schon
+die verschiedensten Anwendungen, die den DSP unterstÅtzen:
+
+- div. Soundprogramme
+- Animationsprogramme
+- MPEG-Player
+- Fractalprogramme
+- Spiele mit 3D-System im DSP sind wohl in Planung
+
+Allen Anwendungen gemeinsam ist das PhÑnomen, daû groûe Datenmengen in Echtzeit
+gleichartig  bearbeitet  werden  mÅssen (z.B. in  Soundfiltern, MPEG-Entpackern
+oder in der 3D-Darstellung). Und genau dazu wurden die DSP's entwickelt und da-
+rum heiûen sie ja auch: "Digitale Signal-Prozessoren".
+Die wichtigste  Eigenschaft kommt aber in diesem Namen noch nicht zum Ausdruck:
+die Signale (d.h. groûe Strîme  von Digitalen Daten) werden im Allgemeinen nÑm-
+lich in  Echtzeit verarbeitet. Ein  Programm z.B., daû  ein eingehendes  Sample
+transponieren  soll, muû in  wenigen Millisekunden  folgende TÑtigkeiten durch-
+fÅhren:
+
+1. diskrete Fouriertransformation  Åber das gerade gelese SamplestÅckchen, d.h.
+   es wird  bestimmt, durch  öberlagerung welcher  Sinuswellen das  eingelesene
+   Sample entstanden ist (Umkehrung von Punkt 3)
+2. die gefunden Sinuswellen in ihrer Frequenz nach oben oder unten verschieben
+3. die Sinuswellen  wieder  zusammenmischen und  das Sample an den Ausgabeport
+   schicken
+4. fertig sein, bevor die nÑchsten paar Bytes vom Sample ankommen
+
+Ein gewîhnlicher  Prozessor ist mit  dieser Aufgabe ziemlich  Åberfordert, aber
+ein DSP
+- ist von vielem Schnickschnack "normaler" 08/15-Prozessoren befreit
+- hat dafÅr Adressierungsarten, die die Fouriertransformation unterstÅtzen
+- erlaubt durch eine besondere Architektur aufeinanderfolgende Befehle fast pa-
+  rallel auszufÅhren
+
+Der DSP kann also im Prinzip jede stupide Aufgabe Åbernehmen, wenn die CPU sich
+nicht darum kÅmmern kann. Leider haben nur wenige Leute Zeit, sich in der Frei-
+zeit und kostenlos mit dem DSP zu beschÑftigen.
+Groûe Ausnahme: einige  Demo-Crews und  bITmASTER. Ergebnisse: meistens irgend-
+welche MOD-Player.
+
+Tja, das war's dann - allgemeiner gehts nicht. Ich hoffe  die Redax dachte sich
+das so. Wenn nicht schick ich's an die STC...
+
+Wer das Ding programmieren will wende sich an bITmASTER of TCE...
+
+-------------------------------------------------------------------------------
+                                                                  Apache of tnb
+-------------------------------------------------------------------------------
+re

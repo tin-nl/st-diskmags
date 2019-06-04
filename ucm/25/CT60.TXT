@@ -1,0 +1,140 @@
+Û--------------------------------------------------------------------------------
+               CT60 - The Neverending Story - My Personal Experiences
+Û--------------------------------------------------------------------------------
+
+ÒDay 1:
+
+I finally  felt like chistmas, although it was still summer, when I finally held
+the  package with  my CT60 in hands. I  ordered and  payed t wo years before, so
+there was no time left to waste, I had to get this thing running.
+My  Falcon  did  already  have a Phantom SE  accelerator, so  I thought  I could
+combine  those  things, also  SD-RAM (256 megs) was  bought  after  the  list on
+Rodolphe's homepage long time before.
+I opened the  package VERY carefully, cause  Rodolphe wrapped my baby completely
+in bubblepaper  and gluestripes. It looked beautiful... but would it work? I had
+to try! I fit the SD-RAM in the slot, removed the jumper on my Falcon's epansion
+port and carefully put the CT60 in it, or on if you like.
+Would  all  my  hopes of  fast internet  browsing (without my Mac ;-)), watching
+realtime movies  and working with big graphic files really just be one switch-on
+away? I thought while pressing the formally reset-switch on my Falcon's tower...
+Noooooo... just black  screen . damn I thought... switched  back  to  normal 030
+mode and everything was okay, but very slow, like before ;-)
+It MUST be the SD-RAM I thought by myself and looked up Rodolphe's website again
+... indeed, the SD-RAM I bought, which was formally supported, wasn't anymore on
+the "goodlist".
+
+ÒDay 2:
+
+So I went  to a local  PC-dealer, who  laughed  at me, as I told him that I need
+SD-RAM, he called  me old-fashioned, but still had one 128 meg SD-RAM card left.
+I didn't want to buy another one in vane, so I brought my  Falcon with me and we
+tried out... the same black screen as before...
+
+ÒDay 3:
+
+I was  getting a  little bit  afraid  if my CT60 might be  damaged, or was it my
+Falcon? Luckily I  had another Falcon  at home, with  an AT-speed PC emulator on
+the expansion  port...I had to try if the CT60 works with it... so I changed the
+CT60 in the other Falcon and switched it on.
+I saw the CT60 boot  screen and  was very  happy, until I got an SD-RAM error at
+boot up...
+
+ÒDay 4:
+
+...so it also had to do with SD-RAM I thought and went again to another computer
+dealer and tried there the SD-RAM, still no good result...
+I wasn't very happy anymore when I was at home again and cheked again Rodolphe's
+homepage... the  SD-RAM  support  has  been  changed  again... so  I  called  my
+girlfriend  who went home from  work and told her to bring me such a SD-RAM card
+which was supported.
+She really did  manage that  and proofed  a lucky  hand: as I put in her 128 meg
+SD-RAM, I could start my Falcon with the CT60 for the first time.
+I wanted to try DOOM first, as this was  already good  playable on my Phantom...
+how would it be on CT60? I started  the game and it was insanely fast... I could
+play for about 2 minutes when I got an error called "spurious interrupt"...
+I tried again, with the same result... maybe it was the game?
+So I tried ScummVM and  played Sam & Max... also  the same error, but incredible
+fast ;-)
+
+ÒDay 5:
+
+I contacted Rodolphe  via email, he asked me for my HDdriver version and told me
+that in mine there should be a bug...
+Uwe Seimet mailed me the latest version, but told me that the error shouldn't be
+a HDdriver problem...I installed the newer HDdriver and tried out...
+This wouldn't  be a  neverending  story  if it'd work now, so it didn't... still
+this nerving error message... I already found out that this message also appears
+while working with MagiC and Mint - but not so often.
+
+ÒDay 6:
+
+I posted  my CT60 problem  on the  forum at www.dhs.nu . Finally  Didier told me
+that my problem  should be caused by  the ABE-SDR and  that I have to flash this
+chip with a jtag cable.
+I contacted Rodolphe again and he mailed me a  patched firmware version for this
+chip. So I had to build a jtag-cable to get my CT60 running correctly.
+
+ÒDay 7:
+
+I went to a electronics dealer and bought everything I needed for the cable, the
+price was about 17 EUR. I reanimated my  soldering iron after a long time of not
+being used (last project was building  a combined parallel/serial  interface for
+my Portfolio)...
+After 2 hours of burning my fingers and soldering wires and resistors, I had the
+jtag-cable ready... I thought...But trying it out just told me: CT60 not found..
+
+ÒDay 8:
+
+After a long  search I found  the error with  the jtag-cable... the power supply
+didn't have a good ground, so I  had to resolder  it again. Now  it worked and I
+flashed my CT60.
+(If someone  is interested, I  could make  a cable  for  him, too. Feel  free to
+contact me!)
+I was spending  the whole left day to complete some optical things (LED in tower
+for 66 mhz) and  added some  technical details (CT60 on/off switch, better power
+switch, a new reset switch, etc).
+
+The next days until now my CT60 did run without any big problems...
+Some programs  do not like  the accelerated  Falcon, but  in most  cases you can
+solve this by changing  program-settings to Fast-RAM off. The biggest problem, I
+still haven't  solved yet is  finding a  suitable boot-selector, as Airbag won't
+work with the CT60. Stoop should work and is freeware, but the registration code
+does not  work for me, I don't  know why... and the unregistered version doesn't
+have enough features for me, as I work with 3 operating systems (MagiC, Mint and
+TOS).
+Another problem is that my  internal clock now  doesn't work correctly, as I use
+another Falcon  than before (you  remember, the one  with  the AT-speed) I don't
+know if this  problem is caused by the CT60... in fact, the clock is running way
+too slow and  my external radio-controlled clock for my Falcon doesn't work with
+the ct60...
+I also tried different ST-RAM modules and found out that for me the FalconWings,
+although  it is  maybe one  of the  slowest RAM cards for the Falcon, works best
+with CT60 (of course with the non-soldered version), but I will have to exchange
+it, when I finally  let my CT60 be  soldered  by a former  atari dealer and good
+friend of mine.
+
+You see, it's still a neverending story!
+
+Note: Until  now, I  wasn't  able  to  get  the  CT60  running  with my Phantom-
+accelerated Falcon, it  should be a problem with the clock patch included in the
+Phantom package, but  I am worried  that the  Phantom won't  work anymore when I
+remove this patch, so you should have a non-accelerated Falcon before installing
+the CT60. Either buy one from Ebay or remove your acclerator completely...
+
+ÚConclusion: Buy it or not? Athough I waited almost 2 years for this hardware and
+Ú            it took me one week to get it finally running, I would really buy it
+Ú            again! The speed is amazing, I never did see such a fast Atari! DOOM
+Ú            runs very smooth, the  Lukasfilm adventures  played with ScummVM are
+Ú            great and I  finally can do online-banking with my Atari under  mint
+Ú            and Cabssl.ovl, although this is not  optimised for 060 and so still
+Ú            is slow...But browsing  the web with CAB  is really  fast, so that I
+Ú            will soon use my Falcon with DSL via my Ethernec and my Mac.
+Ú            Now with  the CT60 I  can listen  to MP3  files  while  working with
+Ú            papyrus, chatting  with aICQ and downloading  some  files  with CAB,
+Ú            without hanging of the music.
+Ú            You see, it's a  must-have for every neverending Atari user, but you
+Ú            should have some patience and not too big expections for the first 8
+Ú            days ;-)
+
+                                                             Mac-falcon  (chris)
+Û--------------------------------------------------------------------------------

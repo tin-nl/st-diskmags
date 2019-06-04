@@ -1,0 +1,347 @@
+06603020203800
+1
+2
+F0110030
+9[............................................................]001
+Maggie 22: Programming
+
+
+                         ST Demos exposed (2)
+
+               Or: A sad coder's guide to the hardware
+
+
+
+After last issue's talk of borders and scrolling, we move on to the 
+subject of scrollers. Last issue's article signposted "scrollers, 
+plasmas and main menus" but I think that was a weeny bit over-
+optimistic!
+
+Again, we assume no previous experience of any type of hardware 
+programming, although the odd bit of assembler, STOS or GFA would not 
+go amiss... also the explanation of bitplanes really needs you to be 
+comfortable with the idea of binary numbers...
+
+
+
+                             2. Scrollers
+
+
+Scrollers were the staple diet of the old ST demo. Although they do 
+all look a bit passe now in the times of heavy 3D, the well-programmed 
+scroller was still a fair technical achievement when you consider how 
+much data has to be shifted. I've chosen this as one of the first 
+topics after some of the really hardcore fancy stuff because at its 
+heart there are some of the core problems of handling graphics on the 
+ST which we will need later to discuss some of the fancier bits of ST 
+demos - in this way, we will also discuss how screens are stored on 
+the ST and how we need to carefully manage data and plan everything 
+clearly.
+
+
+
+
+                   The basic problem with scrollers
+
+In 1985 when the ST first came out, the machine's 8Mhz processor was 
+seen as a major advance in the speed of computers. The big problem was 
+that the increase in processor power was more than matched by an 
+increase in the amount of screen data needed to draw the screen. Added 
+to the fact that the demos all needed to run at 50 frames every second 
+to look smooth (as opposed to down to 5 per second for games) and this 
+meant that some tricks would be needed to put something decent on the 
+screen.
+
+Let's take a simple example: the ST's screen is always 32K in size 
+assuming no borders are removed. At 8Mhz, each frame of the screen 
+"lasts" for exactly 160,256 processor cycles (each scan line lasting 
+512 cycles with 313 scanlines in total - see last issue's article for 
+more info about scanlines.) To copy one area of memory 32K in size to 
+another, as fast as possible, only using the processor, requires 
+almost exactly this amount of time. In fact to do this we need to 
+access 64K of data: 32K for the source and 32K for the destination.
+
+So simply copying a whole screen locks up the system completely. If we 
+want other effects or music, or fiddle about with what we are copying, 
+then it would be impossible to do smoothly.
+
+
+
+
+
+
+                          Storing the screen
+
+Clearly we need to find some ways round this. One is to not copy the 
+whole screen, and this is where bitplanes come in:-
+
+                              Bitplanes
+
+This is an explanation of how a low resolution 16 colour screen is 
+stored in the ST's memory, and seems confusing to the uninitiated.
+
+(1) There are 200 rows of pixels and 320 pixels in each row.
+
+(2) Each pixel takes a value from 0 to 15 (hence 16 colours) and since 
+this is a computer it is used in binary format i.e. 0000 for zero, 
+0001 for one, 0010 for two and so on, up to 1111 or fifteen. So to 
+represent 16 colours we need 4 computer "bits" to represent it - 4 
+bits being half a computer "byte".
+
+(3) The screen is stored in horizontal lines. If there are 320 pixels, 
+this means there are 320 * 1/2 = 160 bytes for each line.
+
+(4) Now the strange bit: in the memory itself we break each line up 
+into groups of 16 pixels. Let's take the top left 16 pixels of the 
+first row. The values of the pixels (top left first) we shall take to 
+be 0, 1, 2, 3... 15. Or in binary:
+
+0000 0001 0010 0011 0100 0101 0110 0111 1000 1001 1010 1011 1100 1101 
+1110 1111 
+
+ What is NOT done is that we take the 4 bits of the first pixel and 
+the 4 bits of the second pixel and make a byte by glueing them 
+together.
+
+(5) Instead, we take the lowest (i.e. last) "bit" of all 16 values in 
+the chunk and make 2 bytes by glueing them all together. If we look at 
+the line of bit data above, then this will make 01010101-01010101. 
+This makes up the first two bytes of the screen as it is stored in 
+memory.
+
+(6) We repeat this for the third, second and first bits of data in 
+turn. In the end we have the following bit patterns:
+
+Bytes
+0,1     01010101 01010101
+2,3     00110011 00110011
+4,5     00001111 00001111
+6,7     00000000 11111111
+
+In this way the pairs of bytes are separated from one another. Each 
+chunk is called a "bitplane" since it refers to all the same bits of a 
+group of many pixels.
+
+
+
+
+                       Advantages of bitplanes
+
+At first sight this looks like a really stupid way to store a screen. 
+First, why not do it the easy way? This is really a technical problem 
+because it is easier for the video processor to decode the data. Also 
+the same technique is used to decode medium and high resolution 
+screens (i.e. splitting into chunks of 16 bits)
+
+Second, there is the cunning advantage that we can draw 16 pixels all 
+at once by simply altering two consecutive bytes of memory. If we take 
+the above example, let us alter bytes 0 and 1 to 11111111-11111111. 
+This will alter pixel 0,2,4...14 all in one go. If we used the easy 
+way to store a screen, we would need to access all 8 bytes of data, so 
+the bitplane technique is quicker.
+
+
+
+                      Disadvantages of bitplanes
+
+As with all things, there are difficulties with this approach. 
+Firstly, if we want to move something by one pixel, we must alter (or 
+"shift") the data around before we draw it to the screen, and this 
+eats up processor time. Secondly, any piece of code that accesses any 
+pixels not in the same chunk of 16 must take this into account. 
+Therefore it must be specially adapted and this takes time and effort. 
+The blitter in the STe made this much easier for programmers, but came 
+too late to be of any real help - most people had normal STs by then.
+
+
+                           Using bitplanes
+
+You can now see that programming bitplanes is, well, a bit of a pain. 
+A great deal of thought is needed to get any efficiency from an ST. 
+Let's look at some of the techniques used in scrollers to do this.
+
+
+
+
+
+
+
+           1. The chunky scroller and the bitplane scroller
+
+This is the old scroller made up of small blocks, usually 8x8 or 
+similar. To get size, you could load one line of graphics into the 
+processor, and copy them several time, thus requiring less time to 
+copy an amount of data. The resulting 68000 code usually looked 
+something like this:
+
+        move.w  (a0)+,d0        ;get a word of data, stick in d0
+        move.w  d0,(a1)         ;copy to row 0
+        move.w  d0,160(a1)      ;copy to row 1
+        move.w  d0,320(a1)      ;copy to row 2
+        move.w  d0,480(a1)      ;copy to row 3
+        move.w  d0,640(a1)      ;copy to row 4
+        ..etc..
+
+and so on, where a0 pointed to the source graphic and a1 the 
+destination. The other big trick was to only use one bitplane (see the 
+above explanation) In this way, to cover a whole screen you only need 
+to copy 8K of data onto the screen (i.e. one quarter) and if the 
+repeated "chunky" trick is used, perhaps only fetch 1K of data to copy 
+on. This is opposed to reading a full screen of 32K from a background 
+and writing another 32K. Hence we have had to copy about 15% of the 
+data of our first example. Most demos desperateyl tried to hide their 
+1-colour shabbiness by using gaudy rasters (see last issue) or other 
+cunning bitplane effects.
+
+
+
+
+
+                         2. Shifting graphics
+
+This is all very well, but what happened if your scroller moved at a 
+speed of less than 16 pixels? In this case we need to alter the 
+graphics put on the screen. This is very costly, but possible in some 
+cases. If you have the famous "BIG Demo" by TeX, look at their "Big 
+Scroller" - it moves one pixel at a time. Luckily in this case there 
+is a very useful instruction, the ROXL instruction, which is perfect 
+for this application. It would shift the data you wanted by one place 
+to the left, and store the bit that was shifted out at the left hand 
+side into a special register: the "X" or Extended Register. In the 
+following ROXL instruction, the X bit would be shifted in at the far 
+right of the next data you shifted. All you needed to do was draw one 
+column of pixels at the right hand side of the screen and the scroller 
+was complete.
+
+This is all that there is to the "ROXL" scroller. Here it is in its 
+assembler glory:
+
+Screen data:
++136     +144     +152      X reg   Assembler code
+----     ----     ----      -----   --------------
+
+00101010 10101110 10101110  0
+                                   roxl.w 152(a0) ;do the last chunk of
+                                                  ;16 on a row
+00101010 10101110 01011100  1
+                                   roxl.w 144(a0) ;do the chunk to its
+                                                  ;left
+00101010 01011101 01011100  1
+                                   roxl.w 136(a0) ;and left again...
+
+01010101 01011101 01011100  0
+                                        ..etc..
+
+
+Despite its simplicity, the roxl was still quite slow. What happens if 
+your scroller moves 4 or 8 pixels left at a time? Doing the "roxl" 
+trick 4 times meant you usually ran out of processor time, unless your 
+scroller was slow. We need to find way round this - the answer was 
+buffering.
+
+
+
+
+
+                             3. Buffering
+
+The concept of a "buffer" is an old one in computing, and really just 
+means a piece of storage space. If we look at a scroller that moves at 
+2 pixels each frame, then it takes 8 frames for it to move one whole 
+"chunk" of the screen (since 2 pixels * 8 frames = 16 pixels.) Instead 
+of shifting all this data each frame, if we store 8 copies of the line 
+of scrolltext somewhere in memory, each shifted 2 pixels left from the 
+last, we can simply copy each one of these buffers in turn to the 
+screen. The only shifting we need to do is when we add parts of the 
+new letter to the right hand end of the buffer!
+
+To demonstrate, here's an example. Each "character" in the example 
+represents 2 pixels of the buffers we use. The splits for each 16 
+pixels are denoted by the spaces:
+
+Buffer 0:
+AAAAAAAA BBBBBBBB CCCCCCCC DDDDDDDD EEEEEEEE
+Buffer 1:
+AAAAAAAB BBBBBBBC CCCCCCCD DDDDDDDE EEEEEEEF
+Buffer 2:
+AAAAAABB BBBBBBCC CCCCCCDD DDDDDDEE EEEEEEFF
+Buffer 3:
+AAAAABBB BBBBBCCC CCCCCDDD DDDDDEEE EEEEEFFF
+Buffer 4:
+AAAABBBB BBBBCCCC CCCCDDDD DDDDEEEE EEEEFFFF
+Buffer 5:
+AAABBBBB BBBCCCCC CCCDDDDD DDDEEEEE EEEFFFFF
+Buffer 6:
+AABBBBBB BBCCCCCC CCDDDDDD DDEEEEEE EEFFFFFF
+Buffer 7:
+ABBBBBBB BCCCCCCC CDDDDDDD DEEEEEEE EFFFFFFF
+
+If in frame one we copy buffer 0, then in frame two copy buffer 1 to 
+the screen, the scroller moves along at two pixels. When we get to 
+buffer 7, we then copy buffer 0, only this time copy 8*2 pixels = 16 
+pixels = one data word from its start, and tag some new slice of 
+graphics on to the end of the buffer. Voila! A much faster method of 
+scrolling buffers. In this way, scrollers using more bitplanes or 
+larger areas of the screen can be achieved.
+
+You may well have noticed that this takes up a lot of memory, and this 
+is one of the main principles of demos: more memory --> faster demos. 
+The other main idea here is that you always appear to be doing more 
+work than is really the case!
+
+
+
+                    4. More tricks with bitplanes
+
+There is one other aspect to bitplanes which involves a fair bit of 
+cunning thinking. It is concerned with the careful use of colour 
+palettes when bitplanes overlap. Let's say we are using a 1-bitplane 
+scroller, while the other three bitplanes are being occupied by an 8-
+colour picture (we can split bitplanes like this to give new effects)
+
+The scroller goes in the 4th bitplane, that is it governs the most 
+significant bit of the colour of each pixel, of value %1000 or 8. If a 
+pixel of this bitplane is set, then the colour of that pixel MUST lie 
+in the range %1000 to %1111 (8 to 15) no matter what lies in the other 
+3 bitplanes. Look at the example below:
+
+
+Bitplane 0   0101010101010101 Picture 1
+Bitplane 1   0011001100110011 Picture 2
+Bitplane 2   0000111100001111 Picture 3
+Bitplane 3   0000111111110000 Scroller
+
+Resulting        1111  11
+Colour       0123234589014567
+
+
+Now, if we use a random palette all the colours will look ugly and you 
+won't be able to read the scroller. But if we set all the colours 8 to 
+15 to the same value (let's say white) then the scroller will appear 
+to run over the top of the picture without them interfering with one 
+another.
+
+Similarly, if we want the scroller to run behind the picture, the 
+colours of 0 to 7 should be copied to those of 8 to 15, with the 
+exception of 8 (ie. where the picture is empty) which should be set to 
+the scroller colour.
+
+That's about it for bitplanes; these tricks are used all over the 
+place in demos, especially those "one million bitplane scroller" 
+screens in fashion a few years ago.
+
+
+
+                                 End
+
+The next issue will go into more depth about fancier scrollers and 
+sprites, since some of the ideas here will be used in the next section 
+too. Meanwhile if anyone wants source code for any of these 
+principles, I have a stackful of old ST demo code from the infamous 
+Double Doozer and Pandemonium Demos by the now sadly defunct Chaos 
+sitting in my diskbox....
+
+tat
+
+s.j.tattersall@cms.salford.ac.uk
+6 Derwent Drive, Littleborough, Lancs OL15 OBT, England.

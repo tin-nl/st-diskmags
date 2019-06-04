@@ -1,0 +1,276 @@
+0660103030571
+9[........................................................]
+€
+…CrystalAtariBrowserv.2.5
+
+„"ThetaxifortheInformationSuperhighway"-(InGerman)
+€
+Theclicheabouttheinternetbeingawonderfulthingoccurstomein
+twoorthreedifferentformseachday..Thereisnotonlythechanceto
+speaktosomeofthestrangestpeoplecastuponitsshores(IRCchat
+relay)andtoemailtoallandsundry('NewsieisGod,Taffsaidso!)
+Youalsogettouseandponderonquitealotofsoftwarethathasnot
+reallydemandedyourattentionbefore..
+
+I'mnotgoingtodoawrite-upontheSTinGconnectionsoftware,I'll
+happilykillthefirstpersonwhoasksmehowtosetitup,andhowit
+allworks..Itjustdoes!!Thatisallyouneedtoknowforthat!
+
+Instead,IamlookingattheCrystalAtariBrowser(CAB),inits
+mature,self-confident,andcommerciallyavailableversion2.5,
+programmedbyAlexanderClauss,distributedbyApplicationSystems
+Heidelberginitially,andSystemSolutionshereintheUK..
+
+„Preamble..
+
+€CABhasbeenaroundalongtime,eversinceitwasjustcalled'HTML
+Browser'andwasstrictlyforofflineuse..(Someonewhoisabitout
+oftouchwithAtaridevelopmentsmadethatmistaketheotherday,it
+wasGarethofMaggie5thbirthdaypartyfamephoningmewhowas„most€
+surprisedthatIwasabletogetafullrangeofinternetserviceswith
+myFalcon,"SodoyouhavetodownloadtheWebpagesandreadthem
+offline?"(!?!?!!))
+
+Itstartedtocometogeneralattentioninthelatterdaysof'ST
+Format'and'AtariWorld'whogavethethenfreewareversion1.0plenty
+ofpublicity..Versionfollowedversion,withthefinalfreewarev1.5,
+andmajorchangesforthefirstcommercialversion2.0..Latterly,the
+currentversion,andtheoneunderconsiderationnowisCABv2.5,which
+hashadmoreinprovementsmadetoitstill..
+
+„Anoverview..
+
+€I'msureyouallknowwhattheworldwidewebisbynow,ina(very
+thin)nutshell,theworldwideweb(or'WWW')isagraphicalmethodof
+puttinginformationontotheinternet,usuallyamixtureoftextand
+picturesin'page'format..Thereareoftenlinkstogotootherpages,
+andbyclickingonalotofthese,youcantravelquiteadistanceon
+the'Web..Theprogramtobeabletoloadinandputthesepagesona
+computerscreeniscalleda'Browser',andCABissuchaprogram..
+
+CABneedsaninternetaccountalreadyinplacetobeabletowork
+online,althoughitcan'browse'suitablepagesoffline,sayimported
+onadisk..CABalsorequiresanextracomponentcalledaninternet
+moduleor'OVL'file,andtherehappenstobeonealreadyincludedfor
+theallnewPPPconnectionsoftware,moreofwhichinaminute..
+„
+€CABputsagraphicalfrontendonscreenwhenrun,withalargewindow
+areadominatingthescreenwherethewebpagegoes,andarowof
+buttonsatthetopcontrollingtheaction..CABisfullyGEMcompliant,
+andissupportedbythelikesofMagiC,andhasalotofmodernGEM
+featuresbuiltin..Itpresentsanicer'sculpted'3Dinterfaceifrun
+underMagiCaswell..
+
+CABhastosupportaverywiderangeofpotentialhostplatforms,it
+demandsaminimum2megabytesofmemoryforversion2.0andupwards,
+butcanbefoundrunningfromanythingfromastandardSTthroughto
+theHadessuperclones,andnodoubt,emulatedformsofAtarisuchas
+PacifistandMagiCMac!
+
+ScreenmodescanbedisplayedasanythingfromSTHiresmono(640x
+400)throughtowhatevergigapixelled24bitmulticolouredgraphics
+cardthattakesourfancy..Forthepurposesofthereview,theFalcon
+'Truecolour'16-bitmodewillhavetosuffice..Generally,themore
+coloursthebetter,buttherearecompromiseoptionssuchasatext-
+onlydisplay(betterforloadinginspeedaswell)andagreyscale16
+shadeoptionforthosescreenscapableofsupportingahigher
+resolution,butnottoomanycolours(someTTmodesIthink..)
+
+Asageneralrule,aresolutionof640x480isrecommended,withsome
+pagesaftera800x600size..I'veregularlyruninalowervertical
+resolutionthanthat,andhavenotcomeacrosstoomanyproblems..The
+browserdocumentdisplayareacanbedynamicallyresizedonthefly
+whilstonline
+„
+€Controliseasyandintuitive,firstlyforofflineviewingofaweb
+page,thereisafloppydiskiconorbutton,whichisthe'loadlocal'
+option,whereitlooksinnormaldiskdirectoriesforanythingwiththe
+magicextender.HTM,forexample,adownloadedcopyoftheAtariTimes
+diskmagazinewhichalwayshasaneasytofind'menu.htm'whichis
+loadedin,andthentherestoftheissueisviewedlikeaminiversion
+oftheworldwideweb,strictlyofflineofcourse..
+
+UsingCABonlineneedsalittlebitmorepre-preparationandthought,
+firstlyaninternetaccountsetup,andasuitableOVLfileobtained,
+andtheninternetconnectionsoftwaresortedout(anepictalein
+itself,)thereisnooptionwithinCABtoeasilysetupthis,although
+aseparateconnectionpackageisincludedifyouaren'talreadyusing
+somethingelse..
+„
+€Thereisadefaulthomepagewithastrictlylimitedselectionoflinks,
+oryoucancopydownaselectionoflikelysoundingwebaddresses,and
+clickonthe'URL'icontotaptheseinindividually,orthe'hotlist'
+icontoself-createyourownbookmarks,whichcanbethenclickedonas
+thedefault'jumping-off'pointsintothe'web..
+
+Whereyouchoosetogotoday(groan!)isuptoyou,thelinksupplied
+tendtobeginandstopatthe'ASH'ApplicationSystemsHeidelberg
+page,andoneortworelatedothers,andthatisit..Mostpeople,over
+ashortperiodoftime,andaccordingtointerest,willbuilduptheir
+owncustomisedcollectionof'Bookmarks'inanycase..
+
+Navigatingadocumentshouldbesimplicityitself,justclickonthe
+highlightedareasaccordingtowhereyouwanttogo..Thereisauseful
+'Back'buttonifyouwanttoretraceyoursteps,andthepagethatyou
+areinoffersnowayout..Thereisa'stop'buttonontherighthand
+sideofthemenubarifyoudecidetocutalongpageshort..Thoseare
+thebasicsofnavigatingthe'webwithCAB!
+
+Thereareotheroptionsformoreadvancedusers,itispossibleto
+installthirdpartyprogramstohandlefunctionsthatCABcan't..For
+example,graphicfileviewersorMPEGanimationplayers,andeven
+NewsieformailingandFTPtransferifthoseoptionsareavailable
+withina'Webdocument..Thereisa.WAVsoundplayer'GEMing',butno
+'MODfileplayersuchas'Modplug'onthePC..
+
+CABsupportsmostcurrentHTMLspecifications,includingmajor
+NetscapeandMonopolysoftInternetExplorerextensions,itdoesnot
+currentlyrecogniseJavascriptandJavaapplications,whichdoesrule
+outaminorityofpages..Asfromversion2.0,CABdoessupportframes
+baseddocuments..
+„
+What'snewforthisversion?€
+
+ThereallybigchangesforCABcamewithversion2.0,wherethe
+decisiontogoforafullycommercialversionleadtoarevamped
+interface,framessupportetc..Withversion2.5beingthenextmajor
+availableversion,furtheradditionswereincluded..
+
+TheallnewPPPconnectionpackagewasseenforthefirsttime,
+previouslyCABusershadtorelyontheirexistinginternetconnection
+software,whichwasusuallySTiKorsimilar,andmostlikelySLIP
+connectionbased..AseriesofdialogueboxesforPPPconnectgives
+someoftheeaseofsettingupmissingfromthe'handbuilt'solutions
+onofferelsewhere..Afewpeoplehaveevengotthisworking,one
+personIwitnessedafterseveralhours!Mostpeoplewillprobably
+ignorethis,andcarryonwiththeirpre-existingconnectionsoftware,
+astherearealternativePPPconnectionoptionssuchasSTinGavailable
+now..Ashame,becauseitdoeslooklikeanicelittleprogram,butcan
+onlyrununderamulti-taskingO/SsuchasMagiC..
+
+WithreferencetothemodernenhancedGEMsupport,CABcanrun
+alongside'BubbleGEM'underamulti-taskingO/S..BubbleGEMisan
+enhanced'helpfacilitywithsmallspeechbubbleassistance,ala
+Windows'95..CABalsosupportstheOLGAmanagerundermulti-taskingas
+well,asadocumentwiththesamenameinbothCABandatexteditor
+supportingOLGAcanbeupdatedinthelatter,andbechangedonthefly
+inboth!UsefulfordevelopersofWebpageswhowanttoseewhatthey
+aredoingquickly..
+
+Theothermajoradditiontothisversion,istheinclusionofseveral
+sub-applicationsormoduleswhichcanbecalledfromtheCABmainmenu,
+again,theseareusedtobesteffectunderamulti-tasking
+environment..
+
+CABALOG-Animagecatalogue,looksforGIFandJPEGimagesinweb
+pages,brilliantforlookinginpagesstoredondisk(inthecache..)
+
+CABDLOAD-Amodulethatcandownloadafileforyouwhilstyougeton
+withtherestofyourbrowsing..Severalcopiesofthiscanberunat
+oncetodownloadseveralfilessimultaneously!
+
+CABCHECK-Checksthehotlisttoseeiftheentriesarestillvalid,
+andiftherehavebeenanychangesmadetothosepages..
+
+CABSURF-Canbesettoautomaticallyfollowlinks,anddownloadthose
+pagesforlaterofflineviewing,again,canberuninparallelwiththe
+mainprogramwhilstyouarelookingatsomethingelse..
+
+CABCACHE-Stirupthecontentsofthediskcachetodisplay,copy,
+moveordeleteanyfilesinthere..
+
+CABSTEGA-Anoddity,allowsyoutoenterencryptedmessagesintoHTML
+documents..Why?
+
+„Queriesandquirks€?
+
+LastweekendIspoketosomeonewhoisbetterknownas'Gingernut'on
+AtariIRCandhesaidthereisnosuchthingasa'perfect'browser..
+Thisistruehere,althoughCABisbetterinmyopinionthansome
+peoplegiveitcreditfor..
+
+"CABalwayscrashes.."I'veheard-MaybeI'vejustbeenlucky,but
+outrightprogramcrashesarerare,usuallyduetoanawkwardwebpage,
+andI'vealwaysbeenabletorestarttheprogramimmediately
+afterwards..ACABcrashdoes*not*inmyexperienceatleast,takeout
+yourwholesystem,andthemodemconnectionstaysupthroughallof
+this..AMagiCcrashmightbeadifferentstorythough!
+
+Ithinkalotdependsontheindividualset-up,whatworkswellonone
+computermaynotbesogreatonanother,therewereagreatnumberof
+variationsonthebasicthemetostartwith,andsincelarge-scale
+manufacturingofTOSbasedcomputersstopped,peoplearemorelikelyto
+tinkerwithandcustomisetheirexistinghardware..CABisatthemercy
+oftheinternetconnectionsoftwareithastoworkwithaswell,and
+therearereportsofsomewebpagesbeingavailableforsomepeople,
+butnotwithothers,achangeofconnectionsoftwarewouldbethefirst
+suggestionthere..
+
+CABisunderconstantdevelopment,andanygenuinebugreportsaresure
+tobeactedupon..
+
+CABdoeshavetheoccasionalannoyingblindspot..Mostofthetime,
+the'Stop'buttonisaccessible,whenloadinginapage,however,
+sometimeswhereCABistryingtoconnecttoapageandunabletoget
+beyondthe'ConnectingtoHost'prompt,the'Stop'button,andtherest
+ofCABisfrozen..Youareunabletodoanythingshortofdroppingthe
+modemconnection,orwaitingacoupleofminutesforthatsingle
+instantwhereCABdecidestothrowupanerrorpromptandthenstart
+againonitseternalquesttoconnecttothatpagewhichishidingin
+thecornerandsulking..Auniversal'Stop'buttonfor*all*situations
+shouldbemandatoryinfutureversions!
+
+Forsomereason,onthe'default'homepage,theauthorsownwebpage
+isinaccessible!Alittlebitofanoversightthere?
+
+Thereareacoupleofpeculiaritieswhichreflecttheauthorspersonal
+preferencesandself-indulgencesmorethananythingelse..Howelsecan
+theoptiontolookforHTMLdocumentsonaseriesofCD-ROMcoverdisks
+notgenerallyavailableoutsideofGermanybeexplained?Also,whatuse
+reallyistheCABSTEGAmoduleforputtinghiddendatainwhatare
+normallypublicallyviewabledocuments,errmm??
+
+Otherwise,I'venothadanyproblemswithit,CABhasbeen
+notablytrouble-freeinuse,asallgoodprogramsshouldbe..
+
+„Howgoodisitreally?
+
+€CABhastobejudged,firstlybyitsabilitytocarryoutthejobitis
+supposedto,whichitseemstomanagewithouttoomanyproblems..
+Secondlybythestateoftheavailablecompetition,ofwhich,thereis
+some,butwe'veheardlittleofWensuite,acommercialalternative,
+thereisalsotheAdamasbrowserwhichispromisingalotincluding
+Javasupport,butisstillatanearlystage..Thereareothersinthe
+pipeline,includingoneprojectprettyclosetohome,butatthe
+moment,IwouldsaythatCABisfaraheadofallofthese..„
+
+Conclusion..
+
+€CABhasnowgottoastagewhereitwillbeveryhardtobeat..Long
+andcontinualdevelopmenthasensuredthatithasgotagood
+reputation,evenifsomepeopledon'tseeitthatway..Further
+developmentwillbeevenbetter,perhapssomeNetscape-likefeatures
+bearinginmindthesensationalreleaseofthesourcecodeforthat
+wellknownbrowserintothepublicdomain..Itwilbeinterestingto
+seewhereCABisbyversion3.0..
+
+„Advantages€:
+
+„WorksonmajorityofAtari68kplatforms€
+„Workswithverywidevarietyofscreendisplays
+Enhancedfeaturesformulti-taskingO/SandmodernGEM
+SupportsmostcurrentHTMLstandards
+Isactivelysupportedanddeveloped
+Generallytrouble-freeinuse
+BrandspankingnewmodulesandPPPconnect€
+
+„Disadvantages:
+
+Quirkyinplaces
+Somepeoplehavehadtroublewithit?
+Reallyneedsahigher-specmachinetogetthebestfromit
+Authorspagenotreachablefrommenu,someonenotpayingattention!
+NoJavasupport(yet)€
+
+CiH-Feb'98
+

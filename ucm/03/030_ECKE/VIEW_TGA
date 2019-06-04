@@ -1,0 +1,35 @@
+ 
+                               ViewTGA 3.0
+                               ===========
+
+Das Proggy dient der Darstellung von ungepackten Targa-Files. Man braucht einen
+Falcon 030 mit  mindestens 4MB. Die Darstellung  erfolgt im  liebsten Modus des
+Falconbesitzers: in True-Color... Durch  Interlacing wird  die mîgliche Farbpa-
+lette auf 18 Bit erweitert ( 262144 Farben ). Das flimmert  zwar etwas, was man
+aber nur sieht, wenn man den Kopf schnell bewegt.
+Leider lÑût  ein VGA-Monitor in True-Color  nur 320 Pixel horizontal zu. Um dem
+Nutzer das Betrachten von 640x480-Pixel-Bildern ( die maximale Grîûe ) trotzdem
+zu erlauben,werden auf VGA-Moni's benachbarte Pixel gemittelt. Die QualitÑt des
+Bildes nimmt dadurch kaum ab. Beste Ergebnisse erhÑlt man jedoch immer noch mit
+einem guten Fernseher.
+
+LÑstige TOS-Features:
+=====================
+Scheinbar setzen die Xbios-Calls zur Grafikprogrammierung die mit dem Kontroll-
+feld  eingestellte  Farbpalette  zurÅck. Durch etwas  Handarbeit umgeht ViewTGA
+dieses. Auch ist es Ñrgerlich,daû Xbios(88) den Bildschirm lîscht und dann auch
+noch in Weiû.
+
+Screenblaster:
+==============
+Ich habe versucht, dem Screenblaster einen brauchbaren High-Color-Modus zu ent-
+locken. Leider  scheint es hier ein kleines  Problem mit dem Falcon-Videosystem
+zu geben. Ein VGA-Monitor  braucht fÅr 640 Pixel  horizontal in High Color hohe
+Pixeltakte ( bis 50MHz ), der Videochip im Gegensatz dazu einen sehr niedrigen.
+Meine Versuche, wenigstens die  Bildwiederholfrequenz zu  erhîhen fÅhrte nur zu
+dem Effekt, daû das Bild unbrauchbar schmal wurde.
+Letzte Bemerkung: der SB erlaubt die  Bildschirmumschaltung per XBIOS(88) nicht
+aus SB-Modi  heraus. ViewTGA  sollte also nur  aus Orginal-Modi ( am besten ST-
+Modi ) gestartet werden.
+
+                                                     Apache of tnb / 05.04.1994

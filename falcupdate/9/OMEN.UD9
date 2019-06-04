@@ -1,0 +1,231 @@
+
+                         PRESS RELEASE FROM:- 
+
+  FLOPPYSHOP, PO BOX 273, ABERDEEN, AB9 8SJ, TEL: 01224 586208
+*************************************************************************
+ Open Multitasking Environment (OMEn) by Esquimalt Digital Logic Inc.
+  
+  Program Type:- Cross Platform Multitasking Operating System
+  System: Any ST, STE, TT or Falcon. TT and Falcon enhanced.
+  Memory Required: 512k
+  Display Type: Colour or mono, RGB or VGA
+  Price: 20.00
+  Postage: UK free, Europe (including Eire) 2.00, rest of world 4.00
+
+  Floppyshop  have been appointed UK distributors for the  OMEn 
+multi-tasking   operating  system.  OMEn is unique in that it is a
+cross platform operating system which runs on most types of computer
+systems.  The version Floppyshop  are distributing is the Atari
+version of OMEn,  but software written to  run   under  this system
+may be used on any machine running OMEn  without further  
+modification.  The Mac,  PC and Gemulator versions of OMEn are
+currently in the  final  stages  of  beta testing and an  Amiga 
+version  is  also under development. A Power PC version is expected
+some time during 1996.
+ 
+ The  distribution  deal with Esquimalt allows Floppyshop to  sell 
+the  full  commercial  version  of  OMEn and accept developer 
+registrations  on their behalf.  The main purpose of Floppyshop
+acting as an agent for Esquimalt is  to enable UK customers to obtain
+their software quicker and more cheaply by  eliminating currency and
+airmail charges. We usually carry a number of units   in stock but, 
+should we run out,  new stock will take no more than 7 to  10  days
+to arrive.
+
+  Please  note that Atari programs cannot be run directly from OMEn, 
+but  the  changes required to the source code are very minimal
+indeed. Programs may be  developed using Atari based assemblers and
+compilers for ease of use.  Full details are contained in the
+developer registration pack.  As we have  said, once converted, your
+program will run on the ST, Amiga, PC and Mac under the  OMEn 
+system.  It  is  Esquimalt Digital's aim to create  a  truly hardware
+independent operating system so that your favourite applications can
+run  on  any computer system.  This in itself will take time to
+achieve,  but OMEn is  already  a stable robust system,  the result
+of five years'  work, and  is  undergoing constant development,
+something which can only continue with your  support.  Remember, 
+it's  the  chicken and egg scenario,  the  more widely 
+circulated  OMEn becomes and the greater the support from  users, 
+the  more   applications will be developed for it.  A number of
+developers have already   purchased  registration  packs so it is
+only a matter of time  before  third   party software starts becoming
+available.
+
+  You will notice that the cost of purchasing OMEn is substantially
+lower than  that of almost all other multi-tasking operating systems.
+This has been done in order to get OMEn widely circulated and used.
+The developer registrations  are even lower in order to encourage
+third party development.  Here's a list   of OMEn's main features:-
+
+FEATURES
+  
+
+(SEE BELOW! Winner of the 1995 "Most use of Jargon in a single
+sentence to blind with pseudo-science award")
+
+  *  The Open Multitasking Environment,  OMEn operating system is a
+true  pre-emptive  multi-tasking,   modular,  open  architecture, 
+component software  environment  with  a graphical interface. (YES,
+but what are you on about? - ED)  It has many  innovative features
+which make it very flexible and which make software development
+easier. This  helps developers to quickly supply superior products
+for custom use or mass-markets.
+
+  *   The SYSTEM CORE ties together all the component software of the
+system.  It is "ported" - adjusted - to run on each type of computer.
+
+  *   An  I_O PORT or I_O CHANNEL MANAGER is created for  each 
+hardware  port available to the computer.
+
+  *   SOFTWARE  PROTOCOL MANAGERS are created for each  peripheral 
+device  or  software protocol to be used with the system.
+
+  *   An  I_O  CHANNEL links a protocol to a  port  (eg:  HP-Laserjet
+Printer protocol  to  Atari-Centronics port) or an I_O channel
+manager handles the entire interface (eg: Atari-Big-Screen).
+
+  *  "COMPONENTWARE" APPLICATION PROGRAMS are created for any type of
+task the computer is to be used for.
+
+  *   The SYSTEM CORE,  I_O PORTS and I_O CHANNEL MANAGERS provide  a
+uniform interface for all other software regardless of the type of
+computer so  that the  same  I_O PROTOCOLS and APPLICATION SOFTWARE
+will run on  all machines without porting or other adaptation.
+
+  *   OMEn  is  a  graphical system and  most  communication  between
+various  programs  is  done by clicking with the mouse,  and dragging
+ files between  windows.  Whereas  other  systems  permit dragging
+between  windows of  one  application program,  OMEn makes extensive
+use ofdragging between different programs' windows, simplifying the
+interface. 
+ 
+ *   Atari-Big-Screen has a scrolling display which is taller than
+the video screen. This allows more windows with less clutter. Moving
+the mouse "below"   the  bottom or "above" the top of the screen will
+automatically scroll the  display up or down. (TT-Hirez doesn't
+scroll).
+
+  *   The system does not use double clicking.  Single  clicks, 
+right button  clicks and dragging of files are the usual forms of
+action.  Using the  left  mouse button with the Shift key pressed is
+the same as using the right mouse  button.
+
+  *   Two types of mouse action messages can be  generated:  Clicking
+without moving  the mouse issues a "Click" message,  but moving the
+mouse with the   button held down sends "Drag" commands instead.
+
+  *  Mouse Wrap lets the mouse go off the left or top of the display
+and  come  back on the right or bottom, allowing faster mouse access
+to different parts  of the display.
+
+  *  Overscan. On the ST and TT, overscan may be selected if a manual
+overscan  switch  has  been installed on the computer.  On  the 
+Falcon, overscan  is  effective on RGB monitors only.
+
+  *  All of memory acts as a virtual RAM-Disk, as required.
+
+  *   New files are usually created and edited in-memory,  where they
+can  be shared between co-operative applications.
+
+  *   Menus are opened from individual windows,  instead of at the
+top of the  display.  There  is  no overall menu bar for the  system,
+ because all  the programs are running at once.
+
+  *  This release of OMEn is pre-set for typical Atari system use. It
+has many  configuration  options  for individual I/O Protocols  and 
+Ports. Protocols (printers  and  others)  are  supplied to  licenced 
+users  as  they become  available.
+
+  WHY BUY THE COMMERCIAL VERSION?
+  
+  *   For  productive work,  starting a licenced copy  of  OMEn 
+automatically installs your selected printer,  sets the display mode,
+ background picture, system sounds and other options, and launches
+your most-used applications.
+
+  *   Proceeds from licence registrations provide funding for 
+continued  OMEn availability,  market expansion (resulting in more
+and better software)  and  upgrades with new features.
+
+  *   The  demo  version  has a limited life and ceases  to  function
+from a specified date.
+
+  WHAT EXTRAS DOES THE COMMERCIAL VERSION INCLUDE?
+  
+  *  Disks with the latest OMEn system & docs for your computer.
+
+  *   The  latest  releases of accompanying OMEn  software,  with 
+upgrade  to  scalable fonts in "Micro-Word" word processor.
+
+  *  The latest Printer Protocol Managers.
+
+  *  Windows/OS2/TGA/Degas to OMEn bitmap picture converter.
+ 
+  *  Falcon True-colour & Audio support.
+
+  *  The ability to save your customised settings and preferences.
+ 
+  *  OMEn Herald newsletter updates you on the latest software and
+developments.
+
+*********************************************************************
+  OMEn Developer Registration Pack
+  
+  Program Type:- Developers' kit for programmers wishing to write
+software for  the OMEn cross platform multi-tasking operating system
+  System: Any ST, STE, TT or Falcon. TT and Falcon enhanced.  
+  Memory Required: 512k  Display Type: Colour or mono, RGB or VGA
+  Price: 12.00  Postage: UK free, Europe (including Eire) 2.00, rest
+of world 4.00
+
+  PRODUCT INFORMATION
+  
+  The OMEn SOFTWARE DEVELOPMENT KIT allows you to write your own OMEn
+software  or adapt your existing code to make it compatible with
+OMEn.  OMEn programs  written and compiled on the ST will run under
+OMEn on the Amiga,  Mac and PC without modification.  The disks
+include an assembler,  a C-library (you can  use  any ST based C
+compiler as long as it outputs in  DRI/GEM format),  an icon creator,
+ a sample convertor and plenty of assembler source code.  More  
+important than any of this is the programmer's reference guide which
+runs to  12  chapters  and  tells  you all you need to  know  about 
+developing  OMEn compatible software.  Please note that both the
+executables and docs are  in OMEn  format so you will require the
+OMEn operating system in order to  make use of this pack.
+
+  Programming with OMEn
+  
+  Every effort has been made to make OMEn the easiest operating
+system ever to  write software for, both in concept and in practice.
+However, most operating systems  have access to numerous development
+tools for  various programming  languages, which have been created
+over time. OMEn, being newly available at  this writing (Feb 1995),
+has few such tools, although they will be easier to  write  or  port
+than with other systems,  and we can look forward  to their  early
+appearance.
+
+  Assembly Language
+  
+  Since  OMEn was written in Assembly Language,  it has a very 
+versatile  and  useful collection of Assembly level software
+development tools, including an  elegant  Eazy`Asm  Structured 
+Assembler,   a  Debugging  Monitor, and  the  Code-View disassembler.
+ Debugging tools can work together with the system's   Crash Window
+to greatly facilitate debugging of new software.
+
+  C Language
+  
+  At  the time of this writing,  there is a basic "C" start-up  and 
+interface  library.  An  Atari GEM based C-compiler is required:  you
+need one machine  running the compiler and another running OMEn for
+testing it to develop OMEn  software in C.  We will create an OMEn
+based C compiler this year, or find a   company  who will.  Anyone
+interested in porting a compiler to  OMEN please  contact us!
+
+  Forth Language
+  
+  A  FORTH language exists,  and can be made available if there is 
+sufficient  interest. Please contact Esquimalt Digital Logic for
+details.
+  
+

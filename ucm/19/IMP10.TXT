@@ -1,0 +1,191 @@
+
+{*f1IMPARTY 10 REPORT{*f0
+
+Ò  --------------Short report of IMP 10, written by deez-----------------
+
+
+ÛIMP!!
+
+
+Thursday night:
+
+I packed down all my falcon and all other stuff needed for a good party, like
+sleeping bag and nice clean clothes. I really hate the feeling you get when
+you wake up in the morning with a t-shirt sticking to your body, I also
+packed a few pair of clean socks (hi felice :)
+A not so nice thing was brought to mind while searching my apartment for
+useful things to bring; During DHS xmas party I had to sleep on the floor
+because I didnt bring anything apart from a sleeping bag, I really didnt want
+to make that misstake again. So in the middle of the night I phoned a friend
+of mine and asked him to bring something to school the next day, he promised
+to have a look.
+So now it seemed like everything was ready so I went to bed.
+
+Friday: IMPday!!
+
+Went to school as usual, left right in the middle of mathclass (fourier
+series, not very interesting anyway :). By 15.00 I was on the train up to
+Gavle to meet Thomas/Newbeat. Around 16.20 I arrived at Gavle Central, I had
+a brief look around and outside on the street I met Thomas who had promised
+to pick me up in his Volvo 240, real swedish steel! The very same Volvo has
+been into the Bergstrom family for quite a few years Thomas told me :)
+(I remember that day when I was supposed to drive Thomas' car to ALT-party in
+Finland, in short; finnish sidewalks are alot higher from the street than
+swedish ones, enough said)
+
+We drove up to Thomas apartment and had a cup of coffee, really nice
+apartment! We started packing down all Thomas stuff into his car, he was kind
+enough to lend me one of his monitors since bringing a monitor on the train
+can really be difficult and heavy, believe me, I've done it a few times.
+
+Half an hour later (around 18.30) we were on our way over to Grangesberg.
+We had a quick stop at McDonalds because I hadn't had anything to eat
+since lunch.
+While on the road again we drove into some fog, I've never seen this kind
+of fog before. And this wasnt temporary either, quite a bit of the way over
+to IMP was covered with this fog.
+
+At 20.00 or so we arrived at the school where IMP was supposed to be, 
+we expected to be the last ones to arrive but that was far from the truth.
+Me and Thomas had to look to see who was there. NoCrew, overrepresented as
+always, atleast five of those somewhat irritating "goteborgare" :) And as
+always they had brought everything they could get their hand on, all kinds
+of computers and weird LEGO models! NoBrain showed me a machine gun they had
+built, using LEGO and some rubberbands, it was capable of automatic fire!
+Other people present at this time was IMPonance (ofcourse), TAM/TOYS, ZPQ
+(from #atariscne/swe) and some other, non-atari guys.
+As Thomas and I started to unpack our stuff and put together some tables
+DHS showed up, with Evil first (and biggest hehe).
+After a while of argumenting we could all settle for a nice place to put
+our equipment, me in the middle of Thomas and Evil, a quite good position,
+giving me a chance to take a peek at coming releases from both DHS and
+NEWBEAT. First thing everybody seemed very eager to see more of mine and
+Vikings stuff, leftout pieces from Lemon but ofcourse I refused :)
+Hopefully you can all see the result at the coming SillyVenture2000 in
+Gdansk, Poland this easter.
+I noticed that some finns were present, three of them to be exact,
+Partycle, Wiztom and Setok.
+
+Me and Thomas went over to the local pizzaplace to make sure we got some
+food before they closed for the evening, and I can tell they know how to
+make pizzas there! Big and with lots of ham and cheese, ofcourse they
+cant match the huge pizzas at EIL'99 but these came pretty close.
+I had the intention to make some sort of introscreen at IMP, to make sure
+atleast one release but i realized that with both Evil and Thomas hanging
+over my neck trying to figure out my mysterious hacks (yeah, right) I
+would have serious problems of finishing anything at all! Instead I spent
+quite some hours trying to get Evil to show some of his things, and lucky
+for me he isnt the kind of guy who would keep everything for himself so
+he showed some nice things (probably not his best moves but anyway).
+
+From my very early days I have been using TOS as only operating system
+for my ataris and I really wanted to give MiNT a try, and since I
+recently bought myself a new SCSI drive I asked Evil to give me a hand
+installing MiNT. As Evil is kindness personified he agreed o help me out.
+
+Early in the morning (saturday) I was a proud MiNT user and (almost)
+everything had went smoothly, with the excepting of the harddisc driver.
+MiNT doesnt really like Cecile (driver from Centek) so we tried to get
+HD driver to work, at first everything looked really good, until we
+decieded to change some settings in my NVRAM. This proved fatal to my
+flashrom of the CT2!! Being totally independent of eachother (atleast
+thats what we all thought) nothing should happen to the one when changing
+the other, but it did! When we saved the settings in NVRAM the whole
+flashrom was reset! So when i booted my falcon Cecile (in the flashboot)
+didnt find my harddrive at all! It didnt show any of the SCSI units
+active.
+At first I was afraid my flashboot was all messed up and I would have
+to send my falcon back to Centek (or whats left of it) for some sort
+of ROM surgery. We tried to install a newer version of Cecile, reset the
+NVRAM, everything that could have any relation to the flashrom but
+it was no good. After some time of desperate fighting against the
+flashrom ZPQ came over to help, he brought a disc with some suspicious
+NVRAM killer or so. He reset the NVRAM once again, this time it was made
+fully he told us. We then rebooted the falcon and VOILA! Cecile found
+my SCSI, booted up and when HD driver took over and MiNT started I was
+happy once again :) Thankyou ZPQ!
+By this time I was a bit tired but not too tired to kick Dafvids butt
+in some HalfLife - Counter Strike on his beloved Win95 machine *grin*.
+At around 7.30 I picked up my sleeping bag to get a few hours of sleep
+and some strange ideas of coding went thru my head as a fell asleep.
+At 9.00 I rushed out of my sleeping bag for some weird reason, I had a
+strange dream about getting up for school! As I slowly realized it was
+all a dream I got back into the sleeping bag to get a few hours more
+sleep before punishing my falcon with some buggy code.
+After 1 hour of trying to get back to sleep I gave up and got up. TAM
+met me in our room with his usual grin and for some reason I asked him
+if he got some sleep, his answer was obvious to me that I dont know why
+I ever bothered to ask him, ofcourse he didnt sleep.
+
+I picked up my towel and headed for the showers, I had heard some rumours
+about only cold water and I took it VERY careful when entering the shower.
+Still I got a neural chock when the cold water hit me. I convinced my
+body that the pain would only last for a few seconds and I slowly turned
+on the water again. I didnt realize the water was so cold up north :)
+
+When I came back Evil sat at his place doing some weird coding, dont ask
+me what. I powered up my falcon and loaded devpac, found some old source,
+including blobs ofcourse. I spend a few hours optimizing it and it really
+was a big improvement, hopefully you can see it in our next production.
+Evil contined to show falcon demos (he had already showed a few) to Nocrew
+and various people. We also had a weird discussion about a strange falcon
+with three (or so) PCBs onto the expansion slot! According to Evil and TAM
+it included an afterburner, 286 (or 486) card and some diagnostic/debugging
+card of some kind. All this was owned by some american guy I think, quite
+interested in atari stuff it seems! :)
+Thomas was away this day, visiting some relatives so he didnt enjoy the 
+excellent meal at the local pizzaplace which this time included discussions
+wether Midimaze was better/worse than Quake. I have to say I really prefer
+Quake if I have to choose one of the above but the rest of the people didnt
+agree with me. Midimaze is really cool, but I rather have a killing party
+in the classroom with Counter Strike or so. When Thomas came back he
+continued working on FlexTrax and quite alot of work and bugfixing was done
+during this party, nice work Thomas! Me and Evil did some demorelated coding
+while Stefan from Nocrew sat beside terrorizing us with everything from
+bad to incredibly bad ideas of what to include in our demos.
+As I wrote above I had the intention to finish one release during this IMP,
+as time went by and passed 22.00 on saturday I realized that I had once again
+failed, not much to do about it though.
+My train would leave Gavle at 16.15 so me and Thomas would have to leave the
+party at 14.00, not later atleast so I at around 00.00 decieded to go to bed
+to get some sleep, get up early in the morning the next day and code a bit.
+So once again I grabbed my sleeping bag and went to bed. This night I slept
+alot better and the whole night. I woke up at around 10.00 and went to wake
+up Thomas. This time they said they had fixed hot water for the showers,
+I was a bit suspicious at first, was it all a lie? No, it wasnt a lie, this
+time I could enjoy a shower with hot water.
+
+After this nice shower I walked around the place a bit (well, three classrooms
+but anyway, to get a last look at everything. Nocrew was busy as always doing
+nothing (almost) and Ajje had some LEGO Mindstorm things in front of him, I
+really have to say that LEGO is nice! Even nicer is the Mindstorm Robolab,
+enabling one to build robots and program them to move or do thing according
+to some lines of code and to react on its environment using light/touch
+sensors.
+
+The clock closed up to 13.30 and me and Thomas started packing our stuff and
+fitting it into the car again. We said goodbye to everybody and headed out
+on the swedish wastelands towards Gavle and my waiting train.
+Soon we realized that we didnt have that much time as we though we had, only
+a little more than two hours until my train would leave and I really didnt
+feel like missing it. To improve speed a bit Thomas kicked in the last
+afterburner and this did the whole thing, we now crossed the holy limit of
+100km/h that seemed almost impossible with the Volvo just a few days ago :)
+At exactly 16.00 we arrived at the train station, me and Thomas said goodbye
+and I went out to wait for the train that would take me back to my dear bed.
+Because by now I was so tired I could hardly stand on my legs. I fell asleep
+on the train and this story ends here, by me arriving to Stockholm after a
+very nice IMP party with alot of nice people and cool discussions.
+I am really looking forward to the next IMP, in 6 months if everything goes
+well.
+
+
+Some of the timestamps here might not be all true because I am writing this
+only days before the release of UCM #19.
+Thankyou for making the event: Thomas, Evil, Tam, IMP and all the rest!
+
+/Fredrik Egeberg
+
+
+
+

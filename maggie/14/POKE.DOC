@@ -1,0 +1,118 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[....................................................]0010
+€
+                          A POKE IN THE EYE
+                          -----------------
+
+                          By LEON O'REILLY
+
+        Remember those glorious days of  Crash! and Your Sinclair when
+the nearest you got to a trainer  was  a two page poke that took three
+hours to type in and then  didn't  work  properly? Yes, those days are
+back again as Maggie brings  you  'poke-city'.  Well a couple of pokes
+anyway.
+
+        Just recently there has been  the  release of an excellent new
+spectrum emulator for the Falcon - written in 030 code it really gives
+you the speed of  the  spec,  but  its  best  feature  is its built in
+disassembler which allows you to fiddle around with all your favourite
+spectrum programs.
+
+        I just thought I'd share  a  few  pokes  that I'd come up with
+recently. As my knowledge of  Z80  is  sparse, I haven't really delved
+much into many  programs,  but  I've  made  a  start  with  some of my
+favourite games.
+
+        Using the disassembler  is  relatively straightforward. Simply
+tap the escape key and you are then presented with a command line. For
+these pokes you need to be able to use the following commands.
+
+A - Start Address. After pressing this you will then have to type in
+    the address you want to look at/change.
+M - Alter Memory. You then say if you want to change memory as Bytes,
+    Words or ASCII. Then you type in your changes with escape to end
+    input.
+U - Run Until. After this you specify an address.
+
+        So simply tap escape, followed  by  the hotkey combination you
+want, and then escape to exit back to program. Its simple really!
+
+€JET SET WILLY II
+================
+
+The grandfather of platform  games  (sort  of).  This was about before
+Sonic and Mario were a twinkle  in  a  programmers eyes. And its still
+better than either of those...
+
+I've come up with a number of cheats for this.
+
+INFINITE LIVES: 7A16 = C3 B7
+
+By this I mean you  type  'esc',  then  tap  'A', type '7A16' then 'M'
+followed by 'b' (for byte) then  'C3' and 'B7'. Finish changing memory
+with 'esc' and go back into JSWII with 'esc' again.
+
+INVULNERABILITY: 79EF = C9
+
+As before - 'esc', 'A', '79EF', 'M', 'B', 'C9', 'esc', 'esc'
+
+The problem with invulnerability is  that  sometimes you get stuck and
+need to die to get out. Change this back to normal with:
+
+NORMAL: 79EF = C5
+
+KILL MONSTERS: UNTIL 7BA7
+
+That is Run Until 7BA7 - 'esc', 'U', '7BA7'
+
+Monsters in your room will freeze,  and  once you move into subsequent
+rooms they will have vanished!
+
+3D DEATHCHASE
+=============
+
+Two little pokes for this chase through the trees!
+
+INFINITE LIVES: 675F = 00
+€
+INVULNERABILITY: 670B = 00 00
+
+
+BATTY
+=====
+
+One of the best versions of break-out for the Spectrum!
+
+INFINITE LIVES: BD35 = 00
+                BD39 = 20
+
+(Both these values most be poked in to get infinite lives).
+
+GROUND ATTACK
+=============
+
+Another oldie!
+
+INFINITE LIVES: 7187 = 00
+
+HYPERACTION
+===========
+
+This is a pretty smart game!
+
+This cheat makes it very easy though...
+
+INVULNERABILITY: A9D9 = 18
+
+(also don't worry about time running out!)
+
+
+
+Join me next time when  I'll  be  covering such classics as Ultimate's
+Sabre Wulf amongst others.  If  you  have  any problems entering these
+pokes, or want to request a game for me to poke drop me a line!
+€
+

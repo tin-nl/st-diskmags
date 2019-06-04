@@ -1,0 +1,60 @@
+ 
+                           AIRBUS A320
+                           ===========
+ 
+Hersteller : Thalion
+Art        : Flug-Simulation
+Disx       : 1
+Steuerung  : Maus/Joystick/Tastatur
+Spieler    : 1
+System     : ST/STE/TT/030,Farb-TV/Monitor,1 MB RAM (Festplatte m”glich)
+Preis ca.  : 100 DM
+ 
+Ok, ber den Sinn einer Flugsimulation, bei der man nichts abschieen kann l„t
+sich streiten. Ich finde sie jedenfalls gut und habe sie mir geholt.
+Natrlich soll  man keine Ansprche  an die GFX stellen  und auch der Sound ist
+mehr als sp„rlich. Allerdings gibt es  die Flugger„usche auch in Digisound! Und
+das Thalion-Intro wartet gar mit einem Modul auf.
+
+Den gr”ten Hammer bietet  aber folgende Story. Als F030-User war mir beim Kauf
+mehr als  Bange, ob den die ( frher erschienene ) Europa-Version  auch Falcon-
+tauglich sei. In der STC stand  jedenfalls ein  entsprechender  Vermerk bei der
+Amerika-Version. Da stand aber auch: "nur RGB-Monitor". Das bedeutet folgendes:
+Als  ich  das  Ding  startete, flimmerte mir  das Intro in 60Hz entgegen ( mein
+Karstadt-billig-TV macht nur 50... ).
+Zwar lief das Hauptprogramm mit vollem Autoordner flimmerfrei,aber dabei h„ngte
+sich dauernd der Tastaturproz auf ( schein ein Ph„nomen  meines speziellen F030
+zu sein ). Also mute  ich das  Programm dazu  bringen, selber auf die 60Hz-Um-
+schaltung zu  verzichten. Ich debuggte mich also durch das Intro und suchte Zu-
+griffe auf  das ST-Shiftmoderegister. Nachdem diese  Zugriffe nun totgelegt wa-
+ren, flimmerten mir  immer noch 60Hz entgegen und ich begann mich zu fragen. Da
+ich zun„chst keine Antwort hatte, hie es wieder Debugger anwerfen und schritt-
+weise durchs  Thalion-Intro. Irgendwann  fand ich die "belt„trige" Routine und
+traute meinen Augen kaum: In einem Programm von... ??? ( Copyrightjahr im Hand-
+buch: 1993, im Intro: 1991 ) ??? ...naja - irgendwann. Jedenfalls  fand ich ei-
+nen Aufruf vom Falcon-XBIOS-Call 88 "Setmode"!!! Da ich  das Problem  schon mal
+fr  das  Speeder-Demo   gel”st  hatte  brauchte  ich  nur  noch  AIRBUS.PRG in
+SPEEDER.DAT umbennen  und SPEEDER.PRG ( 319 Byte ) als AIRBUS.PRG in  den A320-
+Ordner kopieren. SPEEDER.PRG war auf einem der letzten Mag's...
+
+(Redax: Speeder war auf der 2. Disk von Mag 2)
+
+Ansonsten: Belastend  exakte Nachprogrammierung der  Flugphysik und der Naviga-
+tionseinrichtungen. Das Handbuch  ist bessere  Schei..., weil die  zwar die ST-
+Tastenkombinationen  angeben, teilweise  aber falsch, manche  Sachen vergessen,
+Grafiken mit 11  bezeichneten Elementen bekommen im Text Nummern bis 17 ( wobei
+die 17 die 11 ist, die 16 die 10 und  die 10 aus  dem Text in der  Grafik keine
+Nummer hat... ). Einsame Sahne sind die Flugkerten ( 4 High Altitude Charts fr
+( West )-Europa und die  Landebahn-Karten  fr so ziemlich  jeden  europ„ischen
+Acker. Im Handbuch  sind zwar Listen der Funkfeuer und Flugpl„tze, aber auspro-
+bieren ist immer  noch sicherer: Z.B. scheint Innsbruck einen interessanten An-
+flug zu haben ( rundrum Gebirge ), ist aber in der Liste nicht zu finden,k”nnte
+also nicht angew„hlt werden.
+Eigene  Experimante  mit der  Airportdatei fanden  aber die  ungenannte Kennung
+LOWI, die nach eigenen Experimenten mit nahen Funkfeuern Innsbruck sein k”nnte.
+
+                                                     Apache of tnb / 04.05.1994
+
+P.S.: Den Airbuspiloten, die jetzt reihenweise  Airbusse in den Sand setzen sei
+      verziehen: die Kiste fliegt wie ein nasser Schwamm!!!
+P.S.2: ...wie ein mausgesteuerter nasser Schwamm...

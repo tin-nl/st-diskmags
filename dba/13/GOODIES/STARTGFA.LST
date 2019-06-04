@@ -1,0 +1,56 @@
+ON BREAK GOSUB exit
+ON ERROR GOSUB exit
+'
+init
+main
+exit
+PROCEDURE init
+  ' Don't forget to load the INLINE's!!!!!!
+  ' vvvvvv MUSICQU.INC
+  INLINE afspeel%,3000
+  speel%=afspeel%+6
+  ' vvvvvvv ITGOESON.MOD
+  INLINE zemusix%,3000
+  VOID C:speel%(L:zemusix%,W:1)   ! play some music
+  HIDEM                           ! kill mouse
+  IF XBIOS(4)=2 THEN
+    CLS
+    PRINT "Sorry this doesn't work in high resolution."
+    VOID INP(2)
+    EDIT
+  ENDIF
+  oldrez%=XBIOS(4)
+  VOID XBIOS(5,L:-1,L:-1,0)       ! low resolution
+  '
+  CLS
+RETURN
+PROCEDURE main
+  DO
+    vu_meter
+  LOOP UNTIL INKEY$<>""
+RETURN
+PROCEDURE vu_meter
+  COLOR 0
+  LINE 0,0,240,0
+  LINE 0,5,240,5
+  LINE 0,10,240,10
+  volume1%=XBIOS(28,0,8)
+  volume2%=XBIOS(28,0,9)
+  volume3%=XBIOS(28,0,10)
+  SETCOLOR 0,0
+  VSYNC
+  SETCOLOR 0,7,7,7
+  COLOR 1
+  LINE 0,0,volume1%*16,0
+  LINE 0,5,volume2%*16,5
+  LINE 0,10,volume3%*16,10
+RETURN
+PROCEDURE exit
+  VOID C:speel%(L:0,W:0)          ! EN ALLE GELUID UIT UIT.
+  CLS
+  VOID XBIOS(5,L:-1,L:-1,oldrez%)
+  VSYNC
+  SETCOLOR 0,7,7,7
+  EDIT
+RETURN
+'

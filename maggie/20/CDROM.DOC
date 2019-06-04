@@ -1,0 +1,196 @@
+
+
+                     A Very Cautionary Tale!
+
+
+
+It all started  well  enough.  Living  in  a  household  which has had
+computers since 1983,  the  male  members  of  our  family  have had a
+healthy contempt for the computer industry for at least 12 of those 13
+years. The pressure of having to  buy  every  new format of machine is
+one that we have been able  to  resist  quite easily; this was a trend
+that started when we realised  that  "Chuckie  Egg 2" for the Spectrum
+never lived up to the hype  that  had surrounded it. However, with the
+ever-growing demands of PC programs  upon  my Dad's beleaguered 486SX,
+it was time for a bit of a refit.
+
+
+                A C T   O N E
+
+
+The first stage was for a new  hard  disk. His old 80meg effort is not
+exactly state-of-the-art any more: in fact  it  is sitting on the desk
+beside me and the poor desk is groaning under its weight. Added to the
+fact that it made a noise like  a pig being strangled and the addition
+of a disk stacker made it even  slower than Windows '95 under DOS, and
+we  were  pretty  much  agreed  on   putting  the  old  stalwart  into
+retirement.
+
+We took it to a specialist shop and  had it replaced with a new 540meg
+"mother." This all went well  too:  muggins  here was dragged along as
+"Technical Expert" to make sure we didn't get ripped off. The exchange
+in the shop after refitting was quite interesting:
+
+
+Dad: "So it's all OK now is it?"
+
+Shop Expert: (in thick Oldham accent  at  100 miles an hour) "Oh yeah,
+we adabitofaproblem wi't; BIOS, like,  because it couldn't 'andle more
+na' 270meg in partitions so we  had  ta  transfer allt' files on to't'
+network. Now wev' got yer old drive here, simply zeroed the bootsector
+and taken it out. That's it really."
+
+Dad (confused): "That all right then Steve?"
+
+Steve: "Err, what, sorry, wasn't listening. Could you say that again?"
+
+[Expert looks cross. Steve grins  in  satisfaction - I'd always wanted
+to do that]
+
+
+                A C T   T W O
+
+The drive worked perfectly. Dad however was not satisfied, and at this
+point many a reader will  grit  their  teeth:  he  wanted a CD-Rom and
+SoundBlaster. Now this PC has no  games  on  its  HD, nor is Dad a big
+multimedia fan, or into the type  of  CD  that  CiH always seems to be
+mentioned in connection with....
+
+ Steve: "So why do you want this stuff then?"
+   Dad: "Err, well... you know, for data and stuff"
+ Steve: (frowns) "But you don't really need it, do you?"
+        [Several questions follow]
+
+Seasoned cynics will know  the  answer  already:  he'd seen a friend's
+computer. "It played a tune and a picture of a jukebox comes up on the
+screen  and   plays   it!"   he   beamed   enthusiastically.   Not  so
+enthusiastically that he was willing to pay  300 pounds for the set in
+the specialist shop though. It was time for a trip to.... PC World.
+
+        PC World could easily be  renamed  PC  Hell.  It takes all the
+possible enjoyment (not that there is  much)  out of owning a PC. This
+is a corrugated iron/ plastic hangar  near Old Trafford in Manchester.
+We resisted the inconsiderable  temptation  to greet/kill Steve Bruce,
+who was in there making an  impromptu  guest appearance. As usually in
+Manchester he was pounced upon by the store manager:
+
+Manager: Hi! Steve! Great to see you! How are you?
+Steve B: Err, well, like, the printer I bought won't work...
+Manager: (suitably crest-fallen) ....
+
+        The rest of the store  is  like  one  huge advert for Easy-PC,
+apart from the lack of Dads picking  mice up and thrusting them at the
+screen (they aren't _that_ stupid.)  We  made  two purchases: 170 quid
+for a combined Quad-Speed CD-Rom  and  Soundcard,  and œ1.98 for a new
+printer ribbon for a  Star  LC-10.  There  are  no prizes for guessing
+which one has been returned to PC World.
+
+
+
+                A C T   T H R E E
+
+[Scene:  the  dining  table,   sheets   of   newspaper  strewn  about,
+screwdrivers  aplenty,  my  Dad  (somewhat  over-cautiously,  I  felt)
+wearing his anti-static wristband at  all  times. The PC lies belly-up
+on the table. Nervous glances and  deliberate surgery takes place, and
+the PC's innards are strewn.]
+        There are  cries  of  "Blimey,  what's  all  them  wires!" and
+"There's no ruddy instructions!" but after an hour the CD-Rom Drive is
+fitted into its slot, IDE cables  are attached, jumper leads set. It's
+time to rock and roll!
+
+        Or maybe not.
+
+        The disk appears to have different  contents to what its label
+states, but  after  running  the  installation  software,  trying  the
+soundtest ("hurray!"), playing a normal music CD ("hurray! Bit crackly
+though?") then rebooting, we attempt to  use  the CD games. After all,
+that's what a PC's for, isn't it?
+        "Theme  Park"  works,   after   installing   itself  onto  the
+harddrive. Yes, it copies files FROM  a  CD  TO a harddrive. Nice one.
+However the pull of hearing the  sample  of a small child vomitting 30
+times per minute begins to wane very quickly, so let's try....
+        "FIFA '96" proudly states that it  requires 8 megs for the CD-
+spooled commentary (by Tony Gubba!  or  was  it  Alan Parry?) to work.
+Quite why this is so is still beyond me, but we'd installed 8megs soon
+beforehand.
+        Fifa '96 failed to work. So... next!
+        Windows 3.1 also failed to work.
+        Windows 3.1 failed to work after a cold reset.
+        Windows 3.1 failed to work AT ALL.
+
+
+
+                A C T    F O U R
+
+[Scene: a bedroom. PC, with  guts  spilling,  set up beside telephone.
+Yours truly rings helpline. They  must  know  what  to do. Yours truly
+waits 2 hours after getting engaged tone many, many times. Suddenly, a
+ringing at the other end.]
+
+Telephone Man: hello blah blah blah help you?
+Yours Truly:   er, yes, I have  a  [describes machine and problem.] My
+main worry is that Windows won't  work.  When  I  remove a line from a
+windows set up file  that  runs  a  device  driver  for  the CD drive,
+everything's OK  but  no  CD  functions  are  available.  Do  you have
+problems with Windows drivers?
+TM: [long pause] Right, can you load up the CONFIG.SYS file?
+YT: [does so, describes text within]
+TM: [sounds  puzzled]  Are  you  sure  you  have  CONFIG.SYS  and  not
+AUTOEXEC.BAT?
+YT: Yes.
+TM: [pause] Oh yes, I remember now! You're right.
+
+        It was about this point that  I  had a sneaking suspicion that
+this call would be no help. Despite my repeating hinting that it was a
+problem with Windows and not  DOS,  Telephone Man repeatedly forced me
+to delete and reinstall multiple DOS  setups  for  2 hours. In the end
+his boss intervenes. I am fobbed  off  with using different IRQ values
+or something, and told to "ring back if it doesn't work."
+
+
+        A C T S   F I V E , S I X   A N D   S E V E N
+
+        It doesn't work.
+        We even get a replacement from PlastiC World, but to no avail.
+(We can install a CD-Rom in 20 seconds flat though.) In the end, Pater
+insists on  a  refund.  The  traditional  "You  could  try  this [more
+expensive and unnecessary] model instead, sir!" falls on deaf ears.
+
+        The morals of this story?
+        Number one is  to  avoid  PCs  like  the  plague  if  you're a
+hardware novice, or even someone with a reasonable to slight knowledge
+like myself. The task of ringing  up  a helpdesk in London, at premium
+rate in the daytime, can only be  done  by  someone not at work, for a
+start. In most  cases  a  novice  will  have  correctly  installed the
+device/software already - helplines usually  can only help very simple
+case (have you  ever  tried  to  read  out  CONFIG.SYS  over the phone
+without laughing?)
+        Also, please make your  manuals  better! Most device companies
+are multinational and rely  on  dreadful  translations, blurred photos
+and in this case a leaflet with diagrams completely different from the
+device supplied! The "installation video"  promised  on the box failed
+to materialize as well, surprise surprise.
+        In contrast, the local  specialist  store  was excellent: they
+knew the PC inside out, were prompt, knowledgeable and gave good value
+for money. Small is beautiful...
+
+        The rest of my morals are points  more directed to the PC than
+the peripheral industry.  In  truth,  the  innards  of  a  PC  are not
+particularly complicated at all,  although  you  wouldn't  think so at
+first sight. What IS complicated is  the  software needed to cope with
+all the possible add-ons and configurations. This is the great myth of
+PC ownership, which is being perpetuated  for the usual reason: money.
+The do-it-yourself  approach  necessary  for  decent  PC  ownership is
+leading ever more to a have/have not situation, where the "haves" i.e.
+those in the know, can bodge  their  own  machines to an efficient and
+impressive specification,  while  the  rest  are  conned  into  buying
+Windows '96 Plug'n'Play, or a  complete  new machine, because they are
+scared of being left behind.
+        But why complain? We are  Atari  owners, safe in the knowledge
+that we have so few configurations and  add-ons that the fear of being
+left behind is negligible. So maybe small, slow and reliable IS better
+after all. But we knew that all along, didn't we?
+
+
+Steve Tattersall, 1996

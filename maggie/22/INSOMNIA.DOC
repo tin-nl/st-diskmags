@@ -1,0 +1,173 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0110
+ 
+====================================================================== 
+                          THE INSOMNIA DEMO
+                            BY LUZAKS TEAM 
+======================================================================
+ 
+Before you reach for the quit button, this  is not a sample & PI1 demo 
+featuring the popular English's beat combo "Faithless",  but  a  multi 
+part STE demo which breaks some new ground on everyone's favourite 16-
+bit box.
+
+This demo arrived in the Maggie offices  in  a  strange format: MSA. Ah 
+yes, the Magic Shadow Archiver, I remembered  scratching  my  head and 
+wondering where on earth I had put this old packer.  For  those  of  
+you too young to remember this piece of software, the MSA converts all 
+the tracks on a disk into a single file, invaluable if you want to copy 
+raw data disks such as demos. As all Falcon demos are file based and 
+mainly have to run  from  the hard drive, the MSA has slipped out of 
+use.
+
+So it was with some nostalgia that I  created my data disk with MSA and 
+inserted into the STE and turned. I shuddered  as I remember the 
+horrendous complexity of writing interrupt driven loaders and  disk  
+level  protection systems. Us Falcon owners have got it easy - a few 
+calls to GEMDOS and bob's your uncle.
+
+A pleasant dance style module wobbled  forth  from my monitors decrepit 
+speakers as the demo began. Some introductory  logos appeared, the 
+"Insomnia Demo" legend being inexplicably superimposed over a pair of 
+female lips.
+
+"Landscape" shouted a  nasty  font  on  the  next  screen  and  we  
+were whisked Ordinance Survey style into the first effect. This is a 
+voxel type dot landscape which scrolls about. You have seen the type 
+before - the lower blue dots are the sea, and the higher green  dots  
+are  the  hills.  This  landscape is quite well presented and moves 
+about  in  a  reasonably  nippy  way. Cartography fans would approve.
+
+The next presentation screen appears, this  one  with a blurred vectors 
+image in the corner and some  text  informing  us  that  we  will  soon  
+witness some "3D Rotate".
+
+What appears next is a line vector  shape  merrily rotating. It spins 
+and morphs into other shapes. As it is in green and slightly shaded 
+around the edges, it is very reminiscent of a similar effect in  the 
+"Warum" demo. The shading, I think, is just a bitplane effect  where  
+some  graphics  are already overlayed onto the other bitplanes around 
+the edges of the screen causing the change in colour when the one plane 
+line vector passes over them.
+
+Overall this is another  competent  effect  which  admirably  keeps  up 
+with its Falcon cousins.
+
+A nicer font now informs of the  impending "2D Function patterns". 
+These work in a similar way as fractals  -  a  mathematical  formula  
+that produces a pleasing graphical effect. They are calculated in real 
+time on the screen "while-u-wait". This is a bit disconcerting as just  
+as  one  image is finished and you are just starting to appreciate it 
+another one is drawn  over the top. It would have been better if the 
+screens were  calculated  in  the  background  and swapped to when 
+finished. The screens are all rendered  in  tasteful  grey.  It would 
+be nice if they were a bit more active - a simple colour cycle would 
+have added to things.
+
+"INTEL OUTSIDE" proudly proclaims a  superbly  rendered  logo which now 
+appears. This is infinitely better than many  of  its  counterparts 
+that have appeared on the Falcon.
+
+We now have another old  favourite,  the  spinning  dot  objects. Four 
+3D things bounce and rotate about the screen. The dots are shaded as 
+they move to the back of the object giving a sense of  depth.  The  
+rotation is only done around the Y axis to keep things simple. This 
+effect  has  appeared  on a number of ST demos, most memorably by Dune 
+(on Faith I think). Some like it dot....
+
+This leads on to a  rather  rudimentary  form  of  "texture mapping". A 
+rotating square bar appears in the middle of  the  screen spanning its 
+whole width. Those of you have seen Aura's "Hi-Fidelity Dreams"  will 
+be familiar with this object, but this has the added twist of  having  
+some  cloud graphics mapped on to it. A relatively simple effect  (the  
+mapping  is  just  horizontal  lines) and rather spoiled by the fact 
+that the graphics seem to be slightly corrupted. Bar-humbug.
+
+This is a CAD! Yes, next up  are  some  objects  created in dodgy old 
+ST package "CAD-3D". They are all 2  colour  and  move  very  slowly 
+over a grey background which has some embossed text in it. A sign  of  
+the times is when we get to meet our old friend the torus again. He is  
+becoming  a  bit of a star. The goblet is more refreshing (although 
+sadly empty of  alcoholic beverage), but the choice of colours on the 
+objects is awful. Thank god  they only had two to choose, if they were 
+running in true  colour  mode  it  would  have  led  to many colour 
+induced suicides.  I seem to remember someone  complaining  that CAD-3D 
+stores all faces twice, perhaps this is why the objects  move in such a 
+geriatric fashion. Senior CADs!
+
+Three words appear that will strike fear into even the most casual demo 
+watcher: "Fast Fractal Generator". The return of  fractals into demo 
+fashion is something to be welcomed with the same enthusiasm  as  the 
+rejuvenation of flares or Kevin Keegan perms.
+
+A mandlebrot appears on the  screen.  Some  13 seconds later, another 
+mandlebrot appears. What happened to the "fast" bit?  Just  as  we are 
+about to call in the demo police, things speed up a bit (well  to  
+around 7 seconds). To be honest if you are going to do a "Fast  Fractal  
+Generator",  please make it FAST! We don't care if you cheat! We don't  
+care  if  you  store  all  the fractals as PI1s and screen swap between 
+them - at least it  is over faster. After 14 screens full of assorted 
+blue mandlebrots and julias we  are  fortunately  onto the next part of 
+the demo. It seems like years have  passed,  but  in  reality it has 
+only been a couple of minutes.
+
+More 3D vicar? The polygons  are  back!  And  this  time  they are 
+flatshaded 3D objects, which are also lightsourced. These are a lot 
+faster than the previously featured 3D stuff, although the shapes  are  
+a  lot more crude. The main problem with this screen is that there  is  
+a  bug  in  the delta-clearer so bits of the polygon are left smeared 
+across the screen.
+
+If amongst this oasis of 3D, you are feeling in a Liam Gallagher mood 
+and "fancy a line", then the next effect is for  you.  Vector line 3D, 
+not seen since 1832. Well this is not strictly true as most of the 
+Falcon demos of 1996 featured line vectors! This screen has a neat 
+effect where one shape explodes into millions of pixels that then form 
+the next shape. There is a slightly unfortunate pause just before one 
+shape explodes ("please  wait  -  precalculating!")  but perhaps I am 
+just being pedantic. This screen  also  has  a  nice non-black 
+background, which makes it look better somehow. Something to do with 
+colour psychology probably.
+
+"And now, ladies and gentlemen, the moment you have all been waiting 
+for, a fast texture mapped cube on the ST!". Really? Well not quite, 
+but and attempt is made in a roundabout way. This isn't a  traditional  
+polygon cube, but a cube made up of dots, and these being different 
+colours form small images on each face of the cube - hence texture 
+mapping. If  they  could  have  managed to rotate more dots then the 
+effect  would  be  more  convincing,  as  it  is  the  graphics are bit 
+indistinct. I can just  about  make  out  something  that  may  or  may 
+not be a bumblebee standing upright and waving at the camera.
+
+Another audacious attempt  at  converting  falcon  effects  to  the  
+ST. Gouraud shading! With proper 3D polygons!  This  screen  starts  
+off in a very promising manner with a nice looking gouraud shaded shape 
+appearing in the distance. As it gets closer, the problems of 
+attempting gouraud  with a 16 colour palette become evident. It looks 
+horrible with chunky jagged  lines of colour across the faces. If only 
+they had used some sort  of  dither routine, it might have been 
+alright. It's a case of technical merit succeeding over aesthetic 
+appeal.
+
+The demo ends with a nice logo. The  music continues playing, as it has 
+done all through the demo even when new sections  were loaded in. This 
+demo has obviously been influenced by the falcon demos. No main menu or 
+selector, and thankfully no scrollers, just one effect following  
+another.  The effects themselves have been taken a leaf out of  the  
+030's  book  -  those  Warum  lines, lots of 3D stuff, gouraud shading. 
+Sometimes the  demo  is  a  bit  ponderous,  but we have become 
+accustomed to demos taken 5 or 6  megs  of  hard drive space and simply 
+flashing through effects, this is just on a  single  disk.  It  would 
+be nice if they had made some attempt to sync the effects to  the 
+music, but again this is easier to do on the falcon than on a raw data 
+disk.
+
+So overall we have an ambitious multipart STE demo with good music and 
+some cool effects. Insomnia? This demo is a real dream.
+ 
+// Mr. Pink //
+
+

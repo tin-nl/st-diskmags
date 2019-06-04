@@ -1,0 +1,346 @@
+OMIKRON LESSON
+
+OMIKRON LESSON BY MR.Ni!
+
+Programming in Basic and in Omikron Basic in particular.
+
+Why program in Basic?
+
+Sometimes I'm asked why I program in Basic and not in Pascal, Mudula (Yes, I 
+DID write MUDULA, ask University Twente why.) C or Assembly. Well, I program in 
+all mentioned languages, but I like Basic best, and then comes C and assembly. 
+I use Pascal and Mudula only when I'm forced to because a silly professor 
+thinks those are good languages to teach students programming. (Maybe they are, 
+but they are NOT good programming languages!)
+
+I still have to answer why I like Basic best. About ten years ago I learned 
+programming on a Sinclair ZX81 in (you guessed it!) Basic. After a year 
+programming on the ZX81 I switched to a Sinclair ZX Spectrum. On the ZX 
+Spectrum I made some very huge Basic programs (the Spectrum had together with 
+the Basic extension 'BETA Basic' a real powerful Basic and I programmed some 
+administration programs with it).
+
+After the ZX Spectrum came an Atari ST. The computer came with a real lousy 
+Basic so I stopped with Basic programming and played games. In the mean time I 
+learned Pascal at the University but I thought it was a lousy programming 
+language. Also when I got a copy of Gfa Basic, I tried to write some programs 
+with it, but I didn't like it, so I played more games.
+
+Then came Omikron Basic. For only 25 Dutch Guilders you could purchase a copy 
+including a manual (what a luxury!). I really liked Omikron Basic very much (we 
+are still in love with each other, you know?). It was more similar to Spectrum 
+Basic than Gfa ever was. Again I programmed some administration programs (to be 
+honest with you, I programmed just one big program that could do all the things 
+that the several Spectrum programs did and many more). I really liked Omikron 
+Basic so I bought the compiler and I was really satisfied with the speed of my 
+programs (Jeez, can you imagine?!). After that I learned assembly and many 
+things about the hardware of the Atari ST. Then I wrote a bouncing proportional 
+scroller for the high resolution of the ST in assembly. But my 
+scroll-techniques weren't good enough to write a decent demo with it. At that 
+time I saw a Basic demo by the Double Dutch Crew (DDC) and I thought: 'That's 
+not bad at all for Basic, maybe I also can do things like that.'. So I tried to 
+write a scroller in Omikron Basic. It was a real disaster: I could scroll a 
+text, just ten lines high, in one bitplane and needed about 700kB of memory.
+
+A few months later I learned about the Memory_Move command in Omikron Basic. 
+That made things a lot easier and next I was writing a scroller, 64 lines high 
+this time, fitted in less than 2kB sourcecode, which I intended as a 
+contribution to a contest (no, I didn't win, a Whaaaaaamiga did... Still I did 
+include the source with this article).
+Some days later I wrote a 80 lines high sized scroller for high rez. On the 
+first fair in Eindhoven I met the DDC and they gave me a copy of their last 
+demo, 'the Tea Party demo', a very nice Omikron Basic demo. I showed them my 
+programs and they were surprised that there was someone else programming demos 
+in Omikron Basic and they asked me if I could make a monochrome guest screen 
+for their next demo. They also told me that there was a demo, called the 
+Ultimate Gfa Demo, that removed the lower border in Basic and they thought it 
+couldn't be done in Omikron Basic. (They were so wrong, yes, they were!)
+
+After the fair I sat down behind my computer and thought: if they can remove 
+the border in Gfa Basic it's also possible in Omikron Basic. So with some help 
+of Insh_Allah (who removed the border in assembly some years ago) I tried to 
+remove the lower border. Guess what; after two evenings trying on and on the 
+lower border was gone. And in the night of the third evening the upper border 
+was gone too. Than I designed the Mowzes Creeble screen with some moving 
+rasters and featuring low and medium resolution on the same scanline (Title and 
+the colors of the beam by Insh_Allah, all else done by me). After this screen 
+(which is still not ready) I decided to make a good screen with many scrollers 
+and rasters, hence I started developing the QED screen.
+
+During the coding of that screen I decided that I needed some music. I didn't 
+know how to play chip music so it had to be digisound music. Insh_Allah (again) 
+had some digisound tables and knew how to use them. (He had patched a MOD 
+replay program to make it work on all three resolutions and play more modules 
+(replay 1.2.10). Now there's one more year doing little gone, but still I 
+(Insh_Allah) recently finished a totally redesigned replay-program that works 
+on every ST, STe, MEGA Ste and TT and on every resolution (GEM-based). This 
+tool can cope with every MOD and lots of types of chip music. It works as 
+accesoire or program, it understands the commandline (xArg and ARGV 
+commandline-passing protocol support), has a jukebox mode, can spool/play 
+through MODs in fast forward and REVERSE! mode and above all it is crash 
+resistant. It's called Insh_Allah's Replay++, version 3.10.01B...
+
+Insh_Allah is backing away from the keyboard fetching some sleep; he deserves 
+it! Now I (Mr Ni!) can finally continue my story... Where were we? Ah yeah, I 
+remember: we were talking about digisound and my beloved Omikron Basic.) The 
+first tests turned out to be really ugly; the timing of the digisound wasn't 
+good and there were some problems with the calculations of the offsets in the 
+digi-table. When Chainsaw heared this crappy shit-noise, he said (honestly!): 
+"Well, not bad at all for Basic!!!"
+If you were stunned by this opinion you should consider the fact that Chainsaw 
+loves trash-metal, so we can be confident about it this aint no objective view 
+of it all...
+Anyway, Chainsaw kept on nagging so he made me so mad I sat down a next time to 
+fix those bugs. At the end of the day I had perfect digisound in Omikron Basic 
+without using any interrupt routine!
+The next thing to do were some bouncing color-bars, but they had to be special. 
+So I designed a 'pipe' in Degas Elite and tested a lot of color-combinations. 
+Then I thought of enhancing the 'rotation'-effect by inserting some lines that 
+should rotate around the color-bars. No big deal, but the color-selection was a 
+pain-staking operation that took a lot of time. In the end I made a small 
+utility just for the purose of calculating the colors of the last few bars, 
+because I was totally out of inspiration.
+Furthermore I made a tool that should do all the font-conversion for me. I took 
+a nice monochrome font and converted it to a color-font (one color per pixel!) 
+by using Newtons law on calculating the color-shades. It was a hell of a job 
+but I wouldn't likely have done the job with some paint-program: I'm a coder, 
+NOT a painter!
+Then came summer and the holidays with it, so Lord Q got his parents leaving 
+the house to him for a couple of weeks: we moved in. (Indeed, papa anda mama 
+were really desperate when they came back: we had the whole place torn apart, 
+but who cares anyway?! Lord Q himself had to clean the whole mess, marvellous! 
+During that time the bouncing color-bars were tuned to their final state while 
+I introduced the special effects to the scroller.
+Now the thing was starting looking neat.
+After a little coding-related depression and an in-depth discussion with my 
+personal shrink I decided to finish 'em off: at a members-only party at MBH 
+(Moir Brandts Honk BBS in The Hague, Ed.) the scrolltexts were written by 
+Insh_Allah (me staring at his back trying to mentally force him to move on with 
+it: he was much more busy gasping around than typing, although he had promised 
+to write the whole scrolltext ("I can do it, no problem, I can do it, just 
+easy!").
+Then the QED Demo got released at MBH the same day. (End of summer 1991)
+
+After I had finished the QED demo I decided it would be nice to make a MEGA 
+demo in Omikron Basic. So here I am, just four demos are finished but the most 
+terrible piece: the main-menu has been finished too.
+In coding the main-menu I forced myself towards the painting program in order 
+to draw the necessary sprites. (Aint it beautiful if you can afford yourself a 
+'grafix-man', eh? Well, I'm not that 'rich'; the only one around able to achive 
+little (grin) is Insh_Allah: capabality: TERRIBLE PAINTER, even worse than me, 
+but he can really build-up someone. If you meet 'em, no trouble to recognize 
+'em, he's the guy who always has some utterly 'nice' remark about someone when 
+a mistake is made: 5 minutes Insh_Allah around when you are coding and you're 
+eating wall-paper to get yourself cooling down!)
+That main-menu took most of the time and lots of spirit (of the mental kind, 
+yeah? (I understand, you've never heard about spirit, meaning 2, but it does 
+exist, really! There's not only boose on this world! (Ed. I_A))), the other 
+demo-screens took a lot less time but it's very troublesome to think about new 
+effects, new 'looks' and so on if you're on your own.
+Thus I asume the planned release-date end Mai 1992 will not be met at all due 
+to the fact that I'm a little out of inspiration this time, so sorry.
+
+So that is the story about my Basic programming until now and I hope that you 
+understand now why I still like Basic most.
+
+In general there are many reasons to program in Basic. I will mention some:
+- Easy to learn; you can learn to program Basic just by trying out some 
+statements and discover the working of them. In special the direct modus of 
+Basic is very suitable for that purpose. You can immidiately see the results of 
+the used command. You don't have to bother about the troubles you can get when 
+compiling and linking programs, because (nearly) all the stuff runs in the 
+interpreter very well.
+- Many powerful commands; in Basic there are standard commands for almost 
+anything you want to do. There are sophisticated commands for input and output, 
+commands for drawing lines and circles, filled or unfilled shapes, but there 
+are also low level commands like PEEK and POKE (very, very nice).
+- Good debugging facilities; if a program doesn't work properly you can check 
+out all the values of the variables in interpreter mode at any time. It's also 
+possible to monitor a critical process closely by adding some PRINT and INPUT 
+commands.
+- High-speed development/programming; if you want to write a program in a very 
+short time, i.e. table calculation or text conversion from ASCII to some 
+sophisticated format for you demo, Basic will be the best solution, because of 
+the above-mentioned advances.
+- To show the world it's possible in Basic; there are some weird fellas who 
+want to show the world what's possible in Basic. They want to show that it IS 
+possible to write decent demos in Basic without using any assembly subroutines. 
+(The real nacko-nackoos think that you shouldn't even use assembly routines for 
+playing digisound or chipsound. (See Mr Ni! (the Great).) (If you ask my 
+opinion (I_A) I must add Mr Ni! probably is the only nacko-nackoo around, 
+because he's using his own chip-sound routines (written in Basic). All the 
+other folks are using XBIOS 32 (How low can you go?! VERY low!) or are just 
+calling the assembly-shit in MUS-files (OVR, DDC, etc.) (very bad habit!) 
+(Ed.)))
+
+Also, now you know why you should program in Basic. If you think it's all 
+bullshit what I just told you then stop reading and go playing games or if you 
+don't like games (in that case you are very probably a Feb Aludum (this is NOT 
+possitive at all...)) go and suck your mamma's dick.
+
+Still with us?
+
+Good! In that case you should know that we included a very small source to show 
+you how small things can be in Basic. (And how ugly it all looks!)
+To be more precise: it's the source of one of the 2 K sourcecode entries for 
+the contest I was talking about a while ago. It just goes like this:
+
+
+########################## DEMO.BAS #############################
+
+ CLEAR 400000,10240
+ POKE $FF820A,2
+ IPL 7
+ A= MEMORY(339455)
+ A=A+255
+ A=A AND $FFFF00
+ B=A
+ A=A+32000
+ PRINT "f"
+ CLS
+ PALETTE 7,$660,$700,$701,$702,$703,$704,$705,$706,$707,$710,
+         $720,$730,$740,$750,0
+ XBIOS (,5,L B,L -1,0)
+ TEXT COLOR =2
+ TEXT HEIGHT =4
+ TEXT STYLE =O
+ FOR D=1 TO 25
+  FOR C=0 TO 19
+    TEXT C*16+4,D*8-2,""
+  NEXT C
+ NEXT D
+ MODE =2
+ TEXT HEIGHT =31
+ FOR D=1 TO 6
+  FOR C=0 TO 19
+    TEXT STYLE =1
+    TEXT COLOR =1
+    TEXT C*16,D*32-5, CHR$(C+20*D+12)
+    TEXT STYLE =0
+    TEXT COLOR = RND(13)+3
+    TEXT C*16,D*32-5, CHR$(C+20*D+12)
+  NEXT C
+ NEXT D
+ DIM E(16)
+ DIM F(16)
+ FOR C=0 TO 16
+  F(C)=A+C*19200
+  E(C)=F(C)+13758
+ NEXT C
+ A=F(15)+32000
+ G=A+10240
+ SWAP F(16),F(0)
+ XBIOS (,5,L A,L -1,-1)
+ TEXT COLOR =2
+ TEXT HEIGHT =6
+ TEXT 0,6,"TOS"
+ BITBLT 0,0,24,8 TO G
+ PRINT @(0,0);" ";
+ H$="Hi everybody. This is a little fucky scroll-message, I don't want"
+ H$=H$+" to type any more. CU, Mr Ni! says Bye. Now here's the font: "
+ FOR C=32 TO 152
+  H$=H$+ CHR$(C)
+ NEXT C
+ DIM I( LEN(H$)+1)
+ FOR C=1 TO LEN(H$)
+  I(C)= ASC( MID$(H$,C,1))-32
+ NEXT C
+ FOR C=1 TO LEN(H$)
+  D=I(C)
+  Z=D\20
+  D=(D MOD 20)*8+Z*5120
+  I(C)=D+B
+ NEXT C
+ J%=148
+ K%=72
+ L!=0
+ M!=0
+ REPEAT
+  L%= LEN(H$)-1
+  FOR X%=1 TO L%
+    FOR O%=0 TO 4800 STEP 160
+      MEMORY_MOVE I(X%)+O%+160,8 TO A+8+O%
+    NEXT O%
+    FOR P%=0 TO 15
+      WVBL
+      XBIOS (,5,L A,L F(P%+1),-1)
+      MEMORY_MOVE E(P%)+8,4800 TO E(P%)
+      FOR O%=160 TO 4800 STEP 160
+        MEMORY_MOVE A+O%,8 TO E(P%)-6+O%
+      NEXT O%
+      BITBLT 1,1,31,32 TO 0,1,31,32
+      XBIOS (,5,L F(P%),L -1,-1)
+      L!=L!+.01
+      M!=M!+.02212323
+      BITBLT G TO 148+148* SIN(L!),36+36* COS(M!),24,8
+      IF P%=1 THEN
+        XBIOS (,5,L F(16),L -1,-1)
+        BITBLT G TO 148+148* SIN(L!-.01),36+36* COS(M!-.02),24,8
+      ENDIF
+    NEXT P%
+  NEXT X%
+ UNTIL 0
+ END
+
+######################### END DEMO.BAS ##########################
+
+I suppose the code is self-explaining. If not we'll call it reader-feedback if 
+you ever get the courage to write back to me.
+
+Whaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa $%&œ$&$% 
+f*cking shit! ***verdommese klotuhbak, gloeiendegloeiende"œ$%&^œ$œ%!!!
+(This is a softened version of the text just so fanatically exclaimed by Mr Ni! 
+sitting by the keyboard getting a 19"-rack computer (lots of steel and 
+alumimium, litlle computer) on his foot. It seems to hurt... I think... (I_A))
+
+Insh_Allah will be taking over here: what's Mr Ni! chatting about next time? 
+(If he's recovered from foot-ache and other major brain-problems (you'll 
+understand...))
+He'll discuss scrollers in-depth (wow, we love this!). It should be interesting 
+for the starting assembly-freak too, because the scrolling-principles are 
+appicable to every language, not just Basic. (Excluded from the category 
+'programming language' are MUDULA and PASCAL)
+Anyway, cocksucker numero uno is leaving you, hope you enjoyed reading this 
+shit.
+
+Credits:
+
+This text originated from Mr Ni! but after he said he lost his feeling 
+(ayayayaya!) and he couldn't reach his brains no more (thoughts seem to have 
+huge problems jumping over/travelling through a 19" rack), the whole text was 
+edited by Insh_Allah (that's me, the Ed. & I_A dirtbag!).
+
+If you ever would consider taking a pen and paper to write (analphabetics can 
+be cured, order our special discount prices on Special Cures You Will Like (you 
+don't want to hear bout this!)) write to:
+
+  Mr Ni!
+  Rohofstraat 116
+  7604 AK   Almelo
+  The Netherlands
+(You know? The tulips, the windmills and the hasheesh?! Yes!)
+
+Comments, requests about Replay++ (yeah, advertisement time, folks!) and so on 
+are gladly and quickly (???????????) answered by us (Oh no, Mr Ni! I cannot 
+write and read very well, so you answer those letters; besides, they were all 
+addressed to you (grin) so off you go, pal! Happy answering, yeah! Oh, and 
+please do include a copy of my Replay++ otherwise we will never get that piece 
+of shit outdoors. ... You wish I did what?!... Well, fucking myself was 
+allready done by me before (no fun, strange... probably not the right 
+pheripheral, maybe next time plugging in a DB9 connector???) so you'll have to 
+think about something else...).
+
+Hope you write us soon, until the next article, stand up for your programming 
+rights: do it in Omikron!
+
+                                    WAS signed by:
+
+                                    Mr Ni! (the poor guy ;-) )
+                                      &
+                                    Insh_Allah (the DB9-thing)
+                                      of 
+                                    the TOS-Crew
+                                   ("Fidulus Bittus et Fuckus Clockcyclus")
+
+
+

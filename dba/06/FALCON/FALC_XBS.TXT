@@ -1,0 +1,366 @@
+FALCON XBIOS
+
+Here are the preliminary new Xbios calls for the new Atari Falcon 030
+these may change slightly, the official specs are in the Falcon developers 
+manual... These are just the DSP xbios calls (for the moment) in our
+next issue of the DBA magazine we'll print the new sound xbios calls.
+(I will try to get the complete instruction set of the DSP also)
+
+DSP-Calls:
+=========================================================================
+
+void Dsp_DoBlock(a,b,c,d)             
+-------------------------
+Fast data transfer routine without handshake for sending and receiving 
+a block of data to or from the DSP
+
+    a= char *data_in    pointer to send-buffer with data block
+    b= long size_in     number of DSP words to be sent
+    c= char *data_out   pointer to receive buffer for data
+    d= long size_out    number of words to be received from DSP 
+
+void Dsp_BlkHandShake(a,b,c,d) 
+------------------------------
+Slower but reliable data transfer routine
+
+    a= char *data_in    pointer to send-buffer with data block
+    b= long size_in     number of DSP words to be sent
+    c= char *data_out   pointer to receive buffer for data
+    d= long size_out    number of words to be received from DSP 
+
+
+void Dsp_BlkUnpacked(a,b,c,d)
+-----------------------------
+Same as Dsp_DoBlock but the DSP words are not aligned after each other 
+but converted to LONG words for the CPU and for the data from the CPU to 
+the DSP the top byte is discarded.
+
+    a= char *data_in    pointer to send-buffer with data block
+    b= long size_in     number of DSP words to be sent
+    c= char *data_out   pointer to receive buffer for data
+    d= long size_out    number of words to be received from DSP 
+
+void Dsp_InStream(a,b,c,d)
+--------------------------
+Transparent data transfer from CPU to DSP memory
+
+    a= char *data_in     pointer to send-buffer with data block
+    b= long block_size   size of each block in DSP words
+    c= long num_blocks   number of blocks
+    d= long *blocks_done number of blocks done 
+
+void Dsp_Outstream(a,b,c,d)      
+---------------------------
+Transparent data transfer from DSP to CPU memory
+
+    a= char *data_out    pointer to receive-buffer for data block
+    b= long block_size   size of each block in DSP words
+    c= long num_blocks   number of blocks
+    d= long *blocks_done number of blocks done 
+  
+void Dsp_IOStream(a,b,c,d,e,f) 
+------------------------------
+A combination of Dsp_InStream and Dsp_Outstream.
+
+    a= char *data_in      pointer to send-buffer with data block
+    b= char *data_out     pointer to receive-buffer for data block
+    c= long block_insize  size of each block in DSP words
+    d= long block_outsize size of each block in DSP words
+    e= long num_blocks    number of blocks
+    f= long *blocks_done  number of blocks done 
+
+void Dsp_RemoveInterrupts(a)
+----------------------------
+This functions is to stop an already running data transfer from or to the 
+DSP.
+
+    a = word mask        mask bit 0 set: stop receiving data from DSP
+                         mask bit 1 set: stop sending data to DSP
+
+size = Dsp_GetWordSize()             
+------------------------
+this function returns size in bytes of a DSP word, on the 
+Falcon its 3 bytes (24 bits) but this may change with newer models of the 
+Falcon or the DSP.
+
+    word size      number of bytes in one DSP word
+
+state = Dsp_Lock()
+------------------
+This function locks the DSP for access by other processes, this should be 
+used for all the DSP Xbios calls! It returns in a word the lock state of 
+the DSP
+
+    word state      state = -1, it was already locked by other process
+                    state =  0, DSP is now locked
+
+void Dsp_Unlock()            
+-----------------
+Quite obvious, this unlocks the DSP. Don't unlock if your process has not 
+locked the DSP !!!
+
+void Dsp_Available(a,b)             
+-----------------------
+Returns in the pointers a and b the available memory space in the X and Y 
+memory space of the DSP. The returned number is in DSP words (ofcourse)
+
+    a= long *xavailable
+    b= long *yavailable
+
+status = Dsp_Reserve(a,b)
+-------------------------
+Reserves space in the DSP's X and Y memory (starting at address X:$0 and 
+Y:$0)
+
+    a= long xreserve    number of words to reserve in X memory
+    b= long yreserve    number of words to reserve in Y memory
+
+    word status         =  0:  memory reserved succesfully
+                        = -1:  error occured while reserve
+    
+status = Dsp_LoadProg(a,b,c)
+----------------------------
+Loads a DSP file in .LOD format which should be placed at '*file' and will 
+be placed at memory place '*buffer' in the DSP. The program gets the ID 
+'ability'
+
+    a= char *file          address of .LOD file
+    b= word ability        the ID number
+    c= byte *buffer        the DSP program buffer number
+
+       word status         = 0: No erros, DSP program loaded and started
+                           =-1: Error...
+
+
+void Dsp_ExecProg(a,b,c)
+------------------------
+Loads a program from the DSP memory in the DSP and runs it.
+
+    a= byte *buffer        pointer to buffer with DSP program
+    b= long codesize       number of DSP words to be transferred
+                           (for example the value returned by LodToBinary)
+    c= word ability        the ID for this program
+
+void Dsp_ExecBoot(a,b,c)
+------------------------
+Loads a DSP boot program which consists of 'codesize' DSP words from the 
+buffer pointed to by '*codeptr' into DSP memory place P:$0, the maximum 
+size is 512 words.
+
+    a= byte *codeptr     pointer to DSP bootprogram
+    b= long codesize     number of DSP words to be transferred (max 512)
+    c= word ability      the ID for this program
+
+size = Dsp_LodToBinary(a,b)
+-------------------------
+Loads a DSP file in the .LOD format at address 'buffer'. The program is 
+unlike the 'Dsp_LoadProg' function, not transferred to the DSP and so can 
+not be run either. 
+
+    a = char *file       pointer to (a NULL terminated) filename string
+    b = byte *buffer     pointer to buffer 
+   
+    long size            the number of DSP words of the DSP program
+
+void Dsp_TriggerHC(a)      
+---------------------
+Executes a 'vector' (something like a TRAP#)
+
+    a= vector number to be executed e.g. $13
+
+
+ability = Dsp_RequestUniqueAbility()
+------------------------------------
+Calculates an unassigned ID number for use in DSP subroutines. This ID is 
+used in Dsp_LoadProg, Dsp_ExecProg and Dsp_LoadSubroutines
+
+    word ability        an unassigned (free) ID number
+
+
+ability = Dsp_GetProgAbility()
+------------------------------
+Returns the current ID of the program in the DSP, it can be used to 
+determine if it is needed to transfer a certain program to the DSP or if 
+that program is still available in the DSP
+
+    word ability        the current ID of the program in the DSP
+
+
+void Dsp_FlushSubroutines()
+---------------------------
+Clear all (sub)programs from the DSP.
+
+
+handle = Dsp_LoadSubroutine(a,b,c)
+----------------------------------
+Install a DSP subroutine, the routine must be in DSP memory at address 
+'ptr'. The program stays in the DSP as long as it's not replaced by 
+another. The number of subroutines which can be in the DSP at once is 
+limited, you can make space by executing Dsp_FlushSubroutines().
+
+    a = byte *ptr      pointer to buffer with DSP subroutine
+    b = long size      the size of the routine in DSP words
+    c = word ability   the ID which is assigned to this subroutine
+
+    word handle        = 0: the subroutine could not be installed
+                       > 0: select parameter for Dsp_RunSubroutine
+
+ 
+handle = Dsp_InqSubrAbility(a)            
+------------------------------
+DSP subroutines get a handle just as DSP programs get an ID number, this 
+functions checks to see if a certain DSP subroutine is still available in 
+the DSP.
+
+    a = word ability     ID number of the DSP subroutine to check
+
+    word handle          = 0: no such subroutine in the DSP
+                         > 0: the select parameter for Dsp_RunSubroutine
+
+
+status = Dsp_RunSubroutine(a)           
+-----------------------------
+Executes directly subroutine 'handle'
+
+    a = word handle     the select parameter for the subroutine (as 
+                        returned by Dsp_LoadSubroutine or 
+                        Dsp_InqSubroutine) NOT the ID number !!
+
+    word status         < 0: Error...
+                        = 0: DSP subroutine succesfully started
+
+
+hf0_ret = Dsp_Hf0(a)
+--------------------
+Set/Clear/Test Hf0 bit (bit 3 of the HSR register)
+
+    a = word flag       = 0: Clear Hf0 bit
+                        = 1: Set Hf0 bit
+                        =-1: Test Hf0 bit
+
+    word hf0_ret        the current value of Hf0 (0 or 1)
+ 
+hf1_ret = Dsp_Hf1(a)
+--------------------
+Set/Clear/Test Hf1 bit (bit 4 of the HSR register)
+
+    a = word flag       = 0: Clear Hf1 bit
+                        = 1: Set Hf1 bit
+                        =-1: Test Hf1 bit
+
+    word hf1_ret        the current value of Hf1 (0 or 1)
+ 
+
+hf2_ret = Dsp_Hf2()
+-------------------
+Test Hf2 bit of DSP  (bit 3 of the HCR register)
+
+    word hf2_ret        the current value of Hf2 (0 or 1)
+
+hf3_ret = Dsp_Hf3()
+-------------------
+Test Hf3 bit of DSP  (bit 4 of the HCR register)
+
+    word hf3_ret        the current value of Hf3 (0 or 1)
+
+
+void Dsp_BlkWords(a,b,c,d)
+--------------------------
+Similar to Dsp_BlkUnpacked but now only 16 bit words (that's CPU words) 
+are transferred, the 16 bit words are sign extended to the DSP format (now 
+24 bits). In the transfer from DSP to CPU, only the lower 16 bits are 
+written into the receive buffer. 
+
+    a= char *data_in    pointer to send-buffer with data block
+    b= long size_in     number of DSP words to be sent
+    c= char *data_out   pointer to receive buffer for data
+    d= long size_out    number of CPU words to be received from DSP 
+
+
+void Dsp_BlkBytes(a,b,c,d)
+--------------------------
+Similar to Dsp_BlkUnpacked but now only bytes (that's CPU bytes) are 
+transferred, the 8 bit bytes are NOT sign extended to the DSP format (now 
+24 bits). In the transfer from DSP to CPU, only the lowest 8 bits are 
+written into the receive buffer. 
+
+    a= char *data_in    pointer to send-buffer with data block
+    b= long size_in     number of DSP words to be sent
+    c= char *data_out   pointer to receive buffer for data
+    d= long size_out    number of CPU bytes to be received from DSP 
+
+
+status = Dsp_HStat()
+--------------------
+Returns the value of the DSP ISR register, this register reflects the 
+current status of the Host interface.
+
+    byte status         bit 0: receive data register full (RXDF)
+                               bit is set when data is available from 
+                               the DSP
+                        bit 1: transmit data register empty (TXDE)
+                               bit is set when DSP is ready to receive
+                               new data
+
+
+void Dsp_SetVectors(a,b)
+------------------------
+This function enable you to install your own routines which are called 
+whenever data is received form or send to the DSP. These routines are 
+interrupt drive so they don't block your current application.
+If you only want to include a send routine, then put in a NULL for the 
+receiver pointer and vice versa.
+
+    a = void (*receiver());    your own receiver routine
+
+    b = long (*transmitter()); your own transmitter routine
+
+
+void Dsp_MultBlocks(a,b,c,d)
+----------------------------
+At this time, only the call is known, so I have no further information
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Here is the binding list for the new DSP Xbios functions
+--------------------------------------------------------------------
+
+#define Dsp_DoBlock(a,b,c,d)              (void) xbios(96,a,b,c,d)
+#define Dsp_BlkHandShake(a,b,c,d)         (void) xbios(97,a,b,c,d)
+#define Dsp_BlkUnpacked(a,b,c,d)          (void) xbios(98,a,b,c,d)
+#define Dsp_InStream(a,b,c,d)             (void) xbios(99,a,b,c,d)
+#define Dsp_Outstream(a,b,c,d)            (void) xbios(100,a,b,c,d)
+#define Dsp_IOStream(a,b,c,d,e,f)         (void) xbios(101,a,b,c,d,e,f)
+#define Dsp_RemoveInterrupts(a)           (void) xbios(102,a)
+#define Dsp_GetWordSize()                 (int)  xbios(103)
+#define Dsp_Lock()                        (int)  xbios(104)
+#define Dsp_Unlock()                      (void) xbios(105)
+#define Dsp_Available(a,b)                (void) xbios(106,a,b)
+#define Dsp_Reserve(a,b)                  (int)  xbios(107,a,b)
+#define Dsp_LoadProg(a,b,c)               (int)  xbios(108,a,b,c)
+#define Dsp_ExecProg(a,b,c)               (void) xbios(109,a,b,c)
+#define Dsp_ExecBoot(a,b,c)               (void) xbios(110,a,b,c)
+#define Dsp_LodToBinary(a,b)              long   xbios(111,a,b)
+#define Dsp_TriggerHC(a)                  (void) xbios(112,a)
+#define Dsp_RequestUniqueAbility()        (int)  xbios(113)
+#define Dsp_GetProgAbility()              (int)  xbios(114)
+#define Dsp_FlushSubroutines()            (void) xbios(115)
+#define Dsp_LoadSubroutine(a,b,c)         (int)  xbios(116,a,b,c)
+#define Dsp_InqSubrAbility(a)             (int)  xbios(117,a)
+#define Dsp_RunSubroutine(a)              (int)  xbios(118,a)
+#define Dsp_Hf0(a)                        (int)  xbios(119,a)
+#define Dsp_Hf1(a)                        (int)  xbios(120,a)
+#define Dsp_Hf2()                         (int)  xbios(121)
+#define Dsp_Hf3()                         (int)  xbios(122)
+#define Dsp_BlkWords(a,b,c,d)             (void) xbios(123,a,b,c,d)
+#define Dsp_BlkBytes(a,b,c,d)             (void) xbios(124,a,b,c,d)
+#define Dsp_HStat()                       (char) xbios(125)
+#define Dsp_SetVectors(a,b)               (void) xbios(126,a,b)
+#define Dsp_MultBlocks(a,b,c,d)           (void) xbios(127,a,b,c,d)
+----------------------------------------------------------------------
+
+                                                     translated by KGE
+

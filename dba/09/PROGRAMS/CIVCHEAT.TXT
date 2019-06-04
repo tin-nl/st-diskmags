@@ -1,0 +1,79 @@
+CIVCHEAT
+
+Copyright Stuff:
+================
+Program: CIVCHEAT.PRG
+Version: 2.60
+Copyright 1993 by Jeffrey Wisniewski
+Release date: 04/25/93
+
+This software and the accompanying documentation are freeware and
+may be distributed freely as long as they remain intact, complete, and
+unaltered.  It may not be sold or included with any commercial package
+without the written consent of the author.  It may not be sold.
+
+ Included files:
+
+   Filenames        Sizes          Descriptions
+   ------------     -----------    ------------
+   CIVCHEAT.PRG     3124 Bytes     The Program
+   CIVCHEAT.TXT     2588 Bytes     This text file
+
+Disclaimer:
+===========
+The author assumes no responsibility for any loss due to use or misuse
+of this program nor claims suitability for any purpose whatsoever.  I
+also do not make any warranty with regards to this program and the
+documentation.
+
+-------------------------------------------------------------------------
+
+Any questions, problems, or suggestions can be sent to the following:
+
+    Jeff Wisniewski
+    P.O. Box 1243
+    Newtown, PA  18940-9998
+
+    GEnie: E.WISNIEWSK1 (Temporary E-Mail address)
+
+
+Tested On:
+==========
+The program is known to work with the following computers : 520ST,
+1040ST, 520STE, 1040STE, and MEGASTe.
+       
+This program was written for the owners of the game Civilization by
+Microprose and is copyrighted by Microprose.
+
+Since CIVCHEAT does not use any undocumened variables. It should work
+with any TOS Version.
+
+The program was tested on a 1040STe with TOS 2.06 and a Mega-STe with
+TOS 2.05 using standard Color/Mono monitors.  It currently runs in
+LOW, MEDIUM, or HIGH resolutions under TOS 1.00 - 2.06.  It should run
+under other TOS's, but I have no way to test them.
+
+
+Other Stuff:
+============
+This program was written on a 1040STe using Dev-Pac ST Version 2.00.
+
+-------------------------------------------------------------------------
+
+Purpose:
+========
+This program will increase the amount of money you have to $30,000.  I
+found that you can do it as many times as you want without any
+penalties.
+
+This program will take a existing saved game file and change it.  You
+will have to watch the game when you save a file to get the file name:
+CIVIL#.SVE where # is the number of the game on disk.
+
+NOTE:  The money amount is saved in two places in the saved game file,
+       one is for the date B.C. and the other one is for A.D.  This file
+       modifies both locations.
+-------------------------------------------------------------------------
+
+THIS LITTLE PROGRAM CAN BE FOUND IN THE PROGRAMS FOLDER ON THIS DISK
+-----------------------> HAVE FUN WITH IT <-------------------------

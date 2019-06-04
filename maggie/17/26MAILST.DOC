@@ -1,0 +1,1852 @@
+06601030305800
+F0110030
+9[........................................................]001
+ˆExtractsfromthe2600ProgrammersMailingList...
+
+Beginsasadiscussionaboutprogrammingthe2600&makingcarts
+whichfollowsthroughtotalkofanemulator.
+€
+===============================================================================
+
+           CLASSIC ATARI VIDEO GAME PROGRAMMERS DIGEST # 1 -  9/2/92
+
+        "Information of interest to Classic Atari Video Game 
+Programmers"
+
+-------------------------------------------------------------------------
+
+Date: 2 Sep 1992 
+From: Ted Drude (drudetb@infonode.ingr.com)
+To: Classic Atari Game Programmers
+Subject: Getting this thing started.
+
+So far,  here's all the folks on this mailing list:
+
+Greg Alt = galt%peruvian@cs.utah.edu 
+Ted Drude = drudetb@infonode.ingr.com
+James Hauge = exuhag@exu.ericsson.se
+Mike Kienenberger = FSMLK1@acad3.alaska.edu
+Marek Tomczyk = uj1g@ibm3090.rz.uni-karlsruhe.de
+Jay Wilkinson = jay@lafayette.unocal.COM
+
+This is a first attempt at a digest-style programming newsletter, which
+ is 
+modeled after the Classic Atari Video Games Digest.  Let me know what
+ you 
+think.
+
+I've sent everybody a copy of the 2600 programming information file 
+that Jeff 
+Scott sent me when we first organized the game digest a couple of 
+months ago.  
+That's a starting point for discussion. It appears the text in that 
+file is 
+part of an article that appeared in The 2600 Connection #8 (Jan/Feb 
+'92). Tim 
+printed part one of a four-part series entitled "Programming the 2600",
+ by 
+Harry Dodgson, then we never saw another article.  Finally, in the Aug/
+Sep '92 
+issue #12, part two has appeared.  If Tim continues to get stuff from 
+Harry, 
+we should eventually have a decent beginning tutorial on programming a 
+2600, 
+but it may take awhile. 
+
+From my perspective, you have to thoroughly understand two things in 
+order to 
+€program a 2600:
+
+- 65XX machine language.
+
+- The architecture of the 2600.
+
+I understand the former pretty well, but am still working on the later.
+ Here's 
+a brief list of some things I need clarified in my mind in order to 
+start 
+doing games for the 2600, in no particular order:
+
+Issues to be resolved:
+
+- Where can we get some meaningful programming documentation for the 
+  2600 (and the 5200/7800 as well)?
+
+- How do you read 2600 game cart ROMs into another system, so they can
+  disassembled and studied ?
+
+- How do you read bank-switched ROMs ? Is there a cheaper way than 
+having to 
+  use an in-circuit-emulator (ICE) ? 
+
+- Is there a way to hook up a host development system to a 2600 so you 
+don't 
+  have to burn a lot of EPROMs when writing and testing code?
+
+So, there's my first contribution to the programming digest.  
+
+Here's some of what I've already received from you (as edited by me):
+
+------------------------------------------------
+
+Date: 28 Aug 1992 06:28:25 -0800Date:
+From: Mike Kienenberger <SXMLK@acad3.alaska.edu>
+Subject: The 2600 programming list
+
+I am very much interested in joining the 2600 programming list.
+(I've already started building my own EPROM-loadable cartridge!)
+
+I've also told UJ1G@DKAUNI2.BITNET about the mailing list since we
+were sort of trying to figure this out together.
+
+That will make five of us.
+
+Here's my experience:  I was one of the classic Apple II hacks so I can
+program 6502 assembly with skill. I also know enough about digital 
+electronics 
+that I can design a games cartridge using EPROMS.   I do not really 
+know 
+anything about atari programming in general so I will need to have help
+ in 
+that area. 
+€
+I don't get 2600 Connection.   I will go out and look for it, but
+I don't know what the chances for finding it are.  Perhaps if I can't
+find it (and Marek [UJ1G@DKAUNI2.BITNET] will probably have no chance
+ of
+finding it.), you could either buy and send me a copy or photocopy the
+one you have (or digitize it :-)
+
+[Ted: Well Mike, you won't find it on any newstand.  It's available 
+from:
+
+The 2600 Connection
+c/o Tim Duarte 
+P.O Box 3993
+Westport, MA  02790
+
+Subscription price is $6/yr. (six issues), or $1.50 for each back issue.
+
+I'll try to post some of the summaries and disassembled listings that 
+are in 
+the latest article.]
+
+I've been buying Atari 2600 stuff at garage sales for some time now.
+I have 3 or more pacman games, so I finally just broke one open and 
+started
+looking inside.  With the 2600 info I've grabbed off of the net, and
+the pacman (as well as a broken Wizard of Wor cartridge), I've
+figured out a wiring diagram to hook up 2716 - 2732 eproms.
+
+[I am including my results at the end of this message.  Please send me 
+any
+information you have as well. Gregg and Marek already have my info.]
+
+I do not know about EPROM emulators.   However, I still have my old
+Apple II+ and my EPROM burner card for it, so I will probably do
+all of my development on it [Write a program, burn an EPROM, plug it 
+into
+the cartridge, test it, repeat. :-)]. 
+
+[Ted: You need a 'frob' Mike!  What's a frob? Read about it below!]
+
+I can probably also build a periferal card for my Apple that will let 
+us
+copy the information off of the cartridges.  [the cartridges seem to 
+use
+9332B chips which are very similar to my Apple's 9316B rom chips.]
+
+[Ted: Great!  If you get a wiring diagram for it, that's a big start.]
+
+>From their I can upload them to my NeXT, and then upload them to the 
+net.
+You could disassemble them and upload the results.]
+
+[Ted: I've got a very good 6502 symbolic disassembler.]
+€
+I think we need a mailing list for sure, and it would be handy if we
+had an ftp site as well.  I don't really have any way to set up a 
+mailing list,
+but I can probably supply an FTP site if no one else can.
+
+-Mike
+
+Here's what I've deduced:
+                        Cartridge slot
+
+                        Top
+ D3   D4   D5   D6   D7   A12  A10  A11  A9   A8  +5V   SG
+--1- --2- --3- --4- --5- --6- --7- --8- --9- -10- -11- -12-
+ A7   A6   A5   A4   A3   A2   A1   A0   D0   D1   D2   NC
+                        Bottom
+
+Address
+lines           Memory
+used            Available       EPROM   Memory
+======================================================
+A11             2048            2716    2K
+A12             4096            2732    4K
+A13             8192            2764    8K
+
+        
+    ____________
+    |   2716   |
+A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | VPP [Doesn't matter probably.  +5V]
+A3  | 5     20 | !Output Enable (always on) [GND]
+A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2732   |
+A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | A11
+A3  | 5     20 | !Output Enable (always on) [GND] / VPP
+A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+€GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2764   |
+VPP | 1     28 | VCC [+5 V]
+A12 | 2     27 | !Program Strobe (no connection?) [GND]
+A7  | 3     26 | No Connection
+A6  | 4     25 | A8
+A5  | 5     24 | A9
+A4  | 6     23 | A11
+A3  | 7     22 | !Output Enable (always on) [GND]
+A2  | 8     21 | A10
+A1  | 9     20 | !Chip Enable (always on) [GND]
+A0  | 10    19 | D7
+D0  | 11    18 | D6
+D1  | 12    17 | D5
+D2  | 13    16 | D4
+GND | 14    15 | D3
+    |__________|
+
+
+--------------------------------------------
+
+Date: Wed, 2 Sep 92 15:05:19 CDT
+From: jay@lafayette.unocal.com (Jay Wilkinson)
+Subject: The Frob Ad                    
+
+I sent a FAX around 3:00 p.m. CDT [with a copy of ad from an old Byte
+for the "frob", an Apple II-based development system for the 2600].
+
+[Ted: Thanks Jay!  I remembered seeing this ad years ago. Here's
+the text version of the ad for anyone interested:]
+
+
+                         The Frob 26(tm)
+
+                  The Serious Game Design Tool
+
+                    For The Serious Designer
+
+            At The Price Of A Toy For The Hobbyist
+
+              The Game Cartridge Development System 
+             for the Atari 2600 Video Computer System.
+
+[Picture in ad shows an Apple II-bus board, a 5.25" diskette, 
+a three-ring bound "The Frob" manual with the cover open, a ribbon cable 
+with connectors on both ends, and what appears to be two 2600 
+EPROM/ROM cartridge boards.]
+
+Features Include:
+Real-time development 
+No hardware modifications required
+Apple ][ 48K, one disk drive required
+€
+Optional
+Atari 5200 Supersystem Adapter Package
+
+[In a box in the center of the ad:]   Now Available for the Colecvision
+
+Now Only $495
+Call today to order
+408-429-1551
+All major credit cards accepted
+
+For high profit reward, purchase the tool that can do the job at an 
+unbeatable 
+price.  [ Wish we still could! :-) ]
+
+frobco
+A Division of Tri-comp Polytechnics Inc.
+P.O. Box 8378
+Santa Cruz, CA  95061
+408-429-1551
+
+The Miracle of Creation Can Be Yours
+
+[Ted: I WANT MY FROB!]
+-----------------------------------------------------------------
+End of Programming Digest # 1
+===============================================================================
+
+           CLASSIC ATARI VIDEO GAME PROGRAMMERS DIGEST # 2 -  9/11/92
+
+        "Information of interest to Classic Atari Video Game 
+Programmers"
+
+-------------------------------------------------------------------------
+
+Date: 11 Sep 1992 
+From: Ted Drude (drudetb@infonode.ingr.com)
+To: Classic Atari Game Programmers
+
+OK,  here an edited digest of all the mail I've received in the past
+week or so.  Based on early responses, there are some basic issues about
+how we are going to operate that are up for discussion: 
+
+- Do we need a moderated "digest" format,  or should all of us just
+be responsible for maintaining our own copies of  mailing list addresses
+and for sending our messages to everyone else on the list?  I
+have no problems with that.  In fact,  I've already set up my elm
+aliases for everyone anyway.  
+
+- I know nothing else about automating a mailing list, beyond using elm
+aliases,  so if someone else wants to do an automated  "mail list 
+server"
+or whatever it's called,  please be my guest.  I just want to be on the
+list and get the mail.
+€
+- What do you want to do?  Keep this the way it is or go "individual"?
+
+Other news:
+
+- I have gotten ZERO response from the net about the FROB.  It looked
+like a good shortcut to the hardware interface for programming,  but it
+obviously is a rare item.  I'm still trying to ferret one of these
+things out,  if they still exist at all.
+
+- Mike Kienenber appears to be cranking hard on getting his 2600 EPROM
+board and interface working.  GO MIKE!
+
+- Ted Drude (drudetb@infonode.ingr.com)
+
+--------------------------------------------------------------------------
+
+From: Mike Kienenberger <SXMLK@acad3.alaska.edu>
+Subject: 2600 programming response
+
+First off, an address change:
+Mike Kienenberger = FSMLK1@acad3.alaska.edu is now
+Mike Kienenberger = FXMLK@acad3.alaska.edu.
+
+Sorry for the delay, but I've been busy.
+
+As for the digest format, is this what we want?
+I can probably set up a mailing list as well as an ftp site if we need
+
+ it.
+
+(TED: Mike that would be great.  In fact,  I'd be happy to let you take
+over the mailing list for the Atari Games Digest as well.  And we need
+an FTP site for it, too.)
+
+Personally, I like quick responses and small messages.
+I *DO* like the digests, but maybe we should use the digests as 
+archives.
+How often are the rest of you around to converse with?
+
+As for some of the questions posed:
+>- Where can we get some meaningful programming documentation for the 
+>  2600 (and the 5200/7800 as well)?
+  
+I suspect we will have to write our own.
+
+(TED:  We need to get in touch with the guy who's been writing for The
+2600 Connection.  He is the one who's written the commented
+disassemblies that have been posted to the net.  I haven't had time to
+study his latest article,  but he explains some more of what's going on
+with Combat.) 
+
+>- How do you read 2600 game cart ROMs into another system, so they can
+>  disassembled and studied ?
+€
+Easy to do.  It just requires building some hardware for whatever 
+system
+you need.  My roommate and I are designing something to do this for
+the Apple II.
+
+>- How do you read bank-switched ROMs ? Is there a cheaper way than 
+having to 
+>  use an in-circuit-emulator (ICE) ? 
+
+I don't understand the reference.  How does this apply?
+
+>- Is there a way to hook up a host development system to a 2600 so you
+ don't 
+>  have to burn a lot of EPROMs when writing and testing code?
+
+Yes.  When I build one for my apple, I'm just going to have a ram chip
+ on
+a peripheral card which can be accessed by my apple and is also plugged
+ into
+the atari (a single shared memory chip.)  It should also let you read
+ in an
+atari cartridge from another cable as well.  This will essentially be
+ the
+same thing as a FROB, but it will cost about $450 less :-)
+
+(TED:  GREAT!  I'm looking forward to seeing what you come up with.)
+
+Now as for equipment you will need to do any hardware, here's what
+I've currently picked up:
+        Plug-in 44-pin PC board (only edge-connector board with
+                0.1 (apple II & 2600) contact centers I could find.  
+It will
+                have to be cut into the right size.)
+        zero-force 28-pin socket (zip chip?)
+        25 watt soldering iron
+        60/40 resin-core solder
+
+I'm also ordering
+        10-20 2764 eproms
+        an Apple II-specific (50-pin same-size) edge-connector 
+peripheral board
+        
+I already have one 2764 and an EPROM burner, and I am borrowing
+a friend's EPROM eraser so for now I will just keep reusing the
+one I have.
+
+My first EPROM cartridge hasn't worked out.  It's all wired with
+the "colrdemo.asm" eprom (with start = $E000), but my 2600 acts
+as if I don't have a cartridge plugged in.  I don't think I have
+a bad connection anywhere.  Are the assembly programs correct?
+And where is "start"?  Does it load 0000-1FFF on the cartridge
+into E000-FFFF in memory? That's what I am currently assuming.
+
+€If anyone has a fairly short program that will definitely do something
+checkable, I'd be appreciative (maybe plays a tune.) Quadruple-checked
+hex code is ok, or I can take standard code and assemble it myself.
+
+Other good news is that I picked up another console and 20 or so games
+for only $5 at another garage sale this weekend.
+
+Well, I'm off to the electronics stores to try to get some more 
+equipment.
+If anyone has code that they know will really work, send it to me!
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+-------------------------------
+
+Date: 08 Sep 1992 00:49:47 -0800
+From: The Special FX Guy <FXMLK@acad3.alaska.edu>
+Subject: 2600 cartridge pinout changes
+
+(Looking at the bottom of the cartridge -- i.e. edge connectors first)
+                        Top
+ D3   D4   D5   D6   D7   A11  A10  A12  A9   A8  +5V   SGND
+--1- --2- --3- --4- --5- --6- --7- --8- --9- -10- -11- -12-
+ GND  D2   D1   D0   A0   A1   A2   A3   A4   A5   A6   A7
+                        Bottom
+
+Dx = Data line x
+Ax = Address line x
++5V = +5 volts
+SGND = Shield Ground
+GND = Ground
+
+Note 1: On both of the cartridges I took apart, GND was also connected
+        to SGND.  Best to make sure that they are wired together.
+
+Note 2: A11 and A12 could be switched.  On both the chips I've checked,
+        A12 was hardwired to +5 volts which leads me to believe that it
+        is the highest address line.  Since I believe that these chips
+        are only 4Kx8 ROMs, this seems logical, since A12 would 
+actually
+        be just the chip enable for ROM (right?).  Only the 2600 info
+        tells differently, and it doesn't give any connection for A11 
+on
+        the EPROM, so I don't trust it.  Unfortunately, since the 2716
+        EPROM is used as an example, we won't know without actually 
+testing
+        one, since the 2716 doesn't really use A11 or A12 and either 
+one
+        could be used as a chip enable.
+        
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+(Yes, the information given in the earlier net contributions is either
+€wrong or poorly presented.)
+
+-------------------------------------
+
+Date: 10 Sep 1992 01:58:29 -0800
+From: the 'special FX' guy <FXMLK@acad3.alaska.edu>
+Subject: Eprom Cartridge update
+To: Atari 2600 programming list
+
+Well, I have successfully built a unit which "does something"
+I still don't know if A11 and A12 should be switched.
+I don't know if I should assume that $E000 (0xE000) is Cartridge $0000.
+While my program runs (ColrDemo.asm), it doesn't do what I expected.
+It scrolls colors upwards.
+or downwards.
+But it does do something.
+
+(TED:  GREAT! Glad that some progress is being made.
+  ---BTW,  Are you sick of my cheerleading or what!) 
+
+-------------------------------------
+
+Date: Sat, 5 Sep 92 17:11:00 -0600
+From: galt%peruvian@cs.utah.edu (Greg Alt)
+Subject: cartridge trading, the programming list
+
+Also, about the programming list... I was thinking it might be best if 
+we have
+some kind of interactive thing where everyone sends it to everyone, 
+that way
+the communication will go faster.  I've been on lists like that before, 
+but 
+I'm not sure how to set one up.  Oh, also, sean@asylum.utah.edu would 
+like to
+be on the programming list too.
+ 
+Greg
+
+-------------------------------------
+
+From: exuhag@exu.ericsson.se (James Hague)
+Date: Thu, 3 Sep 92 08:17:46 CDT
+Subject: Re:  Atari programming digest #1
+
+Ted asked about where we can get meaningful documentation for the 2600.
+The answer is:  we already have it.  Seriously, I have the official
+developer's docs for the 2600, including a "tutorial."  This is 
+
+supposedly
+how most people learned the system.  I also know that at least several
+developers completely reverse engineered the 2600 from the ground up,
+without ANY documentation.  I own the docs for several other video game
+systems and trust me, things are always about the same.  I'm not 
+knocking
+€it--I really don't think that you need any more than this.  The 
+official
+documentation, BTW, doesn't include any sample code.
+
+There *is*, or at least there used to be, a development "system" which
+hooked up the the Atari ST computers.  It was basically a flaky ICE 
+plus
+some software to drive it.  A nice 2600 sound editor was also included.
+At one time this entire system and documentation sold for only $40, but
+Atari no longer produces it.
+
+One thing which I can't overemphasize is that even if you know 6502
+assembly inside and out and ditto for the 2600 hardware, you're STILL
+a long way from a decent game.  Most Activision titles took close to
+nine months of full-time work.
+
+What I'm looking for in this digest:
+
+   - Discussions about setting up development systems, various cross
+     assemblers available, etc.
+
+   - Discussions which may clarify vague areas in the 2600 specs.  We
+     could figure these out individually, but why not save some time?
+
+What I'm not looking for:
+
+   - General programming & game design questions.
+
+   - Talk about making hacked versions of classic games, etc.
+
+Good luck!
+
+------------------------------------
+End of Atari Game Programming Digest # 2
+From:     the 'special FX' guy (fxmlk@acad3.alaska.edu)
+Subject:  2600 PROG: bank switching, dev systems
+
+From some time back, James Hague (exuhag@exu.ericsson.se) wrote,
+> Marc Brown asked why there aren't any copiers for 2600
+> games.  Well, there used to be back around 1982 (anyone
+> remember "copy-cart"?), a whole bunch of them even.  The
+> problem is that they only work on the straightforward 2K
+> and 4K games which don't use bank switching, and this
+> doesn't include a huge portion of the really good games
+> like Millipede and most Activision titles. Bank
+> switching is not a function of the 2600, but actually
+> requires extra hardware in the cartridge--and the exact
+> way of implementing it is manufacturer specific.  I
+> believe that 7800 games marked as "super games" do some
+> sort of bank switching as well. 
+
+How did they implement bank switching?  Just
+memory-mapped io? [tech note -- memory mapped io means
+that certain memory addresses also activate hardware.]
+€I thought I read that the information stored in the
+cartridges is at $E000, as well as $1000 & $3000.  I wonder
+why they split the second mapping into two pieces? And
+ideas? The disassembly for combat suggests that it is at
+$1000 for sure.  And why bother with bank switching
+instead of just going to a bigger chip?  I assume that they
+were able to get 8192x8 roms, yes?  It just seems odd.  As a
+side note, most of the ROM chips used seemed to be
+variations on the 2332.  Unfortunately, different
+versions of the 2332 switch the A11 and A12 address lines,
+so this info didn't really help me any :-( 
+
+Recently, James Hague (exuhag@exu.ericsson.se) wrote,
+> Ted asked about where we can get meaningful
+> documentation for the 2600. The answer is:  we already
+> have it.  Seriously, I have the official developer's docs
+> for the 2600, including a "tutorial."  This is supposedly
+> how most people learned the system.  I also know that at
+> least several developers completely reverse
+> engineered the 2600 from the ground up, without ANY
+> documentation.  I own the docs for several other video
+> game systems and trust me, things are always about the
+> same.  I'm not knocking it--I really don't think that you
+> need any more than this.  The official documentation,
+> BTW, doesn't include any sample code. 
+> 
+
+Does the "official documentation" say anything
+differently than the information in the "BIG FILE" on the
+2600? 
+
+> What I'm looking for in this digest:
+>    - Discussions about setting up development systems, various cross
+>      assemblers available, etc.
+
+Well, if you are willing to use an Apple II, I should have
+designs for working hardware soon.  I just want to make
+sure that the information I have is correct before I start
+doing much more work.  You should be able to assemble this
+for about $70.  I'm using some fairly expensive hardware
+so it could be possible to do for less.  Here's my list of
+things that it looks like you will need, but I've not
+totally designed it yet, so this is tenative.  (I'm
+ordering all of this from Digi-Key since they will pay
+shipping and also have a large selection of stuff.) 
+
+Monolithic Diode Array  (Fairchild)                     FSA2719P       
+ $1.95
+26 Socket Connector to Card Edge Connector (AMP)        A3AEG-2636M-ND 
+ $9.15
+26 Socket Connector to nothing (AMP)                    A1AXG-2636M-ND 
+ $5.02
+26-Dual Row straight pin .025 Square Headers            S2022-26-ND    
+ $2.48
+€26-Dual Row straight pin .025 Square Headers            S2022-26-ND    
+ $2.48
+SRM2264LC10 64K (8Kx8) CMOS Static RAM                  SRM2264LC10    
+ $8.40                                   
+Apple II Expansion Plugboard                            V1035-ND       
+ $31.27
+28 pin IC Socket with Integral Decoupling Capacitor     ED2115         
+ $3.27
+multiplexer
+control eprom
+
+I will probably use a small eprom (2716) to control my
+memory-mapped io, and a multiplexer or two to switch
+inputs between the cartridge cable and the Apple.  The
+diode array should be (I hope) sufficient to keep the line
+to the 2600 console read-only.  I may get a different
+memory chip as this one is expensive, and it doesn't show
+up in any of the chip spec catalogs (all pre-1984 :-) that I
+have access to.) 
+
+
+They also have one of the cheap eprom erasers if you are
+looking for something like this: UV Eraser      ER2-ND          $39.95 
+
+And I'm using BAL 500series Auto-EPROM programmer (RP
+525) from Nihon Office Communications in my Apple to burn
+them.  I don't know if you can still get it, but it was only
+around $50 a few years ago.  It can program 2716-27128
+EPROMS.  
+
+The best part about using the Apple II is that you can use
+your favorite Apple II assembler to build your programs
+and assemble your programs. Works for me! 
+
+-Mike Kienenberger
+ FXMLK@ALASKA.bitnet
+ FXMLK@acad3.alaska.edu
+
+to: galt%peruvian@cs.utah.edu   Greg Alt
+    drudetb@infonode.ingr.com   Ted Drude
+    exuhag@exu.ericsson.se      James Hauge
+    FXMLK                       Mike Kienenberger
+    UJ1G@DKAUNI2.bitnet         Marek Tomczyk (uj1g@ibm3090.rz.uni-
+
+karlsruhe.de)
+    jay@lafayette.unocal.COM    Jay Wilkinson
+    sean@asylum.utah.edu
+PS: Ted, please keep digesting these.  When we finally set up an FTP 
+site,
+    The digests are going to be excellent for both newcomers and 
+looking up
+    old information.  Thanks.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+€=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Subject:  Additional info on the 2600
+
+Here's information that I've personally figured out from experimenting:
+(Looking at the bottom of the cartridge -- i.e. edge connectors first)
+                        Top
+ D3   D4   D5   D6   D7   A11  A10  A12  A9   A8  +5V   SGND
+--1- --2- --3- --4- --5- --6- --7- --8- --9- -10- -11- -12-
+ GND  D2   D1   D0   A0   A1   A2   A3   A4   A5   A6   A7
+                        Bottom
+
+Dx = Data line x
+Ax = Address line x
++5V = +5 volts
+SGND = Shield Ground
+GND = Ground
+
+Note 1: On both of the cartridges I took apart, GND was also connected
+        to SGND.  Best to make sure that they are wired together.
+
+Note 2: A11 and A12 could be switched.  On both the chips I've checked,
+        A12 was hardwired to +5 volts which leads me to believe that it
+        is the highest address line.  Since I believe that these chips
+        are only 4Kx8 ROMs, this seems logical, since A12 would 
+actually
+        be just the chip enable for ROM (right?).  Only the 2600 info
+        tells differently, and it doesn't give any connection for A11 
+on
+        the EPROM, so I don't trust it.  Unfortunately, since the 2716
+        EPROM is used as an example, we won't know without actually 
+trying
+        one, since the 2716 doesn't really use A11 or A12 and either 
+one
+        could be used as a chip enable
+        
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+Address
+lines           Memory
+used            Available       EPROM   Memory
+======================================================
+A11             2048            2716    2K
+A12             4096            2732    4K
+A13             8192            2764    8K
+
+    ____________
+    |   2716   |
+A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | VPP [Doesn't matter probably.  +5V]
+A3  | 5     20 | !Output Enable (always on) [GND]
+€A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2732   |
+A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | A11
+A3  | 5     20 | !Output Enable (always on) [GND] / VPP
+A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2764   |
+VPP | 1     28 | VCC [+5 V]
+A12 | 2     27 | !Program Strobe (no connection?) [GND]
+A7  | 3     26 | No Connection
+A6  | 4     25 | A8
+A5  | 5     24 | A9
+A4  | 6     23 | A11
+A3  | 7     22 | !Output Enable (always on) [GND]
+A2  | 8     21 | A10
+A1  | 9     20 | !Chip Enable (always on) [GND]
+A0  | 10    19 | D7
+D0  | 11    18 | D6
+D1  | 12    17 | D5
+D2  | 13    16 | D4
+GND | 14    15 | D3
+    |__________|
+-Mike Kienenberger
+FSMLK1@acad3.alaska.edu
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+The top story for the day is that I spent the last few hours assembling
+the combat source code.   Problems included"
+        No definition for POSH2  (Position Horizontal 2, maybe?)
+        Many branch and jump labels use different names (ie, B13AE when
+                called by a branch instruction, and J13AE when called
+                by a jump instruction, but only J13AE is an actual
+                label.
+       No real indication between hex and decimal operands -- I assumed
+€                they were all hex.
+        .WORD directive doesn't really tell whether the information 
+should
+                be stored HI/LO or LO/HI.  I assumed LO/HI.
+
+        And the code wasn't really the kind of code that my favorite
+                assembler likes to assemble :-)
+
+Basically, it didn't work.  The screen went black and that was all.
+
+
+In other news, I've figured out how to set up a primitive mailing list.
+However, I've not yet received permission to install it on one of
+our stable systems.  (I could install it on one of the unstable systems
+that I have access to, but chances are that the machine would be down
+as often as not.)
+
+If anyone else would like to set it up, all it requires (for a Unix 
+system)
+is to add lines similar to the following to /etc/sendmail/aliases (or
+/etc/aliases on some systems):
+prog2600-list: :include:/usr/users/mike/prog2600.mailing-list
+prog2600-request: mike
+
+This redirects mail sent to prog2600-request to mike (so he can handle
+administrative problems like adding/removing subscribers) and 
+redirects mail sent to prog2600-list to everyone listed in the
+file "/usr/users/mike/prog2600.mailing-list"
+
+Pretty simple.
+
+And don't forget to run "newaliases" after changing the aliases file.
+
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Subject:  2600PROG: combat listing found inaccurate, mailing list info
+
+The top story for the day is that I spent the last few hours assembling
+the combat source code.   Problems included"
+        No definition for POSH2  (Position Horizontal 2, maybe?)
+        Many branch and jump labels use different names (ie, B13AE when
+                called by a branch instruction, and J13AE when called
+                by a jump instruction, but only J13AE is an actual
+                label.
+       No real indication between hex and decimal operands -- I assumed
+                they were all hex.
+        .WORD directive doesn't really tell whether the information 
+should
+                be stored HI/LO or LO/HI.  I assumed LO/HI.
+
+€        And the code wasn't really the kind of code that my favorite
+                assembler likes to assemble :-)
+
+Basically, it didn't work.  The screen went black and that was all.
+
+
+In other news, I've figured out how to set up a primitive mailing list.
+However, I've not yet received permission to install it on one of
+our stable systems.  (I could install it on one of the unstable systems
+that I have access to, but chances are that the machine would be down
+as often as not.)
+
+If anyone else would like to set it up, all it requires (for a Unix 
+system)
+is to add lines similar to the following to /etc/sendmail/aliases (or
+/etc/aliases on some systems):
+prog2600-list: :include:/usr/users/mike/prog2600.mailing-list
+prog2600-request: mike
+
+This redirects mail sent to prog2600-request to mike (so he can handle
+administrative problems like adding/removing subscribers) and 
+redirects mail sent to prog2600-list to everyone listed in the
+file "/usr/users/mike/prog2600.mailing-list"
+
+Pretty simple.
+
+And don't forget to run "newaliases" after changing the aliases file.
+
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Subject:  Re: Stephen Landrum's Comments on Starpath Supercharger
+From:     ted@visdoc.b17d.ingr.com
+
+TO: 2600 programmers
+FROM: Ted Drude
+RE: Info from Stephen Landrum.
+
+Stephen Landrum was a programmer for games for the 2600 Starpath
+Supercharger (Communist Mutants, Frogger, and Suicide Mission). I asked
+if he would contribute some stuff two the programming list.  He said he
+would and sent me this reply.  He wants to see some of the postings
+we've made.  Hopefully,  Stephen will join the list and enlighten us  
+a lot about programming the 2600, so let's treat him good!  If you
+correspond privately with him, please mail a copy of his replies to:
+
+2600-program@visdoc.b17d.ingr.com 
+
+and we will all get the info.
+
+Here's the first message I sent and the reply I got from him:
+€> 
+> } Would you consider contributing some stuff to one of these two 
+lists? It
+> } would be greatly appreciated.  In addition to receiving _untold_
+> } adulation, you might even get some fun out of it yourself. I'll 
+send you
+> } back issues of the digested list postings if you want to see them.
+> 
+> Sure, I'd be happy to contribute!  I would be interested in seeing 
+some
+> of the back issues as well.
+> 
+> I've got to warn you, though, it's been nearly 10 years since I did
+> anything on the 2600 so some of the details are a little foggy.
+> 
+> } Here are some of the things we'd love to hear about:
+> } 
+> } - Any anectdotes about the 2600,  Starpath, Arcadia, the games you
+> } wrote, etc. 
+> 
+> Wow, it's been so long, it's hard to come up with anything 
+interesting.
+> If I recall something, I'll pass it along, though.
+> 
+> } - Whatever happened to Starpath?  Where are they now? (If it's not 
+too
+> } painful to talk about!)
+> 
+> Well, Starpath basically ran out of money.  We entered the market at 
+a
+> bad time, and had some "firm commitments" for sales that fell through.
+> In mid-1983 it became clear that Starpath wasn't making it.  Epyx'
+> programming staff had just left to form another company, and Epyx and
+> Starpath shared some common investors, so the two companies merged in
+> November of 1983.  The programming staff was all of Starpath that was
+> kept through the transition.  Craig Nelson (who was in charge of the
+> programming staff at Starpath) is the only old Starpath employee who
+> is still at Epyx.  Most (if not all) of the programmers from Starpath
+> are still working in the computer industry, some still writing games
+> and some doing other types of programming.
+> 
+> } - Perhaps some hints on learing to program the 2600.  Where to get 
+some
+> } ideas for different graphics,  playfields, sound  effects, etc?
+> 
+> The machine has a pretty steep learning curve at the beginning.  Your
+> program has to generate vertival sync at the appropriate time, manage
+ the
+> starting and stopping of vblank, and all without the help of 
+interrupts.
+> The basic graphics capabilities are very limited, so you have to be 
+very
+> creative in how you apply them.  The best games would be ones 
+designed
+€> to use the graphics capabilities of the 2600, and not try to mold
+ them
+> to something that they can't really do.  Many arcade ports to the 
+2600
+> were very disappointing, even though the arcade machines at the time
+> were not very sophisticated either.
+> 
+> } Any neat
+> } programming tricks you'd like to share?
+> 
+> Well, it's hard to remember specifics.  A lot of the unique effects
+ that
+> we achieved in the Starpath games were derived from setting a player
+ to
+> a multiple copy mode, and then banging on the hard position register
+ after
+> one copy of the image had already started to clock out.  With this
+ technique
+> we could get up to 17 copies of a player object to appear on one line
+ of the
+> display.  Variations of this were used in Suicide Mission, Frogger,
+> Communist Mutants from Space, and Party Mix.
+> 
+> The other trick that I remember was that I had a routine that would
+ run in
+> one line of the display, and would hit the hard position register for
+ an
+> object and compute and store the soft position value at the same 
+time.  Most
+> of the other games that I looked at took at least two lines of the
+ display
+> to perform the same type of operation.
+> 
+> } - One item that I'm especially interested in:  Is there any way to
+ create a
+> } Supercharger-compatible tape?  Could I use another computer, like
+ an
+> } Apple or Atari, to assemble some code,  save it to a tape,  and
+ then
+> } use the 
+> } Starpath to load it?  Is this at all practical?
+> 
+> Well, the answer is theoretically yes.  We did all of out original
+ 2600
+> development on Apple ][ computers, using a customized version of the
+ SC
+> assembler.  We made test tapes of games directly from the Apple, and
+ in
+> fact during normal development, we just hooked up the jack from the
+> supercharger to the cassette output from the Apple and downloaded the
+> games directly into the unit.
+> 
+> The difficulty will be in figuring out the format to make the data
+> presentable to the Supercharger.  The tape has a training pattern of
+€ bits
+> on the beginning so that the Supercharger can figure out what speed
+ the
+> tape was recorded at, then the game data followed.  I don't remember
+ the
+> sequence of bits that was the training pattern, or the header to the
+> individual blocks on the tape, unfortunately.
+> 
+> } Anyway, I think you get the idea. If you're interested in seeing
+> } the files,  I'll be happy to send them to you.
+> } 
+> } Thanks!
+> } 
+> } - Ted Drude (drudetb@infonode.ingr.com)
+> }-- End of excerpt from Ted B. Drude
+> 
+> 
+> -- 
+> Stephen H. Landrum                                     VOICE: (415) 813-8909
+>         Domain: slandrum@ntg.com           UUCP: ...netcomsv!ntg!slandrum
+> USNAIL: New Technologies Group Inc. 2468 Embarcardero Way, Palo Alto CA 94303
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Subject:  Automailer for programming list
+From:     ted@visdoc.b17d.ingr.com
+
+Hi to all,
+
+Those of you on the Classic Atari  Games Digest mailing list (and that
+may be everybody) know we just had a little fiasco with the automailer.
+
+Currently, you can send mail to 2600-program@visdoc.b17d.ingr.com and it
+will be redistributed to everyone else.  The mailing address may change
+later, but for now I'm willing to be the admin for this list. Send admin
+stuff to 2600-program-admin@visdoc.b17d.ingr.com.
+
+I just forwarded some neat info from Stephen Landrum.  Hope you enjoy
+it. (Now I've got to figure out how to connect an Apple ][ to my
+Starpath!!!) 
+
+Enjoy!
+
+- Ted
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 22 Sep 1992 10:20:31 -0100
+From: ted@visdoc.b17d.ingr.com (Ted Drude)
+Subject: Using a Supercharger as a development tool
+
+Hi all,
+€
+Well if you got Stephen Landrum's posting, you know that the Starpath
+folks used their Superchargers as a development system for the 2600.
+According to Stephen, they were able to hook up the output of the Apple
+cassette port directly to the Supercharger and download code, which 
+they
+had written and assembled on Apple ][s.
+
+I've used Apples ][+ and //es before, but it's been a while.  Do
+all the machines have the same cassette port interface or only certain
+models?  How about the //c? Is it the same as the ][+ and //e?
+
+I'm proably going to attempt to follow up on this with Stephen and find
+out more on how they were doing this.  It looks like a very cheap and
+clean way of getting code into a 2600.  Of course, you'd still want the
+ability to burn an EPROM when you get the code working, so what Mike is
+doing still needs to be explored too.
+
+- Ted
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 22 Sep 1992 08:07:18 -0100
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re:  2600PROG: combat listing found inaccurate, mailing list 
+info
+
+Hi Mike,
+
+Sorry I took so long to answer your questions.  I've been having 
+problems
+with mail lately.  I don't remember if you sent your questions out on 
+the
+mailing list or to me privately, so I'm just responding to you directly.
+Feel free to send this out on the mailing list if you want.
+
+I don't know how 2600 bank switching is implemented.  It may not be the
+same for all manufacturers, however.
+
+The Atari docs I have are different from the "big file" floating around.
+It looks to me as if the big file is simply a condensed version.  I have
+both a TIA programming guide and some sort of tutorial for new 2600
+programmers (I use the term "tutorial" very lightly).  There is nothing
+which is not mentioned in the stuff everyone already has and the 
+presentation
+isn't any better.
+
+I also have a much better disassembly of Combat, direct from Harry
+Dodgson.  It is still not 100% finished, but is in much better shape
+than the net version.  I do not have a soft copy however.
+
+James H.
+
+€-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 22 Sep 1992 23:29:28 -0400
+From: mike@raven.alaska.edu (Mike Kienenberger)
+Subject: program-2600-list@raven.alaska.edu
+
+I made a mistake in the location of the program-2600-list.
+I said that @alaska.edu would work.  I was wrong.
+You will need to use @raven.alaska.edu, ie,
+program-2600-list@raven.alaska.edu and program-2600-request@raven.alaska.edu.
+Sorry for the misinformation.
+
+-Mike Kienenberger
+ FXMLK@acad3.alaska.edu
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 22 Sep 1992 22:49:23 -0400
+From: mike@raven.alaska.edu (Mike Kienenberger)
+
+Mailing-list for programming the Atari-2600
+Welcome!
+
+This is the permanent home for the mailing list on programming the Atari 2600.
+
+"program-2600-list@alaska.edu" is the address to post to the mailing 
+list.
+
+"program-2600-request@alaska.edu" is the address which handles 
+administrative
+requests (subscribing/unsubscribing/address changes/administrative 
+comments/problems with the mailing list).  Sending a message to me 
+(FXMLK@acad3.alaska.edu) 
+
+
+
+
+will also work for administrative details.
+
+Ted Drude (drudetb@infonode.ingr.com) will be archiving the list into
+digests.  If you would rather just receive periodic digests than 
+subscribe
+to the list, let us know.
+
+We still do not have an ftp site to store files.
+
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+€
+Date: 23 Sep 1992 07:55:05 -0100
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re: 2600PROG: combat listing found inaccurate, mailing list 
+info
+
+Re:  bank-switching
+
+Isn't there a physical 4K limitation?  That it, there are only enough
+address lines for a 4K ROM?
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#12 MAILER@SEARN        Wed 23 Sep 1992  05:04:11  (   2/  115) M C
+
+From:     the 'special FX' guy
+Subject:  Re: 2600PROG: combat listing found inaccurate, mailing list 
+info
+
+According to the "big file" distributed, there are 13 address lines:A0 
+- A12
+That gives an 8K memory space, right?
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 23 Sep 1992 08:55:20 -0100
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re: 2600PROG: combat listing found inaccurate, mailing list 
+info
+
+Well, I've been wondering about that.  "Traditional" 2600 info
+says that originally 2600 games were going to be limited to 2K
+of ROM, but the figure was later upped to 4K.  If 8K games were
+possible from the start, bank-switching shouldn't have been any
+big deal (not too many games used more than 8K).
+
+According to the big file:  "A12 is used as the chip enable."
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: Wed 23 Sep 1992  13:47:40
+From:     the 'special FX' guy
+Subject:  Re: 2600PROG: combat listing found inaccurate, mailing list
+ info
+
+Hmm.
+Well, the information given in the "big file" isn't clear on that
+ point:
+
+The Cartridge:
+        A standard cartridge contains the equivalent of a 2716 or
+€ 2732/2532
+with one notable exception: the chip select line is active high, not
+ low.
+The high order address line of the 6507 (A12) is used as the chip 
+enable.
+
+Now is the author saying that Atari console designers used A12 as the
+ chip
+enable, or is he saying that cartridge designers often chose to use
+the A12 line as the chip select?
+
+Do your tech specs say anything about this?
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date:     Sat 03 Oct 1992  01:08:22
+From:     the 'special FX' guy
+Subject:  Additional info for the slot (derived by me)
+
+(Looking at the bottom of the cartridge -- i.e. edge connectors first)
+                        Top
+ D3   D4   D5   D6   D7   A11  A10  A12  A9   A8  +5V   SGND
+--1- --2- --3- --4- --5- --6- --7- --8- --9- -10- -11- -12-
+ GND  D2   D1   D0   A0   A1   A2   A3   A4   A5   A6   A7
+                        Bottom
+
+Dx = Data line x
+Ax = Address line x
++5V = +5 volts
+SGND = Shield Ground
+GND = Ground
+
+Note 1: On both of the cartridges I took apart, GND was also connected
+        to SGND.  Best to make sure that they are wired together.
+
+Note 2: A11 and A12 could be switched.  On both the chips I've checked,
+        A12 was hardwired to +5 volts which leads me to believe that it
+        is the highest address line.  Since I believe that these chips
+        are only 4Kx8 ROMs, this seems logical, since A12 would actually
+        be just the chip enable for ROM (right?).  Only the 2600 info
+        tells differently, and it doesn't give any connection for A11 on
+        the EPROM, so I don't trust it.  Unfortunately, since the 2716
+        EPROM is used as an example, we won't know without actually 
+trying
+        one, since the 2716 doesn't really use A11 or A12 and either one
+        could be used as a chip enable
+        
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+Address
+lines           Memory
+used            Available       EPROM   Memory
+€======================================================
+A11             2048            2716    2K
+A12             4096            2732    4K
+A13             8192            2764    8K
+
+    ____________
+    |   2716   |
+A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | VPP [Doesn't matter probably.  +5V]
+A3  | 5     20 | !Output Enable (always on) [GND]
+A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2732   |
+A7  | 1     24 | VCC [+5 V]
+A6  | 2     23 | A8
+A5  | 3     22 | A9
+A4  | 4     21 | A11
+A3  | 5     20 | !Output Enable (always on) [GND] / VPP
+A2  | 6     19 | A10
+A1  | 7     18 | !Chip Enable (make high bit) [inverted A12]
+A0  | 8     17 | D7
+D0  | 9     16 | D6
+D1  | 10    15 | D5
+D2  | 11    14 | D4
+GND | 12    13 | D3
+    |__________|
+    ____________
+    |   2764   |
+VPP | 1     28 | VCC [+5 V]
+A12 | 2     27 | !Program Strobe (no connection?) [+5V]
+A7  | 3     26 | No Connection
+A6  | 4     25 | A8
+A5  | 5     24 | A9
+A4  | 6     23 | A11
+A3  | 7     22 | !Output Enable (always on) [GND]
+A2  | 8     21 | A10
+A1  | 9     20 | !Chip Enable (always on) [GND]
+A0  | 10    19 | D7
+D0  | 11    18 | D6
+D1  | 12    17 | D5
+D2  | 13    16 | D4
+GND | 14    15 | D3
+    |__________|
+-Mike Kienenberger
+FSMLK1@acad3.alaska.edu
+€
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 03 Oct 1992 11:43:23 +0000
+From: the 'special FX' guy <FXMLK@acad3.alaska.edu>
+Subject: Current status of mailing list
+
+dead...
+dead quiet, that is!
+
+Has everyone switched over to trying to unlock the secrets of the
+ Nintendo
+Lockout Chip, or is everyone just really busy (my excuse)?
+
+In any case, I've found an ftp site -- my home mainframe!
+I forgot that we finally set up an anonymous ftp site.
+
+Here's the revised welcome message, both to let you know about the ftp
+site, and in case you never received it or have forgotten some of the
+information (like the mailing list address :-)
+
+[Hey, Ted, when will the next Digest of this list be out?]
+
+==================program-2600-list.welcome===================
+
+Mailing-list for programming the Atari-2600
+Welcome!
+
+This is the permanent home for the mailing list on programming the Atari 2600.
+
+"program-2600-list@raven.alaska.edu" is the address to post to the
+ mailing list.
+
+"program-2600-request@raven.alaska.edu" is the address which handles
+administrative requests (subscribing/unsubscribing/address
+changes/administrative comments/problems with the mailing list).
+Sending a message to me (FXMLK@acad3.alaska.edu) will also work for
+administrative details.
+
+Ted Drude (drudetb@infonode.ingr.com) will be archiving the list into
+digests.  If you would rather just receive periodic digests than
+ subscribe
+to the list, let us know.
+
+Temporarily, 2600 programming files are archived on acad3.alaska.edu on
+anonymous ftp.
+
+The directory is "uacn:[sxlib.incoming.atari]" (It's a VAX/VMS machine
+ :-)
+"cd incoming/atari" should also work.
+
+Files can be downloaded into the "incoming" directory, but be sure to
+let me know if you do so (so I can move them to the atari directory).
+€Files in the "atari" directory are read-only.
+
+The atari directory contains the following:
+INTRO.LKT                       Introduction and purpose to the Atari
+ directory
+INDEX.LKI                       Index of files in the atari directory
+CLASSIC-ATARI.FAQ               Proposed FAQ for classic-atari mailing
+ list.
+GIANT-ATARI-2600-7800.LIST      List of known Atari 2600/7800 software.
+2600-PROGRAMMING.INFO           The original 2600 information from
+ internet.
+2600-PROGRAMMING-2.INFO         New information from the mailing list.
+PROG2600-0.DIGEST               Digests of the programming mailing
+ list.
+PROG2600-1.DIGEST
+PROG2600-2.DIGEST
+PROGRAM-2600-LIST.WELCOME       This message/file.
+However, you should always look in INDEX.LKI for a current listing of
+ the
+directory's contents.
+
+I hope to move it to uacn:[sxlib.atari] soon.
+
+-Mike Kienenberger
+FXMLK@acad3.alaska.edu
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 03 Oct 1992 15:43:48 +0000
+From: the 'special FX' guy <FXMLK@acad3.alaska.edu>
+Subject: Ftp directory
+
+The ftp directory (at acad3.alaska.edu's anonymous ftp)
+has now changed to [sxlib.atari] from [sxlib.incoming.atari].
+-mike
+fxmlk@acad3.alaska.edu
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 24 Nov 1992 11:14:57 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: emulator
+
+I think that we should get the project started, because as time goes on,
+machines will get faster.  When this maillist started, we were talking
+about running it on a 486, well the 586 is coming out very soon, and it
+is supposed to be much faster.  I think that the emulator would d
+efinitely
+have to be written on 386+ since we need a 32-bit machine, and a 386 
+would probably run slow, but it could do it.  
+
+About the graphics...  One thing that saves us is that a lot of the
+€graphics will be simply duplicating the previous line.  In VGA, screen
+memory to screen memory copies can be very fast.  Another thing is that
+while vertical resolution will be tough, horizontal resolution is 160
+for most things 40 for the playfield.  
+
+One thing that might help is to draw the line in system memory and then
+just do a copy to screen memory.  That way, we wouldn't have to worry
+as much about the screen memory bottle-neck.  Basically, what we have to
+do is:
+
+1) fill the line with the background color
+2) draw the playfield line (20 4-pixel chunks either repeated or 
+mirrored)
+3) draw the two player lines (possibly scaling or repeating)
+4) draw the two missiles
+5) draw the ball
+
+(and we'd have to check the playfield priority bit to see the order to
+ draw)
+
+Collisions would be a bit more tricky.  There are 15 different types of
+collisions to check for, though you only have to check for collisions
+for things that are actually displayed, and most scan lines won't have
+a playfield, two players, two players, two missiles and a ball.
+(e.g. if there is no ball on the current line, then 5 of the collisions
+won't have to be evaluated)
+
+
+I think we should attempt this, because it will be something that people
+will enjoy having several years from now.  Machines now might not be 
+able
+to run it quite the way we would like, but 5 years from now it might not
+be a problem at all.  
+
+I saw on alt.config that someone was going to be starting a newsgroup
+ for
+apple2 emulators on PCs.  This would be a great way to get an 
+off-the-shelf
+6502 emulator.  I will look into VGA graphics modes to see if it is 
+possible to get a 160x480 mode (I think it might be possible to get
+ more
+than 480 vertical resolution in a tweeked mode, but dropping off a few
+lines would be acceptable (are there 520 lines on a TV?  I keep 
+forgetting)
+We could probably shave a few lines off the top and bottom and drop a
+ few
+in the middle.  And if I can get a mode with 160 horizontal resolution,
+that would cut the drawing time in half (as opposed to a more standard
+320 wide mode). 
+
+Anyway, I could try to get some code working that would basically just
+do one scan-line given different player/playfield/etc. data and do some
+benchmarks just to see what we are looking at.
+
+€The other significant problem is keeping track of timing to synchronize
+the graphics.  This one also sounds doable, but will need to be looked
+into.
+
+Sean Igo on this list (hi Sean) wrote a great sound driver for the Adlib
+card, and he should be able to convert it to emulate 2600 sound.
+
+That leaves input devices...  This part should be the only actual 
+trivial
+part of the project, as you just have to read the joystick port on the 
+PC to get the needed info (and you can use the analog input on the ports
+to allow for paddles).
+
+One question that might be important if we follow through with this 
+emulator is what about legal questions.  Would Atari mind us doing this?
+I'm sure we could write it and play with it ourselves, but this is
+something that should be released into the public domain.  The other
+question is what about making soft copies of cartrdges?  since they
+aren't being produced anymore, I don't see any serious ethical problems,
+though there may be a few legal problems...
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 24 Nov 1992 13:44:34 +0200
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re: emulator
+
+> 1) fill the line with the background color
+> 2) draw the playfield line (20 4-pixel chunks either repeated or
+ mirrored)
+> 3) draw the two player lines (possibly scaling or repeating)
+> 4) draw the two missiles
+> 5) draw the ball
+
+You are forgetting that any of the hardware registers can be hit
+while a scanline is clocking out.  Repeatedly stuffing the ball
+register can result in a ball as wide as the screen, for example.
+
+I don't mean to be a wet blanket, BTW.  Its just that 2600 graphics 
+were *fast* and had lots of motion--I have rarely seen such fluidity
+and speed on a PC.
+
+> One question that might be important if we follow through with this 
+> emulator is what about legal questions.  Would Atari mind us doing
+ this?
+> I'm sure we could write it and play with it ourselves, but this is
+> something that should be released into the public domain.  The other
+> question is what about making soft copies of cartrdges?  since they
+> aren't being produced anymore, I don't see any serious ethical 
+problems,
+> though there may be a few legal problems...
+€
+As of January 1992, Atari Corp. no longer cares about the 2600.  We
+can do what we want.  Copying carts isn't ethically clear, in my
+opinion.  Either way, the originals will be much more meaningful to
+collectors.
+
+One nagging thought is *why*?  It seems more logical to either (1)
+simply write a game for a real 2600 using a ROM emulator, (2) use
+the effort to design new games for modern hardware which follow the
+principles of classic games, (3) write enhanced versions of 2600
+games for current computers which maintin the spirit of the original,
+or (4) write a high-speed "game operating system" for the PC which
+could act as a successor to the 2600--i.e. write an emulator for
+a non-existant 2600-like system which is more suited to the available
+resources.
+
+Blind preservation of lost games is not my goal, though that is
+a noble idea.  It is to learn from those extrordinarily fun little
+games and continue the classic gaming tradition--something which
+most game programmers seem to have forgotten altogether.
+
+James Hague
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 24 Nov 1992 12:01:33 +0000
+From: the 'special FX' guy <FXMLK@acad3.alaska.edu>
+Subject: 2600 Emulation
+
+(First: make sure to use program-2600-list@raven.alaska.edu as the
+ mailing list address, not 2600-program@visdoc.b17d.ingr.com, or
+ you will be excluding a lot of people.  In fact, if you're listening,
+ Ted,
+ could you set 2600-program to point to the raven mailing list? Thanks.)
+
+[ Greg Alt talks about an IBM 2600 emulator. ]
+
+An excellent apple II emulator was written for the NeXT (unix C)
+recently.  The basic emulator is finished, although they
+are still
+working on an even better GUI for it.  It was designed to very modular.
+That's probably the best place to get a 6502 emulator.
+The mailing list for that is na2sig@yvax.byu.edu.
+
+[ James Hague asks "Why bother?" tactfully. ]
+
+For the same reason I have an IBM, Mac, and Apple II emulator on my 
+NeXT.
+It's easier than keeping another machine around.
+It's cheaper.
+It doesn't take up as much space.
+It rarely breaks,
+etc, etc, etc.
+€
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 24 Nov 1992 12:16:26 +0000
+From: the 'special FX' guy <FXMLK@acad3.alaska.edu>
+Subject: Archiving
+
+I'm not sure if anyone is archving this anymore, but we do have an ftp
+ site.
+If anyone has articles form this list from before today, send them
+to me. (FXMLK@acad3.alaska.edu)  I'll put them in the ftp directory.
+-Mike
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 24 Nov 1992 14:23:03 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: Re:  2600 Emulation
+
+After thinking about it some more, the graphics synchronization won't be
+that difficult.  All that you need to do is add up clock cycles every
+time an instruction is executed, then, when you hit some value, call the
+do_a_scan_line() function and reset the clock cycle counter.  This 
+should add very little overhead to instruction evaluation, though it
+will take a bit of time to type in the number of cycles for all of the
+different instructions.
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 24 Nov 1992 15:53:01 +0200
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re:  2600 Emulation
+
+> After thinking about it some more, the graphics synchronization won't
+ be
+> that difficult.  All that you need to do is add up clock cycles every
+> time an instruction is executed, then, when you hit some value, call
+ the
+> do_a_scan_line() function and reset the clock cycle counter.  This 
+> should add very little overhead to instruction evaluation, though it
+> will take a bit of time to type in the number of cycles for all of
+ the
+> different instructions.
+
+Right, that's easy.
+
+The thing to keep in mind is that the 2600 hardware is very different
+from that of all popular computers (the Amiga is probably the best
+match).  When emulating a Mac on a Next, it isn't so bad because both
+€computers have the same native processors and the graphics hardware
+is very straightforward (display buffer, etc.) and a good match.
+An Apple II emulator on a Next or PC is similar, except you have to
+emulate a different processor and some odd memory locations.  But
+both computers still have the same basic conceptual model.  My point
+is that emulating graphics on these machines isn't so bad, you can
+just dump values into a buffer and display the whole thing periodically.
+You don't have to emulate everything the hardware actually does on
+the Apple, some of it is already done for you.
+
+To emulate the 2600, you have to actually emulate things on the
+hardware level--in the same time frame as on the 2600, faster or
+slower isn't any good.  Everyone already knows this of course.
+
+Now calculate exactly how many machine cycles on a 486 or 68040
+are equivalent to a 6502 cycle.  And consider that you have to
+emulate all the quirks of the 6502 and associated chips, something
+the Apple II emulator need not do.  Things like the extra cycle
+needed when fetching across page boundaries when using certain
+addressing modes.  And what happens when you hit a register before
+the reccommended time between accesses has expired?  You have a
+very tight time-frame in which to work.
+
+Anyway, I'm tired of being the critic of this project.  Somebody
+contact Stephen Landrum for a second opinion.  I think he has
+commented on the feasibility of this idea before.
+
+I would like to propose an alternate solution, though.  How about
+a game library which would make it easy to write 2600 style games
+for the PC?  You wouldn't have to emulate the internals of the 2600,
+just the end results onscreen.  It would still take a while to
+port each game, but it might be an interesting project.
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 25 Nov 1992 08:53:42 +0800
+From: Ross <ross@dcs.warwick.ac.uk>
+Subject: Re:  2600 Emulation
+
+> 
+> > After thinking about it some more, the graphics synchronization
+ won't be
+> > that difficult.  All that you need to do is add up clock cycles 
+every
+> > time an instruction is executed, then, when you hit some value, 
+call the
+> > do_a_scan_line() function and reset the clock cycle counter.  This 
+> > should add very little overhead to instruction evaluation, though 
+it
+> > will take a bit of time to type in the number of cycles for all of 
+the
+> > different instructions.
+> 
+€> Right, that's easy.
+> 
+> The thing to keep in mind is that the 2600 hardware is very different
+> from that of all popular computers (the Amiga is probably the best
+> match).[...]
+> 
+> To emulate the 2600, you have to actually emulate things on the
+> hardware level--in the same time frame as on the 2600, faster or
+> slower isn't any good.  Everyone already knows this of course.
+> 
+> Now calculate exactly how many machine cycles on a 486 or 68040
+> are equivalent to a 6502 cycle.[...]
+
+I still maintain that this shouldn't be too difficult. After all, 
+we can calculate exactly how many m/c cycles a each frame takes, and
+the information is readily available for the time taken for each 
+instruction... I'll delve a little deeper into this and see what I
+can come up with!
+
+Alternatively, I may settle for building the ICE interface, and keeping
+the 2600 attached to my PC. Of course, I'll have to put it in a more 
+sensible box, unless if I can get hold of one of those lovely 
+streamlined ones that came out a few years after the originals...
+
+Nice to see a bit of bandwidth in this group again!
+
+Ross
+
+
+________________________________________________________     _________    ____
+He's not really dead while we remember him.               -)[_________==
+Who, Bones ?                   ===========          ____====///_   _\\_____
+Spock, dammit Jim, Spock !    || ross@dcs ||       <____________> '--------''
+Spock who ?                    ===========              ''''
+_____________________________________"Captain, we've lost horizontal hold !"__
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 25 Nov 1992 08:03:21 +0200
+From: exuhag@exu.ericsson.se (James Hague)
+Subject: Re:  2600 Emulation
+
+> > Now calculate exactly how many machine cycles on a 486 or 68040
+> > are equivalent to a 6502 cycle.[...]
+> 
+> I still maintain that this shouldn't be too difficult. After all, 
+> we can calculate exactly how many m/c cycles a each frame takes, and
+> the information is readily available for the time taken for each 
+> instruction...
+
+Once again I'll repeat:  it isn't that difficult at all.  My
+point was this:  take a look at how many 486 cycles you have to
+emulate a single 6502 tick.  Not many at all.  And in that time
+€you have to emulate the 6502, the audio chip, the graphics, etc.
+There is still the misconception that a, say, 33 MHz 486 is
+so incredibly fast that emulating the itty bitty 6502 would be
+a total snap and the emulator could even be written in Scheme...
+
+James Hague 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Date: 25 Nov 1992 09:31:38 +0100
+From: galt@peruvian.cs.utah.edu (Greg Alt)
+Subject: Re:  2600 Emulation
+
+Ok, lets say you have a 33Mhz 486...  That gives you about 20 clock
+ticks for every one on a 6502.  Most instructions on the 486 take
+one clock tick, while I imagine most on the 6502 take a few.  Let's
+say the average 6502 instruction takes 3 just for the sake of argument.
+That gives you 60 486 instructions for every 1 6502.  Now, if you have
+the 66MHz DX2, then you have 120.  If you look at the new 586s, it 
+will be at least twice as many.
+
+One might argue that everyone doesn't have a super fast PC, but I
+bought my 386/25 2 or 3 years ago when it was the top of the line
+(and it cost me close to $5k)  I imagine that 2 or 3 years from now, it
+will be easy to find a 586 for under $1000.
+
+So, it is not a question of whether or not it is possible, just when
+will it be possible to have an emulator that is at least as fast as
+the original 2600.  I still think a good 486 could do it, and a 586
+will definitely be able to do it.  
+
+We could wait until everyone has a machine fast enough, or we could 
+write it now.  I'd like to start it now.
+
+The part that is going to be tricky is getting the timing right, and 
+it seems like we just need to count up clock cycles which should be 
+just a simple add instruction.  Getting the 60Hz frame rate sounds 
+tough, but it should be possible to do.  I'll get some sample code 
+going in a 320x200 mode just to see what kind of speed I can get.  I 
+looked into getting a 160x480+ mode, and it seems like it isn't 
+possible, but there IS a 320x480 mode which should be good enough.
+Also, I'll look into fast ways to do the collision detection.  One
+way is to use 5 long ints (5x32 = 160) to represent the scanline and 
+do some ANDs to see if what overlaps what.  Like I said before, we
+don't have to worry about doing all of the collision checks all the
+time since it will be rare to have a ball, two players, two missiles
+and a playfield all on the same scanline.  If it is missing one of
+them, you only need to do 10 checks, and only 6 checks if it is
+missing 2 of them, 3 if it is missing 3, and if there are only two
+objects on the line, you only need 1 check.
+
+Can someone start looking into the 6502 emulator and the clock cycle
+counting?  I imagine we could use a global variable to keep track of
+€the current count, and once it passes a certain value, we would call
+the scan-line function which takes the values in the Stella registers
+to draw the line and check for collisions.  Check the speed of one of
+the apple2 emulators to see what we can expect...
+
+Greg
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+

@@ -1,0 +1,39 @@
+ 
+                          ========================
+                           Interlacing auf dem ST
+                          ========================
+ 
+ Interlacing - Was  ist das  berhaupt? Jeder kennt es ja wohl vom Amiga: Da 
+ flackert alles  wie wild auf dem  Bildschirm und die Aufl”sung soll doppelt
+ so gro sein. Doch wie  geht das  auf dem ST? Dazu mu man wissen, wieso es
+ auf dem Amiga immer so flackert. Beim  Interlacing wird  n„mlich keineswegs
+ die Aufl”sung verdoppelt,sondern nur bei jedem Bildschirmaufbau ein anderes
+ Bild gezeigt. Dabei enth„lt das eine Bild alle "geraden" Zeilen und das an-
+ dere Bild alle " ungeraden " Zeilen. Dadurch das  die beiden Bilder schnell
+ hin- und hergeschaltet werden, nimmt unser Auge beide Bilder als ein zusam-
+ menh„ngendes wahr, und damit  unser Gehirn  irgendwas mit den Informationen
+ anfangen kann,werden die beiden Bilder zu einem einzigen mit doppelter Auf-
+ l”sung zusammengesetzt. Das Flackern  entsteht also  durch das schnelle um-
+ schalten. Wenn wir auf dem  ST nun ein Bild geinterlaced darstellen wollen,
+ so mssen wir es zuerst  in die beiden Einzelbilder zerlegen, indem wir je-
+ weils die geraden  und ungeraden Zeilen zusammenkopieren. Anschlieend ms-
+ sen wir diese beiden  Bilder bei jedem  Bildschirmaufbau hin- und herschal-
+ ten. Durch diese Technik kann man  die Aufl”sung sowohl in der horizontalen
+ wie auch in der vertikalen Richtung verdoppeln. Beides zusammen geht aller-
+ dings nicht, da dann Bildinformationen verloren gehen wrden.
+ Das drfte wohl  als Kurzeinfhrung  gengen und das beigefgte GFA-Listing 
+ sollte veranschaulichen, wie das programmtechnisch abl„uft. Mit  der selben 
+ Technik  kann man  brigens auch  Farben mischen, die auf dem  ST sonst gar 
+ nicht m”glich w„ren. Man mu  nur bei jedem Bildschirmaufbau statt zwischen
+ zwei Bildern zwischen  zwei Farbpaletten hin- und herschalten. Das Ergebnis
+ ist, da unser Auge die beiden Farben  von jedem Punkt als  eine neue Farbe
+ wahrnimmt. Damit lassen sich auf einem normalen  ST ber  3000  Farben dar-
+ stellen!
+
+                                         by Lucky of ST
+                                         
+ (Anm. d. Redax: Das dazugeh”rige Listing findet ihr in der Rubrik GFA-List
+  unter Intrlace. Ihr k”nnt es sofort unter GFA-Basic ausprobieren, mt es
+  dazu nur in Intrlace.Lst umbenennen. Leider hat der Platz auf dieser Disk
+  nicht mehr ausgereicht, um auch die  GFA-Sourcen  mit unterzubringen. Das 
+  drfte allerdings wenig tragisch sein.)

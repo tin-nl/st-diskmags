@@ -1,0 +1,211 @@
+
+INTERVIEW WITH ARMIN HERZLINGER, A "REAL" CODER
+
+
+
+MAGGIE: Before we start with this interview, please give us some 
+brief information about yourself.
+
+AH: I am 23 years old and student of computer science at the 
+University of Kaiserslautern. I went into computers starting in 
+1980 with programmable pocket calculators and the Commodore PET 
+computers at school. Afterwards I owned ZX81, C64, C128 and 1985 
+I got my first Atari ST.
+
+
+MAGGIE: What kind of commercial programmes have you done so far?
+
+AH: I wrote several programs for small companies (like 
+databases), did some coding of a revision control system for IBM 
+on a IBM3090 and wrote some small parts of Calamus SL. My latest 
+commercial program is V-RAM, a virtual memory manager running on 
+TT and compatible machines.
+
+
+MAGGIE: For which company are you working?
+
+AH: I have my own company, but due to lack of time I let my 
+products distribute by other companies (like Overscan 
+distributing V-RAM).
+
+
+MAGGIE: What equipment do you use for the development of your 
+programmes?
+
+AH: I use an Atari TT030/12 with 21" screen and 0.5 GByte 
+harddrive.
+
+
+MAGGIE: And what kind of software?
+
+AH: I am a dedicated C programmer. I use Pure C, gcc and Pure 
+Assembler for assembly routines.
+
+
+MAGGIE: Have you ever had contact with the demo coders' scene?
+
+AH: Yes, I have. Starting at my C64 times up to now. Nowadays I 
+mainly have contact to members of Delta Force (ED: Obviously, 
+eh?)
+
+
+MAGGIE: What do you think about demos? Are they any good or just 
+a waste of time?
+
+AH: There is a big potential in demos and they take a huge 
+amount of time to write. Nevertheless I do not think that they 
+are a waste of time, because most demo coders code for fun, so 
+why not? And in the past many good games for Atari computers 
+where written by formar demo coders.
+
+
+MAGGIE: Is there still a future for Atari?
+
+AH: I think there is. Atari slept for years, but they woke up 
+and there are many wonderful things to come. But Atari has to 
+start nearly from the scratch in many countries. They have to 
+build up a new net of Atari dealers, do [more] advertising and 
+bring their computers into the public.
+
+
+MAGGIE: What's your favourite computer?
+
+AH: I like my TT a lot, it does all the things I want it to do 
+and at least here in Germany there is great software around and 
+forthcoming.
+
+
+MAGGIE: Is there friendship in the "real" programmers scene? Or 
+is it just pure competition?
+
+AH: Oh yes, there is ! Thats one thing I like with having an 
+Atari: It's not that commercialized like e.g. the Clone scene. I 
+have good contacts to other developers and there truly is 
+friendship among most of us.
+
+
+MAGGIE: Are you playing games sometimes, and if yes what's your 
+favourite?
+
+AH: Playing games I like a lot. Especially adventure games like 
+The Pawn, Fish, Monkey Island etc. I like good jump and run 
+games too, but there are only few of them running on a TT ;-(
+
+
+MAGGIE: Any other hobbies apart from computing?
+
+AH: Sure, I like swimming, collecting gems and minerals, reading 
+(SF&F I like most).
+
+
+MAGGIE: A lot of demos don't work on TT, can you give any 
+suggestions how to do "clean" coding?
+
+AH:
+
+a)
+A very common problem is the inproper use of the sync-mode    
+register. Many  games and demos alter the syncronisation bit and    
+this causes the TT to crash  in most cases. So do not alter this    
+bit at all (it has a different meaning on the TT anyway).
+
+b)
+The stack format of the 68030 is different to the one on the 
+68000. Demos/games hanging in trap or interupt vectors have to 
+check wether they are started on a non-68000 machine and if so 
+there is one more word on the stack (identifying the type of 
+stackframe and vector offset). This can be done by checking 
+_longframe ($59e), if it is not equal 0, the machine has long 
+stackframes.
+
+c)
+Everything relying on the timing of instructions of the 68000 
+will crash. Thats a hard one because many effects are based on 
+this.
+
+
+MAGGIE: Will you ever code a demo?
+
+AH: In the past I wrote some small routines like e.g. very fast 
+vector object routines using the TT video sample&hold mode, but 
+I suppose I will never have the time to do a whole demo.
+
+
+MAGGIE: What's your opinion about the Falcon 30. Are the rumours 
+true or are they just wishful-thinking?
+
+AH: I do not know what rumours you have heard, but some of the 
+ones I heard are not this wrong .-) But I am impressed about 
+what the machine can do and the prize of Falcon 030.
+
+
+MAGGIE: Will you be working on Falcon 30?
+
+AH: I am already working on Falcon 030 :-)
+
+
+MAGGIE: Is this machine a real competition for MessyDOS 
+calculators?
+
+AH: I do not think that the Falcon 030 will be a real 
+competition to 386/486, because it is a machine for a different 
+market. Falcon 030 is designed to be a 'consumer' maschine, like 
+video recorders, cd players and game consoles. But it unites 
+features of all these and ties them together. Thats what I think 
+'multimedia' really is! Multimedia with powerfull expensive 
+workstations might be great, but only few can use it. With 
+Falcon 030 nearly everybody can do things like own videos with 
+titling and cool effects, or even make his own rap sound track, 
+watch TV in a window while writing and sending E-Mail with a 
+software modem and much more. For the semiprofesional and 
+profesional market Atari surely will bring machines of the 
+Falcon-line too.
+
+
+MAGGIE: Why are so many "real" programmers pretty arrogant 
+towards demo coders?
+
+AH: Perhaps because they miss so many great demos that will not 
+run on their machines ? .-)
+Some people complain about the 'dirty' tricks demo coders use, 
+but there are at least as many 'real' programmers doing 
+undocumented things and thats worse, if people who bought their 
+software can not use it. Demos are created out of fun and out of 
+the ambition to push the impossible one step farther and shared 
+with others so they can take part in the fun.
+
+
+MAGGIE: Do you think CISC technology still has a future?
+
+AH: Nowadays the gap between CISC and RISC is closing. Modern 
+CISC machines are capable of doing more than one instruction per 
+clock cycle and RISC machines are getting more and more complex. 
+I think in the future you can not destinguish between RISC and 
+CISC; processors like the 68040 unite already both technologies 
+and this will go even farther in future.
+
+
+MAGGIE: Have you seen the new multitasking TOS? Is it any good?
+
+AH: I like it very much. It is easy to use and, especially 
+compared to other multitasking systems, very small and fast. 
+Because MultiTOS is based on MiNT, MultiTOS gives you many great 
+features from Unix with staying very user friendly. There are 
+still things that could be improved in future releases but 
+overall it is quite usefull and gives your computer a lot of new 
+power. With MultiTOS Atari really has not to hide compared to 
+e.g. OS/2 and System 7.
+
+
+MAGGIE: Now you have space for your own stuff like greetings, 
+etc...
+
+AH: I want to greet all members of Delta Force and all people 
+who helped to wake up Atari with spending many unpaid hours in 
+doing the work that normally had to be done by Atari.
+Special thanks to New Mode, Robo, Knut, Andi, Marco and Sara.
+
+
+MAGGIE: Thanks for this interview!
+
+

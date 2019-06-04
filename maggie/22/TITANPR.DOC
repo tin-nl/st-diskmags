@@ -1,0 +1,241 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0010
+
+from: BLACK SCORPION SOFTWARE 
+=============================
+
+Nemesis - Video enhancement as standard! 
+---------------------------------------- 
+Following tests performed on Nemesis, we have been able to achieve some 
+incredible true-colour video resolutions with Nemesis running at 
+24/48MHz.
+
+This is only possible due to the massive 50% increase on the Falcon bus 
+to 24MHz. Running Nemesis at 20/40MHz does produce lower figures, 
+although 576x432 @ 60Hz refresh is still possible.
+------------------------------------------------------------------------ 
+Falcon with Nemesis at 24/48MHz - all are non-interlaced resolutions, 
+16-bit (65,536 colours per screen) on a standard 14" VGA non-multisync!
+With a half-decent multi-sync it can be expected that even higher 
+resolutions can be seen!
+
+                CPU          Video  Refresh 
+                Bus    CPU    Bus    (Hz) 
+640x480          24     24     24      60 
+720x528          24     24     24      50
+576x432          20     20     20      60
+
+In addition you would also benefit from 48MHz (or 40MHz depending on 
+the Nemesis settings) acceleration to FPU and DSP chips. 
+------------------------------------------------------------------------
+Primarily these tests were performed to check the outer resolution 
+limits when using APEX Alpha (APEX 3). The software which has been 
+developed (see the news on 'Videlity' below) to achieve these 
+resolutions is expected to become commercially available in due course, 
+and will have the capability to alter screen resolutions for any number 
+of bit-planes (mono to true-colour inclusive).
+ 
+Nemesis - Reliable, consistent 24MHz system speed! 
+-------------------------------------------------- 
+While even standard Falcons can be unreliable with DMA transfer, 
+further tests with Nemesis have revealed that a 24MHz bus can be 
+achieved, reliably and consistently, without any problems of this 
+nature.
+
+Having a regular 24MHz bus is increasingly important if the user wishes 
+to use the higher resolutions (720x528 true-colour) that only Nemesis 
+can give!
+ 
+Nemesis - Totally 'crackle-free' 50KHz playback! 
+----------------------------------------------------- 
+Another advantage of having reliable DMA has been totally clean 50KHz 
+sound playback. To the best of our knowledge, no other accelerator can 
+claim to have a 24MHz system speed, reliable DMA or clean 50KHz 
+playback.
+ 
+Nemesis - Major APEX MEDIA enhancement 
+-------------------------------------- 
+Just when you thought it was safe to go in the water...
+
+APEX Media has been updated yet again. Now it is possible to have a 
+full 640x480 TRUE-COLOUR screen display when used with Nemesis at 
+24/48MHz!
+
+Although a slow-down in performance would normally be expected at this 
+resolution, we have found that the speed is comparable (if not better) 
+than with APEX Media at 640x480, 256-colour! Again, the Nemesis 24MHz 
+system speed is responsible for counter-acting the expected decrease in 
+performance one would expect with high-res. true-colour.
+
+Although the increase in screen size means a large chunk of memory is 
+now consumed, the full 640x480, true-colour resolution is still 
+perfectly possible on a "Nemesised" 4MB Falcon, although (obviously!) 
+animations become restricted.
+ 
+VIDELITY - Superb resolution enhancement software 
+------------------------------------------------- 
+Videlity was originally developed to support APEX Alpha for creating 
+high resolution displays, and will therefore be supplied with this 
+program to form part of the complete software/hardware suite - APEX 
+Alpha, Videlity and Nemesis.
+
+We also expect Videlity to become a "must have" option, particularly 
+for Nemesis owners but also for users having a standard Falcon.
+
+Videlity provides extremely reliable resolution switching and fixes 
+many bugs that are apparent in TOS, including some anomalies that seem 
+to exist in NVDI.
+
+Rather than be constrained by fixed resolution settings which are 
+apparent in other screen expanders, Videlity allows fast operation and 
+complete flexibility in all operations.
+
+Price has yet to be decided when sold separately but, as with all BSS 
+products, operation will be fast, smooth, glitch-free and with the 
+usual superb BSS hallmark for design and integration of the interface.
+ 
+APEX ALPHA (APEX 3) 
+------------------- 
+APEX 3 is now officially called APEX ALPHA. As has been mentioned 
+before, the '3' denotes the development number of this particular APEX 
+product.
+
+APEX Alpha was seen publicly for the first time at the Birmingham and 
+London shows on 28/29 September and is making great progress. Windows 
+can be moved & resized in real-time, with Expose' digitiser support the 
+file selector fully implemented.
+
+Unlike Photoline, APEX Alpha (and Audio) operate in a fully customised 
+non-GEM environment for optimum speed and reliability, without being 
+constrained by the limitations imposed by GEM. Although this limits 
+operation to the Atari Falcon only, the extensive use of DSP machine 
+coding provides incomparable performance which cannot be duplicated on 
+any other TOS based computer.
+
+The ability to create and edit 8-bit Alpha channel masks (256 levels of 
+transparency), Chroma-key range masking, multiple filtering, anti-
+aliased block operations - all in real-time - puts APEX Alpha way ahead 
+of the competition, particularly when the price will only be #99.00. 
+This represents a huge saving of #70 over Photoline.
+
+In addition APEX Alpha fully supports the higher true-colour 
+resolutions that are available from the Nemesis system accelerator 
+without any noticable slow- down in operation. The Videlity resolution 
+enhancement software (detailed above), will be packaged as part of the 
+APEX Alpha suite to provide control for the enhanced resolution 
+capability.
+
+To realise the full capability of APEX Alpha, the purchase of Nemesis 
+expands the performance and versatility way beyond the standard 
+specification of a standard Atari Falcon.
+
+It is expected that full support will also be included for pressure 
+sensitive touch tablets, colour scanners and printers.
+
+Although it is difficult to be specific on a likely completion date, 
+progress is accelerating now that the program shell is complete and we 
+expect the finished article to be shipping towards the end of the year.
+ 
+APEX AUDIO (APEX 4) 
+------------------- 
+Following is the first (provisional) specification for APEX Audio;
+o Extremely fast real-time DSP operation. 
+o Full 24-bit sampling capability. 
+o Waveform enhancment technology for high quality audio. 
+o Real-time resampling allowing record and playback at any sample rate 
+  from  6KHz to 99KHz. 
+o Direct-to-Disk sampling. 
+o Basic Filtering functions; low pass, high pass, etc. 
+o Waveform generation Studio.
+
+In addition, it is possible that MIDI & SCSI sample dumps will be 
+included.
+
+Price has yet to be finalised, but APEX Audio is expected to ship 
+towards the end of the year. As with APEX Alpha, Audio is at a similar 
+stage of completion - the shell of the program is complete and some of 
+the operations are already implemented - so a similar rate of progress 
+can be expected.
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PRESS RELEASE from: TITAN DESIGNS 
+=================================
+AFTERBURNER040 - Enhanced video resolutions 
+-------------------------------------------
+As can be expected, Afterburner040 also benefits from having the 
+Nemesis system accelerator installed. Not only does this increase the 
+overall performance of the system, but enhanced video resolutions are 
+also possible.
+
+Falcon with Afterburner040 and Nemesis - all are non-interlaced 
+resolutions, 16-bit (65,536 colours per screen) on a standard 14" VGA.
+                CPU                 Video  Refresh 
+                Bus    CPU    Pipe   Bus    (Hz) 
+720x528          12.5   25     50     25      50 
+640x480          12.5   25     50     25      60 
+576x432          20     40     80     20      50
+
+As with the enhanced Nemesis video resolutions, the Video bus is the 
+crucial figure with regard to video performance and increased 
+resolutions, not the CPU bus.
+
+Although the Afterburner CPU is being half-clocked in the highest 
+resolutions, the actual performance is still much higher than a 
+standard Falcon, and is completely switchable between the various 
+specifications.
+
+The patches created by Black Scorpion Software to replace the existing 
+ones for the Afterburner040 have also been considerably enhanced, and 
+are being continually improved.
+ 
+NEW PRINTER TECHNOLOGY - 600x600dpi! 
+==================================== 
+We are currently assessing a new colour printer which has only just 
+been announced and uses new technology called Micro Dry. The 
+performance of this printer permits colours resolutions of 600x600dpi 
+and, due to the printing process being perfectly dry, allows superb 
+photo-realistic reproduction on standard paper, transparencies, Iron-on 
+transfers, etc.
+
+When creating plain black print-outs, this remarkable printer will 
+produce a laser sharp 1200x600dpi resolution.
+
+Even more remarkable is the fact that true spot metallic colours are 
+possible when using special cartridges. The price for the printer is 
+expected to be #469.00, with CMYK cartridges costing around #7.95 each 
+and the metallic cartridges #9.95 each (Gold, Silver, Cyan and 
+Magenta).
+
+It is expected that a printer driver will be created for use with APEX 
+Alpha. More news will be provided as and when we receive it.
+ 
+GRIBNIF SOFTWARE - NEW PRICES! 
+==============================
+NEW PRICE FOR THE GENEVA/NEODESK 4 BUNDLE! 
+------------------------------------------ 
+Now Titan Designs can bring the complete Geneva/NeoDesk 4 bundle for a 
+mere #79.95! The complete multitasking environment for Atari ST/TT and 
+Falcon computers, coupled with the latest version of the most popular 
+replacement Desktop system has never represented better value.
+ 
+ARABESQUE PRO v2.15 - now only #39.95 
+------------------------------------- 
+A complete Bitmap and Vector based illustration program to create, 
+import, edit and save graphics in the two standard computer formats; 
+Bitmap and Vector. This superb program has now been reduced to an 
+incredible #39.95! Arabesque is still one of the best mono 
+vector/bitmap editing programs for use with any Atari computer and is 
+supplied with a 180 page manual.
+ 
+Further details on any of the above products can be obtained from Titan 
+Designs/Black Scorpion and are detailed extensively on our Web site;
+e-mail: 100345.2350@compuserve.com 
+Web: http://ourworld.compuserve.com/homepages/TITANWEB/ 
+Tel: +44 (0)121 693 6669 
+Fax: +44 (0)121 414 1630
+6 Witherford Way, Selly Oak 
+Birmingham B29 4AX
+ 

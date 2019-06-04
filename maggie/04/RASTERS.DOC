@@ -1,0 +1,56 @@
+   HOW TO DO RASTERS (MORE THAN 16 COLOURS ON SCREEN) BY THE POWER MAN
+   -------------------------------------------------------------------
+
+Yo dudes! I am Powerman of The Wild Boys. We are a new crew so you probably
+wont have heard of us, but by the time you read this our first mega demo
+should have been released. But enough of this, you want to know how to get
+more than 16 colours on screen at the same time, without having to go to
+desperate measures like buying an Amiga!
+First of all, you need some 68000 knowledge, so if you cant code in 68000
+at all, go away! Right then, lets get down to business. The way to get
+more than 16 colours is to use the TIMER B interrupt. See you next time!
+Only kidding, I will explain some more. The TIMER B interrupt can be 
+programmed to occur whenever a certain amount of scanlines have been
+drawn (there are 200 scanlines on the screen). All you have to do is tell
+the TIMER B to occur in the places on the screen where you want to change
+the palette, or change just certain colours on the palette. To do this
+there are two registers: the timer b data register and control register.
+
+The data register is located at $FFFFFA21 and contains a byte value telling
+the TIMER B how many scanlines to draw before doing the interrupt.
+
+The control register is located at $FFFFFA1B and is used to stop and start
+the TIMER B. To stop it, just put a byte value of 0 in $FFFFFA1B. To start
+the TIMER B, just put 8 in $FFFFFA1B.
+
+Finally, the last thing to do with the TIMER B is the interrupt handler whose
+address is stored in location $120. When the data register reaches 0, the
+program takes the address stored in $120 and sets the program counter to this
+address. When an RTE is reached, the program goes back to where the program
+was interrupted. The interrupt routine must acknowledge the interrupt by using
+this code : BCLR #0,$FFFFFA0F.W
+
+By the way, the TIMER B must be enabled before it can be used by using this 
+code: ORI.B #1,$FFFFFA07.W
+      ORI.B #1,$FFFFFA13.W
+
+One more thing before I show you an example of rasters. To make sure that the
+TIMER B is syncronised with the updating of the screen, it must be started from
+the Vertical Blank Interrupt (VBL) whose interrupt handler address is stored in
+$70. This will make sure that the TIMER B starts at the top of the screen.
+
+Now, to see an example, assemble the program RASTERS.S and run it. Yes, before
+your very eyes will be 200 colours on screen!
+
+Now I will tell you some problems with using rasters. Most sample replay 
+routines (including mine) and soundtrackers use the TIMER A to play the samples.
+The TIMER A has a higher priority than the TIMER B, so if you have samples and
+rasters in your program, the colours will flicker a bit.
+Also, sometimes you might notice slight flickering of the colours in the left
+border. This is either because your TIMER B interrupt handler doesn't change 
+the colours fast enough or some other interrupt with a higher priority is 
+interrupting the TIMER B.
+
+Thats it for now, make sure you get my WILD DEMO, which should be out by the 
+time you read this. Chill out........
+ 

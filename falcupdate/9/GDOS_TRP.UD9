@@ -1,0 +1,638 @@
+-----------------------------------------------------------------------
+                         GEMDOS Calls Trap #1
+-----------------------------------------------------------------------
+
+$00 Pterm0
+
+    Terminate programm and return control to parent process
+
+        move    #0,-(sp)
+        trap    #1
+
+
+
+$01 Cconin
+
+    Return character from keyboard
+
+        move    #1,-(sp)
+        trap    #1
+        addq    #2,sp
+
+Results:        d0.w character read from the keyboard
+
+
+
+$02 Cconout
+
+    Write a character to the console
+
+        move    #chr,-(sp)
+        move    #2,-(sp)
+        trap    #1
+        addq    #4,sp
+
+
+
+$03 Cauxin
+
+    Return character from rs232
+
+        move    #3,-(sp)
+        trap    #1
+        addq    #2,sp
+
+Results:        d0.w character read from rs232
+
+
+
+$04 Cauxout
+
+    Write a character to the rs232
+
+        move    #chr,-(sp)
+        move    #4,-(sp)
+        trap    #1
+        addq    #4,sp
+
+
+
+$05 Cprnout
+
+    Write a character to the printer
+
+        move    #chr,-(sp)
+        move    #5,-(sp)
+        trap    #1
+        addq    #4,sp
+
+
+
+$06 Crawio
+
+    Read/Write character (Read without delay)
+
+        move    #mode,-(sp)
+        move    #6,-(sp)
+        trap    #1
+        addq    #4,sp
+
+Results:        d0.w character read from keyboard if mode = $00ff
+
+
+
+$07 Crawcin
+
+    Return character from keyboard with out echo
+
+        move    #7,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$08 Cnecin
+
+    Read character from the keyboard without echo. Control characters
+    ^S, ^Q, ^C are interpreted and have effect.
+
+        move    #8,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$09 Cconws
+
+    Write a null terminated string to the screen
+
+        pea     string
+        move    #9,-(sp)
+        trap    #1
+        addq    #6,-(sp)
+
+
+
+$0a Cconrs
+
+    Read an edited string from the keyboard. On entry, buf(0) contains
+    size of the data part of buf(). On exit, buf(1) contains number of
+    characters in data part of buf(). Data part starts at buf(2).
+
+
+        pea     buffer
+        move    #$0a,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$0b Cconis
+
+    Returns -1 if character is available from keyboard buffer, 0 if not
+
+        move    #$0b,-(sp)
+        trap    #1
+        addq    #2,sp
+
+$0e Dsetdrv
+
+    Select current drive (0=a ,1=b ,etc)
+
+        move    #drv,-(sp)
+        move    #$0e,-(sp)
+        trap    #1
+        addq    #4,sp
+
+Results:        d0.w bitmap of drives in the system (bit0=a, ...)
+
+
+
+$10 Cconos
+
+    Returns -1 if console is ready to receive a character, 0 if not.
+
+        move    #$10,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$11 Cprnos
+
+    Returns -1 if the printer is ready to receive a character, 0 if not
+
+        move    #$11,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$12 Cauxis
+
+    Returns -1 if character is available on rs232, 0 if not.
+
+        move    #$12,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$13 Cauxos
+
+    Returns -1 if character is available on rs232, 0 if not.
+
+        move    #$13,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$19 Dgetdrv
+
+    Returns number of current drive.
+
+        move    #$19,-(sp)
+        trap    #1
+        addq    #2,sp
+
+Results:        d0.w drive number (0=a, 1=b, etc)
+
+$1a Fsetdta
+
+    Set disc transfer address (used by Fsfirst).
+
+        pea     dta
+        move    #$1a,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$20 Super
+
+    Switch to/from supervisor mode, if stack = -1.l then return current
+    mode. If stack is null, switch modes and use current stacks, else
+    switch modes and use stack supplied.
+
+        pea     stack
+        move    #$20,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$2a Tgetdate
+
+    Returns the date.
+
+        move    #$2a,-(sp)
+        trap    #1
+        addq    #2,sp
+
+Results:        d0.w the date in GEMDOS format:
+        bits 0.4   day 1.31
+             5.8   month 1.12
+             9.15  year 0.119 since 1980
+
+
+
+$2b Tsetdate
+
+    Sets the date in the format as above.
+
+        move    #date,-(sp)
+        move    #$2b,-(sp)
+        trap    #1
+        addq    #4,sp
+
+
+
+$2c Tgettime
+
+    Returns the current time.
+
+        move    #$2c,-(sp)
+        trap    #1
+        addq    #2,sp
+
+Results:        d0.w the current time in format:
+        bits 0.4    second 0.59 (2 second res)
+             5.10   minute 0.59
+             11.15  hour 0.23
+
+
+
+$2d Tsettime
+
+    Set the current time in the format as above.
+
+        move    #time,-(sp)
+        move    #$2d,-(sp)
+        trap    #1
+        addq    #4,sp
+
+
+
+$2f Fgetdta
+
+    Returns the current dta.
+
+        move    #$2f,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$30 Sversion
+
+    Return the current versiom number.
+
+        move    #$30,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$31 Ptermres
+
+    Terminate and stay resident. Returns the return code 'ret' and keeps
+    'amount' memory for the TSR process.
+
+        move    #ret,-(sp)
+        pea     amount
+        move    #$31,-(sp)
+        trap    #1
+        addq    #8,sp
+
+
+
+$36 Dfree
+
+    Return infomation about the allocation available on drive 'drv'
+
+        move    #drv,-(sp)
+        pea     buffer
+        move    #$36,-(sp)
+        trap    #1
+        addq    #8,sp
+
+Results:        Stored in buffer:
+        .l  b_free       number of free clusters on drive
+        .l  b_total      total number of cluster on drive
+        .l  b_secsiz     number of bytes in a sector
+        .l  b_clsiz      number of sectors in a cluster
+
+
+
+$39 Dcreate
+
+    Create a directory.
+
+        pea     path
+        move    #$39,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$3a Ddelete
+
+    Delete a directory.
+
+        pea     path
+        move    #$3a,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$3b Dsetpath
+
+    Set the current  directory.
+
+        pea     path
+        move    #$3b,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$3c Fcreate
+
+    Create a file with the specified attributes and path name.
+    Fcreate'ing a file that already exists will delete it's contents.
+    Attr:       $01  set to read only
+        $02  hidden from directory search
+        $04  system file, hidden from dir search
+        $08  volume label (first 11 bytes of name)
+
+        move    #attr,-(sp)
+        pea     path
+        move    #$3c,-(sp)
+        trap    #1
+        addq    #8,sp
+
+Results:  d0.w GEMDOS error number or handle of new file.
+
+
+
+$3d Fopen
+
+    Open a file. Mode is 0=read 1=write 2=read/write
+
+        pea     path
+        move    #$3d,-(sp)
+        trap    #1
+        addq    #6,sp
+
+Results:        d0.w GEMDOS error code or the files handle
+
+
+
+$3e Fclose
+
+    Close an open file.
+
+        move    #handle,-(sp)
+        move    #$3e,-(sp)
+        trap    #1
+        addq    #4,sp
+
+
+
+$3f Fread
+
+    Read from an opened file.
+
+        pea     buffer
+        pea     count
+        move    #handle,-(sp)
+        move    #$3f,-(sp)
+        trap    #1
+        lea     12(sp),sp
+
+
+
+$40 Fwrite
+
+    Write to an opened file.
+
+        pea     buffer
+        pea     count
+        move    #handle,-(sp)
+        move    #$40,-(sp)
+        trap    #1
+        lea     12(sp),sp
+
+
+
+$41 Fdelete
+
+    Delete a file.
+
+        pea     path
+        move    #$41,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$42 Fseek
+
+    Seek within a file. (ie move the file pointer).
+    'mode' is:  0  seek from begining of file
+                1  seek from current position
+                2  seek from end of file
+
+        move    #mode,-(sp)
+        move    #handle,-(sp)
+        pea     offset
+        move    #$42,-(sp)
+        trap    #1
+        lea     10(sp),sp
+
+
+
+$43 Fattrib
+
+    Get/set file attributes. Read if 'act'=0   Set if 'act'=1
+    Mode: $01   read only
+        $02     hidden
+        $04     system
+        $08     volume label
+        $10     subdirectory
+        $20     written to and closed
+         
+        move    #act,-(sp)
+        move    #mode,-(sp)
+        pea     path
+        move    #$43,-(sp)
+        trap    #1
+        lea     10(sp),sp
+
+NOTE!!! not sure about this one, it might well be wrong.
+
+
+
+$45 Fdup
+
+    Returns non standard handle that refers to the same file.
+
+        move    #handle,-(sp)
+        move    #$45,-(sp)
+        trap    #1
+        addq    #4,sp
+
+Results:        d0.w non standard handle to file with handle 'handle'
+
+
+
+$46 Fforce
+
+    Force standard handle to point to same file or dev as the
+    nonstandard handle.
+
+        move    #nonshandle,-(sp)
+        move    #handle,-(sp)
+        move    #$46,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$47 Dgetpath
+
+    Return current directory for drive 'drv' (0=default, 1=a, etc) in
+    the buffer. Buffer must be at least 64 bytes long.
+
+        move    #drv,-(sp)
+        pea     buffer
+        move    #$47,-(sp)
+        trap    #1
+        addq    #8,sp
+
+
+
+$48 Malloc
+
+    Request memory from system. Blocks are word aligned.
+
+        pea     amount
+        move    #$48,-(sp)
+        trap    #1
+        addq    #6,sp
+
+Results:        d0.l is the address of the memory or is 0.l.
+
+
+
+$49 Mfree
+
+    Return memory to the OS.
+
+        pea     address
+        move    #$49,-(sp)
+        trap    #1
+        addq    #6,sp
+
+
+
+$4a Mshrink
+
+    Partially return memory to the OS.
+
+        pea     size
+        pea     address
+        clr     -(sp)
+        move    #$4a,-(sp)
+        trap    #1
+        lea     12(sp),sp
+
+
+
+$4b Pexec
+
+    Load and execute a program.
+
+        pea     envir
+        pea     commandline
+        pea     path
+        move    #mode,-(sp)
+        move    #$4b,-(sp)
+        trap    #1
+        lea     16(sp),sp
+
+
+
+$4c Pterm
+
+    Process terminate.
+
+        move    #code,-(sp)
+        move    #$4c,-(sp)
+        trap    #1
+
+
+
+$4e Fsfirst
+
+    Search for a file. Path may contain wild cards in the name but not
+    the path. attr are attributes to match.
+
+        move    #attr,-(sp)
+        pea     path
+        move    #$4e,-(sp)
+        trap    #1
+        addq    #8,sp
+
+Results:  d0.w is GEMDOS error code.
+        found in the DTA is:
+
+        bytes    
+        0-20    junk
+        21      file attributes
+        22-23   file time stamp
+        24-25   file date stamp
+        26-29   file size (.l)
+        30-43   name + extension of found file
+
+
+
+$4f Fsnext
+
+    Continue with Fsfirst $4e.
+
+        move    #$4f,-(sp)
+        trap    #1
+        addq    #2,sp
+
+
+
+$56 Frename
+
+    Rename a file from old to new name.
+
+        pea     new
+        pea     old
+        clr     -(sp)
+        move    #$56,-(sp)
+        trap    #1
+        lea     12(sp),sp
+
+
+
+$57 Fdattime
+
+    Get/set file date time. flag is 0=read 1=set.
+
+        move    #flag,-(sp)
+        pea     buffer
+        move    #handle,-(sp)
+        move    #$57,-(sp)
+        trap    #1
+        lea     10(sp),sp
+
+
+
+

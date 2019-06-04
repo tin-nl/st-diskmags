@@ -1,0 +1,108 @@
+
+                            FADE TO BLACK
+
+                FADING TECHNIQUES ON THE ATARI FALCON
+
+                     BY MR PINK / RESERVOIR GODS
+
+
+One of the oldest  presentation  effects  is  the  fade. One graphical
+screen fades out, the next  one  fades  in.  This effect has been used
+extensively on all computers, but hasn't been seen on the Falcons true
+colour mode as up until recently it was thought impossible.
+
+For the non coders I will try to  give an explanation of fading. In 16
+and 256 colour mode you have  a  number  of paletter registers and you
+just need to change that palette register and the all pixels on screen
+assigned to that register will change.  So  to change all colours on a
+16 colour screen you need just to change 16 registers, on a 256 colour
+screen 256 registers must be changed.
+
+On a true colour screen things  are  different.  There is no palette -
+each pixel is completely  independent  from  every  other pixel on the
+screen. To fade a screen down  you  have to change EVERY single pixel.
+This means reading in every pixel, isolating the RGB values and fading
+them then combing them to  make  a  new  colour  and writing the pixel
+back. On a low res screen of  320x240 this means 76,800 pixels have to
+be calculated and unfortunatel there is no where near enough processor
+time to do this in one VBL.
+
+Consequently you don't see fades so  often on the Falcon. Screens will
+hardware scroll off  (a  technique  I  used  on  the  intro screens of
+Tautology 2) or be cleared a couple of pixels at a time.
+
+But there has  been  a  breakthrough  and  true  colour  fading is now
+possible on the Falcon! This comes  through  a  lot of clever fiddling
+with the hardware, and some slight reprogramming of the VIDEL.
+
+This effect was discovered by Aggression,  and  told  to me by Evil of
+Dead Hackers Society. It is an effect  I had noticed but not realised.
+The early versions of God-paint, although running in true colour mode,
+had a white border, that is colour  0 of the falcon palette was white.
+I noticed that graphics on  my  monitor  looked  a  lot darker than on
+Ripley's SVGA monitor. I changed  the  background  colour to black and
+graphics appeared lighter. I  assumed  this  was  just something to do
+with the glare of the  white  light  making  the other graphics appear
+dimmer, but it is more subtle than that.
+
+There is a hidden feature  of  the  VIDEL  whereby you can control the
+intensity of a  true  colour  screen  by  altering  the  value  of the
+background colour register.  You  must  clear  the  videl's horizontal
+border end register at the start  of  every  VBL, then poke the falcon
+palette register 0. For a full intensity screen the value of $ffff9800
+must be 0. For a dark screen the value of $ffff9800 must be $FFFF00FF.
+To fade you simply interpolate between these two values.
+
+A quick example of the code:
+
+        moveq   #0,d7                   ;full intensity
+
+fade    move.w  #$25,-(a7)              ;wait vbl
+        trap    #14
+        addq.w  #2,a7
+
+        clr.w   $ffff8286.w             ;clear hbe
+
+        moveq   #0,d0
+        bfins   d7,d0{0:6}              ;set red
+        bfins   d7,d0{8:6}              ;set green
+        bfins   d7,d0{24:6}             ;set blue
+        move.l  d0,$ffff9800.w          ;set palette register
+
+        addq.w  #1,d7                   ;dec intensity
+        cmp.w   #64,d7                  ;lowest intensity reached?
+        blt.s   fade                    ;no, loop
+
+
+
+There are some disadvantages with this effect.
+
+The first is that you can't fade  to  black, the lowest intensity is a
+dark grey. You can get past this problem by quickly screen swapping to
+a black screen when you reach dark grey.
+
+Also the border colour increases  as  the  main picture decreases, and
+this looks a bit messy.
+
+Also this effect doesn't work  on  VGA monitors, though apparently DHS
+have come up with a hack  to  get  this  working. If you manage to get
+this working on other monitors, let us know!
+
+If you have any programming queries  or programming tips, please write
+to us at:
+
+. Maggie Programming Forum
+. Cwm Isaf
+. Abermule
+. Montgomery
+. Welshpool
+. Powys
+. SY15 6JL
+
+If you have any info on these issues, please let us know:
+
+(*) Transferring between main memory and the DSP via the Blitter
+(*) Synchronising Timer B whilst using other interrupts
+(*) Non-flickering palette switching on bitplane modes
+
+Pterm() until next issue!

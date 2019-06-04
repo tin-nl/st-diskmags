@@ -1,0 +1,229 @@
+
+             Now let's answer the most interesting question:
+
+                 How fast runs a Falcon with 68040 CPU ?
+                 =======================================
+
+                  Please remember that my Falcon worked 
+                      at 32 Mhz 030 + 68882 before!
+
+Alls Tests were done on a Falcon030 in BigTower + Afterburner040 (64 Mhz)
++ internal FPU + 50 Mhz DSP + 4 Mbyte ST-RAM + 32 Mbyte FastRAM
++ new keyboard "Cherry G80". NVDI-4 in FastRAM.
+
+
+Test 1: Calculate a picture with NeoN Grafix 3D. It was calculated with
+------  160 x 120 in Falcon True Color. All possible preferences were
+        used: shadow, mirror, transparency, display on.
+        SAVE was disabled. Calculated using Z-buffer.
+
+        68030 (32 Mhz) + FPU = 17,40 minutes
+        68040 (64 Mhz) + FPU =  1,77 minutes
+        performance?         =  9,83 times (!)         =  983 %
+        
+
+Test 2: The same test as before, but using raytracing instead of Z-buffer.
+------
+        68030 (32 Mhz) + FPU = 21,13 minutes
+        68040 (64 Mhz) + FPU =  2,07 minutes
+        performance?         = 10,21 times (!)         = 1021 %
+       
+
+Test 3: Load and show a 800 x 600 pixel TGA picture with NeoN Tools. 
+------  
+        68030 (32 Mhz) + FPU = 54 seconds
+        68040 (64 Mhz) + FPU = 12 seconds
+        performance?         =  4,5 times              =  450 %
+
+
+Test 4: Use CYBERSCULPT and make a sphere (1000,100).
+------
+        68030 at 16 Mhz      = 1 minute  + 12 seconds
+        68030 at 32 Mhz      =             47 seconds
+        68040 at 64 Mhz      =             18 seconds
+        performance?         = 4,0 times               =  400 %
+
+
+Test 5: Use CYBERSCULPT and split all polygons of FALCON.3D2.
+------
+        68030 at 16 Mhz      = 6 minutes + 10 seconds
+        68030 at 32 Mhz      = 4 minutes + 35 seconds
+        68040 at 64 Mhz      = 1 minute  + 51 seconds
+        performance?         = 3,3 times               =  330 %
+
+
+Test 6: Use CAD 3D 2.0 and make join operation 'A subtract B = C'
+------
+        68030 at 16 Mhz      = not tested
+        68030 at 32 Mhz      = 8 minutes + 50 seconds
+        68040 at 64 Mhz      = 1 minute  + 28 seconds
+        performance?         = 6,0 times               =  600 %
+
+
+Test 7: Use CAD 3D 2.0 and make join operation 'A add B = C'
+------
+        68030 at 16 Mhz      = 4 minutes + 42 seconds
+        68030 at 32 Mhz      = 4 minutes + 14 seconds
+        68040 at 64 Mhz      =             46 seconds
+        performance?         = 6,1 times               =  610 %
+
+
+Test 8: Use PAPILLON 2.0 (painting program) in FastRAM and make the
+------  crease effect to a picture in 256 color mode (640 x 480).
+
+        68030 at 16 Mhz      = 6 minutes + 43 seconds
+        68030 at 32 Mhz      = 6 minutes +  0 seconds
+        68040 at 64 Mhz      =             45 seconds
+        performance?         = 8,95 times               =  895 %
+
+
+Test 9: Use PAPILLON 2.0 and load and show a JPG picture in 256 color mode
+------  (Papillon is not able to use the DSP!)
+ 
+        68030 at 16 Mhz      = 1 minute  + 35 seconds
+        68030 at 32 Mhz      = 1 minute  + 21 seconds
+        68040 at 64 Mhz      =             14 seconds
+        performance?         = 6,8 times               =  680 %
+
+
+Test 10 Use PAPILLON 2.0 and load and show a GIF picture in 256 color mode.
+-------
+        68030 at 16 Mhz      =             29 seconds
+        68030 at 32 Mhz      =             25 seconds
+        68040 at 64 Mhz      =              5 seconds (!)
+        performance?         = 5,8 times               =  580 %
+
+
+Test 11 Load and show a document with Calamus SL 6/93 in 256 colors.
+-------
+        68030 at 16 Mhz      = 1 minute  +  3 seconds
+        68030 at 32 Mhz      =             57 seconds
+        68040 at 64 Mhz      =              7 seconds (!)
+        performance?         = 9,0 times               =  900 %
+
+
+Test 12 print (dummy) a document with Calamus SL 6/93 in 256 colors.
+-------
+        68030 at 16 Mhz      = 5 minutes +  6 seconds
+        68030 at 32 Mhz      = 4 minutes + 34 seconds
+        68040 at 64 Mhz      =             21 seconds only
+        performance?         = 14,6 times (!!!)        = 1460 %
+
+
+Test 13 use APEXJPG.CPX and make JPG with quality 99 (256 color mode)
+-------
+        68030 at 16 Mhz      = 5 minutes + 58 seconds
+        68030 at 32 Mhz      = 5 minutes + 14 seconds
+        68040 at 64 Mhz      = 1 minute  +  5 seconds
+        performance?         = 5,5 times               =  550 %
+
+
+Test 14 use APEXJPG.CPX and unmake TGA with quality 99 (256 color mode)
+-------
+        68030 at 16 Mhz      = 5 minutes +  3 seconds
+        68030 at 32 Mhz      = 4 minutes + 11 seconds
+        68040 at 64 Mhz      =             59 seconds
+        performance?         = 5,1 times               =  510 %
+
+
+Test 15 use NOLIPRO3.PRG (scanner software) and flip TGA picture.
+-------
+        68030 at 16 Mhz      = 4 minutes + 53 seconds
+        68030 at 32 Mhz      = 4 minutes + 24 seconds
+        68040 at 64 Mhz      =             30 seconds
+        performance?         = 9,76 times (!)          =  976 %
+
+
+Test 16 use NOLIPRO3.PRG and load and display a grayscale TIF picture.
+-------
+        68030 at 16 Mhz      =             24 seconds
+        68030 at 32 Mhz      =             20 seconds
+        68040 at 64 Mhz      =              8 seconds
+        performance?         = 3,0 times               =  300 %
+
+
+Test 17 make a small fractal by using the FRAC_DSP.PRG. The PRG was run
+------- in 256 color mode (640 x 480)
+
+        68030 at 16 Mhz, no use of FPU =   46 seconds
+        68030 at 32 Mhz, no use of FPU =   36 seconds
+        68030 at 32 Mhz + 68882 FPU    =   28 seconds
+        68030 at 16 Mhz + DSP 32 Mhz   =    8 or 10 seconds
+
+        68040 at 64 Mhz, no use of FPU =    6 seconds
+        68040 at 64 Mhz + DSP 50 Mhz   =    4 or  6 seconds
+
+        performance?     (CPU)         =    7,6 times  =  760 %
+        performance?     (DSP)         =    2,0 times  =  200 %
+
+
+Test 18 load a large document to 1ST Word Plus.
+-------
+        68030 at 16 Mhz      =             23 seconds
+        68030 at 32 Mhz      =             20 seconds
+        68040 at 64 Mhz      =              5 seconds (!)
+        performance?         = 4,6 times               =  460 %
+
+
+Test 19 make a fractal by using the DSPFRAC.PRG at 320 x 480
+------- Falcon True Color.
+
+        68030 at 16 Mhz + DSP 32 Mhz =      4,36 seconds
+        68040 at 64 Mhz + DSP 50 Mhz =      2,69 seconds
+        performance?                 =      1,6 times  =  160 % 
+
+
+Test 20 Load and show a vector document to Calamus SL 6/93 with many,
+------- many vector objects. Calamus worked at 640 x 480 x 256 colors.
+
+        68030 at 32 Mhz      = 9 minutes + 46 seconds
+        68040 at 64 Mhz      =             52 seconds
+        performance?         = 11,3 times (!)          = 1130 %
+
+
+Test 21 The same test as before, but Calamus ran at ST-high.
+-------
+        68030 at 16 Mhz      = 3 minutes +  0 seconds
+        68040 at 64 Mhz      = 0 minutes + 30 seconds
+        performance?         = 6,0 times               =  600 %
+
+
+Test 22 Show the difference between ST-RAM and FastRAM. Load a document
+------- "EUROSKAL.CDK" zu Calamus SL 6/93 at 640 x 480 and 16 colors.
+        Remember that the difference consists of the change of RAM only!
+
+        68040 + ST-RAM       =             29 seconds
+        68040 + FastRAM      =             13 seconds
+        performance?         = 2,2 times               =  220 %
+
+
+Test 23 Load and show a picture with Papillon 2.0 at 640 x 480 and
+------- 256 colors.
+
+        68040 + ST-RAM       =             18 seconds
+        68040 + FastRAM      =              8 seconds
+        performance?         = 2,3 times               =  230 %
+
+
+Test 24 Calculate a picture with NeoN Grafix 3D.
+-------
+        68040 + ST-RAM       =              4,03 minutes
+        68040 + FastRAM      =              2,03 minutes
+        performance?         = 2,0 times               =  200 %
+
+
+Test 25 ZIP packing with ZIPJR.TTP and Two-in-one shell.
+-------
+        68040 + ST-RAM       = 7 minutes + 55,5 seconds
+        68040 + FastRAM      = 4 minutes + 13,7 seconds
+        performance?         = 1,9 times               =  190 %
+
+
+Test 26 Show how important the CPU caches of the 68040 are. Calculate
+------- a picture with NeoN Grafix 3D and raytracing with different
+        cache configurations.
+
+        68040 + no caches         = 3,97 minutes
+        68040 + data cache        = 3,13 minutes       =  127 %
+        68040 + instruction cache = 2,47 minutes       =  161 %
+        68040 + both caches       = 1,57 minutes       =  253 %

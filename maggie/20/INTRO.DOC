@@ -1,0 +1,217 @@
+
+[Chris - this article is quite long and could feasibly be split into 2
+or more parts?]
+
+
+
+        JOURNEYS BY DONUT
+
+        Or: how we did the Maggie 18 Falcon intro...
+
+
+
+It was a long time since we saw a Maggie intro before last August.  We
+hope you enjoyed it -  the  Falcon  was  a  bit  short of boring torus
+intros at the time. We thought it would be nice to start the tradition
+again (there should be one this issue too, although I haven't finished
+it yet!)  and  here  we  shamelessly  expose  ourselves  to  you, dear
+readers, or at least explain how we  made  it. By the way, if you want
+to run  the  intro  without  Maggie,  rename  the  INTRO.DAT  file  to
+INTRO.PRG and you can run it from the Desktop!
+
+The assembler source code (DSP and  68030) and some other files should
+be available in archive  format,  and  partly  documented therein, but
+here in this  article  we  want  to  explain  some  general  ideas and
+algorithms.
+
+
+
+        GENERAL BITS
+
+The design of the demo is very simple but looked quite nice. The music
+was chosen because it  was  the  smallest  decent Protracker module we
+could find that didn't sound  like  Bavarian  folk  music, but it went
+well with dark colours (i.e. black!)  and the breakdowns really suited
+a "flash on the credits"  style,  which  were  created using basic and
+saved out as raw data... cheating is such great fun, isn't it?
+
+The intro uses the  DSP  extensively,  both  to  produce the music and
+graphics. This is why it won't work  with a 32Mhz 68030 processor - we
+have to fetch the data as  quickly  as  possible while the DSP creates
+the sound  and  texture-mapping  in  real-time,  and  the  timings are
+matched to a 16Mhz machine. While I  write this, can anyone provide us
+at Maggie with a reliable check for a 32Mhz machine?
+
+
+
+        3D GRAPHICS
+
+The 3D section relies heavily on  the  power  of  the DSP to achieve a
+reasonable speed of mapping and shading.  All the handling of objects:
+the  rotation  of  points,   shading   of  polygons,  visible  surface
+determination, conversion to  raster  coordinates  and finally texture
+mapping and gouraud shading is done by  the DSP. The main processor is
+merely placed in a  loop  where  the  top  position  of a polygon, its
+height in lines, then a  list  of  left-right  edges  for each line is
+fetched by the 68030, so all the  main  processor must do is copy data
+to the screen - and this screen data too is sent from the DSP. The DSP
+routines are individually documented in the  source code, but here are
+some of the principles involved:
+
+- First, the donut trick:
+Question: why has every Amiga and PC demo  in the last 20 years used a
+    torus?
+Answer: Because (a) it isn't a cube  and  (b) you do not actually need
+    to depth-sort the  polygons  before  they  are  painted on screen,
+    which in most cases is  a  very time-consuming (and non-efficient)
+    process! You disagree? In  fact  the  problem  is solved with some
+    cunning trickery, the  essential  ingredient  of  all  good demos.
+    Simply draw all the *inside*  faces  first, since then they cannot
+    overwrite any other faces. Then draw  the ring of polygons next to
+    the inside ring, then  the  next,  and  so  on.  To visualize this
+    requires some mental agility, so buy  yourself a doughnut and work
+    it out for yourself. In fact,  many  3d objects can be constructed
+    along similar lines. Think of the  letter  C, for instance. If the
+    inside faces marked 1, then the  faces  marked 2, are drawn first,
+    no sorting is needed:
+
+                  3
+            -------------
+            |           |
+            |   ------  |3          (The top and bottom faces should
+            |   | 1  1  |            be drawn last.)
+            |   |    ----
+            |   |     2
+            |   |1
+           3|   |     2
+            |   |    ----
+            |   | 1  1  |
+            |   ------  |
+            |           |3
+            -------------
+                  3
+
+- One drawback of the use of toruses  is the necessity of clearing the
+    whole screen  on  each  frame.  Most  demos  usually  use  "delta-
+    clearing", that is, only clearing  the  left and right edges where
+    the outline of the object has  been  changed - we simply store the
+    left and right extremes of an objects  (e.g. a cube) for each line
+    of the screen.  This  is  not  ordinarily  possible  with a torus,
+    because of the hole (there is  a  way  round this, but I refuse to
+    reveal it here!)
+    Clearing the  whole  screen  takes  around  40%  of  the available
+    processor time. This however  has  one  advantage: while the 68030
+    clears the  screen,  the  DSP  can  calculate  the  rotations  and
+    shadings - true multi-tasking on a Falcon!
+
+- A lot of fellow demo programmers  commented  on the shading routines
+    used in the gouraud-shading  section,  and  the  principle is very
+    simple. Most demos use the  Z-coordinate  of  a point to determine
+    its colour - the greater  the  Z-coordinate, the darker the point.
+    Instead I used the method of normal calculation:
+    - Each point is assigned  what  is  called  a  "normal vector" - a
+    direction vector that  is  perpendicular  to  the  surface  of the
+    object at this point (here  calculated  by  averaging the 4 normal
+    vectors of the polygons that each point belongs to.)
+    - For each frame we rotate  this  vector,  just like we rotate the
+    object points in 3D space.  We  then  find  the angle between this
+    rotated vectors and  a  vector  denoting  from  what direction our
+    light source comes. This new value  is  used to shade the object -
+    the smaller the angle  between  the  light  source  and the normal
+    vector, the brighter the shading.
+
+                Normal vec of poly A     Normal Vector of point
+                           ^            7
+                           .          -
+                           .        -
+                    ---------------*         .Normvec of polygon B
+                     Polygon A      \     .
+                                     \ .
+                             Polygon B\
+                                       \
+
+
+    - This technique allows some  very  nice  shading effects, such as
+    the fading on of the object  from  behind. This produced an "Oooh"
+    from almost everyone I  know  who  saw  it,  and  can  be use in a
+    variety of effects  (for  example  environment  mapping  - see the
+    forthcoming Avena demo for some examples of this.)
+
+    AN APOLOGY
+    - While commenting the source code for this issue, I spotted a bug
+    in the code which detect whether  a  polygon is visible or not. In
+    the Maggie intro, ALL polygons, whether visible or not, are shaded
+    and calculated and data is  sent  to  the  68030 - only that these
+    polygons are invisible! With  the  bug  removed,  the routines run
+    even quicker, in fact around 20-30% faster!!
+
+
+        SOUND AND DSP OPERATING SYSTEMS
+
+
+1. TRANSMITTING DATA
+
+The tracker routines for a  demo  with  DSP  are a complete nightmare.
+Interrupting a routine which sends data  to/from  the  DSP, to go to a
+routine that also sends data to/from  the DSP, usually means that data
+is lost, causing the machine to crash horribly.
+
+To get round this  problem  is  not  easy  and  the  intro uses a very
+complicated and fiddly  system  of  switching  off interrupts whenever
+data transmission takes place. This is  why  there are so many "MOVE.W
+#$2700,SR" statements!  Once  transmission  is  over,  interrupts  are
+enabled again to allow keyboard  and  tracker interrupts to occur. One
+side-effect is that with too  large periods of data sending/receiving,
+routines such as mouse handlers do not work correctly...
+
+Of course there is a much  better  solution  to this problem (one that
+took many months of work!)  but  I  feel  that  publishing a fix, that
+automatically saves any data  caught  in  the  DSP  host  port and re-
+installs it at the end of the  tracker  routine, would be far too easy
+on you! After all, this intro,  although  pretty  poor, was some of my
+best stuff at the time. I'm sure you can work it out if you try.
+
+
+
+2. MUSIC
+
+The music is 25Khz, 8 bit  Protracker  replay code, which does not use
+the SSI to play the  music,  because:  (a)  it  would use too much DSP
+memory, (b) it requires the use of a DSP register - usually r7/m7, (c)
+SSI interrupts would steal time from the time-critical texture mapping
+routines, causing a crash.
+
+3. DSP SYSTEM
+
+I use the Motorola assembler  to  code  DSP  software:  I have a small
+operating system to  transmit  and  install  DSP  routines and execute
+them.  Fuller  explanations  are  given   in  the  file  DSP_OS.S  and
+DSP_OS.ASM, although it should  be  easy  to  convert  the routines to
+Devpac DSP, for example
+
+
+
+        FINAL THOUGHTS
+
+That's all for the technical side  of  the  explanations - most of the
+work had been done for a  Digital  Chaos demo that was never released,
+but the routines have since been  vastly improved and the results will
+be available in the Maggie 20 intro  (I  hope) and the new Avena demo,
+"Sonolumineszenz." We hope you like them.
+
+Incidentally, it is a  sad  state  of  affairs  that  it is quicker to
+produce graphics on Falcon by sending them down an 8-bit (!!) datapath
+from the DSP to a 16Mhz processor,  then down a 16-bit path (wasting 8
+bits each time), than to produce  them  "in-house" by the 68030 alone.
+That's why Amiga demos  all  require  50Mhz  machines  to get a decent
+demo, even though they have a full 32-bit data bus. So in a sense, the
+Maggie 18 intro was a SOUNDCHIP demo. Will we never learn?
+
+
+
+
+Steve Tattersall - Tat/Digital Chaos (now Avena), 1996
+
+
+
+

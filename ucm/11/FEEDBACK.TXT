@@ -1,0 +1,472 @@
+-----------------------------------------------------------------------------
+{*f1FEEDBACK AND VOICES{*f0
+-----------------------------------------------------------------------------
+
+Yep, we received a real  load of meanings, letters and mails after UCM 10 and
+it gave  us much  more motivation  because we  got  the info  that the UCM is
+needed  and I  think we  must go  on and  not talking shit. I don't want that
+someone will jump from the bridge because of our quit, hehe...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+505 / Checkpoint...
+
+Die ZEHN is cool (3. Platz!!, ich glaub es nicht), bloss ist schon krass, wie
+die Scene "shrinkt"..
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Ryder / Vectronix...
+
+Heard that you were having thoughts of stopping the UCM!!
+But that your over it now! Good thing!  I'd miss them like HELL! ;)
+...
+I'll try to help with submission whenever I can!  Gotta keep the UCM
+alive!  It's the best damn zine out there..!
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Mike / Stax...
+
+Euer Mag habe ich  mir auch mal kurz angeschaut. Ich wÅnsche Euch viel Erfolg
+und natÅrlich auch Spaû damit!
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Earx / Fun...
+
+I read ucm10 (got it from your e-mail :)) and it was cool. Loads of nice in-
+depth articles about scene-stuff, drawing, music.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Jace / ST Knights
+
+Undercover is the last global magazine  on ST that  is really speaking of the
+Atari scene in general.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+ST Survivor / NLC
+
+Again, congratulations for this new Undercover as interesting as usual, just
+great! This ascii art used in the mag also looks nice even though I'm not
+always sure of the figures I read in the demo ratings....
+
+editors note: we'll try to make it better with the ascii's... no problem!
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Mr Pink / Reservoir Gods
+
+Dear Undercover Magazine,
+
+I read  with interest  your review of "Maggie 24" and found it to be, in your
+words, "very buggy".
+
+"At last we heard some rumour about a new shell for the Falcon-version and so
+ I thought that  the new issue will come only with the new shell, but nothing
+ happened."
+
+Hum... How can  you have failed to notice the new shell? Did you not read the
+doc file? Did you not see the loading  text  that reads "NEW SHELL PREVIEW"?
+Perhaps your monitor has been destroyed  after  hours  running the flickering
+Undercover shell and you could not see the changes.
+
+Maggie 24 has  been totally 100% recoded. Not  a single line of code from the
+original is in the new version. The old Maggie was entirely coded in assembly
+which meant it was difficult to maintain  and  track  down  the bugs. The new
+version is coded in C with assembly sub routines for sprites, scrolling etc.
+
+If you had studied Maggie 24 you may have noticed a few clues that things had
+changed somewhat...
+
+o New videl system (no longer is there a initial flickering screen on
+  TOS 4.01)
+o New Loading system ( more flexible for us but slightly increased loading
+  time)
+o New Loading Info Screen  (Featuring the text "NEW SHELL PREVIEW")
+o New effect for bring menu picture on
+o New effect for bringing icons on
+o New main menu mouse pointer
+o New scrolltext ( no longer has plasma background  )
+o New scrolltext effect  ( goes behind ferns on picture! )
+o New highlight method for icons
+o New way of bringing up menu tablets ( no longer rotating boxes )
+o New way of highlighting menu entries
+o New way of bringing on graphics in doc displayer screen
+o New keyboard shortcuts in doc displayer
+o New text displayer which now supports first word plus files
+  ( with BOLD, italic, light, underline or any combination of these )
+o New improved picture viewer code
+o New loading effect ( animated disk graphic )
+o New 100% working quit!
+o New much faster operation on VGA (now runs in a frame)
+
+Given your  undoubted journalistic  credentials, I am very surprised that all
+these things escaped your attention.
+
+"But the  Falcon-shell, hum. At the first view it's the same, but you have no
+ quit-button anymore."
+
+ ..err no. The first view is that it is *similar* but obviously different.
+And you can quit - just press F10!
+
+"But at the second  view the viewer is very shitty! The mouse is disabled now
+ and you have to smash some buttons to reach the included pictures or to come
+ back to  the menu. Perhaps there is a read-me  somewhere  in  the  mag but I
+ don't understand this move, sorry guys."
+
+*sigh* if you had bothered to read ANY of the documentation you would realise
+the reasons behind this. Maggie 24 featured the shell in an unfinished state.
+I didn't have time to code  the  mouse  pointer  in the text displayer before
+the release  date of the Atari show. As  all the documentation explained, the
+missing features would be ready in time for Maggie 25.
+
+The lack  of a mouse  isn't that  fatal, I'm sure  even  DiskMag  editors can
+remember two keys 'Space' for a picture and 'Escape' to  quit. Pretty obvious
+stuff really.
+
+Its ironic, but when I spoke to Mod at the Fried Bits he said there should be
+a keyboard  shortcut to  quit the doc  displayer in Maggie quickly because he
+disliked  moving the mouse all the way up the quit button. I pointed out that
+you could press the 'Undo' key which he didn't seem to know about. He said it
+should  be  something  more  obvious  like 'Backspace' (as  in Undercover) or
+'Escape'. So I follow this advice and again get complaints!
+
+As for your comments about the news pages being a big propaganda for
+Reservoir Gods.
+Well obviously! This  is "Reservoir Gods Maggie" and  we are going to include
+all the news about our productions! We could say: "We are working on loads of
+exciting projects for the Falcon, but we won't mention them. Here's some real
+scene  news about a french/german/dutch crew who have been working on a game/
+demo/utitlity for the last two years and still haven't finished!"
+
+We release  lots of  stuff. We are  the  most  productive  crew on the Falcon
+scene. This is  not to be boastful or  arrogant, it  is simply a fact. I know
+that we are not the most talented crew on the scene,  I  would never consider
+myself  to be a coder  on a par with the great demo crews  of  the world. But
+unlike a  lot of our contemporaries we are very active and do actually finish
+projects.
+
+If you look at our productions between Maggie 24 and Maggie 25 you will see
+
+o Megaman
+o Just Not Cricket!
+o Kirby's Dreamland
+o HTML converter
+o Jazz Club Ascii Intro
+o Decibel
+o Snowtro Xmas 97 Demo
+o Static
+o Fractal Playground
+o Two 128 byte intros
+o Second Installment of New maggie shell
+
+During this  time we also  worked on  the Reservoir Gods  CD, "HEAVEN" or new
+falcon GUI, "GODSCAPE" our web-browser (and my final year project  at uni!) a
+NES emulator with Ed Cleveland and a 6502  debugger.  Oh  and  a new web page
+and the HTML conversion of maggie.
+
+We are doing our best to  support  the  Falcon scene. You criticise the scene
+for dying and not producing anything, it is ironic that you also criticise us
+for being so prolific.
+
+"But back  to my final  words... the only minus point this time is the Falcon
+ shell. But the ST shell runs also on  the  F030 and so you can just read the
+ ST version instead  of the buggy one if  you're suffering too much under the
+ other one."
+
+Lets get this straight now - Tat has done a fantastic job upgrading the Delta
+Force shell, but no Falcon owner wants to run this when they can have a shell
+with true  colour graphics, 32 channel  music  and full colour screenshots of
+all the games and demos.
+
+I really  had to laugh  when you called  the Maggie shell buggy. Sure the M24
+shell is incomplete, and yes it still lacks some crucial features. But buggy?
+One of the main reasons I recoded the shell  was  to  eradicate all bugs from
+shell and the new shell is the most stable yet. I  have  yet to find any bugs
+with M24 and  it has never  crashed on  me. The  picture  is stable, all  the
+articles load fine.
+If you  can find  any bugs  in the Maggie 24 shell then please let me know! I
+really do want Maggie to be totally bug free.
+
+
+When I get an issue of UnderCover I have to grit my teeth as the thing is so,
+i'll choose  my words  carefully here, "buggy". The whole screen jumps up and
+down all the  time. Articles  that are  listed  in  the  menu don't load. Not
+only does quit not work properly but it  bombs  out  the machine. The palette
+splits cause horrible flickering colours on  my  monitor  which  added to the
+jumping screen leads to headache city.
+
+I could go on but I am sure you are perfectly aware of the bugs with the
+Undercover shell, and these are geniune bona-fide bugs, not just missing
+features. And not only that, they are bugs that have been there for years!
+
+Don't get me wrong, I really enjoy Undercover magazine, especially your scene
+news which is second to none. I just wish you had a decent shell that
+actually worked. It doesn't need to  be  flashy  -  just display text without
+causing my monitor to have a fit. Maggie readers  are  lucky - if they really
+are having problems with the Falcon shell they can run the ST one. Undercover
+readers don't have the same privelege.
+
+I know Drizzt is a very good coder, its a shame he doesn't have the
+motivation to fix your shell. I hear that Pieter Van Der Meer may create a
+new shell for you - if this is true this is great  news  as he is a bright up
+and coming coder and I'm sure he'll do a great job.
+
+
+The main reason why I wrote this letter was to try and rectify the succession
+of inaccurate stories about Maggie that started in the last issue.
+
+"Reservoir Gods to code brainblasting intro for Maggie 23 for both Falcon and
+ ST versions!"
+
+Its very  flattering  of you to suggest that I could actually code a
+'brainblasting' intro ( I think 'mindnumbing' would  be a better phrase ) but
+we never had any plans to code a intro for  this issue, and even if we did it
+would be a Falcon intro only - how many RG ST productions are there?
+The strange thing about this story is that  you already had M23 and it
+obviously didn't have an RG intro on it, but you still left this strange news
+item in.
+
+But is gets more eccentric..
+
+"New Beat have put Willies on hold as they are coding the new shell for
+ Maggie."
+
+At this point I began to wonder if I was reading the electronic equivalent of
+the Sunday Sport. New  Beat are  not  coding  the new maggie shell! They have
+never been  asked to code a maggie shell, and if  they have put their Willies
+on ice it is nothing to do with us! This story  is  a total fabrication!
+New Beat did code the excellent Falcon intro for Maggie 24 which you could
+have made the effort to review properly.
+
+This is another thing that baffles me slightly about Undercover - you
+complain about the lack of activity on the scene, but when you receive
+productions you don't seem to bother to review  them properly. You don't read
+the  documentation and hence  make mistakes in  your criticisms and also your
+reviews are very short. Surely  the lack of  software means that  you  should
+have ample time to thorougly test each production.
+
+This is  more of  a personal  point, but  please could  you be  a little less
+negative about the atari scene? We  all know that the scene in 1998 is not as
+strong as  it used to be  and we don't need constant reminding and moaning in
+every article. It becomes depressing to read a lot  of  Undercover because of
+all the complaining.
+When I  read a DiskMag  I want  to leave  it  with a  smile on my face, not a
+desire to commit suicide! This doesn't mean that you should pretend the Atari
+scene is as vibrant as ever, but  you  can concentrate more  on the remaining
+crews and productions and try to be a bit more  positive about  them. Try and
+add some more humour! Some more cheerful  colours!  More graphics! I am a big
+fan of MODs graphics so I hope to see more of them  on the new shell, also it
+would be cool if you had a screenshots facility like Maggie.
+
+OK, I'll stop rambling on here as its getting very late  ( I wonder, do all
+coders live only in the nightime hours?)  I  hope I haven't come across as
+being too negative. I do enjoy Undercover, it really is an essential read.
+Yours scene new section is fantastic - I  admit, this section does beat
+Maggie! ( for the moment at least....). I really enjoy the scene charts, this
+is obviously a very popular section and hopes to motivate crews to do better.
+
+I also really like your interviews, these are very well done with interesting
+and though provoking questions.
+
+Its great  to have  some real  competition  at last. I  can wait for the Earx
+shell, its sure to be great!
+
+All the best with the next issue!
+
+And may you have a bug-free 1998!
+
+    Mr Pink / Reservoir Gods
+
+editors note: Ok, after this new big  propaganda strike for the MAGGIE I will
+              loose again some little  words. I don't  want to justify myself
+              for every word I wrote but let me explain some little things.
+              I haven't checked that the  shell was only a  beta version! Ok,
+              perhaps I have missed the little box you're  talking about, but
+              why you have released a beta version when the  former shell had
+              done the job at least as good as the new one?
+              You have listed a load of features and I must admit that I dont
+              have noticed them all. But why? Who the hell is interested in a
+              new mouse pointer? I don't have any  interested in  new effects
+              for bringing  icons and  grafix  to the  screen! Do  you really
+              thinking I'm sitting in front of my monitor to  check out every
+              little pixel and  how it  appears on  the screen?! Sorry, but I
+              only wanted to  read a little  bit in the  mag and was a little
+              bit  frustrated as  nothing runs  in the same  way as in former
+              issues, or before you're  running  around to kick  me again, it
+              seems as  nothing was  running  in the  same  way as  in former
+              issues. For me  it was somekind of logistic bug too, to release
+              the mag in this way. Why a  logistic bug? You  had a shell with
+              only a few and really  unimportant  errors, which  had done the
+              job for  Maggie 24  as well. You  could  have  finished the new
+              shell without  any stress  by releasing  the old one again. You
+              had this chance. We not, we must release the UCM  with old and
+              of course buggy shell because  no one  was coding  on the shell
+              anymore  and so  it's also  some kind of  senseless  to tell me
+              again and again how buggy our shell is! It goes  onto my nerves
+              because I'm  really aware of  the errors of our (old) shell but
+              what should I  do? Jumping in front  of the next train? Jumping
+              from a bridge? Try  to jump  around on my  own head? Or  try to
+              entertain  the scene  with our  very  hard  limits  as  good as
+              possible?! We  had chosen  the last  point, cause not the shell
+              makes a mag, the contents doing this. Ok, we had some errors in
+              our news part  last time, but there were 40 KB of news from all
+              over the world and please tell me how we should check out all?!
+              It's impossible. About the  thing with  the propaganda  I wrote
+              you already back via Email and I hope you understand my view on
+              this point. Btw, it's very strange for me that ALL of you don't
+              have checked this little bug! Maggie isn't the earnest magazine
+              on earth and you  all writing  articles (or just feedback) with
+              many different hided jokes and sarcastic or ironic meanings but
+              finally you all failed in this little joke! Very strange... but
+              it seems as it's your weak point (huuu... something about a bit
+              psychology: if a joke damages  your self-confidence, you  can't
+              laugh about it. If  someone has a strong self-confidence he had
+              laughed about it. So what?! Don't want to write more about this
+              point...). You can make jokes about others en masse but if some
+              people attacking you in any point, you're going mad like hell.
+              I don't understand this.
+              And I  don't want  to write  more. I'm tired  of all these dull
+              stuff.
+              Hum, but  some words  to our  pessimistic views. I  don't think
+              that it's good to use pink glasses all the  time. We're writing
+              this stuff  because we must  inform about  these things. As you
+              know still today several people haven't matched  it to see that
+              the scene isn't  the same  anymore as  5 years ago. And I can't
+              run around  with a grin  in my face when  I hear or read that a
+              group will stop  doing anything for  Atari. And  we report also
+              any good news and don't  hide them! Do  you think  it's good to
+              swap  only propaganda  stuff and  irritate  all the  people out
+              there? It remembers a bit to the Third Reich. All spreaded only
+              enthusiastic news and finally all were surprised by the fall of
+              the Reich. Do  you think people  going mad if they see that all
+              are stopping? I think  if you  have left  some interest for the
+              scene  you will work much more if you read that all things slow
+              down, because  you will  try to  save the  scene! But if you're
+              reading that  all things going  fine you  will also  think that
+              there are enough people around doing  something and there is no
+              real need  to make  something by  yourself. The  meaning of our
+              messages is: Go on! Don't leave your friends alone! If you want
+              to belong to this scene, do something or go to hell!
+              Hum. I will stop here, because I have to do still other things,
+              but if you want to talk  more about  all these  points you can
+              write to me (email)...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+editors note: Last  but not  least I got  a long mail from Ripley / Reservoir
+              Gods and I don't have problems to spare this with you...
+
+Dear Moondog,
+
+I recently read the review of Maggie 24 in UCM 10 and, as usual, was dismayed
+by the amount of inaccuracy the review contained.
+
+Falcon  Maggie 24  is a PREVIEW  of the  new Maggie  Shell. If  you  load the
+diskzine you will see  a credit box  displaying the words Maggie Falcon-shell
+Preview.
+Furthermore if you actually read any of the articles about the shell you will
+also find reiterated, that is it only a PREVIEW of the new shell.
+Hmm.. do  you know what the word preview  means? it means  the first stage in
+development, something that is, as yet, incomplete - an  early  glimpse of an
+unfinished product.
+We have  heard rumours that  your Falcon  is broken, so  perhaps this is the
+reason why you are unable to grasp this rather basic concept, not being able
+to load Falcon Maggie 24 (with New Shell Preview) at all.  If this is true I
+would point out that attempting a review of something that you have not seen
+is not only unethical, unfair and unprofessional but is also apathetic and
+the sort of attitude which will lead to the demise of the Falcon scene.
+May I also quote  some of  the points your 'review' made (in your own highly
+eloquent words):
+"the viewer is very shitty"
+"Buggy"
+"if you're suffering too much under the Falcon one"
+The Falcon viewer  on Maggie 24 features the fastest, smoothest viewer which
+Maggie has ever had in its long history.  It was entirely coded from scratch
+by Mr Pink and  to call it "shitty" is inexplicable, bizarre and lazy.
+We have no objection to constructive  criticism, but just to say "the viewer
+is very shitty" is, well, very shitty journalism by anyone's standards.
+As to  the "buggy" nature of the shell, which seems to afflict you in a very
+physical way, to  the extent where it is obviusly torturous to use, causing
+you great suffering and distress, we are completely mystified.
+All programs have some bugs, but the Maggie 24 Falcon Shell PREVIEW has
+nothing to deserve comments about such huge amounts "suffering".
+Furthermore you do not specify what these 'huge bugs' are. We are very
+interested.  Please tell us about these horrendous bugs  which cause you such
+distress and pain.  We're waiting with baited-breath to hear.
+I myself  have never  found a single bug, even a small one, in the Maggie 24
+Falcon-Shell Preview  and certainly  have never come across anything that
+would cause me to  be either rolling around on the floor in agony or to have
+to avert my eyes in pain.  However I am afraid that I have to say that the
+latter, that is having to avert my eyes, DOES apply to your own incredibly
+"buggy" viewer. When I  run Undercover Mag  on my  VGA monitor  it flickers
+uncontrollably and almost constantly, causing reading to be a difficult and
+unpleasant experience. The Mag also crashes very frequently, has a large
+amount of graphical corruption and also  does not quit cleanly - I would like
+to point out that you complained about  the lack of a quit icon in the Maggie
+24 Falcon-Shell PREVIEW [hmm.. what  about talking  about the  content of the
+articles? the style? the design?] yet when I  used the quit  option in
+Undercover Mag 10 and then loaded Undercover Mag 9, the  magazine crashed.
+I expect my poor Falcon couldn't cope with such  an overload of "buggy" code
+on its abused chips.  The outcome of it was that I had  to return to the
+safety of the reset button, as I might as well have done in the first place
+to save wasting time with a deceptive quit option.
+I could go on to mention things like how you complain about the news section
+when your own news section is constantly filled with a series of inaccuracies
+[New Beat are  going to be coding the new maggie Falcon shell and are putting
+Willy's on hold because of it? really? I never heard that one despite being a
+member of the  Maggie Team..], how  you complain about  Maggie  being  merely
+"propaganda for the Reservoir Gods" (hmm.. well we  are actually a productive
+crew and like people to know about  what we  have done so  they can enjoy our
+products - No! you're right! we'll shut ourselves in a little box and never
+say a word again.) and the general quality of your reviews which could be
+summed up as 'half-hearted' at best.
+But I won't, because  I'm sure, as any good journalist is, you're well aware
+of your own limitations.
+
+Ripley / RG
+
+editors note: Hum... because I already wrote a  mail back  to Ripley for this
+              (erm, and I wrote it in german because I like it to beat others
+              with their own weapons.. what she can do in english I can write
+              in german for decades, but with the difference that I  can read
+              their letter but she will don't understand only one single line
+              of my one.. hehehe) I will not go deeper into this little piece
+              of junk. Even if several people said that I don't  have to take
+              this mail too seriously I  will let not  stand all  their words
+              without leaving the one or other remark...
+              1st. It's unethical  and unprofessional for me to claim because
+                   of rumours  that I  have  never seen  the Falcon  shell. I
+                   tested the mag  on Falcon/32Mhz/12 MB/VGA. If  you want  I
+                   can give you the add of this guy! And  there I was  pissed
+                   of of the strange control this time. But ok, it's my fault
+                   that I don't have red the instructions before...
+              2nd. You seem to be one of this people who're  contacting other
+                   only if they have written some not so pleasing stuff about
+                   productions you've taken part in (more or  less). And with
+                   this you qualify yourself as gravedigger.
+              3rd. Sure, you  can  check  all  your  entries  into  your news
+                   section, because  except  50 percent  own  stuff there was
+                   not much  you had to  check. We  have  hundreds of entries
+                   from  many people who got the one or  other thing  also by
+                   other ones and so it isn't possible to check all stuff!
+              4th. You seem to  be one of  the most earnest people ever.. and
+                   for tose very  slow ones  I must include  many smileys now
+                   in all articles because also you should understand them...
+                   it was meant ironical with  the propaganda but it seems as
+                   you don't understand even the meaning of "irony"...
+              5th. I'm very surprised that also YOU have checked out that the
+                   UCM shell  is fullfilled  with bugs! Even  if  we wrote it
+                   every time in the editorial and on other points in the mag
+                   you needed really  long to  find out that our mag  and not
+                   your machine is buggy... Wow! My congratulations...
+              But to come to an end, because I have other things  to do as to
+              justify myself for my words (and I don't  want to take only one
+              word back.. I don't regret anything, because I don't like it to
+              spread honey around your mouth, I write what I mean and nothing
+              other...
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

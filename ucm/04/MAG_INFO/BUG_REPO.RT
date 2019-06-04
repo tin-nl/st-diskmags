@@ -1,0 +1,29 @@
+ 
+                                  BUG-REPORT
+                                  ----------
+
+Im UNDERCOVER 3 funktioniert die Hardcopyausgabe (Alt-Help) nicht  korrekt  auf
+folgendem System: 1040 FM, 1MB, TOS 1.02 mit parallelem Epson FX-80 (Matrix, 9-
+Pin). Die Bedienerleiste im Textviewer wird zuerst  ausgedruckt, dann folgt nur
+noch GrafikmÅll. Die Printer-Rout im UCM 2 funktioniert auf diesem System dage-
+gen einwandfrei (sogar megaschnell!).
+
+-------------------------------------------------------------------------------
+                                                                          VISOR
+-------------------------------------------------------------------------------
+ 
+(Redax: Ehem... Nunja. Das ist kein  Bug ansich... Das File ist nur mit Ice ge-
+        packt und lÑût  sich daher nicht  mit Hardcopy (wer macht denn sowas?!)
+        ausdrucken... Die Printoption haben wir rausgehauen,da insbesondere die
+        etwas Ñlteren Drucker-Modelle, die wohl noch  in jedem Haushalt stehen,
+        derart viel  LÑrm machen, daû kein angenehmes  Lesen des Mag's mehr ge-
+        wÑhrleistet ist und das  Interesse am Mag selbst  gemindert wird... Wir
+        haben das Vote-File diesmal ungepackt mit  auf dieser Disk. Schaut ein-
+        fach mal auf'm Desk nach... )
+
+(Drizzt: Ehem... Nunja. Jetzt muû ich mich auch mal einmischen.  Was Moondog da 
+         schreibt stimmt auch nicht so ganz! Ich sehe das richtig, daû Du einen 
+         Text geladen hast und  ALT-HELP gedrÅckt hast???  Das kann  gar  nicht 
+         funktionieren,  weil ich die Druck-Addy  verÑndere. Wenn Du Texte aus-
+         drucken willst, dann entpacke die mit ICE 2.4 (auf der Stuff-Disk) und
+         drucke vom Desktop...)

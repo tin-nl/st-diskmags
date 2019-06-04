@@ -1,0 +1,196 @@
+0660103030571
+9[........................................................]
+€
+…ATOricv0.4
+
+„Anemulatorwithadifference!
+
+€We'reallfamiliarwithsomeofthegreatcomputersofthefirsteight
+bitboom,backintheearlytomid'eighties..Whocanforgetthe
+immortalSinclair,thetremendousCommodore64,thebrilliant'Beeb,
+andtheOric,erm....
+
+WelltheOricwasoneofthoseearlypioneer8-bithomemachines
+designedtocashinontheeasypopularityoftheearly
+Sinclair/Commodoremachines,andtheclosestmachineitmighthave
+resembledwasthegoodoldrubber-keyed48kSinclairSpectrum,butwith
+acalculatorstylekeyboard,andbettersound,butmoreofthat
+shortly..
+
+TheparentcompanyofOricwereafirmcalledTangerineComputers,who
+soldamoderatelysuccessfulkitbuildmachineintheveryearlydays,
+whichsolder-stainedhardwarefreaksgleefullyslungtogether
+themselves,nonambypambywarrantiesanddealersupportforthem!
+(Tangerine-Apple-Apricot-geddit?)
+
+Oncetheoriginalsmallscale'hobbyist'marketevolvedintoa
+burgeoning'home'market,Tangerinedecidedtodosomethingmore
+'accessible'fortheaveragepunter,andtheOricwastheresult..
+
+'Accessible'mayhavebeentheintention,butsomehorriblefaults,
+suchasseveralnastyROMbugs,andaresetbuttonthatwasunderneath
+themachine,forgrudssake,meantthatOricwasdoomedtobeanalso-
+ran,reasonablysuccessful,butnotthestuffoflegendinthesameway
+astheCommodore64..Abetterversionwithajazzed-upcase,and
+properkeys(anddebuggedROM!)calledtheAtmoscamealong,butitwas
+almosttoolate,afurtherandmoredevelopedoffshootcalledthe
+Stratoswasrumoured,butneversawreleaseintheUK,allactive
+developmentgoingtoFrance,thecountrywherethemachineseemedtodo
+best..Itdroppedoutofgeneralviewthereafter..
+
+Tolookat,thebasicOriclookedlikealightcolouredversionofthe
+SinclairSpectrum.Thephysicaldimensionswereverysimilar,theOric
+beingabitslimmerthantheSpeccyasIseemtoremember..The
+keyboardwasanimprovementovertheSpeccy,notbeingrubber-keyed,
+andwithapropersinglekeyinput,ratherthanthemassively
+cumbersome'keyword'systemthatSinclairused..Itwasbasedaroundan
+8-bit6502CPU,ratherthanthecommonZ80,thegraphicswere,from
+memory,abitbetterthantheSpeccy,andthesoundhadaYamaha
+soundchiptoexpressitself,practicallyidenticaltotheoneinthe
+ST!(WhichsaysmoreaboutAtarihardwaredesignthantheOric!)
+
+Inanutshellthen:-
+
+The ORIC-1/ATMOS computers had the following hardware features:
+- CPU:   1.0 MHz 6502
+- RAM:   64 kByte, 48kByte usable without external hardware
+- ROM:   16 kByte
+- Video: 240*224 pixels at 8 colors+flash attribute
+         (40 chars at 28 lines or 240*200 pixel + 3 text lines)
+- AY-8912-3 or similar soundchip: 3 voices+noise
+- built-in loudspeaker
+- Parallel printer port (Centronics compatible)
+- expansion port for disc drives etc.
+- cassette recorder interface at 2400 baud
+- TV modulator
+
+Now,akindindividualbythenameofChristianPeppermuellerhas
+decidedtoreproducethismarvelofearlypioneerhomecomputeronthe
+Atari..Workisinprogress,andthecurrentversionunder
+considerationisversion0.4..
+
+Thisisverymuchontheroadtocompletion,asseveralthingshave
+beendone,butalotofworkisstillneeded..Thebasicsareall
+there,youevenhaveachoiceoforiginalROM,orAtmosROM
+(Recommendedforsanity'ssake!)ThefullBASICandstarklooking
+commandlineinterfacearepresent,andthisversionoftheemulator
+supportstapeimages,loadedasifconnectedtoataperecorderwith
+thetyped'CLOAD'command,butathard/floppydiskspeediftheimages
+areinthesamedirectoryastheemulator..Theseimagescanbefound
+ontheOricWebring,andseemtobefreelyavailable.Therewasalsoan
+Oricdiskdriveproduced,butthereisnosupportasyetfordisk
+imageshere..
+
+Somegraphicsmodesaresupported,buttheremaybemoreworktostill
+dothere..ThescreenisdisplayedinoverscanmodeontheFalconwith
+the224verticalpixelmode..Soundisverywellsupported,asthereis
+aphysicalpresenceofthesoundhardwareandnottoomuchtodothere!
+Onememorablefeature,possiblytheonlyoneofOricBASICwerethe
+directlykeyed-insoundgenerationcommands'Zap','Ping',and
+'Explode',andtheseallworkedperfectlyhere!
+
+Connectiontoexternalperipheralsisabitofano-noatthemoment,
+andtheotherfeatureofthisearlyversionisadistinctlackof
+speed..Therearetwoversionsoftheemulator,a68000onlyversion,
+anda'68020andabove'version,ratherlikeChristianGandlersfamous
+ZXSpectrumemulator..OntheST,duetothe'slow'6502emulation,
+thereisonly12%oftheoriginalsspeed!TheFalconclocksinata
+morehopeful40%oforiginalspeed,whichtranslatestoc.60%witha
+lightacceleratorlikeNemesisorCenturbo1..Thescreenupdatingcan
+betweaked,butisstillveryslow,theauthorreckoningthataTTis
+theminimumplatformtogetfullspeedonthiscurrentemulation..
+Certainlyaquickerversionlateronshouldbeapossibility,maybe
+closetofullspeedonastandardFalcon,anduseableonanST?
+
+Thekeyboardisnotfullyemulated,noSHIFTorCONTROLorsimilar,it
+issuggestedthatthereisjoysticksupport,butthegamesItriedout
+couldnotfindit..
+
+Theemulatorcomeswithinstructionsina.DOCfile,thereisalittle
+onlinehelp,butnottothesameextentasthesophisticatedset-up
+optionsandbreak-insthatyoumightgetwithotheremulators..Thisis
+somethingthatwilldoubtlessreceivefurtherdevelopmentinlater
+versions..
+
+Well,whatcanrunonit?Firstly,Itriedtheoldrouteoffumbling
+aroundwithhalf-rememberedBASICcommandsrememberedfromother
+computers,gettingthehangofthecommandlinetextentry,andhada
+hellishlyenjoyableeveningknockingupahandfulofpointlesslysilly
+littleprogramsofnomeritwhatsover..Thiswaswhattheearlydaysof
+homecomputingwereallabout!Nopressure,nohype,nobullshit..
+
+Thereseemedtobelittletype-inmaterialsurvivinginmyhistoricold
+computermagazinearchive,andwhatOricBASIClistingstherewere
+didn'tgivemuchaway,beingheavilydependentoncrypticPOKE
+statementsandoddlumpsofmachinecodefittedinaswell..Still,I
+persevered,andstretchingtheZAP/PING/Explodecommandstothelimit,
+managedapassableimitationofoneofTheSeniorDadsearlydemos,
+althoughtheSeniorDadswerestillbetter,andfunny..
+
+Idecidedtobrowsethewebforsomethingmoresubstantial,andpausing
+onlytoswoonwithimpressivenessatthesizeoftheOricarchives,I
+grabbedarandomselectionofacoupleofgamesandademo..
+
+(SoftwareontheOric,thatwassomethingnewtome,whenthemachines
+weresetupontheshopcountersthefirsttimearound,allIeversaw
+wereblankscreenswithnothingrunningonthem,abitlikehowsome
+computershopstriedtosellST'slateron!)
+
+TheyallranalotbetterundertheAtmosROM,ahard-learnedlesson
+there..Thegameswereanadventure,sortofverypre-DungeonMaster
+style,whichseemedtorun,butveryslowly,andabreakouttypegame
+withFrenchinstructions,whichseemedtorunquitewell,butlacked
+anycontroloverthemovementsofthebatatthebottomofthescreen..
+Probablyneedsfullkeyboardemulationthere..Thedemowasquite
+short,butranperfectly,slowscreenupdatingaside,weweretreated
+toalargeandchunkyspritebiggerthanthescreen,alarge'old
+school'scrollerandsoundindicatorbars,andperfectsoundchipmusic
+from'Thrust',whichseemedtofeatureinamillionandoneSwedishST
+demos,c.1988!
+
+Certainly,fromwhatwasthere,itseemsthattheemulatorwastrying
+hardtoco-operate,andwithsomemorework,shouldbeabletorunthe
+majorityofOricsoftware,andwithabitmorespeed,willgraduate
+frombeingjusta'toy'emulator..Thefilesizesarepleasantly
+historicinsizeaswell,amajorbonusforphone-billconscious
+netheads..
+
+Atthetimeofwriting,Oricseemstohavedevelopedanactiveinternet
+emulationpresence,andevenhasitsownwebring..Accordingtosome
+newspages,thereisevenstillnownewsoftwareunderdevelopment,and
+seemstohavesurviveditstransformationintocultstatuspretty
+well..Worthcheckingoutforgeneralinterest..
+
+http://www.ensica.fr/oric/oric_english.html
+http://www.ensica.fr/~frances/        
+
+# ORIC pages and EUPHORIC(PCemulatorforOric)
+
+
+Advantages:
+
+UniqueonAtari,nootherOricemulationeverseenbefore!
+Compactsize..
+Easytosetup..
+Supportsstandardtapeimagesdownloadablefromtheinternet..
+Mostlycompatible,probablyverycompatiblelateron..
+Perfectsoundemulation!
+'Reset'inasensibleplacecomparedwiththeoriginal!
+It'sfun!
+
+Disadvantages:
+
+VeryslowonST,slowonstandardFalcon..
+Slowandjerkyscreenupdating..
+I'mnotsureifthepaletteiscorrecteither?
+Nofullkeyboardemulationyet..
+Probablyalotoflow-levelstuffingeneralnotimplementedyet..
+Nodiskimagesupport..
+Stillveryroughandreadyincurrentform,notasdeveloped(yet)as
+otherAtariemulators..
+
+Inconclusion,aniceeffort,whichwillmatureintosomethinggood,in
+duecourse..Worthgettinginthemeantimeforcuriousityvalue..
+
+CiH-Feb'98
+

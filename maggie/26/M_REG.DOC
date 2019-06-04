@@ -1,0 +1,215 @@
+0660302020370
+1
+2
+9[............................................................]001
+
+                                        ÑMaggie 26: Falcon ProgrammingÄ
+
+Å                           DSP M-Registers
+                                   Ä
+This article is in response to No of Escape who wanted some info about 
+how the M-registers worked on the DSP, particularly when using ring-
+buffers (that is, a buffer that automatically loops around when you 
+reach the end).
+
+Once you get the idea, using the registers is pretty easy, so I'll 
+launch straight in. Then I'll introduce some code to demonstrate the 
+idea.
+
+                         M-Registers: Basics
+
+According to Motorola, "M-Register" stands for "modifier register". An 
+m-register's job is to take an effective address that is used, then 
+"modify" it to produce automatically a different effective result that 
+is actually used.
+
+There are 8 registers, named m0 to m7. Each one is coupled with the 
+respective r-register, so m0 refers to r0 and so on. This is the same 
+as the offset 'n'-registers. Each m-register is a 16-bit value.
+
+There are 6 modes of addressing that an address register can use, 
+which are affected by the m-register. Here they are:-
+
+Type                      syntax   address fetched     new value of r0
+                                   if using move       after pipelining
+
+Postincrement by 1        (r0)+    r0                  r0 + 1
+Postdecrement by 1        (r0)-    r0                  r0 - 1
+Postincrement by offset   (r0)+n0  r0                  r0 + n0
+Postdecrement by offset   (r0)-n0  r0                  r0 - n0
+Indexed by offset         (r0+n0)  r0 + n0             r0
+Predecrement by 1         -(r0)    r0 - 1              r0 - 1
+
+There are two sets of effective addresses calculated by the instruction. 
+The third column indicates the effective address where data is fetched 
+from; the fourth column indicates the value of r0 after the instruction is 
+executed and the pipelining has taken effect.
+
+The m-registers affect ÑbothÄ these two sets of values if the register is 
+set to the correct value.
+
+
+                      M-Registers: Linear Operation
+
+Normally an m-register has the value of -1, or $FFFF. This means that it 
+leaves all effective addresses unchanged. This is called the "linear 
+modifier" by Motorola.
+
+                      M-Registers: Modulo Operation
+
+This is the mode used for ring buffers. Here the m-register has a value 
+between 1 and 32767. This causes all effective addresses to be calculated 
+to exist between a lower and upper bound address.
+
+Calculating the bound addresses
+
+Let us assume that we want a ring buffer of size M, where M =  21.
+
+Value in m-register = (M - 1) = 21 - 1 = 20
+
+ÅLower BoundaryÄ
+
+(This is the inter
+The lower boundary âmustÄ have a base address of L, where the lower k bits 
+of L are all zero.
+
+'k' is calculated by finding the lowest value where 2^k >= M.
+
+Another way of thinking of this is to consider the lowest value in the 
+sequence 2,4,8,16,32,64,128,256...32768 which is greater than M.
+
+So for our example 32 is the first value greater than 21. This means that 
+the lower boundary of our range must be a multiple of 32, for example 
+0,32,64,96,128 etc.
+
+ÅUpper Boundary
+Ä
+The upper boundary is now (L + M - 1), since the base address is L and the 
+size must be M.
+
+ÅSetting the boundaries
+Ä
+Once we have set the size of the ring buffer, the value of the lower 
+boundary is set by the address "r"-register.
+
+Let's say that we want our ring buffer to start at address 96.
+
+        move #20,m0             ;ring buffer size 21
+        move #96,r0             ;start of buffer is now 96
+
+However (and this is important) our buffer still starts at 96 if we 
+use the following:
+
+        move #20,m0             ;ring buffer size 21
+        move #100,r0            ;start of buffer is now 96
+
+For example, the in-built sine table has 256 entries and exists at 
+address Y:$100:
+
+        move #$ff,m0
+        move #$100,r0
+
+In addition, the equivalent cosine table starts at $140, runs to $1ff 
+and then "wraps round" back to $100 to end at $13f. We can handle the 
+wrapping part automatically using:-
+
+        move #$ff,m1
+        move #$140,r1
+
+
+                    Effective address calculation
+
+Let us assume that an effective address of "ea" is calculated. Using 
+modulo-modification, the new address will be:
+
+        Lower Boundary + ((ea - Lower Boundary) MOD buffersize)
+
+where "buffersize" is the value in the m-regiser plus 1.
+This works even when the "ea" is a value *lower* than the Lower 
+Boundary. The value wraps round to the top of the buffer.
+
+
+MEMORY MAP:
+
+effective address:            <---x---->
+        LB                    UB      EA
+         |--------------------|--------V------------...
+
+resultant address:
+         <---x---->
+        LB       EA2          UB
+         |--------V-----------|---------------------...
+
+
+
+IMPORTANT NOTE:
+If an n-register is used to create an effective address, if Nn>M then 
+the results are unpredictable and unreliable!
+
+The exception to this is where Nn is a multiple of 2^k that was 
+mentioned before. eg. our buffer size is 21, and n0 = 32.
+
+When using the (r0)+n0 addressing mode, this increases the value of r0 
+by n0, or the opposite for (r0)-n0.
+This is useful when making the address "jump" to another block of ring 
+buffers somewhere else!
+
+
+                        Reverse-Carry Modifier
+
+This is in operation when Mn = 0. This is a complex operation used in 
+things such as FFT generation.
+
+Reverse carry means that the "carry" value used in addition is 
+propagated (ie. passed on) from the Most Significant Bit (MSB) down to 
+the Least Significant Bit (LSB).
+
+Imagine a normal binary addition, let's say %1111+%0001. We start by adding 
+the two LSB's: 1 and 1. This gives us 2, or %10. We write "0" in our 
+answer column and keep 1 as the "carry". Now we add the next two LSBs, 
+plus our carry, and so on. The carry "propagates" upwards.
+
+In "reverse carry" the opposite happens. Assume that we add r0 and n0 
+using reverse carry. We can make it easy by reversing all the bits of 
+both r0 and n0, adding, then reversing all the bits again. Not very 
+useful?
+
+Now, here's the interesting bit. If Nn = 2^k where k is any number, 
+then the reverse carry addition is equivalent to reversing the last k 
+bits of r0, incrementing (adding 1) and then re-reversing the last k 
+bits of r0 again. Apparently this is *very* useful when doing things 
+like "twiddle factors" with FFTs.
+
+Interestingly(?), if we consider a setting where Nn = 1024, using 
+reverse carry repeatedly with the following code:
+
+        move    #output_buffer,r1
+        move    #0,r0
+        move    #0,m0           ; select reverse-carry
+        move    #512,n0         ; our reverse carry "increment"
+        do      #100,rc_loop
+         move   r0,x:(r1)+
+         lua    (r0)+n0,r0
+         nop                    ; wait for pipeline
+rc_loop:
+
+... produces the following sequence:
+
+0, 512, 256, 768, 128, 640 ... or in binary:
+
+        000000000
+        100000000
+        010000000
+        110000000
+        001000000
+        101000000
+        011000000
+
+This may look strange, but when an FFT is produced the data is 
+"scrambled". In the produced table, value 0 is at 0, value 1 is at 
+512, value 2 at 256, and so on...
+
+
+
+Steven Tattersall
+

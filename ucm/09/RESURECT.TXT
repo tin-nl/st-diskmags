@@ -1,0 +1,134 @@
+-------------------------------------------------------------------------------
+                           The ST Knights present:
+
+              *****  Resurrection Demo - technical file *****
+
+
+First  of all, if  you want to  make something for  our demo, it will be only a
+effect, a part. For  example  a big sprite  routine! (herr... try  to be  a bit 
+productive! =)
+
+No crew or coder name should be displayed in the part except if you have made a
+new scroll text rout with big mapping and you have to speak about it... 
+All will be displayed in the main credits part!
+
+You have  also to tell  us what you want  to do. We don't want 2 people to code
+the same thing!
+
+* Machine:
+----------
+
+You can make  something only for ST or STe. Falcon  has no place here!!! But if
+it runs on Falcon, I will not kick you...
+
+* Memory:
+---------
+
+The demo will runs on a drive and also on a hard disk. On dis last support, the
+memory  available will be  a bit smaller... So I think that all demo has to use
+about 750 Kb  max of memory, video  screens included! My  loader and  the music
+will not take more than 50 kb!
+
+* Registers availables:
+-----------------------
+
+All the  registers  will be  free! I  think we  won't use  a soundtrack  module
+because of the time process required!
+
+* Keyboard:
+-----------
+
+No test  of the keyboard: your  part has to  finish itself... and then left the
+hand to the demo-OS.
+
+* Interruptions availables:
+---------------------------
+
+You can use only timer B! What?!? No vbl? Don't worry: the vbl interrupt can be
+used only  for initialization  and doing  little stuff... but with the $4ce vbl
+list! Yes has  on the Gem, my demo-OS  will run  your stuff using this way. Big
+graphics  routine will be used in the main syncro routine. Don't try to use the
+other interrupts, they will be activated by the music of Tao and my demo-OS.
+
+Please insert  BIG COMMENT for the  initialisation of interrupt  in your source
+code.
+
+* Tos & Gem variables:
+----------------------
+
+Out! No traps or $3xx to $4xx system variables in use...
+
+* Vbl syncro:
+-------------
+
+Use a vbl syncro test using the $4ce.w routine. I think nobody will use special
+technique  or $4xx vbl  couter or  whatever.... Don't  laught! I've  saw lot of
+things since 1990...
+
+* Source code:
+--------------
+
+Your demo  has to be  sent in  SOURCE CODE! Yes! I don't  want to spent my time
+disassembling  it if any  problem has  occured! Don't  worry, we  won't  spread 
+it! ;-)
+
+* Graphics:
+-----------
+
+Your effect  can include  some gfx, but  no logo  of your  crew or  you will be
+mentioned! If  you  want  to  put  a  logo  it  has  to  be  in  relation  with
+"Resurrection" or atARi!!!
+
+* Greetings:
+------------
+
+A greetings list could be sent in a txt file. It will only give the name of the
+crew you  want to  greet! The  greetings  part is  already coded and only names
+could be displayed... But if  you have really  things to tell, we  will code an
+end-scroll ...
+
+               _________________________
+              I   ____    __     __   IXI
+              I  /  \ \  /\ \   /\ \    I
+              I /    \ \ \ \ \  \ \_\   I    =3DJace=3D
+              | \   \ \_\/  \ \ / / /_  |     from
+              | /\   \/_/    \_\ /_/\_\ | >ST Knights<
+              : \ \   \_\  /\/_/  __/_/ :
+              :  \    / / / /~\/\ \_\   : http://www.runnet.com/STKNIGHTS
+              ..oO\__/_/\/_/jace/_/_/Oo.
+				      ---Atari ST-Mac-PC---
+
+
+          ***************** Contact adresses ********************
+
+	             ST Knights: http://www.runnet.com/STKNIGHTS
+
+	            e-mail:	  Jace: jace.stk@runnet.com
+	        		          Aldyn: fmartin@runnet.com
+
+	        Snail mail: Jace: FARGUES Laurent
+                             3, rue Romain ROLLAND - Appt 11
+				                 Res. Les Contemporaines
+                             Le Moufia
+                             97490 Sainte Clotilde
+                             Ile de la Reunion
+                             FRANCE (whouuuu...)
+
+                       Aldyn: MARTIN Frederic
+                              189, rue Jean CHATEL
+                              97400 Saint Denis
+                              Ile de la Reunion
+                              FRANCE
+
+
+    ************** people who have joined (for the moment) **************
+
+       * ST Knights (:-o)
+       * Llama & Mod from TSCc
+       * Zappy from Holocaust (incredible! ;-))
+       * Drizzt from TNB
+       * Tao from Cream
+       * Ribbo
+       * Some french crew (I'm waiting for the names!)
+       
+-------------------------------------------------------------------------------       

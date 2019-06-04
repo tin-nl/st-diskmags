@@ -1,0 +1,150 @@
+-------------------------------------------------------------------------------
+                             Mega ASseMbler-tips!
+
+                            -~~   by earx/FUN   ~~-
+-------------------------------------------------------------------------------
+
+Now that I've fiddled  with assembler for the Atari for almost 3 years I'd like
+to share  some stuff with you readers out there. I've discovered some very fast
+ways to do small routines on the 68030/68000. I won't explain very big stuff in
+here, only some easy to "digest" thingies.
+
+1) CHECKING FOR BOUNDARIES:
+
+Let's say you  wan't to check a dot if it's on screen or not. You need to check
+if the x and y-values  aren't negative or bigger than the resolution. If you do
+graphics programming, you'll need this a lot!
+In the oold days I always did it like this:
+
+   move.w    (a0)+,d0   get x-coordinate
+   bmi.s out            if x-coord is negative > go out
+   move.w    (a0)+,d1   get y-coordinate
+   bmi.s out            if y-coord is negative > go out
+   cmpi.w    #320,d0    compare x-coord with x-resolution
+   bge.s out            if x-coord is bigger > go out
+   cmpi.w    #200,d0    compare y-coord with y-resolution
+   bge.s out            if y-coord is bigger > go out
+; rest of routine goes here
+;
+out
+
+As you  can see  you  need two  checks for  each  coordinate. But  this  is not
+necessary! Instead  of an 'bge' you  can do a 'bhs'. This because 'bhs' is used
+for unsigned  values and 'bge' is used for signed values. If you look at values
+as positive, a negative word is always bigger than the x-resolution. This means
+you can check for both negative and too big in one go!!
+Like this:
+
+   move.w   (a0)+,d0
+   cmpi.w   #320,d0
+   bhs.s out
+   move.w   (a0)+,d1
+   cmpi.w   #200,d1
+   bhs.s out
+; rest of routine goes here
+;
+out
+
+There you have it! You've eliminated two instructions!
+
+2) GETTING THE MODULO
+
+Call me a moron, but a few years ago I used my own routine to get the modulo of
+a division. This  was completely  obsolete! The 680x0 always returns the modulo
+as standard! Example:
+
+   divu.w   #100,d0     divide value in d0.l by 100
+   move.w   d0,d1       store result of division in d1.w
+   swap d0              get the modulo in d0.w
+
+As you can see  the modulo is automaticly put in the high word of the register!
+Peace of cake!
+
+3) 68030 PIPELINES
+
+The 68030 has  got nasty  pipelining! Some falcon/TT owners  might already have
+experienced  nasty  stuff with  this. This  means  that  changing  the order of
+instructions or using other registers can make the routine faster or slower!
+In order to  speed up your code you need to try out different sequential orders
+of code. Simply  fiddle around a bit and try out what is best. You also need to
+see to it  that the registers  used in the  previous instruction aren't used in
+the following instruction! 
+I'm not  going into detail  and the principles of pipelining. That would take a
+bit too long. Simply  stick to the tips and your code will automaticly gain the
+extra speed.
+
+4) LEA/ADD COMPLICATIONS
+
+A well-known trick to make updating of address-registers faster is replacing an
+ADDI by LEA for instance:
+
+   lea 30(a0),a0
+is faster than:
+   addi.l   #30,a0
+or:
+   addi.w   #30,a0
+
+BUT, many people  think that a LEA is also faster faster than ADD with an data-
+register. NOT TRUE!
+
+   add.l d0,a0
+is much faster than:
+   lea   number(a0),a0
+and especially much faster than:
+   lea   0(a0,d0.l),a0
+
+IF you wan't the fastest method you'll need the ADD.L with a data-register.
+NOTE: An ADD.L with data-register is FASTER than an ADD.W with data-register!
+
+5) AND AND OR AND BITPLANES   ( 8-/ ?)
+
+Let's  say  you only want  to strip  the lowest  bits of  a data-register. Some
+people use this method:
+
+   andi.l   #%11111111111111111111111111111000,d0   strip three bits
+
+I use this:
+
+   andi.b   #%11111000,d0                           strip three bits
+
+Much faster! Using a register as the mask is ofcourse even faster! The same can
+be done for OR's which only use the lowest byte. In some situations (like stuff
+with bitplanes) you need  to strip the highest bits  and shift the value right.
+For instance: When you need the number  of bitplanes to skip to reach a certain
+x-coordinate:
+
+(x-coordinate in d0!)
+(routine is for 4-bitplane resolution!)
+   move.w   d0,d2   store x-coordinate in d2
+   lsr.w   #4,d2    divide d2 by 16 to get number of bitplanes
+   lsl.w   #3,d2    multiply d2 by 8 to get number of skipbytes
+   add.w   d2,a0    update screenadress
+   add.w   d2,d2    shift d2 left one bit
+   sub.w   d2,d0    get number of pixel in current bitplane
+; rest of routine (plotting) goes here.
+;
+
+As you  can see  OR's or  AND's are  not used  here. In this case  it is simply
+faster to  use shifting instructions! Note  that the last instruction subtracts
+the ANDED word from the original word so that only the lowest four bits remain!
+The  same could have  been done with  an ANDI.W #$000F,d0 , but that would have
+been slower.
+So you  now see in  this case  it is just  a matter of  using and upgrading the
+products from previous instructions. This can really fuck shit up! :)
+
+6) INSTRUCTION CACHE
+
+The instruction  cache is  mostly utlised for  dbra-loops. If the  dbra-loop is
+small  enough (smaller than 256 bytes on an 68030) the loop is transferred from
+RAM to cache  and the processor does the loop much faster! What I didn't know a
+long time, is that should avoid going through the loop only two or three times.
+This  because of the time  needed to load the loop in cache, sometimes it might
+even be slower to do the loop only two times!
+
+
+OK, that's it for todays session.
+
+  Take care and have FUN!
+
+
+---------------------------------------------------------- EARchaeopteryx/FUN -

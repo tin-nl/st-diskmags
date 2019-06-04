@@ -1,0 +1,104 @@
+                               A COMPARISON
+                               ~~~~~~~~~~~~
+
+ Because there is often a discussion about the best painting program on
+ ST, I will comparise the mostly used of these programs, which are :
+
+ a.) -DPAINT ST
+ b.) -NEOCHROME 2.28
+ c.) -CRACKART 1.36 TT
+
+  ________________________________________________________________
+ | name     |    DPAINT ST   |   NEO 2.28     |  CRACKART 1.36    |
+ |----------------------------------------------------------------|
+ | producer |    Rushware    |  Delta Force   |  Jaybee and Roy   |
+ |----------------------------------------------------------------|
+ | price    |     189 DM     | Public Domain  |   Public Domain   |
+ |----------------------------------------------------------------|
+ | STE-supp.| yes, 4096 col. | yes, 4096 col. |      no           |
+ |----------------------------------------------------------------|
+ | TT-supp. |      no        |      no        |      yes          |
+ |----------------------------------------------------------------|
+ | Falc-sup.|      yes       |    no (*1)     |      yes          |
+ |----------------------------------------------------------------|
+ | picload  |      5         |      5         |      22           |
+ |----------------------------------------------------------------|
+ | picsave  |      5         |      5         |      19           |
+ |----------------------------------------------------------------|
+ | magnify  |      4         |      4         |      10           |
+ |----------------------------------------------------------------|
+ | fntimport|      yes       |yes, but it bugs|      yes          |
+ |----------------------------------------------------------------|
+ | fntexport|      no        |      no        |yes, own fnt-format|
+ |----------------------------------------------------------------|
+ |animation |     yes        |      yes       |      yes (*2)     |
+ |----------------------------------------------------------------|
+ | numb. of |      100       |      10        |      10           |
+ | screens  |                |                |                   |
+ |----------------------------------------------------------------|
+ | ditherfil|      yes       |      no        |      yes          |
+ |----------------------------------------------------------------|
+ | color-   |      yes       |      no        |      yes          |
+ | courses  |                |                |                   |
+ |----------------------------------------------------------------|
+ | outline  |      no        |      no        |      yes          |
+ |----------------------------------------------------------------|
+ | rotate   |      yes       |      yes       |      yes          |
+ |----------------------------------------------------------------|
+ | antialias|      no        |   yes, 1 fnc.  |    yes, 3 fnc.    |
+ |----------------------------------------------------------------|
+ | bend     |      no        |      no        |      yes          |
+ |----------------------------------------------------------------|
+ | metamorph|      no        |      no        |      yes (*3)     |
+ |----------------------------------------------------------------|
+ | sizing   |      yes       |      yes       |      yes          |
+ |----------------------------------------------------------------|
+ | realtime |      yes       |      yes       |      no           |
+ | magnify  |  (very small)  |  (very small)  |                   |
+ |----------------------------------------------------------------|
+ | acc-supp.|      no        |      no        |      yes          |
+ |----------------------------------------------------------------|
+ | raster   |      no        |    yes (*4)    |      no           |
+ |----------------------------------------------------------------|
+ | slideshow|      yes       |      no        |      yes          |
+ |----------------------------------------------------------------|
+ | usermodul|      no        |      yes       |      yes          |
+ |----------------------------------------------------------------|
+ | GEMusing |      no        |      yes       |      no           |
+ |----------------------------------------------------------------|
+
+ annotations:  *1: you need a special Falcon-patch
+ ------------  *2: uses no special animation-format
+               *3: overlay 2 different screens
+               *4: you can show 512 colors, great function !
+ 
+(Redax: *4 NO! You can show more than 512 colors! On STE up to 3200 at one
+        picture! Up to 200 palettes with each 16 colors > 3200,but only on
+        STE.)
+
+ DPAINT:   good:     -4096 colors
+ ~~~~~~~             -realtime magnify
+
+           bad:      -very expansive
+                     -loading-errors
+
+ NEO:      good:     -raster-function
+ ~~~~                -Kultprogramm
+
+           bad:      -it bugs very often
+                     -shitty text-function
+
+ CRACKART: good:     -big format-support
+ ~~~~~~~~~           -distort-options
+
+           bad:      -you can use drawing functions in the magnify
+                     -no STE support
+
+
+ As you can see, every program has it's advantages and disadvantages.
+ Everybody should decide by himself, what program is the best for him.
+
+
+
+                                                     m.O.d. of tnb / 07.04.1994
+

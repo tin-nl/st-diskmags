@@ -1,0 +1,20 @@
+FILESELECT "A:\*.THK","",file$ ! Choose a file
+IF EXIST(file$)=0              ! Does it exist ?
+  EDIT                         ! No => Quit
+ENDIF
+OPEN "I",#1,file$              ! Yes => Let's load it !
+muzak$=INPUT$(LOF(#1),#1)      ! Load...
+CLOSE #1                       ! Close...
+super%=GEMDOS(&H20,L:0)        ! Supervisor mode
+muzak%=V:muzak$                ! Address of the muzak
+CALL muzak%                    ! Init. muzak
+LONG{&H4D2}=muzak%+8           ! Play it
+~GEMDOS(&H20,L:super%)         ! -> Back to the user mode
+.
+KEYGET zzz%
+.
+super%=GEMDOS(&H20,L:0)        ! Supervisor mode anew
+LONG{&H4D2}=0                  ! Don't play anymore
+stop%=muzak%+4                 ! Second 'BRA'
+CALL stop%                     ! Cut the resident-sounds
+~GEMDOS(&H20,L:super%)         ! -> User mode

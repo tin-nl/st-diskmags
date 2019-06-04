@@ -1,0 +1,144 @@
+                              ~2nd Life~
+ 
+                    ..A TRS 80 Emulator for Atari..
+
+                            By Sander Berents
+
+To  most  people,  a TRS 80 emulator might provoke a reaction of  "Huh, 
+what?!" To those of us who have been around since the dawn of computing 
+time, it may provoke a wry smile.
+
+Well,  try and think of  T andy  R adio  S hack, or 'TRS'. Yep, it was the US 
+based  discount electronics chain's early attempts to get into the  new 
+and exciting home computer market back at the end of the 1970's. It can 
+be  best  summed  up  as a mono competitor to  the  Apple  II,  falling 
+somewhere between that and the Commodore Pet, of a similar vintage.
+
+To  be  a little more technical about things,  it was (is) a Zilog  Z80 
+based machine,  the luxurious Model III, which this emulator recreates, 
+comes  with  64k of RAM,  divided up into 48k main memory,  a 14k  ROM. 
+Foreshadowing more modern systems, the video RAM hasn't been forgotten, 
+it has a whole 1k to itself, like the keyboard (useful for user-defined 
+characters?)  This also handily emulates virtual floppy disks,  more of 
+which, a bit later.
+
+The machine had a reasonably long life,  more as a workhorse, than as a 
+flashy games machine.  There were a lot of useful applications created, 
+but  there was quite a good library of games,  if ZX81-esque  graphics, 
+and Speccy styled sound are your 'bag'.
+
+There  has  been  an  emulation of this vintage  system  on  Atari  TOS 
+computers and compatibles,  this is where 2nd Life comes in. Written by 
+Dutch  person  Sander Berents,  2nd Life sets out to be a more or  less 
+complete  emulation of a disk-based Model III machine,  and at  version 
+1.0, apart from one or two small details, seems to succeed.
+
+It takes a refreshingly different approach from most emulators,  for as 
+it emulates a mono system, it runs in ST High resolution to do so. This 
+would also apply to VGA monitors attached to Falcons.  It will run with 
+the RGB cheap and nasty 'flickerlace' version of ST high.  
+
+It  also runs fully under GEM,  again not common or easy to accomplish, 
+unless the TOS computer is a powerful one.  Amazingly,  this manages to 
+run at a reasonable, if not full speed, on a standard 8mhz ST, and more 
+or less full speed on a 16mhz machine,  according to the authors.  With 
+something  like  a 50mhz Centurbo 2,  there is more than  enough  speed 
+there!
+
+The  emulator is divided into two onscreen parts,  the main GEM window, 
+where  the  action takes place,  and a lower window where virtual  disk 
+drives  (four  in all) are emulated.  Emulator options are set up  from 
+normal GEM pull-down menus.
+
+You are allowed to 'customise' the emulator in quite a lot of different 
+ways,  as  you  can (somehow) emulate a simon-pure tape-based  machine. 
+There are facilities and programs provided with the emulator to  enable 
+physical connection between any real TRS 80 still alive out there,  and 
+the emulated Atari version,  (for the transfer of programs.) The author 
+sadly concluded to me that he was probably the only person likely to be 
+using these, which was a shame, as he had put a lot of work in there.
+
+There  are  other  options  to make the  emulator  more  accessible  or 
+interesting.  It  is possible to turn off the GEM window,  and to get a 
+totally  dark  screen area for that real retro  early  'eighties  Tandy 
+feel,  or  inverse characters if preferred.  The usual monitoring tools 
+within  the emulator are there,  to break into programs where you want. 
+Other  options  are  there to tweak it to go a bit  better  or  faster, 
+depending on your system configuration. 
+
+It is compatible even with emulated Atari ST's, an interesting concept, 
+nested emulation on three layers of computing,  PC/Mac to ST,  and then 
+Tandy!  Also,  in  a  shock move for emulators,  it is also entirely co-
+operative  with  MagiC,  happy  in a multi-tasking environment!  And  I 
+daresay it is on speaking terms with Mint too.
+
+In  the  end,  the  easiest  way to get it all going,  is to  click  to 
+highlight the first drive icon (drive 0),  select 'load disk', and load 
+in  the  'NewDOS 80' system disk,  handily supplied as a  virtual  disk 
+image.  You now have a working TRS80 on your Atari Desktop! Clicking on 
+one of the other drive icons lets you load in one of the other supplied 
+virtual disk images, a bunch of games handily put together!
+
+Highlights  included  a kick-ass Lunar Lander,  a clone of  the  arcade 
+classic  'Scramble' with an underwater theme.  There is the  occasional 
+conversion  of  something more mainstream,  with a version of an  early 
+Sinclair Spectrum hit 'Moon Patrol' (or Moon Buggy?) (Yes, and a lot of 
+these games were ASM language coded.) There is even the odd thing  that 
+creeps  into  the  territory  of  'demo',  although  not  as  we  would 
+understand  it,  with  a neat little 'Dancing Devil' screen that  falls 
+perfectly into the 'scenic but useless' category.
+
+There  is  also  a BASIC variant provided on the NewDOS  80  disk,  and 
+loading  that  lets you get access to the countless .BAS  programs  out 
+there.  Yet another virtual disk has stacks of these supplied, the disk 
+needs to be mounted on one of the virtual drives, and your command line 
+typing  skills  have to be remembered to get one of  these  loaded  and 
+running.  There  is the flexibility to load in individual .BAS programs 
+from the GEM file selector. If you like doing that sort of thing.
+
+Of  the  incomplete  bits,  there  is  only  one  omission,  of  lesser 
+importance,  according to the author.  You cannot format virtual disks. 
+To  create a new disk image,  you have to create a copy of one of  your 
+existing virtual disks, rename it and then PURGE it of all its existing 
+programs. The tools supplied, which actually run within the emulator as 
+TRS80  programs,  should  allow  you to  transfer  standalone  assembly 
+language program files to the new disks, in theory. In practice, things 
+seem  to be a bit longwinded and clumsy,  and so far,  I haven't got as 
+far as making up any new disks from scratch. 
+
+2nd Life should be able to run other disk images available from TRS  80 
+internet  resource  archives,  and as the machine was sold as  an  all-
+purpose computer,  with a 'useful' bias,  there should be quite a range 
+of interesting, if rather old software for it out there.
+
+I did manage to make contact with the author,  who confirmed that, yes, 
+he was still out there,  and kept a distant eye on the movements of the 
+Atari Scene,  but no, there weren't any new versions of 2nd Life in the 
+pipeline,  or any other Atari-related projects.  He did say that a Java 
+TRS80  emulator  was being created under the  'Schizoid  Design'  label 
+though,  and porting the code for 2nd Life, to another portable system, 
+was under consideration.
+
+Details  and downloads of 2nd Life,  along with other news of 'Schizoid 
+Design' can be found at www.schizoid.demon.nl/AtariFreak/
+
+To  wrap  up  this short review,  2nd Life is an  extraordinarily  good 
+emulation of a reasonably complex 8-Bit computer, realised on Atari TOS 
+machines of modest means.
+ 
+ Advantages....
+Runs on lower powered systems decently..
+Full GEM support..(Amazing, in view of comment immediately above!) 
+Virtually complete emulation..
+Very good compatibility.. (Large software library out there?) 
+Easy to get into..
+Loves multi-tasking Ataris! 
+Runs on Mono systems..
+
+ Disadvantages..
+Runs on Mono systems..
+Setting up new disk images a clumsy process..
+Sadly, no longer being developed..
+
+  CiH - Sept '99
+

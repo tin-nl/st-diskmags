@@ -1,0 +1,10 @@
+PROCEDURE sound_patch
+  ~XBIOS(&H8B,0,8,0,0,1)        !  Device connect...
+  ~XBIOS(&H84,0)                !  8 bit stereo zetten
+  ~XBIOS(&H82,2,&H40)           !  Volume linker ingang verminderen
+  ~XBIOS(&H82,3,&H40)           !  idem rechter
+  ~XBIOS(&H82,6,3)              !  Zet Pre Scale (deelfactor is 160)
+  ~XBIOS(&H82,4,3)              !  ADDRIN
+  ~XBIOS(&H82,5,3)              !  ADC input zetten op l+r soundchip
+  ~XBIOS(&H2C,&HFFFE)           !  ????
+RETURN

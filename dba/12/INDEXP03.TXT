@@ -1,0 +1,292 @@
+ATARI CD-ROM SUMMARY 3
+~DROPS.FIL~
+pcformat.lzh    6       Formats disk for use on an MS-DOS machine
+protect.arc     5       Protect files from being overwritten.
+purger.lzh      6       Instantly erases floppies
+ps2form.arc     4       Formats disk like a ps2 would.
+qkdisk11.zoo    4       Quick disk 1.1; fast ram disk
+quikdex.arc     14      Quickly indexes your disks.
+rambaby.arc     28      Ram disk baby.
+ramdisks.lzh    7       A collection of small RAM disk programs
+raminit.lzh     11      Copy files to RAM disk at boot time.
+ramled.arc      3       Lights drive light on ramdisk usage.    
+ratehd15.lzh    16      Hard drive speed benchmark
+rde_v5.zoo      38      RAM disk driver from Mark Williams Company
+reclaim2.zoo    6       Reclaims the 2 sectors TOS formatting 'forgets'
+recover.lzh     4       Unerases files
+rename.arc      18      Rename any file, any time.
+rename1b.arc    20      3 accs for renaming files with wierd characters, etc.
+salvage.lzh     12      Salvage text files from damaged disks
+sambin.lzh      14      Sieu's Analyzer of Disk Media   
+scache.arc      1       OH my goodness. It's another cache.
+seced.lzh       12      Sector editor
+sector.lzh      5       Writes designated sectors to disk
+seekup10.lzh    2       Increase disk seek rate for TOS 2.06 and above.
+serial.zoo      10      Changes the serial number of your disk.
+shredder.lzh    27      Removes all traces of a file from disk.
+speedst.lzh     3       Checks speed of drive
+stdcat52.zip    62      Disk catalog program, including hard drives. V5.2
+stdup.lzh       4       Disk copier
+sticker3.arc    229     Creates labels for 3.5" disks
+stmiror2.lzh    39      Backs up critiacl HD boot sector info   
+stomper.lzh     5       Disk copier
+stpdcat.lzh     80      floppy disk catalogger.
+stree104.arc    93      Search for files on harddisk.
+stsweep.lzh     6       Disk utility program
+st_tools.zip    99      a sharware HD tuneup/repair utility, version 1.93
+super.lzh       7       Super Formatter from France.  Up to 99 tracks
+suprshuf.lzh    7       Shuffles files
+tc60_bin.lzh    42      Hard disk cache program.  German, but w/english docs
+tc60cpx.lzh     13      CPX for controlling main program above
+thekey.zoo      47      Restores files backed up with Vault
+timedrv2.arc    1       Drive timer.
+tlc_form.lzh    21      Puts any character into a file name
+tracker.lzh     1       Checks disk tracks.
+turtle.arc      85      Great hard drive back up prg, dated 12/2/90          
+twister2.lzh    18      Twister formatter
+ulticopy.arc    8       Ultimate copier (not really)
+undelete.lzh    39      recover delete files from disk.
+uneekit.zoo     8       Gives randow serial number to your disk for use w/IBM
+unerase.lzh     10      Unerase your files.
+unformat.lzh    1       Unformats a disk
+unhider.lzh     8       unhides files on disk   
+unixflop.lzh    59      Reads and writes to unix box floppys
+vault201.lzh    99      good hard drive backup program, newer version below
+verify.arc      3       Disk verify/non verify on write 
+vltbin.zoo      100     Vault 3.0 hard drive back up program (requires
+thekey)
+vol.arc         9       Re-lable disks after format     
+vol109.lzh      9       read/write volume label on disk, .ttp program
+volume.lzh      2       read/write volume label on disk, GEM program
+xfsys.zoo       45      Xtended file name sys.  Sorta like unixmode ide
+zorg_113.lzh    138     Disk and file monitor, disk reorg.  In French.  
+zzzap.arc       11      Deletes all files on disk w/o reformatting
+
+============================================================================-
+Editors:
+
+0index          1       ye olde indexe file
+7up_engl.lzh    117     English verison of the 7UP GEM based text editor
+
+Emacs-1858:
+
+1858b-d3.zoo    704     ???
+1858d-d3.zoo    37      ???
+
+Me3.11c-b1.1: MicroEMACS 3.11c GEM enhanced; Beta test by Bjarne Pohlers
+
+copying         2       ???
+ue311cmd.zoo    57      ???
+ue311doc.zoo    72      ???
+ue311gbw.zoo    64      ???
+ue311gcl.zoo    64      ???
+ue311st.zoo     56      ???
+ue311tc.zoo     66      ???
+
+Me3.12:
+ue312dis.zoo    350     MicroEMACS v3.12; Atari distribution set
+ue312pl1.zoo    126     MicroEMACS v3.12; patched to work on Falcon/MiNT/MTOS
+
+Mutt:
+me2b_pl7.readme 8       Readme for Mutt editor.  Read before getting the      
+                        rest.
+me2b_pl7.zoo    421     Mutt editor, gem interfaced, very nice. Pl. 7
+me2s_pl7.zoo    295     Sources for the above.  Pl 7.
+
+ae92.zoo        9       ???
+cstyles.zip     4       *.KRZ files (Everest editor) to speed up the
+                        development of C programs
+cvhyptxt.lzh    35      ???
+edi_demo.zoo    252     Demo of Edith Professional
+editext.lzh     17      Text editor.
+edith1_0.lzh    69      Annius' new text editor - prerelease version
+editv2_1.lzh    18      ???
+elv16beta2.zoo  546     ???
+ever_e33.tos    98      Good GEM based text editor.  
+gfa4pd_e.lzh    71      Editor for GFA 4.0 (English).
+mg2amint.lzh    79      MicroGnuEmacs v2a - MiNT and TOS versions.
+mg_dvi.lzh      28      dvi file with a description to mg2amint
+origami:
+oribin.zoo      139     ???
+oridiff.zoo     4       ???
+origami.tar.Z   241     ???
+proed.lzh       39      ???
+pur_c_vi.zoo    53      ???
+spedit.zoo      10      ???
+sprted13.arc    46      SpiritED - gem based da text editor
+stfolded.arc    72      ???
+stpage.lzh      9       Very small, really fast text editor
+txtool.arc      34      ???
+vix.arc         49      ???
+wp2rtf.lzh      12      Converts 1st Word/Word Writer files to .RTF format
+wp_demo.lzh     20      Converts Word/Word Writer files to Word Perf 5
+
+============================================================================-
+Emulators:
+
+0index          ??      This index.
+alaspec.arc     13      Transfer aladin to spectre disks and vice versa 
+appleemu.arc    37      Emulate an Apple II. I don't know why, but heh....
+cpm.arc         149     Emulate a cpm machine.
+ghost.arc       20      Exchanges aladin - spectre - mac disks
+speccy.zip      54      Another? Spectrum ZX emulator from Germany
+specstuf.arc    32      Spectre utilities.
+spectrum.lzh    544     Spectrum ZX emulator v.1.0  Docs in German
+stxf255.lzh     284     Emulate an 8bit atari.
+stxfp.arc       27      Transfer ST files to 8 bit format       
+stxpp2.arc      63      A couple of 8bit disks in SD or DD format       
+zest.lzh        47      NeXT Simulator demo. Todd likes this one.  Mono only.
+zx81.lzh        99      Emulate a zx81. Fun fun fun.
+zxupload.arc    7       Transfer files between the ZX and the ST.
+zx_sp207.lzh    583     Another ZX/Spectrum emulator.
+
+============================================================================-
+Falcon:
+
+0index             ?    This file, courtesy of the Falcon archivists...
+
+Falcon/Demos:
+
+1600x600.zip       17   Display 15 (!) NeoChrome pics at one time.
+birdshow.zip       651  True color ray-traced animation
+birdy.zip          685  Hard-wired True-color FLI player/flic.
+cebit93.lzh        753  Demo, written for March '93 Cebit computer show
+chromedr.zip       295  "Chrome Dragron" demo
+conflict.zip       328  RGB demo for the Falcon030 by Dead hackers Society
+ff_demo.zip        762  "Falcon Flight" fractals with sound
+flight.zip         32   3 programs, realtime flight over Mandelbrot set
+frac_dsp.lzh       30   Generates fractals, uses dsp for speed
+humans.zip         503  Hilarious graphics/sound demo.  Take HUMANS2.ZIP too.
+humans2.zip        794  "Disk 2" of HUMANS demo.
+humans3.zip        746  "Disk 3" of HUMANS demo.
+humans4.zip        542  "Disk 4" of HUMANS demo.
+in_tel.zip         5    "Motorola Inside" demo
+lazer_1.lzh        111  "Autowaschen Verboten" by Lazer/Independent
+lazer_2.lzh        124  "Autowaschen Verboten" - Part 2
+ldonut.zip         542  2 Falcon demos
+mouse.lzh          603  Hilarious graphic/sound demo
+newtrend_680xx.lzh 557  Another Falcon-only demo
+omegaf30.prg       554  Omega "Grotesque" demo, set video to ST Low
+paragon2.lzh       99   Graphics demo that plays samples w/ no slow down
+pentagon.lzh       684  Graphics demo
+qad3dvga.tos       12   Demo of quadratic math graphed for VGA, I think.
+speeder.zip        164  Grahpics demo - 'texturierte Ebene fliegt'
+termfin.prg        162  Texture-mapping while playing 50 Khz MOD-file. New
+termfin.zoo        148  50khz zooming colour modfile.?
+uk_demos.zip       528  Falcon demos by Black Scorpion Software
+uk_demos.zip.readme
+
+Falcon/Diskutils:
+
+cdrom.zip               10      Atari's CDROM driver for Falcon
+
+
+Falcon/Emulators:
+
+specfalc.lzh            45   A Spectrum emulator for Falcon (?)
+
+
+Falcon/Games:
+
+blackhole.zip           871  Two coins and some bombs...  Go figure.
+breakout.zip            580  Guess what this is...
+colums_d.zip            281  'Columns Deluxe' RGB only
+lasehome.zip            500  Demo of "Of Lasers and Men" shareware game
+madtris.tos             144  4way tetris type game RGB only
+minif1-e.zip            277  Race car game
+minif1-f.zip            481  Race car game, French version
+minif1-flight.zip       654  Demo "flight" over MiniF1 racetrack
+multi.zip               803  'MultiBriques' Playable Demo
+nh311gemc.zoo           806  Graphical nethack, best on TT or Falcon
+nibe.zip                     Wormtype game
+oxydfalc.zoo            580  Oxyd for Falcon & TT
+pmj_eng2.zip                'Premium Mahjong' handles VGA Falcon resolutions
+spacejnk.zip            4202 A 'movie' of some kind. Falcon only.
+starball.zip            345  Pinball game, Falcon enhanced
+triyahoo.zip            47   Yahtzee-esque shareware.  Makes use of Falcon    
+                             and MTOS
+ufo_war.zip             540  2 player game, Falcon only
+preview_game_falcon.zip 54   TGA of game screen for upcoming game
+
+
+Falcon/Graphics:
+
+3dxviewr.zip            124  Animates .3dx files
+3dxfiles.zip            172  3dx files...
+d2m.zip                 358  Image manipulation, including morphing
+flcn_pnt.lzh            26   Some pics of the Falcon desktop, in .pnt format
+fpaint.zip              40   Falcon paint program
+gemtarga.lzh            21   Views TARGA pics in a GEM window
+gif_view_falcon.ttp     3    Does what it says, I assume.
+ham8.zip                26   Display H.A.M/H.A.M.8. files
+jpeg.zip                240  Uses DSP to view JPEGs
+jpegv218a.zip           27   JPEG viewer
+photo_cd.zip            96   Displays Photo CD graphics, complete with driver
+viewer0.prg             126  JPEG viewer, uses DSP to decode
+
+
+Falcon/Info:
+
+f30.zoo                 11   Discussion of the Falcon's capabilities.
+falcadap.zip            7    Plans to make Multi-Sync adapter/switcher
+falcconf.lzh            12   GEnie conference on the Falcon030
+falcnbug.zip            91   Two .IMG pics show Falcon hardware enhancement
+
+
+Falcon/Misc:
+
+d1034_10.lzh            668  Update Diamond Edge for Falcon compatibility
+dcjh_1.zip              20   Don't Click on Jim's head, funny GEM programming 
+                             example
+dcjh_2.zip              48   Next generation of Don't Click
+
+
+Falcon/Programming:
+
+3danim.zip              32   3D routs using the Dsp
+3dxwatch.zip            106  2nd version of 3danim for falcon
+asm56.zoo               142  Cross-assembler for the Falcon's DSP chip
+dspbind.lzh             2    Bindings for the Falcon's DSP.
+dcjh_src.zip            14   Source code for DCJH above.
+
+
+Falcon/Sound:
+
+stesnd2.zip             2   .ACC improves compatibility w/ STe sound system
+
+Falcon/Sound/Editors:
+
+ssam101b.zip            54   "Superb Sample Editor" v1.01b
+
+
+Falcon/Sound/Fortunes:
+
+aladdin_sound_fortune.zip    927
+div_sound_fortunes.lzh       1427
+div2_sound_fortunes.zip      1171
+div3_sound_fortunes.zip      742
+ds9_sound_fortunes.zip       1127
+h_hiker_sound_fortunes.zip   1260
+jungle_b_sound_fortunes.zip  511
+mwc_sound_fortunes.zip       1004
+sf1_sound_fortunes.lzh       1172
+sf2_sound_fortunes.lzh       1021
+startrek_sound_fortunes.lzh  433
+st2_sound_fortunes.zip       1154
+users1_sound_fortunes.zip    408
+users2_sound_fortunes.zip    570
+
+Falcon/Sound/Players:
+
+acp12.lzh                    104  MOD player. Uses the DSP.
+digi202.zip                  514  DIGITAL TRACKER 2.02 & DIGIPLAY 2.02 demos
+dsp_mod.zip                  11   Plays .MODs in DSP.
+dt_demo203.zip               684  Plays Tracker .MODs
+falcpl15.lzh                 6    Plays 4/6/8/10 channel Protracker MODS
+falcplay.lzh                 12   Falcon version 1.0p of Pro-Tracker V2.1a    
+                                  .MOD player
+fortune_1_1a.zip             110  Audio 'fortune' program
+mudu_06.zip                  16   German music/sound player(?)
+protracker_falcon.zip        73   Falcon-specific Protracker
+
+END OF PART 3

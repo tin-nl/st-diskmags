@@ -1,0 +1,869 @@
+0660300030471
+11
+2#1
+9[........................................................]
+
+                                            Ñ"Wearebuildingaruin."Ä
+                                       TraditionalGermanProverb
+
+
+                              Å<<UNDERCOVER12>>Ä
+
+
+__________________________
+!____!    _   |    _   |_   |-[system]-st/e/fo3o/rgb/vga
+|    |   |/   |   !/___!|/   |-[crediz]-moondog/pod    (editing)
+|    |   |    |   .__|   !    |....        earx/fun       (code/text)
+!____!___!____!___!!________!   :        mod/pod        (gfx/text)
+                           :.......:        mclaser/pod   (msx/text)
+                                            tao/cream      (msx)
+                                            seboz/spirits(code)
+                                            505/checkpoint(text)
+                                            grey/tmb       (text)
+                                            madbutcher/f2(text)
+                                            senser/vex     (asciiart)
+
+
+
+
+DonningmyIndianaJonesstylearcheologicalwear(andwhip!)it
+istimetoinvestigatetheruinknownasUndercover12.Thiswillbe
+themostindepthanddetaileddiskmagazinerevieweverconducted.
+InfactthisarticleislargerthanbothModandMcLaser'sENTIRE
+contributiontoUCM12!
+
+Enteringthedarkcavernknownasthereadmefile,Idiscoveran
+inscriptiononthewall."It'stimetokicksomeMaggiebutts".A
+boldstatement,especiallygiventheirtrackrecord.Butletsnotjudge
+thingstoosoon...
+
+AstrangefeelingofDejaVuhitsyouwhenreadingtherestofthe
+file.MoonDogisverytired,hehasbeenworkinghardanditsuchan
+efforttolinkfileallthedata.Arepeoplereallyinterestedinhow
+longittakeshimtolinkfilethedata?Andwhyhasn'thegotadecent
+linkfilesystem?TheMaggielinkfilertakesnomorethanafewseconds
+-justclickonthedirectorytolinkanditdoesitallforyou.
+Please,UCM,getsomeonetoimplementasystemlikethisandwe
+won'thavetoputupwillthislinkfile-basedmoaningeveryissue.
+
+AsisusualUndercoverhasbeendelayedandtherehasbeensome
+trouble.IcansympathisewithMoonDoghere.AsregularMaggie
+readerswillknowproducingdiskmagsisanirregularbusinessandwe
+dotendtocrashthroughdeadlines.Peopleshouldn'ttakeexact
+releasedatesseriously,theyaresimplyaguideline.Evendemo
+andgamescreatorsrunoverschedulesometimes!
+
+HoweverthishasallendedupwithanunseemlysquabblewithDHSand
+thisisn'tthemostpositivenotetobeginamagazineon.
+
+ItisdisappointingtonotethatagainthereisnointroonUndercover
+magazine.Astheydeclarethemselvesthenumberonescenemagazine
+youwouldthinktheywouldhavelotsofscenepeoplecodingintrosfor
+them.
+
+ThisdisappointmentissomewhatdissipatedonseeingMod'stitle
+picture.Averyrealisticgirlsmilesoutfromthescreenwiththe
+words"Igotsunshineinmystomach"floatingaroundher.Thisisan
+absolutelysuperb16colourpicture,oneofthebestI'veeverseen,
+andsurelyMod'sbesteverwork.Butitdoesservetohighlighthow
+dullandfeaturelesstherestoftheshellis.
+
+Nowforaboldstatementofmyown-TheUCMshellisshit.Thisis
+notEarx'sfault.Hehasdoneagoodjobonthecodingsideofthings
+andnearlyallbugshavebeeneliminated.Itisthedesignthatis
+terrible.
+
+MoondogclaimsthattheshellisAmiga-style.TheonlyreasonAmiga
+magazinesusedthisstyleofshellisbecausetheyaresopisseasyto
+codeandrequirenoimaginationintheirconstruction.Onlytwo
+routineshavetobecoded-atextdisplayerandamouseroutine.The
+textdisplayerroutineisusedforthemainmenusothissavesyou
+havingtodesignandcodeadedicatedmainmenusystem.
+
+Theproblemswiththistypeofshellaremanifest.
+
+Forstartersitlooksveryplainanddull.Itislackingingraphics
+andisfartootextheavy.Themainmenusystemlooksveryboring-
+beingnotmuchmorethanalistoftextstrings.Itisaboutas
+excitingastheDosprompt.Itlacksstyle,colourandexcitement.
+
+Becauseofthis,the'shell'isjustaglorifiedtextdisplayer.
+Andnotaparticularlywellfeaturedoneatthat.Whenviewingan
+articleitgivesyounoindicationofitssize,eitherinlinesor
+pages.Youhavenoideawhereyouareinanarticlesrelativetothe
+startorend.
+
+Movingquicklythroughanarticleisnotpossible.Thereisno
+functiontogoimmediatelytothestartorendoraspecificlinein
+anarticle.Thereisnosearchfunction.Eventhepagescrollfunction
+lackskeyrepeatsoyouhavetokeepproddingit.
+
+Themainscrollingisapixelscroll,whichwhilepleasantonthe
+eyeisslowandannoyingingeneraluse.Thereshouldbeanoption
+forpixelorfulllinescroll.Ittakesanagetoscrollfromthestart
+totheendofanarticle.
+
+Sothisisatextdisplayerwithtwofeatures:
+1.Up/DownPixel
+2.Up/DownPage
+
+Fantastic.Itjustaboutimproveson'Show'ontheGemdesktop,but
+eventhemostfeebletextvieweroffersmorethanthis.
+
+Andwhatelsedoesthisshellfeature?
+
+Amusicchangerthatcrashesandanunreliablesavefunction.Brilliant.
+
+WhenIheardthatEarXwasgoingtorecodetheshellIwasexcited
+becauseIthoughtthatthiswouldmeanredesigningtheinterfaceand
+actuallymakingitlookinteresting.UnfortunatelyMoondogseemsto
+havewantedthedulltextbasedeffort.Idon'tknowwhyhedoesn't
+justdistributeitasbigAEOstyletextfile-atleastpeoplethen
+wouldn'tcomplainaboutthebugs.
+
+Peoplespendalotoftimereadingadiskmag.Thereis845kbof
+articlesinUCMandevenifyouonlyreadhalfofthemyouaregoing
+tospendhoursstaringatyourscreen.Youwantsomethingvisually
+attractivetoholdyourattention.AseveryissueofUndercoverlooks
+identicaltothelast,thetediumreallybeginstosetin.
+
+Thesmallconsolationtodesign-thegraphicalbarsatthetopand
+bottomaredrawnbyMoondog.Tobefairgraphicsaren'thisstrong
+point.Thecolourshechoosesaredrabanddullandbringsdownthe
+wholemoodofthemagazine.Andinsteadofthesebarscontaining
+graphicsoricons,theycontainmoretextinabigwobblyfont.
+
+ThemaintextfontchosenislotsbetterthanUCM11.Butyou
+couldn'treallygetaworsefontthantheillegiblescrawlchosenfor
+thelastissue.Althoughthisfontismoredigestible,itisstill
+veryuglyandnotsomethingyoufeelcomfortablespendingalotoftime
+with.
+
+Themousepointerhasanicehabitofdisappearingduringtext
+scrollingleadingtoanannoyingflickeringeffect.Thereisalsoa
+newpieceof'mousebasedaction'onUCM12.Whenthepointermoves
+overanarticleitturnsintoacrosshairssoyouknowyoucanclick
+onit.
+
+Unfortunatelythemousehotspotremainsinthetopleftcornerofthe
+mousenotinthecentreofthecrosshairssowhenyouclickon
+articleitloadstheoneabovethetarget.Again,brilliantdesign.
+
+Threepeoplearecreditedwithshelldesign.Aretheyallblind,
+incompetentorjustsadistic?
+
+Tobefair,EarXhasincludedsomeniceextrafeaturessuchas
+textcolour,differentfontsizesandpicturesinthetext.However
+MoonDogdoesn'tusetheseashesays"Ican'tbebothered".Thisis
+trulypathetic.Ifyouwantyourmagazinetobethebestonthescene
+youhavetoputsomeeffortin.
+
+MoonDogisthefirsttocriticizeothercrewsorcodersforbeing
+lazyornotcompletingproductions.Buthecan'tevenbebotheredto
+changethetextcolouronarticlesorincludesomescreenshots.To
+paraphrasethegreatman:"hmmmmm".
+
+Butletsgobeyondtheshell,trytopositionourcrosshairson
+therightarticleandkickloosesometext.
+
+Å------------------------------------------------------------------------
+                                REGULARS
+------------------------------------------------------------------------
+Ä
+
+ÅEDITORIAL...............................................................
+Ä
+"Helloandwelcometoanotherissueofyourfavediskmag"it
+declares.AndIthoughtI'dloadedUCM!(NiceOne!BobWilsonED.)
+
+TherefollowssomewaffleaboutsomeBBStroubleswhichispretty
+irrelevanttomostreadersastheygettheirissuefromelsewhere.
+
+HethenblamesthedelaybetweenissuesonmodandMClasernotbeing
+motivatedtowritestuff.Thisshowsinalotoftheirarticles
+-especiallytheterminallyshortreviewswhichhaveanairof"will
+thisdo?"tothem.
+
+MoonDogmakesaworryingadmission.HisFalconisbrokenandhehasno
+intentionofbuyinganewone.Canyoubetheeditorofwhatyou
+claimisthebestAtaridiskmagazinewithoutowningaFalcon?It's
+likebeingtheeditorof"EskimoReview"butlivinginAustralia.
+
+Asalways,MoonDogendswithapositivenotebyadministratinga
+childishslaggingtoFrench(!)fakedemocrewReservoirFrogswhodared
+makeajokeaboutUCMintheirrecentdemo.AndwhosaysMoonDoghasn't
+gotasenseofhumour!
+
+
+ÅCredits.................................................................
+Ä
+Onlyinterestingforthepeopleinvolvedincasetheyforgotwhat
+exactlytheydid.Unlikeothermagazinesthereisnochattyblurb
+abouteachcontributor,noprofile,nosummaryofthearticlesthey
+wrote.Justtheirnameandsomedots.Fascinatingreading,andyoucan
+besureitwillbethesameineverypastissueofUCMandeveryfuture
+one.Ican'twaitforthecreditsinUCM13.
+
+Oneofthemostpopulararticlesamongstcontributors.
+
+
+ÅGreetings...............................................................
+Ä
+Almostaspopularasthecredits.Again,nopersonalcomments
+justandalphabeticallist.Fascinatingstuff.Still,that'sarticle3
+done.Wa-hey!
+
+
+ÅContactus!.............................................................
+Ä
+MoondogappearstobeonthemovewhilstGreyhaslosthis
+connection.Superbreadingforfansofpostalsystemsworldwide.
+
+
+ÅProblemsAhead!.........................................................
+Ä
+Isn'titfunnythatsomepeopleseemtoexperienceproblemswith
+everythingtheydoandeveryonetheyareinvolvedwith?Perhapsthey
+arejustunlucky.MoonDoghasbeenunluckywithsettinguptheUCMweb
+pageanditnowlookslikeitwillneverhappen.Shame.Stillwe've
+stillgottheDHSpagewhichisanexcellentsourceofnews.
+
+
+ÅSorry!BugsAlwaysIncluded!............................................
+Ä
+Alistofsomeoftheknownbugsandsomeideasforfuture
+versionsoftheshell.Ifweareveryluckythenextissuemayinclude
+arasterbarANDafadingroutine!Icanhardlywait!
+
+
+ÅAdverts.................................................................
+Ä
+AninterestingpiecebyMarceronacompanyinScandinaviastill
+sellingAtarisoftware.TheyevenselltheHadesandMilan.The
+HadesdoeslookawfullyoverpricedcomparedtotheMilan.
+
+
+ÅUCM12Statistics.......................................................
+Ä
+Whowrotethemostarticles?Welltheblameliesclearlywith
+moondog,thenonFalconownercreatingaquarterofthearticles.
+VexNewsisthesecondbiggestcontributor-creatingmoretextthanthe
+combinedeffortsofmodandmclaser.
+
+Itseemsabitdesperatewhenyoursecondbiggestcontributoris,
+err,anothermagazinethatyouarejustreproducing!
+
+
+ÅFeedbacktoUndercover11...............................................
+Ä
+Mainlylotsofpeoplewritingcomplainingaboutbugsinthelast
+issueofUCM,especiallytheunreadablefont.That'stheproblemwith
+feedback,themajorityofitisbugreports!Howevermostpeoplealso
+havesomepositivepoints.
+
+However,anumberofthis"letters"areinfactprivatee-mailssent
+tomoondogandwerenotintendedforpublicationatall.Theeditor
+shouldreallydoabitmore'editing'anddecidewhichletterswere
+justsmallcommentsintendedforhiseyesonlyandwhichwouldbeof
+interesttotheataripublicingeneral.
+
+Forexample,inmyemail(whichIdidnotexpecttobepublished)I
+mentionedanumberofourforthcomingFalconproductions,whatwe
+wereworkingonandwhatwewereexpectingtorelease.Thisisof
+generalinterest,butwascut.Ialsoenquiredaboutwhentheywould
+getroundtoreviewing'Static'.Thisagainwascut.Still,saves
+themsaying"couldn'tbebothered".
+
+
+ÅPreviewtoUndercover13................................................
+Ä
+Prettylameexcuseforanarticlepromising"scenenews,interviews
+andreviewsofthelatestgamesanddemos".Noreally?No
+speculationonwhatmightbereleased,noanticipation,nopromises,
+nopoint.
+
+
+Å------------------------------------------------------------------------
+                         SCENEANDUNDERGROUND
+------------------------------------------------------------------------
+Ä
+
+ÅNEWSANDRUMOURS........................................................
+Ä
+ThisiswhatUCMisfamousfor.Thisitwhatitpridesitselfupon.
+Thisiswhatit-quitejustifiably-boastsabout.Thisisthe
+reasonmostpeoplegetUCM.Thisistheonlyarticlesomepeopleread.
+Butdoesitliveuptothehype?
+
+Hereisthenews.
+
+ThefirststoryisthatAbsencehavequittheatariscene.Erm,
+didn'tthishappenabouttwoyearsago?WhatwasthelastAbsence
+productionfortheAtari?Notreally'hot'news.Notevenworth
+reporting.
+
+TheproblemwithUCMscenenewsisthatitisalphabetically
+structured,soyoudon'tgetthemostimportantorlateststories
+first.Theycouldbeanywhereandyoureallyhavetowadethroughtons
+ofspuriousrumourstofindthem.
+
+ThesecondstoryisthatACFaremovingtheirweb-page.Again,not
+reallyworthreporting.Ifyouhaveanetconnectionyou'llknowabout
+this.Ifyoudon'tyouwon'tcare.
+
+Thereisalotofstufflikethis-smalldetailsmadeinto
+'stories'.ShortlyfollowingtheACFpieceisareportaboutAnimal
+Mine.Theirhomepageisofflineandtheycan'tbefoundandthey
+can'tbecontactedattheiroldaddressandthustheyarefinally
+dead.Thisisspeculationatbestandpureguessworkatworst.
+
+IntheAggressionpiecethereisasmallbitaboutthealternative
+party,thenapieceaboutXenitsellinghisFalcon."Isthistheend
+oftheband?"itasks.Again,thisisnotreallynews.Xenithasdone
+nexttonothingwithhisFalconandtheimpactonhimsellinghis
+Falconisminimal.ItisWiztomwhodidthemajorityoftheworkon
+'Motion',andifitisgoingtobefinisheditwillbedowntohim.
+
+AmensicCactus-whoarelongdead,UCMremindus-havefinally
+releasedtheirdemo,butitisbuggy."Itsashame"sayUCM.It'sa
+shamethattheonlyphrasetheycanusetodescribeademoisbuggy.
+Whatithasnoeffects,justbugs?
+
+Soofthefirst5stories,wearetoldthat4ofthegroups
+involvedarepotentiallydeadandtheother(ACF)isinlimbobut
+hasn'tactuallydoneanything.Brilliantwaystarttoanewscolumn.
+
+Atlast,somenewsaboutBDCofAuraandhisshoot-em-upX-Moon.But
+theydon'ttellyouwhatitis,theyjustredirectyouto
+anotherarticle."Readhisanswersintheincludedinterview."
+Unfortunately,nointerviewwithBDCofAuraisnotincluded.Ohdear.
+
+AVENA:
+
+Tathasn'treleasedademo.Sonotreleasingademonowbecomesnews?
+BoyisitgoingtobeeasytofillupthenextMaggiescenenews
+column!Thenewseditor'scommentonthis-"Don'tknowwhatsup".
+
+Sonotonlyhassomeonenotreleasedademo,butalsothereporters
+don'tknowwhysomeonehasnotreleasedademo.Incisivescenenewsat
+itsbestcourtesyofUCM.
+
+TheotherAvenanewsisarealshocker.TommyhaswrittenaMOD.Hold
+thefrontpage-"Trackermusiciancomposes.MOD".Whatnext,
+graphicsartistdrawspicture?Coderloadsdevpac?Thescenenews
+neverbeginswithUCM.
+
+
+CheckpointarewritingademofortheST-nowthisisnews.Asis,to
+alesserextent,505makingsecondplaceinademocompetition.But
+theirfemalememberhasdrawnsomegraphicsontheFalcon?Thisis
+news?Graphicsartistdrawsgraphics?ButUCMhavesomeincisive
+commentary-"don'tknowwhetheritsjustforfun".Newsatitsbest.
+
+Climatics:
+
+Someonefromswisscrewwhono-onehaseverheardhassoldhis
+Falcon.Isthistheendofcrewno-onehaseverheardofandno-one
+realisedexisteduntiltheydiedasksUCM.Doesanyonecare?
+
+Confusions:
+
+UnfortunatelyforUCM"Theyarestillhere".Butyoucanbesureto
+readabouttheirdemisefirstinUCM!Theare'workingonthenext
+issueoftheirdiskmag'.Againisthisnews?Diskmagcreatorsworkon
+nextissueofdiskmag?Notreally.IfUCMhadsomedetailsofwhat
+wouldbeinthenextissueofthisdiskmag,whowascodingtheintro
+etc.thenitwouldbenews.
+
+Somemembershaveleftandtheyareworkingonamusicdisk.Thisis
+news.Theex-memberisworkingadiskmag.Thisisnews,butshould
+havebeenfollowedup-isitgoingtobeinPolishorEnglish?
+What'sitgoingtobecalled?Whoelseisinvolved?Isitgoingtobea
+scenemagormoregeneral?Thenewsitemsaren'tfolloweduptoany
+extent.
+
+Icouldgoonbutyougetthepoint.Foreverypieceofnews-and
+thereisafairamountofit-therearethreeorfourpiecesofnon-
+news.Thisgivesthescenenewsasuperficialauthorityandsuperiority
+becauseofitssize.Butthequalityissuspect.
+
+Whenthereisapieceofnews,detailsareminimalandsketchy(if
+presentatall).Alotofnewsissuffixedwithcommentstotheeffect
+of"wedon'tknow".Inwhichcaseeitherfindout,ordon'tprintthe
+iteminthefirstplace.
+
+Asfortheaccuracyofthenewsitself,Icanonlygoontheir
+reportsaboutMaggieandReservoirGodswhichhaveprovedtohavebeen
+totallywrongtimeandtimeagain.(Remember"NewBeatarecodingthe
+newMaggieshell"!!!)
+
+ThistimeUCMhavegotamajorRGexclusive-"Theiroverhead
+racinggame'REPUBLIC'wasreleased!"theyannounce.UCMscenenews
+issofaraheadtheyannouncereleasesbeforeproductionsare
+finished!IwouldbeveryhappyifRepublicwasreleasedbutwe
+stillhavealotofhardworktodo.Thisnewsstorywillcreate
+troubleforuswithlotsofpeopleaskingusforacopyofa
+nonexistentrelease.Iwillhavetoadvisetonotbelieveanything
+theyreadinUCM.
+
+HowtheycameaboutwiththisstoryIhavenoidea.Wearenotevening
+planningtoreleaseapreviewofthisgameandthefullrelease
+won'tbeuntilXmasattheearliest.Dotheyjustmakethesestories
+uptotryandfillmorelinesofscenenews?
+
+Theworryingthingisthatweareprettyhighprofilegroup.MSGand
+sh3turnupregularlyonIRC.Wehavetwowebpagesthatcontainall
+ourreleasesandallthelatestnewsaboutourforthcomingproductions.
+Maggiealsocontainsalotofinformationaboutwhatwearecurrently
+doing.Ievene-mailedMoonDogtellinghimwhatstuffweweredoing.
+Butdespitethis,UCMconsistentlygettheirfactswrongaboutus.And
+notjustslightlywrong,totallywrong!
+
+IfthisisthecasewithRG,Ican'timaginehowwrongtheirstories
+areaboutthemoreobscurecrewswhodon'thaveinternetaccessand
+aren'tdirectlyintouchwithUCM.
+
+Anotherexample,ReservoirFrogs.Itmentionstheirfirstmulti-
+partdemo"RIBBIT"andsays"Justcheckoutthereviewinthis
+UCM!".
+
+Erm,thereisnoreview!UCMcan'tevengettheirscenenewsright
+aboutthemselves!UnlessUCMcangettheirstoriesright,they
+shouldn'tboastaboutthescenenewssection.
+
+
+ÅALTERNATIVE-CompetitionResults......................................
+Ä
+Thisisalistofthecompetitionresults.Thefirstbigscenepartyof
+theyearandUCMhavenopartyreport.Theyaddnocommentarytothe
+results.
+
+
+ÅVOLCANICIV-PartyReportandCompetitionResults......................
+Ä
+ThisreporthasalreadyappearedinVexNews,andasUCMalso
+includealltheissuesofVexNewsthisisprobablythethirdtime
+youhaveseenit.Itsbadenoughthemincludingalltheissuesof
+VexNewsinadesperatebidtofillsomespace,butincludingthesame
+articletwiceisjustplainlame.
+
+
+ÅGIGAFUN98-Firstinformations.........................................
+Ä
+AverysmallamountofinformationabouttheGigaFunparty.No
+informationontheentrancefeeorwhomightbeattending.Itthen
+tellsyoutolookatthewebpageformoreinfo-thisisadisk
+magazine,itshouldgiveyoutheinfo.Whynotjustsay,"someatari
+gamesanddemoshavebeenreleased.Wecan'tbebotheredtoreview
+them,butifyoulookontheinternetyouwillfindthem!"
+
+
+ÅINTERJAM98-TheFacts.................................................
+INTERJAM98-PartyReport..............................................
+INTERJAM98-RealtimeArticle..........................................
+Ä
+WellputtogetherreportsoftheInterjamparty.Thisincludessome
+backgroundinformation,twopartyreportsandalargerealtime
+article.Goodstuff,probablythe'highlight'ofthemagazine(tousea
+MoonDogphrase!)
+
+
+ÅMEKKA/SYMPOSIUM'98-RESULTS...........................................
+Ä
+BiglistofresultsfrominfamousSymposium.Sincetherewasno
+Atarisectionwhatisthepointinincludingthislongandboringtext?
+
+
+ÅQUAST'98-firstinformations..........................................
+Ä
+GoodindepthinformationabouttheforthcomingQuastPartyinPoland.
+
+
+ÅATARISCENEE-MAILLISTv1.5............................................
+Ä
+Fortunatelythishasbeenupdatedandismorerelevantthanin
+previousissueswhenitcontainedmanyinaccurateandoutofdate
+emails.
+
+Howeveritisstillnot   perfect.   MSG   of   ReservoirGods's
+emailismsg_rg@hotmail.com-thelistedaddressdoesn'texistany
+more(andno,thisdoesn'tmeanheisdeadorhasquitthescene!)
+
+Anidea-howaboutincludingascenehomepagelistinthisarticle?
+
+
+ÅInterviewwithDYNACOREof.tSCc........................................
+Ä
+Wearenowontotheinterviews.Undercoverdoesusuallymanagetoline
+upagoodselectionofScenepeopletotalkto,andthisissueisno
+exception.Howevertheinterviewsthemselvesarealittle
+disappointing.
+
+DynacoreoftSCctalksmainlyabouthiscollectionofpornography
+andblowupdolls.FascinatingI'msure,butwhatwereallywant
+toknowaboutisthelikelyhoodofanyforthcomingtSCcproductions.
+Whataretheyworkingon,whatwilltheybeworkingonorhaveweseen
+thelastFalconstuffsfromthem?
+
+
+ÅInterviewwithEROSofCOBRA............................................
+InterviewwithMACGYVERofCOBRA........................................
+Ä
+Theseinterviewsareslightlymorerevealing,givingabitofdetail
+ontheirbackgroundsandsomeinterestinginsightsinthePolishscene
+history.
+
+
+ÅInterviewwithTOODELOOofDHS..........................................
+Ä
+Toodelooprovidesuswithalotofinformation,butthisis
+downtohisgenerallychattynaturenotdownthequalityofthe
+questions.
+
+Thereisaproblemwithinterviews-andthisproblemdoesn'tjust
+affectUCM,itisequallyprevalentinalotofrecentissuesof
+Maggie-andthatisthattheirformathasbecomestaleandboring.
+
+Theinterviewsjustcontaintheseverybasicquestions:
+
+1.ÑHowoldareyou?Ä
+2.ÑHowdidyoubeginonatari?Ä
+3.ÑWhatcomputersdoyouown?Ä
+4.ÑWhatdoyouthinkabouttheSTscene?Ä
+5.ÑWhatisyourfavouriteST/Falcondemo?Ä
+6.ÑWhatisyourfavouriteST/Falcongame?Ä
+
+Atleastwedon'thavetheinfamousSex?questiontowhich
+everycoderinstantaneouslytransformedintoacomediansimplyby
+writing'YesPlease'.
+
+Thesequestionsarenotterriblyriveting.Peoplearealwaysvery
+willingtowriteabouthowbrillianttheirfirstcomputerwasand
+howmuchtheylovedit(youcanalmosthearthemblubbingasthe
+wordshitthepage).Nostalgiaischeap.Butthisdoesn'treallymake
+fascinatingreading,neitherdoesthekitlist.Asforfavouritegames
+anddemos,thesearemoresubjectsforachartthananinterview.
+
+Thelistof'ResponseWords'(pioneeredbyMaggie!)hasbecome
+cliched.Ifanyonedoescomeupwithanoriginalresponsethereis
+noroomtoexpanduponit.Basically,fromUCM'swordsetyougetthese
+responses:
+
+ATARI-nicemachines,shitmarketing
+ST-the'goodolddays'
+FALCON-nicebuttoolittle,toolate.marketingsux.
+JAGUAR-marketingsux
+SCENE-friendlybutnotasactiveastheolddays
+AMIGA-nicemachine
+PC/WIN95/MICROSOFT-suxbutisdominantanduseful
+UCM-thebestdiskmagazine(ifinterviewedbyUCM!)
+MAGGIE-thebestdiskmagazine(ifinterviewedbyMaggie!)
+
+Basicallythesearetheresponsesarejustreflexreactions.It'slike
+takingachildthroughapicturebook'Aisfor...Apple','Bis
+for...Banana','Cfor...Cat'.Theresponseshavebeentoopredictable
+tobeofinterest.
+
+Ifthekeywordschangedwitheveryinterviewandbroughtsomestuff
+relevanttotheintervieweethenperhapstheywouldbebetter.
+Butit'sstilllazyjournalism,"Ican'tbebothered/Don'thave
+thetalenttoconstructaquestionaroundthisconcept".
+
+Theinterviewsshouldnotbesogeneric,theyshouldbecatered
+towardstheinterviewee.It'shumansdoingtheinterviewingnot
+machines!IactuallycodedanautomaticinterviewingprogramforMaggie
+8yearsago(the'MaggieAutomaticGossipGatheringInterview
+Experience'orM.A.G.G.I.E.forshort)andeventhathadagreater
+rangeofquestions.
+
+Ifinterviewsaretobeinteresting,morepersonalityhastobe
+drawnoutandtheyshouldbemoredistinctfromeachother.Nobody
+wantstoreadthesameinterviewfivetimesanissue.
+
+
+ÅInterviewwithTAOofCREAM.............................................
+Ä
+Tobefair,thisinterviewbyMcLaserisalotbetter.Thisactually
+askssomeinterestingquestionsaboutTao'stechniquesand
+activities.Itlookslikehehasactuallydonesomeresearch,
+enquiringaboutSNESactivitiesandsuchlike.Thisisadefinitestep
+intherightdirection.
+
+Ihavedonealotofmusicjournalism,andifIwastointerviewa
+bandandmyonlyquestionswere:
+
+1.ÑHowoldareyou?Ä
+2.ÑWhendidyoubeginwritingmusic?Ä
+3.ÑWhatinstrumentsdoyouown?Ä
+4.ÑWhoisyourfavouritegroup?Ä
+5.ÑWhatisyourfavouritealbum?Ä
+
+thentheinterviewswouldbeterriblyboringandallseemthesame.
+Onlyasmallpartoftheartistspersonalitywouldcomethrough.
+
+AsIsay,thisaproblemwithinterviewsinMaggieaswellasUCM,it
+justseemsworthhighlightingbeforewekilltheinterviewstonedead.
+Themainproblemisalotofinterviewsaremadebysomeonesendinga
+textfilewiththequestionstotheintervieweewhosimplyfillsinthe
+answers.InterviewsoverIRCorusingemailhaveamorespontaneous
+feelandcanbelongerandmoreinteresting.
+
+
+ÅATARITrackerSceneReport..............................................
+Ä
+AtfirstIwasabitsurprisedtoseeingthisentryinthemenu.
+Trackerscenereport?ButafterreadingitIhavetocongratulateUCM
+oncomingupwithanewandoriginalidea.
+
+Thearticlegivesdetailsofthestatusofmostofthetracker
+musiciansontheatariscene,whattheyareworkingon,whereyoucan
+downloadtheirmusicfrometc.Thereisalsosomeinformationabout
+trackerprograms,bothcurrentandforthcoming.
+
+Theauthorofthisarticle,505ofCheckpoint,isobviouslyareal
+enthusiastandthisshoulddefinitelybecomearegularfeature.
+
+
+ÅIRCConfusion...........................................................
+Ä
+Anotherarticlewrittenby505,thistriestoinvestigatetherecent
+problemswithIRC#atariandthecreationof#atariscne.Numberone
+irc-dadEvilgiveshisopinionsonthings,butitraisesmorequestions
+thananswers.
+
+Justwhois/arethelamer(s)whokepttakingoverchannelatari?
+Surelysomeone-ifnotsomeb0dyÅ*Ä-mustknowsomethingaboutthem?
+Also,whoarethepeoplewhohavebecomeannoyingtoeveryoneelseon
+#atariandhavesubsequentlybannedfrom#atariscneandwhatdidthey
+do?Theyshouldbenamedandshamed.
+
+IthinksomethingsimilartothisarticleappearedinVexNews(with
+Evilagainbeinginterviewed).
+
+Å*ÑEditorsnote-weakIRCrelatedjoke.Ä
+
+
+ÅTheDyingofAtarihomepages............................................
+Ä
+AnarticlewrittenbyMoonDogabouttheinternet.Nowdoyouthinkthis
+willbe:
+
+1.Praisingtheworldwidewebforcreatingaglobalcommunity
+whereatariownerscanfreelyexchangeinformationandsoftware,meet
+friendsandchatwithpeople.
+
+2.Theinternet:'Notlikethegoodolddays.Hmmm-forgetit'
+
+Andthenot-so-surprisewinneris...number2.
+
+YesaccordingtoMoonDoglotsofscenehomepageshaveclosed
+downandtheinternetisnolongerasinterestingforAtariownersas
+itwasin1995/96("thegoodolddays").TouseaMoonDogphrase,this
+ispurebullshit.
+
+MoonDogcomplainsthatallthehomepageshavedisappeared.Surea
+lotofthescenehavedisappeared,butmostofthemneverhadhomepages
+inthefirstplace.Andalot,likeLaserwhowerementioned,never
+finishedtheirhomepages.WhenIwasusingtheinternetbackin1995/96
+IusedtogeteverythingfromFTPorbeDCC'edit.Theinternet
+situationislotsbetternowthanitwas.
+
+ThisismostlyduetoDeadHackersSocietywhodoanabsolutely
+fantasticjobwiththeirpageandithasbecomeanessentialaccess
+everyinternetsession.Theirnewssectioncombinedwiththebulletin
+boardbeatbothMaggieandUCMhandsdown.Thereisnowaythateither
+ofuswillbeabletocompetewiththeDHSpagesintermsofupto
+datescenenews.Theyalsohaveatremendousfiledownloadsection
+witheverynewpieceofatarisoftware.Therewasnothinglikethisin
+95/96.
+
+TherearelotsofgoodandinterestingAtarisites.TheReservoir
+Godspageshavebecomeexceptionallypopular,andtheMaggieonline
+sitehasbroughtthispublicationtoawideraudience.TheSenior
+Dadspagehasanexcellentsetoflinks.Paranoiarunaninteresting
+acolourfulpagewithmanygamesreviews(theyhavereviewedmore
+stuffthanUCM!).YesCrewandNaturebothmaintainnicesetsofpages.
+ThisisjuststuffIcanthinkofoffthetopofmyhead.Andboth
+RipleyandIwillbesettinguppagesoverthenextfewweeks.
+
+TheonlyreasonIcanthinkthatMoonDogisbeingsonegativeis
+becausetheUCMpageshavebeensuchadisaster.Hemaycomplain
+atotherpeoplefornotupdatingormaintainingtheirpages,but
+theUCMpagewaspermanentlyunderconstruction,wasslowandthen
+disappeared.Iknowhehasdocumentedtheproblemshehad
+elsewhere,butitisveryhypocriticaltocomplainatother
+peoplespageswhenyourownissopoor.
+
+Theinternetwillneverliveuptothehype.Itisslowand
+awkward,butitstillhasatremendousamounttooffertheatari
+enthusiast.
+
+
+Twomuchmoreenlighteningarticlesfollow....
+
+
+ÅGermanPartyScene....AndNazis........................................
+Ä
+Despitethetitle,thisisn'tareferencetoUCM'sappearanceat
+Interjam.Thisisaveryinterestingarticleabouttheriseofthefar
+rightinGermanyandtheforcesbehindit
+(unemployment,   a   sinistermillionaireand,bizarrely,government
+subsidies).Somepeoplesaythissortofthingshouldn'tbeinan
+Scenemagazine,butIthinkthereshouldbemoreofit.Itisvery
+interestingtofindoutaboutthepoliticalsituationsofdifferent
+countries.
+
+Toooftenwheninterviewing,forexample,aguyinSlovenia,we
+askwhathethinksabouttheST.WeallknowwhatanSTis,whatit
+doesetc.Buthowmanyofusknowaboutthepoliticalsituationin
+thatcountry?Orevenwhereitis?Thesewouldbefarmoreinteresting
+questionsforaninterview.
+
+Backtothearticle,505isrighttohighlighttheworryingrise
+ofthefarrightacrossEurope,anditisunderstandablethat
+Germanyisparticularlynervousgivenitshistory.PersonallyIam
+moreworriedaboutFrancewhereJeanMarieLePenseemstobegettinga
+lotofsupport.
+
+FortunatelyintheUKwedon'thavethesamesortsofproblemwith
+Fascism-althoughwedidsuffer12yearsofThatcherwhichwasclose
+enough!
+
+Ithinkthattodestroythe   menace   ofracismweshould
+becomemoreinternational.Stopworshippingtheflagofyourcountry.
+ThebordersofEuropeshouldbetrulyopenandweshouldhaveone
+currency,oneculture,perhapsevenonegovernment.Idon'tcarewhere
+I'mruledfromorwhatcurrencyIuse-I'mnotpatriotictoany
+degree.Patriotismistoooftenusedasanumbrellaforracismand
+bigotry.
+
+Anyway,goodtoseethisintelligent,thoughtprovokingarticle.More
+please!
+
+
+ÅPrejudicesandtheirtruths.............................................
+Ä
+Anicelittleanecdotefrom505abouthisexperienceon#amigascne,
+expectingtheworstfromAmigapeoplewhenreallyhisfearswere
+ungrounded.
+
+IwouldliketothinkIamnotprejudicedandIamsurethatthere
+aremanyfriendlyAmigapeoplethere,itjustseemsthatwheneverIgo
+topartiesIdon'tseemanyofthem.Atthepartiesonlytheloud,
+obnoxiousAmigaguysturnup!
+
+StillatleasttheyseemtodomorethanPCfreaksatpartieswhoseem
+tospendalltheirtimeplayingQuakeandlookingatpornpictures.
+Whensomanycomputerfreaksseemtofallintothesecategoriesits
+hardnottogeneralise.
+
+StillletusnotforgetthatwehavesomeAmigadudesonour
+scene(HiToodeloo!)andalthoughtheyareveryniceguys,theyhada
+lotoftroublesontheAmigascenewhichtendstosuggestthata
+lotofAmigascenepeoplehaveattitudeproblems.Perhapsthisisa
+reasonthatUCMadoptedanAmiga-styleinterface?
+
+
+ÅCrusadeagainstfakedemos..............................................
+Ä
+"AfterIgotthereleasefromtheAlternativePartyIwasvery
+disturbed".YesitsthestartofanotherMoonDogarticle,and
+whatdoyouknowheiscomplainingagain.Iwonderwhathasdisturbed
+him-coulditbethefakedemobyReservoirFrogs,releasedatthe
+alternativeparty,whichgave"FuckingsTo:UndercoverMagazine-We
+arebuildingabigshit".
+
+Surelytheaveragepersonwouldhavelaughedatthis-another
+childishjokeinafakedemo.Butinsteadthisseemstohave
+infuriatedMoonDogsomuchheislaunchingafanaticalcrusadeagainst
+allfakedemos.
+
+HewritesabouttheAltpartyandhecouldmentionDead
+HackersamazingcompressionofDreamDimensioninto4k,thegreat
+AggressionASCIIdemoorevenBugger.Butno,heiscomplaining
+aboutthefakedemos.Accordingtohisargument,"Fakedemosare
+notasgoodastheyusedtobe."i.e.theywerebetterinthegoodold
+days.Justhowthickarethelensesonthoserosetintedglasses
+MoonDog?
+
+Thegistofthisargumentisthatnodemosliveuptothefirst
+SeniorDadsdemos.TheearlySeniorDadsdemoswereawful!The
+firsteverySeniorDadsreleasewasAnalTuck(lookitup!),
+followedbyColonicIrrigationandtheFIRREdemo.Noneofthese
+standthetestoftimeandifreleasednowwouldbecompletely
+slated.Suretheywerereasonablyinnovativeforthetime,butthere
+arelotbetter,funniermorecreativefakedemosbeingmadenowthan
+therewerethen.TheSeniorDadsdidn'treallygetgooduntilthe
+seminalAir-Dirt.
+
+MoonDogisright,therearealotofshitfakedemosoutthereand
+someofthemarenotevenworthrunningonce.Iamthinkingof
+therecent'efforts'byReject.Obviouslynotime,energyortalent
+hasgoneintothesedemos.Andthescenewouldbebetteroffwithout
+releaseslikethis.
+
+Buttogeneraliseiswrong.TheSeniorDadsXmasdemowasoneofthe
+funniestthingstheyhavedone.BothReservoirFrogsdemoshave
+beenshortbuthighlyamusing.AndtheDadsobviouslyspentalot
+ofcareandtimecreatingMonoMental.Ithinktheproblemisthat
+MoonDoghasasenseofNostalgia,butnotasenseofhumour.Theold
+demosmusthavebeenfunnybecausetheyweremadeinthe"goodold
+days".Infiveyearstimenodoubthe'llbeharkingbackto"the
+goodolddayswhenthereweregreatfakedemosbyteamslikeReject".
+
+IfMoonDoghadbeenattheAlternativepartyduringthe
+presentationoftheSeniorDadsandReservoirFrogsdemohemayhave
+heardasoundthatisalientohim.
+
+ÑItiscalledlaughter.Ä
+
+Itisthesoundofpeopleenjoyingthemselves.Andtherewasalotof
+laughinggoingonduringtheviewingoftheseintros.Sopopularwere
+theythatmostoftheSeniorDadsbackcataloguewasdugoutand
+presentedontheprojectorafterthemaincompo.
+
+Justbecauseademoisfakeisn'tanexcuseforitbeingbadly
+designedorunfunny.Alotofthebestfakedemosareactually
+carefullydesignedandwrittenbyskilledprogrammers.MoonDog
+complainsthattheauthorsofthefakedemosshouldspendtheirtime
+doingmoreproductivethings.Noneoftheauthorsofthefakedemos
+releasedatAltactuallyattendedtheparty,andifitwasn'tforthe
+partytheywouldn'thavecreatedtheintros,andastheyweren'tat
+thepartyitisunlikelytheywouldhavedoneanythingelse.I
+thinkitisalotbettertohaveareleasethatyouloadupadozen
+timesandlaughatthantohavenothing.
+
+Somefakedemosarequitebrilliantandcomefromunusualsources.
+LetsnotforgetCream'sSonolumineszenzparody'F6'whichwascodedby
+AgentTandTao,agraphicartistandamusician.Wewerein
+stitcheswhenwefirstsawthis.AccordingtoMoonDogtheyshould
+havebeeneithercodinganEko-SystembeatingDSPdemoordoing
+nothing.
+
+WhatisMoonDog'sproblem?HeisafraidthatthePCownerswhohe
+knowsmightlaughathimforowningtheselamedemos.Hehasnothing
+toimpressthemwith.Thisispathetic-youdon'townanAtarito
+impressPCandAmigaowners.Andifyoudo,youdon'tshowthemyour
+fakedemoscollection.
+
+Hecomplainsthatthereisn'tenoughdemosbeingreleasedatthe
+partiestofillupthedemosection.Thisisavalidpoint.But
+ifthegraphicsmenandmusiciansstoppedmakingtheirfakedemos,
+wouldthisleadtoahugeincreaseinrealdemocreation?Ithinknot.
+
+Hissummaryentirelymissesthepoint.Hemakesaclarioncallfor
+coderstopushtheirmachinestothelimit-goodpoint.Butdoes
+hereallyexpectthecodersoffakedemostoreallypushthemachine
+tothelimit?AreRaseroTeamthenextEKO,onlyheldbackbythefact
+theywouldrathercouldjokedemos?
+
+Thereasonpeoplecodefakedemosisbecausetheyarenotwizcoders
+butstillfeeltheycancontributesomethingentertainingtothescene.
+Thebestcodersonthescenedonotmakefakedemos.Howmanyfake
+demosdidEKOmake?Askingfakedemocoderstomakethenext
+'Sonolumineszenz'islikeaskingFelicetocodetheFalconversionof
+Quake.
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+NowgoandseewhatelseMrPinkhastosayinepisode2!!
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

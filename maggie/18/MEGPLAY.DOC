@@ -1,0 +1,122 @@
+0660103030571
+9[........................................................]
+Ö
+Megaplayerv1.15
+Ñ
+(Falcon'030only)
+Ä
+Thisusefulmusicplayerhasnotreallyreceivedalotofattention
+fromusbeforeforanumberofreasonswhichI'lltrytoexplain
+shortly..Itwascreatedasaplay-onlyextensiontotheMegaTracker
+composerprogram..Bothoftheseseemedtogothroughadevelopment
+processtypicaloftheFrenchAtariscene,thatisthatno-onewas
+reallysurewhethertherewasstillanydevelopmentprocessgoing
+onornotuntilitwastoolate!
+
+BothMegaTrackerandMegaPlayerwereshareware,andinbothcases,
+itlookedlikethesharewareregistrationsweredefunctandthatthe
+author,SimpletofFatalDesign,hadtotallyjumpedshipandpossibly
+movedtoSouthAmericaatthesametime..Shamereally,asinitial
+versionsofMegaTrackergaveme   my   firsttasteof(mostly)
+workingScreamtrackermultichannelmodfiles,andMegaPlayerwasa
+promisingGEM-friendlyinterpretationofthetheme,andpotentially
+themostcapableAtaridesktopmodfileplayertherewas..
+
+Asithappened,thefullregisteredversionoftheMegaPlayerwas
+releasedasfreewareearlierthisyear,albeitwithoutanynewworkon
+it,sincethelastupdatesin'95-96..Still,wegratefullyreceive
+whatsmallmerciesthereare,andthisisnowtheplacewherewecome
+intoreviewit..
+
+MegaPlayercanberunasa.PRGprogramwithinamulti-tasking
+environment,orasan.ACCfromasingle-taskingTOSdesktop..Mega
+PlayerhasthenowuniversalAudioCDplayerstyleinterface,adapted
+fortheGEMdesktop,whichcantakeonamore'3D'lookonmore
+advanceddesktops..Modfilesareloadedthroughthefileselectorand
+startplayingimmediately..
+
+Youdon'thavetolooktoofarforotheroptions,aswellasthe
+standard'pause/stop/fast-forward'typecontrolsonthefrontpanel,a
+littlejudiciousclickingaroundproducesamenutocontrolthevolume
+andsoundquality,asyoucanselectanyofthenormalreplayratesof
+theFalconAudio,fromthe'default'ormaximum50kHz,rightdownto
+thelowerreplayratespossibleontheFalconsoundchip..Thisis
+potentiallyusefulforgivingsomeCPUtimebacktotheFalconif
+youarerunningMegaPlayerincombinationwithanotherdesktoporGem
+application..
+
+Thereisa'playlist'option,whereyoucanpre-selectseveral
+modfilestobeplayed,andinaparticularordertobeplayedtoo,
+MegaPlayeractingasadigitaljukebox,soyoudon'thavetokeep
+breakingofffromthetaskinhandtore-selectanothertune..
+
+Therearesome'cosmetic'touchestoo,withbothspectrumanalyzers
+andandoscilloscopewhichcanbeputonscreenintheirowngem
+windows..Thisformofwindowdressingisstandardtopracticallyall
+desktopmodfileplayersproducedafterthespartan'RapetheDSP'
+player..
+
+Intermsofwhatitcanhandle,MegaPlayerwalksalloverthe
+opposition,certainlyintheworldofdesktopplayers,andevengiving
+mostfulltracker/composerprogramsaformidablechallenge..
+
+MegaPlayerhandlesstandardfour-channelProtrackerstylemodfiles
+easilyenough,italsocandealwithvarious8-channelformatssuchas
+earlyFastTrackerandOctalysertunes..Afterthat,itreplaysScream
+Trackermulti-channeltunesmoreorlesscorrectly,certainlygood
+enoughfor95%ofthetime,andevenhasacourageousstabatmore
+recentformatssuchasthe32channel.XMformat,ofwhich,onlyone
+othertrackerisabletoreplayontheFalcontoanyextent!(An
+interestingsideissueisthatcertain.XMtunesseemtobeformer
+Protrackermodfilesconvertedto.XMheaders,accordingtotheMega
+Playerinformationdialogue!
+
+Thereareothermulti-channelformatsitwillplay,includingone
+uniquetoMegaPlayer,the.MGTformat,whichisapparentlythemost
+efficientCPU-wiseforthisplayer..Oneraritywhichprobablyhasn't
+beenimplementedonANYotherAtaribasedtrackerormodfileplayer,
+istheabilitytoplayProtrackerfourchannelmodfileswithpanning
+commands,averyrarelyencounteredeffectinthenormalcourseof
+things,Ijusthappentohaveonesuchmodfilethatdoesthat!
+
+ThehardworkisdoneviaacombinationofCPUandDSP,anda
+'Nemesis'orCenturbotypeacceleratorisusefulinprovidingthat
+littleextra'poke'forthebiggermodfiles..Replayonsomeofthe
+moreesotericformatsisprettygood,onlyreallybeatenbyGrauomf
+Tracker..However,MegaPlayeriseasilyaccessiblefromaGEM
+environment..
+
+Ingeneraluse,MegaTrackerseemstobeprettyreliable..Personally,
+Itendtobecarefulwithitaround,asmyFalconhassufferedtheodd
+inexplicable'stoppage'inmid-play..Thisismorethanlikelydueto
+anagingcomputerwithanearlyseriesDSPwhichsometimesdecidesto
+pleaseitselfwhetheritwantstoworkproperlyornot..Accelerating
+viaNemesisathigherclockspeedsismorelikelytoputsomestrain
+onthehardwareaswell..Theother   questionmarkiswithMagiC,a
+lovelyO/S,butnotexactly   aby-wordforuniversalsoftware
+compatibility..I'vegotafeelingthatMegaTrackerOUGHTtowork
+underMagiC,butwhetheritDOESworkunderMagiCseemstodependon
+theindividualusersconfiguration,andI'mjustoneoftheunlucky
+ones!
+
+Inconclusion,MegaTrackerisabighitonthisdesktop,andasit
+hasbeenre-releasedasfreeware,anabsolutebargain!
+Å
+Pro's
+Ñ
+GEMCompatibleanddesktopfriendly
+Verywiderangeofmodulefileformatssupported
+Evennotcommonlysupportedmulti-channelformatsonothertrackers!
+Playlistoptiononhand
+UniversalandintuitiveCD-Playerstyleinterface
+Good(andadjustable)replayquality
+It'snowfreeware!
+Å
+Con's
+Ñ
+Tendstofindoutweaknessesinolderlessstablehardware
+NotsureifMagiCcompatible,cananyoneelseenlightenus?
+Notbeingsupportedbyauthor,nofutureversionsonthecards
+Ä
+CiH-Oct'98
+

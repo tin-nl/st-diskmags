@@ -1,0 +1,95 @@
+ATARI CD-ROM SUMMARY 13
+~DROPS.FIL~
+Tosfixes: 3rd party fixes to atari mess ups
+
+38400bps.lzh   10      Hardware mod improves RS232 throughput
+buttnfix.lzh   2       Fixes "one click gives doubleclick" bug in TOS > 1.4
+fser096b.lzh   52      Fast serial hack, includes MegaSTE PAL fix inform.
+fix_gdos.lzh   3       Fixes vdi handler error.
+flop_fix.lzh   5       Fixes TOS 2.0x floppy bugs, by author of HSMODA0x 
+foldrxxx.arc   1       Fixes 40 folder problem
+hsmoda04.lzh   89      Good serial port fix, ST's to Falcons, German/English
+poolfix_cb.arc 6       Claus Brods pool fix
+quicktos.lzh   3       Boot older versions of TOS from disk.
+rsve_1.lzh     31      Instructions for small board - very fast serial port
+rsve_ge.lzh    26      English/German version of above, complete instruct. 
+serptch2.lzh   5       Fixes bug in TOS 2.02/3.01
+sos_206.lzh    225     Some prgs to make 2.06 nicer
+tos14fx2.lzh   2       A newer version of tos14fx5
+tos14fx5.lzh   5       TOS14file with bugs fixed and xbra support. Go figure.
+vdifx110.lzh   5       Fixes invalid handle error message with GDOS    
+tport.arc      22      Boot time disk copier   
+truedi20.lzh   8       RAM disk driver?
+tshcpx_e.zip   18      Recoverable trash can .PRG and controlling .CPX
+turnkey.arc    3       Autoboot GEM programs
+tvst15.lzh     18      Versatile file viewer
+tx2fmtr1.lzh   10      Converts online mags to TX2 format
+undelete.arc   28      Undeletes files from A: only    
+undoub.arc     9       Removes double lines from text files    
+unix2dos.lzh   1       LF -> LF CR converter   
+
+Unixtools:  Unix like utilities for the st
+
+tr.zoo         16      Like unix tr
+unixtkit.arc   401     A whole bunch of these things.
+wc.zoo         16      Word count.  unix style 
+uproot.arc     5       Make TOS forget current directory tree
+vdos1.lzh      50      Interesting shareware prog. launcher and more
+vdos2.lzh      21      goes with vdos1.lzh
+vdos3.lzh      10      goes with vdos1.lzh
+vdos4.lzh      21      goes with vdos1.lzh
+vecshow.lzh    6       Display (XBRA compatible) changed system vectors
+
+Virus: Virus detectors, killers, etc.
+
+agrabt_2.zip   4       AGRABOOT 2 antivirus bootsector
+atarivir.lzh   18      Doc describing various atari viruses 
+azt.lzh        32      Checks hard drive for virus
+chasseur.zoo   23      Anti virus
+fcheck25.zoo   31      Link virus detector
+flu.arc        13      Simulates a virus, but isn't actually one.
+medvd2.lzh     10      Medway Boys virus detector
+peneciln.arc   16      One fo the 1st virus detectors
+protect6.lzh   3       Erik Lars' new one.
+sagrotan.lzh   92      Great new viruus killer.  Abl to learn new viruses.
+uvd242.lzh     14      Virus detector in .ACC format
+vaccine.lzh    8       Very old virus killer
+virend31.zoo   230     Virus killer
+virusdie.lzh   41      Virus killer
+viruskil.arc   11      Virus killer
+vkiller.lzh    70      The 'best' of the virus killers, version dated 5/27/91
+
+Warp9stuff: upgrades, Extend-O-Save modules, etc. for Warp9 
+
+screen accel.
+clown.lzh      98      Animation for movies12.lzh
+mandala.lzh    5       Mandala Extend-O-Save module
+movies12.lzh   88      Extendo-Save module that plays animations
+savers12.lzh   72      Some shareware Extend-O-Save modules for Warp 9
+minz_ext.lzh   35      Extendo-save modules
+w9upgrad.lzh   81      Upgrades warp9 from 3.5 to 3.6 
+w9371upd.lzh   63      Upgrades Warp9 from 3.7 (?) to 3.71
+w9372upd.lzh   78      Upgrades Warp9 to 3.72
+w9373upd.lzh   78      Upgrades Warp9 to 3.73
+w9_374up.lzh   81      Upgrades Warp9 to 3.74
+w9_375up.lzh   67      Upgrades Warp9 to 3.75
+w9_drop.lzh    4       An extend-o-save module
+w9flyshp.lzh   6       An extend-o-save module
+w9fortne.lzh   26      An extend-o-save module
+w9puzzle.lzh   4       An extend-o-save module
+w9swarm.lzh    9       An extend-o-save module            
+whatis63.arc   20      Guess what type the file is.  prg/acc
+wincol_e.zip   14      "English-ized" Window Color .CPX
+winstall.lzh   31      Automatically installs software packages!
+winx21.lzh     78      Multiple window patch to GEM/AES (needs GEMRAM 1.5)
+xaes_bg.lzh    25      Flying dialogs and stuff, formerly named Let 'em Fly
+xcontrol.lzh   100     Atari's eXtensible Cntr panel, v1.31 for North Amer.
+xcontrol.zip   74      Atari's eXtensible Control panel, w/ .CPXs; v1.31
+xlate.lzh      16      Converts 1st Word <---> Ascii
+xtakey.lzh     7       An acc that lets prgs use extended charcters 
+zoom.zoo       17      Acc and prg : Gem zoomer
+zorg_134.lzh   138     Disk/file monitor and reorganizer
+
+============================================================================
+
+END OF PART 13 (END OF ARTICLE)

@@ -1,0 +1,1 @@
+for %%i in (*) do "c:\projects\st\Articles\_unpack\unice68-20061227.exe" "%%i" "unp\%%i" 

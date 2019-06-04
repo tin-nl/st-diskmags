@@ -1,0 +1,303 @@
+Ú            =========================================================
+Ú            advanced demo efx ( a short tutorial about st c2p part 1)
+Ú            =========================================================
+
+Òintroduction
+Ò============
+
+
+does anyone expected this ? this millennium is nearly at the end and only a few
+days to y2k but well 1999 was a great year for st. dunno but i have the feeling
+that more demos were released for st than for falcon this year. can u believe this ?
+inpired from some amiga or pc demos the coders started to leave oldschool stuff
+and created a new type of st demos.
+
+sure the new demos are seldom done in one vbl. an excetion here is evl with his
+great flicker blur stuff. but anyway to be honest i'm a bit tired of watching
+dots and bobs. so i also do only newschool stuff because who cares about if i
+can do 4 dots more than others.
+i want to see some new stuff on st which is never/not that often done before on it.
+
+this is why i've wrote this article to motivate ppl new and old ones to get
+active and to do some new stuff for st.
+
+
+i take some stuff for granted...u should:
+
+-can code 68k. well i can't explain all and i'm too lazy for this ;)
+-be familiar with st gfx coding bit planes etc.
+-be motivated ;)
+
+oki lets start...
+btw i don't say this is the best way of doing the stuff...its just a try to
+show u how it works... and i guess its of course not bug free ;)
+
+
+
+Úwhat are u talking about?
+Ú=========================
+
+this chapter will explain u some notions. i guess this is needed
+that u know what i'm talking about.
+
+c2p
+===
+
+that's the key to the new demo effects nearly all newschool stuff
+depends on this technic.
+its a shortcut for: chunky to planar
+chunky means here a byte oriented buffer where u set up your effect.
+each byte represents one pixel ( or 2*2 ) on screen.
+planar means the bit planes.
+so c2p is only a technic to convert a chunky buffer to bitplane gfx.
+but later more about this.
+
+Úoffset effects
+Ú==============
+
+some very well known efx are offset effects like tunnels or bumpmapping.
+well its a technic which doesn't need much time and
+generates nice results...but what is an offset effects ?
+normally if u copy a picture by pixel to a screen u read one 
+pixel and write it to same position to the screen. so u do a excat copy to
+screen.
+offset effects don't do this. its a kind of distortion.they copy for example
+the pixel from line 10 row 40 to screen position line 1 row 1. and so on.
+u generate an offset map before the efx that u know later which pixel
+from the gfx must be displayed at which position on screen.
+
+Úbump mapping
+Ú============
+
+this efx wonderful. it creates a illution of a picture which is  effected
+from a lightsource. after i've seen this efx for the first time i was
+absolutly impressed. this effect is that easy thats unbelieveable. it
+always consits of two pictures. one the picture which is bumpmapped and
+one picture of a light source.
+this is an offset effect...but later more about this.
+
+Ûtexture mapping
+Û===============
+
+should be clear i guess. its just a poly with mapped grafix.
+
+Úenvironment mapping
+Ú===================
+
+this effect creates a the illution that your poly or object reflects
+the environnment. the polys looks like an mirror. if u use a special
+env map picture it can look like a spot lightsource which lights
+the object.
+
+Ûphong shading
+Û=============
+
+means a poly texture mapper where each point of the poly has a special light
+source calcuation. this creates a realistic feeling of the object. but if u
+want to do real phong shading on st or falcon.
+forget it ;) its too slow. most of all phong shadings are faked.
+it consists mostly of a normal texturemapper and env mapping.
+u use a special map for the envmapping which creates a light spot
+on the object and the envmapping controls the brightness of the
+texture...thats all ;)
+
+
+Úwhy do i need c2p ?
+Ú===================
+
+did u ever tried to set a pixel bit plane mode ? its a real pain in the ass...
+and its mostly that slow. it is faster to convert an entire buffer to screen.
+the advantage of c2p is that u work with a byte oriented buffer
+where each byte is one pixel on screen. so its much easier to
+generate effects or manipulate that buffer.
+
+
+but how can i convert a byte oriented buffer fast to bitplane gfx ?
+
+hmm the key for this is "movep.l". i guess this instruction is the 
+less used instruction in oldschool demos. well i never found out
+who used it for the first time . but even tat used it already in his fast
+tunnel effects intro for maggie.
+
+but lets have a look what movep.l does:
+
+for example:
+
+    lea    $40000,a0
+    move.l #$11223344,d0
+    move.l d0,(a0)
+
+the result is:
+
+    $40000 = $11 (first byte of plane 1)
+    $40002 = $22 (first byte of plane 2)
+    $40004 = $33 (first byte of plane 3)
+    $40006 = $44 (first byte of plane 4)
+
+
+as u can see movep.l splits up d0 into four bytes and writes the
+the $11 to $40000 ...and writes the $22 to $40002 and so on.
+without movep.l it would look like this:
+
+    lea    $40000,a0
+    move.l #$11223344,d0
+    move.b d0,6(a0)
+    lsr.l  #8,d0
+    move.b d0,4(a0)
+    lsr.l  #8,d0
+    move.b d0,2(a0)
+    lsr.l  #8,d0
+    move.b d0,(a0)
+
+so whats the advantage of movep.l ?
+
+the advantage is that u can write with ONE instrution 8 pixel on
+screen in 4 bitplanes ! so movep.l writes one byte to each plane.
+
+oki now we know a technic to set fast 8 pixels on screen in all
+bitplanes. but does it really help ?
+yep for sure.
+first of all we have to half the resolution. so we only want to set
+4(2*2) pixel with one movep.l we just double the pixels. sure its possible to
+use 8 but its too slow for a normal st and the precalced buffers will be too big.;)
+
+the next step is now to generate a long buffer that keeps all combinations of
+possible colors(16) in 4(2*2) pixel in bitplane format.
+that long is later used to write it to screen via movep.l.
+i will not say more about the generation of that buffer. have a look to the source
+which is included in this issue of ucm. because its really basic stuff.
+its more interesting to continue ;)
+
+have a look to this source part.
+
+    lea    screen,a0
+    lea    buffer,a1	; this is the generated buffer with all
+                  	; pixel/color combinations
+    moveq  #$0,d0       
+    move   #$1234,d0    ; color information for the 4 pixel
+    lsl.l  #2,d0
+    move.l (a0,d0.l),d0
+    move.l d0,(a0)
+
+hmm doesn't look that heavy ? but this is already a routine which
+displays 4(2*2) pixels on screen. with the colors 1 2 3 4.
+ok lets have a closer look what each instruction does:
+
+    lea    screen,a0
+    lea    buffer,a1	; this is the generated buffer with all
+                  	; pixel/color combinations
+
+this should be clear. this is to get the pointer so screen and our
+generated buffer.
+
+    moveq  #$0,d0       
+    move   #$1234,d0    
+
+d0 keeps now the color informations for our 4 pixels so
+1 = color of the first  pixel
+2 = color of the second pixel
+3 = color of the third  pixel
+4 = color of the fourth pixel
+the 1 2 3 4 means the real color numbers
+
+    lsl.l  #2,d0
+
+u know our generated buffer is long oriented. so we have to multiply
+it with 4.
+
+    move.l (a0,d0.l),d0
+
+this gets the bitplane data from the generated buffer for movep.l.
+this is the precalculated color combination for the colors 1 2 3 4.
+
+    move.l d0,(a0)
+
+and write it to screen. voila...
+
+
+as u can see d0 keeps the colors for the 4 pixel. but well each
+color uses 4 bits in d0 but our chunky buffer is byte oriented.
+yes sure u can use a 4 bit oriented chunky buffer. but its not
+that handy like a byte oriented one. so we need to do a small trick.
+
+Ûthe first c2p rout
+Û==================
+
+ok lets continue with a small source part. this is the first
+byte oriented c2p.
+
+    lea    screen,a0
+    lea    c2pbuffer,a1
+    lea    buffer,a2
+
+    moveq  #0,d0
+    move.w (a1)+,d0
+    lsl    #4,d0
+    or.w   (a1)+,d0
+    
+    lsl.l  #2,d0   
+    move.l (a2,d0),d0
+    move.l d0,(a0)
+
+c2pbuffer:
+dc.w $01,$02,$03,$04
+
+----------------------------
+
+    moveq  #0,d0
+    move.w (a1)+,d0
+
+this is to get the first 2 bytes (pixels) from the chunky buffer
+d0 = $0102
+
+    lsl    #4,d0
+
+shift them up.
+d0 = $1020
+
+    or.w   (a1)+,d0
+or the second 2 bytes(pixels) from the chunky buffer.
+d0 = $1324
+
+oh as u can see the order of the colors are not the same like in
+the example before $1234 and now $1324. this type of getting the data from the
+chunky buffer needs a small change in our generation routine for the buffer.
+but don't worry in that source is this already done.
+thats the trick i meant. normally the color order is:
+for a word
+4 bits = color for pixel 1
+4 bits = color for pixel 2
+4 bits = color for pixel 3
+4 bits = color for pixel 4
+==16 bits
+with this trick u have to swap the 2 and 3 so that the order is:
+4 bits = color for pixel 1
+4 bits = color for pixel 3
+4 bits = color for pixel 2
+4 bits = color for pixel 4
+==16
+
+Úthats it
+Ú========
+
+ok now u know the basics of c2p. i will stop now. i guess this should
+be enough for the first part.
+so play a bit with the source and if u have question just drop me
+a mail: candyman@atari.org
+or visit our site at: cream.atari.org
+
+in the next part we will have a look to:
+
+-other kinds of c2p
+-optimizing the c2p
+-elemination of the chunky buffer
+-offset effects
+   bumpmapping
+   tunnel efx
+
+
+excuse my bad english ;)
+
+regards
+
+ÒOlaf

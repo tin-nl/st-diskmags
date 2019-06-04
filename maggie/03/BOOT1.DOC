@@ -1,0 +1,261 @@
+                     B o o t s e c t o r s
+                     ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+                        Written by Mungo
+
+
+  Hello excellent readers of Disc Maggie!   Right, now here comes 
+an interesting bit after all the chit-chat you have been reading.  
+It concerns bootsectors and the writing of them, virus' and other 
+such stuff.
+
+  Well,  for about 8 - 9 months I have been writing an absolutely 
+MASSIVE  utility that will do virtually ANYTHING.   It really  is 
+too big to tell you all what I've done to it,  but the  important 
+ones are a disk/file editor,  virus killer,  bootsector helper  & 
+writer,  formatter,  disk accelerator,  system variable  changer, 
+printer  attribute changer,  cool  editor,  disk  searcher,  file 
+attribute  changer...  well,  simply  too many to  say.   I  will 
+hopefully be able to sell this to a reputable software house  and 
+obtain large sums of money.
+
+  I have been working a lot with bootsectors,  and their workings 
+and how to write them.   In this article are three sources -  two 
+GfA and one Assemble Language - to show all ye budding bootsector 
+writers how to get started.
+
+   The  bootsector's  first 50 or so bytes,  are  where  all  the 
+information about your disk is stored.   Below is a table showing 
+you  the  kind of information you need about what is  where  (and 
+why?).
+
+Byte Label   Meaning                               Typical values
+
+0    BRA.S   Jumps forward to the boot code         $60 38       
+2    OEM     Reserved bytes that don't do much      Anything!!!
+8    SERIAL  24-bit random serial number             "    "
+11   BPS     Bytes per sector                       $00 02
+13   SPC     Sectors per cluster                    $02
+14   RES     Reserved sectors                       $01 00
+16   NFATS   Number of FATs on disk                 $02
+17   NDIRS   Max num of directory entries           $70 00
+19   NSECTS  Sectors on disk                        $7C 06
+21   MEDIA   Media descriptor byte (SS/DS)          $F8/$F9
+22   SPF     Sectors per FAT                        $05 00
+24   SPT     Sectors per track                      $0A 00
+26   NSIDES  Sides on disk                          $02 00
+28   NHID    Hidden sectors                         $00 00
+30   EXECFLG Copied to _cmdload                     Anything!!!
+32   LDMODE  Load mode (0 load FNAME,1 load SSECT)   "    "
+34   SSECT   Sector number to start loading from     "    "
+36   SCETCNT Number of sectors to load               "    "
+38   LDADDR  Address where sector are loaded to      "    "
+42   FATBUF  FAT address                             "    "
+46   FNAME   Filename to load (if LDMODE is 0)       "    "
+57    -      Reserved
+58    -      Boot code
+
+   The  first  30 bytes are the Bios Parameter  Block  (BPB).This 
+table  was compiled with the help of Antic's Disk  Doctor.   From 
+the offset of 30 and on,  I have not used as my routine does  not 
+load  sectors,  but runs a small program in the  bootsector,  and 
+continues loading in the normal way.   If sectors/files are to be 
+loaded, they should be used; but any file to be loaded must be an 
+image  file  -  that  is,  it must not  have  a  header  or  file 
+relocation table.
+
+  For your ST to be able to run your bootsector,  it must be  set 
+up in the correct manner.   The bootsector must be  'executable', 
+meaning that it must checksum to $1234.  It is obvious that 99.9% 
+of the time, after writing or changing a bootsector, the checksum 
+will  not  be the magic $1234,  so we need some way of  adjusting
+the bytes in the bootsector so they total. The ST has such a call
+available to the user {Xbios(18)} and this can be used to  change 
+the executability of the disk.   What it does, is change the last 
+word  (2  bytes)  of the bootsector so it  calculates  to  $1234.  
+Below  is  a small GfA Basic proggie that tells you  whether  you 
+have  an executable disk in your drive.   The bootsector must  be 
+loaded in at the address 'addr%', shown later on.
+
+tot%=0                                  !set total
+FOR f%=addr% TO addr%+511 STEP 2        !count loop in words
+  b%=DPEEK(f%)                          !read current word
+  tot%=(tot%+b%) MOD 65536              !add and wrap at 16 bits
+NEXT f%                                 !end loop
+PRINT HEX$(tot%)                        !print checksum
+IF tot%=&h1234                          !test checksum is executable
+  PRINT "Executable"                    !if so, print 'Executable'
+ELSE                                    !otherwise
+  PRINT "Non-executable"                !print 'Non-executable'
+ENDIF                                   !Byeee!!
+
+   This is not really necessary for boot writing but it gives  an 
+insight into how the checksum is calculated.
+
+   Below is another GfA source that reads in the bootsector  from 
+your disk,  adds a machine code routine to print a  message, sets 
+the  bootsector  in memory to executable,  and writes it  back to 
+disk.
+
+addr$=STRING$(512,0)                    !Gimme a buffer
+addr%=VARPTR(addr$)                     !and it's address!
+VOID XBIOS(8,L:addr%,L:1,0,1,0,0,1)     !Floprd
+DPOKE addr%,&H6038                      !Jump instruction
+RESTORE boot
+FOR f%=addr%+58 TO addr%+82             !Write machine code
+  READ a%                               !and message to
+  POKE f%,a%                            !bootsector
+NEXT f%
+'
+VOID XBIOS(18,L:addr%,L:-1,-1,1)        !Proboot
+VOID XBIOS(9,L:addr%,L:1,0,1,0,0,1)     !Flopwr
+END
+'
+boot:
+DATA 72,122,0,12,63,60,0,9,78,65,92,143,78,117
+DATA 66,111,111,116,115,101,99,116,111,114,0
+
+  The first data line is the machine code,  and the second is the 
+message.   Your  own  can  be added  if  required,  but  it  must 
+terminate with a '0'.  Tricks like inversing the text can be used 
+by the numbers:
+
+DATA 27,112,your message,27,113
+
+  Which turn on inverse mode,  print your message,  then turn  it 
+off again.  To move the cursor down to the next line:
+
+DATA your message,13,10,another message
+
+  Nice stuff, eh?
+
+
+  Right,  all executable bootsectors add to $1234,  including all 
+viruses,  so  to  disable a virus,  just change any byte  in  the 
+bootsector, and  so  it  will  not  checksum  to  $1234  anymore,
+rendering the virus useless.   The best way to kill a virus is to
+zero  all bytes from 30-512.  Whenever possible, make your  disks 
+executable as some virsuses do not write  to  executable  disks -
+thus a type of immunisation is created.  Richard Karsmakers - the
+Virus Killer King - wrote the immunisation concept.   To immunise
+a disk, it must be cleared of all viruses.  The jump word must be 
+added along with another word:
+
+Byte:   0   1   2   3
+      ===============
+      $60 $38 $00 $1C
+     
+     jump word 
+
+   This  will  then jump 56 bytes forward to byte 58  -  where  a 
+machine code RTS must be placed ($4E75).   Then the disk must  be 
+made executable.   This effectively does absolutely nothing,  but 
+prevents your disks being infected from several viruses. 
+
+Byte:   56  58  60  62
+       ===============    
+       $00 $4E $75 $00
+
+  If a disk is made executable without any kind of routine on it, 
+the ST will bomb-out in various ways.   To aid me (and others) in 
+the  quest against viruses,  please send every virus you have  to 
+me.   I am pretty desparate - as I only have 4:   The  Mad,  ACA, 
+Ghost  and  Signum/BPL.   My  address is at  the  bottom  of  the 
+article.  Also any correspondance should be to that address.
+
+  Below is an Assembly Language source to write a bootsector to a 
+disk.  The effect is to gradually turn the ST's screen from white 
+to black - like many demos do.   I did not include the option  to 
+read  the disks boot & change it,  as it is best if you  can  get 
+used  to  the working of the bootsector.   The routine  with  the 
+heading 'Boot',  sets up a bootsector of 2 sides,  82 tracks,  10 
+sectors, etc.  The words in the bootsector are swapped to conform 
+to  the Intel 8088 format.   For example,  to find out  how  many 
+sectors  there are on the disk,  you read bytes 19 and 20 of  the 
+bootsector,  then swap the bytes.   Using the example below,  you 
+would read $68 $06.  Swapping these would give you ,err, $06 $68!
+
+  Then just:
+
+                           6    *  256 = 1536
+
+                           1536 +  104 = 1640                                                         
+                                         ÿÿÿÿ
+  So that would be 1640 sectors on the disk.   The program  below 
+should  be  altered to suit the format of the disks you  wish  to 
+write the bootsector to.
+
+***************************************************************
+*        Assembly Language Source To Write A Bootsector       *
+*        Thanks very much to Mike (Radix) For His Help!       *
+***************************************************************
+
+Booter  move #1,-(sp)               ;Executable
+        move #-1,-(sp)              ;Disktype unchanged
+        move.l #-1,-(sp)            ;Serial number unchanged
+        move.l #Boot,-(sp)          ;Fetch boot code
+        move #18,-(sp)              ;Create prototype boot
+        trap #14                    ;Do it
+        add.l #14,sp                ;Tidy
+        bsr Write                   ;Go and write it!!
+        rts
+        
+Write   movem.l d0-d2/a0-a2,-(sp)   ;Get registers
+        move #1,-(sp)               ;Write 1 Sector
+        move #0,-(sp)               ;Side 0
+        move #0,-(sp)               ;Track 0
+        move #1,-(sp)               ;Sector 1
+        move #0,-(sp)               ;Drive 0 (A:)
+        clr.l -(sp)
+        move.l #Boot,-(sp)          ;Address of boot code
+        move #9,-(sp)               ;Floppy write
+        trap #14                    ;...and do it!
+        add.l #20,sp                ;Tidy
+        movem.l (sp)+,d0-d2/a0-a2   ;Restore 'em
+        rts                         ;Return
+        
+Boot    bra.s Bcode                 ;Branch to bootcode
+        ds.b 6                      ;loader
+        dc.b 255,255,255            ;serial no.
+        dc.b 0,2                    ;512 byes per sector
+        dc.b 2                      ;sectors per cluster
+        dc.b 1,0                    ;reserved sectors
+        dc.b 2                      ;number of FATs
+        dc.b 112,0                  ;max no of dir entries
+        dc.b 104,6                  ;no of sectors on disk
+        dc.b 249                    ;media type
+        dc.b 5,0                    ;sectors per FAT
+        dc.b 10,0                   ;sectors per track
+        dc.b 2,0                    ;sides
+        ds.b 30                     ;filler
+
+Bcode   move #7,d0
+        move #$777,d2               ;Color $777
+Bootll  move d2,$ff8240             ;Colour register 0
+        move.l #$3fff,d1            ;Timing - from $3FFF to 0
+Bootlsw subq.l #1,d1
+        bne.s Bootlsw
+        sub #$111,d2                ;Subtract $111 from d2
+        dbf d0,Bootll
+        rts
+        ds.b 450                    ;Blanks
+        
+
+  I do not make any kind of warrenty to the usefullness of  these 
+programs,  and  neither  I  - nor the Lost Boys  -  can  be  held 
+responsible  through the use or misuse of these source  codes  or 
+any information supplied.  Having said that - have fun with them!
+
+  REMEMBER:   Pleeeease send any viruses to me (and that includes 
+you  Manikin,Sammy  Joe or Spaz - you MUST  have  LOADS!!).   All 
+correspondance to the below address:
+
+                           David Heiland
+                        41 Military Road
+                                Sandgate
+                              Folkestone
+                                    Kent
+                                CT20 3BH
+                                 ENGLAND
+
+  Goodbye and hope to hear from you soon.
+

@@ -1,0 +1,168 @@
+                           PICTURE-VIEWER-VERGLEICH
+                          --------------------------
+
+So nach und nach werden die Atari's mit Picture-Viewern berschwemmt. Neben ein
+paar auf ein Bild-Format beschr„nkten Viewern, gibt  es mehrere, die eine groe
+Palette an Bildern laden, darstellen und teilweise auch konvertieren k”nnen.
+Die wichtigsten  Programme dieser  Sparte, m”chte ich  hier kurz vorstellen und
+untereinander vergleichen.
+
+Ins Rennen bei diesem Vergleich gehen folgende Programme:
+
+SHOWER         V. 1.0   - Newcore / Schweden
+JFIF           V. 2.22  - Volume 11 Software Development / England
+PICSWITCH      V. 1.01  - Advanced Software / England
+GEMVIEW        V. 3.01  - Dieter Fiebelkorn / Deutschland
+SPEED OF LIGHT V. 3.10  - Stuart Denman / England
+GRAFTOOL       V. 1.00  - Joergen von Bargen / Deutschland
+
+INFO/DATEN       | SHOWER |  JFIF  |  PICSW | GEMVIE | SPOFLT | GRAFTL |
+-------------------------------------------------------------------------------
+allgemeine Daten
+Status           | public | sharew | sharew | sharew | sharew | sharew |
+Viewer/Converter |  * / - |  * / - |  * / * |  * / * |  * / * |  * / * |
+System           | Falcon | Falcon | STe-TT | STe-FC | STe-FC | Ste-FC |
+Druckfunktion    |  nein  |  nein  |   ja   |   ja   |  nein  |   ja   |
+Registrierung    |   --   |  10 $  |  10 $  |  25 $  |  25 $  | Postk. |
+-------------------------------------------------------------------------------
+untersttzte Bildformate
+8-bit GFX8 .GR8  |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+8-bit GFX9 .GR9  |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+8-bit Koala .KOA |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+8-bit Micro .MPT |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+Arrow .R24       |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+Art Direc .ART   |   ja   |  nein  |   ja   |   ja   |  nein  |   ja   |
+Atari Image .IM  |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+Atari Pofo .PGF  |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+Atari Pofo .PGC  |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+Compuserve .GIF  |   ja   |  nein  |   ja   |   ja   |   ja   |   ja   |
+Compuserve .RLE  |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+Degas .PI1       |   ja   |   ja   |   ja   |   ja   |   ja   |   ja   |
+Degas .PI2       |   ja   |   ja   |   ja   |   ja   |   ja   |   ja   |
+Degas .PI3       |   ja   |   ja   |   ja   |   ja   |   ja   |   ja   |
+Degas Elite .PC1 |   ja   |   ja   |   ja   |   ja   |   ja   |  nein  |
+Degas Elite .PC2 |   ja   |   ja   |   ja   |   ja   |   ja   |  nein  |
+Degas Elite .PC3 |   ja   |   ja   |   ja   |   ja   |   ja   |  nein  |
+DL Pics .DL      |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+Doodle .DOO      |   ja   |  nein  |  nein  |   ja   |  nein  |  nein  |
+Enh Simplex .ESM |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+GEM Fonts .FNT   |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+GEM Image .IMG   |   ja   |  nein  |   ja   |   ja   |   ja   |   ja   |
+GL Pics .GL      |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+.IFF             |   ja   |  nein  |   ja   |   ja   |  nein  |  nein  |
+.IFF HAM/4096    |   ja   |  nein  |   ja   |   ja   |  nein  |  nein  |
+.IFF AGA         |   ja   |  nein  |  nein  |   ja   |  nein  |  nein  |
+Inshape .IIM     |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+Jpeg File .JPG   |  nein  |   ja   |  nein  |   ja   |   ja   |   ja   |
+Kodak Photo CD   |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+Mac Paint .MAC   |   ja   |  nein  |   ja   |   ja   |  nein  |  nein  |
+Mac Paint .MPT   |   ja   |  nein  |  nein  |  nein  |  nein  |  nein  |
+Mac Startup .MAS |  nein  |  nein  |   ja   |  nein  |  nein  |  nein  |
+MM Bitmap .MZE   |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+MSX II Pic .MSX  |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+Mural OE . MUR   |   ja   |  nein  |  nein  |  nein  |  nein  |  nein  |
+NeoChrome .NEO   |   ja   |  nein  |   ja   |   ja   |  nein  |   ja   |
+.PBM             |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+PC Bitmap .BMP   |   ja   |  nein  |  nein  |   ja   |  nein  |   ja   |
+.PCD             |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+Port.Net. .PNG   |  nein  |  nein  |  nein  |  nein  |  nein  |   ja   |
+PC Paintbr .PCX  |  nein  |  nein  |   ja   |   ja   |  nein  |   ja   |
+POV Ray .RAW     |   ja   |  nein  |  nein  |  nein  |  nein  |  nein  |
+Prism Paint .PNT |  nein  |  nein  |   ja   |  nein  |   ja   |  nein  |
+RAG D .RAG       |   ja   |  nein  |  nein  |  nein  |  nein  |  nein  |
+Spectrum .SPC    |  nein  |   ja   |   ja   |   ja   |  nein  |  nein  |
+Spectrum .SPU    |  nein  |  nein  |   ja   |   ja   |  nein  |  nein  |
+STraight Fax!    |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+SUN Rasterfiles  |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+Targa .TGA       |  nein  |  nein  |  nein  |   ja   |  nein  |   ja   |
+TIFF Images .TIF |  nein  |  nein  |  nein  |   ja   |  nein  |   ja   |
+Tiny .TNY        |  nein  |  nein  |   ja   |   ja   |  nein  |  nein  |
+Tiny .TN1        |  nein  |  nein  |   ja   |   ja   |  nein  |  nein  |
+Tiny .TN2        |  nein  |  nein  |   ja   |   ja   |  nein  |  nein  |
+Tiny .TN3        |  nein  |  nein  |   ja   |   ja   |  nein  |  nein  |
+Indypaint .TRU   |   ja   |  nein  |  nein  |  nein  |  nein  |  nein  |
+Vidas Images     |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+Vivid Raytracer  |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+X-Bitmap .XBM    |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+XGA Images .XGA  |  nein  |  nein  |  nein  |   ja   |  nein  |  nein  |
+Xtend Degas .PI9 |   ja   |   ja   |  nein  |   ja   |  nein  |  nein  |
+-------------------------------------------------------------------------------
+
+So nun nochmal zu den einzelnen Programmen.
+
+SHOWER ist einer  der jngsten Vertreter  unter diesen Programmen und kommt von
+ein paar Scene-Leuten aus Schweden, die bislang mit kleinen Games und Demos auf
+sich aufmerksam gemacht  haben. SHOWER  ist ein einfacher Viewer, der auf s„mt-
+lichen Monitoren  l„uft. Er untersttzt  eine Reihe von  Bildformaten und dabei
+natrlich die wichtigsten. Da das Teil Falcon-only ist, wird nicht so viel Wert
+auf alte ST-Formate  gelegt. Die Bedienung  ist leicht  und  das Programm  beim
+darstellen der Bilder auch recht flott. Leider untersttzt Shower das JPEG-For-
+mat nicht. SHOWER l„uft sehr stabil und ist bei mir noch nicht abgestrzt.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+JFIF kommt von ein paar Leuten aus England, die  ebenfalls schon mit einem Game
+auf sich aufmerksam gemacht haben -> STARBALL. JFIF  ist ebenfalls nur ein Vie-
+wer. Er stellt mehr Funktionen als SHOWER zu Verfgung, untersttzt  allerdings
+nur eine sehr geringe Zahl  von Bild-Formaten. Er  ist im allgemeinen schneller
+beim Darstellen der Bilder als SHOWER, ist dafr aber nicht so stabil. In einer
+ungenehmen Aufl”sung  gestartet hat  man schon des  ”fteren mal einen schwarzen
+Screen vor sich. Mit meinem SVGA-Monitor (Belinea 104065) vetr„gt er sich nicht
+im geringsten, obwohl  er in einer Aufl”sung von 320*240*Truecolor laufen soll.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+PICSWITCH ist das „lteste  Programm in dieser  Runde, was dadurch auff„llt, da
+der Falcon  auch nicht ansatzweise  untersttzt  wird. Auch die  TT-Aufl”sungen
+k”nnen nicht genutzt  werden, womit das Programm fr Falcon-Besitzer uninteres-
+sant sein drfte. ST-Besitzer sollten sich  das Programm allerdings genauer an-
+sehen. Es untersttzt eine wahrlich groe Zahl von Formaten, l„uft in allen ST-
+Aufl”sungen, bietet verschiedene Konvertierungsm”glichkeiten und  Speicherungs-
+Formate, hinzukommen Vergr”erungsoptionen und der gleichen mehr. PICSWITCH ist
+beim  Konvertieren zudem  noch erheblich  schneller als  GEMVIEW, welches unser
+n„chster Kandidat ist...
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+GEMVIEW ist seit einigen  Jahren unterwegs  und der wohl  meist genutzt Bilder-
+Konverter und Viewer. GEMVIEW untersttzt alle TOS-Rechner und alle Aufl”sungen
+und dazu eine  schier unglaubliche Menge an  Bild-Formaten. Die in dieser Liste
+aufgefhrten sind beiweitem noch nicht alle, da GEMVIEW auf Modul-Basis aufbaut
+und st„ndig neue Module / Formate hinzukommen. GEMVIEW kann natrlich auch eine
+Reihe von Formaten speichern und verfgt ebenfalls ber etliche Konvertierungs-
+m”glichkeiten. Leider ist GEMVIEW extrem langsam, da die  Bilder mehrfach umge-
+rechnet  werden, teilweise 3 bis 4  mal und so kann  es schonmal einige Minuten
+dauern, bis  ein gr”eres Bild  zu sehen ist. Von daher  ist GEMVIEW als reiner
+Viewer nicht zu empfehlen.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Der n„chste  Kollege  ist SPEED OF LIGHT, welcher  ebenfalls  ein Konverter und
+Viewer in einem ist, wobei das Programm allerdings mehr auf Konvertieren ausge-
+richtet  ist. Die  Zahl der Bilderformate  ist nicht gerade beeindruckend, doch
+die wichtigsten Formate sind  dabei. Die Geschwindigkeit des Programms ist doch
+als befriedigend  einzusch„tzen und es l„uft auch relativ stabil. Es unterttzt
+den Falcon ebenso  wie alle anderen  TOS-Rechner, verlangt aber nach mindestens
+16 Farben. Die Konvertierungs- und  Bildbearbeitungswerkzeuge sind ziemlich um-
+fangreich. Allerdings  wrde ich die  Shareware-Gebhr  von 25$ als etwas ber-
+zogen ansehen...
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Das neueste Programm in  dieser Sparte ist GRAFTOOL, ein Pseudo-Shareware-Prog,
+das man mittels Postkarte an  den Autor voll funktionsf„hig  kriegt. Es handelt
+sich hierbei um einen Picture-Viewer und Konverter, der nicht  nur verschiedene
+Bilder laden, speichern  und konvertieren  kann, nein die  Bilder k”nnen  zudem
+noch mittels Rasterfunktion und Filtern bearbeitet werden und das Programm kann
+Farbverl„ufe erstellen. FLI/FLC sowie DL-Animationen k”nnen ebenfalls begutach-
+tet werden. Das  Programm ist nicht  das schnellste, l„uft dafr aber auf allen
+Atari-Rechnern und unter Grafikkarten und MagiC. Leider fehlen einige doch sehr
+wichtige  Bildformate, wie  beispielsweise die gepackten Degas-Formate oder das
+IFF-Format. Dafr sind einige andere Formate, die bislang kein anderes Programm
+vorweisen konnte integriert.
+Aufgrund der quasi kostenlosen Registrierung halte ich das Programm fr habens-
+wert, auch wenn Updates nicht garantiert werden...
+-------------------------------------------------------------------------------
+Alles in  allem gesehen, hat  schon jedes Programm  irgendwo Vor- und Nachteile
+und von daher kann  ich eigentlich keines der Programme uneingeschr„nkt empfeh-
+len, abgesehen von SHOWER, welches durch  seinen Public-Domain-Status den ande-
+ren Programmen durchaus eine Nase voraus hat, wenn man nur einen Viewer braucht
+und daher ist auch dieses Programm auf der Stuffdisk zu finden.
+Ich  wollte noch  erw„hnen, da in den  Therapy-Kchen noch  ein sehr m„chtiges
+Tool am k”cheln ist, welches ebenfalls ber jede Menge Formate verfgt. Wie und
+wann und ob es berhaupt released wird, ist mir momentan leider nicht bekannt.
+-------------------------------------------------------------------------------
+                                                                 Moondog of tnb
+-------------------------------------------------------------------------------
+
+---

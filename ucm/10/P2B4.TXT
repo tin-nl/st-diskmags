@@ -1,0 +1,207 @@
+first of all: This  article is an  old one, which was wrote esp. for the SCREAM
+mag, which unfortunately didn't see the light of day :(( Anyway I think it's
+a great piece of text, so I hope you will enjoy this party-report, even if it's
+a year old...
+                                                Signed off,
+
+                                                           Grey/Mystic Bytes
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+                                Place to be 4
+
+                             report by DATA/TRIO
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+        Dates : 22-26 August 1996
+        In : Mont de Marsan , France
+
+
+        - First day : Thursday
+
+        Well, we arrive around 11:00 at this party. 100 people are awaited
+for this party. The beginning looks good: friendly people, various machines
+(Falcon, Amiga, PC and even Macs) and so on. There is only about 20 people
+for the moment (12:30) so we have room for moving and people can install
+themselves anywhere they want.
+        13:40 - There are big screens that displays demos on Amiga and
+Falcon. On the Falcon we can see Eko System and Lost Blubb for example. I am
+still working on my demo, that I hope I will be able to show for the
+competition. There are as many Ataris and Amigas than PCs. But PC were
+nearly everywhere.
+        15:55 - The big room used for the party is almost full, but there
+are still some free places for new people to arrive. An interesting thing
+to talk about: the Jaguar¿ server for Falcon 030¿. What's that ? Well, it is
+a cable and a small electronic card to connect a Jaguar to the F030's
+cartridge port. And with this feature you can send commands to the Jag and
+then you receive the result. Calculations are much more faster with the Jag
+than with the F030. There is another use of this tool: you can rip datas
+from the Jag cartridges (GFX, sounds, and so on). You can have infos for this
+on the Internet. Around 400DM for the least expensive kit.
+        17:55 - Well, I get back to work after having surfed on the Internet:
+We have a PC Win 95, Modem 28.8Kbds in free use: good idea ! I already
+decided to see what's new on the French Atari FTP server : ftp.cnam.fr .
+There are many demos from the NAS96, too big to download fastly on this slow
+machine. I manage to get BadMood 2.14, some AVI/QT DSP players for Falcon,
+and some utilities for Mint.
+        21:00 - Now, I get in touch with some Falcon users, some of them
+have Centurbos cards, and for the Falcon demo Compo, there is 2 Centurbos to
+win. I decide to work harder on the effects of my demo. There are many
+people all over there now, the ambiance is cool. There's a Saturn to play
+with. I think I will upload my new version of DOOM (v0.48) providing
+collision-test with walls, it will be available on the ftp.cnam.fr as usual.
+
+
+        - Second day: Friday
+
+        00:00 - I had modified my Interpolated Texture Mapping and it was no
+longer working: very bad ! So I had to rewrote a part of it. There's still
+problem with it working. The solution is surely simple, but DSP code is
+sometime hard to debug. Many people are going to sleep now. There will be
+fewer persons remaining in some hours.
+        03:00 - Well my ITM effect is getting better but it is still buggy.
+What a shame ! Many people are gone to sleep so the room is half empty now.
+I must try to get the ITM effect running as soon as possible. I have down-
+loaded all the NAS'96 intros on my Falcon. Well, quality seems not to be
+important on Atari, as oppose to the Amiga where demos are always cool to
+look at.
+        07:45 - I drink a coffee as the day rises. All the noise in the party
+is covered by high-volume modules. I swapped my TV for a VGA monitor as a PC
+is not used nearby. The Internet access is a big success: there is always
+someone using it: getting programs for his machine or reading infos on the
+Net is cool, despite the slowness (max 2.2Kb/s (at night!)). I am going to
+convert my effects already done to work correctly on VGA (not fast I mean).
+        10:00 - I am now with friends watching to MOV and AVI on my Falcon,
+with the player I found on the Internet. Sound is supported and some usual
+pictures compression formats too. It is a good player done by a person who
+asked Dieter Fiebelkorn his AVI player's sources and has rewritten it in
+pure assembly!
+        12:00 - My friend's PC has gone mad: the hard disk crashes and we
+had to reinstall Bill95. (See you 3 hours later...) I got some new softs
+again: the Virtual Gameboy Emulator sources. I would like to rewrite it
+in assembly for Falcon, and if it is fast enough, it would be playable on
+a ST. I have not code for a while.
+        15:00 - The last aslept people are awaken now, and now the room is
+as full as the previous day. And now Bill95 is back on my friend's hard disk.
+Well, my ITM effect still does not work as I expect, and I wonder if I can
+put it in the demo.
+        17:00 - And now for everybody, the floppy disk-throwing compo. Nullos
+from Scarface won the 1st prize : a bunch of damaged floppies. The previous
+record was 57m, now it is 65m !
+        19:00 - Now the room is really fill of people: new people arriving
+must search for places hardly, but there are still chairs and tables for
+peoples and machines. The Sensible Soccer compo starts by now. Now there
+are Saturn¿ and PlayStation¿ for entertainment. I saw a demo from TBL on
+Amiga which is really good but it requires 5Megs of RAM to work. The effects
+are very nice. In the concept it is like the Lost Blubb demo Falcon. The
+modules contain vocals. I think that on Falcon demos could be much better
+than what demo crews make.
+
+
+        - Third day: Saturday
+
+        00:45 - Some tired people get to sleep. I have still haven't sleep
+yet (Will I beat my record of about 51H without sleeping ?)
+        02:00 - A new compo for coders: an intro to do, with a bouncing
+ball which moves on the screen, in 96K, with either a Roswell's creature or
+/and a "Poulpe des Garrigues" gfx. A compo for GFXmen: to do a picture with
+a girl and a Place to Be logo.
+        03:00 - A new fast compo: To do a music module in about 20mn, using
+only one sample and only one voice (patterns are unlimited).
+        05:45 - After having donwloaded the Demolition demo from DHS/IMP.
+I wonder how many time I will stay awake. There are very few people active
+at the moment. It is a moment where only the "strongest" stay to work hard.
+I have nearly finished my demo. I hope that it will be right. My hard disk
+is full of news (I must add that I don't get any news for a while).
+        08:00 - Well, I go to sleep. See you later.
+        14:00 - I wake up: it is time to eat and drink. There is now a new
+compo: doing a W95 emulation on Atari & Amiga and a Workbench emulation on
+PC. I am still tired so I will write later.
+        22:00 - Outside is made a Merguez (sausage) party for everybody.
+It is a success. Everybody wants a sausage (there was nothing else too
+eat for this time). Next to me are some PC people which are very fun: they
+have a crashed hard disk. When someone come to see them, they make the HD
+falling down, shouting that they have all lost what they had onto.
+
+        - Fourth day: Sunday
+
+        00:38 - It is really late. A record has been broken here at the
+PTB4: there are 32 (!) girls. It is a record in all the French Coding
+Parties. Concerning my demo, XAZ's fire works now with the others effects.
+I have now changed my soundtrack routine for the third time, because
+NEWFACE's one doesn't work right on Centurbos, and Simplet's general rout
+has a bug which prevent it to work right too (Hint: remove the line
+"move #$2300,sr" some lines after the "MGTK_Replay_Voices" label) but this
+one does not contain the P56 loader for DSP progs so I use AMGDSPIT from
+Simplet. (I hope it will run on Centurbo...)
+        03:00 - Some guys still have porno stuff to display on their PC
+"multimedia" machines. It is a good thing for these who need to stay
+awake for a long time.
+        04:00 - I go to sleep.
+        08:00 - I wake up. I still feel tired but I have a demo to finish.
+Well, I have once again change the soundtrack rout, because the new one does
+not support DSP programs in parrallel. So I decide to get back to the old
+one which does not work on Centurbos.
+        12:00 - The demo is almost ready, there are still few effects to
+implement, and I will win the Falcon compo (and a Centurbo at the same time)
+        18:00 - After many hours of work, my demo (XTASIE) is now finished.
+I am ready for the compo deadline, I have just to write a README file to
+include in the ZIP. Now it is time for Duke Nukem 3D and DOOM 2 compos.
+There are plenty of people moving around everywhere: this party is really
+good.
+        19:00 - It is the deadline for all productions: I am ready, and so
+are others competitors. There are many productions done: demos/intros,
+music modules, and graphics. We have to wait later this evening to see
+all of them.
+
+
+        - Fifth and last day: Monday
+
+        01:00 - Well, everybody is now sitting in front of the giant screen,
+waiting for the demos, and intros to be showed to the freaks. After having
+some (usual!) problems while connecting the computers to the retro-projector.
+There are about 10 demos/intros in total. The Falcon used to display the demos
+was a Centurbo-upgraded one so some of the demos get problems while running at
+40 Mhz. On PC, we get the config.sys problems, the sound card problem, etc...
+but we managed to see the screens. All the PC demos feature the duck object
+from 3D Studio. On the Amiga were shown 4 screens, with 3 of them from Ramses
+Production. The most funny screen we have seen is the Win95 parody on Amiga.
+        02:00 - After having watched the demos, we see a VHS video clip done
+by Scarface: it is really amazing. It features normal images of the crew, with
+some nice computer graphics animations, like a normal techno video, but the
+music is more hard rock than techno. Well, it is very nice to see what future
+of demos could be. This clip is more a demo than a pure clip (I mean that it
+has the spirit of a demo).
+        03:45 - It is now time to hear the modules, and to vote for them.
+Then everybody is very tired and go to sleep.
+        08:00 - I have not sleep for the moment. I explore the Internet,
+starting with the DHS homepage, which contains various links.
+        11:00 - A guy next to me complain that he can not read ZIP disks
+formatted on a Mac. The solution is to format the disk in MSDOS format. So the
+Mac can read it easily. The problem is that the GEMDOS even on Falcon can only
+read disks less than 32Megs. The only thing I found was to use BigDos, which
+is a GEMDOS patch, so you can then read big disks. The other problem is that
+SCSI Tools and AHDI can not support this type of filesystem. So we have to
+use HDDriver from Uwe Seimet. The demo version allows writing only for
+partition C. But I have been able to read some JPEG directly from the disk.
+        14:00 - People are starting to leave. It is the prize ceremony: the
+first Atari crew for demos and for intros won a Centurbo I. Sorry I don't
+remember the complete chart. Here is the Atari chart:
+For demos (names of the crews): 1.Scarface 2.Gloup 3.Trio (me!) 4. I don't
+remember.
+For intros: 1.Joker (from MJJ Prod) 2. Bill (from RDT crew)
+I won a Tshirt, a pin's and a stick from Mindscape Bordeaux. They offer games
+too. Announce from the speaker: there were finally 37 girls at the party!
+        15:00 - Our car is ready to go so we leave. To conclude, I will say
+that it was a good party. There was plenty of people. Organizers where happy
+for this. There were also many compos with many competitors so there were
+many things to see and to show. I did not have time to upload my new DOOM
+version so I will do as usual.
+
+
+                                Have fun & code!
+                                                        DATA
+

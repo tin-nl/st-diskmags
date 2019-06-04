@@ -1,0 +1,110 @@
+
+                How to run games and others on the Falcon040
+                --------------------------------------------
+
+
+ Some games and demos don't like NVDI, MultiTOS, Mint, Outside, MetaDOS.
+ If a PRG don't like FastRAM in any way, please don't use AB40_RAM.PRG.
+ If everything shows 'no', try to boot your Falcon while holding the
+ 'CTRL' key. If a game has all preferences 'yes' it may bee too quick.
+ Then you can try to turn off the CPU-caches and/or not to use FastRAM.
+ 
+ 'run from' shows the screen-mode I used when the PRG did run on my
+ Falcon040. Maybe the PRG is running from other screen-modes too.
+ However, if a PRG is in this list, it worked on my Falcon040.
+
+ Please try the following preferences:
+
+
+ Name:                 Data   Instr. FastRAM  FastRAM
+                       Cache  Cache  (PRG)    (Datas)  run from
+ -----------------------------------------------------------------------
+ 1st Word Plus 1.89    yes    yes    yes      yes      min. 640 x 200
+ APXFLC16.TTP          yes    yes    yes      yes      640 x 480 x 16
+ APXGIF18.TTP          yes    yes    yes      yes      640 x 480 x 16
+ APXGIF24.TTP          yes    yes    yes      yes      640 x 480 x 16
+ APXJPG24.TTP          yes    yes    yes      yes      640 x 480 x 16
+ APXTGA24.TTP          yes    yes    yes      yes      640 x 480 x 16
+ Asteroidia            yes    yes     no       no      ST-low
+ Atari Rolling Falcon  yes    yes     no       no      640 x 480 x 16
+ Ballerburg             no     no     no       no      ST-high
+ Ballerburg 2          yes    yes    yes      yes      640 x 480 x 256         
+ Bitmap View 4.2.0     yes    yes     no      yes
+ Black Hole             no     no     no       no      640 x 480 x 256
+ Boulder Smash Falcon  yes    yes    yes      yes      >= 432 x 432 x TC
+ Boulder Smash ST/E     no     no     no       no      ST-low
+ Breakout by M. Overm. yes    yes     no       no      ST-high only
+ CacheXXX.PRG by Atari yes    yes    yes      yes
+ CAD 3D 2.0            yes    yes     no       no      ST-high
+ Calamus SL 6/93       yes    yes    yes       no
+ CBZone 1.0            yes    yes    yes      yes      640 x 480 x 16
+ Chaotic Easter Egg     no     no     no       no      reboot holding CTRL
+ Cloen vs. Moonspeeder yes    yes     no      yes      640 x 480 x 16
+ Colums                yes    yes     no       no      ST-high
+ Crackart 1.3 TT+      yes    yes     no       no      ST-low 
+ Cybernetix             no     no     no       no      320 x 240 x TC
+ Cyber Sculpt          yes    yes    yes       no      ST-high 
+ Double Bobble 2000    yes     no     no       no      ST-low
+ Dynabusters+           no     no     no       no      reboot holding CTRL
+ Eclipse               yes    yes     no      yes      320 x 200 x TC
+ Elite                  no     no     no       no      reboot holding Alt
+ Enemywar              yes    yes    yes      yes      640 x 400 x 16
+ Fractaly by acfi      yes    yes    yes      yes      640 x 480 x 256
+ Frontier Elite 2      yes     no    yes      yes      ST-low
+ Ganymed by M. Steen   yes    yes     no      yes
+ ImCon 1.1             yes    yes    yes      yes      640 x 480 x 256
+ Isola 3.5             yes    yes    yes      yes      640 x 480 x 16
+ Kobold 2.5            yes    yes    yes      yes      all possible
+ Kwiks                  no     no     no       no      ST-low
+ Lemans Demo           yes    yes     no       no      640 x 480 x 16
+ Let's Play Shangai    yes    yes     no       no      640 x 480 x 256
+ LHarc 3.10 junior     yes    yes    yes      yes
+ Mafia 2 - The Game    yes    yes    yes      yes      all possible
+ Magic Stones 1.05     yes    yes     no       no      640 x 480 x 16
+ Mandelbr.PRG          yes    yes    yes      yes      320 x 240 x TC
+ Mau Mau de luxe       yes    yes    yes      yes      800 x 600 x TC
+ Metal Masters          no     no     no       no      reboot holding CTRL
+ Mint                  yes    yes    yes      yes
+ Moonspeeder Demo      yes    yes    yes       no      ST-high
+ Mouse Trap            yes    yes     no       no      640 x 480 x 256
+ Multi TOS             yes    yes    yes      yes
+ NeoN Grafix 3D        yes     no    yes      yes      640 x 480 x 256
+ Nethack               yes    yes     no       no      640 x 480 x 16
+ No Limit 2            yes    yes     no       no      640 x 480 x 16
+ Obnoxious Demo        yes    yes     no       no      ST-low
+ Of Lasers and Men 2.0 yes    yes     no      yes      ST-high
+ Omikron.Basic 3.6     yes    yes     no       no
+ Omikron.Compiler 3.5  yes    yes    yes       no
+ Pac Them by M. Steen  yes    yes     no      yes
+ Packy by Woolf-Softw. yes    yes     no       no      ST-high
+ Pacman On E's          no     no     no       no      ST-high
+ Paragon 2 vector demo yes    yes     no       no      640 x 480 x 16
+ PFX-Pack 2.1          yes    yes    yes      yes
+ Pusch it              yes    yes     no       no      640 x 480 x 16
+ Pushover               no     no     no       no      ST-low
+ Q-Blue                yes    yes    yes      yes      320 x 240 x TC
+ Rot3dbmp.PRG          yes    yes     no       no      320 x 240 x TC
+ SBM_08                 no     no     no       no      boot with ctrl
+ Sim City              yes    yes    yes      yes      ST-low
+ Skyfall+              yes     no     no       no
+ Solit„r de Luxe       yes    yes    yes      yes      640 x 480 x 256
+ Space Taxi            yes    yes     no       no      640 x 480 x 16
+ Spacola               yes     no     no       no      ST-high
+ Starball Flipper 1.61 yes    yes     no      yes      ST-low
+ Starraider Preview     no    yes     no       no      320 x 240 x TC
+ Stello 1.1            yes    yes    yes      yes      640 x 480 x 16
+ Stolly                yes    yes    yes      yes      640 x 480 x 256
+ STZip 2.6             yes    yes    yes      yes
+ Tankblaster 1.5       yes    yes     no       no      ST-high
+ Tautology I            no     no     no       no      ST-low
+ Technobox CAD 2       yes    yes    yes      yes      640 x 480 x 16
+ Tempus Editor 2.00    yes    yes     no       no      ST-high or ST-med
+ Terminal Fuck Up Demo yes    yes     no      yes      ST-low
+ The Jaguar Demo       yes    yes     no      yes      320 x 200 x TC
+ Towers 2              yes    yes     no       no      ST-high
+ Triple Yahoo 1.0      yes    yes     no       no      640 x 480 x 16
+ Tron (F_TRON)         yes    yes     no       no      ST-high
+ Two-in-one 1.07       yes    yes    yes      yes      min. 640 x 200
+ WalZ 1.04             yes    yes     no       no      640 x 480 x 256
+ Wotanoid              yes    yes     no      yes
+ ZIP2TOS.PRG           yes    yes    yes      yes 

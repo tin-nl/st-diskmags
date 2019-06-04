@@ -1,0 +1,981 @@
+-------------------------------------------------------------------------------
+                            VECTRONIX NEWSLETTER ISSUE 6 - 9
+-------------------------------------------------------------------------------
+
+What a rush! Here comes the  second volume, of the Vex-News-pack with a load of
+information to blow your head away!
+
+-------------------------------------------------------------------------------
+           ______
+   _____  /   __/___  ______  ____    ______  ______  ______  ______  /\
+   \_   \/   /  __  \/     _\/   /___/      \/      \/      \/\  /  \/  \
+    /   /   /   ____/   /__\    ____/   /___/   /   /   /   /  \/   /   /
+  _/   /  _/   /  _/   /  _/   /  _/   /  _/   /  _/   /  _/  _/   x   /_
+  \   /   \   /   \   /   \   /   \   /   \   /   \   /   \   \   /     /
+   \___  / \___  / \___  / \___  / \_/.sNs.\___  / \_/\  / \_/ \_/\__  /
+       \/      \/      \/      \/              \/      \/            \/
+
+                 VECTRONIX NEWSLETTER #6 (20 August, 1997)
+         All text by Phoenix/Vectronix (unless stated otherwise!)
+                      Contact: vectronix@hotmail.com
+
+
+[1] Contents
+--------------------------------------------------------------------------
+
+  1 - Contents
+  2 - Forewords
+  3 - Vectronix Gfx Competition
+  4 - Want to Become a Kickass Cracker?
+  5 - Finishing, Preparing and Packaging
+  6 - MonST v3.x Command Summary
+  7 - Publication of Contents
+
+[2] Forewords
+--------------------------------------------------------------------------
+
+Believe it or not, but VEXNEWS #6 is already here! It was not my intention
+that it should be released this soon, but here it is! Actually I forgot
+that I had promised the MonST command summary for issue #4 to a few people,
+so I thought I could as well make anoher little newsletter! As I start
+typing I canot stop, the adrenaline is kicking and the fingers are bleeding
+of hunger to write, write, write!!!! ;-)
+
+
+[3] Vectronix Gfx Competition!
+--------------------------------------------------------------------------
+
+We're hereby announcing a Vectronix Graphix Competition! We need new,
+fresh, cool and outstanding logos for our forthcoming webpage(s). There is
+no other prices than fame and glory to this competition. You will get your
+name mentioned if we use your graphics, and we will try to make a toplist
+of the ones we like best if we recieve enough contributions. Take the
+chance and prove how good gfx artist you are!
+
+Please let us know if you or anyone else in your crew is considering to
+take part of this competition so we know what to expect. Finished graphics
+can be mailed directly to phoenix@weirdness.com or uploaded to one of our
+headquarters.
+
+
+[4] Want to Become a Kickass Cracker?
+--------------------------------------------------------------------------
+
+Yeah, won't we all? ;-) As we brings you the shortkeys for the most popular
+and well used debugger there ever was for the atari, maybe a few wise words
+about cracking could be in good place as well. There's a few things you
+must ask yourself and the most important I think is if you have the moral
+to crack software? What it means is to remove the protection from a program
+so that it can be copied and/or spread without any limits. The author might
+loose money on this, and he will not be happy when he finds out what YOU
+have done to his beloved piece of work.
+
+There is other aspects of this subject as well, cracking software for a
+dying platform as the atari might be a very good solution to keep it alive,
+and keep people to stay with it! People who uses cracked software would
+never buy it anyway, and it allows you to test before you buy etc...
+
+So, you have decided you want to learn how to crack? Good, stay with us!
+How do one proceed to crack a program you might ask? How does it work? What
+do you need? Well, the most important thing of it all, which you cannot get
+away from is your assembler knowledge! The better you know assembler, the
+better cracker you will be, no question about it! If you don't know
+assembler at all you should stop thinking about cracking and learn to code
+in assembler first, you _need_ to know how things works in order to crack,
+and do _not_ think you can take easy on this part, there is _no_ shortcuts!
+
+When you learn to code in assembler, you also learn how to use a debugger
+to trace your programs and find out what's happening for every instruction
+you pass by. The debugger is the crackers best friend, some people use
+dissassemblers as well, and it can be usefull sometimes, but most of your
+time you will spend in the debugger.
+
+This is really what you need to start with, if you know assembler and you
+know how to master the debugger, you will also know how to crack, almost
+atleast. A good cracker will need a lot of patience, time and imagination,
+he need to be able to look forward, and know what will happen next. You're
+playing a game, it's you against the protection and you cannot give up just
+like that, you have to defent your honour from the evil dark side... ;-)
+
+There is many different protections, some better than other, but most of
+them are really lame. If we take a very easy example, a shareware program
+which needs to be registered in order to unlock all the fatures. There is
+usually a register dialog to do this somewhere, let's find this! We enter a
+fake name and serialnumber, and starts tracing. We are now looking for a
+working serialnumber so we can replace the fake one we just entered. Sooner
+or later an alertbox will probably pop up telling it was the wrong
+serialnumber, "shit!" you may think, it didn't work! Well, if we look on
+the code right before this alertbox we might find something which looks
+like this.
+
+        cmp.l   d0,d1
+        beq.s   $154553
+        bsr     wrong_code
+        bra.s   $154545
+
+Okay, this was a _very_ easy example, but believe it or not, sometimes it
+looks just like this! What happens here is that the values in the data
+registers d0 and d1 is being compared, if equal we will jump to the
+location we're we will get a nice little message telling the program was
+correctly registered, if it was not equal we will get that ugly alertbox
+right in our face saying we failed, you remember it don't you?
+
+If we stop here and think for a while, what are we looking for? What is
+happening here? Can we put this together in some way? Yeah, probably! If we
+look into the dataregisters again, we might just find the fake serialnumber
+we entered before, it have probably been converted into a hex value though.
+If you're not a living hexadecimal calculator (I know one who is) you bring
+up the little calculator tool (press "O" in MonST), enter d0 since it
+contains teh value we want to convert. And hey, look at that! It _is_ our
+serialnumber!
+
+So, we found the serialnumber we entered when we should register the
+program, and this value was then being compared to another value, remember?
+Then, what if we try the other value in that registration dialog instead?
+Yeah, let's give it a try... bring up the calculator again and convert the
+value in d1 so we get a nice code to enter in the serialnumber field. Then
+go ahead and register the program again, and I bet you'll be successfull
+this time!
+
+Let's pretend the above code was in the startup sequence of the program
+instead, the dataregisters does not contain the serialnumber but some
+control value instead, we cannot find any serialnumber. If the serialnumber
+is not correct, the program will be terminated. Hmmm, we could try to force
+the program to think the serialnumber was okay, let's replace the beq
+instruction with a bra instruction and the program will always think the
+code was okay. You see the point?
+
+Now please remember this was a very simple example, it's not always as
+simple as this, but as said, sometimes it is. This all gives you a basic
+idea of what it is about though. It's always best if you can find a working
+serialnumber and don't need to do modifications to the program, this way
+you know the program is 100% registered, and it might also work with future
+versions as well. Perfection is important, more about that later.
+
+If you want to practise or try cracking at a novice level, get the address
+register program DaCapo and use it as your first victim. This is one of the
+easiest programs to crack I have ever seen, the serialnumber is only 3
+characters long, and you should be able to find it quite simple. It still
+requires you to know assembler and how to use a debugger though, this is
+something you have to learn on your own. If there is interest for it I can
+go through the basic of how to do things in the debugger, but I cannot
+teach you assembler...
+
+Please send us response to this article, whether you liked it or not, if
+you found it interesting and useful or just a piece of crap. If there is
+interest for more things like this, please let us know!
+
+
+[5] Finishing, Preparing and Packaging the Release
+---------------------------------------------------------------------------
+
+For the crackers in Vectronix perfectionism is of high priority. First it's
+_very_ important that the crack is working properly, therefore we try to
+test it as much as possible. We always use a work directory for the program
+we're cracking, and when it's done we do all testing here. When it's time
+to pack it, we unzip a new fresh and untouched version. We add our *.nfo
+file containing the serialnumber, a short description of the program and
+such things and also the file_id.diz description. If we did modifications
+to the program (or other files) we replace these as well.
+
+It's important that everything is just the way it was in the original
+distribution. We pack it all together using Lharc, and then we unpack this
+almost-ready-to-go file and run testings on it again, to see that our
+distribution really _is_ working the way it's supposed to do. Now the
+release is ready!
+
+You might call us insane, but for us it's normal. Our job is to bring you
+high quality and working cracks, and we don't take easy on this. We want
+everyone to know that a Vectronix release is of the highest possible
+quality, and that you always can trust that it works the way it's supposed
+to work.
+
+
+[6] MonST v3.x Command Summary
+---------------------------------------------------------------------------
+
+We bring you the shortcuts for the popular debugger MonST/MonTT which comes
+with the Devpac assembler package. This command summary was copied directly
+from the Amiga Devpac/Amon manual by Phoenix some years ago, but they are
+the same for the Atari. We have had these for years, but nobody ever asked
+for them so we thought there was no interest in them, we where wrong... ;-)
+
+Window Commands
+
+Alt-A    Set adress
+Alt-B    Set breakpoint
+Alt-E    Edit view
+Alt-G    Goto source line
+Alt-L    Lock to expression
+Alt-P    Print window
+Alt-R    Register set
+Alt-S    Split window
+Alt-T    Change type
+Alt-W    Widen window
+Alt-Z    Zoom window
+Shift-.     Open view
+Shift-,     Close view
+. and ,     Next/previous window
+Esc      Update all windows
+Tab      Activate next window
+Alt-1 to 5  Activate window 1 to 5
+
+
+Breakpoints
+
+Ctrl-A      Breakpoint after
+Ctrl-B      Simple breakpoint
+Ctrl-K      Kill breakpoints
+Ctrl-X      Stop executing
+Alt-B    Set breakpoint
+U     Run until
+Help     Show help and breakpoints
+
+
+Loading and Saving
+
+Ctrl-L      Load program
+A     Load ASCII file
+B     Load binary file
+S     Save binary file
+
+
+Executing Programs
+
+Ctrl-R      Return to program / run
+Ctrl-S      Skip instruction
+Ctrl-T      Trace instruction
+Ctrl-Y      Single step
+Ctrl-Z      Single step
+R     Run (various)
+
+
+Searching Memory
+
+G     Search memory (get a sequence)
+N     Find next
+
+
+Miscellanous
+
+Ctrl-C/Alt-Q   Exit MonST
+Ctrl-Q      Quit a program
+Ctrl-P      Preferences
+Ctrl-U      Unload symbols
+Alt-O or O  Show other bases
+D     Change drive & directory
+H     Shows history buffer
+I     Intelligent copy
+L     List labels
+M     Modify adress
+P     Dissassemble to printer/disk
+V     View other screen
+W     Fill memory with
+
+-------------------------------------------------------------------------------
+
+                 VECTRONIX NEWSLETTER #7 (28 August, 1997)
+         All text by Phoenix/Vectronix (unless stated otherwise!)
+                      Contact: vectronix@hotmail.com
+
+
+[1] Contents
+--------------------------------------------------------------------------
+
+  1 - Contents
+  2 - Vectronix WWW/FTP HQ
+  3 - PayBax BBS
+  4 - Who is Ryder/Vectronix?
+  5 - Backdoor in MagiC?
+  6 - Voteform for UCM #10
+  7 - Hotmail Information
+  8 - Latest Releases
+  9 - Publication of Contents
+
+
+[2] Vectronix WWW/FTP HQ
+--------------------------------------------------------------------------
+
+The WWW front end interface for the Vectronix Internet HQ is under
+construction at the moment, please note that it's under no circumstancees
+finished yet! We put the page online in order to provide the WWW site with
+descriptions. Have patience and you'll see that it will turn out real
+nice one day!
+
+CAB users who cannot use the WWW, complain to the authors of CAB or the OVL
+files (or wherever the reason is) and make sure they understand it's
+important for you to be able to access protected directories like this.
+
+There's new addresses to bookmark and use! Please change your settings and
+use these instead. If there should be any changes in the server or
+directory structure or whatever in the future, these addresses will always
+be up to date and working!
+
+WWW: http://xxxxxxxxx.xxxx.xx.xxx
+FTP: ftp://xxxxxxxxx.xx.xxx
+
+NOTE! If you have any friends or know someone who could be interested in
+access to these sites, PLEASE tell them to get in touch with us and mention
+you as reference, and we'll be glad to give them access. Do NOT give away
+login and passwords without our approval! If this happens we will have to
+change password and restrict the access!
+
+
+[3] PayBax BBS (USA)
+--------------------------------------------------------------------------
+
+For future reference, those calling PayBax BBS (the "B" is capitalized!),
+first time callers will see only PD software. You MUST request from the
+SysOp (NorStar) that you wish elite accesss, and supply such a file for
+authentication.
+
+/NorStar, SysOp of PayBax BBS
+
+
+[4] Who is Ryder of Vectronix?!
+--------------------------------------------------------------------------
+
+We thought we should let our newest member have some space and write a few
+words about himself, as a small introduction so you guys get to know him a
+bit better. Ok, let's see.....
+
+Who is that guy?!
+=================
+
+Umm.. CooL!! This is where I get to brag. Not that there is much to brag
+about, but I STill get to.
+
+You may all remember me from the 'good old days' of bbs'ing. It was not all
+that long ago that we used to all congregate on bulletin boards and trade
+warez/info. I used to be on all the good North American boards trading
+whatever. Occasionally calling the better overseas boards when you used to
+be able to phreak without getting a life sentence for doing so. But my main
+hangouts were STampede, Happy Hideaway, LiP SERViCE (My Private BBS),
+DreamWave (formerly Tha Rock) which I was 'CO'. I've been an avid Atari Fan
+since buying my first way back in.. Geez.. (can't remember) Well.. anyways
+it was a 2600. Then a couple years later I moved up to a Atari 400 & 800xl.
+That's when all the fun started! I got a whoppin' 300 baud modem and
+started calling local BBS's and did a bit of hacking into boards and
+trading with a few of the local hackers. I had found my calling! I lingered
+around the scene for the next 10 years trading and meeting with friends on
+various Atari BBS's and upgrading to the latest Atari hardware bringing me
+to where I am now. A FULL fledged member of Atari's #1 group. Vectronix! My
+job is distribution. I must supply YOU! I have and probably never will be a
+hacker as C++ to me is only a mark I would occasionally get from one of my
+teachers if I was lucky! ;-) I content being only a trader, as I don't want
+anymore pressure then I already have. I'll leave all the boring hard stuff
+to Phoenix and Metallinos. and the other extremely talented guys. <g>.
+
+Anyways.. you can wakeup now, as I'm finished babbling!! :-) If you used to
+hang on those boards and yak'ed with me.. drop me a line! I'd love to hear
+from you. Send to: vectronix@hotmail.com  Attn: RYdER.
+
+/Ryder of Vectronix
+
+
+[5] Backdoor (or bug) in MagiC 5?!
+--------------------------------------------------------------------------
+
+Here's an interesting thing for all you MagiC users, coming from Faramir.
+To me it seems Faramir have just made the discovery of the clipboard, but
+who knows, there might be the evil forces of satan who's behind all of
+this, as always.... ;-) Well, let's see what he has to say....
+
+Magic is a very powerful platform to use as a multitask environment.
+
+But today, the 18 of august 1997, I came up to something somewhat insane.
+This morning, I wrote a letter with everest running under magic 5, and i
+came back 2 hours later. i turned to starcall and saw a mess going on in
+the terminal window. When it stopped, I saw the last line of the letter i
+was typing with everest.
+
+I don't know when this backdoor activates but it sure can be scary, for
+example if you are typing a message to crypt with pgp while online under
+the terminal program.
+
+The only thing to do to avoid this is to exit any terminal program when
+typing a message. you can load back the program without losing the carrier.
+
+Joined to this archive (see below), a numerological analysis that could
+explain this backdoor and tell why magx 5 looks like windoze 95.
+
+/Faramir
+
+M          77              77              4D              115
+A          65              142             8E              216
+G          71              213             D5              325
+I          73              286             11E             436
+C          67              353             161             541
+           32              385             181             601
+5          53              438             1B6             666
+
+phrase     base 10 ascii   base 10 csum    base 16 csum    base 8 csum
+
+
+[7] Hotmail - Free Email Provider
+--------------------------------------------------------------------------
+
+As many of you probably have noticed we have our own email address for
+Vectronix, it's vectronix@hotmail.com. Although there is a handfull of
+services which provides free email accounts for free, Hotmail is what we
+use, and we're very happy with it.
+
+The main advantage with Hotmail is that it's totally www-based, this means
+you only need a web-browser in order to check your mail, no matter where
+you are. For our purpose it also means that we can easily share the account
+within the group, although it has it's sideeffects also as we might reply to
+the same letters if we don't delete them etc.... ;-)
+
+Below is a small introduction to what Hotmail is really about, and who
+might have interest in this at all. Read it through and check out the links
+to see if Hotmail is something for you. It's totally free, so the chances
+are that you'll find a use for it!
+
+What is Hotmail?
+================
+
+Hotmail is a great solution for so many people. Even if you don't fit into
+one of the listed sample categories, chances are Hotmail is right for you!
+
+Hotmail is right for...
+
+* People who currently share an email account
+
+Tired of sharing your email box with other people in your household? If so,
+Hotmail is a great solution. Everyone who registers gets their own private
+email account. It's free, give it a try.
+
+* People who already have email through their company
+
+Hotmail provides a free personal email account that is yours, not your
+company's. Having a separate, personal email address with Hotmail protects
+your privacy. Additionally, if you change employers you have a working
+email address.
+
+* Mobile Professionals
+
+Have you ever been away from the office, at a client's office for example,
+and unable to check for a vital email? This is no longer a problem with
+Hotmail. If you can access the world wide web, you can check your email.
+Hotmail also lets you travel light. Hotmail lets you retrieve your
+presentation (or any other files) upon arrival at your destination. Just
+send yourself an email to your Hotmail address with a document attached.
+
+* Students
+
+Hotmail is priced right for the student population - it's free. From any
+place that you can access the world wide web you can send and receive your
+personal email. In addition to universally accessible, free email you get
+to keep your Hotmail address for life. So go ahead switch schools, travel
+abroad, or just take a job in the real world -- we'll keep your email.
+
+* Teachers
+
+If you have more students than Internet access accounts, Hotmail may be
+your solution. There is nothing to buy or install. Simply have your
+students register for their own email accounts with Hotmail. They will have
+a fully functional email account without any administration on your part.
+
+* People who don't even own a computer
+
+As hard as it may be to believe, you don't even need a computer to use
+Hotmail. All you need is Internet access and a browser. As libraries,
+cafes, and other venues provide Internet access you will soon be able to
+obtain your email from every street corner.
+
+* Internet Access Bargain Hunters
+
+Want to look for the best deals as Internet service provision becomes a
+commodity? If you keep you email with Hotmail you can jump from free offer
+to free offer without having to change your email address... it's always
+your_user_name@hotmail.com.
+
+* Anyone who wants free, universal access to email
+
+If you are away from your computer or LAN, you usually will be unable to
+conduct email. However, since your Hotmail is located at our web site you
+can send and retrieve email from anywhere you have a browser and an
+Internet connection.
+
+To find out more about Hotmail and how to sign up for your free account,
+check out their homepage directly on http://www.hotmail.com or follow the
+links below.
+
+More About Hotmail: http://www.hotmail.com/more.html
+Frequantly Asked Questions: http://www.hotmail.com/faq.html
+
+--------------------------------------------------------------------------------
+
+                VECTRONIX NEWSLETTER #8 (26 September, 1997)
+         All text by Phoenix/Vectronix (unless stated otherwise!)
+                      Contact: vectronix@hotmail.com
+
+
+[1] Contents
+--------------------------------------------------------------------------
+
+  1 - Contents
+  2 - Forewords
+  3 - New Releases
+  4 - TOSBOX, a new atariemulator
+  5 - What is ICQ?
+  6 - Stockholm Synth Festival
+
+
+[2] Forewords
+--------------------------------------------------------------------------
+
+Well, many of you probably wondered what happened after the last adrenaline
+kick where we brought you 3 issues of this little newsletter at once. It's
+almost a month since this little "incident", and I'm glad to say we're
+back! But as always, you can never tell when a new vexnews issue is to
+come, so there's no need to ask... ;-)
+
+We have not been idling during this period though, we have some real hot
+releases which I'll try to cover later on, we have been working with our
+webpage (as usual), we have made it easier for you to get in touch with us,
+and alot of other different stuff!
+
+I got into a little personal depression period also, there was simply too
+much shit happening at once and I couldn't take it all, I've been very busy
+with school work as I have started studying again, and I'm simply not used
+to this. Alot of thoughts was circulating in my head, and I needed a break
+from everything, I needed to be able to think clear for a while!
+
+This issue will be a bit different from other as I see it right now, there
+will not be any news or article alike stuff, this issue is mainly intented
+to give some lights to our latest releases, we hope nobody will miss them!
+Oh well, let's see what it turns out to, you never know until it's done!
+
+I would also like to welcome all our new subscribers since last time,
+there's a whole bunch of you and I guess you all thought you subscribed to
+nothing. If you want to catch up with previous issues you can get them all
+by sending an email like this...
+
+To: phoenix@weirdness.com
+Subject: get vexnewsX (where X=1 to current issue)
+
+Please note that this is all automatic, there's no way to request issues to
+be sent to some other address or anything like that. If you need it
+delievered somewhere else, please change your reply-to kludge to this
+address.
+
+If anyone would like to unsubscribe for some reason, or change his email
+address for this list, please send us an email and tell us! We have quite
+alot of subscribers already, but we're always looking for more to be able
+to inform the whole scene about what's going on. So if you have any friends
+or know anyone who would be interested in receiving these newsletters,
+please tell them to contact us!
+
+/Phoenix
+
+
+[4] TOSBOX, an Atari ST emulator - What it is
+--------------------------------------------------------------------------
+
+TOSBOX provides an environment for running TOS and GEM applications under
+DOS or Windows. It uses an operating system image which you can create on
+your actual Atari machine, and operates with most of the PC's peripherals.
+
+The design of TOSBOX is unique in working from the system down rather than
+from the hardware up. The goal was not to make a PC behave as exactly as
+possible like an ST, but to run Atari applications as smoothly as possible
+on a PC. Whenever possible, system calls were redirected and translated;
+then, only in cases where that failed to be reliable, the behavior of the
+actual hardware behavior was emulated. The resulting product is able to run
+a considerable variety of popular software. I am interested to hear your
+results on specific programs so I can list conflicts in future
+documentation and continue to improve compatibility.
+
+I wish to emphasize that TOSBOX is not a complete hardware-level emulation
+of an Atari ST. As such, it is not intended to run games and graphics
+demos. For that I strongly suggest using PaCifiST, written by that
+intelligent and genial Frenchman, Frederic Gidouin.
+
+The CPU emulation core is written in assembly, and its speed on a Pentium
+75 is typically about twice that of a stock STf, depending on the task.
+Because of the design objectives described above, TOSBOX does a
+disproportionate amount of its work in the PC domain rather than in CPU
+emulation, so in practical terms it is faster than the numbers would
+suggest.
+
+[cutted from the TOSBOX documentation]
+
+For more information about TOSBOX, PacifiST and Atari emulation check out
+the links below...
+
+http://www.geocities.com/SiliconValley/Vista/4448/
+http://www.pacifist.fatal-design.com/
+http://www.fatal-design.com/desktop/
+
+
+[5] ICQ - What is it?
+--------------------------------------------------------------------------
+
+ICQ - Product Description ICQ is a revolutionary, user-friendly Internet
+tool that informs you who's on-line at any time and enables you to contact
+them at will. No longer will you search in vain for friends or associates
+on the Net. ICQ does the searching for you, alerting you in real time when
+they log on. The need to conduct a directory search each time you want to
+communicate with a specific person is eliminated. With ICQ, you can chat,
+send messages, files and URL's, play games, or just hang out with your
+fellow 'Netters' while still surfing the Net.
+
+It lets you choose the mode of communication you wish to employ. Regardless
+of the application, be it chat, voice, whiteboard, data conferencing, file
+transfer or Internet games, ICQ will get your entire message across in real
+time.
+
+ICQ supports a variety of popular Internet applications and serves as a
+Universal Platform from which you can launch any peer- to- peer application
+(such as Microsoft NetMeeting or Netscape CoolTalk).
+
+It can also be used in a multiple-user mode, so groups can conduct
+conferences or just 'hang out' on-line.
+
+The program runs in the background, taking up minimal memory and Net
+resources. While you work with other applications, ICQ alerts you when
+friends and associates log in, allowing you to work efficiently while
+maintaining a wide range of Internet functions at your fingertips. Among
+the functions available are: chat, message, e-mail, and URL and file
+transfer.
+
+All these functions are consilidated into one easy-to-use program that
+integrates smoothly into desktop systems.
+
+How does it work? It's simple. When you install ICQ, the program asks you
+to register at a server, which is connected to a broad network of servers
+spanning the Internet. At the time of registration, you receive a unique
+UIN (Universal Internet Number). In addition, ICQ gives you the option of
+entering personal information along with your UIN. This allows other ICQ
+users to recognize you when you log on.
+
+Once you've registered, you can compile a selected list of friends and
+associates. ICQ uses this list to find your friends for you. Meanwhile, ICQ
+waits quietly in the background without interrupting any other applications
+in use. As soon as you log onto the Internet, ICQ automatically detects the
+Internet connection, announces your presence to the Internet community and
+alerts you when friends sign on or off.
+
+Once you know who's on, all it takes is a click of an icon to initiate
+chat, implement URL transfers, send messages , exchange files, or launch
+any external peer-to-peer applications.
+
+[cutted from ICQ homepage]
+
+For more information about ICQ, what it is, how to use it, and to download
+the software, please visit the Mirabells homepage:
+
+http://www.icq.com
+
+To contact Vectronix members when we're online, please use the ICQ numbers
+below (also available on our webpage).
+
+Hardball  : 3621901
+Metallinos: 3578812
+Phoenix   : 3276644
+Senser    : 3300213
+Slippy    : 3365790
+
+
+[6] Stockholm Synth Festival
+--------------------------------------------------------------------------
+
+This might not belong in a computer scene newsletter, but as I know alot of
+computer addicts also has a very weak heart for industrial and synth music
+I would like to make a small announcement about a coming festival here in
+Sweden...
+
+Stroke Music, the main industrial/synth booking agency in Sweden is
+striking again with what is to become their yearly synth festival, last
+year it was X-RAY featuring nevertheless than 12 bands with names as Das
+Ich, Project Pitchfork, Dance or Die etc. This years festival simply
+titled, Stockholm Synth Festival, held 1st of November will not worse, some
+_really_ legendary bands will be playing, and you don't want to miss this
+for sure! Book your tickets today!
+
+FRONT 242(b), DAF.DOS(d), RATIONAL YOUTH(c), AND ONE(d), ELEGANT MACHINERY,
+RESTRICTED AREA, SABOTAGE(d), S.P.O.C.K + Special Guest's
+
+For more information, tickets and whatever, please check out Stroke Music's
+official homepage:
+
+http://www.strokemusic.se
+
+-------------------------------------------------------------------------------
+
+                 VECTRONIX NEWSLETTER #9 (6 October, 1997)
+         All text by Phoenix/Vectronix (unless stated otherwise!)
+           Contact: vexnews@mindless.com, vectronix@hotmail.com
+
+
+[1] Contents
+--------------------------------------------------------------------------
+
+  1 - Contents
+  2 - Forewords
+  3 - Atari-Fair in Neuss, Germany
+  4 - Inter Jam '97 Mini-Report
+  5 - New Releases
+  6 - Das ATOS Magazine
+  7 - Free XXX Password Sites
+  8 - Apple to Slash Notebook Prices
+  9 - Sun to Unveil 600-MHz Chip
+
+
+[2] Forewords
+--------------------------------------------------------------------------
+
+I just wanna mention that Monoliths At-Home project which is redirecting
+our homepage is having some huge problems at the moment, this means
+http://xxxxxxxxx.xxxx.xx.xxx has not been accessable for a few days. Please
+use http://xxxxxxxxx.xx.xxx:xxxx/xxxxxxxxx/ if the other url doesn't work,
+you just have to remember entering the port number and vectronix folder!
+
+Also, VEXNEWS now got it's own email address! Use this for un/subscribing,
+old issues requests, sending articles or whatever concerning VEXNEWS. The
+address is vexnews@mindless.com, we're waiting to hear from you! We'd love
+to get article contributions for future issues, if you could consider
+helping us writing this little newsletter, please get in touch!
+
+
+[3] Atari-Fair Neuss, Germany. A Short Overview.
+--------------------------------------------------------------------------
+
+This year the ATARI fair took place in NEUSS, Germany, again. After last
+years disaster with this show, as you probably remember, time and place of
+the fair changed in short-time, this year¥s show was organized very well.
+As Ali Goukassian, the master of the FALKE-Verlag was somehow involved in
+the show¥s organization this must really be called a wonder! Unbelievable!
+A lot more exhibitors than in 1996 found their way to Neuss, this was good
+news.
+
+There have been a lot of exhibitors showing stuff for Jaguar and Lynx which
+both were buyable for a very cheap price. Even 16/32 Bit Systems from the
+UK have been at the show. And they showed a joystick for the Jaguar from
+GRAVIS which had the incredible price of 145 DM which was cheap compared to
+the original UK-price of about 129 pounds...
+
+For us it¥s more interesting to see which companies did some new stuff for
+the ATARI-computer series. There have been e.g. R.O.M, ASH and
+MW-electronic and many more producers showing their product-palette:
+
+EBACKUP 2
+ECOPY 1.72
+JINNEE 1.0
+MAGIC 5.13
+NVDI 4.11 R10
+PAPYRUS 5.5
+PHOENIX 5
+SIGNUM!4.2
+TEXEL 1.6
+THING 1.2
+TOS2WIN 2.0
+
+and lots of other stuff..
+
+Well, I must admit, some of the packages are already released by VECTRONIX
+or are at least on it¥s way to be released by VECTRONIX... but if you have
+the possibility to get hold of one or more of the packages which are not
+released by VECTRONIX, please get in tough with us! We are always willing
+to produce new releases for our friends in scene, but we need YOUR support!
+
+There have been available some newer games for ATARI FALCON, which have not
+been cracked by anyone. E.g. there was a new updated version for Conquest
+(?) of C... well, shit, I forgot that whole name... but I¥m pretty sure you
+know which game I¥m talking about. I must admit: I didn¥t see any new games
+for ST/STE, unfortunately. But available have been a lot of older games
+which were bad to receive over here for years, e.g. No Second Price.
+
+Maybe you remember those old days: No Second Price was first cracked by
+Cynix, but only because this game was sold in the UK _before_ it was sold
+over here... Well, I really was angry about this, because this was a great
+title and I wanted to be the first putting his fingers on this game... so I
+never cracked it then!
+
+There was the French magazine ST MAGAZINE available at this show. This
+really is a nice magazine which is very cheap to subscribe! Compared to
+that very expensive and mostly not very well written German ATARI INSIDE
+the French ST MAGAZINE is a good alternative! The only problem is: It¥s in
+French! (now you know how it feels to have an atari and not be born in
+Germany perhaps! ;-) /Phx)
+
+OK, but the most impressive thingy on the fair have been the HADES with the
+ethernet-connections and the plugged in PC-card which did enable the
+computer to run PC and Atari-software simultanously, and of coz: The MILAN.
+The MILAN is a new ATARI-compatible computer which looks like a PC and even
+the motherboard looks like a PC¥s one! It looks definitively VERY clean and
+stable this little system! Michael Schwingen and another guy are
+responsible for it. The motherboard looks more than a PC-motherboard than
+an ATARI one: there¥s 4 PCI-slots, 3 ISA slots, an Intel (!) PCI-to-ISA
+bridge chip, two EIDE controllers, a floppy-controller and PS/2 SIMM banks
+which will hold 60 ns EDO RAMs only, because the 68040 in this system
+accesses them in full steam power with 33 Mhz while internally it¥s running
+with 66 Mhz. Optionally the system will work with an 68060, but not at this
+time of development!! The system displays video through a standard PCI TRIO
+V64 gfx-card and the sound will be done using a Soundblaster 16, the
+standard-card on PC. It¥s planned to build DSP-cards for full
+Falcon-compatibility, PC-card and more.
+
+In December, the developers want to show a fully working MILAN on the
+PARIS-ATARI show. Actually, the MILAN uses a patched TOS 2.06, but the
+machine in PRIS will then contain a modified TOS 4.04 which is on FLASH-ROM
+which makes it easy to be updated to a newer TOS or other system. The
+built-in GLUE chips on the MILAN¥s motherboard are programmable using some
+kind of cable-connector(?), also. So it¥s even possible to make the MILAN
+more compatible to ATARI-computers by updating the "hardware" in the GLUEs!
+
+I need clarifying possible misunderstandings: The MILAN will not be a fully
+compatible ATARI-system. You will not be able playing your old games from
+the ST or STE, but you will be able to run all Atari-software which is
+68040 compatible and which is made for GEM or Magic. I think that all
+software which works with the MagicPC or MagicMAC or TOS2WIN emulators will
+for sure work on the MILAN, too! Games which only work with PacifiST
+Emulator will most pro-bably have no chance to work on the Milan. Main
+reason is that the original ATARI-video-hardware is not rebuilt in the
+MILAN, but exchanged with a faster one.
+
+In my eyes, the MILAN is a promising system which really is worth to be
+considered as an alternative to your existing and slow-being ATARI TT. The
+price of the MILAN should be lower than the HADES costs.
+
+This was a short overview over the ATARI-Fair in NEUSS. Read longer
+articles in printed medias for more information, please! But this must be,
+I bet, one of the first reports from that show which will be readable for
+more than a fistful of people.
+
+BTW, lots of scene-people have also been at the fair, e.g. Jacky, Bandit,
+Stratagem, Daryl, Marc Rosocha, SuperGAU, Matt, Teddy and so on..
+
+[ Written by Metallinos ]
+
+
+[4] Inter Jam '97 Results
+--------------------------------------------------------------------------
+
+This is a _very_ quick and tiny little report from Inter Jam '97 party held
+in Karlsruhe, Germany this weekend. Hopefully we'll be able to present a
+little bit more extensive report in a few days, we'll see!
+
+In short words there was 87 people attending, 4 of them was girls and one
+"whatever", the rest was boys for some weird reason. 60 litres of Cola, 10
+bags of trash! ;-)
+
+No Atari entries except for graphix and musix, the results of those are
+below, there was 4 PC intro and 2 PC demo entries, only one Atari intro
+which was not released. This was mainly a party for having fun and meet
+people, not to be productive as the compo entries tells...
+
+GFX results Inter Jam '97
+
+1. Gizmo/Icebird
+2. MrCoke/Icebird
+3. MOD/tSCc
+
+MSX results Inter Jam '97
+
+1. 505/Checkpoint
+2. SCY/.tSCc.
+3. McLazer/.tSCc.
+
+For more information, results and releases check out the official Inter Jam
+homepage which will be updated shortly!
+
+http://home.pages.de/~interjam
+
+
+[6] Das ATOS Magazine
+--------------------------------------------------------------------------
+
+There's a German ST-Guide/HTML magazine named ATOS available on the World
+Wide Web. It's been around for quite some time, but I still think it
+deserves to be mentioned as lots of people don't seem to know about it!
+
+This is not a scene magazine or anything like that, but a real serious
+magazine with professional reviews of software and high quality articles.
+There's only one thing which is wrong with it, it's all in german! Please
+send them emails and complain and tell them to translate future issues to
+english so everyone can read it!
+
+In the current issue (which always is available for online browsning) the
+following topics are to be read about....
+
+Atari-Messe Neuss, GIGAFUN-Convention 97, Twilight 2.07, Schon_me, qed
+4.00, TOS2WIN 2.00, Freedom 2, Thing, Fenix, Milan, TAE-Anschluﬂtechnik
+
+Check out the ATOS magazine on their official homepage:
+
+http://wwwrzstud.rz.uni-karlsruhe.de/~uk48/ATOS/
+
+
+[7] Free XXX Password Sites
+--------------------------------------------------------------------------
+
+Want to check out some commercial sex sites? Of course you do! Instead of
+listing alot of passwords which will work for a few days at maximum we give
+you a few sites whose only purpose is to bring you tons of links with
+passwords, updated regulary every day with new sites and passwords. What
+more is there to wish?
+
+There's many of these sites available on the net, those mentioned below are
+some of the best at the moment, they usually have some mirrors all around
+the world as they sometimes have to closedown, and due to the heavy use. By
+following links from these sites you can keep finding new sites for all
+eternity....
+
+Psychosis
+http://www.servtech.com/public/psychosis/
+
+Slutman City
+http://151.196.195.56/SlutmanCity/mirror.html
+
+Password.Org
+http://www.password.org/
+
+Corporate Businesses Suck
+http://www.digicities.com/digital/64/hack.htm
+
+
+[8] Apple To Slash Notebook Prices
+--------------------------------------------------------------------------
+
+Apple Computer is set to drastically slash prices on some PowerBook
+notebook computers by as much as $1,000 as it makes way for updated
+notebooks with the recently announced PowerPC 750 processor. How low can
+they go?
+
+http://www.news.com/News/Item/0%2C4%2C14898%2C00.html?nd
+
+[ CNET NEWS.COM Dispatch ]
+
+
+[9] Sun to Unveil 600-MHz Chip
+--------------------------------------------------------------------------
+
+Sun Microsystems (SUNW) today unveiled a new generation of processors that
+could reach upward of 600 MHz by next year, topping Intel in the chip
+performance game.
+
+The new UltraSparc-III is the third generation of the Sparc family of
+processors, which serve as the brain for Sun's workstation computers and
+servers, and will allow Sun to build even more powerful systems.
+
+http://www.news.com/News/Item/0%2C4%2C14913%2C00.html?nd
+
+[ CNET NEWS.COM Dispatch ]
+
+-------------------------------------------------------------------------------
+
+Publication of contents
+
+Other non-profit magazines and/or organisations are free to use, quote, or
+copy parts of the contents of the news letters as long as the mailing list
+is not mentioned anywhere and the material is not used against Vectronix in
+any way what so ever. Source may be refered to as "Vectronix", but not the
+list. We also ask you to inform/contact us if you're planning to use the
+information somewhere, this only for the purpose of our information.
+
+
+---------------------------------------------------------------------------
+            The Vectronix News Mailing List (c) 1997 Vectronix,
+                           All Rights Reserved.

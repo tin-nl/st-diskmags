@@ -1,0 +1,57 @@
+                    ___     ___     _____     ___     ___  
+                /  /  _\   /   \   /     \   /   \   /  _\   \
+        __  /  /  /  /__  /  _  \ /  / \  \ /   __\ /  /  \   \  \  __
+            \  \  \  \  / \  \  / \  \_/  / \  /  / \__/  /   /  /
+                \  \___/   \_/_/   \_/ \_/   \___/   \___/   /
+     -  --  --- ---- -----------------------------------pAranoid--  --  -
+
+--------------------------------------------------------------------------------
+            óMarblesð -  by òPeylowð (òtoysð) ñ[any Atari ST LowRes]ð
+--------------------------------------------------------------------------------            
+
+óMarblesð is a conversion  of a  game included in the ñWindows 98 Plusð package. The
+screen is  divided into 2 halfs, the left part  is where you  actually play, the
+right part of the screen displays your score and the title of the game.
+
+You find several marbles of different colours on the left side of the screen and
+a small cursor  that can  be moved with - guess what - the cursor keys, but only
+horizontally. Pressing  the keys  for vertical movement shifts the actual column
+of marbles  up or down - if possible. Pressing  Insert  or Clr/Home  rotates the
+marbles left or right, according to the key pressed.
+Controlling  the marbles this  way your task is to line up three marbles of the
+same colour in the middle line horizontally. These marbles then vanish.
+To  prevent you  from running  out of  marbles, new  marbles  are  being  added
+constantly, not only  if you  remove some. This way the amount of marbles grows
+constantly and of  course makes  the game more difficult, because  columns that
+already fill the screen can not be moved anymore.
+If the screen is full of marbles, the game is over.
+
+óMarblesð is a simple game, but it is well programmed and didn't cause any trouble
+on any  system I tried. The graphics are rather simple, but that  really doesn't
+matter  for  that kind of  game. Besides a  few chipsound  effects, the  speaker
+remains silent.
+
+The basic idea  of the game is  very good, but in my eyes, the speed of the game
+is too high. Peylow himself wrote in  the according  readme-file, that  he liked
+the game quite well and played it for several hours - perhaps he was already too
+skilled when he wrote this game?
+New marbles  pop up at a  pace that is too high for a beginner like me and there
+is  of  course  a  lack in game  design. There  are  no "waves"  or "rounds", no
+bonuses, but then again, this would have spoiled the simplicity of the game.
+
+So this  is what  the result  looks like. The game is simple  and a bit  hard to
+learn at first, but once you got the hang of it, it is fun for a while.
+A typical  game you  play in  breaks or for a few minutes, but probably  not for
+hours.
+
+             ____   ____  _____  _  ____  ____
+            | -- \ | -- ||_   _|| || __ ||  __|        Graphics : ñ31ð %
+            | _  / | __ |  | |  | || || || |_ |        Sound    : ò11ð %
+            |_|\ \ |_|| |  |_|  | ||_|| ||__| |        Fun      : ò63ð %
+               |_|    |_|       |_|   |_|   |_|
+               
+--------------------------------------------------------------------------------
+                                                     The Paranoid
+                                               Paranoia (The Lunatic Asylum)
+--------------------------------------------------------------------------------
+ 

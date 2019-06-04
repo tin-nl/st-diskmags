@@ -1,0 +1,246 @@
+STOS LESSON 5
+-----------------------------------------------------------------
+            The CP-3-69 STOS lesson part 5              (PD) 1992
+-----------------------------------------------------------------
+
+
+I got DBA mag 6 a while ago,  the STOS progs were packed down but 
+a  intelligent  being  like you should have figured  out  how  to 
+depack them. Or at least found the text where it was explained.
+
+One  problem  was  that they hadn't  remembered  to  include  the 
+necessary data files to run the next time prog.  (well it  didn't 
+work when i tested it)
+
+But don't worry,  you can find the bas code for that prog on this 
+disk and you can find a explanation of how it works below. 
+
+Lets stop the small talk and get down to the bis...
+
+-----------------------------------------------------------------
+
+Line  10 pokes of the mouse and turns on 50Htz.  lines  20-80  is 
+just the standard startup stuff,  dim's,  loading and  reserving. 
+The  dims are:  EX and YX does something,  but what????  Ahem  it 
+looks  like a whole bunch of lines are missing here.  I  have  to 
+reload......
+
+OK  problem  found and eliminated.  It looks like the  STOS  data 
+lines totally mess up this progy.  (Yes i did save the STOS  file 
+as a ASC file (ASCII))
+
+EX  and EY is the dim containing the x and y cords of  the  three 
+animated scrolling borders. scr1 and scr2 holds the variables for 
+the  x  and  y cords of the Wiggle It text.  W  is  the  variable 
+containing the y cord for the DBA In/Out waving logo.
+
+(Dont worry i'll tell you how it works later on)
+
+
+10 rem poke $FFFC02,$12 : poke $FF820A,%10
+20 mode 0 : key off : curs off : hide : click off : flash off : G=0
+30 reserve as work 8,67840
+35 reserve as work 9,18000
+36 bload "TEST1.THK",9
+40 reserve as screen 13 : reserve as screen 14 : load "dbaint.neo",13
+50 dim EX(15),EY(15),W(8),SCR1(64),SCR2(64)
+60 goto 710
+70 mode 0
+80 palette $0,$0,$0,$0,$0,$0,$0,$0,$0,$0,$0,$0,$0,$0,$0,$0
+
+Lines  90 - 120 reads in the values stored in the data  lines.  I 
+changed some of these lines in the version i used for a intro  on 
+Net Mod III as they are unnecessary 'complicated'
+
+90 for E=0 to 3 : for I=0 to 15 : SCR2(E*16+I)=I*8 : next I : next E
+100 for I=0 to 3 : for E=0 to 15 : SCR1(I*16+E)=I*16 : next E : next I
+110 for I=0 to 8 : W(I)=I*8 : next I
+120 for I=0 to 15 : read EX(I) : read EY(I) : next I
+
+Lines  130  - 220 creates the false parallax/wiggling  Wiggle  It 
+text.  130 - 150 is the background,  160 - 220 is the foreground. 
+The  Wiggle It text is created on screen 14.  Brake the prog  and 
+write: Physic=14 to see how it looks.
+
+130 rem ------------------------------- B G -----------
+140 for I=0 to 19 : screen copy 13,0,100,16,108 to 14,I*16,0 : next I
+150 for I=1 to 15 : screen copy 14,0,0,320,8 to 14,0,I*8 : next I
+160 rem ------------------------------- F G -----------
+170 for I=0 to 5 : screen copy 13,0,192,64,200 to 14,I*64,192 : next I
+180 for I=0 to 15
+190 NET$=screen$(14,0,192 to 320,200)
+200 screen$(14,0,I*8)=NET$
+210 screen copy 14,1,192,321,200 to 14,0,192
+220 next I
+
+Line  240  sets the physic like the start of the  scrolling  area 
+(64k  long).  Line  250  sets  up the start  of  ACO's  bit  copy 
+routine. Line 260 starts the music. 
+
+230 rem --------------------------------- READY TO GO!!! --------
+240 physic=start(8)+1280
+250 MC=start(15)+28
+260 call start(9) : loke $4D2,start(9)+8
+270 rem
+
+Here is the start of the loop!
+
+Line 300 is the set up of the scrolling.  Line 310 is the set  up 
+of the bit copy.
+
+Line  320 sets the variable S like the pitch of voice  3  divided 
+by  42  and minus 3,  S controls the wiggle of the  text  so  the 
+wiggle  follows the music.  Lines 320 - 350 calculates the  value 
+of  E,  E  is the current value of the Wiggle  (0-64).  Line  370 
+copies  the right Wiggle It text into the back screen.  Line  380 
+copies  the  right IN/OUT waver into the back  screen.  Line  390 
+reads the next IN/OUT wave value.
+
+280 rem -------------------------  DA LOOP ---------------
+290 rem
+300 for I=start(8)+1280 to start(8)+33280 step 1280
+310 areg(0)=start(13)+6 : areg(1)=physic+6 : dreg(0)=256 : dreg(1)=0 
+: dreg(2)=320 : dreg(3)=200 : dreg(4)=240 : dreg(5)=0
+320 S=psg(4)/42-3
+330 E=E+S
+340 if E>64 then E=E-64
+350 if E<0 then E=E+64
+370 screen copy 14,SCR1(E),SCR2(E),SCR1(E)+208,SCR2(E)+8 to back,16,0
+380 screen copy 13,0,W(G),64,W(G)+8 to back,240,0
+390 read G : if G=999 then restore 620 : goto 390
+
+This  part is called DA DA BASS because it usually  contains  the 
+equaliser routine, but this intro doesn't have equs.
+
+Line 420 inc's the EQ1 variable,  if it is higher than 8 then  it 
+is  returned  to  0.  EQ1  contains the  value  of  the  animated 
+scrolling  borders.  Lines 430 - 450 copies the borders into  the 
+back screen.
+
+400 rem ------------- DA DA DAAAAA BASS
+420 inc EQ1 : if EQ1>8 then EQ1=0
+430 screen copy 13,EX(EQ1),EY(EQ1),EX(EQ1)+16,EY(EQ1)+8 to back,0,0
+440 screen copy 13,EX(EQ1),EY(EQ1),EX(EQ1)+16,EY(EQ1)+8 to back,224,0
+450 screen copy 13,EX(EQ1),EY(EQ1),EX(EQ1)+16,EY(EQ1)+8 to back,304,0
+
+Lines  460  and 470 copies the part of the back screen  (8  lines 
+where  all  the  GFX are copied to) into the lower  part  of  the 
+physic  screen and into the 8 lines above of the  physic  screen. 
+Line 480 copies the Network logo on top of the scrolling screen.   
+
+460 copy back,back+1280 to physic+32000
+470 copy back,back+1280 to physic-1280
+480 screen copy 13,0,50,208,82 to physic,16,0
+
+The following lines are only Exit and loop end things and are not 
+that interesting.  
+
+490 IN$=upper$(inkey$)
+500 wait vbl : physic=I : call MC
+510 if IN$=" " then loke $4D2,0 : call start(9)+4 : poke $FFFC02,$8 
+: stop 
+520 next I
+530 get palette (13) : goto 300
+540 rem
+550 rem ------------------------  DA LOOP END -------------
+560 rem
+
+The lines that should have followed here was only the data  lines 
+(which  F*** up First W.) and the intro text,  a total  waste  of 
+space so i erased it.
+
+-----------------------------------------------------------------
+
+So  what  happens in this intro?   On the screen you  have  three 
+scrolling  borders/dividers,  one field of wiggling  'Wiggle  It' 
+text, one In/Out waving DBA logo, and one still Network logo.
+
+For starters the entire screen scrolls upwards 8 pix a update  in 
+a 64Kb data bank (described in a earlier lesson) 
+
+The three Dividers seems to scroll downwards but that illusion is 
+created by animating through 9 frames of 8*16pix sized blocks.
+
+The 'Wiggle It' Text seems to be wiggling left to right,  but  in 
+fact they scrolls upwards 8 pix a update, but as it is 8 pix high 
+it  looks  like  it doesn't move upwards  at  all.  The  sideways 
+movement is created by animating through 16 preshifted text lines 
+stored in databank 14.
+
+The  DBA logo looks rather amassing!  It looks like i am  zooming 
+all those blocks up and down each update, you could maybe do that 
+in  MC  but STOS is far to slow to do that.  What you have  is  a 
+three bitplane 'road' that scrolls upwards and a one bitplane DBA 
+logo i copy on top of it (and thereby changing the colours) using 
+a ACO routine found in bank 15. 
+
+The Network logo is in fact the object that uses most time. For a 
+non programmer it looks like it stands still, but it is copied on 
+top  of  the  screen  each update  since  the  entire  screen  is 
+scrolling. I used the logo to eat up some spare time.
+
+The Dividers,  Wiggle text and 'Road' are screen  copied into the 
+eight  top lines of the back screen before they are copied  using 
+the  copy command into the bottom 8 lines and the 8  lines  above 
+the current physical screen.
+
+These  eight  bottom and top lines are the only  lines  that  are 
+updated  each  VBL  (+ the Network logo) But it  looks  like  the 
+entire screen is updated each time! Great trick or what! 
+
+-----------------------------------------------------------------
+
+Using  the Misty extension i made a intro for Net-Mod  III  using 
+this  routine,  but  due to tremendous speed gain i  removed  the 
+Network logo and inserted three 80*50 animated equalisers and one 
+80*50  animated A-HA video.  Most MC freaks can't touch  it!  But 
+that's because no one has told them how to cheat.
+
+You  won't find the ACO routine on this disk, since its better to 
+use the Misty extension,  but if you wants to use it then you can 
+steal it from bank 15. 
+
+I  might use Misty in the next lessons but if so i will send  the 
+extension  with  the  lesson  to  make  sure  you  can  use   the 
+program. Just remember to send Collin A. his money.
+
+-----------------------------------------------------------------
+
+There might/should be another STOS prog from me in this issue. It 
+is  the program that runs the DIE HARD game.  This program  reads 
+ASCII files and interprets them into interactive stories.  In one 
+way  this  prog is incredibly advanced and in another way  it  is 
+idiotically simple.
+
+I used the routine in a intro i made for Pure Energy and it makes 
+it possible to 'Programme' the intro from a ASCII file!  The idea 
+isn't entirely new, the desktop.inf file works in the same way.
+
+-----------------------------------------------------------------
+
+I  had planed to give you the Phantom Slayer game this  time  but 
+i  have wasted time on helping my parents extending and  changing 
+the  house and i have wasted loads of money going to the  dentist 
+fixing my teeth.  
+
+Five  holes are filed with amalgam (quicksilver get  thee  behind 
+me)  and three of my wisdom teeth have gone to Valhall while  the 
+fourth  goes the 22.Feb.1993.  My teeth hadn't been  checked  for 
+nearly  5 years!  Fortunately the dentist knows what he is  doing 
+so  i newer felt any pain at all!  That is more than can be  said 
+about the sadist i had while i went to a public school dentist.  
+
+
+                     But Now its BIBI time!
+
+                        CP-3-69 Signs Off
+
+
+                    May ODIN Guard Your Path.
+
+
+PS. If you does not understand how this STOS prog works then read 
+through the STOS lessons in earlier issues of DBA MAG. 
+          
+ 
+

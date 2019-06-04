@@ -1,0 +1,192 @@
+N.P.G. MEGADEMO
+
+
+
+                                                     article by Slimer....
+****************************************************************************
+
+                         THE N.P.G. MEGA DEMO,
+
+****************************************************************************
+
+It's has been quiet on the ST scene for some time now.......
+But now there is finally some action and loads of new demo's see the light
+of day.
+Most of the released demo's contain the old things, they only improved
+the old routines and added some new graphics to it.
+Everything is already done on the ST or is to complicated to code if you
+ask me.
+It's hard to come up with new ideas that isn't already done in some old
+demo, although i'm convinced that there are many more effects to invent.
+
+The N.P.G. demo isn't bringing us any new things eather, but the demo
+has a lot of class.
+It contains some nice graphics and the coding is from high quality, a very
+good demo from a group that is mostly known from compact menu's !
+
+* * * * * * * * * * * * * * * * THE LOADER * * * * * * * * * * * * * * * * 
+
+Okay lets put the disk in the ST and switch it on.
+A message appears on the screen saying : Disk X cess just wait please !
+They really leave me no choice or do they !?
+Some 15 seconds later things start to light up a bit, because I get 
+a intro screen on the monitor.
+
+A picture of a valley is filling the lower part of the screen and a bowl
+made of colored dots spin's around in the upper part of the screen.
+Caracters come flying out of the valley and they form words in the lower
+part of the screen.
+Some pictures pop up, one is a logo of N.P.G. and an other-one is a big
+Dragon with some text( something in German, translation was hard because 
+the picture disappeard to fast ).
+The pictures seem to be displayed in random order everytime you load the
+intro because i saw some other ones too.
+There only one thing about this intro, why can I not press space to get
+to the main-menu !?
+Good intro...........
+
+* * * * * * * * * * * * * * * THE MAIN-MENU * * * * * * * * * * * * * * * *
+
+The main-menu appears when the intro is ended.
+In the higher part of the screen is a big N.P.G. logo, on this logo are
+some creatures doing things with ropes and Jo-Jo's( nice touch ).
+Above the logo is a big scrolline running through the screen.
+You must guide a man with a big drill with your cursor-keys to the screens.
+The screens are little boxes in the ground and to enter a screen you must
+drill on one of the boxes by pressing the space-bar !
+Nice parallax scrolling while moving the man through the main-menu screen,
+the background is very well drawn with the left/right border colors used.
+
+Very good is the fact that the main-menu stays in memory and it "remembers"
+which screen you have enterd last.
+Cool main-menu........
+
+* * * * * * * * * * * * * * * WE WANNA EGGS * * * * * * * * * * * * * * * *
+
+Everytime you load a demo-screen there is an information screen first with
+the credits and the text: loading and after that decrunching.
+After decrunching you must press space to see the demo-screen appear.
+
+Okay of with the first screen then,
+
+All of the stuff begins by showing a picture with the title of the screen
+drawn all over it.
+There is a landscape and the blue sky and then a big bird appears on the
+scene and dumps three eggs on the ground.
+Ohh goody, the eggs begin to hatch and you get to see three little birdy's.
+The birdy's begin to sing and they whistle and shake their heads on the 
+rhythm of the ( module ) music.
+I believe it is a conversion of the Budbrain screen from the aMIGa.
+Nice though.........
+
+** ** ** ** ** ** ** ** ** ** ** COPPER POWER ** ** ** ** ** ** ** ** ** ** 
+
+Most screens seems to start with a picture and this screen also has one,
+saying: We don't need a copper.
+Some nice vertical distorted rasters show up and begin to wave over the
+screen.
+The upper and lower border colors are used in the screen and a piece of
+digi-drum music is playing.
+Other new effects appear on the screen with many different waveforms.
+Very good screen..........
+
+* ** * ** * ** * ** * ** * ** * CRISTALLO * ** * ** * ** * ** * ** * ** * **
+
+Starting with the text:Apollo of N.P.G. presents Cristello.
+3 layers of background pictures are moving parallax on the screen.
+There are caracters forming words and in the lower part of the screen is
+the text: New Power Generation.
+A digi-drum tune is playing while I watch the screen.
+Looks to much like a TLB screen to me !
+
+* * ** * * ** * * ** * * ** * * SLIDESHOW * * ** * * ** * * ** * * ** * * **
+
+This screen contains some pictures that form a short ( funny ) story.
+The pictures bounce on the screen and they bounce out of the screen when
+they get changed.
+In the low part of the screen is a bytebending scrolline running through
+the screen.
+Normal ( moody ) music here.........
+Nice but not really amazing( it wasn't really ment to be, I think ).
+
+****************************** MULTISCROLL *********************************
+
+This is not an original screen but it contains good code, though !
+A big distorted background appears looking suspiciously like the one of ULM.
+Then lots of vertical moving and distorting scrollines appear on the 
+screen with some music from Max playing.
+Good code but an old idea !
+
+++*++*++*++*++*++*++*++*+++*++* PLANE-O-MATIC *++*++*++*++*++*++*++*++*++*++
+
+The screens starts with a piccy showing a circuit-board with the title of
+the demo-screen drawn on it.
+You must press the big-one to continue with the rest of the screen.
+
+There is an distorted N.P.G. logo wobbling in the upper part of the screen.
+Somewhere in the middle of the screen are dots that change to different
+kinds of objects.
+There is one bytebending, one big bounching and four vertical scrollines 
+moving on screen !
+Mad-Max also joins the party with some hippy-chippy music.
+Avarage demo-screen.........
+
+(*)(*)(*)(*)(*)(*)(*)(*)(*)(*) VECTOR SCREEN (*)(*)(*)(*)(*)(*)(*)(*)(*)(*)
+
+Guess what, yeeaaah a piccy first !
+First there is some text that gives you information about the object that
+is about to appear.
+A cube starts to fly over the screen and many different objects will follow.
+Effect's like lightsource and other things are also in the demo-screen, the
+text keeps appearing with new info. about the many objects !
+Not as fast as the Kruz routines but nevertheless a very good screen !
+
+/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\ MULTIPART /*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*\/*
+
+This is an Dentro kind of screen with different effects.
+There are words appearing on the screen and they explode when the words
+change or disappear( nice looking effect ) !
+After the text a cube comes flying over the screen, after that some vertical
+rasters come danching over the screen.
+In the lower border is a scrolltext and when the rasters are gone away, a
+big bytebending scrolltext moves over the screen.
+In the background is a horizontal starfield and the module is sounding
+like a track from the Fine Young Cannibals ( She drives me crazy ).
+
+It all ends with a big booommm !!
+A very nice Dentro kind of screen with nice effects in it !
+
+///////////////////////////// HIDDEN SCREEN ? \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+There is a Hiddenscreen in this demo, which i havn't discoverd yet !
+I didn't have time looking for it, but that's okay otherwise there is
+nothing for you to look for !
+
+                             ****************
+                             *              *
+                             *              *
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ RESET SCREEN ////////////////////////////////
+
+When you press the reset-button, a reset screen pops up !
+A wobbling N.P.G. logo is floating on the screen and a very good module
+is playing in the background.
+You can press the up and down keys to scroll through some information
+screens with credits.
+
+******************************* CONCLUSION *********************************
+
+The N.P.G. mega-demo is a very good demo with very good graphics and some
+good code !
+I really hope that you guys do another one in the future with some more
+original effects on the ST.
+
+Ratings,
+
+Coding         : 8+
+Graphics       : 9-
+Music          : 8- ( mostly ripped music from Mad-Max ).
+
+Overall Rating : 8+
+
+****************************************************************************
+

@@ -1,0 +1,126 @@
+
+                                         Maggie 21: Utiliy Review
+
+
+                        S C R E E N S P A I N
+
+
+                              UTILITY: It  may  have  the  oddest name 
+                               since "Easy  Rider",  but  what  does it 
+                               actually do for your Falcon?
+                              HOUSE OF (S)PAIN: Tat
+
+
+ScreensPain? Or is it ScreenSpain? S-Creenspain? Scree'n'Spa-in?
+
+Who knows, but this natty piece of  kit is not a geography Edutainment 
+ title, rather more a neat utility  for  serious Falcon owners who want 
+ to get the  most  out  of  their  video  chip,  or  even the ambitious 
+ dabbler. Anyone who has had a Falcon  for  more than a week knows that 
+ there are hundreds of applications (even  NeoN-3D, costing a couple of 
+ hundred quid!) which have terrible problems coping with setting up and 
+ restoring video modes. ScreensPain  is  a  valiant (although sometimes 
+ flawed) attempt to remedy this. It has been knocking around in several 
+ forms for a while now,  and  a  newer,  non-Shareware version has been 
+ bundled with the ScreenBlaster hardware in Germany. 
+
+The authors of this Shareware title (registration is 30DM - see later) 
+ were responsible for  the  original  German  video  documentation from 
+ Maggie 20: demo programmers  from  Aura  and  the  Mugwumps... and the 
+ first thing that strikes you when  loading ScreensPain is that it's in 
+ German. Not a good start, but readers  can rest assured that once they 
+ have the hang of it, it's the  easiest way of designing your own video 
+ resolutions currently available - in fact, probably the only way.
+
+                                IN USE
+
+The program  interface  is  GEM-compatible  (don't  try  with MultiTOS 
+ though, the  screen  switching  can  cause  problems)  but  requires a 
+ 640*400 minimum  screen  resolution,  and  after  the  initial warning 
+ dialog  boxes,  you  are  presented  with  a  bewildering  display  of 
+ switches, sliders and numerical inputs. It looks very confusing, but a 
+ quick click on the "Testen"  (Test)  button  gives  you  a test of the 
+ currently chosen resolution, where, by  using  the mouse and the right 
+ button, you can define the screen  positioning, border size and so on, 
+ but here you can see exactly what the finished product will look like. 
+ Pressing Enter (to accept change)  or  Esc  (to reject) returns you to 
+ the main panel again.
+
+The options available are exhaustive:  even the screens' frequency can 
+ be altered, the border positions  tweaked  to the nanosecond(!) and of 
+ course screen  size,  pixel  cycle  size,  (for  fat/thin/normal width 
+ pixels) bitplanes and  double  line  or  interlace  (or  both!) can be 
+ defined.  Even  ST-compatible  modes,  or  GEM-compatible  modes,  can 
+ forced.
+
+                       BUT HOLD ON A SECOND...
+
+...and herein lies the main  problem  with ScreensPain. Because of the 
+ incredible number of options that you  can  tweak, it is impossible to 
+ automatically define  resolutions  that  are  simultaneosly compatible 
+ with RGB/TV (the two use  identical  settings),  VGA  and SM124 all at 
+ once: they all use different  screen  frequencies, pixel cycle lengths 
+ and border positions to create similar mode.
+
+This problem is inherent within the video system of the Falcon itself, 
+ and explains why Atari  were  so  anxious  for  everyone who wanted to 
+ alter video settings to use  the  operating  system calls - which were 
+ awful,  so  everyone   ignored   them.   My   version  of  ScreensPain 
+ automatically detects the monitor  type  and  initially  sets up video 
+ settings accordingly. What is really needed is a button to convert one 
+ RGB resolution to a VGA one, and so on... but this is easier said than 
+ done. You  really  need  both  VGA  and  RGB  monitors  to  create two 
+ resolutions, each to be  used  in  certain  cases. Unfortunately, many 
+ people don't have both.
+
+
+
+But back to the program....  Once  defined  to your taste, resolutions 
+ can be saved, along with 40 characters of text to define its use, as a 
+ .SCP  (ScreensPain   file),   or   as   68000   assembler   sourcecode 
+ (automatically optimised for you!), or  a  GFA-Basic .LST file (easily 
+ converted  for  STOS-Basic  users.)  So  inclusion  in  your  programs 
+ couldn't be simpler. Happy coding.
+
+But that's not  all.  Registered  users  can  use ScreensPain-produced 
+ resolutions with an AUTO-folder  program,  similar to FalconScreen, to 
+ fool the Desktop into  giving  different  resolutions. Want a 1600*800 
+ Desktop in 16 colours? Just say the word. Overscan? Tiny joke screens? 
+ CinemaScope Dolby Surround-Sound Trashcan?  (well,  I  lied about that 
+ bit.) Almost anything that ScreensPain produces can be used.
+
+And finally, some tips for creating wacky screen modes:
+           - The "Pixeltakt" button (it means pixel cycle length, that 
+            is how many video  processor  cycles  each pixel is display 
+            for, or its width) can give  extra-fat pixels with VGA with 
+            a setting of 4, or extra-thin ones on RGB with a setting of                 
+            1.
+
+           - Similarly, RGB's default clock-speed setting of 32Mhz can 
+            be altered to 25Mhz to give  30% fatter pixels - that's the                 
+            trick that many demo  coders  use  to  get more complicated                 
+            effects  on   screen   without   sacrificing   frame   rate                 
+            ("Terrorise Your Soul" is  a  good  example: nearly all its                 
+            effects use this mode)
+
+           - VGA  monitors  normally  run  at  60Hz  -  but  not  with                 
+            ScreensPain! Depending on the bitplanes  and screen size of                 
+            your  resolution,  framerates  can   be   tweaked  to  give                 
+            different values. This is  how  some  demos  managed to run                 
+            "identically" on RGB and  *nearly*  all  VGA monitors (e.g.                 
+            Abstract's X-Perience demo)  WARNING:  some  monitors can't                 
+            handle this, but have fun trying!
+
+WARNING: The author cannot be  held  responsible  for you turning your                 
+            monitor to toast with these tips. Heh Heh.
+
+                              CONCLUSION
+
+Overall, a very useful package which  behaves in exemplary fashion and 
+ not inconsiderable style. Now, if only they'd let me translate it into 
+ English...
+
+
+
+
+(C) 1996 Maggie Team

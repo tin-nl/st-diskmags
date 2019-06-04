@@ -1,0 +1,58 @@
+Raytracing Worlds
+=================
+
+If you are anything like me you probably spent several days rendering
+all the scenes that came with the POVRay distribution. I then tried to make my
+own wonderful raytraced creations. After the twentieth scene I created using a
+sphere and a cylinder, I wondered, "Okay, now what?. Well, this book is what. 
+
+Raytracing Worlds with POV-Ray is written with the intermediate to advance
+POV-Ray user in mind. This book comes with POVRay V2.2, Moray, and several
+additional tools for MS-DOS. It assumes you have a basic knowledge of POVRay,
+which you can easily get by reading the POVRay documentation or, better yet, by
+reading Raytracing Creations [ISBN: 1-878739-69-7]. 
+
+Chapter 1 goes through the installation of the software from the disks, and
+shareware ethics. In this chapter you will find a glaring omission - it does not
+tell how to properly set up memory management for Moray V1.5. The examples in
+the book will not work until 610-630K of lower memory is freed up. 
+
+Chapter 2 introduces object creation with Moray. By the end of this chapter
+you've modeled a coffe cup, made a POV logo, and created a soda can. 
+
+Chapter 3 covers lights and cameras. It talks about pointlights, spotlights,
+area lights, field-of-view, aspect ratio, and coordinate systems. 
+
+Chapter 4 covers colors and textures. Most experience POVRay users would agree
+that creating good textures is an art form. This chapter takes much of the
+mystery out of the creation of textures. It explains some of the obscure aspects
+of the creation of textures. 
+
+Chapter 5 covers some of the more confusing aspects of POVRay. There are good
+examples of using heightfields in POVRay for creating terrains, and for creating
+extruded objects like letter. The design and cration of polygon surfaces is
+covered, as is the use of custom designed programs to create POVRay components. 
+
+Chapter 6 introduces patches and polygons. The cration of bezier patches and the
+conversion of 3D polygon models is covered in this chapter. 
+
+Chpater 7 goes through several examples of creating scenes. This is where all of
+the pieces in the previous chapters come together. Six different scenes are
+created, including a room, f117 flight formation, ducks in a pool, Beethoven's
+head, a molecular model of ATP, and an android. 
+
+The remainder of the book goes through POVRay 2.0 and 1.0 differences, and
+describes each of the tools used in the text. These tools include RAW2POV (a 3d
+model converter), CRENDER (explores pigments and textures), CMAPPER (interactive
+development of color maps), and LPARSER (a program to generate organic looking
+3d models). 
+
+When I bought this book the clerk at the store, a woman in her 50's who said she
+was a computer phobe, commented, "This is really neat!" I certainly have to
+agree with her. Even with the problems in chapter 1, if you really want to learn
+to create "really neat" scenes with POVRay this book is a good investment. 
+
+Raytracing Worlds with POV-Ray
+Alexander Enzmann, Lutz Kretzschmar, and Chris Young 
+ISBN: 1-878739-64-6 
+Price: $44.95 - Includes 2 disks 

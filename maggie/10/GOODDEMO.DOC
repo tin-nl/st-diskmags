@@ -1,0 +1,156 @@
+
+ How to do a g ood demo!
+
+†„(an article done by Slime)†
+
+As the headline of this article is 'How to do a good shag', oops! 
+Sorry! ;-) I meant 'demo', I try to explain what 'I' want to see in 
+a demo and what not.
+First of all there are many maaaaany crap demos flying around and 
+only some ˆreal brilliant masterpieces of code, graphics and sound!
+Just to show you a little bit of my taste, I'll tell you my 
+favourite demos. They are:
+
+Oh Crickey, wot a scorcher! (The Lost Boys), Union demo, The Cuddly 
+demos (The Carebears) and some more...
+(By the way, you always have to remember the release date of the 
+demos to be objective!!)
+I can't give you any names of shite demos because I don't use my 
+brain capacity to save such unimportant data (Wow! What an arrogant 
+sentence! Harharhar!).
+
+The most important thing you have to remember if you want to do a 
+demo is that originality, good design and new technics are the most 
+wanted stuff people like. So don't bore them with a-zillion-times-
+seen fullscreens or crappy colourshocks!
+If you have to show the whole world what a good coder you are - ok! 
+But don't do it by producing one after the other fullscreen (and the 
+only difference between them are the scroll texts and the needed CPU 
+time!). And to stay at scrolltexts; a scroller has to look good, 
+should be readable (but don't have to be!), AND it has to be 
+interesting! Don't write gigabytes of crap like: 'I ate 10 kg of 
+crisps while coding this screen', or 'My dog had the flu while I 
+was doing this screen'. Beware of such stuff! I know it is 
+difficult to write a good scroller (at least if you're writing the 
+scroll text of the last screen of a 'Mega Demo', but you have to 
+try it!). And by the way, do you really think every screen has to 
+have a scoller? I don't think so anymore!
+Another important rule for doing an - at least - nice demo is the 
+precision in doing the work. Never say 'Uhh the rasters are 
+flickering a bit, but I'm too lazy to do it better', or something 
+like that. If you start doing this, your demo is doomed to be 
+just mediocre! Because other people will think you are NOT ABLE to 
+do it better!!! In some demos I saw things like wrong cutted fonts 
+or graphics with a wrong palette! If you do such mistakes, too, a 
+demo reviewer will bash your brain out of your skull (at least I 
+will do it!). Hmmm.. I know that it isn't nice but the latest demos 
+I remember (and that's a compliment when I can remember a demos 
+name!) which failed in precision are: 'Pandemonium' by „Chaos and 'My 
+socks are weapons' dentro by „Legacy. The Legacy dentro was good but 
+there was one thing in it that makes me puke (especially me as I'm a 
+grafics man!). There were some letters in the scroller which have 
+contact to each other (that means some letters were too wide!) and 
+that makes the scroller looks shite (at least for me!).
+But the best example for the failure in precision is the latest 
+Chaos demo. Ben, I hope you won't mind at all, but if some people 
+can learn from your mistakes then this would be a big success!
+Well, what has he done? There were flickering rasters, a jerking 
+screen, bugs in the colourshock and crappy animation. (You might 
+think that the demo was completly crap but it wasn't! It was really 
+good (read MAGGIE 9 for a review)). If he had avoided at least half 
+of the above mentioned mistakes he had got a better rating in the 
+review easily.
+Stop criticizing other people now. I hope they don't kill me 
+because I show them their mistakes (I never would be angry if 
+another person showed me things I can do better, if he does it in 
+an objective way!).
+Before I forget it - the next demo, dentro, intro, etc. that uses 
+70hz in the beginning will get MINIMUM two points less in the 
+rating as it would get without the 70hz rubbish! That's no threat - 
+that's a LAW! Even as a really unexperienced guy in coding I know 
+that my colour monitor runs in 50hz or 60hz and it's not harmless 
+to switch it to 70hz! So stop that silly stuff dumbfuckers (that 
+was meant as an insult and I don't care about any reaction!)!
+The next rule is: Do not copy whole demos from the Amiga or other 
+computers. That sucks! But if you do it anyway, then you should be 
+that fair to give the credits to the group you copied (even they are 
+bastards!). I don't mean that copying ideas from other groups and / 
+or computers is bad (Delta Force did it several times) but if you 
+copy it, then it has to contain better code and some little NEW 
+effects. And: If you saw a good screen on Amiga but are unable to 
+do a good conversion then better don't use it instead of making a 
+fool of yourself!!
+To tell you something about good design, here are some basic rules:
+
+1. You should be possible to exit ALL screens, intros, etc. when 
+ever you want. (Some demos had crap intros you had to look till the 
+end! That was extremly boring and I hate it like hell!!)
+
+2. If you decide to do a demo which runs like a movie it would be a 
+nice idea to include an optional menu (available by pressing help) 
+so if I would like to see a single effect I don't have to look at 
+all the stuff for hours. But that's only an advice from me.......
+
+3. Don't show the same effects too often. E.g. don't use all your 
+three-dimensional stuff at once (showing ten and more of them makes 
+me screaming!). Split it!
+
+4. If you do a reset screen, then please think about Mega ST's! They 
+have the reset button at a difficult place to reach (you always 
+have to stand up from your chair to press this nipple (at least New 
+Mode has to do it)). Make it in a way that it is possible to leave 
+the screen by pressing space but don't forget to exit the screen by 
+pressing reset twice too! And perhaps include the Control-
+Alternate-Delete keyboard reset! That's the best way. And never do 
+a reset part you only can exit if you switch off your computer!!
+
+5. Hold the menu, loading screen and reset part in memory (only for 
+1 meg and more). And if you have a screen which is too big to hold 
+everything in memory, then you have to decide which part you skip. 
+Please, try to use the available memory capacity - on a 4 meg 
+computer I don't want to see the same disadvantages as on half meg 
+ones (reloading menu, etc.). Do a CLEVER concept! (I know it is 
+always bad if you praise the own stuff, but 'Punish Your Machine' 
+had a real good concept - not brilliant, but good! There was an 
+optional menu; menu, reset and loading part was held in memory (on 
+1 meg and more!) and you could exit the reset screen by pressing 
+'Space' or 'Reset' twice).
+
+If you do a hiddenscreen, then you should give some hints how to 
+reach it in the demo or - and that's nice too - tell a disk 
+magazine (like MAGGIE or ST-NEWS of Richard Karsmakers and Stefan 
+Posthuma) the way how to get there. By the way, if the key to reach 
+the hiddenscreen is a password then PLEASE, all you Frenchies, 
+think about your strange keyboard that doesn't fit to the rest of 
+the world! I just say AZERT and QWERT! Do it in a kind that it 
+possible to enter the password on all ST's in a normal way.
+Another important topic is the style of the demo menu. Jesus H. 
+Fucking Christ - that's really the most important thing! Just let us 
+think that you've done a demo with well code, nice grafics and 
+earblasting sound... And NOW you have this BIG idea to do the menu 
+like a jump'n'run game, 'Dungeon Master' looking or - much worser - 
+like a shoot'em'up (like NTM-demo by Zuul). Oh boy! If you do this 
+I'll rip your nuts! WE HAD  ENOUGH OF THOSE 'EXTREMLY'„  FUNNY  
+MENUS!!! Think about new ideas to do one! But if you have to do it 
+in this kind anyway, please, do an optional menu (reachable without 
+any password or tricks, but simple by pressing HELP for example!).
+
+Well, what's left to mention? I don't know..... Hmmmm? Should I tell 
+you that you don't have to slander in your scroll texts? No, I don't 
+think so - you must know it on yourself, if you can bear the 
+reactions of annoying other people.
+One thing left to mention. If you own a megabyte or more computer 
+then please use it! Do a demo just running on ONE meg! The halfmeg 
+pissheads should fuck off or buy an extension! If you are such a 
+person, then why you don't buy a single-sided drive to complete 
+your collection of worse computer equipment?
+
+That's the end of this crappy article! Feel free to write MAGGIE 
+your opinion about a good demo or - if you want - to tell me to piss 
+off if you think that I am completely wrong with this article. Or 
+perhaps I have forgotten something important? And send MAGGIE an 
+article about your opinion of 70Hz in bootsectors and the reasons 
+why you like / use it or not!
+
+Slime
+

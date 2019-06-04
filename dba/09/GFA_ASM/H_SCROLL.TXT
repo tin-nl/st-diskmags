@@ -1,0 +1,127 @@
+HARDWARE SCROLL
+
+Hardware Scroll - The easy way.  (Written by Robert from T.A.B.)
+
+Hello Boys and Girls,
+
+I  want  to explain my new vertical  hardware  scroll  method.  I 
+accidentally discovered this method while I was playing with some 
+graphics  registers  to  open borders which  mostly  resulted  in 
+distorted screens and a peeping monitor.
+
+Lets try to install the routine listed below in a timer b  raster 
+interupt halfway the screen.
+
+
+timerb_int:     nop                     ; wait 4 clockcycles
+                move.b  #2,$FFFF8260.w  ; switch to 70 Hz
+                REPT 15
+                nop                     ; wait 5*4 clockcycles
+                ENDR
+                move.b  #0,$FFFF8260.w  ; switch back to 50 Hz
+                clr.b   $FFFFFA1B.w     ; timer b off
+                bclr    #0,$FFFFFA0F.w  ; end of interupt 
+                rte                     ; the end
+
+This  normally is the routine I use to open the lower  border  in 
+line 200, but then I switch to 60 Hz and back and 5 nops instead
+of 15 nops.
+
+When  you execute this routine after a couple of lines  you  will 
+see a black line on the screen. Under this line you will see some 
+distortion.  
+
+Conclusion:  
+This  routine  pushes  the screen one line down  from  where  you 
+execute the routine.
+
+If you wait till the next line and switch to 70 Hz and back to 50 
+Hz again, then the screen will be pushed down 1 line again.
+When  you do this at the top of the screen,  then you can  scroll 
+the whole screen down by steps of 1 line. (it can't be smoother)
+At  the top of the screen you haven't the distortion because  you 
+switch before the visible lines.
+
+With the Video Base registers $FFFF8201.w and $FFFF8203.w you can 
+scroll vertically by steps of 8 lines.  When you combine these  2 
+methods  you  can  scroll the whole screen in 0  to  7  scanlines 
+processor  time.  (time  depents on no.  lines scrolled  down  by 
+frequency switching.)
+
+Now  we  have  the screen scrolling but you can  see  the  screen 
+pulled down and then flipping up.  This is not a nice sight so we 
+must  make a vissible window of the screen.  This can be done  by 
+using timer b interupts to change the color pallete from black to 
+color  at the beginning of the screen and from color to black  at 
+the end of the screen.
+
+The  first  timer b interupt to make the screen visible  must  be 
+called at line (8-no. lines scrolled). This is because the pushed 
+down lines are not counted.  
+
+The  second  timer  b interupt too make the rest  of  the  screen 
+invisible,  must be called 192 lines later. (or 191 lines to make 
+a invisible color change)
+
+Now  we  have  made  a visible window  on  the  screen  which  is 
+scrolling very smooth.
+
+To show you this hardware scroller I have made an example program 
+with sourcecode which you can find in the GFA_ASM folder.
+The  source was written with Turbo Assembler but you can  use  it 
+with Devpack 2 too.
+In the folder there is also a crappy fullscreen version.  (no top 
+and  lower border)(I hope that the top border works on  most  STs 
+because  I've  heard that there are STs with a top border  of  13 
+lines instead of 29 lines.)
+
+Advantages of this hardwarescroller:
+
+- I think it is much easier to use than sync-scroll.  (I've heard 
+  that it works by toggling some left/right borders at the top of 
+  the screen so you can change the screenoffset,  which is  quite 
+  complicated. (I've not yet tried it))
+
+- It works without modifications on all tested ST(e)s.  I hope it 
+  works on your st(e) too.
+
+
+Disadvantage of this hardwarescroller:
+
+- It's only for vertical scrolling. Not for horizontal scrolling.
+
+- If  you  have  connected your st(e) to a tv-set  by  using  the 
+  modulator or the composite video input then the screen will  be   
+  black  and  white but work for the  rest  good.  (very  strange 
+  effect. I've tried to fix it but that seems impossible)
+  To these few people:  buy a monitor.  The much better   picture 
+  quality is worth the money. 
+  If you  want to watch TV, buy a TV with scart connector because   
+  this scroller  works good if you  connect your st by using  the     
+  R-G-B scart input and the picture quality is almost as good  as     
+  a monitor.
+
+
+I hope you find this article interesting.  
+I  don't  know  if  there is someone  else  who  discovered  this 
+hardwarescroll  technique because I haven't see anyone using  it. 
+In  my  opinion  there must be someone  who  also  discovered  it 
+because  there  are  so much people who  are  experimenting  with 
+borders and sync-scrolling.
+
+I you want to contact me write to
+
+Robert Demming,
+Talmastraat 54,
+1182 EP, Amstelveen.
+The Netherlands.
+
+Or E-mail: robertde@solist.htsa.aha.nl
+
+
+See you,
+
+Robert from The Atari Boys.
+
+Ps. Hi Ultimate of DULL. Why didn't you greet me in the 
+DBA 8 intro ????

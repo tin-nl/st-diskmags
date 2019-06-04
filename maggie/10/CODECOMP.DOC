@@ -1,0 +1,87 @@
+
+ THE CODERS COMPETITION
+
+
+
+This is also a new series of articles. First time we'll start 
+with a competition for the coders, then the painters and the 
+musicians will follow.
+Don't expect big prizes, it's just fame that will be gained. 
+Besides, how should we afford them?
+
+Now it's up to you, please compete! Send your answers until the 
+end of September to our HQ. Now enjoy!
+
+All the solutions have to be in pure 68000 assembly language.
+
+
+QUESTION 1:
+
+You've got the following situation : there's a four byte ID 
+handle in memory. You can't decide if it's at an odd or even 
+address, so no word or longword access can be done without 
+risking an address error. 
+
+For example, you've got this ID here:
+
+$30001 : "A"
+$30002 : "B"
+  $30003 : "C"
+  $30004 : "D"
+
+Register A0 points to $30005 now and you've got to get the ID 
+into register D0. The ID is "ABCD" and has to be in the correct 
+order afterwards (not "ACBD" or "DCBA", etc.).
+
+Your routine may not change any registers (except for D0, which 
+has to contain the ID). You may just use the stack for storage of 
+your registers or for any other purpose. But still, the 
+stackpointer has to be the same as before after you're routine is 
+finished. For the dumb persons : of course you can change 
+registers, you just have to restore them after your routine's 
+finished.
+
+You may also not use any branches or tables (would give no sense 
+anyway).
+
+
+Ok, to make it easier, I give you a simple routine that gets this 
+ID into D0.
+
+move.b -4(A0),D0
+lsl.l  #8,D0
+move.b -3(A0),D0
+lsl.l  #8,D0
+move.b -2(A0),D0
+lsl.l  #8,D0
+move.b -1(A0),D0
+
+Obviously this is a „very slow way to get this done.
+
+Now, do it faster... The fastest routine will win. 
+
+
+
+QUESTION 2:
+
+Mirror a longword at the word boundary. This means you have to 
+exchange bit 31 with bit 0, bit 16 with bit 15 and the rest 
+should explain itself.
+You get the longword to mirror in D0, no other registers may be 
+changed without a proper restore. You may not use tables.
+
+
+
+QUESTION 3:
+
+A bitcounter. You get a longword in D0 and you have to return how 
+many bits are set in D1. Again all registers (except for D1 this 
+time) have to stay the same.
+
+
+Happy clockcyclecounting...
+
+
+
+
+

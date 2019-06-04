@@ -1,0 +1,461 @@
+ò                       .------<------<------<-----.
+ò                       vðó CHAPTER 4 : MAKING LOOPSðò ^
+ò                       '------>------>------>-----'
+
+This chapter really is different in many ways to the last two. It is not
+aimed at getting sound, music or interaction directly, but it shows you the
+basics on how to make a fast and effecient loop for all of your routines.
+You want to plot someting like 80 pixels on your Falcon true color screen.
+You know that every pixel is one word(16-bits). You can do either this:
+repeat the command that moves a word 80 times in your code (this is called
+"unrolling" or "hardcoding"), OR this: You can use a loop...
+
+Let's take a look at falcon-pixel plotting routines:
+
+        moveq   #0,d0                   * Prepare d0 for being a counter.
+loop:   move.w  #$ffff,(a0)+            * Do one pixel and move to the next.
+        addq.w  #1,d0                   * Increase the counter.
+        cmpi.w  #80,d0                  * If the counter isn't 80 > again.
+        bne.s   loop
+
+As you can see every loop-structure consists of an initialising part,
+a processing part and a part to do loop-household things.
+Well, this is reasonable. At least it is smaller than repeating the command
+every time in your code.. But it's slower. And if it's one thing we don't
+want in assembly it's slow code!
+
+The first step to faster code is:
+
+        moveq   #80-1,d7                * initialize counter
+loop:   move.w  #$ffff,(a0)+            * do one pixel and move to the next
+        dbra    d7,loop                 * Subtract 1 from d7.w and loop
+* until d7=-1
+
+There you have it. If you're not using the counter for other purposes, you
+can just as well use a dbra loop. It's simply much faster!
+There are many ways to get this loop even faster, but you'll read more about
+that in the next chapter.
+Nested loops are a bit more complicated then this and I can hear you asking
+what 'nested' actualy means. A 'nested' loop means 'a loop in a loop'! Wow!
+That sounds GrOoVy! Like true industrial, man!!
+A good example of a nested loop would be something like clearing the left
+half of the screen. Again this situation goes for Falcon true color, but the
+same can easily be adapted to the ST-low resolution.
+
+        move.l  #screenaddress,a0       * Screenaddress in a0.
+        move.w  #200-1,d7               * Initialize for bigloop.
+bigloop:
+        move.w  #160-1,d6               * Initialize for loop.
+loop:   clr.w   (a0)+                   * Clear one pixel and move to the next.
+        dbra    d6,loop                 * Loop 160 times.
+        adda.l  #160*2,a0               * Move to next line.
+        dbra    d7,bigloop              * Loop 200 times.
+
+Note that the screen is 320 pixels wide so the half is 160 pixels wide. When
+you've cleared those 160 pixels you need to adjust a0 by adding the length
+in bytes of the 160 pixels. This brings you to the beginning of the next
+line.
+As you can see d7 is now reserved for 'bigloop' and d6 is reserved for
+'loop'. This automatically means you can never have more than 7 nested loops
+because you only have 8 data registers. It's ofcourse possible to backup
+the registers and restore them again, but the more memory accesses.. the
+slower it will get.
+
+Ofcourse the power of loops isn't only repeating the same operations over
+and over again without using up much space. They can also be used to make
+code more flexible. A flexible loop can for instance allow copying/drawing
+differently sized blocks or maybe show a starfield from whatever angle you
+want simply by putting some different values and addresses into registers
+before running them.
+
+We're now gonna go up a level to see how you could construct very big loops.
+If you have a game you need to rebuild your paying-screen every so often.
+For this you need a really complicated loopstructure. If you checked out my
+last book, you might know that I explained something about game-loops. I'm
+gonna do more or less the same, but now in assembler.
+Here's the situation:
+ * We want our background refreshed everytime.
+ * We want our enemy sprites moved accordingly to their programming and they
+   can react to the main-player too.
+ * We want the sprites displayed with animation and some FX like explosions
+   too.
+ * We want our main sprite drawn in the same way.
+ * We want a nice panel at the side of the screen that shows realtime
+   statistics.
+ * We want to check for joystick input and read it and check if the spacebar
+   is pressed (spacebar exits the game)
+
+The loop will look somthing like this:
+
+mainloop:
+        bsr     HANDLE_INPUT            * Read stick+keys and update variables.
+
+        bsr     HANDLE_BACKGROUND       * Initialize position+masks+animation.
+        bsr     HANDLE_MAINSPRITE       * Handle collision+masks+speed+weapons.
+        bsr     HANDLE_ENEMIES          * Do same for all the enemies.
+
+        bsr     PLOT_BACKGROUND         * Put the background in screenbuffer.
+
+        bsr     PLOT_MAINSPRITE         * Put the main sprite in screenbuffer.
+        bsr     PLOT_ENEMIES            * Put the enemies in screenbuffer.
+
+        bsr     WAIT_VBL                * Wait for the VBL (no flicker).
+        bsr     SWAP_SCREENS            * Swap screens (no flicker).
+
+        tst.b   spacepress              * Test for space.
+        beq.s   mainloop                * if no spacepress > again
+
+As you can see you divide all the hard work into subroutines. The
+subroutines theirselves aren't in here, because it's irrelevant and it would
+be far too much work.
+About the order of subroutines.. The checking for input from hardware
+decives MUST always be seperated in big loops. If you don't you're bound to
+get crashes all over the place! If you simply let your program read joystick
+input everywhere, you mess the code up so hard that even yourself won't know
+what you did. Also note that you musn't put the call to HANDLE_INPUT
+inbetween other routine-calls. If you do that you'll mess up the position
+of your main-sprite.
+The handling routines come in second. You should also keep these together.
+They only calculate the frames, position and what FX are necesary. After
+that, the plotting routines do the rest.
+Then there is some waiting for the VBL. You should now what that is from
+chapter 2. Also the screenbuffers are swapped, which also has to do with
+flickerless animation. I'll explain that later on. It's absolutely
+essential that you keep these together in the right order and do them
+AFTER THE PLOTTING!
+Finally a byte is tested to see if the looping can continue or not. This
+byte is updated by the HANDLE_INPUT routine.
+BTW for those of you that don't know how subroutines work I'd like to
+explain it. It's quite important for the understanding of structures.
+OK, when you use a bsr or 'branch to subroutine' the 680x0 remembers the
+position of the following instruction. Then it jumps to a label and executes
+all the instructions untill it reaches a 'rts' (return from subroutine).
+Then it jumps back to the saved location. Just look at the picture:
+
+Step 1:                   |Step 2:
+=/\====-------------------+=/\====------------------
+        .......           |         .......
+        ....              |         ....
+        move.w  #1,d0     |         move.w  #1,d0
+->      bsr     routine   |         bsr     routine
+        rol.l   #1,d0     |         rol.l   #1,d0
+        .....             |         .....
+        ...               |         ...
+.                         |  .
+.                         |  .
+.                         |  .
+routine:                  |  routine:
+        .....             |  ->      .....
+        ...               |          ...
+        .....             |          .....
+        rts               |          rts
+
+Step 3:                   |Step 4:
+=/\====-------------------+=/\====------------------
+        .......           |         .......
+        ....              |         ....
+        move.w  #1,d0     |         move.w  #1,d0
+        bsr     routine   |         bsr     routine
+        rol.l   #1,d0     |  ->     rol.l   #1,d0
+        .....             |         .....
+        ...               |         ...
+.                         |  .
+.                         |  .
+.                         |  .
+routine:                  |  routine:
+        .....             |          .....
+        ...               |          ...
+        .....             |          .....
+->      rts               |          rts
+
+(Yeh! Now I'm real proud of myself that I made cool ASCII art again!)
+
+The little arrow is the current postion where the 680x0 is executing the
+instructions.
+
+Using this bsr/rts combination is very common in most programs and it is
+damn handy. It has the following advantages:
+* Allows repetitive use of same piece of code without having to copy it.
+* Allows the code to be called from different positions in the code.
+* Makes loops more readable.
+Ofcourse using this technique is only handy in places where not much speed
+is required. In the 'mainloop'-example this is the case! But beware when
+calling from within the innermost nested loops!
+
+A situation like the following will drasticly decrease the execution speed
+of a loop structure:
+
+        movea.l screen_address,a0       * Set a0 to the first pixel on screen.
+        move.w  #200-1,d7               * Prepare for 200 outer loops.
+yloop:  bsr     DRAW_LINE               * Call routine to draw a screenline.
+        adda.w  #160,a0                 * Set a0 to next screenline.
+        dbra    d7,yloop
+
+* INPUT: a0: startaddress of screenline
+DRAW_LINE:
+        move.w  #320-1,d7               * Prepare to loop 320 times.
+xloop:  bsr     PLOT_PIXEL
+* Go to next pixel here..
+        dbra    d7,xloop
+        rts
+
+* INPUT: a0: address of actual pixel
+PLOT_PIXEL:
+* Code goes in here..
+        rts
+
+This piece of code is well readable, but sadly it lacks speed. A bsr/rts
+combination everytime a pixel is drawn is a bad idea. It causes enormous
+overhead. So only use them in outer loops. This makes the global structure
+of the program look somewhat better and easier to modify at high level.
+The innerloops should best be kept without bsr/rts, saving/restoring of
+registers (d0 to a6) and other costly instructions.
+
+So, when you start coding on loopstructures you always come across the well-
+known two tradeoffs: speed and readability/adaptability. Coder's opinions on
+those two differ most of the time. Some people like their code completely
+readable, some optimise every byte, some make a mix of the two.
+
+Whether you do or don't make everything optimised, you should always consider
+this way of working with optimisation in loops.
+1) First of all, lay out your loop-structure from the highest level. Get your
+   code running and please don't think about speed yet.
+2) Check out where the bottleneck in the loop is. This is mostly (always :))
+   the loop nested deepest.
+3) Then only optimise these innerloops. Remove unneeded branches/subroutine
+   jumps, replace costly instructions with cheaper ones (or combinations of
+   cheaper ones), reduce flexibility by using simpler logic and instructions,
+   etc, etc.
+4) If you're a perfectionist you can also optimise other pieces of code besides
+   the most inner loop. This often is the step where the code becomes
+   unreadable and it's wise to only do this when you want to release your
+   final product (i.e. game, program or demo).
+
+Using this method you keep a good overall view AND get the speed where it is
+needed most.
+
+Let's conclude this chapter with a practical example. A loop that reads a table
+with sprite-positions and plots sprites on screen accordingly. To begin with we
+setup our initial sluggish, but readable code. Please note that the sprite-
+routine is for Falcon highcolor, just to keep it simple.
+
+*==============================================================================
+* :STep        _/I\_ Laying out the STructure:
+
+******** CODE MEMORY SECTION ********
+
+        TEXT
+
+* Routine that draws all sprites in the spritetable.
+DRAW_SPRITETABLE:
+        lea     sprite_table,a0                 * Get the spritetable.
+        move.w  number_of_sprites,d0            * Get the number of sprites.
+        moveq   #0,d1                           * Initialize loopcounter.
+
+draw_sprite_loop:
+        movem.l d0-d1/a0,-(sp)                  * Save used registers.
+
+        move.w  (a0)+,d0                        * Get X center of sprite.
+        move.w  (a0)+,d1                        * Get Y center of sprite.
+        bsr.s   DRAW_SPRITE                     * Jump to the spriteroutine.
+
+        movem.l (sp)+,d0-d1/a0                  * Restore used registers.
+        addq    #4,a0                           * Goto next sprite.
+        addq.w  #1,d1                           * Increase the loopcounter.
+        cmp.w   d0,d1                           * If not all sprites are done:
+        bne.s   draw_sprite_loop                * then loop once again.
+        rts
+
+* Routine that draws a 16*16 highcolor sprite on screen at a given position.
+* INPUT: d0.w: center X coordinate of sprite
+*        d1.w: center Y coordinate of sprite
+DRAW_SPRITE:
+        movea.l #screen,a0                      * Get address of the screen.
+        movea.l #sprite,a1                      * Get address of the sprite.
+        subq.w  #16/2,d0                        * Get left position of sprite.
+        subq.w  #16/2,d1                        * Get right position of sprite.
+        add.l   d0,d0                           * / Calculate sprite's
+        mulu.w  #320*2,d1                       * | offset on
+        add.l   d0,d1                           * \ the screen.
+        adda.l  d1,a0                           * Add offset to the screenaddy.
+        move.w  #16-1,d7                        * Setup Y loopcounter.
+
+yloop:  move.w  #16-1,d6                        * Setup X loopcounter.
+
+xloop:  move.w  (a1)+,(a0)+                     * Plot one pixel and goto next.
+        dbra    d6,xloop
+
+        adda.w  #(320-16)*2,a0                  * Goto to next screenline.
+        dbra    d7,yloop
+        rts
+
+******** DATA MEMORY SECTION ********
+
+        DATA
+
+number_of_sprites:
+        DC.W    4                               * four sprites in our table
+
+sprite_table:
+        DC.W    167,89                          * X and Y centers of sprite 1
+        DC.W    23,156                          * X and Y centers of sprite 2
+        DC.W    230,53                          * X and Y centers of sprite 3
+        DC.W    97,170                          * X and Y centers of sprite 4
+
+sprite: INCBIN  SPRITE.SPR                      * Include 16*16 binary sprite.
+
+******** RESERVED MEMORY SECTION ********
+
+        BSS
+
+screen: DS.W    320*200                         * Reserve a 320*200 HC screen.
+
+*==============================================================================
+
+*==============================================================================
+* :STep        -=< II >=- Finding the bottleneck:
+
+Well... You found the innermost loop yet? Ofcourse, it's the "xloop" inside
+the "yloop" inside "DRAW_SPRITE". If you look closely you'll notice there are
+4 sprites to draw and the sprites are 16*16=256 pixels to draw.
+This equals a total of 4*256 = 1024 pixels to means 1024 (!) times the xloop
+is executed!! (I the sound of that word "executed" :-])
+
+If you check out the relevance on the other loops, you'll see that an equal
+amount is done in "yloop" and quite alot more is done in "draw_sprite_loop".
+This might be true, but "yloop" is done only 4*16 = 64 times and
+"draw_sprite_loop" is done a mere 4 times.
+
+A close study of how much the each loop costs gives the following results:
+
+xloop:                 approx. 12 clockcycles on 68030 (without cachehit)
+yloop:                 approx. 10 clockcycles
+draw_sprite_loop:      approx. 70 clockcycles
+
+Then multiply this by the number of times each loop is done.
+
+xloop:                 12 * 1024 = 12288 cycles
+yloop:                 10 *   64 =   640 cycles
+draw_sprite_loop:      70 *    4 =   280 cycles
+
+It's very clear that xloop is the bottleneck here and hell, you needn't even
+do the calculations in this case, it's all quite evident. As soon as you know
+the innerloop, it's settled.
+
+*==============================================================================
+* :STep        -=> III <=- Optimising the innerloop:
+
+How to some perform some serious clockcycle hackin' procedures on tha xloop's
+ass?!?! Well.. You could always unroll the loop.
+
+yloop:
+xloop:  move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+        move.w  (a1)+,(a0)+
+
+        adda.w  (320-16)*2,a0
+        dbra    d7,yloop
+
+Yep... this eliminates the move.w #16-1,d6 as well as the dbra 16,xloop. This
+reduces the number of cycles for a pixel from 12 to 10. Very smart, but this
+code looks kinda chunky. AND... There is still a way to reduce the size of the
+code and speed it up even more!
+
+yloop:
+xloop:  movem.l (a1)+,d0-d6/a2                  * Move 16 pixels into regs and
+                                                * goto next spriteline.
+        movem.l d0-d6/a2,(a0)                   * Move 16 pixels onto screen.
+
+        adda.w  #320*2,a0
+        dbra    d7,yloop
+
+The movem.l instruction is specialized for moving large amount of LONGs in/out
+of the registers. In this example we move 8 LONGs (d0,d1,d2,d3,d4,d5,d6 and a2)
+and every LONG is two highcolor pixels. So 8 * 2 = 16 pixels.
+
+But how fast is this really? Well, according to the literature about
+cyclefucking on the Falcon, this should be about 140 cycles for the pair, so
+140 / 16 = a bit less than 9 cycles for a pixel. And hey, that's just a bit
+faster.
+
+Let's check out the score so far:
+Old number of cycles: 12288 + 320 + 280 = 12888
+
+Now for the new timings.. The xloop doesn't exists anymore.. All that's left
+is a pair of movem's. The total time for the yloop is something like 140+8 =
+148.
+
+New number of cycles: 148*64 + 280 = 9752
+
+This means a ((12888/9752) - 1) * 100% = 32 % speed increase!
+
+*==============================================================================
+* :STep        /|\ IV /|\ Perfection:
+
+Yes kids, grandpa Earx sure met a few freaks in his lifetime. People who won't
+give up till they killed every redundant bit of code and counted every single
+cycle (Hi Defjam, Llama and mr. Ni!). =)
+
+I know some coders that don't give a damn about excessive optimisation, but
+still it might be nice to optimise this example a bit further, eventhough
+there isn't more than a few percent in speed to gain.
+
+Let's start with the most inner loop again. This now is "yloop". As you can
+see you could unroll this loop also, but you've now already seen the principle
+of this, so we'll focus on something else..
+
+The adda.w #320*2,a0 is quite slow, because the immediate data in the
+instruction (the number 320*2) needs to be fetched every time this instruction
+is done by the CPU. A better option is to put the number in a register and add
+with this register everytime. This should save maybe 3 or 4 cycles every loop
+(shock, horror!).
+
+Also, you could optimise "draw_sprite_loop" quite a bit more by keeping track
+of which registers are used in "DRAW_SPRITE" so you don't use overlapping
+registers and hence needn't do the register-(re)storing. Furthermore the
+addq.w/cmp.w/bne.s combination can be transformed into a simple dbra which is
+more efficient.
+
+Phew.. That's it. Ok, hope you learned something from this looping bussiness.
+The summary:
+
+Clockcycle:            A single tick generated by the CPU-clockcrystal. An
+                       instruction takes up a number of these ticks. Some
+                       instructions take less cycles than others.
+Dbra instruction:      Nothing to do with certain female bodyparts, but
+                       actually an instruction often used to keep count of the
+                       number of loops done and decide whether to reloop or
+                       terminate the loop.
+Hardcoding:            A term often used to describe optimising a piece of code
+                       completely and only to one specific situation. This
+                       mostly leads to exceedingly speedy, but also very
+                       unreadable and chunky code. The word is often used too
+                       instead of "unrolling".
+Loop:                  A piece of code that is reran by the CPU.
+Mainloop:              A term mostly used for the most important loop in a
+                       program.
+Nested loop:           A loop within another loop.
+Overhead:              The time wasted when executing a certain piece of code
+                       in a specific case. Highly adaptable code mostly suffers
+                       from huge amounts of overhead. Highly specialised code
+                       has minimal overhead.
+Subroutine:            A block of code terminated with a "rts" instruction.
+                       Yes, basicly that's all there is to it.. :)) But you
+                       should always jump to a subroutine with "bsr" or "jsr".
+Unrolling:             Write out the number of loops you want to do in your
+                       code, by repeating the looped instructions everytime.
+                       Mostly leads to fast code, but can get very hugy and
+                       maybe to large to fit into the 68K cache.

@@ -1,0 +1,68 @@
+                            
+                                   OVERSCAN
+                                   ~~~~~~~~
+
+ Overscan: Wenn es noch  Leute geben sollte, die Geld  in den ST investieren
+ wollen, wo die 386er und 486er spottbillig geworden sind,sollten diese sich
+ mal Overscan Åberlegen. Wirklich toll.
+
+ Was ist das?
+
+ Eine kleine Schaltung + Software,die den Bildschirm vergrîûert. Und zwar um
+ ca. 25 % (hÑngt von der  Hardware ab, bei  meinem SM 124 sind es 28 %). Man
+ bekommt wirklich mehr Pixel, also mehr Platz.
+ Die Software kommt in den Autoordner. Dazu bekommt man, da es von einem der
+ besten  Atari-Kenner ( K. Isakovic ) programmiert wurde, diverse Patch-PRGs
+ gleich mitgeliefert. Auûerdem  einige Anpassungs-PRGs und ACCs. Der Perfek-
+ tionismus  geht so weit, daû sogar ein PRG beliegt, das die Atari-Bomben in
+ der neuen Auflîsung ausgibt!
+
+ Wozu das ganze?
+
+ Nun, was haben  Schreibtische, Festplatten und Monitore gemeinsam? Sie sind 
+ immer zu klein! WÑhrend man aber auf ersteren irgendwie Platz schaffen kann
+ sind Monitore nur durch Einsatz von sog. Geld zu vergrîûern.
+ Und bei Overscan kostet diese Vergrîûerung ca. 130 DM.
+
+ Was lÑuft?
+
+ Da das GEM seinerzeit (als es noch kein  WINDOWS  gab, man stelle  sich das
+ vor! Dabei weiû doch jeder, daû gute Dinge nur von Gott oder MICROSOFT kom-
+ men!) schon auflîsungsunabhÑngig  angelegt wurde, sollten folglich GEM-PRGs
+ keine Probleme haben. Und das stimmt auch (ziemlich). Eine Auswahl von PRGs
+ die problemlos laufen und von dem zusÑtzlichen Platz profitieren: 
+ Das GEM-Desktop (ja, auch das ist ein PRG),GEMINI, SIGNUM3.*,WF-EDIT (womit
+ ich dies Pamphlet zusammenhaue),FCOPY3.0,7UP,IDEALIST,KARMA,CALAMUS (jeden-
+ falls wird  immer mit dem Vorher/Nachher-Bild vom Calamus-Space-Shuttle ge-
+ worben. Wenn ich noch einmal das Shuttle oder den Tigerkopf sehe, dann kann
+ ich fÅr nichts garantieren),GUCK,META_BIT,ST_ZIP ...
+ Sowie fast alle  ACCs, da diese ja ( meist ) eh nur  Åber Dialogboxen Bild-
+ schirmausgaben machen.
+ Je moderner und/oder  teurer ein PRG ist, umso wahrscheinlicher wird es mit
+ Overscan klarkommen. Im  Overscan-Handbuch  wird genau beschrieben, wie man
+ auflîsungsunabhÑngig programmiert. Im wesentlichen  bedeutet das, immer die
+ Auflîsung irgendwo zu  erfragen und  nicht stur von  der hohen ST-Auflîsung
+ auszugehen.
+ Sogar ich konnte damit  GFA-PRGs schreiben, die liefen (wÑhrend der GFA-In-
+ terpreter pikanterweise nicht Overscan-tauglich ist). 
+
+ Und was macht man mit diesen PRGs?
+
+ Einfach benutzen. Man trÑgt diese  in eine ASCII-Datei ein, die beim Booten
+ gelesen wird. Oder man drÅckt  bestimmte Tasten, um beim Start das Overscan
+ abzuschalten.
+ Spiele laufen natÅrlich nicht. 
+
+ Nachteile: 
+
+ Bei mir  flimmert der Monitor  gelegentlich. Ob das ein thermisches Problem
+ ist?
+ 
+ FÅr wen?
+
+ Ja, fÅr wen heutzutage? Vielleicht fÅr die paar Leute, die ihren Atari noch
+ einige Monate benutzen wollen, bevor der neue 486er auf dem Tisch steht.
+ 
+                                            by Gnort
+                                            
+ (Anm. d. Redax: Wieso 486er?! Wie wÑr's mit Falcon 030 oder 040?!?)      

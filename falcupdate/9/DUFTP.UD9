@@ -1,0 +1,74 @@
+
+                                DUftp
+                  (C)1995, Data Uncertain Software
+                   ===============================
+
+What is DUftp?
+---------------
+
+DUftp is a GEM based FTP (File Transfer Protocol) program for use
+with MiNT and the MiNT-net networking drivers. You can use DUftp
+under MultiTOS, or just under plain GEM, as it uses non of the
+MultiTOS AES extensions. You can use DUftp to fetch files from
+any FTP server on the Internet (or any other TCP/IP based network).
+
+This was inspired by Rapid Filer on the PC, which provides a very
+simple way of transferring files (although Rapid filer does a lot
+more than DUftp, as it's very like Kobold in the way it speeds up
+disc access).
+
+Why Should I Use DUftp?
+------------------------
+
+Well, the standard FTP for MiNT-net is a text based Unix port, and
+although it works well, it looks a bit naff. DUftp is loads easier
+to use. As well as the just transferring files you get the following
+extra's:
+
+        o Web-browser style bookmarks for fast access to your fave   
+          sites.
+        o Automatic logins.
+        o Full modern GEM interface (windowed dialogs all round).
+        o Runs under MultiTOS or plain GEM.
+        o Drag & Drop style file transfer.
+        o Multiple connections at the same time (under MultiTOS).
+        o Abuse from unix fans for being a pussy and wimping it.
+        o Fast, reliable transfers (code based on the BSD Unix ftp).
+        o Envy from PC users who have to pay for this sort of thing.
+        o AES 4.1 iconify support.
+        o Pretty colour icons.
+        o No command lines to fart around with.
+        o Integrated with DIP to handle your dial-up SLIP connection
+          for you (simple Connect/Disconnect menu options).
+        o Only uses 200K when running.
+        o Context sensitive help.
+
+Credits
+--------
+
+Written by Craig Graham of Data Uncertain Software.
+GUI done with Interface2, coded using Lattice C 5.52, all on a
+falcon030
+4/32Mhz.
+
+Thanks go to the following people:
+
+o Steve Sowerby for the initial work porting the MiNT-net libraries
+to
+  Lattice C.
+
+o Chris Ridd for the MiNTLIBpl46 port to Lattice.
+
+o Kay Roemer for MiNT-net.
+
+o All the folks who do beta testing for me (DUftp & CLA).
+
+
+Craig.
+ __                              _
+ | \        | |                 / | Watch this space - something
+wonderful
+ |_/ A T A  \/| N C E R T A I N  /   is happening on 'Distant Earth'
+?
+                                                                 
+

@@ -1,0 +1,402 @@
+ATARI CD-ROM SUMMARY 12
+~DROPS.FIL~
+Dc: A directory devoted to Double Click PD/Shareware utilities
+
+dc_bhelp.arc  3       Causes a backspace when you press help  
+dc_cpx.arc    3       Sample CPX for Extensible Control Panel 
+dc_crc.arc    4       Keeps a crc checksum register of your files     
+dc_ff.arc     3       Send ff to printer      
+dc_fkeys.lzh  6       Puts ascii strings in your fkeys        
+dc_gtp.arc    7       "GEM Takes Parameters" driver   
+dc_homey.arc  5       'Homes' the mouse to the middle of the screen w/key cmb
+dc_jchar.arc  5       Puts a character on every joystick dir/button   
+dc_mwrap.arc  6       Wrap mouse movement at edge of screen   
+dc_rt_dc.arc  5       Double click with 1 click of the right mouse button
+dc_sea.lzh    30      Makes a self extracter from anything  
+dcx_plus.lzh  49      DC Xtract
+dcadump.arc   6       Text screen dump to printer     
+dcbitset.arc  5       Fix TOS 1.0/1.2 archive bit bug 
+dcbootit.lzh  5       Set Hz and stuff to boot difficult tasks        
+dcclk33.arc   13      DC Clock, ver 3.3
+dcdirdmp.arc  6       Dump directory contents 
+dcdmaspl.arc  3       Plays samples though dma        
+dcdskinf.arc  8       Disk information        
+dcflight.arc  3       Turns on floppy light when ramdrive is accessed 
+dcflpcfg.arc  5       Configure floppy disk   
+dcfmt30.arc   29      DC Formatter
+dcfmtacc.arc  24      DC Formatter in acc form
+dcinvert.arc  4       inverts the screen when bell is sounded 
+dclckrtc.lzh  12      DC RTC from GEnie
+dclefty.lzh   2       Switches mouse buttons
+dclftarw.arc  4       Left pointing mouse arrow (use with dclefty)    
+dclickme.arc  5       DC Click me game
+dclitoff.arc  4       Turns drive light off
+dcmaxtrk.arc  6       DC Max Track - gives max tracks for floppy and more...
+dcmometr.arc  7       DC Mouse Tachometer     
+dcmouser.arc  5       Turns mouse on and off
+dcmsaver.arc  5       Hides mouse when not active     
+dcmshift.lzh  3       Right mouse button activates shift, crtl, or alt.
+dcmstick.lzh  4       Use joystick instead of mouse   
+dcnoalrt.arc  6       No alert.  Assumes yes for all alert boxes
+dcnostic.arc  8       prevents hard disk heads from sticking  
+dcpopbar.arc  9       DC Pop bar, version 1.  
+dcpopbr2.arc  12      DC Pop bar, version 2. ST and STe ONLY.
+dcr_tmag.arc  6       Real time magnifier     
+dcreserv.arc  9       Reserve memory while starting an application    
+dcrtcall.arc  5       File selector pops up when you press the right button
+dcrunrez.arc  5       Auto switch to correct resolution if moniter oks it 
+dcsalvag.arc  6       Salvage what's left of damaged files
+dcshohex.arc  7       A hexadecimal dump program      
+dcshow11.arc  8       Ver 1.1 of dcshowit     
+dcshowit.zoo  9       Replacement for TOS 'show'
+dctoper2.lzh  6       Highlights whatever window mouse is on
+dd_demo.arc   61      Data diet demo
+diskstat.arc  12      Shows disk statistics   
+snowball.lzh  212     DC Snowball fight game  
+dbklick.lzh   8       Program launcher
+dclock1.zoo   52      A clock program, one with melting digits. 
+decky.arc     14      How to connect a DEC keyboard to your ST
+deskpic.zoo   43      CPX - put DEGAS background on your desktop.
+
+
+Desktop: A directory devoted to desktop stuff.
+
+cookie.prg      1     Puts a cookie jar on the desktop
+degadesk.arc    24    Replace your gray desktop with a degas pic.
+deskac.arc      2     Makes progs into accs   
+dekmg31.lzh     29    Desk manager, v3.1
+deskpac.arc     81    Desk pac plus: clock, notes, calc, etc. 
+desktop1.arc    40    Change the desktop background in Hi-Res
+dskmgr33.lzh    52    Deks manager, v.3.3
+dskmrf10.lzh    19    DeskMorf, does neat things when you click stuff
+dsktpinf.lzh    6     Desktop info.
+dstatx.lzh      6     Get Info replacement
+emula.lzh       20    Emulates low-rex/high-rez on monitor
+emulator.lzh    4     Emulate mono/medium/color monitors. Keyboard patch.
+gemin121.lzh    476   Gemini 1.21.
+gmni1999.tos    547   Gemini 1.999.  Supercedes Gemini 1.99.
+gmni2.tos       480   Gemini 1.99.
+gogost42.arc    70    Go go, fast desktop replacement, version 4.2
+icon.arc        54    Icon editor for Motif-like GUI environment. 
+icon90.lzh      19    Neodesk icons
+icons4.lzh      12    Neodesk icons
+kaos21en.lzh    84    KAOS Desktop 2.1 (english version)
+load_inf.lzh    7     Load a desktop.inf file at any time. w/src
+maggie8.lzh     473   Maggie8 desktop replacement
+mclock.zoo      10    Corner clock
+menumast.lzh    11    Menu master. 
+monmagic.arc    5     Changes the color of your background screen
+mupftl01.tos    285   Supporting ttp's for Gemini 1.99
+neodemo3.lzh    ??    Demo of neodesk 3.
+neoicons.lzh    84    Replacement icons for neodesk 3.
+neoqueue.arc    8     Neo que patch for neodesk 3.02
+newicons.lzh    15    Change the disk icons on the desktop
+tera_139.lzh    221   TeraDesk 1.39 Awesome Desktop Replacement
+zannier.lzh     11    Neodesk 3 icons by zannier
+dhry.lzh        10    Dhrystone bench mark test.
+diablocp.lzh    13    Diablo emulator CPX
+diff115.lzh     10    GNU diff, ver 1.15 mv this too
+dircnt.arc      11    Count the number of directories on a drive w/ src.
+dirsrch.arc     27    Recursively list the directories on disk.
+disk_cpx.zoo    23    Disk drive control CPX German docs.
+dive_cpx.zoo    30    "Diverse" CPXs (clock, frequency, etc) German docs.
+dm3_u.zip       130   "Does it all in one program" disk utilities
+doc2asc.lzh     16    Strip formatting code out of word proc. files
+drivers.zip     200   DJ550c/Epson drivers for Speedo/AT-Works
+dsx_110.lzh     8     total info giver on your st/e/tt
+dt.arc          13    Disk toolbox    
+dtr.arc         8     Turn DTR line (RS232) on and off w/src.
+dvorak2.lzh     5     ACC to set US/UK keyboard to Dvorak layout
+easyboot.lzh    16    Boot manager
+edi_uti1.lzh    24    Mouse acc, screen saver, etc.
+edisk21.arc     11    reset survivable ramdisk (works on STes too)    
+elfboot2.lzh    58    Similar to superboot, but with gem interface
+emumontr.arc    11    A good color/mono emulator      
+encrypt.arc     17    A veryslow file encrypter.      
+environ.arc     2     Allows you to set environment variables from AUTO
+errcheck.arc    3     Assembly source to see bombs after a crash/reboot.
+eternal2.arc    35    Reset proof ram disk    
+exe.arc         20    Utilities for customising gulam start-up.
+extakey2.arc    5     Insert non-standard text characters into GEM apps.
+fastdump.arc    7     Fast screen dump for text       
+filefix.arc     15    Improved file selector
+fileinfo.lzh    5     Disk utils CPX.
+
+Filemenus:      A directory of file menu stuff
+
+elfboot.lzh     56    Superboot like thing, w/gem interface. "neat"
+lgs18c.lzh      37    Little Green Selector, ver 1.8c
+max30dmo.lzh    63    Maxi file 3.0 demo
+stwhiz11.lzh    34    ST_Whiz,version 1.1, file selector.  Pretty good.
+filestuf.lzh    14    Auto program to copy, delete or rename files
+flp1aR01.arc    22    Flip ver1 - Changes unix eol to atari eol and back
+fmc.arc         2     Forced Media Change
+foldrsrt.lzh    15    Sorts *any* folder      
+fontedit.arc    19    Font editor     
+freeram.lzh     3     Displays free RAM.
+frmdo12d.lzh    19    Replaces standard form_do() routines    
+frmt24.lzh      4     Versatile disk formatter, runs as .ACC/.PRG
+fsck.zoo        344   Full screen construction set
+fsfix.arc       18    Boot sector fix to msdos 3.3    
+funkalrt.arc    5     Lets you handle alert boxes, f keys instead of mice
+gdosfont.arc    18    More gdos fonts
+gbench31.zip    80    GEM-based benchmark program; shareware
+gclock.lzh      1     A clock program.
+gemenv.lzh      22    Set up environmental variables for GEM desktop
+gemfed.lzh      33    GEM font editor 
+gemfsc15.lzh    78    Source for gemfast 1.5
+gemfst15.lzh    42    Fast GEM library routines for C (sozobon/alycon)
+gemfut15.lzh    35    Gem fast utilities
+gemfxm15.lzh    45    Examples of program sing gem fast libraries
+gemram15.lzh    16    Install GEM into RAM. v1.5. Required by winx21.lzh.
+ger_cpxs.lzh    30    German cpxs for xcontrol
+gettext.arc     9     Print, display or capture files froma unix host.
+go5060hz.lzh    2     Toggles display 50<-->60 Hz.
+guck18.zip      61    Ultimate file viewer.  In German        
+hcopy16s.lzh    48    High speed copier
+headstrt.arc    17    Autoboot a gem prg from auto folder     
+hertz.arc       1     Toggles between 50/60Hertz monitor display-updating.
+hexify.arc      3     C source to convert binary file to/from ascii
+icnlibs.zip     99    Icons in NeoDesk format (.NIC)
+icon.lzh        26    Icon Juggler (builds *.RSC icon files for NewDesk!)
+icondem3.arc    17    Demo of NewDesk Icon CPX.  An icon editor.
+iconedi3.lzh    167   Icon editor
+icones.lzh      13    Icon editor (?)
+ikonitor.zoo    40    World's only (?) TOS>2.0 3-color icon editor
+inc_date.arc    10    Auto sets date on systems w/ no clock
+james15d.lzh    24    Control panel replacement acc.  
+jar12.lzh       6     Displays cookie jar
+kbd.lzh         4     Sets keyboard click/bell.
+kbext.arc       12    Keyboard extend. Allows for easy access to xtra char
+key.zip         3     Inserts keypresses into keyboard buffer for autostart
+keyedit.lzh     11    Key editor.
+killdrvb.lzh    3     Tell TOS drive B: is not available
+kittylck.lzh    6     Implements a password lock on keyboard entry
+kp_overs.lzh    18    Overscan driver, fixes many bugs. 5/21/91
+launcher.lzh    13    Program launcher, keeps desktop clean of icons
+ledpan24.lzh    18    Continuous display of drive read/write activity
+leonard.lzh     4     Replaces bombs with silohouette of Leonard Tramiel
+less.arc        26    Unix less
+letemfly.lzh    41    Let 'em fly v1.2: flying dialog boxes and such
+lgsel18d.lzh    33    Alternative file selector from Charles Johnson
+lutils.arc      21    Cache/ramdisk
+
+---------
+MTOS:           Utilities to run under MultiTOS
+The files in this directory have no English documentation.  They are
+for the most part CPX modules and desk accessories which run under
+Atari's multitasking TOS, and will probably NOT run on older
+machines.  Folks, if you find these useful, write a note to let us
+know what it does, what versions of TOS you ran it with ... English
+translations of the documentation would be appreciated.
+---------
+
+m_spool.zoo     16     Print spooler, can spool to disk... (tsr and cpx)
+macread.arc     19     Ports files from Spectre GCR partitions
+make512.lzh     1      Makes your ST emulate a 512K machine for old programs
+mapmem.lzh      2      XBRA memory map displays vector info
+mauswind.zip    34     Auto-tops windows, improves M-TOS priorities
+max30pat.arc    16     Fixes v3.0 of maxifile
+maxidi22.lzh    36     Reset-proof RAM disk with data compression
+mb45abin.lzh   190     MasterBrowse v4.5a; versatile text browser
+mcf.arc         12     Dialogue box from which you can change folder.
+mdial103.zip    60     Dialog boxes auto-locate under mouse or screen center
+megmatic.arc    15     Ramdisk and boot utilties       
+memcheck.lzh    7      Memory checker
+memfil.arc      26     Disk / File editing accessory.
+memfree.lzh     4      Displays amount of free memory  
+memtest.arc     2      Memory tester   
+memwtch2.zip    15     PRG/ACC monitors & displays mem. useage/frags
+mini.lzh        9      Replacement viewer for desktop. View DEGAS pics too
+miniview.lzh    1      Nice text viewer        
+mkrsc.arc       60     Resource editor
+monoware.arc    9      Crappy mono emulator    
+monster.lzh     3      Emulates dimensions of Viking Moniterm
+multicop.zip    33     Fast formatter/copier (?)
+
+Mouse:  Mouse accessories of all sorts 
+
+m_mouse.zip     9       Another mouse accelerator as CPX.
+mkm21.zip       92      MouseKaMania 2.1, change/animate mouse pointers, cool
+mousdb30.lzh    3       Mouse doubler v.3.0 
+mousedbl.arc    1       Original version
+mousespd.arc    4       Mouse accelerator
+mouspeed.arc    4       Mouse accelerators.
+mspeed.arc      1       Timy mouse accelerator  
+rt_move.lzh     3       Right mouse button moves files on desktop. TOS 1.4
+promouse.arc    1       ???
+silkmous.lzh    20      Mouse accelerator/Screen saver for all Ataris
+n_althlp.lzh    4       Screen grabber, uses ALT/HELP key combo
+n_mentim.arc    2       Show time and date in desk menu 
+n_syscom.arc    6       Trace system calls
+ndp_1.zip       53      New Depack 1.0
+neg_time.lzh    1       Sets system time/date
+neoicon2.lzh    158     Neodesk Icons (many)
+neoicon3.lzh    4       Neodesk Icons (not so many)
+neop302a.zoo    241     NeoDesk 3.02 --> 3.03 patch
+newbell.arc     32      replaces the atari bell ding
+newfont.arc     5       Replace the original system font.  Hi-rez only.
+newset1.lzh     3       Collection of NeoDesk icons
+nolock.arc      1       Turns off caps lock
+nosey_ii.lzh    20      Searches up to 50 files for text string matches
+nroff121b.zoo   146     Bill Rosenkrantz's text formatter, binaries
+nroff121s.zoo   153     Bill Rosenkrantz's text formatter, sources
+
+-----------
+OMEn The files in this subdirectory are related to OMEn (Open Multitasking
+Environment).  Currently, it contains the first working release (omen246d)
+and several newsletters relating to OMEn.
+-----------
+
+ocultar.lzh     21      Boot up password protector for hard disk owners 
+one_jack.lzh    17      Program launcher in .ACC format
+onepart.lzh     12      File compactor
+oscan_60.arc    34      Additional info for 60Hz overscan (see overscn3)
+overscan.arc    3       More pixels on your screen 50Hz - the original  
+overscn3.arc    142     MUCH nicer & newer version of overscan.arc      
+oyviewer.lzh    21      "Oh Yeah! File Viewer" versatile text/pic displayer
+palinout.arc    3       Save / load palette information and change disk name
+password.arc    6       Autoboot with password  
+patch.arc       92      Larry Wall patch utility.  Move to programming  
+patch302.lzh    146     Neodesk 3.02 patch.  Yes, it's back.
+peek_17a.zip    25      Displays files in GEM window
+pgp23ab.zip     281     ST version of PGP 2.3a
+pgp26uib.lzh    288     Version 2.6ui of PGP for the ST
+pgpshl09.zip    38      GEM shell for PGP
+poplib.arc      50      Library to create pop up menus  
+phwclk2.lzh     37      Local & world time in a window plus alarm & chime
+ping_cpx.zoo    35      Change system bell sound. German docs. CPX
+poplibsr.arc    12      Sources for the above   
+postmort.arc    3       Produces much more useful output than bombs     
+prgmen14.lzh    5       Menu for running programs
+printcms.lzh    ??      Prints 132 col listing with epson fx    
+priveye.arc     11      Examine system variables etc.   
+profile.arc     27      C program profiler
+proqueue.lzh    134     VDOS proqueue.  
+qf.arc          12      Quik Find. Search for files on disk.
+qi.arc          12      Quik Inf. Edit desktop.inf files.
+qindex16.lzh    8       Quick Index 1.6.  Benchmark program
+qmenu2.lzh      10      Quik Menu, menu program for launching applications.
+quickinf.lzh    15      Configures DESKTOP.INF file
+quickrun.arc    23      Sort of an alternative desktop  
+quickr_2.lzh    17      Menu for running programs
+quickst.arc     15      Speeds up GEM routines  
+quikdex.arc     9       Quick Index V1.0
+quikfind.arc    14      Find file, floppy and hard disk
+quikinf.arc     16      Allows custom changes to desktop.inf files      
+quiklock.lzh    9       Protect hard, floppy and ram disks.
+qview148.lzh    12      QuickView 1.48.  Text file viewer
+rainbow.arc     30      Minor bug fixes + utils for tos 1.4     
+rambuff.arc     7       Printer buffer and ramdisk accessory.
+rampls12.lzh    21      Format & copy accessory, ramdisk and printer spooler.
+rcs5ap1b.lzh    ??      Apratt's revision control system binaries
+rcs5ap1m.lzh    9       Apratt's revision control system bug fix
+rcs5ap1s.lzh    ??      Apratt's revision control system sources
+rdd320.lzh      151     Awesome file browser, M/C , just download it!
+read_txt.lzh    14      Document viewer optimized for ST-Report
+reboot.lzh      1       Floppy AUTO program, reboots until hard drive ready
+ren.lzh         77      File and directory rename program. Sharware by Harry.
+renameit.lzh    30      Rename files using any ST-recognizable character.
+reset_st.lzh    1       Supplies keyboard reset in TOS <1.04
+rocp8.arc       5       Read desktop.inf and apply saved changes.
+rtvmse.lzh      5       Accessory to hide/show the mouse/cursor
+runlow13.lzh    15      Runs low res programs in med res
+runner.lzh      70      GEM based program launcher
+runprg.arc      13      Desk accessory for running TOS progs.
+rvsscrn.arc     6       Reverses the screen, mono only
+safemenu.lzh    8       Protect drop down menus against accidental activation
+sb_other.lzh    61      Utilities for super booter
+sbsounds.lzh    177     Sounds for superbooter  
+schizo11.arc    20      Control panel   
+scndrvr.lzh     3       Alt-help replacement with degas drivers
+
+Screensavers:
+
+Beforedawn:             Before Dawn screensaver and modules
+bohrer.lzh     7        Flying drills
+dawn125.lzh    142      Before Dawn 1.25 with English and German Docs!
+dawnimg1.lzh   441      All current (v1.25) Before Dawn movie modules.
+gib_dos.lzh    3        "Give DOS keine Chance" logo
+movies.lzh     436      More BeforeDawn.At-the-movies modules 
+tng_dawn.lzh   55       Star Trek TNG bouncing hole for BD, with mods Picard
+toaster.zip    8        Flying toasters
+turbodaw.zip   13       ??
+blkout.lzh     5       blacks out the screen 
+boinksav.lzh   26      Yet another screen saver
+faze.lzh       9       Even yet another ss
+hotsav16.lzh   25      Hot saver, v.1.6
+idle_22.lzh    15      Typical screensaver
+oatbran.arc    2       8-bit atari type screensaver.
+pyrocfg.arc    14      Configures pyro for you....
+pyrosav3.lzh   11      Just like pyro for the mac ....
+rubricks.lzh   13       Acc screensaver. Give it a try.
+scrnsave.arc   2       V1 of `oatbran'.
+scrnsavr.lzh   33      Contains a number of screensavers
+scroll.arc     1       Speeds up screen scrolling
+scrollsr.arc   7       Assembly source for scroll.arc
+sddfr_12.lzh   16      Converts Super Directory data files to Ascii
+searcher.zip   28      Displays file hierarchy
+sebra133.lzh   10      Very Good Mono Emulator. Vers. 1.33
+sed.arc        43      Justlike unix sed no doubt      
+sel_prog.arc   10      Menu program for launching applications.
+setkbd22.lzh   9       Reset-proof clock
+settdfix.arc   3       Set the clock correctly within PC-Ditto (.COM)
+sharsrc.arc    10      C source for the shar program
+showmem4.lzh   4       Shows all avilable memory, not just biggest block
+shredder.lzh   26      Wipes files from disk
+shortbin.lzh   15      Small program for sorting
+slct110e.zip   77      Alternate item selector
+sleep.arc      8       Utility to allow hard drive to spin up
+slgsht12.lzh   17      Good program launcher.     
+slkmse31.zoo   20      Highly rated mouse accelerator w/ screen saver
+slowdown.lzh   1       Slowsdown the ST
+smore.arc      11      Text file pager
+streader.lzh   66      Text file reader
+stsenty2.lzh   6       Protects your system with a password
+solapak.arc    19      General utility program
+sort.arc       48      Sorts your file.  Probably like unix sort.
+sortbin.arc    22      Binaries for sort
+sortdemo.arc   12      Demo for sort
+sortsrc.arc    31      Source for sort
+spbt81.lzh     156     Super Boot 8.1
+
+Speedloaders: 
+
+fastload.arc   4       Sets the 'fastload' for a tos1.4 file   
+flxifast.lzh   9       Improved version of fastload.arc        
+pinhed21.arc   21      Ver 2.1 of pinhed.   Skips memory erase on load 
+spell.arc      38      Bad spell checker
+splitit.arc    23      Split up and reassemble large files
+splitter.lzh   44      Breaks/Restores large file into smaller blocks
+st_tools.lzh   57      ST version of sun tools
+st_type.lzh    11      Tells you what version of tos, gem, gdos, etc. you
+havest_whiz.lzh31      Desktop program launcher
+stats.lzh      20      See how your st compares to the norm
+stblank.arc    7       screen blanker  
+stcrs.arc      3       TSR to allow you to reset pal. if an app changes it
+stfa.lzh       9       "GEMDOS text speeder"
+stint3_1.lzh   11      Allows you to load in accs at startup selectively.
+strtup15.arc   36      Process a batch file on boot-up
+sunclock.zoo   54      Just like on the sun, Earth spins with day/night line
+superb74.lzh   149     Super boot v7.4 (works with 520ST systems)
+suprview.lzh   69      Replaces desktop Show/Print/Cancel
+swaphz.arc     3       Toggle between 50 and 60 Hz.    
+switcher.lzh   10      Selects random NeoDesk, Degadesk pics, sounds at boot
+sys_conf.arc   18      Boot config program     
+sysmon.arc     131     System monitor for st and ste
+systat7.lzh    5       System statistic program
+takeoff.lzh    30      German ACC launches programs from pop-up (?)
+taskcopy.lzh   6      .ACC multitasks file copy operations
+td.lzh         9       Time/date setter
+tdss_1_2.lzh   8       Time and date stamp saver.
+textview.lzh   17      Replacement text viewer. New version:5/22/91
+the_acc.lzh    52      File / Disk utilities accessory
+time.arc       16      Asks you time on boot up.
+tited.arc      27      A very fast, gem-based, file viewer
+tlc_fixr.lzh   16      Replace one string with another in a program
+tlc_namr.lzh   13      Renames files with extended character set
+topdown.lzh    11      Forces progs to load into high memory. Why?     
+topicon4.lzh   7       Changes the desktop icons
+tos_vers.zoo   10      Tells you what version of tos you have
+ 
+END OF PART 12

@@ -1,0 +1,306 @@
+--------------------------------------------------------------------------------
+                    FAST 3D, NOT ONLY FAST POLYGON FILLERS
+--------------------------------------------------------------------------------
+
+When finishing up the  1.2 patch for wait I thought much of what should or could
+be  done  next. I thought  about  32 megabytes  of colour-translation  tables, I
+thought of what the CT60 could do but mostly I thought about  what could be done
+to improve the 3D. The "drug fish" scene has the highest polygon count with just
+above 220 polygons. That is not much, Unreal II  claims to  have more  then 2000
+polygons  each just for  in game  characters and the  by now old and famous game
+Quake has about a hundred  each for the  characters and then  still about 400 to
+600 for the static world. In short I am behind and as a demo coder it is my duty
+to change that regardless of the speed of my target system.
+
+So I begun  searching the Internet for  techniques usable  for me and for what I
+want to do, that is indoors  impressive 3D scenes. I did  not have to search for
+long  before I  came upon the  two holy grails; BSP and Portals. It  did however
+take  very  long before  I came over  information that I  could understand, that
+where more then gibberish of how fantastic BSP and Portals are. What I intend to
+do here is to do the short version. Describe  in short what  BSP and Portals are
+and what they can be used for.
+
+Let's first in simple words define what BSP and Portals are and at the same time
+what they are used for.
+
+BSP is the asumtion that everything on the other side of the line is not on this
+side of the line.
+Portals are the asumption that everything in another room is not in this room.
+
+Now lets take a look at a  simple 3D world, its actually a  2D world but you are
+free to imagine that is has depth, lets say it is a top down blueprint :).
+White crosses  are vertices, grey  lines are walls  and blue lines  are the wall
+normals.
+
+{*i 3d.pi1 m 0 20 0 60}
+
+Now a world does not get any simpler that this but still imagine standing at "A"
+no matter which direction you look at only four walls are visible from there and
+only five vertices defines those walls and needs to be taken into account.
+Considering we have in total ten  walls and ten vertices we  could get away with
+calculating less then half of the world.
+
+We as humans with the biggest brains of all primates have no problem seeing wish
+walls and vertices  that are but  a computer is  not quite that  clever. BSP and
+Portals are  techniques for  implementing  that thinking for  computers and as a
+bonus we get our polygons sorted (Fast sorting algorithms in all  honour but not
+sorting at all is always the fastest!).
+
+Now both BSP and Portals depends on convex shapes. What is so  great with convex
+shapes is that wherever you are  within a convex shape no  part of the shape can
+overlap itself, so if our whole 3D world would be convex we  would never need to
+sort our polygons since none of them overlaps anyway.
+No 3D world is  that simple, mostly  because the inside of balls are quite dull.
+But still our world  could be made up of groups of convex shapes and that way we
+could handle  groups of polygons and not every single polygon. This is just what
+this is all about.
+
+And now we have come to where BSP and Portals differs. Lets start with BSP.
+
+BSP is most known for being used in games such as Doom and Quake. The basic idea
+is as I stated earlier is that  everything on the other  side of the line is not
+on this side of the line. In reality building a tree structure of the world does
+this. Starting with a root node and descending trough nodes until it reaches the
+leafs. In BSP a  Node (Root node  included) defines  a line (2D) or a plane (3D)
+and two links one link to what's on the front of the line/plane and  one link to
+what's on  the back. On  either side  of the node  there can be a  new node or a
+leaf. A leaf is a set of convex walls/polygons.
+
+Warning pseudo code ahead. I know the impossibility in  line five. It means that
+the set is split into two  sets named setFront  and setBack. A set is a bunch of
+walls/polygons.
+
+Sub CreateBSP( set )
+  If set is convex Then
+    Add Leaf set
+  Else
+    setFront, setBack = Split set
+    CreateBSP setFront
+    CreateBSP setBack
+  End If
+End Sub
+
+
+Now as I have said  EVERYTHING on one side of the line is NOT on  the other side
+of the line. This means that when we decide where to put that line and split our
+world  every  wall/polygon  crossing that  line HAVE to  be split! Consider this
+first split on the simple 3D world shown before;
+
+{*i 3d.pi1 m 0 5 61 120}
+
+Now the green  line is the split. As you  can see I  have made the  split linear
+with an existing wall, the red  line that is  to minimise the  amount of splits.
+The split is also chosen to have a roughly  equal amount of walls  on both sides
+of the split (six in front and five on the back). Now lets split the front side.
+
+{*i 3d.pi1 m 6 10 61 120}
+
+I chose the red line since that way I get  four walls in front  and three at the
+back. I think you all see that I could  have split with one  other wall as well.
+Go figure which wall and why I did not chose that one, when you think you get it
+I think you have grasped the most  important thing  here. Now consider the front
+and back of the new split, which are  convex so we just add up  the wall in them
+as leafs. And traces back  to the first  split and see  what we can  do with the
+back.
+
+{*i 3d.pi1 m 11 15 61 120}
+ 
+Yet again the  red wall  is chosen  as split and  this time it  should be really
+obvious. Now with all the splits done the  next picture includes  an ugly atempt
+to number the walls (including the new ones created by splits).
+
+{*i 3d.pi1 m 16 20 61 120}
+
+     N0      Nn are nodes, left line is the front and right is the back.
+     /\        N0 is the root node as shown above
+    /  \       N1 is the second node and N2 is the third node.
+   /    \    Ln are Leafs
+  N1    N2     L0 contains wall no. 8, 9, 10 and 11
+  /\    /\     L1 contains wall no. 6, 7, and 12
+ /  \  /  \    L2 contains wall no. 4, 5 and 13
+L0 L1 L2 L3    L3 contains wall no. 1, 2 and 3
+
+Now when such a tree  is constructed how  do I use it? Most probably you want to
+draw  polygons in  front to  back  order as you  have a clever s- c- or w-buffer
+renderer right? Let's say you do for now at least.
+
+Warning pseudo code:
+
+Sub RenderNode( node )
+  If Camera Behind node Then
+    If node.Back is Leaf Then
+      Draw node.Back
+    Else
+      RenderNode node.Back
+    End If
+    If node.Front is Leaf Then
+      Draw node.Front
+    Else
+      RenderNode node.Front
+    End If
+  Else
+   If node.Front is Leaf Then
+      Draw node.Front
+    Else
+      RenderNode node.Front
+    End If
+    If node.Back is Leaf Then
+      Draw node.Back
+    Else
+      RenderNode node.Back
+    End If
+  End If
+End Sub
+
+
+If you  want  back to  front sorting  then just  step "away" from  your position
+first.
+
+Let's see if it works. We are standing at A so we check  are we behind the first
+split (N0)? We are so we traverse the  Backside to N2, are we  behind N2? We are
+and the  back of N2 is a Leaf (L4) so we  Render wall 1, 2 and 3. Back  of N2 is 
+done and  front of N2 is a Leaf (L3) so we render wall 4, 5 and 13. Now we  step
+up from N2 and go the other  side down and  come to N1. Are we  behind N1? No we
+are not so we check the front, the front is a leaf (L0) so we  render wall 8, 9,
+10 and 11. And the back of N1 is a leaf (L1) too so we  render wall 6, 7 and 12.
+
+So the order to render the walls if we are at A would then be 1, 2, 3, 4, 5, 13,
+8, 9, 10, 11, 6, 7, 12. Take a few and ponder about where ever  you stand inside
+the area define by wall 1, 2, 3 and  the split  N2 drawing the  polygons in that
+order will be front to  back. And I can  assure you  using BSP tree  will do the
+trick for any 3D world with the camera at any position.
+
+But wait a  minute! We are still  drawing every  wall? Even though  the walls in
+leaf L0 have no chance in hell of ever being visible from L3. Now to do that you
+need a visibility list for each node. How quake and Doom makes it is quite easy;
+every Leaf has  an Array of bits  for each leaf. If  the current Leaf is visible
+from the Leaf in the Array then the bit  is set. That  way when rendering a Leaf 
+you just have to  check if the Leaf is visible or not. A more effective but more 
+memory consuming way would be to have a  visibility list for each  node as well,
+that way you  would not  have to  traverse the  whole tree  to figure  out which
+fraction is visible and which is not. 
+
+Now that is not the hard part, the hard part is to create  the visibility lists.
+That would  require  a whole  article of its own  so I refer to  the sources for
+Quake free for  download at  ftp.idsoftware.com. Or maybe someone wants to write
+such an article?
+
+As we can see BSP can have some major drawbacks, visibility  list are quite hard
+to make and a node can split walls and polygons into hundreds. Can be quite hard
+on polygon count actually but what to do? Well we always have Portals.
+
+Portals are most famous  for such games as  Descent and Prey that  made big fuzz
+about  them. Prey  mostly  talked  about  the  possibilities to make  impossible
+geometry and holes in space. Now it is true  Portals can be used  for that (Even
+Descent does at the later levels) but  most notably  it can be  used for drawing
+front to back and to ignore unseen geometry.
+
+Now BSP is a tree like structure that makes it  really fast to traverse. Portals
+are flat and slower to traverse unless you implement secondary  code yourself, I
+shall mention it briefly in the end.
+
+Portals is  based upon  clusters of  convex geometry (Cells) that  are connected
+together by Portals. Consider the world shown before and let's  insert our first 
+portal.
+
+{*i 3d.pi1 m 0 5 121 199}
+
+The green  line is the  portal and  as we  can see is devideing  the convex area
+where the camera "A" is from the rest of the world. Let's add two more portals.
+
+{*i 3d.pi1 m 11 15 121 199}
+
+Now the world is divided into  four areas by three  portals. Lets set numbers on
+the walls and make up the data structure for the world.
+
+{*i 3d.pi1 m 16 20 121 199}
+
+Cn is a Cell in the world P[Cn] is a Portal that references Cell Cn. The numbers
+are the walls of course.
+
+C0 = [1, 2, 3, P[C1]]
+C1 = [P[C0], 4, P[C2], 10]
+C2 = [P[C1], 5, P[C3], 9]
+C3 = [P[C2], 6, 7, 8]
+
+Now the rendering is quite esely  done, pseudo code warning again!
+
+Sub RenderPortal ( CurrentCell )
+  Mark CurrentCell as Rendered
+  For Each Polygon In StartCell
+    Draw Polygon
+  Next
+  For Each Portal In StartCell
+    If Portal -> Cell Not Marked as Rendered Then
+      RenderPortal Portal
+    End If
+  Next
+End Sub
+
+Now the tricky part is the call to this procedure as we  must pass the cell that
+contains the camera when we  first call. Well not quite that  tricky, simply use
+calculate the dot product of each Polygon and Portal in  each Cell. As Cells are
+convex the Cell will all positive dot product will be the one  we are in. It can
+be quite  costly to traverse  the whole  date structure  if we have  hundreds of
+Cells so you better just traverse all  of them the first time  and then "assume"
+we are in the same Cell  the next time, if we  are not then test  adjacent Cells
+(Using the Portals).
+
+As you might have noticed Portals to just as BSP only sorts  the polygons for us
+in front to  back order. With  Portals this can  still be fixed  with visibility
+lists, bit arrays with the visibility for each Cell in every  Cell. We have with
+Portals however a second choice not available to us using BSP. As can be seen in
+the image above the structure of the Cells  are not quite the chaos  as with BSP
+and we can  make some assumptions; if the bedroom (Cell) has a  door (Portal) to
+the living room and the living  room has a door to  the kitchen but  there is NO
+door between the bedroom and the  kitchen (Hey that's my flat!) then it is quite
+possible to assume that if we are in the bedroom and cant see the living room we
+wont see the kitchen either right!?!
+
+So  if we  have a s-, c- or w-buffer  renderer  for our  polygons  that  returns
+weather or not the Polygon we  tried to draw  was visible at  all or not then we
+can when rendering the  Cells determine if  anything of  the Cell was visible or
+not and if it where not then we just don't do the "For Each Portal..." part.
+And Tada! We have visibility determination on the fly  without visibility lists.
+This even works if the world is dynamic. We can move around  the vertices in our
+world a bit and the over all structure will still be ok.
+
+Now to get a hang of  this I suggest you  play around with  two games and have a
+look. First of all get Quake!!! Download a level  editor such as  QuArK and play
+it typing "r_drawflat 1" in the console. This will draw the polygons flat shaded
+and you will see where  the BSP tree  have made  splits. Start out  with a cubic
+room and place a pillar in it and you will understand when you  look at it. Also
+try "r_draworder 1" to draw the polygons back to front, it is a  good way to see
+how the visibility lists works. Look  around and you will  understand. I suggest
+http://www.planetquake.com for accessing all Quake related material.
+
+Also  download  and  try  out Descent  and level  editors, both can  be found at
+http://www.planetdescent.com. I suggest the official editor  v.2. Now Descent is
+a simplified  Portal engine that only handles "cubes", cubes can be distorted as
+long as  they are convex but  still only  cubes. I do however not  see this as a
+restriction  it  makes  the  example  much  more  clear  and  perhaps  an  Atari
+implementations need such simplification?
+
+Now at last a few hints! Do not rotate and/or translate vertices not used by any
+visible polygons, that  is do  not touch  the vertices  until they  are actually
+needed  for  rendering. The  same  is true  texturemap  data. Creating  lists of
+texture  map  data  for  the  edges  is  good, it  speed  up and  allows for two
+instruction per texel rendering but as for vertices do  not make them  until you
+know they are needed. A "tst.w" for 50 vertices to  see if they  are rotated yet
+is way faster then rotating 2000 vertices that wont be used anyway.
+
+I have mentioned s-, c- and w-buffers  quite a few  times so might  just as well
+mention what they are. All polygon renders I have seen so far  works by dividing
+up the polygon in scans (lines in Y space of the screen) and then  drawing those
+spans. S-, c- and  w-buffers  are all  different ways  of keeping  track of what
+spans have already been drawn on what lines of the screen. By knowing  what have
+been drawn the current line the span to be drawn can be clipped. This allows for
+Z-buffer effects but most importantly it can be  used for Front to  back drawing
+without  the  overdraws  that  painter  algorithm  gives. No  overdraws  is good
+especially if the bus  bandwidth  is low as  on the  Falcon for  example. If the
+demand is high I might write something on this topic as well some day.
+
+Until next time have fun and code if you like to.
+
+                                                    PeyloW of T.O.Y.S. July 2001
+--------------------------------------------------------------------------------

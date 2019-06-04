@@ -1,0 +1,842 @@
+
+                      ‰M a g g i e   N e w s d e s k 
+
+                        All that's fit to print! 
+ 
+Apologies  in  advance,  in  some  kind  of  vain  attempt  to  deflect 
+criticism!  It's CiH here, taking over for this issue, what is normally 
+done so well by Mr Pink.
+
+Now  he's been having a few problems keeping up with the  movements  of 
+the Atari Scene,  mainly to do with the fact that he started a new job, 
+as  if the old job wasn't keeping him busy enough!  We discussed  doing 
+the newsdesk briefly over the phone,  and he said "Chris,  you've got a 
+much  better  grip on the Atari scene than I have at  the  moment,  why 
+don't you do it." 
+
+Errm,  thanks,  I thought. So here we are. Can't promise it is going to 
+be the greatest scene newsdesk on earth, but I'll do my best....
+
+
+[] PHENIX FRESHLY (RE)MINTED! []
+
+The Phenix is dead!  Long live the Phenix?  Confused? Thought you might 
+be... 
+
+The Phenix in its original and very long awaited form is no more.  This 
+was apparently due to a failure of its custom-written operating system, 
+Dolmen,  to  arrive.  In  the period just before Xmas,  I was told that 
+Phenix was being scrapped,  and efforts were turning to an entirely new 
+hardware design,  based around twin G4 PowerPC processors, with a Linux 
+front-end.  It  seemed  that Centek's links with the Atari  world  were 
+finally over?
+
+However, after some constructive feedback via #Atariscne, the Phenix is 
+apparently being revamped,  keeping the base specification,  and option 
+of  single  or twin MC68060 processors.  The operating  system  quandry 
+being resolved by the adoption of MiNT. The only loss, has been the DSP 
+part,  which  may well be available as an add-on.  The really brilliant 
+news,  is  that  it has been pared down to a competitive price  of  913 
+Euros!  This  would  work out to around 6-700 UKP,  depending on things 
+like  VAT,  and it makes an interesting comparison with the forthcoming 
+'060 Milan.
+
+The revised specification looks something like this;
+
+  CPU:  Motorola 68060 at 83Mhz, expandable to 2 Motorola 68060 at 83Mhz 
+  Local Bus:  32Bit / 83Mhz (Full Speed Bus Mode - 266 MByte/sec) 
+  AGP:  1 AGP Slot 3.3V with a ATI Rage Pro graphic card 
+  PCI : 5 PCI Slots 3.3/5V - 32Bit / 32 Mhz (132 Mbyte/sec) 
+  RAM:   2  DIMMS  for  up to 1GB SDRAM (166 MBytes/sec) or  ESDRAM  (221 
+ Mbytes/sec) at 83Mhz  
+  Flash:  512 KB 
+  USB:  2 USB Ports (1.5 at 12 MBit/sec - PCI Master) 
+  PS/2:  2 PS/2 Ports for Mouse and Keyboard 
+  IDE (ATA-4) : 2 IDE (UDMA 33) Ports (PCI Master) 
+  RTC:  RTC + 256 Bytes NVRAM 
+  Case:  Standard ATX 2.1 
+  OS:  MiNT and Linux
+
+It  will  also be interesting to see if the proposed  G4  Linux  design 
+makes an appearance in the longer term? This design apparently also has 
+a  Texas  Instruments  DSP  included,  which will be  capable  of  some 
+seriously harmful levels of power on its own!  Personal computer?  More 
+like  a  supercomputer  in  a bun,  with fries!!  One  reliable  source 
+suggested  that preliminary plans for this were being shown to  a  very 
+select few people at the Stafford ACC last November!?
+
+STOP  PRESS!  - You might want to check out the statement from a friend 
+of  Rodolphe  Czuba of Centek,  which is the closest and most  detailed 
+account of recent events yet in the public domain.  This is to be found 
+elsewhere  in Maggie.  This seems to suggest that the near future,  for 
+Phenix at least, may be still not be wholly resolved? 
+
+
+[] BEWARE OF GREEKS WRITING INTROS! (NEW BLOOD!) [] 
+
+Those  of  you currently enjoying the ST version of Maggie,  and  fresh 
+from running the intro for it, may well already realise, there are some 
+new  kids  in  town.  These are from a part of the world  not  normally 
+associated with any meaningful Atari activity. It is our great pleasure 
+to bring you KUA, the new Greek stars on the Atari Scene! 
+
+Apart  from taking the time out to produce an intro for us,  they  also 
+have  future  plans,  coming soon to an ST(e) near you,  should be  the 
+following.
+
+Xmastro, which missed the DHS Xmas competition..
+ A 4ktro, based on the theme of Sierpinski triangles, which I've already 
+seen a beta of..
+ A vertically scrolling shoot-em-up on the lines of 'Flying Shark'..
+ Maybe even an update of the ST Maggie shell,  which they said they were 
+willing to do!?
+  
+It  is  always  great to see new blood,  and we look forward  to  their 
+future productions with great interest.
+
+
+[] FIT THEM UP! (MORE NEW BLOOD) []
+
+A  genuine  rarity,  a  new  Falcon demo crew debuts,  with  an  Indian 
+flavoured production,  'Mahabharata'.  The crew responsible, 'Fit', are 
+from  Finland,  and  have  been around since 1991 as  a  multi-platform 
+group.  This is their first release for the Falcon,  and it was done in 
+co-operation  with  Sturm,  formerly  of  the  Admirables,  and  Acorn, 
+previously of Flash.
+
+Further  Falcon productions,  quite possibly under a new name and  with 
+more people involved, are likely.
+
+
+[] ELECTRONIC IMAGE STILL BRIGHT? []
+
+You  all  remember  Griff  of  EI,  right?  He went away  to  work  for 
+Electronic Arts,  and disappeared from the scene. Some people with very 
+logn  memories may also remember an  unfinished  demo of his,  shown at 
+the Bradford Coding Convention in  1992.  This was never released,  and 
+has assumed 'mythical missing megademo' status!
+
+Well,  since  Mr  Pink went down south to work for Bullfrog,  he  found 
+Griff again.  Better still,  this mystical missing demo is still on his 
+hard drive,  essentially complete, but needing putting together.
+
+We  learn  that Griff is keen to return to ST demo coding  in  general. 
+Both  the completion of the EI final demo,  and any future  productions 
+depend on 'time permitting',  as he  is very very busy!   He is said to 
+have  learned  a lot from his  time working  in  'the  industry',   and 
+reckons he could kick out some  really fantastic screens on the ST,  if 
+he ever gets the time! But don't hold your breath folks.
+
+
+[] CREAM TEASE! []
+
+Work  proceeds steadily on their forthcoming ST megademo 'Heftig',  and 
+their  generic Amiga chip player 'Jam'.   An initial release version of 
+'Jam'  is due 'real  soon now',  Candyman still having to overcome  his 
+dislike  of  coding  GEM interfaces and the effects  of  moving  house. 
+Meanwhile,  Heftig  will include wild contemporary effects,  some based 
+around  PC  3D  studio rendered material,  which  have  been  converted 
+successfully to the ST.
+
+
+[] DHS DON'T REST! []
+
+Nothing  major to hand,  but lots of interesting bits and pieces coming 
+real soon from the hyperactive Swedes...
+
+The 3k Graphics competition, well you all know about that one!
+
+Just Musix 4, is still awaiting graphics for its delayed release.
+
+DHS's major efforts are based around their new forthcoming web site and 
+FTP  server,  coming later this year.  A new domain has been purchased, 
+and  the new site will be very much more feature packed even  than  the 
+current  Ludvika site!  Also,  Atari.org is expected to get a refresher 
+and bugfixes as well, if things go to plan.
+
+There  is a sequel to the SND Player program being worked on,  with Ozk 
+of AssemSoft. This is described as 'something quite nice'!
+
+The 'Dump' module player should gain some more features,  other modfile 
+types such as GTK/GT2 to be catered for?
+
+There is no major demo in there at the moment though :(
+
+
+[] SWEDE DREAMS ARE MADE OF DEEZ! []
+
+I've  really got to apologise for this rash of dismal song lyric  based 
+pun titles!
+
+Mind Designs are planning a new Falcon demo for the Sillyventure  2000. 
+This is aimed at those lucky owners of Centurbo 2 accelerated  Falcons, 
+competition rules permitting?  In any case, a non CT2 'lite' version is 
+planned for release at the same time.
+
+There may even be a small intro/preview soon, time permitting.
+
+
+[] DELAYED EIL DEMO IN THE BAGGIO! []
+
+Wildfire's  delayed Error in Line ST demo should make its long  awaited 
+appearance  at the SV2000 party.  Due to time related pressures,  not a 
+lot  of  activity  has been forthcoming before now,  but we  have  been 
+informed  that  the  demo is now 80% finished,  and should  be  finally 
+completed in good time to be released at the Sili'.
+
+
+[] T.O.Y.S MAY BE FEELING PROJECT BLUE? []
+
+A new STe demo called 'Project Blue', first reported in Toxic Mag issue 
+18 does seem to be alive, sort of.
+
+Such  wonders  as  a 12-bit video mode,  a 'Descent style'  3D  engine, 
+Motion Blur,  Bump-mapping, and more, were reported. We have heard from 
+PeyloW that there is something going on, but there are no release dates 
+yet.  That deadly enemy of the Atari scene,  lack of time,  is delaying 
+things.  Those  effects  which  have been completed,  are described  as 
+'incredibly high quality',  but they are too unpolished, and not enough 
+for a proper demo yet.
+
+Of their other projects,  no new news at the moment.  Hopes are high we 
+will see the team at SV2000 this Easter.
+
+
+[] LAST CAB HOME? []
+
+Alexander  Clauss  amazed  everyone by releasing CAB 2.8 at the   Atari 
+Messe  in November.  This is thought to feature .PNG graphics  support, 
+and several bugfixes. This seemed to contradict earlier statements from 
+him  that he no longer had sufficient time to continue  development  of 
+CAB?  However,  we  would  view  this as a large bugfix and tidying  up 
+exercise,  it  is  unlikely  that  any  major  new  features,  such  as 
+Javascript, will be added in the future.
+
+He  is  currently working on the similar sounding,  but very much  more 
+commercially profitable Mac-based iCAB browser.
+
+
+[] MAGIC CIRCLE! []
+
+Rumours of the forthcoming MagiC 7 are starting to circulate.  The most 
+interesting of these speculates that it is to include its own  built-in 
+networking,  and  maybe  even internet connection software,  thus doing 
+away with the STiK/STinG connection layer?!
+
+
+[] MILAN MELEE! []
+
+Suddenly,  things  seem to be looking up for the makers of Milan,  with 
+their  announcement  of  the Milan II '060  model.  This  includes  USB 
+connectivity,  with an impressive 060 based specification,  and a large 
+amount of interest from the remaining commercial Atari developers.
+
+Yes,  there are going to be games especially for Milan,  with top-rated 
+Arkanoid  clone for the Falcon 'Impulse' and Duke Nuke clone  'Running' 
+both  being  converted and enhanced for this machine.  there are  other 
+third party games in the pipeline too.
+                                                                     
+Rumours have spawned and proliferated. These are the best of them..
+
+Apple Mac peripherals to be added via the USB. A 'large German company' 
+is  working  on  drivers  for all  kinds  of  peripherals,  replacement 
+keyboards, to CD writers and TV tuners etc?
+
+A Macintosh emulator for Milan is successfully running MacOS.8 in beta. 
+It should be available by the time Milan II goes on sale?
+
+German  newsgroups  suggest that Milan may be sold  outside  of  German 
+markets  solely  as  a  Linux box?  This would be an  attempt  to  gain 
+commercial  acceptance in markets not recently used to Atari TOS  based 
+systems.  In Germany,  it will sell with a MagiC/Jinnee desktop O/S and 
+front-end. The role of TOS is to be downgraded to the BIOS level.
+
+If  Milan  sells 10,000 units,  there will be a transition  to  PowerPC 
+based CPU's for a future generation?
+ Further information would suggest that a PPC Milan is very likely,  and 
+even a portable Milan is under consideration!
+ 
+- This one is true! -
+Hewlett  Packard *are* hard at work writing new drivers for their  most 
+modern printers and scanners to work with Milan! These will all connect 
+via the USB.
+
+One  observer  at  the  Messe described it  as  'three-one  to  Milan', 
+compared with Centek. 
+
+
+[] ASH LOOK FOR NEW WEB BROWSER? []
+
+There  is  some  loose talk of a high-end  CAB  replacement?  ASH  (App 
+Systems  Heidelberg) rumoured to be working on a CAB replacement.  Both 
+the Behne Brothers of NVDI fame, and the team behind MagiC are supposed 
+to be heavily involved? 
+
+This will be a genuine modern browser capable of supporting the  latest 
+HTML  features  and  protocols,  and I'm sure you can guess  this  will 
+include things beginning with 'Java' and ending in 'Script'!
+
+Other  accounts suggest that this may be nothing more than  loose  talk 
+after all, though :(
+
+
+[] RUNNING MEETS THE ITALIAN JOB! []
+
+RDT  are  hard at work on the single biggest incentive  to  purchase  a 
+Milan  in the new year.  The Milan version of 'Running' is in the works 
+for  Spring  2000.   It will have an  entirely  new level with two  new 
+missions,   double resolution for textures and bad guys from the Falcon 
+original,  and  support for high detail levels.  This may  well  be the 
+production that breaks down the staid and slightly dull  'productivity' 
+image of the Milan at last!
+
+
+[] MYSTIC BYTES TOP THE POLE! []
+ 
+CiH  note,  I  hand the keys over to Grey for a minute,  thanks for the 
+cool news about the new MB demo,  I'm definitely booking my tickets for 
+SV2000 now!
+ 
+We,  Mystic  Bytes are busy working on the SV2000 invitros  (separately 
+for  Falcon and ST).  Invitros were announced over 2 months ago but  we 
+couldn't  release it...  The reason is so simple - not all details were 
+fixed yet. The date of the party has been changed - party will start at 
+21st  and will end at 24th day of April (Friday-Monday,  as the most of 
+the  ppl wished for!).  Invitros will be released at January.  Till the 
+3rd day of January I will set details for 100%.
+
+Mystic Bytes is also working on the new multi-part demo for the  Falcon 
+-  "Upside  Down".  The demo will be pretty FAT and will need at  least 
+14MB  of RAM.  What kind of effects you can expect?  That's a secret... 
+Just  a  one  thing...  "MSB is going to kick some butts!".  Demo  will 
+feature  NEW  effects...  tunnels free-zone :))) "Upside down" WILL  BE 
+released at Silly Venture 2000!
+
+>>p.s. new MSB demo for the Falcon will kick some ass! :)))) 
+CIH> I like the sound of this, any more information at this stage, 
+CIH> even a teeny-tiny hint to whet peoples appetites!?
+
+Hmmm...  well...  :))  The  demo will feature neat graphics and  "high- 
+standard" effects... It should be the real kicker since few years!! :)) 
+The previews which are already done beats everything what MSB did up to 
+now... you will love this demo! Can't tell anything more... sorry!
+
+Sea Brush (another ex member of Confusions) joined Mystic Bytes as  the 
+musician.
+
+
+[] COBRA STRIKES! []
+
+Winio  is going to release another Falcon demo at Silly  Venture  2000! 
+During  the  phone-chat  Winio mentioned that  "bunch  of  REALLY  good 
+graphicians and musicians wished to contribute to new Cobra demo",  but 
+didn't tell who they are.. It gonna be another surprise... :))
+
+Also the ST coder behind Cobra,  Mayonez,  is also going to release his 
+ST demo at SV2000!
+
+ Thanks again Grey! 
+
+
+[] SV2000 CONFIRMED! []
+
+Whilst  we are on the subject of the Polish scene,  confirmation of the 
+dates  for Sillyventure 2000 has been received.  These are going to  be 
+the  21st  to the 24th April Easter weekend.  A lot  more  information, 
+including  quite  a  bit in a tour guide vein  about  the  venue  city, 
+Gdansk,  is in the invitation text file, rather handily located in this 
+issue of Maggie!
+
+There is a great deal of interest already. It looks like there is to be 
+a  large  Polish  8-Bit Atari presence,  in addition to  the  ST/Falcon 
+contingent.  Of  particular  interest on the guest list,  are ST coding 
+wizards Syntax, and even the reappearance of Pandemonium. The follow-up 
+to  their satanically styled Falcon Siliconvention release 'Ignis',  is 
+awaited with great interest! This really sounds like the scene party to 
+be at,  this Easter, as Grey describes the ST and Falcon based parts of 
+the  Polish  scene  as "Motivated like never  before..."  (Even  people 
+considered currently 'dead'!)  
+
+
+[] PLEASED TO MEET YOU MP3! []
+
+Mequignon Didier, the star behind Aniplayer has made his latest release 
+(v2.08)  able to play the famous and widespread MP3 audio file  format! 
+This  is pushing it a tad too hard at the moment on a standard  Falcon, 
+but it is able to cope with CT2-accelerated Falcons and higher end  TOS 
+machines  with  ease.  the  sound is fully  stereo  supporting.  Future 
+releases  of Aniplayer are intended to include full MPEG movie  support 
+with  soundtrack,  and  hopefully,  further  optimisations for the  MP3 
+format to make this more viable on a standard unexpanded Falcon.
+
+
+[] SECTOR ONE TURNS UP THE FALCAMP! []
+
+The  other MP3 player on the Atari is now coming to fruition.  FalcAMP, 
+the  Sector  One project,  does work well on a standard  Falcon!  David 
+Carrere of 'Flaysid' fame is working on the DSP part.  The beta version 
+0.8  was released,  just a day or so before Aniplayer 2.08!  FalcAMP is 
+currently  a simple TTP program,  and only able to playback in mono  at 
+present,  but is fine with standard unexpanded Falcons.  Future FalcAMP 
+releases  will be optimised further,  gain a proper GEM interface,  and 
+should  be  able to play all MP audio files in full stereo.  
+
+Version  0.9 and 0.92 has since been released,  and apart from  welcome 
+bugfixes, also features an interrupt driven DSP decoder, to make it run 
+properly under a multi-tasking environment.
+
+David  Carrere is also apparently working on an Atari  8-bit  soundchip 
+POKEY player, and further versions of FlaySID may still appear?
+
+
+[] IT'S ANOTHER KIND OF MAGIC! []
+
+The  MagiC  games compo closed on the 25th December  1999.  There  were 
+eight  full entries,  and another game 'Rosemary Rancoon' that got  out 
+too soon and was disqualified from the competition. Various genres from 
+classic arcade to board games are all represented.  These are generally 
+runnable  on  most fair to middling GEM based systems in spite  of  the 
+'MagiC  Games' label.  Check out the reviews and competition results in 
+this issue!
+
+I  might  sneak in and say well done to Mario Becroft for  his  winning 
+entry, the Sokoban playalike GEM-friendly, 'Orb'!
+
+
+[] FUN, AND GAMES? []
+
+Fun are quiet at the moment, a new website, www.fun-industries.nl is in 
+its very early stages.  A new demo is planned, but this is very much at 
+the beginning,  with no deadline to complete it.  Also,  there are some 
+reports that Havoc is to return soon to the scene?
+
+Keen  observers  wanting to keep up with the movements of  Earx,  might 
+want  to check out the homepage of Escape as new and updated Whip!  VLM 
+modules from him turn up there from time to time.
+
+
+[] ENEMY WAR WINTER OFFENSIVE! []
+
+Marcus  Binder  is  back!  A  new Falcon game,  Enemy War II  has  been 
+announced.  This features a number of Falcon specific enhancements over 
+the  previous Enemy War ST version,  not least of which is a  800 x 600 
+game  resolution,  all  the  better  to display  the  enhanced  in-game 
+graphics.  This  will  be  optimised especially for AB040  Falcons  and 
+fastRAM machines.
+
+(A little later..) There is also an ST/STe version to come, this to run 
+in a virtual 640 x 400 screen mode, and needing a screen expander for a 
+stock ST/STe.
+
+
+[] WHERE RG?! []
+
+The  Reservoir  Gods are in a state best described as 'bubbling  under' 
+at  the  moment.   Mr  Pink is 'very busy' in his new job at  Bullfrog.  
+I'm  sure  he'd love to tell you loads of exciting new stuff about  the  
+PSX2  internals,   but   I'm  equally  sure he'd have to kill and   eat  
+himself afterwards, under the terms of his Non-Disclosure agreement! 
+
+Of the rest,  MSG, Ripley, and Sh3. there is no real news at all. There 
+as  a Cymvention in late October where most of the Gods  got  together, 
+but  nothing  emerged  from that.  Ripley broke cover on  the  DHS  BBS 
+recently,  to  say  that she only had contact with her Falcon,  to  use 
+Protext!  She is in the final year of her degree course. Sh3 is also at 
+university,  and  hassled by hardware death and strange Atari-badged PC 
+monitors. MSG, well have you lot got any ideas where he is?
+
+As Mr Pink is still keen on coding Atari stuff, but is prevented by the 
+extreme  nature  of the hours he works,  we propose a new  campaign  in 
+defence of liberty!
+
+…FREE THE GUILDFORD ONE!  
+
+
+[] ROB GOLDSMITH TO WALK ON THE HIGHWIRE? []
+
+Rob  Goldsmith,  The  man  behind Zetnet Atari  support  has  something 
+interesting  on the way.  The Highwire web browser was seen working  at 
+the Stafford AMS show in November.  It is  still at an early stage, but 
+various  other  parties  are  co-collaborating to  try  to  bring  this 
+further.  Most  interestingly,  it  will  be  a freeware  release,  and 
+eventually intended to bring up-to-date features even to less  powerful 
+hardware.  Rob's view is that other platforms, such as the PC and Amiga 
+have good freeware browsers,  so why not Atari? It presently can format 
+and display a HTML page in half the time CAB does!
+
+Further development is on a 'time permitting' basis, so don't expect to 
+see too much very soon.
+
+
+[] PARANOIA, THEY ARE OUT TO GET YOU! []
+
+Paranoia have been showing recent life-signs.  Their 'Sim-Atariscne', a 
+one-off  joke,  was not popular in certain quarters!  Their forthcoming 
+game, Extreme Pong has been delayed due to partial loss of source code. 
+This was originally intended to be released at the Paracon.
+
+There has been a very late Xmas demo promised from them as well.
+
+
+[] TNH KICKS THROUGH THE NIGHT! []
+                
+Sim-Bacteria  game  'Kweek' from Crackman producers,  Teenage,  is  due 
+'real soon now', maybe slightly overdue, as it was pencilled in for the 
+Xmas  period?  Also  a comedy diskzine,  the 'Undertaker' Maggie  scene 
+is on its way, with about a 3% completion rate for articles!?
+
+
+[] UNDERCOVER, UNDER PRESSURE? []
+
+UCM   16 was released,   one rumour at the time suggested future issues 
+going  HTML   to some  extent?   This was a reasonable  issue  produced 
+under  the new editorship of  ST  Survivor,   but feeling the pinch  in 
+outside help and contributions like everyone else.
+
+UCM  17  followed.  This was  very thin content-wise,  a Xmas or end of 
+year 'millenium' special issue is due out anytime now.
+
+This  became  UCM  18,  another  issue produced under  the  'small  but 
+frequent' formula,  and in addition to the usual content, also featured 
+a  large  dollop of useful coding tutorials and related  material  from 
+Earx and Candyman.
+
+Doubtless,  more  UCM  issues  to follow,  with a SV2000 special  issue 
+pencilled in there somewhere?
+
+
+[] MAGGIE RAZES ROSEWELL! []
+
+The   Maggie special one off issue,   the Psycho Babble Project,  which 
+was held over from  Error in Line last Easter,  was finally released in  
+November.   The  Psycho  Babble Project is a skeptical look at the  UFO 
+lover  fraternity,  and  other counter-culture issues from a  humourous 
+viewpoint.  It uses the ST shell.  At least one other one-off 'special' 
+is planned,  with a definite theme or concept for it, but no time scale 
+yet,  or even what form it will take? 
+
+There  is also the small matter of fitting in the 10th  Birthday  issue 
+this summer...
+
+
+[] CAUGHT IN A TOXIC WEB! []
+
+Toxic Mag released  issue  18,  firstly  in  HTML webzine dual-language 
+format,   with   English translated articles,  with a traditional Atari 
+shell, with intro by Dune still awaited.
+
+The new editorial team seem to be making a reasonable job of it.
+
+Uodate  -  The Atari shell version,  with a cool Falcon  compatible  ST 
+intro by Dune has finally been released.
+
+
+[] MR DATA, MAKE IT SO! []
+
+Data of Trio (Patrice Mandin) is steadily improving his Doom, Hexen and 
+Heretic  ports.  Current versions have got to v0.23,  now including VDI 
+display,  so  they  can be run on generic higher end Atari clones,  and 
+some  sound support.  (Effects but not music).  Check out the review of 
+v0.21 of Doom this issue.
+
+Also new emulator ports are being considered.  these are SNES, Neo Geo, 
+and even MAME!  Whether these can be runnable on a standard Falcon,  or 
+will need substantially more powerful Atari clones, remains unclear. My 
+own  guess  is,  that something like a CT2 Falcon will be  the  MINIMUM 
+spec!  At the moment,  these are just statements of intent,  but surely 
+something will appear before too long?
+
+For  those people really interested,  Patrice has already compiled a  C 
+source  emulator  for  the  VCS console,  but reckons  in  its  current 
+unoptimised state,  it is too slow to run decently on a standard Falcon 
+'030.
+
+Still on the subject, Patrice has added a 'Descent' port to his list of 
+'things to do', now the source for this out in the open.
+
+
+[] MATT SMITH IS SHACKING UP! []
+
+Matt  Smith,  he  who  supplied the handy 'Running' players  guide  for 
+Maggie,  is busy on a proposed games CD for next year.  There is also a 
+beta  test  of a ST (but compatible with Falcon) platform  game  called 
+'Down the Pipes' game available from his website,  the Atari Shack. The 
+preview is playable, the subject matter on the lines of something 'Nun' 
+would do! 
+
+He  is  currently working on a new and improved games engine  for  this 
+game,  and  is  open to any suggestions!
+
+
+[] STUNE-D PRUNES! []
+
+Stune,  the 'Dune 2' strategy game in GEM is at version 0.60.  released 
+at  the Paracon.  It was first seen at EIL.  A mixed team consisting of 
+Thothy  and  Sokrates is behind this,  with Spion of Escape  doing  the 
+graphics. Check out the preview in the games section of this issue.
+
+
+[] IT'S NOT OVER UNTIL THE SONGBIRD SINGS! []
+
+Songbird   Productions  announce  that  three  new  Jaguar  games   are 
+forthcoming  very  soon.  These are 'Protector' and  'Hyperforce',  two 
+original  arcade  2D  games,  and also Rebellion's unreleased  3D  game 
+'Skyhammer'.  'Protector', a nifty Defender style game, may well be out 
+by now, the others are due early next year.
+
+Update:  They now have acquired three unreleased Lynx games from Beyond 
+Games. These are Cyber Virus, Ultra Vortex, and Mechtiles.
+
+(From the Press Release..)
+ 
+Cybervirus is  an incredible  first-person  perspective,  mission-based
+action game based on the Lynx BattleWheels engine set in an apocolyptic
+future  where  rogue  computers  and  virus-infected  robotic  warriors 
+threaten the very survival of humanity. Ultra Vortex, the original Lynx
+version of what became Ultra Vortek on the Atari Jaguar,  is an awesome
+two-player  fighting game.  Mechtiles is  a multiplayer  game  of giant
+robot combat, also based on the award-winning BattleWheels engine.
+
+ We  are  advised  that Cybervirus is going to be  the  first  of  these 
+released,  'later  in  2000'.  The other games being evaluated for  how 
+much more work needs doing, before these get a firm release date.
+
+
+[] PLEASE FELICE ME, LET ME GO! []
+
+Felice mentioned at the Stafford Show,  that he fancied doing something 
+for SV2000,  this may be in the form of a Fake demo or wild competition 
+entry? Could be interesting!?
+
+
+[] STORMIN' NORMAN! []
+
+Escape are in the frame for current and future activity,  further Whip! 
+VLM  add-ons have turned up,  some from third parties such as known VLM 
+enthusiast  Earx,  and  previously  unknown  fan  Sokrates.  There  are 
+anything up to four new ones, plus any updates that have crept in since 
+the release of their bugfixed Whip v0.31.
+
+No of Escape tells us that a new version of Whip! is in the works, with 
+a number of new features,  and  a lot of updated modules will come  out 
+together with the new version.
+
+Even  better,  when/if  the  new  Phenix  260T turns  up,  he  will  be 
+developing  a virtual light machine for that computer,  so if Whip!  is 
+this cool now on a standard Falcy, what is he going to come up with for 
+the vastly superior Phenix!?
+
+There are some other projects planned, but no firm news here as yet.
+
+
+[] FADING TWILIGHT DELIGHT! []
+
+MC  Laser  is  currently  compiling what he  intends  to  be  the  most 
+comprehensive music compilation CD-ROM for the Atari scene.
+
+'Fading  Twilight' is intended to gather together as much  Atari  scene 
+music  in one place,  this will include material from all the different 
+ages  of  the scene.  The preferred format is Protracker  modfile,  but 
+things like soundchip, SIDchip, multi-channel formats, and even MP3 are 
+being considered.
+
+Hopefully,  a wealth of material,  including many previously unreleased 
+tunes will make its way onto there. We wish MC Laser every success.
+
+Update:  A  small  collection of old but interesting stuff is  released 
+under  the tSCc label with the title 'Revisited'.  In the acccompanying 
+textfile, a small statement from MC Laser saying "Ignore what I said in 
+'Songs of Distant Earth', we're still here!
+
+
+[] NATURE GOES THE FULL MEG MONTY! []
+
+Nature  haven't  been  lying around and doing  nothing  over  the  Xmas 
+holidays.  Firstly,  work continues on 'Reekin' Rubber', which is being 
+optimised further. The big news is, that it will definitely be a 14 meg 
+only release! They ran out of 'unnecessary' things to cut out to make a 
+4  meg  version  possible.  A system accelerator may well  improve  the 
+playability a bit as well. Hopefully a new version release soon, but no 
+dates given in that direction as yet.
+
+Also, there is a new game project 'Natris' coming through. Described as 
+a  'truecolour  Tetris  clone  for up to  two  players'.  The  code  is 
+essentially complete, but the graphics and sound are lagging behind. It 
+will be interesting to see how it compares with other efforts,  such as 
+the discontinued 'Xktris'?
+
+
+[] YESCREW ARE EMUXL-ENT! []
+
+Draco  has  been busy behind the scenes,  as the latest version of  his 
+Atari 800XL emulator for the Falcon has been quietly slipped out.  This 
+is  version 0.41 of his ongoing 'Emu-XL'.  This features many  bugfixes 
+and  substantial  improvements  over previous versions.  Not  least  of 
+these,  is  the  recognition  of 'drag and drop' protocol,  so you  can 
+autoboot  disk  images  right away,  without having  to  negotiate  the 
+forbidding MYDOS front-end.  People with TT's and higher end clones may 
+well be interested to learn that Emu-XL will run quite happily on their 
+machines  now,  as  it  has been coded a lot more  system-legally  than 
+before.  There is still quite a lot to do, but even now, certain games, 
+not too closely tied to the 800XL hardware, will run on this emulation. 
+'Mercenary' and 'Amaurote' being two such listed.
+
+The  speed  remains reasonable,  currently 37-38% of the original on  a 
+standard Falcon,  and about 90% on a TT with FastRAM. It does recognise 
+accelerators  from the likes of Nemesis to CT2 and Afterburner.  Emu-XL 
+is coded in 100% assembler.
+
+This  has been developed on a MinT environment,  but also runs  happily 
+under single-TOS and even MagiC!
+
+Meanwhile, Toodeloo quietly works away, producing more new MP3 tunes.
+
+
+[] FALCON SYNTH EMU AT LAST?! []
+
+Some  interesting,  not to mention confusing developments over the last 
+few days on the vexed subject of 'Falcon Synthesiser emulation'!
+
+People  with  long memories may well recall a number of  such  products 
+promised,  but never delivered. There was the System Solutions 'General 
+synthesiser',  which  went  all  quiet,  even  Tat  had a  go  in  that 
+direction,  which  was  ultimately  unproductive.  We all remember  the 
+Sentry TB303 emulator,  which was very close to release about a year or 
+so ago, but seems to have been laid low by the curse of non-completion?
+
+Well, first the bad news.
+
+Havoc  has gone public to say that Sentry are no longer working on  any 
+Atari related projects, it must be the case that their TB303 emu' is no 
+more?
+
+The interesting news is,  that New Beat are working on a 'softsynth' of 
+some  kind.  Havoc has seen a preview and "it rocks." Whether this sees 
+daylight or not, is, of course, debatable?
+
+The even more interesting news,  is that a totally new,  and previously 
+unknown  contributor  to the debate has thrown his hat into  the  ring. 
+Here  is the posting from the Atari.org forums that I took the  liberty 
+of including.
+ 
+Author: JasonCoughlin; (dialup-209.246.86.43.NewYork2.Level3.net)
+
+Date 1-13-2000 18:03
+
+There  was a note on the DHS "scene news" about a year  ago  explaining 
+that  Sector  One (or somebody) was working on a falcon  303  emulator.  
+However,   such  an  emulator  never  appeared.   (This  refers  to  the 
+ultimately abortive Sentry project, nothing to do with Sector One..)
+ 
+The good news is this:  the DSP is MORE THAN CAPABLE of performing this 
+emulation.   AFAIK  the  303 sound consists of 1 oscilator,  a low-pass 
+filter,  some  crude  envelopes,  and the famous 16-step sequencer that 
+makes  squelchy dance tunes soooo easy.   I am working on a  soft-synth 
+for the falcon DSP currently.   It is already capable of filtering etc. 
+(which  of course,  any program calling itself a soft-synth would be!).  
+I plan on releasing it soon (within one month).
+
+My  question  to  you is ...  why do you want that overused  303  sound 
+anyways? There is a whole world of synthesis that can be achieved using 
+the wonderful DSP 56000.   Is it the groove sequencer you're interested 
+in, or the squelchy sound?
+
+Jason
+ 
+If  Jason  can keep his promise in an area where so  many  others  have 
+failed, then this could be one of the biggest releases of the year!
+
+
+[] POV WERE NOT BORN JESTERDAY! []
+
+Persistence  of  Vision maintain their grip on the  Falcon  music  demo 
+marketplace,  with  a  release of their tribute to famous  Amiga  scene 
+musician,  Jester of Sanity. 'Jesterday' is based on the Amiga original 
+sound demo done in 1992.  This 'remix' for the Falcy has been done with 
+the consent of Jester, which was nice!
+
+
+[] NOCREW ARE ON THE EGO TV! []
+
+A  long  germinating idea in the minds of NoCrew is about to  poke  its 
+first tentative shoots of growth into the rich surrounding soil, and... 
+(Get on with it! - Impatient Maggie News Ed)
+
+The Ego TV label,  when it is up and running properly,  will consist of 
+camcorder-filmed  extracts,  from  their website,  of various humourous 
+situations,  in  the format of a television show.  Much of this will be 
+for  the  groups own appreciation,  so expect lots of obscure  in-jokes 
+which no outsider will ever hope to understand!
+
+The  Falcon-based  'Ego  Demo',  shown at Error in Line,  and  reviewed 
+elsewhere, was related to this.
+
+A  wise  man once said,  "Beware of those productions where the  people 
+making it, clearly had more fun than the audience watching it!"
+
+(He  also  said "If you have a tendency to  stress  incontinence,  then 
+don't wear skimpy panties!")
+
+
+[] TORMENT GO BACK TO OLDSKOOL! []
+
+Torment are working on a new ST demo, this has no release date yet, but 
+hopefully will be seen in the earlier part of this year. It is going to 
+consist  of totally new code,  with a leaning to classic or 'oldschool' 
+design but "done well",  according to Spiny, although it may be done in 
+a PC demo style, so the odd 'new' effect may be in there too.
+
+
+[] ATARI WORLD LOOKING GOOD ON PAPER! []
+
+When  Atari Computing,  the UK's premier(*) paper magazine closed down, 
+how we all gnashed our teeth in disappointment.  At an end, was our own 
+rich and fruitful involvement in the 'Maggie Pages',  a lukewarm column 
+running from a 'scene' perspective.
+
+ (*) ST Plus people, no teddies thrown out of the prams please! 
+
+Well,  the great news is, that there is to shortly be a new paper-based 
+Atari  mag  'Atari World',  picking up where Atari Computing left  off! 
+Full announcements, etc, will be trailblazed shortly all over the usual 
+places, we're just getting in there first!
+
+A  mysterious figure known only as "Bob" is thought to be behind  this, 
+and he can be contacted on Bobf@techsoftware.freeserve.co.uk
+
+
+[] EPIC MARKETING ARE 'GAME' FOR IT! []
+
+And  finally,  something  of  a 'first' for a long while in  the  Atari 
+world, a new commercial games publisher arrives!
+
+These brave souls are Epic Marketing, better known as publishers on the 
+Amiga  and  PC.  They are taking note of the new interest in the  Atari 
+Platform,  mainly  with regard to the impending arrival of the Milan 2, 
+but other Atari systems may well be developed for, if possible.
+
+Conversions  of  some  of their Amiga titles  are  planned.  These  are 
+currently 'Foundation Edge',  'Simon the Sorcerer II,  a game described 
+as  comparable with Monkey Island,  and 'Tales from Heaven',  a 3D jump 
+and  run in Mario 64 style.  Work will commence when developer machines 
+arrive  shortly,  and  their website will have an Atari section up  and 
+running by the end of January.
+
+The URL for their homepage is;        
+
+ www.epicmarketing.ltd.net/
+
+
+                              ~~~~~v~~~~~
+    
+Thanks  and  acknowledgments go to the following for  their  invaluable 
+assistance.
+
+Grey,  Evil,  Baggio,  Deez,  No/Escape,  Henrik/Nature,  MagiC Online, 
+Atari.org,  Place2be,  Mr Pink,  George/KUA,  Marq/Fit,  Spiny/Torment, 
+Earx, Rob Goldsmith, 'Bob F', and lots of various other websites around 
+the place.
+
+Compiled by CiH - '99 - '00
+
+

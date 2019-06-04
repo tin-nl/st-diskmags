@@ -1,0 +1,118 @@
+               The Super Pac Man control system explained.
+
+                               by Eddies'
+                                   Cat
+                             Un-Interactive
+
+
+When I was writing Super Pac Man, I came across the problem of a control system 
+for the game. You might think this is a pretty simple thing, all you do is stop 
+the Pac Man moving into walls. 
+However, this simple approach causes a problem when you have to turn corners. 
+Here's the  problem. To move in another direction, you must be exactly alligned 
+with  the opening  to that  passage. Otherwise, you  don't move  and the ghosts 
+catch you. Most programmers get  around this  by keeping Pac Man moving all the 
+time until he hits a wall, this isn't too good really-player control is reduced 
+as you can't stop moving and you can often run into things without meaning to.
+
+The method  I used to  solve this  problem is to  switch the movement direction 
+given by  the stick  depending on what  direction Pac Man is facing at the time 
+and where he is in the maze.
+
+Here's how it works, all written in "pretend code". The method below is similar 
+for all four directions, I've just included the method for "up" to save space:
+
+READ JOYSTICK
+ if "up" goto MOVE UP, etc.
+
+
+MOVE UP
+  Check to see if the player can move upwards
+  if not, goto UP/DOWN_SWITCH
+  set player direction to "up"
+  move the player up
+
+UP/DOWN_SWITCH
+  if player direction is not "left" goto SEE IF RIGHT
+  check to see if player can move left
+  if so, move the player left
+  if not, don't move the player at all
+
+SEE IF RIGHT
+  if player direction is not "right", don't move the player
+  check to see if the player can move right
+  if so, move the player right
+  if not, don't move the player at all
+
+(In  the actual  program, "Move  the  player" and "Don't  move the  player" are 
+branches to other parts of the program.)
+
+Okay, let's  see how  this  works in  the game. Imagine  your  Pac Man  is in a 
+horizontal corridor with an upwards exit to the right. Moving the  stick to the 
+right, will, of course, move him right. But when the stick is moved up, MOVE UP 
+makes the program goto the UP/DOWN_SWITCH part. 
+In this case, SEE IF RIGHT causes the movement to be switched from up to right, 
+and Pac Man moves right, even though you are holding the stick up. 
+As soon as he is alligned with the upwards exit, MOVE UP sees there is a way up 
+and  continues without  jumping to UP/DOWN_SWITCH. In this way, auto-allignment 
+is acheived.
+
+The only other  thing we have to worry about now is diagonals. In Pac Man there 
+are no  diagonal passages, yet  diagonal movements  are still important as when 
+you turn a  corner, the joystick  will briefly  register a diagonal movement in 
+between the two directions. If this is not handled  properly, the  Pac Man will 
+stop moving  momentarently, or go  in the wrong  direction. So here's what I do 
+when, for instance, the joystick is at the up & right position:
+
+MOVE UP & RIGHT
+
+(the following  two lines  allow you  to reverse  direction  easily, as you can 
+sometimes accidently trigger a diagonal when moving the stick back quickly)
+
+  if player direction is "left", goto MOVE RIGHT
+  if player direction is "down", goto MOVE UP
+
+  see if the player can move upwards and store the result 
+(yes/no)
+  see if the player can move right and store the result (yes/no)
+  use these stored values to see:
+  if player can't move up or right, don't move at all
+  if player can move up AND right, goto  UR BOTH
+  if player can only move right, goto UR RIGHT
+  if player can only move up, goto UR UP
+
+UR BOTH
+  if player direction is "up", goto UR M R
+  if player direction is "right", goto UR M U
+
+UR M R
+  set direction to "right", goto UR RIGHT
+  (you don't need a "goto" here, just make this the instruction 
+before      UR RIGHT and it will work fine)
+UR RIGHT
+  if player direction is "up", goto UR M R
+  if player direction is not "right", don't move at all
+  move player right
+ 
+UR M U
+  set direction to "up", then goto UR UP
+UR UP
+  if player direction is "right", goto UR M U
+  if player direction is not "up", don't move at all
+  move player up
+ 
+Now this all  may seem pretty confusing at first, but look the code over and it 
+will  eventually  make  sense. Basically, you  carry  on  moving  in  the  last 
+direction  you faced before the diagonal movement, unless there is a passage in 
+the other possible direction, when this happens your direction is automatically 
+changed.
+
+Well, I hope  this small article has been of  some use to  someone out there in 
+Undercover land. The  information  here can also be used to improve other types 
+of maze  games, I mean, certain  versions  of  Bomber man, for  instance, would 
+benefit greatly from this control system, wouldn't they?...
+
+-eOf---------------------------------------------------------------------------
+
+
+

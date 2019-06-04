@@ -1,0 +1,123 @@
+BUGS AND TRICKS
+
+
+                     BUGS & TRICKS in GFA BASIC
+
+By Corsair of The Giants.
+
+This is an article about stupid BUGS in GFA BASIC. If you want to see a 
+little  bit of the power(?) of GFA-BASIC,  please reboot the  intro  of 
+this mag. (It's written in it)
+
+There are a lot bugs especially in GFA BASIC 3.6 TT!  Try this in  that 
+version (interpreter):  SDPOKE &HFF8241,&H777.  Wham!  Bombs,  no basic 
+error, just bombs!
+I  advice you to use a lower version of GFA BASIC,  but v3.6 has  extra 
+commands. (See Maggie issue V)
+
+Well,  enough  talked  about v3.6,  I shall now give  you  some  useful 
+information with some examples about GFA BASIC in general.  Don't blame 
+me if I do not talk good English!
+
+The first trick to know is the RESERVE trick.  If you use this command, 
+you  can  set  free some memory for using it for  your  own  data  like 
+pictures, samples, executing programs etc. Without this command you are 
+hopeless! I will give you the old and bad example (don't use this):
+
+RESERVE 30000                 !Reserve all memory exept for 30000 bytes
+start%=HIMEM                  !Find start free memory
+BLOAD "THING.DAT",start%      !Load data to start%
+... Rest of program
+RESERVE                       !Set memory back
+
+This  example  works perfectly till the program reaches the  last  line 
+(RESERVE) and there appears an error:  ERROR WHILE RESERVE.  GFA  BASIC 
+gives  an  error and you have lost all your memory exept  30000  bytes! 
+This is the way to prevent it: (use this method!)
+
+mem%=FRE()-30000              !Better way to reserve memory
+RESERVE FRE()-mem%            !Reserve it
+start%=HIMEM                  !Find start free memory
+BLOAD "THING.DAT",start%      !Load data to start%
+... Rest of program
+RESERVE                       !Wow, no bombs
+
+The  next point is HIMEM.  I'm against it because I've  bad  experience 
+with using this command.  The best way is to MALLOC it and later  (when 
+leaving  the program) to free it with VOID MFREE(adres%). Something  like 
+this:
+
+mem%=FRE()-30000              !Better way to reserve memory
+RESERVE FRE()-mem%            !Reserve it
+start%=MALLOC(50000)          !"Lock" 50000 bytes memory
+BLOAD "THING.DAT",start%      !Load data to start% (max. 50000 bytes)
+...  Rest of program
+VOID MFREE(start%)                !Set memory free
+RESERVE                       
+
+Use always a%=MALLOC(32000) instead of a$=STRING$(32000,0) because when 
+a VOID FRE(0) appears (=memory garbage), the pointer  to  a$  could  be 
+changed!
+
+Now I will you give my own logbase and physbase routine.  I have  tried 
+some variations of this routine but this one works nice:
+
+PROCEDURE init_screens
+ RESERVE FRE()-(64512+256)    !Reserve memory (512 bytes waste!)
+ screen%=MALLOC(64512)        !Allocate memory
+ screen1%=XBIOS(3)            !Save original screen
+ screen2%=screen%-(screen% MOD 256)
+ screen3%=screen2%+32000
+ ' Clean screens:
+ scrncln$=STRING$(32000,0)    !I use it only for a while...
+ BMOVE V:scrncln$,screen2%    !Clean screen A
+ BMOVE V:scrncln$,screen3%    !Clean screen B
+ CLR scrncln$                 !Erase scrncln$ (erased after VOID FRE() )
+RETURN
+PROCEDURE exit_screens
+ set_screen(screen1%,screen1%)!Screens back to original (important)
+ VOID MFREE(screen%)
+ RESERVE
+RETURN
+PROCEDURE set_screen(log%,phys%)
+ VOID XBIOS(5,L:log%,L:phys%,W:-1)
+RETURN
+PROCEDURE swap_screen
+ SWAP screen2%,screen3%
+ VOID XBIOS(5,L:screen2%,L:screen3%,W:-1)
+RETURN
+
+How to use it:
+
+init_screens                  !Initiale screens
+set_screen(screen2%,screen3%) !Work on scr. 2, see scr. 3
+PBOX 0,0,100,100              !Wow, a BOX!! (and it's filled)
+swap_screen                   !Now we see it
+VOID INP(2)                       !Wait for a key
+exit_screens                  !Deactivate screens
+
+This was a short example for using this screenrout.  Of course you  can 
+do  it  better  but  this is  the  structure.  Never  forget  to  GOSUB 
+exit_screens  or  else  you  lose memory and  your  screens  are  still 
+activated....
+
+Well,  I stop this article here and hope you can use it.  I'm sure  you 
+will  find  more articles in future!  If you have  questions  or  other 
+things  (legal!) than you can write to me:
+
+CORSAIR of the (still cool) GIANTS
+Wildschutweg 33
+1456 AD  Neck
+The Netherlands
+
+P.S.: If  people think this text is lame 'coz all is common  knowledge, 
+they've  to f*ck off because I try to help people.  If all  the  coders 
+learn  from eachother,  you automatically get better  productions.  (Yo 
+Bonus, I hope the previous sentence wasn't to rude for the mag)
+
+P.S.  2:  Please use the option to contact me,  I haven't written  this 
+text for "the sake of the walls".  Else I'm beginning to feel a  little 
+bit angry at the DO-NO-RESPOND-'COZ-IT-COSTS-TOO-MUCH-MONEY-people.  If 
+I  receive a few letters (do it!) I will "reveal" some  more  GFA-BASIC 
+tricks (vertical rasters? no problem). (I will send them to this mag)
+

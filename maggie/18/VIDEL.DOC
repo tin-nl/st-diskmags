@@ -1,0 +1,229 @@
+066030003040000132006000006008000
+11
+2#1
+F0110030001
+9[..................................................................]0110
+Ä----------------------------------------------------------------------
+ programming
+----------------------------------------------------------------------
+
+                         ÅVIDEL INITIALISATIONÄ
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+The videl is one of the  most  misused  chips  on the Falcon. The good
+thing about it is that it is  highly configurable. The bad thing about
+it is that it is highly configurable. It is relatively straightforward
+to create Videl routines that work  perfectly on your monitor but fall
+over on other Falcon systems.
+
+The main problem comes not  in  setting  the resolution, but restoring
+the resolution. How many demos have  you  seen that quit and leave the
+screen jumping around with no sync or totally black? Far too many. And
+Reservoir Gods productions are not free from blame either.
+
+The problems are twofold. First, the standard Xbios screen routines do
+not work correctly. Secondly,  it  is  very  difficult  to restore the
+videl correctly - simply dumping all the videl registers and restoring
+them will not work!
+
+As some videl registers are  dependent  on  others, the order that you
+set the registers is important. There is  also the special case of the
+ST Mode register (0xFFFF8260).  This  should  only  be  written to for
+certain screen modes - just restoring it will not work.
+
+For years coders have tried to  create  a set of routines that cleanly
+restore the videl chip.  My  own  solution  for  detecting ST mode was
+based on the colour depth and  dimensions  of the screen, and the most
+likely 'guess' was made. But now  Sage  of  Escape has created a Videl
+restoration routine that appears to  work  for all resolutions and all
+accelerator cards. Genius.
+
+Evil of DHS has integrated  this  routine  into his video intiliastion
+and restore routines.
+
+Let's take a look at the code:
+
+
+init_program:
+                move.l  4(sp),a5                ;address to basepage
+                move.l  $0c(a5),d0              ;length    of     text
+segment
+                add.l   $14(a5),d0              ;length    of     data
+segment
+                add.l   $1c(a5),d0              ;length of bss segment
+                add.l   #$1000,d0               ;length of stackspace
+                add.l   #$100,d0                ;length of basepage
+                move.l  a5,d1                   ;address to basepage
+                add.l   d0,d1                   ;end of program
+                and.l   #-2,d1                  ;make address even
+Ä                move.l  d1,sp                   ;new stackspace
+                move.l  d0,-(sp)                ;mshrink()
+                move.l  a5,-(sp)                ;
+                move.w  d0,-(sp)                ;
+                move.w  #$4a,-(sp)              ;
+                trap    #1                      ;
+                lea     12(sp),sp               ;
+
+
+The routine begins with an  Mshrink()  call, needed for allocating the
+memory the  program  needs  and  returning  all  other  memory  to the
+operating system. Without this  calls  like  malloc() and other gemDOS
+routines will not work.
+
+                move.w  #0,-(sp)                ;reserve STRAM
+                move.l  #320*240*2+256,-(sp)    ;screen size +256
+                move.w  #$44,-(sp)              ;mxalloc()
+                trap    #1                      ;
+                addq.l  #8,sp                   ;
+                tst.l   d0                      ;mem available?
+                beq.w   exit_nostram            ;nope
+
+                add.l   #256,d0                 ;align screen
+                clr.b   d0                      ;
+                move.l  d0,screen_adr           ;
+
+This screen setup may been unusual  to  some, but it is very important
+to use this way of  allocating  screen  memory. The traditional system
+has been to allocate space for your  screen in the BSS section of your
+program. The problem with this approach is  that your screen has to be
+in STram, and if you  have  FASTram  in  your machine and your program
+loads there it won't work. The video  chip only reads from STram - one
+of the reasons that FASTram is, erm,  Fast,  is that it hasn't got the
+overhead of the video chip fetching data from it.
+
+The Mxalloc() call allocates memory  in  STram  -  in this case enough
+memory is set  aside  for  one  320x240  true  colour  screens, or two
+similar size 256 colour ones. It  is  also wise to byte align screens,
+even on the Falcon, as  you  will  probably  run  into problems if you
+start using 0xFFFF820D.
+
+                move.l  screen_adr,a0           ;clear screen
+                move.w  #320*240*2/64-1,d7      ;
+.clrloop:       rept    16                      ;
+                clr.l   (a0)+                   ;
+                endr                            ;
+                dbra    d7,.clrloop             ;
+
+A not  particularly  optimised  screen  clear  routine  follows  here,
+although as this is only going  to  be called once you shouldn't worry
+too much about lost cycles.
+
+
+                clr.l   -(sp)                   ;get              into
+supervisormode
+                move.w  #32,-(sp)               ;
+Ä                trap    #1                      ;
+                addq.l  #6,sp                   ;
+                move.l  d0,save_stack           ;
+
+Mac users take note - we are now in supervisor mode!
+
+
+                lea.l   $ffff9800,a0            ;save falcon palette
+                lea.l   save_pal,a1             ;
+                move.w  #256-1,d7               ;
+.colloop:       move.l  (a0)+,(a1)+             ;
+                dbra    d7,.colloop             ;
+                movem.l $ffff8240,d0-d7         ;save st palette
+                movem.l d0-d7,(a1)              ;
+
+Both the Falcon and ST palette registers are saved. You will need a 1K
+buffer for the Falcon registers and 32 bytes for the ST registers.
+
+                lea.l   save_video,a0           ;store videomode
+                move.l  $ffff8200.w,(a0)+       ;vidhm
+                move.w  $ffff820c.w,(a0)+       ;vidl
+                move.l  $ffff8282.w,(a0)+       ;h-regs
+                move.l  $ffff8286.w,(a0)+       ;
+                move.l  $ffff828a.w,(a0)+       ;
+                move.l  $ffff82a2.w,(a0)+       ;v-regs
+                move.l  $ffff82a6.w,(a0)+       ;
+                move.l  $ffff82aa.w,(a0)+       ;
+                move.w  $ffff82c0.w,(a0)+       ;vco
+                move.w  $ffff82c2.w,(a0)+       ;c_s
+                move.l  $ffff820e.w,(a0)+       ;offset
+                move.w  $ffff820a.w,(a0)+       ;sync
+                move.b  $ffff8256.w,(a0)+       ;p_o
+                clr.b   (a0)                    ;test  of   st(e)   or
+falcon mode
+                cmp.w   #$b0,$ffff8282.w        ;hht kleiner $b0?
+                sle     (a0)+                   ;flag setzen
+                move.w  $ffff8266.w,(a0)+       ;f_s
+                move.w  $ffff8260.w,(a0)+       ;st_s
+
+Here is the clever  part,  the  videl  register  saving. Note that the
+horizontal hold timer is checked for a  specific value - by doing this
+Sage can tell if you are in an ST or Falcon screen mode. A flag is set
+accordingly which will be checked when restoring registers.
+
+We'll skip the next part of the  program which just sets a test screen
+resolution (which screenspain routines) and waits for key.
+
+exit_program:   lea.l   save_video,a0           ;restore video
+                clr.w   $ffff8266.w             ;falcon-shift clear
+                move.l  (a0)+,$ffff8200.w       ;videobase_address:h&m
+                move.w  (a0)+,$ffff820c.w       ;l
+                move.l  (a0)+,$ffff8282.w       ;h-regs
+                move.l  (a0)+,$ffff8286.w       ;
+                move.l  (a0)+,$ffff828a.w       ;
+                move.l  (a0)+,$ffff82a2.w       ;v-regs
+                move.l  (a0)+,$ffff82a6.w       ;
+Ä                move.l  (a0)+,$ffff82aa.w       ;
+                move.w  (a0)+,$ffff82c0.w       ;vco
+                move.w  (a0)+,$ffff82c2.w       ;c_s
+                move.l  (a0)+,$ffff820e.w       ;offset
+                move.w  (a0)+,$ffff820a.w       ;sync
+                move.b  (a0)+,$ffff8256.w       ;p_o
+                tst.b   (a0)+                   ;st(e)      comptaible
+mode?
+                bne.s   .ok
+                move.l  a0,-(sp)                ;wait for vbl
+                move.w  #37,-(sp)               ;to avoid syncerrors
+                trap    #14                     ;in falcon monomodes
+                addq.l  #2,sp                   ;
+                movea.l (sp)+,a0                ;
+                move.w  (a0),$ffff8266.w        ;falcon-shift
+                bra.s   .video_restored
+.ok:            move.w  2(a0),$ffff8260.w       ;st-shift
+                lea.l   save_video,a0
+                move.w  32(a0),$ffff82c2.w      ;c_s
+                move.l  34(a0),$ffff820e.w      ;offset
+.video_restored:
+
+
+This is the interesting  part,  the  videl  retore. Note the branching
+based on the flag set earlier, things  are done differently for ST and
+Falcon modes. The Falcon setting also  has  a vsync before setting the
+falcon shift register, this is to prevent the dreaded mono-sync bug.
+
+                lea.l   $ffff9800,a0            ;restore        falcon
+palette
+                lea.l   save_pal,a1             ;
+                move.w  #256-1,d7               ;
+.loop2:         move.l  (a1)+,(a0)+             ;
+                dbra    d7,.loop2               ;
+                movem.l (a1),d0-d7              ;restore st palette
+                movem.l d0-d7,$ffff8240         ;
+
+The screen is back so we can now restore the palette registers.
+
+                move.l  save_stack,-(sp)        ;exit super
+                move.w  #32,-(sp)               ;
+                trap    #1                      ;
+                addq.l  #6,sp                   ;
+exit_nostram:
+exit_mono:      clr.w   -(sp)                   ;exit
+                trap    #1                      ;
+
+Finally we drop back into user mode and leave exit the program.
+
+I would advise that all  Falcon  coders  use  these routines in future
+productions - they have been thoroughly  tested  and proved to work on
+all systems. Full source code  for  this  can  be found in the goodies
+directory.
+
+Thanks to  Evil/DHS  for  supplying  the  code,  Sage/Escape  for  his
+brainwaves and everyone who tested this videl routine on their system.

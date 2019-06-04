@@ -1,0 +1,80 @@
+                      __
+      _  _ _ __     __\ \   _____   _______   _____   _____
+               /   /  _  \ /  __ \ /       \ /  _  \ /   __\   \  \  \
+            \  \   \  \  / \  ___/ \  / /  / \  /  / \__   /   /  /
+          \  \  \   \___/   \___/   \_\_\_/   \___/   \___/   /__ __ _  _
+     -  - -- --- --------------------------------pAranoid----- --- -- -  -
+
+--------------------------------------------------------------------------------
+                 Crywolf - Reservoir Gods (128 byte intro) (Falcon)
+--------------------------------------------------------------------------------
+
+After depacking the archive which was supposed to contain the intro, I wondered.
+It is more than 3 kbytes ...
+The  reason for  that is  the very  long readme-file which by  the way  has very
+little to do with the intro or the Reservoir Gods or computers or whatever.
+It is rather  a story about Morten Harket, ex-leadsinger of the  pop group A-ha,
+which was well known during the 80s.
+In comparison  to the 3kb ASCII-text, the demo seems just like an add-on someone
+forgot to remove. ;-)
+
+So, in the bottom  lines of the readme-file it is said to switch the Falcon into
+Truecolour and execute the 160 bytes (128 bytes + file header).
+I did so and here is the summary.
+
+This demo  is called  Crywolf, and in the readme-file and on the  Reservoir Gods
+page, they call  it to be a "Wolf-3D-engine" in 128 bytes. This of course sounds
+very impressing ...
+So far  the  smallest  Wolf-3D-engine  I have  seen was a 4ktro. It  displayed a
+smooth trip through  a corridor  of green, textured wall-patterns, taking  a few
+turns and moving constantly.
+I already  considered this one very  impressing. The  texture may  have been not
+very well drawn, but  I guess it was a question of saving  memory. It moved very
+smoothly and I found it very impressing to pack that into 4k bytes.
+
+(note by moondog... it was .tnb.'s "TÅtensuppenzauber" 4K, SiliConvention'97)
+
+Probably you get an impression of what I expected as a "Wolf-3D-engine". I could
+not believe that this was  supposed to be possible in 128 bytes, so  of course I
+was very excited when I launched crywolf.
+
+After crywolf is being started, it displays the following picture:
+The  middle of  the screen  is black, the  top and  the bottom is blue, which is
+being faded to black to the middle of the screen, so you get the impression of a
+large  room with  the upper  half of the screen  depicting  a ceiling  that gets
+darker in the  distance and the  lower half  of the screen displaying the floor,
+which of course also "vanishes" in darkness.
+To the left  and to the right of the screen you have trapezes which are supposed
+to represent the  walls you move  along. In  these  trapezes, colours  are being
+shifted from  the middle of the screen to the border, so you get  the impression
+of actual movement.
+
+And that's it, I guess there is very little more to expect in 128 bytes. However
+... this demo leaves me with a big question mark over my head.
+It's not  that this 128byte-tro is bad - it isn't. But  it's not as  good as the
+readme and the name suggest: Crywolf - Wold-3D-engine in 128 bytes.
+It is no Wolf-3D-engine. It is not even a "good" simulation of a Wolf-3D-engine.
+I don't  blame the Reservoir Gods  for this, I rather guess  a Wolf-3D-engine or
+even a good simulation of such is just impossible in 128-bytes, but this demo is
+claimed to be  something which it is not, and that is  never a good thing to do,
+neither in Megademos nor in 128-byte-intros.
+
+For a 128-byte-tro, the design is very good. The typical "odd" behaviour of 128-
+byte-intros like remaining TOS-cursor, odd  border colours or  things like that,
+do not appear in these 128 bytes and this is definetly the strong part of it.
+The effect  being displayed is okay for 128-bytes and  I guess, much  more of an
+effect like this isn't possible in 128 bytes.
+
+If they didn't call it a Wolf-3D-engine, I would have said nice, but this way, I
+would just call it a nice try. ;-)
+
+
+                               Rating: 41 %
+
+--------------------------------------------------------------------------------
+                                               Paranoid
+                                     Paranoia (The Lunatic Asylum)
+--------------------------------------------------------------------------------
+
+P.S.: I assume this review  is going to cause a  128 Kilobyte reply  in the next
+      issue of Maggie. ;-)

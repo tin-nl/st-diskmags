@@ -1,0 +1,415 @@
+        ***********************************************
+        *                                             *
+        *      Article sur le format graphique FLI    *
+        *      ¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹    *
+        *                     par                     *
+        *                                             *
+        *        ..oo >:) Hight  Spirit (:> oo..      *
+        *                11 / 01 / 1995               *
+        *                                             *
+        ***********************************************
+
+
+    ARRRGH, Coucou c'est moa je suis en possession du clavier et  je  ne  le 
+lache plus. Je vais vous pr‚senter un zouli article concernant le format que 
+tout le monde se doit de connaitre, je veux parler du format FLI. Comme  les 
+doc's ne courrent pas les rues cet article n'est surement pas exhaustif.
+
+
+        FLI, KE ZA KO ?
+
+        Ce format est utilis‚ pour  des  animations  graphiques,  c'est  une 
+norme qui est utilis‚s largement en la matiŠre (cf  intro  EKO  "Are You..." 
+thanxs to Ranma 1/2).
+        Le format qui va etre pr‚sent‚ ici est celui qui est g‚n‚r‚  par  3D 
+STUDIO (sur PC, DAMNED !!!) et d'autres applications biensur.
+        DE GROSSES GENERALITES SUR LE FLI 
+
+        Le FLI a ‚t‚ cr‚e pour  g‚rer  des  animations  d'images  au  format 
+320x200 pixels et en 256 couleurs (tiens cela nous arrange on connait ‡… sur 
+Falcon, Non !).
+        Le FLI fait usage d'une m‚thode de compression des plus  simples  je 
+veux parler du RLC (Run Length Coding) pour chaque ligne,
+        Le FLI n'enregistre, si c'est possible biensur, que les  changements 
+d'une image … l'autre,
+        Je m'en va vous donner une liste de termes employ‚s plus  loin  avec 
+leur signification cela m'evitera de la mettre entre () … chaque fois.
+        
+        FRAME  <===> IMAGE,
+        CHUNK  <===> CHAMPS,
+        HEADER <===> ENTETE,
+        PACKET <===> LOT, PAQUET.
+
+
+        ATTAQUONS LE FLI (CA VAS SAIGNER !)
+
+        REGARDONS LE FLI DE HAUT ET L'ON VOIT... DU SANG DU SANG DU SANG
+
+        - 1 File-Header de 128 octets ;
+        - Chaque frame est enregistr‚e  l'une  derriŠre  l'autre  mais  leur 
+TAILLE et COMPOSITION sont, bien entendu, variables.
+        RAPPROCHONS NOUS D'UNE FRAME ET QUE VOIT-ON ?
+
+
+        - 1 Frame-Header de 16 octets ;
+        - n Chunks eux aussi de TYPE et de TAILLE variables ;
+
+
+        ET ENFIN FAISONS UN ZOOOOOOMM SUR UN CHUNK ET LA....
+
+
+        - 1 Chunk-Header de 6 octets ;
+        - les donn‚es variant selon le type de Chunk.
+
+
+        Et maintenant ladies and gentlemen passons en d‚tail chaque  Header, 
+c'est-…-dire :
+
+        
+        - Le Header de fichier ;
+        - Le Header de Frame ;
+        - Le Header de Chunk ;
+        
+
+        PASSONS AU CRIBBLE LE FILE-HEADER :
+
+ ---------------------------------------------------
+|   Mnemonique  | Octet |          Descriptif       |
+|---------------|-------|---------------------------|
+|    SIZEFICH   |   4   | TAILLE TOTALE DU FICHIER  |
+|    IDENTFLI   |   2   | SIGNATURE DU FLI ($AF11)  |
+|    NBREPICT   |   2   | NOMBRE DE FRAMES/IMAGES   |
+|    LARGPICT   |   2   | LARGEUR D'IMAGE EN PIXELS |
+|    HIGHPICT   |   2   | HAUTEUR D'IMAGE EN PIXELS |
+|    BITBYPIX   |   2   | NOMBRE DE BITS PAR PIXELS |
+|    FLAGSFLI   |   2   | *                         |
+|    SPEEDFLI   |   2   | TEMPORISATION ENTRE 2 IMG |
+|    NEXTHEAD   |   4   | *                         |
+|    FRIT_FLI   |   4   | *                         |
+|    FILE_FLI   |   2   | *                         |
+|    FRAMEONE   |   4   | *                         |
+|    STROKFLI   |   4   | *                         |
+|    FSESSION   |   4   | *                         |
+|    FNOTHING   |  88   | INUTILISE EXTENSION FUTURE|
+|---------------|=======|---------------------------|
+|  TOTAL HEADER | 128   |                           |
+ ---------------------------------------------------
+
+
+
+
+        ATTRAPPONS LE HEADER DE FRAME AU VOL ET HOP !!
+
+
+ ---------------------------------------------------
+|   Mnemonique  | Octet |          Descriptif       |
+|---------------|-------|---------------------------|
+| SIZEFRAME     |   4   | TAILLE DE LA FRAME        |
+| IDENFRAME     |   2   | SIGNATURE FRAME $F1FA     |
+| NBRECHUNK     |   2   | NOMBRE DE CHUNK(S)        |
+| PLUSFRAME     |   8   | INUTILISE EXTENSION FUTURE|
+|---------------|=======|---------------------------|
+|  TOTAL HEADER |  16   |                           |
+ ---------------------------------------------------
+
+
+        DIS PAPA C'EST QUOA CE CHUNK ???
+
+ ---------------------------------------------------
+|   Mnemonique  | Octet |          Descriptif       |
+|---------------|-------|---------------------------|
+| SIZECHUNK     |   4   | TAILLE DU CHUNK           |
+| TYPECHUNK     |   2   | TYPE DU CHUNK             |
+|---------------|=======|---------------------------|
+|  TOTAL HEADER |   6   |                           |
+ ---------------------------------------------------
+
+        QUELQUES REMARQUES (TIENS OUI !! POURQUOI PAS ?)
+
+
+        Dans le FRAME HEADER faite attention car NBRECHUNK peut etre ‚gal  … 
+ZERO. Mais cela veut dire quoa ? Bin c'est trŠs simple cela veut dire  qu'il 
+n'y a pas de chunk (ah,ah ah ah). Oui OUI rigolez pas  dans  une  boucle  en 
+Assembleur (DBxx) si votre registre compteur est zero, dans  ce  cas,  quand 
+vous arrivez … votre boucle un, et bin qu'est qui pache ? dites-moa  ?  cela 
+boucle infiniment.
+
+        Une derniŠre remarque sur l'‚l‚ment SIZECHUNK  qui  est  ‚gal  …  la 
+somme de l'entete plus la taille du chunk par lui-meme excepter dans un  cas 
+celui o— le type de Chunk est un FLI_COPY qui normalement devrait avoir  une 
+longueur constante de 64000 octets d'image + 6 octets d'entete  et  bin  que 
+neni que  neni,  la  taille  est  de  64004,  alors  attention  lors  de  la 
+programmation. Pourquoi me demanderez-vous ? oui tiens  pourquoi,  alors  je 
+n'en sais rien (si vous le savez dites le moa !).
+
+        Parlons un peu de l'‚l‚ment TYPECHUNK, dans  le  cas  d'un  FLI  (le 
+notre donc) il existe (… ma connaissance) 5 types diff‚rents, que voici :
+
+
+
+
+ -----------------------------------------------------------
+| Nomination   | Valeur | A quoa sert-tu, dis ?             |
+|--------------|--------|-----------------------------------|
+| FLI_COLOR    |   11   | Je suis la palette des couleurs   |
+| FLI_LC       |   12   | Moa une partie de frame modifiee  |
+| FLI_BLACK    |   13   | Moa oune image noir (ah ah)       |
+| FLI_BRUN     |   15   | Une image complete compress‚e     |
+| FLI_COPY     |   16   | Une image complete non compress‚e |
+ -----------------------------------------------------------
+
+        BON BIN HEU MAINTENANT CELA SE CORSE (!) 
+        
+        DESCRIPTIF DES CHUNKS
+
+~~~~~~~~~~~~~~~~~~~
+LE "FLI_COLOR" (11)
+~~~~~~~~~~~~~~~~~~~
+                
+                Comme il disait, c'est la  palette  de  couleurs  en  codage 
+Rouge Vert Bleu (RVB). Mais ce chunk  n'est  pas  simplement  la  liste  des 
+composantes RVB pour les  256  couleurs  puisque  il  se  peut  quand  cours 
+d'animation plusieurs voir une seule couleur change, ah ah, alors voil… :
+        
+        Tout d'abord le premier MOT du chunk contient le  nombre  de  packets 
+contenus dans le chunk, prenons un exemple pour etre plus claire :
+
+Ceci est un exemple
+¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹
+
+        Prenez une palette de 256 couleurs et en cours d'animation  celle-ci 
+change en deux endroits diff‚rents par exemple  de  l'index  1  …  5  et  de 
+l'index 10 … 20 donc vous aurez comme nombre de  lots  (… votre avis)  :  2, 
+DEUX, TWO, ZWEI, II, 1+1.
+
+
+        Revenons … nos moutons, pour chaque packet(s) le premier  OCTET  qui 
+sera (et l… faite attention) le nombre de couleurs  INCHANGEES  et  donc  "… 
+sauter" (SOYEZ PAS VULGAIRE). Je rapppelle  qu'une  couleur  est  cod‚e  sur 
+TROIS OCTETS (R.V.B). L'OCTET  suivant  indique  le  nombre  de  couleurs  … 
+changer, ATTENTION SI IL EST EGAL A ZERO ALORS CELA VEUT DIRE  QUE  SE  SONT 
+LES 256 COULEURS QUI SERONT CHANGEES (PALETTE COMPLETE). Puis ensuite  viens 
+les triplets d'octets qui compose la couleur Rouge, Vert puis Bleu.
+        Apparemment, les fichiers FLI n'ont qu'une palette commune …  toutes 
+les frames de l'animation. Ce chunk ‚tant d‚clar‚  au  tout  d‚but  du  FLI, 
+cette possibilit‚s serait offertes aux FLC (voir fin article pour FLC).
+
+
+
+
+
+~~~~~~~~~~~~~~~~
+Le "FLI_LC" (12)
+~~~~~~~~~~~~~~~~
+
+        C'est le chunk le plus complexe  car  il  contient  que  les  pixels 
+modifi‚s de l'image pr‚c‚dente. On trouve se type de chunk dans le cas,  par 
+exemple, d'animation sur un plan fixe avec des objets mobiles ou encore lors 
+de mouvements de camera et d'objectif (zoom)).
+        Allez accrocher vos ceintures on FLY.
+        Le premier MOT du chunk est le nombre de  lignes  qui  ne  sont  pas 
+chang‚es depuis le haut de l'‚cran donc  "… sauter"  (SVP,  merci  !),  puis 
+viens le MOT qui donne le nombre de ligne(s)  chang‚es.  Puis  se  sont  les 
+lignes compress‚es,
+
+        Pour chacune on aura :
+        1 premier MOT qui nous donne le nombre  de  packet(s)  compris  dans 
+cette ligne, ATTENTION la valeur 0 peut s'y  trouver  elle  indique  que  la 
+ligne reste inchang‚e.
+
+        Puis pour chaque packet on aura :
+        1 OCTET donnant le nombre de pixel(s) inchang‚s depuis  la  position 
+COURANTE dans la ligne (se sont encore, ici, des pixels  "…  sauter").  Mais 
+avec votre perspicacit‚ vous vous etes dit "oui mais si le saut fait plus de 
+255 pixels comment faire ?). TrŠs simple on codera les sauts de plus de  255 
+sur deux packets successifs.
+        Le 2nd OCTET est sert de compteur,  pr‚cise  le  nombre  de  donn‚es 
+suivantes et la fa‡on de les d‚coder. Puis  ensuite  le  ou  les  octets  du 
+packet qui sont la valeur des pixels.
+
+        Une explication s'impose sur 2nd  OCTET  du  packet  (je suppose !). 
+Deux cas se pr‚c‚dente … nous :
+
+                (1 K) : n valeurs pour n pixels, on aura  ce  cas  quand  le 
+compteur (donc le 2nd OCTET du packet) sera < 128,
+
+                (2 K) : 1 valeur pour n pixels, il faudra soustraire  256  … 
+l'octet pour avoir le nombre de pixels donc le compteur.
+
+
+~~~~~~~~~~~~~~~~~~~
+Le "FLI_BLACK" (13)
+~~~~~~~~~~~~~~~~~~~
+
+
+        Allez aprŠs le FLI_LC on se calme, je suis sur que vous allez adorer 
+ce type de chunk puisqu'il ne contient ABSOLUMENT rien  !!!!  (non  rien  de 
+rien, non je ne regrette rien.... hum je m'‚gare !).  Il  implique  pourtant 
+quand meme mais seulement l'effacement de l'‚cran.
+
+
+~~~~~~~~~~~~~~~~~~
+Le "FLI_BRUN" (15)
+~~~~~~~~~~~~~~~~~~
+
+        AprŠs cette entracte voyons ce chunk qui en  th‚orie  ne  se  trouve 
+quand premiŠre image car c'est tout simplement les 200  lignes  de  haut  de 
+l'image compress‚e.
+        Pour chaque ligne on aura :
+
+        1 OCTET qui comporte le nombre de packets de la ligne :
+
+        Pour chaque packet de la ligne :
+        
+                1 OCTET sert  de  compteur,  pr‚cise  le  nombre  de  don‚es 
+suivantes et de la fa‡on de les d‚coder,
+
+                Le ou les octets qui sont les valeurs des pixels.
+
+        ATTENTION … propos de l'octet qui sert de compteur, etc...
+Oui car il n'est pas diff‚rents dans l'utilit‚ que dans le  FLI_LC  mais  il 
+est diff‚rents dans l'utilisation.
+
+                (1 K) 1 valeur  pour n pixels : si l'octet < 128
+                (2 K) n valeurs pour n pixels : dans les autres cas  et  ici 
+il faudra enlever 256 pour avoir la valeur du compteur.
+~~~~~~~~~~~~~~~~~~
+Le "FLI_COPY" (16)
+~~~~~~~~~~~~~~~~~~
+
+        Faisons dans  la  simplicit‚,  ce  chunk  contient  l'image  enti‚re 
+320x200 non compress‚e (64000 octets). ATTENTION : le chunk suivant dans FLi 
+se trouve … 64004 ocets et non pas 64006 octets (cf. plus haut).
+
+..IMPORTANT..IMPORTANT..IMPORTANT..IMPORTANT..IMPORTANT..IMPORTANT..
+
+        Malheureusement une ombre noir viens au tableau de ce  format,  bien 
+que peu difficile, il faut savoir que le FLI viens du PC et  sur  le  PC  le 
+Micro P est un INTEL (ah bon  premiere  nouvelle  !)  et  que  pour  ne  pas 
+compliquer les chose (hum hum) INTEL …  d‚cider  d'avoir  le  Poids  Fort  … 
+droite et le Poids Faible … gauche donc si vous avez l'intention de coder un 
+player de FLI n'oubliez pas d'inverser pour un MOT les  octets  et  pour  un 
+LONG mot les MOTS et par cons‚quent les OCTETS..... Thanxs INTEL !!!
+
+        ADDENTUM SUR LES FORMATS FLI, FLC
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~        
+        Tout chaud, tout chaud, derniŠre minute. Voici quelques  infos  supp    
+sur FLI et FLC.
+        D'aprŠs ce que j'ai compris (doc en Anglais) la  suite  n'est  qu'un 
+essai de description de nouveaux Chunk et Frame qui ne sont pas d‚crit  dans 
+la doc sur la librairie FLI de Turbo C.
+
+        NOUVEAU CHUNK
+        ¹¹¹¹¹¹¹¹¹¹¹¹¹
+~~~~~~~~~~~~~~~~~~
+Le "FLI_DELTA" (7)
+~~~~~~~~~~~~~~~~~~
+
+        Le premier MOT est le nonbre de  lignes  compress‚es,  les  prochain 
+sont les donn‚es modifi‚es des lignes. Toujours … partir de la 1re ligne  de 
+l'‚cran.
+
+
+La compression d'une ligne se fera de la fa‡on suivante :
+
+        1 MOT : nombre de packet dans la ligne :
+                Si MOT < 0 alors on saute -MOT ligne(s)
+                Si MOT > 0 alors on d‚code le packet
+
+
+        Le packet ‚tant compr‚ss‚ de la fa‡on suivante :
+
+                compteur de saut ;
+                compteur pixel ;
+                les donn‚es des pixels.
+
+        Le compteur de saut n'est qu'un OCTET donc si un saut de  +  de  255 
+pixels doit etre effectu‚ alors on le divisera en deux packets. Le  compteur 
+de pixel(s) est lui aussi un OCTET. Si il est positif, c'est que les donn‚es 
+suivantes devront etre copi‚es directement … l'‚cran. Si, par contre, il est 
+n‚gatif c'est qu'il y a  qu'une  donn‚e  suivante  qui  devra  etre  r‚p‚t‚e 
+-compteur pixel fois. Le format des donn‚es des pixels et  dans  ce  cas  un 
+MOT, mais attention d'aprŠs la doc. le format de ce MOT serait en faite deux 
+OCTETS cons‚cutifs donc pas besoin de le mettre au format  INTEL  comme  les 
+mots pr‚c‚dents. Alors pourquoi cela, je n'en sais rien  pour  moi  1  OCTET 
+aurait ‚t‚ plus logique puisque le format ecran sur PC est : 1 octet = index 
+de couleur d'un pixel en RAM ‚cran. L… je suis dans l'ombre...
+
+
+~~~~~~~~~~~~~~~~~~~~~~
+Le "FLI_256_COLOR" (4)
+~~~~~~~~~~~~~~~~~~~~~~
+
+
+        C'est le meme format que pour le chunk "FLI_COLOR (11)" a  la  seule 
+diff‚rence c'est sur le domaine des composantes de couleurs, qui ‚taient  de 
+0 … 63 pour le FLI_COLOR et ici de  0  …  255.  C'est  tout  le  format  est 
+exactement identique.
+        
+
+
+        DU NOUVEAU SUR LES FLC
+        ¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹
+
+        Je  ne connais pas beaucoup les FLC mais voici, quand  meme  ce  qui 
+‚tait dans la doc.
+
+        Les FLC contiennent tout les Chunk vuent pr‚c‚demment mais  avec  en    
+plus :
+
+~~~~~~~~~~~~~~~~~~
+Le "FLI_MINI" (18)
+~~~~~~~~~~~~~~~~~~
+        
+        Toujours d'aprŠs mes traductions (hum hum), c'est une  miniature  au 
+format 64x32 de la premiere  Frame  au  format  "FLI_BRUN"  c'est-…-dire  la 
+premiŠre image du FLC dans toute sa hauteur  et  au  format  compress‚e.  Ce 
+serait uniquement utilis‚ comme bouton de s‚lection dans Animator Pro,  donc 
+pour nous, nous le passons avec grande fiert‚ dans  notre  zouli  player  de 
+FLC.
+
+        Maintemenant et pour finir,  aux  niveaux  des  Frames,  le  FLC  en 
+contient certaines avec une signature (Magic Word) du type "00A1". C'est  la 
+premiŠre Frame dans le fichier FLC. Actuellement se ne serait pas  vraiement 
+une Frame mais un ensemble  de  Chunks  qui  donnent  simplement  des  infos 
+sp‚cifiques pour Animator Pro (encore lui !), du  style  :  nom  de  chemin, 
+fonte utilis‚ et informations sur fichier COL.
+Cette frame doit etre saut‚ lors du chargement puisque compl‚tement  inutile 
+pour le bon d‚roulement de l'animation. Son en-tete est de la meme  longueur 
+que celle des autres Frames.
+
+..IMPORTANT..IMPORTANT..IMPORTANT..IMPORTANT..IMPORTANT..IMPORTANT..
+
+        Quand vous lisez une en-tete de fichier FLI  ou  FLC,  la  signature 
+peuvent etre maintement "AF12" … la place de "AF11" utilis‚s dans  les  plus 
+vieux FLI.
+        Et aussi attention au format d'ecran qui ne seras pas  forc‚ment  du 
+320x200 mais aussi 640x480, 800x600, voir meme du 1280x1024.
+        Et une note sur le temps entre deux  frames  qui  apparait  etre  de 
+l'ordre du 1000's de seconde au lieu du 70's de seconde.
+        
+..CONCLUSION...CONCLUSION...CONCLUSION...CONCLUSION...CONCLUSION....
+
+        Voil…, je pense avoir fait le tour du format FLI du moins  avec  les 
+infos que j'ai glan‚es de ci et de l…. D‚solez pour les  fotes  d'ortaugrafe 
+mais bon on fait ce que l'on pneu. Normalement si Dieu le  veux  il  doit  y 
+avoir avec cet article un source GFA.LST pour  vous  montrer  la  synoptique 
+g‚n‚rale d'une routine FLI et en plus le pack de mon player de FLI  (VERSION 
+0.3, faites circuler thanxs).
+
+
+...CONTACT...CONTACT...CONTACT....CONTACT...CONTACT...CONTACT...
+
+        Si vous avez des doc's supplementaires sur les formats FLI,FLC  mais 
+aussi et surtout FLX et FLH (qui sont les memes mais  pour  le  True  Color) 
+pensez … moi cela serait sympa.
+Je recherche aussi toutes doc's en general (format  musik,  gfx,  archiveur, 
+hardware). Ce serait l'occassion pour sortir un DOC'MAG, non ????.
+        Pour toutes critiques, etc.... aussi.
+        Pour me contacter (trŠs simple):
+                -HIGHT SPIRIT-
+                SCHMIDT FREDERIC
+                2 RUE DES FRERES BRUAUX
+                59920 QUIEVRECHAIN
+        Voil… j'espŠre reprendre possession  du  clavier  dans  un  prochain 
+article. Sinon je vous souhaite Bon Code … tous... Et See you later.

@@ -1,0 +1,149 @@
+
+A little bit of news of Positive Image as it gets go-faster stripes, or 
+shading effects or whatever.. 
+
+_____________________________________________________________________
+PRESS RELEASE                                        20th August 1996
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+POSITIVE IMAGE V1.1 OUT NOW
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+Things may have  been  a  little  quiet  on  the  Positive Image front
+recently, but there's good reason  for  this.  We've been hard at work
+improving the package  still  further,  reaching  towards  our goal of
+producing the most powerful  image  processing  and retouching package
+for Atari computers.
+
+The initial release achieved all of the  above and more but, lets face
+it, it was a bit on  the  slow  side.  Although  we all love our Atari
+machines, they are not exactly  the  fastest  by today's standards and
+image processing is undoubtedly  processor  intensive, so the downside
+was the speed at which  things  happened,  mostly in the screen redraw
+and printing departments. Some competing  packages  were faster on the
+redraws (none offered printing directly so  that was not an issue) but
+they paled into insignificance  when  compared  feature  by feature to
+Positive  Image.  They  concentrated  on  speed,  we  concentrated  on
+features, you can't have both....or can you?
+
+Well it appears that you  can,  within  limits.  Here at Floppyshop we
+have gone back to the  drawing  board  to  squeeze every last ounce of
+power out of your 68x00 chip and  the results are plain to see. Screen
+redraws are around 40%  faster  in  256  colour  modes  for a complete
+redraw. More importantly, in  v1.1  the  tiling works 'intelligently',
+redrawing only the tiles where  changes  have  been  made. There is no
+reliable way to measure this  increase  as  v1.0  used to walk through
+each and every tile, the larger  the  image  the longer this took. Now
+(after the initial load  and  draw)  ALL  subsequent  redraws are near
+instantaneous with only UNDO or  APPLY  MASK ever requiring the entire
+screen to be redrawn (for obvious  reasons).  The amount of time saved
+when editing any image is enormous!
+
+Another area which  has  received  a  major  upgrade  is the printing.
+Without affecting the quality (which was  always superior to any other
+printing package on the  market),  output  speed  has been improved so
+that it is now on average 335%  faster  (not a misprint, it takes less
+than 1/3rd of the time v1.0 took!)  at  outputting an A4 size image to
+monochrome printers  and  about  35%  faster  at  printing  to  colour
+printers.
+
+A new feature of the upgrade  is  support for multiple masks active on
+the same image. This requires  a  little  explanation.  In v1.0 it was
+possible to define any region  within  an  image  and create or load a
+mask to be previewed for that  area.  Assuming you were happy with the
+result, it was  a  simple  case  of  applying  the  mask  in  order to
+permanently integrate it into  your  image.  If  you  defined a second
+region (before applying) and created/loaded  a  mask for it, the first
+region would be lost. In v1.1  you  define  a region, load or create a
+mask then  (without  applying)  define  a  new  area  and  repeat  the
+procedure. The result is that  (although  the block definition for the
+first region is removed) the original masked area remains intact along
+with your new  definition.  Repeat  this  as  required.  When you have
+finished with masking,  select  APPLY  MASK  and  all  defined regions
+within the image will have  their preview masks permanently integrated
+into the image in a single operation.  This  is a great time saver and
+adds considerably to  the  functionality  of  Positive Image's masking
+capabilities.
+
+Amongst the most notable of the  miscellaneous  speed ups is the trace
+area tool (commonly known as the Magic Wand in several other packages)
+which now auto  traces  areas  (subject  to  a  user defined tolerance
+level) at  around  three  times  its  previous  speed.  Invaluable for
+selecting/eliminating  specific  areas  of  background  or  foreground
+within an image. Its  editable  partner,  the  bezier  tool,  is a bit
+faster than before but more  importantly,  it  is now pixel precise in
+its selecting of control  points  and  editing  of  curves even at the
+highest zoom level.
+
+Finally,  we   have   fixed   the   filtering   bug   which  prevented
+images/regions within images from  being  filtered  right  up to their
+edges! Lots of other minor bugs  have  been eliminated (we didn't have
+any major ones) and the functionality of certain minor elements within
+the program has changed, all in the name of progress!
+
+PRICING
+ÿÿÿÿÿÿÿ
+We decided to hold Positive Image at its launch price until v1.1 was
+released. As this has now happened, we  reserve the right to revert to
+full RRP of 79 pounds at any time. Having said that, the current price
+remains at 65 pounds + P&P  (2  pounds  UK, 5 pounds Europe, 10 pounds
+rest of world). UK customers can pay by cheque, Postal Order or Credit
+Card  (except  Switch).  Overseas  customers  should  order  from  our
+distributor in their country (  list  follows).  If  we  do not have a
+distributor they can of  course  order  direct from Floppyshop. Please
+note that when ordering from  Floppyshop,  payment  must be made in UK
+pounds sterling. The easiest way is to pay by credit card, but we also
+accept Eurocheques, International Money Orders  and Post Giros (in all
+cases they must be made out  in  UK  pounds  sterling)  or by way of a
+cheque drawn on a UK bank.
+
+UPGRADING
+ÿÿÿÿÿÿÿÿÿ
+Those of you who have already purchased Positive Image will be pleased
+to know that you can  upgrade  by  returning  your master disks (disks
+only, not the whole package!) along with the upgrade fee of 5 pounds +
+P&P (UK & Europe  œ1,  rest  of  world  2  pounds). Customers in North
+America should contact  Computer  Direct  (support@compdirect.com) for
+details of how to upgrade their copies.
+
+NEW DEMO VERSION
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+For those of you who have not yet purchased Positive Image, a new demo
+of the latest upgrade  (v1.1)  is  now  available for downloading. The
+demo on the ST Format cover  disk  and  on most ftp sites is pre-v1.0,
+although it says v1.0 on the info  box.  It is VERY old and you should
+not  waste  time  downloading  it!  Instead,  the  latest  version  is
+available by anonymous ftp from Wintermute. Here's how to get it:-
+
+ftp ftp.wintermute.co.uk
+
+log in as ftp, give your email address as your password, then type the
+following two lines.
+
+cd home/s/steil/outgoing/
+get pi_demo.zip
+
+POSITIVE IMAGE DISTRIBUTORS
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+SWEDEN,  NORWAY, FINLAND, ESTONIA, LATVIA  and  LITHUANIA - Falcon Pro
+Center, Vaederlekstorget 12, S-418 32 Gothenburg, Sweden.
+
+NETHERLANDS - Atari ST  Computerclub  Nederland  (ACN),  Postbus 5011,
+2000 CA Haarlem, The Netherlands.
+
+DENMARK - Indigo 2, Montanagade 29E, DK-8000 Aarhus C, Denmark.
+
+NORTH  AMERICA  -    Computer  Direct,   10338-59   Avenue,  Edmonton,
+Alberta, Canada. T6H 1E6
+
+UK,  IRELAND  and all  other  territories  -  Floppyshop,  PO Box 273,
+Aberdeen, Scotland, UK, AB15 8GJ.
+--
+
+|ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ|
+| Steve Delaney  (Floppyshop)   sdelaney@steil.wintermute.co.uk      |
+|                                                                    |
+|                                                                    |
+|ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ|
+|      Nothing is foolproof because fools are ingenious!             |
+ ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+

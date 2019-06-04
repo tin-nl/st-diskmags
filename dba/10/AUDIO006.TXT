@@ -1,0 +1,369 @@
+AUDIO FAQ 6
+
+11.24 Can I add digital output to a non-digital-out CD player?
+ Some Magnavox CD players using the Philips chip set can be 
+ modified.  Look for a SAA7220 IC.  If it has one, then it can be 
+ modified.  If you have experience modifying electronic 
+ equipment, follow this procedure:
+
+ Take pin 14 of the SAA7220 IC and remove whatever terminating 
+ resistor is on it.  Connect it through a 560 ohm resistor to the 
+ input of a wide band pulse transformer.  Tie the other end of 
+ the primary of the transformer to ground.  Pulse Engineering 
+ PE65612, Schott Corp 6712540, and Scientific Conversions 
+ SC916-01 all will work.  Bypass the primary through a 620 ohm 
+ resistor.  Connect the output of the transformer to an RCA jack.  
+ Do not ground either side of the RCA jack. This output is now
+ S/PDIF compatible. (Thanks for the tip to Positive Feedback)
+
+11.25 What can I get in the way of a CD test disc?
+ Many use the Hi-Fi News & Record Review test discs.  So far, 
+ these have received only positive comments.
+
+ Chesky produces 2 test discs.  The first, "Chesky Jazz Sampler 
+ Volume I" contains some excellent imaging test signals (called 
+ LEDR), some well-recorded acoustic jazz, and other test signals.  
+ The second, "Chesky Jazz Sampler Volume II" has similar music & 
+ different tests.
+
+ Stereophile produces two test discs.  The first seems of limited 
+ value.  The second just came out.
+
+ Denon also produces two test discs.  The first, "Digital Audio 
+ Check" is more useful for home use.  The second, "Audio 
+ Technical" is more for repair shops and test-disc addicts. 
+
+11.26 How do the letters ADD on my CD relate to sound quality?
+ The simple answer to this question is that there is no relation
+ between the three letter code and sound quality.  Those three
+ letters refer to the recording and mastering tools used in
+ making the CD.
+
+ The first letter refers to the recording process.  For example,
+ a disc labeled ADD was ANALOG recorded, where a disc labeled
+ DDD was DIGITALLY recorded.  Analog recording means that some
+ form of conventional analog tape recorder was used, whether it
+ be a two-track home-quality recorder or a very expensive
+ wide-tape, high-speed, multi-track recorder.  Digital recording 
+ could be as simple as a two-track DAT recorder, or can be a 
+ much fancier multi-track digital recorder. 
+
+ The second letter refers to the "mastering" process.  Mastering
+ refers to the processing which takes the initial analog or 
+ digital recording and mixes it down to two-track stereo, 
+ edits out flaws, equalizes for different sound, adjusts levels,
+ and otherwise changes the signal.  All of this can be done with
+ digital signal processors, and it can also be done with analog
+ signal processors.  There are good machines available for this
+ which are analog and good machines which are digital.
+
+ The third letter refers to the final product, which for a CD is
+ always a digital product.  I have seen discs that are labelled
+ as AAD, ADD, DAD, and DDD.  
+
+ Future releases may not have this three letter code on them
+ because they don't tell you anything that is significant. Also,
+ some codes have been used incorrectly on some discs, which
+ makes the information that much more meaningless.
+
+ 11.27 How can I clean LPs?
+ There are expensive machines for this purpose which work very
+ well.  One popular model goes by the name Nitty Gritty.  These
+ machines spray cleaner onto the record, work it into the
+ grooves, and then vacuum the cleaner and dirt out.  If you are
+ serious about records and have lots of them, it may be a good 
+ investment for you.
+
+ If you have a more reasonable collection, you might be happy
+ with a good hand washing every now and then.  To give your
+ records a good hand washing, start by preparing this wash:
+  1 gallon distilled water
+  90 ml 70% isopropyl alcohol
+  1 gram Alconox (a laboratory detergent)
+ Also, get a natural bristle brush and trim it to the correct
+ stiffness/bristle length so that the bristles can get into the
+ grooves but aren't stiff enough to scratch the record.
+
+ Lay the LP flat and pour a thin coat of the above fluid on it.
+ Brush the wash into the grooves with the bristle brush.  Brush
+ in the direction of the grooves, going through all grooves.
+ Flush the wash and dirt off with cool, running tap water.
+ Rinse the record with distilled water and pat it dry
+ with a soft, clean cotton cloth.
+
+ 11.28 How do you set the stylus pressure correctly?
+ Stylus tracking force is typically adjusted at the back of the
+ tonearm with a knob that is calibrated in grams at the stylus 
+ tip.  With the control set to zero, the stylus should sort-of 
+ float above the record surface.  The control is then increased 
+ to the number recommended by the cartridge manufacturer.  
+ 
+ Do not, under any circumstances, use a lower than recommended 
+ force, as the cartridge may lose the ability to maintain 
+ contact with the groove wall on passages of large amplitude.  
+ This WILL result in RECORD DAMAGE.
+ 
+ If you want the best possible tracking and sound quality, you 
+ will want to fine-tune the tracking force.  Use a test record 
+ and listen very carefully, or get the help of a good dealer 
+ with a battery of instruments.
+ 
+ 11.29 How do you set the anti-skating on a tonearm?
+ If you have a recommendation or suggestion from the 
+ tonearm manufacturer, follow their advice first.  
+ They will give you the best starting point.
+
+ Some tonearms come with calibrated anti-skate.  The manufacturer 
+ of these tonearms has tried to calibrate the anti-skate control 
+ so that if you match the setting of the anti-skate to the 
+ setting of the stylus pressure, you will have nearly perfect 
+ anti-skate.  Read the manufacturer's recommendations to see if 
+ this applies to your tonearm.
+
+ You can see gross errors in anti-skate by looking at 
+ the stylus.  If you shine a light on the front of the 
+ tonearm while playing a record, you will be able 
+ to see whether the stylus is centered in the stylus 
+ holder.  If the stylus is biased to one side or another 
+ while playing a record, then the anti-skate is way off.
+
+ More subtle adjustments can be made by listening for 
+ mistracking.  If you can, obtain a record with equal 
+ left right modulation at high frequency with ascending
+ modulation magnitude (volume), such as the Shure
+ ERA-III, IV, or V test record.  They have five bands of
+ "greensleeves" played on flute, and you fiddle until the
+ audible breakup is equal in both channels, and adjust
+ tracking weight until it occurs in the highest band.
+ This is, like other cartridge and tonearm adjustments, 
+ easier for the experienced hand than the beginner.
+
+ Some high-end dealers have electronic instruments which 
+ allow them to accurately adjust anti-skate and other 
+ cartridge and tonearm parameters.  If you can get this 
+ service, consider yourself fortunate.
+
+ 11.30 How else do you adjust a tonearm/cartridge/stylus?
+ There are a few other critical adjustments.  Again, a good 
+ high-end dealer may be your best resource.  Your ear may 
+ also be your best test instrument.  
+
+ You need a level turntable.  Use a quality carpenter's 
+ level.  Some people like the Shure stylus force gage for 
+ setting stylus pressure accurately.  Other tools which are 
+ well recommended are the Geo-disk, a good protractor, and 
+ above all, the Cart-Align, which uses a very precise 
+ etched plastic mirror for cantilever alignment.
+
+ You'll also want to set the tracking angle.  It CAN be 
+ done by eyeball, but is best done with test instrumentation 
+ and a record.  There is also the cartridge angle, tonearm
+ height, etc.  Read the instructions which came with your
+ tonearm for the best specific advice for that tonearm.  
+
+ Tonearm cable is more critical than any cable anywhere else in
+ the signal chain.  Cable capacitance directly sets the high
+ frequency characteristics of the cartridge.  In addition, the
+ correct grounding of the shield is essential to minimize hum.
+ It may be necessary to change preamp input capacitors so that
+ the cable/preamp combination loads the cartridge with the
+ right overall capacitance.  Replacing tonearm cable will have
+ a similar effect, but may be harder to change tonearm cable
+ than to change preamp input capacitors.  Consult the 
+ cartridge, tonearm, and preamp manuals for specific advice.
+ Also refer to 16.6 for more information on tonearm cable.
+
+ An excellent article on setting up a turntable is: 
+  Stereophile, July 1990, Pages 62-85.
+
+11.31 Do CDs deteriorate with time?  What is their life span?
+ A CD consists of a polycarbonate top layer, an aluminum (or
+ gold) metal reflective layer, a polycarbonate bottom layer,
+ and some miscellaneous printing ink.  Of these materials, 
+ polycarbonate seems to be extremely stable with time provided
+ that it is well cared for.  Do not use any liquids on a CD
+ that contain silicones or solvents.  Do not leave CDs in 
+ sunlight or other bright light.  Do not stick labels on CDs.
+ Do not write on CDs.  Do not expose CDs to temperatures higher
+ than normal room temperatures.  Don't leave a CD under water.
+ Even the top side of a CD is critical and subject to damage.
+
+ Some pressings from the early 1980s used ink which damaged the
+ polycarbonate top layer and eventually got into the aluminum.
+ These inks are not in use today.  Some earlier discs were made
+ with imperfect sealing around the perimeter of the disc.  This
+ was evident because the aluminum in the disc extended all of
+ the way to the disc edge.  These discs were known to fail due
+ to moisture getting to the aluminum and causing it to oxidize.
+ Modern CD factories have solved this problem as well.
+
+ With those cautions, modern CDs will last for more than 30
+ years without deterioration.  Most of the CDs which were 
+ made in 1983 are still around today and still sound good.
+-- 
+Bob Neidorff; Unitrode I. C. Corp.  |  Internet: neidorff@uicc.com
+7 Continental Blvd.                 |  Voice   : (US) 603-424-2410
+Merrimack, NH  03054-0399 USA       |  FAX     : (US) 603-424-3460
+Archive-name: AudioFAQ/part3
+Last-modified: 1993/6/4
+Version: 1.5
+
+12.0 High Fidelity Systems
+ People frequently use the term "Stereo" to refer to a sound 
+ reproduction system.  To be more accurate, we will use the term 
+ High Fidelity System to refer to a pile of equipment including 
+ at least one source, at least one amplifier, and at least one 
+ speaker.  Common sources are turntables, CD players, tape 
+ players, tuners, and receivers.
+
+12.1 What is a receiver?
+ A receiver is a tuner, power amplifier, and preamp combined.  A 
+ common receiver has inputs for a turntable, a CD player, a tape 
+ deck, and perhaps one or two other sources.  It has selector 
+ switch(s), tone controls, and a volume control.  A receiver may 
+ have outputs for two speakers, or for more.
+
+12.2 What is a tuner?
+ A tuner is a radio receiver which can not directly connect to 
+ speakers.  Sometimes, the radio in a tuner is higher quality 
+ than the radio in a receiver.  A tuner may or may not receive 
+ the AM broadcast band, but 99.999% will receive the FM broadcast 
+ band.  Some also receive short wave bands, frequencies used 
+| for long-distance rather than for local commercial broadcasts.  
+
+12.3 How should I go about selecting a system?
+ If you're looking to buy something, the first step is to figure 
+ out what you can spend.  If you're looking for a whole system, 
+ this gets tricky, because you have to allocate amounts for the 
+ different components.  The most popular current rule-of-thumb 
+ for a single source system (speakers, amp, 1 something-player) 
+ is to divide the money about equally among the three parts.  If 
+ you want several players, you'll have to decide whether they are 
+ all equally important, and so deserve the same amount of money; 
+ or whether some are less important, in which case you can spend 
+ less on them and put the savings elsewhere.
+
+ This rule isn't hard-and-fast.  It's just meant as a starting 
+ point so you don't have to listen to every possible combination 
+ of equipment.  If you are building around a CD player, you might 
+ spend a bit less on the player and a bit more on the speakers.  
+ If you are buying turntable (or something else which plays by 
+ physical contact) on the other hand, it might be good idea to 
+ put a bit extra into the player.  The reason for this is that if 
+ you skimp on the turntable, then when you come to buy a better 
+ one you may find that your records have been worn out by the 
+ cheap player.  If you skimp on the speakers, on the other hand, 
+ then when you can afford better speakers the music will still be 
+ there on your records.
+
+ See also 9.1, 9.2, and 11.1 for information on what to listen
+ to and what to listen for when evaluating speakers, turntables, 
+ CD players, tape recorders, and systems in general.
+
+12.4 How can I improve the sound of my stereo?
+ The cheapest improvement you can make, and perhaps the most
+ effective, is to position your speakers carefully and correctly.
+ See 13.1, below.  This will improve the frequency response
+ flatness, making it easier to hear every instrument and voice.
+ Setting speaker position correctly can also improve the
+ three-dimensional recreation of a stereo image.
+
+12.5 Do I want a combo system or separate components?
+ Combo systems used to be cheap jokes; that's not always true 
+ now.  Some sound very nice; there are even some made by 
+ "audiophile" companies, and they sound even nicer.  They've got 
+ lots of advantages.  They take up less space.  The controls tend 
+ to be well-integrated, especially if they are remote-controlled.  
+ Therefore, they are easy to operate; this can be a major plus if 
+ some of the people who'll use it are afraid of, or not very good 
+ at, technology.  Also easy to set up, and don't leave millions 
+ of wires dangling all over everywhere.
+
+ If you do go for a combo, get a brand name; either an audiophile 
+ company, or a good "consumer electronics" company.  Brand-X 
+ combos are generally overpriced and unpleasant.  If possible, 
+ buy it where you can listen to it first, such as a "real" hi-fi 
+ shop.  Mid-range hi-fi shops sell combos, as a way of 
+ introducing beginners to quality sound.
+
+ In most good combos, the speakers are the weak link.  If you do
+ go for a combo, you can almost always improve the sound 
+ drastically by buying a set of better speakers.  Better speakers 
+ start in the $100-$200 price range.  Some of the best combos 
+ come without speakers, forcing you to do this.  A good combo 
+ with replacement speakers will give you very pleasant music.
+
+ Sounds good, you say, so why do people bother with components?  
+ Well, you can get better sound with a component system -- but 
+ usually at the expense of convenience and size.  A good 
+ component system will normally require a mixture of boxes from 
+ different makers to get the best results, so you've got to spend 
+ more time listening to things.  However, if you listen to your 
+ music seriously, then the performance of a component system is 
+ the reward for that extra work.
+
+ Components are harder to set up and operate.  However, as noted, 
+ you can get better sound.  You also get more flexibility.  If, 
+ for example, you decide you want a better CD player, you just 
+ replace the CD player.  With a combo system, you've got to 
+ replace the whole system.  If your component tape deck breaks, 
+ you can remove it from the system and take it in for repair or 
+ replacement. With a combo, the whole system has to go in for 
+ repair or be replaced.  
+
+ When you want to add some new recording medium to your system 
+ (laserdisc, VCR, DAT, DCC, MD, ...), if you've got components 
+ you just go buy the appropriate box.  Many combo systems do not 
+ have places (or many places) to attach extra bits, so again you 
+ could be looking at replacing the whole thing.  With a component 
+ system, you can add a turntable; most modern combos can't cope 
+ with turntables any more.  Do you have a record collection?
+
+ If you're really not sure, components are the safer bet; if
+ you're going to make a mistake, that's probably the better way 
+ to be wrong.  But, if you're sure that a combo would be best 
+ for your needs, it can be a totally reasonable choice.
+
+ Now, some people may be tempted by one-maker 'component sets',
+ particularly the modern, miniature ones.  They tend to be 
+ equivalent to combos.  Most use non-standard connections, rather 
+ than the normal twin phono plug, so that it's likely you can't 
+ swap or add components anyway.  Even where they use standard 
+ interconnects, they may rely on non-standard interconnections 
+ for control purposes.  In a few cases, they also rely on sharing 
+ power, with a power supply in only one of the boxes and the rest 
+ taking low-voltage connections from that.  And, no one maker 
+ makes the best everything.  By default, assume that they will 
+ have the same disadvantages (and most of the same advantages) as 
+ combos.  If it's important for it to work with "standard" 
+ components from other makers, be sure to ask before you buy.
+
+ And, if you're in doubt, go for separate components.
+
+12.6 How can I get better FM radio reception?
+ A. Use a (better) antenna. (See 12.7 and 12.8 below)
+ B. Use a (more) directional antenna. (See 12.7 and 12.8 below)
+ C. Aim your directional antenna.  Rhombics are ungainly to move,
+  but Yagis and dipoles are small enough to point right at 
+  the station.  With the dipole, to tune in a station to 
+  the East, run the antenna North-South.  With a Yagi, 
+  point the individual elements North-South with the 
+  smallest element on the East end.
+
+12.7 How good are these compact FM antennas?
+ For receiving, small is ugly.  The bigger the antenna (all else 
+ equal) the better.  Of course, all else is never equal, but 
+ these fancy, expensive mini antennas tend to be awful.  Some 
+ compensate for their small receiving structure with a small 
+ antenna signal amplifier.  However, the quality of that 
+ amplifier is often no better than the quality of the amplifier 
+ in your tuner or receiver, so the antenna just gives you a 
+ stronger signal, complete with stronger noise.
+
+ All of that said, some compact FM antennas can work better than 
+ a simple dipole in some situations.  They tend to have an 
+ internal amplifier, which helps with weak signals.  Some are 
+ directional.  Some aren't.  If possible, be sure that whatever 
+ you buy can be returned for a refund if it doesn't work out well 
+ for you.
+

@@ -1,0 +1,301 @@
+                     _____.               _______.
+  _______.         /     |  ___.___.     /      _| ______       .______.
+ /      _|     ___(   --.|_/_. |   |    /   ___/ |/      \_____/    ___|
+/   ___/ |_.  /   \\    \    | |   |_.  \        |   __   \    \       |
+\        | | /  .  \--   )--.|       |   \_______|        / =   )   ---|
+ \_______| |/__..   \___/   \ _.   ._|            \______/     /\______|
+      |        ||____\|'--   ) |___|                    |      \
+      |________|      |_____/        VS                 |___|___\ Design
+      
+-------------------------------------------------------------------------
+
+                  ñClass 4ð against ñTitan Designsð.
+
+The Atari scene is a small scene, but a cosy and cuddly scene. Usually,
+almost everybody still doing something on an Atari is well-known and
+welcome for what he does.
+The òcommercialð Atari market is not very much larger. The amount of
+people left who use the Atari for everday work like óword-processingð,
+óspreadsheetð, óimage processingð or ódata-basesð, is not very much
+larger than the number of people in the so-called scene.
+In the òsceneð, this has a major advantage: Every demo released,
+every game written is instantly being reviewed, looked at, taken serious
+and mostly being appreciated. Additionally, there is very little
+competition, just a sensible amount to support creativity. óDHSð for 
+example says in their newest ST demo, òSweetyð, that without Cream
+releasing òdo thingsð, their ST demo would have never looked the way
+it did. On the other hand, òCandymanð of óCreamð was carefully watching
+the competitions on the ñEIL'99ð to make sure that his newest demo 
+does get along with the demos shown.
+
+On the commercial Atari market, the little competition there is seems
+to make people crazy.
+Here is where the involved parties are today.
+
+The names are óCore Designð, formerly known as óTitan Designsð,
+óClass 4ð, formerly known as óCenTekð and óSystem Solutionsð, which is
+only indirectly involved in this war.
+The rivalry between óCenTekð and óTitan Designsð did not exactly start
+yesterday. While the people from óCenTekð in France were busy working
+on their ñCenTurboð-Accelerator, óTitan Designsð was developing ñNemesisð.
+Although very similar in basic construction, design and performace, the
+producing companies did the best to seperate these products.
+Both accelerators replace the original Falcon ñ32ð MHz clock with a
+ñ50ð clock, resulting in a ñ25ð MHz BUS and CPU speed, optionally in
+a ñ50ð MHz DSP and FPU.
+Both accelerators have been reported to have problems, some similar, some
+different. Both for example have problems with the òDMAð, causing Audio-
+replay to crackle and SCSI- and Diskaccess to fail once in a while.
+Additionally, òNemesisð sometimes causes problems with some IDE drives
+and some memory cards while the òCenTurboð is known to have problems with
+the driver software and the serial and parallel-port.
+óTitan Designsð tried the best they could to get the problems worked out
+and offered an excellent user support as well as rather well planned
+ñmarketingð campaign, resulting in òNemesisð being awarded with ñAtari
+hardware-upgrade of the year 1997 and 1998ð by the ñAtari Timesð and
+óTitan Designsð being awarded with ñbest Atari supporting company of
+the yearð.
+óCenTekð on the other hand hardly did anything to get their òCenturboð
+sold outside France. Hardly anyone in the UK or Germany saw this speeder
+while òNemesisð was widely available.
+
+Additionally, óSystem Solutionsð got angry as well. òNemesisð after all
+was a low-cost accelerator that offered some kind of reliability, that
+the òBlow Up FXð card didn't offer for a much higher price. Since
+òNemesisð was a óTitan Designsð development and óSystem Solutionsð
+therefore couldn't sell the óFX cardð anymore in large numbers.
+Another rivalry comes up.
+
+It wasn't very long after òNemesisð that óCenTekð announced the òCenTurbo 2ð.
+My french is not very good, but as far as i can see it, the first 
+announcement of the òCenTurbo 2ð was intended to have a ñ75ð MHz CPU and
+i also assume it was intended to be an ñ68040ð-system. It was supposed to
+run ñDolmenð and early ratings with the ñDolmen VDIð, that could be run
+under TOS, were displayed.
+After all, when the òCenTurbo 2ð came out, it was a ñ50 MHz 68030ð system,
+offering up to ò32 MBð FastRAM, including an ñFPU-socketð as well as a
+ñCombelð and an integrated ñCenTurbo 1ð.
+This basically is a computer in itself on the Falcon port and can therefore
+speed the system up to ó4 - 9ð times, depending on what application you run.
+The òCenTurbo 2ð was advertised in the rest of europe this time as well with
+óSystem Solutionsð selling it in the UK and óSeidelð and óAG Computertechnikð
+distributing it in Germany.
+So far, 192 units have been sold and with people still ordering them, it 
+looks like the Revision B of the òCT2ð, that even accepts up to ñ64 MBð
+FastRAM, is going to be a full success as well.
+
+óTitan Designsð had no answer to that yet.
+The òAfterburner040ð, a CPU-replacement that also offered FastRAM, was sold
+out and could not be produced anymore. Besides, it was very expensive and
+without an additional busspeeder like òNemesisð, it only offered a speedup 
+of the factor 4 as well - if the software ran at all, because the òAB040ð,
+was not very compatible at all.
+Luckily, óTitan Designsð joined forces with óIstari Softwareð in Sweden
+to start a new series of hardware-add-ons for the Falcon: ñF-Maxð.
+The first project, òEclipseð, is basically a ñPCI-Adapterð for the Falcon.
+PCI-Graphic cards like being used in the Milan could be driven on a Falcon
+then as well as Ultra-SCSI cards or network cards.
+òTempestð is another long-term project, that will probably introduce the
+Motorola ñPowerPCð technology into the Atari market as òTempestð is equipped
+with a ñ100ð MHz or optionally even a ñ266ð MHz ò603e PPCð and up to ñ256 MBð
+FastRAM.
+Nevertheless, òEclipseð is currently being produced and òTempestð is in
+Prototype state.
+
+All those accelerators and upgrade-cards have one thing in common:
+They all plug into the òFalcon-extensionð port, located around the CPU.
+
+And this is where the problems arised.
+The òCenTurbo 2ð does, in contrast to every other speeder so far, no
+expansion through port that allows connecting another card into the
+Falcon extension port.
+
+And óBang!ð they all go crazy.
+In the latest press release, óCore Designð announced that they changed
+their name from òTitan Designsð to óCore Designð and also the lack of
+an expansion through port of the òCenTurbo 2ð-card would make the usage
+of òEclipseð impossible since òEclipseð has definetly no expansion through
+port. Additionally, òTitan Designsð assumed problems with this port and
+that óCenTekð now skips it because of these problems.
+óCenTekð reacted in a very offended/offensive way. First they renamed 
+themselves to óClass 4ð, which sounds a little too close to óPhase 5ð
+in my eyes, a german company that made the first PowerPC accelerator cards
+for the Amiga and is famous there, and wrote a long and very offensive ñreplyð
+to óTitan Designsð' press release.
+The basic points of the reply was
+- there is no problem with the expansion through port, òClass 4ð never had
+  any problems
+- óTitan Designsð sucks because
+  - òNemesisð had a lot of problems, affirmed by neutral and very reliable
+    dealers in europe
+  - óTempestð, based on a Coldfire 5102 would be totally incompatible, not
+    allow to run MiNT, MagiC, Linux because of the lack of PMMU and not 
+    POV-Ray because of the lack of the FPU
+  - òTempestð, based on a PowerPC would be even more totally incompatible,
+    and besides almost impossible because óTitan Designsð does not know
+    anything about developing hardware
+  - It is possible to use òEclipseð together with the òCenTurbo 2ð as
+    òEclipseð should have an expansion through port the óct2ð can be
+    put on
+  - òTempestð and òEclipseð are being advertised as "under development"
+    for so long now
+- Get your facts right, óCore Designð
+
+In a rather insulting way, óClass 4ð rants about óCore Designð not knowing
+anything about hardware, not doing any sensible research, spreading lies
+in objection to obvious facts and so on ...
+
+It took óCore Designð more than a week to reply to that.
+Nevertheless, it was a typical ñDavid Encillð-press release. In a 
+distincive, noble, slightly insulted manner, óCore Designð takes point for 
+point of the óClass 4ð press release and comments on it.
+
+The basic points of the reply were
+- òCenturbo 2 Rev.Bð does not have an expansion through port, this is a 
+  fact, not a lie
+- òNemesisð was received well by the public and most problems occured
+  because of improper installation
+- The reliable dealer that óClass 4ð mentions to affirm the òNemesisð-
+  problems is óSystems Solutionsð, which is - of course - not happy about
+  not being able to send the òFX cardð anymore.
+- All debates of the ñColdfire 5102ð as a replacement CPU are outdated
+  since this project is skipped, nevertheless
+  - No PMMU just means that MiNT does not run in protected mode while
+    MagiC, Geneva and SingleTOS run, Linux being currently developed for
+    Non-PMMU machines
+  - No FPU just means some programs slow down because software emulation
+    of the FPU is possible
+  - The Coldfire 5102 is cheaper and faster than an original 68040
+- A lot of research has been done on the usage of a ñPowerPCð in an Atari
+  and a prototype is running
+- Is there a Phenix prototype running ?
+- Doesn't óClass 4ð advertise the Phenix as "under development" for 2 years
+  now ?
+- òEclipseð does not have an Expansion through port as graphic cards never
+  do. Accelerator on the other hand are supposed to.
+- Get your facts right, óClass 4ð
+
+Here ends the live report from the battle-field.
+But this wouldn't be a ñParanoidð-article without a very subjective and
+personal comment on these quarrels. ;-)
+
+I wonder why everybody dislikes óCore Designð.
+óClass 4ð obviously dislikes them, because if not, a simple
+"Centurbo 2 does not feature an Expansion through port anymore as there
+is now hardware available anymore to use it with. If Eclipse does feature
+an Expansion through port, the usage of them both is of course possible."
+would have done it.
+But they didn't reply this way.
+They wrote a 6 page letter about what óCore Designð has done wrong in the
+past, what they are doing wrong now and what they will do wrong in the near
+future. About their superior knowledge about hardware, processors and
+accelerators and about the lack of this knowledge on óCore Designsð side.
+About that óCore Designð only advertises products that are not available
+yet while óClass 4ð products are available.
+So either óClass 4ð's marketing division is extremely bored and in a bad
+mood or they dislike óCore designð.
+
+óSystem Solutionsð does not seem to like óCore Designð much either.
+Some of the people working for óSystem Solutionsð miss no opportunity
+unpassed to throw mud at óCore Designð, complaining that they sell their
+hard- or software too cheap and therefore ruining the prices on a market
+where every penny is extremely hard to earn, moaning that óCore Designð
+imports hardware from europe they are not allowed to distribute in the UK
+and so on ...
+
+I admit that my view is not objective, as óCore Designð surely has its
+bad sides as well. For example, most of the hardware or software they
+sell is still quite expensive for the german market. They announce
+products - like every company does - and in the end can't deliver yet or
+probably not at all (Expose and Nemesis for example are no longer made).
+User support is sometimes a bit "edgy", when for example harddisks are
+being sold that are not capable of being booted on a Falcon and can 
+therefore only work as a secondary drive.
+I also admit that i am a little involved into their doings as i usually
+translate the manuals, beta-test the soft- and hardware and negotiate
+between the german master-distributor óAxel Gehringerð and óCore Designð
+directly.
+
+Nevertheless, óCore Designð has not deserved this kind of treatment in
+my eyes. Because, when looking back in time a little, óTitan Designsð
+was always good for a surprise.
+When for example the Falcon was released, it was òApexð from óBlack Scorpionð
+and óTitan Designsð that displayed the abilities of the Falcon well and
+got it mentioned in magazines that ignored it so far - òApexð still is
+one of the most popular art packages on the Falcon.
+When òScreen eyeð turned out to be a flop and was only shipped in very
+small scales, it was óTitan Designsð that developed òExposeð, a real-time
+video-digitizer for the Falcon.
+When the òFX-cardð showed how hard and expensive it is to accelerate the
+Falcon, it was óTitan Designsð, whose òNemesisð accelerator was quick,
+cheap, and relatively reliable.
+When the òAfterburner040ð was finally shipped and not very compatible at
+all, it was ñDoug Littleð of óBlack Scorpion/Titan Designsð that sold it
+with a set of patches that increased compatibility a lot.
+
+Of course, óClass 4ð has done an excellent job as well. The òCenTurbo 2ð
+is a very capable accelerator, that remains at a very high compatibility
+level along with relatively high performance.
+The òCenTurbo 1ð was probably neither worse nor better than ñNemesisð,
+just a little different, with differents pros and different cons.
+Finally, the òPhenixð will probably be the best computer ever built
+based on a ñMotorola 680x0ð and therefore suit a lot of Atari programmers 
+and users.
+
+In the same way, óSystem Solutionsð has done a lot of good things to
+support the Atari platform. Most important, they support the english
+magazine ñAtari Computingð heavily. They translate and distribute the
+software of ñApplication Software Heidelbergð in the UK along with
+the òSoundpoolð hard- and software.
+
+But the argument brought up by óClass 4ð now is ridiculous.
+Do they have to waste a lot of energy for accusing óCore Designð of 
+something which is of no importance ? What does it matter if the 5102 is 
+compatible or not ? It has been skipped anyway. And what does it matter
+if Nemesis has had some problems ? It's not a product currently being
+released and advertised. And what does it matter if Tempest containing
+a PowerPC might be less compatible ? It is not being shipped yet, changes 
+can still be done, and after all, it's óCore Designð's problem, not
+óClass 4'sð.
+This whole argument is silly, pointless and leads nobody anywhere.
+It's a waste of time.
+Obsolete.
+Senseless.
+Totally unnecessary.
+
+Even my whole article about it is completely senseless and unnecessary. ;-)
+
+Therefore i stop it here with a request:
+Stop that stupid flame-war.
+Concentrate on your projects, óClass 4ð and óCore Designð. 
+That's where your strong points are. The guys from óClass 4ð obviously
+displayed that they are not very good at taking criticism. óCore Designð has 
+displayed that they can defend themselves very well.
+But this is óNOTð what i expect from those 2 companies.
+
+I expect hardware to be devloped.
+So instead of arguing about unfinished projects and their specs, let the
+customer argue about finished projects. Finish the Phenix, release Eclipse,
+hurry up with Tempest.
+Because only when these projects are finished, produced and being shipped,
+arguments of this kind are objective and based on facts, and then, the 
+competition will be a fair one.
+Then the people will tell you if Tempest is too incompatible, if the Phenix
+is worth its money, if Eclipse is usefull or not.
+
+Anything else is talking about "unlaid eggs".
+And we could as well debate about the Atari Microbox040 or a hypothetical
+Atari Vulture 080 ... It would make as much sense as all this.
+
+I'm out of here, and i still support óCore Designð as far as i can. :-)
+
+            |
+------------+> Rating:
+            |            Sense : 0 %
+            +--+-------- Humour: 3 %
+               |         Fun :   1 %
+               |  Senselessness:99 %
+               |   
+               +---------> The Paranoid  <--------------- Paranoia -------->
+                    <-- from The Lunatic Asylum -- Think you can handle it ?!
+<-------------------<

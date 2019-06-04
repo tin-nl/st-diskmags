@@ -1,0 +1,53 @@
+
+                         NEUES DATENWUNDER VON SONY!
+                         ===========================
+
+ Ich bin immer wieder erstaunt,was bei meinem Herumgest”bere im Internet alles
+ abf„llt. Da kommt man manchmal  an faszinierende Vorabinformationen heran.
+ So hatte  ich  neulich  ein  bichen  im  FTP-Server  der  UNI  in  Stuttgart 
+ ( FTP.INFORMATIK.UNI-STUTTGART.DE ) gewhlt. Im  Verzeichnis pub/allgemeines/
+ technik/news lachte mir ein Text entgegen,in dem von einem neuen Festplatten-
+ system von Sony gesprochen wurde. Neugierieg geworden  loggte ich mich sofort
+ bei der  angegeben  Quelle ein: HISHU.DEVELOP.SONY-TOKYO.JP ! In  einer etwas
+ spartanischen aber nicht weniger  verwirrenden Dateistruktur fanden sich dann
+ genauere Informationen zu einem Projekt namens "Mega-Disk".
+
+ Bei diesem System handelt  es sich um eine Weiterentwicklung der Wechselplat-
+ tentechnologie. Prim„r besteht  das System aus  einem speziellen, sogenannten
+ "Computer Controlled Drive Mechanism" ( CCDM ),der es erm”glicht, Laufschwan-
+ kungen des Mediums in allen Richtungen (genauer: Verschiebungen in drei Rich-
+ tungen, Kippen um  die zwei horizontalen  Achsen und  die Winkeldifferenz der 
+ dritten Drehachse <=> Schwankungen der  Drehgeschwindigkeit des Mediums ) per
+ Laser und Kontrolltracks  auszumessen und  zu korrigieren. Dadurch  soll sich 
+ die Kapazit„t  einer 2.5"-Platte auf 300MB bis 500MB ausdehnen lassen ( sogar
+ bei wechselbaren Medien! ). 
+ Allerdings sinkt die Geschwindigkeit  dieser Platten wegen den ”fters n”tigen
+ Korrekturumdrehung  drastisch ( etwa 1/4-1/10 von  herk”mmlichen  5.25"- oder
+ 3.5"-Festplatten vergleichbarer Kapazit„t ).
+
+ Fr das Oberprojekt "Mega-Disk" wurden  auerdem neue elektrostatische Reini-
+ gungssysteme entwickelt, die Staubk”rnchen  vor dem Lesekopf  abfangen und in
+ einem Kunststoffilter  sammeln. W„hrend fr das CCDM noch kein Prototyp exis-
+ tiert, werden fr die Filtereinheiten  bereits etwa $500 bei Anlaufen der Se-
+ rienproduktion angageben. Hinzu  kommen j„hrlich  $50 fr die Kunststoffilter
+ (inklusive hauseigenem Entsorgungsservice - leider lassen sich die Cartridges
+ nicht recyclen). Zusammen mit dem CCDM sollen diese Filter erm”glichen,norma-
+ le 3.5"-Disketten auf etwa 150MB zu formatieren. Allerdings drfte die Daten-
+ sicherheit auf normalen DD oder HD-Disketten sehr zu Wnschen brig lassen.
+ Auch die neueren ED-Disks  werden wohl  nicht reichen. Man wird wohl bei SONY
+ spezielle Mega-Disketten produzieren, deren Preis etwa bei 2 bis 3 Dollar pro
+ Stck liegen soll. Sie sollen sich nicht von den bekannten 3.5"-Disketten un-
+ terscheiden,aber der Shutter soll blo von der Drive-Mechanik zu ”ffnen sein,
+ um ein versehentliches Benutzen in alten Diskettenlaufwerken zu vermeiden,die
+ das Medium zerst”ren wrden.
+
+ Bis jetzt wrden die Gesamtkosten eines Mega-Drives bei $2000 liegen. Bis zum
+ Start der Nullserie  sollen die Kosten bereits auf $1000 gesenkt werden. Eine
+ weitere Kapazit„tssteigerung verspricht man sich, wenn die neuen blauen Laser
+ in ”konomischen Stckzahlen verfgbar sind.
+
+ Wer das (englische) Orginalfile haben m”chte, melde sich bei 
+ AEGAA@CLUSTER2.URZ.UNI-HALLE.DE. 
+ Ich werde es dann per E-Mail zusenden.
+
+                                                          Apache of tnb

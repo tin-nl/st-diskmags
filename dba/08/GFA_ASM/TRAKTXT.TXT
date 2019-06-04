@@ -1,0 +1,31 @@
+MODULES IN GFA
+
+Modules in GFA,
+
+You must be out of your mind. Well yes everybody knows that a lot of
+GFA freaks try to get the very best out of the GFA language. But this
+nice trick couldn't do without a nice piece of 68000 language, it's just
+to complex.
+
+So what is it ???? Well we all know the latest music kind, the MODULE
+files. They are so much better the the silly old Yamaha chip music's
+and you have 4 channels to play. There are just one ore two small
+dificulties. The mod files are most of the time big, say about 80 Kb,
+and they take a lot more cpu time.
+
+In 100% GFA basic it's not possible to play the modules so Jedi of Sector
+One from The Heavy Killers made a Sound tracker player in ASM for you to
+use in GFA..It takes about 22% of the VBL at 10.1 KHz and still leave some
+registers. There is just one small thing you have to know: The four voices
+--> MUST <-- start at the same time if you want to avoid lotsa nasty
+noises.  So take Audio Sculpture of (Pro)-Tracker and put an (new) unused
+instrument at the first line of the first position of the module...
+
+This small very nice routine works nice on a normal St or even an STE. 
+The Atari TT isn't supported it just doesn't seem to work. So get started
+and let us see some of those nice GFA demo's with good musix/mod's under
+it. We are waiting...
+
+                                            Text: Bonus
+                                            Code: Jedi 
+

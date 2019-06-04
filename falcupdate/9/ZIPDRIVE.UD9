@@ -1,0 +1,245 @@
+Zip Drive Product Information
+
+What is it?
+The Zip Drive is Iomega's new removable disk drive. 
+For $199.99 the Zip Drive offers you additional storage for your PC or Mac, and
+additional Zip Disks are available in 100MB -$19.95, and 25MB -$9.95 capacities.
+
+The Zip Drive is a SCSI II device that has two SCSI connectors, switchable
+termination, and switchable SCSI ID address. The access time on the drive is 29
+milliseconds, and the sustained transfer rate is up to 1.4MB a second. -However
+if you really want a good example of the drives performances, run the Zip Tour
+demo that comes included with the drive. This is a multimedia demo. 
+
+The Zip Drive is also available in a Parallel Port version for the PC. This
+model lets you connect to any PC or PC LapTop instantly. The drive also offers a
+printer pass-though feature so you can still use your printer while the Zip is
+connected. 
+
+The GUEST software that is included lets you connect and access the drive
+without the need to modify the system setup (ie config.sys). GUEST is a special
+utility that runs from the command prompt and assigns the Zip a drive letter.
+After you are finished and have removed the drive, then you can reboot to remove
+the GUEST from memory. A real "plug-and-play" device. 
+
+Additional useful information on Zip:
+        Technical specifications
+        Frequently Asked Question (FAQ)
+        Zip Accessories (the cool stuff!) 
+    Zip Drive press release
+
+
+    [Return to the Iomega Home Page] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZIP Frequently Asked Questions (FAQ)
+
+WHEN WILL THE ZIP DRIVE BE AVAILABLE? 
+The Zip drive is scheduled to start shipping in late March 1995. 
+
+
+WHAT IS THE PRICE FOR THE DRIVE?
+The street price for the drive will be about $199.99. A 100MB starter disk is
+included with this price. Additional 100MB disks will have a street price of
+about $19.95 for each 100MB disk. 
+
+
+WHY IS IT CALLED ZIP? 
+The Zip name is descriptive of the products key attributes; speed, mobility,
+simplicity, and security. 
+
+
+IS COMPRESSION USED WITH IN THE ZIP DRIVE? 
+The Zip drive works similar to a normal hard drive. It does not automatically
+perform any data compression during write or read operations. However, popular
+compression software, such as Stacker, should be compatible. Also, backup
+software with compression works with the Zip drive. 
+
+
+IS AN INTERNAL ZIP DRIVE AVAILABLE? 
+The ZIP drive is an external drive only. There are two models, a SCSI model and
+a Parallel Port model. There is currently no internal model available but it is
+being considered by Iomega development. 
+
+
+WHAT ZIP DRIVE MODELS ARE AVAILABLE? 
+A Zip SCSI model and a Zip Parallel Port model. The SCSI model can be used with
+Macintosh or a PC that is using a ZIP compatible SCSI adapter. The SCSI model
+has two 25 pin SCSI ports (for chaining), a SCSI ID switch, and a SCSI
+termination switch. The Parallel Port model can only be used with a PC and
+connects to the computers Parallel Port. 
+
+
+DOES ZIP USE BERNOULLI TECHNOLOGY? 
+NO, Zip uses a new design which leverages Iomega's 15 years of experience with
+high capacity removable storage. 
+
+
+WHAT IS INCLUDED WITH THE ZIP DRIVE? 
+The Zip solution comes complete with drive, cable, power supply, operating
+software, and a starter 100MB disk with Zip tools software. 
+
+
+WHICH SCSI ADAPTERS CAN BE USED WITH THE SCSI ZIP MODEL? 
+Iomega provides a optional low cost SCSI adapter called the Zip Zoom
+Accelerator. Other ASPI compatible SCSI adapters can be used in conjunction with
+Iomega SCSI driver software. 
+
+
+WHAT OPERATING SYSTEMS ARE SUPPORTED? 
+
+DOS 4.x or greater, DR/NOVELL DOS 6.0 or greater, Compaq DOS 3.31 or greater,
+and Windows 3.1. 
+OS/2 version 2.0 or greater, with the purchase of the optional Iomega OS/2
+driver software package (OAD For OS/2 version 2.33 or greater). 
+Macintosh System 6.0.7 or greater (System 7 is required for full functionality).
+
+
+
+
+WHAT ARE THE SYSTEM REQUIREMENTS FOR MY COMPUTER?
+
+IBM PC And Compatibles: DOS 4.x or greater, 640K RAM, Windows requires a minimum
+2MB RAM (4 or greater is recommended). 
+Macintosh: System 6.0.7 or greater (System 7 is required for full
+functionality), 4MB of RAM, MAC SE or greater. 
+
+
+
+
+DOES THE PARALLEL PORT MODEL ALLOW PRINTER CONNECTION? 
+Yes, the Parallel Port ZIP model has a second port that lets you connect to your
+printer. 
+
+
+IS THERE A SPEED DIFFERENCE BETWEEN THE SCSI AND PARALLEL MODELS ON PC'S?
+The SCSI model is 2-5 times faster, depending on your system configuration,
+however, the parallel port model is easily connected to any PC. 
+
+
+WILL THE ZIP DRIVE RUN IN BOTH HORIZONTAL AND VERTICAL POSITIONS? 
+Yes, the drive has rubber feet on it to support both horizontal and vertical
+positions. 
+
+
+IS THE ZIP DRIVE COMPATIBLE WITH REGULAR FLOPPY DISKETTES?
+No, Zip disks have much greater capacity, performance, and durability. 
+
+
+ARE THE DISKS RUGGED? 
+The disk are very rugged. They can withstand a 1000Gs shock (an 8 foot drop)
+without any harm to your data. 
+
+
+HOW LONG IS THE DISK MEDIA SHELF LIFE? 
+Zip disks have a long 10 year shelf life. 
+
+
+ARE HIGHER CAPACITY ZIP DRIVES POSSIBLE?
+Zip technology is capable of higher capacities in the future. 
+
+
+WILL THE ZIP DRIVE BE COMPATIBLE WITH POWERBOOK MACINTOSH? 
+Yes, a optional cable adapter is needed for attachment. 
+
+
+CAN THE ZIP DRIVE BE CHAINED WITH OTHER SCSI DEVICES? 
+Yes, The SCSI model can be put in a SCSI chain just like any SCSI device. 
+
+
+HOW IS POWER PROVIDED TO THE ZIP DRIVE?
+It uses a AC power adapter. 
+
+
+HOW TO I GET THE ACCESSORIES FOR THE ZIP DRIVE?
+Call Iomega at 1-800-MY-STUFF. 
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ZIP Drive Technical Specifications
+
+Works like a hard drive... 
+
+Max Sustained transfer rate             up to 1.4MB/second      
+Average Seek time                       29 milliseconds      
+Buffer size                             32K
+SCSI throughput                         up to 60MB/minute      
+Parallel throughput                     up to 20MB/minute
+Average start/stop time                 3/3 second      
+Drive long format time (surface verify) 15 minutes 
+Drive short format time                 5 seconds      
+Drive auto spin down                    Software selectable
+
+
+No fail reliability... 
+
+Drive data bit transfer (hard errors)    10 errors in 10(13) bits
+Disk drop height/shock tolerance        8ft/1000Gs
+Disk estimated shelf life               10 years
+Disk storage capacity                   100MB or 25MBs; 
+
+The Zip drive read/writes 100MB or 25MB disks.
+
+Operating system compatibility          DOS, Windows, MAC, and OS/2
+Drive temperature tolerances:           Operating  50' to 90' F(10' to 32'C)
+Storage                                 -8' to 126' F (-22'to 52' C)
+Shipping                                -40' to 140' F(-40' to 60' C)
+Drive operational modes                 fixed or removable
+Drive orientation                       horizontal or vertical
+Drive service life                      5 year
+Warranty                                1 year warranty on drive 
+                                        Limited Lifetime warranty on disks
+
+Dimension:              Zip Drive               Zip Disk
+        Height          1.5 in                  .25in
+        Width           5.35 in                 4in      
+        Length          7.26 in                 4in      
+        Weight          1.05 lbs                .09 lbs
+
+Interfaces Available                    SCSI or Parallel Port
+Drive power requirements                5V, 1Amp continuous, 1.7 Amp peak
+
+*All specifications are preliminary and depend on your system. 
+
+         

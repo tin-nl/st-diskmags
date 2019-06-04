@@ -1,0 +1,145 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[.......................................................]0110
+€
+-----------------------------------------------------------------------
+                          THE COOKIE REPORT
+
+                     BY MR PINK OF RESERVOIR GODS
+------------------------------------------------------------------------
+
+
+Whatisthecookiejar?Contrarytopopularbelief,thiswasn't
+theatari'sfailedattempttogetintothebiscuitmarket.Thecookie
+jarsimplycontainsalotofinformationaboutthemachines
+configuration,inasimilar(butlesscomplex)waytotheWindows
+registry.
+
+
+READY,STEADY,COOKIE!
+
+Eachentryinthecookiejaris8byteslong.Theconventionistouse
+thefirstfourbytestostoreanidentifierandthesecondfour
+bytestostoretheinformation.Forexample,thesoundinformation
+cookiehastheidentifier_SNDandtheinformationlongwordhasbits
+identifyingwhatpiecesofsoundhardwareareinthemachine(CODEC,
+DSP,PSGetc.)
+
+InC,thecookiejarstructlookslike:
+
+typedefstruct
+{
+longcookie_id;
+longcookie_info;
+}COOKIE_STRUCT
+Inassembly:
+RSRESET
+cookie_idrs.l1
+cookie_infors.l1
+
+Thecookiejarcanbestoredanywhereinmemory.Sohowdoyoufindthe
+€bugger?Thesystemvariable_p_cookieshelpfullypointstothecookie
+jar.Thisvariableresidesat$5a0soyou'llhavetobeinsupervisor
+modetoaccessit.
+
+
+COOKIEONCLASSICALGAS
+
+Hereare3routinesforcookiejaraccess.
+
+'cookie_get_offset'looksthroughthejarforaspecifiedcookie.If
+thecookieisnotfound,itwillreturn-1.Ifthecookieis
+found,itwillreturnapositivenumberwhichistheoffsetofthat
+cookieinthecookiejararray.
+
+'cookie_get_info'returnstheinformationvalueassociatedwitha
+particularcookie.Insteadofpassingthecookienametothisroutine,
+youpasstheindex.Thisroutineisintendedtobeusedimmediately
+afterthe'cookie_get_offset'routineinthissortofconstruct
+
+i=cookie_get_offset(this_cookie);
+if(i!=-1)info=cookie_get_info(i);
+else
+...codeformachineslackingthiscookie
+
+'cookie_set_info'writesanewvalueforaspecifiedcookieinthe
+cookiejar.Ifthecookiedoesnotexist,anewcookieiscreated
+bearingitsnameandcontainingthenewinformationvalue.Ifthe
+cookiejardoesnotexist,theroutineisterminated.
+
+intcookie_get_offset(longcookie_name)
+{
+inti;
+COOKIE_STRUCT*c_ptr;
+c_ptr=*(COOKIE_STRUCT**)0x5A0;
+if(c_ptr!=0)
+{
+i=0;
+€while(c_ptr[i].cookie_id!=0)
+{
+if(c_ptr[i].cookie_id==cookie_name)return(i);
+i++;
+}
+}
+return(-1);
+}
+longcookie_get_info(intcookie_offset)
+{
+COOKIE_STRUCT*c_ptr;
+c_ptr=*(COOKIE_STRUCT**)0x5A0;
+return(c_ptr[cookie_offset].cookie_info);
+}
+voidcookie_set_info(longcookie_name,longnew_info)
+{
+inti;
+COOKIE_STRUCT*c_ptr;
+i=cookie_get_offset(cookie_name);
+c_ptr=*(COOKIE_STRUCT**)0x5A0;
+if(i>=0)
+{
+c_ptr[i].cookie_info=new_info;
+}
+elseif(c_ptr!=0)
+{
+i=0;
+while(c_ptr[i].cookie_id!=0)i++;
+c_ptr[i].cookie_id=cookie_name;
+c_ptr[i].cookie_info=new_info;
+}
+}
+
+TOOMANYCOOKIESSPOILTHEBROTH
+
+Ifyoustartpilingcookieswilynilyintothejar,thenthereisa
+goodchancethatitwilloverflow.Ifyouarereachingtheendof
+€thecookiejarthenyoucansimplyMalloc()somenewmemory.Ensureyou
+haveenoughsizeforalltheoldcookiesandallthecookiesyouwant
+toadd.Traditiondictatesthatthecookiejarshouldexpandin
+incrementsof8,butifyouwanttobereallywackyandzanyyou
+couldadd11slots!Ha-ha!Wouldn'tyoujustbethefunniestguyin
+town!
+
+Butwaitaminute!HowdoIknowifIamattheendofthecookie
+jar?Well,instinctreally.Yougetafeelforit.Atingleinyour
+spine.Girlsknow.Butyoumayprefertousetheorthodoxapproach.
+
+Thelastentryofthecookiejarhasacookie_idof0,butthecookie
+valueisequaltothenumberofentriesinthejar.Sobefore
+stickinganewcookieanywhereyoufindablankcookie_id,youshould
+firstcheckthecookie_info.
+
+Aftermemoryallocationcopyalltheoldentriesintothenewareaof
+memoryandpoint_p_cookiestothenewareaofmemory.Makesureyou
+wipeallthememoryafteryournewcookie,andensurethatthe
+lastcookieinthejarhascookie_infoequaltothenumberof
+entriesinthejar.
+
+Altogethernow...
+forprogramsthattravelfar
+usetos'sinbuiltradar
+takealookie
+atthecookie
+thatlivesinthejar
+(c)E.J.Thribb

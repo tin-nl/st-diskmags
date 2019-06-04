@@ -1,0 +1,153 @@
+                       THE COMPLETE DESCRIPTION
+                        OF THE LOST BOYS TWIST
+                          SCROLL. AS SEEN ON
+                         THE DEFINITIVE DEMO.
+
+This article has been used before in ST NEWS,  but as nobody here 
+in  England  appears  to have the code,  I decided  to  use  this 
+article again. The rest of the article has not been changed....
+
+     Hi,  we are the Lost Boys, a demo crew from London, England. 
+We  have just released our newest and as yet biggest demo on  the 
+ST, it is called the DEFINITIVE demo. If you haven't got the demo 
+yet then you are unlikely to know that there are 4 members of the 
+Lost Boys.  The youngest  member  is  Spaz,  age  15,  he  is our 
+graphixx,  sample and midi specialist.  Next comes  Sprog,  coder 
+extrordinaire  (shit at everything else but a very  good  machine 
+code programmer!!  age 15).  Sammy Joe, age 15 (nearly at the age 
+of  consent!!),  he  is a general dogsbody and the man  with  the 
+filofax!!.  Finally there is me,  Manikin,  age 18,  machine code 
+programmer and also a little bit of graphixx!!.
+     
+     Before  we start in ernest I must warn you that this  scroll 
+is really pretty complicated to describe and also to program.  So 
+I advise that if you have never written a scroll before then  you 
+certainly should not start with this one. YOU HAVE BEEN WARNED!
+
+     This  article  concerns one of the many screens on  our  DEF 
+demo.  The Twist screen, programmed by Manikin, the original idea 
+for this scrolline appeared on the Amiga a little while ago,  the 
+first ST coders to attempt it were XXX- International (ex UNION).
+
+     The idea of the scroll is to give the appearance of twisting 
+a scroll around an imaginary bar, it looks very much like twining 
+two pieces of string around each other, the scroll rotates around 
+and appears on the back of the bar but upside down and then moves
+back around the bar again. 
+
+     In  case  you  hadn't noticed this is really  very  hard  to 
+describe!!  Therefore  the best thing to do would be to  assemble 
+the source on this disk to see what the final effect is, or refer 
+to  a copy of our DEF demo,  you'll see what I'm trying to  say!! 
+But  anyway I shall continue bashing away at this keyboard  while 
+being  deafened by some really naff heavy metal music  that  Spaz 
+has just started to play outside my bedroom.  I believe it is  by 
+Helloween and it really is incredibly bad. 
+Sammy Joe and Spaz: Oh no it Isn't!!
+
+Manikin  :          Oh Yes it is!!
+
+Sammy Joe and Spaz: Oh no it Isn't, OUCH !!
+
+     Normally  I (Manikin) would not resort to physical  violence 
+     but this really was bad. Anyway now the heavy metal is going 
+     to be switched off and replaced by some  S-Express.  Ahhhhh! 
+     decent music at last says Manikin.
+     
+     Aaarrghhh says Sammy Joe and covers his ears!!
+
+     Anyway  enough  of the spurious talk and back to  the  Twist 
+scroll. The trick for this scroll lies in the construction of the 
+fonts  and  how the original scroll is drawn  out.  Before  being 
+drawn  onto  the screen around the imaginary bar  the  scroll  is 
+constructed in a buffer.  This buffer is in fact just a  diagonal 
+scroll which wraps around after 80 lines have been drawn.  If you 
+assemble the source code which is present on this disk (Done with
+DEVPAC 2.08 ASSEMBLER) then the buffer is the top part of screen.
+
+     As  I  have  said the trick in this scrolline  lies  in  the 
+construction of the fonts.      
+
+     The  original  font  is simply  a  file  containing  1-plane 
+graphixx  for  the 60 characters from the " " to the "Z"  in  the 
+standard  Atari font.  Each character is 36 lines high but  there 
+are graphics in only the top 28 lines,  for reasons that will  be 
+explained in a moment. The characters are 16 pixels wide, this is
+1 word or 2 bytes. So the format is 60 (characters) x 36 lines x2
+bytes (1 word) = 4320 bytes.        (The standard font should  be 
+on the disk if Richard has been kind and allowed us the space!!)
+
+     The font is then copied out 8 times in memory,  but with one 
+extra  word  before  every  word  that  contains  graphixx.  Each 
+character  in the first font is then moved down by one  line.  In 
+the  second font each is moved down by 2 lines and in  the  third 
+font, 3 lines etc. This is why the empty lines were needed in the 
+original  font.  Now every character in the second font  must  be 
+shifted  over by 2 pixels.  this is done using  the  instructions  
+     lsl.w and roxl.w    (see source for full example)
+
+     This  is why the extra words in the copies of the font  were 
+required.  The  characters  in  the third copy of  the  font  are 
+shifted over by 4 pixels, the fourth by 6 pixels etc.      
+
+     This  now means that we have 8 copies of the  original  font 
+each  copy  shifted over by 2 pixels and down  by  1  line.  when 
+animated these characters will appear to move diagonally!
+
+     Well as before this description really is very badly  worded 
+and  complicated so for a better idea of whats  happening  please 
+refer  to the source code.  Oh god I think my brain is  going  to 
+frazzle if I write much more of this,  still I know everyone will 
+be very dissapointed if I don't carry on, won't you?
+     No?
+     Oh go on just a little dissapointed!
+
+     Thanks I feel a lot better now.
+         
+     Right,  on we must press I guess,  Manikin is a poet and  he 
+doesn't know it!.      
+
+     The  scroll  is contstructed  in  the  buffer.Basically  the 
+scroll is drawn  on the screen from left to right, the first word 
+of every character is ADD.W 'ed to the screen while the 2nd  word 
+is MOVE.W 'ed and hence the scroll is constructed.  (For full and 
+more accurate details take a look at the source code.)       
+
+     And now the actual making of the twist scroll. The scroll is 
+constructed from the buffer in the following fashion. 
+
+     A  data table in the program tells the copying  routine  how 
+many  times to display each line of the buffer,  by  missing  out 
+lines or by displaying them more than once it is possible to give 
+the  impression that the scroll has been wrapped around the  bar. 
+The buffer is actually copied twice to the screen,  once in plane 
+1, the correct way up and secondly in plane 2 but upside down.
+     
+     And there you have it the, the twist scroll. By changing the 
+palette so that the color for plane 1 set and for plane 1 & 2 set 
+is  the same the correct way up scroll will then appear to be  in 
+front of the upside down one. Other additions that you could make 
+to this scroll would be a raster display to shade the scroll thus 
+making it appear more 'bar like',  or perhaps continued  movement 
+up  and down,  it is really up to you.       The fonts  are  also 
+important,  to  increase  the  effect of  the  scroll  you  could 
+possibly draw the font at a slant (the standard font that we  use 
+is drawn like this.) You still must not use more than the top  28 
+lines of each character,  but draw them with a slant of 2  pixels 
+per  line  and they will then appear to move smoothly  along  the 
+diagonal!
+
+     I'm sorry if this article seems a little garbled and perhaps 
+a bit rushed, but you find me (Manikin) at a time of great stress 
+and  very little free time for article writing,  in less  then  6 
+weeks  I  have A-levels (Maths,  Physics and  Chemistry  but  not 
+Computer Studies!!) so I'm really rather worried about them,  but 
+I  did promise the guys at ST-NEWS that I'd write them  a  little 
+article  about  my  Twist  scroll and as they  say  the  rest  is 
+history.
+
+     If  you  have any comments etc on this article  then  please 
+write to ST-NEWS.  With luck,  this will not be our last  article 
+for them, and so until next time, Goodbye !!!!!!!!!  
+
+     

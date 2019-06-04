@@ -1,0 +1,184 @@
+
+----------------------------------------------------------------------
+ utils
+----------------------------------------------------------------------
+
+                               CENTINEL
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+The most important weapon in  the  arsenal  of the atari programmer is
+the debugger.  The  lower  the  language  you  program  in,  the  more
+essential  the  debugger  becomes,  and   as   the  vast  majority  of
+productions on the ST and Falcon  are coded in assembly the programmer
+and debugger are inseparable.
+
+For the uninitiated, a debugger is a utility that allows you to debug
+your code. You begin by loading the executable file you are working on
+into the debugger. The windows in  the  debugger display a list of the
+CPU registers, memory and disassembly of  the source code. Most decent
+debuggers are symbolic - this means  that they display labels from the
+source code, both function and variable names.
+
+The debugger allows you to step  through  the code an instruction at a
+time - this is known as 'tracing'.  You continually view the status of
+the CPU registers and memory. You  can  also place 'breakpoint' at any
+point in your code. You then run  your  code and it will execute until
+it finds a breakpoint  at  which  point  it  will  drop  back into the
+debugger.
+
+Since its creation by Andy Pennel in  the late 80s, MonST has been the
+debugger of choice for the fuji  generation. Other debuggers have come
+and gone, some forming small bands  of  devotees, but none has had the
+lasting appeal and userbase of MonST.  It  is truly the heavyweight of
+atari debuggers.
+
+MonST's main rival is 'Bugaboo',  part  of the TurboAssembler package.
+Whilst this is fast and contains all the funtionality of devpac, it is
+rather unwieldy to use and  hasn't  gained popularity with many coders
+outside Germany.
+
+Apart from being fantastically  well  designed,  Mon  had a head start
+over other  debuggers  in  the  fact  that  it  was  bundled  with the
+ubiquitous Devpac package. It  is  heavily  integrated into the Devpac
+IDE, and it even allows you  to  debug  programs you have assembled in
+Devpac straight from memory.
+
+When Andy Pennel left HiSoft an  unique  talent  was lost to the atari
+software world. A lot of the  impetus and innovation was lost. Instead
+of mon evolving revolutionary it went  through  a series of minor face
+lifts and enhancements.
+
+An obstacle that was hurled  in  the  way  of  Mon's dominance was the
+Falcon. The arrival of atari's  32  bit  beast  caused Mon a number of
+problem - the  chief  of  these  being  its  inability  to  handle the
+Falcon's video modes. A patched version  was created and released with
+Devpac Version 3, but this didn't solve all the problems - notably Mon
+still fails to comprehend  videl  modes  set  by  direct access to the
+hardware registers and will fall over horribly if you use these custom
+modes - something that nearly all demos do.
+
+Falcon pioneers Black Scorpion Software  unleashed a debugger that was
+to give mon a real run for its money. Overlook the unimaginative title
+(BSS Debug) and you will  find  an  array  of innovative features. BSS
+Debug was a falcon only debugger  and  so  instantly found a home with
+Reservoir Gods development team. Instead of the fixed panels of MonST,
+BSS featured a  sophisticated  GUI  with  moveable, resizable windows.
+This was no GEM based monstrosity - this was a custom environment that
+bristled with speed and robustness.
+
+The obvious problem with  BSS  Debug  was  its  choice of resolution -
+640x480 in 4 colour mode. Being  in  interlace made debugging on TVs a
+real headache, and unlike Mon  there  was  no  way to switch into non-
+interlace mode. But BSS had so many  saving graces - it handled Falcon
+screen modes smoothly.  It  saved  and  restored  interrupts so wasn't
+phased by custom routines. It was  programmable  - there was a library
+of routines you could  use  to  communicate  with  the debugger so you
+could code watchpoints and breakpoints into  the debug release of your
+code.
+
+My favourite feature of BSS is its label expansion. Type the first few
+characters of a label and hit tab  and it will automatically expand it
+to the full label. This is a  simple  feature that saves a huge amount
+of time when debugging and overcome Mon's pedantic label entry.
+
+The main flaw of BSS is its  lack  of  support for the FPU. It doesn't
+display FPU registers and  it  can't  disassemble FPU instructions. In
+1994 this didn't seem like a big problem, but in 1999 with most people
+owning FPUs and most 4k  and  128  byte  intros requiring them, BSS is
+beginning to show its age.
+
+The majority of  Reservoir  Gods  software  has  been  debugged with a
+combination of BSS Debug and Mon.  I  have added some functionality to
+my library so that BSS  handles  custom screen modes totally correctly
+and can  also  read  from  my  IKBD  routines.  But  as  I've  started
+programming the FPU I've been drifting back to Mon.
+
+Another contender in the debugger wars is PureDebug, part of the PureC
+package. This allows debugger of  assembly  and  C files, you can even
+trace through C  source  code.  The  watchpoint  windows are excellent
+allowing you to  view  structures  and  variables  easily. Despite its
+array of great features, PureDebug is  let  down by its GEM interface.
+This falls over horribly  if  you  try  doing  anything funky with the
+hardware which makes it almost totally useless for demo coders.
+
+The falcon was sold on the strength  of  its DSP chip, and a new range
+of debuggers had  to  be  created.  The  first  out  of  the boxes was
+brainstorm's superb  'DspDebug'  (the  names  don't  get  any better).
+Initially the Gem interface and sluggish speed are a bit of a put off,
+but persevere and you will  find  the  essential  DSP debugger. As DSP
+programs can't mess around with the  video  chip or any other hardware
+register, having a GEM based debugger is not a problem.
+
+Writing DSP programs is considerably  more difficult than creating 030
+code, and a good  debugger  is  essential.  DspDebug  includes a great
+evaluator which is handy  for  converting  from  fractional  to hex, a
+graphical  view  of  the  hardware  register,  display  of  registers,
+disassembly, source and multiple memory windows so you can see what is
+happening in X,Y and P memory if you wish.
+
+HiSoft created their own DSP  debugger  which  came with the DevpacDSP
+package. This was based on  the  Mon interface - something programmers
+are familiar with - but unfortunately  was flaky, buggy and lacked the
+features of DSPDebug. Frenchies 1, English 0.
+
+So there are programs to debug  68k  code, and there are programs that
+can debug DSP code. So you can  write your 68k algorithm and debug it,
+write your DSP routines and debug  them. Spot the problem yet? Combine
+your DSP and 030 programs and together,  like heart to heart, they are
+dynamite. There is no way of simultaneously debugging both chips.
+
+So you can debug your  3D  engine  on  the  030  side,  but if the DSP
+crashes you haven't a clue where  or  why.  You can debug the straight
+DSP routines, but  without  your  030  routine  sending  it  data that
+condition that caused it to fall over is unlikely to arise.
+
+Enter French company Centek, famous  for  their falcon accelerator and
+infamous for their unreleased super atari clone, the Phenix.
+
+Being former (current?) demo  coders,  the  Centek kids certainly know
+the importance of  a  decent  debugger.  As  the  Phenix  will support
+68040s, 68060s and 56301 DSPs, Centek needed a debugger able to handle
+all these chips. Centinel was their solution.
+
+On loading Centinel you are  presented  with  a  panel layout that has
+obviously been 'heavily  inspired'  by  MonST.  Most programmers would
+agree that  this  is  not  a  bad  thing.  Centinel  is  slightly more
+colourful which allows, for example, labels and the program counter to
+be prominent.
+
+Along the top of the screen is a menu bar - but this feels more like a
+dos program than a gem  utility.  The  final  version will use DOLMEN,
+Centek's o/s. The menus in  the  preview  version are quite empty, but
+there will be the facility to  change  video mode, drivers and various
+other preferences.
+
+Onto the panels themselves.
+
+The disassembly window  is  structure  in  the  conventional  way with
+addresses on the left and code  on  the right. The program counter and
+any breakpoints are  marked,  and  labels  are  displayed.  There is a
+hex/ascii window which is identical to the  one known and loved by Mon
+users. The register window  is  quite  comprehensive,  showing all the
+standard CPU registers plus  all  the  memory registers. Unfortunately
+there is no display of  the  FPU  register,  I  really do hope this is
+implemented in the final version.
+
+Start messing around  with  the  numeric  keypad  and  you  get a very
+pleasant surprise. The panels change to become a DSP disassembly! Yes,
+you can debug the DSP and CPU simultaneously! This is what programmers
+have been dreaming about since  the  falcon  was  released. It is what
+makes this package stand out above all  others.  It is one of the main
+things that has  held  back  DSP  development.  Once programmers start
+using this, there will be no going back. There are also panels for DSP
+memory and DSP registers - this is a total solution.
+
+Unfortunately in this alpha  version  a  lot  of the functionality has
+been deliberately disabled so  I  wasn't  able  to comprehensively put
+this debugger through its paces. But I've  seen enough to know this is
+going to be the best atari debugger ever created.
+
+
+

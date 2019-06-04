@@ -1,0 +1,129 @@
+ó--------------------------------------------------------------------------------
+                         "Chosneck # 2" by MYSTIC BYTES
+ó--------------------------------------------------------------------------------
+
+system ... Atari Falcon, 14 MB RAM, RGB/VGA
+
+credits .. intros by Reservoir Gods, DHS & Evolution
+           shell by Sqward and Moonwalker
+           msx by Lotek Style
+           articles by Grey, Saulot, Felice, RafalK, AdamK, EarX, Mikro and some
+                       others
+
+size ..... 7,6 MB on harddisk
+
+release .. o3/2k4
+
+ó--------------------------------------------------------------------------------
+
+Yes, yes, yes! Finally, one year after  Chosneck # 3 we now get issue 2, overall
+the 4th issue  at all. Confused  now? Ok, so  some short info: Issue # 0 was the
+first  and came along  with the  Music disk "On Edge Of The Abyss", so naturally
+issue 1 was already the second. Issue 3 is really issue three but false numbered
+as it seems  the polish blokes have drunk too much vodka  while working on it...
+So they close the hole with the fourth regular issue now... Don't take the issue
+numbers too serious then...
+
+After I tortured my modem to leech  the marvellous  6,5 MB I was a  bit mixed up
+with the  used splitting  program, a small  info in the archive  would have done
+fine as there are several splitting programs are around. Happily I have SPLITTER
+(the one that  was used here) and after I copied all  the files to my  Falcon, I
+joined the files  again, depacking the final magazine, that fills over 7,5 MB on
+my harddisk then, what a load.
+
+The mag starts  with the usual  menu screen, where  you can chose if you want to
+run the mag with or without intro and what screen refreshrate and screen you use
+as well as what kind of replay frequency you want for your ears.
+
+I took "with" intro  and started  the thing, the first  one is designed for CT6o
+only, so no  way to take a look  at it. The second is done by DAMO  of RESERVOIR
+GODS and  a quite stylish  thingie, really  well done  for the first big  coding
+experiences on  Falcon! Typical abstract  SH3 grafix, a  rumbling tune  and some
+small eye  teasers like blobs  and stuff that turn out to real little killers in
+the end with the help of Earx... Wow, wow, wow... What a good start!
+
+{*i RESGODS1.PI1 m 0 20 0 200}
+
+ñHui, nice puzzle effect... As I couldn't make snapshots of the mag you get intro
+ñpictures then :)
+
+{*i RESGODS2.PI1 m 0 20 0 200}
+
+ñYou should see this morphing vector in motion!
+
+Unfortunately DAMO  advised to  use the  VGA1oo Hz  mode that  folded  my screen
+together... arf! After  my SC1435 already died while working on this magazine, I
+yelled loud as the screen folds together and stood black on my Philips VGA then.
+I don't need more broken monitors, man! Btw... 6o Hz mode works fine as well :P
+
+Just want to  mention that there  is a 3rd intro in  the archive that isn't used
+for the magazine, it is done  by CoolGirls (whoever they are...) and  falls back
+behind Damo's  stuff a lot... If you  haven't checked  it yet, you  haven't lost
+anything... The  accompanied readme  is again full of dull text and I like it to
+stay on the blacklist as I don't need those cowgirls...
+
+Finally I reached the  main menu, short after a stylish loading grafix. The menu
+looks again very stunning... and Lotek Style torments our ears with some kind of
+drum'n'bass music, together with speech  synthesis that reminds hard to some old
+UCM soundtrack at this second... :)
+Right here, the menu is stunning and blasts away everything, there wasn't and is
+no other magazine released on Falcon that can reach this styling... it is just a
+fact everyone has to accept! I really like it...
+
+The menu with the list of contents is fairly long and offers over 5o articles to
+read. Right at this  point Chosneck is no exception, although the time to create
+this issue was fairly long, Grey didn't matched it to hold contact to the bigger
+contents of  the previous issue. But this  is understandable when you check that
+Grey wrote  big parts of  the magazine alone. There were a few other writers but
+mainly  with max. a handfull of articles, mostly less... This is unfortunately a
+bad sign for the future of the magazine.
+
+The magazine  offers again a big range  of topics and avoids, again, to bring us
+detailed  reviews  on several  softwares, so Grey  is talking  about God and the
+world and the  scene itself, with his very special slang a funny read! He really
+gives Chosneck a special note that can't be copied by other magazines!
+
+So Grey  drags 11 (!) freaks into  the spotlight for interviews, apart from some
+polish 8bit sceners  also Xi of Satantronic, Art of TBL, Klocek of Syntax or SH3
+of Reservoir Gods. He also  tortures his mind about the current state and future
+of the polish Atari  scene, specially  the 16/32 bit scene  that doesn't seem to
+exist anymore.
+Furthermore he steps into the ring with FelX of MJJ, without  getting answers to
+his thoughts about some previous issues concerning  MJJ releases. This corner is
+named "Atari Fight Club" and  thought to discuss problems until the blood comes,
+or did I get it wrong? :)
+
+Other parts bringing  us informations about the polish scene, we get  some party
+reports, so  from EIL 3, Quast  2oo3 and Assembly 2k3, Rafal Kawecky talks about
+the PDF format and his plans for a PDF viewer, as well as he tells us the reason
+for dropping  the Tales Of Tamar Atari  conversion. We can find a look back onto
+the demise  of the Jaguar  and Andrew Whittaker  tells us the untold story about
+the works on AvP.
+
+Mikro and EarX giving a bunch of coding tips and there is more to discover but I
+wont list it all up here. Anyway, the mag is very interesting, may use some hard
+words here and there and might be hard to diggestible for the one or other but I
+think Chosneck is an essential publication on the Falcon.
+
+There are just a few drawbacks left, I wont count  the 14 Megs problem really to
+them even though if it would be fine to see the mag running on a standard Falcon
+and I still don't see  a point why it  shouldn't be possible, but a real problem
+is the load, depack and text formatting  routine that is  still awfully slow, it
+always takes  several seconds until we get  a new article  onto the  screen, the
+same for getting back to the main menu. On some longer articles you have to wait
+1o - 2o seconds  until you can  go on reading. If the  whole 14 megs  are used I
+wonder why the mag cannot hold at least the menu including the music selector in
+the memory all the time. ... a question only coders can anser...
+
+ñFinal words...
+
+ñLeaving the technical  drawbacks aside, Chosneck 2 is a load, the Reservoir Gods
+ñintro gives  us a glimpse of the things to  come by Damo, what a cool intro! The
+ñdesign of the mag  itself is state  of the art and  the contents are interesting
+ñand entertaining... esp. because of Grey's straight  ahead style and very unique
+ñslang, sometimes I laughed my pants off! I still cross my fingers that this very
+ñbright shining pearl  of Atari diskmag madness  will see the light of day on the
+ñST somewhen as  all who can't enjoy  the mag are missing some quite entertaining
+ñstuff!
+
+ò_______________________________________________________________ðmoondogò_ðo3/2k4ò___

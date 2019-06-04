@@ -1,0 +1,282 @@
+FALCON COMPATIBILITY LIST 3
+~DUST.FIL~
+===============================================================================
+MIDI AND SOUND
+===============================================================================
+
+Alchemy Jr.                  Runs, but not with MultiTOS
+Background Music Utility 3.0 Runs (even with MultiTOS)
+Band in a Box                Runs (needs 80 colomns, 2 colours)
+Cubase Audio                 Runs
+Cubase Lite                  Loads, bombs on mouse movement
+Cubase 3.02                  Runs
+Dr. T's Tunesmith            Bombs
+Edit Track Platinum          Runs
+Guitaristics 1.96            Runs
+Keyboard Controlled Seq. 4.0 Runs
+Keyboard Contr.Seq.4.0 lvl 2 Runs
+MIDI Max                     Runs
+MIDI Spy                     Runs
+Music Studio                 Runs
+Music Studio '88             Runs
+Pianistics 1.20              Runs
+Stereo Replay                Nope
+
+ 14/17 (82%)
+
+===============================================================================
+PROGRAMMING
+===============================================================================
+
+FTL Modula-2                 Runs
+GfA Basic 2.xx               Runs, but in ST resolutions only
+GfA Basic 3.5                Runs
+GfA Basic 3.6TT              Runs (but has numerous small bugs)
+GfA Basic 3.0 run-only       Runs
+G.I. Sound Tool              Runs
+HiSoft Basic 2               Runs
+HiSoft C                     Runs in all modes
+HiSpeed Pascal               Runs
+Lattice C 5.52               Runs in all modes
+LDW Power                    Runs
+Raid Debugger                Nope
+STOS                         Freezes when attempting to load
+STOS 3D                      Nope
+STOS Basic 2.4               Nope
+Templemon 2.01               Nope (at least not VGA)
+Templemon 2.02               Runs K)
+
+ 12/17 (71%)
+
+===============================================================================
+SPREADSHEETS AND DATABASES
+===============================================================================
+
+DataManager ST               Runs
+K-Spread 3                   Runs
+Superbase Professional       Runs
+VIP                          Locks after loading
+VIP Professional GEM         Loads, but no mouse cursor available
+
+ 3/5 (60%)
+
+===============================================================================
+COMMUNICATIONS
+===============================================================================
+
+AnsiTerm                     Runs (in ST medium res)
+D-Term                       Yes, but has redraw problems
+Flash 1.6                    Nope
+Flash >1.6?                  Runs
+Interlink 1.7                Runs
+STalker                      Conflicting reports
+ST Aladdin                   Nope
+Tiny Term                    Runs
+CanTerm 3.8                  Runs, but bombs occasionally
+
+ 6/9 (67%)
+
+===============================================================================
+DISK MAGAZINES
+===============================================================================
+
+DBA Magazine                 Runs (as of Issue 10)
+Disk Maggie                  Runs (as of Issue 11)
+Power Disk Magazine          Runs (with Backward or Falcon SX)
+ST Beermat                   Runs
+ST News                      Runs (as of Volume 7 Issue 2)
+STOSSER                      Nope
+
+ 5/6 (83%)
+
+===============================================================================
+VARIOUS (INCLUDING MOST UTILITIES)
+===============================================================================
+
+Acopy 1.3                    Nope (bombs when writing) 7)
+AHDI (Atari HD Driver)       Runs
+Antidote                     Runs
+ARC                          Runs
+Arcshell 3.1                 Runs (all modes except true colour)
+Atomic Packer 3.5            Runs 9)
+BakSplat                     Runs
+Chamaeleon 0.19              Runs
+Clich‚                       Runs 5)
+CodeKeys 1.3                 Runs (crash when macro in true col.)
+Command Processor Program    Runs
+Crossword Creator II         Runs
+Cryptographer                Runs
+DC Format 3.02               Runs
+DC Maxtrack                  Runs
+DC Mouse-O-Meter             Runs
+DC Mouse Shift               Runs
+DC Shower 1.0                Nope
+DC Squish                    Runs (and so does Squish II)
+DeskManager                  Nope (other sources claim it runs)
+DeskPic                      Runs
+Diamond Back                 Gets conflicting reports
+Disc Doctor                  Runs
+Exorcist 2.0                 Nope
+FastCopy Pro 1.0             Nope (bombs when writing) 7)
+FastCopy Pro 1.2             Runs
+Fast Filemover 1.41          Runs
+Floppy Virus Killer 3.0      Runs
+G+Plus 1.5                   Runs
+Geneva                       Runs
+Handy +                      Runs (even with MultiTOS)
+Harlekin 2                   Runs
+Harlekin 3                   Runs, but icons have no texts
+HD Sentry                    Runs, but freezes upon exit
+Hiscore Terminal Utility     Runs
+HotWire 3.0                  Runs
+Hushi (HD Driver)            Runs
+Interface 2.21               Runs in all resolutions
+Hushi HD Driver              Runs
+Kaosdesk                     Nope
+Knife ST 1.07                Runs 6)
+Kobold 2                     Runs, but bombs when you try format
+Kobold 2.5                   Runs perfectly
+Little Green Selector        Conflicting reports on this.
+                              At least 1.8c seems to work
+LZH 2.21                     Runs 3)
+LZH 2.99                     Runs
+Maccel III 4.0               Runs in any mode
+MasterBrowse 2.0             Runs
+Maxifile                     Runs, but bombs may appear at exit
+McGyver (virus killer)       Nope
+Memfile 3.0                  Runs
+Mouseboot                    Runs
+Mouse-Ka-Mania II 2.1        Runs
+Mouse Tricks II 2.20         Runs
+Multidesk                    Runs
+Mutil                        Runs 8)
+NeoDesk 3.03                 Runs, but can't delete folders
+NeoDesk Control Panel        Runs, but can't change colours
+NVDI 2.5                     Runs (even with "MultiTOS")
+Pack Ice                     Runs
+PAnTHer                      Runs
+Pa Pack 1.01                 Runs
+PC Ditto 3.0                 Nope
+Poison!                      Runs
+PopIt                        Runs
+Procopy 1.7                  Conflicting information
+Professional Virus Killer    Nope I)
+Profile 1.1                  Nope
+Puzzle Pack                  Runs
+Quick Index II 2.2           Runs, but locks on floppy RPM test
+Quick ST III                 Nope
+R.A.I.D.                     Runs
+Redacteur                    Nope
+RenameIt!                    Runs
+Revenge Doc Displayer 3.10   Runs
+Sagrotan                     Runs in ST resolutions only
+Selectric 1.10               Runs
+Sentry Packer                Runs
+Spectre 128                  Crashes
+ST DCat 5                    Runs
+ST Tools                     Said to run, but not with me!
+ST Virus Killer 3.11         Runs
+ST Zip 2.3                   Runs
+Superboot 8                  Runs
+Super Formatter              Nope A)
+Squish II                    Runs
+SysInfo                      Runs
+TLC Formatter 3.02           Runs
+ToXis 5.00                   Runs
+Universal Item Selector III  Runs, but can't be AUTO-run 1)
+Ultimate Virus Killer 6.2    Runs (even with "MultiTOS") G)
+Virendetektor 3.1            Runs
+Virus Fixer                  Nope, can't find its resource file
+VKill 3.84                   Runs
+Warp 9 3.75                  Nope
+Warp 9 3.8                   Runs (though not with "MultiTOS")
+WhatIs 6.5                   Runs
+Word Search Creator          Runs
+Wowbagger Swearing Acc. 4.2  Runs (evens with MultiTOS/Geneva)
+XBoot                        Runs
+
+ 80/99 (81%)
+
+===============================================================================
+
+ Total compatibility average 637/881 (72%)
+
+===============================================================================
+
+Remarks:
+
+1) Bombs when switching resolutions with it resident.
+2) And you can even leave instruction cache switched on.
+3) But  you  can't use it more than once with  Chameleon         installed  (at 
+   least sometimes).
+4) The built-in screen saver bombs out too, so you have to disable it.
+5) This  is  the  screen  snapshot utility by Epigraf that  you  get  with  "Le 
+   Redacteur". It works, but does not recognize resolutions properly and writes 
+   the  files  with the wrong extension.  With a bit of extra work  it  usually 
+   yields  the correct results.  Nonetheless it created a normally  undeletable 
+   file  on my C:  partitions called "        .DOO".  It could only be  deleted 
+   with "Kobold", and the reason why GEM couldn't handle it was that it started 
+   with one or more spaces (chr$(32)), a thing GEM can't handle.
+6) You  can't edit actual tracks and sectors on floppy disk,  but you can  edit 
+   logical sectors on it.
+7) Works  with  Falcon  cache turned off (can be  done  with  the  FCONTROL.ACC 
+   accessory).
+8) Editing files is no problem whatsoever.  Editing large HDs directly  through 
+   disk sectors is not possible (only 512 BPS allowed), and in general the only 
+   drive you can select at the "Edit disk" option is the drive that you  booted 
+   from.  This  is  caused  by the fact that "Mutil" checks  which  drives  are 
+   present by searching for the desktop store buffer in RAM to see which  icons 
+   are on the desktop. These are on a different spot on the Falcon, of course.
+9) Said  not  to decompress properly in some rare cases,  but there's  a  fixed 
+   version  too (also numbered 3.5 though).  Compression on a  whole  directory 
+   sometimes doesn't work either.
+A) It is even rumoured to trash your hard disk if used on the Falcon.
+B) You have to delete the music file, otherwise it'll bomb-crash.
+C) This  certainly doesn't work with me (alas,  alas!) but other lists  say  it 
+   does, so there might be different versions.
+D) With Backward the whole thing works...but receives no valid controller input 
+   (and therefore doesn't actually work).
+E) With Backward the whole thing works...but the ship is invisible most of  the 
+   time, making it sortof difficult (impossible) to play.
+F) As  with  all other systems (i.e.  (MEGA) ST(E),  you have to  disconnect  a 
+   possible cable on the parallel port.
+G) Versions previous to 6.2 don't support "MultiTOS" well or not at all.
+H) Hiscores and currently accessible levels are not saved to disk, though.
+I) This is the "PVK" by GoldSoft Computing, not the one released by Floppyshop!
+J) Don't press the fire button or touch anything until the entire intro is over 
+   and  the  program  requests you to insert disk B.  This only  works  with  a 
+   patched version you can get from Renegade.  Simply send your original  disks 
+   over to the Bitmaps and tell them you have a Falcon and would like the disks 
+   fixed.  They will send you a disks of which the directory is readable (which 
+   isn't the case with the original). Use Backward maximum compatibility.
+K) Works on all regular modes (80 column) but will go wrong after use if you've 
+   got a bigger screen through, for example, "BlowUp 030".
+L) As  of  "Backward" version 2.72 there an additional patch utility  that  can 
+   alter  the  code of programs so they can be made to run on the  Falcon  with 
+   rather  more success.  This will disable programs from running on a  regular 
+   ST, though there's also an "unpatch" utility supplied...
+
+ General remarks:
+
+O  When a game runs too fast on the Falcon,  using it with "Backward" and  with 
+   processor  speed  turned  to 8 Mhz (and possibly blitter speed  8  Mhz  too, 
+   and/or processor caches turned off) will yield a better result.
+O  When  the digi sound effects are really noisy,  try running with  "Backward" 
+   sound setting to "Spec".  This helps in some cases ("Llamatron") and not  in 
+   others ("Impact").
+O  Programs  tested  to  run  with "FBoot" will  most  likely  also  work  with 
+   "Backward", but usually not vice versa!
+O  If you know of a higher version number than that mentioned in this list, the 
+   compatibility is usually the same if the lower versions already runs on  the 
+   Falcon. Later versions of non-compatible versions may work now.
+O  When  reference  is made to BOOT_COF.PRG this entry is  taken  from  another 
+   compatibility list (of the Falcon User Group) that is going around.  I don't 
+   know what program it is.
+
+===============================================================================
+
+ And  that,  as they say,  is all folx.  There will most likely be another  few 
+instalments  of this column (i.e.  updated and extended versions of it) in  the 
+next issues of ST NEWS.  So further information as to programs' supposed Falcon 
+(in-)compatibility are welcomed at the correspondence address.
+

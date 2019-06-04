@@ -1,0 +1,271 @@
+CD ROM QUESTIONS
+
+                        ATARI CD-ROM FAQ
+                        ----------------
+                           25/05/1994
+
+1 - What driver should I use with my Atari system ?
+
+There are several drivers available :
+
+MetaDos :
+     Free software from Atari Corp.
+     Available from atari.archive.umich or ftp.muenster.de (metads23.zip)
+
+     The filesystem drivers support ISO9660 and High Sierra CDs, but not
+     multisession CDs.
+     The device driver only works for the Atari CDAR504 connected to the
+     ACSI bus or with generic SCSI CD-ROMs connected to the TT SCSI port.
+     (Answer from Julian Reschke)
+
+
+CDROM.XFS :
+     Free software (Copyright 1992,1993,1994 Eric R. Smith, Michael Bernards
+     u. Gunther Leis)
+     Available from atari.archive.umich and other ftp sites.
+
+     This driver is a Mint extended filesystem and works on TTs and Falcons.
+     CDROM.XFS version <0.7 does not work with Mint/Multitos > 1.04.
+     The curren version (0.7) is said to work on Mint/Multitos > 1.04.
+     It seems to be true on TTs but it does not work with any Mint version
+     on my Falcon.
+
+
+CD-Tools :
+     Commercial solution from Hard & Soft, Obere Muensterstrasse 33-35,
+     D-44575 Castrop-Rauxel, Germany, Phone: ++49 2305 18014, Fax: ++49 2305
+     32463
+
+     Includes MetaDOS with GEM-based installation program, audio player with
+     PCM audio data import (only some drives) and custom devices and
+     filesystem drivers (support for Atari CDAR504 and generic CD-ROMs
+     connected to ACSI through host adapter, TT-SCSI, Falcon-SCSI,
+     multisession support (only some drives)).
+     (Answer from Julian Reschke)
+
+     With CD-Tools, you also have a GDPS module and the program Scan-It that
+     can handle Photo-CD Pictures.
+     CD-Tools is in German and costs 99 DM.
+
+
+ExtenDOS v1.11:
+     Commercial solution from Anodyne Software, 6 Cobbler Court, Ottawa,
+     Ontario K1V 0B8, Canada.
+     Available in UK : System Solutions.
+
+     Support ST, STe, Mega, TT, and Falcon. Read ISO9660  and High_Sierra
+     CD-ROMs. It now runs just fine under MultiTOS with no restrictions;
+     memory protect is OK, and you can run programs directly from CD. It
+     also runs fine with Mag!X 2.01, with the restriction that the
+     EXTENDOS.CNF file must be in the root directory.
+
+     Extendos v1.11 costs $29.95(North America).
+     (Information updated by Roger Burrows / Anodyne Software)
+
+
+F030_CD :
+     Fairware from Peter Hilbring, Dietrich Otmar Straûe 16, 59597
+     Erwitte, Germany
+     Available on ftp.tu-clausthal.de
+     (/pub/atari/falcon/systools/f030_cd.zip)
+     
+     This package includes a BOS driver for MetaDOS, MetaDOS 2.3, a
+     low level SCSI driver (TT & FALCON) and a program named
+     cd_explorer as exemple of the access of the low level driver.
+     
+     I've just tried these drivers on my falcon with an Apple
+     CD-300 cdrom and it works without problem.
+     (Info from Vincent Lefevre)
+     
+
+ICD Pro :
+     Old versions came with a MetaDOS driver named ICDCDROM.BOS.
+     The new ones comes with a mint extended filesystem.
+
+
+
+2 - What discs are available ?
+
+There is three Atari specific CD-ROMs :
+
+GEMini CD-ROM :
+     From Walnut Creek CDROM, Suite 260, 1547 Palos Verdes Mall, Walnut
+     Creek, CA  94596, USA, Phone: +1 510 674-0783, Fax: +1 510 674-0821,
+     Email: info@cdrom.com, Ftp: ftp.cdrom.com
+     Available in Germany from Ingenieurburo Praefcke, Holtzvogtkamp 55,
+     24220 Flintbeck, Phone: (04347) 7531.
+
+     You can find the index of the GEMini CD-ROM on atari.archive.umich.edu.
+
+
+Bernd Lohrum CD-ROM :
+     From Bernd Lohrum, Schlossbergstrasse 36, D-66440 Blieskastel, Germany,
+     Phone: (0171) 4210222
+
+     This CD-ROM costs 69 DM (59 DM for MAUS net users).
+
+
+Wohlfahrtstatter CD-ROM :
+     From Wohlfahrtstatter, Irenenstr. 76c, D-40468 Dusseldorf, Germany,
+     Phone: (0211)429876.
+     This CD-ROM costs 89 DM.
+
+
+You can also use all the ISO-9660 CDs that exists for the PCs. You won't
+rn the PC programs but you will access all the text, pictures, and sound
+files on it.
+The discs already tried are :
+
+Corel Artshow 91 :
+     1000 scans of paintings (like Manet, Van Gogh, ...) in 16 and 256
+     colors PCX files;
+     All the images from the 91 Corel draw contest in CDR and DIB format;
+     some midi files.
+     The PCX and DIB files can be read with Dieter Fiebelkorn's Gem-View
+     3.xx .
+
+Clipart Warehouse
+
+
+3 - Can I use Photo-CD on my Atari ?
+
+Of course You can !
+To have full use of the photo-cds, you'll need a multi-sessions drive and
+driver and also a program that can handle PCD files.
+
+CD-TOOLS :
+     The driver from Hard & Soft can read multi-sessions discs and have all
+     the needed stuff to handle the Photo-CDs.
+
+ColorDisc PCD :
+     Commercial software from Color Concept, Im Alten Breidt 4, D-53797
+     Lohmar Breidt, Germany, Phone: (02246) 7132
+
+     This program allows you to manipulate the photos on your Photo-CDs, and
+     save them on hard-disc. It handles Portfolio CDs.
+     If my understanding is good, it works with metados and a special BOS
+     file (both included).
+     It also includes a CD-Audio player.
+
+     A demo version is available at ftp.tu-clausthal.de.
+     ColorDisc PCD works on TTs and Falcons and costs 99 DM.
+
+Studio Photo :
+     Commercial software from Eurosoft.
+     This french program can manipulate Photo-CDs.
+
+Gemview v3.xx :
+     Shareware from Dieter Fiebelkorn, GrÅner Weg  29a, W4370 Marl-Brassert,
+     Germany,Email : fiebelko@bonny.informatik.uni-dortmund.de
+
+     Gemview is also capable of handling PhotoCD's. Only in two resolutions
+     (Base and Base/4 I think)
+
+4 - Can I play Audio-CDs on my Atari ?
+
+Of course You can !
+
+The following programs are available :
+
+CD-TOOLS :
+     The driver from Hard & Soft includes a player for CD-Audio discs. The
+     drive must understand SCSI2 instructions(Or CDAR504 or the Apple
+      CD150).
+
+
+ColorDisc PCD :
+     It also includes an audio Player.
+
+Audio CD Master 3.0 :
+     Commercial software from It's All Relative Software, 2233 Keeven Lane,
+     Florissant, MO 63031, USA.
+
+     This program can play CD-Audio discs on SCSI2 and Nec drives. On
+     falcon and with some drives, it allows you to control and pipe your CD
+     audio sound into the Falcon for DSP effects using software like the
+     Audio Fun Machine that comes with your Falcon 030.
+
+     Audio CD Master 3.0 costs $29.99 US, postpaid, worldwide.
+
+Audio CD player 2.0 :
+     Older shareware version of Audio CD Master 3.0 from Nina Montaser, P.O.
+     Box 52127, Ottawa, Ont. K1N 5S0, Canada
+
+     Does not work on my falcon
+
+
+5 - Appendix A
+
+These are some users configurations :
+
+TT, MultiTOS 1.04, CDROM.XFS
+TT, MultiTOS 1.08/9, CDROM.XFS v.0.7
+TT, MetaDOS
+
+These do not work:
+
+TT, MultiTOS 1.08/9, CDROM.XFS < 0.7
+TT, MultiTOS, MetaDOS
+
+Drive : NEC Multispin, external (84-1).
+
+Discs :   GEMini Atari CD ROM from Walnut Creek
+               Clipart Warehouse
+
+------------------------------------------------------------------
+MSTE -> ICD MicroSCSI -> ICD AdSCSI+ -> NEC CDR-37
+but the first host adapter in the chain has nothing to do with driving the
+CD-ROM, its for a hard disk. The AdSCSI+ also has a hard disk running from
+it as well as the CD-ROM
+
+Drive : NEC CDR-37
+
+Software :
+
+ICDCDZ2.XFS as supplied on the ICD Pro utilities disk. This only seems to
+work under MiNT <= 1.04. None of the other freely available CD-ROM drivers
+(MetaDOS etc.) seem to work. I haven't tried Extendos or CD-Tools.
+
+For audio playing, I'm using Nima Montasser's 'Audio CD Master 3v0'. This
+is the commercial release of the AUD_CD20.ACC audio CD player. Both work
+fairly well for me, but I haven't got all the features to work yet.
+
+In order to CD Player configuration to work (the default NEC CDR-37 one
+didn't work! with AUD_CD20.ACC ) I contacted NEC(UK). They very kindly
+sent me a copy of their 'SCSI 1 Spec' free of charge. This is a 90 page
+photocopied document which lists all the SCSI 1 commands for a CD-ROM and
+what they do. I'm sure its pretty out of dte now, especially as NEC must
+be onto SCSI 2 by now.
+I used the SCSI.PRG from the ICD Pro disk to send SCSI commands to the
+CD-ROM to get the combination right.
+
+------------------------------------------------------------------
+Atari Falcon030, 4MB RAM, 127MB Internal IDE drive, 270MB external
+SCSI drive, Viper 105S Tape Streamer.
+
+Drive : NEC 2xi
+
+Non-working drivers: MetaDOS 2.3 (no BOS drivers for Falcon).
+               ICD Pro Utilities (didn't see the drive at all).
+               Atari CDROM driver, v0.6 (gave read errors).
+
+Working drivers :  ExtenDOS v1.11  (commercial, available in the UK from
+                    Systems Solutions, price about 30 pounds).
+
+Discs : Gemini Atari CD-ROM.
+Cover disk from a PC CD-ROM magazine.  The files read OK, but obviously
+the PC-specific executables do not run.  I got loads of TIF pictures etc
+off of this disk.
+The NEC 2xi is about the same price as an Apple CD300 (160 pounds + VAT).
+But people seem to have had less hassle getting the Apple drive running.
+I chose the NEC because is an internal drive, so slotted into my
+mini-tower comfortably.
+
+
+Thanks to all the users that mailed me their experience sofar.
+
+If you have usefull info about your/other CD ROM disks/ players/ drivers/ 
+utils send them to the DBA HQ for our next issue. Let's all try to make
+CD ROM work on Falcon in the future !!!!!!
+
+

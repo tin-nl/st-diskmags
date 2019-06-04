@@ -1,0 +1,132 @@
+
+------------------------------------------------ 
+- Advanced techniques for swing and polyrhytms - 
+------------------------------------------------ 
+
+Note:This was originally written for pc trackers so I had to do some 
+changes to get it all up to date with the atari trackers. As I use so 
+many trackers and so many computers (atari/amiga/pc) I have problems 
+keeping them all apart :-)
+
+ [Introduction]
+
+While much of tracked music is 4/4 with a vengeance, there is good 
+reason to venture beyond the perceived [time] limitations of the modern 
+tracker and to go forth and multiply [or divide, as the case may be] 
+with abandon.
+
+First, let us examine the perceptual barrier known as the pattern...
+
+ [The Pattern]
+
+From the early days of moddom, the pattern was 64 atomic units in 
+length; no more, no less. Given that one wanted to write 4/4 pop music, 
+this neatly worked out to equal four measures allowing the use of 
+sixteenth notes. [16*4=64]
+
+While Scream Tracker, Protracker still imposes this strict 
+fragmentation, others like Graoumfracker, Fasttracker go beyond, 
+allowing variable size patterns; to a point.
+
+The point is, however, that regardless of the format's patternization, 
+small miracles can be achieved if you just go linear, and ignore 
+pattern boundaries. Your mind may not thank you (conventional 
+tracking's much easier) but your listeners probably will.
+
+We'll be working towards this, however, so let's start off by seeing 
+what improvements can be made within the confines of the 64 note 
+pattern and the beat itself.
+
+ [The Beat]
+
+Even sticking to 4/4 time signatures, not many of us really use the 
+beat, at least with our melodies. Trackers (the people, not the tools) 
+who are rhythmically inclined like to alternate speed, say between 06 
+and 02 for shuffle feel, etc. Problem being, what if you only want one 
+channel to shuffle? Enter our friend, note delay and his trusty 
+companions.
+
+ [The Triplet]
+
+Note delay lets us break the tracker atom to a great extent, bringing 
+things such as triplets to life. Along with note cut, note repeat and 
+arpeggio, we can bring some feeling to our music.
+
+Let's start off with the triplet then.
+
+The value we set for speed will determine the number of divisions 
+possible. For mixing eighth note triplets with sixteenth notes, the 
+default 06 will suffice. It's a good idea to decide before-hand on the 
+smallest quanta of your piece.
+
+ Below, we have one beat:
+
+              Track 1         Track 2         Track 3
+
+         | C-4 01 -- --- | C-4 02 -- --- | C-4 03 -- --- | 
+         | --- -- -- --- | C-4 03 -- --- | C-4 03 -- ED2 | 
+         | --- -- -- --- | C-4 03 -- --- | C-4 03 -- ED4 | 
+         | --- -- -- --- | C-4 03 -- --- | --- -- -- --- |
+
+Assuming these are rhythm tracks, lets let track 1 be our four-on-the-
+floor bass drum, track two our sixteenth open-closed hi-hat, and track 
+3 our triplet ride cymbal. It really doesn't matter, however.
+
+Notice that using this technique, we only use the first three beats for 
+our eighth note triplets. The first occurs squarely on beat one. The 
+second is delayed 2/6th (1/3rd) of beat 2, and the third, 4/6th (2/3rd) 
+of beat 3. If you want a run of triplets, just lay in EDx effects, 
+copy, paste, and enter your notes over-top.
+
+Probably the best way to start grasping what is possible would be to 
+try entering some classical sheet music. Look for the smallest quanta 
+needed: perhaps there is a 7:4 run in an otherwise smattering of 
+eighths. Some university level big band jazz charts would also be a 
+good bet in your search for rhythm.
+
+ [The Swing]
+
+Note that jazz charts (expect perhaps the most elementary) will not 
+explicitly notate swing feel; it's to be added by the performer. 
+Basically, every odd eight note in a measure is to be played for about 
+2/3rds of a eight note triplet, while every even eighth is to be played 
+for the remaining 1/3rd.
+
+Try entering the following four bars of eigths (excerpt from Miles 
+Davis' Serpent's Tooth) into one channel using your favourite tracker:
+
+         Bar 1: G-4; E-4; D-4; C-4; C#4; E-4; A-4; G-4; 
+             2: F-4; D-4; F-4; A-4; D#4; F#4; B-4; A-4; 
+             3: G-4; E-4; G-4; C-5; G#4; C-5; F-5; E-5; 
+             4: D-5; C-5; D#4; F-4; E-4; D-4.
+
+Now go and add note delay to every second eighth-note. Initially, use a 
+value of four, which would be technically correct given a speed of six. 
+Swing is a feeling, however, so try adding some using other values. 
+Smaller values will bring you closer to straight-eighths, larger will 
+add more swing: to a point. At moderate tempos, I like delays of two.
+
+If you want to be accurate, use a Bb-tuned instrument like a trumpet, 
+perhaps muted.
+
+ [The Pattern Break]
+
+If you want to get going on alternate time signatures early, chances 
+are that your patterns no longer end up with 64 prime divisions. 
+Consider using the Break Pattern [d00] effect on your last 'beat' to 
+jump ahead to the next pattern if you come up short. Alternately, 
+switch to a tracker that allows a definable pattern length.
+
+ [Still dont get a thing?]
+ 
+Well audio examples (as gt2) using these techniques (shuffle, 
+notedelay, poly) can be mailed to you for free. Just mail me with the 
+topic "maggie27 article" and I will have it sent to you within a few 
+days.
+
+ toodeloo@atari.org
+ //Anders Nilsson - Toodeloo / dhS
+
+(c) traxweekly, e-zine and toodeloo (sorry if 
+I forgot someone here, just let me know).
+

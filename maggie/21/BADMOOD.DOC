@@ -1,0 +1,87 @@
+
+                    B a d   M o o d   P r e v i e w 
+
+Having finally got hold of a compatible .WAD file,  time to see what all 
+the fuss is about on this one..
+
+Bad  Mood is steathily moving towards a full game,  so stealthily,  that 
+the bad guys,  and assorted things to blow them away still have not made 
+it into the game as yet.. Instead the actual 'Doom' environment has been 
+tweaked up to the extent that it is a nigh perfect emulation of the real 
+thing,  apart  from the apparent recently deserted air of 'Doom' after a 
+really  heavy  all  night  party where the  flame  spitting  demons  are 
+sleeping  off  a  major  hangover,  and  thus not  around  to  do  their 
+particular thing..
+
+Speed wise, it is fast enough although a little bit choppy on a standard 
+16mhz Falcon..  Of course the 32mhz rated DSP chip is lending a very big 
+hand  here  as you might expect..  One does wonder what additional  load 
+putting  in  the  monster sprites and game intelligence  will  add,  and 
+whether  a  standard  Falcon is man enough for the  job..  Bog  standard 
+Falcon devotees may yet have to cast a wistful glance in this  direction 
+and console themselves with the excellent (and only partially  textured) 
+'Running' instead..
+
+As this is a Doug Little inspired project,  one also wonders what impact 
+the  Titan  designed 'Nemesis' accelerator will have,  and whether  this 
+will  supply  the slightly absent fluidity to this game  engine,  or  if 
+something even heavier duty is needed by the end..
+
+The  version under consideration is v2.14 alpha,  which was released  at 
+the  end  of June,  now with the ability to run Patch WADs  for  greater 
+variation in level design etc..  Patch WADs are available,  literally by 
+the  thousand,  and  feature tons of homebrew design efforts  from  DOOM 
+bedazzled  PC  owners who just couldn't get enough  of  their  favourite 
+game.. They  hang  off the main WAD,  and as a bonus,  don't take up too 
+much space at all..
+
+Anyway,  here  is  a little information from the man himself  to  finish 
+with..   CiH - Aug '96..
+
+
+*----------> Bad Mood v2.14 alpha release - 28/06/96 <----------*
+
+Bad Mood is a special project planned as the basis for a PC Doom /
+Doom II / Heretic compatible (pseudo) 3D game system for the Atari
+Falcon & compatibles.
+
+The system itself is intended more as a generic game engine than
+any specific game, in order to allow open-ended flexibility and
+therefore encourage development of a vast array of generically
+similar games on the Falcon. Bad Mood itself is being developed
+into a fully playable game in order to demonstrate the power of
+this engine. Tools are also under development to allow players
+to develop their own levels & even develop customised games to
+their own specification.
+
+There is still much to do before a final release, but with new
+people joining the team, the project is becoming more and more
+a reality.
+
+This software is currently 'freeware', and is therefore available
+free of charge. The Bad Mood developers retain the right to alter
+this freeware status for future releases, although this is highly
+unlikely. Sourcecode is also freely available.
+
+*----------> Features <-----------------------------------------*
+
+* Doom, Doom II & Heretic IWAD compatible.
+* Supports Doom, Doom II & Heretic PWAD files.
+* 16-bit truecolour graphics.
+* Perspective mapped walls.
+* Rotating, perspective mapped floors & ceilings.
+* Transparent wall textures.
+* Alpha-channeled wall textures.
+* Wraparound sky textures.
+* Artificial & depth-cued lighting.
+* LRU graphics cache for high speed & low ram requirements.
+* Variable x & y detail settings.
+* Variable viewport size up to 320x240.
+* Scaled player movement.
+* Simulated 'bobbing' movement.
+* Advanced version of BSP & occlusion algorithms for speed.
+* Works with all good CPU accelerators, including 68040 CPUs.
+* Fully FastRAM compatible with both FXRam & real 32-bit RAM.
+* Sources are freely available from several FTP & Websites.
+
+

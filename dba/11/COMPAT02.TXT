@@ -1,0 +1,319 @@
+ST ON FALCON 2
+~ATARI.FIL~
+                         ~FALCON.BLK~
+
+
+
+
+
+
+                        FALCON 030 - LIST OF GAMES
+                        ==========================
+
+                        Compiled by Heiko Hartmann
+                   zcam1121@rpool4.rus.uni-stuttgart.de
+                           Last Update: 02/11/94
+                               Titles: 470
+
+ST: Status. "PD" - Public Domain, Freeware, Postcardware etc.
+            "SH" - Shareware, Dongleware, Poolware etc.
+            "C1" - Commercial, newer games (full-prize).
+            "C2" - Commercial, older games (some of them reappeared in
+                   Compilations, others are available as low-budget games,
+                   many of them aren't available any more).
+
+C: Compatiblity. "-" - The game does never run on F030.
+                 "+" - The game runs with ST-Emulators like Backward etc.
+                 "!" - The game runs without modifications (in ST-Low)!
+                 Falcon games and some GEM based games may run in higher
+                 resolutions.
+
+MHZ: Mhz-rate of 68030 (and Blitter). "8"  - 68030 with 8 MHz.
+                                      "16" - 68030 with 16 MHz.
+     This row (and the following) aren't important for games with
+     Compatibility = "!". These are the switches for the ST-Emulators.
+
+DC: Data cache. "-" - Data cache OFF.
+                "+" - You can leave the Data cache switched ON.
+
+AC: Adress cache. "-" - Data cache OFF.
+                  "+" - You can leave the Data cache switched ON.
+
+STE: STE-Bus-Mode. "-" - STE-Bus-Mode is not needed.
+                   "+" - STE-Bus-Mode must be switched ON.
+
+SND: Sound. "-" - The game has no sound on F030.
+            "+" - The game has slightly distorted sound with ST-Emulation.
+            "!" - No problems with sound on F030.
+
+HD?: Harddisk installation?. "+" - The game can be installed on HD.
+                             "-" - HD-Installation is not possible.
+
+A "?" means: unknown.
+
+
+NAME                  ST  C  MHZ  DC  AC STE SND HD?
+----------------------------------------------------------------------------
+Obliterator           C1  -                       ?
+Ogre                  C2  -                       ?
+Oids                  C2  +   ?   ?   ?   +   ?   ?       (switches unknown)
+Oil Imperium          C2  !   -   -   -   -   !   ?   You can't save a game
+Onslaught             C2  -                       ?
+Operation Jupiter     C2  +   8   -   -   +   !   ?   Best compatibility
+Orion's Run           SH  !   -   -   -   -   !   +   8 Mhz recommended
+Out Run               C2  -                       ?
+Overlander            C2  +   16  ?   ?   +   !   ?
+Overlord              C2  !   -   -   -   -   !   ?
+Oxyd I & II           SH  !   -   -   -   -   !   +   Monochrome
+Oxyd Magnum           C1  !   -   -   -   -   !   +   Falcon version.
+P47 Thunderbolt       C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Pacland               C2  !   -   -   -   -   !   ?
+PacMan on E's         SH  !   -   -   -   -   !   +
+Pac-Mania             C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Paladin               C2  !   -   -   -   -   !   ?
+Paperboy              C2  -                       ?
+Paradroid 90          C2  -                       ?
+Parasol Stars         C1  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Patience              SH  !   -   -   -   -   !   +   (german, "Sonderdisk")
+Patrizier             C1  -                       +
+Peking (Color)        PD  !   -   -   -   -   !   +   (german)
+Pengy                 PD  +   ?   ?   ?   +   !   +
+Phantasie III         C2  !   -   -   -   -   !   ?
+Pharao                C2  !   -   -   -   -   !   ?
+Pirates!              C1  -                       ?
+Planetfall            C2  !   -   -   -   -   !   +
+Plutos                C2  !   -   -   -   -   !   ?
+Populous              C2  -                       ?
+Populous II           C1  +   ?   ?   ?   +   +   +   (switches unknown)
+Powerdrift            C2  +   8   -   -   +   !   ?   Best compatibility
+Premium Mah Jongg II  SH  !   -   -   -   -   !   +   (german)
+Prohibition           C2  !   -   -   -   -   !   ?
+Psion Chess           C2  !   -   -   -   -   !   +
+Push Over             C1  !   -   -   -   -   !   ?
+Quest for Time Bird   C2  -                       ?
+Questron II           C2  !   -   -   -   -   !   ?
+R.A.I.D.              ??  !   -   -   -   -   !   ?
+Railroad Tycoon       C1  +   16  +   +   +   +   +   needs 1 Meg. not more
+Rainbow Islands       C2  -                       ?
+Rampage               C2  !   -   -   -   -   !   ?
+Ranarama              C2  -                       ?
+Rayoid                SH  !   -   -   -   -   !   +
+Reach for the Skies   C1  !   -   -   -   -   !   +
+Real Ghostbusters     C2  !   -   -   -   -   !   ?
+Return of the Jedi    C2  !   -   -   -   -   !   ?
+Revenge of Mutant C.  SH  +   16  +   +   +   !   +
+Rick Dangerous        C2  -                       ?
+Risk                  SH  !   -   -   -   -   !   ?   fast!
+Risky                 PD  !   -   -   -   -   !   +   Monochrome
+River of No Return    PD  -                       +
+Robocop               C2  +   ?   ?   ?   +   !   ?   Corrupted Screen
+Robocop 2             C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Robotron 2084         C2  +   8   +   +   +   !   ?
+Robot War 0.96        SH  !   -   -   -   -   !   +   Monochrome
+Robozone              C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Rockford              C2  !   -   -   -   -   !   ?
+Rock 'n' Roll         C2  -                       ?
+Rogue                 PD  !   -   -   -   -   !   +   fast!
+Rogue II              SH  !   -   -   -   -   !   +   fast!
+R-Type                C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Sapiens               C2  -                       ?
+Secret of Monkey Isl. C2  !   -   -   -   -   !   +
+Sensible Soccer       C1  +   16  -   -   -   !   -
+Setz Ab               PD  !   -   -   -   -   !   +   Monochrome (german)
+Shadowgate            C2  -                       ?
+Shadowlands           C1  -                       ?
+Shadowlord            C2  !   -   -   -   -   !   ?
+Shadow of the Beast   C2  -                       ?
+Shanghai              PD  !   -   -   -   -   !   +   GEM
+Sherman M-4           C2  -                       ?
+Shift I & II          SH  !   -   -   -   -   !   +   Monochrome (german)
+Shocker 2             SH  !   -   -   -   -   !   +   Monochrome (german)
+Shoot'em up Const.Kit C2  +   16  ?   ?   +   !   ?
+Sidewinder            C2  -                       ?
+Sim City              C1  !   -   -   -   -   !   +
+Skate                 C2  +   16  ?   ?   +   !   ?
+Skulldiggery          C2  +   ?   ?   ?   +   !   ?   (switches unknown)
+Sky Chase             C2  !   -   -   -   -   !   ?   fast!
+Solomon's Key         C2  -                       ?
+Sorcerer              C2  !   -   -   -   -   !   ?
+Space 1889            C2  +   8   -   -   +   !   ?   Timer A
+Space Ace             C2  -                       ?
+Space Crusade         C2  !   -   -   -   -   !   ?   Press fire at begin.
+Space Quest I         C2  !   -   -   -   -   !   +
+Space Quest II        C2  !   -   -   -   -   !   +
+Space War 2400        C2  !   -   -   -   -   !   ?
+Spacewar              PD  !   -   -   -   -   !   +
+Special Forces        C1  -                       ?
+Speedball             C2  !   -   -   -   -   !   -
+Speedball II          C2  +   8   -   -   +   !   -
+Spellbound            C2  -                       ?
+Spider-Man            C2  !   -   -   -   -   !   ?
+Spitting Image        C2  +   16  ?   ?   +   !   ?
+Star Fleet I          ??  !   -   -   -   -   !   ?
+Starflight            C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Starglider            C2  -                       ?
+Starglider 2          C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+StarNukers            ??  !   -   -   -   -   !   ?   ST-Med
+StarQuake             C2  !   -   -   -   -   !   ?
+StarRaiders           C2  !   -   -   -   -   !   ?
+Starray               C2  -                       ?
+Star Trek - Klingon W.SH  +   16  +   +   +   !   +
+Stationfall           C2  !   -   -   -   -   !   +
+Steel Empire          C1  !   -   -   -   -   !   ?
+Stellar Crusade       C2  !   -   -   -   -   !   ?
+Stone Age             C1  !   -   -   -   -   !   +   Dino-game!
+Stone Age Deluxe      SH  !   -   -   -   -   !   ?   Boulderdash-clone!
+Street Fighter        C2  -                       ?
+Street Fighter II     C1  !   -   -   -   -   !   ?
+Strip Poker           C2  !   -   -   -   -   !   ?
+Strip Poker II        C2  -                       ?
+Summer Games          C2  +   8   -   -   +   !   ?   Best compatibility
+Sundog                C2  -                       ?
+Super Breakout        PD  !   -   -   -   -   !   +   Monochrome.
+Super Cycle           C2  -                       ?
+Super Sprint          C2  !   -   -   -   -   !   -   Get patched version!
+Suspended             C2  !   -   -   -   -   !   +
+Switchblade           C2  -                       ?
+Take Two              PD  !   -   -   -   -   !   +   (german)
+Talespin              C2  -                       ?
+Tanglewood            C2  -                       ?
+Tass Times in Toont.  C2  !   -   -   -   -   !   +
+Tautology             PD  !   -   -   -   -   !   +   
+Team Yankee           C2  !   -   -   -   -   !   ?
+Teenage M.H.Turtl. II C1  +   16  ?   ?   +   !   ?
+Terrorpods            C2  -                       -
+The Crypt             C2  +   8   -   -   +   !   ?   Best compatibility
+Their finest Hour     C1  !   -   -   -   -   !   +   fast!
+The Pawn              C2  !   -   -   -   -   !   ?
+Thurg'n Murg          PD  !   -   -   -   -   !   +
+Time Bandits          C2  !   -   -   -   -   !   ?
+Titanen der See       SH  !   -   -   -   -   !   +   Monochrome (german)
+TNT                   C2  +   16  -   -   +   !   ?
+Topas                 SH  !   -   -   -   -   !   +   (german)
+Total Eclipse         C2  !   -   -   -   -   !   ?
+Towers                SH  !   -   -   -   -   !   +   Get patched version!
+Traders               C1  +   16  +   +   +   !   +
+Trailblazer II        C2  !   -   -   -   -   !   -
+Transarctica          C1  !   -   -   -   -   !   -   Falcon version.
+Trinity               C2  !   -   -   -   -   !   +
+Turbo Outrun          C2  +   16  ?   ?   +   !   ?
+Turrican I            C2  -                       -
+TV Sports Football    C2  !   -   -   -   -   !   ?
+TV Sports League (?)  C2  !   -   -   -   -   !   ?
+Two-on-Two            C2  +   8   -   -   +   !   ?   Best compatibility
+Typhoon Thompson      C2  -                       ?
+Ultima II             C2  !   -   -   -   -   !   ?
+Ultima III            C2  -                       ?
+Ultima IV             C2  !   -   -   -   -   !   ?
+UMS                   C2  !   -   -   -   -   !   ?   GEM
+UMS II                C1  +   16  ?   ?   +   !   ?   Changed Fill-Patterns
+Uninvited             C2  !   -   -   -   -   !   +
+Universe II           C2  -                       ?
+Universe III          C2  !   -   -   -   -   !   ?
+U.N.Squadron          C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Uridium               C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Utopia                C1  -                       ?
+Utopos                SH  -                       +   STE only.
+Vengeance of Excali.  C2  !   -   -   -   -   !   ?
+Vertical Mayhem       PD  !   -   -   -   -   !   +   Falcon game. RGB only.
+Vindicators           C2  -                       ?
+Virus                 C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Vixen                 C2  !   -   -   -   -   !   ?
+Walz                  SH  !   -   -   -   -   !   +   Falcon game.
+Wargame Constr. Set   C2  !   -   -   -   -   !   ?
+Warhawk               C2  !   -   -   -   -   !   ?
+War in Middle Earth   C2  !   -   -   -   -   !   ?
+Warlock               C2  -                       ?
+Winglord              SH  !   -   -   -   -   !   +
+Wings                 C2  -                       ?
+Wings of Death        C2  +   16  +   +   +   +   -
+Winter Games          C2  !   -   -   -   -   !   ?
+Wizball               C2  -                       ?
+Wonderland            C1  !   -   -   -   -   !   +
+World Snooker         C2  -                       ?
+Xenomorph             C2  +   ?   ?   ?   +   ?   -   (switches unknown)
+Xenon                 C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Xenon 2 Megablast     C1  -                       ?   <= Maybe wrong!?
+Xevious               C2  !   -   -   -   -   !   ?   Wrong Colors!
+Xybots                C2  +   ?   ?   ?   +   ?   ?   (switches unknown)
+Zak McKracken         C2  !   -   -   -   -   !   +
+Zany Golf             C1  !   -   -   -   -   !   ?   Bombs on exit.
+Zool                  C1  -                       -
+Zork I - Zero         C2  !   -   -   -   -   !   +
+----------------------------------------------------------------------------
+
+Statistics:
+Games which never run on F030        : 118   25.2 %
+Games which run with ST-Emulators    : 117   25.0 %
+Games which run without Modifications: 233   49.8 %
+There are 12 games especially done for the Falcon. With a ST-Emulator you
+can run 76.8 % of the ST(E)-Games. In reality I expect -65 %...
+
+----------------------------------------------------------------------------
+
+Some hints for ST-Emulators:
+
+1.) If you get 2 Bombs, try the STE-Bus-Emulation-Mode.
+2.) If you don't get correct sound, try to switch between "Timer A" and
+    "MFP"-Interrupt. Try "ST-Sound corrected".
+3.) If your game is protected and doesn't load properly try to switch off
+    both caches and switch the CPU to 8 MHz.
+4.) In Backward always use "TOS patched" and "STE-Bus-Mode". You have no
+    disadvantages when using them.
+5.) Set the Bootup-resolution to ST-Low. There are some programs which
+    allow you to alter the Non-Volatile-RAM of the Falcon.
+6.) If you have TOS 4.01 try to get TOS 4.02 from Atari! Backward has
+    problems with some (!) TOS 4.01 versions and so are the games.
+7.) Known ST-Emulators:
+    Backward    - Lots of switches, nice GEM-Interface, the best!
+    Magi-Boot   - The first ST-Emulator.
+    Gamefix     - German STE-Emulator ("TOS-Disk"), nice.
+    VCB         - Writes Bootsectors. Switches can be made while playing!
+    FBoot       - Writes Bootsectors. Only Caches ON/OFF, CPU 8/16 MHz.
+    Falcon SX   - ACC which allows to switch CPU 8/16 Mhz and Caches ON/OFF.
+
+----------------------------------------------------------------------------
+
+Do you have informations about another game? Do you have some corrections
+for the list? -> EMail me! This list should be as big as possible and
+therefore I need your help!
+
+Please EMail me the following:
+NAME: The name of the game.
+STATUS: Is it PD, Shareware or Commercial?
+COMPATIBILITY: Does it run on the F030? Perhaps with a ST-Emulator?
+If a ST-Emulator is needed:
+    MHZ: Do you have to switch the CPU to 8 MHz?
+    CACHES: Do you have to switch the caches off?
+    STE-MODE: Do you have to switch to STE-Bus-Mode?
+SOUND: Does the game have the proper sound on F030?
+HD: Is it possible to install the game on harddisk?
+
+----------------------------------------------------------------------------
+
+Remember: All informations are subject to error! No warranty that the
+given information is correct! I'm unable to test all the games in the list!
+
+Feel free to spread this list wherever you want! But take care: Commercial
+use of this list is prohibited! For example: publishing this list in any
+magazine is not allowed (you have to contact me first)!
+
+You can always get the latest copy of this list from:
+       ftp.uni-kl.de in /pub/atari/falcon, name: f_games_list.zip
+
+Thanks to: Michael Papadopoulos, Thomas Binder, Ari, Kevin Grubb, Victor
+Bruhn, Andrew Hague, Patrik Sanfridsson, Christian Perle, Brian Baird,
+Dr. Bruce Noonan, Randall Kopchak, Brian Freeman, Steven Elliot, George
+Cubra, Meg Schwartz, Dan Ackerman, Jeff Ziolkowski, Ian Hodgson, Graig
+Graham and Jack Kitowicz!
+
+This list contains some changes and a few extra entries by Slimer.
+
+If you have more informations about ST-games or corrections for the list,
+please EMail me:
+                    Heiko Hartmann
+                    zcam1121@rpool4.rus.uni-stuttgart.de
+                 or higgi@yeti.faveve.uni-stuttgart.de
+
+----------------------------------------------------------------------------
+~BLEU.PAL~

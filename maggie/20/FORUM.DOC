@@ -1,0 +1,180 @@
+                    << MAGGIE PROGRAMMING FORUM >>
+
+                 << WITH MR. PINK / RESERVOIR GODS >>
+
+Greetings coding  obsessed  people  and  welcome  to  another  "Maggie
+Programming Forum" which gives you, the  reading public, the chance to
+ask us, the writing public, technical questions.
+
+Our first query comes from Mr. Ed Clevland of Liverpool.
+
+        "About a month ago  I  bought  myself  a Jaguar controller and
+tried to use it on my  STE.  Basically  your Powerpad routine will not
+work properly on this machine. The  routine as supplied in Maggie will
+not accept some  keypad/fire  presses  and  will  not  do diagonals. I
+started mucking about with  it  myself  and  eventually  got it almost
+fully working. The problem  seems  to  be  connected with timing. With
+your routine you write the mask to  $ff9202 once and then do two reads
+for the data. I've found that for the  STE you need to write the mask,
+read one set of data, then write the mask again and read the other set
+of data otherwise the  second  lot  of  information  is lost. I assume
+because the Falcons' processor is faster  than the STE's it can 'grab'
+the data before it vanishes, and so you wouldn't see this problem.
+        Even so, it still  won't  work  properly  for  me. I can't get
+diagonals to work on it,  but  sometimes 'up/right' will, and pressing
+button A cuts out the directional  data. Even stranger, I re-wrote the
+routine using the information you gave  in your Maggie article and put
+it into a program to display  the  values from the joypad registers in
+decimal. The diagonals worked, but only in that specific program. If I
+cut and past  this  routine  out  of  that  program  into another, the
+diagonals stop working.
+        I assume it's all to do  with  timing, there must be something
+you have to sync with to get  proper  data out of the joypad, like the
+way the microwire works on the DMA  sound  chip. With this you have to
+write a mask to one register  and  then  wait  until it returns to its
+original value then you can write more data to it. I'm sure there must
+be a similar method for the joypad."
+
+Thanks for the enquiry  Ed.  My  first  advice  to  you  is: GET A NEW
+PRINTER! Or at least  a  new  cartridge  as  the  type  is so blank we
+thought at first that  someone  had  sent  us  a  blank sheet of paper
+through the post!
+
+When I wrote my powerpad routine I  was trying to make them as optimal
+as possible, doing  the  minimum  amount  of  writes  to hardware. The
+routine works fine on my Falcon,  and  also  runs perfectly on my STE.
+Perhaps you have a dodgy powerpad or port?
+
+You are right about the  timing  problems  though. You will definitely
+get timing errors, if you are  not  careful, when interfacing with the
+extended joystick ports. I find that  if  you access then at the start
+of the VBL  the  results  you  get  are  fine,  otherwise  they can be
+unpredictable. Perhaps this is due to a  fault in my routines, but VBL
+syncing seems to iron out all  the  errors. I suggest that the reading
+the powerpads should  be  your  first  routine  after  waiting for the
+vertical blank:
+
+e.g.    bsr     wait_vbl
+        bsr     read_powerpads
+
+This will cause the minimum of  errors.  You  may get problems if your
+read_powerpads routine is interrupted  by  an  interrupt,  by the time
+this returns you may have lost valuable  data. The way to stop this is
+blank the status register at the start of your powerpad routine:
+
+read_powerpads:
+        move.w  sr,-(a7)                ;save status register
+        ori.w   #$0700,sr               ;interrupts off
+        ...                             ;(read powerpad code)
+        move.w  (a7)+,sr                ;restore status register
+        rts                             ;return
+
+You still may get problems if the  interrupt occurs after the wait vbl
+and before the read powerpads, or if  it occurs before the VBL reaches
+to bottom of the  screen,  but  carries  on  through  part of the next
+frame. The way to solve this  is  to  call your read powerpads routine
+from the Vertical Blank itself.  You  should  have  a VBL handler that
+sits on $70.w, updates a counter  and  calls any VBL specific routines
+(NB it is not a good idea to put  your whole game on the VBL like some
+people do!!).  You  still  have  the  problem  of  a  higher  priority
+interrupt interrupting  the  vbl  routine.  This  can  be  stopped  by
+blanking the status register at  the  start  of  the vbl. You need not
+worry about saving the contents of the old sr as this is automatically
+stored on the stack when the  interrupt  occurs  and popped off by the
+RTE instruction.
+
+my_vbl:
+        ori.w   #$0700,sr               ;interrupts off
+        bsr     read_powerpads          ;call read powerpads routine
+        addq.l  #1,$466.w               ;update vbl counter
+        rts
+
+I hope this solves all your problems.
+
+
+Last issue I discussed the  new  technique  of hardware fading in true
+colour mode by messing around  with  the  videl registers. This was an
+effect invented by Creator of  Aggression  and  is now common place in
+Falcon demos. I mentioned that the drawback that I was having was that
+the border colour  increases  as  I  implement  the  fade  down as the
+background palette colour has to be increased.
+
+Longshot from Swedish coding team Impulse  writes to Maggie to give us
+some advice.
+
+"True Colour fading - in Maggie  19  you  wrote about this cool trick.
+But you say that  'the  border  colour  increases  as the main picture
+decreases'. I used this  fading  technique  last  year in Angest, Bugs
+From Outer Space and  now  in  Corsair,  and it's working beautifully.
+Perhaps you are referring to a little raster bar in the top border? If
+so, sit back and have a cup  of  tea, hehe...This can be eliminated by
+clearing the VBE together with the  HBE. That is, "move.w #0,$ff82a6".
+I don't know whether this is  such  a  nice  thing  to do, but I can't
+think of any other way to eliminate  that colour bar at the top. While
+I discovered this, I also discovered some nice things to do with these
+registers... :)
+If there are any queries, check  out  the (horrible) source code found
+on the disk".
+
+Thanks  Longshot  for  your  advice  and  code.  The  routine  we  are
+interested in is the hardware fade,  and Longshot has supplied us with
+two different versions of this, one  using standard logical shifts and
+the other using the new 68030 bitfield instructions.
+
+
+hfade_tc_rgb:
+        move.w  #0,$ff8286      ; horizontal border end
+        move.w  #0,$ff82a6      ; vertical border end
+        movem.l d1-d2/a0,-(sp)
+        lea     $ff9800,a0      ; RRRRRr.. GGGGGg.. ........ BBBBBb..
+        move.w  d0,d1           ; green intensity (0-63)
+        lsl.w   #2,d1
+        move.w  d0,d2           ; red intensity (0-63)
+        lsl.w   #2,d2
+        lsl.w   #8,d2
+        add.w   d2,d1
+        move.w  d1,(a0)
+        move.w  d0,d1           ; blue intensity (0-63)
+        lsl.w   #2,d1
+        move.w  d1,2(a0)
+        movem.l (sp)+,d1-d2/a0
+        rts
+
+
+; This is a shorter way to set the register, using the 030 instruction
+set:
+
+hfade_tc_rgb2:
+        move.w  #0,$ff8286      ; horizontal border end
+        move.w  #0,$ff82a6      ; vertical border end
+        movem.l d1-d2,-(sp)
+
+        bfins   d0,d1{0:6}      ; red intensity
+        bfins   d0,d1{8:6}      ; green intensity
+        bfins   d0,d1{24:6}     ; blue intensity
+        move.l  d1,$ffff9800.w  ; RRRRRr.. GGGGGg.. ........ BBBBBb..
+                                ; 0        8        16       24
+        movem.l (sp)+,d1-d2
+        rts
+
+Thanks again  Longshot.  The  fading,  as  you  say,  is  very smooth,
+although we still get a rather  bright border as the background colour
+approaches $fcfc00fc.
+
+
+
+
+If you  have  any  programming  queries  (in  any  language)  or other
+technical questions, drop us a line and we'll try to sort you out:
+
+
+        Leon O'Reilly ( Mr. Pink )
+        Maggie Programming Forum
+        Cwm Isaf
+        Abermule
+        Montgomery
+        Powys
+        SY15 6JL
+
+
+Pterm until next time!

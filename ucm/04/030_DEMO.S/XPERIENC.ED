@@ -1,0 +1,77 @@
+		                     	 ARE U EXPERIENCED ?
+                     			 ~~~~~~~~~~~~~~~~~~~
+			
+Name der Gruppe: Extremly Kriminal Oranization - EKO
+Guestscreens   : mit Grafiken von NIKO/MJJ
+L„nge		      : 1.4 MB packed, 1.7MB unpacked
+Art des Demos  : Megadentro (was sonst auf 'nem Falcon ?!?)
+ 
+Uppsie. Das war  mein erster  Eindruck als ich  dieses Demo zum ersten Mal sah.
+Mann, Mann, ist das  Demo deprimierend. Das war dann  auch die  Meinung unserer
+gesamten Crew. Wer das Demo kennt, wei,was ich meine: schaut's euch an und ihr
+seid pl”tzlich ziemlich unmotiviert und depressiv, wie schlecht doch die eigene
+Gruppe (und man selbst) ist... Aber auf jeden Fall ist es wert,bei uns getestet
+zu werden !
+ 
+Zu Beginn  zoomt eine  gerenderte FLI-Animation auf uns zu. Sie besteht aus ei-
+nem, sich bewegenden  grnen EKO-Logo und  wird von einem Dsenj„ger-Sample un-
+termalt. Dann gibt  es einen Donner  und von oben nach  unten scrollt ein "Pre-
+sents"-Vektor. Hier merkt man brigends schon, was auf einen zukommen wird. Nun
+folgt ein extrem gutes "Are u exerienced"-Logo von Niko/MJJ, das so genial ist,
+da man es wirklich nicht beschreiben kann. Nur soviel: der Mensch mu seeehhhr
+viel Zeit haben,denn er dithert in einer Abart von Floyd-Steinberg per Hand! ;)
+Das ganze  Demo wird  brigends von  einem sehr guten  Modul untermalt, welches
+stets zu den zu sehenden Effekten pat.
+ 
+Der erste Teil  des Demos erz„hlt eine Geschichte: Irgendwo in einer fernen Ga-
+laxie fliegt ein EKO-Nahrungsschiff durch den unendlichen Raum. Es kommt,wie es
+kommen mute: das  Schiff wird  von feindlichen  J„gern angegriffen, hier durch
+Raumschiffe der Gruppen Lazer, Aura, Mugwumps und Avena dargestellt. Allerdings
+haben diese  vergessen, da die Transporter von EKO-Fightern eskortiert werden.
+Es kommt zum  spannenden Kampf, aus  dem die EKO-Armada  als Sieger hervorgeht.
+Die gesamte Geschichte  wird in bester geshadeter Vektorgrafik dargestellt. Die
+Raumschiffe  bewegen sich sehr realistisch und alle Geschehnisse wurden mit der
+Musik abgestimmt. Noch  besser w„re  es gewesen, h„tten  die Leute  diesen Teil
+"Odysee-Demo"-m„ig ausgeschmckt,d.h. etwas Pixelgrafik und eine etwas bessere
+Geschichte verwendet.
+Der zweite Teil besteht aus enorm schnellen Z-Buffer-Objekten. Das bedeutet,da
+zwei oder  mehrere Vektoren ineinander  eintauchen. Hier  gibt es  verschiedene
+M”glichkeiten  zu sehen: Wrfel, Riesenpolygone  und vieles mehr. Danach folgen
+noch einige normale (aber auch nicht zu verachtende) Vektorobjekte,zum Beispiel
+ein geshadetes EKO-Logo oder einen Battletech-Roboter,der aus sage und schreibe
+135 Polygonen besteht.
+Nach kurzer Depackzeit erscheint jetzt ein Plasma, welches ein Feuer darstellen
+soll. Gelegentlich  sprht die Glut ein "EKO"-Tag aus, welches dann in der Luft
+verglht. Als n„chstes sieht man einen gouraud-geshadeten Texturemappingwrfel,
+der ber den Screen wirbelt.
+(fr alle die, die nicht  wissen, was Goraudshading ist, sei  folgendes gesagt:
+eine Fl„che  ist an der  einen Seite hellblau  and der anderen  dunkelblau; das
+Gouraudshading  schafft nun einen gepixelten šbergang zwischen den beiden Farb-
+pigmenten (so sieht es jedenfalls aus))
+Die hier  verwendete Texture ist  brigends ein Teufel. Der Effekt ist zwar ge-
+nial,mich st”rt aber ein wenig, da der Feuer-Hintergrund nicht gel”scht wurde.
+Der blendet n„mlich ziemlich, wenn man den Wrfel betrachten will.
+Der letzte  Effekt ist aber der absolute Hammer: man bewegt sich auf einem gr-
+nen Planeten ber Berge  und T„ler hinweg - und das verdammt schnell. Der glei-
+che Effekt geistert auch als 15KB-File rum.
+(MARS_DSP.PRG)
+ 
+Zum Schlu  gibt es  noch die Credits, die von einer beruhigenden  Klaviermusik
+untermalt werden. šber  die Texte schweben  hier viele  kleine Kreise, in deren
+Inneren das Darunterliegende in Fischaugenperspektive dargestellt wird.
+
+Auch in  diesem Demo haben EKO wieder  bewiesen, was sie drauf  haben. Das Demo
+ist absolut up-to-date und man darf auf jeden Fall auf das n„chste EKO-Demo ge-
+spannt sein.
+ 
+Bewertung :		coding.......90%
+-----------    gfx..........65% (da nicht sehr viele)
+        			musik........80%
+ 		       	konzept......90%
+      			----------------
+ 		       	gesamt       80%
+       			================
+ 				
+-------------------------------------------------------------------------------
+                                           					         m.O.d. of tnb
+-------------------------------------------------------------------------------

@@ -1,0 +1,55 @@
+RIP BOOT SECTOR
+
+BOOT SECTOR CREATOR/RIPPER                                   Made by JEFF
+
+Here is the lamest code i never seen, coz it's made to rip bootsectors.
+(Note from Bonus: ->His own words !!!)
+
+The first version of dis utility was made a year ago. In this new version
+there's an option to create a boot contening your gfx. Enjoy it
+
+F1: LOAD BOOT SECTOR
+Copy the boot sector from disk A to memory. Some boot can't be ripped with
+this programme. It can be easily changed but i'm a very lazy coder.
+
+F2: SAVE BOOT SECTOR
+Copy the boot sector from memory to disk A. And make it exectable.
+The disk musn't be write protect.
+
+F3: LOAD A BOOT FILE
+Load a file, contening a boot-sector. The extension of files is *.BIN.
+You can only load files saved with the F4 option. If you choose another file
+it'll probably scratch the disk
+
+F4: SAVE A BOOT FILE
+Save the boot sector in memory as a file. You have to choose a name. The
+extension is *.BIN. The disk must be unprotected. This option is usefull
+if ya want to change text in a boot sector. (Who said, boot ripper???)
+You only have to load the *.BIN files with mutil for example and change
+the data. Then use the F3 option to reloaded it an then the F2 one.
+
+F5: MAKE A BOOT FILE
+This new option allows you to create your own bootsector. First a Degas 
+picture name is asked with the fileselector (*.PI1). Choose an unpacked
+low res picture. If you choose a picture that not exist a default boot
+sector will be created. If all goes weel you have a mouse-moving box;
+with it can choose a tiny part of the screen (16*64) in only 2 bitplanes.
+Click on a mouse button to confirm and that's all. You now have in memory
+a boot sector that displays the gfx, with the fist 4 colors of the picture.
+
+F6: VIEW
+Display the second part of the boot sector on the screen. 
+
+The bootsector made with the F5 option is a piece of code made by your
+sevant. It's my first 68000 lines of code. The sound effects were made by
+DEJANEIRO. Thanks to him. In this bootsector there's no detection of 
+memory resident virusses. All room is taken by the GFX.
+
+If you want to contact\fuck\greet me the contact:
+
+Clement Jeff  1 Reu de la Boucherie   56000 Vannes   France
+
+
+                                                        Text re-typed by
+                                                         Bonus Software
+

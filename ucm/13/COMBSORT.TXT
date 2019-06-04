@@ -1,0 +1,75 @@
+--------------------------------------------------------------------------------
+ó                                    combSort
+--------------------------------------------------------------------------------
+
+Well, this is  a very small  sorting routine I once  discovered  in a newsgroup,
+called Comb-Sort. It's quite small in size and also quite fast, altough I really
+can't say why. It's basically a kind of bubble-sort with variable gap-size.
+In some  quick  tests with  GfA-Basic I  discovered that it's nearly  as fast as
+quicksort, but the advantages are obvious:
+* no recursive function-calls
+* very easy to implement in all coding-languages
+* in-place-sorting, no extra memory needed
+* no worst-case-situation like in Quicksort
+
+The only  disadvantage is that you have to resize the gap with a division by 1.3
+(yes, a fraction). But you can also use those wonderful  fixed-point-workarounds
+like:
+
+
+
+mulu    #65536*10/13,D0
+swap    D0
+ &laquo; instead of &raquo;
+
+
+
+mulu    #10,D0
+divu    #13,D0
+
+
+So, here is the algorithm in pseudo-code:
+
+
+
+
+gap = arraysize
+
+
+
+;the list is sorted if gapsize=1 and no swap occured
+while gap1 or switchflag==true:
+
+
+
+    gap = gap * 10 / 13         ;resize gap
+    if gap < 1:                 ;gap must be at least one
+        gap = 1
+    switchflag = false          ;no swap so far
+
+
+
+    for g = 1 to arraysize-gap:
+
+
+
+        if array[g]array[g+gap]:   ;in wrong order?
+
+
+
+
+
+
+            helper=array[g]         ;yes, so swap them
+            array[g]=array[g+gap]
+            array[g+gap]=helper
+            switchflag=true         ;remember that we swapped
+
+
+The original  article said: "the only known routines that can  compete with ours
+in execution speed cannot compete in coding ease" And I have to admit it's true.
+
+                             .-------------------------------------------------.
+.----------------------------| ódynaCore/.tHE .sIRIUS .cYBERNETICS .cORPORATIONð |
+| óandreas_john@tesla.inka.deð |-------------------------------------------------'
+'----------------------------'

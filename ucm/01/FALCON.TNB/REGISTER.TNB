@@ -1,0 +1,681 @@
+
+		FALCON-Register
+		===============
+
+ by bITmASTER of BSW
+
+ last Update: 15/8/93
+
+ FÅr Erfahrungsaustausch Åber Falcon-Register schreib an:
+
+ Steffen Scharfe
+ Sachsenburgweg 6
+ Erfurt
+ D-99094
+
+
+ IDE-Port
+ --------
+ 
+$fff00000 ... $fff0003f
+
+$fff00000.w	Datenregister
+$fff00005.b	read:	Fehlerbits
+		write:	ParameterÅbergabe fÅr manche Befehle
+$fff00009.b	SektorzÑhler
+$fff0000d.b	Startsektor
+$fff00011.b	Zylinder LSB
+$fff00015.b	Zylinder MSB ( nur Bit 0 und Bit 1 )
+$fff00019.b	b3...b0: Kopfnummer
+		b4:	 0 = Master, 1 = Slave
+		b7...b5: Sektorgrîûe = 101 = 512 Bytes ( fest )
+$fff0001d.b	read:  b0: ERR, Fehler aufgetreten, Fehlerbits gÅltig
+		       b1: IDX, Indeximpuls, 1mal / Plattenumdrehung
+		       b2: CORR, mit ECC korrigierte Daten Åbertragen
+		       b3: DRQ, fertig fÅr Datentransfer
+		       b4: SKC, Suchvorgang ausgefÅhrt
+		       b5: WFT, Schreibfehler festgestellt
+		       b6: RDY, Laufwerk fertig
+		       b7: BSY, Laufwer fÅhrt Befehl aus
+		write: Kommandoregister
+		
+$fff00039.b	read:  2. Statusregister wie 1., kein Lîschen des IRQ
+		write: Reset, IRQ-Maske
+		       b0, b3...b7 unbenutzt
+		       b1: 0 = Interrupt nach Kommandoende auslîsen
+		       b2: 1 = Software Reset
+
+$fff0003d.b	read:  Aktive Adresse		
+                       b0:      0 = Master aktiv
+                       b1:      1 = Slave aktiv
+                       b5...b2: Einerkomplement des eingeschalteten Kopfes
+                       b6:      0 = Laufwerk schreibt gerade
+                       b7:      not used
+                       
+ ST-KombatibilitÑt
+ -----------------
+
+$ffff8007.b	xx5x32x0
+                  | || |
+                  | || 0 CPU:  8 Mhz
+                  | || 1 CPU: 16 Mhz
+                  | ||
+                  | |0 Blitter:  8 Mhz
+                  | |1 Blitter: 16 Mhz
+                  | |
+                  | 0 Blitter an
+                  | 1 Blitter aus
+                  |
+                  0 Buserror aus, ab $ffff8800 kann dann auf jedes Register
+                    zugegriffen werden, ohne das dabei ein Buserror ausgelîst
+                    wird
+                  1 Buserror an
+                       
+ Videoregister
+ -------------
+
+$ffff8201.b	Video-Base High
+$ffff8203.b	Video-Base Mid
+$ffff8205.b	Video-Count High
+$ffff8207.b	Video-Count Mid
+$ffff8209.b	Video-Count Low
+
+$ffff820a.b	Syncmode ST
+
+$ffff820d.b	Video-Base Low
+
+$ffff820e.w	b8...b0 Line-Width
+ 								
+$ffff8210.w	b9...b0 LineWords
+
+Anzahl der Words, die fÅr eine Pixelzeile gebraucht werden.
+
+LineWords = Horizontale Auflîsung / 16 * Bitplanes
+
+Colors  Bitplanes
+    2	 1
+    4	 2
+   16	 4
+  256	 8
+65536   16
+
+
+- ST(E) Farbregister
+
+$ffff8240.w	Farbregister   0
+  :   :           :  :
+$ffff825e.w	Farbregister  15
+
+
+$ffff8260.b	xxxxxx10	Shift-Mode ST
+		      ||
+		      00 320 * 200 / 16 Farben
+		      01 640 * 200 / 4 Farben
+		      10 640 * 400 / sw
+
+Ein Schreibzugriff auf das Shift-Mode ST Register aktiviert die
+ST(E) Palettenregister. VT_ST wird auf 8 gesetzt. LineWords wird
+mit 80 geladen und die Zeilenverdopplung wird eingeschaltet.
+
+$ffff8265.b	xxxx3210	Horizontal-Shift
+
+$ffff8266.w	xxxxxAx87654xxxx	;Falcon Shift Register
+		     | | |||
+		     | | ||1 256 Farben
+		     | | ||
+		     | | |0 intern Vertikal Sync
+		     | | |1 extern Vertikal Sync
+		     | | |
+		     | | 0 intern Horizontal Sync
+		     | | 1 extern Horizontal Sync
+		     | | 
+		     | 1 True Color
+		     1 Zwei Farben
+
+Wenn die Bits bA und b8 und b4 Null sind, ist der 16 Farben Falcon-Modus
+aktiv. Ein Schreibzugriff auf das Falcon Shift Register aktiviert die
+Falcon-Palette und setzt den VT_ST auf 1. 4 Farben lassen sich nur in
+ST-Modus realisieren.
+
+
+$ffff8280.w     b9...b0 ZeilenfrequenzzÑhler, nur lesen
+$ffff8282.w	b9...b0 Zeilenfrequenzteiler
+
+Zeilenfrequenz = Videoclock / VT / VT_ST / ( Zeilenfrequenzteiler + 2 ) / 2
+
+Videoclock: 25.175 Mhz / 32 Mhz, siehe Clock-Control	
+VT:	    1 / 2              , siehe Clock-Control
+VT_ST:	    nach einem  Schreibzugriff auf das ST Shift Mode Register
+	    ist dieser Vorteiler 8
+	    nach einem  Schreibzugriff auf das Falcon Shift Mode Register
+	    ist dieser Vorteiler 1	    
+
+Es wird immer die doppelte Zeilenfrequenz programmiert ( deswegen das
+"/2" ! ) Eine Zeile wird demzufolge in 2 Teile zerlegt: 
+
+<-- 1/Zeilenfrequenz  -->
+
+|-----------|-----------|  1 Zeile
+      |          |
+      |          +-------- Zeile 2.Teil           
+      +------------------- Zeile 1.Teil
+
+
+$ffff8284.w	b9...b0 HBlankOn,   ab wann die Zeile dunkel
+				    getastet wird ( rechter Rand )
+
+$ffff8286.w	b9...b0 HblankOff,  ab wann die Zeile-Dunkeltastung
+				    aufgehoben wird ( linker Rand )
+				
+|-----------|-----------| 1 Zeile			
+
+-----xxxxxxxxxxxxxxxx---- aufgetasteter Teil einer Zeile
+    		
+|--->       |------->
+  |             |
+  |             +-------- HBlankOn
+  +---------------------- HBlankOff
+
+der HBlankOff - ZÑhler wird am Anfang einer Zeile gestartet und
+schaltet dann das HBlank aus. Wenn HBlankOff grîûer als Zeile/2 
+ist, wird die Zeile nie aufgetastet ( kann man als Bildschirmschoner
+miûbrauchen )
+
+der HBlankOn - ZÑhler wird mit dem Beginn des 2.Teils der Zeile
+gestartet und schaltet das Hblank wieder ein. 
+
+Nun zur Berechnung des HBlank-Timings:
+Grundlage ist natÅrlich der Videoclock ( 25.175 Mhz oder 32 Mhz ).
+Dieser Takt wird entsprechend VT und VT_ST geteilt ( s.o. ). Die
+folgenden Angaben beziehen sich auf diesen vorgeteilten Takt !
+Dieser Takt steuert den Zeilenfrequenzteiler und die HBlank-ZÑhler.
+1 Zeile hat (Zeilenfrequenzteiler + 2) * 2 Takte. Die Zeile wird
+fÅr (Zeilenfrequenzteiler + 2) - HBlankOff + HBlankOn Takte auf-
+getastet.
+
+Beispiele:
+
+VGA-Modus, 640 * 480, sw:
+
+Videoclock = 25.175 MHz
+VT = 2
+VT_ST = 1
+CLock = 25.175 MHz / 2 / 1
+      = 12.5875 MHz
+Zeilenfrequenzteiler = 198
+HBlankOn = 141
+HBlankOff = 21
+
+Zeilenfrequenz = 25.175 MHz / 2 / 1 / ( 198 + 2 ) / 2
+               = 31.469 kHz
+               
+Die Zeile wird fÅr (198 + 2) - 21 + 141 = 320 Takt hellgetastet, dies
+entspricht 640 Pixeltakte ( VT = 2, VT_ST = 1 ).
+
+VGA-Modus, 320 * 200, 16 Farben, ST-KompatibilitÑtsmodus:
+
+Videoclock = 25.175 MHz
+VT = 2
+VT_ST = 8
+CLock = 25.175 MHz / 2 / 8
+      = 1.5734 MHz
+Zeilenfrequenzteiler = 23
+HBlankOn = 18
+HBlankOff = 1
+
+Zeilenfrequenz = 25.175 MHz / 2 / 8 / ( 23 + 2 ) / 2
+               = 31.469 kHz
+               
+Die Zeile wird fÅr (23 + 2) - 1 + 18 = 42 Takt hellgetastet, dies
+entspricht 672 Pixeltakte ( VT = 2, VT_ST = 8 ). Ein Pixel ist hier
+2 Pixeltakte breit, da der 40 Zeichen-Modus eingestellt ist.
+Da die horizontale Auflîsung 640/2 ist, ist links und rechts ein Border.
+
+
+$ffff8288.w 	Tja, die Register sollen die horizontal Pos. des Bildes
+$ffff828a.w     bestimmen, habe aber keine Ahnung wie und was da passiert ?
+
+$ffff828c.w	Position Hsync
+
+$ffff82a0.w	b10...b0 BildfrequenzzÑhler, nur lesen
+$ffff82a2.w	b10...b0 Bildfrequenzteiler
+
+Der Bildfrequenzteiler wird mit den Ausgangstakt des Zeilenfrequenzteilers
+getaktet. Da dieser Ausgangstakt der doppelten Zeilenfrequenz entspricht,
+zÑhlt der Bildfrequenzteiler halbe Zeilen. Dies ist fÅr den Interlacemodus
+wichtig ( ein TV-Halbbild hat 312.5 Zeilen )
+
+Bildwechselfrequenz = Zeilenfrequenz * 2 / ( BildfrequenzzÑhler + 1 )
+
+Beispiel:
+
+VGA-Modus, 640 * 480, sw:
+
+Zeilenfrequenz = 31.469 kHz
+ein VGA-Bild hat 525 Zeilen
+Bildwechselfrequenz = 31.469 kHz / 525
+		    = 59.9 Hz
+		 
+Der BildfrequenzzÑhler muû mit ( 2 * 525 ) - 1 geladen werden.
+
+Auch die folgenden ZÑhler werden mit Ausgangstakt des Zeilenfrequenzteilers
+getaktekt. 	
+     
+$ffff82a4.w	b10...b0 VBlankOn
+
+Bestimmt den Zeitpunkt der Dunkeltastung des Bildes in Halbzeilenschritten.
+
+
+$ffff82a6.w	b10...b0 VBlankOff
+
+Bestimmt den Zeitpunkt der Auftastung des Bildes in Halbzeilenschritten.
+
+Beispiel:
+
+VGA-Modus, 640 * 480, sw:
+
+VBlankOn:  1023
+VBlankOff:   63
+
+Das Bild wird ab Zeile ( VBlankOff + 1 ) / 2 = 32 dargestellt und wird
+ab Zeile ( VBlankOn + 1 ) / 2 = 512 dunkel getastet. Das Bild hat
+also 512 - 32 = 480 Zeilen.
+
+
+$ffff82a8.w    	b10...b0 VDispOn
+
+Bestimmt die Zeile, von der an das Bild ausgegeben wird.
+
+$ffff82aa.w 	b10...b0 VDispOff
+
+Ab dieser Zeile wird die Bildausgabe beendet.
+
+Beispiel:
+
+VGA-Modus, 640 * 480, sw:
+
+VDispOn:    63
+VDispOff: 1023
+
+Das Bild wird ab Zeile ( VDispOn + 1 ) / 2 = 32 dargestellt. Ab Zeile
+( VDispOff + 1 ) / 2 = 512 wird die Bilddarstellung eingestellt.
+512 - 32 = 480 Zeilen.
+ 
+
+$ffff82ac.w	b10...b0 Position Vsync
+
+bei Zeile Vsync + 1 wird ein Vertikal-Syncimpuls erzeugt
+
+
+$ffff82c0.w	xxxxxxx8765xx21x        Clock-Control
+                       ||||  ||
+                       ||||  |0 Videoclock / 1					
+                       ||||  |1 Videoclock / 2
+                       ||||  |
+                       ||||  0 Videoclock = 32 Mhz	
+                       ||||  1 Videoclock = 25.175 Mhz
+		       ||||
+		       |||0 negative VSync-Impulse
+		       |||1 positive VSync-Impulse
+		       |||
+		       ||0 negative HSync-Impulse
+		       ||1 positive HSync-Impulse
+		       ||
+		       |0 Bitplanes ??
+		       |1
+		       |
+		       0 bei SM124
+		       1 alle VGA-Modi
+		       
+		         
+		                  
+$ffff82c2.w  	xxxxxxxxxxxx3210      	Resolution-Control
+                            ||||
+                            |||0 Zeilenverdopplung aus
+                            |||1 Zeilenverdopplung an
+                            |||
+                            ||0 Interlace aus
+                            ||1 Interlace an
+                            ||
+         	            00 ?
+         	            01 320 Pixel
+		            10 640 Pixel
+		            11 ?
+		      
+- Soundchip
+
+$ffff8800.b	Daten lesen / Registerauswahl
+$ffff8802.b	Register schreiben
+
+
+ DMA-Sound
+ ---------
+$ffff8900.b	xxxx3210	Interrupt bei Pufferende
+		    ||||
+		    ||x1 MFP-15-Interrupt (I7) am Ende des Wiedergabepuffers
+		    ||1x MFP-15-Interrupt (I7) am Ende des Aufnahmepuffers
+		    ||
+		    x1 Timer-A-Interrupt am Ende des Wiedergabepuffers
+		    1x Timer-A-Interrupt am Ende des Aufnahmepuffers 
+		         
+$ffff8901.b:  	7x54xx10	Sound DMA Control Register
+		| ||  ||
+		| ||  00 DMA aus
+		| ||  01 Abspielen
+		| ||  11 Abspielen mit Wiederholung
+		| ||
+		| 00 DMA aus
+		| 01 Aufnehmen
+		| 11 Aufnehemen mit Wiederholung
+		|
+		0 Select Abspiel-Frame-Register
+		1 Select Aufnahme-Frame-Register
+
+Abspiel-/ Aufnahme-Frame-Register:
+
+$ffff8903.b	Frame Basis High
+$ffff8905.b	Frame Basis Mid
+$ffff8907.b	Frame Basis Low
+$ffff8909.b	Frame Address Counter High
+$ffff890b.b	Frame Address Counter Mid
+$ffff890d.b	Frame Address Counter Low
+$ffff890f.b	Frame Address End High
+$ffff8911.b	Frame Address End Mid
+$ffff8013.b	Frame Address End Low
+
+
+Frame Basis und Frame End sind gepuffert. Nach dem Start der DMA kann
+sofort die Frame Basis und Frame End fÅr das nÑchste Frame gesetzt werden.
+Die DMA-Ausgabe wird Åber ein 32 Byte FIFO gepuffert. Wenn ein Frame
+kleiner als 34 Byte ist, wird das Frame solange wiederholt, bis mindestens
+34 Byte ausgegeben worden sind.
+
+Beispiel:
+
+Frame Basis = $1000
+Frame End   = $1010, d.h. das Frame ist 16 Byte lang
+DMA Start: Abspielen mit Wiederholung
+danach wird gleich das nÑchste Frame programmiert:
+Frame Basis = $2000
+Frame End   = $3000
+
+Die DMA sollte also erst $1000 - $100f auslesen, und dann immer 
+wiederholend $2000 - $2fff auslesen. Tja, wir haben aber einen 
+Atari ( ;-) ) und deswegen passiert folgendes: Es wird dreimal 
+$1000 - $100f ausgegeben ( 2 * 16 < 34, erst 3 * 16 ist grîûer 
+wie 34 ) und dann erst kommt die DMA in die $2000- $2fff - Schleife.
+Die DMA schaufelt also erst einmal den FIFO voll, bevor die Abbruchbedinung
+( Frame Count == Frame End ) getestet wird.
+
+Frame-Grîûe |  wird n mal wiederholt
+------------+-------------------------
+  2         |   17
+  4         |    9
+  6         |    6
+  8         |    5
+ 10         |    4
+ 12         |    3
+ 14         |    3
+ 16         |    3
+ 18         |    2
+ 20         |    2
+ 22         |    2
+ 24         |    2
+ 26         |    2
+ 28         |    2
+ 30         |    2
+ 32         |    2
+ 34         |    1
+ 
+Ab einer Frame-Grîûe von 34 Bytes gibt es keine Probleme mehr. OK, solche
+kleine Frames werden nicht oft vorkommen. Mein Prog. sollte aber mit
+kleinen Frames arbeiten ( sonst wÑre mir das auch nicht aufgefallen )
+Festgestellt habe ich diesen Effekt bei den DMA-Transfer von CPU-RAM
+in den DSP, ohne Handshake. Wenn Daten per DMA in den RAM geschrieben
+werden, kommt es bestimmt zu den gleichen Problemen. Was bei 
+eingeschalteten Handshake passiert, habe ich nicht getestet.
+
+
+$ffff8920.b	xx54xx10
+		  ||  ||
+		  ||  00 Play 1 Track
+		  ||  01 Play 2 Tracks
+		  ||  10 Play 3 Tracks
+		  ||  11 Play 4 Tracks
+                  ||
+                  00 setze DA-Wandler auf Track 0
+                  01 setze DA-Wandler auf Track 1
+                  10 setze DA-Wandler auf Track 2
+                  11 setze DA-Wandler auf Track 3
+                  
+$ffff8921.b	76xxxx01	Sound Mode Control
+		||    ||
+                ||    00  6258 Hz  Abspielfrequenzen fÅr STE-DMA-Sound
+                ||    01 12517 Hz
+                ||    10 25033 Hz
+                ||    11 50066 Hz
+                ||
+                00  8 Bit Stereo (STE kompatibel)
+                01 16 Bit Stereo (Falcon-Sound)
+                10  8 Bit Mono   (STE kompatibel)
+
+
+ Multiplexer
+ -----------
+ 
+$ffff8930.w	Parameter der Quellkomponenten
+
+		DMA-Ausgabe:	03 02 01 00
+                                 |  |  |  |
+                                 |  |  |  0 Handshake an
+                                 |  |  |  1 Handshake aus
+                                 |  |  |
+                                 |  0  0 25,175 Mhz
+                                 |  0  1 externer Takt
+                                 |  1  0 32 Mhz
+                                 |
+                                 0 wenn die Zielkomponente DMA-Eingabe ist
+                                 1 bei allen anderen Zielkomponenten
+                
+                                 
+		DSP-Ausgabe:	07 06 05 04
+                                 |  |  |  |
+                                 |  |  |  0 Handshake an
+                                 |  |  |  1 Handshake aus
+                                 |  |  |
+                                 |  0  0 25,175 Mhz
+                                 |  0  1 externer Takt
+                                 |  1  0 32 Mhz
+                                 |
+                                 0 Multiplexer abkoppeln
+                                 1 Verbindung mit Multiplexer
+
+		externe Eingabe:11 10 09 08
+                                    |  |  |
+                                    |  |  0 Handshake an
+                                    |  |  1 Handshake aus
+                                    |  |
+                                    0  0 25,175 Mhz
+                                    0  1 externer Takt
+                                    1  0 32 Mhz
+                                    
+              	AD-Wandler:	15 14 13 11
+              			       |
+                                       0 interner Takt
+                                       1 externer Takt
+                                       
+
+$ffff8932.w	Parameter der Zielkomponenten
+
+
+		DMA-Eingabe:	03 02 01 00
+                                 |  |  |  |
+                                 |  |  |  0 Handshake an
+                                 |  |  |  1 Handshake aus
+                                 |  |  |
+                                 |  0  0 Quelle = DMA-Ausgabe
+                                 |  0  1 Quelle = DSP-Ausgabe
+                                 |  1  0 Quelle = externe Eingabe
+                                 |  1  1 Quelle = AD-Wandler
+                                 |
+                                 0 wenn die Quellkomponente DSP-Ausgabe ist
+                                 1 bei allen anderen Quellkomponenten
+                
+                
+		DSP-Eingabe:	07 06 05 04
+                                 |  |  |  |
+                                 |  |  |  0 Handshake an
+                                 |  |  |  1 Handshake aus
+                                 |  |  |
+                                 |  0  0 Quelle = DMA-Ausgabe
+                                 |  0  1 Quelle = DSP-Ausgabe
+                                 |  1  0 Quelle = externe Eingabe
+                                 |  1  1 Quelle = AD-Wandler
+                                 |
+                                 0 Multiplexer abkoppeln
+                                 1 Verbindung mit Multiplexer
+
+		externe Ausgabe:11 10 09 08
+                                    |  |  |
+                                    |  |  0 Handshake an
+                                    |  |  1 Handshake aus
+                                    |  |
+                                    0  0 Quelle = DMA-Ausgabe
+                                    0  1 Quelle = DSP-Ausgabe
+                                    1  0 Quelle = externe Eingabe
+                                    1  1 Quelle = AD-Wandler
+                
+
+		DA-Wandler:	15 14 13 12
+                                    |  |
+                                    0  0 Quelle = DMA-Ausgabe
+                                    0  1 Quelle = DSP-Ausgabe
+                                    1  0 Quelle = externe Eingabe
+                                    1  1 Quelle = AD-Wandler
+                
+
+$ffff8934.b	xxxx3210	Vorteiler externer Takt
+
+$ffff8935.b	xxxx3210	Vorteiler interner Takt
+
+                
+$ffff8936.b     xxxxxx10
+		      ||
+		      00 Record 1 Track
+		      01 Record 2 Tracks
+		      10 Record 3 Tracks
+		      11 Record 4 Tracks
+
+$ffff8941.b	xxxxx210	GPX - Control
+		     |||
+		     ||0: In, 1: Out
+		     |0: In, 1:Out
+		     0: In, 1:Out
+		  
+$ffff8943.b	xxxxxddd	GPX - Daten
+                                         
+ CODEC
+ -----
+ 
+$ffff8937.b	xxxxxxma	Eingabequelle des 16-Bit-Hardwareaddieres
+                        	m: Multiplexer
+                        	a: A/D-Wandler
+                        	
+$ffff8938.b	xxxxxxlr	ADC-Input fÅr linken & rechten Kanal
+				0: Mikrophon
+				1: Soundchip
+
+$ffff8939.b	llllrrrr	llll: VerstÑrkunk linker Eingabekanal
+				rrrr: VerstÑrkung rechter Eingabekanal
+				
+ 
+$ffff893a.w	xxxxllllrrrrxxxx    llll: AbschwÑchung linker Ausgabekanal 
+		                    rrrr: AbschwÑchung rechter Ausgabekanal
+
+- Clock
+
+$ffff8961.b	Register Select
+$ffff8963.b	Daten
+
+- SCC Z8530
+                                               0
+$ffff8c81.b	SCC Kanal A Control Register
+$ffff8c83.b	SCC Kanal A Data Register
+$ffff8c85.b	SCC Kanal B Control Register
+$ffff8c87.b	SCC Kanal B Data Register
+
+- DSP Host Interface
+
+$ffffa200.b	Interrupt Control Register
+$ffffa201.b	Command Vector Register
+$ffffa202.b	Interrupt Status Register (nur lesen)
+$ffffa203.b	Interrupt Vector Register
+$ffffa204.b 	not used
+$ffffa205.b	DSP-Word High
+$ffffa206.b     DSP-Word Mid
+$ffffa207.b     DSP-Word Low
+
+- Falcon Farbregister
+
+$ffff9800.l	Farbregister   0	rrrrrr00 gggggg00 00000000 bbbbbb00
+  :   :           :  :
+$ffff9bfc.l	Farbregister 255
+
+- MFP Register
+
+$fffffa01.b	GBIP Data Register
+$fffffa03.b	Active Edge Register
+$fffffa05.b	Data Direction Register
+$fffffa07.b	Interrupt Enable Register A
+$fffffa09.b	Interrupt Enable Register B
+$fffffa0b.b	Interrupt Pending Register A
+$fffffa0d.b	Interrupt Pending Register B
+$fffffa0f.b	Interrupt In-Service Register A
+$fffffa11.b	Interrupt In-Service Register B
+$fffffa13.b	Interrupt Mask Register A
+$fffffa15.b	Interrupt Mask Register B
+$fffffa17.b	Interrupt Vektor Register
+$fffffa19.b	Timer A Control Register
+$fffffa1b.b	Timer B Control Register
+$fffffa1d.b	Timer C + D Control Register
+$fffffa1f.b	Timer A Data Register
+$fffffa21.b	Timer B Data Register
+$fffffa23.b	Timer C Data Register
+$fffffa25.b	Timer D Data Register
+$fffffa27.b	Synchronous Character Register
+$fffffa29.b	USART Control Register
+$fffffa2b.b	Receiver Status Register
+$fffffa2d.b	Transmitter Status Register
+$fffffa2f.b	USART Data Register
+
+- Tastatur-ACIA
+
+$fffffc00.b	ACIA Statusregister
+$fffffc02.b	ACIA Steuerregister
+
+- MIDI-ACIA
+
+$fffffc04.b	ACIA Statusregister
+$fffffc06.b	ACIA Steuerregister
+
+
+Handshaking
+============
+                        DSP-Programmierung
+                        
+kein Handshake:		SC0: 	nicht benutzt
+			SC1:	Receive Frame
+			SC2:	Transmit Frame
+			SRD:	Receive Data
+			STD:	Transmit Data
+			SCK:	Receive / Transmit Clock
+			
+Handshake:		SC0: 	gated Receive Clock
+			SC1:	als IO prog. 1 = Daten freigeben
+			SC2:	als IO prog ???
+			SRD:	Receive Data
+			STD:	Transmit Data
+			SCK:	gated Clock Out ????
+			
+			
+			                         by bITmASTER of BSW

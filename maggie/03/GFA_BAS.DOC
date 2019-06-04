@@ -1,0 +1,901 @@
+
+	GFA COMMANDS #3 BY (YOU KNOW WHO)
+
+		           
+      MID$
+
+HOW:       MID$(string,A [ ,N ])
+
+EG:        N$="GFA BASIC"
+           PRINT MID$(N$,5)
+           PRINT MID$(N$,1,3)
+           PRINT MID$(N$,3,12)
+
+PURPOSE:   RETURNS ALL OR 'N' CHARACTERS IN A STRING FROM THE 
+           POSITION 'A' ONWARDS.
+           IF THE OPTIONAL PARAMETER 'N' IS NOT USED, THE FUNCTION
+           RETURNS ALL CHARACTERS OF THE STRING FROM 'A' ONWARDS.
+           NOTE: A=0 PRODUCES THE SAME AS A=1.
+           IF 'N'=0 AN EMPTY STRING IS RETURNED.
+
+
+      MIN
+
+HOW:       MIN(expression [ ,expression... ])
+
+EG:        A=17
+           B=3
+           A$="AAA"
+           PRINT MIN(A,B,2*2)
+           PRINT MIN(A$,"AAAA")
+
+PURPOSE:   RETURNS THE SMALLEST VALUE (OR SMALLEST STRING) FROM
+           A LIST OF EXPRESSIONS.
+           'expression' IS ANY NUMERIC OR STRING EXPRESSION.
+           ALL EXPRESSIONS IN THE LIST MUST BE OF THE SAME TYPE
+           (i.e ALL NUMERIC OR ALL STRING).
+           IF NUMBERS ARE BEING COMPARED, THE SMALLEST IS RETURNED.
+           IF IT IS STRINGS THENM THE OPERATOR '>' IS USED TO
+           DETERMINE THE 'SMALLEST' STRING.
+           THE OPPOSTIE TO MIN IS MAX
+
+
+      MKDIR
+
+HOW:       MKDIR "DIRECTORY NAME"
+
+EG:        MKDIR "A:\DIRECTORY1"
+           MKDIR "A:\DIRECTORY1\DIRECTORY2"
+           FILES "A:\*.*K"
+           FILES "A:\DIRECTORY1\*.*"
+
+PURPOSE:   CREATES A NEW DIRECTORY.
+           'DIRECTORY' NAME IS THE NAME OF THE NEW DIRECTORY.
+           IT IS POSSIBLE TO USE THE HIERARCHICAL FILE SYSTEM (\)
+           WHEN CHOOSING THE NAME.
+
+
+      MKI$ MKL$ MKS$ MKF$ MKD$
+
+HOW:       MKI$(N)
+           MKL$(N)
+           MKS$(N)
+           MKF$(N)
+           MKD$(N)
+
+EG:        A=0.1111
+           PRINT MKF$(A)
+           FOR I=0 TO 5
+             Z=PEEK(VARPTR(A)+I)
+             PRINT Z,CHR$(Z)
+           NEXT I
+
+PURPOSE:   TRANSFORMS A NUMBER INTO A CHARACTER STRING.
+
+           MKI$ 16-BIT NUMBER INTO A 2-BYTE STRING.
+           
+           MKL$ 32-BIT NUMBER INTO A 4-BYTE STRING.
+
+           MKS$ A NUMBER INTO AN ATARI BASIC 4-BYTE FORMAT.                    
+                                              
+           MKF$ A NUMBER INTO GFA BASICS OWN 6-BYTE FORMAT.
+
+           MKD$ A NUMBER INTO A MBASIC COMPATIBLE 8-BYTE FORMAT.
+
+           EVERY NUMBER THAT IS TO BE STORED IN A RANDOM ACCESS
+           FILE MUST FIRST BE TRANSFORMED WITH ON OF THE ABOVE
+           FUNCTIONS.
+           THE EXAMPLE ABOVE SHOWS THAT GFA BASIC STORES NUMBERS
+           INTERNALLY IN THE 6-BYTE FORMAT WHICH CAN ALSO BE
+           CREATED USING THE MKF$ FUNCTION.
+           SEE ALSO CVI, CVL, CVS, CVF AND CVD
+
+
+      MOUSE  MOUSEX  MOUSEY  MOUSEK
+
+HOW:       MOUSE X,Y,K
+           MOUSEX
+           MOUSEY
+           MOUSEK
+
+EG:        DO
+             MOUSE A,B,C
+             PRINT AT(1,1);A,B,C
+             X=MOUSEX
+             Y=MOUSEY
+             K=MOUSEK            
+             PRINT AT(3,1);X,Y,K
+           LOOP
+
+PURPOSE:   DETERMINES THE MOUSE POSITION (X,Y) AND THE STATUS
+           OF THE MOUSE BUTTONS.
+           
+           K=0 NO BUTTONS PRESSED
+           
+           K=1 LEFT BUTTON
+      
+           K=2 RIGHT BUTTON
+
+           K=3 BOTH BUTTONS        
+           
+
+      MUL
+
+HOW:       MUL var,N
+
+EG:        A=2
+           FOR I=1 TO 20
+             MUL A,2
+             PRINT A
+           NEXT I
+
+PURPOSE:   MULTIPLIES THE VALUE 'var' BY 'N'.
+           SAME AS var=var*N BUT EXCECUTES 30% FASTER.
+
+
+      NAME
+
+HOW:       NAME "OLDFILE" AS "NEWFILE"
+
+EG:        OPEN "O", #1,"YORK"
+           CLOSE #1
+           FILES
+           NAME "YORK" AS "NEWYORK"
+           FILES
+
+PURPOSE:   RENAMES AN EXISTING FILE. THE CONTENTS OF THE FILE ARE
+           NOT AFFECTED.
+           THE COMMAND CAN REFER ONLY TO ONE DRIVE. IF 'OLDFILE'      
+           IS ON DRIVE A THEN 'NEWFILE' WILL ALSO BET PUT ON THIS
+           DRIVE. 
+           'NEWFILE' CAN HOWEVER BE PUT INTO ANOTHER FOLDER eg.
+           NAME "B:PARTS" AS "\CAR\SPARES"
+
+
+      NEW
+
+HOW:       NEW
+
+EG:        PRINT "IS THIS A DAGGER I SEE BEFORE ME ?"
+           NEW
+
+PURPOSE:   DELETES THE PROGRAM CURRENTLY IN MEMORY AND CLEARS ALL
+           VARIABLES.
+
+
+      OCT$
+
+HOW:       OCT$(X)
+      
+EG:        A=-1
+           B=&H22
+           PRINT OCT$(A)
+           PRINT OCT$(234)
+           PRINT OCT$(B)
+           
+PURPOSE:   CHANGES THE VALUE 'X' INTO A STRING CONTAINING THE
+           VALUE OF 'X' IN OCTAL FORM (PREFIX &O)
+           SEE ALSO HEX$, BIN$ & STR$
+
+
+      ON...GOSUB
+
+HOW:       ON expression GOSUB procedure list
+
+EG:        DO
+             INPUT A
+             ON A GOSUB PRO1,PRO2
+           LOOP
+           PROCEDURE PRO1
+             PRINT "1<=A<2"
+           RETURN
+           PROCEDURE PRO2
+             PRINT "2<=A<3"
+           RETURN
+
+PURPOSE:   DEPENDING ON THE VALUE OF 'expression' ONE OF SEVERAL
+           GIVEN PROCEDURES IS PROCESSED.
+           IF THE VALUE OF 'EXPRESSION' IS GREATER THAN OR = TO 1
+           AND SMALLER THAN 2, THE FIRST PROCEDURE IN THE LIST IS
+           PROCESSED.
+           IF THE VALUE OF 'EXPRESSION' IS GREATER THAN OR = TO 2
+           AND SMALLER THAN 3, THE SECOND PROCEDURE IN THE LIST IS
+           PROCESSED AND SO ON.
+           IF THE VALUE DOES NOT COME IN RANGE THEN NO PROCEDURE
+           WILL BE EXECUTED.
+
+
+      ON BREAK  ON BREAK CONT  ON BREAK GOSUB
+
+HOW:       ON BREAK
+           ON BREAK CONT
+           ON BREAK GOSUB name
+
+EG:        ON BREAK GOSUB comment
+           PRINT "INTERRUPT PROGRAM"
+           REPEAT
+           UNTIL MOUSEK
+           ON BREAK 
+           PROCEDURE comment 
+             PRINT "NO INTERRUPTION POSSIBLE"
+           RETURN
+
+PURPOSE:   ON BREAK CONT MAKES IT IMPOSSIBLE TO STOP A PROGRAM
+           BY PRESSING BREAK ( <ALT><SHIFT><CNTRL> ).
+           ON BREAK REACTIVATES IT.
+           ON BREAK GOSUB MAKES IT POSSIBLE TO JUMP TO THE 
+           PROCEDURE 'name' BY THE ABOVE KEY COMBINATION.
+
+
+      ON ERROR  ON ERROR GOSUB
+
+HOW:       ON ERROR
+           ON ERROR GOSUB name
+           
+EG:        ON ERROR GOSUB error routine
+           PRINT SQR(-1)
+           PRINT 3/0
+           ON ERROR
+           PRINT SQR(-1)
+           PROCEDURE error routine
+             PRINT "ERROR NO. ";ERR
+             ON ERROR GOSUB error routine
+             RESUME NEXT
+           RETURN
+
+PURPOSE:   PERFORMS THE PROCEDURE 'name' WHEN AN ERROR OCCURS.
+           THE PROGRAM IS NOT INTERUPTED AND NO ERROR MESSAGE
+           IS GIVEN. THE COMMAND MUST BE PRESENT IN THE 
+           PROGRAM BEFORE THE ERROR OCCURS. THE PROGRAM WILL
+           DEVIATE ONLY ONCE TO THE PROCEDURE. IF A FURTHER
+           ERROR OCCURS, THE PROGRAM WILL STOP AND AN ERROR
+           MESSAGE WILL BE DISPLAYED AS USUAL.
+           IF IT IS NECESSARY TO DEVIATE WITH EVERY ERROR THEN
+           THIS MODE MUST BE SWITCHED ON EACH TIME WITHIN THE 
+           ERROR ROUTINE BY ON ERROR GOSUB BEFORE RETURNING TO
+           THE MAIN PROGRAM.
+           THE COMMAND OR ERROR SWITCHES THE PROGRAM BACK TO 
+           THE NORMAL ERROR HANDLING PROCEDURE.
+
+      
+      ON MENU GOSUB
+
+HOW:       ON MENU GOSUB proc1
+           ON MENU KEY GOSUB proc2
+           ON MENU MESSAGE GOSUB proc3
+           ON MENU IBOX A,X,Y,B,H GOSUB proc4
+           ON MENU OBOX A,X,Y,B,H GOSUB proc5
+
+EG:        DIM STRIP$(50)
+           FOR I=0 TO 50
+             READ STRIP$(I)
+             EXIT IF STRIP$(I)="***"
+           NEXT I
+           STRIP$(I)=""
+           STRIP$(I+1)
+           DATA DESK,MENUTEST
+           DATA ------------------------
+           DATA 1,2,3,4,5,6,""
+           DATA FILE,LINE1,LINE2,LINE3,""
+           DATA HELP,HELP 1, HELP 2,""
+           DATA EDIT,EDIT1,EDIT2,EDIT3,QUIT
+           DATA ***
+           MENU STRIP$()
+           OPENW 0
+           ON MENU GOSUB menue
+           ON MENU IBOX 1,100,100,200,100 GOSUB inbox1
+           DO
+             ON MENU
+           LOOP
+           PROCEDURE menue
+             PRINT " MENU SELECTION ";
+             PRINT STRIP$(MENU(0))
+             IF STRIP$(MENU(0))="QUIT"
+               END
+             END IF
+           RETURN
+           PROCEDURE inbox1
+             DEFMOUSE 4
+             ON MENU OBOX 1,100,100,200,100 GOSUB outbox1
+           RETURN
+           PROCEDURE outbox1
+             DEFMOUSE 0
+             ON MENU IBOX 1,100,100,200,100 GOSUB inbox1
+           RETURN
+
+PURPOSE:   CERTAIN MENU ASPECTS CAN BE HANDLED USING ON MENU....
+           'proc1' TO 'proc5' ARE NAMES OF PROCEDURES WHICH DEAL
+           WITH CERTAIN ASPECTS OF THE MENU. 
+           ON MENU GOSUB DEFINES THE PROCEDURE WHICH HANDLES MENU
+           SELECTION.ON MENU KEY GOSUB DEFINES THE PROCEDURE
+           WHICH HANDLES KEY INPUT.
+           
+           (CONT.)
+
+
+           ON MENU IBOX...GOSUB  AND  ON MENU OBOX...GOSUB DEFINE
+           THE PROCEDURES TO MAKE THE MOUSE MOVE IN OR OUT OF 
+           PRE-DEFINED RECTANGLES. 'A' DEFINES WHICH ONE OF THE
+           TWO POSSIBLE INDEPENDANT RECTANGLES WILL BE USED
+           'X' AND 'Y' DEFINE THE TOP COORDINATES AND 'B' AND 'H'
+           DEFINE THE WIDTH AND HEIGHT.
+
+           THESE MENU ASPECTS CAN ONLY BE CALLED UP BY THE COMMAND
+           ON MENU. THEREFORE, THIS COMMAND SHOULD BE FREQUENTLY
+           USED (FOR EXAMPLE, IN A LOOP).
+
+
+      OPEN
+
+HOW:       OPEN "mode", [#]N,"FILENAME" [ ,LEN ]
+
+EG:        OPEN "O",#1,"NAME"
+           PRINT #1,"GFA BASIC"
+           OPEN "I",#2,"NAME"
+           DO
+             EXIT IF EOF(#2)
+             PRINT INPUT$(1,#2)
+           LOOP
+           CLOSE
+
+PURPOSE:   OPENS A DATA CHANNEL OR A CHANNEL TO A DISC FILE.
+           'mode' MUST ALWAYS BE WRITTEN IN QUOTES AND IS ONE
+           OF THE FOLLOWING :-
+              
+           'O' OPENS A WRITE FILE CREATING A NEW FILE IF NEEDED.
+
+           'I' OPENS A READ FILE.
+
+           'A' ENABLES DATA TO BE ANNEXED TO AN EXISTING FILE.
+
+           'U' READ/WRITE, BUT FILE MUST BE OPENED BY 'O' FIRST.
+
+           'R' STANDS FOR RANDOM ACCESS FILE.
+
+           THE FOLLOWING PREFIXES CAN ALSO BE USED AS FILENAMES :- 
+                     
+           'CON:'  FOR THE CONSOLE.
+
+           'LST:'  OR 'PRN:' FOR THE PRINTER.
+
+           'AUX:'  FOR THE SERIAL INTERFACE.
+
+           'MID:'  FOR MIDI.
+
+           'VID:'  FOR THE CONSOLE IN TRANSPARENT MODE
+                   (COMMANDS ARE PRODUCED BUT NOT EXECUTED).
+
+           'IKB:'  FOR DIRECT ACCESS TO THE KEYBOARD CONTROLLER.
+
+
+           'LEN' IS ONLY USED IN FILES WITH RANDOM ACCESS. THE 
+           LENGTH OF A FILE ENTRY IS DEFINED. IF THIS PREFIX IS
+           NOT PRESENT, A LENGTH OF 128 BYTES IS DESIGNATED.
+     
+
+      OPENW
+
+HOW:       OPENW N [ ,X,Y ]
+
+EG:        OPENW 2,320,200
+
+PURPOSE:   OPENS A WINDOW WITH THE NUMBER 'N'.
+           THE OPTIONAL 'X & Y' DEFINE THE POINT OF CONTACT FOR
+           THE FOUR POSSIBLE WINDOWS. THESE ARE ARRANGED ON THE 
+           SCREEN LIKE THE FOUR QUADRANTS OF A SYSTEM OF 
+           COORDINATES. THE POINT OF CONTACT CORRESPONDS WITH THE
+           ORIGIN OF THE COORDINATES IN THE ANALOGY. THE NUMBERING
+           OF THE WINDOWS IS SET AS FOLLOWS :-
+
+
+                          1                    2
+
+                     ---------------------------------    
+                         
+                          3                    4
+
+
+           AFTER USING THE COMMAND OPENW 0 THE WHOLE SCREEN,
+           WITHOUT THE MENU STRIP, IS USED AS A WINDOW. THE 
+           STARTING POINT FOR GRAPHICS COMMANDS IS SET WITH
+           OPENW 0,X,Y
+                
+
+      OUT
+
+HOW:       OUT X,A
+           OUT #N,A
+
+EG:        OPEN "O",#1,"DATA"
+           OUT #1,65
+           CLOSE #1
+           OPEN "I",#1,"DATA"
+           PRINT INPUT$(1,#1)
+           OUT 2,66
+
+PURPOSE:   TRANSFERS A BYTE WITH THE VALUE 'A' TO A PERIPHERAL
+           DEVICE OR FILE.
+           'X' IS AN INTEGER FROM 0 TO 5  WHERE :-
+
+           0=LST:   1=AUX:  2=CON:  3=MID:  4=IKB:  5=VID:     
+           
+           'A' IS AN INTEGER FROM 0 TO 255. IF 'A'>255 THEN
+           'A' mod 256 IS SENT.
+
+           OUT X,A SENDS THE VALUE 'A' TO THE DEVICE 'X'
+
+           OUT #N,A SENDS THE VALUE 'A' TO A FILE CHANNEL 'N'
+
+           
+
+      PAUSE
+
+HOW:       PAUSE X
+
+EG:        PRINT "PLEASE WAIT FIVE SECONDS"
+           PAUSE 250
+           PRINT "READY"
+
+PURPOSE:   INTERRUPTS A PROGRAM FOR EXACTLY  X/50 SECONDS.
+
+
+      PBOX
+
+HOW:       PBOX X,Y,XX,YY
+
+      PCIRCLE
+
+HOW:       PCIRCLE X,Y,R [ ,PHI0,PHI1 ]
+
+      PELLIPSE
+
+HOW:       PELLIPSE X,Y,RX,RY [ ,PHI0,PHI1 ]
+
+      PRBOX
+
+HOW:       PRBOX X,Y,XX,YY
+
+PURPOSE:   THE FOUR COMMANDS ABOVE ARE THE SAME AS BOX, CIRCLE,
+           ELLIPSE AND  RBOX EXCEPT THAT THEY DRAW FILLED SHAPES.
+           THE TYPE OF FILL IS DEFINED BY THE COMMAND DEFFILL.
+
+
+      PEEK  DPEEK  LPEEK
+
+HOW:       PEEK(X)
+           DPEEK(X)
+           LPEEK(X)
+
+EG:        A$="A"
+           D=ARRPTR(A$)
+           A=LPEEK(D)
+           L=DPEEK(D+4)
+           C=PEEK(A)
+           PRINT "DESCRIPTOR ADDRESS"''D
+           PRINT "ADDRESS"''A
+           PRINT "LENGTH"''L
+           PRINT "ASCCII CODE"''C
+
+PURPOSE:   RETURNS THE CONTENTS OF THE MEMORY AT ADDRESS 'X'
+           PEEK  RETURNS A 1 BYTE AT ADDRESS X
+           DPEEK  RETURNS A 2 BYTE NUMBER FROM X AND X+1
+           LPEEK  RETURNS A 4 BYTE NUMBER FROM X, X+1, X+2 & X+3
+         
+           FOR DPEEK AND LPEEK, 'X' MUST BE AN EVEN NUMBER                                             
+                      
+
+      PI
+
+HOW:       PI
+
+EG:        PRINT PI
+
+PURPOSE:   RETURNS THE VALUE OF PI. THE VALUE OF PI IS
+           3.141592653.....etc.
+
+
+      PLOT
+
+HOW:       PLOT X,Y
+
+EG:        PLOT 320,200
+           DEFLINE 1,6,2,2
+           PLOT 30,30
+
+PURPOSE:   PLOTS A POINT ON THE SCREENA COORDINATES 'X,Y'.
+           THIS COMMAND IS THE SAME AS DRAW X,Y.
+           IF A LINE WIDTH HAS BEEN SET WITH DEFLINE, IT IS
+           NECESSARY TO SET THIS BACK TO 1, OTHERWISE NO DOT
+           WILL BE DRAWN.
+           THERE IS AN EXCEPTION TO THIS RULE: IF THE BEGINNING
+           AND THE END TYPE OF DEFLINE IS 'ROUNDED DOWN', A LARGE
+           DOT, VARYING IN SIZE ACCORDING TO THE WIDTH SET, WILL
+           BE DRAWN (SEE EXAMPLE).
+
+
+
+      POINT
+
+HOW:       POINT X,Y
+           
+EG:        PLOT 10,10
+           PRINT POINT(20,20)
+           PRINT POINT(20,21)
+
+PURPOSE:   CHECKS IF A GRAPHIC DOT (AT 'X,Y') HAS BEEN SET AND 
+           RETURNS ITS COLOUR VALUE.
+
+
+      POKE  DPOKE  LPOKE
+
+HOW:       POKE X,N
+           DPOKE X,N
+           LPOKE X,N
+
+EG:        A$="A"
+           L=ARRPTR(A$)
+           DPOKE L+4,4
+           Z=VARPTR(A$)
+           LPOKE Z,1111638594
+           PRINT A$
+           POKE Z,67
+           PRINT A$
+
+PURPOSE:   WRITES 1, 2 OR 4 BYTES INTO MEMORY AT AN ADDRESS WHICH
+           STARTS AT 'X'.
+           THE VALUE OF 'X' MUST BE AN EVEN NUMBER FOR DPOKE AND
+           LPOKE.
+           'N' MUST BE :-  
+
+           FROM 0 TO 255 FOR POKE
+           FROM 0 TO 65535 FOR DPOKE
+           FROM -2147483648 TO +2147483648 FOR LPOKE
+
+           THE COMMANDS MENTIONED HERE ALL WORK IN THE 68000
+           'USER' MODE (USUALLY THE AREAS 0 TO 2047 AND THE AREA
+           OVER 8MBYTES CANNOT BE USED).
+           IN ORDER TO REACH THESE AREAS THE SUPERVISOR COMMANDS 
+           SPOKE, SDPOKE AND SLPOKE ARE REQUIRED.
+
+           
+      POLYLINE  POLYFILL  POLYMARK
+
+HOW:       POLYLINE N,X(),Y() [OFFSET XX,YY ]                          
+           POLYFILL N,X(),Y() [OFFSET XX,YY ]   
+           POLYMARK N,X(),Y() [OFFSET XX,YY ] 
+
+EG:        DIM X(8),Y(8)
+           FOR I=0 TO 8
+             X(I)=320+150*SIN(I*2*PI/8)
+             Y(I)=200+150*SIN(I*2*PI/8)
+           NEXT I
+           DEFFILL 1,2,9
+           POLYFILL 9,X(),Y()            
+
+PURPOSE:   DRAWS A (FILLED IN) SHAPE OF 'N' DOTS OR MARKS THE 
+           CORNER POINTS.
+           'N' STATES THE NUMBER OF DOTS (MAX 128). IF A CLOSED
+           SHAPE IS TO BE DRAWN THEN THE FIRST AND LAST DOT
+           POSITIONS MUST BE IDENTICAL.
+           THESE COMMANDS WORK SIMILARLY TO DRAW BUT THEY ARE MUCH
+           QUICKER, ESPECIALLY WITH INTEGER ARRAYS X%() AND Y%().
+
+           X() & Y() ARE NUMERIC FIELDS (ARRAYS) WHICH CONTAIN THE
+           COORDINATES OF THE 'N' DOTS FROM WHICH THE SHAPE WILL
+           BE DRAWN. IT IS NECESSARY TO STORE THE FIRST DOT IN
+           X(0) AND Y(0).
+
+           IF THE OPTIONAL 'OFFSET XX,YY, IS USED THEN THE ENTIRE
+           SHAPE WILL BE DRAWN RELATIVE TO THESE COORDINATES.
+           
+           DEFFILL DEFINES THE FILL PATTERN AND DEFMARK DEFINES
+           THE TYPE OF MARK TO BE USED WITH POLYMARK.
+
+
+      POS
+
+HOW:       POS(N)
+
+EG:        FOR I=0 TO 600
+             PRINT "A";
+             IF POS(1)=30 THEN
+               PRINT
+             END IF
+           NEXT I            
+ 
+PURPOSE:   RETURNS THE COLUMN IN WHICH THE CURSOR IS POSITIONED.
+           'N', A HYPOTHETICAL ARGUMENT, IS OPTIONAL. THE COLOUMNS 
+           START AT 0. THE VALUE DOES NOT ALWAYS CORRESPOND TO THE
+           ACTUAL CURSOR POSITION. PRINT AT AND CURSOR COMMANDS ARE 
+           IGNORED. IF OVER 80 CHARACTERS WITHOUT A CARRIAGE RETURN 
+           IS PRINTED THEN POS CAN RETURN A VALUE GREATER THAN 100.
+  
+
+
+      PRINT  PRINT#
+
+HOW:       PRINT [ AT(X,Y) ][ ; ][ expr [ , ][ ; ][ ' ]]
+                       PRINT #N [ ,expr [ , ][ ; ][ ' ]]
+
+ABBR.:     P OR ?
+
+EG:        A$="GFA"
+           B=1986
+           PRINT A$'
+           PRINT B,
+           PRINT A$,B;"GFA"
+           PRINT A$'''''B
+           PRINT AT(77,25);A$;
+
+PURPOSE:   DISPLAYS INFORMATION ON THE SCREEN OR SENDS IT TO
+           DATA CHANNEL 'N'.
+           'expr' CAN BE ANY NUMBER OF EXPRESSIONS WHICH MUST BE 
+           SEPARATED BY COMMAS, SEMICOLONS OR APOSTROPHES.
+           IF THESE SIGNS ARE MISSING A SEMICOLON WILL BE INSERTED
+           AUTOMATICALLY.
+
+           ; -ITEMS ARE PRINTED ONE AFTER AN OTHER IN ONE LINE.
+
+           , -ITEMS ARE PRINTED AT INTERVALS OF 16 COLUMNS.
+
+           ' -EACH APOSTROPHE CAUSES A SPACE TO BE PRINTED.
+
+           IF NONE OF THE ABOVE ARE PLACED ON THE END OF 'expr'
+           THEN A CARRIAGE RETURN AND LINE FEED IS MADE.
+           THE OPTIONAL AT(X,Y) SPECIFIES THE ROW & COLUMN AT
+           WHICH PRINTING WILL START.
+
+
+      PRINT USING
+
+HOW:       PRINT USING "FORMAT",LIST [ ; ]#
+           PRINT #N,USING "FORMAT",LIST [ ; ]#
+
+EG:        PRINT AT(7,5);USING "###.##",PI*100
+           PRINT USING "A!b","LAMBDA"
+
+PURPOSE:   ISSUES FORMATED DIGITS AND CHARACTER STRINGS.
+           'FORMAT' IS A STRING EXPRESSION WHICH SETS THE PRINTING
+           FORMAT (SEE BELOW). 'LIST' IS A LIST OF EXPRESSIONS
+           SEPARATED BY COMMAS.
+
+           #    RESERVES SPACE FOR FIGURES.
+           .    POSITION OF THE DECIMAL POINT.
+           +    EXECUTES A PLUS SIGN.
+           -    RESERVES SPACE FOR A MINUS SIGN.
+           *    ZEROS BEFORE THE COMMA ARE REPLACED BY * OTHERWISE
+                THE SAME AS #.
+          $$    PREFIX $.
+           '    INSERTION OF A COMMA.     
+        ^^^^    EXECUTION IN EXPONENT FORM  E+100
+       ^^^^^        "     "      "     "    E+1000
+           !    INDICATES THAT THE FIRST CHARACTER OF A STRING IS
+                ISSUED.
+           &    THE WHOLE STRING IS ISSUED.
+        \..\    AS MANY CHARACTERS AS THE LENGTH OF \..\ IS ISSUED
+                (INCLUDING BACK-SLASHES).
+           -    PRINTS THE PROCEEDING CHARACTER.
+
+
+      PROCEDURE
+
+HOW:       PROCEDURE name [ (VARIABLE LIST) ]
+                      
+EG:        PRINT "MAIN PROG"
+           GOSUB subr(7)
+           PRINT "BACK A=";A
+           PROCEDURE subr(a)
+             PRINT "PROC A=";A
+           RETURN
+           PRINT "IS DISREGARDED"
+
+PURPOSE:   MARKS THE BEGINNING OF A PROCEDURE.
+           BASIC WILL ONLY PROCESS A PROCEDURE WHEN IT IS CALLED
+           BY THE COMMAND GOSUB. IF IT COMES ACROSS THE COMMAND
+           PROCEDURE DURING 'NORMAL' RUNNING OF THE PROGRAM, IT
+           CONSIDERS IT TO BE THE END OF THE PROGRAM.
+           (SEE GOSUB & RETURN FOR FURTHER INFORMATION).
+
+
+      PUT
+
+HOW:       PUT X,Y,A$ [ ,MODE ]
+
+EG:        FOR I=1 TO 5
+             CIRCLE 320,200,I*40
+           NEXT I
+           GET 0,0,320,399,A$
+           PUT 320,0,A$,3
+
+PURPOSE:   WRITES A STRING OBTAINED BY GET ONTO THE SCREEN AS A
+           BIT PATTERN. 'X,Y' MARKS THE STARTING POINT OF THE 
+           BLOCK. 'A$' IS A STRING VARIABLE WHICH HOLDS THE BIT
+           PATTERN DATA. 'MODE' IS A NUMBER (0 TO 15) WHICH
+           DEFINES THE WAY IN WHICH THE STRING WILL BE DISPLAYED
+           ON THE SCREEN.
+      
+           0 = DELETE                 8 = NOT (S OR B)
+           1 = S AND B                9 = NOT (S OR B)
+           2 = S AND (NOT B)         10 = NOT B (INVERSE)
+           3 = S (OVERWRITE)         11 = S OR (NOT B)
+           4 = (NOT S) AND B         12 = NOT S (INV. OVERWRITE)
+           5 = B (DO NOTHING)        13 = (NOT S) OR B
+           6 = S XOR B               14 = NOT (A AND B)
+           7 = S OR B                15 = 1                              
+
+           
+      PUT
+
+HOW:       PUT [ # ]N[ ,I ]             
+
+EG:        SEE FIELD
+
+PURPOSE:   WRITES A RECORD TO A RANDOM ACCESS FILE.
+           'N' DATA CHANNEL NUMBER (0 TO 99).
+           'I' IS AN INTEGER EXPRESSION BETWEEN 1 AND THE NUMBER
+           OF RECORDS IN THE FILE (MAX 65535) AND DENOTES THE
+           RECORD NUMBER OF THE RECORD TO BE WRITTEN.
+           IF I IS NOT USED THEN THE NEXT RECORD IN THE FILE WILL
+           BE WRITTEN.
+
+
+      QUIT
+
+HOW:       QUIT
+
+EG:        INPUT "ENTER PASSWORD! ";P$
+           IF P$<>"SPLIB IBBLE LIBBLE IB" THEN
+             QUIT
+           ENDIF
+
+PURPOSE:   CAUSES A RETURN TO THE GEM DESKTOP, SAME AS SYSTEM.
+
+
+      RANDOM
+
+HOW:       RANDOM(X)
+
+EG:        PRINT "DIE THROW=";RANDOM(6)+1
+
+PURPOSE:   RETURNS A RANDOM INTEGER BETWEEN 0 (INCLUSIVE) AND 
+           'X' (EXCLUSIVE).
+
+           RANDOM(X) = TRUNC(X*RND)
+
+
+      RBOX
+
+HOW:       RBOX X,Y,XX,YY
+
+EG:        RBOX 50,50,590,350
+
+PURPOSE:   DRAWS A RECTANGLE WITH ROUNDED CORNERS FROM THE TWO
+           DIAGONALLY OPPOSITE CORNER POINTS 'X,Y' AND 'XX,YY'
+
+           SEE ALSO DEFLINE
+
+
+      READ
+
+HOW:       READ var [ ,var0 ] ......
+
+EG:        READ P,N$,Z%
+           PRINT P'N$'Z%
+           DATA LONDON.W1
+
+PURPOSE:   READS VALUES FROM A DATA COMMAND AND ASSIGNS THEM TO A
+           VARIABLE 'var'.
+
+           THE VALUES READ FROM THE DATA LINES MUST BE OF A TYPE
+           WHICH CORRESPONDS TO THE VARIABLE IN THE READ COMMAND.
+           (IMPORTANT  SEE ALSO DATA AND RESTORE).
+
+      
+      RELSEEK
+
+HOW:       RELSEEK [#]N,X
+
+EG:        OPEN "O",#1,"DATA"
+           PRINT #1,"1234567890"
+           SEEK #1,8
+           RELSEEK #1,-5
+           PRINT LOC(#1)
+
+PURPOSE:   MOVES THE RANDOM ACCESS FILE POINTER FORWARD (+X) OR
+           BACKWARDS (-X) 'X' NUMBER OF BYTES.
+
+
+      REM
+
+HOW:       REM remark
+
+ABBR.:     R OR '
+
+EG:        REM calculation of distance
+           LET S= (A*T*T)/2
+
+PURPOSE:   WHATEVER FOLLOWS A REM COMMAND ON A PARTICULAR LINE
+           IS IGNORED BY BASIC.
+           REM CAN BE USED TO PUT REMARKS INTO A PROGRAM TO MAKE
+           THE LISTING MORE READABLE. IT CAN ALSO BE USED TO
+           DEACTIVATE A LINE OF CODE TO AID IN DEBUGGING.
+
+
+      REPEAT...UNTIL
+
+HOW:       REPEAT
+           UNTIL end
+
+EG:        REPEAT
+             A=A+1
+             PRINT A
+           UNTIL A=20
+           
+PURPOSE:   CREATES A PRE-DEFINED LOOP. THE SECTION OF THE PROGRAM
+           BETWEEN REPEAT AND UNTIL IS REPEATED CONTINUOUSLY 
+           UNTIL THE CONDITION IS FULFILLED.
+           THE CONDITION IS CHECKED AT THE END OF THE LOOP ie.
+           THE LOOP HAS TO BE COMPLETED AT LEAST ONCE.
+
+           
+      RESTORE
+
+HOW:       RESTORE [label]
+
+EG:        RESTORE
+           READ A,B,C,D
+           RESTORE Other
+           READ E$,F,G,H
+           DATA 1,2,3,4
+           Other:
+           DATA MORE,5,6,7
+
+PURPOSE:   PLACES THE DATA POINTER AT THE BEGINNING, OR BEHIND THE
+           LABEL NAMES 'label'
+
+           'label' CAN BE ANY LIST OF CHARACTERS AND CAN CONTAIN
+           DIGITS, LETTERS, UNDERSCORE AND FULL STOPS.  UNLIKE
+           OTHER VARIABLE NAMES IT CAN BEGIN WITH A DIGIT.
+           IF NO LABEL IS SPECIFIED, THE POINTER IS SET TO THE
+           FIRST DATA STATEMENT.
+
+
+           RESUME
+
+HOW:       RESUME    RESUME NEXT    RESUME label
+
+EG:        see ON ERROR GOSUB
+
+PURPOSE:   EXITS OUT OF AN ERROR ROUTINE
+
+           RESUME REPEATS THE ERRONEOUS COMMAND.  RESUME NEXT
+           RESUMES PROGRAM EXECUTION AFTER AN INCORRECT COMMAND.
+           RESUME 'label' BRANCHES TO THE 'label'.
+
+           IF A FATAL ERROR OCCURS ONLY RESUME 'label' IS POSSIBLE
+
+
+           RETURN
+
+HOW:       RETURN
+
+EG:        PRINT "main program"
+           GOSUB sub
+           PRINT "return"
+           PROCEDURE sub
+             PRINT "procedure"
+           RETURN
+
+PURPOSE:   TERMINATES A SUB-ROUTINE
+
+           IF THE INTERPRETER COMES ACROSS THE COMMAND RETURN IN A
+           PROCEDURE (SUB-ROUTINE) EXECUTION IS CONCLUDED AND
+           EXECUTION CONTINUES AFTER THE GOSUB COMMAND WHICH MADE
+           THE PROGRAM BRANCH OFF INTO THAT PROCEDURE.  LOCAL
+           VARIABLES ARE DELETED.
+
+           (see GOSUB, PROCEDURE, LOCAL)
+
+
+
+

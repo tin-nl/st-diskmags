@@ -1,0 +1,88 @@
+                            _______              _______
+                         __/ __   /__  ___  ____/   __  \_     __
+                  ______/_   \/  /   \/   \/    \   \/  / \___/  \
+                 /  __   /      /                \   __/  /  ___  \
+                /   \/  /\_____/\    /\    /\    /\______/   \__\__\
+             ___\__    /         \__/  \  /  \__/__     pA\__   \__
+            /   /   __/                 \/     /  /__________\__   \
+           /_______/                          /  __________________/
+                                              \_/
+--------------------------------------------------------------------------------
+     ñDoom v.06ð by òData of Trioð (1998) [óFalconð] - original Doom C-Sources
+--------------------------------------------------------------------------------     
+
+Doom ... Show me ñoneð Falcon  user who wouldn't like to see this game in suitable
+speed on his machine.
+And òBad Moodð  or óData'sð  very  own  òDSP-based Doom engineð showed  that  Doom  in
+suitable speed would be possible on the Falcon indeed.
+Yet all these programs had one major disadvantage - they weren't playable.
+And although it  can be fun  for a while just to run around in a few levels, the
+fun and action of the original ñDoomð hasn't made its way to the Falcon ...
+... that was until  now. ñidð Software  released the sources for the original ñDoom
+and òPatrice Mandinð aka òData of Trioð compiled the sources for the ñUnix version of
+ñDoomð using GCC on MiNT and released it as ñDoom v0.01ð.
+After solving  a few problems  on the óVGA-monitorð (v0.03) and fixing some errors
+in the  lighting engine  (v0.05), he now  releases version ò0.06ð with  minor bugs
+fixed and the lighting perfectionised.
+
+You need  a ñDoomð òWADð-file, either  from the  original ñDoom 1ð, ñDoom 2ð, ñUltimate
+ñDoomð or commonly available, the òsharewareð ñDoom-WADð.
+These òWADð-files  contain all  graphics, all sounds, all samples and  all levels.
+The ñDoomð-program  itself  is  just  the  ògraphic-, sound- and  game  engineð, all
+relevant data is óinð the òWADð-file.
+
+The control  device is  the keyboard as  a default and all the original keys are
+being  used. Cursor  keys to  move, SHIFT for  run, ALT for  strafe, CONTROL  to
+shoot, space  to activate  buttons/open doors, ESC for the menu, 1 to 6  for the
+weapons and the numeric keyboard for screen-size options.
+Even the original cheats (ñIDKFA, IDDQD, IDCLIP etc.ð) work.
+There is yet no sound.
+
+This is the first playable ñreal Doomð on the Falcon ever, but the word "playable"
+is a bit brave. On ordinary Falcons, it isn't playable. It is simply too slow to
+play. This is  not very astounding  as this  port of ñDoomð is only 68030 code and
+does ónotð use the DSP  for anything. Since every Falcon owner knows that the real
+power of  the Falcon  lies in the òDSPð and not  in the  rather slow  16 MHz ò68030
+(Hi SWE! :-), it is  obvious for anybody that a ñDoomð version not  using  the òDSP
+can not be played very well.
+Using  simple  accelerators  like  òCPU-doublersð, óSkunk, FX card etc.ð solves  the
+problem a  little. Playing ñDoomð in  a medium sized  window in low  resolution is
+possible  using the óNemesisð or óCenTurbo 1ð-speeder, but gets very slow  in higher
+levels as the rooms get larger and the sprite movement increases.
+With a óCenTurbo 2ð, you can play ñDoomð a lot  better. Even in  larger windows, the
+average  speed of the game is suitable, although I would still  recommend to use
+low resolution. An óAfterburner 040ð of course will make ñDoomð fly on the Falcon.
+
+Version 0.06 of  this ñDoomð-port looks best so far. The lighting now is clean and
+shiny and looks like the original versions on the PC. I have the impression that
+this version  is a òbitð slower than the previous  one, v0.05, but this  is rather
+a personal impression.
+From what I have learned  in the documentation, òPatrice Mandinð is currently busy
+to build a compromise between his own ñDSP-Doomð and the original ñDoomð.
+It looks rather  like he will  make his own ñDSP-Doom (v0.8)ð, which now  features
+the  possibility  of  playing  music  by  a  òMIDI-instrument-emulationð, playable
+instead of replacing the ògraphic engineð in the original ñDoomð with his  own, òDSP-
+òbasedð one - since  he seems to  know a lot more about ñDoomð than anybody  else on
+the  Falcon - especially  now  that  the ñBad Moodð development  group  fell  into
+eternal sleep, I guess he knows which approach is better.
+
+ñDoomð may be  outdated now  that there are no ónon-3D gamesð anymore on the PC or
+the Playstation, but as  usual, the original is still one of the best. Some even
+more advanced 3D games on the PC  look rather sad in comparison to the thrill of
+the  original  ñDoomð, as  the  leveldesign, the  graphics, the  sprites  and  the
+atmosphere are still exciting and unique.
+So if you call an accelerated Falcon your  own, grab the shotgun, search for the
+BFG-9000 and shoot everything in your way. Even in medium sized windows with 4 -
+10 frames a second, ñDoomð is one hell of a bloodbath.
+
+---------------------------> Rating :          <--------------------------------
+                                      GFX: 77%
+                        Fun (Std. Falcon): 17%
+                        Fun (Nemesis,CT1): 63%
+                         Fun (AB040, CT2): 83%
+                           <------------------->
+
+--------------------------------------------------------------------------------
+                                                                    The Paranoid
+                                                   Paranoia - The Lunatic Asylum
+--------------------------------------------------------------------------------                                                   

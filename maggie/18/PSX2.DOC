@@ -1,0 +1,706 @@
+066030003040000132006000006008000
+11
+2#1
+F0110030001
+9[..................................................................]0110
+€----------------------------------------------------------------------
+ hardware
+----------------------------------------------------------------------
+
+                            PLAYSTATION 2
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+It is strange to  think  that  the  most  successful piece of computer
+hardware this decade  hasn't  come  from  Intel,  Nintendo, Sega, IBM,
+MicroSoft, Silicon Graphics,  Compaq,  Motorola  or  even  our beloved
+Atari. A company with  no  track  record  in  the  computer or console
+industry has come from nowhere and taken the market by storm. The Sony
+Playstation is the computer entertainment success story of the 90s.
+
+It takes a lot to  impress  a  hall  full  of demo coders and computer
+freaks, and in early 1995 in Bremen Germany a lot of us got to see our
+first glimpse of the PSX.  The  party  organisers  of Fried Bits 3 had
+just got hold of one of these machines and presented it to us all on a
+large projection screen. At the time it was incredible - there was not
+another machine on the market that could cope with the amount of polys
+it was throwing around. Top end  PCs  of the day couldn't compete with
+this, let alone the Falcon and Amiga 1200.
+
+This technical ability combined with Sony's ruthless marketing saw the
+playstation find its way into  over  50 million homes. The competition
+from the Jaguar and Saturn was akin to ASH going up against MicroSoft.
+By the time the technically superior  Nintendo 64 was released, it was
+too late. The  PSX  had  swallowed  a  large  part  of  the market and
+Ninentdo was left with crumbs.
+
+It is now 5 years  since  the  Playstation's  release,  and as we know
+computers and consoles age  very  quickly.  Playstation games now look
+substandard, the glitches and problems  with  the hardware have become
+more and more obvious. Top end PCs with the best graphics cards are so
+far ahead of the  PSX  technically  it  is  laughable. The playstation
+doesn't even have a z-buffer for god's sake! Yet the sales of PC games
+remain sluggish, and this christmas  more  playstations were sold than
+ever before.
+
+Japanese gamers were lucky enough  to  get  their  hands on Sega's new
+console, the  Dreamcast,  this  Christmas.  The  Dreamcast's  power is
+comparable to today's top end PCs  and  it  also  has the benefit of a
+very  nice  graphics  chip.  At  last   Sega  have  woken  up  to  the
+possibilities of 3D, something they ignored with the Saturn.
+
+Whilst the Dreamcast is a very nice machine and is probably just ahead
+of current PC technology, by  the  time  of  its European release this
+september the PC will have caught up,  and  it won't be long before it
+is showing its age  again.  The  current  range of Dreamcast software,
+whilst nice, doesn't really do anything  that is impossible on the PC.
+It is not as far ahead  of  the  competition  as  the PSX was in 1994.
+Given the rapid march  of  technology,  the  lifespan of the Dreamcast
+looks limited.
+€
+Sony have the number one brandname and  a huge amount of money to sell
+their new console with. They could  have  given the PSX2 similar specs
+to the Dreamcast  and  still  outperformed  Sega  simply  on marketing
+acumen. But  Sony  are  more  forward  looking  than  this,  they have
+designed a console that is not only  the natural successor to the PSX,
+but leapfrogs the DreamCast and all current PCs.
+
+
+Given the rapid expansion in PC  technology  over the last 5 years, it
+has been hard  to  see  how  console  manufactures  could compete. CPU
+manufacturers like Intel and AMD have been doubling the speed of their
+processors every 18 months, and there are now a whole load of graphics
+card manufacturers pushing the  polygon  performance  of the PC. Cards
+from people like 3DFX and nVidia significantly outperform the consoles
+and have been getting better every year.
+
+The gap between the PC and  consoles  couldn't be much greater than it
+is today. The playstation has 33Mhz CPU and 2MB of main memory and 1Mb
+of graphics memory. If  you  were  to  buy  a  new  PC today, it would
+probably have a 500mhz Pentium 3  processor,  at least 128MB of memory
+and graphics card with at least  8Mb  of  memory. It can run in higher
+resolutions and offer graphics  that  look  a  lot  smoother thanks to
+techniques such as  bi-linear  filtering.  The  polygon  throughput of
+these cards is also considerably greater than that of the PSX.
+
+The strange thing is that these vastly powerful PCs with their arsenal
+of graphics processing  power  have  made  little  impact  on  the PSX
+market. PC games sell notoriously badly - even though they are cheaper
+than PSX games,  the  playstation  version  of  a  game will typically
+outsell the PC by 4 to 1.
+
+And its not just  the  software  that  is  selling  - people are still
+buying thousands and  thousands  of  playstations.  The  demand was so
+great at christmas that they  ran  out  of stock. Manufacturers of PCs
+and graphics cards must be  scratching  their heads and wondering what
+they are doing wrong. Even with  its  huge technical advantage, the PC
+is losing out to the PSX.
+
+Details about  the  PSX2  have  been  shrouded  in  secrecy.  With the
+playstation selling so well, why  damage  the market by announcing its
+successor? But even Sony realise that the  PSX  is near the end of its
+life, and they could do  with  firing  a  shot  across the bows of the
+DreamCast.
+
+It takes a lot to impress a  room  full of games coders, especially PC
+coders with a natural dislike of consoles. But at my games company the
+announcement of the PSX2 left a  load  of gaping mouths and mutters of
+"this can't be right". One  DirectX  coder was overhead saying "that's
+it, I give up now!"
+
+The PSX2 specs are not good - they are astounding.
+
+The CPU is a 300mhz RISC chips based on the MIPS instruction set. RISC
+chips are a lot faster than  CISC  equivalents  at the same clock rate
+(just compare  Motorola's  G4  to  Intel's  Pentium  series).  This is
+€supported with 3 co-processors, an FPU with a floating point MAC and a
+Divider, another floating point unit with  4  MACs and a divider and a
+third floating point unit with 5  MACs  and 2 dividers. This gives its
+an awesome floating point performance  of  6.2  GigaFlops, more than 3
+times as powerful as the new Pentium 3 processors. Its capacity for 3D
+maths is unrivalled.
+
+It has a huge amount of memory  for  a console - 32Mb. Whilst this may
+seem small compared to  the  PC,  it  doesn't  have  to  cope with the
+massive footprint of windows. The DreamCast  has 16Mb and bear in mind
+that it has to cope with Windows  CE. The memory bandwidth of the PSX2
+is excellent - it can transfer 3.2 GigaBytes a second.
+
+With this floating  point  perfomance,  it  can  transform  66 Million
+Polygons a second ( that  includes  perspective transformation ). Even
+with an additional lighting calculation,  it  can calculate 38 million
+polys a second. For particle effects,  it can transform an amazing 150
+million pixels a second.
+
+But it is no good having  all  this  huge calculation capacity if your
+graphics chip can't keep up. If you  pushed it, the original PSX could
+do about 6,000 polys a frame - that's 300,000 polys a second at 50hz.
+
+The PSX2's GPU has the pretentious  name of "Graphics Synthesiser". It
+runs at a clock frequency of  150mhz  and has 16 pixel engines. Whilst
+the only effects that  the  PSX's  GPU  offered  were Gouraud Shading,
+Texture Mapping and a limited form  of Transparency, the PSX2 has Bump
+Mapping, MIP-Mapping, Anti-Aliasing, Alpha  Blending, Fogging and both
+Bi-Linear and Tri-Linear Filtering. It also  has a Z-Buffer so no more
+horrible poly sorting problems!
+
+This graphics chip is very  well  designed,  it has an incredible 2560
+bit bus (yes, that's two thousand  five  hundred and sixty bit!). This
+gives it a bandwidth of 48 GigaBytes per second. This gives it a pixel
+fill rate of 2.4 GigaPixels  per  second.  It can effectively draw 150
+millions pixels a second, which  nicely  ties  in with the 3D particle
+calculation rate.
+
+Remember the old  school  consoles  that  had  '64'  or '256' hardware
+sprites? This seemed a lot  and  very  impressive compared to the ST's
+sprite capabilities. Well the PSX2  has  upped  the ante somewhat, and
+can draw 18.75 Million sprites a second. Enough for most games I would
+think!
+
+Like the PSX, its 3D performance is  better  than its 2D. The PSX2 can
+draw 75 Million polys  a  second  -  an  astonishing figure. Even with
+Texture Mapping, Z-Buffering and  Alpha  Channeling  it can display 25
+million polys a second.
+
+This kind of performance is  far,  far  ahead  of  even the top of the
+range graphics cards for the PC. You  could spend over 2,000 UK pounds
+on a PC with Pentium 3  and  the  best  graphics card and see it being
+outperfomed by a 200 pound console.
+
+This must be worrying to PC manufacturers. In recent years, the PC has
+tried to market itself more and  more  as a games machine. The success
+€of this strategy has been  limited  -  games companies like writing PC
+games as it is less demanding to  develop  on and profits per game are
+higher. Yet the games sell in  pitifull quantities and people are much
+happier buying consoles to play games on.
+
+Whilst Sega have got into bed  with  Microsoft with the DreamCast ( it
+runs a version of  Windows  CE  to  allow  easy  PC  ports ), Sony are
+resolutely alone. Given the technology in this machine, they could not
+only challenge the PC games market but other aspects of software. This
+sort of technology could outperform  the  PC on graphics applications,
+renderers and even  net  browsers.  If  Sony  ever  decided  to make a
+computer or expand the functionality of the PSX2 then MicroSoft should
+be very worried.
+
+It would cost other  graphics  card  manufacturers  over 1000 pounds a
+unit to make hardware similar to  the  PSX2  and no-one would pay 1000
+pounds for a console. Sony  can  afford  to  make  a huge loss on each
+console they sell because they have made so much from PSX software and
+they now they will make  an  equally  huge  figure from PSX2 software.
+Manufacturers of PC graphics card do not have this luxury - they don't
+get 7 pounds back from every  PC  game  bought. To catch the PSX2 they
+have to develop similar hardware  and  then wait for the manufacturing
+costs to come down which will take  some  time - by this time the PSX2
+will have a dominant grip on the market.
+
+For the PC to compete against consoles it can't just be better, it has
+to be significantly better. And  the  PC won't be significantly better
+than the PSX2 for at least 3 years. And even this may not be enough to
+temp people away from a cheap but enormously powerful console which it
+easy to use and has a vast array of software.
+
+
+You may wonder why this article is  in  Maggie - what has the PSX2 got
+to do with atari? Given the  capabilities  of the PSX2 it could change
+the current computer market. The PC is going  to have to go a long way
+to keep up, and during this  time  Sony's profits will keep rising and
+they can plough the money into developing  the PSX3 which can again be
+ahead of the competition. It will be hard to break their stranglehold.
+
+With all this money and  technology,  you  have to wonder whether sony
+will ever go into the  computer  industry  -  it has the capability to
+design a computer to challenge the  PC  and the financial resources to
+back it up. Imagine a  computer  that  could  play PSX2 games and also
+give  you  internet  access  and   have   a   range  of  office  style
+applications. The  amount  of  software  you  need  for  a  successful
+computer is relatively  small  (  word  processor,  art package, music
+package, email package, net browser,  some  utilities ). Most software
+is just small variations on these  genres. Sony have come from nowhere
+to dominate the computer games industry  -  it would be interesting to
+see what would happen if they turned their minds to other areas of the
+computer industry.
+
+PC manufacturers surivive by selling consumers new hardware. If people
+don't keep buying new CPUs and  new  graphics  cards then they will go
+out of business.  And  what  encourages  people  to  buy  new CPUs and
+Graphics Cards? People aren't going  to  buy  a  Voodoo  3 to get more
+€performance from their word  processor.  Intel's desperate claims that
+the Pentium 3 makes the internet faster  have been laughed at by all -
+the speed of your CPU has  very  little  to  do  with the speed of the
+internet. The main thing that  encourages  people  to buy new PCs, and
+certainly new graphics cards, is games.
+
+Thousands of people were tempting away  from  their atari to the nasty
+PC on seeing 'Doom'.  And  ID  caused  more  atari casualties with the
+release of 'Quake'. A very  small  amount  of people have been tempted
+away from the  atari  by  Microsoft  Word.  It  is  games  and amazing
+graphics that showcase the PC and lure people into buying it.
+
+A lot of people may say that  they  want  a PC for working on or doing
+their homework with, but  in  reality  they  just  want to play 'half-
+life'.
+
+The cumbersome nature of the PC serves to put a lot of people off. The
+fact that even CD based games dump  hundreds of megabytes of data onto
+your hard drive is also a  pain.  Consoles are an efortless solution -
+just put in the game  and  switch  it  on.  PCs  will never be able to
+compete with this ease of use.
+
+It is amusing that one of the most popular areas of software on the PC
+are emulators. It is funny that  people  would rather run the software
+of other computers and play console games  than use all the 'great' PC
+software. The latest machine that  PC  emulates  is  the N64.
+
+So is a PSX2 emulator feasible  on  a  PC?  Not  for a very long time.
+Playstation emulators have only  arrived  relatively recently and they
+aren't great. To emulate a different machine, you need roughly 4 times
+the processing power of the emulated  platform. Just look at the speed
+of PC you need to run a gameboy emulator at a decent framerate. The PC
+has to go a hell of long way  to  catch up the PSX2, let alone attempt
+to emulate it. By this time, Sony will have their next machine out.
+
+It is interesting that the companies  Sony talked about competing with
+in their Tokyo presentation of the PSX2 weren't Sega or Nintendo. They
+know they have already beaten them.  They were talking about taking on
+Microsoft and Intel.
+
+Some people are of the opinion  that  the  PSX2 is "only a console, it
+could never challenge the pc". This is a somewhat simplistic and short
+sighted view. At the lowest level, PC  users  may buy a PSX2 for games
+and have no incentive to upgrade their  PC. What's the point of buying
+a new graphics card for your PC if your 200 pound console out performs
+it?
+
+On the next level, there is the talk  of the PSX2 running Unix. It can
+have development tools running on the console itself rather than a PC.
+There are manufactures of graphics software working on PSX2 packages.
+
+At the moment the PSX2 is not  a  replacement for a home computer. But
+it certainly has  the  capabilities  to  be  a  home  computer,  and a
+computer that beats its competition.  It  has  a faster processor than
+the fastest PCs and far  better  graphical capabilities. It can output
+to VGA monitors. It has enough  memory  to run large applications. The
+€only difference between the PC  and  the  PSX2  is  that  the PC has a
+keyboard, mouse, hard drive and more memory. And is slower.
+
+Given this power,  a  challenge  to  the  dominant  PC  is  not so far
+fetched. In the business  environment  the  PC  will  always be king -
+there are  too  many  specialised  applications  needed  by  different
+companies from anything to challenge it. The PC came from the business
+world and  it  may  be  sent  back  there.  The  home  market  is very
+different.
+
+The I/O processor  of  the  PSX2  is  ridiculously  powerful  -  it is
+bascially an  enhanced  version  of  the  CPU  used  in  the  original
+PlayStation, the mips R3000. This allows it to be backwards compatible
+with the original  machine  thus  giving  a  huge established software
+base. It  will  probably  send  the  graphics  through  the  'graphics
+synthesiser', so like UltraHLE the  games  could look better. It could
+use the GS's bi-linear filtering to make the graphics look smoother.
+
+Interestingly  the  I/O  processor's   keyboard   and  mouse  handling
+capabilities are highlighted by Sony,  an  indication of the area they
+may want the system to move into.
+
+Sony has the  best  hardware,  a  good  reputation  with the consumer,
+brilliant marketing strategies, and,  most importantly, huge financial
+resources. It has captured the  console  market,  and I can't see this
+position being challenged by Sega  or  Nintendo. The next logical step
+is it to move  into  is  the  home  computer  market.  It has hardware
+capable of performing the PC in all areas, and it can sell it cheaper.
+
+
+For us atari users, any machine  that halts the relentless monopoly of
+the PC in any area is good. It  proves that there is an alternative to
+this dinosaur machine, that other companies can do things better.
+
+----------------------------------------------------------------------
+
+SONY COMPUTER ENTERTAINMENT  ANNOUNCES  WORLD'S  FASTEST  128  Bit CPU
+"EMOTION ENGINE" FOR THE NEXT GENERATION PLAYSTATION
+
+
+TOKYO, March 2, 1999 - Sony Computer Entertainment Inc. is pleased to
+announce the co-development with  Toshiba  Corp.  of  the  128 bit CPU
+
+("EE",  or  "Emotion  Engine  for  use  in   the  next  generation  of
+PlayStation In order  to   process   massive  multi-media  information
+at  the  fastest possible speeds,  data  bus,  cache memory as well as
+all registers are 128 bits; this  is  integrated  on a single chip LSI
+together with the state  of  the  art  0.18 micron process technology.
+The development of a full 128-bit CPU is  the first of its kind in the
+world.
+
+Not only will this new CPU have  application for games, but it will be
+the  core   media   processor   for   future   digital   entertainment
+applications, and  has a  vastly  superior  floating point calculation
+capability compared to the  latest  personal  computers.   The new CPU
+incorporates two 64-bit integer units (IU)  with a 128-bit SIMD multi-
+€media command unit, two independent  floating point vector calculation
+units  (VU0,  VU1),  an  MPEG  2  decoder  circuit  (Image  Processing
+Unit/IPU) and high performance DMA  controllers onto one silicon chip.
+The massive  combined  performance  of  this  CPU  permits complicated
+physical calculation, NURBS curved surface generation and 3D geometric
+transformations, which are difficult to  perform  in real time with PC
+CPUs, to be performed at high speeds.
+
+In addition, by processing the data at 128-bits on one chip, it is
+possible to process and transfer massive volumes of multi-media data.
+ CPUs on conventional PCs have a basic data structure of 64 bits, with
+only 32 bits on recent game consoles.  The main memory supporting the
+high speed CPU uses the Direct Rambus( DRAM in two channels to achieve
+a  3.2GB/second  bus  bandwidth.  This   equates  to  four  times  the
+performance  of  the  latest  PCs   that   are  built  on  the  PC-100
+architecture.
+
+By incorporating the MPEG 2 decoder circuitry on one chip, it is now
+possible to simultaneously process high-resolution 3D graphics data at
+the same time as high quality DVD images.  The combination of the two
+allows the introduction of a new approach to digital entertainment and
+real-time graphics and audio processing.
+
+With a floating point calculation performance of 6.2GFLOPS/second, the
+overall calculation performance of  this  new  CPU  matches  that of a
+super computer.  When this is  applied  to the processing of geometric
+and perspective transformations normally used in the calculation of 3D
+computer graphics (3DCG), the peak calculation performance reaches 66
+million polygons per second. This  performance is comparable with that
+of  high-end  graphics  workstations  (GWS)  used  in  motion  picture
+production.
+
+
+
+Emotion Engine Features and General Specifications
+
+
+
+CPU core                128 bit RISC (MIPS IV-subset)
+Clock Frequency         300MHz
+Integer Unit            64bit (2-way Superscalar)
+Multimedia extended instructions  107 instructions at 128 bit width
+Integer General Purpose Register  32 at 128 bit width
+TLB                             48 double entries
+Instruction Cache               16KB (2-way)
+Data Cache                      8KB (2-way)
+Scratch Pad RAM                 16KB (Dual port)
+Main Memory                     32MB (Direct RDRAM 2ch@800MHz)
+Memory bandwidth                3.2GB/sec
+DMA                             10 channels
+Co-processor1                   FPU (FMAC x 1, FDIV x 1)
+Co-processor2                   VU0 (FMAC x 4, FDIV x 1)
+Micro Memory                    (I:4KB D:4KB)
+Vector Processing Unit          VU1 (FMAC x 5, FDIV x 2)
+Micro Memory                    (I:16KB D:16KB)
+
+€Floating Point Performance      6.2GFLOPS
+
+Geometry
++ Perspective Transformation  66Million Polygons/sec
++ Lighting     38Million Polygons/sec
++ Fog     36Million Polygons/sec
+Curved Surface Generation (Bezier)  16Million Polygons/sec
+Image Processing Unit           MPEG2 Macroblock Layer Decoder
+Image Processing Performance   150Million Pixels/sec
+
+Gate width              0.18 micron
+VDD Voltage             1.8 V
+Power Consumption       15 Watts
+Metal Layers            4
+Total Transistors       10.5 Million
+Die Size                240 mm2
+Package                 540pin PBGA
+
+
+----------------------------------------------------------------------
+
+SONY COMPUTER ENTERTAINMENT ANNOUNCES THE DEVELOPMENT OF THE WORLD'S
+FASTEST GRAPHICS RENDERING PROCESSOR USING EMBEDDED DRAM TECHNOLOGY
+
+
+
+TOKYO, March 2, 1999 - Sony Computer Entertainment has developed the
+Graphics  Synthesizer   for   the   next   generation   PlayStation(r)
+incorporating a massively parallel rendering  engine  that  contains a
+2,560 bit wide data bus  that  is  20  times   the   size  of  leading
+PC-based  graphics accelerators.
+ Very high pixel fill rates and drawing performance is achieved only
+through the use of embedded  DRAM  process technology pioneered by SCE
+for use in advanced graphics technology.
+
+The  current  PlayStation  introduced  the  concept  of  the  Graphics
+Synthesizer via  the  real-time  calculation  and  rendering  of  a 3D
+object.
+ This new GS rendering processor is the ultimate incarnation of this
+concept - delivering unrivalled  graphics  performance and capability.
+The rendering  function  was  enhanced  to  generate  image  data that
+supports NTSC/PAL Television,  High  Definition  Digital  TV  and VESA
+output standards.   The  quality  of  the  resulting  screen  image is
+comparable to movie-quality 3D graphics in real time.
+
+In the design of graphics systems, the rendering capability is defined
+by the memory bandwidth between the pixel engine and the video memory.
+ Conventional systems use external  VRAM  reached  via an off-chip bus
+that limits the total performance  of   the   system.   However in the
+case of the new GS, there  is a  48-Gigabyte  memory  access bandwidth
+achieved via the integration of the  pixel  logic and the video memory
+on a single high performance  chip.  This  allows orders  of magnitude
+greater pixel fill-rate performance compared  to today's best PC-based
+graphics accelerators.
+
+When rendering small polygons, the peak drawing capacity is 75 Million
+€polygons per second and the  system  can  render 150 Million particles
+per second. With this  large  drawing  capability,  it  is possible to
+render a movie-quality image. With Z-buffering, textures, lighting and
+alpha blending (transparency), a sustained rate of 20 Million polygons
+per second can be drawn continuously.
+
+This new architecture can also execute recursive multi-pass rendering
+processing and filter operations at a very fast speed without the
+assistance of the main CPU  or  main  bus  access.   In the past, this
+level of real-time  performance  was  only  achieved  when  using very
+expensive, high performance, dedicated graphics workstations. However,
+with the design of  the  new  Graphics  Synthesizer, this high quality
+image  is   now   available   for   in-home   computer   entertainment
+applications. This will help  accelerate  the  convergence of  movies,
+music   and  computer  technology   into   a   new   form  of  digital
+entertainment.
+
+
+
+
+Graphics Synthesizer - Features and General Specifications
+
+
+
+GS Core         Parallel Rendering Processor with embedded DRAM
+Clock Frequency   150 MHz
+No. of Pixel Engines   16 (in Parallel)
+Embedded DRAM   4 MB of multi-port DRAM (Synced at 150MHz)
+Total Memory Bandwidth  48 Giga Bytes per Second
+Combined Internal
+           Data Bus bandwidth  2560 bit
+   Read  1024 bit
+   Write  1024 bit
+   Texture  512 bit
+Display Colour Depth   32 bit (RGBA: 8 bits each)
+Z Buffering    32 bit
+Rendering Functions   Texture Mapping, Bump Mapping
+     Fogging, Alpha Blending
+     Bi- and Tri-Linear Filtering
+     MIPMAP, Anti-aliasing
+     Multi-pass Rendering
+
+Rendering Performance
+
+Pixel Fill Rate 2.4 Giga Pixel per Second
+(with Z buffer and Alphablend enabled)
+1.2 Giga Pixel per Second
+(with Z buffer, Alpha and Texture)
+Particle Drawing Rate   150 Million /sec
+Polygon Drawing Rate   75 Million /sec (small polygon)
+     50 Million /sec (48 Pixel quad with Z and A)
+     30 Million /sec (50 Pixel triangle with Z and A)
+     25 Million /sec (48 Pixel quad with Z, A and T)
+Sprite Drawing Rate   18.75 Million (8 x 8 Pixels)
+
+Display output    NTSC/PAL
+€     Digital TV (DTV)
+     VESA (maximum 1280 x 1024 pixels)
+Silicon process technology  0.25 ( 4-level metal
+Total number of transistors  43 Million
+Die size     279mm2
+Package Type    384 pin BGA
+
+---------------------------------------------------------------------
+
+
+SONY COMPUTER  ENTERTAINMENT  ANNOUNCES  THE  DEVELOPMENT  OF  AN  I/O
+PROCESSOR FOR  THE  NEXT  GENERATION  PLAYSTATION  THAT  PROVIDES 100%
+BACKWARDS COMPATIBILITY
+
+
+TOKYO, March 2, 1999 -  Sony  Computer Entertainment has developed the
+I/O  Processor   with   LSI   Logic    Corporation    for   the   next
+generation PlayStation.
+ By  embedding  this  processor   we   have   achieved  100%  backward
+compatibility with the current PlayStation.   In addition, the new I/O
+Processor supports IEEE 1394 and Universal  Serial Bus (USB) which are
+the new standards for digital interconnectivity.
+
+The new I/O Processor for the  next generation PlayStation is based on
+the current PlayStation CPU but  with   enhanced  cache  memory  and a
+new, higher performance  DMA  architecture  that  permits  a four-fold
+increase in data  transfer  rates.   The  serial   interface  is  also
+upgraded  to over 20 times the performance of the current PlayStation.
+In addition, the USB  host  controller  and  the  IEEE 1394  link  and
+physical layers are integrated onto this single chip LSI.
+
+The USB  interface  is  compatible  with  OHCI  (Open  Host Controller
+Interface) and can handle data transfer rates of between 1.5Mbps and
+12Mbps (Mega bits per  second).   IEEE  1394  can handle data transfer
+rates of between 100 Mbps and 400 Mbps.
+
+The use of these interfaces allows the future connectivity of the new
+PlayStation system to a variety of other systems and consumer products
+such as VCR, Set Top Box,  Digital Camera, Printer, Joystick, Keyboard
+and Mouse amongst others.
+
+----------------------------------------------------------------------
+
+SONY  COMPUTER  ENTERTAINMENT  ANNOUNCES   THE   DESIGN  OF  THE  NEXT
+GENERATION PLAYSTATION SYSTEM
+
+
+
+TOKYO, March 2,  1999  -  Sony  Computer  Entertainment  is pleased to
+announce the completion of  its  research  and  development project to
+design the successor  to  the  PlayStation  that  was first introduced
+during 1994 in Japan. The advanced  technology of  the next generation
+system provides the basis for an  exciting  new era of in-home digital
+entertainment.
+
+With over 50 Million units  shipped  to date, the original PlayStation
+€game  console  radically  changed    the    landscape   for   computer
+entertainment with the  introduction  of  real-time  3D graphics which
+significantly enhanced the possibilities  for creative expression over
+conventional 2D graphics-based systems.
+
+The next generation PlayStation massively increases the quality and
+performance of graphics technology to the maximum level that can be
+enjoyed on a television set through the innovative design of its new
+Graphics Synthesizer. The new Graphics Synthesizer will give software
+experiences for the next generation PlayStation unparalleled graphic
+quality  and  detail.  The   next  generation  PlayStation  technology
+combines this richly detailed  graphic  quality with the revolutionary
+ability  to  generate    worlds,     characters,     behaviours    and
+complex  physical simulations in  real-time  via the massive floating-
+point processing power of the system.
+
+This  powerful  combination   allows   for   new   types  of  computer
+entertainment to be created. For example, the  hair  and clothing of a
+character can  be  effected  by  a   digital   wind   calculated   and
+processed  in  real-time.  Other   examples    include   the   dynamic
+simulation  of   real-world   physical  attributes  such  as  gravity,
+friction,   mass   and   the    accurate    simulation   of  different
+materials such as water, wood,  metal  and  gas.  This will change the
+future of computer entertainment forever.
+
+This concept is called "Emotion Synthesis(" which allows the system to
+simulate not just how  the  images  look,  but  how the characters and
+objects in a game think,  act   and  behave.  This  concept requires a
+computer system with a massive floating-point mathematical calculation
+capability far beyond  the  current  state-of-the-art workstations and
+approaches the performance  of  large-scale  super  computers used for
+scientific simulation.
+
+The next generation PlayStation  has  at  its  heart  a  CPU with data
+processing capabilities far exceeding  those  of  today's state of the
+art PCs and with a rendering   processor  that has greater performance
+than that of  the   highest   level    graphics   workstations.   This
+allows  for unparalleled real-time  computer  graphics expressions and
+techniques to be used in software  for the first time. Imagine walking
+into the screen and experiencing  a  movie  in real-time...this is the
+world we are about to enter.
+
+In addition to the technology  of  conventional CD-ROM, the new system
+also adopts the future generation of disc media, DVD-ROM, to allow for
+the storage of massive amounts of data and large programs. Because the
+calculation performance of the new  system  can reduce the requirement
+for massive data structures on the  disc, we believe that the capacity
+of conventional CD-ROMs will be appropriate for certain applications.
+However, in  the  future  we  anticipate  the  need  for  larger, high
+capacity  storage  mediums  required  by  the  new  forms  of  digital
+entertainment created by Emotion Synthesis.
+
+
+
+
+In  addition,  the  new  system   employs  MPEG2  image  decompression
+€technology, widely used today  for  image-based  DVDs. This allows for
+the  storage  of  compressed  image   data   for  texture   maps   and
+background data that can then be decompressed in real-time as required
+by the application. The resulting  image  quality not only matches the
+computer graphic quality generated by the  system but is  also  of the
+highest quality available for in-home use.
+
+In the vital  area  of  sound  processing,  we  have  gone  beyond the
+capabilities of the current PlayStation to allow for even more complex
+digital  enhancement  and  processing  of  sound  effects  and  music.
+Software  generated   sounds,   using    the    massive    calculation
+performance of the system  and  complex   enhancements  to  the  sound
+processor,  allows  for the  encoding  and  processing  of advanced 3D
+digital  sound  techniques  such  as  AC-3  and  DTS.  With  this leap
+forward  in   technology,   we  anticipate  a  New  World  of  digital
+entertainment that will surpass  the  experience of conventional video
+and music CDs.
+
+With over 3,000 titles currently available for the current PlayStation
+worldwide, we have designed the new system to be backward compatible,
+therefore, allowing consumers to continue to enjoy their library of
+software. This was made possible  by  integrating  a new I/O Processor
+that uses a 32-bit core identical to the current PlayStation system,
+permitting the accurate interchange of data and programs with the rest
+of the new system.
+
+Sony Computer Entertainment will incorporate  this new technology into
+the next generation PlayStation that  is  planned  to be released into
+the  Japanese market during  the  fiscal  year  ending  March 2000. An
+overseas introduction is planned  to  follow  in  the  fall  of  2000.
+To allow software developers to  begin  developing  new titles to take
+
+advantage of this powerful new technology, development systems will be
+made available starting this spring.
+
+The next generation PlayStation system announced here is a significant
+part of Sony Computer Entertainment's mission to create "a new form of
+entertainment beyond games" via the integration of innovative computer
+technology with digital AV technology.
+
+AC-3 and DTS are trademarks and/or registered trademarks of their
+respective owners.
+
+
+
+CPU       128 Bit "Emotion Engine("
+System Clock Frequency   300 MHz
+Cache Memory    Instruction: 16KB, Data: 8KB + 16KB (ScrP)
+Main Memory     Direct Rambus (Direct RDRAM)
+ Memory Size     32MB
+Memory Bus Bandwidth   3.2GB per Second
+Co-processor     FPU (Floating Point Unit)
+       Floating Point Multiply Accumulator x 1,
+Floating Point Divider x 1
+ Vector Units     VU0 and VU1
+Floating Point Multiply Accumulator x 9,
+€Floating Point Divider x 3
+ Floating Point Performance   6.2 GFLOPS
+
+ 3D CG Geometric Transformation  66 Million Polygons per second
+
+ Compressed Image Decoder   MPEG2
+
+Graphics      "Graphics Synthesizer"
+Clock Frequency    150MHz
+ DRAM Bus bandwidth    48GB per Second
+ DRAM Bus width    2560bits
+ Pixel Configuration    RGB:Alpha:Z Buffer (24:8:32)
+ Maximum Polygon Rate   75 Million Polygons per Second
+
+Sound       "SPU2+CPU"
+Number of Voices ADPCM: 48ch on SPU2 plus definable, software
+programmable voices
+Sampling Frequency   44.1 KHz or 48 KHz (selectable)
+
+IOP       I/O Processor
+ CPU Core     PlayStation (current) CPU
+ Clock Frequency    33.8MHz or 37.5MHz (Selectable)
+ Sub Bus     32 Bit
+ Interface Types    IEEE1394, Universal Serial Bus (USB)
+ Communication    via PC-Card (PCMCIA)
+
+Disc Device      CD-ROM and DVD-ROM
+
+

@@ -1,0 +1,129 @@
+-------------------------------------------------------------------------------
+                A simple introduction into Environment-mapping
+               ================================================
+
+1. What is Env-Mapping?
+-----------------------
+Env-Mapping is a rendering-method where an environment is mapped onto a pseudo-
+mirrored  object. Just  take a chromed  spoon or knife an rotate it in front of
+your eyes. With  Env-Mapping you  can simply  simulate the way your spoon/knife
+reflects its  environment (in our Spoon-model: the room you are sitting in). If
+you've  just  no  ideas  what  we  are  talking  about  then  watch  the famous
+"Sonolumineszenz"-Demo by Avena.
+
+
+2. The basic principles behind Env-Mapping:
+-------------------------------------------
+Well, of course the only nearly realistic method to calculate the reflection of
+a real 3D-environment  on a 3D-object would  be raytracing, which can't be done
+in realtime  on a slow  computer. So Env-Mapping is somehow a fake-method which
+produces (under certain circumstances) raytracing-like results. The idea behind
+Env-mapping  is that you don't use a real 3D-environment! Instead of it you use
+a predefined *constant* environment  which is mapped  on a sphere. The diameter
+of the sphere has to be endless while the 3D-objects are in the centre of it!
+Now you can just calculate the normal-vectors of each point of a polygon. These
+normal-vectors  point directly to  a point on the surface of the sphere. So you
+can take the color of the point on the sphere and draw the point of the polygon
+with this color.
+
+
+3. Limits of Env-Mapping:
+-------------------------
+The problems/errors of Env-Mapping are:
+1. 2 objects  can't be  reflected in  each  other because  the  environment  is
+   absolutely constant and the same for both objects!
+2. A flat polygon would have the same normal-vector at each point of it. So the
+   point  of the Environment  this vector  points to  is always  the same. As a
+   result the  whole polygon would be of 1 color! That's why Env-Mapped objects
+   should  always be built of "bended" polys. (just  define a poly by 3 corner-
+   points and 3 corner-normals and then interpolate a normal for each pixel out
+   of the corner-normals)
+3. There are  some other errors  which result  of the first 2 errors and/or are
+   less important...
+
+
+4. How you really DO it:
+------------------------
+The things you really have to do are generally MUCH SIMPLER than what you might
+think at this point!
+1. A sphere-like environment is really bad to code. But let's think:
+   Polygons which  lie at the backside  of our 3D-object are hidden anyway. And
+   Polys  of the  frontside of  our object  generate only  normal-vectors which
+   point to  the front-half  of our environment-sphere. (if  we forget the fact
+   that our polys are generally bended!)
+   So what  we only need is  the front-half  of the sphere, as the back-half is
+   nearly never addressed by any normal-vector of the front-polys. So why don't
+   we use  a simple quadratic  map which is somehow  a projection of our front-
+   half of the sphere?
+
+
+ (-1,-1)                     (1,-1)
+   +---------______---------+
+   |      . -      - .      |
+   |    /              \    |          our new quadratic map
+   |  /                  \  |          the circle shows the part of our map
+   | |                    | |          which is really used (filled with
+   ||         (0,0)        ||          pixels) the corners outside the circle
+   | |                    | |          are not really used - they will never
+   |  \                  /  |          be addressed by any normal-vector!
+   |    \              /    |
+   |      ` -______- '      |
+   +------------------------+
+ (-1,1)                      (1,1)
+
+
+2. Okay, now we  have a simple form of the environment, but how do we calculate
+   these  normal-vectors? Well, we  said  that  every  poly  is  defined  by  3
+   different 3D-corner-coordinates and 3 normal-vectors - 1 for each corner.
+   All these normal-vectors have an equal length : 1
+   Because the only information of these vectors we need is not the length - we
+   need the direction  the vector points to. So, when we rotate the whole poly,
+   we have  to rotate each  corner-coordinate  AND each  normal-vector  of  the
+   corners.
+   When everything  is rotated, we  can ignore the z-coordinates of the normal-
+   vectors. When  we now look at the x- and y-coordinates of the normal-vectors
+   we see, that  a 2D-vector  coming out  of the  point (0,0) of  our  map, and
+   parallel  to the x- and y-components  of the normal-vectors would point to a
+   point inside this circle with the radius 1.
+   So we take  the map-koordinates of the 3 points which are adressed by the x-
+   and y- components  of the 3 normal-vectors  of the corners. To fill our poly
+   we  just  interpolate between  these 3  map-coordinates 'scanning' exactly a
+   triangle  between these  3 map-points. This  triangle  is the  part  of  our
+   environment which is reflected by our poly.
+
+
+5. Summary of things to do:
+---------------------------
+1. rotate the corner-coordinates
+2. rotate the normal-vectors of the corners (a normal-"vector" is somehow a 3D-
+   coordinate which is exactly 1 unit away from (0,0))
+3. take 3 rotated normal-vectors and use the x- and y-components as coordinates
+   of our env-map
+4. fill  the  poly (on  screen) with  points of  the map which  are adressed by
+   interpolations of the 3 x- and y-components of the normal-vectors (= stretch
+   the triangle defined by the x- and y-components and draw it on screen....)
+
+Any other things you have to do are equal to other 3D-rendering-methods...
+
+I hope you understood at least the main bits. Basically Environment-Mapping can
+be done  in realtime even on *really* slow computers. I did it on ST, but I saw
+it already on XL. And it looks really more complicated than it is.
+
+If you have any questions or comments about this or any other effects, just get
+in touch with me!
+
+e-mail:    m.schwalb@liebig.gi.he.schule.de
+
+Happy hacking!
+
+Llama/.tSCc.
+
+PS: Sorry  for  this lame  English - I  don't know  much of  these mathematical
+    expressions and  have general  problems to express my ideas/thougths in any
+    other language than in German....
+
+-------------------------------------------------------------------------------
+________________________________.tSCc._________________________________________
+Mausnetz:       Martin Schwalb @ GI
+e-Mail:         m.schwalb@liebig.gi.he.schule.de
+---------------------------[ no pROMiSEs! ]------------------------------------

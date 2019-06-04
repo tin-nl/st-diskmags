@@ -1,0 +1,81 @@
+
+
+                    STOS DISTORTER BY STEVE JARRETT
+
+
+
+        Welcome to this little bit of stuff by me steve
+        i will in this section try to explain how distortion
+        can be achieved using stos basic. If you look at the
+        program it is really very simple to achieve good fx
+        the mian loop of the program consists of def scrolls
+        these can be found at lines 130-200 ,i.e
+ 
+        130 def scroll1,60,190-y to 250,199-y,1,0
+        
+        If we look at this line we see that scroll zone 1
+        is shifted 1 step(16 pixels) to the right
+        and we have y as a variable. 
+        This is increased using inc y ,This causes a block
+        of 9 pixels high to move up the screen ,This can
+        also be decreased to make the block go down.
+       
+        Next we look at how the six or more scroll zones
+        work together to give the desired effect.
+        Scroll 1 goes right 1 step
+        Scroll 2 goes left 2 steps
+        Scroll 3 goes right 3 steps
+        Scroll 4 goes left 2 steps 
+        Scroll 5 goes right 1 step
+        Scroll 6 goes left 1 step
+       
+        All this brings the screen back to were it started
+        but you could leave the screen to the left or the right
+
+        Lines 220-270 check position of the scrolls up the  screen  
+        and send the prg to the sub routines for starting the 
+        following scrolls on there way .i.e. When scroll area 1
+        moves up the screen 16 pixels scroll 2 is then set on
+        its way at line 290 as below
+ 
+        290 scroll 2
+        300 if e>0 then inc a
+        302 if a>130 then dec a
+        305 if e=0 then a=0
+        310 return
+
+        If we look at line 300 this checks to see if e is not 0
+        if eis not 0 then a is increased this moves scroll 2 
+        up the screen
+        Line 302 checks to see that a is less than 130 which is
+        the top of the area to be distorted.If it is greater then
+        a is decreased this is done to stop the scroll going
+        above the area to be distorted
+        Line 305 checks to see if e is 0 ,e is set at 1 to start 
+        with and corresponds to scroll 6 the last scroll,When
+        e reaches130 then it is set to 0 this inturn set all
+        the variables to 0 ready to reapeat all over again
+        then e is set to 1 agian .
+
+
+
+        This is basically how it works i have left all the rems in 
+        the basic source to help you more,You can ignore the intro
+        screen and exit screens as they are there just for show
+
+
+        O.K. if you have any hints tricks or tips for use in stos
+        then send them to me and i will send you some more of my
+        stuff ,some of it is new some older than this routine
+      
+        Write to      STEVE JARRETT
+                      52 MAWNEY CLOSE
+                      ROMFORD
+                      ESSEX
+                      RM7 8EJ
+        
+  
+
+               SEE ALL YOU STOSSERS SOON BYE
+
+

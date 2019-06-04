@@ -1,0 +1,404 @@
+0660302020367
+1
+2
+9[.........................................................]001
+
+Maggie 24: XBIOS DSP Programming
+
+
+
+Å                  DSP PROGRAMMING USING THE XBIOS
+
+                           AN INTRODUCTIONÄ
+
+Ñ                          Steven TattersallÄ
+
+
+One of the things that Maggie has lacked has been an in-depth 
+explanation of the Falcon's DSP and how it works. It was always one 
+of the Falcon's great strengths, but as is typical for Atari, 
+despite programming a very thorough set of Operating System 
+operations for it, they didn't bother telling the average 
+programmer how to access it. 
+
+(Doh!)
+
+However with the help of a list of C calls, some free time due to 
+holidays and a trawl through the operating system, here is a 
+reasonably full guide on how to control data in a friendly and 
+"clean" kind of way. It should be accurate because I've spent a 
+fair amount of time ripping the code apart, but I can't be held 
+responsible for any errors.
+
+This is not a course on programming the DSP; it is basically a 
+reference on how the XBIOS works. It is becoming more and more 
+important, as variations on the standard Falcon emerge, to write 
+system-friendly DSP code. In addition, it is also very useful to 
+find out just how Atari programmed the wee beastie...
+
+
+
+                              DSP BASICS
+
+There are two ways of getting data in and out of the DSP:-
+
+- The first is to use the Host Port, which is a set of registers 
+specifically designed for programmers to send data at high speed 
+from the Host Processor (in our case the 68030 chip) to the DSP; 
+this can be done in the normal course of program execution, or can 
+be controlled via the use of programmable 68030 interrupts.
+
+- The other is the use of the DMA (Direct Memory Access) which 
+automatically sends blocks of data to and from the DSP without any 
+specific intervention from the Host Processor  DMA uses aspects of 
+the CODEC sound chip to control flow of data and is therefore 
+closely linked with the sound libraries.
+
+Sound programming is beyond the scope of this article, so I don't 
+propose to go into it here unless specifically necessary. This 
+could well be the subject of a further article though.
+
+
+
+                            THE HOST PORT
+
+The Host Port occupies the memory range $FFA200 to $FFA207 
+inclusive. Access from the 68030 processor to these addresses is 
+done by use of an 8-bit bus; this means that data accesses of these 
+addresses of more than 8 bits are done by sending 8 bits, then the 
+next 8 bits and so on.
+
+The layout of the Host Port registers as seen from the 68030 are as 
+follows:
+
+$FFA200            àInterrupt Control RegisterÄ. Controls methods of                                 
+                   transferring data to/from the DSP, whether using                                 
+                   the DMA or the Host Port, including the use of                                 
+                   interrupts to do this
+
+$FFA201            àCommand Vector RegisterÄ. Used to send special 
+                   commands to the DSP to force interrupts; often 
+                   used by DSPdebuggers or special interrupts such 
+                   as sound generation
+
+$FFA202            àInterrupt Status RegisterÄ. Gives the current 
+                   status of DSP transmission, including interrupts 
+                   it uses.
+
+$FFA203            àInterrupt Vector RegisterÄ. Controls which vector 
+                   the 68030 will use for interrupt-driven host 
+                   port data transfer.
+
+$FFA204            àUnusedÄ. (Always reads as zero, but does not 
+                   cause bus error if read)
+
+$FFA205            àDSP-Word HiÄ.  Used to send data to the DSP Host Port.
+$FFA206            àDSP-Word MidÄ. Used to send data to the DSP Host Port.
+$FFA207            àDSP-Word LowÄ. Used to send data to the DSP Host Port.
+
+We shall look more closely at these registers in the future, but 
+for now we shall purely be considering transferring data to and 
+from the DSP via the Host Port. We transfer data by putting it into 
+the DSP-Word Registers, but first we have to check whether the DSP 
+is free to receive/transmit on its side: it does this by setting 
+flags in the Interrupt Status Register, to denote whether it is 
+free.
+
+If we test Bit 0 and it is zero then we are not free to receive 
+data; similarly if we test Bit 1 and it is zero then we are not 
+free to transmit data.
+
+For example, here is a piece of assembler code to send 512 bytes to 
+the DSP (taken from the XBIOS):
+
+        MOVE.W  #512-1,D0               ; d0 = our counter
+Lab08:  BTST    #1,$FFFFA202.W          ; ready to transmit?
+        BEQ.S   Lab08                   ; bit 1 = 0? Not ready
+        MOVE.B  (A0)+,$FFFFA205.W       ; send hi byte
+        MOVE.B  (A0)+,$FFFFA206.W       ; send mid byte
+        MOVE.B  (A0)+,$FFFFA207.W       ; send lo byte
+        DBF     D0,Lab08                ; loop
+
+
+This is an over-simplified model of DSP transfer (in future issues 
+of Maggie I hope to go into this further) but for now we can use 
+the XBIOS to send programs to the DSP and execute them. All you 
+need to know for now is that this is the main model for Host Port 
+transfer.
+
+
+
+                  INTRODUCTION TO XBIOS DSP COMMANDS
+
+We shall now look at some of the commands available to control data 
+transfer to/from the DSP using TOS. Firstly here is a complete list 
+of the XBIOS DSP commands and their names:
+
+                      96: DOBLOCK
+                      97: BLKHANDSHAKE
+                      98: BLKUNPACKED
+                      99: INSTREAM
+                      100: OUTSTREAM
+                      101: IOSTREAM
+                      102: REMOVEINTERRUPTS
+                      103: GETWORDSIZE
+                      104: LOCK
+                      105: UNLOCK
+                      106: AVAILABLE
+                      107: RESERVE
+                      108: LOADPROG
+                      109: EXECPROG
+                      110: EXECBOOT
+                      111: LODTOBINARY
+                      112: TRIGGERHC
+                      113: REQUESTUNIQUEABILITY
+                      114: GETPROGABILITY
+                      115: FLUSHSUBROUTINES
+                      116: LOADSUBROUTINE
+                      117: INQSUBRABILITY
+                      118: RUNSUBROUTINE
+                      119: HF0
+                      120: HF1
+                      121: HF2
+                      122: HF3
+                      123: BLKWORDS
+                      124: BLKBYTES
+                      125: HSTAT
+                      126: SETVECTOR
+
+Obviously some of these look a bit confusing so for the moment, but 
+for this article we'll look at some of the basic commands to send a 
+program to the DSP, and doing some general housekeeping:
+
+
+
+                          DSP "HOUSEKEEPING"
+
+XBIOS 104: LOCK
+
+Assembler:
+        move.w  #104,-(a7)
+        trap    #14
+        addq.l  #2,a7
+        tst.w   d0
+
+C:      short DspLock(void);
+
+Operation: Attempts to lock the DSP so that it can not be used by 
+other programs. The call returns the status of the locking BEFORE 
+the call was made (ie. -1 if locked, 0 if unlocked) Hence 0 denotes 
+a fully successful call, -1 semi-successful since the DSP is now 
+locked anyway.
+
+
+
+XBIOS 105: UNLOCK
+
+Assembler:
+        move.w  #105,-(a7)              ;XBIOS 105, DspUnlock
+        trap    #14
+        addq.l  #2,a7
+
+C:      short DspUnlock(void);
+
+Operation: Frees the flag denoting the DSP has been previously 
+used.
+
+Despite indications to the contrary, this call does *not* return a 
+value, at least on my version of TOS! This is because the flag is 
+always cleared, no matter whether the DSP has been reserved or not. 
+This operation should be carried when execution of your DSP 
+application has finished.
+
+In practice for testing code, the above two operations can be 
+ignored because the 'locked' flag is not checked when carrying out 
+any other XBIOS commands (at least not in my version of TOS) NOTE 
+that this 'lock' is purely a software lock - there is no feature 
+built into the hardware to lock the DSP to one program. You are 
+perfectly free to come along and access all the hardware directly, 
+demo coders.
+
+
+
+
+
+
+Now we have (hopefully) determined that the DSP is free for use, we 
+can proceed to send it programs, routines or data. The XBIOS system 
+calls seem to have been set up with two broad aims in mind:-
+
+- To allow full access to the DSP without direct hardware 
+manipulation, provided that the DSP code is correctly written; this 
+includes interrupt driven host port access;
+
+- To allow combinations of programs, routines and memory allocation 
+routines, providing that they conform to certain standards.
+
+
+                           SENDING DSP CODE
+
+
+First we shall look at the XBIOS calls to send DSP code across to 
+the 56001 processor:
+
+
+110: EXECBOOT
+
+Assembler:
+        move.w  #0,-(a7)                ;ability
+        pea     (codesize).w            ;length of code in DSP-
+Words
+        pea     code_address(pc)        ;address of code
+        move.w  #110,-(a7)              ;XBIOS 110, DspExecBoot
+        trap    #14
+        lea     12(a7),a7
+
+C:
+void    DspExecBoot(char *codeptr,long codesize,short ability);
+
+IMPORTANT NOTES:
+
+This is the most basic way of sending code to the DSP. It resets 
+the DSP completely and then transfers 512 DSP-Words of code to the 
+bottom of DSP memory. It does this by:-
+
+1. Setting bit 4 of the Port A to 0, and pausing for 1/100 of a 
+second. Note that timer C must be operating normally for this code 
+to work!
+
+2. Setting the bit high momentarily, then low. This has the effect 
+of resetting the DSP. The DSP's "bootstrap" load code comes into 
+operation: it expects 512 dsp-words of code to be received via the 
+normal host port registers. These are placed at address p:0 and 
+execution restarts at p:0. Note that system vectors are positioned 
+at the range p:1 to p:$3f, so the first instruction is invariably a 
+'jmp' command to the first line of your code.
+
+Also note that in the following three calls, no status value is 
+returned in D0 - the call is assumed to have worked correctly in 
+all cases. In fact D0 will be set to -1 because it is used for a 
+DBF loop, so it will appear to the unaware that the code has 
+failed!
+
+The code is expected to be stored in "unpadded" format: that is the 
+first word (24 bits) of DSP code should occupy bytes 0, 1 and 2 of 
+the data, the second word bytes 3,4 and 5 and so on.
+
+If the code length ("codesize") is less than 512 words, the XBIOS 
+pads out the data stream at the end by appending (512-codesize) 
+dsp-words of zero value.
+
+The value of "ability" is unused in my version of TOS and has no 
+effect.
+
+
+109: EXECPROG
+
+Assembler:
+                move.w  #ability,-(a7)
+                pea     (codesize).w
+                pea     code_address(pc)
+                move.w  #109,-(a7)
+                trap    #14
+                lea     12(a7),a7
+C:
+void    DspExecProg(char *codeptr,long codesize,short ability);
+
+Similar to ExecBoot, in that the DSP is reset and a piece of 
+bootcode is sent but this time the bootcode is supplied by the 
+XBIOS. It then jumps to a piece of code in high P memory (at around 
+p:$7800) which expects a piece of unpadded DSP code in the 
+following format:
+
+DSP-WORD:       destination memory type:
+                $000000 - P memory
+                $000001 - X memory
+                $000002 - Y memory
+DSP-WORD:       destination address in DSP memory bank
+DSP-WORD:       length of chunk of data in dsp words
+DSP-WORDS:      chunk of data of length given above
+
+The length of the overall file of data is determined by the call to 
+the XBIOS itself. An incorrect value to this can result in extra 
+data being sent which overwrites DSP memory.
+
+Once the data is sent, the XBIOS itself sends an extra chunk of 
+code which installs a couple of DSP interrupt vectors. It then 
+jumps to address P:0, so your code must include an instruction at 
+P:0 which jumps to the start of your code. Also note that resetting 
+the DSP rewrites all P memory below P:$200, so your code must sit 
+above this address!
+
+The 'ability' value can be left at zero for present; it seems to be 
+used to determine the identity of DSP subprograms (see a future 
+article for this?)
+
+
+In addition to sending the lowest-level code yourself, you can also 
+utilise some DSP routines that are built in to the XBIOS. Here are 
+two which allow you to use LOD files instead of lower-level code.
+
+
+111: LODTOBINARY        
+
+Assembler:
+                pea     ptr(pc)         ;destination code address
+                pea     file(pc)        ;addr of name of LOD file
+                move.w  #111,-(a7)      ;XBIOS 111, DspLodToBinary
+                trap    #14
+                lea     10(a7),a7
+                move.l  d0,d7           ;length of code in words
+C:
+long    DspLodToBinary(char *file,char *ptr);
+
+This routine converts a LOD file produced by most DSP assemblers to 
+the format needed by the DspExecProg call above. "Filename" is a 
+pointer to the name of the file, which is loaded from disk 
+automatically during the call (it cannot be stored in memory!) 
+"Destaddr" is the destination buffer which will hold the converted 
+DSP code. The length of the produced code, in DSP words, is 
+returned in D0.
+
+
+
+108: LOADPROG
+
+Assembler:
+        pea     ptr(pc)         ;temporary buffer to hold code
+        move.w  #ability,-(a7)
+        pea     file(pc)        ;filename
+        move.w  #108,-(a7)      ;XBIOS 108, DspLoadProg
+        trap    #14
+        addq.l  #8,a7
+
+C:
+short DspLoadProg(char *file, short ability, char *ptr);
+
+(This call was incorrectly defined in the documentation I had)
+This routine is a combination of "LodToBinary" and "ExecProg." It 
+loads in the named lodfile, converts it to the correct format 
+(storing it in the buffer pointed to by 'ptr' and then sends the 
+code to the DSP. If successful the code returns 0, else -1 if an 
+error has occurred (eg. specified file not found)
+
+
+
+
+
+
+These are the main calls to send programs to the DSP. In the next 
+article I'll take a closer look at how the operating system handles 
+multiple routines.
+
+
+Steve Tattersall (tat/avena)
+
+Email: àtat@avena.com
+       s.j.tattersall@cms.salford.ac.uk
+
+
+
+
+
+
+

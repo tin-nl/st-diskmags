@@ -1,0 +1,26 @@
+                        ---  BUBBLEFIELD SOURCE CODE  ---
+                         ---  FOR USE IN STOS BASIC  ---
+                        --- CODED BY DARKMAN OF T-deF ---
+                      --- AS USED IN THE CHECKMATE DEMO ---
+
+  Hi again!!  First, let me say a big thank you to Sammy Joe who, since you are
+reading this, has obviously decided to include this in Maggie!!
+
+  Right, there isn't really much to say about the source, since it has quite a
+lot of remarks (well, quite a lot from my point of view!).  Basically, all it
+does is read some data stuff and then plots 15 sprites of the appropriate size
+and in the appropriate positions.  Pretty simple really.  The music was taken
+from Skate Tribe (I think) and has about 25 tunes in it.  It would be quite
+easy to make this screen much better...
+
+     - Logic screen plotting allowing for more bubbles (but also slowing the
+       screen down)
+     - A nice background picture
+     - Different types of sprites (there are 7 different sizes of sprites.
+       Examine the sprite bank to see which order they are in)
+     - Better music (really hard to implement)
+
+  I have nothing more to say on this subject since I am now a retired STOS
+programmer.
+
+  Cheeribye from Darkman of T-deF

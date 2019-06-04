@@ -1,0 +1,631 @@
+066030003040000132006000006008000
+11
+2#1
+F0110030001
+9[..................................................................]0110
+€----------------------------------------------------------------------
+ hardware
+----------------------------------------------------------------------
+8000900001\PHENIXW.IMG
+
+
+
+
+
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+I can still remember the tingle of  excitement I got when I first read
+about the Falcon. True Colour  graphics!  50khz  stereo sound! A 16mhz
+CPU! And a strange but very fast  processor called 'DSP' that could do
+stuff at "lightning speeds".
+
+The Falcon designers had some good  ideas about making a super-st, and
+the technology (especially  the  DSP)  was  good  for  1992,  the year
+developer machines went out.
+
+But the  problems  with  the  Falcon's  hardware  became  evident very
+quickly. It  was  a  32-bit  machine  with  a  16-bit  bus.  The DSP's
+performance was severely limited by its  8-bit  bus to the CPU. And it
+only had 96k of  memory.  Main  memory  was  slow.  The blitter hadn't
+improved - it still hogged the  bus  and couldn't run in parallel. And
+the CPU quickly began to seem  slow,  after all 68030s are designed to
+run at speeds of at least 20mhz.
+
+The true colour graphics mode was great,  but  as you now need 16 bits
+for a pixel as opposed to 4 on the  ST (for 16 colour mode) you had to
+effectively shift 4 times as much  data  around  on a machine that was
+only twice as fast.
+
+If any of these restrictions  had  been  limited  - 32 bit bus, direct
+access to memory for DSP, 20mhz  030, separate video memory to improve
+main memory speed - the Falcon would be a far more capable machine. It
+is so frustrating to have the hardware and be limited by bad design.
+
+Despite these limitations, people  have  done  amazing things with the
+Falcon. Coders like Tat have pushed  the machine beyond all reasonable
+expectations. But even the best machine have a life cycle, and 7 years
+after the Falcon's creation people are looking for new options.
+
+I've never had any interest in PCs  or  Macs and some of the new atari
+machines seem to be  going  about  things  the  wrong  way. I love the
+Falcon and want a super powered Falcon  style machine, not a faster ST
+or TT style machine. I want  great  graphics,  audio, a fast CPU and a
+DSP.  The  falcon  had  all  the   right  ideas,  but  all  the  wrong
+implementation.
+
+If you were to choose a group of  people to design a new atari machine
+who would it be? No-one  knows  the  Falcon's strengths are weaknesses
+better than demo coders, and it is  a  group of French demo coders who
+are behind the new Centek Phenix machine.
+€
+The Centek Phenix is modelled  on  the  Falcon architecture, but fixes
+all the design problems that atari created. Plus it gives you a lot of
+extras. Let's take a look at the latest revision of the specs:
+
+----------------------------------------------------------------------
+                                 CPU
+----------------------------------------------------------------------
+
+
+ ATARIST
+
+   Chip:   68000 @ 8Mhz
+   Caches: None
+
+
+The 68000 was king when the ST  was  launched and it made Intels chips
+look very silly indeed. At 8Mhz,  the ST's 68000 just outperformed the
+Amiga making it slightly faster at 3D games.
+
+
+ FALCON030
+
+   Chip:   68030 @ 16Mhz
+   Caches: 256 byte Instruction Cache
+           256 byte Data Cache
+
+A 16mhz chip was a nice  upgrade  from  the  8mhz of the Atari ST, but
+this was still one of the first  parts of the Falcon architecture that
+came under fire. Even back in '93, 16mhz  was slow for a 68030, a chip
+that was designed to run at speeds  of  greater than 20mhz. The TT had
+been around for years and its CPU was twice the speed of the Falcon.
+
+The problem was that  Atari  seemed  to  want  to  keep  the TT as its
+flagship, power  user  machine.  Either  that  or  they  found  a huge
+shipment  of  cheap  030s  that   hadn't   met  the  grade  at  higher
+frequencies.
+
+The 030 has  some  nice  features  compared  to  the  68000,  the main
+performance benefit being the addition of data and instruction caches.
+Unfortunately these  caches  are  too  small  to  be  of  use  in most
+routines. Obviously 128 bytetros fit nicely  in  the cache - no wonder
+they are so fast ;-)
+
+There are some  useful  extra  addressing  modes  for programmers, but
+these give no  real  speed  benefits.  The  030  also  gave coders the
+ability to perform 32 bit multiply and divides - very useful for fixed
+point calculations.
+
+The 68030 runs the core 68k instruction  set of an average of 4 cycles
+each. The Falcon's 030 had a performance of 3.84 MIPS.
+
+
+  PHENIX040
+
+   Chip:   68040 @ 36Mhz
+€   Caches: 4K Instruction Cache
+           4K Data Cache
+
+With each even numbered chip, Motorola enters a new generation. Whilst
+the 030 was an enhanced 020, the 040 is next step.
+
+The 4k instruction cache is big  enough  for most routines, and as the
+040 uses Harvard architecture there is also a 4k data cache.
+
+The instruction set has been  optimised  and  there  is also a greater
+degree of pipelining. Processing of 040 instructions is split into two
+phases, the Calculate stage and  Execute  stage.  This means that when
+one instruction  is  being  executed,  the  next  instruction  can  be
+calculating.
+
+The instruction set has been optimised with notable speed increases in
+the logical and arithmetic shifts and divides. For example a divide on
+an 030 takes 90 cycles, on the 040 this has been cut to 53 cycles. The
+pipelining also increases performance significantly.
+
+
+The 040 has one major new instruction, MOVE16. This instructions moves
+16 bytes of data  around,  very  useful  for  copying  large chunks of
+memory. It has been designed  so  that  data  accessed with the MOVE16
+instruction is not cached so  you  do  not  incur the speed penalty of
+cache flushing when moving around a lot of data.
+
+ PHENIX060
+
+  Chip:   68060 @ 72Mhz
+  Caches: 8k Instruction Cache
+          8k Data Cache
+
+The 68060 really  is  the  king  of  the  68000  family. Motorola have
+optimised the hell out of the instruction set and produced a CISC chip
+with RISC style performance.
+
+There are the generously sized  8k  instruction  and data caches which
+should be able  to  fit  the  majority  of  all  but  the most bloated
+functions in them. And if you  are  writing loops that are bigger than
+8k you should be very ashamed!
+
+The speed increase Motorola have got  out  of the core instruction set
+is nothing short of incredible. All the most common 68000 instructions
+run  in  just  1  cycle.  Even  the  costly  and  cumbersome  Multiply
+instructions, traditionally shunned by programmers, have been cut from
+44 cycles on the 030 down to just 2 cycles. Incredible work!
+
+The 68060 features some  great  branch prediction technology. Branches
+are the  major  obstacle  in  creating  a  smooth  and  fast pipelined
+architecture,  but  Motorola  have  incorporated  a  technique  called
+'branch folding'  where  branches  are  detected  and  the instruction
+stream changed accordingly. There is a  256 entry branch cache to give
+maximal performance  and  means  that  the  majority  of  branches are
+executed in 0 cycles!
+
+€The 68060 features dual superscalar architecture  - it has two integer
+units both capable of decoding  and executing instructions. This means
+that multiple instructions  can  execute  simultanously  allowing more
+than one instruction to execute each clock cycle.
+
+This superscalar architecture gives  the  68060 an average instruction
+time of  less  than  1  cycle  per  instruction  for  the  core  68000
+instruction set! A truly incredible feat of engineering.
+
+The 68060 has extremely  high  internal  transfer  rates. The internal
+instruction and data caches  provide  600  MBytes/Sec at 50mhz, whilst
+the integer units can support a sustained rate of 1.2 GBytes/sec.
+
+These amazing features  give  a  68060  running  at  66mhz  an amazing
+100MIPS performance rating. And the Phenix CPU is faster than that.
+
+
+ INSTRUCTION CYCLES
+
+This gives an indication  of  the  relative  instruction times for the
+68030,040 and 060 processors.
+
+Note that direct comparison is  not  entirely  valid,  the 040 and 060
+instructions are faster than 030 instruction even if they are rated at
+the same number of clock cycles.
+
+The 68040 splits  instructions  into  calculate  and  execute steps so
+whilst one instruction is being executed  the  next can be fetched and
+calculated.
+
+The 68060 features  dual  superscalar  architecture  allowing multiple
+instruction to be executed simultaneously!
+
+Branching instructions on the 68060 use branch prediction. The timings
+given here for branch instructions are WORST CASE/BEST CASE. Given the
+branch folding techniques employed and the 256 entry branch cache, the
+WORST CASE times will only be encountered on very rare occasions.
+
+
++--------+-----+-----+-----+
+| Op     | 030 | 040 | 060 |
++--------+-----+-----+-----+
+| ABCD   |  4  |  4  |  1  |
+| ADD    |  2  |  2  |  1  |
+| ADDX   |  2  |  2  |  1  |
+| AND    |  3  |  2  |  1  |
+| ASL    |  8  |  5  |  1  |
+| ASR    | 10  |  4  |  1  |
+| Bcc    |  6  |  6  | 7/0*|
+| BCHG   |  6  |  5  |  1  |
+| BCLR   |  6  |  5  |  1  |
+| BFTST  |  8  |  6  |  8  |
+| BFCHG  | 14  | 11  | 12  |
+| BFCLR  | 14  | 11  | 12  |
+| BFSET  | 14  | 11  | 12  |
+| BFEXTS | 10  |  7  |  8  |
+€| BFEXTU | 10  |  7  |  8  |
+| BFINS  | 12  |  9  |  6  |
+| BFFFO  | 20  | 11  | 11  |
+| BRA    |  6  |  6  | 3/0*|
+| BSET   |  6  |  5  |  1  |
+| BSR    |  6  |  4  |  3  |
+| BTST   |  4  |  3  |  1  |
+| CHK    |  8  | 16  |  2  |
+| CLR    |  2  |  2  |  1  |
+| CMP    |  2  |  2  |  1  |
+| CMPM   |  8  |  6  |  2  |
+| DBcc   |  6  |  6  | 8/2*|
+| DIVS.W | 56  | 35  | 22  |
+| DIVS.L | 90  | 53  | 38  |
+| DIVU.W | 44  | 35  | 22  |
+| DIVU.L | 78  | 53  | 38  |
+| EOR    |  2  |  2  |  1  |
+| EXG    |  4  |  3  |  1  |
+| EXT    |  4  |  3  |  1  |
+| JMP    |  4  |  6  |  3  |
+| JSR    |  4  |  6  | 5/1*|
+| LEA    |  2  |  2  |  1  |
+| LINK   |  6  |  6  |  2  |
+| LSL    |  8  |  4  |  1  |
+| LSR    |  8  |  4  |  1  |
+| MULS.W | 28  | 21  |  2  |
+| MULS.L | 44  | 21  |  2  |
+| NBCD   |  6  |  4  |  1  |
+| NEG    |  2  |  2  |  1  |
+| NEGX   |  2  |  2  |  1  |
+| NOP    |  2  | 16  |  9  |
+| NOT    |  2  |  2  |  1  |
+| OR     |  2  |  2  |  1  |
+| PEA    |  4  |  4  |  1  |
+| ROR    |  8  |  4  |  1  |
+| ROXR   | 12  |  7  |  1  |
+| RTS    |  9  | 10  |  7  |
+| SBCD   |  4  |  4  |  1  |
+| Scc    |  4  |  3  |  1  |
+| SUB    |  2  |  2  |  1  |
+| SUBX   |  2  |  2  |  1  |
+| SWAP   |  4  |  3  |  1  |
+| TAS    |  4  |  3  |  1  |
+| TST    |  2  |  2  |  1  |
+| UNLK   |  5  |  4  |  1  |
++--------+-----+-----+-----+
+
+----------------------------------------------------------------------
+                                 DSP
+----------------------------------------------------------------------
+
+ FALCON030
+
+  Chip:   560001 @ 32Mhz
+  Memory: 256 byte On-Chip Program RAM
+          256 byte On-Chip X Ram
+€          256 byte On-Chip Y Ram
+          96k Off Chip RAM
+
+The DSP  is  the  main  thing  that  set  the  Falcon  apart  from the
+competition. It is an incredibly powerful  chip with very fast on chip
+memory.  It  is  brilliant   at  multiplication,  specifically  matrix
+multiplication - the cornerstone of 3D maths.
+
+On the Falcon we have seen  the  DSP blasting out great demos, tracker
+replays and super fast JPEG  decoders  amongst  other things. The real
+shame is that this great chip hasn't been put to greater use.
+
+There are two main problems with the Falcon's DSP.
+
+1. Memory.
+
+96K really isn't enough, especially if you are trying to store your 3D
+world in there with  objects  and  textures.  You  will have to either
+continually swap things in and out of the  DSP or send data in lots of
+small chunks, limiting the effective parallelism.
+
+2. Data Transfer.
+
+The Falcon's DSP has no access to main memory so all data transfer has
+to go through the 68030. This  limits  the 030s performance and limits
+parallelism. The bus between the chips is a measly 8 bits wide meaning
+data transfer rates are limited.
+
+For a typical operation, the  68030  has  to  fetch the data from main
+memory (a slow operation on the falcon).  Next the 030 must check that
+the DSP is ready to receive data  -  when  it  is then it can send the
+data down the 8-bit  bus  to  the  DSP.  Now  the  DSP can process the
+information, then it has to wait  for  the  030 to be ready to receive
+data. Now it can send the data  back  down  the  8 bit bus to the 030.
+Finally the 030 can write the data to memory.
+
+This  is  probably  the  worst  designed  part  of  the  whole  Falcon
+architecture, with the DSP never really being allowed to cut loose and
+the 030 being reduced to acting  as  a  'bus' between the DSP and main
+memory.
+
+The Falcon's DSP has a performance of 16 MIPS.
+
+ PHENIX
+
+ DSP:    56301 @ 80Mhz
+ Memory: 3072 byte On-Chip Program RAM
+         2048 byte On-Chip X RAM
+         2048 byte On-Chip Y RAM
+         384K Off-Chip RAM (12ns SRAM)
+
+The Phenix's DSP is from the 56300 family.  It is based on the new DSP
+56300 core engine which  is  capable  of  executing  an instruction of
+every clock cycle which  is  a  twofold  performance increase over the
+56000 family from which the Falcon's DSP comes.
+
+€There is more space for code and data  to exist in the very high speed
+on-chip memory, and  there  is  384K  of  off-chip  memory which gives
+programmers a lot more scope than the 96k on the Falcon's DSP.
+
+Whilst the  extra  speed  and  extra  memory  are  welcomed,  the real
+performance boost of the Phenix's DSP comes from its ability to access
+main memory  direct.  This  means  the  main  limiting  factor  of the
+Falcon's DSP is finally abolished!  The  Phenix  DSP  can work in true
+parallel, loading and storing  data  to  and  from main memory without
+needing intervention from the  CPU.  The  Falcon's biggest design flaw
+has been killed.
+
+The Phenix is connected to the  PCI  bus  and  it can send and receive
+data at 132 MBytes/Sec -   a  huge  advantage  over the slow 8-bit bus
+between the DSP and CPU on Falcon.
+
+At 80Mhz, the 56301 has a performance of 80MIPS.
+
+
+
+----------------------------------------------------------------------
+                               GRAPHICS
+----------------------------------------------------------------------
+
+   FALCON030
+
+   Chip:    Videl
+   Modes:   2,4,16,256 or 65,536 Colours
+   Blitter: Rectangular Block Transfer
+
+
+Whilst the Falcon  had  excellent  graphical  display capabilities, it
+lacked the horsepower to  actually  draw  reasonable amounts. The true
+colour mode was a real bonus,  allowing  coders to easily create pixel
+effects without messing around with  bitplanes. Unfortunately the time
+required to draw graphics was large  -  more than 50% of the processor
+time is need to just CLEAR the screen in 320x240 (low res) true colour
+mode.
+
+For this reason, most demos  run  in  very  low resolutions, a typical
+screen res being 160x100. Whilst the  DSP can calulate stuff, the fill
+rate cannot keep up.
+
+The Blitter didn't help too much  -  whilst  it was useful in bitplane
+mode for shifting graphics, in  true  colour mode you could outperform
+it in software. As the blitter hogged the bus it was effectively mono-
+tasking, and  only  allowed  you  to  copy  blocks  of  data  or  draw
+rectangles.
+
+The Falcon uses main memory to store  its frame buffer. As main memory
+is slow, drawing is slow.  Having  the  video  chip access main memory
+also slows down memory for other devices.
+
+ PHENIX
+
+ Chip:  S3 VIRGE 4mb DX
+€ Modes: 256, 65536 or 16.7 million colours
+        Polygon Drawing
+        Flat Shading, Texture Mapping, Gouraud Shading
+        Perspective Correct Texture Mapping
+        Mip-Mapping, Bi-Linear Filtering, Tri-Linear Filtering
+        Alpha Blending
+        Z-Buffer
+
+The S3 Virge is a graphics  card  that  became very popular on the PC.
+Whilst not up to the standard of current  3D cards, it is still a very
+capable chip and is an amazing leap forwards compared to the Falcon.
+
+Just the ability to blit lots of stuff around the screen is great, and
+the S3 Virge is very good  at  2D graphics. Console style games should
+be easy to implement -  large fast scrolling platformers, shoot-em-ups
+with lots and lots of sprites, beat-em-ups with massive sprites.
+
+The S3 also has an excellent  range  of  3D features. As well as being
+able to draw flat shaded polys -  something  the blitter can't do - it
+can also draw gouraud shaded polys,  texture  mapped polys and even do
+perspective correct texture mapping!  For  smoothing  out the textures
+there is Mip-Mapping, Bi-Linear and Tri-Linear filtering.
+
+The  virge  also  supports  alpha   blending   allowing  you  to  draw
+transparent polys. It also has support for depth queuing and fogging.
+
+One of the great features of  the  card  is  the  fact that it has a Z
+Buffer. No more poly sorting nightmares - just send them to the S3 and
+let it sort them out! The  playstation,  for example, lacks a z-buffer
+and look what a mess its 3D output can be.
+
+It is true that there are  better  cards  on the PC, but whatever card
+Centek had chosen would have  been  surpassed  by the time the machine
+was launched. The Virge is a  great card that offers great performance
+without  being  expensive  (sound  like  a  familiar  motto).  With  Z
+Buffering, Perspective Correction and  Tri-Linear  filtering there are
+enough features on this card to ensure the 3D looks smooth.
+
+You just need to look how  slow  software  engines for games on the PC
+are  compared  with  hardware  accelerated  versions  to  realise  the
+advantage of a 3D card. Taking  the  burden of rendering from the CPU,
+something  which  it  isn't  really  designed  to  do,  gives  a  huge
+performance boost. For games on the  ST  and Falcon, drawing takes the
+greatest part of the CPU time. Even an ST with this card could compete
+with current consoles. Put it in a Phenix and you are really flying.
+
+----------------------------------------------------------------------
+                                AUDIO
+----------------------------------------------------------------------
+
+The ST was tirelessly criticised  for its sound capabilities. Compared
+to the Amiga, and  even  the  C-64,  it  was severely lacking. Despite
+this, people managed to  do  some  quite  amazing  things with the YM-
+2149F. But playing sampled sounds or tracker music ate large chunks of
+processor time.
+
+€The STe remedied this problem to  some degree with a relatively decent
+soundchip. And with the Falcon we  got  arguably the best soundchip of
+any home computer.
+
+The built in sound sampling capabilities were great, but unfortunately
+the input ports were not of  a  very  good quality, certainly not good
+enough for professional audio. There  were hardware solutions at extra
+cost and the C-Lab Falcon finally fixed this problem.
+
+
+The Falcon's 50khz rate was  not  suitable  for  CD and DAT recording,
+again hardware solutions had to found.
+
+The Phenix continues the Falcon's tradition  of great audio, but gives
+it an extra boost.  Whilst  the  Falcon  dealt  with  8-bit and 16-bit
+samples, the Phenix handles 20-bit  stereo  sound. It also has support
+for 44.1khz and 48khz (CD and DAT frequencies).
+
+The Phenix also supports a  range  of professional quality connections
+for the audio in  and  audio  out.  It  should  be hugely popular with
+musicians.
+
+----------------------------------------------------------------------
+                            STORAGE MEDIA
+----------------------------------------------------------------------
+
+The arrival of the hard drive changed our lives! Could anyone consider
+living without one now? Going back to floppies would be impossible.
+
+I first used a hard drive when I  got  my  Falcon - it was a 80meg one
+which seemed huge for the first few months...
+
+The phenix comes fitted with a  4.3Gbyte  hard drive which should keep
+you going for some time.
+
+Unlike Apple, Centek still think  that  disk drives are important. The
+step up from  the  ST's  double  density  drive  to  the Falcon's high
+density drive  was  nice.  Centek  take  things  a  stage  further  by
+installing an LS120 drive in their machine. Not only can this read and
+write to standard High Density and Double Density floppies, but it can
+also use special 120 Megabyte disks! Tasty!
+
+It's a shame that a CD-Rom wasn't fitted as standard with the Falcon -
+the cost of producing CDs is negligible  and  it would be nice if this
+had become a more common format.  Centek are fitting DVD-ROM drives to
+the Phenix as standard. Very nice!
+
+----------------------------------------------------------------------
+                                MEMORY
+----------------------------------------------------------------------
+
+Whilst most people  now  have  14mb  in  their  Falcon,  4mb  is still
+considered the default  model  and  nearly  all  games  and  demos are
+designed to run with just 4mb.
+
+The Phenix has 32Mb as standard,  and  this  is  EDO RAM - much faster
+€memory than what atari fitted in the Falcon or ST.
+
+On the Falcon a large portion  of  memory  has to be reserved for your
+screen buffers - this is not the  case  on the Phenix as screen memory
+is on the 3D card - so the  Phenix is able to use a greater proportion
+of its memory than the Falcon can.
+
+----------------------------------------------------------------------
+                                BUSES
+----------------------------------------------------------------------
+
+Buses are the parts of  the  computer  through which data pass between
+processors and external devices. If  you  have  a  fast CPU and a slow
+bus, you will end up with  a  slow  computer. Another problem with the
+Falcon was that whilst it had a  32bit  CPU,  it only had a 16bit bus.
+This drastically reduced the performance  of  the  030, which likes to
+fetch and send data as longwords.
+
+
+The Phenix has full 32 bit  buses  which  don't limit the processor in
+any way. Another blunder  by  the  Falcon  developers  has been kicked
+away.
+
+----------------------------------------------------------------------
+                           OPERATING SYSTEM
+----------------------------------------------------------------------
+
+The most controversial part of the  Phenix is its operating system. It
+doesn't use TOS.  Instead,  Centek  have  created  their own operating
+system called 'DOLMEN'.
+
+Like TOS, Dolmen is in a ROM Chip which means you don't have a Windoze
+style wait for your operating system  to  load  every time you turn on
+your computer. The ROM chip is flash upgradable for future versions of
+Dolmen.
+
+Dolmen has the advantage  of  being  a  multi-tasking operating system
+allowing multiple programs  to  run  simultaneously.  It  has built in
+support for TrueType vectorial fonts, long filenames and HTML.
+
+Dolmen contains VDI and AES emulation  so  you  should also be able to
+run GEM  software  and  benefit  from  the  multi-tasking  and  hugely
+increased performance of the Phenix.
+
+Dolmen is a bit of an unknown at  the moment - no-one has seen it, and
+no-one knows how reliable or stable  it  will  be. One thing we can be
+sure of is that it will be amazingly fast. Whilst GEM is written in C,
+Dolmen is written in 100% 68060 assembly language and includes support
+for the 3D Card for  all  screen  functions.  It  should be one of the
+fastest operating systems ever seen.
+
+There is a Linux port for the Phenix,  so if you would rather use this
+operating system and have access to its software you have the choice.
+
+A port of MiNT is not impossible either.
+
+€----------------------------------------------------------------------
+                              EMULATION
+----------------------------------------------------------------------
+
+The Phenix is not a TOS machine, but Dolmen should be able to run most
+GEM software. As the machine is based  around a 68k and DSP, emulation
+of Falcon and ST software should not  be too hard. Already, Centek can
+emulate the hardware registers.
+
+The Phenix isn't really a machine for  running Falcon demos on, it's a
+machine for creating  new  demos,  making  new  games  and  making new
+software with.
+
+----------------------------------------------------------------------
+                            UPDATED SPECS
+----------------------------------------------------------------------
+
+Since writing  this  article,  some  changes  have  been  made  to the
+Phenix's specifications.
+
+First, the 68040 model  has  been  dropped.  The  Phenix will be 68060
+only. This is great news  because  it  means  there isn't a lower spec
+base model limiting 060 coders. Everyone will have a 68060!
+
+The performance of the 68060 has also been increase to 80mhz - this is
+120 MIPs!
+
+The DSP's performance has also been upgraded to 100Mhz - 100 MIPs!
+
+The adoption of PCI bus architecture is also sensible and has answered
+a lot of the critics of the earlier proposals.
+
+If you though the Phenix was good before, it's just got even better!
+
+----------------------------------------------------------------------
+                             FINAL WORDS
+----------------------------------------------------------------------
+
+If you asked a Falcon coder to  re-design  the Falcon and this time do
+it properly, he would come up with  something like the Phenix. All the
+problems of the Falcon have  been  smoothed  out.  And compared to the
+machines we know and love,  the  Phenix's performance is nothing short
+of awesome.
+
+For example, the combined capabilities  of  the Falcon's 68030 and DSP
+give it a performance of just  under  20  MIPs. On the Phenix, the CPU
+alone has a performance of 120 MIPs.  The  DSP is capable of a further
+100 MIPs. So that's 220 MIPs - 11 times more processing power than the
+Falcon.
+
+But most Falcon stuff doesn't even  use  the  DSP. If we are comparing
+programs that just run on the 030,  the  Falcon has a performance of 4
+MIPs whilst the Phenix is 120 MIPs. That is 30 times faster!
+
+As we know, the Falcon's CPU  spends  a large amount of its processing
+time simply drawing  pixels  -  whether  it  is  just  clear a screen,
+€drawing sprites, drawing windows or drawing polys. All this can now be
+handled by the S3 Virge.
+
+The Phenix is a huge leap forward  for  the Atari scene. It delivers a
+computer equipped for  the  modern  age,  something  that  can compete
+effectively against both consoles and even the PC. In the past we have
+only been able to  dream  about  an  atari  machine  with this type of
+performance. Now, the dream is coming true.
+

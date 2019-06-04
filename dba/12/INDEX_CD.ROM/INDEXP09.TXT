@@ -1,0 +1,263 @@
+ATARI CD-ROM SUMMARY 9
+~DROPS.FIL~
+
+Printing:
+
+1stpr182.arc    19      Print a first word file w/o 1st Word    
+1stw2ps.arc     53      First word to post script convertor
+24pin1.lzh      641     Dvi drivers for 24 pin printers (with 24pin2.lzh)
+24pin2.lzh      651     Dvi drivers for 24 pin printers (with 24pin1.lzh)
+2column6.lzh    79      Prints ASCII files in two columns.  Includes drivers.
+0index          ??      I know you love it....
+ascto1st.arc    8       Ascii to first word convertor
+banner.arc      33      Enter a phrase, it prints a banner
+ccprint.arc     16      Pretty C code printer   
+cd3_cdar.lzh    31      Prints good directory listings!
+cdprnt15.arc    46      Code Printer v1.5.  Prints ascii files in 2 columns
+cstat.arc       12      ???
+dc_ff.arc       ??      Form feeder     
+degasprt.arc    6       Degas printer drivers   
+deskjet.hlp     2       Help in setting up your deskjet.
+diablo.zoo      34      Diablo emulator for atari laser printers        
+dj_fonts.zip    58      HP Deskjet softfonts, Hebrew, Greek, Arabic, Syriac
+djenvelp.arc    17      Print an envelope on a deskjet.
+djresest.arc    2       An old way to reset the deskjet.
+djreset.arc     4       A more recent way to reset the deskjet.
+dskfonts.arc    544     POrinter fonts for dvidsk.arc in ../tex 
+fpprnt.lzh      3       Fast Print, speeds up printing considerably.
+fw+hplsr.lzh    4       basic printer driver for Laser Jet II in 1st Word +
+gem2ps.arc      80      Gem => post script (and back I'd bet)
+gooffy12.zip    17      ASCII background printer, MultiTOS compatible.
+gprnt_ox.arc    65      G-Print opt. explorer. Lets you look about w/o GDOS
+gprntdmo.arc    75      G Print demo, version updated here April 9,1991.
+gs211s.zoo      780     Gnu Ghostscript sources
+gs231b.zoo      378     Gnu GhostScript (sorta like postscript if you follow)
+gsprev.zoo      206     Ghostscript screen previewer
+hc24_h12.arc    6       Prints screen with true x/y ratio, with a LQ500 
+hpaccs.lzh      95      Accessories andutilities for hp printers
+hpedit11.zip    35      HP Deskjet font editor
+hpmn2dmp.arc    6       HP Deskjet dump utilitiy
+hpprint.zoo     9       HP print utility, two pages in landscape mode
+hputils.arc     336     Utilities for Deskjet & LaserJet. Needs arc 6.02
+icca.lzh        2       I Can Capture Anything (?) - printer redirector      
+idea_31.lzh     270     Prints several columns, small fonts. Saves paper.
+img-300.zoo     28      Speedo GDOS drv. for mono img files(300 dpi). German.
+img2hplj.lzh    28      Prints GEM img files on HP laserjet
+jacket17.arc    52      Disk jacket creator v1.7
+lablpace.lzh    18      Disk label maker.
+lazbrain.arc    96      Epson driver for atari laser printer.
+mfps.arc        80      Metafile -> postscript converter (sameas gem2ps)     
+mprint10.lzh    30      Master Print 1.0, Text file printer, configurable
+nlqps2.arc      19      ???
+nx1000.lzh      6       ???     
+p_or_s_2.lzh    24      Print or save it, version 2.0
+pamflite.lzh    38      Pamphlet maker for HP deskjet
+pan24drv.lzh    5       Degas drivers for 24 in panasonic printers
+pmace.arc       188     Print Master icons
+pmcat.arc       33      Catalogue of print master icons,  77/page.      
+printit.arc     12      ???
+printque.arc    6       Set up your own printque, just like here at Angell
+Hall!
+prntcms2.lzh    9       Prints .LISTING files from VM/CMS on Epson FX-80
+prtinstl.lzh    26      Replaces alt-help w/custom drivers
+prtset.arc      8       Useful for sending printer init codes   
+pscapt.arc      11      For use w/Timeworks DTP. Captures PS file to disk    
+ 
+quiklabl.arc    16      Print labels, quickly.
+rsplot11.arc    83      ???
+scmlabel.lzh    33      Yet another labeler.
+sdump1_5.lzh    5       ???
+set1091.lzh     7       ???
+sigfntdj.zoo    1200    Signum2 fonts
+spool11.arc     2       Pretend you have a fast printer, use a print spooler.
+stlabel2.lzh    21      Yet another label program.
+tapmaker.lzh    9       ???
+techpp.arc      24      ???
+treesavr.lzh    22      ???
+versadir.lzh    23      Prints directory contents
+
+============================================================================-
+Programming:
+
+0index  ??      this thingamabob you are currently purusing
+ams++lib.zoo    178     Warwick Allison's C++ game library "AMS" v 0.8
+68k_crib.arc    10      Pictures to help with 68k assembly programming 
+abztos.arc      18      Abzmon monitor  
+achlib.arc      16      ???
+aicons.zip      1053    High res icons in IMG and GIF format
+argv.txt.akp.Z  9       Allan Pratts discussion of argument passing 5/91
+arp68-book.zoo  469     Big huge 'book' on ST assembly programming..
+arp68-pix.zoo   430     All of the .img and post script files for the above.
+batch.arc       18      ???
+big.zip         209     Library functions enhance GEM, use with Pure C.
+cdbind01.zoo    6       Bindings for MetaDOS and CD-ROMs
+cdecl.zoo       46      Translates C declarations to English and vice-versa
+cled122s.lzh    84      An example of gem programming, binaries and sources.
+compiler.zip    16      Shell for GFA 3.x compiler.  Replace internal one.
+cpp112.zoo      72      Stand alone C preprocessor
+curses.arc      33      ST version of portable text screen managing library
+dasmblr.arc     20      Disassembler
+degaspic.lzh    4       C routines for use with DEGAS paint files.
+disasm2.arc     15      Another dissasembler    
+disasmb1.arc    17      Yes another disassembler        
+disasmld.lzh    7       Disassembles DSP 56000 .LOD files
+distomwc.arc    37      Dissasembles to Mark William C  
+dlibs12.arc     108     Sozobon C library, also usable with alcyon C    
+dlibsrc.arc     78      sources for dlibs       
+dspbind.lzh     2       Binadings for Falcon's DSP
+extra.zip       32      STOS extensions
+f68kans.zip     432     680x0 implementation of ANSI Forth
+fcc.arc         58      Mark's flow chart compiler, with rsc file now. :)
+fixtree3.arc    24      ???
+fldlib.zip      38      Lattice C lib controls multiple windowed dialog
+flinker.arc     26      ???
+fortran.zip     165     BC-FORTRAN 77, v1.3c; byAndre Koestli
+fpupatch.lzh    58      patch for libraries for Turbo-C (greater ver1.1)
+funnel.zoo      793     FunnelWeb - language independent version of Web
+gdos.arc        14      Info on gdos/assign.sys 
+gem++19.zoo     298     GEM++ library:  GNU C++ GEM classes.
+gemdos.arc      32      GEMDOS document 
+gemenv.lzh      22      Set up environment variables for GEM desktop
+gfabas09.lzh    72      Hints and tips on coding in GFA basic
+graphx11.zoo    148     Ken's graphics library for turbo, lattice and sozobon
+C
+gso22st.zoo     83      GNU SuperOptimizer. Optimizes assembly (68000 &
+68020).
+indnt16b.zoo    48      Indent, makes c programs look good by showing levels
+jagdem_s.zip    698     "Jag Demo" require GenST 3
+joshua.lzh      16      Utility for programmers.
+joveexe.arc     75      Version of emacs        
+keyclick.arc    2       ???
+kr2ansi.zoo     28      KR standard to ansi converter for c
+ldon_src.zip    472     Source code for "Left Donut" demo
+libscsi1.zoo    36      C Library front-end for Atari SCSI devices
+lineah.arc      11      Line A call documentation       
+linkdem2.zoo    289     demo files for Missing Link STOS extension
+linkkdemo.zoo   386     demo files for Missing Link STOS extension
+linkinst.zoo    168     Installer for Missing Link STOS extension
+lynxlib.zoo     165     Various lib routines
+m2gem106.lzh    656     Crystal Modula-2 GEM bindings of Ulrich Kaiser
+m2posx10.zoo    323     Experimental POSIX bindings for Modula-2
+manview.zoo     58      GEM based man page viewer
+memmap.arc      3       Memory map for the st.
+misty.lzh       796     MISTY - STOS extension and demos
+mit2mot101.zoo  24      Converts GAS-syntax assembly code to Motorola syntax
+mnilu.lzh       43      Shareware compiler for GFA Basic v2 code.
+nutshsrc.arc    8       Source for nut shell.
+orcs.lzh        148     Otto's resource contruction set
+outtolod.lzh    8       Convert .OUT --> .LOD
+passmsrc.arc    17      ???
+pbug1_19.zip    208     Version 1.19 of the Peace debugger
+pdmake.arc      57      PD make (so you wanna be a unix box, eh?)
+pexec.arc       5       Scaled down pexec.
+pexeccbk.txt    39      Pexec cook book.
+popup.zoo       86      Pop up menu editor/handler
+prgemdvi.lzh    199     Pr gem series dvi files
+prgemtex.lzh    167     TeX Pro Gem Series
+progtl02.tos    130     Programming tools for Pure C (cc driver, etc)
+progem.arc      173     Professional Gem series of programming articles 
+prosrc.arc      54      Source from progem series       
+pt_src3t.lzh    15      ProTracker source code (?)
+ratfor.arc      22      Converts rational fortran to true fortran       
+rcs56.zoo       847     RCS ver 5.6, complete with source.
+rcs5ap1b.lzh    310     Binaries for apratt's revision control system.
+rsc5ap1m.lzh    ??      Bug fix for the above.
+rcs5ap1s.lzh    230     Sources for the above. 
+readme12.arc    16      ???
+relmod.arc      7       Converts CP/M to ST executables. Needs Alycon
+compiler
+rs2lang.zoo     42      Converts .rsc files to C or ASM
+rsc_view.lzh    7       Displays contents of GEM's .RSC files
+rsctoc1.arc     17      Converts .rsc files to C structures     
+rsctoc2.arc     9       Source code for above   
+sources.arc     234     Source code for all the Dangimere RPG series
+spin3d.lzh      12      C sources teach basic 3d graphic programming
+srw.zip         117     STOS Rewriter - create surreal prose & poetry
+stosgame.zip    150     STOS Gamecomposer - generate weird game ideas
+stosshow.zip    96      STOS Slideshow - DEGAS/NEO slideshow with effects
+strings.lzh     6       Extract strings from binaries
+strip3sr.arc    3       ???
+superh.arc      1       ???
+szadb1_4.zoo    155     Low level debugger, ver1.4 ST & TT, also GST format 
+szadbbin.arc    29      Sozobon C debugger      
+tempcall.arc    10      Use tempus as an editor for Personal pascal     
+termcap.arc     52      ST version of portable generic terminal sequence lib 
+timecode.arc    3       Calculate the time needed for a machine code routine
+timecsrc.arc    5       Source for above        
+tmpl201c.lzh    112     TempleMon Debugger 
+tom.arc         19      ???
+tostrace.arc    30      Traces tos system calls 
+ufsl.lzh        18      Progr. utility "provides standard font selector." 
+varlnsrc.arc    7       Checks printf and scanf for matching arguments. 
+vbl.zoo         2       Place a user defined routine in VBL queue (asmsrc)
+vbi.arc         14      VBI doc and example     
+vdit.arc        8       Partial VDI interface   
+vmsource.zip    518     Source code for Falcon game "Vertical Mayhem"
+xaes.zip        42      test version of eXtended AES library
+xhdi-110.zoo    32      XHDI specification docs
+xlib.arc        7       Experimental shared library handler for MWC.
+xrf.arc         15      ???
+
+============================================================================-
+Sound:
+
+Convert: Info concerning converting st sounds to other formats and back
+sox10p11.lzh   68      Sound Exchange, v.1.0, pl11.
+st2sparc.doc   7       How to go from st to sparc sound format.
+525.lzh         67      Convert to-from 5 different sound formats. All STs.  
+convert.lzh     11      convert Hippo/Navarone to .snd
+digidrum.lzh    88      Drum kit using digital samples
+digiedit.lzh    25      Convert sound files between 8bt signed and unsigned
+foreign.lzh     483     Foreign Affair (Mike Oldfield) sampled song w/player
+hdrecord.lzh    5       Digitize directly to HD with ST-Replay4
+outmusic.lzh    288     Music from game Outrun (wild guess?!?)
+slab11.lzh      253     Shareware sound file manipulations program. slick.
+slupd111.lzh    15      Patch to upgrade Sound Lab 1.10 to 1.11
+sox5.zoo        48      Converts some sound formats used on UNIX
+ms2demo.lzh     122     Mastersound II demo w/STE support.
+zeppelin.lzh    284     Disk full of zeppelin bites. Use discplay for max fx.
+
+Sound/Players:
+
+50play.lzh     38      STe/TT ProTracker V2.1a Replay - plays .mod files
+audio.lzh      87      Plays noisetracker mods. Use it regualrly.
+cdplay.lzh     23      Play audio CDs on a CD-ROM drive
+cdplayer.lzh   28      Plays .mod files like a cd player would
+dcdmasp2.lzh   2       Plays Replay files in DMA 
+digicomp.lzh   117     Play noistracker mods. Should work on TT.
+digistuf.arc   331     Dave's latest sound utils: now supporting stereo      
+digiubik.lzh   21      another digital sound player
+discplay.lzh   7       Plays big sounds on little ST's by loading in parts
+dp_demoa.zoo   37      Demo of a MODule player for ST/TT/STE
+dtrak122.zip   63      ProTracker player in .ACC form 
+eplay20.arc    28      Sample player.
+gbell10c.zip   51      Plays sounds at var. events, similar to Mac Soundmst
+lps123.lzh     14      Plays AU/WAV/AVR and raw sound files 
+marxtrkr.lzh   16      Beta version of ST Soiundtracker.
+mplay1_2.lzh   15      Multiple mod players
+naudio.lzh     204     "Evaluation Version" of sample/module player
+naudiemo.lzh   496     Demo of NAUDIO sample replay library 
+noisetra.s     27      Noise tracker source
+noiztrkr.lzh   116     Plays noizetracker modules
+nsq.lzh        20      Plays .SND files 
+nt_comp.lzh    39      Noizetracker mod player
+octalyse.zip   483     8 channel shareware tracker for ST/TT/Falcon/MultiTOS
+octa096.tos    126     version 0.96 of above, excellent for 4/8 track mods
+paula21c.zip   63      Shareware mod player for ste/tt
+play31.arc     100     QD Play v3.1 from Dave Baggett 
+player.lzh     7       Play Noisetracker mods.  Lame.  Use audio.lzh instead 
+pt_src3.lzh    13      Plays 50KHz Replay files w/ only 30% CPU loading
+pt20s.lzh      348     ProTracker v2.0s 
+ptplay12.zoo   15      ProTracker player v1.02.  Rewritten, uses effects.
+qdplay31.lzh   84      Play 8-bit sound files from command line
+resound.arc    8       Plays digitized sample at the end of programs
+snd_play.arc   12      Play sounds from a desk accessory
+sndconv.lzh    9       Converts sounds from hippo/digisound to mac/st.
+strack081.zip  167     Shareware version of Storm Tracker
+stracker.zip   183     ST's first GEM based MOD editor
+trackst.lzh    25      Noisetr. module player. See also ste/trackste.lzh
+utracker.zip   19      Mod player
+waveplay.zoo   22      Plays .WAV sound files 
+ym_track.zoo   98      Ym Tracker, a sound module player
+ 
+END OF PART 9

@@ -1,0 +1,196 @@
+ó--------------------------------------------------------------------------------
+                  (Really) Basic Things About 3D Graphics
+ó--------------------------------------------------------------------------------
+
+In this article I would like  to tell you some things  I learned during last 2-3
+months. It's dedicated  to people  who understand  some basics, but  that have a
+mishmash in it :-) So if you're experienced 3D coder, skip this article...
+
+After reading I recommend  to get any  serious docs about 3D coding, for example
+from my  homepage (hey!!! that's  selfpromotion!!! kill him! kill him!!! :-)) to
+get deeper into this problematic. OK, let's start:
+
+Matrices
+ñ--------
+No, no, I'm  not going to explain here what they  are and how  to calculate with
+them. I only want  to say, they  are a MUST  for doing  3D things! So  take your
+school book about Linear Algebra and start to study :-)
+
+Rows vs Columns
+ñ---------------
+Or, more concretly, I mean this:
+
+          /a b c\           /a d g\   /x\
+[x y z] * |d e f|    and    |b e h| * |y|
+          \g h i/           \c f i/   \z/
+
+ ^         ^                 ^         ^
+ point     matrix            matrix    point
+
+You know the result in both cases is the same:
+
+(x*a+y*d+z*g x*b+y*e+z*h z*c+y*f+z*i) resp.   /a*x+d*y+g*z\
+                                              |b*x+e*y+h*z|
+                                              \c*x+f*y+i*z/
+
+Where the  1st column/row means  final x-composant, the 2nd  y-composant and the
+3rd z-composant. That's clear. You see that (x,y,z) point  didn't change (except
+the fact that  is in column  instead of row) and the matrix is transposed (rows=
+columns and vice versa; btw in the case of inverse rotation is the transposition
+equivalent to inverse operation).
+These two examples  are two  various possibilities  how to write matrix & point/
+vector multiplication.
+In this case it doesn't  matter what kind  of multiplication  we use. But, let's
+look at this  example: imagine  that we have  three matrices: A (rotation around
+z-axis),  B (around  y-axis) and C (around  x-axis) and  one point  with (x,y,z)
+coordinates. We want to rotate around z, then y and finally around x the axis.
+And here  comes  the  problem: you  know matrix  multiplication isn't comutative
+(A.B != B.A in general case) and we  swapped the point and matrix in the example
+above, so what is the right order??? Ok, ok, here's solution :)
+
+new [x y z] = [x y z] * A * B * C   or
+
+    /x\               /x\
+new |y| = C * B * A * |y|
+    \z/               \z/
+
+Got the idea? If we  use point/vector  as row, we start with point/vector on the
+left side and we write  matrices from left to right and vice versa. I think that
+I mustn't write that we always multiple from left to right :-) Some of the texts
+I red had mistakes in order of this multiplication.
+
+Homogeneous vs Non-homogeneous Coordinate System
+ñ------------------------------------------------
+Or, in another  jargon: affine vs linear transformation. Probably  you know  how
+looks rotation matrix for 2D around the origin (0,0):
+
+                         / cosFI sinFI\
+rotated [x y] = [x y] *  \-sinFI cosFI/
+
+that means we got result:
+
+rotated x = x*cosFI - y*sinFI
+rotated y = x*sinFI + x*cosFI
+
+Basic stuff, isn't? :) Similarly for 3D:
+
+matrix for rotating around x-axis:
+
+/1   0     0   \
+|0  cosFI sinFI|
+\0 -sinFI cosFI/ etc...
+
+You know, if  we multiple  A, B, C matrices  from the  example  above, we'll get
+again  the 3x3 matrix. This looks nearly  perfect, but ... again that  wellknown
+BUT :) All  things  like  rotation, scaling, stretching  around  the  origin are
+LINEAR transformations. Imagine  we want  to TRANSLATE point, that means we want
+to move from original (x,y,z)-point to, let's say, (x+10,y-10,z+5).
+And we want to do with matrices. So the only way how to do it is as follows:
+
+            /1   0   0\
+[x y z 1] * |0   1   0|
+            |0   0   1|
+            \10 -10  5/
+
+But hey !! 4x3 matrix?? We can't use it! (becoz of inverse  matrices, see below)
+So what?? Now you probably think: "I can fuck up such translation matrices, I'll
+add it  manually before  rotate-matrix multiplication" Yes, you can, but look at
+this: we want to rotate point around z-axis (A), then move to the origin (0,0,0)
+(M), then rotate  around y-axis (B), then rotate around x-axis (C) and move back
+to the original (x,y,z) position. (resp to the position rotated around z-axis).
+In ideal case it could look like this:
+
+new [x y z] = [x y z] * A * M * B * C * M^(-1)   (M^(-1) means inverse)
+
+But as we could see, it's impossible becoz of multiplying 3x3 matrices with 4x3.
+So... and here it comes... AFFINE transformation :) All the problem is with non-
+square 4x3 matrix. So what about "extending" to the 4x4?
+
+            /1   0   0   0\
+[x y z 1] * |0   1   0   0|
+            |0   0   1   0|
+            \10 -10  5   1/
+
+Hmmm... that looks nice... let's applicate it to the rotation matrix:
+
+            /1   0     0    0\
+[x y z 1] * |0  cosFI sinFI 0|
+            |0 -sinFI cosFI 0|
+            \0   0     0    1/
+
+And we got what? Square matrix !!! Now we can multiply/inverse/anything_you_want
+these matrices and all is ok!
+
+Final note:
+if we use 4D space (4x4 matrices), it's  called homogeneous  coordinates, if  we
+use only  3x3 matrices, we're  working  with non-homogeneous  coordinates. Ofcoz
+there are applications in (x,y) space, but there is better to get final formulas
+instead of working with matrices.
+
+Right-handed vs Left-handed Coordinate system
+ñ---------------------------------------------
+Probably you know  that stupid theorem  with fingers from physics :-) Only thing
+you need to know is how looks these systems:
+
+       +y|            +y|  +z/
+         |              |   /
+         |              |  /
+         |              | /
+         |         +x   |/        +x
+         /-----------   ------------
+        /
+       /
+      /+z
+
+      right-handed      left-handed
+
+
+There are only two differences:
+
+1)direction of z-axis -> sign of z value
+2)direction of rotation around z-axis (clock- vs anticlockwise)
+
+I prefer left-handed one  since if we put  eye/camera in origin (0,0,0), objects
+with positive  z-coordinates are visible and objects wit negative z-coordinates
+are behind us (non-visible)
+
+Additive vs Cumulative Rotating
+ñ-------------------------------
+There are  two different  ways of  rotating  the point  in 2D/3D space. You have
+rotation matrix, cos/sin tables and you want to  rotate around whole circle (360
+degrees/2pi radians/256 units).
+
+Additive  rotating: you  start  with  alpha/beta/gama == 0.  Calculate  rotation
+matrix with  these angles, save them somewhere and use it with every point. Then
+increase alpha/beta/gama and next frame you'll calculate new rotation matrix. So
+every frame you'll do the matrix precalcing and for every point you'll do 9 muls
+(or less if you skip any angle or optimize your rotation matrix)
+
+Cumulative  rotating: you  start  again  with  alpha/beta/gama == 0. But  you'll
+define how much  they will increase, e.g. if one degree, we precalc ONLY sin (1)
+and cos (1) values  and these  values we'll use in our matrix (remember we'll do
+this only ONCE - in the init part of the program).
+And, here comes  the main idea, after calculating of every point, we put them to
+the screen, but to their original  coordinates, too. So what  will happen in the
+next frame? Our "point-buffer" contains  rotated  coordinates => we  need  again
+only 1 degree to rotate and that's the reason  why we don't  need to precalc the
+rotation matrix again.
+
+Again, here are  some pros  and cons... Against additive rotating is the speed -
+remember in every frame we need to calculate 14 muls, that means it takes "some"
+CPU time... But a  big pro is (instead of cumulative rotating) an ACCURACY -> in
+cumulative  rotating  you  need  to  "refresh"  original  values (e.g. in 90/180
+degrees) bcoz you'll  see nice  morphing-deformations :)) and  in generall, with
+more muls you need more refreshing...
+
+Final Words
+ñ-----------
+Yes, we're at the  end of this  article. I hope I helped someone, if not, it was
+at least a good  excercise for me :-) In  case of positive  feedback I can write
+some more things for newbies in 3D gfx, bcoz it's really cool stuff :)
+
+                                                                           MiKRO
+ñ
+--------------------------------------------------------------------------------
+mk20432@decef.elf.stuba.sk        XE/XL/MegaSTE/Falcon           mikro.atari.org
+--------------------------------------------------------------------------------

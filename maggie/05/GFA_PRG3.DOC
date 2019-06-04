@@ -1,0 +1,179 @@
+
+                      - GFA PROGRAMMATION -
+                            Part III
+
+                by Dogue "LAZY" de Mauve from OVR
+
+
+Hi, guys! It's Dogue again, for another crap article...
+Well, Sammy Joe asked me to do some more articles about GFA 
+coding and so I wanted to do... But I'm so lazy and busy at the 
+same time nowadays that I'm not sure I'll be able to do any good 
+course about GFA coding again...
+
+Anyway, quite a big amount of people asked me for SPRITES routine 
+in GFA Basic 3.03. So, I made a simple (but fast!) one that you 
+should find in the SPRITE.GFA folder on this MAGGIE disk.
+
+Since I don't feel like explaining it in details at all, I think 
+you'll have to load it and see by yourself. Anyway, I don't want 
+to leave you alone with this lame sourcecode so I'll explain a 
+few things about it.
+
+First, this sprite routine uses the basic principles of demo 
+sprites. It means that these sprites are pre-shifted on a 16 
+pixel squale (so, you've got 16 sprites instead of 1 in memory).
+
+This is due to ST's screen structure.
+
+As you probably know, the ST screen (in low rez) has 4 bitplanes. 
+What does it mean? It mean that a screen is composed of 4 
+different independant graphix buffers. When you mix them 
+together, you can get 16 different possibilities... which is 
+exactly the amount of colors in the ST palette!
+
+Have a look at dis:
+
+1st plane:     0/1       2 possibilities...
+2nd plane:     0/1     x 2 possibilities...
+3rd plane:     0/1     x 2 possibilities...
+4th plane:     0/1     x 2 possibilities...
+                      
+                      = 16 possibilities (colors)
+
+It means that a single pixel on the screen is coded in 4 bits (one 
+for each bitplane, OK?). So, we've got 320x200 pixels = 64000. 
+Each of them on 4 bits = 256000 bits = 32000 bytes (the exact 
+size of a screen).
+The organization of the video memory is very important to 
+understand when you want to program any real demo or game on ST.
+
+When you use any GFA graphic function, you always work on 4 
+bitplanes (and therefore in 16 colors). But, of course, this is 
+slow. Imagine what you could do by plotting only one bitplane 
+instead of 4? It would be 4 times faster... but you'd have only 2 
+different colors (0 or 1). In fact, that's what happens in high 
+rez.
+
+Many programmers use these technics. When you display some one-
+color graphix, what's the need to display them on the four 
+biplanes? Better: since the 4 bitplanes are independant, you 
+could display up to 4 different one-color graphix at the same 
+time and none of them would erase the others! That is also very 
+common in "bitmap mania" kind of demos (lotsa monochrom graphix).
+
+So, how do I display such graphix?
+
+OK. Let me explain you how the memory video is organized (not 
+very easy).
+
+Let's say that screen% holds the screen address (XBIOS(4) 
+function, remember?). So, what happens if you POKE anything at 
+this address?
+It will surely affect the screen. The first 8 pixels of the first 
+bitplane to be precise, since POKE works on 8 bits (1 byte).
+OK?
+
+The screen is built that way. The first 16 bits contain the first 
+16 pixels (0/1) of the first bitplanes. So, you can change them 
+using the CARD{}, WORD{} or even DPOKE() instructions - although 
+you'll see that BYTE{} is far faster than POKE(), CARD{} than 
+DPOKE() and LONG{} faster than LPOKE() -.
+For instance, if you make a CARD{screen%}=0 (or %000000000000000 
+in binary format), you'll erase the 16 first pixels of the the 
+first bitplane.
+The 16 next bits contain the 16 first pixels of the second 
+bitplane. So, when you write CARD{screen%+2}=0, you erase the 
+first 16 pixels of the second bitplane, OK?
+
+And what happens if you do something like LONG{screen%}=0?
+You'll erase the first 16 pixels of the first 2 bitplanes.
+
+The next 16 bits contain the 16 first pixels of the 3rd bitplane 
+and the 16 next ones contain the 16 first pixels of the 4th 
+bitplane. Is that still clear?
+
+Now, imagine you've got a graphix at the top of the screen and 
+would like to erase it. You'll use the LONG{} (or simply {}) 
+instruction like this:
+
+{screen%}=0   (erase 16 pixels of bitplanes 1 and 2)
+{screen%+4}=0 (erase 16 pixels of bitplanes 3 and 4)
+
+Imagine you put something else instead of 0. You get a graphic in 
+a memory buffer and display it like that:
+
+{screen%}={sprite%}
+{screen%+4}={sprite%+4}
+
+That's exactly the method to do sprites. You've got to clear them 
+({}=0) then display them to the next position ({}={}). Have a 
+look at my sourcecode and you'll understand...
+
+Last thing: usually, you don't want to display graphix one line 
+high. Then you must display them on the first line and the second 
+line and so on... So, how do you do that? Simply by adding 160 to 
+your screen address (320 pixels of 4 bits = 160 bytes).
+
+For instance:
+
+{screen%}={sprite%}            ! Write on the first screen line
+{screen%+4}={sprite%+4}
+{screen%+160}={sprite%+8}      ! Write on the second screen line
+{screen%+160+4}={sprite%+12}
+
+Final comment: in my little routine, I use a sprite on the first 
+two biplanes (3 colors + black) and a background on the other two 
+bitplanes (3 other colors + black). Then, displaying the sprite 
+doesn't affect the background at all. But it reduces the amount 
+of usable color. Have a look at the DEGAS picture palette and the 
+following table to understand how to conceive your palette for 
+bitplanes-demos.
+
+                                  Bitplanes
+
+                                   1 2 3 4                                                                                
+Color register
+                    0              0 0 0 0
+                    1              1 0 0 0
+                    2              0 1 0 0
+                    3              1 1 0 0
+                    4              0 0 1 0
+                    5              1 0 1 0
+                    6              0 1 1 0
+                    7              1 1 1 0
+                    8              0 0 0 1
+                    9              1 0 0 1
+                   10              0 1 0 1
+                   11              1 1 0 1
+                   12              0 0 1 1
+                   13              1 0 1 1
+                   14              0 1 1 1
+                   15              1 1 1 1
+
+
+
+Ooh... I forgot something else, about pre-shifted sprites. As you 
+can see, I use a 16 pixels/2bitplanes wide sprite. So, I should 
+be able to display it with a {} command. But, as it is preshifted 
+(it means I've go all positions - pixel by pixel - between 0 and 
+15), it's in fact 32 pixels wide and I must use 2 {} commands 
+instead of one... By the way, have a look at the sourcecode and 
+you'll understand (I hope!).
+
+OK. I think that's all for this crap course. I hope you 
+understand some stuff about the video memory 'coz it's something 
+very important to make any real demo (in GFA or ASM as well).
+
+I will leave you now. Once again, I would like to thanx the LOST 
+BOYS for their great work, the productivity, for publishing 
+this in their MAGGIE and mainly for being great guys...
+
+May the Mauve be with you, dear reader, since the world seems to 
+worsen every day (shitty war!)...
+
+                                                   Doguy from OVR
+
+
+
+

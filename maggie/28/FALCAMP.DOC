@@ -1,0 +1,92 @@
+ 
+                       ‰ FalcAMP v0.8 (beta)  
+
+                    By STGhost and Splash of Sector One!  
+ 
+"It works on a standard Falcon? That's cool, you need at least a 100mhz 
+Pentium to play MP3's on a PC!" - John Hayward,  suitably impressed, as 
+he should be, of course..
+ 
+It's an MP3 player for the Falcon!! At last!! And it really works!!
+
+Sorry about so much expression of jubilation so early in a review,  but 
+it  isn't  every  day  that you get access to  a  new  form  of  media, 
+especially  when  you've  been  told  that  this  should  be  basically 
+impossible.
+
+MP3,  or to give it its boring name,  MPEG layer 3 audio,  has gained a 
+very  wide acceptance in the (Wintel/Mac) community at large.  This has 
+become  the  format of choice for transporting music files  around  the 
+internet.  Everyone  from long established acts (why do I keep thinking 
+of David Bowie?!) to up and coming talent,  all choose MP3.  It is also 
+the  current  choice of music pirates,  and even those clearer  sighted 
+distributors  who  want their piece of the action.  I've  even  started 
+seeing  MP3  players in hi-fi magazines,  and portable MP3 players  may 
+well  displace  the Walkman as the go-anywhere format  of  choice  real 
+soon now.
+
+A  new  factoid/urban myth about the internet is  currently  doing  the 
+rounds,  'Sex' no longer is the main keyword typed into search engines, 
+the new favourite word is now 'MP3!'
+
+With  all  of this going on around our heads,  then the arrival of  the 
+first MP3 player runnable on a Falcon, couldn't have been more timely!
+
+FalcAMP 0.8 is a beta,  the authors are at pains to point this out.  It 
+also  is very simple and compact at this point in time,  coming in at a 
+mere  77  kilobytes.  We can imagine that a PC equivalent will come  in 
+many times larger.
+
+The  user  interface  is sort of non-existent at this  point  in  time, 
+consisting  of a TTP command line,  with the rather more sensible 'drag 
+'n  drop' featuring strongly too.  You can see this as a  half-finished 
+early Xmas present,  as there is a lot more to do,  not least, adding a 
+proper GEM interface,  and according to the authors, further debugging, 
+refinement  of the DSP side,  and further optimisation to allow  stereo 
+replay on a standard (16mhz) Falcon.
+
+The key to all of this,  is not how it looks,  but what it sounds like, 
+and  a  preliminary examination of some MP3's cribbed  off  a  Computer 
+Shopper coverdisk CD-ROM (November 1999), realised all my hopes in that 
+direction.
+
+On  a 50mhz (and 50mhz DSP) Centurbo 2 accelerated Falcy,  the  results 
+were  sensational!  CD-quality replay (interpolated to work with  Falcy 
+replay  rates,  it  sounded  brilliant,  even  in mono!  And  this  ran 
+comfortably from a screen mode of 800 x 598 in 256 colours.
+
+On  a  standard  Falcon,  it worked just as fine,  with a tendency  for 
+stuttering/skipping replay when the system was under load on one or two 
+or  the  more  intense tunes.  This may also have been due  to  another 
+factor, discussed immediately below.
+
+It mostly managed to cope with my ancient NEC SCSI double-speed CD-ROM, 
+playing  'on the fly'.  Retrospectively,  and trying the CD in question  
+with  the  MP3-capable  Aniplayer  2.08,  suggests that  this  item  of 
+hardware  may have been a little slow in places.  An option to cache  a 
+whole  song to memory,  for those of us with stupid amounts of FastRAM, 
+may  be  a good idea for a future version of FalcAMP? (Aniplayer  does 
+this already.) Or just copy and run from a hard drive.
+
+It does work under multi-tasking systems,  just about,  as under MagiC, 
+it  forces VT52 running.  When I first tried it out under MagiC,  there 
+was  a  nasty hangup on the DSP when quitting,  but this didn't  happen 
+again.  You  can multitask if you really have to,  but there is so much 
+distortion  and  jumping,  it isn't such a good idea.  (To be fair, the 
+same problem affects v2.08 of Aniplayer,  in fact,  the only MPEG audio 
+file  player  that doesn't clash with the system,  was the  NoCrew  MP2 
+player, which didn't even seem to put any significant load on it?
+
+For such a tiny program,  it does a brilliant job, and the next version 
+release  from  Sector  One with a full GEM  interface  etc,  is  keenly 
+awaited!  It will be interesting to see how this compares with the MP3-
+able version 2.08, and future releases, of Aniplayer.
+
+What the finished product promises to be,  will be very exciting,  what 
+we've got now, is scarcely less so!
+
+ Version 0.92 is released, which has DSP interrupt sorted, so it is able 
+to  operate  smoothly within a  multi-tasking  environment.  Definitely 
+comes out as an efficient little MP3 engine now!
+ 
+ CiH, Dec '99 

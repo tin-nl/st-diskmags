@@ -1,0 +1,286 @@
+STOS CODING
+
+   Programming In Stos Basic
+   -------------------------
+
+   Everybody knows that Stos has some very annoying limitations. Have you
+   ever seen any good demo's written in this language ?. We have however
+   seen some very good demo's from the other languages on the market.
+
+   G.F.A. basic is a very powerfull and popular language. It has a tremendous
+   amount to offer the basic programmer and with it's high performance in
+   speed compared to other high level languages, is usually a first choice
+   for the learning demo coder.
+
+   But substancial demo's have been written in other high level languages
+   and i have even seen a multi demo written in metacomco basic (ST BASIC)
+   that was a fairly impressive attempt.
+
+   Why not stos then ? We all know that stos has some very powerfull
+   commands and for games programming it's one of the quickest and most
+   used. The reason that most people have not coded a decent demo in stos
+   is because of lack of information. GFA and other languages have masses of
+   source books covering most subjects. Stos is classed as a games creator
+   and as such is refered to as that and that only.
+
+   What books are available for this language of ours then ?. Well basically
+   we have the stos manual (which is very lame and un-informative), and
+   the gamemaker's manual (Which tries to cover well too many subjects and
+   as such does not have much depth). That's it. Pretty bad news is'nt it ?
+
+   I know that there are user groups and other such organisations around
+   that deal in this language, but unfortunately most require you joining
+   before they will pass any info unto you.
+
+   So the people that get the most out of the language are the people in the
+   know. Assembly language coder's could easily turn there hand at an
+   impressive stos demo screen (impressive by our standards, not there's).
+   But unfortunately we will never succeed without help or knowledge.
+
+   I am what is classed as a lame programmer. I have no real talent as regards
+   programming routines and i have'nt ever coded a demo screen in my life.
+   I do not know the fastest way to do a scroller and have no idea of
+   the complexity's of assembler (Not for the want of trying though). But i
+   wish to learn, but who from ?
+
+   Well the only way to learn is through examples. It's no good somebody
+   telling you exactly how to write a scroller and then attempting to do
+   one yourself (I've tried and failed on numerous occasions). You need to
+   see working examples or at least a pointer to work on. So i'm going to
+   present you with tips and idea's i have managed to aquire through the
+   many months of learning this language. These are not all my own routines,
+   in fact very little of them are, but they are what other people have wrote
+   and i have used in the past .
+
+
+   PLAYING CHIP MUSIC IN STOS
+   --------------------------
+
+   Stos music is totally crap. It's one of the most annoying features of
+   the language. To have interrupt driven music you need to create it with
+   that terrible accessory. Oh yes i've heard some good attempts, but in
+   the end it boils down to reaching for the volume and turning that awfull
+   dim down.
+
+   But you don't have to use stos music in your programs. You can easily
+   use some of the ST's greatest musicians pieces with only a few lines
+   of code. Let me show you :-
+
+
+                      10 RESERVE AS WORK 10,10000
+                      20 BLOAD "MAD_MAX1.MUS",10
+                      30 DREG(0)=1:CALL START(10)
+                      40 LOKE $4D2,START(10)+8
+
+   This bit of code will install and play a piece of mad max music under
+   interrupt in stos basic. Let's examine the code shall we.
+
+       Line 10 : Reserve some space for a machine code program (The music)
+       Line 20 : Load in the machine code program (The music file)
+       Line 30 : Pass 1 to register D0 and call start(10). Informs music file
+                 to play tune 1 in the music file (max.16 in most cases) when
+                 run.
+       Line 40 : This line puts the music file on the vertical blank and
+                 starts the music going. The start(10)+8 is the offset to
+                 the play routine and because it is installed in the vertical
+                 blank play as in interrupt.
+
+   The routine will, when run, play some glorious mad max music in the same
+   manner as any stos music. At last some decent music in stos. Now you
+   can do other things in stos without affecting the music. You could install
+   sprites etc. in the normal way without using much processor time.
+
+   To turn the music off is as simple as when you started it. Lets do
+   just that then shall we :-
+
+                            LOKE $4d2,0
+
+   This clears the vertical blank back to its normal state. The music will
+   now stop and all is back to normal.
+
+   Most chip music can be installed in this manner without problems. All you
+   need is the offset number (remember mad max was +8) and your away.
+
+   Here is the offset number's to some of the more popular chip music formats.
+
+
+                     ----------------------------------
+                     |MAD MAX         |     +8        |
+                     ----------------------------------
+                     |COUNT ZERO      |     +2        |
+                     ----------------------------------
+                     |LAP             |     +4        |
+                     ----------------------------------
+                     |DAVE WHITTAKER  |   +12 & +14   |
+                     ----------------------------------
+                     |ROB HUBBARD     |     +12       |
+                     ----------------------------------
+                     |TAO             |     +4        |
+                     ----------------------------------
+                     |A.BRIMBLE       |     +4        |
+                     ----------------------------------
+                     |BIG ALEC        |     +4        |
+                     ----------------------------------
+                     |MEGATIZER       |     +8        |
+                     ----------------------------------
+                     |JEDI            |     +8        |
+                     ----------------------------------
+                     |HYBRID MUSIC    |     +16       |
+                     ----------------------------------
+
+   Well as you can see there is quite a selection of music to choose from.
+   Most, if not all, of this music will istall and play easily with the code
+   i gave you above. Just replace the +8 in the statement
+   loke $4d2,start(10)+8 to that of the offset in the table above. Remember
+   to change the filename as well. Try altering the DREG(0)=1 to another
+   number (maximum of 16) as some music files contain more than one song.
+   BE CAREFULL with this though as some musics will crash on altering this
+   to too high a number. DAVE WHITTAKER is one such type of music.
+
+   Well there you are. You can now play good quality music in stos under
+   interrupts without any problems. Remember though, if you use any of
+   these musics to credit the author. They all spend a great deal of time
+   creating them and most will allow you to use them aslong as there
+   recognised for there work. Credit were credit is due is always a good motto
+   to follow.
+
+
+   HOW ABOUT VU METERS ?
+   ---------------------
+
+   Most demo's these days have vu meter's to show the levels of music being
+   played. Stos demo's should be no different so lets code some shall we.
+
+
+       05 RESERVE AS DATA 10,10000 : BLOAD "MAD_MAX1.MUS",10
+       10 KEY OFF : CURS OFF : HIDE : MODE 0 : CLICK OFF : LOGIC=BACK
+       20 AUTO BACK OFF
+       30 DIM IND(2) : DREG(0)-1 : CALL START(10) : LOKE $4D2,START(10)+8
+       40 CLS LOGIC : FOR J=0 TO 2 : POKE $FF8800,J+8 : VL=(PEEK($FF8800)*3)
+       50 IF VL>48 THEN VL=48
+       60 IF IND(J)>VL AND IND(J)>2 THEN IND(J)=IND(J)-3 ELSE IND(J)=VL
+       70 SET PAINT 1,1,1 : INK 7
+       80 BAR 0+(20*J), 100-IND(J) TO 9+(20*J),100
+       90 IF INKEY$=CHR$(27) THEN LOKE $4D2,0 : DEFAULT : END
+      100 NEXT J
+      110 SCREEN SWAP : WAIT VBL : GOTO 40
+
+   Give it a try and see what happens. Fairly impressive for stos don't you
+   think. Most of this routine is by a chappie called Asa Burrows and he
+   has done a very nice job. It was originally for stos music and the vu's
+   were not filled. I altered the code slightly to give a better effect.
+   I won't tell you all that's going on as most of the code is easy to
+   follow.
+
+   Basically what the code does is read the yamaha soundchip volume on
+   each of the 3 seperate sound channels and multiplies it by 3.
+   The boxes use the information gained from the soundchip to alter the
+   size's. The loop reads the sounchip volumes individually and then updates
+   the boxes accordingly. The code is poked and peeked for extra speed. You
+   could equally use the STOS PSG (8), PSG (9), and PSG (10) commands instead
+   but it would slow down the box updates a bit.
+
+
+   WHAT ABOUT A BOUNCING DISK DRIVE LIGHT
+   --------------------------------------
+
+   Well this takes alot more work and is really specific to the music you
+   are playing. I'll give you the pokes anyway and let you decide on the
+   use.
+
+   For best results you will need to install and run the routine above and
+   watch carefully the vu meter's. Decide which is the best channel to
+   activate the disk drive light and install these pokes.
+
+   Think of the disk drive light as a switch. It can be either on, in which
+   the code would be :-
+
+
+                   POKE $FF8800,14 : POKE $FF8802,40
+
+   Or it can be of :-
+
+                   POKE $FF8800,14 : POKE $FF8802,2
+
+   The first poke tells the computer you want access to the disk drive light
+   (I assume ?) and the second poke changes the light to either on or off.
+
+   To install it into the vu meter section you would code it something like
+   this :-
+
+       55 IF IND(2)>26 THEN POKE $FF8800,14 : POKE $FF8802,2 : ELSE POKE
+          $FF8800,14 : POKE $FF8802,40
+
+   Remember we are multiplying each sound channel volume by 3 to get a
+   decent size vu meter (Maximum volume per each channel is 16). So we are
+   saying that if the volume on channel 3 is greater than 26 (normally 13)
+   then turn of the disk drive light. If its lower than 13 then turn it on.
+
+   It works as it is but to get the best results will need alot of
+   experimenting. You will need to design offsets for the peak of the music
+   at certain levels and write your code accordingly. This will give you
+   something to work on won't it.
+
+
+
+   CHANGING HERTZ
+   --------------
+
+   If you have a monitor then it why not change the frequency hertz that
+   stos runs in. This is easy if you know the correct pokes but very
+   difficult without them (impossible i would say).
+
+   To change to 60 Hz you would install a line like :-
+
+
+                      WAIT VBL : POKE $FFF820A,252
+
+
+   And to change back to 50 Hz you would do :-
+
+
+                      WAIT VBL : POKE $FFF820A,254
+
+
+   The wait vbl instruction is there just to keep the change to the different
+   frequency as smooth as possible.
+
+
+
+   READING THE PALETTE OF A SPRITE BANK
+   ------------------------------------
+
+   To read the palette of the sprite back quickly you can code these lines
+   into your program
+
+
+               10 H=HUNT(START(1) TO START(1)+LENGTH(1),"PALT")+4
+               20 LOKE $45A,H : WAIT VBL
+
+   This will get the palette of the sprite bank almost instantly and saves
+   a few lines of code as well.
+
+
+
+   Well that's it for me on this file. I'm now throwing the issue's over
+   to you to see what develops. If you have found some nice peek's and
+   pokes and would like to share them with everyone then either write
+   direct to me or any other member of the D.B.A. and we'll include them for
+   everyone to see.
+
+   I would like to build up a nice little library of usefull little routines
+   that people can code direct into there programs. Remember that not
+   knowing is bad news but not sharing with other's what you've learnt is
+   terrible news.
+
+   Do everybody a favour and share your secrets. Who can it hurt.
+
+
+   Before finishing i would just like to say that i am not a good Stos
+   programmer but a learner like you. These routines are what i have aquired
+   through reading as much as i can on the language. I need to learn more
+   (much more) and as such i also need your help.
+
+   Bye for now.
+
+   (Dizzy of the D.B.A.)

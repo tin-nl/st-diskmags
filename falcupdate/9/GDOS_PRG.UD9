@@ -1,0 +1,55 @@
+* More on the intricate art of  GEMDOS  programing,  my  thanks  to  the
+original author, whoever you are (if someone knows then  PLEASE  contact
+me so I can give credit where credits due).
+
+
+
+                         Gemdos Program Information
+                         --------------------------
+
+
+
+Basepage Layout:
+----------------
+
+Every program run by GEMDOS  has a basepage area which contains inform-
+  ation  relating to the  program such as  size and  top and  bottom of
+  available memory.
+
+Offset  Name            Contents
+  $00   P_lowtpa                Base address of TPA (Usually here)
+  $04   P_hitpa         End of TPA+1 (TPA=The Process Area?)
+  $08   P_tbase         Pointer to start of text area (code)
+  $0c   P_tlen          Length of text area
+  $10   P_dbase         Pointer to start of data area
+  $14   P_dlen          Lenght of data area
+  $18   P_bbase         Pointer to start of BSS area
+  $1c   P_blen          Lenght of BSS area
+  $20   P_data          Pointer to DTA
+  $24   P_parent                Pointer to parent's base page address
+                        (set to zero if a desktop acc.)
+  $28                   Reserved
+  $2c   P_env           Pointer to environment string
+  $80   P_cmdlin                The command line string (1st byte=lenght)
+  $100                  The start of the program
+
+
+Executeable File Format
+-----------------------
+
+Any program run by GEMDOS must confirm to the following layout:
+
+Start of file:          Gem Header
+                        Text Area
+                        Data Area
+                        Symbol Table ( If Any )
+                        Relocation Table ( Null terminated )
+Gem Header:
+
+Offset  Contents
+
+  $00   $601a ( A branch short instruction to start of code )
+  $02   Length of Text ( Code )
+  $06   Lenght of Data
+  $0a   Lenght of Bss ( Bss area is NOT contained in the file )
+  $0e   Lenght of symbol table.

@@ -1,0 +1,182 @@
+FTP site                  Directory                        IP address
+---------------------------------------------------------------------------
+  Belgium
+  -------
+193.190.205.13          * /archive/atari/                  (193.190.205.13)
+
+  Czech republic
+  --------------
+ftp.dcs.muni.cz           /pub/archives/atari/             (147.251.48.3)
+
+  Finland
+  -------
+ftp.funet.fi              /pub/atari/                      (128.214.248.6)
+
+  France
+  ------
+ftp.ibp.fr                /pub/atari/                      (132.227.77.2)  
+  
+  Germany
+  -------
+ftp.leo.org               /pub/comp/platforms/atari/       (131.159.0.252)
+                                                           (131.159.0.198)
+ftp.regent.e-technik.tu-muenchen.de
+                          /pub/comp/platforms/atari/       (129.187.231.131)
+ftp.uni-trier.de          /pub/atari/                      (136.199.8.81)
+alice.fmi.uni-passau.de * /pub/atari/                      (132.231.1.180)
+ftp.uni-kl.de             /pub/atari/                      (131.246.94.94)
+ftp.uni-erlangen.de       /pub/atari/
+                        * /pub/Linux/LOCAL/680x0/          (131.188.3.2)
+                                                           (131.188.71.2)
+ftp.tu-clausthal.de       /pub/atari/                      (139.174.2.10)
+ftp.uni-muenster.de       /pub/atari/                      (128.176.121.55)
+ftp.uni-paderborn.de      /atari/                          (131.234.22.34)
+vax.ph-cip.uni-koeln.de   /pub/atari/                      (134.95.64.1)
+pascal.math.fu-berlin.de *    /atari/                      (160.45.40.50)
+ftp.cs.tu-berlin.de       /pub/atari/                      (130.149.17.12)
+                                                           (130.149.144.4)
+ftp.fu-berlin.de      *   /pub/atari/                      (160.45.10.6)
+ftp.uni-regensburg.de     /pub/freeware/software/atari/    (132.199.1.203)
+ftp.germany.eu.net        /pub/comp/atari-st/              (192.76.144.75)
+ftp.uni-bremen.de     *   /pub/atari_st/                   (134.102.228.2)
+ftp.hrz.uni-kassel.de *   /pub4/atari/                     (141.51.12.12)
+ftp.rz.tu-bs.de       *   /pub/atari/                      (134.169.9.44)
+ftp.coli.uni-sb.de        /pub/comp/atari/                 (134.96.68.11)
+ftp.phil.uni-sb.de    *   /pub/atari/                      (134.96.80.220)
+                                                           (134.96.82.13)
+ftp.inf.tu-dresden.de     /pub/atari/                      (141.76.1.11)
+ftp.uni-giessen.de    *   /pub/atari/                      (134.176.2.11)
+ftp.rz.tu-harburg.de  *   /pub/software/systems/atari/     (134.28.240.5)
+ftp.uni-oldenburg.de      /pub/atari/                      (134.106.38.5)
+ftp.uni-frankfurt.de  *   /pub/arch/atari/                 (141.2.1.2)
+ftp.on-luebeck.de     *   /pub/systems/atari/              (193.29.188.9)
+ftp.informatik.rwth-aachen.de     * /pub/comp/Atari/       (137.226.225.3)
+ma2s2.mathematik.uni-karlsruhe.de *     /pub/atari/        (129.13.115.2)
+ftp.uni-duisburg.de   *   /pub/atari/                      (134.91.3.16)
+
+  The Netherlands
+  ---------------
+nikhefh.nikhef.nl         /pub/atari/                      (192.16.199.1)
+ftp.twi.tudelft.nl    *   /pub/atari/                      (130.161.156.11)
+ftp.icce.rug.nl       *   /pub/erikjan/Atari/              (129.125.14.129)
+
+  Norway
+  ------
+ftp.sn.no             *   /user/hallvart/atari/            (194.143.8.25)
+
+  Poland
+  ------
+piwo.bl.pg.gda.pl         /pub/atari/                      (153.19.34.34)
+
+  Switzerland
+  -----------
+ftp.isbiel.ch             /atari/                          (147.87.2.27)
+ezinfo.ethz.ch            /st/                             (129.132.2.72)
+
+  United Kingdom
+  --------------
+micros.hensa.ac.uk        /micros/atari/                   (194.80.32.51)
+ftp.demon.co.uk           /pub/atari/                      (158.152.1.44)
+
+  United States
+  -------------
+atari.archive.umich.edu   /atari/                          (141.211.120.11)
+f.ms.uky.edu              /pub2/atari/                     (128.163.132.108)
+ftp.netbsd.org        *   /pub/NetBSD/                     (206.86.8.12)
+ftp.teleport.com      *   /pub/users/atari/                (192.108.254.15)
+
+
+MIRROR SITES
+------------
+FTP mirrors are alternative sites to certain popular ones which are
+usually under a high load most of the time (many people accessing them
+at the same time).
+Mirror sites contain the exact same directories and files, but have
+different entry points. Try to use the one closest to you geographically
+and not during business hours (in that geographic area).
+
+         Mirrors for 'atari.archive.umich.edu'
+         -------------------------------------
+  United States
+  -------------
+ftp.toad.net              /pub/umich/                       (205.197.182.100)
+barnone.citi.umich.edu    /atari/                           (141.211.128.19)
+
+  Europe
+  ------
+src.doc.ic.ac.uk          /packages/atari/umich/            (146.169.16.11)
+                                                            (146.169.17.5)
+                                                            (146.169.32.5)
+                                                            (146.169.33.5)
+                                                            (155.198.1.40)
+                                                            (146.169.43.1)
+                                                            (155.198.191.4)
+                                                            (193.63.255.1)
+                                                            (146.169.2.10)
+ftp.switch.ch         ^^^ /mirror/atari/                    (130.59.1.40)
+                                                            (130.59.10.40)
+
+^^^ ftp.switch.ch is restricted to educational/research institutions only!
+                     -----------------------------------------------
+
+
+         Mirror for 'ftp.uni-paderborn.de'
+         ---------------------------------
+src.doc.ic.ac.uk          /packages/atari/uni-paderborn/    (146.169.16.11)
+                                                            (146.169.17.5)
+                                                            (146.169.32.5)
+                                                            (146.169.33.5)
+                                                            (155.198.1.40)
+                                                            (146.169.43.1)
+                                                            (155.198.191.4)
+                                                            (193.63.255.1)
+                                                            (146.169.2.10)
+
+        Other mirrors
+        -------------
+ftp.phil.uni-sb.de    *   /pub/atari/mint/umich.mirror/     (134.96.80.220)
+ (mirror for atari.archive.umich.edu- 'mint' section)       (134.96.82.13)
+
+ftp.phil.uni-sb.de    *   /pub/linux-m68k/mirror.erlangen/  (134.96.80.220)
+ (mirror for ftp.uni-erlangen.de- 'linux' section)          (134.96.82.13)
+
+tsx-11.mit.edu        *   /pub/linux/680x0/                 (18.86.0.44)
+  (mirror for ftp.uni-erlangen.de- 'linux' section)
+
+
+- - - - - - - - - - - - - - - -
+ * = specialized or small site
+- - - - - - - - - - - - - - - -
+
+
+MAIL SERVERS
+------------
+Mail servers can be used to get hold of the same software as through FTP,
+but instead of using a lot of download time online, files can be 'ordered'
+via email.
+In order to get information about how to do this, send an email to the
+various addresses below with the word:  help
+in the mail itself. If possible, do not include any 'signature' in the mail,
+as the automated system which replies to these mails tries to interpret any
+message (and with a certain amount of errors no response to your requests
+will be given at all).
+
+
+Email server email address                Equivelant to FTP site
+--------------------------------------------------------------------------
+atari@atari.archive.umich.edu             atari.archive.umich.edu
+mail-server@ftp.tu-clausthal.de           ftp.tu-clausthal.de
+mail-server@cs.tu-berlin.de               ftp.cs.tu-berlin.de
+archive-server@Germany.eu.net             ftp.germany.eu.net
+ftpmail@ftp.uni-stuttgart.de              ftp.uni-stuttgart.de
+ftp-mailer@ftp.informatik.tu-muenchen.de  ftp.informatik.tu-muenchen.de
+archive-server@micros.hensa.ac.uk         micros.hensa.ac.uk
+mailserver@leo.org                        ftp.leo.org
+
+
+
+----------------------------- End of file -------------------------------
+
+ Re-distribution allowed as long as nothing is altered or omitted.
+ Copyright (C) 1994-1997 Hallvard Tangeraas (hallvart@sn.no)
+

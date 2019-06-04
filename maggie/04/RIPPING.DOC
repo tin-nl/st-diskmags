@@ -1,0 +1,217 @@
+*******************************************************************
+* THE ART OF NOISE or HOW TO PLAY SOME MUSIC YOU'VE JUST RIPPED   *
+* Artical by -ZCT- of THE LOWER LEVEL.  (SEE SOURCE CODE ON DISK) *
+*******************************************************************
+
+Music ripping is a great skill and an art.  It is also bloody good fun.  
+It is extreemly enjoyable removing protection and rooting around in 
+somebody elses' code to find what you are looking for.  The Lower Level
+are NOT crackers and thus the art of removing protection is up to another
+crew to explain.
+
+Ripping music is neccessary for most crews since creating standard 
+soundchip music is a very rare skill and only the very best crews have a 
+musician who does good soundchip music.  Arguably the best musicians 
+around on the ST today are -AN COOL- and -MAD MAX-.  Both of these 
+musicians seem to use the same music package and thus spotting their music 
+is quite easy since the code that surrounds it is fairly similar.
+
+In this artical we will explain how to rip and play music.
+
+The first tool you must have to rip music is a dissassembler (and an 
+assembler to play the music).  Let's take a typical demo.  Most contain 
+some music written by -MAD MAX-.  The demo will normally initialize itself 
+by doing some calculations and loading graphics onto the screen.  Next the 
+demo will set up interupts for rasters and music etc.  It might help 
+beginners to make refererence to a book like ST INTERNALS by ABACUS.  You 
+will then understand some of the addresses the demo is using.
+
+We'll assume you are using DEVPAC.  If you aren't make sure you are !!!
+
+First you need to get an unprotected demo.  You'll probably find some on 
+this issue of Maggie.  You'll find some demos in past issues of Maggie, 
+such as ours in Maggie 3.  The demos are normally in the DATA folder.  The 
+demos DO NOT have a .PRG extension.  WORKING WITH A BACK-UP of Maggie 
+change the extension of a file to .PRG.  You may get a TOS #35 error at 
+first when you try to run it.  This means the file is not a program that 
+you can use.  REMEMBER TO CHANGE THE EXTENSION BACK TO ITS ORIGINAL NAME.  
+When you have found a demo you can load it into MONST.
+
+Most demos are compressed nowadays, so you will have to run part of the 
+program to decompress the demo.  Typically if you cursor down through the 
+dissassembled code you will find an instruction like JMP (A4).  Most 
+decompression routines have somthing similar.  You may as well run the 
+program through the decompression since this will take a long time to step 
+through.  Place a breakpoint on the JMP instruction (ALT-B) amd then press 
+R and then G.  The code should almost fully decompress.  Then begin 
+stepping through the code by pressing CONTROL-Z.  The Automation packer is
+quite difficult to step through, but remember the packer itself 
+(in Maggie 1) has a decompression routine built in; you can use this.
+
+Watch out for the 
+following instructions : 
+
+CLR.L  $24.W (or similar : MOVE.L  #$50043,$24)
+CLR.B  $FFFFA07.W
+CLR.B  $FFFFA09.W
+MOVE.L #$address,$118.W
+
+These are classic LEAVE ME ALONE anti-hacking instrucions.  Try to skip 
+these instructions with CONTROL-S.  When you see a loop that is simply 
+repeating some instructions e.g.
+
+       MOVE.W #$1FFF,D0
+       LEA    $63022,A0
+       LEA    $78000,A1
+$4CD82 MOVE.L (A0)+,(A1)+
+       DBF    D0,$4CD82
+
+You would have a very boring time if you stepped through the entire loop 
+8192 times so simply put a break-point on the instruction ONE AFTER the 
+DBF.  Then run the program and will complete the loop and (hopefully) 
+allow you to continue.
+
+Before we go any further it is as well to remind you that it is very easy 
+to lose control over the program.  It is a good idea to make a note of 
+each subroutine or supicious instruction you execute so that if you lose 
+control you will be able to re-load and continue from the address you lost 
+control at.
+
+After a quick back-ground on simple hacking we'll move on to music itself. 
+All music routines have two main routines:  An intialization routine and a 
+play routine.  The initialization routine sets up pointers to the
+appropriate piece of music.  Remember that although a demo only uses one
+piece of music the music file may actually contain several pieces.  The
+play music routine it executed every VBL (that's 50 times per second)
+and actually outputs the sound data to the sound-chip.
+
+The music file can be included anywhere in the code and so finding it can 
+be a pain.  Music written by -MAD MAX- or -AN COOL- usually looked like 
+this :
+
+BRA   $address
+BRA   $address
+BRA   $address
+  G A R B A G E
+MOVEM.L A0-6/D0-7,-(A7)
+BSR   $address
+MOVEM.L (A7)+,A0-6/D0-7
+RTS
+
+MOVE.L $FFFF8800.W		;some kind of soundchip access
+.
+.
+.
+
+The important part to notice are the three BRA instructions.  They really
+give away the music.  The initialize routine we mentioned earlier is
+called in a similar way to this :
+
+MOVEQ #1,D0
+JSR   $address
+
+This will usually appear in the main body of the program.  The value MOVEd 
+into D0 is a parameter which will determine which piece of music is 
+played.  The most common values for D0 are 0 or 1.
+
+When you execute the JSR instruction it may take you to one of the three 
+BRA instructions we mentioned earlier.  If it does WHAM !!!  You've found
+the music.  Simply find the address of the first BRA and press S to save 
+binary.  Give a filename like MUSIC.MUS and specify the address of the 
+first BRA.  Give the end address as the start + about $5000.  There are 
+very few pieces of music longer than this.
+
+If you still haven't found the music you are going to have to look for the 
+VBL routine.  Trace through the program until you come to an instruction 
+like MOVE.L #$address,$70.W or MOVE.L #$address,$4D2.W.  An address 
+similar to the last one will also do.  Investigate the addresses placed 
+into $4D2 or whatever.  You might find a list of BSR's.  This means the 
+programmer is STRUCTURED !!!  Structured programmers are easy to rip from. 
+To investigate the address you have to adjust the PC register to the 
+address and there you have it.  Remember to record the last address of the 
+PC before you change it so that you can return to where you were before if 
+you find nothing interesting.  In the aforementioned list of BSR's you may 
+find a JSR.  Branches to music are normally done with a JSR since the 
+music is normally tagged on the end of the file out of range of a BSR.
+
+It is fair to say that 90% of music (in demos) on the ST is in the
+THREE BRA form.  But newer muscians like the one who wrote count zero
+in Maggie 3 might have BRA BRA BRA.S or similar instead.  About 8% of
+music has no BRA's at all.  In this case you must find the VBL routine
+and the INITAILIZE routine and save from the start of the lowest address.
+Then set up INIT in my source code to address $7A014 and then work out the
+difference between the two addresses and set the VBL parameter at the end
+to $7A014 + the offset.
+
+THIS IS EASY ONCE YOU TRY IT !!!
+
+Let's forget the difficult pieces for the time being.  Look through demos 
+for nice easy TREBLE BRA'S music.  Try THE LOST BOYS' CEBIT '90 screen in 
+Maggie 2 or the CHARTS from the same issue or THE UNDER-C PREVIEW from 
+issue 3.  The hardest bit is decompression, the rest should be easy.  As 
+you become more experienced you will get to know where to look for music 
+and which are the nasty instructions that make you lose control !!!
+
+AND NOW THE BIT I REALLY HATE : DOCUMENTATION !!!
+
+The program which accompanies this artical can be assembled with DEVPAC and 
+will allow you to play the fruits of your ripping.  I have included the 
+music from the charts on Maggie 2.  When you assemble the program the 
+music is included into the code.  Simply change the filename to that of 
+any you rip yourself.  If you assemble to memory and step through my 
+program you will discover at first hand what music looks like and how it 
+is called.  If you wish to strip off all the "Frills and Bells" from the 
+program and use it in your own please do.  BUT PLEASE MENTION US IN YOUR 
+PROGRAM !!!  The bare source will allow you to start the music with
+"BSR on" and end with "BSR off".  The rest is up to you.  We have included
+disk drive FX just to show you how it's done and a VU meter.  You can
+select different values for D0 when you run the program.  This is very
+useful because then you can find and play all the tunes available in
+that file.  You may find some music has funny noises in some values.
+There is even some music that will bomb out when you use certain values.
+However the error trapping routine I included will (should) return you,
+unharmed, to the editor.
+Pressing F1-F3 will determine which channel is monitored for noise output
+i.e. drum beats.  My source relocates the music to $7A000 before playing
+it.  This makes life easier for more complex pieces and for working out
+offsets etc.  In your own programs you should be able to leave most
+music where it is and execute from where it was loaded into memory by
+DEVPAC's INCBIN.
+
+In future months as you master the art of ripping you will no doubt keep a 
+library of music.  You should record in a notebook or some details such as 
+active drum channel, INIT address, VBL address, possible values of D0 and 
+the filename.  
+
+The source code on the disk is pretty self explanitory.  It is probably my 
+most well documented source code to date !!!  The program is designed not 
+to bomb out if an error occurs.  This is because if you call music with an 
+incorrect address you usually get bombs.  The anti bomb routine returns 
+the following values :
+
+RED   : addRess eRRoR  (R for Red !!!) ; normally 3 BOMBS
+GREEN : illeGal intruction error (G for Green !!!) ; normally 4 bombs
+BLUE  : Bus error (B for Blue !!!) ; normally 2 BomBs
+
+Upon crashing the computer will throw you back into the editor with the 
+appropiate colour as the background.  Okay so it's a bit crude but it's 
+better than bombs !!!
+
+To run the program simply assemble the source code to about 40KB of 
+memory.  If you have problems with your own music use DEBUG and assemble 
+with extended debug option set.  You should look for my JSR (A0) in the
+"on" subroutine and put a breakpoint on it.  Run the program to here and
+then step through from there.  You should be able to see why the error
+has occured.
+
+THAT IS IT !!!
+
+SIMPLE EH ?!?
+
+Keep reading until you understand.
+
+It took me a while to learn to rip.
+
+-ZCT-            
+
+-THE LOWER LEVEL-

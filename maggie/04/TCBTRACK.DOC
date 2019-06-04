@@ -1,0 +1,179 @@
+
+   ............................................................
+   .  AHEM !!  - Part II of the TCB Tracker Review, which was .
+   .   supposed to find it's way into Maggie 3.0, but Did'nt  .
+   .   Anyway, here it is, with some other bits, such as a    .
+   .   first look at Tracker 1.1 and also a brief look at     .
+   .   some extra .MOD disks, and also Noisetracker           .
+   .     (C)IH for Maggie 4, 28-11-90..                       .
+   ............................................................
+
+Firstly, the missing bit...
+
+``````REALLY HARD SWEARING AND X-CERTIFICATE SEX``````````````````
+
+Or PART 2 of this review, take your choice.....
+
+Well  thanks for wanting to continue with the review anyway,  this 
+bit or addendum to the original is being written in late Sept,  as 
+firstly,  Maggie issue 3 is still in production,  the European CES 
+haf  come und gone (More on that elsewhere...) and I now have  the 
+finished final product,  TCB Tracker version 1.0 to hand,  and can 
+offer some more detailed advices after having used it  extensively 
+for a few days....
+
+To  start with,  the bottom third of the screen displays the  four 
+tracks together,  anything you enter is displayed on the track you 
+are  working on in alphanumeric format,  the tracks count down  in 
+hexadecimal (base sixteen, you thick gits..) format. The technique 
+used  to  write music on this is a lot easier than  certain  other 
+trackers (Qu*r*et..) as you can hear what you are doing a step  at 
+a time and can modify it accordingly.  Step programming means that 
+everything  you do is kept together,  so it is much easier to work 
+out  where  you are,  and you don't get hopelessly lost like  with 
+some other programs (Quar**t...). 
+
+TCB  Tracker  uses a clear to read,  and largely  self-explanatory 
+main  screen,  the  functions on the left hand side deal with  the 
+major  functions  of 'Save-Load-play,  also 'RECord for  when  you 
+decide  to commit a sample to one of the four channels.  You  have 
+the  option of loading in samples,  songs (without sample  data..) 
+and  MOD  files  (songs and a complete custom  sample  set..)  The 
+tracker uses its own Gem-like screen handling,  but has nothing to 
+do with GEM. You can play out the sound through the monitor, or an 
+external source, via ST Replay, or through the STE stereo jacks.
+
+This  is also the first program on commercial release to  properly 
+support the STE's Extra sound production facilites, the tracker is 
+switchable  between  'normal ST and the extra hardware,  Bass  and 
+treble are adjustable if the tracker is on an STE. 
+
+To  return  to aspects of music making,  samples are entered  at  a 
+chosen  pitch,  into  the  chosen channel,  to build  up  patterns 
+(approx  forty steps make up a pattern..) Your patterns  are  then 
+assembled in order to make up a song,  these can be moved about at 
+will into the desired positions, a Restart position being selected 
+for  the  end/beginning of a song,  and away you go.  The  program 
+oozes  user-friendliness (Review cliche 3 million  and  twelve...) 
+and  picking-up on how it works is intuitive and quick (as a  good 
+proggy  should  be...)  and  it is possible  to  get  some  fairly 
+respectable results in the space of, say, less than an hour....
+
+OTHER USEFUL 'TWIDDLY' BITS:-
+
+Drum machine mode, every sample is accessed from the keyboard, and 
+the channels are programmed accordingly.  You can select whichever 
+of the four channels you want to listen to at any time, Amiga bass 
+slows  down  any converted Amiga MOD.files,  you can  select  disk 
+drives  from  the  main screen,  you can 'selectively'  bin  whole 
+modules,  songs only,  or individual samples. All the functions on 
+the screen in icon form are available from the keyboard as well.
+
+I  have not tried out the cut-and-paste,  or sample tuning effects 
+yet,  but these look good, and should be good (In keeping with the 
+overall  standard  of  the  program..)  The  keyboard  layout  for 
+entering  notes,  is  slightly  strange  at first,  but is  not  a 
+problem.
+
+Some general points and final words......
+Bugs....Only  very occasionally locks up,  upon completion of SAVE 
+operation,  also, on a half-meg machine, does not like really long 
+(Over 130 kb..) MOD files,  which is not a pressing problem. After 
+fairly intensive use, this is a package I am confident in, and not 
+irritated with, and it is considered reliable. 
+
+There  is also at least one disk of additional .MOD files for  the 
+program,  some  of  the samples are spectacularly dodgy,  but  the 
+general  quality is ok,  and if you are dissatisfied,  the tracker 
+can use any SPL sample file.  Personally,  after use,  I can still 
+recommend  this package,  and suggest that you get it,  if you are 
+into music-making in any form...
+
+(C)IH - 27/09/90 it is now cold at night....
+
+I  hope you had a good laugh at the sixth paragraph of  the  first 
+half  of  the review,  as I gather TCB have had a little  'problem 
+with their hard-drive, so an early release for their demo is oudda 
+da question, Well did YOU see any screens at the CES !!???!!!
+
+
+```````````````````````````````````````````````````````````````````
+       YET MORE WIBBLE ON TCB-TRACKER RELATED MATTERS.....
+
+By Chris ...Nov '90
+
+It  is now f*cking freezing at night,  having come a long way from 
+the heatwave of Aug/Sept 1990,  and TCB Tracker version 1.1 is now 
+to hand.. Improvements include some bug-fixing, well I did'nt find 
+any major trouble,  and also the addition of an Amiga .MOD file to 
+Tracker converter program. This currently requires one meg to work 
+in, and is not compatible at present with all .MOD files.. Fine, I 
+said,  having  got  my  extra half-meg in  the  week  before..(NOW 
+there's a story!!! more of which in another part of the Maggie...)
+
+I  tried out several .MOD files from Equinoxe,  ST-Connexion,  and 
+other soundtrackers, and got about a 50% success rate for these. I 
+spoke  to  MPH who advised that Noisetracker files have  the  best 
+conversion  rate,  most  of their files successfully translate  to 
+Tracker,  Hopefully  there will be a converter program which  will 
+work  on  a 512k machine,  and also convert (hopefully)  all  .MOD 
+files from whichever original format..
+
+Also  now  available  are 8-9 (at time of  writing..)  extra  .MOD 
+disks,  and  two  .SPL disks,  I plumped for the .MOD disks,  which 
+appear  to have been done with the current converter program,  the 
+quality  is variable,  some samples obviously being more difficult 
+than  others  to  translate..  The  disks are  a  mixture  of  all 
+'musical'  tastes,  synth  and guitar rave-ups,  a stunningly good 
+'Dick Tracey' mix on disk 3,  all of them Amiga originals, the odd 
+tune heard in a commercial release,  but most of them from famous, 
+or notorious Amiga demos, including the Red-Sector Megademo...
+
+Overall,  most of my post-Maggie 2 activities seem to be connected 
+with this bloody program, (Apart from playing Turrican and writing 
+this lot...),  and most of my earlier observations still stand,  I 
+also  gather  from  MPH that the  soundtrack  to  POWERMONGER  was 
+written on the Tracker, and most of the major software houses have 
+expressed keen interest,  as they can port over Amiga tunes to the 
+ST,  saves  the  extra cost of commissioning an ST-soundchip  tune 
+apparently, (Sorry David Whittacker......)
+
+Some  of  the Amiga-converted .MODs are not as clear  as  I  would 
+like,  but  at the same time,  I have had no problems with samples 
+taken from these sources, original samples (As done by MPH...) are 
+better.... 
+
+A quick word on Noisetracker,  bundled with Maggie 3.0,  thank you 
+very much...    EEErrrrmMMMM!!!
+
+No,  hang on, lets try a bit more, Noisetracker is very similar to 
+TCB  Tracker  in layout,  the method of tune creation is  in  fact 
+identical to Tracker and uses a very similar keyboard-layout.. The 
+method of tune-building is the same, but it does not have the more 
+advanced  editing features of TCB Tracker..  On the plus side,  it 
+does  have  compatibility  with Amiga Noisetracker  and  other  ST 
+soundtracker  files,  (But  not  TCB .MODs..) and is  also  Public 
+Domain  (at  present....) against TCB Tracker being  a  full-price 
+program,  the  sound quality is very similar,  it is not not known 
+how  much CPU time it uses,  generally it does not sound too  bad, 
+but it is a bit short on the sort of features that you get in  TCB 
+Tracker,  which,  I suppose,  illustrates the difference between a 
+P.D. program, and a full price one...
+
+Out of the two, Noisetracker is only going to be known to the keen 
+P.D'ers,  whilst  TCB  Tracker  is  being  reviewed  and  marketed 
+extensively, and going from strength to strength as a result..
+
+Still,  Noisetracker  is what you would call a good P.D.  program, 
+and  if  your  finances  don't run to  TCB  Tracker,  then  it  is 
+definitely worthwhile...
+
+Hope  to  pick up some more samples,  and other tasty P.D.  at the 
+Shopper  Show at Wembley,  on the 7-8 December 1990,  also hope to 
+have  most  of my articles for Maggie 4 finished  by  then..  (FAT 
+CHANCE!!!)
+
+           See you-u-u-u-u again soo-o-o-o-o-nnnn!
+               Chris H.  (30.11.90)
+
+

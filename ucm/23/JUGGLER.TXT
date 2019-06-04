@@ -1,0 +1,113 @@
+ó--------------------------------------------------------------------------------
+                  RESERVOIR GODS' "DOUBLE JUGGLER VEGETABOBBLE"
+ó--------------------------------------------------------------------------------
+
+system.... STf, STe, MegaSTe, Falcon, TT, 1 MB RAM, RGB, VGA
+
+credits... code - mr pink
+           grfx - sh3
+           musx - msg
+
+release... o4/2oo2
+
+ó--------------------------------------------------------------------------------
+
+Yaaouuu... It seems as have the ñRESERVOIR GODSð ended their big break since 1999,
+since not too  long  time after  their smashing ó"CHUCHU ROCKET"ð conversion  of a
+DreamCast game, now another release popped up.
+
+This game features a quite ñsimple game ideað, juggling, as the title already says
+and a closer look  onto the game itself proves. This small game was put together
+as 24 hours game, that doesn't means  that you need  24 hours to play it through
+or that it will  delete itself after 24 hours, but that all stuff was done in 24
+hours instead. So you will ask me, is it possible to create a game in 24 hours..
+
+"Yes" I would say... but then you know that the game will have some drawbacks as
+well, since even for a conversion of a known game  idea you need a lot  of time,
+at least if you're willing to squeeze out that idea until the very end.
+
+The fine thing at first, not alike as it was with ó"CHUCHU"ð now all Atarians with
+at least 1 MB RAM can  play the game at  once. Furthermore it doesn't matters if
+you're running a  VGA or RGB monitor, it runs fine  on both... and last  but not
+least they support òany kind of  controlsð, including Jaguar Pad, as always. So on
+the systems side it's a typical ñRESERVOIR GODSð game, on the known high technical
+standard...
+
+So we must take a look behind  the scenes to find out more... After starting the
+game a  òslideshow alike introð, showing  up several  logo and title  pages in the
+typical SH3 style, that means damn  òstatic and fancy  coloured logo'sð, comes up,
+without any sound or  music... Hum... But  this changes  as the main menu of the
+game appears. This looks like this...
+
+{*i JUGGLER1.PI1 m 0 20 0 199}
+
+Yeps, it's a òquite strange  colouredð thing. On the upper right  corner the whole
+menu stuff is located, containing the usual buttons to turn music and fx or even
+the speaker on or off, choosing the controls and play level.
+
+Play level doesn't  means in what  level you  have to start, but what difficulty
+you choose to play, since the game itself doesn't features any levels.
+There are two difficulties to choose, A and B... A is called in the readme to be
+the ñLamer stageð, B the ñSuper stageð. Since I'm a lamer, yurk, I tried A at first.
+Finally you reach the game screen, that looks like this...
+
+{*i JUGGLER2.PI1 m 0 20 0 199}
+
+óEeeks, game over!
+
+The horrible slim lined guy below is the juggler and  your aim is to avoid it to
+let the blue balls fall down to the floor. Therefore you can move your arms left
+and right  while pressing the special buttons to do so. Then the ugly guy on the
+playfield moves  his arms like a  spastic. Btw... you have ñjust 3 possible moves
+at all, that means that the  guy is always moving both  hands and so you have to
+take a closer look onto the flight of the blue balls.
+
+But after all the balls aren't very fast  in falling, the only problems occuring
+if they're coming down all three at once, because then fast movements are needed
+to avoid a ñclash on the floorð and the obvious ñgame overð.
+
+And that's all about  the game idea! òDamn  simple, isn't it?!ð It is, without any
+doubt or question. But if you  think the different game  modes feature something
+burning too, you're wrong, since I didn't saw a big difference in them, and also
+in the "hard" game mode I knocked away the highscore at the first attempt.
+
+As I said ñhighscoreð, yes, there is one, a ñsaveable tooð that is a nice feature to
+hold up  the motivation. And here it is damn  needed, since the game doesn't has
+any special features, it's  just pure juggling and so the òneat chip musixð or the
+small gimicks on  the upper border of  the screen, don't help to make the sparse
+thing much  better... Mmmh... after all there aren't much more words to loose in
+here... except the final ones...
+
+ñ...final words...
+
+ó"DOUBLE JUGGLER VEGETABOBBLE"ð is a nice  title for a òquite  uninspired gameð that
+doesn't  only òtorments  the eyes  and earsð (luckily you can switch off the fx!),
+but also the  motivation, since the game  hasn't a deeper  meaning. I think only
+the implemented  saveable highscore  will bring people to the point to play it a
+bit more often. Ok, it's ò24 hours gameð, but after all you see it in nearly every
+point, the òvery sparse grafixð  that seem to be inspired by some LCD game, or the
+ònearly not  existing game playð. Highlites  are the òneat  chip musicð and the high
+technical level, that makes it run on any Atari 68oXo hardware without any probs
+and the òeasy controlsð. So this makes the game to a òneat break fillerð, but really
+nothing more. After the great ó"CHUCHU ROCKET"ð that surely will bring wake nights
+while playing, this little thingie here is òa bit disappointingð... :/
+But after  all Atari  gamers haven't  a big choice  nowadays and I believe, if I
+take a look at some games released in the past, that also this one will find its
+lovers...
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals .....ð  2o % ñ- Torment me! I wanna be a LCD pocket game!
+ñaudio .......ð  7o % ñ- Neat chip sound, but nerving fx...
+ñcontrols ....ð 1oo % ñ- hehe, really, just left and right! grin...
+ñidea ........ð  1o % ñ- not much to say, just juggling...
+ñmotivation ..ð  3o % ñ- no more stages, boring with the time, highscore saveable
+
+ó___ðoveralló_____ð46ó_ð%ó_____________________________________________________________
+
+I just hope that the next ñRESERVOIR GODSð' games will be a bit more addictive and
+fun to play... As I look onto their release list  so far, this one  is maybe the
+absolut deepest point in their row of releases... too bad...
+
+.tSCc.                                                          moondog . o4/2k2
+ó--------------------------------------------------------------------------------

@@ -1,0 +1,430 @@
+
+т              .               .      _      *     .
+т                      *             / \                 *
+т    .          .  *ру        CHAPTER 2 : PIXELPUSHING     рт       .
+т          .              *          \_/          .      .
+
+This part of the book is all about the basics of Atari graphics. To put
+something on the screen (a pixel for instance), you need to put your
+CPU in a special mode called SuPeRViSoRMoDe.. This allows you machine
+(and program) to access all kinds of chips that normally can't be
+approached. If you should try to access those nasty chips in the normal
+mode, you'll get two bombs on screen. So, here's how you set the Super-
+visormode:
+
+        clr.l   -(sp)
+        move.w  #32,-(sp)
+        trap    #1
+        addq.l  #6,sp
+
+Now a longword that is very important is put in register D0 by the system.
+You should back this up somewhere in the memory, because you need it to
+return safely to the desktop. It's called the User-stackpointer so you
+should put it under a label called something like 'oldsp' or 'old_stack'
+or something. Here we go:
+
+        move.l  d0,oldsp
+
+If you want to exit your program you should use the 'oldsp' value again
+and do like this before calling you termination routine:
+
+        move.l  oldsp,-(sp)
+        move.w  #32,-(sp)
+        trap    #1
+        addq    #6,sp
+
+You should reserve a LONGWORD for 'oldsp' like this:
+
+oldsp:  ds.l    1
+
+You probably know that you need something called a screenaddress. This is
+simply a 24 bits long number that points to the first pixel on screen. In
+order to get the screenaddress you can use a systemroutine. Just type in
+this:
+
+        move    #2,-(sp)
+        trap    #14
+        addq    #2,sp
+
+The screenaddress is returned in d0, so you can now put in an
+addressregister with something like:
+
+        move.l  d0,a0
+
+Now it's time to put a pixel on screen.
+
+        move.w  #$ffff,(a0)
+
+This makes the first pixel in the screen white. Simply moving to the next
+pixel is done with:
+
+        move.w  #$ffff,(a0)+
+
+But this only goes for the Falcon truecolor mode. This mode is far more
+easy to use than the normal ST resolutions. The ST uses a type of screen-
+layout known as BITPLANES.. (aaarrrggghh!) You might also know that the
+ST works with a pallette of 16 colors. This makes 4 bits for every color.
+(If you didn't know that please don't continue to read this..)
+
+A complete ST-LOW screen of 320*200 4bit pixels makes up a total of
+320*200*4 bits = 256000 bits = 32000 bytes. Each screenline has 320*4 =
+1280 bits = 160 bytes.
+
+Each of those 4-bit values points to a piece of color information the video-
+chip can use. Now you probably assume that the screenbuffer just consists of
+a bucketload of 4-bit values just put next to each other, like this:
+
+1st pix  2nd pix  3rd pix  4th pix  5th pix  6th pix
+
+|  0110  |  0101  |  0000  |  1100  |  0110  |  1001  | -> etc ->
+
+     1st byte           2nd byte          3rd byte
+
+I'm very sorry but it just isn't as logical as this.... :( It would have
+been much nicer if Atari had done like the above method, because it's much
+handier for 3d and easier to understand for beginners. Here's how the
+situation really is:
+
+4 bitplane mode (ST LOW):
+
+  1 word 
+ /      \
+ ------- ------- ------- ------- ------- ------- ------- -------
+|plane 0|plane 1|plane 2|plane 3|plane 0|plane 1|plane 2|plane 3| etc.
+ ------- ------- ------- ------- ------- ------- ------- -------
+
+A bundle of 4 consequent words make up 16 pixels in the screen. There are
+20 of such bundles (or chunks or whatever you want to call them) in one
+screenline (20*16 = 320 pixels).
+
+                        value of 1st pixel
+  +------------------+-------0110-------+------------------+
+  |                  |                  |                  |
+| 0101101011100100 | 1011100101101110 | 1100001100011010 | 0101010101110101
+
+1st word           2nd word           3rd word           4th word
+
+(This value is 0110 so that's > color 6 < in plain English)
+
+Yikes! That is indeed a whole lot more complicated!! You see the actual
+value of each consequent pixel is got out of the consequent bits from
+4 consequent words.. Sounds difficult? In order to code well on an ST you
+should at least have figured out how this works. I'm gonna give you some
+more examples:
+
+                        value of 2nd pixel
+   +------------------+-------1101-------+------------------+
+   |                  |                  |                  |
+| 0101101011100100 | 1011100101101110 | 1100001100011010 | 0101010101110101
+
+1st word           2nd word           3rd word           4th word
+
+( > color 13 < )
+
+For the next pixel you just take the bits that are positioned right from
+the current bit in each word. Putting all those bits toghether in one 4-bit
+number gives the actual code.
+
+When you reach the seventeenth pixel you need to move on to the next 4
+words. This is because each of those 4 word blocks hold 16 pixels. Get the
+value of the 17th pixel like this:
+
+                        value of 17th pixel
+  +------------------+-------0111-------+------------------+
+  |                  |                  |                  |
+| 1101010101010100 | 1000110101110010 | 1011011100101010 | 0111010110100010
+
+5th word!          6th word!          7th word!          8th word!
+
+( > color 7 < )
+
+Now let's skip this confusing theory and go on with some more practical
+approach to these bitplanes...
+Let's assume that we got our screenaddress in a0 again! In order to make
+the first pixel on screen color 0 you do this:
+
+* Clear most right bit of 1st word.
+        andi.w  #%0111111111111111,(a0)+
+* Clear most right bit of 2nd word.
+        andi.w  #%0111111111111111,(a0)+
+* Clear most right bit of 3rd word.
+        andi.w  #%0111111111111111,(a0)+
+* Clear most right bit if 4th word.
+        andi.w  #%0111111111111111,(a0)+
+
+So now, 4 cleared bits make 0000 which happens to be color 0, hurrah!!
+But now we want to give the pixel at the coordinates (165, 45) the color
+11. Keep in mind that all the screenlines are directly behind eachother.
+The upper screenline starts at offset 0, the second at 160, the third at
+320, the fourth at 480, etc, etc.
+
+* First adjust the address to the right couple of words.
+* Adjust it down 45 lines. (45 times the number of bytes in each line)
+        adda.l  #45*160,a0
+* Adjust it to the right 4 word block. 165pixels/16pixels per block=10
+* So the pixel is in the 10th block on the line and each block is 8 bytes
+* large so, you need to add 10*8.
+        adda.l  #10*8,a0
+* Now which pixel to address in this block? If you calculate the remainder
+* of the 165/16 division, you've got the answer.
+* 165 - (165/10)*10 = 165 - 16*10 = 165 - 160 = 5, or:
+* 165 MOD 16 = 5 as some people like to put it.
+* Set the 5th right bit in the 1st word.
+        ori.w   #%000010000000000,(a0)+
+* Set the 5th right bit in the 2nd word.
+        ori.w   #%000010000000000,(a0)+
+* Clear the 5th right bit in the 3rd word.
+        andi.w  #%111101111111111,(a0)+
+* Set the 5th right bit in the 4th word.
+        ori.w   #%000010000000000,(a0)+
+
+So, as you can see this is a question of clearing and setting the
+appropriate bits in the corresponding couple of words. OK, that's that for
+those bits at the moment.
+
+Now, suppose you want to reconfigure all the colors in the pallette so you
+don't have those ugly bright 16 desktop colors, but a more atmospheric
+pallette.. For this you really need SUPERVISOR-MODE again. Make sure you
+put that supervisor routine at the beginning of all your programs!
+
+OK, let's show something about those colorvalues. Everytime the Video-chip
+converts 4-bits into a color to put on screen, it looks up the pallette
+registers. These contain all sixteen red, green and blue brightnesses for
+the colors.
+
+A colorregister is one word with bits for red green and blue.
+
+ST(e) Colorregister:
+
++----+----+----+----+
+|xxxx|Rrrr|Gggg|Bbbb|
++----+----+----+----+
+
+The three r's represent the brightness of red with a value that can range
+from 0 to 7. The g's and b's do the same for the colors green and blue.
+The x's do nothing and you don't need to mess around with these.
+The Capital letters are for STe/Falcon/TT only. They give twice the
+precision of brightness for each color. I won't use 'em in here, because
+they are kinda confusing.
+The registers are located in high memory. At $ffff8240 to $ffff8260 to be
+exact. (These are hexa-decimal numbers. If you don't know what they are,
+please don't go on!)
+Now you want to make all the colors (0 to 15) bright yellow. You just set
+the maximum of red and green(green+red makes yellow!). The value of a
+register would look like this:
+
+ xxxx Rrrr Gggg Bbbb
++----+----+----+----+
+|0000|0111|0111|0000|
++----+----+----+----+
+
+If you want to do this with all the registers you do this:
+
+        move.l  #$ffff8240,a0               * Put address of first color in a0.
+        move.w  #16-1,d7                    * Prepare for looping 16 times.
+loop:   move.w  #%0000011101110000,(a0)+    * Make register bright yellow.
+        dbra    d7,loop                     * Loop 16 times.
+
+Make sure you set supervisor mode first! Now you have a totally yellow
+screen. You now see how easy it is to change the color in the 16 color mode.
+If you wanted to do this in Falcon True color it would be very easy to code
+as well. The principles are a bit different, but it's not a bit harder. It's
+only takes the CPU much longer to execute! Since you have no pallette in
+True-color you need to adjust the color for every pixel!
+But OK, let's explain how a Falcon-16 bit pixel is put together. It's a bit
+like the pallette register of the ST(e):
+
+Falcon 16-bit truecolor pixel:
+
++-----+------+-----+
+|rrrrr|gggggg|bbbbb|
++-----+------+-----+
+
+The r's give the value of red from 0 to 31. The g's give the value of green
+from 0 to 63. The b's give the value of blue from 0 to 31.
+
+Now for the routine (the screenaddress is in a0):
+
+        move.w  #64000-1,d7                 * Prepare for looping 64000 times.
+loop:   move.w  #%1111111111100000,(a0)+    * Make a pixel yellow.
+        dbra    d7,loop                     * Loop 64000 times.
+
+Simple, but very SLOW, because you need to do the loop 64000 times for
+320*200 resolution!!
+
+Phew! Now that that stuff is done you know some stuff about giving the
+screen all kinds of colors for both the Falcon and the ST. With certain
+looping structures and combinations of putting pixels you can make all sorts
+of graphical effects. But more about that in Chapter 6.
+What we're worried about now is the flickering of the screen when you change
+something on screen. Let's say you want to change the 16 colors of the ST
+when you're displaying a picture. When you do this without synchronisation
+you'll get some ugly flickering on screen. This is because when the video-
+chip is still transfering picture-signals to your monitor/TV the colors
+change in the middle of the screen. Sounds difficult? I'll explain here:
+
+Let's assume your whole screenbuffer is filled with color 3. In the curremt
+situation this is blue. You want to change it to red....
+
+Picture 1:
+
+Color 3 is still blue. The Video-chip is halfway through reading the buffer
+and so the monitor is halfway through refreshing the picture on screen.
+
+                        +------------+
+                        |""""""""""""|
+                        |""""""""""""|
+                        |""""""      |
+                        |            |
+                        +------------+
+
+" = blue
+
+The current position of where the screen is refreshing is where the "'s end.
+
+Picture 2:
+
+The palette is now changed and color 3 becomes red. The screen is now
+updates a bit further and you can see blue bits are still on screen!!
+
+                        +------------+
+                        |""""""""""""|
+                        |""""""""""""|
+                        |""""""!!    |
+                        |            |
+                        +------------+
+
+" = blue  ! = red
+
+The current position of refreshing is where the !'s end.
+
+Picture 3:
+
+The video-chip finishes reading the screenbuffer and the monitor finishes
+refreshing. The upper half of the screen is now blue and the lower half is
+red!!
+
+                        +------------+
+                        |""""""""""""|
+                        |""""""""""""|
+                        |""""""!!!!!!|
+                        |!!!!!!!!!!!!|
+                        +------------+
+
+" = blue  ! = red
+
+Now the monitor and video-chip have stopped reading/refreshing for a moment
+and went into Vertical Blank. This is a moment when the monitor adjusts the
+Cathode Ray Tube to start in the top-left corner again. In this so called
+Vertical Blank or VBL nothing is put on screen... Conclusion: if you want
+flickerless colorchanging you need to adjust the colors in the VBL!!
+OK, you say, but how do I do this in assembly code Mr. Smartypants? Well,
+you can easily do this with a systemroutine:
+
+        move.w  #37,-(sp)
+        trap    #14
+        addq    #2,sp
+
+This simply waits and executes no other instructions untill the VBL is
+reached. If you simply put this in your code before you start kicking around
+some pixels, you will have no flickering! Yeh!!
+
+This VBL-syncing stuff works fair enough with only a few pixels on screen,
+but still you need one extra trick if the drawing of graphics costs quite
+alot of time. You remember the funky ASCII representations of our screen
+=) ? Well, even if you start drawing when a VBL occurs, the CRT can catch up
+with your drawing in the screenbuffer and again you've got flickering.
+
+What to do about this now? '!|: Double bufferinG :|!'
+Always draw your pixeldata on a screenbuffer that isn't read by the
+videochip. When you've finished drawing, wait until the VBL occurs and then
+give the screenbuffer-address to the videochip. When drawing the next frame
+for your animation you draw to another screenbuffers (yes, you have TWO
+screenbuffers, hence the word "double" in double buffering =)).
+
+The code will now look like this:
+
+*=/\_ Funky '!|Double buffeR|!' examplE _/\====================================
+
+* 0) Initialize screenaddresses.
+* The basic ST(fm) must always have it's screenaddress aligned on a 256 byte
+* boundary. Keep this in mind when coding for a basic ST!
+        move.l  #screenbuffer+255,d0            * Get bufferaddress+256 in d0.
+        sub.b   d0,d0                           * Make it 256 byte aligned.
+        move.l  d0,physical_screen              * Store first address.
+        addi.l  #160*200,d0                     * Move to next screenaddress.
+        move.l  d0,logical_screen               * Store second address.
+
+drawing_loop:
+* 1) Draw some stuff on the logical screen.
+;
+;
+
+* 2) Swap the screenaddresses. i.e. swap the logical and physical addresses.
+        move.l  logical_screen,d0
+        move.l  physical_screen,logical_screen
+        move.l  d0,physical_screen
+* 3) Kick in the new physical screen.
+        lsr.w   #8,d0                           * Get mid byte in low byte.
+        move.l  d0,$ffff8200.w                  * Kick in new screenaddress.
+* 4) Wait for the VBL...
+        move.w  #37,-(sp)
+        trap    #14
+        addq    #2,sp
+
+        bra     drawing_loop                    * And loop once more...
+
+******** DATA MEMORY SECTION ********
+
+        DATA
+
+physical_screen:
+        DS.L    1                               * Address of visible screen.
+logical_screen:
+        DS.L    1                               * Address of invisible screen.
+
+******** RESERVED MEMORY SECTION ********
+
+        BSS
+
+screenbuffer:
+        DS.B        256                         * For 256 byte aligning!
+        DS.B        160*200                     * Reserve one ST-LOW screen.
+        DS.B        160*200                     * Reserve one ST-LOW screen.
+
+*==============================================================================
+
+
+Well, that's about all for this chapter. I hope you now know the basics of
+how you can put something on screen. Here's a summary of what you have seen
+in this chapter. I hope you remember them:
+
+Bitplanes:             A couple of words(16-bits) in the screenbuffer that
+                       contain the bits of 16 pixels in a very illogical order.
+Cathode Ray Tube:      The tube in a TV or monitor that spits out electrons
+                       on the phospor-screen so that you can see colors.
+Double buffering:      Technique used to avoid flickering and stripes on the
+                       screen. Without this, no flickerless animation! Used in
+                       combination with VBL-syncing.
+DS:                    Assembler command used for reserving memory space at an
+                       address (label).
+Flickering:            Flickering of the picture on screen.
+Logical screen:        The actual invisible screen.
+Pallette-registers:    The 16 hardware registers that contain red, green and
+                       blue values for each value that is read from the
+                       bitplanes. They are used for the ST 16 color mode.
+Physical screen:       The actual visible screen.
+Screenaddress:         The address of the first pixel or bitplane in the
+                       screenmemory. In the Atari the screenmemory is held
+                       in the main RAM.
+Supervisor-mode:       A special mode your 680x0 needs to be in access
+                       pallette-registers and other nasty bits.
+User-stackpointer:     A value that needs to be saved when you called the
+                       supervisor-setting routine. It needs to be given to
+                       the routine that exits supervisor-mode.
+Vertical Blank or VBL: A period when the monitor and video-chip have stopped
+                       reading/refreshing and nothing is put on screen.
+Video-chip:            A chip in your Atari that reads from the screen-
+                       memory/pallette register and converts the digital
+                       color-values into a analog signal that your monitor
+                       understands.

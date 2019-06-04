@@ -1,0 +1,54 @@
+Û--------------------------------------------------------------------------------
+                          EVOLUTION - "EVOLUTION 1.o"
+Û--------------------------------------------------------------------------------
+
+system .. Falcon with at least a 68o4o CPU, designed to run on CT6o
+
+Û--------------------------------------------------------------------------------
+
+The longer  the wait  for the ct60 was, the  shorter it  was for  a special ct60
+demo. Sure, "Evolution 1.0" is  just a relative short intro, but it is exclusive
+for the ct60... this means it  is just  running on  68040 or higher cpus, but to
+get a good speed, you'll need your 060Falcon.
+
+When starting the demo, you first get an ASCII menu, where you can select the Hz
+and quality, on my 66 Mhz CT60 100 Hz VGA runs fine, other options are 60 Hz RGB
+or VGA and  50 Hz RGB, a  switch  between  high  and  low detail-level  is  also
+possible.
+
+The intro begins  with a moving mirror effect  which looks very nice, after that
+you see a  moving 3-D  writing "evolution" and "dhs". The  text  is  moving VERY
+smooth over the screen but is not very colourful.
+The following 3-d and textured objects are moving and turning in front of a nice
+drawn "finished" Mortal Combat combatant, 18+, if you know what I mean ;-)
+
+{*i EVO1.PI1 m 0 20 0 200}
+
+
+The next  part, a jumping  3-d ball in  a kind  of 3-d "castle" is  my favourite
+effect, it is simple, but has something fascinating, it is followed by my second
+favourite: a  morphing  cube, also  very, very  smooth  and  nice  coloured, but
+nothing you need a ct60 for...
+
+{*i EVO2.PI1 m 0 20 0 200}
+
+
+A kind  of textured snake, or  two rings  holding  each other  are the next one,
+followed by a short writing which is also the end of this short demo...
+Just as long as a good song has to be ;-)
+
+ÒMy conclusion: In  this  intro  you  won't  find  any  really  new  effects, but
+Ò               everything is  running smooth and the effects are innovative, for
+Ò               example  the  jumping ball  in the  3-D environment, or  the nice
+Ò               drawn background picture...
+Ò               The music  is also  very good, it  is a mod  file  playing in the
+Ò               background, but the quality is very clear, just as mp2.
+Ò               Sure, this short but good quality proggy is not a reason to buy a
+Ò               ct60 (if there is a second run), but  it shows  the world  a very
+Ò               exclusive  product for 150 proud ct60 users and of course it is a
+Ò               step in the  right direction, because  good software  lets  other
+Ò               good software grow, it is a question of honour and maybe a result
+Ò               of this would be a ct60 exclusive game... we just t can hope ;-)
+
+                                                       Cheers, Chris (MacFalcon)
+Û--------------------------------------------------------------------------------

@@ -1,0 +1,474 @@
+
+Part III:
+
+--- DIM from OVERLANDERS (SYGMA FORCE) --- 27/08 -- 9:38:17' 34'' PM
+
+     Hello guys... Here I am writting for the first time in this 
+article. I wanted to a few days ago, but I didn't feel (I think)
+writting more than what I was doing for some line-routs (which 
+are quite fast; I mean they could be of the best, but there still 
+are some things to do). By the way, I've been learning some 3D
+techniques (not filled, don't dream) for 2 or 3 days. As I have
+not all the mathematical notions for it, I would have to study
+those techniques to understand them well. In fact, Crystar of 
+Pendragons gave me his ideas and techniques, I gave him my line-
+routine (witch can draw about 13 lines of 320x200 each VBL), and
+my optmisations. We just have done a 3D-line animation pretty 
+fast but we don't have optimized the animation-techniques.
+     Well. I was without my ST for about a month and a half, just
+before the Convention. So I didn't really feel coding at the 
+beginning. I had a screen to do, it isn't finished yet (I worked 
+just for 2 days for it). It would be a fullscreen with hardware-
+scroller of 256 lines height, with a Wizball-sprite of more than
+200x200 (I can't remember), and, if possible, with digi-
+soundtrack. And now only the scroller is done. The sprite is 
+really terrible to optimise, and as I don't want to optimise it
+bit by bit, I think I'll make a program to do it. The lone 
+problem is in the fact that I really don't want to do it during 
+the Convention. 
+     I've seen some finished screens from Mister Bee, Adso, 
+
+Pendragons, Ziggy Stardust... All are really good!! And what is 
+terrific (at least, for me) is that some were done in the first 
+days of the Convention! That means, I don't feel coding many 
+hours a day, so I haven't (for now) a large productivity, I just 
+hope to code faster when I'll be back.
+     Now stop writting about my life!
+The Convention is really (that means R-E-A-L-L-Y) cool, 
+delirious! Sometimes there are some water-huntings, where 
+every guy goes down in the washtub. And, as I have (once again)
+taken precautions, I brought my camera, and managed to take 
+photos of everyone (even of me!!) in the water. Well, I just say 
+that it was a really good idea to make everyone going into the 
+watertub!!     Perhaps in a future screen, you will see some of 
+those cliches...
+     Okay. I saw that Dogue made a very big logo. No problem.
+                         Just see.....
+
+
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD          If you don't see, let me say that           DDDDDDDDDD
+DDDDDDDDDD                 we are in a "D"...                   DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+DDDDDDDDDD                                                      DDDDDDDDDD
+ DDDDDDDDDD                                                    DDDDDDDDDD
+ DDDDDDDDDD                                                    DDDDDDDDDD
+  DDDDDDDDDD                                                  DDDDDDDDDD
+  DDDDDDDDDDD                                                DDDDDDDDDDD
+   DDDDDDDDDDDD                                            DDDDDDDDDDDD
+    DDDDDDDDDDDDDD                                      DDDDDDDDDDDDDD
+      DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+        DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+           DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+              DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+                  DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
+                    
+                         Hey, here is a "I".
+                    
+
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+
+
+
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+                                                          MMMMMMMMMMMMMMM
+                                                        MMMMMMMMMMMMMMM
+                                                      MMMMMMMMMMMMMMM
+                                                    MMMMMMMMMMMMMMM
+                                                  MMMMMMMMMMMMMMM
+                                                MMMMMMMMMMMMMMM
+                                              MMMMMMMMMMMMMMM
+                                            MMMMMMMMMMMMMMM
+                                          MMMMMMMMMMMMMMM
+                                        MMMMMMMMMMMMMMM
+                                      MMMMMMMMMMMMMMM
+                                    MMMMMMMMMMMMMMM
+                                  MMMMMMMMMMMMMMM
+                                  MMMMMMMMMMMMMMM
+                                    MMMMMMMMMMMMMMM
+                                      MMMMMMMMMMMMMMM
+                                        MMMMMMMMMMMMMMM
+                                          MMMMMMMMMMMMMMM
+                                            MMMMMMMMMMMMMMM
+                                              MMMMMMMMMMMMMMM
+                                                MMMMMMMMMMMMMMM
+                                                  MMMMMMMMMMMMMMM
+                                                    MMMMMMMMMMMMMMM
+     No, it is not an inverted Sigma,                 MMMMMMMMMMMMMMM
+         it is a "M"...                                 MMMMMMMMMMMMMMM
+                                                          MMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+
+
+
+
+
+     
+
+
+                                        Have you noticed,
+                                   here is coming a plot...
+**********************
+**********************
+**********************
+**********************
+**********************
+**********************
+**********************
+**********************
+**********************
+**********************
+
+
+
+
+
+
+     Well, okay, I stop here, otherwise all the others will kill 
+me! (they don't want big logos anymore!!!). In fact, I was 
+supposed to write in big-logo: "DIM FROM SYGMA FORCE OF THE 
+OVERLANDERS"...).  So you see, there are 50 missing print-
+screens to see all the real logo!
+
+     Crazy, no?
+
+     Okay, let's wrap...   NOW!!!
+
+
+-------------- DOGUE DE MAUVE from OVERLANDERS ----------- 05.00 PM
+ 
+Yes, it's me again, at the same hour... Well, in fact, we're now 
+28/08/90! We had a very turbulent night, in fact. We first 
+watched BEETLEJUICE, a very nice & delirious film by Tim BURTON 
+then we had good time with ROBOCOP, great film, too. Of course, 
+since I remain as serious and as reasonnable as you know, I 
+decided to go to bed. Unfortunately, the PENDRAGONS had to pack
+their luggages (with Huffman algorythm!) and they disturbed me by 
+putting the light on and walking through the attic. A few minutes 
+later, a few guys came, intending to disturb the PENDRAGONS. The 
+whole attic was quickly filled by some crazy shouting barbarians 
+fighting eachothers. Pillows, sleepbags and mattress were flying 
+through the air. I desesperately tried to calm everybody but they 
+didn't want to stop. I finally had to fight them myself, using my 
+"FORCE MAUVE" suit (in fact, my mauve sleepbag) and all my tired 
+power... Four or five guys tried to catch me, intending to tickle 
+me. I resisted and three of them are now in hospital...
+That was really tiresome! When we finally stopped this terrible 
+war, it was 4.45 AM and the PENDRAGONS had to get up at 6.00 AM 
+and leave at 8.00 AM. Of course, these stupid boys didn't try to 
+be discreet. They took a big cooking-pot and drummed against it 
+like mad musicians. An AWFUL noise!!! They even managed to damage 
+the pot!!! Dumb brains!!!
+In fact, it's a pity that they left us. These guys are very cool, 
+actually. They are our best friends in France (they aren't 
+pretentious, nor jealous; they're good coders and very pleasant
+and funny boys).
+OK, let's talk about the present time. Most of us are now playing 
+various games ("TECH" on AMIGA -a kind of TRON-, "CHAOS STRIKES 
+BACK" on ST -a kind of Shoot'em up-, "SUPER SPRINT" on ST -a sort 
+of mindboggling game- and "QUARTZ" -a very nice adventure game I 
+played a few minutes before-).
+This no more a coding-party but a playing-party. I must say we 
+all worked quite hard (I even programmed ASSEMBLER! Yes, 
+ASSEMBLER!!!) and we now need to rest a bit... 
+Well, FURYO needs his "SUPER SPRINT" dose or he will die. I'll 
+stop 'coz I don't want to be considered as a murderer.
+
+                                                        "See" ya!
+                                                    DDM (5.40 PM)
+
+------------------ Ziggy STARDUST from OVERLANDERS ------------- 00.00 PM
+
+Ok! For the first time, and surely the last, I write in this 
+article. I didn't write before because I was too busy! Not busy to 
+code anything, but to play to various game. I stop now, because 
+it's too easy, I always win! Ha ha ha!! It's really hard to code 
+here, because every member make some "music-war", which means that 
+they try to put the volume of their ST at the maximum. The result 
+is that I even can't hear myself thinking. Well, in fact, it's 
+not a bad thing, because I feel very lazy, those last time. WE 
+ARE ON HOLIDAY!!! Well, in fact, not for a long time. GGGRRR! 
+Don't laugh, Adso, that's not funny! (He goes back to school just 
+in more than one month!). With Humungus, I'v done some pretty 
+nice 3D forms animations. It's very funny! I want make rebound every 
+object, even the car and the space craft. I don't understand  
+why, Humungus does not agree with this movement.
+
+Arf arf!!! Pib has just been thrown to the washtub! Poor little 
+guy! It's very cold, because we are in moutains, at 1200 meters 
+high! I've already be thrown in the wasthub two time. Well, I 
+must say that this convention is completly delirious, sleeping 
+here is very difficult! Anyway, it seems that more I sleep, more 
+I'm tired. The only thing I've done here, is including the line 
+rout of Dim in my filled vector routs, and now, my routs are 
+completly bugged! Arrrg! I have no .BAK!! Ok, bye everybody! We 
+come back home in two days.
+
+     BBBBBB    Y     Y  EEEEEEEEE    
+     B     B    Y   Y   E
+     B     B     Y Y    E
+     BBBBBB       Y     EEEEE
+     B     B      Y     E
+     B     B      Y     E
+     B     B      Y     E
+     BBBBBB       Y     EEEEEEEEEE   . . . . . .
+
+
+------- DOGUE DE MAUVE from OVERLANDERS ------- 18.47 PM (31/9/90)
+
+Yeah! I'm back in town (I mean in ASNIERES, were I live) and I'm 
+supposed to tell you what we did the last two days. The 
+convention ended the 29/9/90. In the morning, we received a 
+journalist who wanted to know what we were doing and perhaps make 
+an article about our convention. We showed him our last demos & 
+game previews and explained who we were and what we were doing 
+here. He took a few pictures from us, too. Well, let's hope we'll 
+be able to get this article quickly...
+Just before leaving, a few guys were thrown in the washtub again 
+(good luck that it was hot). Then, two pretty taxi-girls came to 
+drive us to the station (all the others seemed to find this women 
+wonderful but I thought they were not that beautiful in fact).
+
+After the convention, we (I, HUMUNGUS, ADSO, GUDUL, LUDUG, ZIGGY, 
+FURYO & STAN MERCURY) decided to go to the AQUA-SOMETHING (a kind 
+of giant swimming-pool with jaccuzi, "waving pool", fountains, 
+hot "bubbling" water and so on... We even had great time in a 140 
+meters high toboggan (nearly all, 'coz STAN was frightened and 
+HUMUNGUS didn't want to loose his lenses). Great, actually, 
+especially when I loose my "swimming carpet", heard FURYO 
+shouting 10 meters behind me in the tunnel and had to hurry to 
+avoid a terrible crush (he's quite a big guy, you know!).
+A very funny afternoon!
+But we had to leave in the evening... OVERLANDERS go home!
+
+I would like to thanx and congratulate again FURYO & STAN MERCURY 
+who organized this great "BEACH PARTY" (where's the beach?). A 
+special thought for STAN who's leaving for army...
+Thanx to all inhabitants in the village and to STAN's and FURYO's 
+parents who accomodated us very kindly.
+
+That's all for this time. 
+                                                 "See" you soon &
+                                       May the MAUVE be with you!
+
+-------------------------------------------------------------------
+
+
+        Here are now the greetings from some guys of the
+            - OVERLANDERS "BEACH PARTY" CONVENTION -
+
+
+--------------- DOGUE DE MAUVE from OVERLANDERS -----------------
+
+MEGA GREETINGS to:  - THE PENDRAGONS (the other members of TRITON 
+                      DEVELOPMENT - especially to CRYSTAR, 
+                      NEMROD, SILVER & TERENCE -)
+                    - THE CAREBEARS (still the best on ST - Hi to 
+                      AnCOOL, GOGO, JAS, NICK & TANIS)
+
+GREETINGS to:       - THE LOST BOYS (still the biggest egos on ST!
+                      Hi to MANIKIN, SAMMY JOE & SPAZ!)   
+                    - THE UNION (all other members)
+                    - ST CONNEXION
+                    - SYNC
+                    - OMEGA
+                    - THE (GERMAN) ALLIANCE
+                    - MCODER (generally great code!)
+                    - THE VOYAGERS
+                    - THE BUSHWACKERS (Esp. THE SERGEANT)
+                    - DIGITAL INSANITY
+                    - Richard KARSMAKERS
+                    - FOXX
+
+SPECIAL HIs to:     ELRIC from TRIPPLE H, LEONARD from ULTIMA 
+                    FORSAN, LUDUG from DEMONS (AMIGA crew), 
+                    GUDUL (from the megamighty GUDUL Corp.), 
+                    BANANA CLUB, KERDAVEN & WULF (cool guys!)
+                    COUNT ZERO (nice book, hey? And your muzax 
+                    are great!), ACE from HTL (thanx for your 
+                    letters), DENIX LE GAULOIS (very good 
+                    friend!), THE SILVERS, STEW & all my other 
+                    contacts in the world...
+
+(FURYO is eager to write his own greetings and doesn't let me 
+verify I didn't forget anybody).
+
+
+------------------ FURYO from OVERLANDERS -----------------------
+
+Greetings to: - THE PENDRAGONS (NEMROD, TERENCE, CRYSTAR & SILVER).
+              - ST-CONNEXION (esp. VANTAGE & MARLON (See ya at 
+                PARIS in october)).
+              - TCB (All members).
+              - LIESEN from OMEGA.
+              - THE VOYAGERS (nice demo!)
+              - BLOODY MURRAY from BMT.
+              - DEMO CITY (Hi MAX!).
+              - ST SPIRIT.
+
+-------------------- XRAY from BANANA CLUB --------------------
+
+Greeting to:  - OVERLANDERS (ALL MEMBERS!)
+              - PENDRAGONS (TERENCE, CRYSTAR, SILVER & NEMROD)
+              - DEMONS (esp. LUDUG)
+              - GUDUL corp (esp. GUDUL, the only member!)
+              - LAP (good zik, Manu)
+              - THOMAS CROWN (send me my 2 disks back!)
+              - HEMOROID
+              - AXEL FOLLET
+              - BLUE BIRD
+              - STUNT MAN
+              - MOHAMED from HLM
+              - COCACOLA
+              - PIB (great PROUT, guy!)
+
+------------ GUDUL from GUDUL Corp. (the one member crew)---------
+
+Greetings to: - Hum, reflexion... why not Overlanders??? perhaps 
+                coz the member of overlanders are dumbheads?
+                NO!!! So, greetings to OVERLANDERS!
+              - PENDRAGONS (the small troll called TERENCE,the 
+                twins bigs monsters called CRYSTYAR & SILVER and 
+                their dog NEMROD)
+              - BAM-BAMS from the zone of belhawab
+              - BANANA CLUB (the only crew which have been 
+                created in an psychiatric hospital especially
+                X-RAY & CAPTAIN BUG)
+              - DEMONS (especially a guy called LUDGU or GUDLU or 
+                GUULD or DLUGU or LUUGD... RAAH! There are too
+                much possibilities. Hi, LUDUG! I hope I will meet
+                you one day)
+              - THE ex-T.ZONE (still alive???)
+              - TOM A CRONHS (mega scroll 25hz, 12 pixel high:
+                ASM makes it possible!)
+              - MICROTEL-PARIS-CREW: COSMOS (Hi, Stephane!)
+              - ST-CONNEXION (don't know you but FURYO said I 
+                have to greet you) (note from FURYO: it is 
+                totally false!)
+              - SCROLLUS-MAKER (good first ASM demo!)
+              - SUGNUMUH (yats thiw eht afg hahaha!!(ti saw a ekoj 
+                fi uoy evah ton dootsrednu)
+              - DIM (called half guy 'coz MI-DIM-AZE. Arf, arf!!!)
+
+------------------ ADSO from OVERLANDERS ------------------
+
+     Just to say "Bye and see you soon!"
+
+------------------ STAN MERCURY from the lamers crew: ------
+
+                    ----   OVERGNOMERS   ----
+
+
+Greetings to :
+               - The Pendragons (all members. Sorry, Silver, my 
+                 job was too important, and I couldn't visit you)
+
+               - The Carebears (hope to see you soon at our next 
+                 "Beach Party" in France...)
+
+               - The German Alliance (TOTAL VISION - esp. X man, 
+                 a great friend in this land. If you ever come in 
+                 France, please give me a call... -)
+                 
+               - Phalanx (Vector -esp. ZHZ, Hey! I go to the 
+                 French army in one month, it's horrible-)
+
+               - Omega and Sync (Eh!!! I SSSSAAIIIDDD "EEEHHHH!" 
+                 Why didn't you answer me for long months... 
+                 And why didn't you send my disks back!!! This is 
+                 scandalous)
+
+               - The Lost Boys (Hey! Sammy and the corp... I 
+                 didn't said that the Delirious 2 was better than 
+                 yours, but my english is poor. You probably 
+                 misunderstood me...)
+
+               - NPG (you are a really GREAT friend for 
+                 Overlanders in Germany. GERMANY (what?) Huh...
+                 The wall is dead...)
+
+               - TDA (you are a cool coders but PIRACY is a 
+                 crime... --- in France...---)
+
+               - AGGRESSION (great 3D universal pictures)
+
+And now, I would like to send a big "HI!" to all guys we don't 
+know but that we would like to meet.
+
+               - DIGITAL INSANITY (great products in the 
+                 Mindbomb)
+
+               - THE DELTA FORCE (I heard you had quite a bad 
+                 opinion about us 'coz of the NeXT guys. I would 
+                 like to talk with you about it...)
+
+               - FOXX (great screen and musaxx)
+
+               - MAD MAX (you probably already know what I mean)
+
+               - COUNT ZERO (your musics are cool)
+
+So, I send a big, big, big "HI" to all members of The Overlanders 
+and especially to Dogue de Mauve and Ziggy Stardust having to 
+bear me during the past two years...
+
+               STAN MERCURY.
+
+-------------------------------------------------------------------           
+
+OK. This is the end of this very long (boring?) article. Many thanx to 
+the LOST BOYS for publishing it (quite painful to pack, I guess!).             
+
+If you want to contact us, here are two addresses. If you don't 
+get an answer from one, just try the other. Sorry, we've got 
+lotsa mail and cannot answer quickly to everybody 'coz STAN, our 
+boss & public relations expert, is leaving for the army. Please, 
+if we do not already know you, include a reply coupon and be 
+patient. Thanx.
+
+Write to:
+
+                       OVERLANDERS (FURYO)
+                    27, Chemin des Cyclamens
+                         73000 CHAMBERY
+                             FRANCE
+
+                              or...
+
+                  OVERLANDERS (DOGUE DE MAUVE)
+                         Chez LE PENNEC
+                     12, avenue d'argenteuil
+                         92600 ASNIERES
+                             FRANCE
+
+
+                                            Have fun with MAGGIE!
+
+
+

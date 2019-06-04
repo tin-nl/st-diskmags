@@ -1,0 +1,16 @@
+' Don't forget to load the INLINE
+INLINE ad%,246
+OUT 4,&H12 ! Kill the mouse...
+HIDEM ! ...and hide the cadaver
+super%=GEMDOS(&H20,L:0) ! Supervisor mode
+buf$=MKI$(0)+MKI$(&H100)+MKI$(&H200)+MKI$(&H300)+MKI$(&H400)+MKI$(&H500)+MKI$(&H600)+MKI$(&H700)+MKI$(&H710)+MKI$(&H720)+MKI$(&H730)+MKI$(&H740)+MKI$(&H750)+MKI$(&H760)+MKI$(&H770)
+buf$=buf$+MKI$(&H670)+MKI$(&H570)+MKI$(&H470)+MKI$(&H370)+MKI$(&H270)+MKI$(&H170)+MKI$(&H70)+MKI$(&H71)+MKI$(&H72)+MKI$(&H73)+MKI$(&H74)+MKI$(&H75)+MKI$(&H76)+MKI$(&H77)
+buf$=buf$+MKI$(&H67)+MKI$(&H57)+MKI$(&H47)+MKI$(&H37)+MKI$(&H27)+MKI$(&H17)+MKI$(7)+MKI$(&H107)+MKI$(&H207)+MKI$(&H307)+MKI$(&H407)+MKI$(&H507)+MKI$(&H607)+MKI$(&H707)
+buf$=buf$+MKI$(&H706)+MKI$(&H705)+MKI$(&H704)+MKI$(&H703)+MKI$(&H702)+MKI$(&H701)+MKI$(&H700)+MKI$(&H600)+MKI$(&H500)+MKI$(&H400)+MKI$(&H300)+MKI$(&H200)+MKI$(&H100)
+buf$=buf$+buf$+buf$+buf$ ! Buffer
+~C:ad%(0,1,L:V:buf$) ! Enable rastering
+KEYGET z ! Wait a key
+~C:ad%() ! Disable rastering
+~GEMDOS(&H20,L:super%) ! User mode
+OUT 4,8
+EDIT ! Bye

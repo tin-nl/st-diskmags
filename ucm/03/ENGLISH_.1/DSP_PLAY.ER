@@ -1,0 +1,19 @@
+ 
+                           ===================
+                           DSP-Backgroundmusic
+                           ===================
+
+This little accessory is based on bITmASTER's (BSW) DSP-replay I got on the DCC
+II in Dresden. I added a "Mainvolume-Control".
+
+Known Bug's:
+-	if started from within an program music will stop at the program end
+-	keyboard may jam ( with an  continously sended ESC ) because some mouse pak-
+   kages are  interrupted  by the  timer B wich  the ACC  uses -> try a  key or
+   closing all windows to stop the "ESC gun"
+-	a module isn't  loaded if there  is not enough memory, no special message is
+   displayed
+
+Thanx for attention and now start listening tnb-modules until you are sick!
+
+                                                     Apache of tnb / 26.03.1994

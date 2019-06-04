@@ -1,0 +1,136 @@
+ó--------------------------------------------------------------------------------
+                          "PEKING v2.ob" by Gunnar Gr”bel
+ó--------------------------------------------------------------------------------
+
+system... ST, STe, TT, Falcon, Emulation (STeem), RGB, VGA, 512 KB RAM
+
+release.. dunno? the game itself says 1993 (!)
+
+ó--------------------------------------------------------------------------------
+
+It's a  bit tricky, as if the  things announced in  the game are right, I really
+wouldn't review it in here. Strange enough I stumbled over a link that announced
+an updated version and so I leeched it... The first horror came up, as I started
+the game and must read "1988" in the intro picture, can it be?!
+
+Anyway, now I have it leeched and played and ripped screenshots, so who cares...
+
+ñ"PEKING"ð is  nothing more and  nothing less  than a complete Mah Jong clone, the
+puzzle game with the stones mixed on the desk, also in several layers, where you
+have to remove  the whole bunch  of stones while  searching the  counterparts of
+every stone but with  the problem that only  stones on the left  and right outer
+borders can  be removed and also only if they aren't overlayed by another stone.
+And since all stones are included  in very limited  numbers, òit is quite tricky,
+the smaller the heap is going.
+
+But hell, what I'm trying  to tell you here?! I guess  you already played one of
+those many clones before. The  best conversions  of this game  idea so far where
+the  version by  DELTA FORCE in  the ó"Punish Your Machine"ð megademo  on ST, yawn
+what I had played that game! Furthermore the creations of  the RESERVOIR GODS on
+Falcon, ó"Tautology 1 & 2"ð, as  well as  the commercial  version on Falcon called
+ó"Let's Play Shanghai"ð. There are many different versions available in the PD/SW.
+
+While the first mentioned used an own  surrounding, ó"Peking"ð follows  the way of
+ó"Let's Play Shanghai"ð, but why following? It  obviously was  present before this
+one... anyway, òit  is offering  a GEM shell, arf!ð That  it is  still quite  nice
+looking you can see here...
+
+{*i PEKING1.PI1 m 0 20 0 200}
+
+ñLet's start to kill this heap!
+
+But under GEM it runs only in the  LOW and HI RES ST resolutions. Btw, that this
+games was originally  created for ST and TT shows the fact that the Falcon kicks
+out a few bombs, surely caused by the included  chip music routines. Happily the
+author has done a version for ST emulations without sound and this one runs well
+on Falcon, too. òBut don't try other resolutions, the game surely will fuck up.
+
+Since you have to play in complete silence on the Falcon then, I thought back to
+the good old DSP Background Player, done by my old group mate, Apache. I quickly
+installed  it and, it runs... unfortunately  with the problem  that, if you call
+the player in the game menu, the screen will be deleted and not restored, so you
+have to restart the game, but in a new mix.
+
+{*i PEKING2.PI1 m 0 20 0 200}
+
+ñWhile playing I didn't got any breakdowns...
+
+Ok, this problem is solved... so let's take a closer look... At first and surely
+the biggest drawback, òthe game is completely in german, all menus and readme's.
+But since the idea of the game is quite old and I guess known to everybody, this
+is a thing, we can step over here.
+
+The stones of the original set are well done and hard on the original set, known
+from all the other versions. It includes  a few special  stones, that are surely
+own creations of the author, those are  special ones  that can be  mixed in some
+way together  to be deleted. Btw, the  is a table  included, listing  all stones
+that are availble  in the game and showing  too with which stones they can mixed
+up to be deleted.
+
+The game runs as long as you're  able to delete pairs of  stones, it starts with
+144  stones in  several layers in  the middle of  the heap. In the  upper  right
+corner is a counter showing how many stones are still on the board... In fact it
+is better to  get informed about  the available  stones to know how many of each
+sort are  on the board to know  what pairs you  can delete  and what you have to
+save to avoid later problems. òIn fact, the game isn't that easy!ð So far I didn't
+matched it to delete all stones, damn.
+
+You can ofcourse ask the computer to take over a next move  and he does if it is
+still possible, if not it is on to you to restart the level.
+
+Apart from this help the game offers a few more features such as different stone
+designs (but  I prefer the original  one since the  flaggs or  traffic signs are
+quite confusing to watch at), the possibility to play against another player, on
+the same playfield  and to set  a time counter  for the  single moves in the two
+player game. There is also a highscore included, but somehow I didn't matched it
+to step into it, even if it doesn't contains any entries, hu?
+Another option is  the delete one, you  can delete some  stones while using this
+option, but then the stone counter  is switched off  and there is no possibility
+to enter the highscore  at all then, better  in this case is  the move backwards
+option and so you can rebuild up the whole heap again, move by move and see what
+you've done wrong... Last  but not least  the actions of  the menu can be called
+via  the Function  keys too but  it isn't  that easy  to remember  the different
+functions  there, so  the  mouse driven  way to play  is surely  better  for the
+player that just plays now and then a round...
+
+
+What's left? òThe visuals  aren't brainblasting  but doing their  job quite well,
+the intro  picture, showing a dragon  seems to be ripped from  somewhere, dunno,
+but I have the feeling that I have seen it before somewhere.
+On the sound/fx side isn't  much to mention, the "intro" features  a little chip
+music  of quite old style, maybe  ripped from some  old game too and in the game
+itself there is just... silence. The  only fx is a ping  that sounds when you're
+clicking onto tiles you can't use.
+
+So what else is to mention here? Not much, so let's run down the final words...
+
+ñ...final words... PEKING is surely a nice little game, featuring a quite old but
+ñ                  still very captivating idea. It has a mediocre set of features
+ñ                  and is in  its visual/audio creation not that brainblasting as
+ñ                  well. The controls  are ok, a thing  that  is rising  or maybe
+ñ                  also lowering the motivation is the fact that the game is damn
+ñ                  hard. After 1o or more tries I didn't matched it to solve this
+ñ                  heap of tiles. This  can  be a bit  frustrating  and a  slowly
+ñ                  rising difficulty via levels would have been a better solution
+ñ                  since you can fastly  loose your  interest  in that  game. The
+ñ                  realisation  in GEM offers  a few possibilities  as background
+ñ                  music players  and so on, but I  doubt it will run under multi
+ñ                  tasking systems very well  as it will  run only  in ST LOW and
+ñ                  HIGH resolution and will bug in  others for  sure, even if you
+ñ                  are using the same colour depth, but I haven't checked this.
+ñ                  What is  left? A  quite ok  little  brain teaser, for ST users
+ñ                  surely worth a look, Falcon users have better alternatives...
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals .....ð  65 % ñ- they're ok for ST low, but wont reach the DF version
+ñaudio .......ð  1o % ñ- far from being state of the art, fx = mouse ping, arf!
+ñcontrols ....ð  8o % ñ- mouse controlled, but the menu's are all in german only
+ñidea ........ð  5o % ñ- not original but always nice to play
+ñmotivation ..ð  5o % ñ- far too hard, no rising difficulty
+
+ó___ðoveralló_____ð51ó_ð%ó_____________________________________________________________
+
+ñNot a real burner, nice to play but the competition is far to hard!
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_ò11/2k2ó_

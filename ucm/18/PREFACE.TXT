@@ -1,0 +1,104 @@
+This version of the assembler tutorial is made especially for UnderCover
+Magascene. There are still some 2 sources to be made, watch for them in the
+full version! Have fun!
+               ______________    ______________     ___________
+              /____________ /!  /_____________/|   /__________/|
+              |  __________!/   [             ]|   |          ||
+              | ||              |    _____    ||   |   ____   ||
+              | |!____          |   [_____]   ||   |  [____]  ||
+              | !____/!         |             ||   |          ||
+              |  ____!/         |  _________  ||   |  ___  ___!/
+              | ||              | ||        | ||   | ||  \ \\
+              | |!___________   | ||        | ||   | ||   \ \\
+              | !__________ /!  | ||        | ||   | ||    \ \\
+              !____________!/   !_!/        !_!/   !_!/     \_\>
+
+             C....H....A....E....O....P....T....E....R....Y....X....
+                                                                   :
+                                                                   :
+   ................p    R    E    S    E    N    T    s............:
+   :
+   :
+   :..A   NEW   PART   IN   THE   SERIES   OF   ATARI   CODING   BOOKS....
+                                                                         :
+                                                                         :
+                                                                         :
+                 ......+--/\------/\--------/\-----/\-+......            :
+   ...........:::::|||||MAKING OPTIMIZED ASSEMBLY CODE|||||:::::.........:
+   :             ''''''+--\/------\/--------\/-----\/-+''''''
+   :..[ EarX 1999 ]
+
+
+            (..hey, I'm getting better at this stupid ASCII stuff..)
+
+contacts:
+
+EarX - Pieter van der Meer
+Bereklauw 1
+4102 KZ Culemborg
+Holland
+e-mail: earx@atari.org
+        1028587@icim.fnt.hvu.nl (until july 2000)
+
+Baggio - Robert Hogberg
+Grind v 34
+716 62  Norrtalje
+Sweden
+e-mail: baggio@canit.se
+
+:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:[]:
+
+INDEX:
+
+
+Chapter 0...................................Assembler?
+ - for every Atari
+ - only for absolute beginners
+ - useless for experienced coders
+Chapter 1...................................Introduction
+Chapter 2...................................Pixelpushing
+ - for ST and Falcon
+ - very nice for beginners
+ - useless for experienced coders
+Chapter 3...................................Coding sound
+ - only for STe or better
+ - nice for beginners
+ - maybe of some use for experienced coders
+Chapter 4...................................Making loops
+ - for every Atari
+ - very nice for beginners
+ - useless for experienced coders
+Chapter 5...................................Extreme looping
+ - for ST and Falcon
+ - beginners should read chapter 4 first
+ - of use for experienced coders
+Chapter 6...................................Real graphics
+ - for ST and Falcon
+ - beginners should read Chapter 1 first
+ - of use for experienced coders
+Chapter 7...................................Extreme optimising
+ - for ST and Falcon
+ - nothing for beginners
+ - handy for experienced coders
+Chapter 8...................................Structurising
+ - for every Atari
+ - of use for beginners
+ - of use for experienced users
+Chapter 9...................................Usefull stuff
+ - for Falcon and ST
+ - very nice for beginners
+ - maybe of some use for experienced coders
+Chapter 9...................................Usefull stuff
+ - for every Atari
+ - of use for beginners
+ - might be of use to some experienced coders
+Chapter 10..................................The future
+
+<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-
+
+Appendix A..................................Bits and bytes
+Appendix B..................................680x0 instructions
+Appendix C..................................Suggested reading
+Appendix D..................................Essential tools
+
+<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-<>-

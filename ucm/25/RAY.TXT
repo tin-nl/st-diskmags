@@ -1,0 +1,187 @@
+Û--------------------------------------------------------------------------------
+               Bound onto the hot seat... today: Ray of .tSCc.
+Û--------------------------------------------------------------------------------
+
+UCM .... Moin Ray. The Atari scene must go on about one year without you, as the
+         military service captured you. How do you  feel today as you can invest
+         more time again into Atari'ing?
+
+ÚRay .... Great, what else. Coding has been an important thing for me  during the
+Ú         last years, some sort  of passion if you want. And yes, like everything
+Ú         else  about my  personal life  coding  had  to  suffer  a bit  from the
+Ú         military service. Let's be honest about that, I think many of us had to
+Ú         do some kind of (military) service in their lifes and those would agree
+Ú         that it doesn't neccessarily remain a negative experience and it hasn't
+Ú         been that hard, eventually. It's been an interesting time to go through
+Ú         and now  I'm happy  to be 'back' having  collected  lots of  new coding
+Ú         ideas which I can put into action soon hopefully.
+
+
+UCM .... You know, as you  left the  scene for  the army  last year, you  left a
+         quite hungry comunity behind, so "Beams" and "Wolfenstein" had feed the
+         hype quite well before and in the end the scene got nothing.
+         Are those your top projects now?
+
+ÚRay .... Yes that's  true. I planned  to finish "Beams" asap to clear up my head
+Ú         for "wolf3d" and other new projects, completely.
+
+
+UCM .... Concerning "Beams"... how would you describe its  development state? Is
+         there still that much to do or can we expect the demo in the next time?
+
+ÚRay .... Many  things could  be improved  about the  code, actually. But I don't
+Ú         want to  lose my  way in  perfectionisim  optimizing  every  single bit
+Ú         leaving the scene  behind waiting, endlessly. As  said before I want to
+Ú         clear up my head, so  it's getting  time to  release the thing not only
+Ú         because the scene had to wait for almost a year or something.
+Ú         If I had to fix the development state in percent I would say like about
+Ú         80% since some textures, gfx, camera paths, timing and etc. are missing
+Ú         here  and there  but concerning  the code, it  is finished except for 2
+Ú         bugfixes, an endpart by remo was planned as well which brings me to the
+Ú         next question/answer...
+
+
+UCM .... As we know, Remo  vanished for  long times without stepping forwards in
+         coding, so "Beams" seem  to hang on you  more or less alone, how do you
+         feel with that pressure in your back?
+
+ÚRay .... The fact  that Remo seems to have left the scene for unknown reasons is
+Ú         a bad pitty  to me. I feel like  his quitting itself is a greater shame
+Ú         than a  demo or  something having  to suffer  from it simply  because I
+Ú         don't know  what happened to him at all and why we can't get in contact
+Ú         with him  anymore. That  guy was on  his way to  get a  kick-ass coder,
+Ú         honestly. He kept having/implementing great ideas which got even better
+Ú         after he got to coding his stuff in 680x0 assembler - believe me, I had
+Ú         seen some  previews. I'd really have liked to work together with him in
+Ú         the future but now things went that way.
+Û         So, remo, if you happen to read this please give us a lifesign.
+
+Ú         Regarding  the  pressure on  my back  I have to  say that  I've stopped
+Ú         feeling  pressure at all. I got fed up with feeling like I'd have to do
+Ú         things  on my own, completely... and I  think many sceners tend to feel
+Ú         the same  nowadays, for  instance take you  or STS with standing almost
+Ú         alone  writing your  diskmags which  is just funny  because that's what
+Ú         causes the dilemma in the first place:
+Ú         I as coder  would have the  possibility to "saturate" the  scene with a
+Ú         new demo or something similar but  for one reason or  the other I'm not
+Ú         able to code anything during a  certain period and the  scene goes like
+Ú         "lazy coder bastard" or  something. But  should I feel pressure because
+Ú         of that?
+Ú         Sure, it  isn't the most  refined thing  to let you wait  for a project
+Ú         that long. But if it doesn't work out for me to do any code due to lack
+Ú         of  creativity  or  anything   for  some  time, is  there  a  sense  in
+Ú         convulsively  releasing loads of crap instead in order  to just release
+Ú         anything, at  all? That's  like saying  "Hey  guys, look here, I'm  not
+Ú         dead, yet!" just to make sure everyone knows it.
+
+Ú         To me it  makes more sense  to produce  stuff only if you feel like you
+Ú         want to  do so or  if  you're  in a creative  mood and  not  because  a
+Ú         comunity  fearing their  platform  might die out  demands it. The whole
+Ú         demoscene is about  fun and releasing demos should be nothing more than
+Ú         a hobby, plainly because it isn't - it's obvious that Atari (I mean the
+Ú         company) is dead, so what's the deal, should that stop us from going on
+Ú         producing  code running  on their  hardware or  even worse should  that
+Ú         force us to yell at each other just because someone isn't interested in
+Ú         Atari anymore? You just have to accept that...so what?
+
+
+UCM .... I guess you  are fed up with  falcon coding  after the "Beams" odyssey,
+         aren't you, or have you already other ideas in mind?
+
+ÚRay .... No, I'm not. I got very curious about what I could do with the DSP, for
+Ú         example. Laugh  at me but as mentioned above I collected loads of ideas
+Ú         during my military service  such as a video codec, a decent and modular
+Ú         demo engine, a 3d API etc. everything for TT and Falcon computers yeah,
+Ú         yeah, I  hear you  say: "For heaven's  sake, why  that TT thing" - it's
+Ú         just that  I like to work  with that machine  and no one seems  to ever
+Ú         have coded TT specific stuff, which doesn't neccessarily mean it has to
+Ú         be Falcon incomatible software at the same time.
+
+
+UCM .... Topic "Wolfenstein", that  was laying so  long on ice that I don't even
+         remember right when  the last preview  was released, is it easy for you
+         to dive  into your old  sources? I know that you announced to start the
+         work on this project again.
+
+ÚRay .... Yeah, you're right those sources seem to  have gotten old. And it isn't
+Ú         very easy to get into it after this had rested for so long, that's also
+Ú         true. But in  general I still  know what I meant  and I can  follow the
+Ú         lines of  code I've written  down there. So  after a couple  of days of
+Ú         work I believe I could continue the project, too.
+
+
+UCM .... When can we expect the first major steps in  its development? Still the
+         essentials  aren't included, but  anyway, what  will be the  things you
+         want to include as next?
+
+ÚRay .... True, at  the moment this  is nothing more  than a 3D  engine, the next
+Ú         steps on the way to game are sprites as it had been planned a long time
+Ú         ago. This way  we may add  some "spice" to  our maze in  form of static
+Ú         items at first, like tables, pillars, pickups and so on.
+Ú         The  next major  step would be  some sort  of AI taking up  the work of
+Ú         moving  sprites to control  and animate your enemies, as obviously they
+Ú         have to behave in some way, i.e. they need to move towards and shoot at
+Ú         you :).
+
+
+UCM .... While  you were  working on  "Wolfenstein" some  other  quite  good W3D
+         routines popped up, esp. the  one of Defjams "Posh" and Ear_X' rout for
+         the current UCM intro. What do you think about them?
+
+ÚRay .... I admire both  engines, for their speed and especially Defjam's for its
+Ú         features like mapped floors/ceilings and animated textures. At the same
+Ú         time I have to say that I'm not going to compete with any of them since
+Ú         my goal was to recreate the  game, plus it should be  playable on plain
+Ú         ST machines. I didn't  ever intend to  release it as a  demo screen  so
+Ú         please don't  blame me if  my engine is worse  and keep in mind that it
+Ú         has to be much more flexible in order to work as a game not as a "mere"
+Ú         demo screen.
+
+
+UCM .... Have you ever thought to join forces with other coders to  speed up the
+         development a bit  or is it your  very own project? I know you invested
+         a lot of your heartblood into it.
+
+ÚRay .... Concering "Wolf3d" I want to finish the project on my own, since as you
+Ú         say it has  been started  as "my very own project", so in it's  current
+Ú         state it would possibly be very hard for someone else to dig through my
+Ú         code, you know.
+Ú         But in general I would have  nothing against  joining forces with other
+Ú         coders to produce projects a more professional way, maybe this might be
+Ú         an option for the future, dunno?
+
+
+UCM .... Ok... as we  know .tSCc. always  say "no promises - no demands"... what
+         are your dreams to do after you finished "Beams" in the first place?
+
+ÚRay .... As I said, I'd like  to start experimenting with the Falcon's DSP and I
+Ú         would like to start programming  more "professional" software  or maybe
+Ú         some new  games (?) because you can't go on coding demos all your life,
+Ú         there simply isn't any demo effect which has not been shown yet in some
+Ú         way, in my opinion.
+
+
+UCM .... So we reached  nearly the end  of this small "up-to-date" interview, if
+         you  have something  to add here, to greet  someone or  something  like
+         that, do it now.
+
+ÚRay .... I like to  thank anyone who  has managed to stay  active on Atari until
+Ú         today. What I'd  like to add: hat off to Ear_X and Lineout for bringing
+Ú         some fresh air into the scene with some  hifi code/demostuff, Reservoir
+Ú         Gods  for  the  same  reason  and  for  their  nice  games  popping  up
+Ú         frequently, Defjam for  surprising ST fans once more  during  the EIL3,
+Ú         Charon for  surprising us  with his  unexpected  kick-ass DSP abilities
+Ú         (even  though everyone thought "_" was a "Hmmm..." ripoff, which is not
+Ú         true in my opinion).
+Ú         Finally, I'd  like  to  spell out  my best  hope for  the long  awaited
+Ú         Coldfire Atari. If it  would eventually  make it  that would  be a true
+Ú         step forward  for the scene, even more than the not less worthy CT6o as
+Ú         I believe.
+
+
+UCM .... Thanks,  mate. That's  all, hope  you  didn't  felt  too  uncomfortable
+         answering the questions, but you know, the scene already smashed an eye
+         on you and is hungry for the things to come :)
+         Stay cool and take care!
+
+Û_________________________________________________________________ÚmoondogÛ_Úo3/2k4Û_

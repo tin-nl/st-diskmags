@@ -1,0 +1,129 @@
+ {*f1
+         HOW TO DESIGN A DEMO
+       ------------------------ {*f0
+
+You all know  the problems on the Atari ST or Falcon... Even if  the demo-effex
+aren't bad (sometimes also really  brainblasting) the demos suffer under a lack
+of design... Everytime you  can see the same  boring black  backgrounds and the
+same  style: an effect before a  simple background, nothing  else... no  little
+grafix, shitty colors... arf...
+I think the times are over to count dots  or bobs! We need demos  which are not
+only interesting for coders... demos should entertain  the guy in front of your
+monitor and this can't be realized by counting dots, planes or even stars...
+For this I've taken out an article of the Amiga-diskmag R.A.W. by the wellknown
+SPACEBALLS... Damn! Would  you cry! Amigaaargh... but open your eyes! The demos
+on this machine are  very good designed! Even on the old  Amiga 500 you can see
+better  design as on the Falcon, although  this machine must have the power for
+some little things more on the screen...
+Ok, read now what Mount of Parasite has written...
+
+   . . . ......_._._.______________________________________._._._..... . . .
+ {*f1
+            HOW TO DESIGN {*f0
+
+   . . . ......_._._.______________________________________._._._..... . . .
+
+                              by Mount / Parasite
+
+This article  is not a  manual to  design your  demo(s) since  most people have
+different  taste. It's a description  of the different types of design and four
+important things you should think about when making your demo.
+ {*f1
+             The Colours {*f0
+
+is probably  what people think when  you say  design. There  are no real golden
+rules but when people think about the choice of colours they  mostly choose one
+of the following types: RGB - the good (?) old  which in  my opinion  mostly is
+caused by lazy and stubborn coders. The RGB colours have been used so much that
+you sometimes really wonder when seeing then  colours again: Why only use about
+50 of all those 4096 wonderful colours??? Still a lot of people  use 000, plain
+stupid  black, as  background. Why  not just  try a 012, 013 or 023 and explore
+that difference can be very refreshing?
+KYD-BALLE more or less shocked  the world with  their design in HARDWIRED. Some
+blue  but  mostly greyish  colours  which made  a very  special atmosphere  and
+shortly afterwards got very popular.
+POP colours are the direct contrast to KYD-BALLE design where you use pure blue
+or purple background and in general colours which might look a bit sugar sweet.
+One of the best examples are ANARCHY's LEGALIZE IT.
+MELON DEZIGN introduced  their own design with HUMAN TARGET, intros for CRYSTAL
+and later SOS. most of the colours are very happy (some would say childish) and
+some pastel colours but often still very colourfull.
+ANDROMEDA have with their last productions established their own kind of dsign.
+Not as innovating as MELON, you could say a mixture of KYD-BALLE and POP so you
+get these very consistent pastel colours.
+No matter what colours you use, it's very  important to try to keep them in the
+same style through the whole demo.
+ {*f1
+             Composition {*f0
+
+is something people have been more aware of lately, again more or less starting
+with HARDWIRED. It's  all about  making the routines  more or less overlap each
+other so you don't feel any breaks while watching.
+If you can  even time the music with the routines it  can give a  very stunning
+effect  like  in  SANITY's  WORLD  OF  COMMODORE. The  probably  best  composed
+production  is  MIRROR  by ANDROMEDA where  things  as  simple as a module info
+suddenly turns into art.
+ {*f1
+                Speed {*f0
+
+A lot  of demoproducers forget a golden  rule: never let  the viewer get bored.
+There is  nothing more  frustratin g than sitting and have  to wait long (maybe
+without having  the chance  to click and continue) before a booring  routine is
+over. I would even say than you can get bored of watching even cool routines.
+To impress people you have to slam routines into their faces so they maybe even
+want to see the demo once more.
+Some rather normal routines shouldn't be on the screen for more than 5 seconds,
+nearly none  for more than 10. Actually  you can often improve a demo when just
+making it last half as long.
+I would  even say that you should sometimes consider removing 1/2 or 1/3 of the
+routines just to show only what's interesting.
+Also be careful writing too much text in the middle of the demo - that can wait
+till the end.
+And maybe you should think about your  language too - Don't write that you will
+now show a cool routine. Let people decide on their own!
+ {*f1
+             Homogeneousy {*f0
+
+It's one  of the smaller  things which are harder to explain. One part of it is
+the before mentioned that you shouldn't mix different types of colours.
+But there are also different  types of graphics and routines which shouldn't be
+mixed up. Who would like a dragon in the middle of HARDWIRED, eh?
+As an  actual example  I will attack  the HUMAN TARGET because the plane in the
+end of the demo really doesn't fit at all! As said before the graphics must fit
+the demo  well  no matter  how simple  it is. You could  even say that graphics
+basicly isn't needed at all when the routines are only good enough!
+
+Remember that it can be worth it to  use some time to  design. Through the last
+1-2 years  there have  been seen  several  productions which people  liked more
+because of the  design than the code  etc. and on the other hand some very good
+coded  demos didn't  get the attention  they deserved because of lack of design
+(no names mentioned.....).
+
+        GO FOR IT AND MAKE YOUR PRODUCTIONS AS ATTRACTIVE AS POSSIBLE!
+
+-------------------------------------------------------------------------------
+
+Thats it! Hum, some of  you surely don't know the demos which were mentioned in
+this article but I would  only say that this  demos are something like state of
+the art on the Amiga 500... At least  HARDWIRED has the same cultstate like the
+good old "Ooh Crickey..." on the ST.
+Some of  you have surely  scratched themselves  on the head after reading this,
+because of the Atari-typical  failures like  black backgrounds (which were also
+used on  the Falcon, today!) or  demoeffex which  were showed  for minutes  and
+hours...
+Some demos on the ST or Falcon are very well done. Only remember to the FLIP-O,
+which is the state of the art on the ST with great effex and which is also very
+well designed, even if this demo looks like a rippoff of several amiga-demos.
+On the Falcon there  are some nice  designed demos like the new ENTRACTE or the
+ENRAGED by AVENA... But the most demos on the Falcon still suffer under the old
+fashioned styling. At example the OBNOXIOUS... The demo brings very great effex
+and the  design is  ok, but the routines are  shown to long  on the screen. The
+same  problem appears on the  good old  MOSTLY HARMLESS, very good  effex but a
+totally outdated "design"... I could continue this (GERANIUM, HDX SYMPOSIUM...)
+but I'm too tired...
+Ok, even  if you're thinking  it is lame to "convert" Amiga-design to the ST or
+Falcon think  about the text above and try to give your  productions a bit more
+design... so we  can go proud to  multi-system-parties and we can show demos to
+the others without being laughed at...
+
+----------------------------------------------------------------Moondog of tnb-

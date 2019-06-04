@@ -1,0 +1,82 @@
+WAV SOUND FILE FORMAT
+~WAVE.FIL~ ~BLEU.PAL~                
+
+The RIFF File Format
+
+WAV files use the RIFF file structure. The RIFF format was designed
+for multi-media purposes. A RIFF files consists of a number of "chunks":
+
+ Byte              Length                                               
+ Offset   Name   (in bytes)    Description                              
+ 
+ 00h      rID        4h        Contains the characters "RIFF"           
+ 04h      rLen       4h        The length of the data in the next chunk 
+ 08h      rData     rLen       The data chunk                           
+ 
+
+The WAVE Form Definition
+
+The rData chunk in a WAV file is split up into several further chunks:
+
+ rData                                                                   
+ Byte              Length                                                
+ Offset   Name   (in bytes)    Description                               
+
+ 00h      wID        4h        Contains the characters "WAVE"            
+ 04h      Format    14h        Contains data which specifies the format  
+          Chunk                  of the Data in the Data Chunk           
+ 18h      WAVE Data  ?         Contains the WAV audio data               
+          Chunk                                                          
+
+
+The Format Chunk
+
+The Format Chunk is split up into these fields:
+
+Format                                                                  
+Chunk                  Length                                           
+Offset  Name         (in bytes)   Description                           
+
+ 00h     fId               4       Contains the characters "fmt"        
+ 04h     fLen              4       Length of data in the format chunk    
+ 08h     wFormatTag        2       *                                     
+ 0Ah     nChannels         2       Number of channels, 1=mono, 2=stereo  
+ 0Ch     nSamplesPerSec    2       Playback frequency                    
+ 0Eh     nAvgBytesPerSec   2       **                                    
+ 10h     nBlockAlign       2       ***                                   
+ 12h     FormatSpecific    2       Format specific data area             
+
+
+* The wFormatTag specifies the wave format, eg 1 = Pulse Code Modulation
+  (or in plain english, regular 8 bit sampled uncompressed sound)
+
+** Indicates the average number of bytes a second the data should be
+   transferred at = nChannels * nSamplesPerSec * (nBitsPerSample / 8)
+
+*** Indicates the block alignment of the data in the data chunk. Software
+    needs to process a multiplt of nBlockAlign at a time.
+    nBlockAlign = nChannels * (nBitsPerSample / 8)
+
+
+The Data Chunk 
+
+The Data Chunk is split up into these fields:
+
+ Data                                                                   
+ Chunk                  Length                                           
+ Offset  Name         (in bytes)   Description                           
+
+ 00h     dId              4        Contains the characters "data"        
+ 02h     dLen             4        Length of data in the dData field     
+ 00h     dData            dLen     The actual waveform data              
+
+
+In mono 8-bit files each byte represents one sample. In stereo 8-bit files
+two bytes are stored for each sample, the first byte is the left channel
+value, the next is the right channel value.
+
+I assume no responsibility whatsoever for any effect that this file, the
+information contained therein or the use thereof has on you, your sanity,
+computer, spouse, children, pets or anything else related to you or your
+existance. No warranty is provided nor implied with this information.
+

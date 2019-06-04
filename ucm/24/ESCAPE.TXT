@@ -1,0 +1,144 @@
+ó--------------------------------------------------------------------------------
+                                  "_" by Escape
+ó--------------------------------------------------------------------------------
+
+system ... Falcon o3o, 4 MB RAM, RGB, VGA (1oo Hz)
+
+credits .. code - charon / escape
+                  no / escape
+           gfx  - flash / tnb
+           msx  - 5o5 / checkpoint
+
+release .. may 8 2oo3, shown first at Error In Line 2oo3
+           demo took the ñ1st placeð in Falcon demo compo
+
+ó--------------------------------------------------------------------------------
+
+14 days after the party was held, finally the winning demo, again by Escape, was
+released  for public. The  crowd was  anxiously  waiting  for this  new piece of
+coding madness, to see it finally on their  home systems. So we will go straight
+for the review here and cut the crap...
+
+At first, Escape matched it to create a ñbog standard demoð, again. In fact it was
+interesting to see only standard Falcon demos in the competition at all. No FPU,
+FastRAM or 14 MB or acceleration cards, just bog standard Falcon stuff, that are
+ñcool newsð for the community  I think, even if this doesn't means that there wont
+be accelerated  demos in  the future, but the  delayed CTo6o is just braking out
+the development of such specialised demos a lot... good for the standard users..
+
+After  loading the  demo you  can see an "_" sign  blinking  in the  lower right
+corner of the black screen. A very  science fiction movie oriented  music starts
+to play  and we're  starting to  fly slowly  through a  blurred blue tunnel with
+curves. This  together comes  already ñvery niceð, as well  as the  coming smaller
+effects, just as a vector ball made out of lines that build  enlighted points on
+the contact points. This one is again and  again blurred  as well, and so is the
+environment mapped vector star as well.
+
+At next  the known Escape logo, an "E" comes  up, where the middle bar builds an
+arrow. It is also an  environment mapped vector, in  the blue/grey style we know
+from "Hmmm..." and their "Chosneck # 3" intro  too. The logo builds three of the
+same logos, turning around one axis  in the middle, it  turns faster  and faster
+and then the arrows were shot away and the music starts to go completely mad.
+Now there  isn't something  left from  the slow  intro music  and we  get a hard
+stomping noisy and dark technoing tune (what a sentence, arf ;)
+ñI really like this kind of musicð and it reminds me some way to "Hmmm...", too.
+
+{*i ESCAPE.PI1 m 0 20 0 200}
+
+òYou have to see that moving!
+
+The background turns  dark purple and  we see a vector cube, in grey/blue/orange
+colours, flying around on the screen. This one is build out of many small cubes.
+While there are again and again lightnings enlighting the scenery with the beats
+of the  music, the cube starts to  part itself, the  little cubes starting to be
+stretched and  disted very mad while the music gets really crazy. ñLooks coolð but
+falls a bit back behind the other stuff.
+
+Then an Escape logo, build up of many small texture  mapped vector cubes scrolls
+in, zooms in and flies finally into the  direction of the viewer, then the parts
+of the logo are falling apart and the textured cubes are flying into the viewers
+direction to be deleted from the screen. ñNice effect, but they can do better...
+
+At next the music changes, it's now slow, dark and noisy, the screen turns black
+too and a white blurred line vector cube appears on the screen, blinks from time
+to  time and  has little  white blob  jumping around  in  itself. Then  the blob
+explodes into many  little white points that are  jumping around in the cube and
+that are enlighted if they  cross another  point. ñThis effect reminds me again a
+ñlittle bit to "Hmmm..."
+
+And finally, the  effect that liked the  crowd very much at the  party, comes up
+onto my screen too. At  first the  music changes a  little bit again, now into a
+very relaxed oldschoolish trackertune, a  starfield appears on the screen and...
+the cute  little Atari bee as  big gouraud shaded  vector object flies around on
+the screen, in blue/orange colours. Later on it even starts to move their wings,
+but not like a bee, more like a butterfly, not really realistic but again ña real
+ñ"woah" effect. Very well done!
+
+{*i BEE.PI1 m 0 20 0 200}
+
+òSsssssssssssssssting.... aaaaouh...
+
+But this peaceful  scene doesn't  lasts too long  as suddenly one  of the arrows
+that were shot in the intro of the  demo snips onto the screen and hits the bee,
+the music returns into  a very aggressive  state and the next  scenery offers us
+a line of environment mapped  tins without ground  and cover and the arrow flies
+through them like  through a tunnel. This  is shown from  different perspectives
+and in quite fast speed and makes this ñvery impressive again.
+
+In the end the arrow  finds its end  in the environment mapped Escape logo again
+and the  demo ends  with 2 end pictures  without movement, done  in grey colours
+and in  ña very designish styleð, that  are giving  us the  credits and  the usual
+"the end" logo for the demo. To come back to the desk you just have to hit Space
+then.
+
+óAnd the little trip is over...
+
+Final words... Without  any doubt a  real cool demo  and with  right the winning
+               demo at Error In Line 2oo3. But right  after the party there were
+               voices that said that "Hmmm..." was the better demo and you could
+               feel a bit  disappointment about "_". But  is this real? And so I
+               watched both  demos again and  again, and I have  to say that "_"
+               creates  not such a big  atmosphere as "Hmmm...", but  makes this
+               the demo not as good?! I wouldn't say that. The problem of "_" is
+               the fact that  it doesn't  brings revolutionary  new effects onto
+               our screens, "just" much more optimized "Hmmm..." routines at the
+               first impression. But if you look twice  the 3d routines are very
+               impressive  for a  standard  Falcon  demo  and I  don't  remember
+               another demo  so far that  offers  such  big and  detailed vector
+               stuff in such resolutions and  such speed on a bog standard Fo3o.
+               Furthermore some  people might haven't  checked it out  still, it
+               wasn't No, who coded the "Hmmm..." routines, but  Charon who gave
+               us with "_" a slight impression of his DSP activities and this is
+               the breaking point, that  Charon, who  didn't  stepped  that much
+               into the scene  spot lights so far matched it to create big parts
+               of a demo that nobody thought another one except No would be able
+               to do... Sure, "_" suffers a bit under the "Hmmm..." hype as some
+               people might have waited for bigger steps after two years, but we
+               have to  think about  the frontiers  of our systems  now, they're
+               surely still not reached but the Escape coders are already moving
+               in quite thin air now and I doubt that we will see such big steps
+               in  development on  standard machines  again as in 2oo1. But  I'm
+               already going to  write crap... maybe I  will express my thoughts
+               in another articles about this topic.
+               "_" lives definitly from the polished 3d routines  and a few very
+               nice ideas, such as  the animated  vector bee  and the thing with
+               the arrows. Furthermore  the design  and ofcourse  the  very cool
+               music are kicking the demo even further
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals.......ð  7o % ñ- again quite sparse used pixels, but well done pictures
+ñaudio.........ð 1oo % ñ- what to say, the score should say all! I love it!
+ñeffects.......ð  9o % ñ- massive vector stuff again in all sorts
+ñdesign........ð  85 % ñ- very nice design and timing, but some breaks in style
+ñoriginality...ð  85 % ñ- nothing revolutionary, but again tuned vector routines
+
+ó___ðOveralló______ð86ó_ð%ó____________________________________________________________
+
+86%?! In comparison "Hmmm..." matched 88% ... The little fall back belongs to the
+breaks  in  the  design  that "Hmmm..." didn't  had, as  well  as the  fact  that
+"Hmmm..." impressed the viewer a bit more 2 years ago with its cool routines.
+But anyway, still a stunning  demo that may get a quite good place in the overall
+Falcon demo Top 1o.
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_òo5/2k3ó_

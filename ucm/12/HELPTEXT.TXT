@@ -1,0 +1,63 @@
+{*f1HELPHELPHELP{*f0
+
+Welcome to  the helptext  of the new UCM  shell. Here  you can  find information
+on how to access the functions of the program.
+
+{*f1HISTORY{*f0
+
+This shell has  a long hard history  behind it. The original  being based  on an
+ancient shell  from ñDBAð magazine. When UCM was still going  under the ñtnb.ð label
+the main code was by òDrizztð and some library routines by óSebozð. The current code
+is by earx/fun,  the libraries still  by ðSebozð, the players  by òBitmasterð,  óTAOð,
+ñScavengerð and óDefjamð.
+
+{*f1THE MENUBAR{*f0
+
+The main  features are  incorporated  in  the lower  bar on  the screen.  As you
+can see there are various options. Here's a diagram of this menubar:
+
+         | QUIT | HELP | SAVE | MUSIC | 1 | 2 | 3 | OFF | DOWN | UP |
+
+ñQUITð:  Does just what it says. When pressing this it returns you to the desktop.
+       (And hopefully without hanging or crashing ;-) )
+       This can also be done with the 'òQð' key.
+ñHELPð:  Accesses this text you're looking at right now.
+       Pressing the 'òHELPð' key does the same.
+ñSAVEð:  Makes the GEM-fileselector pop up. You can type in a name for the article
+       you want  to save.  It always  saves  the CURRENTLY  DISPLAYED  text. The
+       format is ASCII, so all  special effects in  the article will be lost.
+       This can also be done by pressing the 'òSð' key.
+ñMUSICð: On a falcon  this will toggle the  music from modplayer  to chipplayer so
+       you can check out the st-songs in the mag.
+ñ1ð:     Selects and  plays  song nr.1.  This only  works when song  1 is included
+       with in the magazine.
+ñ2ð:     Selects and  plays  song nr.2.  This only  works when song  2 is included
+       with in the magazine.
+ñ3ð:     Selects and  plays  song nr.3.  This only  works when song  3 is included
+       with in the magazine.
+ñOFFð:   This toggles the music on/off.
+       Your keyboards 'òMð' will also happily perform this trick.
+ñUPð:    This scrolls you up the article. (line by line)
+       The 'òUPð' arrow on your keyboard does the same.
+ñDOWNð:  This scrolls you down the article. (line by line)
+       The 'òDOWNð' arrow on your keyboard does the same.
+
+Pressing the 'òLEFTð' and 'òRIGHTð' arrows scrolls up and down page by page. (That's
+better..)
+
+{*f1ARTICLES{*f0
+
+If you want  to select an  article just  move  your mouse over  the text-area of
+the  screen.  When  the  mouse-pointer changes  it  indicates  the  textline  is 
+selectable  and  you  can press  the  òleft mouse  buttonð  to display  the  text.
+
+Whilst in the  article you can  press the òright  mouse buttonð to  go back to the
+menutext. The òspacebarð does exactly the same.
+
+{*f1!BUGS!{*f0
+
+At the  moment there is  one nasty  bug  concerning  the AM_SID  player. Despite
+serious efforts it  still is buggy on the Falcon. Anyone  who think he can help,
+ówrite us!!!ð
+
+HAVE FUN!----------------------------------------------------------PoD 1998-----

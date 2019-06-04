@@ -1,0 +1,182 @@
+066030003040000132006000006008000
+11
+2#1
+F0110030001
+9[..................................................................]0110
+Ä----------------------------------------------------------------------
+ internet
+----------------------------------------------------------------------
+
+                          Å NATURE HOME PAGEÄ
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+Although Nature have been programming  on  the Falcon since 1996, they
+have only recently sprung to prominence with releases of their texture
+mapped Lotus Clone "Reeking Rubber".
+
+Hencox and Instream  form  the  Atari  division  of  the Swedish group
+"Nature". They are based in Gothenburg and develop Falcon games - from
+humble STOS beginning to the  current  030  and DSP bashing of Reeking
+Rubber.
+
+There homepage is frames based. On logging  on you see a menu bar down
+a narrow vertical panel on  the  left,  whilst  the  right side of the
+window contains information about nature.
+
+The only problem with this system is that you have to have graphics on
+to access the links in the menu bar, there is no alternative text.
+
+Like most Swedish pages, the  whole  thing  is well designed and looks
+very professional. The graphics are  nice  without being over bearing.
+An animated nature  logo,  looking  very  like  a  small  demo effect,
+wibbles around in the bottom left corner.
+
+Lets surf the page.
+
+----------------------------------------------------------------------
+ NEWS
+----------------------------------------------------------------------
+
+This is the section you are  most  likely  to check out. Nature's news
+takes the form of a diary and  is  presented  as a table with dates on
+the left and 'happenings' on the  right.  This is a neater design than
+some other homepage diaries we have seen.
+
+The entries are reasonable concise,  but  convey  a lot of interesting
+information. There is not the  aimless  rambling  that seems to infest
+other diaries, and there is also  quite a lot of technical information
+which is something coders really enjoy reading.
+
+You can follow the story of  Nature's  Centurbo  2 board - despite all
+the problems it seems  Centek  were  helpful.  You  can read about the
+ongoing development of Reeking  Rubber  and  their  plans for Error In
+Line.
+
+Although not updated ever day,  this  news section is maintained often
+enough to make it worth checking  regularly. The stuff that is written
+is always interesting, there's not much  of the "we didn't actually do
+anything today" type entries. Full marks!
+Ä
+----------------------------------------------------------------------
+ PROJECTS
+----------------------------------------------------------------------
+
+Here you can find out about all  Nature's projects. And you may not be
+surprised to learn that none of them have actually been completed yet!
+
+
+The first project is  "Lands  Of  Fantasy",  something  we previewed a
+couple of issues ago.  This  is  Role  Playing  Game  in  the style of
+HeroQuest, but instead of relying  on  isometric bitplane graphics, it
+actually renders each  screen  as  you  walk  into  it!  Everything is
+texture mapped and there is also light sourcing from torches. It saves
+the rendered image to hard drive to prevent any wait when returning to
+the screen. A neat idea.
+
+The game itself was ambitious, with  37  different types of spell, 200
+different weapons to collect  and  200  different  pieces of armour to
+wear. There was also  the  possibility  to  have 65135 different items
+(hmm, add up these numbers and you  get 0x10000 - what a coincidence!)
+which could range from healing potions to magic wands.
+
+Like heroquest, the game was  turned  based,  with  you making a move,
+then all the monsters moving.  This  could  be  a very interesting and
+involving game, and is certainly  unlike  anything we've currently got
+on the Falcon.
+
+Next up is "Megablast" a shoot-em-up, but not the Bitmap brothers one.
+You may be alarmed to learn that  Megablast was written mainly in STOS
+- come back! Its not  so  bad,  it  does  run  in  320x240 mode in 256
+colours and achieves a framerate of 50fps.
+
+There were plans for some cunning alien  AI and also some nice weapons
+such as seeking missiles and plasma  beams. Although the engine is 99%
+complete, it is unlikely that this game will be finished.
+
+"Reeking Rubber" we  know  already.  There  have  been  some very nice
+enhancements to this game since version 0.9 , the most noticable being
+the addition of 8 player multiplayer mode using STING. This will allow
+you to race against friends over the internet!
+
+All  these  projects  have  detailed  information  about  them  and  a
+selection of screenshots to view.
+
+----------------------------------------------------------------------
+ DOWNLOAD
+----------------------------------------------------------------------
+
+Everyone wants to leech warez from pages,  and heres your grab and run
+point. There are  some  downloads  here  that  aren't  featured in the
+projects section.
+
+"Battle" is a strategy game for  GEM. You basically move some counters
+around a grid attempting to attack enemy counters. Not Nature's finest
+hour.
+Ä
+There is a preview version  of  "Lands  Of  Fantasy" to download. This
+will render up some rooms for you  and you can see the texture mapping
+and light sourcing on the  torches.  The  engine looks very promising,
+but there is not much in the way of gameplay here.
+
+A utility to download is  a  "Height  Field Creator for POV". Although
+written in assembly, it is apparently "very slow".
+
+More useful is the "Shell for assembling DSP files". Take the pain out
+running all the motorola  utilities!  Well  worth  checking out if you
+intend to tackle the strange beast known as the 56001.
+
+There is a  very  early  version  of  the  Shoot-Em-Up  "Megablast" to
+download here. Unfortunately it  seems  to  be  headed  for the Falcon
+shoot-em-up graveyard along with "Panium Disaster" and "X-Moon".
+
+
+This is what most people  are  here  for  -  a downloadable version of
+"Reeking Rubber". The current version on the  page  is 0.9 , and a lot
+has changed since them. Hopefully we  will  see  a new version for the
+EIL party.
+
+So a good selection of previews, games and utilities here.
+
+----------------------------------------------------------------------
+ NATURE
+----------------------------------------------------------------------
+
+Here you can find  out  information  about  the  members of Nature. It
+seems that the  Amiga  division  is  larger  than  the Atari division.
+Musician C-Frog is actually a member of the Amiga division.
+
+There are links here to  the  homepages  of  some  of the other nature
+members. This section could have benefited from some pictures of the
+members, if only for us to laugh at their strange Swedish faces.
+
+----------------------------------------------------------------------
+ FTP LINKS
+----------------------------------------------------------------------
+
+This is links section of the  page,  but  you  won't find any links to
+other atari crews or any other web pages for that matter. Its strictly
+FTP links only.
+
+There are links here to some of  the most popular atari ftp sites, the
+French  lip6  site,  and   the   German   uni-kl  and  berline  sites.
+Surprisingly there is no funet.fi link.
+
+----------------------------------------------------------------------
+
+Nature have created a decent web-page. Not only is it good looking, it
+is easy to navigate, contains good  information and lots of downloads.
+My main criticism of it  is  its  reliance  on  having graphics on. It
+would also be good if they included more programming material on their
+page.
+Ä
+If you want to  check  out  one  of  the  most interesting development
+diaries on the net, then their news  page  is well worth a visit. It's
+hard to resist the call of Nature.
+
+Point your browsers to:
+
+                       http://nature.atari.org
+

@@ -1,0 +1,538 @@
+  Coucou c'est moi,  Golio, pour une
+s‚rie d'articles sur le C.  Pourquoi
+le C? bah parceque!
+
+  TrŠve de plaisanterie,  et passons
+au   d‚but  de  cette   initiation.
+Le  C  est  un  language  structur‚,
+c'est … dire qu'il ne fonctionne pas
+avec  des sous programmes (comme  le
+basic ou l'assembleur), mais par des
+fonctions    (et   uniquement    des
+fonctions, pas de proc‚dure comme en
+pascal).   Nous  verrons  plus  tard
+comment cr‚er une fonction, et aussi
+comment l'appeler.
+
+   Une  pr‚sentation de  la  syntaxe
+d'une  fonction s'impose :  soit  la
+fonction suivante :
+
+int calcul(int a, int b)
+{
+....
+}
+
+  La premiere ligne d‚fini le nom de
+la fonction (ici calcul), l'ordre et
+le type des paramŠtres qui lui  sont
+transmis  (ici  un int  (un  entier)
+appell‚ 'a' dans la fonction,  suivi
+d'un  autre int appell‚ 'b' dans  la
+fonction).   Le  int  avant   calcul
+signifie  que  le  resultat  de   la
+fonction calcul est un entier, ainsi
+si  l'on  ecrit  resul=calcul(10,5),
+resul  doit ˆtre un entier pour  que
+l'affectation  soit  correcte.   Les
+accolades  d‚finissent en C un  bloc
+d'instructions.        Ce       bloc
+d'instructions est consid‚r‚e  comme
+une instruction.
+
+  Mais passons … LA  fonction,  j'ai
+nomm‚  la fonction  main().  Lorsque
+vous ‚crivez un programme, vous avez
+des  sous  programmes  et  aussi  un
+programme principal qui se  chargera
+d'appeler les sous programmes. C'est
+ce  que r‚alise la fonction  main().
+Passons par l'exemple le plus  connu
+en C :
+
+/* les commentaires commence par /*
+   et finissent par */
+
+#include <stdio.h>
+/*  les lignes commen‡ant par  un  #
+concernent  le  pr‚processeur.
+    Ici  il se charge  d'inclure  le
+fichier stdio.h (qui se trouve  dans
+le  r‚pertoire des fichiers  include
+standard ('cause des <...>))
+*/
+
+int main(void)
+/*  Ici la fonction main est  d‚fini
+comme une fonction ne recevant  rien
+en entr‚e (utilisation de void),  et
+retournant  un  int (un  entier)  en
+sortie */
+
+{ /* d‚but de la fonction */
+     printf(" Hello, world \n");
+     /* affiche " Hello, world" + un
+retour chariot
+   Rq.  :  le point virgule  sert  …
+s‚parer deux instructions */
+     return 0;
+     /* retourne la valeur 0 */
+} /* fin de la fonction */
+
+Ce   premier   programme   va   nous
+permettre de voir comment fonctionne
+la chaine de production du  C.  Tout
+d'abord  suivant le compilateur  que
+vous  utilisez,  il vous  faut  soit
+cr‚er  un fichier MAKe (pour le  gnu
+et  le  sozobon),   soit  cr‚er   un
+fichier  PRJ(pour le  Pure  C).  Ces
+fichiers,   compte  tenu  que  leurs
+contenu  n'est  pas  identique  d'un
+compilateur  …  l'autre,   je   vous
+laisse le soin de regarder la doc et
+de le fabriquer (mat‚riel n‚cessaire
+:  2 chevilles de 10,  une boite  de
+clou de 110).
+
+  La compilation d'un programme C se
+d‚roule    en   plusieurs    parties
+distinctes  :
+  - le Pr‚processeur (encore lui)  :
+il  se charge de cr‚er un fichier  C
+contenant    tous    les    fichiers
+includes,  ainsi que d'effectuer les
+changement  n‚cessaire du fichier  C
+original  (il est possible de  cr‚er
+des macros,  faire de la compilation
+conditionnelle, etc...)
+   -  le Compilateur  :  il  compile
+(d'ou   son  nom)  le   fichier   .C
+(produit par le pr‚processeur)  pour
+produire  un fichier .S (un  fichier
+contenant   les   instructions    en
+assembleur).
+   - l'Assembleur :  il assemble  le
+fichier .S pour produire un  fichier
+object   .O.   Ce   fichier   object
+contient   tous   les   appels    de
+fonctions,  toutes les  instructions
+du  programme.   Mais  survient   un
+problŠme,  le C est un language  qui
+contient trŠs peu d'instructions
+(mˆme pas le traditionnel print  des
+basics),  par quel miracle  utilisont
+nous la fonction printf?  Et bien il
+existe en C,  des bibliothŠques, des
+sortes  de boites  …  fonctions,  ou
+l'on prend les fonctions n‚cessaires
+au   bon   d‚roulement   de    notre
+programme.  Ici  on doit utiliser la
+bibliothŠque                standard
+d'entr‚es/sorties,  on doit pr‚ciser
+au  linker  que l'on  utilise  cette
+bibliothŠque :
+   - le Linker ou ‚diteur de lien  :
+sert  … lier les appels de  fonction
+du fichier object (ici printf) …  la
+fonction  printf de la  bibliothŠque
+d'entr‚es/sorties standard.  Il sert
+en  fait  … tisser une  toile  entre
+notre      programme     et      les
+bibliothŠques.
+
+  Apres le linker,  notre  programme
+est  prˆt … ˆtre froidement  ex‚cut‚
+(… la guillotine??).  Mais que fait-
+il,  notre  programme?  Et  bien  il
+affiche  tout simplement le  message
+"Hello,  world",  effectue un retour
+chariot (d'ou le \n), et retourne au
+systŠme la valeur 0 :  c'est …  dire
+tout  est  OK.   Donc  l'instruction
+return  sert … retourner une  valeur
+au truc qui appelle la fonction (ici
+main). Mais ce truc ‡a peut ˆtre une
+fonction,  ou le systŠme dans le cas
+de  la  fonction  main.   Comme   ce
+paragraphe n'est pas trŠs clair,  un
+petit exemple s'impose :
+/* programme d'addition */
+
+#include <stdio.h>
+
+/* Prototypage */
+/*  cette partie sert a  d‚finir  le
+type des fonctions (c'est … dire  le
+type de donn‚e qu'elles retournent),
+et aussi le type de donn‚e  qu'elles
+acceptent en entr‚e */
+
+int calcul(int, int);
+/*  calcul  est  une  fonction   qui
+acceptent  2 entiers en  entr‚e,  et
+qui retourne un entier
+  Rq.  : le point virgule : c'est un
+prototypage */
+
+int main(void);
+/*  on  peut  aussi  prototyper   la
+fonction main */
+
+/* d‚but des sous programmes */
+int calcul(int a, int b)
+{
+   return   (a+b);    /*    retourne
+l'addition de a et b */
+}
+
+/* programme principal */
+int main(void)
+{
+  int a;
+  a=calcul(10,5);
+  printf (" le r‚sultat  du  calcul
+est %u", a);
+  return 0;
+}
+
+  Encore des petites nouveaut‚es :
+  - le int a :  defini une  variable
+'a' comme ‚tant un entier. C'est une
+variable locale, car elle est d‚fini
+dans  un  bloc  d'instruction   (les
+accolades) et ne peut ˆtre  utilis‚e
+que dans ce bloc  d'instruction.  Il
+n'y a donc aucun rapport avec le 'a'
+de la fonction calcul.  A ce propos,
+remarquez  que  le  'a'  de   calcul
+contient   pendant  l'ex‚cution   la
+valeur 10, et le 'b' la valeur 5. La
+fonction  calcul  retourne  donc  la
+valeur  15  (a+b=10+5=15   magik!!).
+J'espŠre  que vous avez bien  saisit
+la  philosophie des fonctions en  C.
+Ce n'est pas trŠs compliqu‚ mais  il
+vaut mieux bien la comprendre.
+   -  la  fonction  printf  est  une
+fonction  trŠs  puissante,   le  %u,
+indique  que  la variable  qui  suit
+(ici  'a') est un entier,  et  qu'il
+faut  l'afficher en mode non  sign‚.
+Attention  ici  encore  l'ordre  est
+important,  le premier %? correspond
+…  la premiŠre  variable  rencontr‚e
+dans la liste des variables.
+
+   Bon  passons en  revue  tous  les
+paramŠtres  de  la  fonction  printf
+contenu    dans    la   chaine    de
+caractŠres :
+
+ ==================================
+| %? | type | affichage            |
+ ==================================
+| d,i| int  | entier d‚cimal sign‚ |
+|  o | int  | entier en mode octal |
+|    |      |             (base 8) |
+| x,X| int  | entier en mode octal |
+| u  | int  | entier d‚cimal non   |
+|    |      |                sign‚ |
+| c  | int  | caractŠre            |
+| s  | char*| chaine de caractŠres |
+| f  |double| flottant             |
+| e,E|double| flottant avec        |
+|    |      |      exposant        |
+| %  |aucun | permet d'afficher %  |
+ ==================================
+
+
+
+  Et les caractŠres de commandes
+ ==================================
+| \? | effect                      |
+ ==================================
+|  \ | affiche le caractere \      |
+|  0 | caractŠre nul : indique la  |
+|    | fin d'une chaine            |
+|  a | caractŠre d'alerte          |
+|  b | caractŠre de retour arriŠre |
+|  f | saut de page                |
+|  n | fin de ligne                |
+|  r | retour chariot              |
+|  t | caractŠre de tabulation     |
+|  v | tabulation verticale        |
+ ==================================
+  Ce ne sont que les plus  courants,
+pour plus  d'informations,  regardez
+la     doc    accompagnant     votre
+bibliothŠque
+
+   Bon voici encore un exemple  pour
+ce  premier article :
+/* calcul de moyenne */
+
+/* prototypage */
+int calcul(int, int, int);
+int main(void);
+
+/* fonction de calcul */
+int calcul(int a, int b, int c)
+{
+ int d, e; /* une autre m‚thode pour
+definir  plusieurs variable de  mˆme
+type en mˆme temps */
+ d=a+b+c;
+ e=d/3;
+ return e;
+}
+
+/* fonction principal */
+int main(void)
+{
+ int a, b, c, d;
+ a=10;
+ b=15;
+ c=20;
+ d=calcul(a,  b, c); /* ici on passe
+les paramŠtres grƒce … des variables
+*/
+ printf(" La moyenne de %u, %u et %u
+est : %u \n", a, b, c, d);
+}
+
+  Il existe d'autre type de  donn‚es
+que  des  entiers dans le  C  :  les
+nombres  …  virgule  flottante,  des
+chaines    de    caractŠres,     des
+caractŠres,    des   tableaux,   des
+structures etc...
+  Vous avez remarqu‚ que le r‚sultat
+de  notre  calcul de  moyenne  ‚tait
+entier  (cas souvent  rare),  et  si
+nous  avions  un r‚sulat  …  virgule
+flottante.  De plus au lieu de faire
+une moyenne sur 3 nombres,  pourquoi
+pas sur 15, ou 10!!
+
+/* calcul de moyenne avec  plusieurs
+nombres */
+#include <stdio.h>
+
+/* prototypage */
+int main(void);
+float saisie(int);
+
+/* fonction de saisie */
+float saisie(int a)
+{ int compteur;
+  float som, sai;
+  som=0;
+  sai=0;
+  for (compteur=1;   compteur<=a;
+       compteur++)
+        { printf(" Nombre : ");
+          scanf ("%e", &sai);
+          som=som+sai;
+        }
+  printf("\n");
+  return som;
+}
+
+/* fonction principal */
+int main(void)
+{ int nb;
+  float som;
+  nb=0;
+   printf(" Programme de  calcul  de
+                       moyenne \n");
+   printf(" Combien de nombres  pour
+       le calcul de la moyenne ? ");
+  scanf("%u", &nb);
+  if (nb!=0) { som=saisie(nb);
+               printf(" moyenne : %e
+                       \n", som/nb);
+             }
+      else printf (" Au revoir \n");
+  scanf("%u", &nb);
+  return 0;
+}
+
+   Encore  des nouveaut‚s  pour  cet
+exemple  :  commencons par  float  :
+c'est un type de donn‚es, et ce type
+de   donn‚es  sont  les  nombres   …
+virgule flottante. Un petit problŠme
+se pose,  le C ne sait pas  utiliser
+les nombres … virgule flottante,  il
+a besoin d'une bibliothŠque pour les
+g‚rer,  je  vous laisse le  soin  de
+regarder  votre  documentation  pour
+trouver son nom.
+    Donc   notre   fonction   saisie
+retourne   un   nombre   …   virgule
+flottante.  Le  but de  la  fonction
+saisie  est  de saisir  'a'  nombres
+flottants,  de  les  sommer,  et  de
+rendre cette somme.  Pour faire  une
+entr‚e  au  clavier,  rien  de  plus
+simple!  La  fonction  scanf  marche
+‚xactement comme la fonction printf,
+il faut rentrer une chaine contenant
+les  types  de donn‚es  qui  doivent
+ˆtre  saisie,   et  de  fournir  les
+variables   qui   contiendront    le
+r‚sultat.  A ce propos, ce n'est pas
+‚xactement   la  variable   (=   son
+contenu)  que  l'on  fournit  …   la
+fonction scanf,  mais son adresse (=
+son contenant).  Pourquoi? Bien tout
+simplement  pour  que  la   fonction
+scanf  sache ou mettre  les  donn‚es
+quelle recoit. Et comment on obtient
+l'adresse  d'une  variable  et  bien
+grace au caractŠre &, juste avant le
+nom de la variable.
+     Passons   …   la    myst‚rieuse
+instruction for.  Cette  instruction
+permet de faire des boucles, c'est …
+dire  des parties de  programme  qui
+seront ex‚cuter plusieurs fois. Pour
+pouvoir  faire une boucle,  il  faut
+connaŒtre plusieurs choses : de quoi
+l'on  part,  … quoi  on  arrive,  et
+pourquoi on s'arrˆte.  Imaginez  que
+l'on   veut  additionner  tous   les
+nombres  compris  entre  1  et   100
+(1+2+...+99+100).     Une    m‚thode
+courageuse  consterait …  ‚crire  la
+suite d'addition (bon courage!!) :
+ a=1+2+3+.....+100;
+ printf(" la somme est : %u",a);
+Une autre m‚thode,  plus  ‚conomique
+en  frappe,  consisterait …  pouvoir
+cr‚er  une instruction qui passe  un
+nombre  n  de 1 … 100,  il  ne  nous
+reste   plus  qu'…   chaque   n,   …
+l'additionner au reste de la  somme.
+Et cette instruction miracle existe,
+elle s'appelle for.  Elle se compose
+de 4 parties :
+  for (instr1; instr2; instr3)
+          instr4;
+    -  la  premiŠre  instruction   :
+instr1,    est    une    instruction
+d'initialisation,   c'est   …   dire
+quelle  est ex‚cuter en premier  par
+l'instruction   for.    Dans   notre
+exemple,  on  met la valeur  0  dans
+compteur.
+  - la seconde instruction : instr2,
+est une instruction conditionnelle :
+elle  retourne  comme  valeur   TRUE
+(vrai)     ou     FALSE      (faux).
+L'instruction  for  continurat  tant
+que  la condition est vraie  (TRUE).
+Dans  notre  exemple  tant  que   le
+compteur est inf‚rieur ou ‚gale (<=)
+… 'a'.
+   -  la  troisiŠme  instruction   :
+instr3,   est   ex‚cuter  …   chaque
+passage  de  l'instruction  for.  En
+g‚n‚ral,  cette  instruction sert  …
+modifier le compteur.
+   -  la  quatriŠme  instruction   :
+instr4,  est aussi ‚x‚cuter … chaque
+passage de l'instruction for.  C'est
+souvent  le corps de la  boucle,  la
+partie de programme qui est ex‚cuter
+… chaque passage.
+
+   Pour r‚sumer,  l'instruction  for
+utilis‚e dans notre exemple,  permet
+de  lire 'a' nombres (scanf)  et  de
+les additionner (som=som+sai).
+    A  encore  un  nouveu   truc   :
+'compteur++' : ceci est ‚quivalent …
+compteur=compteur+1.    Vous    avez
+compris?  Oui! C'est une instruction
+de postincr‚mentation (incr‚menter :
+augmenter de 1).  Pourquoi post, car
+le C utilise la variable  'compteur'
+(ici  il l'utilise pour  rien,  mais
+bon),  puis l'incr‚mente de 1. Si il
+y  a  post,  c'est qu'il y a  pr‚  :
+++compteur,   incr‚mente   compteur,
+puis le C peut s'en servir.  De mˆme
+avec  -- qui au lieu d'augmenter  de
+1,  diminue de 1.  Une petite  ligne
+pour les esprits tordus :
+
+for(compteur=0; compteur++<=a;) ...
+
+    He   oui,    cette   ligne   est
+rigoureusemnt  identique … celle  de
+notre  exemple.   A  consommer  avec
+mod‚ration !!
+     Encore    une    nouveaut‚    :
+l'instruction  if  (instr0)   instr.
+Cette instruction permet  d'ex‚cuter
+sous  certaine condition  une  partie
+de programme. Cette condition, c'est
+une    instruction    conditionnelle
+(comme  l'instruction instr2  de  la
+boucle  for).  Donc  si  instr0  est
+vraie,    alors    le   C    ex‚cute
+l'instruction instr.  Voici la liste
+de     tous     les     instructions
+conditionnelles :
+
+avec  a  et b  :  des  valeurs,  des
+variables..
+avec c et d : des expressions, c'est
+…     dire     des      instructions
+conditionnelles
+
+
+
+
+
+
+ ==================================
+| instr. | signification           |
+ ==================================
+| a > b  | a sup‚rieur … b         |
+| a < b  | a inf‚rieur … b         |
+| a >= b | a sup‚rieur ou ‚gale … b|
+| a <= b | a inf‚rieur ou ‚gale … b|
+| a == b | a ‚gale b               |
+| a != b | a diff‚rent de b        |
+| c && d | c ET d                  |
+| c || d | c OU d                  |
+|   !c   | n‚gation de c           |
+ ==================================
+
+Ainsi  pour faire une  condition  du
+type  :  la  variable  a  doit  etre
+sup‚rieur … 10 et inf‚rieur … 15 :
+
+ (a>10)&&(a<15)
+  Les deux conditions  doivent  etre
+rempli pour pouvoir ˆtre vrai.
+
+
+
+
+
+
+
+
+
+
+   Bonne  d‚couverte  du  C,  et  la
+prochaine  fois on  appronfondi  les
+boucles, les types de donn‚es
+
+
+
+                        GOliO JuNioR

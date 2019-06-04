@@ -1,0 +1,1039 @@
+06601030305800
+F0110030
+9[.........................................................]001
+€From:   MX%"larry_a@netcom.com"  1-FEB-1995 18:40:52.88
+
+‰Here's the most recent iteration, a revision will be posted on Feb 15th€
+
+„Intellivision FAQ Rough Draft - January '95€
+
+Copyright (c) 1995 Larry Anderson
+
+All right reserved.  This document may be copied, in whole or in part,
+by any means provided the copyright and contributos sections remain
+intact andno fee is charged for the information. Contributors retain
+the copyright to their individual contributions.
+
+The data herein is provided for informational purposes only.No warranty 
+is made with regards to the accuracy of this information.
+
+These people, either knowingly or unknowingly, helped contribute 
+information to this FAQ:
+
+edh@netcom.com
+Clint Dyer
+Joe Huber
+Jerry Greiner
+Sean Kelly
+Craig Pell (VGR)
+Paul Thurrott
+
+--------------------------------------------------------------------------
+
+This FAQ will be posted once a month around the 15th.
+
+If you have any additions, correction, comments, flames, or pats on the
+back, please mail them to me at larry_a@netcom.com
+
+--------------------------------------------------------------------------
+
+Table Of Contents:
+1.0)  History of the Intellivision
+2.0)  Specs
+3.0)  Hardware Listing
+        3.1  - Intellivision
+        3.2  - Sears Super Video Arcade
+        3.3  - Radio Shack Tandyvision One
+        3.4  - Intellivoice Voice Synthesis Module
+        3.5  - Intellivision II
+        3.6  - INTV III
+        3.7  - Computer Adaptor
+        3.8  - Entertainment Computer System
+        3.9  - Music Syntesizer
+        3.10 - System Changer
+4.0)  Cartridge Listing
+        4.1 - Easter Eggs, Cheats and Tips
+        4.2 - Information regarding Label Variations
+5.0)  Trivia and vaporware
+€        5.1 - PlayCable
+        5.2 - Intellivision III
+6.0)  Books and magazine sources
+7.0)  Reapir Information
+        7.1 - Hand Controllers
+        7.2 - Cartridge Problems
+        7.3 - Console Disassembly
+        7.4 - General Troubleshooting
+8.0)  Programmer Interviews
+9.0)  Dealers
+--------------------------------------------------------------------------
+
+1.0)  History of the Intellivision:
+
+- Many of the original Intellivision games were programmed by college
+  students as part of their computer programming classes.  Cheap labor?
+
+- Clear up a common misconception.  INTV is NOT an abbreviation for
+  Intellivison as many people seem to think.  INTV is the name of the
+  company that bought the rights to the system and all it's games from
+  Mattel when they decided to leave the market.  Mattel NEVER referred
+to it's system as INTV.
+
+- Cheif rival to the Atari 2600.
+ 
+- 16-position control disc was "revolutionary" for it's time but also
+one of the reasons Intellivision never did catch up to the 2600.
+
+- Intellivision I consoles had a problem with overheating in the early
+  years.
+
+- Major League Baseball was an instant "classic" and one of the most
+popular games for the system.
+   
+- Another "problem" with many Intellivision games was that they were for
+  2-players only.
+
+(This section needs some MAJOR help, any contributions here would be
+greatly appreciated!)
+
+--------------------------------------------------------------------------
+
+2.0)  Specs: 
+
+Intellivision Master Component (these apply to the clones as well)
+------------------------------
+CPU:            GI 16 bit microprocessor
+Memory:         7K internal ROM, RAM and I/O structures, remaining 64k 
+                address space available for external programs.
+Controls:       12 button numberic key pad, four action keys, 16
+direction disk
+Sound:          Sound generator capable of 3 part harmony
+Color:          16
+Resolution:     192v x 160h
+€
+--------------------------------------------------------------------------
+
+3.0)  Hardware Listing:
+
+What follows is a brief description of all of the Intellivision
+components that are known to exist.
+
+-----
+3.1 - Intellivision 
+The original, the one the started it all.  It has a brown molded plastic 
+case with gold trim on the top.  It has two controller wells on the top 
+for housing the two hard-wired controllers.  The controllers are also
+brown molded plastic, with a 12-key numeric keypad, two fire buttons
+located on each side, and a gold disk centered in the bottom third of
+the controller which is used as a joystick:
+
+(crude ASCII illustration goes here =) )
+
+The power and reset switches are located on the lower right hand corner
+of the top of the unit.
+
+-----
+3.2 - Sears Super Video Arcade 
+Up until recently, if you wanted to market your product through Sears, 
+it had to have thier name on it.  Much like Atari with the Tele-Games 
+Video Arcade, Mattel created a clone that was similar yet different to 
+the INTV I.  Functionally identical, this unit has a cream-colored case, 
+and removable controllers that rested in the center of the console. 
+(more info??)
+
+-----
+3.3 - Radio Shack Tandyvision I
+Yet another clone, this console has faux woodgrain paneling in the place
+of the INTV I's gold panels.  Otherwise, this unit is totally identical 
+to the INTV I.
+
+-----
+3.4 - Intellivoice Voice Synthesis Module
+This module attaches to the cartridge port of your Intellivision, and
+through the use of special voice-enhanced games, your INTV could talk.
+There were 5 games released to take advantage of the unit's capabilities
+(Space Spartans, B-17 Bomber, Tron Solar Sailor, Bomb Squad, and
+World Seires Major League Baseball (also requires the ECS) ).  The
+module has a dial on the front to control the voices' volume.  Voice
+games will work without the adapter, but since the voice was made to be
+an integral portion of the game, they're toally unplayble.
+
+-----
+3.5 - Intellivision II 
+In 1982, Mattel decided that they needed to spice up the design of the 
+Intellivision, as well as attempt to shave some costs; the Intellivision 
+II was the result.  Some key differences include:
+        - A much smaller footprint
+€        - Grey plastic case with a thin red stripe circling the unit
+        - External power supply (not standard by any means)
+        - Detachable controllers (although the fire buttons on these 
+        controllers are nearly impossible to use, and darn uncomfy =) )
+        - Combination Power/Reset switch (probably the most annoying
+        feature of all, you have to hold the switch for 5 seconds in
+        order to turn the unit off)
+        - Power LED Indicator
+
+This unit also contained a revised ROM which was necessary for the ECS
+(more on that later), but also made certain Coleco games and some Mattel
+gamesincompatible with this unit (Donkey Kong, Mouse Trap, Carnival,
+and Chess).
+
+-----
+3.6 - INTV III
+In 1987, a consortium of ex-Mattel Electronics execs bought the rights
+to the since-defunct Intellivision and formed a company called INTV
+Corp., and attempted to revive the Intellivision much the same way that
+Atari attempted to revive the 2600 around the same time.  This
+redesigned unit is physically identical to the original INTV I, except
+that it has a black plastic case with silver plates, and also has a
+Power LED indicator.
+(is the INTV III compatible with the ECS without any modification??)
+
+-----
+3.7 - Computer Adaptor
+This unit only saw a limited test marketing run of less than one
+thousand units.  It was color-keyed to match the INTV I, and the entire
+game console fit into the top of the unit. It sported a full-stroke
+??-key keyboard, built in cassette recorder, and some other unknown
+enhancements.  After muchdebacle, the plans to market this unit were
+shelved.
+
+-----
+3.8 - Entertainment Computer System
+Spurred on by the increasingly popular home computer market, Mattel
+introducedthe Entertainment Computer System along with the INTV II in
+1982.  This unit plugs into the cartridge port of the INTV II, and has
+its own cartridge slot, two additional controller ports, a cassette 
+interface, and a balance dial for controlling the output level of the
+ECS's three additional voices.  The unit requires an additional power
+supply. It came pacakged with a 49-key chiclet-style keyboard, power
+supply, and a well-written manual describing INTV BASIC.Upon returning
+your registration card, you would receive "The Step-By-Step Guide To
+Home Computing", which included a very detailed BASIC Tutorial, and
+some more in-depth study of the ECS's abilities.  For the techies, the
+unit sported an additional voice chip (total of 6), 10K of ROM and 2K
+of RAM for programming purposes.
+
+If you happened to own an original Intellivision, sending in your Master
+Component and $19.95 would get you a ROM upgrade that would allow you to
+use this unit.
+
+€(Did upgraded INTV I's then have the compatibility problems??)
+-----
+3.9 - Music Synthesizer
+This was an add-on for the ECS, a full 49 key piano style keyboard.  It 
+has 6 note polyphony (for you non-musicians, can play 6 notes at once), 
+and plugs into the controller ports on the ECS via a dual 9 pin
+connector.  Melody Blaster was the only program released by Mattel to
+specifically take advantage of this component.
+
+-----
+3.10 - System Changer
+The Atari 2600 had the biggest library of games at the time, and Mattel 
+added the capability of playing 2600 carts to the INTV II with this
+module.This unit also interfaces with the INTV II via the cartridge
+port.  It has a cartridge port on the top of the module, Game Select
+and Reset keys flanking the two difficuly and color/BW switch:
+
+(yet another crude ASCII drawing goes here =) )
+
+The controller ports are located on the front of the module, and any of
+yourfavorite 2600 compatible controllers work just fine.  If you don't
+happen to have Atari controllers lying around, you can use the disc
+controller attached to the INTV II in lieu of them.  The author has not
+currently found any gamesthat will not operate with this adaptor, if
+anyone knows of any, please speak up =)
+
+Here again, if you wished to use this module with your original
+Intellivision, you had to send the unit in for the ROM upgrade.  It's
+interesting to note that on an unmodified Master Component, when turned
+onwith this unit plugged in, the title screen reads "M-Network", and
+you canhear all the sounds from the 2600 game you have inserted, but no
+video.
+
+--------------------------------------------------------------------------
+4.0)  Cartridge Listing:
+
+This list contains information from VGR'S Giant List of Intellivision
+games, Sean Kelly's list, and Paul Thurrott's List, as well as some 
+information I have from personal experience.
+
+Manufacturer's Key:
+MA = Mattel     IM = Imagic     PB = Parker Bros.       IN = INTV
+SE = Sega       AT = Atarisoft  AC = Activision         CO = Coleco
+IT = Interphase
+
+Ovr? Key:
+Yes = Has overlays      No = No Overlays        ?? = Don't Know =)
+
+Notes:
+Any interesting tidbits, such as additional hardware required, 
+release notes, and compatibility.  Please note that the compatibility
+issue varies from person to person, e.g. two people have told me that
+Chess works in their INTV II's, but it freezes in mine.
+
+€
+Title                            Mfg. Part #    Ovr?    Notes
+--------------------------------------------------------------------------
+Advanced Dungeons & Dragons      MA   3410      Yes
+Advanced D&D Treasure of Tarmin  MA   5300      Yes
+Armor Battle                     MA   1121      Yes
+Astrosmash                       MA   3605      Yes
+Atlantis                         IM   700006    Yes
+Auto Racing                      MA   1113      Yes
+B-17 Bomber                      MA   3884      Yes  (Intellivoice Req.)
+Backgammon                       MA   1119      Yes
+Beamrider                        AC   M-005-02  Yes
+Beauty & The Beast               IM   700007    Yes
+Blockade Runner                  IT   8010001   Maybe   
+Body Slam Wrestling              IN   9009      No      
+Bomb Squad                       MA   3883      Yes  (Intellivoice Req.)
+Bowling                          MA   3333      Yes
+Boxing                           MA   1819      Yes
+Bump 'n Jump                     MA   4688      Yes
+Burgertime                       MA   4549      Yes
+Buzz Bombers                     MA   4436      ??
+Carnival                         CO   2488      No    (INTV I/III Only)
+Centipede                        AT   70254     No      
+Championship Tennis              IN   8200      Yes
+Checkers                         MA   1120      Yes
+Chess                            MA   3412      Yes    (INTV I/III Only)
+Chip Shot Super Pro Golf         IN   8900      No      
+Commando                         IN   9000      No      
+Congo Bongo                      SE   006-06    No      
+Defender                         AT   70252     No      
+Demo Cart                        MA   ????      No      
+Demo Cart II                     MA   ????      No      
+Demon Attack                     IM   700005    Yes
+Dig Dug                          IN   9005      No
+Diner                            IN   8800      No      
+Donkey Kong                      CO   2471      No    (INTV I/III Only)       
+Donkey Kong Jr.                  CO   24??      No      
+Dracula                          IM   700018    Yes
+Dragonfire                       IM   700010    Yes
+Draughts                         MA   1120    (English ver. of Checkers)
+Dreadnaught Factor               AC   M-004-04  Yes
+Fathom                           IM   7?00??    ??
+Frog Bog                         MA   5301      Yes
+Frogger                          PB   6300      No
+Golf                             MA   1816      Yes
+Happy Trails                     AC   M-003-04  Yes
+Horse Racing                     MA   1123      Yes
+Hover Force                      IN   8500      No
+Ice Trek                         IM   710012    Yes
+Jetson's Way With Words          MA   4543      Yes  (ECS Required)
+Kool Aid Man                     MA   4675      Yes
+Ladybug                          CO   2483      No      
+Las Vegas Poker & Blackjack      MA   2611      Yes(Included w/ system)
+Las Vegas Roulette               MA   1118      Yes
+€Learning Fun I                   IN   9002      ??
+Learning Fun II                  IN   9006      ??
+Lock 'n Chase                    MA   5637      Yes
+Locomotion                       MA   4438      Yes
+Major League Baseball            MA   2614      Yes
+Masters of the Universe          MA   4689      Yes
+Math Fun                         MA   2613      Yes
+Melody Blaster                   MA   4540      Yes     (ECS Required)
+Microsurgeon                     IM   720013    Yes
+Mind Strike                      MA   4531      Yes     (ECS Required)
+Mission X                        MA   4437      Yes
+Motocross                        MA   3411      Yes
+Mouse Trap                       CO   2479      Yes    (INTV I/III Only)
+Mr. Basic Meets Bits & Bytes     MA   4536      Yes     (ECS Required)
+Mountain Madness Skiing          IN   9007      No      
+NASL Soccer                      MA   1683      Yes
+NBA Basketball                   MA   2615      Yes
+NFL Football                     MA   2610      Yes
+NHL Hockey                       MA   1114      Yes
+Night Stalker                    MA   5305      Yes
+Nova Blast                       IM   700022    ??
+Pac Man                          IN   8000      No
+Pac Man                          AT             No      
+Pinball                          MA   5356      Yes
+Pitfall                          AC   M-002-04  Yes
+Pole Position                    IN   9004      No      
+Popeye                           PB             No      
+Q*Bert                           PB   6360      No      
+Reversi                          MA   5304      Yes
+River Raid                       AC   M-007-03  Yes
+Royal Dealer                     MA   5303      Yes
+Safecracker                      IM   710025    Yes
+Scooby Doo's Maze Chase          MA   4533      Yes     (ECS Required)
+Sea Battle                       MA   1818      Yes
+Sewer Sam                        IT   8010002   No      
+Shark! Shark!                    MA   5387      Yes
+Sharp Shot                       MA   5638      Yes
+Skiing                           MA   1817      Yes
+Slam Dunk Basketball             IN   9001      No      
+Slap Shot Hockey                 IN   9003      No      
+Snafu                            MA   3758      Yes
+Space Armada                     MA   3759      Yes
+Space Battle                     MA   2612      Yes
+Space Hawk                       MA   5136      Yes
+Space Spartans                   MA   3416      Yes  (Intellivoice Req.)
+Spiker! Volleyball               IN   9102      No      
+Stadium Mud Buggies              IN             No      
+Stampede                         AC   M-001-04  Yes
+Star Strike                      MA   5161      Yes
+Star Wars: Empire Strikes Back   PB   6050      No      
+Sub Hunt                         MA   3408      Yes
+Super Cobra                      PB             No    (European Release)
+Super Pro Decathalon             IN   9008      No      
+Super Pro Football               IN   8400      No      
+€Swords & Serpents                IM   720009    Yes
+Tennis                           MA   1814      Yes
+Thin Ice                         IN   8300      No      
+Thunder Castle                   IN   4469      No      
+Tower of Doom                    IN   8600      No      
+Triple Action                    MA   3760      Yes
+Triple Challenge                 IN             ??      
+Tron Deadly Discs                MA   5391      Yes
+Tron Maze-a-tron                 MA   5392      Yes
+Tron Solar Sailer                MA   5393      Yes  (Intellivoice Req.)
+Tropical Trouble                 IM   700017    Yes
+Truckin                          IM   710023    Yes
+Turbo                            CO             No      
+Tutankham                        PB   6340      No    (European Release)
+Utopia                           MA   5149      Yes
+Vectron                          MA   5788      Yes
+Venture                          CO   2477      No   (INTV I/III Only??)     
+White Water                      IM             Yes
+Word Fun                         MA   1122      Yes
+World Championship Baseball      IN   5789      Yes     
+World Cup Soccer                 IN   8100      Yes
+World Series Major League BB     MA   4537      Yes     (ECS Required)
+Worm Whomper                     AC   M-006-03  Yes
+Zaxxon                           CO   2487      No
+
+Unreleased (but announced) titles for the ECS:
+
+Title                        Mfg. Part #    Ovr?    Notes
+----------------------------------------------------------------------
+Yogi's Frustration           MA   ????      ??      (Prototype exists)
+Number Jumble                    MA   ????      ??
+The Flintstones                  MA   ????      ??
+Game Factory                     MA   ????      ??
+Program Builder                  MA   ????      ??
+Song Writer                      MA   ????      ??
+
+Software announced for the original Computer Adaptor (never released):
+(These programs were all to have been provided on cassettes)
+
+Title                            Mfg. Part #    Ovr?    Notes
+----------------------------------------------------------------------
+J.K. Lasser's 1980 Federal
+Income Tax Preparation           MA   ????      ??
+Stock Analysis                   MA   ????      ??
+Jack LaLanne's Physical Cond.    MA   ????      ??
+Guitar Lessons & Music Comp.     MA   ????      ??
+Jeanne Dixon Astrology           MA   ????      ??
+Speed Reading                    MA   ????      ??
+Dr. Art Ulene Weight Loss Prog.  MA   ????      ??
+Conversational French            MA   ????      ??
+
+-----
+4.1 - Easter Eggs, Cheats and Tips:
+
+€Tower Of Doom -
+At any point in the game, try typing "112656" on the keypad, you should
+get a 'ticker-tape' deisgned (sic) by message.  (Not verified by the
+author)
+
+-----
+4.2 - Information regarding Label Variations
+
+This information was provided by Jerry Greiner (jerryg@hevanet.com), and
+is by no means considered gospel, but until someone else comes up with
+something better, this works pretty well =)
+
+There are 4 main "distributors" of the Intellivision games though we
+tendto call them manufacturers. For instance, Atarisoft manufactured
+the INTVversions of the Atari titles as well as the Atarisoft release
+versions.
+
+The 4 "distributors" are:
+
+        - Mattel, the original "manufacturer" of the Intellivision.
+        
+        - INTV, the company that was formed and bought out the Mattel 
+        rights to Intellivision products.
+        
+        - Sears/Telegames which distributed Intellivision games and 
+        systems under their own names.
+        
+        - Telegames, which is still in business and which owns many of 
+        the rights (if not all) to the Intellivision games. Their games 
+        are most likely manufactured by CBS Electronics in Italy, though 
+        not all are.
+
+The games originally manufactured to be distributed by Matell have a (c)
+MI or (c) MEI on the label. These are the only types of labels known to
+have been sold by Mattel.
+
+Sealed INTV boxes (yes INTV boxes were different, though, like the
+cartridges, they also used the leftover Mattel boxes) have been found
+(frequently) with 3 types of labeled games in them:
+   
+        1. (c) II, white label
+        2. (c) MI
+        3. (c) MEI
+        4. no copyright or country of origin, colored label
+        5. no copyright but with a country of origin, colored label
+        6. no copyright or country of origin, white label
+
+The (c) II is the closest thing to being a "regular" INTV release, but
+notcomplete proof.
+
+Sears/Telegames released games in specially designed boxes which are
+quiteeasy to identify. They are a dark redish brown and clearly say
+"Sears/Telegames". The labels on the games sold by Sears/Telegames are
+of several types:
+€
+        1. no copyright or country of origin, colored label
+        2. no copyright but with a country of origin, colored label
+        3. (c) MI
+        4. (c) MEI
+
+Telegame releases are in a variety of boxes, most commonly in a box
+clearly identified as "Telegames". They can still be purchased from
+Telegames, UK. There are a variety of labels on these games, but the
+most common, and the closest to "official" Telegame releases are a
+white label with no copyrightor country of origin on them. The
+following labels have been found in Telegames boxes.
+
+        1. no copyright or country of origin, white label
+        2. All of the above varieties.
+
+There may be a way of telling the White Label, no (c), no country of
+origin INTV games from the White Label Telegames in some cases as there
+tends to be two distinct styles and sizes of lettering used.
+
+The bottom line is:
+
+You can't tell who sold or manufactured the games themselves in most
+casesexcept:
+
+        - If it is (c) MI or (c) MEI it was manufactured for Mattel
+        - If it is (c) II it was manufactured for INTV
+
+The boxes were manufactured for the company (one of the 4 above) and can
+be identified as they are clearly marked. They were not necessarily sold
+by the same companies.
+
+--------------------------------------------------------------------------
+
+5.0)  Trivia and vaporware:
+
+-----
+5.1 - PlayCable
+The idea of beaming Junior videogames through Cable TV is not new; a
+companycalled PlayCable created an adapter for the Intellivision that
+plugged intothe cartridge port, and the service would have had a
+selection of 20 of themost poular games available every month. Although
+this product was talkedabout quite a bit for well over a year, the idea
+flopped, and the device wasnever released.
+
+-----
+5.2 - Intellivision III
+Atari wasn't the only company with plans to introduce a "nextGeneration"
+video game system;  Mattel spoke of it's soon-to-be released
+IntellivisionIII for well over a year before the idea was dumped.  Here
+are some of thespecifications for this unit:
+
+  - Built-in Intellivoice
+  - 320 x 190 resolution
+€  - Unlimited colors
+  - Onscreen sprites move at 2x the speed of the original Intellivision
+  - Six channel sound with RCA outputs
+  - Remote controlled joysticks
+  - Four controller ports
+  - Plays original Intellivision titles as well as Aquarius titles
+  - 12k ROM - 10k RAM
+  - Able to manipulate 64 sprites onscreen at once
+  - 6-8 titles announced including Air Ace - a flight simulator
+  - Scrapped for fears of not being able to introduce it before Coleco
+Visionand the Atari 5200 had too strong a grip on the "next
+generation" market.
+  - Projected price : $300
+
+Please note that this unit is COMPLETELY different from the INTV III
+whichwas later released by INTV Corp in 1986.
+
+--------------------------------------------------------------------------
+
+6.0)  Books and magazines:
+
+(need more information)
+
+--------------------------------------------------------------------------
+
+7.0)  Repair tips and information:
+
+Most of the information provided here has been taken from the book
+"Repairing Your Home Video Game:  How To Save A Buck While Your Kids
+DriveYou Insane", by Gordon Jennings, or has come from personal
+experience.Excerpts taken from the book are enclosed in quotes.
+
+-----
+7.1 - Hand Controllers
+
+Let's face it, I don't know a single person would could say that they
+preferthe Intellivision hand controllers over a standard joystick with
+a straightface, but you're stuck with them if you own an INTV I or III,
+as they arehard-wired into the unit.  There WILL come a time when they
+will fail. Fortunately, there are some simple steps short of totally
+disaasemblingthe main console you can take to fix controllers.
+
+"Inside the controller is a plastic sheet with a circuit painted (or
+silk-screened) on it.  This is call the Membrane Printed Circuit Board,
+or MPCBfor short.  Often, pieces of the circuit chip off and cause the
+controllerto short out.  This can be repaired by opening the controller
+and cleaningout the MPCB with a soft cloth"
+
+"To gain access to the MPCB, loosen and remove the four small screws on
+theback of the controller.  With the controller facing up, lift off the
+topcover.  Remove the round control button and the spring beneath it.
+Thereshould also be a white plastic spacer, sandwiched between two
+sections of the MPCB directly beneath the spring (Note its position.
+It must be placed back between these two sections when you put the
+€controller back together)."
+
+"Slide out the black side buttons (When reassembling the controller,
+theseare useful in holding down the MPCB, which tends to pop out).
+Remove thegold numeric pad and the clear sheet (static shield) beneath
+it."
+
+"Remove the MPCB.  Visually inspect it to see if it's still in good
+condition.  Hold it up to the light; if you see any holes or breaks in
+it,it should be replaced."
+
+To reassemble the hand controller, follow the above instructions in
+reverseorder.  "Note that the MPCB, static shield, and numeric pad have
+two smallholes in each of them.  These holes interlock with the two
+pins protrudingfrom the bottom cover of the hand controller, making it
+easier to align andadjust the MPCB into its proper position."
+
+If your MPCB's require replacement, a great source of spare parts are
+thosetotally trashed, $2 INTV consoles you pass up at the flea market.
+Not onlyare the hand controllers usually in working order, but you get
+a whole slewof other spare parts, such as logic boards, transformer
+assemblies, powersupplies and switches.
+
+(If anyone knows of a source for new spare parts, please let me know so
+I can include the information in the FAQ.)
+
+-----
+7.2 - Cartridge Problems
+
+Help!!  I've turned on my console and all I get is a black screen!!
+What doI do??
+
+First off, follow the teachings of one of my favorite sci-fi authors, 
+Douglas Adams: "Don't Panic!"
+
+Secondly, ensure that the cartridge is properly inserted.  Not inserting
+thecartridge far enough, or even inserting the cartridge too far can
+cause theconsole not the read the game.  
+
+Dirty contacts on the cartridge itself may also cause a problem; use a 
+cotton swab and some denatured alcohol to remove any corrosion from the 
+gold contacts (the swabs used for cleaning VCR heads work best, as they
+arelint-free).  I STRONGLY recommend against using a pencil eraser, as
+is so popular in many PC repair circles.  Not only does the rubber build
+up a static charge in the cart, potentially damaging the ROM's, it also
+removes some of the gold plating on the PC board.  Too many treatments
+of this manner could result in a useless game.
+
+If you know the problem is not with the cart, all is not lost. If you're 
+handy with a volt-ohm meter, you can usually pinpoint the problem to one 
+of the major components inside the console.
+
+-----
+7.3 - Console Disassembly
+€
+For those of you who have seen the inside of an Intellivision before,
+skip to the next section.  What follows is a basic description of all of 
+the Intellivision's major components.
+
+The system is comprised of four major components.  "First is the transformer
+assembly.  The assembly itself is made up of smaller component; the AC
+Power Cord, the ON/OFF switch, and a small plastic connector."
+
+"The next major component is the power supply board.  It receives AC
+powerfrom the transformer assembly, and transforms it into several
+differentDC values.  Not only does it convert the voltages, but it also
+stabilizesthem for the logic board."
+
+The third set of components are the hand controllers.
+
+"The final unit is called the logic board.  This board is the brains of
+the Intellivision."
+
+Okay, so with phillips screwdriver in hand, you're ready to rip apart
+your Intellivision.  First off, as with any electronic repair work, be
+sure that your work area is free of static electricty.  I personally
+use a wrist grounding strap clipped to some metal portion of your work
+area.
+
+"Unplug the unit from the wall and from the television.  Remove any 
+cartridge from the machine.  Turn the power switch to the ON position to 
+drain any stored up voltage.  Place a soft cloth on your work area.
+Turnthe console upside down and place it on the cloth.  Using a
+phillips screwdriver (some units may require a nutdriver), remove the
+six coverretaining screws."
+
+"Turn the unit back over and gently lift off the top cover.  The small
+brown cover for the ON/OFF switch will come off at this point.  Weave
+the hand controllers through the holes in the top cover."
+
+"The insides of the Intellivision are now exposed.  You should be able
+toidentify he four major component groups.  There is a brown plastic
+platecovering and securing the logic board, transformer and power
+supply board.Remove the six screws holding down the plate, and place
+them aside."
+
+Be CERTAIN to see how the controllers are placed in this plastic plate,
+as they must be replaced in the exact same fashion in order for the top
+cover to fit securely.
+
+-----
+7.4 - General Troubleshooting
+
+Some of the procedures listed here will require the use of a volt-ohm
+meter.  All of this material has been taken from the aforementioned
+reference.
+
+Problem:  When you turn the game on the screen clears, title comes on,
+€but game will not play when hand controllers are pushed.
+
+Repair:  This normally indicates that on or both of the MPCBs must be
+cleaned or replaced.  Sometime you can open up the hand controller,
+clean it off, put it back together and it will work. (see 7.1 for info.)
+If you have cleaned or replaced both MPCBs and the problem still exists,
+then you may need a couple of new hand controller cables or a new logic
+board.
+
+Problem:  When you turn the game on, the screen clears (turns dark), but
+game title does not appear on the screen.
+
+Repair:  With the power switch in the OFF position, take the cover off
+the unit.  Unplug the transformer assembly from the power supply board.  
+Place the power switch in the ON position.  Using your VOM, test the 
+following voltages:
+
+        - The first readings you'll need to take are on the plastic
+        connector of the transformer assembly.  They are AC voltage
+        readings.  If the voltages do not read as follows, then replace
+        the transformer assembly, it cannot be repaired.
+                                                ________
+                        Yellow Lead -->   ------| |     |
+                          Blue Lead -->   ------| |     |
+                  Green/Yellow Lead -->   ------| |     |
+                         Green Lead -->   ------| |     |
+                         Green Lead -->   ------|_|_____|
+
+                        Yellow Lead to Blue Lead - 18 VAC
+                Green/Yellow lead to any Green - 9.25 VAC
+                      Green Lead to Green Lead - 18.5 VAC
+
+        - Turn the unit off.  Reconnect the transformer assembly to the 
+        power supply board.
+
+   - Turn the unit ON.  The next set of voltages are DC voltages and
+   should be read from the other end of the power supply board.  They
+   can be taken right off the cables leading to the logic board.  
+   There are two sets of leads; a small two prong lead near the top of 
+   the board, and a flat five prong lead near the bottom right corner. 
+   Place the black clip of your volt-ohm meter on the lead from the two 
+   prong clip farthest from you (if looking down, the is the lead 
+   closest to the upper right hand corner).  Place the other lead of 
+   your meter into the holes for the 5 prong lead each in turn, and 
+   note the voltages.  They should read as follows:
+        
+                                        _______
+                        +  5 VDC -->    | |_| |
+                        + 12 VDC -->    | |_| |
+                        + 16 VDC -->    | |_| |
+                        +  0 VDC -->    | |_| |
+                        -  2 VDC -->    |_|_|_|
+
+If any of the voltages are not present, the power supply board should be 
+€replaced.  If you want to attempt to repair the board, most of the
+problems are associated with the two voltage regulators, one being a
+7805 and theother being a 7812, or the two larger capacitors.
+
+(more information to follow as time and sources permit)
+--------------------------------------------------------------------------
+
+8.0)  Programmer Interviews:
+
+The two following interviews were condicted over Internet with a couple
+of ex-Mattel Electronics employees by Sean Kelly (skelly@bbs.xnet.com).
+
+*************
+Daniel Bass *
+*************
+
+>What was your line of work before you became an Intellivision
+programmer?
+
+I joined TRW right out of grad school, I was working there as a software
+engineer.  I had started in Feb. 1981, just as the Reagan Administration
+came into office.  The job I was supposed to work on was frozen, and
+therewas an enormous delay in getting any kind of security clearance,
+so thatlimited what projects were available to me.  As a result, I
+spent my firstyear there not accomplishing very much on a variety of
+small projects.
+
+>How/Why did you come to work at Mattel?
+
+In the spring of 1982, I heard on the radio of an Open House / Job Fair
+at Mattel Electronics, and I thought it would be a fun way to spend the
+afternoon - playing with their latest games and gadgets.  I was not very
+happy about my job at TRW, but I wasn't looking to go anywhere.  When I
+gotthere, I started talking to one of the managers about Dungeons &
+Dragons, a personal passion of mine.  He was looking for some people to
+develop a D & D style game for the Intellevision Keyboard, the big
+keyboard.  One thing led to another, and in a few weeks I was on board
+at Mattel Electronics.
+
+>Exactly which games did you personally program?
+
+Loco-Motion was the only game I programmed start to finish.  I also 
+programmed Tower of Doom but I only had the game about 80% done when 
+Mattel Electronics went out of business.  I had concentrated on the 
+special effects and mechanics, but I hadn't put in the game play and 
+strategy that I had had in mind.  A few years later, one of the guys 
+was contracting out with whoever it was that had bought up all the 
+Intellevision property (was that INTV?) to finish a bunch of the games 
+that were in development when M.E. went under.  Tower of Doom was one 
+of those games.  I had since moved from California to Massachusetts, 
+and so had not the equipment, nor time to do the completion.  He got 
+one of the other programmers to finish it up, but he didn't add any
+gameplay either, he just tidied up the loose ends so that the game had 
+an ending and wouldn't crash.
+€
+>Were you involved in programming any other games?
+
+Most games were developed by a single Game Designer, with the help of 
+certain "specialists."  There were a few graphic artists who designed 
+most of the graphics for most of the games, a few sound people who 
+developed most of the sound effects.  However, the total game
+developmentand integration was done by a single engineer.  
+
+There was a lot of testing, feedback, and reviews amongst the game 
+designers.  A significant portion of our work week was assigned to
+playing other people's games to find bugs, cite improvements and offer
+suggestions.To this end I worked on several games, but that wouldn't
+qualify as programming.
+
+I also worked on several projects that just didn't go anywhere, and were
+dropped.  The whole big keyboard project (for which I had been hired)
+wasdropped not long after I started working there.  It was deemed to be
+toexpensive to produce, so that it would be unsaleable.  Subsequently
+it wasredesigned, and code-named "LUCKI" [pronounced 'lucky'] for Low
+User-CostKeyboard Interface.  I started developing a Stock Market game
+for the LUCKI, when, one day, the arcade version of Loco-Motion turned
+up next tomy cubicle.  I watched and played several games, and I was
+hooked. Literally overnight I had developed an Intellivision prototype
+of thearcade game, and the rest, as they say, is history.
+
+>What was it like working for Mattel?
+
+It was an absolute blast!  The people there were all a bunch of
+overgrownkids, and management encouraged us to work on having fun as
+hard as getting product out.  The result was an atmosphere of great
+teamwork andcameraderie.  Some examples:
+
+    The annual office party would be held by renting out a local video
+    arcade and providing Pizza / Deli / Beer / Sodas and unlimited 
+    video games to all the staff and their families.
+
+    The arrival of a new piece of equipment would often lead to the
+    impromptu creation of a new game, using the packing materials 
+    in the hall.  Several of the managers in particular were
+    particulary creative in constructing these games.
+
+    Numerous arcade machines lined the walls of the work areas, and
+    people were encouraged to take breaks to study the games and 
+    improve our hand-eye coordination.
+    
+    All of Mattel Electronics and families were invited to Disney 
+    Studios for a private pre-release screening of "Tron" .
+
+>Can you fill us in on any 'unfinished' projects that may have been
+>in the works when Mattel Electronics went out of business?
+
+I'm afraid that I can't be much help here.  So I'll answer a different
+question.
+€
+Things started turning down for the entire video game market around
+the beginning of 1983.  I finished Loco-Motion, and in the summer,
+started working on Tower of Doom.  It was originally supposed to be
+a voice-optional game, and by the fall I was putting in many long
+hours focussed on getting that going.  Around October, Mattel had
+its first round of layoffs.  About 1/3 of the staff was gone over-
+night.  The atmosphere had become quite depressed, and I coped by
+becoming ever more involved with working on Tower of Doom, and
+blocking out what was going on around me.
+
+In November we had the second round of layoffs, and another third
+of the staff was gone.  It seemed like there was no hope left for
+the few of us that remained, but I kept plugging away at T-O-D,
+hoping that I'd have enough time to finish the game.  Unfortunately,
+in January 1984, Mattel Electronics went out of business, and that
+was that. 
+
+So, about all I remember from that time period was how depressing
+things got, and how desparate I was getting, hoping that I'd be
+able to finish T-O-D.
+
+>As game collectors, one of the biggest problems we have is finding out
+>exactly what games are out there to be had.  Do you know of any games
+>that may be in existence that are not listed on the 'complete' listing
+>I sent you?   
+
+I doubt I can help you here.  While I enjoyed playing the games, I was 
+never a 'walking encyclopedia' on them.
+
+>Do you still own an Intellivision system?
+
+Yes, although I never use it.  Now my son Aaron (9 years old) uses it.
+
+>What was/is your personal favorite Intellivision game? 
+                                                       
+Now you're going to have me make enemies of all people whose games I
+don't mention! :-)
+
+Well, leaving aside a personal bias for Loco-Motion and Tower of Doom,
+I really like Thunder Castle for its graphics and music.  It is such a
+pleasure to look at and listen to, that you can forgive it its simple
+game play.
+
+There was a Pinball game I liked, but I was always more into pinball
+machines than Arcade Video games.
+
+Buzz Bombers and Thin Ice were both cute.
+
+My favorite game when I was on mental overload was Shark! Shark!  I
+found that the colors, sound, and pace of the game was generally rest-
+ful and relaxing, unlike most video games which leave you all keyed up
+and strung out.    
+
+€---------------------------------------
+**************
+Ray Kaestner *
+**************
+ 
+> What was your line of work before you became an Intellivision 
+programmer?
+ 
+I came to Mattel straight out of school.  I was a EE major.  Initally,
+I hired on at Mattel to do handheld games, such as electronic football,
+basketball, etc.  then moved into the Intellivision group after a couple
+of years.
+
+> How/Why did you come to work at Mattel?
+ 
+After graduating from UCLA in 1978, I did a lot of interviewing. Most of 
+the local companies in Southern California were defense oriented and I
+wasn't particularly interested in going down that path at that time.
+I also talked to a number of chip companies in Silicon Valley.  By far,
+the most interesting job was the one at Mattel.  I had my doubts about
+Mattel's longterm stability, since they had recently completed some
+litigation about how they were running the business and also since the
+toy industry in general tends to follow boom and bust cycles.  However,
+in the final analysis, it came down to that sure sounds like it would
+be a lot of fun.
+ 
+> Exactly which games did you personally program?
+> Were you involved in programming any other games?
+ 
+In Intellivision, my games for Mattel were BurgerTime and I also did
+about half the programming on Masters of the Universe.   After Mattel
+got out of the business, I worked on Diner (a BurgetTime sequel) and 
+Super Pro Hockey for InTV, who took over the Intellivision business 
+from Mattel.   I also worked on the concept development for
+Super Pro Football, though I didn't do any of the programming.
+ 
+In handheld games, I wrote Computer Gin and World Championship Football.
+In addition, I also worked with a championship chess player on Computer 
+Chess.
+
+> What was it like working for Mattel?
+ 
+It was a blast!  The best part by far was the team that we had put
+together.   There was lots of diversity the talents and interests
+of members of the group and that added a lot to the quality of the
+games.   In fact, every year there is the annual layoff reunion
+party, where everyone gets together to reminisce and network and
+all those sorts of good things.  Next year is the 10th anniversary,
+so there may be some special festivities planned.
+  
+> Can you fill us in on any 'unfinished' projects that may have been
+> in the works when Mattel Electronics went out of business?
+ 
+When things went under at Mattel, I was working on a sequel to Masters
+€of the Universe with a lot of Escher-looking screens.  After a few
+mutations and change in characters and story line, I was able to finish 
+that game as Diner, a sequel to BurgerTime done by InTV.  When InTV 
+bought out the rights to Intellivision, they bought the right to all the
+work in progress at the time.  Much of the work that was fairly far
+along was later published by InTV, so you can see what was happening
+at that point.  After a while, we ran out of pre-existing work, and
+so we ended up doing some new work and other sequels to existing games,
+especially the sports titles.
+  
+> Do you still own an Intellivision system?
+ 
+Of course!  Since the machines tended to breakdown every so often
+and since I suspected that it would become increasingly difficult
+to get them fixed, I made sure to store away 3 or 4 Intellivisions
+in the attic to make sure that my kids would be able to see what
+I had done at Mattel.  So far, I have only lost one machine, so they
+were a lot more reliable than I thought they would be.
+
+> What was/is your personal favorite Intellivision game?
+ 
+Of the work that I did, I would probably rank Diner as my favorite,
+followed closely by BurgerTime.  I would also rank Night Stalker
+pretty highly.  I also played a lot of Sea Battle and would count
+that among my favorites. 
+ 
+> What is your line of work now?
+ 
+After Mattel went under, since there was so little commercial work
+around the area and no video games work anywhere at the time, I went 
+to TRW to work on defense systems.  Fortunately, I was able to get 
+involved with some pretty fun projects using early versions of Sun 
+Workstations and so I was able to have some fun, learning lots about 
+GUI and all those things that are still increasing in popularity.
+I even designed a paint program for a government project, probably one 
+of the only paint programs ever done specifically for the government.   
+ 
+Since then, I've moved over to the PC business and am doing Windows
+work for first for Software Publishing Corporation on Harvard Graphics
+for Windows. I also worked on their InfoAlliance project, which was one 
+of the first GUI database projects available. Unfortunately, though the 
+market was ready for such a product,SPC was not and the product died an 
+unfortunate death.Currently, I am at Borland working on future versions
+of Paradox for Windows.
+ 
+>Lastly,Dan said I had to ask you about your"Cheesburger Birthday Cake".
+>What gives???  8-)
+ 
+Dan's wife was taking a cake decorating class and one day they surprized me 
+and brought in a birthday cake shaped like a giant hamburger.  Obviously the 
+connection was BurgerTime. 
+
+--------------------------------------------------------------------------
+
+€9.0)  Sources for hardware and software:
+
+This list does not serve as an endorsement of these particular people/
+dealers, but rather as a source of information for the collector. People
+listed here have been known at some time to stock Intellivision games
+and/or accessories.
+
+(any suggestions??)
+
+--------------------------------------------------------------------------

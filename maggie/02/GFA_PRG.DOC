@@ -1,0 +1,167 @@
+
+                       - GFA PROGRAMMING -
+                               by
+                         DOGUE DE MAUVE
+                              from
+                           OVERLANDERS
+
+
+Yo, this is DOGUE DE MAUVE again! As you perhaps know, I am one 
+of the ULTIMATE GFA DEMO authors...
+So, I decided to write a few articles to teach some of our GFA 
+programming tricks, used in the UGD. You should have a look to 
+SAMMY JOE's articles, too. He explained in the previous issue 
+some great GFA commands that could be useful (perhaps not in 
+demos but you'll have to know the GFA very well to get the best 
+from it).
+
+First, let me make the things clear: when we say our demo is pure 
+GFA code, it means IT IS 100% GFA BASIC 3.03 code! The only thing 
+programmed in ASSEMBLER are the muzix (by MAD MAX) and the 
+interruption digirout (which was coded from GFA, in fact).
+It would have been a very stupid idea to include ASM in the UGD.
+If we knew ASM, we wouldn't have done a GFA demo...
+For some kind of resistant lamers, a few precisions:
+Compilated GFA programs are of course in machine executable code 
+which can be disassembled. So, if you've a look at it, you'll 
+find some ASM instructions, that's logical! Well, every real 
+programmer should be able to recognize GFA compiled when 
+disassembling a PRG file...
+For the total lamers, the use of the POKE instruction doesn't 
+mean we do ASM (could you imagine some guys stupid enough to 
+program an assembler demo in poking all ASM instructions from GFA 
+BASIC???). We use the GFA BASIC 3.03 to its (nearly) full 
+capacities, that's all! It means we take profit of the power of 
+the language itself (thanx to Frank Ostrowski, the GFA 
+programmer) and all its most powerful instructions (such as LONG, 
+CARD, BYTE, BMOVE...).
+
+Some people told us our demo wasn't original. They were absolutely
+right! But, of course, that wasn't our goal. We WANTED our 
+screens to look like the "classical" ASM screens by the best 
+democrews all around the world. We're now learning assembler and 
+be sure that we will try to do some REALLY ORIGINAL stuff ('coz 
+we can't hope being better than TCB, SYNC, OMEGA or TLB).
+
+Well, we're still eagerly waiting for your letters about the 
+ULTIMATE GFA DEMO. We will be happy to answer to the guys who 
+will join reply coupons (and to the others...).
+See our address at the end of the article (or find the HIDDEN 
+screen code in the UGD!).
+
+Now, here are a few basic routs to program in GFA BASIC 3.03 (for 
+beginners, mostly. The others will probably find them useless):
+
+First, you should always begin your GFA programs with two lines 
+of this kind:
+
+super%=GEMDOS(&H20,0) ! supervisor mode
+init                  ! call the initialisation procedure
+
+The supervisor mode allows you a total access to ST memory 
+(necessary for muzix or to access the whole palette ($FFFF8240)).
+You should put in the INIT procedure all the datas & values used 
+in the programm. Our INIT procedure usually looks like that...
+
+PROCEDURE init
+  RESERVE 35000         ! Reserve memory for GFA itself
+  rez%=XBIOS(4)         ! Get the resolution
+  xb%=XBIOS(2)          ! Get the screen address
+  '  key|=BYTE{&H484}         ! save keyboard (of no use here)
+  '  inter|=BYTE{&HFFFA09}    ! save interrupts (of no use here)
+  OUT 4,18                 ! disable mouse
+  BYTE{&H484}=0            ! disable keyboard clic
+  VOID XBIOS(5,L:-1,L:-1,0) ! low resolution
+  BMOVE XBIOS(2),&HFFFF8240,32  ! blackout
+  screen1%=XBIOS(3)
+  buffer%=MALLOC(32255)       ! create a screen buffer...
+  screen2%=screen2% AND &HFFF00  ! addresses==>256
+  VOID XBIOS(5,L:xb2%,L:xb3%,-1) ! to work on the buffer
+  ' 
+  ' Here you should put your calculations/graphix procedure calls 
+  '
+  CLS
+RETURN
+
+After that, you should try to make a very clear MAIN LOOP, the 
+center of the programm itself... Here's an example:
+
+' ********* MAIN LOOP ***********
+'
+REPEAT
+  VSYNC                                  ! Wait the next VBL
+  '
+  ' Here you should put the demo procedures (scrolls, sprites, dots...)
+  '
+  SWAP screen1%,screen2%                 ! Swap the two screen buffers
+  ~XBIOS(5,L:screen1%,L:screen2%,-1) ! Set the logical/physical screens
+  '
+  KEYTEST c|                ! Test the keyboard on one byte (0-255)
+UNTIL c|=32                 ! Wait for the spacebar
+'
+
+The VBL SYNCHRO & SCREEN-SWAPPING are the most important things 
+you've to learn if you wanna make something valuable. I'll try to 
+explain these very-easy-to-use-but-not-so-easy-to-understand 
+stuff...
+
+The screen in low & medium resolution is updated every 1/50" 
+We say the monitor works in 50Hz (monochromatic monitors work in 
+70Hz, which makes the screen very steady). So, it means that if 
+want your demo to be smooth, you've to do all your displays in 
+less than 1/50" (Wow! That's not that much!)
+But you don't want to begin your work on the screen when the 
+monitor already updated half of the screen. So, with the VSYNC 
+instruction, you will wait until the VBL (Vertical Blank Line or 
+something like that) is at the top of the screen. Then, you can 
+begin to display your graphix, sprites, scrolls and so on...
+
+Another problem can occur when the screen is updating the screen 
+section where you put your graphix. You can get some problems as 
+flashing graphix or a strange "bar" in the middle of the 
+display... Here comes the SCREEN SWAPPING method.
+
+The idea is simple, indeed. The ST uses two different types of 
+screen: the LOGICAL and the PHYSICAL ones.
+All the operation are done and the LOGICAL screen and this is the 
+PHYSICAL which is displayed on the monitor. Usually, these two 
+screens are the same. But, if you want, you can change it. So, 
+you can make many screen-operations (sprites shifting, masking...) 
+on the LOGICAL screen while the PHYSICAL remains unchanged.
+That's the SCREEN SWAPPING principle. 
+You make all your operations on the LOGICAL screen and, when 
+everything is ready, you exchange the LOGICAL & PHYSICAL 
+addresses. So, the audience will see the finished screen and you 
+will be able to work on the new LOGICAL (previously PHYSICAL) 
+screen. This operation can be easily done in GFA BASIC by using 
+the XBIOS number 5 fonction:
+
+VOID XBIOS(5,L:LOGICAL ADDRESS,L:PHYSICAL ADDRESS,RESOLUTION)
+
+There are faster ways to do it but this one is rather quick and 
+simple.
+
+OK, I hope you understood my explanations about those easy 
+programmation bases. Well, I suppose that many of you already 
+knew all this stuff but we must think to the beginners, too. 
+Don't you agree?
+
+For those who cannot wait, some sourcecodes of our UGD will soon 
+be available (have a look at TLB PD Library)...
+
+I'm waiting for all your comments, questions, suggestions, 
+donations or criticism about my articles and the ULTIMATE GFA 
+DEMO (please join reply coupons).
+You can write to:
+
+                         DOGUE DE MAUVE
+                         chez LE PENNEC
+                     12, avenue d'argenteuil
+                         92600 ASNIERES
+                             FRANCE
+
+            'Hope to read you soon and may the Mauve be with you,
+
+                                        DOGUE DE MAUVE (from OVR)
+
+

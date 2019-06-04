@@ -1,0 +1,203 @@
+06601030305800
+F0110030
+9[........................................................]001
+€[ Version 2.0 ]    maintained by vgriscep@wam.umd.edu
+This document is available on the World Wide Web at:
+http://www.wam.umd.edu/~vgriscep/lists/odyssey2
+/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\
+|   KEY:                                                              |
+|              Rarity:   C  = common                                  |
+|                        U  = uncommon                                |
+|                        R  = rare                                    |
+|                        ER = extremely rare                          |
+|                        NR= never released;  i.e. very, very rare!   |
+|                (My policy is simple:  things are only nonexistent   |
+|                 until someone finds one.)                           |
+|                                                                     |
+|              Gr (graphics rating):  1 = poor graphics               |
+|                                     2 = reasonable graphics         |
+|                                     3 = decent graphics             |
+|                                     4 = good graphics               |
+|                                     5 = excellent graphics          |
+|                                                                     |
+|              Pl (playability):      1 = tedious                     |
+|                                     2 = dry;  brief enjoyment       |
+|                                     3 = worth playing               |
+|                                     4 = fun                         |
+|                                     5 = irresistible                |
+|                                                                     |
+|(These are all subjective, of course.  If you see something with     |
+|     which you don't agree, I hope you'll let me know!)              |
+|                                                                     |
+|              Man?, Have?:   indicates whether I (VGR) own           |
+|                               instructions or game itself,          |
+|                               respectively                          |
+|                                                                     |
+|                      To remove these so you can put in your         |
+|                      own indicators of which games you own,         |
+|                      use the Unix command:                          |
+|                                                                     |
+|                        sed 's/|[A-Z].*$/|/' vgrlist > mylist        |
+|                                                                     |
+|                                                                     |
+|                                                                     |
+\- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/
+
+
+
+
+***********************************************************************
+*     Magnavox                                                        *
+***********************************************************************
+
+Name                                 Magnavox  Rarity  Gr  Pl
+                                     Model No.
+
+Speedway!/Spin-Out!/Crypto-Logic!     AC9400       C          |
+Blackjack!                            AJ9401       R   2   3  |
+€Football!                             AJ9402       U          |
+Sub Chase!/Armored Encounter!         AJ9403       C          |
+Bowling!/Basketball!                  AJ9404       U   2   3  |
+Math-a-Magic!/Echo!                   AJ9405       R          |
+Computer Intro!                       AC9406       U   2   3  |
+Matchmaker!/Buzzword!/Logix!          AJ9407       C   2   3  |
+Baseball!                             AJ9408       C   3   4  |
+                                      A?9409  
+Computer Golf!                        AJ9410       U          |
+Cosmic Conflict!                      AJ9411       C   3   4  |
+Take the Money and Run!               AJ9412       U   4   4  |
+I've Got Your Number!                 AC9413       R          |
+Invaders From Hyperspace!             AK9414       C   3   3  |
+Thunderball!                          AK9415       R   3   3  |
+Showdown in 2100 A.D.                 AK9416       C   3   4  |
+War of Nerves!                        AK9417       U          |
+Alpine Skiing!                        AK9418       U          |
+Out of This World!/Helicopter Rescue! AC9419       R   1   3  |
+Hockey!/Soccer!                       AK9420       U   3   3  |
+Dynasty!                              AK9421       U   2   4  |
+Volleyball!                           AA9422       R   2   4  |
+Electronic Table Soccer!              AA9423       R          |
+Pocket Billiards                      AC9424       R   3   4  |
+Pachinko!                             AA9425       R          |
+Casino Slot Machine!                  AA9426       U   3   2  |
+Blockout!/Breakdown!                  AA9427       C   4   3  |
+Alien Invaders---Plus!                AA9428       C   4   4  |
+The Quest for the Rings!              AC9429       U   4   5  |
+UFO!                                  AB9430       U          |
+Conquest of the World!                AB9431       U          |
+Monkeyshines!                         AB9432       R   4   5  |
+Keyboard Creations                    AC9433       ER         |
+The Great Wall Street Fortune Hunt    AC9434       R          |
+K.C. Munchkin!                        AC9435       C   3   4  |
+Freedom Fighters!                     AC9436       C          |
+Pick Axe Pete!                        AC9437       U   3   3  |
+S.I.D. the Spellbinder                AC9438       ER         |
+Nimble Numbers Ned!                   AC9439       ER         |
+Type & Tell! (voice)                  AC9440       R   2   2  |
+Smithereens (voice)                   AC9441       ER         |
+K.C.'s Krazy Chase! (voice)           AC9442       U   3   3  |
+P.T. Barnum's Acrobats (voice)        AC9443       ER         |
+                                      A?9444  
+Attack of the Timelord!               AC9445       ER         |
+Turtles                               AC9446       ER         |
+Killer Bees!                          AC9447       ER         |
+Power Lords                           AC9448       ER         |
+Pink Panther                          A?????       ER         |
+
+
+
+
+***********************************************************************
+*     Imagic                                                          *
+€***********************************************************************
+
+Name                                 Imagic    Rarity  Gr  Pl  Manual Have?
+                                     Model No.
+
+Atlantis                                           ER         |
+Demon Attack                                       ER  4   5  |
+
+
+
+
+***********************************************************************
+*     Parker Bros.                                                    *
+***********************************************************************
+
+Name                             Parker Bros.  Rarity  Gr  Pl  Manual Have?
+                                  Model No.
+
+Frogger                                            ER         |
+Popeye                                             ER         |
+Q*Bert                                             ER         |
+Super Cobra                                        ER         |
+
+
+
+
+***********************************************************************
+*     Videopac                                                        *
+***********************************************************************
+
+Name                              Videopac     Rarity  Gr  Pl  Manual Have?
+                                  Model No.
+
+Race!/Spinout!/Cryptogram!            01       ER           
+Pairs!/Space Rendezvous!/Logic!       02       ER           
+American Football!                    03       ER           
+                                      04
+Blackjack!                            05       ER         
+Ten Pin Bowling!/Basketball!          06       ER         
+Mathematician!/Echo!                  07       ER         
+Baseball!                             08       ER         
+Computer Programmer!                  09       ER         
+Golf!                                 10       ER         
+Cosmic Conflict!                      11       ER         
+Take the Money and Run!               12       ER         
+Playschool Math!                      13       ER         
+Gunfighter!                           14       ER         
+Samurai!                              15       ER         
+Depth Charge!/Marksman!               16       ER         
+Chinese Logic!                        17       ER         
+Laser War!                            18       ER         
+Catch the Ball!/Noughts and Crosses!  19       ER         
+Stone Sling!                          20       ER         
+Secret of the Pharoahs!               21       ER         
+€Space Monster!                        22       ER         
+Las Vegas Gambling!                   23       ER         
+Flipper Game!                         24       ER         
+Skiing!                               25       ER         
+Basket Game!                          26       ER         
+Electronic Table Football!            27       ER         
+Electronic Volleyball!                28       ER         
+Dam Buster!                           29       ER         
+Battlefield!                          30       ER            
+Musician!                             31       ER            
+Labyrinth Game!/Supermind!            32       ER            
+Jumping Acrobats!                     33       ER            
+Satellite Attack!                     34       ER           
+Electronic Billiards!                 35       ER           
+Electronic Hockey!/Electronic Soccer! 36       ER               
+Monkeyshines!                         37       ER               
+Munchkin!                             38       ER               
+Freedom Fighters!                     39       ER               
+                                      40
+Conquest of the World!                41       ER               
+Quest for the Rings!                  42       ER               
+Pick Axe Pete!                        43       ER               
+Crazy Chase!                          44       ER               
+Morse!                                45       ER               
+The Great Wall Street Fortune Hunt!   46       ER               
+Mousing Cat!                          47       ER               
+Backgammon!                           48       ER               
+Turtle!                               49       ER               
+                                      50
+Terrahawks!                           51       ER               
+Killer Bees!                          52       ER               
+Nightmare!                            53       ER               
+Looney Balloon!                       54       ER               
+Neutron Star!                         55       ER               
+Blobbers                              56       ER               
+Norseman!                             57       ER               
+4 In One Row!                         ??       ER               
+Air-Sea War!/Battle!                  ??       ER               

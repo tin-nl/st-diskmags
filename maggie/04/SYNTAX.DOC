@@ -1,0 +1,218 @@
+
+                    THE SYNTAX TERROR DEMO
+                    ----------------------
+
+                  programmed by Delta Force
+
+
+Today,  22.12.1990,  9.50  PM I'm siting in front of this  really 
+horrible  looking  ST  and think about how to  start  the  SYNTAX 
+TERROR  review.  This is the second day of the ST News  Christmas 
+Convention and issue four of MAGGIE is nearly finished!
+First of all some words about this issue and this article:
+Only about three weeks after MAGGIE 3 has been launched Sammy Joe 
+and myself (Timo) decided to bring a joined Christmas  Convention 
+Issue  launched by MAGGIE and Disk MAGAZIN!  I have to  tell  you 
+that  it  will be the last issue of the Disk  MAGAZIN.  I  myself 
+joined  the MAGGIE crew and I hope I'll be able to  increase  the 
+quality of this famous disk magazine.
+
+But now let's start talking about the SYNTAX TERROR DEMO:
+About  two  years ago three (really mad guys!) decided  to  start 
+programming a megademo for the Atari ST!  The four most important 
+members  of the Delta Force (member of the UnioN!),  New Mode  as 
+maincoder,  Chaos Inc. as second coder, Slime as main painter and 
+Questlord  as second painter tried to do this.
+After  two years of gambling,  doing nothing than  shhhiittt  and 
+also  sometimes coding they present their megademo containing  25 
+screens!!!!!!!!!
+
+                               ***
+
+OK. This is an interrupt by someone who should not be typing here 
+and  who generally has nothing to do with "Maggie" or  something. 
+It's Cronos from the Amazing Cracking Conspiracy, who may (or may 
+not)  be  known to be working for "ST NEWS" (which is  a  bit  of 
+competing magazine on disk, I guess).
+Well. Since I suppose I am not very welcome to type a lot here, I 
+guess I'd better sign off.  I have more to do here (as you  know, 
+this   article  is  being  written  at  the  infamous  "ST   NEWS 
+INTERNATIONAL CHRISTMAS CODING CONVENTION" which just happens  to 
+be the event of the decade (maybe even of the century,  but  I'll 
+leave that up to others to say).
+Bye.
+
+Hello. This is the Morderous Gnaerhelm from Norway. I just wanted 
+to   say  that  the  "ST  NEWS  INTERNATIONAL  CHRISTMAS   CODING 
+CONVENTION" is the most major event of the century.
+Bye.
+
+Hello. Here's Cronos again. See what I mean?
+Thanks Morderous.
+
+                               ***
+
+These are words by Richard the 'Cheesemaker' and I returned to my 
+ST when he was writing these few sentences!  Let's return to  the 
+Syntax Terror Demo and start with the loader. After inserting the 
+disk  and  surviving the loader you crash into  an  average  menu 
+which looks a bit as the 'Life is a bitch'-mainmenu!
+A  simple coloured scroller,  some stars and a cycle-scroller  to 
+choose the different screens built up this menu. Let's choose one 
+screen after the other and inform you about what happens:
+
+1. Sum big Shapes:
+This is one of these screens which might be difficult to  program 
+(caused by the big shapes!  I don't know!!!), but it looks really 
+boring.  Next  to  this shapes saying 'The Union'  you  only  see 
+another simple rasterscroller (don't give up,  great screens will 
+follow!).
+
+2. Soko Ban:
+First  time  in history Delta Force managed to bring  a  complete 
+game called 'Soko Ban'.  The game also contains a really  colour-
+full introducing screen! After this you can choose from 50 levels 
+(original  PC level design!) and get the real Soko  Ban  feeling. 
+Final very important feature: the highscore will be safed automa-
+tically when leaving the screen!! Fantastic idea !!!!!
+
+3. Colourshock III:
+This is the third part of the story called:  'How can I create  a 
+further screen containing as much colours and HBLs as possible!". 
+Well done, but I think we had enough shocks.......
+
+4. Big Border:
+You'll understand this title when you see the screen: it contains 
+the biggest borders ever programmed on the ST!  In the middle  of 
+the screen you find (when looking really close!) a 100*100 pixels 
+small  screen (all around nothing else than dark  border!  Really 
+difficult  to  program!!!!!).  Within this screen  you  find  the 
+smallest scroller (5 pixels!) and the smallest distorter! This is 
+the stuff we need .... 
+
+5. Snurkel Twist:
+Another part of the story 'how can I program the most  unreadable 
+scrolline?'. Sometimes it is very difficult to follow the cycling 
+and  waving scroller!  You also get a very big logo  ...  average 
+screen .....
+
+6. The Ball-Scroller:
+An idea transfered from the Amiga: a scroller depending on bballs 
+which  move in various waveforms.  Also some other shit  I  can't 
+remember yet! If you wanna know it, just try to get the demo ....
+
+7. Match it!
+Game number two is stylled as 'Shanghai' and 'Turn it'!  This  is 
+one  of these games you can play for hours and hours.  Also  this 
+game contains 50 levels and a highscore which you can safe to the 
+disk! Again very well done .......
+
+8. Sukka Screen:
+Lots  of  things  are  moving around  within  this  screen  as  a 
+backgroundscroller,  little scrolllines, a logo and some sprites. 
+'A lot, but nothing special!!!!'.
+
+9. The Lamertest:
+Within  this  screen you have to answer 10 out of  128  questions 
+under  the topic 'Atari ST'!  According to the number of  correct 
+answers  you  get the title 'Lamer' or you get it  not.  A  funny 
+idea again coming from the Amiga , but I start wondering  why the 
+ST-crews are not able to have these ideas .....
+
+10. BeeCeeDee Two:
+Another  really well designed and programmed screen containing  a 
+lot  of  action  as several different sized  scrollers  and  some 
+distorters!!!! Well done !!!!
+
+11. The official greetings:
+A mega-giga idea is brougth to us with this screen!  Here we  get 
+all the greetings we can't find in the other  scrollers!  Special 
+feature:  the screen contains most of the logos used by the crews 
+mentioned in this screen!!! Weeeeeeeelllll ddddddone!!
+
+Now  I  have  to  tell you something  about  the  so  called:'ICC  
+Competition Screens':
+
+1. Twentyfourhoursscreen from Nick of TCB:
+This   screen   contains  sync  scrolling   (whole   screen),   a 
+rasterscroller  and  some  little vector  grafixx.  24  hours  to 
+produce  such  a screen?  You must come from Sweden  to  do  this 
+...... fantastic ....... !!!!!!
+
+2. Onedayscreen by Ford Perfect (BMT):
+Another  screen built within one day!  Only a big scroller and  a 
+moving sinus curve!  Simple, but very nice ... well done (only 24 
+hours time!).
+
+3. Realtimezoomer by the Gigabyte Crew:
+This  is  one  of  these mathematical  but  very  boring  screens 
+although they might be very difficult to code.  You see a zooming 
+logo and ... and .... hmmm, and some further grafixx!
+
+Now the guest screens:
+
+1. Next:
+After  activating  this  screen you see  a  simple  colourcyling-
+moving-floor  (just don't know how to explain this!) and  a  lame 
+scroller,  but after a few seconds the screen starts 'living' and 
+a  zooming logo and a cycling scrolline increase the  quality  of 
+this screen.
+
+2. The Respectables:
+The Respectables present their second screen and they strike back 
+with  a  distorted  logo (only a part of  their  name!),  a  mega 
+'Respectables'  swinging  through the screen (just  look  at  the 
+interesting shadow!),  a floor-scroller (again this special  type 
+of  thing,which  is very difficult to explain) and  a  low-border 
+scrollline. Well done Respectables!!!!!!
+
+3. TEX:
+It  is  very  difficult to tell you anything  about  this  screen 
+because  of the great amount of things which happen!  Some  words 
+about this well screen which caused a lot of trouble:
+Daryl of TEX had to program this screen and about one day  before 
+launching  the SYNTAX TERROR DEMO he found several errors he  had 
+to correct. A lot of trouble till the demo could vbe finished !
+
+4. Legacy:
+An average screen a great circle-scroller .......
+(Just  one word from me,  Fury (the author of  the  screen),  the 
+screen's  not as good as it could have been had I had more than  a 
+week to make it...)
+
+5. Multicoloursounddisplay by Level 16:
+The most colourful equalizer ever programmed on the Atari  ST.  A 
+really  fantastically realized screen,  although  theirs  nothing 
+more than the colours!!!!!!
+
+Now some words about one of the two Hiddenscreens:
+If you want to activate the Hiddenscreen number 1 , just move the 
+blinking line over the Delta Force member list, so that you can't 
+see  this  cursor  anymore.   Than  you  have  to   enter:"HEMMEL 
+HERRGOTTSJESASWILLA".   IMPORTANT:  THIS  IS  NO  JOKE,  BUT  THE 
+SENTENCE YOU HAVE TO ENTER,  IF YOU WANNA GET INTO HIDDEN  SCREEN 
+NUMBER 1.  All freaks can search the second hidden screen and  if 
+you find it send us the way to get in .....
+
+This  is  all we can say about the screens you can  find  in  the 
+SYNTAX  TERROR DEMO!  Caused by the fact that I'm very tired  and 
+that  I  have to do some further work for MAGGIE 4  I'll  try  to 
+write a short last sentence. At the moment the SYNTAX TERROR DEMO 
+is  the  best mega demo ever produced on the ST!  Let me  try  to 
+explain this:
+
+1. Syntax Terror has got most screens on one disk (25 Screens!)
+2. First  time  in demo-history you get two COMPLET games with  a 
+demo. 
+3.  You  get some really funny and well done screens within  this 
+demo.
+
+But  theirs  also a little piece of demostuff I  have  missed:  I 
+would  like to have one screen containing  some  digisounds,  al-
+though  this  would  have the effect that we  could  not  get  25 
+screens on one disk .......
+
+                                   Timo Schmidt (T & T-SOFT)
+
+
+

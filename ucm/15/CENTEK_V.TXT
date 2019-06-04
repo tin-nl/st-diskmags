@@ -1,0 +1,194 @@
+{*f1CLASS 4'S PART{*f0
+
+-------------------------------------------------------------------------------
+This day, the CLASS 4 (CENTEK) team was very disappointed to read these
+following sentences in an official email from TITAN :
+-------------------------------------------------------------------------------
+
+-----Original Message-----
+From: Core Design <sales@titan-bss.co.uk>
+To: Core Design <sales@titan-bss.co.uk>
+Date: 12 May 1999 12:17
+Subject: CORE PRESS RELEASE - IMPORTANT!!!
+
+               CORE DESIGN - PRESS RELEASE
+                       10th MAY 99
+<><><><><><><><><><><><><><><><><><><><><><><><><><>
+
+.....
+>NOTE: We understand the Centurbo2 is no longer fitted with an expansion
+>through port which will make it difficult to fit Eclipse. We believe
+>there is a technical problem with Centurbo2 in this area.
+>
+>Tempest, however, WILL be fitted with an expansion port!
+.....
+------------------------------------------------------------------------
+
+
+CLASS 4 can't accept this free stupid attack from TITAN !
+So, here is our official answer
+
+- It is not the first time that Titan send some bad and false
+information
+about the CENTurbo 2 accelerator board !
+- Never have we fight Titan !
+- Never have we send an official email with such bad things like those
+from Titan !
+- We have nothing (I should speak in the past !) againt Titan :
+where is a WEB link on our WEB site !
+NOT in the other SENSE !!! Hum....
+
+But if Titan wants fight, we are ready and have many things to tell
+about
+Titan products like NEMESIS by exemple !!!
+
+Is Titan afraid by the CENTurbo 2 to sell the mighty TEMPEST ?
+CENTurbo 2 is running and produced : 192 units were already sold !
+And what about the Tempest card ?
+
+Hum, firstly it was said to us it is a COLDFIRE 5102 board..
+Great, but it was said to you it will be 100 % compatible...
+Hum, a stupid affirmation when you know (like us since may 1997 at a
+Motorola Seminar) that the 5102 is a 68EC040 body !
+(the other familly 52xx,53xx,54xx are NOT COMPATIBLE with the 68000
+instruction set !!!!  5102 was produced by Motorola to permit a
+transition of the Motorola customers from 68000 builded hardware to
+COLDFIRE builded hardware ! The 5102 is surely 'has been' now... ).
+For people who don't know what do the letters EC mean, I have GREAT
+PLEASURE to explain you what Titan forgot to tell You :
+
+EC means NO PMMU AND NO FPU (COPRO) !!!
+The consequence of using a 5102 on an Atari system is direct :
+- NO MAGIC
+- NO MINT (or MULTI-TOS)
+- NO LYNUX
+- NO OUTSIDE and all other virtual memory systems !!!
+- in general, no MEMORY PROTECTION very needed for inteligent and
+serious MULTITASKING OS !!
+
+- NO COPRO --> no POV by example !
+
+- Sure, now are you happy to know that the 5102 at 33 MHz is performing
+36 MIPS that is superior to the 68EC040 that is performing only 27 MIPS
+at 33 MHz too ??
+Hum..... me not !
+
+I continue the incredible story of TEMPEST :
+Recently (I don't know exactly when because we have surely to never
+remind what was TEMPEST before...) you stoped to hear about the stupid
+idea of COLDFIRE on the TEMPEST ...
+
+It is replaced by a POWER PC !
+Great, good idea to do like on Amiga market (you should adapt an Amiga
+card on the Falcon, it may be quicket to design !).
+
+The only problem is that you need a software emulator to run the 'atarti
+software and OSs.
+And the worst is that the bad and old TOS and software are in general
+bad programmed ! So, it may be an urgent necessity to develop and modify
+the general 68000 code emulator to adapt special dedicated routs for a
+specific old software ! Hum, great and very big job, guys ! Good luck !
+
+Seriously, the radical change of CPU on the TEMPEST proove only one
+thing :
+This product is only a nice amazing project and no market, no technical
+studies was previuosly done !!!
+By example, ask to Titan why they didn't kept the 5102 ??
+
+My long experince designing the PHENIX computer during the last 2 years
+is that it is very important to perfectly know the offer of the
+electronical componeent market to do the best choices corresponding to
+the price, the market and the needs of the customers you have to follow!
+And at last you have to take time to test 100 % the prototyped product
+before to produce and sell.
+
+If you don't do that, you go to a financial catastroph !
+Ask to some reseller in UK like SYSTEM SOLUTIONS what they think about
+NEMESIS card !?
+And it is not a CENTEK  speech, it is an expenrienced, respectable
+and honnesty distributor's speech ...
+
+Keep this in mind each day you are waiting for a product that nobody has
+never yet seen ! (take that in your figure, Titan !).
+
+And now, you have to know that there is no probem with the expansion
+connector of the CT2 because there is no more !
+The CT2A had a 32-Bit expansion connector that is a extended version of
+the Falcon expansion connector.
+The presence of this connector was firstly to allow us to plug our
+internal parts of the PHENIX future computer to debug and realize the
+software drivers !
+In the same time, a complete pin out and hardware documentation was
+available on our WEB site to allow hardware developers to do something !
+Hey Titan, you never saw this documentation ????!!!
+
+Unfortunately, only one serious project arrived at CENTEK :
+A TEXAS 32C40x DSP card using the full 32 Bit DATA bus of the CT2 !
+But the author never terminated (an atari market speciallity !) this
+nice project...
+It is sure people spent more time to speak (bla bla bla) than to work to
+produce hard and software on Atari !!!
+
+At Centek, 3 cards where designed :
+- DSP56301 100 MHz  to avaluate the DSP of the PHENIX computer.
+This card was presented at NEUSS october 98 and SILICIUM mars 99 in
+France.
+- PCI/USB card to avaluate the PCI bus and the USB keyboard for the
+PHENIX.
+  This card was presented with a S3 DX VIRGE at NEUSS April 99.
+  It was running with 1600*1200 16-Bit graphical mode and DOLMEN OS !
+- FAST-RAM EDO card to develop the new EDO controler of the CT2B.
+
+Hey Titan, explain to all people how it is possible to see on the stand
+of CENTEK 2 cards running on the CT2A if "we have a problem with the
+expansion connector" like you stupidely told, or would you prefer
+English Justice asks you (we will nextly install a mother company in
+your country !) ???
+
+Finally we have removed the expansion connector on the CT2B because :
+- we didn't need more longer to avaluate the parts of the Phenix AND
+- no other hardware development were planned at CENTEK or outside CENTEK
+AND
+- we found an other solution to connect the 16-Bit card of the falcon
+(EXPOSE, ECLIPSE, etc...) on the CT2 B :
+  the card must be installed between the motherboard and the CT2.
+  There is only a MAL/MAL connector to solder on the card and plug the
+CT2 on it.
+
+We tried that with a German graphical card. It works fine !
+
+And if you have a problem with a such fitting, CLASS 4 resolves your
+problem FREELY !
+MORE INFORMATION ON THE WEB SITE OF SYSTEM SOLUTIONS (link on our WEB
+site).
+
+***********************************************************************
+So, to do a conclusion :
+
+You CAN buy a CT2 and buy an ECLIPSE card !
+The Eclipse card has an expansion connector : so, you have nothing to
+solder !
+
+You have not to wait an other accelerator board !
+**********************************************************************
+If Titan wants again fight Centek, no problem ! Ready to receive...
+But I'm sure they are not so stupid people and fairplay do to good
+buiseness without to have to speak in a such bad/pitty manner about
+EXISTING products !
+
+
+And I apologize me for my bad english...
+
+The team &
+Rodolphe Czuba
+Technical Director
+
+CLASS 4  (CENTEK)
+42, rue Delegorgue
+F-62970 COURCELLES-LES-LENS
+FRANCE
+Tel: +(33)-3-2-1-409-400
+Fax: +(33)-3-2-1-746-449
+http://www.centek.fr
+vxp@imaginet.fr
+-------------------------------------------------------------------------------

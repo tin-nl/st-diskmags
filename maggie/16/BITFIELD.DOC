@@ -1,0 +1,205 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[....................................................]0010
+€
+                    MC68030 BIT-FIELD INSTRUCTIONS
+                    ------------------------------
+
+
+
+by Mr Pink / Reservoir Gods
+
+
+One of the most interesting  aspects  of  the new 030 instructions are
+the bit field operations. (They  are  also  present  on 020 chips, but
+those of us who have upgraded from the 68000 will not have encountered
+them before).
+
+When coding in assembly, most  operations  concentrate on bytes, words
+and longwords which are 8,16 and  32  bits long respectively. The only
+operations exclusively revolving  around  individual  bits  were BTST,
+BCHG, BCLR and BSET which only  operated  on  one bit at type and were
+byte oriented (you could only  access  one  bit  in a particular 8 bit
+field in one instruction).
+
+Other instructions were  useful  for  altering  individual  bits which
+could be ANDed, ORed and shifted about with functions such as ROL, ASL
+ROXL, and LSL. But to  extract  and  alter  a  specific number of bits
+would involve a number of instructions and require the use of a number
+of  data  registers.  One  of  the  main  theories  behind  a  Complex
+Instruction Set is that operations  like  this  should be supported on
+chip, you shouldn't have to make up  a series of operations to do such
+a relatively simple task.
+
+All this has been remedied with the bit-field operations of the 68030.
+All these instructions are capable  of  working  on user definable bit
+fields of sizes from 1 to 32 bits. For each instruction you specify an
+offset (in bits)  to  the  start  of  your  bitfield  from the current
+specified effective address (or data register)  and then the length of
+your bitfield.
+
+€When using data registers it  is  important  to remember that they are
+treated as 32 bit long bitfields and the starting offset (0) is bit 31
+of the data register, which is the  opposite way round to what you may
+think. So to just access the low  word  of a data register your offset
+would be sixteen, and to  access  the  low  byte  of the low word your
+offset would be 24.
+
+offset (in bits) 0........16...24
+data register    |    |    |    |BYTE|
+                 |         |  WORD   |
+                 |        LONG       |
+
+The same principal applies when operating on an effective address. The
+offset is the number of bits  to  be added from your effective address
+to the start of the bitfield.
+
+The following instructions are available
+
+
+BFCHG (Bit field change)
+------------------------
+
+//format:       BFCHG <ea>{offset:width}
+
+This complements the specified bitfields.
+
+example:        BFCHG   d0{16,8}
+
+before:         d0      %00000000000000001101001111111100
+after:          d0      %00000000000000000010110011111100
+                                         |bfield|
+
+
+BFCLR (Test bit field and clear)
+--------------------------------
+
+//format: BFCLR <ea>{offset:width}
+€
+The specified field is zeroed.
+
+
+example:        BFCLR   mymess{5:10}
+
+before:         mymess  %01111111011111111
+after:          mymess  %01111000000000011
+                              |<bfield>|
+
+
+BFEXTS (Extract Bit Field Signed)
+---------------------------------
+
+//format: BFEXTS <ea>{offset:width},Dn
+
+Extracts a bit field from specified effective address, sign extends to
+32 bits then places in the specified data register.
+
+
+example:        BFEXTS  d0{2:3},d1
+
+before:         d0      %00101000
+                           | |
+
+after:          d1      %11111111111111111111111111111101
+
+
+BFEXTU (Extract Bit Field Unsigned)
+-----------------------------------
+
+//format: BFEXTU <ea>{offset:width},Dn
+
+Extracts a bit field  from  the  specified  effective address and zero
+extends to 32 bits then places the result in specified data register.
+
+
+€example:        BFEXTU  d0{2:3},d1
+
+before:         d0      %00101000
+                           | |
+
+after:          d1      %00000000000000000000000000000101
+
+
+
+BFFFO (Find First One in Bit Field)
+-----------------------------------
+
+//format: BFFFO <ea>{offset:width},Dn
+
+This searches the bit field for  the  most significant bit that is set
+in a bit field. The offset of  this  bit added to the specified offset
+in the instruction is placed in the destination data register.
+
+example         BFFFO   d0{4:5},d1
+
+before:         d0      %11110001111110000
+after:          d1      7
+
+
+BFINS (Insert Bit Field)
+------------------------
+
+//format: BFINS Dn,<ea>{offset:width}
+
+Inserts a bit field taken  from  the  low  order bits of the specified
+data register into a bit field at the effective address location.
+
+example         BFINS   d0,d1{7:6}
+
+before          d1      %10101100101110000111110111110111
+                d0      %00000000000000000000000000111000
+                                                   |field
+€
+after           d1      %10101101110000000111110111110111
+                                |field
+
+BFSET (Test Bit Field and Set)
+------------------------------
+
+//format: BFSET <ea>{offset:width}
+
+Sets all bits in the specified bit field.
+
+example         bfset   d0{10:16}
+
+before:         d0      %00001001010000100010000100001001
+after:          d1      %00001001011111111111111111001001
+                                   |<- bit field->|
+
+BFTST (Test Bit Field)
+----------------------
+
+//format: BFTST <ea>{offset:width}
+
+This tests the specified bit field to see if any bits are set and sets
+the condition flags accordingly.
+
+
+All bit field instructions affect the status register in the same way.
+The zero flag is set if all the  bits of the field are zero, otherwise
+it is cleared. The Negative flag is set if the most significant bit of
+the field is set,  otherwise  it  is  cleared.  The overflow and carry
+flags are always cleared.
+
+The 'offset' and 'width' specifiers  in  these instructions can either
+be defined as immediate data values or data registers (but not address
+registers).
+
+I hope this has been of use to  some Falcon coders. If you want a more
+€in depth discussion of  bit  field  operations  I recommend Motorola's
+book on the 68030 'A concise 32  bit processor users guide' if you can
+still find it (as it seems to be out of print).
+
+I got my  information  from  Motorola's  programmer's  reference guide
+which is a handy  little  book  that  cover  all  the  chips up to and
+including the 68040, although not in the  depth that I would like, for
+example it doesn't give  instruction  timings.  However  it is still a
+very useful book and comes highly recommended.
+
+Don't forget to look out  for  the  Reservoir  Gods productions on the
+Falcon - Tautology, Power Mouse, God  Paint and Bubble Bobble 030. And
+there is more to follow! Keep the Falcon alive!
+
+

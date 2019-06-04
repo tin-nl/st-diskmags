@@ -1,0 +1,306 @@
+--------------------------------------------------------------------------------
+                     Ray spends some time building a theory
+--------------------------------------------------------------------------------
+		   
+Hiya fellas!
+
+A little word in  advance: this is a  theory so please don't wonder why I didn't
+write any actual  code in here. To make the idea as understandable as possible I
+used some c-style pseudo-code.
+
+Browsing the  net I found some  document that described  an advanced ray-casting
+method which enables the computer to render a *DOOM*like maze without using bsp-
+trees or anything even more complicated.
+(note: I said "doomlike" and  I meant "doomlike" not "wolf3d-like" like  some of
+those fakie  docs floating around  out there tend to do - i.e. sector based maps
+and non-orthogonal walls).
+
+I hope you're familiar  with the term "raycasting", if this is not the case here
+is some very brief introduction.
+Raycasting is a method to render a 3d scene based on a 2d map usually consisting
+of sqare-cells. Depending on  the player's position  on that  2d map as  well as
+depending on  his facing we cast out one ray for every screencolumn until we hit
+a cell with  a content <> 0 which means that we've hit a wall - once we have hit
+a wall we work  out the distance between the player and this wall-hit to scale a
+textureslice  to the apropriate  height into the  current screencolumn  centered
+vertically.
+This way our scene  is build sliver by sliver. It's exactly the techniqe used by
+Wolfenstein 3d  and however  it has some  drawbacks like  the fact  that all the
+walls have to be orthrogonal meaning the angle between 2 walls will always be 90
+degrees.
+
+Now what the hell is special about this advanced method?!
+Well, first  of all  it's quite  easy to  code compared  to let's say a bsp-tree
+engine like the one used  in id-softwares original Doom. Another thing is that I
+found it  perfectly  suitable for  an 8Mhz ST  as it  doesn't  perform  too many
+instructions  per screenslice - comparing  it to "conventional  raycasting" it's
+not *much* more cycle consumptive.
+As  you  all  know, there  already  are  some  wolf3d  clones  for the ST/E like
+Substation, Destruction Imminent  or at last  my own hopefully upcoming  port of
+the original game - hence  an ST should  be at least  able to  render a doomlike
+maze, even if this wouldn't become a complete game.
+
+(I'm writing  this text to inspire  you, maybe you'll use this technique in your
+demos or  anything - concerning me, I'm busy  with Wolfenstein 3d  atm, so  this
+isn't supposed to become more than a theory, at least for this time - maybe I'll
+use this algorithm to build something after wolf3d, though, who knows :) ).
+
+So let's get  into it - the first striking  diffrence is that our 2d map will no
+longer be cell-based, we'll  rather use sectors that can be defined  without any
+restrictions except for the 16 or 32bit-ranges.
+First of  all we'll have  to define  a list  of lines  that will  be used in our
+world, those  represent our walls (this is done by using the start and end-point
+of those  lines - x1,y1/x2,y2) - now every sector consists of a number of walls/
+lines  used by  this sector  followed by  an according  bunch of pointers to the
+line-list determining the sector's edges.
+Of course, two or more sectors might be connected by something like a "portal" -
+those sector-transitions  will be marked  as transparent walls, possibly using a
+flag in our  line-list, if you choose a certain range for the line's coordinates
+fx. [0;32767] - you  might or' that  flag into  the 15th bit  of x1 to save some
+space (x1,y1,x2,y2 ought to be words in my case).
+Ok, that much on the world-representation.
+  
+Next thing, just  like in  wolf3d, is  to check  intersections  between rays and
+walls. What you  basically do again  is tracing out a ray for  each screencolumn
+While calculating intersections with walls.
+And here it  differs *alot* from wolf3d  because instead  of casting through the
+map  cellstep  by  cellstep  and then  checking  for a  wall, you  will  have to
+calculate  an intersection  with every  wall (line) of  the sector the player is
+standing in, then, as  soon as you find a "portal" you recursively jump into the
+sector that  is connected through  this transition (hence  it should  be save to
+build a portal-list for every sector keeping  the number of the  next sector for
+each transition, too) and so on.
+
+Since both your ray and all the walls are lines you might equate and resolve the
+following way:
+
+     ray(x)  = rayslope*x  + b1    ; the ray's equation
+     wall(x) = wallslope*x + b2    ; the current line's equation
+
+The ray's  slope depends  on the  current angle of the ray and it's equal to tan
+(rayangle). the wall's slope can be computed  as (y2-y1)/(x2-x1) - pre-calculate
+and put it into the line-list for optmization.
+
+To make them intersect, do this:
+
+     wall(x)       = ray(x)
+     rayslope*x+b1 = wallslope*x+b2
+
+We want x, but  b1 and b2  are unknown - to  get rid  of this  problem  make the
+coordinate-system's  origin  move  around  with  the player, meaning the player-
+position will be the origin and b1 will be 0:
+
+    b2 = (playerx-x1)*wallslope+(playery-y1)   (x1 and y1 are taken
+						from the current line)
+
+  further:
+
+    rayslope*x = wallslope*x+(playerx-x1)*wallslope+(playery-y1)
+    x*(rayslope-wallslope) = (playerx-x1)*wallslope+(playery-y1)
+
+    x = (playerx-x1)*wallslope+(playery-y1)/(rayslope-wallslope)
+
+  that's all, now you may easily use the wall's equation to calclate y:
+
+    y = y1+(x-x1)*wallslope
+
+  and there's your intersection with the current wall.
+
+Well I hear you say, "Which intersection will be the right one ?". That's easy -
+as you might  have noticed, you'll at  least find as many intersections as there
+are lines in the current sector.
+To find out  the proper intersection you first of all sort out all intersections
+that will be behind the player - you get those intersections since your ray is a
+straight line, following ascii-pic might visualise it:
+				  
+       intersection in front of the player    
+              ____ ___________________    
+             /     \                  |
+            /       \ ray             |
+           /         \                |
+          /           \               |
+         /             * player       |
+        /  sector       \             |
+       /                 \            |
+      /___________________\___________|
+				    
+          intersection behind 'em
+
+ 
+So before you  determine the distance  based on an intersection you have to find
+out if  this intersection  is in  front  of the  player, i.e. you  test if  it's
+visible and if you have to calc the distance, at all.
+This can be done  by comparing the quadrant of the ray and the quadrant in which
+the  intersection  appears - for  the ray  just use  the rayangle, here  is some
+pseudo-code:
+
+  byte GetRayQuadrant(Angle)
+  {
+     if (Angle >= 0deg && Angle < 90deg) return 1;    // 1st quadrant
+     if (Angle >= 90deg && Angle < 180deg) return 2;  // 2nd    "
+     if (Angle >= 180deg && Angle < 270deg) return 3; // 3rd    "
+     if (Angle >= 270deg && Angle < 360deg) return 4; // 4th    "
+  }
+
+
+  the intersection's quadrant might be determined using deltaX and deltaY
+  (deltaX = PlayerX-IntersectionX, deltaX = PlayerY-IntersectionY):
+
+  byte GetIntersectionQuadrant(deltaX,deltaY)
+  {
+       if (deltaX > 0) 
+       { if (deltaY > 0) return(4); else return(1); }
+       else
+       { if (deltaY > 0) return(3); else return(2); }
+  }
+
+
+The next  problem  is that  in front  of you  there'll  often  be more  than one
+intersection because you don't take into acount where a wall starts and where it
+ends, meaning  that your intersection-test doesn't mind if a ray just passes the
+current wall, actually.
+This can be solved easily since the intersection that has the shortest  distance
+to the player will be the valid one.
+
+Implemented in pseudo-code your intersection test could look the following way:
+
+  word TestIntersection(Sector,Rayslope,Angle) // returns the distance to
+  {                                            // next valid intersection
+
+  int     deltaX,deltaY,
+     xs,ys,        // player to wall deltas
+     distance,
+     newdistance,
+     x1,y1,x2,y2;
+     ix,iy;        // intersection
+  byte    rayquadrant;
+
+  float   wallslope;
+
+  word    wall;
+  offset  wallnumber;
+  
+   distance = 32767; // some great value
+
+   rayquadrant = GetRayQuadrant(Angle);
+
+   for wall = 0 to SectorList[Sector].number_of_walls-1 
+	{
+	   // get the right wall
+     wallnumber = 
+        WallOffsetList[SectorList[Sector].firstpointer+wall];
+
+	   // recursively cast into the next sector if the wall is a portal
+	   if (linelist[wallnumber].portal == true) { distance = 
+	      TestIntersection(portallist[Sector,wallnumber],Rayslope); }
+	   else
+	   {
+	    x1 = linelist[wallnumber].x1;  // get apropriate line
+	    y1 = linelist[wallnumber].y1;
+	    x2 = linelist[wallnumber].x2;
+	    y2 = linelist[wallnumber].y2;
+
+	    wallslope = linelist[wallnumber].slope;
+
+	    xs = playerx-x1;
+	    ys = playery-y1;
+
+	    // compute intersection
+	    ix = xs*wallslope+ys/(rayslope-wallslope);
+	    iy = y1+(ix-x1)*wallslope;
+
+	    deltaX = playerx-ix;     // intersection deltas
+	    deltaY = playery-iy;
+	   
+	    // calcualte distance if intersection is visible
+	    if (GetIntersectionQuadrant(deltaX,deltaY) == RayQuadrant) 
+	    {
+	       // use 1/cos(Angle) or 1/sin(Angle to get the
+	       // distance depending on deltaX or deltaY
+	       newdistance = getdistance(deltaX,deltaY,Angle);
+	    }
+	    
+	    // the smaller distance will be the valid one
+	    if (newdistance < distance) { distance = newdistance; }
+	   }
+	}
+	return(distance); // return last valid distance
+  }
+
+
+Basically this  is all to say  about the  whole topic, not too hard, eh? However
+there're  still many things  to do like  playermovement and  collision-detection
+with walls (don't  forget to set  the PlayerSector  up to the next sector if the
+player walked  through a  portal), as well  as in  wolf you  have to correct the
+fisheye-bug...and anyway this  engine would be  far from Doom since there aren't
+any variable floor-/ceiling-heights, but those could be easily added if you save
+additional height information for every sector to scale your  texture-slivers to
+the right  screenrow instead  of just centering  them to the  horizon - this way
+your worlds might even contain steps !!
+Don't forget to  handle special cases  with wall- or rayslopes of 0 or infinity,
+either.
+
+Just be creative  to make something  out of it, if you should do so one day, let
+me know - otherwise I'll let you  people know as soon as I made something out of
+it :).
+  
+  
+In the  end, one  general hint and  a pseudo-code  example of the  world render-
+procedure:
+
+If you decide  to map textures onto your slices, there really is only one option
+that makes  sense for on the ST - use a nibble-chunkybuffer with a codetable-c2p
++ precompiled  texturescalers for all the possible sliver-heights...that way you
+might gain an acceptable vbl useage, even on an 8Mhz ST (at least that's the way
+I'm using in the new beta of my wolf3d-engine :) ).
+
+So here comes the render-module:
+
+  void render(playerSector,playerX,playerY,Angle)
+  {
+  int   distance;
+  byte  texuresliver;
+  word  screencolumn;
+  float rayslope;	// use fixedpoint for an 68k implementation :)
+
+       for screencolumn = 0 to screencolumns-1
+       {
+	   Rayslope      = tan(Angle);
+	   distance      = TestIntersection(playerSector,Rayslope,Angle);
+	   texturesliver = lastintersection; // this might be easi to imple-
+					     // ment, though
+
+	   correct_distance(screencolumn); // cancel fisheye-bug using a
+					   // correction cosine
+
+
+	   mapsliver (screencolumn,distance,texturesliver) // maybe you could
+							   // even assign 
+							   // your walls with
+							   // diffrent textu-
+							   // res to add a 
+							   // texturenumber 
+							   // here ;)
+
+	   inc(Angle);          // next ray
+	   keepangle_in_range;  // ensure that Angle stays in the 0..360deg
+				// range
+       }
+  }
+
+
+If you have questions or comments please drop an email to:
+reimund.dratwa@freenet.de
+- I haven't tested this method yet so it might be completely wrong, in that case
+I'm sorry - at least  the idea works out  fine and one maybe even more pc guy(s)
+has/have already implemented it:
+
+Regards have to go to Andreas Chrisitan Seidel who seems to have worked out this
+algorithm, actually - check his implementation and read his tute at:
+
+http://www.acs-home.de/rex3d
+http://www.gamedev.net/reference/articles/article872.asp
+
+
+ray//.tSCc.                                                             03-16-02
+--------------------------------------------------------------------------------

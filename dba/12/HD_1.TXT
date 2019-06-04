@@ -1,0 +1,396 @@
+HARDDISKS 1
+~LEGO.FIL~
+
+ ~BRIEF1.BLK~  ~RED.PAL~
+ 
+
+                                Harddisks
+
+           
+
+           Steenwijk, 22 februari 1995
+           Marco de Boer, A7B
+         
+
+           
+
+                                 Inhoud
+
+           
+
+                    Blz.
+
+           
+
+           1.  Inleiding  3
+           2.  De Harddisk     4
+           3.  De Harddisk Technisch bekeken   6
+           4.  De Aanschaf van een Harddisk   11
+           5.  Samenvatting   15
+    
+               Bronvermelding 16
+
+               Bijlage 1: De aansluitingen van een IDE-drive.
+
+           
+         
+
+           
+
+                                                                   3
+
+                               1. Inleiding.
+
+
+           Mijn eerste verslag bij Jonkers Data gaat over hard-disks. 
+           Tegenwoordig wordt bijna elke PC met een harddisk uitgerust.      
+           Alleen de PC's die als Client aan een netwerk hangen bezitten over
+           het algemeen geen harddisk. Maar die hebben dan wel weer indirekt 
+           toegang tot zo'n harde schijf.
+           
+
+           Het tweede hoofdstuk van dit verslag behandeld de harddisk zo'n 
+           beetje in het algemeen. Ik vertel iets van de ontwikkeling van de 
+           harddisk in de afgelopen jaren. Hierbij maak ik gebruik van een 
+           aantal termen en uitdrukkingen, maar daar ga ik in dit hoofdstuk  
+           nog maar niet op in.
+
+
+           In hoofdstuk drie van dit verslag ga ik iets dieper in op de      
+           harddisk. Ik leg in dit hoofdstuk onder andere uit wat de bepaalde
+           termen betekenen die horen bij een harddisk zoals MTTR, MTBF      
+           enzovoort. Tevens zal ik alle uitdrukkingen en termen verklaren   
+           die in hoofdstuk twee zijn voorgekomen. 
+           
+
+           In hoofdstuk vier leg ik uit waar je op moet letten bij de        
+           aanschaf van een harddisk. Hierbij maak ik gebruik van de uitleg  
+           van de verschillende termen die ik in hoofdstuk drie behandeld    
+           heb.
+
+           
+                                                               
+
+                             2. De Harddisk.
+
+           
+
+           Een harddisk bestaat uit een aantal aluminium plaatjes met een    
+           dunne magnetische laag van ijzeroxide of een speciale kobaltlege- 
+           ring die boven elkaar zijn gemonteerd. 
+
+
+           Door de plaatjes van stevig materiaal te maken, kan het oppervlak 
+           veel gladder worden. Hierdoor kan de lees- en schrijfkop veel     
+           dichter boven het oppervlak "zweven". Dit betekent dat er op een  
+           kleiner oppervlak geschreven en gelezen kan worden. 
+           
+
+           Door die kleine afstanden tussen kop en plaat is de harddisk erg 
+           gevoelig voor stof. (Overigens deze afstand tussen kop en opper-  
+           vlak ligt rond de 0,00005 millimeter.) 
+           
+
+           Een harddisk wordt dan ook gemaakt in een stofvrije omgeving. 
+           Daarna wordt de harddisk in een stofdichte behuizing gedaan. Het 
+           openen van deze behuizing in een niet-stofvrije omgeving is hoogst
+           waarschijnlijk fataal voor de harddisk.
+           
+
+           Een harddisk bestaat net zoals floppydisks uit sporen. Deze sporen
+           (ook wel tracks genoemd) worden weer onderverdeeld in sectoren.   
+           Elke sector kan een aantal bytes bevatten, meestal 512 of 1024    
+           bytes. 
+           
+
+           Doordat de tracks zich boven elkaar bevinden worden deze tezamen 
+           ook wel cilinders genoemd. Doordat de koppen van een harddisk op 
+           een soort van kam gemonteerd zijn is het bereik altijd een hele 
+           cilinder. (Zie figuur 1.)
+   
+
+           Voordat de computer iets kan begrijpen van de informatie die op de
+           harde schijf staat, moet dit eerst door de controller bewerkt     
+           worden. Deze controller leest de informatie die op de harde schijf
+           staat uit en zet dit daarna op de juiste wijze in een gedeelte van
+           het geheugen van de computer.
+
+
+                                                                   5
+
+           
+
+           De eerste harde schijven die aan MS-DOS computers "hingen" werden 
+           aangestuurd door de Seagate ST506 controller. Later (namelijk in 
+           1984) presenteerden Western Digital en IBM een nieuwe standaard. 
+          
+
+           In het begin had deze standaard nogal wat aanloopproblemen, en 
+           sloeg dus ook niet direct aan. Twee jaar later werd de standaard 
+           bijgeschaafd door Western Digital en Compaq. Deze standaard is 
+           tegenwoordig bekent als IDE en wordt bijna in elke huidige        
+           personal computer gebruikt. Bijlage 1 laat de aansluitingen zien  
+           zoals die tegenwoordig te vinden zijn op de IDE-harddisk
+           
+
+           Helaas heeft IDE nogal wat beperkingen. (daarover meer in het 
+           volgende hoofdstuk.) Er was naast IDE nog een andere standaard die
+           niet zoveel last had van de beperkingen zoals IDE deze kende, maar
+           die standaard heeft eigenlijk nog nooit echt gemaakt in de wereld 
+           van MS-DOS.
+           
+
+           Tot de komst van de CD-ROM. Hoewel er tegenwoordig ook 
+           CD-ROM-drives zijn die gebruik maken van IDE, maken de meeste 
+           CD-ROM-drives gebruik van de SCSI-controllers.
+           
+
+           Tegenwoordig zijn er al weer twee nieuwe standaarden bijgekomen. 
+           Dit zijn de EIDE en de ESDI. EIDE is een soort van afgeleide van  
+           de IDE en de ESDI is een soort van afgeleide van de SCSI. 
+           
+
+           Hierbij moet ik nog zeggen dat het ESDI systeem al weer een beetje
+           in het ongebruik geraakt is. Het lijkt de grote verliezer ten     
+           opzichte van de EIDE. Maar wie weet wat de toekomst nog brengen   
+           zal voor de ESDI, want EIDE is er toch ook nog niet helemaal.
+           
+         
+
+                                                                   6
+
+
+                  3. De Harddisk Technisch Bekeken.
+
+
+           Een harddisk bestaat evenals een diskette uit een schijf met een 
+           magnetiseerbare lag. Deze laag maakt het mogelijk gegevens voor 
+           langere tijd vast te houden. 
+           
+
+           Vroeger lag de dikte van deze laag tussen de 0,4 en de 0,8 
+           micrometer. Tegenwoordig zijn er ook harddisks die gebruik maken 
+           van de thin film-techniek. Zoals te zien is in figuur 2 ligt de   
+           dikte van die laag tussen de 0,04 tot de 0,1 micrometer.
+           
+
+           Beide lagen hebben zo hun voor en hun nadelen. De conventionele 
+           dikke laag houdt de informatie langer dan de dunnere magnetische 
+           laag. Nadeel hiervan is echter dat het ook langer duurt voordat de
+           laag gemagnetiseerd is. En snelheid is een van de belangrijkste 
+           faktoren die bij een harddisk horen. 
+          
+
+           Om tijdwinst te krijgen blijft de harddisk ook op 3600 toeren per 
+           minuut draaien. Het duurt even voordat de harddisk deze snelheid 
+           bereikt heeft, maar dat is geen probleem. Want deze aanlooptijd   
+           geeft de MS-DOS computers de mogelijkheid om het geheugen uit te  
+           testen en te kijken of alle instellingen kloppen zoals die        
+           opgeslagen zijn in het CMOS geheugen.
+           
+
+           Een harddisk heeft voor ieder plaatje twee lees/schrijf-koppen.   
+           Als er dus zes koppen aanwezig zijn, betekent dit dat er drie     
+           schijfjes in de harddisk gemonteerd zijn. Vreemd genoeg zullen we 
+           ook harddisks tegenkomen met een oneven aantal koppen.
+           
+
+           Dit is een verwijzing naar een voice coil-actuator. Gewone        
+           harddisks hebben een stappenmotor om de lees/schrijfkoppen te      
+           bewegen. De stappenmotor maakt veel lawaai, en is gevoelig voor   
+           temperatuurverschillen.
+           
+
+           Dit is zelfs zo erg dat de harddisk bij lage temperaturen niet wil
+           opstarten. Dit gebeurde vroeger nog wel eens als de computer het 
+           hele weekend uit was geweest, en de verwarming een aantal graden 
+           lager was gezet gedurende het weekend.
+           
+
+                                                                   7
+
+           
+
+           Duurdere harddisks hebben een speciaal mechanisme waardoor de kop 
+           door een magneetspoel bewogen wordt. Dit systeem wordt een voice 
+           coil actuator genoemd.
+           
+
+           Omdat een magneetspoel geen vaste stappen kent voor zijn beweging,
+           is er een zogenaamde feedback (terugkoppeling) nodig om te kijken 
+           op welke positie de koppen zich bevinden. Hiervoor wordt een kant 
+           van een schijfje gebruikt. Hierop houdt men de exacte positie van 
+           een track bij in een index.
+           
+
+           Deze index bevat het spoornummer. Als dit nummer goed gelezen kan 
+           worden, dan houdt dit automatisch in dat de koppen zich op de     
+           juiste positie bevinden. 
+           
+
+           Nadeel hiervan is, dat er een schijfje verloren gaat die eigenlijk
+           voor een grotere capaciteit had kunnen zorgen. Maar er zijn echter
+           meerdere voordelen bij dit soort harddisks. Namelijk:
+
+           * Het mechanisme is veel betrouwbaarder.
+
+           * De harddisk is minder lawaaierig
+
+           * En het geheel is veel duurzamer dan de conventionele harddisk   
+
+             met stappenmotor.
+
+
+           Normalerwijs raken de koppen de schijven niet. De koppen zweven 
+           ongeveer 0,0005 millimeter boven het schijfoppervlak. Doordat de 
+           schijven met grote snelheid ronddraaien ontstaat er namelijk een 
+           soort van luchtkussen tussen schijf en kop. Dit luchtkussen zorgt 
+           ervoor dat koppen niet in aanraking komen met de schijf. (Dit is 
+           wel het geval bij floppy-disks.)
+          
+
+           Het ontstaan van zo'n luchtkussen wordt het Bernoulli-effect      
+           genoemd. Mocht een of meerdere koppen toch in aanraking komen met 
+           de schijf, dan spreken we van een head crash. In dit geval is de 
+           magnetische laag dan ook beschadigd. Eventuele informatie die op  
+           die plek stond is dan hoogst waarschijnlijk voorgoed verloren     
+           gegaan. 
+           
+
+           Een head crash is nooit helemaal uit te sluiten en komt ook voor  
+           bij kwalitatief betere hard-disks. Dus mochten er belangrijke     
+           gegevens staan op een harddisk is het altijd van belang om daar   
+           regelmatig een back-up (Veiligheidskopie) van te maken. 
+           
+
+                                                                   8
+
+           
+
+           De oudere conventionele koppen die zich in de harddisk bevonden 
+           worden wel Winchester-koppen genoemd. Maar ook op dit gebied 
+           blijft de techniek niet stilstaan en daarom maken de meeste       
+           harddisks van tegenwoordig dan ook gebruik van de zogenaamde      
+           Whitney-kop.
+           
+
+           Deze Whitney kop is een stuk lichter dan zijn voorganger. Daardoor
+           is deze sneller te verplaatsen dan de conventionele kop. De lees- 
+           en schrijfkop zelf is ook een stuk kleiner geworden. Dit levert   
+           weer een grotere schrijfdichtheid op. Figuur drie toont het       
+           verschil tussen de beide koppen. 
+           
+
+           Er zijn ook nog andere manieren om de schijfcapaciteit te verho-  
+           gen. Een van die manieren is het gebruik maken van een harddisk   
+           met Run Length Limited. 
+           
+
+           De ST506/412 controller (beide controllers zijn eigenlijk hetzelf-
+           de) is in feite verouderd, maar wordt nog steeds toegepast. Deze 
+           controller werd ontwikkeld door Seagate rond 1980 voor een 5      
+           Megabyte harddisk. 
+           
+
+           De maximale overdracht-snelheid van deze schijf bedraagt 5        
+           Megabits per seconde. De overdrachtsnelheid is de snelheid waarmee
+           de gegevens van harde schijf naar computer kunnen worden getrans- 
+           porteerd.
+           
+
+           De ST506/412 controller is zowel geschikt voor MFM als RLL.       
+           Modified Frequency Modulation (MFM) is een relatief gezien        
+           eenvoudige manier om gegevens op een harde schijf te zetten. Run  
+           Length Limited (RLL) daarentegen is een duurdere, storingsgevoeli-
+           ger en een ingewikkelder methode. 
+           
+
+           Maar zoals al gezegd met RLL vergroot je de schijfcapaciteit wel. 
+           Bij RLL past er op een harde schijf ongeveer 1,5 keer meer 
+           gegevens dan bij dezelfde schijf met MFM. Een ander voordeel is   
+           dat RLL een stuk sneller is dan MFM.
+           
+
+           Een MFM harddisk heeft 17 sectoren per spoor, een RLL harddisk    
+           heeft er 26. Voor een RLL harddisk zijn kortere kabels, voice coil
+           besturing en thin film media vrij belangrijk. 
+           
+
+           Een RLL harddisk is over het algemeen vrij gemakkelijk te herken- 
+           nen aan de capaciteit. Voor MFM zijn de volgende formaten vrij 
+           gebruikelijk: 20, 40 en 80 Mb. Voor RLL zijn 32, 48, 64 en 128 Mb 
+           meer gangbaar. 
+           
+
+                                                                   9
+
+           
+
+           IDE is eigenlijk de grote standaard in de pc-wereld. Dat is       
+           eigenlijk ook de grote kracht van IDE geweest. Het is een soort   
+           van universele standaard geworden waardoor de fabrikanten van     
+           harde schijven zich slechts op een standaard hoefden te concentre-
+           ren.
+           
+
+           Maar tegenwoordig, zeven a acht jaar na de ontwikkeling van IDE is
+           men toe aan een nieuwe standaard. IDE is oud, en achterhaald. 
+          
+
+           Je kunt niet zomaar elke harddisk aansluiten op een pc met IDE.   
+           Als een harddisk groter is dan 528 Megabyte, dan kan de pc deze   
+           niet meer op normale wijze beheren. Meestal wordt er bij een      
+           harddisk met een grote capaciteit wel speciale software meegele-  
+           verd die dit probleem voor de pc voor een gedeelte oplost.
+           
+
+           In de beginjaren was dit niet zo'n groot probleem. Aan de hand van
+           de tweede harddisk-aansluiting kon men de totale schijf-capaciteit
+           opvoeren naar 1 Gigabyte. Bovendien lag de doorvoersnelheid 
+           beduidend hoger dan hetgeen de 8 MHz. ISA pc-bus aankon.
+           
+
+           Tegenwoordig is deze snelheid lang niet meer toereikend gezien de 
+           mogelijkheden van de Vesa Local- en PCI bustechniek. Dankzij de 
+           doorbraak van de CD-ROM zijn de twee aansluitingen van IDE 
+           eigenlijk wel beperkt. IDE kent dus eigenlijk drie grote proble-  
+           men:
+
+           * Beperkte schijfcapaciteit (528 Mb)
+
+           * "Lage" doorvoersnelheid (3 tot 5 Megabit per seconde)
+
+           * Beperkt aantal apparaten aan te koppelen (2 apparaten)
+
+
+           Het eerste probleem ligt eigenlijk niet helemaal aan de pc, maar  
+           ook een beetje aan de IDE standaard. Het BIOS van de pc (het      
+           eigenlijke besturingssysteem) kan een maximale schijfcapaciteit   
+           aan van 1024 cilinders, 255 koppen en 63 sectoren. Omdat voor DOS 
+           een sector 512 bytes groot is komen we aan een capaciteit van 8,4 
+           Gb.
+           
+
+           De IDE standaard kan echter een schijfcapaciteit aan van 65.535 
+           cilinders, 16 koppen en 63 sectoren wat neerkomt op 136,9 Gb. En 
+           daar ligt nu het probleem. Er moet dus naar een middenweg gezocht 
+           worden. Deze wordt gevonden in 1024 cilinders, 16 koppen en 63 
+           sectoren. Dit alles komt neer op een schijfcapaciteit van 528 
+           Megabytes.
+         
+
+           Dit probleem is op te lossen door het BIOS en IDE-controller voor 
+           de gek te houden. Een stuurbestand vertaalt het BIOS CHS-adres 
+           (Cylinder head sector adres) in een soort van "namaak" adres 
+           waarmee de IDE-interface wel iets kan.
+           
+
+           Het systeem adresseert zo een blok in plaats van een afzonderlijke
+           cylinder, kop en sector. Hierdoor kan dan dus ook de maximale 
+           schijfcapaciteit van 8,4 Gb. gehaald worden.
+           
+
+           Deze oplossing is eigenlijk niet zo netjes. Een betere oplossing  
+           zou zijn: de oude BIOS vervangen voor een nieuwe, en de IDE-inter-
+           face vervangen voor een EIDE-interface. 
+

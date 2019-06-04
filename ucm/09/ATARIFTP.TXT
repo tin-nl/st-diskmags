@@ -1,0 +1,524 @@
+
+                 _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+                _/                              _/
+               _/  The    ____/ __ __/ ____/   _/
+              _/  Atari  /        /   /   _/  _/
+             _/  ST     __/      /   ____/   _/
+            _/  FTP    /        /   /       _/
+           _/  list  _/       _/  _/       _/
+          _/                              _/
+         _/  (C)1994-96  H. Tangeraas    _/
+        _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+
+FTP site                  Directory                        IP address
+---------------------------------------------------------------------------
+  Czech republic
+  --------------
+ftp.dcs.muni.cz           /pub/archives/atari/             (147.251.48.3)
+
+  Finland
+  -------
+ftp.funet.fi              /pub/atari/                      (128.214.248.6)
+
+  France
+  ------
+ftp.cnam.fr               /pub/Atari/                      (163.173.128.15)
+(editors note: not longer available! Try - ftp.ibp.fr)
+
+  Germany
+  -------
+ftp.leo.org               /pub/comp/platforms/atari/       (131.159.0.252)
+                                                           (131.159.0.198)
+ftp.regent.e-technik.tu-muenchen.de /pub/comp/platforms/atari/
+                                                           (129.187.231.131)
+ftp.uni-trier.de          /pub/atari/                      (136.199.8.81)
+alice.fmi.uni-passau.de * /pub/atari/                      (132.231.1.180)
+ftp.uni-kl.de             /pub/atari/                      (131.246.94.94)
+ftp.uni-erlangen.de       /pub/atari/                      (131.188.71.2)
+                                                           (131.188.80.20)
+                                                           (131.188.3.2)
+ftp.tu-clausthal.de       /pub/atari/                      (139.174.2.10)
+ftp.uni-muenster.de       /pub/atari/                      (128.176.121.55)
+ftp.uni-paderborn.de      /atari/                          (131.234.22.34)
+vax.ph-cip.uni-koeln.de   /pub/atari/                      (134.95.64.1)
+pascal.math.fu-berlin.de *    /atari/                      (160.45.40.50)
+ftp.cs.tu-berlin.de       /pub/atari/                      (130.149.17.12)
+                                                           (130.149.144.4)
+ftp.fu-berlin.de      *   /pub/atari/                      (160.45.10.6)
+ftp.uni-regensburg.de     /freeware/software/atari/        (132.199.1.203)
+ftp.germany.eu.net        /pub/comp/atari-st/              (192.76.144.75)
+ftp.uni-stuttgart.de      /pub/systems/atari/              (129.69.18.15)
+ftp.uni-bremen.de     *   /pub/atari_st/                   (134.102.228.2)
+ftp.hrz.uni-kassel.de     /pub/machines/atari/             (141.51.12.12)
+ftp.rz.tu-bs.de       *   /pub/atari/                      (134.169.9.44)
+ftp.coli.uni-sb.de        /pub/comp/atari/                 (134.96.68.11)
+ftp.phil.uni-sb.de    *   /pub/atari/                      (134.96.80.220)
+                                                           (134.96.82.13)
+ftp.inf.tu-dresden.de     /pub/atari/                      (141.76.1.11)
+ftp.uni-giessen.de        /pub/atari/                      (134.176.2.11)
+ftp.rz.tu-harburg.de  *   /ATARI/                          (134.28.240.5)
+ftp.uni-oldenburg.de      /pub/atari/                      (134.106.38.5)
+ftp.uni-frankfurt.de  *   /pub/Atari/                      (141.2.1.2)
+ftp.on-luebeck.de         /pub/systems/atari/              (193.29.188.9)
+ftp.informatik.rwth-aachen.de       /pub/comp/Atari/       (137.226.225.3)
+ma2s2.mathematik.uni-karlsruhe.de *     /pub/atari/        (129.13.115.2)
+
+
+  The Netherlands
+  ---------------
+nikhefh.nikhef.nl         /pub/atari/                      (192.16.199.1)
+ftp.twi.tudelft.nl  *     /pub/atari/                      (130.161.156.11)
+ftp.icce.rug.nl     *     /pub/erikjan/Atari/              (129.125.14.129)
+
+  Norway
+  ------
+ftp.sn.no           #     /user/hallvart/atari/            (194.143.8.25)
+
+  Switzerland
+  -----------
+ftp.isbiel.ch             /atari/                          (147.87.2.27)
+ezinfo.ethz.ch            /st/                             (129.132.2.72)
+
+  United Kingdom
+  --------------
+micros.hensa.ac.uk        /micros/atari/                   (194.80.32.51)
+disabuse.demon.co.uk      /pub/atari/                      (158.152.1.44)
+
+  United States
+  -------------
+atari.archive.umich.edu   /atari/                          (141.211.120.11)
+f.ms.uky.edu              /pub2/atari/                     (128.163.132.108)
+ftp.netbsd.org      *     /pub/NetBSD/NetBSD-1.1/atari/    (206.86.8.12)
+                          /pub/NetBSD/arch/atari/
+
+
+ * = specialized or small sites (mostly Linux, BSD, GNU, MiNT, StonX etc.)
+ # = beginner/essential software/various info files (small site).
+
+
+MIRROR SITES
+------------
+FTP mirrors are alternative sites to certain popular ones which are
+usually under a high load most of the time (many people accessing them
+at the same time).
+Mirror sites contain the exact same directories and files, but have
+different entry points. Try to use the one closest to you geographically
+and not during business hours (in that geographic area).
+
+         Mirrors to 'atari.archive.umich.edu'
+         ------------------------------------
+  United States
+  -------------
+ftp.toad.net              /pub/umich/                       (205.197.182.100)
+barnone.citi.umich.edu    /atari/                           (141.211.128.19)
+
+  Europe
+  ------
+src.doc.ic.ac.uk          /packages/atari/umich/            (146.169.16.11)
+                                                            (146.169.17.5)
+                                                            (146.169.32.5)
+                                                            (146.169.33.5)
+                                                            (155.198.1.40)
+                                                            (146.169.43.1)
+                                                            (155.198.191.4)
+                                                            (193.63.255.1)
+                                                            (146.169.2.10)
+ftp.switch.ch             /mirror/atari/                    (130.59.1.40)
+                                                            (130.59.10.40)
+
+*** ftp.switch.ch is restricted to educational/research institutions only!
+
+
+         Mirror to 'ftp.uni-paderborn.de'
+         --------------------------------
+src.doc.ic.ac.uk          /packages/atari/uni-paderborn/    (146.169.16.11)
+                                                            (146.169.17.5)
+                                                            (146.169.32.5)
+                                                            (146.169.33.5)
+                                                            (155.198.1.40)
+                                                            (146.169.43.1)
+                                                            (155.198.191.4)
+                                                            (193.63.255.1)
+                                                            (146.169.2.10)
+
+        Other mirrors
+        -------------
+ftp.phil.uni-sb.de   *    /pub/atari/mint/umich.mirror/     (134.96.80.220)
+ (mirror to atari.archive.umich.edu- 'mint' section)        (134.96.82.13)
+
+ftp.phil.uni-sb.de   *  /pub/atari/linux/tsx-11.mirror/     (134.96.80.220)
+ (mirror to tsx-11.mit.edu- 'linux' section)                (134.96.82.13)
+
+
+MAIL SERVERS
+------------
+Mail servers can be used to get hold of the same software as through FTP,
+but instead of using a lot of download time online, files can be 'ordered'
+via email.
+In order to get information about how to do this, send an email to the
+various addresses below with the word:  help
+in the mail itself. If possible, do not include any 'signature' in the mail,
+as the automated system which replies to these mails tries to interpret any
+message (and with a certain amount of errors no response to your requests
+will be given at all).
+
+
+Email server email address                Equivelant to FTP site
+--------------------------------------------------------------------------
+atari@atari.archive.umich.edu             atari.archive.umich.edu
+mail-server@ftp.tu-clausthal.de           ftp.tu-clausthal.de
+mail-server@cs.tu-berlin.de               ftp.cs.tu-berlin.de
+archive-server@Germany.eu.net             ftp.germany.eu.net
+ftpmail@ftp.uni-stuttgart.de              ftp.uni-stuttgart.de
+ftp-mailer@ftp.informatik.tu-muenchen.de  ftp.informatik.tu-muenchen.de
+archive-server@micros.hensa.ac.uk         micros.hensa.ac.uk
+mailserver@leo.org                        ftp.leo.org
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+HOW TO GET FILES VIA FTP
+------------------------
+Below follows a step-by-step guide on how to get hold of files via FTP.
+Your specific version of the FTP program might differ slightly (it might
+have extra functions and be more user friendly etc.) But the main procedure
+is likely to be more or less the same.
+
+The examples below are taken from a Unix environment using the usual
+'ftp' program. The more user friendly 'ncftp' is recommended though,
+as it's easier and more efficient to use.
+
+
+[1] Starting FTP/logging into FTP site
+======================================
+
+What to type                                           What it does
+--------------------------------------------------------------------------
+ftp                                                       [ENTER FTP MODE]
+open FTPsite-address  (i.e: open ftp.funet.fi)         [OPEN THE FTP SITE]
+anonymous             (when asked for username)          [INSERT USERNAME]
+USERNAME@SITE (your email address- i.e. hallvart@sn.no)  [INSERT PASSWORD]
+
+ Example:
+---------------------------------------
+  oslonett.no% ftp                                        [ENTER FTP MODE]
+  ftp> open ftp.cs.tu-berlin.de                        [OPEN THE FTP SITE]
+  Connected to caramba.cs.tu-berlin.de.
+  220 caramba FTP server (wu-2.4/fb13[34] 18-Feb-1995) ready.
+  Name (ftp.cs.tu-berlin.de:celine): anonymous           [INSERT USERNAME]
+  331 Guest login ok, send your complete e-mail address as password.
+  Password: celine@geonet.com               [INSERT PASSWORD- (NOT SHOWN)]
+  230-You have reached Berlin, Germany.  Access is allowed all day.
+---------------------------------------
+
+
+* You can also enter a site and start ftp at the same time:
+
+ftp FTPsite-address  (i.e: ftp ftp.cs.tu-berlin.de)  [START FTP/OPEN SITE]
+
+ Example:
+---------------------------------------
+  oslonett.no% ftp ftp.cs.tu-berlin.de               [START FTP/OPEN SITE]
+  Connected to caramba.cs.tu-berlin.de.
+---------------------------------------
+
+* It's also possible to use the IP number instead of the usual FTP
+  site address:
+
+ftp IP.number  (i.e: ftp 130.149.144.4)  [START FTP/OPEN SITE WITH IP NO.]
+
+ Example:
+---------------------------------------
+  oslonett.no% ftp 130.149.144.4         [START FTP/OPEN SITE WITH IP NO.]
+  Connected to 130.149.144.4.
+  220 caramba FTP server (wu-2.4/fb13[34] 18-Feb-1995) ready.
+---------------------------------------
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+[2] Preparing for file downloads
+================================
+
+cd /directory/   (i.e: cd/pub/atari/)          [MOVE TO DESIRED DIRECTORY]
+bin                                          [SET TRANSFER MODE TO BINARY]
+ls -l  (or: dir)             [SHOWS A DIRECTORY LISTING WITH FILE-LENGTHS]
+
+ ** Some FTP sites don't accept 'ls -l' for some reason. In those rare cases
+ use 'ls' instead (or use 'dir').
+
+ Example:
+---------------------------------------
+  ftp> cd Music/                               [MOVE TO DESIRED DIRECTORY]
+  ftp> bin                                   [SET TRANSFER MODE TO BINARY]
+  200 Type set to I.
+  ftp> ls -l                 [SHOWS A DIRECTORY LISTING WITH FILE-LENGTHS]
+  150 Opening BINARY mode data connection for /bin/ls.
+  total 4624
+  -rw-rw-r--   1 ftpadm   atarimod    3409 Feb 19 12:48 00INDEX
+  -rw-rw-r--   1 ftpadm   atarimod   37419 Mar 18  1993 50play12.lzh
+  -rw-rw-r--   1 hesche   atarimod  105936 Jul 24  1995 525_v211.lzh
+  -rw-rw-r--   1 ftpadm   atarimod  168363 Mar 10  1993 accomp25.lzh
+---------------------------------------
+
+* If you want to go back one directory:
+
+          cd ..                                    [GO BACK ONE DIRECTORY]
+          cd /.                       [GO DIRECTLY BACK TO ROOT DIRECTORY]
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+[3] Downloading files
+=====================
+get filename  (i.e: get letemfly.zip)                           [GET FILE]
+
+ Example:
+---------------------------------------
+  ftp> get setseek.zip                                          [GET FILE]
+  200 PORT command successful.
+  150 Opening BINARY mode data connection for setseek.zip (3825 bytes).
+  #######
+  226 Transfer complete.
+  ftp>
+---------------------------------------
+
+Several files at once:
+----------------------
+mget filenames (i.e: mget ao.lha xyz.zip ps.txt)       [GET SEVERAL FILES]
+
+ Example:
+---------------------------------------
+  ftp> mget silkmous.zip snip.zip      [GET 'SILKMOUS.ZIP' AND 'SNIP.ZIP']
+  mget silkmous.zip? y                      [DO YOU WANT THIS FILE (y/n)?]
+  150 Opening BINARY mode data connection for silkmous.zip (22086 bytes).
+  ############################################
+  226 Transfer complete.
+  mget snip.zip? y                          [DO YOU WANT THIS FILE (y/n)?]
+  150 Opening BINARY mode data connection for snip.zip (17852 bytes).
+  ###################################
+  226 Transfer complete.
+  ftp>
+---------------------------------------
+
+* You can also use 'wildcards' to ease the whole procedure of typing file-
+names correctly:
+
+ Example:
+---------------------------------------
+  ftp> mget ma*    [GET ALL FILES STARTING WITH 'ma' IN CURRENT DIRECTORY]
+  mget maccell33.zip? y                     [DO YOU WANT THIS FILE (y/n)?]
+  150 Opening BINARY mode data connection for maccel33.zip (9012 bytes).
+  ##################
+  226 Transfer complete.
+  mget mauswind.zip? y                      [DO YOU WANT THIS FILE (y/n)?]
+  150 Opening BINARY mode data connection for mauswind.zip (49373 bytes).
+  ######################################################################
+  ############################
+  226 Transfer complete.
+  mget maxidisk.zip.zip? y                  [DO YOU WANT THIS FILE (y/n)?]
+  150 Opening BINARY mode data connection for maxidisk.zip (20970 bytes).
+  ########################################
+  226 Transfer complete.
+  ftp>
+---------------------------------------
+
+* you can also use a 'wildcard' to get hold of single files or a specified
+selection. Just be sure the wildcard is unique.
+
+ i.e. if you want to download 'stzip26.lha' and there are no other files which
+ start with the letters 'stz', you can type:  mget stz*.
+
+ You can also download all files within a directory with a single
+ command:  mget *
+
+PS. you have to use 'mget' with wildcards- 'get' won't work!
+
+Hint: if you're using 'mget' a lot and don't want to be asked if you want this
+file or not, you can use the command 'prompt'. FTP will then proceed to get all
+the files that match your wildcard without asking if you want them.
+
+ Example:
+---------------------------------------
+  ftp> prompt                             [TURN OF 'GET THIS FILE (y/n)?']
+  Interactive mode off.
+  ftp>
+---------------------------------------
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+[4] Ending your FTP session
+---------------------------
+close              [EXIT CURRENT FTP SITE, READY FOR A NEW FTP CONNECTION]
+
+ Example:
+---------------------------------------
+  ftp> close       [EXIT CURRENT FTP SITE, READY FOR A NEW FTP CONNECTION]
+  221 Goodbye.
+  ftp>                      [FTP IS READY FOR A NEW CONNECTION- 'OPEN...']
+---------------------------------------
+
+
+quit                      [EXIT CURRENT FTP SITE/FTP MODE, RETURN TO UNIX]
+
+ Example:
+---------------------------------------
+  ftp> quit               [EXIT CURRENT FTP SITE/FTP MODE, RETURN TO UNIX]
+  oslonett.no%                                              [BACK IN UNIX]
+---------------------------------------
+
+* When doing a 'close' and re-entering a new FTP site you won't have to set
+up features like 'bin', 'prompt' and 'hash' again.
+You will however have to set it up again if you choose to 'quit', then
+restart FTP.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+A SHORT SUMMARY OF FTP COMMANDS/PROCEDURE
+=========================================
+ftp
+open {FTP site address}                                    [OPEN FTP SITE]
+Username: anonymous
+Password: {your email address}
+
+cd {directory/directory etc.}                            [GO TO DIRECTORY]
+bin                                          [SET TO BINARY TRANSFER MODE]
+hash      [DISPLAY '#####' CHARACTERS FOR VISUAL CONFIRMATION OF DOWNLOAD]
+ls -l (or dir)                       [FILE/DIRECTORY LISTING WITH LENGTHS]
+get {filename}                                         [GET A SINGLE FILE]
+mget {filename filename filename filename}             [GET SEVERAL FILES]
+quit                                         [EXIT FTP SITE/EXIT FTP MODE]
+
+
+Other useful commands to know
+=============================
+stat (or status)                 [DISPLAYS USEFUL INFORMATION ABOUT SETUP]
+prompt                               [TURNS ON/OFF 'GET THIS FILE (y/n)?']
+get {filename} -  (i.e: get 00index -)         [DISPLAYS TEXT FILE ONLINE]
+!host {FTP site}  (i.e: !host ftp.sn.no)        [SHOWS IP ADDRESS OF SITE]
+help                                   [DISPLAYS A LIST OVER FTP COMMANDS]
+help {command}    (i.e: help bin)                       [EXPLAINS COMMAND]
+
+
+FTP commands
+------------
+!               escape to the shell
+$               execute macro
+account         send account command to remote server
+append          append to a file
+ascii           set ascii transfer type
+bell            beep when command completed
+binary          set binary transfer type
+bye             terminate ftp session and exit
+case            toggle mget upper/lower case id mapping
+cd              change remote working directory
+cdup            change remote working directory to parent directory
+chmod           change file permissions of remote file
+close           terminate ftp session
+cr              toggle carriage return stripping on ascii gets
+delete          delete remote file
+debug           toggle/set debugging mode
+dir             list contents of remote directory
+disconnect      terminate ftp session
+form            set file transfer format
+get             receive file
+glob            toggle metacharacter expansion of local file names
+hash            toggle printing '#' for each buffer transferred
+help            print local help information
+idle            get (set) idle timer on remote side
+image           set binary transfer type
+lcd             change local working directory
+ls              list contents of remote directory
+macdef          define a macro
+mdelete         delete multiple files
+mdir            list contents of multiple remote directories
+mget            get multiple files
+mkdir           make directory on the remote machine
+mls             list contents of multiple remote directories
+mode            set file transfer mode
+modtime         show last modification time of remote file
+mput            send multiple files
+newer           get file if remote file is newer than local file
+nmap            set templates for default file name mapping
+nlist           nlist contents of remote directory
+ntrans          set translation table for default file name mapping
+open            connect to remote tftp
+prompt          force interactive prompting on multiple commands
+proxy           issue command on alternate connection
+sendport        toggle use of PORT cmd for each data connection
+put             send one file
+pwd             print working directory on remote machine
+quit            terminate ftp session and exit
+quote           send arbitrary ftp command
+recv            receive file
+reget           get file restarting at end of local file
+rstatus         show status of remote machine
+rhelp           get help from remote server
+rename          rename file
+reset           clear queued command replies
+restart         restart file transfer at bytecount
+rmdir           remove directory on the remote machine
+runique         toggle store unique for local files
+send            send one file
+site            send site specific command to remote server
+                Try "rhelp site" or "site help" for more information
+size            show size of remote file
+status          show current status
+struct          set file transfer structure
+system          show remote system type
+sunique         toggle store unique on remote machine
+tenex           set tenex file transfer type
+trace           toggle packet tracing
+type            set file transfer type
+user            send new user information
+umask           get (set) umask on remote side
+verbose         toggle verbose mode
+?               print local help information
+
+** Most of these commands work as 'on/off switches'. Each time you enter the
+   command it switches over to the opposite position (from on to off or
+   vice versa). If you're not sure about it's position, type:  stat
+   (or: status) which will show your setup.
+
+Be sure to check if transfer mode is set to 'bin'!!!! (if you try to
+download binary files in ASCII mode all your downloads will be useless!-
+You can download text files as binary as well, though you sometimes might
+have to convert the end-of-line characters afterwards-
+(get hold of 'unix2st.ttp' or similar program for this).
+
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+
+
+TRANSFERRING FILES TO MS-DOS DISKS ON UNIX TERMINAL SYSTEMS
+-----------------------------------------------------------
+Part of this is dependant on you having the GNU msdos-utilities available
+at your site. If you don't, ask your local system operator how to transfer
+files to/from MSDOS disks (The Atari ST reads MSDOS formatted disks).
+
+* If your terminal doesn't have a disk drive you can "remote login" to
+  another computer that does (and use it's disk drive):
+
+rlogin {computer name}                   [REMOTE LOGIN TO ANOTHER MACHINE]
+ (i.e:  rlogin hnoss)
+(You can now access the disk just as if it was on your own terminal, except
+for the disk drive being physically on that other machine).
+
+mcopy {filename} a:                                 [COPY FILE(S) TO DISK]
+ (i.e:  mcopy autosort.zip a:)
+ (i.e:  mcopy autosort.zip icone.lzh files.txt dcxtrct.zoo a:)
+mdir                                      [SHOW DISK DIRECTORY/FREE SPACE]
+fdformat -l -d                                   [FORMAT 720K DISK- MSDOS]
+fdformat -d                                    [FORMAT 1.44MB DISK- MSDOS]
+mcopy a:{filename on disk} {copy filename}   [COPY FILE FROM DISK TO UNIX]
+ (i.e:  mcopy a:ftplist.txt ftplist.txt)
+mcopy a:"*" .                           [COPY ALL FILES FROM DISK TO UNIX]
+mdel a:{filename}                                  [DELETE A FILE ON DISK]
+ (i.e:  mdel a:ftplist.txt)
+eject              [EJECT DISKS FROM DRIVES WITH NO 'MANUAL EJECT BUTTON']
+
+--------------------------------------------------------------------------
+Re-distribution allowed as long as nothing is altered or omitted.
+
+Copyright (C) 1994-1996 Hallvard Tangeraas (hallvart@sn.no)
+
+

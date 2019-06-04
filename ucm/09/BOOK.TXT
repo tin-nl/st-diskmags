@@ -1,0 +1,655 @@
+              /------------>            ^            --------\
+              |ÿÿÿÿÿÿÿÿÿÿÿÿ            / \           ||       \
+              |                       /   \          ||        |
+              |                      /_   _\         ||________|
+              >------>              /-------\        >---------/
+              |                    /ÿÿ     ÿÿ\       ||ÿÿÿÿ\\
+              |                   /           \      ||     \\
+              |____________      /__         __\     ||      \\
+              \------------>    /___>       <___\    ||       ||
+
+              C....H....A....E....O....P....T....E....R....Y....X
+
+
+                      P    R    E    S    E    N    T    S
+
+
+                    CoDInG GAmEs FoR ThE AtARi toS ComPuTErs
+
+===============================================================================
+
+by: Pieter van der Meer
+    Bereklauw 1
+    4102 KZ Culemborg
+    Netherlands
+    0345-517200
+
+Feel free to contact me if you want to ask something!!!!
+
+============================================================================
+
+Chapter 1........Introduction to the book
+
+Chapter 2........PROJECT 1
+
+Chapter 3........PROJECT 2
+
+Chapter 4........PROJECT 3
+
+Chapter 5........Conclusion for these projects
+
+Chapter 6........BIG game-coding
+
+Chapter 7........Converting ideas to reality
+
+Chapter 8........Graphics and sound
+
+Chapter 9........The Hardware
+
+Chapter 10.......The ATARI ST
+
+Chapter 11.......Conclusion
+
+
+
+                          CHAPTER 1 : INTRODUCTION
+
+
+This book is not practical neither is it theoretical. It is aimed at people who
+are considering coding games for their beloved ATARI-tos computer. It shows how
+I, the writer, coded stuff and how all  that begun. It also  gives a conclusion
+about all this and gives the reader many tips on how to code games.
+However, if you think that  this book shows you  exactly how to code  a game in
+say assembler  or C, you are wrong. For that I would have needed a few thousend
+lines  extra, because  you  need  to  explain  your  computers  internals,  the
+programming language and incredibly many coding techniques for that.
+This book is  aimed at the  people who  want to know general stuff about coding
+games. It can (mayby) even used be for coding games on other platforms.
+I hope this  book gives  the beginning coder  a bit of security on how they are
+going to  handle things. The book shows my experiences with coding games so the
+reader can draw his own conclusions from that.
+Well, that's about it. Oh, yeah this book is completely free! Have fun!!!
+
+
+                            CHAPTER 2 : PROJECT 1
+
+
+It was March  1994. I was  watching a  few demos and  fooling around with other
+software and going totally nowhere. I was getting a bit fed up with playing the
+same games and always fooling around with programs.
+Then, as if  struck by lightning, I got  a marvellous idea! Why not code a game
+for my  computer!! Yeah, I  would write my  own stuff  and finally  unravel the
+mysteries  coders would  not speak  of and the  rest of  the world knew nothing
+about!
+Though  I  had  thought  about  improving  the  games  I  played  and  had some
+theorethical  knowledge of  games, I  had totally  no practical knowledge of my
+machine's  internal guts and knew very little about programming languages. As I
+realized  much later on I really needed to know more about these two things. To
+make things  worse I also  had no contact with people who know how to code. And
+that is  because  aproximately 99,5% of  all computer  users have  never really
+seriously  tried to  code  anything. (N.B. Those  people  are called  lamers by
+people who do know how to code.)
+These things  aside, though. After  a short  while I was already thinking about
+what kind of game I was going to code. I was easily impressed by great graphics
+and  sound, so  I immidiately  thought about  coding a 3D-texturemapped fractal
+landscape  action shoot 'em up. (This  sort of game  is virtually impossible to
+code for a beginner.) This  would be the  start of a new Falcon030-only project
+called  INTERFERENCE (Don't  ask me why I  gave it this  name, because  I don't
+remember myself.)
+Soon I began to realize I should do something, otherwise the project would only
+have a  name and nothing  more. So I started making the music, because that was
+the only  thing I was capable of. I could draw graphics too, but I had very bad
+painting-software   that  utilized   nothing  of   my  new   Falcon's  enhanced
+capabilities. I  also had no coding package. Anyway, I started making the music
+with Protracker(a great music-programme). And  I succeeded. It cost my about 12
+working  hours to produce  a 4-minute piece of music that sounded quite nice. I
+had already made many pieces of music and so I had plenty experience with those
+kind of things.
+But when I had finished the music I began to realize I could do little else for
+the project  because of the  things mentioned  above. And then the weeks passed
+and I  got a few ideas for the game which I couldn't practisize because I still
+was a lamer. And the weeks passed and they passed....... 
+And then I  realized that this  was going nowhere and aborted the project. With
+only the name  and the music finished in more than two months I realized that a
+coding  3D-texturemapped  fractal landscape  thingy  had not  been such a great
+idea....
+
+
+                            CHAPTER 3 : PROJECT 2
+
+
+After this  great big dissapointment  left behind by my last project I realized
+that I  should learn  how to code and get  myself better programs. So I started
+looking out for articles on coding in magazines bought some coding and painting
+programs. (mostly illegal, I'm sorry but I was only 15.)
+I eventually got myself some articles from ST format and software like DEVPAC 3
+and PRISMPAINT. I  decided that I  should code in DEVPAC 3 assembler. (I didn't
+regret that.)
+Soon I  started  developing an  idea for  a new  project. It  should  have been
+something  like an  overhead-view  action game  placed in  an arena. The player
+controls  a car with  loads of weaponry and has to destroy everything placed in
+the arena. As  you can see the idea for this project is only a bit simpler than
+the last  one, but an overhead-view  game is always much simpler to code than a
+3D-game. (Trust me!!)
+I liked  the  idea  of the game  and started  thinking  about how  to make  the
+graphics. I already  understood the principles of animation. (More info on that
+is found later on.) So  I started drawing  graphics for the objects in the game
+with PRISMPAINT. (Which was pretty frustrating to use.) I still didn't know how
+to integrate  those graphics  in a program, though. That  was still the biggest
+problem, I guess...
+I completed  many graphics  for the game  and became  real proud of myself. But
+then I asked  myself how to integrate it and when I realized I had no answer to
+that  question I got  pretty down. I soon  realized that assembler-language was
+pretty hard  to learn. I had some assembly-language articles from ST format and
+they  showed me a  bit of the  basics. I  slowly began  to understand what this
+language was all about.
+After  a week  or two  I used  some  example  routines (pieces  of  programming
+language) with  my  graphics  for  the  program  and  I  got  some animation on
+screen!!! I  don't know exactly  how it worked but it was nice, though... I now
+understood  that I had to find out more about this magical assembly language in
+order to make my own routines for games.
+After another  while I bought  a coding-book from a book-store. When I got this
+book I was really happy. Finally I had really something to hold on to. The book
+exlained  many things like  how my computer worked and how you could write your
+own small programs. It made me pretty happy to know al this. 
+I now got many, many ideas for my game and at first I was happy about that. But
+soon I got  too many ideas and they confused me utterly. I thought the idea for
+the  game wasn't  all that  good anymore. I  guess you  get that  sort of thing
+because you get bored with old ideas and excited with new ones.
+So I cancelled this project too. And when I look back I think that was a pretty
+stupid  thing  to do. You  should  hold  on to  ideas  if you  want to complete
+something. And I didn't.
+With only  two small pieces  of code finished  and a few  screens drawn I again
+aborted a project, but I already had a much better idea for a game......
+
+
+                             CHAPTER 4 : PROJECT 3
+
+
+....And  that  became  project 3 : NEUROBOTIX. Neurobotix  would  be  a hi-tech
+platform game. This was the beginning of an incredible amount of work. And with
+that I mean something like more than about THIRTEENHUNDRED working-hours!!!!!
+The first  step was to get enough coding experience, otherwise I would not even
+know how to put a sprite on screen. I started modifying routines and I observed
+the results. Mostly  if I modified something and then tried to run the compiled
+program it  totally screwed up on me. This is something most coders tend to see
+when they are only beginners.
+I also started  to use a new  raytracer that I just got. In a few weeks I could
+already  make some  pretty pictures  with the  program. I  decided to  use this
+raytracer  for the game  to make  the graphics  look more  realistic. I used it
+mostly for designing  the robot-sprites in the game. The graphics were not that
+hard, afterall.
+I started thinking about how the intro of the would look. And I thought that if
+the graphics  were not that  hard to produce I could as make an enormously well
+presented  intro that  would almost  look like a  sci-fi-movie. I was  terribly
+wrong about  that, though! It would have taken much too long to produce. And to
+make  things worse  the raytracer  didn't  seem to be  powerful enough for this
+enormous task.
+Meanwhile my  coding talents  weren't  increasing  much. I was  already working
+three months on  this project and I still couldn't put a picture on screen. But
+there  was hope... I  got in contact with  an experienced  coder. He advised me
+lots  of things and  it helped  me a lot. I  got a new  coding book and learned
+pretty much from out of that. A month later I could make all sorts of routines.
+It did however take another two months for me to make a sprite-routine due that
+homework  and stuff. But  now I finally had some talents. I finally knew how to
+code!! And things started speeding up from then on. Ofcourse there still were a
+lot of drawbacks including bad painting programs which I used for retouching my
+graphics, but those weren't that much of a barrier anymore.
+After a  few months of  hard sweatin' work I had completed a background routine
+for the game  and it looked  quite nice. I also created some songs for the game
+and  integrated them with  the help of a routine  that I had gotten earlier on.
+Now I put some sprites in the game and threw in the controls. It  really looked
+like a game from then on. Ofcourse then only then I realised that I had already
+spent  a year to  do this. I had  put in more  than 500 working hours of effort
+into the project!!
+I started  improving the game from here on. I made the movements more realistic
+and  began to design  more levels. I also  created a little menu to make things
+more easy  and comfortable. I  started to make  some movement  routines for the
+enemy-sprites. And in a short time the feel of the game seriously improved.
+Then I started working  on the intro, which was quite nice. This was quite easy
+to because I already  had loads of routines which I could include in the intro.
+Painting  and retouching  was also easier  cause I had  better programs. I also
+made many new extra routines to improve the variety of the gameplay. These were
+many, many lines of code.
+Soon I had finished a preview version and now I had only two or three months to
+go until I would reach the deadline. I had to finish the game quickly otherwise
+I would work more than 2 years. I didn't feel like working that long. I already
+had a new  project on  the line so  I just to  finish NEUROBOTIX in  those last
+months.
+Level-designing was pretty much the most work. Some levels were quite big and I
+had to design  all the tiles, enemies and bonusses. I also started implementing
+new  weapon-types, which  was quite hard, because I had  to find the right feel
+when  controlling them. To  make things worse  I had to implement every part of
+the program into one solid modular system.
+The last  weeks were  the most  nervewrecking. I had  to do my  schoolexams AND
+finish the game in time. When the exams had past I only had three weeks left to
+go until  the deadline. Things really started speeding up from then on, though.
+I worked like  a mad man. I quickly  finished the intro and I started upgrading
+the mainpart at an alarming rate.
+Sadly I  passed the  deadline  and still  hadn't  finished  the game, due to my
+social life (yuck!). I completed it 6 weeks after the  deadline. Working on the
+last bits  gave me a nice  relaxed feeling, cause I knew the end was finally in
+sight.
+Creating Neurobotix  was an exiting but sometimes frustrating thing to do. When
+I finished it, however I felt really relaxed and even a bit wiser.
+
+
+                            CHAPTER 5 : CONCLUSION
+
+
+I hope you have drawn a good conclusion from this story. I hope now you realize
+what amounts of work and time go into coding your first game. You could be much
+wiser  than me, though! Please, do  yourself a  favour. Don't try to code a big
+game when  you don't  even know how  to code. Try to do something simpler first
+and take  it easy. Don't force  yourself into terrible brain-fuckups like I did
+and follow these basic tips:
+
+- Before trying to code anything ask someone with  experience where to get some
+  info about your computer and coding-languages.
+
+- Get yourself: - some good coding programs
+                - a good painting program
+                - a good music program
+
+  Good  backup-programs and virus killers  are also highly  recommendable. Make
+  sure you get really familiar with all these programs before coding anything.
+
+- For excersize  and checking  if you're  up to  the  task of coding games, you
+  should try  to code  a demo with multiple effects. You should learn all basic
+  techniques for creating graphics and sound by doing so.
+
+- Start with  coding  a simple game  and don't  think you'll  get a  commercial
+  quality game  straight  away. You should  first code  a simple  non-scrolling
+  overhead view game. Something like a shoot 'em up would be nice.
+
+- When you've done that you can try to code a big game.
+
+- If you can, try  to team  up with  somebody who wants to  make a game too. It
+  will speed  up the work  and make  it more  fun. I myself  have never  worked
+  toghether on a game, but I'm sure it will make things a loty easier.
+
+
+                             CHAPTER 6 : BIG GAMES
+
+
+"O.K.," I hear  you say "but how  the hell am  I going to get a good idea for a
+game??". Well, that  question is quite  simple to answer, really. Just get some
+inspiration and get a good idea. Simple, innit?
+Well, actually it's a bit more complicated than that, but I will explain it all
+in here, so  don't worry. Let's asume that you've already coded a nice demo and
+you've already coded a little game.
+
+- First of all  think twice about  doing it. If you're going to code a BIG game
+  you're talking about working at least ONE YEAR in your spare time. However if
+  you like  to code (just like me) you  should already spend most of your spare
+  time coding stuff all year long.
+
+- Think about  the money that want to earn with the game. I can assure you that
+  if  you   release  a  game  as  shareware  you're   talking  about  a  pretty
+  unpredictable  profit. If  you develop a game  for the normal STe the profits
+  range  from something  BELOW ZERO to up to $5.000,-!!!! It depends largely on
+  how  people like the game, how  much you spend on your development-tools, and
+  ofcourse  how much  you ask for  the registration. If  you release  your game
+  commercially the profit is mostly much more stable. However, it still depends
+  on how people like your game.
+
+- Now you should start  thinking about  what kind  of game  you're going  to be
+  coding. First  you should check  out some games like ELITE, POPULOUS, DOOM (a
+  damned  PC  game), XENON II, DUNGEON  MASTER, CIVILIZATION, and  VROOM. These
+  games have all been smash hits and were pretty original. You could try making
+  a clone of  these games. People  are very likely to like your game. You could
+  mix the  ideas of the games  together too, but this a bit more challenging. A
+  strategic role  playing game  for instance  has yet to  prove itself. And you
+  have no examples to hold on to.
+
+- Some games  are easier  to code  than others  and  coding  some  games give a
+  totally  different coding-experience than others. For example if you wan't to
+  code  an amazingly  smooth shoot 'em  up you will  need to develop incredibly
+  fast BLITting  routines  and you will most  likely have  to code in assembly-
+  language, because it is the fastest language. If however you're going to code
+  an adventure-game  you won't  need to have  these quick  routines, but you're
+  code has to be really structured and flexible. You can even code  such a game
+  in BASIC, since it doesn't need really fast routines.
+
+- Let's explain some of the games you could be coding:
+
+  - 2D SHOOT 'EM UP 
+    This gametype  involves the player aiming at enemies on screen and blasting
+    the living  daylights out  of them. If you try to code such a game you will
+    definitely need fast routines, because  the faster it moves the better. The
+    animation and movements are also incredibly important. This sort of game is
+    easy codable, but  you will need  assembly-knowledge and that's pretty hard
+    to obtain.
+
+  - 3D SHOOT 'EM UP
+    Basicly the  same as normal  shoot 'em  ups but  it features  3D-algebra to
+    present  you the graphics  instead  of simple  bitmaps. Fast routines are a
+    must too. But they are mostly a bit more complex because of the maths used.
+    It requires  much practice  to code  such a game. I  myself have coded some
+    routines sometimes and I can really say that it's pretty difficult.
+
+  - PLATFORM GAME
+    This  game's  closest  relative  is  the  2d shoot 'em  up. There  are some
+    differences, though. There  is mostly  more  thinking  to  be  done for the
+    player  and involves  less shooting  but more  wandering around. Follow the
+    same advice as used with shoot 'em ups.
+
+  - ADVENTURE GAME
+    Adventure  games are  the games  that involve the player wandering around a
+    world picking up objects and using them, talking to people to gather useful
+    information, etc.. These games are  either text-based or graphically-based.
+    Text-based games are  not that hard to code, but require structured coding.
+    Graphical  adventures are much harder to code, though. These require really
+    flexible routines  for handling  many of the  the scenes involved. The code
+    you produce has to be really stuctured to be understandable, because such a
+    game is really versatile. There will need to be loads and loads of graphics
+    too and that too involves much work.
+
+  - ROLE PLAYING GAME
+    This is a bit like an  adventure, but the big  difference is that  you have
+    more fighting to do. And this has to be represented quite  nicely. Read the
+    text for adventure games.
+
+  - PUZZLE GAME
+    This involves  the player solving  many brain-teasing puzzles. Mostly these
+    need to be  incredibly  original to  be succesful, because  there have been
+    pretty  much sorts  of puzzling  games. They  aren't that hard to code, but
+    converting  a new idea is  always difficult to do. They can be coded in any
+    language because the program doesn't need to be big.
+
+  - STRATEGY GAME
+    A strategy game is basicly a game that involves the player giving orders to
+    all kinds of objects and trying to achieve your goal with that. This sounds
+    quite abstract, but  if you just see CIVILIZATION or POPULOUS you will know
+    exactly  what I mean. These  kind of games  take a lot of time to code, but
+    they don't  need fast routines. If you code structured and think logically,
+    you will be  likely to succeed. But watch out, your game could turn in to a
+    complete bore if  you don't think  about the  fun part of the game, because
+    these games involve many statistics for the player to understand.
+
+  - FLIGHT SIMULATOR
+    This is pretty much  comparable with  3D shoot 'em  ups, but they  are more
+    realistic. You  need to  code  in assembler  and  integrate  all  kinds  of
+    physical formulas into the game. Some flight simulators involve no shooting
+    at all and  are pretty boring. Only  few people like those games. This game
+    type is probably the most difficult to code. The major advantage is however
+    that only little bitmaps need to be drawn.
+
+Well, I hope  you now  understand  what most  games are  like  and how they are
+constructed. But I still have not answered the biggest question..... How do you
+convert an idea to a game...
+
+
+                         CHAPTER 7 : CONVERTING IDEAS
+
+
+Let's asume you have a  suitable system that  you've gotten used  to for coding
+and that  you think you  are ready for the big task. Then the next steps should
+be followed very  carefully... Maybe these steps don't entirely show you how to
+create  a complete game, but I  think they  will help  you a  bit with avoiding
+mistakes.
+
+- Think  about  the sort  of game  you're  going  to  create  and  get  a  nice
+  brainstorm. Think  about how your  game will have to look and how it is going
+  to feel. This  will give you  the basic ideas of the sorts of processing that
+  will have to be done by the computer in the game. Just let your mind run wild
+  and think about how great you're game could look.
+
+- The next thing you should do is think  about what  kind of  routines  you are
+  going to  need. You should start with the most important. For instance: for a
+  shoot 'em  up  you  should  start  with  sprite-routines  i.e. routines  that
+  actually draw the sprites so you can see them on screen. For a scrolling game
+  a tile-scroller is also very important. Since these routines are the building
+  blocks  of these  kind of games they determime the look and feel of the whole
+  game. You  need a solid basis  to build on so must be sure these routines are
+  absolutely bugfree and fast too. (If you like speedy games, that is.)
+
+- When you've done this you should try to integrate the most important routines
+  into your code. For instance: put your sprites over your scrolling  level and
+  you will  have a good start and impression of how your game is going to look.
+  This doesn't  sound that hard. And  indeed when you start it isn't that hard.
+  This will change when you try to integrate more routines. You need to be very
+  tidy with  your code. Don't let your code become a  complete mess!! If make a
+  mess of  your code you  could end with  a complete lack of understanding your
+  own program.
+
+- Now we  have arrived  at the most difficult part of the game. Now you need to
+  create the  main-loop of your  game. Please keep the following in mind whilst
+  creating your main-loop:....
+  - Always make sure that your main-loop first checks for keyboard input.
+  - See to  it that  during your  main-loop the  calculations  for the  sprite-
+    positioning, menu's, etc. are  done  first  and  after  that the  graphical
+    representation is done.
+  - Make  sure  that no  calculation  is  done twice  or trice  if  this  isn't
+    necessary.
+  - If you  need something  like  interaction  with  objects  in your game or a
+    complete  change  of  scene (For  instance: the player enters a house.) you
+    need to create another mainloop. 
+  All these  tips are  meant to make your code more structured. They don't show
+  you everything about coding a mainloop.
+
+- When your  main-loop  is fully  working  you  should  start  to  think  about
+  improving the  feel of  the game. Smooth  animation, realistic  movements and
+  comfortable gameplay are what I'm talking about. These are what make games so
+  much better. The main-loop was one thing, but this is maybe just as difficult
+
+If you  follow  these steps  carefully  whilst coding you will probably deliver
+quite a  nice game. Ofcourse  it still  depends  on how ambitious  and original
+your project  is. And this what makes coding so much fun. You have control over
+everything you're doing and can do everything you want to.
+
+
+                        CHAPTER 8 : GRAPHICS AND SOUND
+
+
+Now that I have  explained how to convert an idea we can perhaps talk about the
+graphics and  sound of games. The most important thing to remember is that some
+games need  good graphics  and sound  to make them nice. However other types of
+games  (puzzles,  simple   shoot 'em  ups)  don't  need  those  things. Another
+important thing is that you know the graphical/sonical-capacities of the system
+you're  developing  for. If the system  has crappy sound that is pretty hard to
+control (like  a plain STFM) you  can better  forget  about making  a game that
+depends on  sound-FX to make it great. A STE on the other hand  has much better
+sound that is incredibly easy to access.
+A STE is an  ideal games-machine. The  sound-, video-, processing and blitting-
+systems are all very fine-tuned to cooperate perfectly. Explaining the hardware
+in here  is perhaps a  bit complicated  so I won't  bother to do that, but it's
+safe to say that it is one of the best designed systems EVER! This doesn't mean
+though, that  it can handle  any game fast enough. For some games you will need
+more  colors  on  screen, which  automatically  means  that  it  requires  more
+processing/blitting-power. A machine  like the  Falcon030 has  better video and
+processing/blitting. For some games you will simply need a machine like this.
+What I'm  trying to  imly here  is that  games that depend largely on graphics/
+sound needs a  bigger system. I'm NOT trying to say that BETTER games require a
+BIGGER machine. Games  with simple graphics can easily kill off games that have
+better  graphics (but lousy  gameplay). I hope  you  understand  what  I  mean,
+because you should never start designing without understanding this advice.
+If you want  to create a puzzle or simple shoot 'em up you don't have to create
+great  graphics. If  however you  are designing  something like  a RPG you need
+serious amounts of graphics, because  it really adds up to the game. Some games
+(like RPGs) require  a certain atmosphere. This can best be done with creepy or
+medieval graphics and sound.
+In this situation  the sound is  not really the  problem. If you listen to some
+RPGs you're  very likely  to get inspired. When you  have already  created some
+songs it won't be much of a problem. You can get some cool sounds from sampling
+adventure  and fantasy movies and use them as samples in the game. The graphics
+however are quite a bit harder to do...
+RPGs require many, many  atmospheric  bitmaps. Therefore  you need  to make all
+your drawings  in the same style. Though this looks the best you need very much
+talent and  patience. For most normal people this is virtually imposible to do.
+Therefore  you can best  use a  digitizer  to speed  things up. Digitizing  and
+retouching  often  gives very  realistic  and convincing  results. You  can for
+example  digitize people  wearing medieval  clothes and  implement them in your
+game.
+Beware tough, for digitizing you will need a big computer, because of the large
+memory consumption  and amounts of colours. Digitized pictures look best in 256
+colors or  even better  HIGH/TRUE-color(Falcon030). You must also watch out for
+your  graphics-files  not getting  too big, otherwise  players need an enormous
+harddisk and RAM.
+Futuristic games(like my game NEUROBOTIX) either need fast 3D graphics or loads
+of futuristic  bitmaps. 3D graphics  needs to  be fast  and  has  to  have very
+optimised and smart code. For beginners this is not very advisible. For bitmaps
+you can  use a  great  program  called a "RAYTRACER". With  this you can easily
+create very  realistic, stylish graphics. The only thing you have to do is some
+3d-modelling  and your machine  does the rest. Maybe  I will create a raytracer
+myself someday, but it will be a large amount of work.
+Some drawings  are virtually  impossible to make. Only the best graphic-artists
+are able to  do them. Explosions  are best  digitized and  detailed pictures of
+structures  are best raytraced. And if you do this you DO need a big system and
+you can best create the game for a big machine too.
+Don't even  think of releasing  a totally  digitised game for a basic STFM. The
+gameplayers have  to swap disks every minute and the graphics (dithered back to
+16 colours) don't even  look that good. A Falcon  or TT would be better systems
+for these type of games.
+Eventhough  this is  so, the  STFM/STE still  can do a  lot. With  non-animated
+screens  you can  achieve  up to  3300  colours  on a  STFM and up to 19200(!!)
+colours  on a STE. These  techniques  have  never been  used in games before so
+maybe somebody  could try? If you look at the specs of a C64 you'll immidiately
+laugh. When you see the games you'll be totally amazed, though. The same can be
+done for the ST. It  looks like  every last bit of juice has been squashed out,
+but this  really isn't  right. Just look at  some good STE demos. Maybe FX from
+these demos can be implemented in new games?
+
+
+                           CHAPTER 9 : THE HARDWARE
+
+
+As I already  pointed out  the STE  has very  well designed  hardware. In  this
+chapter  I'd like to  give some  info about the  hardware. It is  impossible to
+explain everything  about it  in here. You can find everything you need to know
+about the hardware in the ATARI PROFIBOOK or the ATARI-developers guide. I will
+only try to explain the basic stuff.
+First of  all let's  start  off with the CPU. The CPU (Central Processing Unit)
+controls everything that  happens inside your ST. The ST-series is equiped with
+a particularly  nice Motorola  680x0 processor. It  is a great chip in terms of
+controlability and  datatransfer-speed. This  chip can move data to the RAM and
+calculate values.
+The it does  is is as  follows.... First of  all, the chip looks in the RAM for
+program data and  reads it  in little  steps. Every step  is read and each step
+encodes an  instruction the CPU then executes. This step can be copying data or
+subtracting  a value or  something. By combining different instructions the CPU
+can do a very large amount of complicated processes. CPUs are  pretty fast. The
+one in a  basic ST can even do 900000 instructions every second. The CPU in the
+Falcon can do an average of 3.84 million each second!
+The CPU can control  other chips  inside the  ST too. It  can send  commands to
+chips to  make them do  things. It can  receive data  from those chips too. The
+computer has a nice  load of special  chips. A good  example is  the VIDEOCHIP.
+This chip  actually reads  one part of the RAM continuously and it converts the
+zeroes and ones it has read into a video-signal that is sent to the monitor.
+Now that  you understand  a bit  of the  way a machine  works I  will give some
+usefull specs of the two most suitable game-STs, the STE and the Falcon030.
+
+                     STE                         Falcon
+---------------------+---------------------------+--------------------------
+standard number of   |                           |
+colours              |16 from 4096               |65536, or 256 from 262144
+---------------------+---------------------------+--------------------------
+sound(standard)      |4 channel, 8 bit, 50 KHz   |8 channel, 16 bit, 50 KHz
+---------------------+---------------------------+--------------------------
+standard sampler?    |no                         |yes, 16 bit, 50 KHz
+---------------------+---------------------------+--------------------------
+max. RAM write/read  |4.0 MB/s (with blitter)    |8.0 MB/s
+---------------------+---------------------------+--------------------------
+processor waitstates |none                       |sometimes
+---------------------+---------------------------+--------------------------
+DSP                  |no                         |yes, 32 MHz Motorola 56001
+---------------------+---------------------------+--------------------------
+CPU MIPS(average)    |900000                     |3840000
+---------------------+---------------------------+--------------------------
+
+
+                           CHAPTER 10 : THE ATARI ST
+
+
+This chapter  tells you a  bit about the Atari and how it should be programmed.
+Then I will  tell you about  what makes  the atari so good for coding games on.
+After that I will tell you my opinion on how to code for the Atari.
+
+First of all  let me tell  you a bit  about the  ATARI ST-series if  you didn't
+already know. In  december 1985 a  new computer hit  the shops which was pretty
+revolutionairy  seeing both it's  power and price. It was the ATARI 520 ST. The
+computer became a smash hit. The power of this system was really the tremendous
+data-transfer  speed. This  combined  with  easy  control-interface  and  great
+graphical capabilities made the machine a killer.
+The 520 ST model  was soon followed by a number of extended versions. These had
+more memory, a  better operating  system, better sound, and a sort of graphical
+accelerator (a blitter). These were not really that much better than the old ST
+and it would  take until 1990  for ATARI to make  a really revolutionairy model
+once again.
+And in 1990 it  finally arrived: the TT030. This machine had an incredibly fast
+data-transfer, which was 4 times greater than the ST's. Mathematical operations
+were even  faster than  this. The  memory was  faster too and the graphics were
+greatly enhanced. The machine was sadly a bit too expensive for the home-user.
+A load of  enhanced ST-models  came soon afterwards. This was ofcourse not that
+interesting.
+In 1993 came  the real  follow up of  the ST: the  Falcon030. It was  a greatly
+enhanced ST  with a higher transfer-speed than the ST and even better graphical
+and sonical capabilities  than the TT030. This  model was just as affordable as
+the ST in  the older  days and  became  a big hit, though  not  as  big as  the
+original ST.
+While I'm  writing this  I still  don't know exact details about the new Atari-
+computer. Perhaps  there will  never be one. You never know with Atari, anyway.
+They make  excellent computers but  you never  know when they hit the shops and
+only little people know about Atari.
+
+As you can see the ST-series has a  great potential  for games. The  high data-
+transfer-rate  and good graphical  and sonical capabilities should convince you
+of  this. The many  coding-languages make the machines even better for creating
+games  than  playing  them  if  you  ask  me. The  way in which the hardware is
+constructed and  how it is compatible  with other machines makes these machines
+unique. These aspects  make the ST-series ideal for assembly. This is a coding-
+language that is actually very close to the hardware. The CPU (this is the part
+of the  computer which you have to code for) is very easy to use if you compare
+it to other CPU's (like those in PC's).
+All these aspects convince  me utterly that  the language  in which  you should
+code is  assembly-language. This  way you  can utilise every part of your ATARI
+and make your game fast and optimised. Another point on which I base my opinion
+is the great  assembling-packages that are available. Once you see DEVPAC 3 you
+immediately fall in love with it.
+Most  people  immediately get  scared when  they hear  the word  assembly. They
+rather code in Pascal or something else. These people actually ignore the truth
+about computers  and will  never know  how they  work. The  only  advantage  of
+languages like Pascal is that they are more portable and are also used on other
+platforms. The  subject of  complete software  compatibility on every system is
+actually  out  of  the question. This  only  limitates  the  potential  of  the
+computers and makes it more difficult to  discover how computers actually work.
+The power  of the ATARI  is assembly. A  computer actually works very logically
+(especially an ATARI) and  is not  that hard  to understand. The  same goes for
+assembly on the atari.
+
+When you  start coding a game for say a standard 1 meg STe with colour-monitor,
+you should  make sure  you make it  compatible with the Falcon and the TT. This
+should  not be  so difficult  considering  that  those three  computers are 99%
+hardware-compatible  with  eachother. You  should make  sure that the game runs
+fast and  comfortable  enough on the standard system. These are the only things
+you should keep in mind. And this the power of the atari. If you look at the PC
+you'll  see that  when you want  to make your games fast, you'll already need a
+big system  because you  can't get a normal  assembler, the processor design is
+crap and  the system  layout is a  terrible mess. If  you're thinking about how
+nice those  PC's are with  their 2435000 Mhz Pentium Pro chips, consider  this:
+You almost can't  code on those  machines. Buy  a PC and  you'll  end up like a
+lamer!!!!!
+
+An Atari is a very capable machine that is relativily easy to code on and has a
+stabile system (unlike  the amiga). The  good games on the ST have demonstrated
+what a ST  can do. While  I'm writing this the  Falcon will still have to prove
+what it can do......
+
+
+                           CHAPTER 11 : CONCLUSION
+
+
+I hope all of you have learned what coding games is all about. When you haven't
+coded  anything before  you should  seriously  try to do so. It is fun and will
+give you a lot of pleasure. You can let your mind run wild and create something
+that is  even wilder. The  atari combined  with some good  software is an ideal
+tool to do  the job with. The  idea behind coding games is a beautiful one. You
+do something  you like  and please gameplayers  with that. As for the future of
+Atari-TOS-computers. I still  don't know. It  would be a  damn shame if the ST-
+series would  die out, because they  are so beautiful to code on. Now be a nice
+Atarian and start coding many cool games, please...
+
+
+P.S. Watch out for new EARchaeopteryx books, games, utils and other stuff..
+
+------------------------------------------------------- EARchaeopteryx of FUN -

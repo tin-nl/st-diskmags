@@ -1,0 +1,89 @@
+Ú--------------------------------------------------------------------------------
+                         WOLFENSTEIN 3D - SOON ON YOUR ST
+Ú--------------------------------------------------------------------------------
+
+Ok, welcome back in the  second part of the  PROPAGANDA for .tSCc., this time it
+is special dedicated to ...
+
+{*i WOLF1.PI1 m 0 20 0 200}
+
+ÒPlease think that this is a downscaled screenshot...
+
+At the moment  I haven't  much to review  about "Wolfenstein", our  coder RAY's,
+heartblood. Just this... So far the game engine runs quite fast on a ST and very
+fast  on  Falcon, ofcourse. In  fact "Wolfenstein" will  be the  first 1stperson
+shooter on the STFM (!) that can be called so and is using the machines techs to
+the edge. The few other games around  using texture  mapping suffered under very
+sparse and coarse textures, slowness, missing colours and so on.
+
+So RAY's attempt to convert "Wolfenstein" can be  called the  first real attempt
+to bring an ego  shooter with texture  mapping 3d engines  to the ST in all it's
+possible glory, and that is, after all still very well playable.
+
+So far only  the 3D engine is  running and there  isn't much of the  game itself
+implemented, but  the development  is going  strong  in comparison  with so many
+other game  projects on the  ST and everytime  we see  a new test  version, more
+features are implemented.
+
+Anyway... here's what RAY plans and thoughts about the future...
+
+Ò- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- completely finished:  wall-environment refresh, including  animated doors  and
+                        pushwalls. The  walls get  rendered at  16.16 fixedpoint
+                        accuracy, and still it runs at up to 15fps on a plain ST
+
+- partly finished:      controls, keyboard  movement  works  just  like  in  the
+                        original game, mouse and joystick support need yet to be
+                        added.
+
+- still to be included: statics, such  as pickable  bonus items, bodies, tables,
+                        pillars etc. that's  what I am  working on at the moment
+                        and that's what the next beta will be all about.
+                        Implementing this includes visibility detection, sorting
+                        transformation  and clipping + additional masked scalers
+                        as any of the  sprites' pixels will  need to be markable
+                        as transparent (colorkey!). I guess this  will  drop the
+                        framerate  a  bit, depending  on how  many  objects  are
+                        visible at a time, however.
+
+                        moving objects i.e. enemies. having inmplemented statics
+                        once, those  shouldn't be too  hard to add. Nevertheless
+                        that's not all because they need to be controlled, which
+                        means:
+
+                        a game  engine  emulating  the  enemies  brains is still
+                        missing, too then :). In  my opinion  this  will  be the
+                        hardest  part of the  game as it doesn't have to control
+                        the enemies only, but additionally needs to check if our
+                        bullets  have hit  the enemy, if  it's dead, if  we  are
+                        dead, it  has  to count  our  score, control  our  items
+                        (keys, weapons) and  so on. So again this might drop the
+                        framerate, although I'll  try optimizing this as much as
+                        possible just like with the finished features, before.
+
+                        sound-sample  replay/mixing...  we  don't  want  to  run
+                        through  a  silent  maze, right? - hance  a  2-4 channel
+                        mixer will have yet to be added, as  well. On the humble
+                        ST I need  to emulate a  DA directly writing into the YM
+                        via timer a, on the STE+ i will the DMA sound system, of
+                        course.
+
+                        menus, a level  loader (I hope to recieve the level data
+                        from the  Apple IIgs guys, soon :), will  be one  of the
+                        last steps in finishing the game.
+
+Ò- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+{*i WOLF2.PI1 m 0 20 0 200}
+
+ÒWhere are the enemies?! Originally the screen has about 3o colours...
+
+
+But I think even if "Wolfenstein" will be  finished somewhen, the running engine
+could be help to port more  games of this kind  to the ST, I don't think on DOOM
+and such  stuff, but there are enough ego shooters around that  aren't on a much
+higher technical level than "Wolfenstein" but still a good play.
+Naaaah.... This game itself would be cool enough at first (...) :)
+
+Û_Ú.tSCc.Û__________________________________________________________ÚmoondogÛ_Úo9/2k2Û_

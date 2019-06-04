@@ -1,0 +1,399 @@
+FALCON COMPATIBILITY LIST 1
+~DUST.FIL~
+                         THE FALCON COMPATIBILITY LIST
+                               MK. IV AND A HALF
+                             by Richard Karsmakers
+                  (after an old idea by Cottonwood Computers)
+
+ For those of you still waiting to purchase a Falcon, I have compiled a list of 
+some stuff that has been tested on it (not just by me,  mind you). This list is 
+based on some original research and the idea of Cottonwood Computers,  which is 
+a  USA  Atari retailer.  I have used only a small part  of  their  list,  which 
+originally  contained a lot of programs I guess nobody has ever heard  of,  and 
+have  afterwards added a lot of stuff myself (from other sources as well as  my 
+own experience).
+ Please  realize  that  some  of the programs  featured  here  have  been  used 
+extensively  whereas  some  others,   obviously,  haven't.  I  can't  take  any 
+responsibility  for  the accuracy of the data featured  here.  Of  course,  you 
+should  also  take into consideration that what is tested for  here  is  Falcon 
+compatibility,  not  "MultiTOS" compatibility!  If "MultiTOS" compatibility  is 
+known, this will be indicated.
+ I  would like to send thanks to some of the people whose research I have  also 
+used:  Piper,  Kai Holst, Gregg, Sean Dougherty, Cut FlÅgel, David Fairweather, 
+Silicon Magic,  Bob DeWitt,  John Stansford, Paul Glover, the Atari Falcon Club 
+and  John  Eidsvoog.  Special thanks to Heiko Hartmann (who runs  an  extensive 
+compatibility list on internet,  including flag settings for  "Backward",  most 
+excellent!).
+ Last  but  not least I'd like to mention that most of the  stuff  I've  tested 
+myself was done on a 4 Mb TOS 4.04 Falcon,  with Sinister Developments' "FBoot" 
+version 1.2 and "Backward" version 2.72 handy.
+ After each section, a success ratio is given: RUNS/TOTAL.
+
+===============================================================================
+DRAWING & ART
+===============================================================================
+
+Avant Vector                 Runs
+Calligrapher                 Runs
+Canvas                       Runs
+Chronos                      Nope
+Crack Art                    Runs, but no block rotate possible
+Cyber Color                  Runs
+Cyber Paint 2.0              Bombs
+Cyber Sculpt                 Runs, but in ST high res only
+Degas Elite                  Runs
+Deluxe Paint ST 1.00         Runs
+DT Paint                     Nope
+DynaCADD 2D                  Runs
+DynaCADD 3D                  Nope
+Easy Draw 2.3                Nope
+Easy Draw 3.0                Runs
+Falcon Paint (FPaint)        Runs (Falcon program)
+Flairpaint                   Won't load
+HyperDraw                    Runs
+Imagecopy 2                  Runs
+MegaPaint                    Runs
+MegaPaint Pro 4              Runs
+Neochrome 1.0                Runs
+Neochrome Master 2.24        Nope (can't I/O)
+Paintworks                   Runs
+Phoenix 3D Object Renderer   Runs in 80 columns or higher
+Photo Show                   Runs
+Prism Paint                  Runs in all palletted resolutions
+Quantum Paint                Crashes
+Rainbow                      Runs (Falcon program)
+Spectrum 512                 Attempts to load, then crashes
+Speed of Light               Runs
+Tinyview                     Runs
+True Paint                   Runs (Falcon program)
+
+ 24/32 (75%)
+
+===============================================================================
+DTP & WORD PROCESSING
+===============================================================================
+
+Atari Works                  Runs (all modes, even MTOS)
+Calamus SL                   Runs
+Timeworks DTP                Loads, freezes when mouse is moved
+First Word 1.03              Runs
+First Word Plus 3.20TT       Runs, but grabs up all memory
+First Word Plus 4.02         Runs
+Fleet Street Publisher 1.1   Runs
+GfA Draft                    Runs
+K-Rhyme                      Runs
+K-Roget                      Runs
+Marcel Word Processor        Runs
+Microsoft Write              Runs
+Miniprint                    Runs
+Pagestream 2.2               Runs
+PrintMaster Plus             Runs in ST medium
+Protext 5.52                 Runs
+Publishing Partner           Runs
+Redacteur                    Runs in ST resolutions
+Signum!                      Nope
+ST Writer                    Runs
+ST Writer Elite 2.3          Runs
+Tempus 2.0                   Runs in ST med/hi only 4)
+Timeworks DTP                Nope
+That's Write 2.03            Runs, but crashes when printing
+That's Write 2.09            Runs
+Word Perfect 4-18-91         Runs, but not with Maccel 3.4!
+Word Writer ST 2.2           Runs
+
+ 24/27 (89%)
+
+===============================================================================
+GAMES
+===============================================================================
+ (All  titles are originals - not cracked stuff - to the best of my  knowledge, 
+except where noted)
+
+1943                         Runs
+3D Pool                      Runs, but needs 50 Hz
+8-Ball                       Runs with Backward
+Action ST                    Nope
+A Day at the Races (v 1.2)   Runs with Backward
+Afterburner                  Runs (Hitpack version only!)
+Airball                      Runs with FBoot
+Airbus A320 USA              Runs, but on RGB only
+Air Warrior (PD game)        Runs, ST medium only
+Aliants                      Runs
+Alien Fires                  Nope
+Alien Syndrome               Runs
+Alternate Reality, The City  Runs
+Amberstar                    Nope
+Ancients Art of War i/t SkiesRuns (with Backward only?)
+Annals of Rome               Runs
+Another World                Runs with Backward
+Aquanaut                     Nope
+Archer MacLean Pool          Runs with FBoot
+Archipelagos                 Nope
+Arctic Fox                   Nope
+Arena                        Nope (no joystick input)
+Arkanoid                     Nope (copy protection goes wrong) D)
+Arkanoid II                  Runs with Backward (not with me!)
+Armourgeddon                 Nope
+Artificial Dreams            Runs
+Atari Grand Prix             Runs
+Attack of the Mutant Camels  Runs with Backward
+Auto Duel                    Conflicting reports on this one
+AV8V Harrier Attach          Runs in ST low res mode
+Baal                         Runs with Backward
+Backlash                     Runs with Backward
+Badlands                     Runs
+Baker Street Detective       Nope
+Balance of Power             Runs
+Ballerburg (German shareware)Runs
+Ballistix                    Runs with Backward
+Bang!                        Runs
+Barbarian (Psygnosis)        Nope
+Barbarian (Palace)           Runs with Backward
+Bard's Tale                  Runs (with Backward?)
+Batman the Movie             Nope
+Batman (Joker)               Runs with Backward
+Batman (Penguin)             Runs with Backward
+Battle Chess                 Runs
+Battle for the Throne        Runs
+Battle Hawks 1942            Nope
+BattleTech                   Runs
+Battletris (PD game)         Runs
+Battle Zone                  Runs (probably all old Atari stuff)
+Better Dead than Alien       Runs
+Beyond Zork                  Runs with Backward
+Billiards II                 Nope
+Bio Challenge                Nope
+Bionic Commando              Conflicting reports on this one
+Black Lamp                   Runs with FBoot 2)
+Blastaball                   Nope
+Blasteroids (not Imageworks) Runs
+Block Out                    Normal
+Blood Money                  Nope
+Bloodwych                    Conflicting reports
+Bloody Blade                 Nope
+Blue Max                     Runs with Backward
+Boing                        Nope
+Bomb Jack                    Runs with Backward
+Bombuzal                     Runs
+Borodino                     Runs, but very fast
+Boulderdash                  Runs
+Brataccas                    Runs with FBoot or Backward
+Breach                       Conflicting reports on this one
+Breach 2                     Nope
+Breaknoid                    Runs
+Bubble Bobble                Runs with Backward
+Bubble Trouble               Runs
+Buggy Boy                    Runs with FBoot (maybe without) fast
+Bundesliga Manager Prof.     Runs
+Cadaver                      Runs with Backward
+Caesar                       Runs
+California Games II          Runs
+Campaign                     Runs
+Cannon Fodder                Runs with Backward
+Captain Blood                Nope
+Captive                      Nope
+Carrier Command              Runs with Backward
+CBZone (PD monochrome game)  Runs
+Centipede                    Runs with Backward
+Challenge Golf               Nope
+Championship Wrestling       Nope
+Chaos Engine                 Runs with Backward J)
+Chaos Strikes Back           Runs with Backword, possibly without
+Chariots of Fire             Nope
+Chess Champion 2175          Runs
+Chessmaster 2000             Nope
+Chopper X                    Runs
+Chrono Quest                 Runs with Backward, maybe normal?
+Chronos                      Nope
+Chuckie Egg                  Runs
+Circus Attractions           Nope
+Civilization                 Runs (though colours are messed up)
+Cloud Kingdoms               Runs with FBoot
+Cold Revenge (shareware game)Runs
+Colonial Conquest            Runs
+Colorado                     Nope
+Columns                      Runs (Falcon game, RGB only)
+Conquest                     Runs (uses GEM)
+Cops'n'Robbers Too           Runs (but too fast)
+Corporation                  Nope
+Corruption                   Runs
+Cosmic Pirates               Nope
+Curse of the Azure Bonds     Runs in ST low
+Crackdown                    Runs with FBoot
+Crack'Ed                     Nope
+Crafton & Xunk               Nope
+Crash Garrett                Runs
+Crazy Stunt Cars             Nope
+Creatures                    Nope
+Crystal Castles              Runs with Backward
+Crystal Cave (PD game)       Nope
+Cudlee's Quest               Runs with Backward
+Curse of the Azure Bonds     Runs
+Cutthroats                   Runs
+Cyber                        Nope
+Cyberdrome                   Runs
+Cybernoid                    Runs
+Cybernoid II                 Nope
+Dark Castle                  Runs
+Dark Century                 Nope
+Darkman                      Runs with Backward
+Day of the Pharaoh           Runs
+DC Snowball Fight            Runs with Backward
+Deadline                     Runs
+Deathbringer                 Runs
+Death Sword                  Nope
+Debut                        Nope
+Deep Space                   Runs with FBoot
+Defender II                  Nope
+Defender of the Crown        Nope
+Deflektor                    Nope
+Deja Vu                      Conflicting reports on this!
+Deja Vu II                   Runs
+Delta Patrol                 Nope
+Demolition Man               Runs
+Demon's Winter               Runs
+Desolator                    Nope
+Diablo                       Runs
+Disciples of Steel           Runs with Backward
+Dogfight                     Nope
+Double Dragon                Runs with Backward
+Double Dragon III            Runs
+Drachen (PD "Shanghai" clone)Runs
+Dragon Breed                 Runs (with Backward?)
+Dragonflight                 Nope
+Dragon's Breath              Runs
+Dragons of Flame             Nope
+Drakkhen                     Nope (conflicting reports w/Backw)
+Dropix ST                    Runs
+Dr. Zock                     Runs, but too fast
+Dungeon Adventure 5.2        Runs
+Dungeon Master               Runs
+Dynablasters                 Runs with Backward
+Dynabusters                  Runs
+Eco                          Runs
+Elf                          Runs with Backward
+Elf II                       Runs with Backward
+Eliminator                   Runs (Hitpack version only!)
+Elite                        Runs
+Elite II                     Runs
+E-Motion                     Nope
+Empire 2.0                   Runs in ST medium and high
+Empire Strikes Back          Nope
+Enchanted Land               Nope
+Enduro Racer                 Runs
+Enigma                       Nope
+Epic                         Conflicting reports
+Escape                       Runs
+Exolon                       Runs
+Exotic                       Runs
+Extensor                     Runs, but colours are screwed
+F-15 Strike Eagle            Nope
+F-16 Falcon                  Nope
+F-19 Stealth Fighter         Runs with Backward, but maybe not
+F-29 Retaliator              Nope
+Falcon                       Nope
+Falcon Mission 1-3           Nope
+Falctron                     Runs
+Federation of Free Traders   Nope
+Fighter Bomber               Nope
+Fire Brigade                 Runs, and fast too
+Fish!                        Runs
+Flames of Freedom            Runs
+Flight Simulator II          Runs, but screen flashes a bit
+Formel 1 ST                  Nope
+Formula One Grand Prix       Runs with FBoot or Backward 2)
+Foundations Waste            Runs
+Frogger (PD game)            Nope
+Full Metal Planet            Runs with Backward
+Future Wars                  Runs
+Fuzzball                     Nope
+Galdregon's Domain           Conflicting reports
+Gauntlet II                  Runs w/Backward/FBoot (not with me!)
+Gauntlet III                 Runs with Backward
+GFL Championship Baseball    Runs with Backward
+Ghostbusters II              Runs with BOOT_COF.PRG
+Ghost & Goblins              Runs with FBoot
+Gnome                        Nope
+Gnome Ranger                 Nope
+GNU Chess                    Runs
+Goal!                        Nope
+Gobliiins                    Nope (conclicting reports w/Backw)
+Gobliiins II                 Runs with Backward
+Go-Board 3.0                 Runs
+Gods                         Runs with Backward
+Gold of the Americas         Nope
+Golden Island                Runs
+Goldrunner                   Runs
+Goldrunner II                Runs, though scrolling not perfect
+Goldrush                     Runs
+Go-Up                        Runs
+Grandad and the Quest etc.   Nope
+Grand Prix 500cc             Nope
+Gravity                      Nope
+Great Battles                Runs
+Great Courts II              Runs with Backward
+Great Giana Sisters          Nope
+Gremlins                     Runs with Backward
+Gridiron                     Nope
+Gridrunner                   See Super Gridrunner
+Guild of Thieves             Runs
+Gunship                      Runs with Backward
+HacMan II (shareware game)   Runs
+Hardball                     Conflicting reports
+Hardcore (Llamasoft demo)    Runs with Backward
+Hard Drivin'                 Runs with Backward
+Harrier Assault              Runs
+Hawkeye                      Runs with FBoot
+Hero                         Nope
+Heroes of the Lance          Runs
+Hero Quest                   Runs with Backward
+High Roller                  Nope
+Hillsfar                     Runs
+Hitchhiker's Guide...        Runs
+Hole in One                  Runs (though screen is shifted)
+Hole in One Miniature Golf   Runs with Backward
+Hollywood Hijinx             Runs (probably all Infocom advntrs)
+Home Casino                  Runs
+Hopper                       Runs
+Hostages                     Nope
+Hot Shot                     Nope
+Hoyle's Book of Games I      Runs, but very fast
+Huang Shi (monochrome sharew)Runs
+Hunter                       Runs with FBoot
+I, Ball                      Runs
+Ice Palast                   Runs
+Immortal, The                Nope
+Impact (cracked version)     Runs with Backward
+Imperium (commercial game)   Runs with Backward
+Imperium (shareware game)    Runs
+Impossible Mission           Nope
+Impossible Mission Ii        Conflicting reports
+Indiana Jones (Adventure)    Runs
+Indiana Jones and the Last C.Runs with Backward
+Indiana Jones and the Templ..Runs with Backward
+Infestation                  Nope
+Infidel                      Runs
+Infinity One                 Runs
+Insectoid 512                Runs with Backward
+International Karate +       Nope
+International Sports Chall.  Runs
+Interphase                   Runs with Backward
+Ishar                        Runs (Falcon game)
+Ishar II                     Runs (Falcon game)
+Ishar III                    Runs (Falcon game)
+Jambala, Seven Gates of      Nope
+James Pond                   Runs with FBoot, but is fast!
+James Pond 2: Robocod        Nope
+Jeopardy                     Runs
+Jeopardy 3                   Runs
+Jet                          Runs
+Jimmy White's Whirlwind Sn.  Runs
+Jinxter                      Runs
+Joan of Arc                  Runs
+Joe Blade                    Runs
+John Lowe's Ultimate Darts   Nope
+Journey to the Center o.t.E. Runs, but fast
+Joust                        Runs in ST low res, but too fast
+Jupiter Probe                Nope (no joystick input)
+Jupiters Masterdrive         Runs
+

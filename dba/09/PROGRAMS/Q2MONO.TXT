@@ -1,0 +1,52 @@
+Q2 MONO EMULATOR
+
+      ____    ____ _____________
+     /   /'  /   //___     ____/' 
+    /   /___/   /'   /    /':::'   
+   /   ____    /'   /    /'    -RES ON LOW RES...
+  /   /'  /   /____/    /___ 
+ /___/'  /___//____________/'  THE MONO EMULATOR II
+ ':::'   ':::' ':::::::::::'
+
+We have seen them before, programs the emulate hi-resolution on a normal
+RGB monitor. But this one is somewhat different. It has some new features
+and it works from the bootsector.
+
+It's a very small prg, it has to or else it couldn't work from the 
+bootsector, and it has a view options:
+
+1. Save Emulator             - Seems clear save it to a bootsektor
+
+2. Save Blitter Emulator     - Extended version of the emulator, save
+                               it to the bootsector.
+
+3. Clear Bootsector          - Clears the bootsector (old virus or old
+                               emulator version)
+
+4. Emulationspeed            - Can be set from 2 till 8 Vbls. Default 
+                               is 3 Vbls. A slower screenupdating 
+                               gives you a faster calculation, it 
+                               depends on what you prefer...
+
+5. Screenupdating            - An option to switch on/off the screen-
+                               updating while accesing the diskdrive.
+                               
+6. Quit                      - Quess what that does ????
+
+          
+A very nice small util, which works very good. I already tried it with 
+Signum 2 and Degas Elite but it all works very good. This way you 
+could also see the pictures that are in the folder ATARIWORKS. They 
+are all in .PC3 format and if you don't have a SM-124 or 125 you 
+couldn't look at them. So here is the solution...
+
+I tried it on the Falcon but it doesn't work on it, so i presume it's
+ST/STE only !
+
+It's all coded by Awe of Q2 and I think he did a great job on this one.
+Thanks go to Q2 for sending it to us. Hope to see more of these small 
+good things in the future also on the Falcon.
+
+                                       Bonus and Slimer.
+
+

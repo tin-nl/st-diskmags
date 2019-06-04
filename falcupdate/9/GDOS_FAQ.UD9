@@ -1,0 +1,2783 @@
+* It's a BIG file! It'd eat your printer for breakfast, but it  contains
+a wealth of information... read on!
+
+
+                                 More Joy of GDOS*
+
+                                    Version 2.4
+
+                                   Gerd Castan **
+
+
+
+
+
+
+
+
+________________________________
+*  English version posted in comp.sys.atari.st -
+   German Version posted in de.comp.sys.st and maus.gui.gem
+** English translation by Stefan Damerau (cookie@cookie.syd.de)
+
+
+Contents
+
+     1 Technical Info
+     2 Introduction
+     3 Motivation
+     4 Changes
+     5 VDI drivers
+       5.1 Ink printers
+       5.2 9pin drivers
+       5.3 24pin drivers
+       5.4 Laser drivers
+       5.5 Atari laser drivers
+       5.6 Screen drivers
+            5.6.1 LineA
+            5.6.2 Setscreen & Getscreen
+            5.6.3 NVDI and WARP 9
+       5.7 Other drivers
+            5.7.1 Memory drivers
+            5.7.2 Plotter drivers
+            5.7.3 NVDI 3 drivers
+       5.8 What's missing
+     6 Errors
+     7 Fonts
+       7.1 Bitmap fonts
+       7.2 Vector fonts
+            7.2.1 FSMGDOS fonts
+            7.2.2 Bitstream Speedo fonts
+            7.2.3 Type 1 fonts
+            7.2.4 TrueType fonts
+            7.2.5 Calamus fonts
+       7.3 Comparison of vector formats
+            7.3.1 Curves
+            7.3.2 Hints, instructions, switches
+            7.3.3 Internal resolution
+            7.3.4 Linear and optical scaling
+            7.3.5 Multiple Master (MM) fonts
+       7.4 Format conversion of scalable fonts
+     8 Printers
+     9 Programs
+    10 Utilities
+      10.1  fontfix
+      10.2  Outline fonts
+      10.3  Printer drivers
+      10.4  ASSIGN
+      10.5  FONTCHK
+      10.6  FONTCNV
+      10.7  GEMFont
+      10.8  FontMonger
+      10.9  Font ID
+      10.10 X4U
+      10.11 GDOS-Font
+      10.12 REFONT
+    11 Font Selectors
+      11.1 UFSL
+      11.2 XUFSL
+      11.3 Magic (from Peter Hellinger, *not* MagiC!)
+      11.4 FontSel
+      11.5 Minimum requirements
+      11.6 Characteristics liked to be seen
+            11.6.1 Attributes and selection
+            11.6.2 Windows and even handling
+            11.6.3 misc
+      11.7 About dialogs
+    12 Distribution
+      12.1  Atari
+      12.2  BELA
+      12.3  Language
+      12.4  Internet
+      12.5  Working Title
+      12.6  XWindows
+      12.7  COMPO
+      12.8  IMG-0300
+      12.9  FTP
+      12.11 SciLab
+      12.12 Star Division
+      12.12 Thierry Rodolfo
+      12.13 Others
+    13 GDOS Versions
+      13.1 The ones from the bones
+            13.1.1 Atari-GDOS and AMCGDOS
+            13.1.2 ABCGDOS
+            13.1.3 G+Plus
+      13.2 One step forward
+            13.2.1 FontGDOS 2.0
+            13.2.2 FSMGDOS 3.0
+      13.3 Actual Developments
+            13.3.1 SpeedoGDOS 4.0 and 4.1
+            13.3.2 SpeedoGDOS 4.2
+            13.3.3 SpeedoGDOS 5.0
+            13.3.4 NVDI up to V2.51
+            13.3.5 NVDI 3.0
+      13.4 Comments
+    14 Source
+    15 Tips'n Tricks for users
+      15.1 Pixeltrash at printing
+      15.2 NEC P6+
+      15.3 Overwritten Speedo faces
+      15.4 SpeedoGDOS & MagiC!
+    16 Tips'n Tricks for coders
+      16.1 Fontsize and Pixelsize
+      16.2 Selecting drivers
+      16.3 The Metafile format
+      16.4 Expanded Sub opcodes for metafiles
+           (Not yet completet)
+      16.5 NVDI3
+    17 Addresses
+    18 Miscellaneous
+      18.1 Critics
+            18.1.1 Critics to the author
+            18.1.2 Critics to the translator
+      18.2 Praise
+      18.3 For my support
+      18.4 Trademarks
+      18.5 Guarantee
+    19 Appendix
+      19.1 Literature
+
+
+1 Technical Info
+
+
+My email address will change. Due to this reason I
+have an alias, pointing to my actual location - and if it's in the
+MAUS-Net: G.Castan@physik.uni-stuttgart.de
+
+For easy location of this document at servers and mailboxes, I ask for
+using the following name(s) and saving the ascii AND TeX versions:
+FILENAME      = gdosi24    (German version)
+FILENAME      = gdosi24e   (English version)
+CR+LF should be used when saving at UNIX-Fileservers too, not just LF
+
+2 Introduction
+
+Actually I'm writing a program, that makes his print-out via GDOS. Looking
+for printer drivers I faced the problem, that many times no documentation is
+included to the drivers.
+
+Otherwise it may happen that there are different drivers with the same name.
+But what are their differences?
+
+Here I have briefly collected my experiences with printer drivers.
+
+This collection doesn't generally want to describe coders how to use
+printer drivers (except to problems not mentioned in literature). And you
+wont find information about the concept or how to install printer drivers.
+To get this refer to the list at the end of this FAQ.
+
+What I want to exclaim here is more information about the several drivers:
+
+  o Where are the drivers available?
+  o How to distinguish them?
+  o What are the problem with them?
+  o Which drivers can be used for certain printers?
+
+
+If anybody has more experience or questions, please write me. I will face
+the work to update this FAQ.
+
+Credits:
+Kay Prisille       (MIGRAPH-products, Calligrapher lite)
+Julian Reschke     (IMG-0???)
+Volker Ritzhaupt
+Juergen Voorgang   (Working Title - products)
+Herwig Schelauske  (Installation of GDOS, name-conventions)
+Normen Kowalewski  (Font-GDOS)
+Erik Dick          (SpeedoGDOS)
+Patrick Dubbrow
+Ulrich Rossgoderer (WYSIWYG)
+Stefan Hintz       (CHARLY IMAGE)
+Ulli 'Huhu' Ramps  (SpeedoGDOS 4.2)
+Laurenz Pruessner  (SLM_HS)
+Marcel Boom        (1st Postcard!)
+Joerg Tochtenhagen (Misc)
+Ralf Heckmann      (Spellchecker for the German version 8-)
+Andreas M. Koepfer (EASE, That's Write, MagiC!)
+Wilfried Behne     (misc)
+Ulrich Kaiser      (ABC-GDOS)
+
+Gerd Castan.
+
+
+3 Motivation
+
+With GDOS it took me ~2 hours of coding, to get the screen-output to the
+printer in maximum quality. And (almost) with no extra work I get output to
+printers I even don't know.
+
+I there's anybody who wants to write a program with printing options, should
+better care of the main job of the programm.
+
+Nobody wants to pay for printer drivers if there's another program that
+didn't take the coder extra work with such stuff making this program less
+expensive (and surely better).
+
+The user has - besides the lower price - another advantage. If he uses
+several programs he need place for the driver and the fonts only one time on
+the disc.
+
+SpeedoGDOS is available from Atari shops (Atari Competence Center in
+Germany) now.
+
+The (qualified) feedback to my FAQ has - compared to autumn '92 - raised
+remarkable. Due to Speedo the interest in GDOS coming from the coders seems
+to be bigger.
+
+
+4 Changes
+
+Now (from 2.4) I'll switch back to listing the changes here, not in the table of
+contents ...
+Anyway, a "*" stand for changed chapter and "+/-" for new or removed chapter (I
+guess you'll know which char stands for what <g>)
+
+One Important thing to note: The dates of the GDOS drivers are in German format,
+that is: DD.MM.YY! Remember that! (But I guess you alreade noticed that?)
+
+     * 2 Introduction
+     * 7.2.4 TrueType fonts
+     * 9 LDW-PowerCalc, Fractals IV
+     * 13.3.2 ''character 0`` within Bitstream mode
+     * 13.4 Comments about NVDI 3.0 and SpeedoGDOS 5.0
+     * 19.1 New release of [20]
+     + 9 STELLA, Stello 2.0, Gut'nberg, Tarkus
+     + 10.11 GDOS-Font
+     + 10.12 REFONT
+     + 12.12 Thierry Rodolfo's printer drivers
+     - Listing about printers (got out of date)
+
+5   VDI drivers
+
+In this table I have listed distributor, errors and useable fonts.
+
+ 5.1 Ink printers
+
+__________________________________________________________________________
+| Name      |Date     |Length |Distributor |Errors | Others | Fonts      |
+|___________|_________|_______|____________|_1_|_2_|________|____________|
+| BJ10E     |20.11.90 | 45917 | WT         |   |   |        |NC          |
+| BJ10      |20.11.85 | 45919 | CL         |   |   |        |NC          |
+| BJ10      |28.08.91 | 45660 | BELA       |   |   |        |NC          |
+| BJ10      |27.01.92 | 59715 | FontGDOS,I |   | n |        |NC, OTL     |
+| BJ10      |28.01.93 | 61428 | SGDOS 4.0  |   | n |        |NC, SPD     |
+| BJ10      |02.07.93 | 63496 | SGDOS 4.2  |   | n |        |NC,SPD,TT,T1|
+| STYLUS    |25.04.94 | 60848 | SGDOS 5.0  |   | n |        |NC,SPD,TT,T1|
+| HP_LJET   |22.02.89 | 45512 | BELA       |   |   | n.p.   |LS          |
+| HP_LASER  |25.09.89 | 36928 | Atari,I    |   |   |        |LS          |
+| LASERJET  |06.03.91 | 54517 | Atari      |   |   |        |LS          |
+| LASERJET  |27.01.92 | 60194 | FontGDOS,I |   | n |        |LS, OTL     |
+| LASERJET  |28.01.93 | 61907 | SGDOS 4.0  |   | n |        |LS, SPD     |
+| LASERJET  |02.07.93 | 64408 | SGDOS 4.2  |   | n |        |LS,SPD,TT,T1|
+| HPL150    |12.04.86 | 51541 | wt         |   |   |150dpi  |LL          |
+| HPL300    |24.04.86 | 51541 | CL,wt      |   |   |        |LS          |
+| DESKJET   |13.05.92 | 45637 | BELA       |   |   |  p.    |LS?         |
+| DESKJET   |14.05.91 | 46040 | CL,WT      |   |   |  p.    |300x600     |
+| DESKJET   |06.03.91 | 54285 | Atari,I    |   |   |        |LS?         |
+| DESKJET   |?        | 45618 | ?          |   |   |  p.    |LS          |
+| DESKJET   |?        | 45285 | ?          |   |   |  p.    |LS          |
+| DESKJET5  |14.05.91 | 46040 | CL,WT      |   |   | delta  |LS          |
+| DJ5       |27.01.92 | 60600 | FontGDOS,I |   | n |        |OTL         |
+| DJ5       |?        | 60538 | ?          |   |   |        |            |
+| DJ5       |28.01.93 | 62251 | SGDOS 4.0  |   | n |        |SPD         |
+| DJ5       |02.07.93 | 64319 | SGDOS 4.2  |   | n |        |SPD,TT,T1   |
+| DJ550C    |11.10.93 | 68870 | SGDOS 5.0  |   | n |        |LS,SPD,TT,T1|
+| DJ550C    |11.10.93 | 68870 | T.R.       |   | n |        |LS,SPD,TT,T1|
+| DJ_550C2  |14.04.94 | 68746 | SGDOS 5.0  |   | n |        |LS,SPD,TT,T1|
+| DJ_500C   |14.04.94 | 68761 | SGDOS 5.0  |   | n |        |LS,SPD,TT,T1|
+| DJ_510    |17.05.94 | 61921 | SGDOS 5.0  |   | n |        |LS,SPD,TT,T1|
+| DJ_510T   |17.05.94 | 61925 | SGDOS 5.0  |   | n |        |LS,SPD,TT,T1|
+| MT90      |21.12.90 | 44881 | BELA       |   |   |180dpi  |SP          |
+| PAINTJET  |27.01.92 | 60005 | FontGDOS   |   | n |        |SP, OTL     |
+| PAINTJET  |?        | 60173 |            |   |   |        |SP          |
+| PAINTJET  |28.01.93 | 61648 | SGDOS 4.0  |   | n |        |SP, SPD     |
+| PAINTJET  |02.07.93 | 63642 | SGDOS 4.2  |   | n |        |SP,SPD,TT,T1|
+| PAINTJET  |14.08.92 | 60173 | I          |   |   |        |SP, OTL     |
+|_PAINTJET__|13.10.91_|_45934_|_WT_________|___|___|________|SP__________|
+
+Note: The drivers named HP_LJET and DESKJET can be used for (HP compatible)
+ink and laser printers. The difference is in the transfer to the printer:
+Packed (p.) or not packed (n.p.). 'Delta' means that the data is delta
+packed.
+
+PAINTJET:
+   180X180: 2-8 colo(u)rs
+    90x90:   16 colo(u)rs
+
+MT90 is made by Patrick Dubbrow.
+
+Using ink drivers produces a problem with bitmap fonts. Using 300dpi all is
+ok. But 360dpi fonts are optimised for best efforts with pin printers having
+thick pins. Using ink printers makes the fonts look much too thin.
+
+Solution: either use 300 [ 600, 1200 :-) ] or exclusively use vector fonts
+
+
+
+ 5.2 9pin drivers
+
+________________________________________________________________________
+| Name      |Date     |Lenght |Distributor |Errors | Others | Fonts    |
+|___________|_________|_______|____________|_1_|_2_|________|__________|
+| FX240DPI  |22.12.89 | 45396 | BELA       | y |   |        |SR        |
+| FX80      |22.12.89 | 45396 | BELA,wt    | n |   |        |EP        |
+| FX80_2    |12.06.91 | 45396 | I          |   |   |        |EP        |
+| FX80      |24.09.91 | 45525 | CL         |   |   |        |EP        |
+| FX80      |16.12.87 | 45396 | Atari      | n |   |        |EP        |
+| FX80      |27.01.92 | 59236 | FontGDOS,I | n | n |        |EP, OTL   |
+| FX80      |28.01.93 | 61111 | SGDOS      |   | n |        |EP, SPD   |
+| FX80      |02.07.93 | 63177 | SGDOS  4.2 |   | n |        |EP, SPD   |
+| FX80HIGH  |22.01.89 | 44730 | Atari,I    | n |   |        |SR        |
+| FX80_QD   |24.09.91 | 45525 | WT         |   |   |        |EP        |
+| NX1000    |27.01.92 | 58719 | FontGDOS   | n | n |        |EP, OTL   |
+| NX1000    |28.01.93 | 60723 | SGDOS      |   | n |        |EP, SPD   |
+| NX1000    |02.07.93 | 62717 | SGDOS  4.2 |   | n |        |EP, SPD   |
+| NX1000    |14.08.92 | 58887 | I          |   |   |        |EP, OTL   |
+| OKI20     |27.01.92 | 58491 | FontGDOS   | n | n |        |EP, OTL   |
+| OKI20     |28.01.93 | 60495 | SGDOS      |   | n |        |EP, SPD   |
+| OKI20     |17.03.93 | 60511 | SGDOS  4.2 |   | n |        |EP, SPD   |
+| OKI20     |14.08.92 | 58659 | I          |   |   |        |EP, OTL   |
+| SMM804    |16.12.87 | 44801 | Atari      |   |   |        |LB        |
+| SMM804_2  |16.06.91 | 44801 | I          |   |   |        |LB        |
+| SMM804    |27.01.92 | 59201 | FontGDOS,I |   | n |        |LB, OTL   |
+| SMM804    |28.01.93 | 61076 | SGDOS      |   | n |        |LB, SPD   |
+|_SMM804____|02.07.93_|_63142_|_SGDOS _4.2_|___|_n_|________|LB,_SPD___|
+
+
+Note: FX80HIGH prints normal text twice, FX240DPI once, FX80_QD printer in
+quad density.
+
+NX1000 and OKI20 are color drivers with 8 colors
+
+
+ 5.3 24pin drivers
+
+__________________________________________________________________________
+| Name      |Date    |Lenght |Distributor |Errors | Others | Fonts      |
+|___________|________|_______|____________|_1_|_2_|________|____________|
+| EPSON360 |04.04.90 | 45619 | BELA       | y |   |        |NC          |
+| EPSON360 |16.09.92 | 45547 | WT         |   |   |180x360 |            |
+| EPSLQPAR |14.02.91 | 44939 | I          |   |   |        |            |
+| LQ_500   |15.11.93 | 68068 | T.R.       |   | n |        |SP,SPD,TT,T1|
+| LQ570    |28.01.93 | 62051 | SGDOS 4.0  |   | n |        |SPD         |
+| LQ570    |02.07.93 | 64228 | SGDOS 4.2  |   | n |        |SPD,TT,T1   |
+| LQ_800   |15.11.93 | 68068 | T.R.       |   | n |        |SP,SPD,TT,T1|
+| LQ_850   |15.11.93 | 68068 | SGDOS 5.0  |   | n |        |SP,SPD,TT,T1|
+| LQ_850   |15.11.93 | 68068 | T.R.       |   | n |        |SP,SPD,TT,T1|
+| LQ_1000  |15.11.93 | 68068 | T.R.       |   | n |        |SP,SPD,TT,T1|
+| LQ_1050  |15.11.93 | 68068 | T.R.       |   | n |        |SP,SPD,TT,T1|
+| LX800    |14.11.93 | 67989 | T.R.       |   | n |        |SP,SPD,TT,T1|
+| NB15     |22.12.89 | 44881 | BELA,wt    | n |   |        |SP          |
+| NB15     |16.12.87 | 44881 | Atari,CL   | n |   |        |SP          |
+| NB15_2   |12.06.91 | 44881 | I          |   |   |        |SP          |
+| NB15     |27.01.92 | 59121 | FontGDOS,I | n | n |        |SP, OTL     |
+| NB15     |28.01.93 | 60989 | SGDOS 4.0  | n | n |        |SP, SPD     |
+| NB15     |02.07.93 | 63055 | SGDOS 4.2  | n | n |        |SP,SPD,TT,T1|
+| NECP6    |12.04.80 | 45199 | wt         |   |   |        |NC          |
+| NECP6    |10.04.91 | 45619 | BELA       | y |   |        |NC          |
+| NECP6    |06.02.86 | 44906 | Atari,I    | y |   |        |NC          |
+| NECP6_2  |28.06.91 | 46557 | I          |   |   |        |NC          |
+| NECP     |27.01.92 | 59516 | FontGDOS   | y | n |        |NC, OTL     |
+| NECP     |28.01.93 | 61229 | SGDOS 4.0  |   | n |        |NC, SPD     |
+| NECP     |02.07.93 | 63297 | SGDOS 4.2  |   | n |        |NC,SPD,TT,T1|
+| NEC_P    |14.08.92 | 59516 | I          |   |   |        |NC, OTL     |
+| P24M     |08.04.89 | 47104 | I          |   |   |        |            |
+| P24ML    |08.04.89 | 47104 | I          |   |   |        |            |
+| P24MWID  |08.04.89 | 47104 | I          |   |   |        |            |
+|_P24MWIDL_|08.04.89_|_47104_|_I__________|___|___|________|____________|
+
+
+
+
+ 5.4 Laser drivers
+
+
+___________________________________________________________________________
+| Name      |Date     |Lenght |Distributor  |Errors | Others | Fonts      |
+|___________|_________|_______|_____________|_1_|_2_|________|____________|
+| RICOH12   |23.06.92 | 45438 | WT          |   |   |400dpi  |            |
+| HP_LJET   |22.02.89 | 45512 | BELA        |   |   |  n.p.  |LS          |
+| HP_LASER  |25.09.89 | 36928 | Atari,I     |   |   |        |LS          |
+| LASERJET  |06.03.91 | 54517 | Atari       |   |   |        |LS          |
+| LASERJET  |27.01.92 | 60194 | FontGDOS,I  |   | n |        |LS, OTL     |
+| LASERJET  |28.01.93 | 61907 | SGDOS       |   | n |        |LS, SPD     |
+| LASERJET  |02.07.93 | 64408 | SGDOS  4.2  |   | n |        |LS, SPD     |
+| HPL150    |12.04.86 | 51541 | wt          |   |   |150dpi  | LL         |
+| HPL300    |24.04.86 | 51541 | CL,wt       |   |   |        |LS          |
+| LJ4_300   |12.01.91 | 61910 | SGDOS  5.0  |   | n |        |LS,SPD,TT,T1|
+| LJ4_600   |12.01.94 | 61910 | SGDOS  5.0  |   | n |        |SPD,TT,T1   |
+| DESKJET   |13.05.92 | 45637 | BELA        |   |   |   p.   |LS          |
+| DESKJET   |14.05.91 | 46040 | CL          |   |   |        |LS          |
+| DESKJET   |06.03.91 | 54285 | Atari,I     |   |   |        |LS          |
+| CANONLBP  |26.09.89 | 36980 | Atari,I     |   |   |        |LS          |
+|_LBP_______|13.01.92_|_45453_|_WT__________|___|___|________|LS__________|
+
+
+ 5.5 ATARI laser drivers
+
+___________________________________________________________________________
+| Name      |Date     |Lenght |Distributor  |Errors | Others | Fonts      |
+|___________|_________|_______|_____________|_1_|_2_|________|____________|
+| SLM804    |12.04.91 | 47496 | BELA        |   | n |        |LS          |
+| SLM804    |16.12.87 | 45788 |Atari,I,CL,wt|   | y |        |LS          |
+| SLM       |12.12.90 | 48399 | Language    |   |   |        |LS          |
+| SLM       |27.01.92 | 60036 | FontGDOS,I  |   | n |        |LS, OTL     |
+| SLM       |28.01.93 | 61911 | SGDOS       |   | n |        |LS, SPD     |
+| SLM       |02.07.93 | 63987 | SGDOS  4.2  |   | n |        |LS, SPD     |
+|_SLM_HS____|17.01.94_|_63663_|_ROM_________|___|_n_|________|LS,_SPD_____|
+
+SLM_HS is a SLM driver for the Falcon (when using the Heatseeker interface)
+
+
+ 5.6 Screen drivers
+
+The screen is (if VDI functions are used) seen as an output device just
+like printer, plotter etc. That's why fonts for the screen can be installed
+in ASSIGN.SYS just like for printers.
+
+Normally this isn't remarked because the drivers are in ROM. But they can be
+used like printer drivers.
+
+Note: For system fonts only (like the original ones) non proportional fonts
+with a 8*8 or 8*16 matrix can be used. That's limited by the AES not VDI.
+
+With newer AES (from 4.0?) it's no problem to use fonts of free choice
+(Variable AE_FONTID and AE_FONTSIZE in GEM.CNF, see [19]). Coders should
+make sure their programs can take that. (even like scrollbars of free width)
+
+Bitmap fonts not assigned for screen driver 1 are not available for other
+screen drivers.
+
+
+ 5.6.1 LineA
+
+The so-called LineA-routines are subprograms of the screen drivers from the
+ST series, to bee seen undocumented. This is the hardware depending part of
+these drivers.
+
+The attentive readers discovers it: Exchanging the drivers removes the
+LinaA routines too. As happened with the TT for example.
+
+So never use them!
+
+/Reading/ acces can be taken to the LinaA-variables. But Why?
+
+
+ 5.6.2 Setscreen & Getscreen
+
+These XBIOS-Functions (mostly Setscreen) should'nt be used.
+
+But what am I talking. For those useing them or those being tortured
+because someone did it:
+
+The video hardware of 1040STE and Mega STE has an hardware bug. When defining
+a new physbase with Setscreen (and if it's the same gotten with Getscreen),
+it may happen that the screen is 'folded'. This happens due to the movement
+of a register at a special moment, which is only allowed to be moved at
+special phases of the screen output.
+
+What has to be done?
+
+Users: The programs NVDI and FALT_OFF stop this error. Or give this FAQ to
+       coder.
+
+Coders: Either even don't use Setscreen.
+        If You use it though: If physbase isn't changed, the value taken
+                              with Getscreen may not be used. Use the
+                              value -1 than physbase!
+
+
+
+ 5.6.3 NVDI and WARP 9
+
+
+There are two often used programs exchanging the ROM drivers: NVDI and WARP
+9 (earlier QuickST). TurboST was distributed by BELA but isn't updated no
+more.
+
+If these are used once, one will never want to miss them: the Desktop seems
+to be terribly slow. I will never want to work without NVDI on my Atari.
+Others say the same about WARP 9.
+
+NVDI uses strongly optimised drivers for the ST  and TT resolutions. Sadly I
+don't know which drivers are used by WARP 9.
+
+NVDI is available from Behne & Behne and contains not only the drivers but a
+GDOS and a manual describing exactly all VDI calls.
+
+WARP 9 is available from CodeHead.
+
+Due to this NVDI is spread in Germany and WARP 9 in the US
+
+Different to NVDI WARP 9 only speeds up the text output. Grafics stay slow
+as before. AND the newest version doesn't work with MultiTOS. It Works on
+the Falcon too, but I don't know if it supports *all* resolutions there
+(Like with Screenblaster, BlowUp030 or others)
+
+
+ 5.7 Other drivers
+
+_______________________________________________________________________
+| Name     |Date    |Length|Distributor|Errors | Others  | Fonts      |
+|__________|________|______|___________|_1_|_2_|_________|____________|
+| META     |11.04.89| 5644 | I         |   |   |         |MF          |
+| META     |08.10.88| 9325 | BELA      |   |   |         |MF          |
+| META     |16.12.87| 9325 | Atari     |   |   |         |MF          |
+| META_2   |14.06.91| 9325 | I         |   |   |         |MF          |
+| META     |27.01.92| 9718 | FontGDOS  |   | n |         |MF, OTL     |
+| META     |28.01.93| 9733 | SGDOS 4.0 |   | n |         |MF, SPD     |
+| META     |02.07.93| 11174| SGDOS 4.2 |   | n |         |MF,SPD,TT,T1|
+| MEMORY   |27.01.92| 58397| FontGDOS  |   | n |         |LS, OTL     |
+| MEMORY   |28.01.93| 60265| SGDOS 4.0 |   | n |         |LS, SPD     |
+| MEMORY   |02.07.93| 62331| SGDOS 4.2 |   | n |         |LS,SPD,TT,T1|
+| CYPRESS  |        |      |           |   |   |  MEMORY |            |
+| PSCRIPT  |14.10.92| 33016| WT        |   |   |         |            |
+| HPGL     |08.07.91| 48885| ST458     |   |   | V 1.4r2 |            |
+| ZEBRA    |07.12.91| 45746| WT        |   |   |         |            |
+| T_OFFICE |        |      | wt        |   |   |98/196dpi|            |
+| T_OFFICE |        |      | wt        |   |   |98/196dpi| SPD        |
+|_IMG-0300_|________|______|_Reschke,wt|_n_|___|_________|LS__________|
+
+
+IMG-0300 can be copied (non commercial). The other IMG-0??? drivers are by
+SciLab. ZEBRA is for the Zebra Labelprinter.
+
+
+ 5.7.1 Memory drivers
+
+
+A memory driver doesn't do anything else than a screen driver (see [17] and
+[15]). But the output doesn't get to the screen driver, but in another
+memory to be influenced there.
+
+The usual v_openwk binding doesn't have all parameters needed to open this
+driver. If not included to the language this binding must be made by
+yourself. A listing is found at [17].
+
+The memory driver listed above is only capable of b/w output only and has
+a logical resolution of 300dpi. The (matrix) drivers tested by me have no
+problems with fonts installed that are for other other drivers. The memory
+driver should take screen fonts - due to the 300dpi.
+
+Problem could appear because of the aspect ratio (relation of pixel width to
+height) - normally not similar to the screen resolution.
+Due to this circles can be displayed as ellipses.
+
+With NVDI V2.5 or higher output can be made to offscreen bitmaps. There can
+be made any GDOS outputs and the result can be copied in the screen windows.
+
+ 5.7.2 Plotter drivers
+
+A HPGL driver seems to be distributed with the program DATA. On PD disk ST
+458 (German PD series) is one too. If I get more about it I'll include this
+info here.
+
+ 5.7.3 NVDI 3 drivers
+
+NVDI 3 has its own driver concept. Only a small quantity of drivers is
+included, but they're very fast, small and flexible.
+
+The drivers are:
+
+___________________________
+|_Treiber______|_Datum____|
+| PINPRN.SYS   | 19.10.94 |
+| PAGEPRN.SYS  | 19.10.94 |
+| IMG.SYS      | 30.10.94 |
+| MEMORY.SYS   | 18.10.94 |
+| META.SYS     | 18.10.94 |
+|_ATARILS.SYS__|_18.10.94_|
+
+Depending to the colo(u)r printing capability of a printer (this can be set
+in the MAKEPRN.APP), the drivers have to use different offscreen drivers to
+create the graphics (this can't be found in the manual coming with NVDI 3
+[Stef: A manual like for NVDI 2.x is in work]
+Gerd: It will be an ascii file for FTP servers and BBS, not a printed one)
+
+The Offscreen drivers are:
+
+_____________________________________
+|_Treiber_______|_Datum____|Farben__|
+| OFF002.NOD    | 06.11.94 | 2      |
+| OFF004IP.NOD  | 06.11.94 | 4      |
+| OFF016IP.NOD  | 06.11.94 | 16     |
+| OFF256IP.NOD  | 06.11.94 | 256    |
+|_OFF32KFL.NOD__|_06.11.94_|_32768__|
+
+The actual NVDI 3.01 can't handle colo(u)r printing though :-(
+3.02 will. (Which is soon to be released. More then ...)
+
+The flexibility to create a driver's INF for printers is great. To code a
+driver for SpeedoGDOS you have to become a developer for SpeedoGDOS.
+It isn't that easy ...
+With NVDI you only have to enter you printer's codes in MAKEPRN.APP. So you
+only have to check you printer's manual, not learn or do C coding.
+
+The codes driving the printer are saved in the INF files belonging to each
+driver. A flaw is that these assignments aren't simply exchangeable.
+There's no documentation about the file format and no program to extract or
+add codes yet. The only way is to exchange the complete INF file.
+
+Another problem not even noted in the manual occurs when assigning pixel
+fonts in the ASSIGN.SYS. Guess that you have assigned 180dpi fonts to the
+PINPRN.SYS. It's easy to change the output resolution to 360dpi by the CPX.
+*Then* the printout will be catastrofugly.
+
+A workaround is to duplicate the driver with another name (close to the
+first ...) and assign this one to in the ASSIGN.SYS too, but with different
+fonts.
+
+At last I think those drivers conceptionally are much better compared to
+the ones coming with SpeedoGDOS 5. No colour printing yet though.
+
+ 5.8 What's missing
+
+I don't know drivers using the abilities of the following printers:
+
+  o Canon BJC 600 - A colour printer with 4 heads (CMYK) 64 nozzles each.
+                    In the colour mode he's compatible to:
+                          - Canon BJC 800
+                          - Epson LQ 2550/2500
+                    It's resolution is 360x360. I dont's know any GDOS driver
+                    supporting the BJC's capabilities directly (or via
+                    compatibility mode) when using colours.
+
+6 Errors
+
+Errors in the printers drivers - that I know - are the following:
+
+
+  1 These drivers display Fonts with the attribute 'light'
+  2 Doesn't work on TT
+  3 The EXTENDED ENQUIRE FUNCTION (VDI 102, vq_extnd) doesn't give back the
+    parameters as listed in the German 'Profibuch' (Jankowski, Rabich,
+    Reschke - Sybex)
+  4 Using the attributes 'italic' and 'outlined' the letters of bitmap fonts
+    are cut off on the right side. This error appears independent from other
+    attributes being used.
+    This error was in the Libraries of the driver sources from Atari and
+    seems to be included in all drivers except to NVDI and SpeedoGDOS.
+
+
+If theres nothing written about an error I don't know if this error appears
+or not.
+
+Seems it's no accident, that Xact only uses the attributes 'fat', 'italic'
+and 'underlined'. (See [5])
+
+Another reason against using 'outlined' is the following:
+ If You make a driver calculate an outlined font from a normal one it get's
+ 'wider' by two pixels. Due to the reason that a pixel has a width depen-
+ ding to the resolution (other than a fitted font) a text gets different
+ widthes in each resolution. But who wants to have different textformat on
+ different printers? The only way to stop this is letterspacing -
+ typographic 'bullshit'.
+
+
+7 Fonts
+
+First: What's the difference between a fonts and a face?
+
+When calling a font selector there may be Swiss 721, Swiss 721 italic,
+Swiss 721 Bold and Swiss 721 Bold Italic. These are 4 faces, alltogether
+creating a font.
+
+This separation isn't that simple at bitmap fonts, because all attributes are
+created from only one file (this can be made with vector fonts too, but it's
+quite nonsens In my opinion). That's why I first didn't note that this
+attribute creation is buggy in some versions of SpeedoGDOS (see 13.3.3).
+
+Me I'm not always using this separation of font and face in this FAQ.
+Especially in the chapter about font formats.
+
+ 7.1 Bitmap fonts
+
+
+The fonts used are bitmap fonts in the DR standard format. They have to be
+saved in Intel format. Motorola format isn't supported by any GDOS.
+(See [1] and appendix)
+
+GDOS bitmap fonts have their width information defined in both, screen font
+and printer fonts. Sadly the designers were a bit too zealous and fitted the
+width of the sreen fonts to make them look very beautiful. They've done a
+good job, but they're not similar to the printer fonts and don't allow
+WYSIWYG.
+
+There are many fonts on the Internet only for the screen and maybe useable
+for one printer. Everybody using these fonts should know that he can't print
+documents in an acceptable quality via GDOS.
+
+But in the Atari and former BELA package there are included fonts for
+all printer drivers in this package (the 360*360dpi fonts are missing in the
+Atari package). If you have a useable program you can print every document
+with every driver.
+
+
+ 7.2 Vector fonts
+
+Vector fonts don't use pixels, they are created with algorithms - supported
+by shapes and hints. These algorithms (see METAFONT for a good example) make
+the fonts copyrighted like normal programs. (See [23] for this)
+
+Here I'll write a bit about vector formats. Why should a pure user try to
+understand it? Nowaydays you'll just get a cheap Font CD, choose 17 of the
+most interesting fonts for your first poster an print out the creation.
+
+Problems are: I have one face in different formats. Which one should I
+take? Sometimes I have problems on screen, when I print out something or
+only when using a specific size. So what?
+
+(When you have 17 Garamond styles from 17 different distributors it's
+ better to read a magazine about typography or DTP to get help)
+
+ 7.2.1 FSM-GDOS fonts
+
+The vector fonts with the old FSM-GDOS format by QMS/Imagen Corp. are 
+named with OTL.
+
+These fonts and drivers should'nt be used no more and are listed to only for
+completion of this FAQ.
+
+ 7.2.2 Bitstream Speedo onts
+
+The vector fonts in SpeedoGDOS format are named with SPD.
+
+They are supported by all SpeedoGDOS releases and by NVDI 3.0 or higher.
+
+ 7.2.3 Type 1 fonts
+
+Type 1 fonts are available for MacIntosh abd MS-DOS/Windows. They only have
+differences in the internal representation, not in the information.
+
+At least one of these formats is supported by SpeedoGDOS from V5.0a. But I
+already found some that SpeedoGDOS 5.0a can't display.
+
+ 7.2.4 TrueType fonts
+
+This format is available for MacIntosh and MS-DOS/Windows too.
+
+SpeedoGDOS from V5.0a and NVDI from version 3.0 can handle both, no
+matter if it's for MacIntosh or MS-DOS/Windows. The MS-DOS format
+is a superset of the MacIntosh format.
+
+By Apple's definition it's got different tables (like the chunks known from
+the IFF format). In the table's header a name and a length is noted. This
+way a program can ignore tables it can't handle. When new types of tables
+are defined, they have to be announced to Apple. Required and optional
+Tables are defined by Apple too. Microsoft used this procedure to announce
+new tables and make them obligational for Windows.
+
+The difference between the Apple and Microsoft format simply is that
+Microsoft declared more tables as obligational. Plus the fixed order of
+glyphs when special flags are set. A definition of the Microsoft format is
+found in [28]
+
+I don't know any official documentation which tables are used or required
+by SpeedoGDOS 5.0 ff or NVDI 3.0 ff.
+
+On Macs .suit is the suffix for TrueType files. The data is found in the
+resource fork.
+
+
+ 7.2.5 Calamus fonts
+
+Can YOU tell me more about these?
+
+
+ 7.3 Comparison of vector formats
+
+(This chapter is to be completed yet)
+
+There's no noncommercial program on any platform that can convert one format
+into the other. A lot of fonts are only available in one format.
+
+But what makes a conversion so difficult? To ask different: Which infor-
+mations are stored by which way?
+
+ 7.3.1 Curves
+
+First the shape of the chars should be saved. But that for many ways are
+used (see [25]):
+Type 1:   Uses cubic Bezier curves aka cubic B-splines
+TrueType: Uses square Bezier curves aka square B-splines
+Speedo:   Uses cubic Bezier curves aka cubic B-splines
+
+For an application there should be no difference between different font 
+formats. Therefore SpeedoGDOS transforms TrueType characters into
+cubic bezier curves for v_getoutline. I'd like to get (optional) quadratic
+bezier curves in this case and v_bez_fill should be able to cope with it.
+
+Square B-splines are much faster than cubic Bezier curves but you have to
+store about 4 times as much points to achieve the same quality.
+
+
+ 7.3.2 Hints, instructions, switches
+
+The next problem is the display on media with low resolution. For a neutral
+observer Speedo fonts always look quite good on the screen (well, some fonts
+are ugly by nature).
+
+But I've found TrueType fonts that look as ugly as nothing else on the
+screen. For example the two vertical lines of an 'n' are not the same, one
+is 1 pixel and the other is 2 pixels thick.
+
+The way to prevent those errors are hints. This method is used by Speedo,
+Type 1 and TrueType (but not by Type 3 and CFN). But hints given by the
+format don't mean that they're used too!
+
+So, finally: All these three font types can look very good on the screen,
+Type 3 and CFN can't [ever tried to print CFNs on a printer with less than
+360x360dpi?]
+
+Now I've noted, what hints are doing and in which formats they're used. But
+*how* do they work? Specific parts of a character have a specific >>job<<,
+like serif, bow etc. This is saved besides the font's outline. This way the
+scaler e.g. can create similar vertical lines of a >n<. More is found in
+[25]
+
+Type 1 only can handle very few different hints compared to other formats.
+
+Note:
+  with v_getoutline you get the outlines in the workstation's actual
+  resolution. Remember that using hints depend of the resolution. Plans
+  exist to make v_getoutline independent from the actual hint size.
+
+ 7.3.3 Internal resolution
+
+After the problem with low resolution now there's the problem with the high
+resolution. Even if you think there shouldn't be any; there are! (See [26]
+too)
+
+To display a vector font first an internal system of coordinates has to be
+selected. To do this the em-square is devided in units. CFN has one from
+0 to 16000, Type 1 (which was created when there were no high-res printers)
+one from 0 to thousand. Due to this there are 'corners' visible at large
+letters or high resolutions (in the professional league)
+
+   Referring to [25] the internal resolution can be raised by the
+   DIV operator. But this has to be supported by the font editor.
+   (Is this done regularly and does the scaler get remarkably
+   slower by this?
+
+CFN can make the big deal here.
+
+With TrueType, the font designer can choose a resolution up to 16768.
+Resolutions equal to 2^k are faster than others.
+
+ 7.3.4 Linear and optical scaling
+
+Do we now have - with the description of the shape, a high internal
+resolution and the hints - a scalable font? Sure not!
+
+A font being designed for 16pt has a totally different shape as a doubled
+8pt fonts (see Knuth: The METAFONT book; Kopka: LaTeX etc.). A well designed
+font isn't linear scalable.
+
+In large fonts vertical lines are much thicker than the empty space between
+them. But this information for optical scaling can be saved in a font too.
+
+So a font, being 20 pixels high on the screen (this is usually a large font)
+should look different to one being 20 pixels high on a laser printer (this
+is a small font that should have small vertical lines).
+
+The rest of this subsection was misunderstood by to many people. Anyway I
+seem to be the only one thinking here's a problem. That may have (at least)
+three causes:
+
+        o I can't make you understand what I think
+        o I'm a crazy mind
+        o the problem's too complicated to make anyone even *see* a problem
+          here
+
+Well, let me (Stef: and me) start anew:
+
+Vector formats make it possible for the font designer to decide a face may
+look different in points or pixels below a specific size. For example it's
+useful to make a face broader when used with a small size [25] -
+independent from the printer's output quality.
+
+So, let's display a small text in a window (e.g. with a size of 8pt). And
+the font designer made this face look broader at 8pt or smaller.
+
+Another window is used as a magnifier to get a doubled size (Almost any
+Word processor has this function - Stef: really?)
+
+This doubled view in the magnifier's window *should* be broader like the
+8pt text, the WP's coder shouldn't have to take care about that.
+
+But the coder has to use a size of 16pt in the magnifier's window - and now
+the designer's decision (to make the face look broader from 8pt) is
+ignored!
+
+To solve this problem there are two ways:
+
+   1. The coder sets two values for the size.
+       - The linear size (16pt here)
+       - The optical size
+      But the font engine and the bindings have to be fixed to that.
+      (it's my recommendation, no reality)
+   2. Maybe NVDI 3.0 makes it possible to (explicitely) change a virtual
+      workstation's logical pixel size (Well know more about it from the
+      docs - recently released by the Behnes).
+      *Then* the problem simply could be solved by using another virtual
+      workstation for the magnifier's window, which will get a pixel size
+      with factor 0.5.
+      Now both windows display a text with 8pt and both faces are broader -
+      like the font designer's thoughts - and the text in the mag's window
+      has the double size though.
+
+Did anyone get it? (Stef: Yeah, I'd like to get feedback too!)
+
+  7.3.5 Multiple Master (MM) fonts
+
+ATM 3.01 (Adobe Type Manager) for Windows now is capable of scaling MM
+fonts. With this technology not only height, size, skew angle and rotation
+can be set for output, there's one more continuosly parameter. This is to
+set, what thick a face is to be displayed. This is no simple algorithm -
+like others at GDOS - but the font designer can make sure where to change a
+face when it's more or less fat.
+
+This subsection only is FYI. SpeedoGDOS 5.0 only can handle normal Type 1
+fonts - and NVDI none.
+
+When taking a look at [29] (about the URW PrintWorks CD), it's visible that
+URW has such technology - internally - too. The extremely interesting book
+[25] is by URW too.
+
+ 7.4 Font Format convertition
+
+From what I wrote above I hope you'll realize that converting a font from
+one format to another is about as easy as converting a highly optimized
+program from one language to another ...
+
+Problems:
+
+     o The only converting program I (Stefan) know for Atari
+       is TypetoType fby Hasso Baudis, converting Type1 to CFN
+     o There isn't any program on any platform that is accepted by the
+       comp.fonts community (according to the comp.fonts FAQ)
+     o For a program capable of converting fonts you'll pay a big
+       amount of money. But even good programs need manual corrections.
+       Looking for a PD or shareware program won't be
+       successfull ...
+
+8 Printers
+
+8 Printer
+
+_______________________________________________________________________
+|_Producer____________Printer___________________|Drivers Fitting______|
+| NEC               |P6+,P7+,                   |NECP...              |
+|___________________|P60,P70____________________|NB15_(FX...,NX1000)__|
+|_HP________________|LaserJet_II________________|HP_LJET______________|
+|_HP________________|DeskJet,_LaserJet_III,IV___|DESKJET_(HP_LJET)____|
+|_CANON_____________|BJ10E______________________|BJ10_________________|
+|_CANON_____________|LBP_4/8____________________|CANONLBP,_LBP________|
+|_Mannesmann-Tally__|MT_90______________________|MT90_________________|
+|_Epson_____________|Stylus_800_________________|STYLUS_______________|
+
+
+Drivers in parantheses work but don't use the ability of the printer totally.
+This means - for 24pin printers - that these are used in 9pin mode. At
+HP compatible Laser  and Ink printers this means that the data isn't packed
+though being supported by the printers.
+
+Some Deskjet drivers are told to make problems. In this case try the Laser-
+jet driver. The printing takes longer then (due to more data) but the
+problems should be removed then.
+
+The BJ10 drivers use the Proprinter emulation. Don't use them in the epson
+mode!
+
+The Stylus shouldn't be used with 24needle drivers. The needles overlap
+(the ink dots of the stylus don't) and so the drivers just don't print some
+dots.
+
+The meaning of compatible normally is made by the producers of the
+compatible printers.
+
+Notes:
+
+  o If You don't find your printer in the list and knows a fitting driver,
+    please write me a note.
+  o Try other drivers even if you have found one fitting to your printer.
+  o Of course the FontGDOS drivers have a lot of problems with the memory.
+    But the speed of'em is faster than the other (Speedo not considered).
+
+
+
+9 Programs
+
+Nowadays it's obvious (but not usual) to use GDOS in every program.
+
+The following list is limited to those using GDOS to print too.
+
+_____________________________________________________________________________
+Kind of Program______|Program______________|Distributor___________________|Sp|
+Chart/Measureanalysis|Xact                 |SciLab                        |y |
+                     |MM-Graph             |Overscan                      |  |
+                     |Off-Axis             |ByTech                        |y |
+                     |DATA_Professional 4  |Ralf Wirtz                    |  |
+                     |DPE                  |MAXON (Special disc)          |  |
+                     |GRAPH                |Hans-C Ostendorf (Shareware)  |y |
+                     |MessPlot (Shareware) |Michael Siek (Shareware    )  |y*|
+_____________________|rho-Analyse__________|rhotron_GmbH__________________|y_|
+Graphics             |Xact Draw            |SciLab                        |y |
+                     |Kandinsky            |U. Rossgoderer (Shareware)    |y |
+                     |TRIPLE_D             |U. Rossgoderer (Postcardware) |y*|
+                     |Chagall              |Trade-iT                      |y*|
+                     |Easydraw             |MIGRAPH                       |  |
+                     |TouchUp              |MIGRAPH                       |  |
+                     |GEM-View             |D. Fiebelkorn (Shareware      |y*|
+                     |CHARLY_IMAGE         |Wilhelm_Mikroelektronik       |y*|
+                     |STELLA               |Thomas Kuenneth               |y |
+_____________________|Tarkus_______________|Eickmann_Computer_____________|y_|
+Spreadsheet          |LDW Power Calc 2     |COMPI                         |  |
+                     |K_Spread_4           |Omikron                       |  |
+                     |Graal Calc 3         |Editions Profil               |  |
+                     |Atari Works          |Atari Corp.                   |y |
+                     |OPUS                 |Doug Harrison (PD)            |n |
+_____________________|BASiChart____________|Dr.__Ackermann________________|y_|
+Text/DTP             |Calligrapher         |Working Title                 |  |
+                     |Wordflair II         |H3                            |  |
+                     |Timeworks Publisher  |GST/H3                        |  |
+                     |G&D Text II          |Hard & Soft                   |  |
+                     |Cypress              |Sascha Luedemann              |  |
+                     |Papyrus (Gold) S     |R.O.M.                        |y |
+                     |Infinity             |ByTech GbR                    |  |
+                     |7Up                  |Michael Thaenitz (Shareware)  |y |
+                     |Atari Works          |Atari Corp.                   |y |
+                     |Tempus Word          |                              |y |
+                     |Gut'nberg            |BlowUp                        |y |
+                     |JANE                 |DeltaLabs                     |y |
+_____________________|1st_Word_Plus_4.1____|GST/ICP/COMPO_________________|y_|
+Fax                  |Junior Office        |TKR                           |y |
+                     |Tele Office          |TKR                           |y |
+_____________________|CoMa_________________|SoftBaer Gbr__________________|y_|
+Sim._of_dyn._Syst.___|Dynasys______________|Digital_Systems_&_Consulting__|__|
+Text/List printing   |IdeaList             |Chr. Bartholme (Shareware)    |y |
+_____________________|ProList______________|Richstein_&_Dick______________|y_|
+Chem.__Displaying    |Monoklin             |MAXON (Special disc)          |  |
+_____________________|Chemograph Plus______|DigiLab_______________________|__|
+Circuitlayout        |Route iT! & Circu iT!|Think!                        |  |
+_____________________|Platon_______________|VHS___________________________|y*|
+Vektoriser___________|Convector_II_________|ZYN/TEAM-Computer_____________|__|
+Hardcopy_____________|rhocopy______________|rhotron_______________________|__|
+Disk-List-printers___|TreeView_2.4_________|Stephan_Gerle_________________|__|
+Fraktals_____________|Fractals_IV__________|Harald+Martin_Hansen__________|__|
+PS-Interpreter_______|Postman______________|SILICON_Technology_&_Promotion|__|
+Concordance__________|Concordance__________|SPIRIT_WARE___________________|__|
+Packershell_f.__MTOS_|MARC_4.0_____________|Think!________________________|y_|
+Logikanalyser________|CLA_v2r1_____________|C._Graham_(Shareware)_________|y_|
+Adress base__________|Pegasus______________|Pergamon Software_____________|y_|
+Symbolic mathematics_|Solutions            |Elan Software                 |  |
+_____________________|Riemann II___________|Richter Distributor___________|__|
+Database_____________|Atari Works__________|Atari Corp.___________________|y_|
+Notators_____________|MIDI File Printer____|ST PD-Disc 677 (Public Domain)|__|
+CASE_Nassi Schneider.|UpToCase_____________|Michael_Nolte_________________|y_|
+Invoicing____________|Kundendirektor_+_____|Michael_Kammerlander__________|y_|
+Desktop______________|EASE_from_V.3.1______|ASH___________________________|__|
+Games________________|Stello (Othello Game)|Claus_J._Petersen_____________|y_|
+
+This list is no commercial. I'll include every program I get to know.
+(Comment by the Translator: Sorry for mentioning Atari Works three times,
+ but I wanted to keep the 'Text/DTP' and 'Spreadsheet' Chapters')
+
+
+Notes:
+
+  o Programs listed in the Speedo column with 'y*' support Speedo but don't
+    use it - don't output text too.
+  o Xact can print Speedo fonts without Speedo too.
+  o FSM-GDOS is included in the Wordflair II package.
+  o Platon only outputs metafiles via GDOS.
+  o I didn't make it to print via GDOS in OPUS.
+    (I've been told, OPUS doesn't chose the fonts it can handle with,
+     and doesn't print if even one of these fonts is installed. See 7.1 too)
+  o Programs only printing via device 21 (like OPUS and CLA are out! (see
+    16.2 too)
+  o 7up only uses non proportional fonts (e.g. Monospace 821 from Speedo)
+  o Tempus Word only supports Speedo Fonts but prints with its own drivers
+    This seems to be due to the capablity of handling CFN and its own fonts
+  o That's Write & 1st WordPlus 4 both can use Speedo fonts without
+    Speedo. TW 4 will be able to use TTF and Type 1 without SpeedoGDOS
+    (well, TW and the SpeedoGDOS 5.x font extension to TTF and Type 1
+     is created by the same coders ...)
+  o LDW-PowerCalc: MAXON lost the purchaser database. Ask COMPO for updates
+    (Stef: hmm, it seems to be a German-only problem?)
+  o Tarkus is a label printing program.
+
+Kandinsky Version 1.73
+ftp://ftp.cs.tu-berlin.de pub/atari/Graphic/kand173
+(Version 1.74 is the actual one, though, note by Stefan;
+Gerd: but not on any FTP-Server)
+
+10 Utilities
+
+
+ 10.1 fontfix
+
+Problem: The font height is included wrong at some fonts. fontfix discovers
+this error and corrights it.
+
+In the Internet fontfix can be found here:
+
+ftp.uni-muenster.de /pub/atari/Applications/Dtp/Fonts/Gdos
+
+ftp.cs.tu-berlin.de /pub/atari/utils
+
+
+
+ 10.2 Outline fonts
+
+Outline Fonts Accessory by CJG
+
+What for: This utility edits the EXTEND.SYS for SpeedoGDOS. This file
+          contains a description of the volume from the Speedo caches, the
+          fonts and the font-sizes. The caches can be saved to disc and loaded
+          again from there too.
+          A good done program except to the preset cache sizes fitted to
+          FSM-GDOS not Speedo.
+
+Filename: OUTLINE.PRG alias OUTLINE.ACC, 67644 Bytes (49254Bytes at
+                                                           Speedo 5)
+
+Spread with SpeedoGDOS.
+
+(Why doesn't Atari make it to make programs including a display of the
+version?)
+
+
+
+ 10.3 Printer drivers
+
+GDOS Devices Accessory by CJG
+
+What for: To edit the ASSIGN.SYS
+
+Filename:  DRIVERS.PRG alias DRIVERS.ACC, 64878 Bytes (41592Bytes with
+                                                              Speedo 5)
+
+Before starting this program it's better to create a backup of the
+ASSIGN.SYS!
+The (at least) two reasons are the following:
+
+1. The informations about the bitmap fonts are removed without comment.
+2. ASSIGN.SYS is removed by a new one if 'Benutzereigen'-'Hinzufuegen' (in
+   the German release) is selected wihtout any chance to get it back.
+   (The English Version should have a Dialog like 'Own drivers' 'Add' or
+   similar). To all coders: Don't copy that style!
+
+If this utility should display no drivers sometimes simply start ASSIGN.PRG
+(see next subsection)
+
+DRIVERS.PRG/ACC only displays the Speedo drivers of my collection. Does
+anybody know, how it does this? Even it doesn't display the Filename but a
+name being included as string in the driver. How does one get there?
+
+
+
+ 10.4 ASSIGN
+
+ASSIGN 1.0d is by Dirk Sabiwalsky (PD).
+
+It tests three things:
+
+   o Are there several fonts using the same ID and have different Names
+     (Typefaces)?
+   o Are there several fonts using the same ID and the same Pixelheight?
+   o Are there several fonts with the same name (Typeface) and different
+     IDs?
+
+
+
+ 10.5 FONTCHK
+
+FONTCHK tests GDOS fonts if they have possible errors.
+
+It's spread with ProList for example.
+
+
+
+ 10.6 FONTCNV
+
+Converts GDOS fonts from Motorola to Intel format.
+
+Comes with ProList too.
+
+
+
+ 10.7 GEMFont
+
+Fonteditor being able to read Signum- and PK (TeX)- Fonts too.
+
+Internet:  ftp.tu-clausthal.de:pub/atari/systools/gdos/gemfo120.lzh
+Use the chance to get a new unlzh or lhxarc.
+
+
+ 10.8 FontMonger
+
+Converter and editor for different vector formats including Speedo. Only
+works on IBMs or MAC though.
+
+ 10.9 Font-ID
+
+Font-ID is a little freeware tool made by Frank Schneider. In a window it
+displays the fonts installed with GDOS or SpeedoGDOS including the Font-ID
+in different sizes. So you can get an overview when you don't have a program
+with font selector/ID display function at the moment.
+
+ 10.10 X4U
+
+Speedo fonts have much more glyphs than the ones displayed in the ASCII
+charset. With this program by Peter Hellinger you can setup, which char is
+to be used at which ASCII code. It's distributed by R.O.M.
+
+It *seems* to be PD now. Use Archie ...
+
+ 10.11 GDOS-Font
+
+Filename: GFONT112.LZH
+Shareware with limitations
+GDOS-Font 1.12 (Aug. 22nd 1994) by Holger Weets@ol.maus.de
+Display and editing of GDOS fonts, including or removing them in the
+ASSIGN.SYS! = Never more manually changing the ASSING.SYS, GDOSFONT does it for
+you!
+
+ 10.12 REFONT
+
+This Program converts Type-1 fonts between Mac- Unix- and Windows format and
+TrueType fonts betwenn Mac- and Windows. But no conversion from TT to T! or vice
+versa (Stef: :-/= )
+
+
+11 Font selectors
+
+We all know this useful thing about file selectors:
+The Operating system soesn't only offer a file selector, it's got an interface
+to use own file selectors in every application.
+
+A scaled interface for FONT selectors doesn't exist, normally they're
+offering their jobs by cookies. The work to make a program support font
+selectors via cookies is much smaller than writing one for yourself. If there
+wouldn't ... but let's take a look at the candidates first.
+
+ 11.1 UFSL
+
+UFSL from Michael Thaenitz is freeware  and is allowed to be distributed with
+any application. The last version is 0.97 from April 30th 1994.
+
+Fonts (faces) and size can be selected comfartable. But I didn't get a face
+displayed after selecting a free size.
+
+Attributs are missing and the dialoge is only modal.
+
+UFSL sadly isn't in development no more.
+
+ 11.2 XUFSL
+
+This font selector is the one with most features - compared to the other
+ones mentioned here. It even can handle Speedo 5 (and NVDI 3, note by
+Stefan) too.
+
+Version 1.03 is stable and UFSL compatible. The following setting are
+possible:
+
+  - Font size
+  - Kerning informations (Pair & Track kerning)
+  - Skewing angle
+  - Color
+  - Attributes
+
+*And* it is (almost) totally keyboard controllable and shows the actual
+font ID.
+
+At first test I only found some non-important flaws (flat hand on popup).
+But it would be a nice feature to (totally) hide disabled setting.
+
+This file selector is to be supported further on (1.05 is the actual
+release) and - public - beta, until there's a fix definition about
+font selectors.
+
+ 11.3 Magic from Peter Hellinger
+
+This selector is part of Magic 4.00 from Peter Hellinger and not available
+separately. Magic itself - NOT MagiC! the multitasking OS - can be copied
+freely. But the information how to use it must be paid.
+
+It's nice that this selector can be set in a non modal dialog, FlyDial or
+normal dialog. Scrolling through the list is fast too.
+
+Attributes aren't selectable and the size selection in the edit line isn't
+acceptable the way it's done.
+
+The selector only can be used when the event handling is completely done by
+Magic, what makes the coder use a fixed code structure (working parts must be
+rewritten, other things don't work anymore) and produces new errors.
+
+ 11.4 FontSel
+
+FontSel from Holger Weets is totally cmpatible to UFSL for the programs.
+It's small size and the selecteable attributes are a very nice feature.
+
+Version 1.00 from May, 11th 1994 only shows the System Font when using
+Speedo 5.0a.
+
+ 11.5 Minimum requirements
+
+A Font selector should work with all OS-releases (TOS, MiNT, MultiTOS,
+MagiC!, Geneva). Plus with every video hardware supported by the VDI and
+should show each font available from every GDOS version. (Pixel fonts,
+Speedo fonts, Type1 and TrueType).
+
+ 11.6 Characteristics liked to be seen
+
+   11.6.1 Attributes and selection
+
+Its quite complicated to make the user set further characteristics of fonts
+in an extra dialog. So, at least the standard attributes (bold,
+outlined, ...) should be directly made available. If a program doesn't
+support them they should be made non selectable.
+
+Same with the skew angle.
+
+Not every program can handle all fonts. According to this every program
+must be able to set, which faces have to be invisible or disabled.
+An example:
+  Some programs (like 7up) only use non proportional fonts.
+A further feature (but not exlusively, due to BASIC) it should be possible
+to pipe a procedure variable to the selector setting the kind of displaying
+for each face.
+
+   11.6.2 Windows and event handling
+
+It would be nice if the program could set the selector in a window or normal
+dialog too. It can be done much easier and more flexible than in Magic.
+The font selector opens a window in the calling program's name and gives back
+the window handle to it. The application further handles the events and if one
+is for the font selector's window it is passed to it via a procedure call. This
+simple mechanism enables the use of multiple (system wide) selectors, colour
+pickers (and more) distributed by different producers being in windows on the
+screen the same time.
+
+Once more:
+  This parallel work only is possible when no selector uses
+  its own evnt_multi loop.
+
+Almost all utility coders want to make it the other way (and do so). So, let me
+show you, what happens, when utilities make their own evnt_multi call and set
+unhandled events to the application:
+
+In this case there are several utilities for an application, all making the
+evnt_multi call themselves. One of those utilities makes this call, can't work
+with it and gets it to the application. And now? What should the app do with it?
+It isn't able to get this event to other utils, but one of'em has to handle it.
+But all utils won't take any events from the app ...
+
+Due to this an app can use one (window) utility as maximum. If an app uses Magic
+(by Peter Hellinger) it can't use *any* utility.
+
+   11.6.3 misc
+
+
+Finally an application should be able to set if it doesn't matter if a font is
+proportional or not (the user can have displayed it if he really wants to).
+When not using this information the call of a selector can happen much faster!
+
+My favourite selector actually is the one of papyrus, but it only works in
+papyrus (yet?) [ Stefan says: It's my favourite too ;-) ]
+
+
+ 11.7 About dialogs
+
+This subtopic is quite off topic to this FAQ, but I think it fits here.
+Take it as a note by me about Tim Oren [22]
+
+I was quite curious about why I like papyrus' font selector much more than
+XUFSL. This one does include all features offered by the new libraries.
+*And* it doesn't break any design rule I've read.
+
+So I'll try to write, what's disturbing me intuitively [hrrrgn, note by
+Stef] And that's not about font selectors but about dialogs in common - but
+fixed to a concrete example ...
+
+The popups (with sliders) are, what's disturbing me most.
+
+State-of-the-art user interfaces (Gerd writes "Benutzeroberflaechen", but
+in German it's "Benutzungsoberflaechen", the first is the user's skin <g>)
+offer selection instead of input (like those *Ý&" MS-DOS programs). To make
+this possible, the selectable thing have to be visible at first sight.
+
+Popups surely can't show everything. And if there are more of'em it's
+impossible to take a short look, but one has to take a deeper check what's
+available too. Plus one more mouse click to open the popup.
+
+For the theory: Popups are modal parts in non modal (or worse: in modal)
+dialogs and modal dialogs are quite interrupting (not only to the user!)
+
+Popups don't fit to the ideas of intuitive user interfaces. I know you're
+proud of using Popups (even with sliders) but please: don't use them if
+possible.
+(Note by stef: file selectors are soon not out of concurrence, there's a
+new - non modal - one, released early '95! Looks nice, I recently got it.
+FREEDOM 1.0 beta;
+Note by Gerd: It uses a different mechanism than described above; it
+needs an additional process)
+
+
+12 Distribution
+
+
+ 12.1 Atari
+
+The drivers named with Atari are availabel from Atari. Send three disks,
+Money for shipping and a letter to them and you'll get them with printer
+drivers and fonts.
+
+This Package is available at Atari shops too.
+
+No docs but for this price ...
+ (That's the way in Germany - other countrys may differ!)
+
+
+ 12.2 BELA
+
+
+The fonts named BELA were available from BELA
+
+There were two disks with packed printer drivers and fonts for them.
+
+The fonts DO have the same IDs like the ones from Atari, but the internal
+font NAME is different. Due to this these fonts are correctly not accepted
+by some programs if used with Atari fonts.
+
+There's almost no documentation. Not even a hint about the one owning the
+copyright for the drivers or about the author(s)
+
+One last thing about BELA: R.I.P. ;-)
+
+
+ 12.3 Language
+
+The driver named Language is spread on the language disc of the MegSTE
+
+
+
+
+ 12.4 Internet
+
+The drivers signed with 'I' are to be found in the Internet.
+For example: ftp.cs.tu-berlin.de
+
+
+
+ 12.5 Working Title
+
+The WT drivers are spread with Calligrapher. They are (c)Working Title, the
+wt driver are licensed by Working Title.
+
+No drivers are on the Calligrapher DEMO-disc. The drivers coming with
+Calligrapher-lite (15DM) are signed with CL in the tables.
+
+Screen fonts are on both discs.
+
+
+ 12.6 X Window System
+
+There are PD Speedo fonts from Bitstream. These can be used with Speedo 4.2.
+I (Gerd) have no problem using them (even the umlauts are correct)
+
+To find them let Archie (see 11.12 FTP) search as follows:
+set search sub
+prog speedo-
+
+The fonts
+font0648.spd -bitstream-charter-medium-r-normal--0-0-0-0-p-0-iso8859-1
+font0649.spd -bitstream-charter-medium-i-normal--0-0-0-0-p-0-iso8859-1
+font0709.spd -bitstream-charter-bold-r-normal--0-0-0-0-p-0-iso8859-1
+font0710.spd -bitstream-charter-bold-i-normal--0-0-0-0-p-0-iso8859-1
+font0419.spd -bitstream-courier-medium-r-normal--0-0-0-0-m-0-iso8859-1
+font0582.spd -bitstream-courier-medium-i-normal--0-0-0-0-m-0-iso8859-1
+font0583.spd -bitstream-courier-bold-r-normal--0-0-0-0-m-0-iso8859-1
+font0611.spd -bitstream-courier-bold-i-normal--0-0-0-0-m-0-iso8859-1
+
+
+ 12.7 COMPO
+
+COMPO offer two Bitstream Speedo packets with 100 fonts each. One costs
+DM99.-
+(At your own risk)
+
+Since some time COMPO also offers a CD-ROM with TrueType and Type1 fonts/faces.
+These seem to be the same ones as on the StarType CD, but TrueType and Type1
+on a single CD-ROM.
+The price is DM99.-
+
+
+ 12.8 IMG-0300
+
+In the Internet:
+
+ftp.uni-muenster.de /pub/atari/Gdos
+
+
+
+ 12.9 FTP
+
+Many students can get software worldwide via ftp. Prices for steady
+connections are constant, but connections between America and Europe
+have to be paid depending to the volume of data transferred.
+
+Please try not to ftp across the big blue and use short ways.
+Use transferring times not in the range of working at the server!
+('9 to 5')
+
+Files with known names can be found by Archie.
+
+In Germany:
+telnet archie.th-darmstadt.de
+login: archie
+help
+
+In the US e.g.:
+archie.ans.net
+
+Archie will automatically display other archies. use the one thats' closest
+to you.
+
+The Archie databases ask about once each month one ftp server after the
+other for freely available files
+
+One more small hint: atari.archive.umich.edu ist always totally busy. Not
+even mirroring to other servers helps.
+Better connect to
+    - amiga.archive.umich.edu
+and type cd atari from there.
+This computers have the same HD mounted. BUT: First search your own vicinity!
+
+ 12.10 SciLab
+
+SciLab's GDOS drivers are not mentioned in the driver's tables though they
+are very favourite - specially the colour drivers.
+
+These drivers no langer can be ordered without a program. This is due to the
+programs that lots of programs have when using the colour drivers. SciLab
+would be blamed then.
+
+You only can get these drivers by ordering a program from SciLab or making
+the distributor (of the software you use) licensing those drivers. SciLab
+always has 'an open ear' for that. Those are especially the Speedo capable
+drivers for HP 600dpi and HP 500C/550C. Actually these are distributed with
+Speedo 5 too.
+
+
+ 12.11 Star Division
+
+Star Division sells two CD-ROMs (StarType) with 500 TrueType/Type1 fonts/
+faces. These are mostly complete packages of fonts.
+One example:
+ Zapf Humanist 601 is available as:
+
+ o roman
+ o italic
+ o bold
+ o bold italic
+ o demi
+ o demi italic
+ o ultra
+ o ultra italic
+
+(Stef: and lotsa Swiss 721 ...)
+
+A lot of Bitstream fonts are included. (e.g. Zapf Humanist 601 as noted above)
+There are two ITC faces too. In Germany these two CDs are (at least)
+available for DM69.- from Vobis. A booklet with a short overview is available
+there too.
+
+ 12.12 Thierry Rodolfo
+
+Thierry Rodolfo made the drivers with T.R. as note.
+You'll find them in the BBS BRASIL and on
+ftp://hensa.micro.ac.uk/atari/tos/n/n196/...
+
+ 12.13 Others
+
+I don't make a choice of drivers. The limit is all of them. The authors (and
+users) of the programs are asked now to write me, which GDOS drivers come
+with the programs (With information of: Codelenght, Date and known bugs).
+
+A comparison of TrueType collection CDs is found in [29]
+
+Anyone using one of those low priced CD (500 faces for $9, DM15, œ6) shouldn't
+take care of Umlauts (Stef: I still recommend "vowels" for this ...), kerning or
+a good looking print image. *Then* it's not ugly to use more than 20 fonts on a
+poster (*sigh!*)
+
+
+13 GDOS versions
+
+ 13.1 The ones from the bones
+
+Atari-GDOS, AMCGDOS, ABCGDOS, NVDI and possibly G+Plus use the same drivers.
+
+ 13.1.1 Atari-GDOS and AMCGDOS
+
+The Atari-GDOS is the father of each GDOS coming after it. It's most
+remarkable character are lots of bugs and it's horrible slow speed. But
+that's history.
+
+AMCGDOS is faster and has less bugs. But it almost has the same capabilities
+and was distributed together with Atari-GDOS. (stef: This one works with
+MagiCMac!)
+
+ 13.1.2 ABCGDOS
+
+Comes from The Netherlands (I think so) and is almost totally unknown. I
+only mentioned it because it's a GDOS.
+
+ 13.1.3 G+Plus
+
+Does anyone know anything about it?
+
+
+ 13.2 One step forward
+
+Even though there was a very good GDOS in NVDI, Atari had an open ear to the
+request of users and coders and tried to raise the capabilities of GDOS.
+
+ 13.2.1 FontGDOS 2.0
+
+This is a GDOS still using bitmap fonts. It uses own drivers.
+
+The drivers from this package are really much faster than the former ones.
+(Only bitmap fonts and graphics are comparable of course)
+
+I didn't have any problem using these with other GDOS versions but you must
+limit to the old fonts.
+
+FontGDOS is the follower of the Atari GDOS. Mainly it differs with the
+Bezier function and faster (and color-able) drivers. It's got nothing to do
+with FSM-GDOS or SpeedoGDOS.
+
+FontGDOS is availabel from several firms which use it for their programs.
+
+
+ 13.2.2 FSMGDOS 3.0
+
+During the development of FontGDOS, Atari created a GDOS that can handle
+vector fonts (named OTL in this FAQ). So FSMGDOS isn't a follower of FontGDOS,
+but was developed the same time. FSMGOS practically was ready to be released
+but due to massive protest by the developers it was cancelled in the last
+moment. Except to bundles it never has been distributed officially.
+
+
+ 13.3 Actual developments
+
+
+ 13.3.1 SpeedoGDOS 4.0 and 4.1
+
+See [5]
+
+
+The information if it's a Speedo or bitmap font can be found in byte 33 of
+the Fontname (vqt_name, INQUIRE FACE NAME AND INDEX, VDI 130). zero means
+bitmap font and one means FSM- or Speedo font.
+
+Some Problems are inportant to be mentioned:
+
+A coder can't find out if a driver can handle Speedo fonts (see last
+question in 10.3)
+
+Some font IDs are used by bitmap  AND Speedo fonts, though different fonts
+with similar IDs may never be installed the same time.
+
+If you don't take care of this you'll get bombs.
+
+It depends to the user to install the right drivers and fonts. The coder
+can't help here to stop errors.
+
+The best way is only to install bitmap fonts with the right drivers or to
+use a Speedo only system.
+
+The monospace font coming with SpeedoGDOS 4.0 has no umlauts (ae, oe, ue ...)
+
+SpeedoGDOS is still in development, ignore the note in [17].
+
+For installation and coding best is to refer to [6-8]
+Remember starting NVDI before SpeedoGDOS in the AUTO-Folder!
+
+The ones that bought Speedo got 4.0, the Falcon buyers got 4.1
+
+  13.3.2 Speedo 4.2
+
+Let's see, what Ulli Ramps has to say:
+
+Huhu! [TM]
+
+The following is a list of changes made to SpeedoGDOS.
+
+1) Line-A - Due to many requests from developers, SpeedoGDOS is now no
+longer Line-A dependent.  All output is done through VDI calls.  This
+was done to make Speedo compatible with various graphics cards, and to
+make it more multi-tasking-friendly.  In addition, users should be
+able to use various VDI replacements with GDOS.
+
+Another benefit from removing the Line-A dependency is that we no lon-
+ger have to worry about the scratch buffer used for algorithmic spe-
+cial effects.  We have implemented the special effects inside of Spee-
+doGDOS and the drivers, so that the user/program does not have to wor-
+ry about the memory needed to accomodate arbitrary sized characters.
+Unfortunately, this means that old drivers need to be relinked with
+the new independent library (found in the new driver kit).
+
+There are plusses and minuses of the new implementation of special
+effects.   In many cases, the special effects will be slower.  With
+all previous incarnations of GDOS, you could not use 'bolding' or
+'skewing' at non-90 degree rotations; now both of these work at all
+rotations.  On the other hand, 'lightening' used to work at all angles
+and combinations of effects; now 'bold' mixed with 'lighten' only work
+at 90 degree rotation angles.
+
+Miscellaneous Note - When using special effects, many applications
+have a hard time placing the cursor.  In both the v_gtext() call and
+the v_ftext() call, the only cursor compensation to be made is for
+bolding.  Bolding adds the thicken value to the number of pixels of
+each character.  For rotated characters, note that the extra pixels
+can be considered a vector along the positive x-axis which is rotated
+at the same angle as the text and added to the advance vector;  there-
+fore, the length of the text string should remain the same at any ang-
+le.  This is true even when SpeedoGDOS generates characters on a scan-
+line basis (when the character does not fit in the character cache),
+although it does not implement the special effects.  Also, applica-
+tions should watch for the case when they keep track of the cursor
+position with vqt_advance() or vqt_width(), instead of vqt_extent() or
+vqt_f_extent().  In versions prior to 4.2, the application could accu-
+rately place the cursor by adding two pixels for every outline charac-
+ter and by adding left and right skew offsets for a skewed string.
+Now these effects are generated by the outline font engine, so the
+application must either rely on the extent calls or it must inquire
+for the advance vectors for characters that are skewed and/or outlined
+separately.  For compatibility purposes, it is recommended that the
+version number of SpeedoGDOS is checked so that programs can handle
+both old and new characteristics.
+
+2) Font ID's - Speedo font id's have been promoted to a higher range
+of ID numbers.  This was introduced to avoid conflicts with bitmap
+fonts and more importantly, with the system font (which conflicted
+with a variation of Swiss 721).  For those applications which use the
+usual interface with Speedo (i.e. use vqt_name() to find out what the
+font ID's are), there should be no problem, except if documents have
+font ID's embedded into formatting information.  Of course, all the
+user has to do is substitute the font.  If the application actually
+goes into the font file header to read the ID, note that we are adding
+5000(decimal) to all Speedo font ID's.
+
+3) Printer Driver Incompatibilities - Speedo will now check the prin-
+ter driver it is trying to load for the '_FSM_HDR' cookie embedded in
+the driver header information.  If GDOS does not find the cookie, it
+will not allow the loading of any fonts; therefore, you can still use
+your driver for non-text applications.  For future reference, please
+be sure that the driver header begins on a word boundary for all dri-
+vers to be used with this version and any future versions of GDOS.
+
+4) Vst_load_fonts() - We have made two optimizations to the loading of
+fonts.  The first is when a load_font call is made, GDOS checks the
+date of the extend.sys file to see if it was modified since the last
+load.  A reload used to be mandatory because a bigger scratch buffer
+might have been required.  Since we no longer need a scratch buffer,
+GDOS only checks to see if a change has been made to the list.
+
+The second change is that GDOS no longer deallocates the global list
+of fonts if there are no more workstations using GDOS fonts.  There-
+fore, application launches will be faster.  On the other hand, the
+miscellaneous cache never gets cleared of font header information,
+unless a reboot happens.
+
+5) Memory.sys - The memory driver used to mistakenly open a printer
+handle.
+
+6) vst_height() - Vst_height used to have a bug in which a maximum
+point size is reached and then the size begins to shrink.  This is
+fixed.
+
+7) Postscript table - The Postscript table has been fixed (i.e. the
+indexes were off by 32 for certain Postscript files).
+
+8) Fixed vrt_copyfm() in the drivers.
+
+9) When in 'bicsmode', character 0 was not passed through to the font
+engine.
+
+10) Negative point and set sizes - The handling of negative point and
+set sizes has been made consistent with the original handling in
+FSMGDOS.
+
+11) The handling of fractional setsizes was incorrect in the drivers,
+and is now fixed.
+
+12) V_ftext() in the drivers can now handle the offsets passed into
+the ptsin array.
+
+13) Screen drivers can now safely load as device 10.
+
+14) The memory driver can be loaded residently.
+
+15) vqt_devinfo() - Vqt_devinfo() now returns information, whether or
+not the device has been opened.  Furthermore, the device drivers name,
+found in the driver header, is copied into the ptsout array;  the name
+is 26 bytes long.  Note: if the driver is not SpeedoGDOS-compatible, a
+null string is returned, and if there is an error, a -1 is returned in
+ptsout[1].
+
+16) vst_width() - A new call has been added to Speedo.  The call is
+similar to vst_height() except that it sets the width.  The bindings
+are identical except that the opcode is 231.  Note:  As with
+vst_arbpt() and vst_setsize(), you must call the general call (i.e.
+vst_arbpt() or vst_height()) before using the width calls (i.e.
+vst_setsize() and vst_width()).  In addition, the general calls always
+reset the widths.
+
+Miscellaneous Note:  Although these have been published before, many
+requests have come in for the SpeedoGDOS error codes.  Here they are:
+Code    1       Out of memory
+        2       File open
+        3       File read
+        4       File write
+        5       Speedo engine error
+        6       Character too large (not used, defaults to line output)
+        7       No room for scratch buffer
+        8       Character cache error
+        255     Miscellaneous
+These errors are placed in the error code address that applications
+should provide.  Note that if you have MultiTOS installed, GDOS will
+report the error to Salert, the system alert box.  A revision of the
+error handling is overdue, since some of the errors are no longer re-
+levant (e.g. code 6), and error code 5 is returned for the lack of
+availability for pair and track kerning (in addition to the serious
+errors).
+
+Well, again a big thank you to Ulli!
+
+Now it's me again:
+
+The Installation program for Speedo 4.2 had a small bug yet. If a NEC P
+printer is selected, NEC_P.SYS ist written into ASSIGN.SYS. But the
+distributed driver hat NECP.SYS as filename. R.O.M. fixed that.
+
+ 13.3.3 Speedo 5.0
+
+SpeedoGDOS 5.0 was developed by COMPO/no!software using the sources by
+Atari.
+More than Speedo 4.x it can scale TrueType and Type 1 (see 7.2). Price:
+DM129.-
+(at your own risc)
+
+Now 9 printer drivers are included - the additional ones. Speedo 5.0 is an
+upgrade, so you have the other drivers. But: Which are the old divers? The
+ones before Speedo 4.1 don't work (and only falcon users have 4.1; the ones
+who bought Speedo from COMPO in the beginning only got 4.0)
+
+So I at once printed a text using Speedo 5.0, NECP.SYS (Speedo 4.2) and
+ProList. And? Surprise! It works. That's really astounding because ProList
+and my own program (see 2) had problems with this driver and Speedo 4.2.
+
+Using the drivers of Speedo 4.0 at least shouldn't work due to the changed
+jobs of Speedo 4.2 and the drivers.
+(Could anyone test Speedo 4.1 drivers with Speedo 5.0? I don't quite believe
+this works)
+
+Here's how I think an upgrade works (be careful satire)
+
+===================
+User:   Dear Mr. Compo [...] but my Speedo 4.0 drivers don't work any more.
+
+COMPO:  ... best wishes to your decision ... BUT: Speedo 4.2 isn't an
+        official release. It's especially made for papyrus and not useful
+        for other programs. On the other hand...though...seen from a
+        different point...maybe...possibly...Finally you need the drivers
+        from Speedo 4.2. But we don't distribute them. Ask R.O.M. about
+        it ...
+
+[later]
+
+USER:   Dear Mr. R.O.M., ...I'd like to get a downgrade, free of course.
+
+R.O.M.: ...don't work...our own costs...bla...etc...better wait for NVDI
+        3.0, we certainly can put you on the list.
+
+User:   "Ý$&"Ý$/(!Ý&!^#
+====================
+
+Well, *I'm* full of anticipation how users that only had Speedo 4.0 will be
+able to make printouts.
+
+Versions of Speedo 5.0 until now:
+
+5.0a (Aug. 3rd 1994)
+First release
+
+5.0b (Aug. 8th 1994)
+From now T1 & TT font loading works faster.
+
+Known Bug: After calling vqt_headerinfo() the files arent' closed again.
+Whe using programs making this with all fonts there maybe can be no more
+filehandles (the amount of them differs from one TOS release to another).
+
+Since Speedo 4.2 the 'outlined' attribute only works in special conditions.
+It depends on the font used, the SpeedoGDOS version, the point size ... and
+which Mantra's are mumbled at full moon.
+
+5.0c (Aug. ? 1994)
+From here LOWMEM=0 works like noted in the manual.
+
+Now LOWMEM=0 works as stated in the manual.
+
+
+ 13.3.4 NVDI up to V2.51
+
+These releases were made of very fast screen drivers and a very fast GDOS.
+Compared to Atari-GDOS, NVDI had almost no bugs. But there functions weren't
+almost any more functions.
+
+ 13.3.5 NVDI 3.0
+
+From 3.0 NVDI is capable of scaling Speedo and TrueType fonts. Different
+from SpeedoGDOS it can't scale Type1. The Behne brothers (correctly!) say
+this format has least capabilities and only would blow up NVDI. But lots of
+special fonts are only available as Type1 and I could use some of them.
+But since the existence of Multiple Master fonts (see 7.3.5) I don't think
+the decision was that good ...
+
+A (by principle very good) conversion of the formats is possible but very
+difficulty (see chapter 7.4) and no Atari program doing this exists yet. So
+the Behne's decision has advantages and flaws.
+
+NVDI's printer drivers are found in 5.7.3
+
+bugs and problems (I know about):
+
+ o All released versions of NVDI ignore the pixel size relation. (aspect ratio)
+   for output of circles and ellipses.
+ o when calling v_clswrk after vqt_devinfo to a physical workstation creates a
+   privilege violation when using MultiTOS. With NVDI 3.02 we'll get rid of this
+   bug
+ o The character mapping isn't compatible to SpeedoGDOS 5.0
+ o There's no alert when you try to install NVDI (release before November '94)
+   on a full (hard)disk.
+ o You'll get a memory violation when using the cache CPX with MTOS. Again, wait
+   for NVDI 3.02.
+ o Output of rotated text doesn't work with some fonts (e.g. MONACO08.FNT), the
+   chars are always set to 0 degrees.
+   And bitmap fonts with 8pt or less aren't light when this attribute is set.
+   This happened when using the monochrome driver and the 8pt system font; not
+   woth other fonts or bit depths. Fixed since Nov. 10th '94
+ o vpt_fontheader get's an incorrect TDF path.
+ o Track kerning doesn't have effect.
+ o When a skew angle is set, vector character's positions aren't located
+   correctly. Once a skew angle is set the text is moved to the left or right
+   (depends on the skew angle - positive or negative). This doesn't happen with
+   SpeedoGDOS. Will be fixed with NVDI 3.02
+
+
+ 13.4 Comments
+
+Users and coders should be happy with the speed of development. Even the
+numbers of font format included in the programs doesn't have anything
+comparable on any other platform.
+
+The time between the releases of SpeedoGDOS 5.0a to 5.0c - making one think
+there wasn't much of betatesting - doesn't satisfy a lot but, on the other
+hand it's nice to see that the competition by NVDI 3.0 makes the developers
+hurry.
+
+SpeedoGDOS 5.0 creates problems in some applications that worked perfectly
+with Speedo 4.x. This may be due to the negative handles that 5.0 uses for
+the new formats. That's not a bug, because one shouldn't calculate with
+handles. But some apps do it though.
+The coming workaround is the interpretation of handles as unsigned integer
+(SHORTCARD).
+
+For coders the manuals coming with SpeedoGDOS 5 and NVDI 3 are only a bad
+joke. Even simple user's questions aren't answered:
+TrueType (and Type1 with SpeedoGDOS) are handled. But these fonts are
+created in platform specific formats. Which ones are handled and what files
+with what extensions are needed? Without this information both programs
+aren't very useful.
+
+But the developers of both programs promised to spread the coder documentation
+by BBS's (Actually the NVDI docs are finished. There's a ST-Guide HYPertext
+version of it too).
+
+A provisional coder documentation is free on request when updating to
+SpeedoGDOS 5. You only have to *know* that it's possible. Sorry for this
+late information but I didn't know this before too. It's still available
+(for three Deutschmark in Germany by sending a stamped envelope addressed
+to yourself). It's 90% Englisch and 10% German, so it's sent to foreign
+countries too (Stef: try your country's COMPO dealer?)
+
+Here some more differences between NVDI 3 and SpeedoGDOS 5. Get your own
+clues.
+
+   o The driver's concept
+     A real plus for NVDI 3. They're small, fast and
+     easy to be configured by the user. But they're not able to print with
+     colours yet! And setups aren't to be copied, due to everything set in
+     one file.
+   o Print to files
+     NVDI drivers can print in a file and the program won't
+     notice this (SpeedoGDOS can't)
+   o Need of RAM.
+     NVDI 3 needs about as much RAM as SpeedoGDOS 5 and NVDI 2.5 (when using the
+     same cache sizes with both GDOS versions)
+   o Installation
+     NVDI 3 is begginer-friendly to install BUT: Everything
+     having the same name as a file to be saved is overwritten without any
+     request to the user: META.SYS and the old Screen drivers. This makes
+     different configurations for testing quite difficulty.
+     But this may be more interesting to coders (and freaks) and they'll be able
+     to rename the old folders before, aren't they ?-)
+     Only since November '94 there's an alert when there's not enough disc space
+     for NVDI 3.0
+   o VDI Speed
+     NVDI 3 is a bit faster than SpeedoGDOS 5 and NVDI 2.5, which is
+     much faster than SpeedoGDOS 5 without NVDI. But SpeedoGDOS 5 and
+     NVDI 2.5 can be enough. This combination is about as fast as NVDI 3 when
+     the fonts used fit into the caches.
+   o Scaler Speed
+     Both scalers are the same. Don't look here, why SpeedoGDOS is slower.
+   o Bugs
+     Current changes here. I don't know, who actually has more bugs.
+   o Number of font formats
+     Only SpeedoGDOS has Type1 capability. Some of those fonts are very
+     expensive, but there are special fonts not available in other formats.
+   o The font's concept
+     Insiders are fascinated by NVDI's font concept. But you won't get the
+     documentation for "normal coders" from the Behnes. Did'nt even
+     Microsoft lose a t court for such actions?
+     (Stef: I guess the concept is close to Bitstream's recommendations
+     (font suitcases and more). And Bitstream's docs aren't free too. I
+     talked with the Behnes at the ProTOS fair about it)
+     (Gerd: There isn't anything about a font concept in nvdiguid)
+   o Via cookie NVDI claims to be like SpeedoGDOS 5.0, but (obviously) it isn't.
+     But SpeedoGDOS 5.0 isn't SpeedoGDOS compatible too. Huh? You ask why? Well:
+     There are several versions of SpeedoGDOS 5 (with different
+     functions/opcodes) and none is documented. Even worse:
+     Some SpeedoGDOS Version have some experimental functions which aren't
+     allowed to be used. In the past functions *always* were documented that
+     it's allowed to call VDI function to check their existence.
+
+14 Source
+
+Being a developer it's possible to get an almost complete printer driver in
+object code. This one only must be adapted to the special printer.
+
+This package is available for GDOS and SpeedoGDOS.
+
+
+
+15 Tips'n tricks for users
+
+ 15.1 Pixel trash at printing
+
+Printing graphics on a NEC P6+ (maybe other printers too) including a lot of
+black in a line I often had the problem that one line was left out (Speedo-
+drivers NB15, NECP) or two lines were printed displaced in one line (Speedo-
+drivers FX80, NX1000).
+
+This happens when printing directly and via CENSPEED. When using VARSPOOL
+this effect is gone.
+
+VARSPOOL can be found on the driver disk of the NEC-printers.
+
+
+ 15.2 NEC P6+
+
+Once in a while a NEC P6+ will get noisy (rrrrrrrrrrraattatatattaa).
+When You open the front you'll see a round stick (about 1cm thick).
+Put two drops of sewing machine oil on it each year (you'll get it from
+Mom)
+
+ 15.3 Overwritten Speedo faces
+
+Sometimes Speedo writes in face files producing interesting effects. To fix
+this I have a second order besides GEMSYS filled with the Speedo faces on my
+harddisk. If I get strange effects again I copy these files to the GEMSYS
+folder. The almost fixes it in most cases.
+
+ 15.4 SpeedoGDOS & MagiC! (VT52.PRG)
+
+Andreas M. Koepfer:
+SpeedoGDOS 4.1, 4.2, 5.0b used together with MagiC! (former Mag!X) have a
+problem. When VT52.PRG has to be used it already has to be in memory to
+correctly start a TTP (or TOS??). Otherwise VT52.PRG scans the fonts, what
+takes longer than the time it has been given for that. Putting VT52.PRG
+into the APPS folder of MagiC! is a workaround for that. Then the booting
+takes longer, but no errors occur. *But* a lot of memory ist lost. I wrote
+Andreas Kromke - who sent the upper note about the timeout. I guess the new
+MagiC! release will have this flaw fixed.
+
+The VT52.PRG coming with EASE 3.5 is fixed, ask ASH ...
+
+
+16 Tips'n tricks for coders
+
+ 16.1 Fontsize and Pixelsize
+
+Here are my experiences with GDOS and WYSIWYG. Credits to Ulrich Rossgoderer
+for confirming these.
+
+It's about the output of vector graphics and text on screen and printer.
+
+The size of text is defined in point and is always the same - independent
+from the resolution of the output device.
+
+Different are vector graphics: they have to be recalculated in pixels before
+the output. Should be no problem because when opening a virtual/physical
+workstation You get the pixel size in micrometers in devParm[3] and
+devParm[4].
+
+Let's assume the vector graphic is saved internally in micrometers, then the
+definition points at the output simply have to be divided by devParm[3] or
+devParm[4] to get the position in pixels. When doing the output in windows
+an offset has to be added. but thats not relevant here.
+
+So far for the theory being quite simple so to this point (see [4]).
+Now for the practice.
+
+As described above we output a text and a border - saved internally as
+vector graphic. It doesn't matter here if the text is a Speedo or bitmap font.
+To have a better chance to compare the border exactly surrounds the text.
+
+Doing this I got the following experineces: The text exactly filling the
+border on the screen (ST-high) is - when printed - much too small compared
+to the border.
+
+An error in the recalculation of the pixelsize can't be the problem, because
+I made the printing with the drivers NB15, NECP, FX80, NX1000 and the results
+are the same.
+
+I have only one explanation for this: The screen driver supposes a different
+resolution for the pixel size than for the font size.
+
+Two solutions I can offer:
+
+First you can use another pixel size on the screen than the one given from
+the operating system. After opening the virtual workstation (and ONLY
+this one!) I calculated
+devParm[3] := 282
+devParm[4] := 282
+and with this parameter I made the recalculation from micrometers in pixels.
+Now the relation from graphic to text on  screen and print-out is exactly
+the same. But now a DIN A4 page doesn't fit on the screen in it's width.
+The numbers are found by me the experimental way and possibly can be
+optimised
+
+Another solution may be this: Use a smaller font size for the screen (and
+ONLY there!) by multiplicating the size with 72/96. This is simple with
+Speedo fonts because the size in points can be defined by almost endless
+values behind the point. Using bitmap fonts this won't work due to not
+having a screen font in the 72/96ish size for every printer font. (Different
+to translate this, sorry - SD)
+
+This method surely is to be midified for ST-Mid and other resolutions.
+
+From Wilfried Behne (Half NVDI ...) SpeedoGDOS ignores the devParm[3]
+and [4] - values of the screen drivers. The values of physical workstations
+ARE taken.
+
+
+  16.2 Selecting drivers
+
+
+When testing several GDOS programs I found out, that some coders have
+problems
+with the following reasons:
+
+Users can freely assign drivers in the ASSIGN.SYS.
+There may be a setup like
+
+          23 FX80.SYS
+          27 NECP.SYS
+          28 NB15.SYS
+          31 META.SYS
+          61 MEMORY.SYS
+
+How may a coder find out which drivers are installed (and ready)? Even
+though there's no Printer 21?
+Quite easy: When the program supports printers ALL drivers from 21 to 30 are
+to be opened and closed again at once. An installed driver gives back a
+devicehandle >0 when being opened. vf_devinfo gives back correct values when
+a driver is opened.
+
+Do the same thing with drivers 61 to 70 when MEMORY drivers are supported.
+
+The ASSIGN.SYS as printed above is very useful. That's because the NEC P
+printers support all these drivers and print in different resolutions.
+
+ 16.3 The Metafile (MF) format
+
+If been asked to count, what i don't know about Metafiles 8-)))
+
+By the idea the Metafile format is quite simple. It's a recording of VDI
+calls (including parameters) made by a program.
+
+A program making it's output via GDOS will open a Metafile driver instead
+of a printer driver (see 5.7) and the output will get there just like to a
+printer.
+
+A Metafile reading program recreates this recording.
+
+But the simplicity of this format is one of the biggest problems of
+metafiles because different GDOS releases exist and different drivers
+with different capabilities. So, one programs makes output being understood
+by the GDOS actually installed. When this Metafile is read by a program
+running under a different GDOS with less or different capabilities, how
+can the recording be recreated?
+
+Concrete examples:
+The length of ptsin and intin fields is limited (different for different
+drivers) usually. The Metafile driver can handle this in another way.
+This can have influence to text output, poly line & marker, filled area
+and more ...
+
+Next problem:
+A font face not available on the output system is used. I which way another
+(most similar) face has to be requested by the program making the output?
+
+At this point, this is a problem to be handled by the coders of the
+reading graphics programs (who willknow, what they're doing).
+
+But when writing a metafile header you have to know, what you're doing. I
+don't but I'll give it a try ;-)
+
+The resolution set for a metafile is a decision of the application. If
+there's no resolution set, 300dpi are used. That's a pixel width of 0.085mm
+
+(Stef: that's not a pentium calculation, but *where* are 300dpi equal to 85
+micrometers? On a 72dpi SM124?
+Gerd: everywhere)
+
+Screen drivers are only capable of handling raster coordinates. For
+metafile output the same routines are used, so I'll limit the next info to
+raster coordinates (even though metafile can handle NDC's). Those
+coordinates are defined from upper left to lower right.
+
+To define a system of coordinates, metafile do this:
+
+  o  (W)idth and (H)eight are set in millimeters (mm) via vm_pagesize.
+     That's the (positive) difference beetween the lower right and upper
+     left corner (which doesn't have to be in the origin)
+  o  The rectangle (xmin, ymin, xmax and ymax) is defined in pixels via
+     vm_coords. The way to calculate this rect. is found below.
+  o  Here inside another rectangle is defined in pixels via v_meta_extents.
+     It's got nothing to do with the system, the MF reading application
+     get's info how to clip (what doesn't *have* to be done!)
+     Note: papyrus doesn't clip; kandinsky does, but it moves the graphic
+           to the lower right a bit making miss a bit of it on the screen.
+           So it could be useful to set the size for v_meta_extents a bit
+           larger than the one for vm_coords.
+
+This way the system of coordinates, the resolution (width and height of a
+system) has a fixed definition.
+
+But the veriables set aren't the ones an application usually calculates
+with.
+Here's an example what's to do, when the application knows the resolution
+wished (in dpi), the upper left (X1,Y1) and the lower right dot in tenths
+of a millimeter (or a multiple of it).
+
+Here's how to get the width and height of a pixel by the resolution:
+
+                                                  25400
+(Pixel height in tenths of a millimeter) = --------------------
+                                           vertical res. in dpi
+
+                                                    25400
+(Pixel width in tenths of a millimeter)  = ----------------------
+                                           horizontal res. in dpi
+
+(W)idth and (H)eight (in millimeters) are needed for vm_pagesize:
+
+W = (X2 - X1 + 1) * (Pixelwidth in 1/10mm)
+H = (Y2 - X1 + 1) * (Pixelheight in 1/10mm)
+
+xmin, ymin, xmax and ymax (in pixels) are needed for vm_coords:
+
+              X1
+xmin= --------------------
+      Pixelwidth in 1/10mm
+
+              Y1
+ymin= ---------------------
+      Pixelheight in 1/10mm
+
+              X2
+xmax= --------------------
+      Pixelwidth in 1/10mm
+
+              Y2
+ymax= ---------------------
+      Pixelheight in 1/10mm
+
+v_meta_extents is found the same way as vm_coords. To make Kandinsky
+display everything, xmin & ymin can be set smaller and xmax & ymax larger.
+
+Before making any output into a MF, first set the system of coordinates.
+
+(In the early past I noticed, that my desriptions are that good, that even
+I understood them <g> [Stef:I hope the translation is that good too])
+
+Further informations:
+Ulrich Rossgoderer coordinates a list of further informations to put
+in a MF via v_write_meta (See version 2.4 of this FAQ). The Profibuch [2]
+the Atari Compendium [3] and the standard book "Ueber FIleformate [20]
+contain further information. And every literature about VDI calls is helpful,
+too.
+
+ 16.4 Anticipation is half the fun -  I've been told ;-)=
+
+
+17 Addresses
+
+( Lot's of stuff is available from the friendly Atari dealer 'around the
+corner ;-/ )
+
+(Note: All addresses are German ones - except when marked!)
+
+
+Application Systems Heidelberg (ASH)
+Postfach 102646 * 69016 Heidelberg
+Tel.: +49 6221 300002
+
+ATARI (Europe)
+Postbus 70 * NL-4130 EB Vianen * The Netherlands
+
+Behne & Behne Systemsoftware GbR
+Lindenkamp 2 * 31515 Wunstorf
+Tel./Fax.: +49 5031 8629
+
+BELA Computer GmbH: R.I.P.
+
+ByTech GbR
+Detlef Kuhl, Frank Hieronymi
+Bismarckstrasse 88 * 10627 Berlin
+Tel.: +49 30 3134258
+
+COMPO Software GmbH
+Ritzstrasse 13 * Postfach 1051 * 54591 Pruem
+Tel.: +49 6551 6067
+
+DigiLab GmbH
+Posener Str. 18 * 24161 Daenischhagen
+
+DigitalDesktop (DDT) Is a dealers community
+Addresses are to be found in Atari-magazines
+
+Digital Systems & Consulting
+Soester Str. 306 * 59071 Hamm
+Tel.: +49 2381 889413; Fax.: +49 2381 889812
+
+Elan Software
+550 Charest Est
+P.O.Box 30232
+Quebec, G1K 8Y2
+Canada
+Voice: (418) 692-0565; Fax: (418) 683-9189     CANADA!!!
+
+Dieter Fiebelkorn
+Gruener Weg 29a * D-45768 Marl-Brassert
+
+Stephan Gerle
+Ruthstrasse 8 * 44149 Dortmund
+
+H3 Systems
+Haeusserstrasse 44 * 69115 Heidelberg
+Tel.: +49 6221 164031; Fax.: +49 6221 184541
+
+Harald und Martin Hansen
+Weserstrasse 82 * 12059 Berlin
+
+Hard & Soft
+Obere Muensterstr. 33-35 * 44575 Castrop-Rauxel
+Tel.: +49 2305 18014; Fax.: +49 2305 32463
+
+ICP GmbH & Co.KG
+Leserservice TOS * Innere-Cramer-Klett-Strasse 6 * 90403 Nuernberg 1
+
+Konfect Corp.  Vertriebsbuero A-D-CH
+Postfach 1113 * D-63797 Kleinostheim
+Tel.  +49 6027 99941; Fax +49 6027 99942
+
+MAXON Computer GmbH
+Schwalbacher Strae 52 * 65734 Eschborn
+Tel.: +49 6196 481811
+
+Migraph Inc.
+32700 Pacific Highway S.
+Suite 12, Federal Way
+WA 98003, USA                                  USA!!!
+Tel.: 0012068384677
+
+Michael Nolte Computersysteme
+Vasters Str.  10, 50825 Koeln
+Tel.:  +49 221 558269, Fax:  +49 221 5504629
+
+OMIKRON Soft+Hardware GmbH
+Sponheimerstr. 12a * 75117 Pforzheim
+Tel.: +49 7231 356033
+
+Pergamon Software * Lehmann & Herzog
+Wegscheidestr. 29 * 60435 Frankfurt/Main
+Tel.: +49 69 5488279
+
+rhotron GmbH
+Entenmuehlstrasse 57 * 66424 Homburg/Saar
+Tel.: +49 6841 64067; Fax.: +49 6841 2467
+
+Richstein & Dick GbR (Kaktus)
+Konrad-Adenauer Strasse 19 * 67663 Kaiserslautern
+Tel.: +49 631 22253
+
+Richter Distributor
+Hagener Str. 65 * 58285 Gevelsberg
+Te.: +49 2332 2706
+
+R.O.M. Software (New Address!)
+Christian Nieber & Ullrich Ramps
+Raschdorffstr. 99 * 13409 Berlin
+Tel.: +49 30 4924127
+
+RoSoft Stefan Rogel
+Koehlerweg 1 * 67661 Kaiserslautern
+Stefan_Rogel@LU.maus.de und Stefan_Rogel@WI2.maus.de
+
+SciLab GmbH
+Isestrasse 57 * 20149 Hamburg
+Tel.: +49 40 4603702
+
+SHIFT Computer + Werbung GmbH (quit!!)
+
+Michael Siek
+Bohlweg 6a * 38678 Clausthal-Zellerfeld
+Tel.: +49 5323 4413
+
+SILICON Technology & Promotion
+Wilhelmshoeher Allee 124 * 34119 Kassel
+Tel.: +49 561 711924
+
+Softbaer GbR
+Richardstr. 60 * 12055 Berlin
+Tel.: +49 30 6226884
+
+SPIRIT WARE
+Bible Church 15211
+15th Avenue NE Seattle, WA 98155 (USA)            USA!!!
+
+TKR
+Stadtparkweg 2 * 24106 Kiel
+Tel.: +49 431 337881; Fax.: +49 431 35984
+
+Trade-iT exists no more (since April 1994)
+
+Holger Weets
+Tangastr.  45 * 26121 Oldenburg
+E-Mail:  Holger_Weets@OL.maus.de (Not above 45kB!)
+
+Dipl.-Phys.-Ing. Ralf Wirtz
+Kasterstr. 30 * 52428 Juelich
+Tel.: +49 2461 1255
+
+Wilhelm Mikroelektronik
+Luenen
+
+Working Title GbR
+Lilienweg 12 * 53123 Bonn
+Tel.: +49 228 647020
+
+3K Computerbild
+Wevelinghoven 26 * 41334 Nettetal
+Tel.: +49 2153 91860
+
+
+18 Miscellaneous
+
+
+ 18.1 Critics
+
+
+
+  18.1.1 Critics to the author
+
+Critics are greatly welcomed. To get more info, send email to:
+
+G.Castan@physik.uni-stuttgart.de
+
+Possibly one writing me has already tested two or three drivers.
+Please write me if the errors listed above occured or not.
+
+Anybody knowing different driver support addresses, please write me an
+email.
+
+
+  18.1.2 Critics to the translator
+
+Hi, this is Stefan writing :-)
+The reason why I wrote this translation I can't find in my head ...
+Guess it's because Atarians should work together and support each other!
+Well, if you wonder about some errors of spelling or syntax remind this:
+ I learned English at school for 4 years and after that I kept my knowledge
+ actual by playing some text adventures and reading some international
+ newsgroups.
+If you find some errors in this translation, please don't send them to Gerd
+but
+to me:
+
+cookie@cookie.syd.de
+
+Referring to the feedback on this translation there seems to be ANY error in
+it.
+I didn't get too much email now - and no postcard, so I'll set my address
+here too: Stefan Damerau
+          Bergholm 31
+          D-24857 Fahrdorf
+
+It would be interesting to me, WHO is happy with this FAQ, so send me
+postcards,
+discs, books, whatever you want - no mail bombs please ;-)))
+
+Thank you and have fun and lot's of experience with this FAQ.
+
+Bye
+  Stefan
+
+
+ 18.2 Praise
+
+If this FAQ helped you out of a problem, please write me a postcard in your
+next holidays.
+
+Postcards I received yet: 1
+
+ 18.3 For my support
+
+Due to actual experiences I ask the distributors to switch on verify when
+copying update disks.
+
+I only know two distributors not making any problem with this.
+
+Does one of the readers want to code a Speedo font editor? We (Gerd &
+Stefan) offer our time to beta test it ;-)
+
+
+ 18.4 Trademarks
+
+This document is full of trademarks, no to be used freely.
+
+
+
+ 18.5 Guarantee
+
+I'll offer no guarantee.
+
+
+19 Appendix
+
+ 19.1 Literature
+
+  [1] Douglas N. Wheeler,
+      EVERYTHING YOU EVER WANTED TO KNOW  ABOUT  GDOS  (AND  MORE)
+      (Internet, Filename: GDOS.ARC oder GDOS.TXT)
+       Here's written all what's important to know about GDOS drivers.
+       (AND MORE)
+
+ [2] Jankowski, Rabich, Reschke
+     Atari Profibuch [Professionals book]
+     10. Auflage, SYBEX, Duesseldorf (1992)
+       The Standard. For Coders: In the VDI part you'll find how to use
+       screen and printer drivers correctly.
+
+ [3] Scott Sanders,
+     The ATARI Compendium, first revision, SDS Publishing, Long Beach '94
+       Another standard. More actual compared to the Profibuch (VDI calls
+       up to SpeedoGDOS 4.2) and very complete. The official GEM user
+       interface guidelines are included too! But it can't replace the
+       Profibuch.
+       A plus is the list of operating system functions, from which release
+       they're available and which way their existence can be requested.
+       If this FAQ ever will have a chapter about layout, this book will be
+       an example. A negtive one, though.
+
+ [4] Marc Rene Gardeya
+     VDI fuer jedermann [VDI for everyone], ST-Computer 10/93
+       Introduction in correct programming of screen  and printer outputs.
+
+ [5] Julian Reschke
+     Herbstgedanken, ST-Magazin 11/92
+       Autumn thoughts about SpeedoGDOS and FontGDOS.
+
+ [6] Erik Dick
+     Schoen und schnell? [Pretty and Fast?] , ST-Computer 7/93
+       Common info about GDOS and installation of Speedo. Almost the same
+       standing in the installation manual, but more information about
+       special problems
+
+ [7] Erik Dick
+     SPEEDO-Gonzales, ST-Computer 8/93
+       Important stuff about programming Speedo. Description of the new
+       bindings tips for coders for standard-uses.
+
+ [8] Erik Dick
+     SPEEDO-Gonzales, ST-Computer 9/93
+       Meaning of the Speedo error messages and bindings of the Bezier and
+       cache routines
+
+ [9] Erik Dick
+     Mit Speedo in die zukunft?, ST-Computer 6/94
+       What's new with Speedo 4.2? New bindings are described too.
+
+[10] Erik Dick
+     Thronfolge Teil 1, ST-Computer 11/94
+       Comparison of NVDI 3 and SpeedoGDOS 5: Contents, installation and
+       handling.
+
+[10a] Erik Dick
+      Thronfolge Teil 2, ST-Computer 1/95
+       Part 2 of the comparison of NVDI 3 & SpeedoGDOS 5
+       Speed, more handling and safety
+
+[11] Raymond Schroeder
+     Atari-Hotline, ST-Magazin 7/92
+       Whats GDOS for? Which programs supports it? How to install it?
+
+[12] Sven Behne, Wilfried Behne
+     NVDI-Dokumentation, BELA
+       VDI-description. But no description of the differences between screen
+       and printer drivers.
+
+[13] Wilfried Behne, Andreas Kromke
+     Traps in the Atari ST's VDI and how to get around them, c't 1991, Nr. 3
+       A lot about errors in the screen drivers.
+
+[14] Laurenz Pruessner
+     es ist alles so schoen Bunt hier [Oh, take a look at these colors]
+     ST-Magazines 5/92, 7/92, 9/92
+       How to handle more than 256 colors with device depending formats
+
+[15] Laurenz Pruessner
+     Sekt oder Selters [Champaign or mineral water], ST-Magazin 4/93
+       MEMORY.SYS: Binding, way to handle color resolutions, font output
+       with and without SpeedoGDOS.
+
+[16] Laurenz Pruessner
+     Auf ein Neues!, ST-Magazin 1/93
+       OFF TOPIC Everyone using FlyDials or similar Libraries should read
+       this.
+       Problem: New AES's releases use (formerly free accessible )
+                ob_state-Bits that are used by these libraries too
+                This only is important for AES 3.31 (TOS 4.01) and is
+                fixed now.
+
+[17] Laurenz Pruessner
+     Summertime Blues, ST-Magazin 6/93
+       Listing to open the MEMORY driver.
+
+[18] Laurenz Pruessner
+     Mehr Schub!, ST-Computer 2/94
+       Printing with GDOS - espacially it's about printing of bitmap raster
+       - color too.
+
+[19] Oliver Scheel
+     Erste Hilfe fuer [1st aid for] MultiTOS, ST-Magazin 6/93
+       Common information to install MultiTOS.
+
+[20] Guenter Born
+     Referenzhandbuch Dateiformate [Reference Dataformats],
+     3. Edition, Addison-Wesley, Bonn (1994)
+       With the right drivers it's quite simple to make output in .IMG-
+       and in .GEM- Format In this book is a description how to read these
+       formats again (and more).
+
+[21] Guenter Born
+     Dateiformate [Dataformats] Programmierhandbuch [Coders manual]
+     Addison-Wesley, Bonn (1993)
+       Sources (TurboC, TurboPascal) for loading and saving the formats
+       to use the datas [16] is recommended.
+
+[22] Tim Oren
+     Professional GEM, (Internet, Filename:  PROGEM)
+       Tim Oren almost only describes the programming of the AES but without
+       him this list would not be complete.
+
+[23] Norman Walsh et al
+     comp.fonts FAQ
+       TeX DVI, PostScript, and info versions of this FAQ are available from
+       ftp.shsu.edu in archive/help/comp-fonts-FAQ. A Gopher is also
+       maintained at shsu.edu which can provide interactive access to the FAQ.
+       Finally, an online, hypertext version of the FAQ ist maintained
+       (experimentally) on jasper.ora.com where an HTP server runs. For
+       example, point XMosaic (or a similar WWW browser)
+       to http://jasper.ora.com/.
+
+[24] Bundestag
+     Lobby et al, Typeface law, law to the agreement of vienna
+     (June, 12th 1973) about protection of typographic typefaces (Typeface
+     law) Dated July, 6th 1981 (BGBl.II S. 382)
+       last change by law of December, 18th 1986 (BGBl.I S. 2501)
+       ftp://ftp.uni-stuttgart.de/pub/doc/law/german/SchriftzeichenG
+
+[25] Peter Karow
+     Schrifttechnologie, Springer (1992) / Font technology, Springer (1994)
+       This book really fascinated me (though the Speedo format is missing).
+       Intelligent scaling: Which tricks (Hints and more) does a font format
+       have, (T1, TT, F3, IF, II)? One reading this chapter, will know, why
+       the Behne's don't support T1 with NVDI 3 ...
+       Lots about a fonts quality, readability and copyrights.
+
+[26] Peter Karow
+     Digitale Schriften, Springer (1992) / Digital typefaces, Springer (1994)
+       Display and formats of scalable font formats like Type 1, True Type,
+       F3, Intellifont etc. (Speedo is only mentioned shortly). Lots of
+       concepts are mentioned. Appendix F is a small dictionary about words
+       from the writing league (German - English - French)
+
+[27] Thomas Merz
+     Name of truth, c't 12/1994
+       How to get font names and other informations from a true type font
+       file.
+
+[28] Microsoft
+     Several documentations and programs about TrueTypeFonts
+       ftp://ftp.microsoft.com/developr/drg/TrueType-Info/...
+
+[29] Ulrich Hilgefort
+     Fonts mit Mengenrabatt, c't 1/95
+       Quality comparison of some TTF CD's:
+
+        o Accurate Research: Dr. Fonts (2275 s/w & PD faces, TTF)
+        o ARI Heidelberg (1268 sw & PD faces, TTF)
+        o Bitstream Typeshop (502 faces, TTF)
+        o PrimaFont TrueType CD (1812 faces, 1203 of them are digitized
+          Berthold faces)
+        o SoftMaker Profi-CD Version 2 (750 faces, TTF+T1)
+        o URW PrintWorks (503 faces of 10 fonts, TTF+T1)
+        o Wayzata Technology Font Pro 2 (213 faces, TTF+T1=
+      (Stef: Gerd used "TT" for TrueType but I use TTF instead)
+
+[30] Philip Glass
+     Koyaanisqatsi, Island Records (1983)
+       It's astoundishing that so many documental films use this music
+       without any note ...
+
+CASTAN@cip.physik.uni-stuttgart.de; alias: G.Castan@physik.uni-stuttgart.de
+Gerd Castan * Hoehbergstr. 16 * D-70327 Stuttgart
+
+cookie@cookie.syd.de (MausNet: Stefan Damerau @ SL)
+Stefan Damerau * Bergholm 31 * D-24857 Fahrdorf)
+---EOF---
+
+
+gerd@theo2.physik.uni-stuttgart.de          G.Castan@physik.uni-stuttgart.de
+Gerd Castan * Hoehbergstr. 16 * D-70327 Stuttgart
+

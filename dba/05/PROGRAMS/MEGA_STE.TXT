@@ -1,0 +1,29 @@
+SWITCHER
+                      Mega STe processor speed switcher
+                      =================================
+
+This program allows you to toggle some of the settings of the Mega STe micro-
+processor.
+When you run the program, it checks for TOS-version 2.5 or higher and displays
+an alertbox if you don't have such a TOS-version.
+You can then choose to ignore it, if you do the program will try to load a
+value from $ffff8e21, and you'll get 2 bombs.
+Right , if all goes well and you use it on a machine it's designed for, a
+dialogue-box will appear and display the processor's current status.
+
+That is either:        - 16Mhz, + cache
+                       - 16Mhz, no cache
+                       - 8Mhz, no cache
+
+You can then toggle these options and exit if you're finished with it.
+
+One more thing, while testing this program, a machine with TOS 1.2 gave
+sometimes an incomplete pathname and the resource file couldn't be found by the
+program.
+
+This can be solved by placing the program, along with it's resource file in the
+root-directory.
+
+P.S THE PROGRAM ON THE A DISK OF THE MAGAZINE.
+
+

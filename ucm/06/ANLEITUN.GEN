@@ -1,0 +1,532 @@
+   -------------------------------------------------------------------------
+           Sammlung lustiger šbersetzungen von Bedienungsanleitungen
+                 edited by Boris Grotz@2:247/175@fido.claic
+                   nderungen, Erg„nzungen an diese Adree
+   -------------------------------------------------------------------------
+ 
+In den Nrnberger Nachrichten  stand diese Woche einen Arikel ber komische Ge-
+brauchsanweisungen wie z.B:
+
+"Nimmer diesen Monitor legen, wo der  Schnur von Personen darauf spazierengehen
+grausam behandelt wird."
+
+-------------------------------------------------------------------------------
+
+Gebrauchsanweisung fr eine Luftmatratze:
+
+"Wenn das Wetter kalt ist, wird die Puff Unterlage sich langsam puffen. Entrol-
+len die Puff Unterlage und liegen auf ihr, dann wird sie von der W„rme sich In-
+flationen bekommen."
+
+-------------------------------------------------------------------------------
+
+"Setzen Sie das  Stereo in Kopfphon Wagenwinde ein, die Macht ist an, sonst ist
+die Macht ab."
+
+-------------------------------------------------------------------------------
+
+Ein  Zeitungsbericht  aus  der NEUEN PRESSE, den  ich Euch  nicht  vorenthalten
+m”chte:
+
+"Herzlichst  Gluckwnsch zu  gemutlicher  Weihnachtskerze Kauf". So freundlich,
+dem Ruf der ewig  l„chelnden Japaner  entsprechend, beginnt  die lustigste  Ge-
+brauchsanweisung, die der NEUEN PRESSE bis jetzt ins Haus flatterte.
+
+Sie h„ngt  an der Pinnwand  in einer hannoverschen Werbeagentur. "Und", so Ein-
+sender Wolfgang  Friedrichs, "sorgt immer wieder fr gute Laune." Bei der Weih-
+nachtskerze handelt  es sich um einen  fnf Zentimeter groáen beleuchtbaren An-
+stecker mit  dem sensationellen  Namen "GWK 9091". Das "vielseitig verwendbare"
+Modell ist  schon an sich ein Witz. Die  Anleitung dafr bertrifft aber alles.
+Es darf gelacht werden:
+
+"Mit sensazionell  Modell GWK 9091 Sie  bekomen nicht teutonische Gemutlichkeit
+fr trautes  Heim nur, auch  Erfolg als moderner  Mensch bei anderes Geschleckt
+nach Weihnachtsganz aufgegeáen und l„nger, weil Batterie viel Zeit gut lange.
+
+Zu erreischen  Gluckseligkeit unter  finstrem Tann, ganz  einfach Handbedienung
+von GWK 9091:
+
+1. Auspack und freu.
+2. Slippel A kaum abbiegen  und verklappen in  Gegenstippel B fr  Illumination
+   von GWK 9091.
+3. Mit Klamer C in Sacco oder Jacke von Lebenspartner einfr„sen und l„cheln fr
+   Erfolg mit GWK 9091.
+4. Fr eigens Weihnachtsfeierung GWK 9091 setzen auf Tisch.
+5. Fr kaput oder Batterie mehr zu Gemutlichkeit beschweren an:
+   wir, Bismarckstraáe 4.
+
+Fr ne Batterie alt Batterie zurck fr Sauberwelt in deutscher Wald."
+
+Viel Spaá mit GWR 9091,
+
+-------------------------------------------------------------------------------
+
+TASTATUR BEDIENUNGSANLEITUNG FUR VERBRAUCHER (K5S1)
+
+---------
+Kapitel 1
+---------
+
+         TECHNISCHE EINFšHRUNG
+
+Die grenzschnicht  der STAFF  tastatur ist begrenzt so da  das system software
+die maximalbiegbarkeit fr die begrenzten gewien tastaturoperationen hat. Dies
+ist durchgefhrt mit die hin- und rck-fahrenden blickskodes der tastatur viel-
+mehr als  die Amerikanischen Standardkodes  fr die Kodes  des Informationsaus-
+tausches (ASCII). Auerdem sind alle tasten typematic und erzeugen ein bearbei-
+tungs- und anrikode. Zum beispiel erzeugen die taste "I" blickskode hex 01 auf
+die bearbeitung und kode hex 81 auf den anri. Die anrikodes werden  durch das
+hinzufgen  hex 80 zur bearbeitungskodes  gestaltet. Dieser fhrer der tastatur
+I/O kann die  tasten wie shift tasten oder typematic as ben”tigt von der bewer-
+bung begrenzen.
+
+Der mikrocomputer  in der tastatur  fhrt viele  funktionen aus, einschlielich
+der selbstprfung des  kraftbetriebs wenn ersucht vom systemeinheit. Diese pr-
+fung prft  den mikrocomputer ROM, einnerung, und  die festsitzten  tasten. Die
+zus„tzlichen  funktionen  sind: die gena  prfung der tastatur, der puffer der
+blickskodes  ab 8 taste, das  erhalten der  serienmaigen kommunikation mit dem
+systemeinheit, und das ausfhren des hand-schttelnden protokolls  ben”tigt von
+jedem transfer der blockskodes.
+
+---------
+Kapitel 2
+---------
+
+             TASTATURLAYOUT
+
+Die STAFF tastatur hat 84 tasten in drei gr”áer fundaments angeordnet. Die zen-
+trale  portion dieser  tastatur ist ein  tastatur layout der standardschreibma-
+schiene. Auf der linken seite gibt  es 10 funktionstasten. Diese  tasten werden
+durch  software vom  benutzer  begrenzt. Auf  der  rechten  seite  gibt  es ein
+16-tasten  tastepolster. Diese  tasten werden auch  von software begrenzt, aber
+haben  die inschrife fr die funktionen  der numerischen zugang, schieber, kon-
+trolle, rechnungspolster, und schirmauflage.
+
+---------
+Kapitel 5
+---------
+
+          BRAUCH DER TASTATUR
+
+Diese  sektion bittet  den umri des  tastaturbrauchs  an wenn  die verwendeten
+funktionen ausgefhrt werden.
+
+        Funktionen                Kodes                Anmerkung
+-------------------------------------------------------------------------------
+Heimschieber                      Home           Schriftleiter;Wortverarbeiter
+-------------------------------------------------------------------------------
+Zum auersten men zurck-        Home           Getriebene anwendung des mens
+kehren
+-------------------------------------------------------------------------------
+Schieber aufw„rts fortbewegen     ^              V”llig schirmschriftleiter;
+                                                 Wortverarbeiter
+-------------------------------------------------------------------------------
+Aufw„rts paginieren,schn”rkel     PgUp           Schriftleiter;Wortverarbeiter
+ruckw„rts 25 linien und heim
+-------------------------------------------------------------------------------
+Schieber linksw„rts fortbewegen     <- Taste 75  Text, Kommandozugang
+-------------------------------------------------------------------------------
+Schieber rechtw„rts fortbewegen    ->            Text, Kommandozugang
+-------------------------------------------------------------------------------
+Schn”rkel zum ende des textes      End           Schriftleiter, Wortverarbeiter
+Am ende der linie schieber stellen
+-------------------------------------------------------------------------------
+Schieber unterw„rts fortbewegen    \/            V”llig schirmschriftleiter;
+                                                 Wortverarbeiter
+-------------------------------------------------------------------------------
+Rckw„rts paginieren,Schn”rkel     PgDn          Schriftleiter;Wortverarbeiter
+rckw„rts 25 linien und heim
+-------------------------------------------------------------------------------
+Text im schieber einzufgen,      Ins            Text,kommandozugang
+text im puffer rechts zu be-
+wegen beginnen/unterbrechen
+-------------------------------------------------------------------------------
+Charakter im schieber aus-         Del           Text,kommandozugang
+streichen
+-------------------------------------------------------------------------------
+Zert”rtischer rckplatz            <- Taste 14   Text,kommandzugang
+-------------------------------------------------------------------------------
+Streifen votw„rts                  ->|           Textzugang
+-------------------------------------------------------------------------------
+Streifen reserve                   |<-           Testszugang
+-------------------------------------------------------------------------------
+Schirm und heim s„ubern            Ctrl Home     Kommandozugang
+-------------------------------------------------------------------------------
+Schn”rkel aufw„rts                /\             In der mode der
+                                                 Schn”rkelfeelung
+-------------------------------------------------------------------------------
+Schn”rkel unterw„rts              \/             In der mode der schn”rkel-
+                                                 feelung
+-------------------------------------------------------------------------------
+Schn”rkel linksw„rts              <-             In der mode der
+                                                 Schn”rkelfeelung
+-------------------------------------------------------------------------------
+Schn”rkel rechtw„rts              ->             In der mode der
+                                                 Schn”rkelfeelung
+-------------------------------------------------------------------------------
+Vom schieber bis EOL aus-         Ctrl End       Text,kommandozugang
+streichen
+
+
+---
+
+"DIE INSTALLATIONSMETHODE DER NEIGUNG UND DREBRING-STANDTEILEN
+
+Ihr Farbe-Monitor hat besondere Neigung und Drehring-standteilen.
+
+Sie k”nnen so installieren, sich ihrem sichtbaren Winkel snzupaen.
+
+Diose  Neigung  und Drehring-Standteilen  wurden Besonders fr diesen Monnnnnn-
+gedacht und sind ein Einziges, das sie verwenden sollen.
+
+Verwenden sie irgendandere  standteilen, dann  k”nnen sich  Unbest„ndigkkkkkund
+schaden ergeben.
+
+Um die Neigung und Drehring-Standteilen auf  den Monitor zu installieren, bitte
+folgen sie diese Schritte :
+
+1. Stellen sie  die Oberseite des  Monitors nach unten und Bildschirmseite nach
+   links.
+
+2. Montieren sie die standteilen und den Monitor suf den P.C.
+2-1. Stellen sie  so das  Stand-Oberteil  auf  den P.C. da  sich  die boierte
+     "FRONT"  Schrift auf dem auf dem Stand-Obcrteil "A" zu der vorderseite des
+     P.C. zu orientieren.
+2-2. Stellen sie den Stand-St”psel "B" auf den Stand-Oberteil.
+2-3. Binden sie  den Stand-St”psel  und P.C. durch  Stand-Oberseite  mit groer
+     Schraube "C" fest.
+
+3. Drehen sie die P.C.-Montage um und setzen sie die vier Stand-Anh„nger in die
+   vier  schlitzen auf  dem boden des  Kabinetts und  schieben die P.C.-Montage
+   nach unten, Bis  das schappen der  Kabinett-Rckseite die P.C.-Montage fest-
+   stellen.
+
+4. Binden  sie  die  P.C.-Montage  an  den  Winkelsttze-Stand "E" mit  kleiner
+   Schraube "D" fest.
+
+ANBEI: EINE ZEICHNUNG šBER DIE OBEN GENANNTE FACHWORTE.
+
+-------------------------------------------------------------------------------
+
+Dies ist der authentische Text einer Anleitung fr ein Autoradio der Firma xyz,
+Modell FN-12.
+Kommentare in ... eingeschloáen.
+
+
+...titel...
+ANWEISUNGEN EINFšHRUNG
+
+LESEN SIE BITTE DIESE EINFšHRUNG ROLL VOR DER OPERATION
+
+...Bild vom Radio, Bedienelemente mit Ziffern versehen...
+
+1.KRAFT SCHALTER
+  Wenn  dieser Knauf  wird gedrckt, wird  die Kraft angemacht und werden grne
+  Erleuchtungen  rundrerum  alle  kn„ufe  und  kn”pfe  mit  zifferblatt  schale
+  gezndet.
+2.ZIFFERBLATT SCHALE
+3.AM/FM BAND WHLER
+  Steilen den knopf zu gedrckter stellung fr FM station und loslaen Stellung
+  fr AM.
+4.STEREO ANZEIGER LAMPE
+  Die Lampe zeigt, da das Radio zur FM Stereo Station gespielt wird.
+5.BAND ANZEIGER LAMPE
+  Die Lampe wird erleuchten W„hrend das Band spielt.
+6.BAND SCHLITZ
+  Haltend die  kaette aufrecht,(Offenes Band mu auf recht Seite sein), setzen
+  in Band  Schlitz ein. Der  Band Mechanismus wird zur kaette Spielen Mode ge-
+  stellt.
+7.FEST VORWRTS/AUáTOEN KNOPF
+  Drcken diesen knopf bis halbe Niederlaung, dann wird das Band gewunden ror-
+  w„rts schnell. Um das Band zu autoen, drcken diesen knopf voll.
+8.TONNE KONTROLLE
+  Drehen links oder rechts um gewnschte Station w„hlen
+9.VOLUMEN KONTROLLE
+  Um das  volumen zu wachsen, Laen  dieser knauf aufw„rts, und  Vm zu abnehmen
+  Laen dieser knauf abw„rts.
+10.TON KONTROLLE
+  Um den  Diskant zu  wachsen, laen  dieser knauf  laen dieser knauf abw„rts,
+  aufw„rts, und um zu abnehmen.
+11.WAAGE KONTROLLE
+  Laen dieser  knauf gleiten aufw„rts  um das link-Sprecher Volumen zu Wachsen
+  und um das recht-Sprecher Volumen zu abnehmen.
+
+ANLAGE
+
+Heften das Rahmen-kragstein zn zur rechten und  linken seite des vorderen Fahr-
+gestell des Besteck wir Figur 2.
+Schlieen das  Armaturenbrett richtig nach der Gr”e (178x50mm) aus. Seien vor-
+sichtig um nicht  zu schneiden berm„ig  ber die Gr”e. Anders k”nnen sie das
+Armaturenbrett besch„digen.
+Setzen das Besteck ins Armaturenbrett um es zu gingen.
+Ordnen die klammer  Schraube (Sehen Figur3) so  die Schneide des Armaturenbrett
+kann zwischen den Rohmen-kragstein und klammer eingesetzt werden.
+Drcken  vorw„rts  und  abw„rts  zwei  Henkel  mutige  Schraube  der Oberen und
+niederen seiten  des Rahmen-kragstein bercksigtig  solange sie k”nnen vorw„rtz
+und abw„rtz dann festigen vier Henkel Schraube.
+Heften den Hintergrund Sttzen kragstein zum Rcken des Radio.
+Heften die Stellung-platte wie Figur 2.
+
+... Abbildung : Einbau-Explosionszeichnung "Figur 2"...
+
+VERBINDUNG
+
+Verbinden  Positiven Leitungsdraht  zum positiven zubeh”r schlu auf dem Znder
+Block.
+Der Netzteil wird wirken wenn das anznder angemacht ist.
+Wenn sie wollen, verbinden  eines Grund kabel  vom Netzteil zur Metall Stellung
+des Fuhrwerk Fahrgestell.
+Verbinden  das gran  kabel an  positiven schlu  auf dem linken sprecher. Ver-
+bindne das blan kabel an positiven schlu auf dem rechten Sprecher grnden die
+negativen Schle der Spiecher an Fuhrwerk Fahrgestell.
+
+... Abbildung : Anschlu-Schema ...
+
+ST™RUNG SCHALL UNTERDRšCKUNG
+
+Die meisten  neulichen wagen  nicht wollen schall  Unterdrckung. Aber wenn Sie
+n”tig haben, installieren bitte "1" Typ Schall Unterdrckung wie unten.
+
+... Abbildung : "Anznder Rolle","Elektrische Verteilungsmaschine" ...
+
+KAETTE ANWEISUNGEN UND FšHRUNG
+
+Machen  den Netzteil  an und fgen das kaette Band in  Ladestelle. Schlitz wie
+ilustriekt ber ein.
+Das Band Anzeiger wird angesndet um zu zeigen, da der Netzteil in Band Anwei-
+sungen Mode ist.
+Wenn das  Band am Ende  einer seite  reicht, wird  der Band  Anzeiger Lampe er-
+l”scht. Fr  festes Vorw„rts, des Bandes drcken FF/EJ Knopf auf halbe weise zu
+schlieen in die festen Vorw„rts Stellung.
+Um zu wegs chaffen die kaette, drcken den FF/EJ knopf v”llig.
+Eher das Einfgen  der kaette in Netzteil, vermindern šberma Band L”sen durch
+Rotieren den  Gyrometer  um zu  Verrichten  das L”sen  und um zu  schtzen  die
+kaette aus direkter Sonnenlicht und hoher Temperatur.
+
+ANTENNE BESATZNHERIN ANORDNUNG
+
+1. Machen Radio an.
+2. Dehnen Antenn v”llig aus.
+3. Einstellen eine Woohe rund AM 1400KHz.
+4. Durch  den  Kaette  Deckel, ordnen  sorgf„ltig  Antenne  Besatzn„herin  mit
+   Schraube Ramme an wie unten (Siehe Figur 5)
+
+...Figur 5 : Mit einem Schraubenzieher wird die Antennenanpaung eingestellt...
+
+So, das wars'. Von MIR sind keine Rechtschreibfehler oder grammatischen Verfeh-
+lungen drin, ich hab alles 2mal durchgesehen.
+
+-------------------------------------------------------------------------------
+
+- Kamera
+Bevor dem  photografieren  vergewiern sich dasz  die Linzedeckel abgehoben und
+visieren durch dasz Blickfenster. Drcken die Linzehebel  ohne Wakkeln zur Auf-
+nahme und bet„tigen wiederholt dasz Transportrad zun erneute Aufnahme.
+
+-------------------------------------------------------------------------------
+
+- Schuh
+Vielen Dank  fr einen "Tokyo Kumagai" schuhe  gekauft zu haben. Wir bitten sie
+darauf  zu bemerken, da  der eleastische  auentlich schwanlich  ist, ber fur
+diesen  Artikel. Wir  bitten sie immer  den schuhekleidunger  zu benutzen, auch
+wenn sie  in eilige sind. Bitte  ziehen sie  nie den elastisch  berall, ob sie
+lange nageln haben. Wir danken fr diesen vorsichten zu bemerken weil wir nicht
+verantwortlich nach der benutzung sind.
+
+-------------------------------------------------------------------------------
+
+- Kartei
+Drcken die  Knopf zum ersten Platz, dann stehen die klar Karte zurck, hat die
+Nummer dann errichtet.
+
+-------------------------------------------------------------------------------
+
+- Computermaus
+Folgen sie  die unten beschreibte Prozedur um ihre Maus zu montieren: 1/ Drehen
+Sie die Maus um. 2/ Entferne  die Decke durch eindrucken oder nach unten drehen
+bis zur  OPEN Position. 3/ Nimm den Gummi Ball  aus der Dose  und t ihn in die
+Mausleere.
+
+-------------------------------------------------------------------------------
+
+Aus dem Beipackzettel eines Kyocera Toners:
+
+RESTTONER BOX
+-------------
+Wenn "Nen Resttoner-box Einban" auf  dem  Tastatur  erscheint, men  sie den
+Toner Kit  verwenden. Wollen  sie bitte  die TK-9  Bentzung  Notiz wieder hin-
+bringen.
+
+-------------------------------------------------------------------------------
+PC-Player 8-93:
+
+Wir haben schon  viele seltsam bersetzte Anleitungen gesehen, aber  das Manual
+zum Texel CD-ROM 3024 (erste  Auflage) schl„gt einfach alles. Da das CD-ROM in-
+zwischen mit korrigierter  Anleitung ausgeliefert wird, men wir hier die bes-
+ten Perlen  fr  die Nachwelt  erhalten. Der  erste Satz  des Handbuches lautet
+brigens w”rtlich: "Lesen Sie diese Anleitung bitte sehr sorgf„ltig".
+
+-Dieses CD-ROM-Laufwerk ist ein Genalektromechanisches Ger„t welches fr Lesen
+ der CD-ROM-Scheibe aufgezeignetes Ger„t.
+-Gebrauch  der Regelung oder Einstellung, oder Ausfhrung der Reihenfolge, wel-
+ che anders hierin spezifizieren, kann zu gef„hrliche Radiationszersperrung zur
+ Folge haben.
+-Falls Ihres  Laufwerk die Wartung fordern, bitte in Berhrung kommen mit H„nd-
+ ler oder autorisiertes Dienstzentrum.
+-DM-3024 ist ein  interner Laufwerkeinheit welche in leere Halbh”hebai der per-
+ s”nliche Computer.
+-Falls Sie keinen SCSI Peripherie haben in Ihres System anders als CD-ROM Lauf-
+ werk, Sie  drfen  Lautwerk  mit  Schaltern  welche  gestellt  bei  Ankauf Sie
+ erhalten.
+-Nicht l„ngere Schruaben ins Setz des besteigenden Loches einsetzen
+-Dies ist ein externes Ger„t mit seiner selbster Stromversorgung.
+-Falls  somstige  SCSI  Peripherie  in  Verkettung, Terminator  darf nicht ein-
+ schalten
+-Die Scheibe ladet Caddy ins Schlitz des CD-Rom Laufwerks einlegen.
+
+1) DM-3024
+   5-1-1. Werkeinstellung fr Verschiffung
+
+
+               +------- AUS (Jumper wegbringt)
+               | +----- EIN (Jumper einbaut)
+               | |
+     1 2 3 4 5 6 7 8
+    +---------------+
+    |o o o o o o o o|
+    |  |   |     |  |
+    |o o o o o o o o|
+    +---------------+
+
+ANMERKUNG: Wen Mudus mit  diesen Rohverbinder  w„hlen, sicherstellen da CD-ROM
+           Laufwerk  ist abgeschaltet. Diese  Rohverbinder  besteht  aus sieben
+           L„ngsrichtungen  wie in ABbildung gezeigt. Seitliche  Einlaung kann
+           die Folge des Schadens auf elektrische Stromkeris leiten k”nnen.
+           Funktionen sind  wirkend ob Jumper  ist eingesetzt. Funktionen  sind
+           nicht wirkend ob Jum”r ist weggebracht.
+
+-------------------------------------------------------------------------------
+
+Hier auch eine von einem _sehr_ bekannten Fax-Programm unter Wind**s:
+
+Sie einban  Delrina  Delrina W*nFax  fr einen (14,400 bps) fax/modem. Sicher-
+stellen Betriebicherheit  wenn [faxes] bei  dieser Geschwindigkeit senden, em-
+pfehlen wir den COMxFIFO unf„hig machen. Ihren SYSTEM.INI einse [Fr mehre Aus-
+kunft, sehen den LESEN.MIR nach Installation datei, sind vollst„ndig.]
+
+Wnschen Sie, das macht nderung automatisch ?
+
+       Ja                     Nein
+         Beenden Sie Umst„nde
+
+-------------------------------------------------------------------------------
+
+Eine Betriebsanleitung fr ein AMIGA-Diskettenlaufwerk
+
+
+                             BENUTZERHANDBUCH
+
+EINFšHRUNG ZUR PRODUKTEIGENSCHAFTEN:
+
+Das Laufwerk is  ein 3.5 Inch  zwei-seitiger  Auen-Diskettenlaufwerk mit 880KB
+Wert (formatiert) fr Amiga Komputer.
+Dieses Laufwerk  bentzt den  Strom durch  den befestigten 23-pin Tau der AMIGA
+Komputer.
+
+GEBRAUCHSANWEISUNG
+Bevor das  Laufwerk oder irgendeines Periferieger„t an  zu schlieen oder ab zu
+trennen, ist es wichtig  das AMIGA System und die angeschloene Periferieger„te
+aus zu schalten.
+
+Installieren  Sie den 23-pin Tau an der Rckseite der "Diskettenlaufwerk" Ger„-
+testeckdose der Komputer.Spanne die Schrauben der Anschluá an.
+
+Dieses Laufwerk  wird durch das  Komputersystem "DF1" genannt. Das zweite Lauf-
+werk wird angeschloáen an das Rad-f”rmige Ger„testeckdose des ersten Laufwerks.
+Es wird angewiesen als "DF2".
+
+Wegen  des  geringen Stromverbrauchs  drfen Sie zwei  Auen-Laufweken  mit der
+Komputer anschlieen.
+
+Sie k”nnen dieses Laufwerk ein- oder auáchalten mit dem Ein-/Auchalter auf die
+Rckseite des Laufwerks.
+
+AUFMERKUNG: Drcken  Sie nicht auf den Auto-Knopf wenn das rote LED-Licht auf
+die Vorderseite  noch brennt. Entfernen Sie die Diskette nur wenn das LED-Licht
+nich mehr aufleuchtet.
+
+TECHNISCHE DATEN
+Vermogen Formatierte Daten                     880 Kilobytes
+Daten Oberfl„che                               2
+Daten šbertragungs-Tempo                       250 Kilobytes pro Sekunde
+Rotier-Geschwindigkeit der Diskette            300RPM
+Spre pro Inch                                 80
+K”pfe Anzahl                                   2
+Aufnahme                                       MPM
+Spur-Such Zeit                                 3MS
+Durchschnittliche Zugangszeit                  94 MS
+Stromverbrauch                                 0,22W Standby
+                                               1,5W Lesen/Schreiben
+                                               4,5 Maximal
+Soft Error Tempo                               1 pro 10 Bit/S
+Hard Error Tempo                               1 pro 10 Bit/S
+Seek Error Tempo                               1 pro 10 Bit/S
+
+     tm
+AMIGA   IST EIN WAHRENZEICHEN DER EINGETRAGENE AKTIENGESELLSCHAFT AMIGA.
+
+(Qlle:AMIGA SPECIAL 4/93)
+
+-------------------------------------------------------------------------------
+
+Indem Sie die Druckformatvorlage des Dokuments mit  der Druckformatvorlage ver-
+binden, k”nnen  Sie die  Druckformatvorlage der  Dokumentvorlage aktualisieren.
+Wenn  Sie die  Druckformatvorlage  eines Dokumentes  mit der Druckformatvorlage
+einer  Dokumentvorlage   verbinden, ersetzen  die  Druckformatdefinitionen  des
+Dokuments  die gleichnamigen Druckformatdefinitionen der Dokumentvorlage. S„mt-
+liche  Druckformate in der  Druckformatvorlage des  Dokuments, die nicht in der
+Druckformatvorlage  der Dokumentvorlage  enthalten sind, werden dieser hinzuge-
+fgt.
+
+Auszug aus dem "Benutzerhandbuch fr MS Winword"
+
+-------------------------------------------------------------------------------
+
+Die Beschreibung, die einer Reinigungsdiskette beilag: (aus PC-PLAYER 12/93):
+
+- Die automatisch, nachsprende, beurteilende, durfhrende Weispure
+- Alles programmiert mit Musik und Leuchte
+- Der Nachspur  vom Schreiben- und  Lesenf„higkeit des Kontaktkopfes: Ober- und
+  Unterkopf k”nnen das Auslesen und Einschreiben nachspren
+- Der Magnetbahn wird voll benutzt
+- Bildschirm-Erscheinung: Zeigen sich der ganze Bildschirm mit der Leuchte
+- Jeweils 1 Scheibe Reinigungsdiskette, 1 Scheibe programmierte Diskette
+
+-------------------------------------------------------------------------------
+
+Folgender Auszug aus dem Begleitheftchen zu meinem Telefon:
+
+letzte seite, letzter absatz:
+
+Wenn mal was nicht funktioniert:
+
+Wenn mal was  nicht funktioniert - und das kann ja  schlielich mal vorkommen -
+dann versuchen  Sie bitte nicht  selbst, das  versiegelte Telefon zu ”ffnen und
+nach dem Rechten zu sehen. Wenden Sie sich an Ihre St”rungsanahme fr Telefone.
+Die Techniker von der Post sind schnell bei Ihnen und l”sen das Problem.
+
+-------------------------------------------------------------------------------
+
+An dieser Stelle m”chte ich eine Stelle aus der Anleitung zu meiner Maus -
+Kapitel FEHLERSUCHE - zum Besten geben...
+
+PRšFEN SIE OB SIE UM DEN GEWšNSCHTEN BETRIEBSMODUS ERREICHT HABEN
+
+Verschiedene  Andwender  Software  spezifisch verlangen  um Andwender-Modus der
+Mause. Stellen  Sie sicher, die korrekt Modus zu erreicht. zum Beispiel, Mause-
+Systems-Modus fr AutoCAD.
+
+-------------------------------------------------------------------------------
+                                                        aus irgendeiner Mailbox
+-------------------------------------------------------------------------------
+lt

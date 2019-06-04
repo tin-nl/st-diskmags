@@ -1,0 +1,137 @@
+ó--------------------------------------------------------------------------------ð
+                              ó"ERGO BIBAMUS"ð by ñQUASIMODOSð
+ó--------------------------------------------------------------------------------ð
+
+ system.... Atari 8bit, 32o kb, RGB
+
+ size...... ATR-diskimage, 131 kb
+
+ credits... Kroger (code)
+            Glonisz (code)
+            Raven (gfx)
+            Morgoth (music)
+
+ release... Lato Ludzikow 2oo1-party
+
+ó--------------------------------------------------------------------------------ð
+
+ Some  days after the  release of the  last issue  of óUnderCoverð, I  was highly
+ motivated to  write some  articles again.  But I  was not  sure what  to write
+ about, so ñMoondogð  helped me a bit by copying me the demo I will review on the
+ following  pages.  The  production  I  speak  about  is  from  a  crew  called
+ ñQUASIMODOSð. They  come from  Poland  and  consist  of  five  members:  ñGloniszð
+ (coder), ñKACð (coder),  ñKrogerð (coder), ñMorgothð (musician)  and ñRavenð (gfxman).
+ Since the year  of  their  foundation,  1994, they  released a  lot of  demos,
+ intros, games and tools. If  you  want to  know more about them,  please check
+ out their homepage under
+
+                       òhttp://www.quasimodos.px.pl/ð
+
+ ...before I start to go into  detail, I have to admit that  I did not test the
+ production on the  original machine. The  demo needs 32o kilobytes  of RAM and
+ this is  definately too  much for  my good  old 8oo  XE that  is resting  in a
+ plastic bag one meter away  from the place I sit right  now. Anyway, there are
+ some good emulators on "modern  machines not being compatible to Atari", and I
+ testet the demo on maybe the best of  those emulators, óATARI 800 WIN Plus 3.0ð.
+ This version was launched on March 26th, 2oo2 and can be leeched at
+
+                   òhttp://www.a800win.atari-area.prv.pl/ð
+
+ After mounting the diskimage  with óATARI 800 WINð  and  starting the emulation,
+ the screen fades  to black.  In  the  lower part  of the  screen we  are being
+ informed about the name of  the demo,  óERGO BIBAMUSð, and that we  are going to
+ see a  "collection of  realtime effects"  coded from 1996  to 2oo1.   As  I am
+ quite  sure that only very  few people  in the Atari  scene do have  the Latin
+ proficiency certificate  (neither  have I!),  I had  to search  for  the right
+ translation of  the demo's name. "Ergo bibamus!" means as  much us "Let's have
+ a drink together!" and  has  its origin in  medievil drinking songs,  where it
+ uses to be part  of the refrain.  (Okay, okay,  no more  imparting  of general
+ education  in this text... :))
+
+ So  only some seconds  later, some kind of main menu appears  on  the  screen.
+ On the  top of  the  screen,  a  weird  three dimensional figure is  displayed
+ in green  colors. It looks  like one of these impossible constructions by óM.C.ð
+ óEscherð, but  not as good  as his  works (of course!). Below this we can see  a
+ ñQUASIMODOSð-logo,  held  in three  blue colors. Nothing outstanding, but  nice
+ to look at,  anyway. The most important thing on this screen is of course  the
+ selector,  some plain  white  8x8 text, letting us choose between the Trackmo-
+ part and the Endpart. We  choose the Trackmo-part and wait what's happening...
+
+ Ahem.
+
+ ...nothing happens, except  for  a  loader that  takes some  ages to be  done.
+ Fortunately, the  emulator I am using  has an option allowing fast loading, so
+ the job  is done within 3o seconds. The loader  itself comes  along with three
+ yellow  linevector-digits that  turn  around and  counting  numbers down  from
+ around   7oo  to  zero.    The screen  fades  black  again  and some  strange,
+ newskoolish pokey-music begins  to  play. I  cannot  find any melody  in here,
+ but maybe that's the intention of   its maker. After  all, this  music is hard
+ and loud.  Some seconds after, the   screen turns to  white and a  b/w logo of
+ the crew is  displayed. It has a very  low resolution,  must be 8o x somewhat.
+ There are also  two black wings on the   top of the logo. The  picture is soon
+ broken through by a cube,  also  held in   black and white. The  picture fades
+ away and the cube rotates quite fast  on the  black  background. It seems like
+ they used some gouraud-techniques  to fill the  surfaces, at least the cube is
+ shaded. Nothing  spectacular though, as it was   shown in a lot  of other 8bit
+ demos before.
+
+ The cube  disappears and  a fullscreen-picture is displayed. Good in  painting
+ technique,  not outstanding in  choice of motive. But form yourself an opinion
+ by having a look at this:
+
+{*i QUASI_WR.PI1 l 0 20 0 200}
+
+ Next, the  picture scolls  down and  some design stuff  appears on top of  the
+ screen. We can  see a white line, one  pixel wide, drawn from  the far left to
+ the far right of the  screen. In  the upper left corner are  some green plants
+ or  flowers. Very  nice  stuff, that is.  Design  rules! :)  But this is  only
+ preparation for the  next effect,  a big  white  scroller  that  is  shown  in
+ different  perspectives - they even change perspectives  while scrolling. Well
+ done! If you don't get the image how  this looks like, just  remember ñEquinox'ð
+ óEAT MY BOLLOCKSð demo from 1992. They  also  did a blue  scroller  that changed
+ perspectives   there,  even  if  their  scroller  was  plus   distortion.  The
+ following  effect seems  to  be some  special Polish  running gag.  ñQUASIMODOS
+ again distort a  picture of a  crew member, showing  him when he was  a little
+ kid  (maybe  you remember the óBUMBLE BEEð demo by  ñSyntaxð?). Additionally, they
+ display a  cube over - or better: - within  the distored image which makes the
+ effect different from the  others. Multilayer  effects  rule!
+
+ Another  common effect  is coming up: toruzzz!!! This one  is held in b/w with
+ flat surfaces and  it is not as  big as the  toruses in the amazing óTOTAL DAZEð
+ demo by ñTightð, but  the crew claims  it to be  realtime. Soon  after, a little
+ orange  sun  moves around  the torus  and lightens it  from  different angels.
+ Finally, the  torus gets mapped  with a grey texture  and slows down a  lot...
+ After  this  we can  see  scanned  pictures  of  the makers of the demo. Those
+ pictures are displayed in an interlaced-modus  and they slowly morph into each
+ other  (haven't  I seen  something like that  on XL before, maybe in a demo by
+ Hungarian's number one ñHardð?!?).
+
+ The demo  ends with  a huge grey  3D-world  with  houses,  a church  and other
+ building. This effect  is damn slow,  it has some o.5 to 1  frame per  second,
+ but  don't mind:  you can  speed it up by pressing the fast forward-key of the
+ emulator. :)
+
+{*i QUASI_FX.PI1 l 0 20 0 200}
+
+ ENDPART. Once again the loader  with the  linevector-digits, but this time not
+ as long as before the trackmo  part. The endpart uses a  resolution of 32ox2oo
+ pixels. Some white  text  is  scrolled  from  the bottom  to the  top,  giving
+ information about the  different effects and the  makers of  the demo.  In the
+ background of this  scroller  we  can  see  a white  linevector-cube, not  too
+ smooth,  but  using  hidden  line-algorithms.  All in  all,  this  serves  its
+ purpose.  Unfortunately,  also  the  music of  this part  lacks of  melody and
+ harmony.
+
+
+ óFinal Words:ð It's great to  see that there are still some people on Atari 8bit
+              "doing  things". You  can feel  and see  it: the  makers  of óERGOð
+              óBIBAMUSð took some time in designing this production. The  effects
+              shown are  not really state of the art, but that's mainly because
+              most of them were already coded back in 1996. The musics are crap
+              IMHO. Anyway,  I really  like demos  on XL, esp. better ones than
+              those  released  at EIL 2oo1 or  Unconventional  Party.  And óERGOð
+              óBIBAMUSð  is definately  better than most of the stuff released on
+              ATari 8bit these days!!!
+
+                                              ñmOdmate of CheckPointð, 19-o4-2oo2
+ó--------------------------------------------------------------------------------ð

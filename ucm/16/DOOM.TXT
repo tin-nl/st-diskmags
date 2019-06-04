@@ -1,0 +1,79 @@
+ò_____.    ________         .__.
+ò     |   /  _____/         |  |            ___   ___   ___
+ò   __|__/_ /____    ___   _|_ | ________  /  /  /  /  /  /    .___.. .  .
+ò  /  ____/  ____\  /  /  /  / |/  _____/ /  /  /  /  /  /     |
+ò  \  \   \  \_____ \  \ /  /  |\  \____  \  \ /   \ /  /      |
+ò   \  \---\_______\-\  '  /|  |-\   ___\--\  `     `  /-------+
+ò    \  \             \   / |__|  \  \_____ \___/\____/        |
+ò     \__\             \_/         \_______\ .     .   . ..____|ğñ pAğ
+
+ñDoomğ v0.11 by òPatrice Mandinğ (óFalcon)ğ [Update]
+
+I remember having written a lengthy introduction to ñDoomğ on the óFalconğ
+in one of the previous issues of ñUCMğ so i'll cut a long story short
+this time.
+Everyone knows ñDoomğ. óPCğ users can play it, óAmigağ users can play it,
+why should the óFalconğ users be spared out ?
+That's what òPatrice Mandinğ aka òDatağ of òTrioğ must have been thinking
+when he started working around the released source-code of ñDoomğ.
+This finally gave the óFalcon-usersğ a playable version of Doom which has
+been constantly been improved.
+
+Now it reached ñversion 0.11ğ, using the original ñLinux Doom 1.10ğ
+sources from òID Softwareğ themselves.
+In the current version, ñDoomğ can play music using the ñSNDSERVğ-
+soundserver which is a part of the ñHDIğ-project Patrice himself
+initiated. ñHDIğ is supposed to be a òhardware libraryğ that other
+programs can use/share so porting sourcecode from óLinuxğ or other
+systems to the óFalconğ can be done easier and more efficient - 
+after all, this worked fine on the óAmigağ-port of ñDoomğ.
+Only disadvantage so far: The Soundserver needs a multitasking OS,
+preferably òMiNTğ.
+Additionally, ñversion 0.11ğ runs on the TT the first time - just
+without sounds as the soundserver requires 16-bit audio - using
+an ò8-bit-colourğ mode, resulting in ò256 coloursğ.
+
+I really hoped for a speedup due to the reduction of colours but
+unfortunately, that's not what happens. The ò8-bitğ-mode just
+looks a bit uglier and that's it.
+Although the Soundserver works really fine, ñDoomğ is just simply
+to slow to play on a óstandard Falconğ, it's even an unbearable drag
+on a óNemesis-Falconğ so using a óct2ğ-Falcon might be just a little
+too slow and not much too slow.
+I'm a little dissappointed about this because the major disadvantage
+of the ñDoomğ-port so far was the speed - not the lack of sound or
+8-bit resolutions.
+I can understand that the 8-bit resolution now enables óTT-usersğ to
+play ñDoomğ as well but since the 8-bit mode on óAtari computersğ are
+plane-modes while they are chunky-modes on the PC, the speedup of the
+8-bit mode is minimal to nonexistant, it's probably even a little
+slower.
+I also understand the concept of the ñHDIğ and i welcome it, yes, i
+really rate it this a very promising and important project, but
+giving an unplayably slow version of ñDoomğ the ability to play
+sound under òMiNTğ doesn't help much, unfortunately.
+
+So, for all ñDoomğ-players, there's still no cure in sight. The
+fastest version of ñDoomğ was ñv0.06ğ, so don't delete it - with
+a óct2ğ this was really playable.
+For the óTT-usersğ that hope for a ñDoomğ-port, this is not very
+helpful as it basically runs, but is simply too slow to play.
+
+Personally, i had hoped Patrice would try to include his own, very
+fast óDSPğ-based 3D engine into the original ñDoomğ-port so it
+gained some speed. It looks rather like Patrice is currently
+concentrating on other details - without a doubt i am thankful that
+Patrice is doing a lot, but his current developments go in another
+direction than i hoped for.
+
+Patrice also released ñHereticğ and ñHexenğ for the óFalcon/Linuxğ,
+but these ports are identical to this ñDoomğ-port and therefore also
+suffer from the lack of speed.
+
+ñDoom v0.11ğ may be a step forward, but when it comes to speed, it's
+a major drawback.
+
+
+ò     <-----------> No Rating ... <--------------------------->ğ
+     
+ñ  --.-- The Paranoid --.-- Paranoia --.-- The Lunatic Asylum --.--ğ

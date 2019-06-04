@@ -1,0 +1,162 @@
+0660103030571
+9[........................................................]
+
+…M a g i C   M o m e n t s ! ! 
+
+An interesting hour spent with the PC emulation of MagiC.. 
+
+This is a quick overview of the PC/Intel version of MagiC, supplied in 
+demonstration form by System Solutions, and is not intended as a full 
+review as such.. Our written impressions were gained from a grazing and 
+tentative first contact with that version of MagiC, and we apologise in 
+advance for any potentially misleading information which may well be 
+corrected in a proper future evaluation..
+
+Enough of that, and on with the fun..
+
+The story starts at the Autumn Atari Shows, as the demo version is in 
+wide circulation there, and a copy ends up on my hard drive.. It is PC 
+software, and no immediate use to me, but there are several ex-ST 
+owning PC people in the neighbourhood who might well benefit.. Finding 
+Mark (of Wellingboro' computer club past fame) and remembering he has 
+Windows '95, a precondition for this demo to run, suggest that we 
+visit.. (CiH implicated in Maggie 'royal we' shock!) I also bring along 
+a range of likely software to try out with the emulator..
+
+Reading the instruction file is interesting, it includes a full 
+emulation of the Motorola 68xxx cpu in software, and needs no 
+additional hardware, apart from a soundblaster compatible soundcard if 
+you want emulation of the squeaky Yamaha soundchip.. As such, it 
+promises to be a big step forward over present ST emulators which come 
+expensively on a plug in board, and still only offer GEM-legal 
+compatibility.. The price for the full product is around sixty-odd 
+pounds, which is very reasonable for an ST emulator capable of TT plus 
+speed, and similar to the going rate for a second-hand ST..
+
+Installation is a breeze, as the demo comes in one big .ZIP file, and 
+unzips quickly enough.. Booting Windowze '95 and setting up MagiC only 
+takes about a minute as well, we click, and we are off!!
+
+A very smart dialog box within a 640 x 480 onscreen window appears.. It 
+is a very nicely designed box, and has to be, as we are going to see a 
+lot of it in the next hour or so.. When the emulator is running, it 
+appears every couple of minutes to see how you are getting on, and to 
+remind you that this is a demo version.. From the dialog, there is a 
+set up menu, where you can customise the emulator to your tastes, and 
+such things as TOS compatibility, Yamaha soundchip emulation, grow and 
+shrink boxes, and screen modes can be set..
+
+We breeze through that, and start up the emulator, which boots up in a 
+tantalisingly familiar 'ST Medium' mode within the window.. We back out 
+to take another look at the available screen modes, not too many 
+there.. ST low and medium res, ST mono (640 x 400) and TT medium res, 
+(640 x 480 in 16 colours, STe pallette..) I would imagine that in the 
+full version, and future updates, more screen modes, including 
+customisable ones with more colours on screen (256), and higher 
+resolutions will be included..
+
+Of those, the prettiest is the TT medium, which gives us the MagiC 
+desktop in nicely designed sculpted 3-D look 16 colour icons.. TT 
+medium is also a pretty good mode in which to kick off the first of our 
+Atari applications, Imagecopy 4, which takes to it like on old friend, 
+recently rediscovered.. Imagecopy runs without hesitation, and does a 
+good job of displaying the available pictures, both old 16 colour ST 
+screens, that Mark had around, and dithered 256 colour PC GIFs..
+
+Speed of light 3.8 also runs, but is a little more hesitant about how 
+it displays the pictures, leaving chunks missing unless the pictures 
+are sized down to half size..
+
+We back out of the emulator and try out some applications in old 
+fashioned ST medium res.. First up, is that ancient asteroids clone, 
+'Megaroids', which does work, although we can't quite get to grips with 
+the keymap, which is faithfully emulated, but some keys are in slightly 
+different places.. It runs with a just a little hint of a judder..
+
+Moving onto something  moderately higher risk, and we try out ST News 
+(issue 10.2) with the sound set wisely off be me beforehand.. This one 
+*just about* runs, as the GFA coded menu appears, but trails and leave 
+little bits still on the screen.. Articles load, scroll, and read just 
+fine however.. The one silly thing I did do was to set the bottom 
+border greets scroller on.. Now if there is one thing ST News readers 
+running it under MagiC should not do, never EVER activate the border 
+scroller, as it won't go away, even if you leave ST News.. MagiC then 
+was reluctant to shut down as it decided that ST News was still 
+running.. Eventually, I got ST News to reappear, and gratefully quit 
+out..
+
+Yes, we did try Maggie in a 'what the hell, lets go for it' spirit and 
+got rewarded with lots of bombs on screen, and the message 'System 
+Destroyed', which I would imagine puts it under severe doubt for any 
+other form of MagiC compatibility as well..
+
+After trying out one or two fairly harmless text editors, we decided to 
+leave the other (GFA coded) games to one side for the moment, and 
+looked around the system a bit more..
+
+This demo set up its own 'C' drive area, running a virtual hard disk, 
+with several small applications to demonstrate the multi tasking 
+abilities, which we only briefly touched on.. The system dialog 
+suggested that other PC-specific hard drive partitions could be 
+accessed, and indeed, this emulation could allow access to the serial 
+port as well, but we did not explore those in too much detail..
+
+In general feel, the system ran quickly, but the mouse pointer moved a 
+bit fuzzily as screen updating felt similar to the Sebra mono 
+emulator.. This was another option that could be changed, with either a 
+fast emulation speed, and jerky mouse, or fine mouse control, and 
+slower emulation.. The GEM Bench results below do tend to suggest that 
+this emulation is capable of a fair turn of speed though..
+
+At this point in time, it seems that MagiC is an essential purchase for 
+any PC owner with a large collection of high quality ST based 
+applications.. Even a lot of older GEM programs should run as well.. It 
+would be interesting to see a compatibility list, and I would imagine 
+that most major GEM based programs should run here.. With the hardware 
+element totally removed, this provides a totally affordable and 
+reliable means of ST emulation for the PC, although a 'total' ST 
+emulation, that is able to run the majority of games, etc, is still 
+some way off.. (On that subject, does anybody have any feedback on the 
+'STonX' X-Windows/Unix emulator??)
+
+-----------------------------------------------------------------------
+One final thing, we did have the presence of mind to run GEM Bench, and 
+the results were recorded, and can be seen below.. The end results do 
+reflect the system that ran the emulation was an Intel 120 mhz Pentium 
+PC compatible..
+
+
+GEM Bench v4.03             ½ Ofir Gal - 3 March 95
+============================================
+STE  TOS 2.00
+AES v3.99
+GEMDOS v0.25
+MiNT not present
+Blitter Disabled
+NVDI not present
+Video Mode: 640*480*16
+FPU not present
+Run and Malloc from STRAM
+Ref: ST + Blitter + FPU, ST Medium
+pc magic emulation
+============================================
+GEM Dialog Box:             1.320    450%
+VDI Text:                   1.460    395%
+VDI Text Effects:           2.445    494%
+VDI Small Text:             0.790    832%
+VDI Graphics:               3.350    512%
+GEM Window:                 1.275    143%
+Integer Division:           0.430   4162%
+Float Math:                 4.450     17%
+RAM Access:                 1.375    457%
+ROM Access:                 0.915    687%
+Blitting:                   6.100     22%
+VDI Scroll:                 1.470    300%
+Justified Text:             1.905    293%
+VDI Enquire:                0.345    768%
+New Dialogs:                2.395    300%
+============================================
+Graphics:                            409%
+CPU:                                1330%
+Average:                             655%
+

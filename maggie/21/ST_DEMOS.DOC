@@ -1,0 +1,243 @@
+
+Maggie 21: ST Demo Programming
+
+
+                   S T   D E M O S   E X P O S E D
+                  Part One of an Occasional Series?
+
+
+           PROGRAMMING: Do the  words  Cuddly,  Phaleon or Overlanders 
+            mean anything to you? We get  our  ST demo tips out for the 
+            lads.
+           EXPOSING HIMSELF: Tat
+
+
+See it? See that huge pile of  old knackered disks lying in the corner 
+ of your room? Just over there near old those expensive boxed games you 
+ played through after a week?  I  bet  you  a  fortune that if you ever 
+ owned an ST, you kept all those old DS disks - because they have demos 
+ on them (or Maggie). No-one ever seems to format (good) old demo disks 
+ - because they were free, unlike  all those games we played. Probably. 
+ So here comes Maggie to  answer  all  those useless questions: HOW THE 
+ HELL DID THEY DO THAT ON AN ST?
+
+Eight megahertz was never enough to really do all those things you saw 
+ in demos: they were all merely illusions... you *thought* you saw huge 
+ amounts of  screen  data  being  shifted,  but  most  times  it  was a 
+ combination of clever tricks  and  fiddling with little-known hardware 
+ tricks. Parallax scrolling in the  Cuddly  demos?  An illusion! So sit 
+ back, read on, and see how they did it...
+
+N.B. Anyone wishing to know how a  specific effect or demo worked, let 
+ us here at Maggie know (demo name/  screen name) and we'll publish the 
+ secrets (and source code  if  possible)  in  a  further article. Amiga 
+ demos don't count: their hardware was designed for cheating!
+
+
+
+                           P A R T   O N E
+                (Borders and Scrolling, ColourShocks)
+
+
+                              Graphics
+
+                             1.1. Borders
+
+The staple of demos was the ability  to do what nearly all games could 
+ not. Therefore,  opening  borders  was  the  staple  diet  of  a demo. 
+ Unfortunately this process was  nowhere  near  as  easy  as it sounds: 
+ therefore we'll need to introduce you to some theory as we go along... 
+ you have been warned!
+
+                       1.1.1. The Bottom Border
+
+The bottom was the first  to  go:  the  first  demo  I remember with a 
+ removed bottom border was The Exceptions' BIG Demo (although I believe 
+ they did a slideshow  demo  before  this)  The  method is surprisingly 
+ simple...
+
+Unlike the imfamous reply to  a  reader's  question  in ST Format, the 
+ method of opening borders is NOT to  switch the whole system into 60Hz 
+ NTSC mode to get a bigger screen (!!) In fact, the principle of border 
+ removal is the same in all  cases:  at  certain points, the video chip 
+ would perform certain checks,  a  bit  like  a  piece  of software, to 
+ determine whether phases of its operation should change (i.e. starting 
+ or stopping the screen display.)
+
+At the bottom of a normal screen, after the final line becomes border, 
+ before the next line appears, the  video  processor checks that the ST 
+ was set to 50Hz (PAL) mode.  If  it  was, then the processor output no 
+ more screen data. By quickly flicking  into  60Hz while no screen data 
+ is displayed, then switching  back  to  50Hz,  the processor is fooled 
+ into displaying more screen data until  it reached the point where all 
+ display is automatically cut off (38 lines later, I seem to remember.) 
+ Voila! No bottom border. To see how programmers determined exactly how 
+ to write a program that switched  50Hz/60Hz at exactly the right time, 
+ see "Screen Synchronisation."
+
+
+                        1.1.2. The Top Border
+
+  This is slightly  more  difficult,  due  to  the  way that processor 
+ interrupts and video display  was  set  up,  but  the principle is the 
+ same: switch into 60Hz very briefly,  then back into 50Hz (once only). 
+ Early attempts  at  this  were  not  very  reliable  (anyone  see  the 
+ Whattaheck Demos?) but more of this later.
+                              
+
+                         1.1.3. Side Borders
+
+Yuk! Ever wonder why the  Lost  Boys, probably the best "pure" 
+ coders of early ST days,  hardly ever did fullscreens? Because 
+ it was a total  nightmare,  that's  why.  People went to great 
+ lengths to give the  illusion  of  fullscreen effects by using 
+ rasters (see later) - I remember a  Level 16 demo as being the 
+ best example of this, and the  ICE STe demo reviewed in Maggie 
+ 20 also uses a similar trick,  nearly  8 years later. "So Des, 
+ how did they do that?"
+
+      Knowing the way that a  monitor  displays graphics (i.e. left to       
+       right, then next line, etc.) you should be able to work out that       
+       you need to repeat the  process  of opening borders EVERY SCREEN       
+       LINE. Not  only  that,  but  the  precise   times  at  which the       
+       switches needed  to  be  made  were  much  more  exact  than the       
+       processes for top  and  bottom  border  opening.  In  fact, they       
+       really needed a precision of 4  processor  cycles - the speed of       
+       execution of the fastest 68000 instruction possible!
+
+The process then involved  synchronising the processor exactly 
+ to the screen  display  (see  "Screen Synchronisation" again), 
+ then analysing your  code  to  add  up  exactly  how long each 
+ instruction takes... therefore programs using conditions (i.e. 
+ IF...THEN  type  statements)  were  impossible,  and  to  make 
+ matters worse, the original execution speed lists published by 
+ Motorola were incorrect. Typical.
+
+      Side border removal was  notoriously  unreliable.  No sooner had       
+       groups managed to make  one  type  of  removal possible, foreign       
+       machines would fail to  be  compatible,  and  when  the STe came       
+       out...  everyone started again. Reliable border removal code was       
+       a closely-guarded secret. Good job  we  all had ripper programs,       
+       eh?
+
+
+
+                1.2 Screen Synchronisation and Rasters
+
+Ok, time for a little diagram, then some explanations:
+
+VBL     _________________________________
+        |       Non-Visible Time        |  ^
+        |ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ|  |
+        |       Top Border Area         |  |    (Not to scale,
+        |ÿÿÿÿÿÿÿ|ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ|ÿÿÿÿÿÿÿÿ|  |    obviously!)
+        |       |/Normal\Screen|        |  |
+        |       |\/\/\/\/\/\/\/|        |  |313 scanlines
+        |ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ|  |
+        |       Bottom Border Area      |  |
+        |ÿÿÿÿÿÿÿÿÿÿNon-Vis Timeÿÿÿÿÿÿÿÿÿ|  V
+        ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+This diagram shows more precisely how  the video system operated. Most 
+ readers will have heard  of  the  VBL  (Vertical BLank) interrupt: the 
+ processor will stop each time the  video processor restarted sending a 
+ frame of screen data from the top  again  (50  times a second on a PAL 
+ system),  jump to an address defined  by software, and do whatever the 
+ programs in ROM or RAM  want.  Then  it  returns  to what it was doing 
+ beforehand. That's what an interrupt  is.  Interrupts are also used to 
+ process keyboard/Midi data, disk access,  or internal clocks. In demos 
+ such other interrupts were switched  off  because they stole time from 
+ raster effects or complex  calculations.  Leaving a keyboard interrupt 
+ enabled with rasters, then  moving  the  mouse,  caused the rasters to 
+ wobble up and down - a source of much hilarity...
+
+Similar to the  VBL  is  the  HBL  interrupt  (Horizontal BLank) which 
+ occurs every time the  video  processor  restarts processing a screen-
+ line (even when in the borders or  past the top/bottom of the screen - 
+ video processors don't take a  rest.)  This  was usually switched off: 
+ interrupting  the  main  processor  every   line  slows  the  ST  down 
+ significantly.
+
+                            1.2.1. Rasters
+
+ In addition, there was another way  to cause an interrupt, called the 
+ Timer B interrupt, which only occurred  when the screen display itself 
+ was on (i.e. not  in  the  top  and  bottom  borders.) By changing the 
+ background (or other) colours with this interrupt, it was possible for 
+ raster effects: more than 16 colours  on screen, for example. This was 
+ a bit pass‚ though: but you got  a  hell  of a buzz the first time you 
+ got it to work. From then on  ("Wow!  I've bent the limits of my ST!") 
+ most people who did it were hooked.
+
+                            1.2.2. Syncing
+
+Now, back to the theory:  The  time-relation  between the start of the 
+ VBL interrupt and the point in time  needed to open borders was fixed, 
+ but not accurately enough for side  borders.  A more precise method of 
+ being accurately able to know where  the  video processor was when you 
+ changed a colour  was  needed...  hence  "syncing."  This  relied on a 
+ stunning  coincidence  (not  really):   every   4   pixels  on  screen 
+ corresponded (almost) exactly to 4 processor  cycles of the main 68000 
+ processor. In addtion, the 68000  could  read exactly which section of 
+ screen data was being  processed  at  any  specific moment... So... By 
+ using a piece of code which code  vary how long it waited depending on 
+ where the screen was up to (either a Shift-instruction or jumping into 
+ a long list of dummy instructions at a variable point) the coder could 
+ change a colour at EXACTLY the same  point every frame, or reliably do 
+ the necessary switches  to  remove  side  borders.  The  left one went 
+ first, the right one later (it needed two switches!)
+
+                1.2.3. ColourShock and Plasma Effects
+
+The ability to change background  colours  gave  an added bonus. If we 
+ did nothing but continually change  the  background colour (as long as 
+ we switched off any interruptions to it) we get a repeating pattern of 
+ colour, that we could  overlay  the  other  15  colours over. Later we 
+ could distort  the  pattern  by  jumps  of  4  pixels  left/right,  by 
+ inserting short paused in  the  code  (the distorting plasma effects.) 
+ Later single colours in a picture  e.g. the insides of lettering, were 
+ also changed in this way. See  "Plasma"  in  a later article for other 
+ variations on this.
+
+
+                        1.2.4. Sync Scrolling
+
+A real buzz-word of demos in  the  days  of the ST. Basically this was 
+ the ability to hardware scroll  to  an  accuracy  of  2 bytes. But the 
+ normal ST only allowed screens laid on  boundaries of 256 bytes - just 
+ over one normal screen-line,  which  required  160  bytes. 256*5 bytes 
+ came to 1,280 bytes, which was  exactly  8  screen lines, so you could 
+ hardware scroll up and down 8 lines  at a time, but this wasn't really 
+ good enough, and sideways scrolling was impossible... or was it? Enter 
+ Sync-scrolling.
+
+The great Swedish crews Omega  and  The  Carebears take the credit for 
+ inventing the new technique. They realised that a screen line with the 
+ side borders opened took 230  bytes  (70  bytes  more), while one with 
+ only the right border removed took 192 (32 bytes more.) By opening the 
+ top border and playing with these numbers (multiples of 256,70 and 32) 
+ they managed,
+
+- by opening both borders for 'x'-many lines.... by opening both borders for 'x
+          then the right borders for 'y' many.... then the right borders for 'y
+
+          .... then  adjusting  the  base  screen  address  by 256*'z'           
+           bytes, you could scroll the screen to multiples of 8 bytes!
+
+
+Later, more sophisticated forms  of  the  sync-scroller appeared using 
+ more types of  border  opening  (e.g.  left  border  only, leaving the 
+ processor in 60Hz for a tiny  bit  longer)  that reduced the number of 
+ screenlines needed to do this effect  to  around 9-10 lines, and to an 
+ accuracy of 2 bytes. Stupid amounts of effort were expended to squeeze 
+ that extra free line  of  processor  time,  but  we  were all very sad 
+ people then...
+
+
+                    Coming soon - Part, um, Two...
+                 (Scrollers, Plasmas and Main Menus)
+
+
+
+
+(C) 1996 Maggie Team

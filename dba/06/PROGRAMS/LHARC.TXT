@@ -1,0 +1,36 @@
+USING LHARC.TTP
+
+
+Or just how to unpack those LZH files...
+
+This isn't going to be a large lessons of how to use LHARC.TTP. Noway
+just a brief instruction lesson.
+On disk A and B the are some files with the extention.LZH. This means
+that the files are packed with an utility called LHARC.TTP. It one of
+the best packing methodes with one minor setback. All the files are
+packed in one large file that you can't start right away. You will 
+have to unpack it first...
+
+How to do it.
+-------------
+
+Just copy the program LHARC.TTP and the .LZH file you want to unpack
+on an empty floppy. Double klick on the LHARC.TTP and you will get a
+dialog box. just type "e *.LZH" and enter. The e stand for extract and
+the * is just the name like LISTINGS.LZH. After you have don this the
+program will start unpackinmg ("Melting" as they call it) and you will 
+get the unpacked files on that disk.
+
+There are a lot more options and you can display them by double klick
+on LHARC.TTP and when you get the dialog box just press return, don't fill
+in anything. This way LHARC will show it's own HELP display with all the
+options it has...
+
+Hope that this is any help for you so you can use the listings and prg's
+that are on the disks...
+If there are still any questions just write and we will help you...
+
+                                                Bonus Software
+
+
+

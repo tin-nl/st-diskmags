@@ -1,0 +1,227 @@
+HIGHSPEED 40 
+~TROEP.FIL~
+                  'Knowing what right is and not bringing 
+                   it in practice, is the same as a lack
+                   of courage' 
+ 
+                   Confucius 
+
+-------------------------------------
+HIGHSPEED 40 OR A SPAGHETTI INCIDENT ?
+-------------------------------------
+          By Slimer
+ 
+There are several hardware accelerators available for the Falcon at the
+moment. One of them is a '40 MHz' accelerator manufactured by a German
+company called 'Digital Data Deicke'. In the Netherlands are several
+distributors of this device and the biggest of them is the Atari Computer-
+club Nederland(A.C.N.). This commercial 'club' is the biggest distributor
+of Atari hard and software in the Netherlands, they also print their own
+magazine that somewhat resembles a ordinary newspaper. This newspaper is 
+very popular amongst the Dutch Atari community as it is cheap and contains
+more or less interesting articles. In the issue dating back from may 1994
+was an enthusiastic review about the device standing trial in this column.
+On offer was a 40 MHz accelerator for only 279 guilders (about 255 Dmark)
+that would speedup your Falcon to TT32 speed !! I decided to order one as
+many people did or are planning to do..... 
+ 
+You had to place the order before the end of may to get a 30 guilders
+discount (making it 249 guilders). So I did, unaware of the troubles lying
+ahead. Several weeks passed and still no accelerator in my mailbox, so a
+bit worried I decided to call the A.C.N. They told me that all the High-
+speed devices were sold out completely and the manufacturer was working
+overtime to keep up with the demand. It would take a little while longer,
+so I had to have a little more patience...  I waited another 3 weeks and
+called again with the intension to ask for a refund, this is how the
+actual phone-conversation took place, 
+ 
+ 
+( Really Real-time) 
+ 
+T = Telephone
+A = A.C.N. 
+S = Sietse Postma a.k.a. Slimer
+* = My Thoughts 
+ 
+T = Beeeep Beeeeep Beeeep, Beeep, Beeep, Beeep....    
+* = 6 F@cking lines and no answer, lets try again..... 
+T = Beeepp, Beeep, Klick  
+ 
+A = Hello with the A.C.N., Henny speaking..... 
+ 
+S = With Postma calling from Drachten. 
+ 
+A = I'm sorry I can't hear you..... 
+ 
+* = Are you deaf or something..... 
+ 
+S = WITH POSTMA FROM D R A C H T E N !!!! 
+ 
+A = Hello mister Postma. 
+ 
+S = I ordered an accelerator about two months ago, and I still haven't     
+    seen anything ! 
+ 
+A = We called the firm that produces these devices in Germany and they     
+    promised us to send them. 
+ 
+* = Yeah sure, that's what they all say ! 
+ 
+S = So when can I expect it to come !? 
+ 
+A = We have called them several times and they promised us everytime to    
+    send them. They couldn't keep up with the demand, they had to produce  
+    much more to keep up. But they will come soon now, maybe even tomorrow 
+    or next week ! 
+ 
+* = I will hope this for you, or you have to prepare for fullscale war !! 
+ 
+S = Well I will wait another week, goodday... 
+ 
+A = Goodday. 
+ 
+T = Klick. 
+ 
+This piece of really real-time phone-conversation was initially done for
+another article but things sometimes take another direction in time and
+space. Anyway, several days later I opened my mailbox and found completely
+unexpected a parcel in it. Ofcourse it was unexpected as I already had
+given up hope to ever receive the bloody thing. After opening the parcel
+with trembling hands I'd stumbled upon tree tiny black boxes all rapped up
+in plastic. There were lots of wires hanging out them, enough to drive the
+average electronics expert completely out of his skull. This was a job for
+a professional, this was a job for 'K.G.E.' as the E stands for electro-
+nics. We arranged a meeting to install the plastic bag of spaghetti into
+my computer. This became one of the strangest operations ever performed 
+inside a computer.... 
+ 
+The whole operation was planned at 'Bonus' his house where K.G.E. would
+perform his magic. K.G.E. was planning on a smooth operation as he dropped
+by a hour late with a confident expression on his face. He examined the
+tree black boxes and mumbled something like 'is this all' !? In the
+meantime Bonus started to undo my Falcon from all his screws. His room
+started to look more and more like a hardware store. The Falcon was soon
+taken apart and it's pieces and bits were chattered all over the place. My
+heart was beating almost out of my chest and sweat was coming from every
+hole in my skin. 
+ 
+Will my Falcon survive all this doctor ?!? Well ofcourse son, he's in very
+capable hands, now where did I leave my hammer !?? 
+ 
+The accelerator was supplied with a German manual which contained some
+remarkable information. It stated that the 'highspeed' wouldn't work with
+R.G.B. monitors anymore, even if it was switched off !! This very impor-
+tant information isn't mentioned in the advert or review article of the
+A.C.N. paper!  The review also contains a Dutch description of the install
+procedure described by the author of the article. He claims that from a
+certain IC, the first two feet had to be cut. Our German manual however 
+states that feet three and four have to be cut !! An incredible fault that
+could have enormous consequences for people who rely completely on this
+review article. 
+ 
+The German manual also stated that there was a slight possibility that the
+"40 MHz Highspeed" wouldn't work. You could return the device in such a
+case to get it replaced by a 32 MHz version instead. So after K.G.E. had
+installed the thing in the Falcon it was time for a test run. The Falcon
+would boot normally with the 'highspeed' switched off but would refuse any
+action switched on... Closer examination revealed that the processor
+couldn't keep up with accelerator. All seemed lost but K.G.E. managed to
+get the Falcon working at 32 MHz. Two of the three tiny blackboxes had no
+use anymore and got removed again from the computer. Although I was a 
+bit disappointed about the drop in speed, I gained one advantage, the
+Falcon would now work properly on R.G.B. monitors ! I think that most
+people would gladly trade some speed against the possibility to use R.G.B.
+or T.V. ! Otherwise you never could watch cool demos anymore and that 
+would be a disaster !
+
+
+Okay time for some Benchmark tests with 2 different programs,
+
+NVDI GEM-Test v2.00 and Quick Index V2.1 (Warp 9) !
+
+
+*NVDI GEM-Test V2.00  (c) 1991-1993 
+    by Sven & Wilfried  Behne
+*
+* Aufl”sung     :  640 X, 400 Y
+* Farbebenen    :  1
+* Farbstifte    :  2
+* Farbpalette   :  4096 Abstufungen
+* Betriebssystem:  TOS 4.02
+* Referenzsystem:  TOS 4.01/ST-Hoch
+* NVDI-Version  :  nicht installiert
+* GDOS-Version  :  nicht vorhanden
+* Blitter       :  an
+* CPU           :  M68030
+* FPU           :  nicht vorhanden
+* Rechner       :  ATARI Falcon 030
+*  
+
+
+WITHOUT ACCELERATOR (16 Mhz.)
+-----------------------------
+
+Textausgabe        : 99    %   
+Linien             : 98    %   
+Rechtecke          : 98    %   
+Polygone           : 97    %   
+Kreise/Ellipsen    : 98    %   
+Rasteroperationen  : 99    %   
+Attributfunktionen : 96    %   
+Auskunftsfunktionen: 95    %   
+ESCAPES            : 97    %   
+BIOS-Ausgabe       : 99    %   
+GEMDOS-Ausgabe     : 95    %   
+AES-Objekt-Ausgabe : 98    %   
+
+
+WITH ACCELERATOR (32 Mhz.)
+--------------------------
+
+Textausgabe        : 113   %  
+Linien             : 117   %  
+Rechtecke          : 103   %  
+Polygone           : 113   %  
+Kreise/Ellipsen    : 126   %  
+Rasteroperationen  : 101   %  
+Attributfunktionen : 102   %  
+Auskunftsfunktionen: 102   %  
+ESCAPES            : 102   %  
+BIOS-Ausgabe       : 104   %  
+GEMDOS-Ausgabe     : 102   %  
+AES-Objekt-Ausgabe : 106   %  
+
+------------------------------------------------------------
+ 
+QUICK INDEX V2.1
+
+Test mode: TT LOW
+
+                      16 MHz.       32 MHz.
+
+
+CPU memory          : 285   %       407   %
+CPU register        : 201   %       402   %
+CPU divide          : 112   %       226   %
+CPU shifts          : 112   %       228   %
+
+TOS text            : 152   %       169   %
+TOS string          : 136   %       151   %
+TOS scroll          : 103   %       105   %
+GEM dialog          : 131   %       141   %
+
+------------------------------------------------------------
+
+Draw your own conclusions from these tests. I must say that 32 MHz. is
+very useful. Packing will go a lot faster, this also goes for games and
+the editing of graphics. I did some tests with the Ice Packer, the increa-
+se in packing speed will be around 70 % ! Quite handy if you have to pack
+lots of files like I sometimes do (for the magazine). It also means that
+the Backup from your Harddrive (with compression) will go a lot faster as
+well as the packing and depacking of .ZIP and .ARC files ! Games and demos
+that support accelerators will go a lot smoother like the Boompreview from
+N.P.G. and Lasers and Men ...
+
+I would recommend an update to 32 MHz., if everybody would do this than we
+would be able to produce better and faster software for the Falcon.
+

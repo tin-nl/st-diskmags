@@ -1,0 +1,335 @@
+ 
+                           DER HAYES-BEFEHLSSATZ
+                           =====================
+
+Die folgenden  Tabellen  benennen und  erklÑren die  wichtigsten HAYES-Befehle.
+Wenn Sie selbst HAYES-Befehle an Ihr Modem Åbermitteln, beachten Sie bitte, da·
+Sie entweder  Gro·- oder Kleinbuchstaben  verwenden mÅssen! Eine  Mischform aus
+Gro·- und Kleinschreibung  wird  von  vielen, vor  allem  von  postzugelassenen
+Modems nicht verstanden.
+ 
+Die Einleitung der Befehle geschieht durch:  AT
+
+Beispiel  von Pulstonverfahren, ohne Datenkommpression und mit  einer Wartezeit
+auf eine Verbindung von 45sec:
+
+                AT DP S=45
+
+Grundbefehle
+============
+
+Befehl  Wirkung
+---------------
+A       Online, Ñhnlich dem Abheben des Telefonhîhrers
+A/      Wiederholung des letzten Modembefehls
+AT      das Modem pa·t sich der eingestellten Baudrate an
+B0      CCITT-Modus(nur bei 300 und 1200 bps mîglich)
+B1      BELL-Modus (nur bei 300 und 1200 bps mîglich)
+D       Dial, wÑhlt die folgenden Zeichen als Telefonnummer
+E0      Ausschalten des Kommando-Echos
+E1      Einschalten des Kommando-Echos
+H0      Modem auflegen, Abbrechen der Verbindung
+I       Produktionscodes des Modems abfragen
+I1      Ausgabe der ROM-PrÅfsumme
+I2      Ausgabe der RAM-PrÅfsumme
+I3      Ausgabe der Verbindungsdauer
+I4      Ausgabe der aktuellen Modemeinstellung
+I5      Ausgabe der CMOS-RAM-Einstellungen
+I6      Ausgabe der Verbindungsdaten
+I7      Ausgabe derProduktkonfiguration
+L0      Lautsprecher ganz leise
+L1      Lautsprecher leise
+L2      Lautsprecher mittel
+L3      Lautsprecher laut
+M0      Lautsprecher immer ausschalten
+M1      Lautsprecher nach Verbindungsaufbau ausschalten
+M2      Lautsprecher immer einschalten
+O       Wechsel vom Kommando- in den Verbindungsmodus
+P       deutsches PulswÑhlverfahren
+Q0      Ausgabe von RÅckmeldungen erlauben
+Q1      Ausgabe von RÅckmeldungen unterdrÅcken
+R       Reverse, Anrufen im Antwort-Modus
+T       amerikanisches TonwÑhlverfahren
+V0      Ausgabe von RÅckmeldungen als Zahl
+V1      Ausgabe von RÅckmeldungen im Klartext
+W       Warten auf das Freizeichen
+X0      nach Verbindungsaufbau nur "CONNECT" melden
+X1      zusÑtzlich die Baudrate melden, z.B. "CONNECT 2400"
+X2      Freizeichen erkennen   (bei Nebenstellenanlagen nîtig)
+X3      Besetztzeichen erkennen
+X4      Frei- und Besetztzeichen erkennen
+Y0      keinen Verbindungsaufbau mit BREAK zulassen
+Y1      Verbindungsaufbau mit BREAK zulassen
+Z0      Modem zurÅcksetzen
+,       zwei Sekunden Pause
+:       wechselt nach der Anwahl in den Kommandomodus
+!       Modem fÅr eine halbe Sekunde auflegen
+@       vor der Anwahl auf Stille warten
+
+
+Erweiterte &-Befehle
+====================
+
+Befehl  Wirkung
+---------------
+&C0     Data Carrier Detect (DCT) immer einschalten
+&C1     DCT ein, wenn Carrier der Gegenstelle erkannt
+&D0     Data Terminal Ready (DTR) ignorieren
+&D1     bei DTR-Wechsel in den Kommandomodus schalten
+&D2     bei DTR-Wechsel auflegen
+&D3     bei DTR-Wechsel Modem initialisieren
+&F      Ausladen der ROM-Register
+&G0     Guard-Ton ausschalten (nur in USA und England)
+&G1     Guard-Ton auf 550 Hz (nur in USA und England)
+&G2     Guard-Ton auf 1800 Hz (nur in USA und England)
+&H0     Kontrolle der Sendedaten abschalten
+&H1     Kontrolle der Sendedaten durch Hardware
+&H2     Kontrolle der Sendedaten durch Software
+&H3     Kontrolle der Sendedaten durch Hard- und Software
+&I0     Kontrolle der Empfangsdaten abschalten
+&I1     Kontrolle der Empfangsdaten durch Hardware
+&I2     Kontrolle der Empfangsdaten durch Software
+&I3     Kontrolle der Empfangsdaten durch Hard- und Software
+&J0     Modem an Zweidrahtverbindung angeschlossen
+&J1     Modem an Vierdrahtverbindung angeschlossen
+&K0     Dtenkompression immer ausschlie·en
+&K1     Dtenkompression automatisch regeln
+&K2     Dtenkompression immer einschalten
+&P0     PulswahlverhÑltnis fÅr USA aktivieren
+&P1     Pulswahlverfahren fÅr England und Schweden aktivieren
+&S0     DSR-Signal immer einschalten
+&S1     DSR-Signal gemÑ· Norm V.24 durch Modem
+&W0     Registersatz in CMOS-RAM-Speicher 0 schreiben
+&W1     Registersatz in CMOS-RAM-Speicher 1 schreiben
+&X1     Taktimpuls durch Software festlegen
+&X2     Taktimpuls durch Empfangstakt festlegen
+&Z      Rufnummern speichern
+
+
+S-Register-Befehle
+==================
+
+Befehl  Werte   Wirkung
+-----------------------
+S00             keine autom. Antwort
+S0      (1-255) Anzahl der Klingelzeichen, bis das Modem abhebt
+S1      (0-22)  Anzahl der Klingelzeichen zÑhlen
+S2              Zeichen fÅr die RÅckkehr in den Kommandomodus
+S3              Zeichen fÅr CR (Return)
+S4              Zeichen fÅr LF (WagenrÅcklauf)
+S5              Zeichen fÅr Backspace (Zeichen lîschen)
+S6      (0-255) Warten auf Freizeichen (in Sekunden)
+S7      (1-30)  Warten auf Verbindung (in Sekunden)
+S8      (0-255) Pause fÅr RÅckkehr in Kommandomodus (in Sekunden)
+S9      (0-255) Zeitdauer fÅr Carrier-Erkennung (in 100 Millisekunden)
+S10     (0-255) Pause bei einem Komma im WÑhlbefehl (in 100 Millisekunden)
+S11     (50-255)Dauer und Pause zwischen WÑhlimpulsen (in Millisekunden)
+S12     (0-255) So lange darf das Modem ohne Carrier sein (in 1/20 ms)
+
+ 
+ 
+Bei meiner Modemanleitung zusÑtzlich:
+-------------------------------------
+
+Grundbefehle
+============
+
+Befehl Wert     Wirkung                         Parameter
+---------------------------------------------------------
+N       1-9     Befehlsmakro ausfÅhren          Makro-Nr.(siehe AT\P)
+Sxx=yyy         in Register schreiben
+Sxx?            aus Register lesen
+Z       0-3     Benutzereinstellung laden
+
+
+Erweiterte &-Befehle
+====================
+
+Befehl Wert     Wirkung                         Parameter
+---------------------------------------------------------
+&A0             nur eingestellte öbertragungsrate
+&A1             alle öbertragungsraten erlaubt
+&F0             Voreinstellung V.22bis
+&F1             Voreinstellung V.22bis/V.42bis
+&F2             Voreinstellung BTX
+&F3             Voreinstellung V.21
+&O0             dezimal Ein/Ausgabe-Format der Register
+&O1             hexadezimal Ein/Ausgabe-Format der Register
+&R0             M2/S2-Verzîgerung (Register 26)
+&R1             M2 stÑndig an
+&T0             Test beenden
+&T1             lokale Analogschleife (Abbruch mit "+++")
+&T2
+&T3             nahe Schleife PS2N
+&T4             ferne Schleife PS2F zulassen
+&T5             ferne Schleife PS2F sperren
+&T6             ferne Schleife PS2F anfordern
+&T7             PS2F mit Selbsttest
+&T8             lokale Analogschleife mit Selbsttest
+&V              Das aktuelle Profil, bzw. die aktuellen gespeicherten
+                Telefonnummern
+&W      0-3     momentane Benutzereinstellung als Konfiguration
+speichern
+&Y      0-3     Benutzereinstellungen nach dem Einschalten
+&Y      4-7     Werkseinstellungen nach dem Einschalten
+&Z              Telefonnummer speichern
+
+
+Erweiterte \-Befehle
+====================
+
+Befehl Wert     Wirkung                         Parameter
+---------------------------------------------------------
+\A0             maximale MNP-BlocklÑnge 64 Zeichen
+\A1             maximale MNP-BlocklÑnge 128 Zeichen
+\A2             maximale MNP-BlocklÑnge 192 Zeichen
+\A3             maximale MNP-BlocklÑnge 256 Zeichen
+\B      1-9     LÑnge des Break-Signals nx100ms, mit n als Parameter
+\C0             autom.Erkennenen/Abfallen MNP kein kickin & fallback
+\C1             autom.Erkennenen/Abfallen MNP   kickin
+\C2             autom.Erkennenen/Abfallen MNP   fallback
+\C3             autom.Erkennenen/Abfallen MNP   beides
+\F              Liste der Befehls-Makros
+\G0             keine Flu·kontrolle
+\G1             Flu·kontrolle
+\K      0-5     Breakbehandlung
+\L0             Stream-/Blockmodus
+\L1             reiner Blockmodus
+\L2             Blockm. Verbindungsphase, Streamm. DatenÅbertragung
+\N0             Fehlerkorrekturverfahren        aus(...V.42bis aus)
+\N1             Fehlerkorrekturverfahren        DIRECT-Mode
+\N2             Fehlerkorrekturverfahren        MNP/V.42
+\N3             Fehlerkorrekturverfahren        MNP/V.42 fallback
+\N4             Fehlerkorrekturverfahren        V.42
+\N5             Fehlerkorrekturverfahren        MNP
+\0hh            Fehlerkorrektur einleiten
+\P      1-9     Befehls-Makro speichern
+\P0             alle Befehls-Makro lîschen
+\Q0             Auswahl des Handshakes          keines
+\Q1             Auswahl des Handshakes          XON/XOFF
+\Q2             Auswahl des Handshakes          S2/M2
+\Q3             Auswahl des Handshakes          beides
+\S              Aktuelle Modemeinstellung
+\U              Fehlerkorrektur akzeptieren
+\V0             Fehlerkorrekturmeldungen        keine
+\V1             Fehlerkorrekturmeldungen        ausgeben
+\W0             DEE-Baudrate aufteilen (V.23)   nicht aufteilen
+\W1             DEE-Baudrate aufteilen (V.23)   aufteilen
+\X0             XON/XOFF-Weitergabe             keine Weitergabe
+\X1             XON/XOFF-Weitergabe             Weitergabe
+\Y              Fehlerkorrektur einleiten  ??? (?einschalten?)
+\Z              Fehlerkorrektur ausschalten
+
+
+Erweiterte %-Befehle
+====================
+
+Befehl Wert     Wirkung                         Parameter
+---------------------------------------------------------
+%A      0-127   auto  reliable fallback charakter
+                (nur bei AT\C2,AT\C3 aktiviert)
+%B              Liste der gesperrten Nummern
+%C0             Datenkompression auswÑhlen      aus
+%C1             Datenkompression auswÑhlen      ein
+%C2             Datenkompression auswÑhlen      V.42bis nur TX(senden)
+%C3             Datenkompression auswÑhlen      V.42bis nur RX(empf.)
+%D              Liste der verzîgerten Nummern   (bei Wahlwiederholung)
+%E0             Handshakewiederholung           kein auto-retrain
+%E1             Handshakewiederholung           auto-retrain
+%F1             V.23 Sende/Empfangsgeschw.      75/1200 bit/s
+%F2             V.23 Sende/Empfangsgeschw.      1200/75 bit/s
+%Q0             XON-Schwelle festlegen          1/4 des Zwischenspeichers
+%Q1             XON-Schwelle festlegen          1/2 des Zwischenspeichers
+%S0             XOFF-Schwelle festlegen         1/2 des Zwischenspeichers
+%S1             XOFF-Schwelle festlegen         3/4 des Zwischenspeichers
+
+
+Erweiterte *-Befehle
+====================
+
+Befehl Wert     Wirkung                         Parameter
+---------------------------------------------------------
+*C              Konfigurationspa·wort speichern (6-12 alphanumerische Zeichen)
+*E              Konfigurationsmodus verlassen
+*L              Liste der RÅckrufnummern, Pa·wort
+*P0             alle RÅckrufnummern und Pa·wort lîschen
+*P      1-9     RÅckrufnummern und Pa·wort speichern
+                AT*Pn:<Pa·wort aus 6-12 Zeichen>:<RÅckrufnummer>
+                Wird aus der Ferne ein Pa·wort eingegeben, zu dem keine
+                RÅckrufnummer gespeichert ist, wird bei richtigem
+                Pa·wort gleich mit der DatenÅbertragung begonnen.
+                Ist eine Nummer gespeichert, so wird die Verbindung
+                abgebrochen und vom lokalem Modem die Nummer gewÑhlt.
+                Am lokalen Modem mu· in S80 Bit 3 gesetzt sein.
+*R              Konfiguration vom fernen Modem aus
+                AT*R<Konfigurationspa·wort gemÑ· AT*C>
+                Zum lokalen Modem (bei dem S80 Bit 2 gesetzt ist),
+                mu· eine MNP-Verbindung aufgebaut werden.
+                Am fernen Modem wird durch Eingabe von "+++" zur
+                BefehlsoberflÑche umgeschaltet und obiger Befehl
+                eingegeben.
+                Kommandos werden dann ohne vorangestelltes "AT" zum
+                fernen Modem geschickt. Ausstieg mit "*E".
+
+
+S-Register-Befehle
+==================
+
+Befehl  Werte   Wirkung
+-----------------------
+S24     (0-255) Powerdown (Stromsparmodus)      Einheit: 10s
+S30     (0-255) Flashimpuls (Unterbrechung)     Einheit: 10ms
+S34             XON Margin
+S34             XFF Margin
+S36     (0-12)  max. Zahl der Wahlwiederholungen
+S37     (0-255) Abbruchzeit bei InaktivitÑt     Einheit: min.
+S40             XOFF CHAR
+S41     (0-255) Warten auf V.22bis-Handshake    Einheit: 10ms
+S42     6-13    Sendepegel (nur lesbar)         Einheit: -dBm
+S80     4Bit    Wichtige Grundeinstellung
+                Bit0: 0- AT, 1-V.25bis
+                Bit1: reserviert
+                Bit2: Konfig. remote: 0-nicht mîglich, 1-mîglich
+                Bit3: Pa·wort und RÅckruf: 0-aus, 1-ein
+
+
+V.25bis-Befehlesatz
+===================
+
+Befehl  Wirkung
+---------------
+CIC     ankommenden Ruf annehmen
+CRI     wÑhlen einer Nummer und Kennung
+CRN     wÑhlen einer Rufnummer
+CRS     Nummer einer Liste wÑhlen
+DIC     ankommenden Ruf abweisen
+PRI     Teilnehmerkennung speichern
+PRN     Nummer in die Liste aufnehmen (max. 20)
+RLF     Liste der kurzzeitig gesperrten Nummern
+RLI     Teilnehmerkennung ausgeben
+RLN     Liste der gespeicherten Rufnummern
+CNL     Verbindung zum AT-Befehlsatz
+
+
+Meldungen:
+==========
+
+Befehl  Wirkung
+---------------
+CFI     Verbindungsaufbau erfolglos
+DLC     verzîgeter Ruf
+INC     ankommender Ruf
+INV     Eingabe ungÅltig
+LSD     Liste der kurzzeitig gesperrten Nummern
+LSI     Liste der Kennung (RLI)
+VAL     gÅltige Eingabe (Befehl ausgefÅhrt)
+ 
+-------------------------------------------------------------------------------
+                                                    aus irgend einer Mailbox...
+-------------------------------------------------------------------------------
+ 
+ 
+ 
+
+ 
+

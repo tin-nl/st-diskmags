@@ -1,0 +1,366 @@
+       The animated Sierpinsky triangle in 128 bytes mix!* 
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ (* this means that this is only a small sample of my forthcoming 
+      4Ktro called something like "The Sierpinski overdose")
+
+      Coded by GGN of KšA software productions (who? what?)
+
+  INTRO €
+
+     "Oh great,  another 128bytetro, just what my life needed!", I 
+hear some of you say.  But wait!  For this proggie has some unique 
+features to boost!!!
+
+     For starters, it was needs an STE because I need the blitter, 
+so  it _should_ work with all blitter machines (but I must  stress 
+that  I haven't run it on any other machine than my own -  a  1040 
+STE.  If  it  doesn't work for you,  just e-mail me)  (The  screen 
+address is set to $78000,  so it should work with 520 STEs,  too). 
+So, no Falcon-only-and-you-must-have-an-FPU-installed-or-it-won't-
+work  demo (sorry to all Falcon crews,  but I'm quite fed up  with 
+this  quote!  If  it's of any consolation to you,  my  code  is  a 
+Blitter-only-or-it-won't-work-demo!).
+
+     Secondly,  the program's  size (without the .PRG header  that 
+is) is 116 bytes!!!!  BUT, in order to keep the standard size, the 
+extra 12 bytes are used rather stupidly (some lame colour changing 
+and some anti-optimisations).
+
+     Its third, and maybe the most awesome, feature of this screen 
+is the author's origin! Can you guess it???
+
+
+
+
+     Ok,  I'll tell you..... (cause I'm cetrain you wouldn't guess 
+ €it anyway!) It's....  Greece! (yeeeaahhh!! Wooopiiee!!!) Yes, it's 
+true!  Finally some activity from that part of Europe!  (any Greek 
+ST coders are free to contact me,  but I think the possibility  of 
+this is below zero!)
+
+
+  PRINCIPLE
+ €
+     Well,  enough cheering for one day, let me try to explain how 
+this  damn program works...  You ran it (you have run it at  least 
+once,  haven't  you?),  you  compared it to the  other  Sierpinski 
+triangle  demos,  and came to the conclusion that the others  suck 
+and GGN rules!  (yeah,  right!) But then you asked yourself: "Hang 
+on,  the  ST/Falcon scene has some top coders and mega  optimisers 
+and  all  they can do is a static  128-byte  Sierpinski  triangle, 
+coloured or not coloured! So, how the f**k did one stupid kid from 
+Greece,  who  I haven't heard of before,   came up with this  code 
+that  tra- shes all of them??" (well,  you thought something  like 
+that,   eh?)  Well,  the  answer  is  very  simple:  I  stole  the 
+code!!..............  Er,  nope,  that's not it (but I bet  that's 
+what you wanted to hear :-), but this is it: I cheat a lot!
+
+     (Before  I  begin let me point out that I found  this  effect 
+accidentally,  while messing around with GFA BASIC in summer  '95. 
+Don't ask me for much details, I just stumbled across this effect. 
+It took me a couple of years to figure out how it worked,  and I'm 
+still not entirely sure!!  I could NEVER predict this effect would 
+happen!  Oh,  and I still don't know the algorithm to draw a Sier- 
+pinski triangle!!!)
+
+     The  main principle which this proggie is based is an  effect 
+called blitter feedback (at least, that's how I know it's called). 
+This  is caused whenever we,  for example,  copy a portion of  the 
+screen  onto itself,  i.e.  we have overlapping of the source  and 
+destination adresses.  Try this little program in GFA BASIC, and I 
+think you'll understand better...
+
+ €DO
+     LINE 319,0,319,49
+     RC_COPY XBIOS(2),1,0,319,200 TO XBIOS(2),0,0
+LOOP
+
+     ...see what happens ??  (what do you mean you haven't run  it 
+yet?) Now, let's change the upper example a bit...
+
+LINE 319,0,319,49 
+DO
+     RC_COPY XBIOS(2),1,0,319,200 TO XBIOS(2),0,0,6
+LOOP
+
+     Instead  of simply watching a block expanding from the  right 
+hand  side,  you see a weird-looking effect,  just by  XORing  the 
+copy. Let's mess around a little more with this code...
+
+DO
+     LINE 318,99-i,318,100+i
+     RC_COPY  XBIOS(2),1,0,318,200 TO XBIOS(2),0,0,6
+     INC i
+LOOP
+
+     Cool effect,  isn't it??  (well,  go on,  don't be lazy, it's 
+only  5 lines!  Fire up GFA BASIC and write them!  It's worth  it! 
+Believe  me!!  Stilll  haven't convinced  you??  Well,  it's  your 
+loss!!!)  After experimenting with the code a bit,  I put it on  a 
+disk and forgot about it....
+
+     ....until  summer '98,  when I went to University and  I  was 
+connected  to  the 'net.  I was astonished not only to  find  that 
+there  is still some ST activity,  but that  disk-based  magazines 
+were still published! (to show you how "easy" it was for me to get 
+software for my ST all those years -never mind demos- without  the 
+Internet,  let  me just say I'm still downloading demos  that  you 
+probably  saw  in 1991 or 1992!!!) So,  I downloaded  some  Maggie 
+issues (I think 24 and 25) and was informed that the latest  craze 
+ €was 128-byte intros!  I wanted to contribute to that section,  and 
+then  I  remembered  this  code!  At first  I  wanted  a  complete 
+conversion of the effect I wrote (which isn't shown here,  'coz  I 
+don't  want  you  to  steal my idea before  I  publish  my  4Ktro, 
+harharhar!!),  but I saw that that was not possible,  as I  needed 
+some way of doing sinuses in little space in assembly!
+
+     Next up,  a complete presentation of the source,  with enough 
+explaiations of how it works.
+
+  THE SOURCE
+
+ €                  clr.w   -(SP)
+                  move.l  source(PC),-(SP)
+                  move.l  (SP),-(SP)
+                  move.w  #5,-(SP)
+                  trap    #14
+
+     You should be familiar with these lines of code (you  already 
+_know_ assembly,  elsewise why are you reading this??).  They  set 
+the  screen's  address  to $78000 (this number is  read  from  the 
+biltter's data to reduce space) and set ST low resolution as well. 
+This is much smaller than writing my own set of routines.
+
+SIZE=14 bytes
+
+                  addq.l  #6,SP
+                  move.w  #$20,-(SP)
+                  trap    #1
+
+     This turns supervisor mode on and sets the stack to $78000!!! 
+(note  the  addq.l #6,sp !!!  This sets the stack  !!!)  (if  that 
+messes  up  things on a Falcon or other  variety  Ataris,  let  me 
+know!)
+
+SIZE=8 bytes
+
+ €...and now we come to the main loop:
+
+restart:          moveq   #99,D3
+                  lea     $078000+16000-160+153,A6
+                  lea     -153+160+153(A6),A5
+
+     d3  has the inner loop counter,  and a5,a6 have the  adresses 
+where the first 2 pixels will be plotted,  which are (318,99)  and 
+(318,100).
+
+SIZE=12 bytes
+
+inloop:           move.w  #$25,-(SP)
+                  trap    #14
+                  addq.l  #2,SP
+
+     This  waits for vertical retrace.  (notice that this  can  be 
+optimised  to move.w #$25,(SP) ,  trap #14 (thanx to No  Crew  for 
+releasing   their   megascroller  code  at  EIL   '99   for   this 
+optimisation), but you tell me what to do with 2 extra bytes :-)
+
+SIZE=8 bytes
+
+                  rol.w   D7,D7
+                  rol.w   D3,D7
+                  move.w  D7,$FFFF8242.w
+
+     These  3  instructions were added at the  very  end.  Without 
+these  3  lines the code size is 120 bytes!  As I can't  think  of 
+anything fancy to do in 8 bytes,  this is what you get... (BTW the 
+colours suck!)
+
+SIZE=8 bytes
+
+                  bset    #1,(A6)
+                  bset    #1,(A5)
+
+ €     Now the two pixels are plotted on screen.
+
+SIZE=8 bytes
+
+                  lea     -160(A6),A6
+                  lea     160(A5),A5
+
+     And  now  a5  and  a6 move to the  next  and  previous  line, 
+respectivly, so in the next frame's pixels will be plotted.
+
+SIZE=8 bytes
+
+                  movem.l blitter(PC),D0-D2/D4-D7/A2
+                  movem.l D0-D2/D4-D7/A2,$FFFF8A20.w
+                  move.w  #200,$FFFF8A38.w
+                  move.b  #192,$FFFF8A3C.w
+
+     Finally  the blitter does its job.  Instead of using tons  of 
+MOVE.Xs,  all the blitter's registers are set (except ycount which 
+must be set JUST BEFORE the blitter takes control, and line number 
+because if it was set,  the blitter wouldn't take into account the 
+skew value,  which is set later) using 2 MOVEM.Ls. Then the ycount 
+is set,  and finally the line number.  The blitter is set to do  a 
+horizontal 1 plane copy 1 pixel to the left, using XOR (that's the 
+secret  to  our success!) (again,  if Atari  moved  the  biltter's 
+hardware  registers or changed the blitter's  behavour,  then  I'm 
+really  sencerely sorry!  Just drop me an e-mail to try  and  work 
+this  out!  I anyone fancies hacking this for himself,  just  know 
+that $ffff8a20.w is 'source x increment' on my STE...)
+
+SIZE=24 bytes
+
+                 dbra    D3,inloop
+                 bra.s   restart
+
+     Closes our 2 loops.
+
+ €SIZE=6 bytes
+
+
+blitter:         DC.W 8,8        ;source x inc,source y inc
+source:          DC.L $078000    ;source address
+                 DC.W $FFFF,$FFFF,$FFFE ;endmasks
+                 DC.W 8,8        ;dest x inc, dest y inc
+                 DC.L $078000    ;destination address (=source)
+                 DC.W 20,200     ;x count,y count
+                 DC.B 2,6        ;hop,op
+                 DC.B 0,-1       ;line number, skew
+                 DS.W 1          ;dummy for MOVEM.l
+
+     The blitter's hardware registers are set from this  table.  I 
+won't  go into great detail (for that consult any  proper  blitter 
+docs) but here are some pointers:
+-    the '8's indicate a 1 plane low res copy
+-    source=dest=$78000 (i.e.  copies the screen onto itself, thus 
+     causing the blitter feedback, which produces this effect)
+-    op=6=xor
+-    skew=-1=one pixel to the left
+-    don't ask me why the 3rd endmask is $fffe... it has something 
+     to    do  with  protecting  the  rightmost  bit  from   being 
+     blitted....  (anyway I can't be bothered to explain it  since 
+     it works! Do something for yourself!!)
+
+SIZE=32 bytes
+
+                END
+
+...and that's the end.
+
+     TOTAL  SIZE=128 bytes!!  Note that an extra 2 bytes could  be 
+saved by moving the DS.W 1 of the blitter table into the BSS,  but 
+I really don't konw what I would do with them (even with the other 
+8 bytes used for color changing added, as well as the other 2 from 
+the VSYNC :-)
+ €
+     Before closing, I would like to write a little anecdote story 
+from  my adventures in the PeeShit machines,  entitled "It  serves 
+you right, you bloody fool!"
+     
+     About  2 years ago (December 1997) me and my brother  decided 
+to  by  a  PeaShooter machine.  (wrong  decision,  but  the  STE's 
+internal drive was busted and we didn't know what to do to find  a 
+replacement  one,  and we wanted to play some new  games,  and  my 
+brother uses the 100 PerCent crappy machine in his work, and, and, 
+and... lame excuses or what?? :-)
+
+     After  being  "amazed" by the "new concepts"  in  games,  the 
+"speed"  they ran at (when I first ran Quake,  I thought  we  were 
+given a 486 instead a Cyrix 6x86 @ 166 Mhz!!!),  and the "quality" 
+of Wincrap, I thought "Well, since we made the mistake, I'd better 
+make  the  most  out  of  it...".  So  I  started  to  learn  some 
+assembly... From my first steps I realised why most people code in 
+C/C++  on  the  PantsComputers...  Conventional  memory,  expanded 
+memory,  extended  memory,  fixed screen memory,  reverse  way  of 
+syntax on assembly (if you were to write an equivelant to  "move.l 
+D0,D1",  it  would  have to be  written  "mov  D1,D0"!!!  Hell!!), 
+segments,  real mode, protected mode, only 4 (!!!) 32-bit internal 
+registers (not counting stack, code segment, etc.), DOS extenders, 
+EMM, HIMEM.... aaaaaaaaaaaaaaarrghhhhh!!
+
+     To get to my point (about bloody time some say!),  not  being 
+one  coder  to be put off that easily,  I set about  writing  some 
+routines in assembly.  The first one was a line routine, which was 
+really slow,  but I thought that was just because I was running it 
+from  a  debugger....  Then,  I thought about converting  the  old 
+Sierpinski  triangle  routine  to the  Pile-o-Crap  (yes,  as  you 
+gathered  from the acronyms written so far,  I'm not that fond  of 
+the PCs!).  I wrote some pretty well optimised code (at  least,  I 
+thout it was well optimised) :  the scroll routine was 5-6 bytes I 
+remember.  Yet,  when I ran it, it CRAWLED!! (about 5-10 frames!!! 
+And  remember:  Cyrix 6x86 @ 166 Mhz with a pretty damn  fast  PCI 
+ €video  card!!!) I couldn't find a single reason that  could  cause 
+such a slowdown on the code.
+
+     So,  I sent it to a more experienced programmer on the Prats' 
+Computers.  So,  he  recoded the whole thing in  C++,  and  (guess 
+what!) it ran at a VERY high frame rate! I was shocked! "How is it 
+possible",  I  thought,  "that  C++  could  be  faster  than  pure 
+assebmly?".  So  I asked him how he coded it.  He  said  "Well,  I 
+reserve a buffer in memory,  and do all the work there and THEN  I 
+copy  it to the video card RAM"!!  While I,  as any good ST  coder 
+would  do,  did  everything on the video card's RAM  (reading  and 
+writing bytes from and to it)!  What does that tell you about  the 
+video card's RAM and the Prehistoric Computer's bus altogether?
+
+     As  you can guess,  after this experience,  I  quit  learning 
+assembly on the PC,  and,  as I fixed my drive in 1998,  I started 
+coding   in  good orthodox  and completely easy  MC68000  assembly 
+once again!
+
+
+
+
+
+
+     Well,  that's about all from me for now.  I'll be  definitely 
+doing more ST/STE stuff in the future (whenever a good idea  comes 
+up),  be it a 128bytetro, a 4Ktro, a megademo (that's an ambitious 
+claim, but anyway...), a game, or whatever.....
+
+     Any comments,  fan-hate mail, flames, etc. are welcome (my e-
+mail address follows later).  If anyone can do sinuses in less  or 
+equal to 12 bytes, please contact me!!!! I'll be glad to do a v2!!
+
+
+
+    Death to the PCs! (=Pure Crap!) (only good for emulation!)
+
+ €
+
+
+
+                 -GGN of KšA software productions
+
+              (AKA George Nakos - gnakos@yhaoo.com) 
+          (This will soon be changed to ggn@x-treme.gr)
+
+P.S. 1:  The  ST  was my second computer (first one was  an  Atari 
+800XL - yeah!), and, for me, is still one of the best & cheap home 
+computers ever made.
+
+P.S. 2:  After  spending  a week in Word 97 (by  Micro$oft  corp.) 
+trying  to  compose a 50-page report (which  was  almost  entirely 
+typed in Greek. If you think Office has enough bugs, try to import 
+an Excel spreadsheet with Greek characters into Word (the  English 
+version)!!!!),  it's a relief that I type this text in a good  ol' 
+(and BUG-FREE!) ST editor!!
+
+P.S. 3:  A  little  message  to all the other  coders  who  did  a 
+static  Sierpinski  trangle in 128 bytes:  HA HA  HA  HA!!!  (only 
+kidding!  ;-)  I  haven't seen your efforts ('coz thy all  need  a 
+Falcon!),  but I suspect mine is the best!!!!  (correct me if  I'm 
+wrong).  And  if you think I can only do this humble  effect  with 
+this code,  wait for my 4Ktro mentined above!  You'll be lost  for 
+words!!!
+
+P.S. 4:  If  anyone manages to figure out what "KšA"  stands  for, 
+without  knowing us personally (no points given for guessing  part 
+of the acronym),  I'll certainly shoot myself!!!  Anyway,  if  ARE 
+curious what KšA stands for,  just e-mail me! (E-mail me anyway! I 
+would like to make some ST friends!)
+

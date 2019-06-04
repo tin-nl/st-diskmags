@@ -1,0 +1,65 @@
+ñ                              < - . - >
+
+ñ                  R    E    V    I    E    W    S
+ñ               -- - -- - -- - -- - -- - -- - -- - --
+
+ñCrimboð by òTormentð (A DHS Xmas compo contribution) ó[ST]ð (1999)
+
+All of a sudden, they were back.
+Simply back.
+Like they never were away, the group named òTormentð, consisting of
+óRhinoð, óSpinyð and óGNDð, reassembled itself again to simply do what
+they like: Produce ñold-schoolð demos. As a replacement for the never
+released/finished ñSwitching Channelsð, they gave us the short, but nice
+ñTwitching Flannelsð at the óPMP 1999ð party, where i had the honour
+to meet them and now they're back with a cute little entry for the
+DHS Xmas compo.
+
+The demo starts with some black text on white background, saying who
+this demo is from, what it is supposed to be like and why it is in
+the first place.
+After that, you'll see a nice ñsnowmanð, a ñscrollerð in the upper part
+of the screen (which is maybe ñ1 bplð but coloured by a ñHBL-routineð or
+probably ñbplð and might also be out of border - read below why i'm not
+sure) while ñsnow is fallingð straight downwards.
+
+{*i crimbo.pi1 m 0 20 0 200}
+
+The snow doesn't simply fall down but even ñslidesð down skewed surfaces
+to remain at the deepest point. Yes, you guessed right, this way, the snow
+starts to fill all gaps and slowly pile up until it covers the whole screen.
+All through the demo, a stylish "ñtð" that also seems to be out of border,
+in a coloured circle, is being displayed in the left part of the upper
+screen. Additionally, a remix of a christmas song by óRhinoð is being
+played.
+
+Why don't i know wether the scroller is out of border and where the t is ?
+Simple. The demo refuses to run on the Falcon as the ñJAMð-Packer they
+used doesn't like the 68030. If you turn off all 680x0-caches by for
+example using backward, the demo runs a little, but the timing is totally
+corrupt on VGA so i óassumeð that the demo features out-of-border graphics.
+As it also doesn't run on a òTOS 2.05 MegaSTEð, i had to view it on my
+trusty old 1040 STE on a TV set and it's a bit hard to see wether something
+is out of border on this TV set or not.
+And that are already the negative sides of the intro. If you have a Falcon,
+you won't be able to view this demo - Okay, if it really features out of
+border graphics, i can understand it. But why doesn't it run on TOS 2.05 ?
+The demo simply hangs up with a black-screen with the floppy light on.
+Weird.
+If you managed to get it to run, it's definetly worth a look. The snow falls
+a bit straightforward, but smoothly and flawless and the piling up of the
+snow is really very well done. The graphics are not too hot but way better
+than those of a certain competitor (guess who) and the music may be short,
+but it's nice, too, as it is very original.
+So, give Crimbo a chance, definetly worth a look, just leaves some
+questions open. Like, why does it have to be JAM-packer ? Are the graphics
+out of border or not ? Does the demo crash when the whole screen is filled
+with snow ? And what the heck does Crimbo mean anyway ?
+
+ñ[Graphics: 47%]ð -------------------------------------------------+
+|         ò[Sound: 63%]ð                                           |
+|               ó[Technical: 59%]ð                                 |
+|                          ò[Fun: 65%]ð                            |
+|                               ñ[Overall: 61%]ð                   |
+|                                        [The Paranoid of Paranoia ]
++----------------------------------------[Think you can handle it?!]

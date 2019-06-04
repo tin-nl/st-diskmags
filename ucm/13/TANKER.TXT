@@ -1,0 +1,107 @@
+--------------------------------------------------------------------------------
+      ********************************************************************
+      ********************************************************************
+                                                                        **
+       _______________                                                   *
+      ( IDEMLINE      )         .                   +
+       ¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹                                          |
+                                         '                      |
+       ________________________________       .               --+--
+       \ø       _______________________>              .         !
+        \\     /   /  /ø     /   /  ø/   .
+         \\   /¹¹¹¹\_/      /¹¹¹¹\__/
+          \. /     //,     /            _   +            _     +
+      *    \/     ///     /            |ø|/\       /\   / \
+      ***        //'      \            | / /  /¹  /  \   _/           /¹
+      **********//.       .\  /\  /\ \ |< <  /\  /\__/  / /\ /\ /\ \ /\
+      *********/ \_________/ /¹¹\ \ \/ | \ \ \/¹ \ \   <_/_/ \/ \ \/ \/¹
+      ********/       __/ /             ¹ \/  \_                      \_
+      *******/_Sine__/___/************************************************
+      ********************************************************************
+      ********************************************************************
+
+--------------------------------------------------------------------------------
+                         "TANKERZONE" by IDEMLINE
+--------------------------------------------------------------------------------
+ò________________________________________________________________________________
+ò _______________   _____________  ____ ____     /
+ò/   ____ __/   /__/  _     / _  \ \ __/   /_   / ðmachines: ñste/fo3o
+ò\__/ __  \_   __  \_/  /\  \_/  / / \_   __/__ \ ðspecials: ñ512kb/rgb
+ò/    \/  /    \/  /    \/  /    \/  /    \/   \ \ ðcredits: ñcode - sine
+ò\____    \____    \____    \____    \____     / /          ñgfx  - sine
+ó====ðAò\___/ó===ðBò\___/ó===ðOò\___/ó===ðUò\___/ó===ðTò\_md/ó=ò/   ñ        msx  - ?
+ò________________________________________________________________________________
+
+ñ"TANKERZONE"ð is another release from the óJEM'98 PARTYð, held in  August in France
+as follower to the óGIGAFUNð. It's another small demo by  the hyperactive guy óSINE
+of òIDEMLINEð who suddenly appeared last year and is bombing  us out with loads of
+small GFA demos and games.
+
+This one is a 96K intro and is again done  by himself only, except the music. So
+there is the  question if òIDEMLINEð is a real band or just a one-man-project. But
+this miracle has to be solved on another point.
+The strange thing  on óSINEð's productions is that they're coded for  ST but don't
+run on ST at  all. All his  productions need the blitter... and this is the only
+thing he's using of the special hardware of the STE.
+
+Ok, let's  start  with the review. After  starting this little  thingie  the for
+òIDEMLINEð productions  wellknown GEM  box appears with  the first info  about the
+demo and your final possibility to break the demo.
+After chosing  the "GO" button a very  old chip  music  starts  to play. I don't
+remember where I heard it before, it seems to be ripped from a very old game.
+
+A grey  figure  zooms in and out  again, after this  rendered grafix  appearing,
+splitted  in the  middle and  scrolling up and down to give the  sight on a very
+simple IDL logo in grey. No comment...
+After  this  some  information  about the  intro comes  up. The  rendered grafix
+disappearing and  a small ñTANKERZONEð logo in blue comes up with some  other very
+strange and  not to describe grafix  in the background. The background  vanishes
+too and a field of bobs comes up. They're flying diagonal  over the screen. This
+would look  better with other colours! So it's  just a bit  boring. Just look by
+yourself!
+
+{*i tanker1.pi1 m 0 20 0 200}
+
+Looks a bit strange, eh?
+After this a  complex delayed linevector object comes up, the best effect so far
+in this intro  but it's going  better... at next some distorted vertical rasters
+are displayed, not bad and good looking.
+Here comes a short impression of this effect...
+
+{*i tanker2.pi1 m 0 20 0 200}
+
+A picture of a  drink is scrolling over the screen and after this  break another
+nice effect with bad colours  comes up, plasma  waves in  4 layers. Too bad that
+he is a fan of dark blue... Btw... this effect and the line vectors are  already
+used in his "VOLCANIC 4" intro, only with some little changes.
+Another strange thing is the  socalled "realtime spherical mapping" which  means
+that a little  star (sprite) is  flying around a sphere and mirrored  on it. The
+sprite changes and so also the mirrored stuff. Bigger objects are a bit slow.
+The blue bobsfield with the blue ñTANKERZONEð logo comes  up again  and after this
+the greetings are displayed on the screen.
+The  last  effect, as  a little bonus, is  a so  called ñ"realtime morphing"ð with
+very strange grafix. Erm... that's all and the demo goes back to the desk...
+
+òConclusionð: At first, it's nice to have such a enthusiastic  newcomer like SINE,
+            but he needs  urgently the  help of  other  people! He  can code, no
+            question  but his  productions  suffering  mainly  under the ólack of
+            ógood grafix and designð. It has nothing  to do  with  being negative,
+            it's just a fact  that so his  coding affort is  only lost time. And
+            because he  started to code  in ASS too it would  be sad  to present
+            his future productions  with the same old stylish outfit. This  demo
+            is for all the collectors only, and ofcourse for the users  of ATARI
+            blitter machines... and unfortunately it isn't as good as the  older
+            intro from the óVOLCANICð party, at least it's my opinion.
+
+ñ________________________________________________________________________________
+ñ ________________________   ___   _________________   ______
+ñ/   ____ /   ____ __/   /_ /   \ /   ____ /    ___/__/  ___/__  ócode.ð6o% ógfx.ð35%
+ñ\__/  \/ \__/ __  \_   __/_\___/_\__/   / \   /__  \______    \ óorig.ð6o% ómsx.ð5o%
+ñ/    \   /    \/  /    \/  /     /     /  /    \/  /    \/    / ódesign.......ð25%
+ñ\____/   \____    \____    \__   \____/   \____    \____     / ò/================
+ò====ðRñ\___/ò===ðAñ\___/ò===ðTñ\___/ò=ðiñ\___/ò==ðNñ\___/ò===ðGñ\___/ò===ðSñ\_md/ò=/ óOVERALL......ð46%
+ñ________________________________________________________________________________
+
+--------------------------------------------------------------------------------
+ó .no retreat and no surrender.                        òmoondog ð. ópoets of decay
+----------------------------------------------------------------------23-o8-98--

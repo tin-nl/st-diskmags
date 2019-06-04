@@ -1,0 +1,385 @@
+
+----------------------------------------------------------------------
+======================================================================
+----------------------------------------------------------------------
+
+                    Assembly Language, in Devpac, Tutorial
+
+                                      by
+
+                         John Cove (Tronic of Effect)
+
+                                     for
+
+                                  MAGGIE 19
+
+
+           Series 1, Part 2, Other Miscellaneous Useful Tit-bits
+
+----------------------------------------------------------------------
+======================================================================
+----------------------------------------------------------------------
+
+
+In this part i will cover very simple routines,just so i can then move
+onto the more difficult routines.
+
+I will cover resolution, hertz changing, loops and picture displaying.
+
+_________________________
+Section 1.1 - Resolutions
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+Right, first off all you  need  to  know  the register that deals with
+resolution!!
+
+This register  is the $ffff8260  register.  There  are  many different
+ways  to alter the resoltion, i will show you two.
+
+___________________________________________
+Section 1.11 - Using the $ffff8260 register
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+First off all, it is best to  alter the resolution after one vbl cycle
+is complete otherwise, you may experience  a distorted screen, so here
+is a simple routine to achieve this:-
+
+
+                move.w  #37,-(sp)               ... line 1
+                trap    #14                     ... line 2
+                addq.l  #2,sp                   ... line 3
+                move.b  #?,$ffff8260            ... line 4
+
+
+Explanation
+ÿÿÿÿÿÿÿÿÿÿÿ
+
+Lines 1 to  3  is  the  v_sync  routine,  otherwise  known  as the vbl
+syncronisation routine.
+
+Line 4 is altering the resolution value. Here is the table of what the
+question mark represents:-
+
+                            0 - low resolution
+                            1 - medium resolution
+                            2 - high resolution
+
+So, if  you  wanted to alter  the   resolution  to low, then you would
+write the following routine:-
+
+
+                move.w  #37,-(sp)               ... line 1
+                trap    #14                     ... line 2
+                addq.l  #2,sp                   ... line 3
+                move.b  #0,$ffff8260            ... line 4
+
+
+There simple.....here is another way  of altering the resolution, just
+for your information and so i cover resolution completely.
+
+Before i continue, note well...Do  not  try  and set the resolution to
+high on a  colour  output!!!   It  won't  work,  unless  you are using
+overscan techniques!!!!!
+
+Here's that other routine:-
+
+                move    #?,-(sp)                ... line 1
+                pea     -1.w                    ... line 2
+                pea     -1.w                    ... line 3
+                move    #5,-(sp)                ... line 4
+                trap    #14                     ... line 5
+                lea     12(sp),sp               ... line 6
+
+
+Explanation
+ÿÿÿÿÿÿÿÿÿÿÿ
+
+Line 1 sets the  resolution  value,  so  see  the  above table for the
+value, and bare in mind that IT IS ALWAYS THE SAME!!!
+
+Line 2 to 6 are the system bits to implement the resolution change!!
+
+
+___________________
+Section 2.1 - Hertz
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+This is another very easy routine.  Again  all you really need to know
+is the  register  you  are  going  to  play  with!!   The  reigster is
+$ffff820a!!!
+
+Here is table of values you have to use to alter the hertz:-
+
+
+                            50 Hertz - 2
+                            60 Hertz - 0
+
+
+and you implement it in the following way:-
+
+
+                         move.b  #0,$ffff820a
+
+
+The above line will set the  hertz  to  60,  and  if you do not have a
+monitor or a 60 hertz output device,  the  screen will look like it is
+very ill, basically it will look and sound very bad!!!
+
+If you want to "flash"  the  hertz  to  make  a qicked effect, used my
+myself, STAX and most other coders, then  here is the source code, try
+it out!!!
+
+
+                *************
+                program start
+                *************
+
+                move.b  #0,$ffff820a.w
+                jsr     v_sync
+                move.b  #2,$ffff820a.w
+                jsr     v_sync
+                move.b  #0,$ffff820a.w
+                jsr     v_sync
+                move.b  #2,$ffff820a.w
+
+                ***********
+                program end
+                ***********
+
+        v_sync  movem.l d0-d7/a0-a7,-(sp)
+                move.w  #$25,-(sp)
+                trap    #14
+                addq.l  #2,sp
+                movem.l (sp)+,d0-d7/a0-a7
+                rts
+
+
+There a wicked effect if you  use  it,  please credit me!!!   The code
+will only work in supervisor mode,  so  if  you are not sure, refer to
+Series 1, Part 1 to  make  sure!!    Though,  you should not really be
+here if you have not got the basics perfected!!!
+
+N.B.  When compiling, the labels  (for  example, in the above program,
+the   label  is  "v_sync",   this   MUST   be   at  the  beginning  of
+the line, otherwise you WILL get an error!!!)
+
+___________________
+Section 3.1 - Loops
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+Loops, a very important part of any program!!!
+
+Here is a key  loop  program.....remember  I  am  trying to make these
+articles as easy to read  as  possible,  so  do  not complain if I get
+straight   into   the   facts   instead    of   faffing   around   the
+topic........okay!!!!  (Rough justice, Rough LAW!)
+
+
+        key_loop        jsr     v_sync                  ... line 1
+                        cmp.b   #$39,$fffffc02.w        ... line 2
+                        bne.w   key_loop                ... line 3
+
+
+Explanation
+ÿÿÿÿÿÿÿÿÿÿÿ
+
+Line 1 - This has a  few  components  to  it,  first of all you need a
+label to call when the condition,  in  Line  3,  is not met, and it is
+also a good idea to have a  v_sync  in THIS kind of loop, basically so
+you do not overload the  keyboard  buffer  ($114.w - keyboard vector).
+The v_sync routine is the same as in Section 2.1.
+
+Line 2 - This is the cOmpARE condition.  Basically it is comparing the
+keyboard buffer to  the  value  #$39,  which  is  the  space bar.  The
+$fffffc02.w is the keyboard handler.   So,  you are comparing $39 with
+the keyboard buffer which will be  true  when have pressed space bar!!
+The compare statement must be conditioned as a "byte", ie. a ".b", not
+a ".w" etc, because this will never match the hex #$39!!!
+
+Line 3 - If the cOmpARE condition  is  not  true then it will brand to
+the key_loop label.  BNE is  the  mnemonic  for Branch Not Equal, just
+like CMP means COMPARE!! Lovely jubbly!!!
+
+
+Here is another loop, using addition:-
+
+
+                        *************
+                        program start
+                        *************
+
+        add_loop        add.w   #1,counter              ... line 1
+                        cmp.w   #1000,counter           ... line 2
+                        bne.w   add_loop                ... line 3
+
+                        ***********
+                        program end
+                        ***********
+
+        counter         dc.w    0                       ... line 4
+
+
+Remember  what  I  were  saying  that   you  have  the  you  the  same
+declaration!!!  Ie. the  ".w",  if  you  are  using  an  "add.w"  to a
+declared store, then you must declare  the  store  as a "dc.w" and you
+must make all compares and  mathematics  use  the ".w" declaration, DO
+NOT MIX THE DECLARATIONS!!!!  Your program simply won't work!!!
+
+
+Explanation
+ÿÿÿÿÿÿÿÿÿÿÿ
+
+Line 1 - Again, you need a label to call if the condition is not met!!
+This line also add 1 to the  value  in counter, which at the beginning
+is 0.
+
+Line 2 - This compares the value in counter with 1000.
+
+Line 3 - This compares  whether  the  condition, in the previous line,
+was met and if it was  then  the  loop  has ended and the program will
+continue on its course, past the  loop.   If  the condition is not met
+then it will simply return to the label "add_loop".
+
+
+______________________________________________________
+Section 4.1 - Displaying pictures of different formats
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+Time for a break to watch  Eastenders,  I think.........I will be back
+on this wonderful tour  into  the  ST very soon....."Red alert....I've
+got mine!!!".....
+
+________________________________________________
+Section 4.11 - Displaying a Degas Elite picture.
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+Here is a complete, and working, routine to display a degas picture.
+
+
+                        clr.l   -(sp)                   ... line  1
+                        move    #$20,-(sp)              ... line  2
+                        trap    #1                      ... line  3
+                        addq.l  #6,sp                   ... line  4
+
+                        jsr     v_sync                  ... line  5
+                        move.b  #0,$ff8260              ... line  6
+
+                        lea     pic+34,a0               ... line  7
+                        move.l  $44e,a1                 ... line  8
+                        move    #(32000/4)-1,d0         ... line  9
+        copypic         move.l  (a0)+,(a1)+             ... line 10
+                        dbra    d0,copypic              ... line 11
+
+                        movem.l pic+2,d0-d7             ... line 12
+                        movem.l d0-7,$ff8240            ... line 13
+
+                        move    #7,-(sp)                ... line 14
+                        trap    #1                      ... line 15
+                        addq.l  #2,sp                   ... line 16
+
+                        jsr     v_sync                  ... line 17
+                        move.b  #1,$ff8260              ... line 18
+
+                        clr.w   -(sp)                   ... line 19
+                        trap    #1                      ... line 20
+
+
+        pic             incbin  degas.pi1               ... line 21
+
+
+____________________________
+The rather LARGE explanation
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+
+Lines 1 to 4 - This opens the supervisor mode.
+
+Line 5 - This waits until a vbl cycle is complete.
+
+Line 6 - This  alters  the  screen  mode  to  low  resoltion, as a PI1
+picture file will only  display   correctly  in  low resolution, a PI2
+picture file  will  only  display  correctly    in  medium  resolution
+and  a PI3   picture   file  will   only   display  correctly  in high
+resolution.
+
+Line 7 - This points to the  picture  data in the picture file & moves
+the contents into the data  register,  a0.  The  processor  knows when
+it has reached the end of  the  picture   data  because after the file
+is  loaded,  a  pointer  is   placed,  in  memory,  at  the end of the
+picture data and the data will   stop  being loaded into the  register
+a0.  The  actual  picture data  starts  an   the   offset  +34, or the
+seventeenth byte in the file.
+
+Line 8 -  The  logic  screen  address  is  $44e.    So   all  that  is
+happening  is  that  happening  is  the  screen  address,  the   final
+destination of  the  picture data,is being put into the register a1.
+
+Line 9 - The actual number  of  bytes  that  the  picture  data  takes
+up is 32000, which is  also  the  same  as  the standard sized  ST Low
+resolution  screen. So, you are  loading  that amount of bytes, 32000,
+into the register d0.
+
+Line 10 - This serves   a   few   functions. First  a  label,  because
+you  will be performing a conditional  loop  on  Line 11, and  this is
+where  you  will jump to. The   second   is  the moving of the data in
+a0  and  literally  moving  it  onto  the  screen.   The plus   symbol
+after the (a0) register,  and  (a1),is  simply telling the computer to
+take the next part of picture data, so on and so on!!
+
+Line 11 - This  is  a  condition,and  when  all  the  picture has been
+displayed,this is when the condition is  met, and basically, when  you
+jump  back  to the  loop,  the  pointer  of  the  picture data will be
+implemented by one and in EFFECT will  jump  to the  next byte of  the
+picture  data, to be displayed.  God that was DIFFICULT to explain...
+
+Line 12 - This  is   implementing   the   palette,  from  the  picture
+data, on  the screen.The palette is  also contained within the picture
+file, at the offset of +2 So,  the  data  starts at the second byte in
+the file. The palette  data  uses  16  bits  and  is  picked up in the
+registers d0-d7.
+
+Line 13 - This  puts   the  palette  values, from  the  picture  file,
+in d0-d7 and implements it onto the screen.
+
+Line 14 to 16 - This waits for the user to  press  any  key, before it
+continues.
+
+Line 17 - This waits until a vbl cycle is complete.
+
+Line 18 - This sets  the  screen  mode to  medium  resolution,  really
+used  for the returning to GENst.
+
+Line 19 to 20 - This is  the  standard exit routine, out of supervisor
+mode.
+
+Line 21 - This is  the  incLUDE  binARY  command, thats loads  a  file
+from the disk and is then present in that label.
+
+
+
+In the next part  we  will   look   at  how  to  display  a  Neochrome
+picture  and the different structures  of the picture formats....watch
+out man!!
+
+----------------------------------------------------------------------
+----------
+
+Tronic of Effect, aka John Cove,[C]opyright 1995 .. Started:
+14-11-1995
+
+Finished: 14-11-1995
+
+
+            "I reserve the right to publish these tutorial series
+             wherever  i  choose...   Only,  with express written
+             confirmation,  is  this  to  be  published by anyone
+             other than myself.   These  series  were written for
+             st world, but if i feel that the series is not being
+             taken advantage of in the way that most st users are
+             able  to read  the  series, then  i will publish the
+             series in my own, and other  peoples, disk magazines
+             and products."
+
+
+             Series Written For Sion Dovey, Editor of ST WORLD.
+           --------------------------------------------------------
+         -----------------------------------------------------------

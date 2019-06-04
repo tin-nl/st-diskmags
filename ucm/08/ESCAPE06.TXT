@@ -1,0 +1,71 @@
+                                                                                 {*f0
+-------------------------------------------------------------------------------  {*f1
+          Escape Paint v0.6ž                                                     {*f0
+-------------------------------------------------------------------------------
+
+pixel painting program for the Falcon by No of Escape
+
+
+Originally I did not  had the motivation to write another article about Escape-
+Paint. But due  the fact of its great improvements I'll try to give you a small
+review of  this beta-version, which  will  be -surely- released  at the SiliCon
+party. So, here we go...
+
+Firstly there  are some big  changes  in the  appearance of the programm. As No
+told me, the  GEM-boxes are  supposed to look really great now. Unfortunatly my
+Falcon has only TOS 4.01, so there's no possibility for me to ckeck this out.
+...
+The Degas-magnify now emulates the way of painting in Crackart. That means that
+you've got  the same  feeling like  drawing in  Crackart. Although Escape-Paint
+runs in  Truecolor, you  have the  possibility of clicking on your right mouse-
+button while staying with your brush on a pixel of your wish: the programm will
+select  this color  in the palette. So  there are no  differences to a programm
+that works in plane-mode, if you are painting with the magnify.
+I don't know  if this function  will be integrated  in the Neochrome-magnify as
+well, but  it would  be really great - even  if I don't  use this one... ;) The
+Neo-magnify  has not changed  since the last version. Somehow you could not use
+it in this beta-version.
+...
+In the new  version of Escape-Paint you may create pictures with a size of max.
+999x999(!). A little  calculator is  telling you  how much  memory this picture
+needs. If  you've got  less memory  than the  picture takes, you cannot execute
+this option. That's  really great: the  programm will  never fuck-up because of
+the picture  takes too  much memory, and  you can see by  yourself what  size a
+picture may have that if fits in memory.
+Whilst working on the picture you can scroll  the screen by  pressing ALTERNATE
+and moving  the mouse. Unfortunately  No hasn't integrated a function that sets
+the screen-solution to cinemascope, so the x-range is always at 320 pixels.
+As he told me, it  is not possible to  change the solution to 384 pixels in one
+of the  next versions  due to the  fact that he  would have to adjust the whole
+bunch of functions to this screensize.
+...
+Juri of Newline  is now working  on a real  nice  toolbar. The GEM-look will be
+kicked out soon.
+...
+As I heard recently, DynaCore of tSCc is now working on a load-/save-module for
+Escape-Paint. It  will load and save all modules of the programm GEMVIEW, which
+are about 40 (at least that's the amount of formats I can load with it...)
+So Escape-Paint  will be  the painting-programm with the most possible picture-
+formats loadable. (strange word, never saw it before... ;))
+...
+I guess that this are all  improvements... (surely I  have forgotten  some, but
+look at  it by  yourself!!) You  can order the  latest issue of Escape-Paint at
+
+                                Norman Feske
+                            C„mmersw„lder Str. 19
+                               01189  Dresden
+                                  Germoney
+
+                or leech the latest version via Internet from
+
+                              ftp.uni-kl.de
+
+(I'm going to upload the latest versions as soon as they're released...)
+
+
+So that's all for this review. Keep cool and have a nice day... Und immer sch”n
+geschmeidig bleiben... ;)
+-------------------------------------------------------------------------------
+ tSCc - art factory                                   m.O.d. of .tSCc./23-02-97
+                                                        (upps, my birthday!?!?)
+-------------------------------------------------------------------------------

@@ -1,0 +1,78 @@
+
+                            Ghostlink
+                      by Kev "Taffy" Davies
+
+To say that ghostlink is a  unique  program would be just as good
+assaying ghostlink is a PC - Atari networking system. This little
+pair of programs allows your ST  (or  TT, or Falcon) to drive the
+PC as a slave thus  allowing  you  to  effectively access all the
+PC's mediums of storage. The upshot  of which is simply that with
+the use of a plain old every  day  null modem cable you can use a
+PC as a large (if somewhat cumbersome) disk drive.
+ Okay, so you know what  it  does.  By  now you are thinking this
+program is going to be a bugger to  set up envolving all sorts of
+dodgey and obscure options. How  wrong  you  are.  The  PC end of
+things is just a  little  DOS  based  file  which requires you to
+select the COM  port  you  are  interested  in  and  the speed of
+transfer.
+ The Atari end is  a  little  bit  more  interesting  with a well
+constructed GEM interface, although  Falcon  owners  do not get a
+special sculpted one :-( Shame. On this screen you can select the
+port you are reading from  (owners  of  MEGAs  and TTs can access
+more than one PC). You can also define the name of the device you
+wish to use as the link, A-Z. Once all of this is done it is just
+a matter of clicking install and away you go.
+
+The TEST.
+I tested it  using  my  younger  PC  owning  brothers machine and
+accessed his CD ROM drive to  play a little tracker music. Urika!
+It works. The world  of  CD  ROMs  here  I  come.....No, wait the
+documentation states that there a few bugs and you cannot run PRG
+files directly from CD :-( . However I suppose  I could  download
+from Atari CDs to Hard drive. Sigh!
+ Speed wise it isn't that bad,  its  no Linford Christie, but its
+no arthritic snail either. Even with a three meter cable the wait
+was negligible.
+ In conclusion certainly it is a  great little program to have if
+you have access to a Multi Media  PC  and don't fancy forking out
+dosh on a CD ROM for your Atari. Anyway Ataris are more versitile
+than PCs arn't they.
+
+Additional
+ If you are thinking about giving this program a  bash, but don't
+have a null modem cable here is how  to make one (each contains a
+9pin connector as most PCs have them.
+( Warning!! User at your own risk!!! )
+
+
+ST -> PC lead
+
+ ST Serial                                 PC COM1
+       ___________________________             ___________
+   13 \ o o o o o o o o o o o o o / 1       1 \ o o o o o / 5
+   25  \ o o o o o o o o o o o o /  14      6  \ o o o o /  9
+         ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ                 ÿÿÿÿÿÿÿ
+
+     ST pin No | PC pin No
+               |
+          2    |    2
+          3    |    3
+          1    |    5
+
+
+Falcon -> PC lead
+
+ Falcon Modem                              PC COM1
+       ___________                             ___________
+    1 \ o o o o o / 5                       1 \ o o o o o / 5
+    6  \ o o o o /  9                       6  \ o o o o /  9
+         ÿÿÿÿÿÿÿ                                 ÿÿÿÿÿÿÿ
+
+   Falcon Pin No | PC Pin No
+                 |
+            2    |    3
+            3    |    2
+            5    |    5
+
+
+That's all Folks!!

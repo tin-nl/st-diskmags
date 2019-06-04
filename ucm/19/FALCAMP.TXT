@@ -1,0 +1,108 @@
+{*f1FALCAMP 0.92 AND{*f0
+
+{*f1ANIPLAYER 2.08 MP3 REVIEW{*f0
+
+ñby EarX / ~fun~
+
+
+
+Some of you familiar with #atariscne might recall endless conversations
+about whether mp3 could ever be played on a standard falcon. MP2 was already
+playable with NoCrew's splendid ACC. Even on a standard Falcon the
+performance was very reasonable. Mp3 would be next to impossible to play in
+realtime, due to large lookuptables totally overpopulating the DSP RAM.
+
+Now the rumours started to appear about some French people trying to beat the
+odds. They really had some fine coding todo on this one. Now there were two
+attempts:
+
+1) SectorOne and splash (maker of FlaySID) developing a .ttp mp3 player and
+   eventualy an acc-version.
+2) Olivier Didier doing a mp3 player in his aniplayer.
+
+ñFalcAmp:
+
+First was heard about sectorone's attempt. A few months later I read some
+words about mp3 on atari.org's forums. There was a discussion going on
+whether mp3 on falcon would ever be possible. Evl posted a message that
+sectorone had made their first working realtime decoder!
+
+The next week followed version 0.80 of FalcAmp. Quickly I leeched the file
+from the the web. I had some mp3 (a skinny puppy one for anyone who's
+interested =;-)) hanging around on my harddisk. Some drag and drop action
+later and òthe ó.ttp ñpumped òmusic óinto ñmy òroom. ðWow!
+
+Sadly the sound didn't appear to be such high quality. The mp3 was a
+112Kb/s one, that wasn't the highest quality. Though it appeared to sound
+better when played on a GatesMobile. There were some clicks in the sound
+and it sounded a bit like a 20KHz sample.
+
+Whenever a newer version came out I got a disk ready and leeched it asap.
+Version 0.92 has got an honoured spot on my system. The sound quality
+improved alot and it can even be used in a multitasking environment.
+
+I have a CT2 in my system and the performance is quite good. You can easily
+use any normal application while FalcAmp is playing. The big advantage over
+crappy PC's is that the sound doesn't get fucked when the CPU load gets
+higher. ñFucking ace!ð
+
+SectorOne and splash did a great job on this one. They went against all odds
+and proved playing mp3's on a standard Falcon IS possible! A big advantage
+is that the sound is ónever interruptedð and can easily be used with
+multitasking on faster Falcon's!
+
+One downside is the soundquality which is not as good as it could be. Though
+the dudes at sectorone are already working on this. I can't wait!! What are
+you waiting for: if you still haven't got it, leech it from:
+òhttp://falcamp.atari.org!
+
+ñAniplayer v2.08
+
+Already before FalcAmp 0.80 appeared AniPlayer could decode mp3. The problem
+was that it needed the fastest falcon system even to just decode in
+realtime. The only real use of these early betas was to just decode to an
+òAVRð on disk and play that instead.
+
+Ofcourse this takes up heaps of space, about 50MB for an average length
+song. Do 50 songs and most of your harddisk is flooded with sample. Wasted
+space. Space better used by useful things like JPEG pornpics. Oops? Did I
+just say that? I meant ofcourse things like .S sourcecodes =;-)
+
+Okay: let's cutting da craps and continue with the review:
+
+Aniplayer is shareware and as a little motivation I decided to donate the
+mere 50FF to the author. It seemed to have payed off. The next version did
+play MP3 realtime!!! Well.. ehm, on an accelerated Falcon that is.
+
+Still it is impressive. There seems to be enough cpu-time left to 
+succesfully update the screen. I didn't get the chance to test it in a 
+multitasking environment, but I suspect that on a CT2 falcon 80% of the
+system is used up.
+
+The replay quality is excellent. I don't even have an óexternal DSP clockð.
+This is said to improve soundquality and reduce DSP load, the same goes for
+FalcAmp. But my compliments to the author. The sound is fingerlickin' good!
+
+Aniplayer certainly came a long way. It does play/show about every sort of
+sound, image or animation around and in high quality too. Additional
+features like framegrabbing and soundconversions are no exception.
+
+I'd say FalcAmp definetely does win when you're talking about just
+replaying MP3's, but Aniplayer is a program in a leage of it's own. The
+replay could be a bit less CPU intense, but it's in many ways a perfect
+replayer.
+
+
+
+This about rounds it up. MP3 is certainly a great new technology and it's
+nice to use it on atari. But it's quite funny that this actually became the
+standard for audio-exchane. ñMP3 qualityð isn't all that high.
+
+When doing higher bitrates MP2 offers superior soundquality AND it costs
+less time to decode. It runs perfect on a bog standard Falcon with óNocrew's
+óMP2 decoderð. Which is an ñACCð too. Damn great stuff.
+
+Stay tuned to the whole MPx development on atari. It could turn out to have
+a big future ahead.
+
+ñ<---------------------------------------------------------> EarX / fun <--->

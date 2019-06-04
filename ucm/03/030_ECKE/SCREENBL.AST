@@ -1,0 +1,58 @@
+ 
+                        ===============================
+                        Ein paar Tips zum Screenblaster
+                        ===============================
+ 
+Ich mîchte  hier weder Åber  die NÅtzlichkeit  des SB diskutieren  noch Werbung
+machen. Ich mîchte bloû ein paar Tips fÅr SB-User geben.
+
+Ich habe festgestellt, daû die viele mitgelieferte bzw. vom SB_VMG.PRG erzeugte
+Screenmodi am  oberen Rand eine  halbe weiûe Zeile  zu viel und am unteren eine
+halbe Zeile zu wenig haben. Hat man Ahnung vom Videochip,kann man zumindest die
+fehlende untere  Zeile beseitigen. In der  Datei SBLASTER.INF sind die Register
+in der Form
+
+struct {
+	long *adresse;
+	word inhalt;
+} Register;
+
+abgespeichert. Diese EintrÑge sind leicht zu finden. In der SBLASTER.INF stehen
+hinter  den  Daten immer  die Modusbezeichnungen  in ASCII-Form. Es  ist zu be-
+achten, daû dort nicht  die Namen aus der Auswahlbox stehen, sondern die Namen,
+aus denen  die Modi erzeugt  wurden. Hat man also im SB_VMG.PRG auf 1024*768 in
+16 Farben geklickt und daraus etwa 900*900*16 erzeugt,so "heiût" der neue Modus
+in der INF-Datei  auch "1024*786*16". Die richtige Auflîsung findet man 198 By-
+tes vor dem ersten Zeichen des Namens:
+
+struct {
+	word	x_virtuell,y_virtuell,
+			x_physical,y_physical;
+}
+
+Dort steht immer die maximale Koordinate und nicht die Pixelzahl (also z.B. 639
+bei 640 Punkten ). Irgendwo  zwischen diesen  Angaben und  dem Namen findet man
+einen Block mit vielen $FF, gefolgt von den Registern.
+
+Um nun die  halbe Zeile am  unteren Rand zu  ergÑnzen, muû man sich den Eintrag
+$FF,$FF,$82,$A4,xx,yy ( $FFFF82A4 = VBB ) suchen  und das Wort xxyy um eins er-
+hîhen. Fehlt  am rechten Rand  eine Spalte, so ist das Register $FFFF8284 = HBB
+zustÑndig. Man  sollte  nur  die  Register  $FFFF8284, $FFFF8286, $FFFF82A4 und
+$FFFF82A6 Ñndern, da diese Register  nur die Bildhelltastung Ñndern und das Ti-
+ming nicht beeinfluûen.
+
+Mîchte  man  SBLASTER.PRG packen, sollte  man  beachten, die "Konfiguration" im
+AuflîsungsmenÅ im ungepackten Zustand einzustellen, weil das Programm nicht ab-
+speichern kann, wenn SBLASTER.PRG gepackt ist. Nutzt man  wie ich aus unerfind-
+lichen GrÅnden Paddleport B, sollte man nach Benutzung von SB_VMG.PRG immer mit
+SB_MONI.PRG die Paddleeinstellung  korrigieren, da der Videogenerator diese auf
+Paddle A rÅcksetzt.
+
+Viel Spaû mit dem Screenblaster wÅnscht euch
+
+                                                     Apache of tnb / 05.04.1994
+
+P.S.: Wer mit dem Videomodegenerator interessante Modi erzeugt hat ( hohe Bild-
+      wiederholfrequenz  oder hohe  Auflîsung oder  beides ) kann ja mit mir in
+      Kontakt treten.
+E-Mail: aegaa@cluster2.urz.uni-halle.de

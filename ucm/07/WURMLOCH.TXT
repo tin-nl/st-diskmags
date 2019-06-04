@@ -1,0 +1,559 @@
+
+Das Wurmloch-Ph„nomen
+
+Ein kleines Programm namens "Elite Worm Hole Calculator" von Karl
+Foley, da ich mir rein zuf„llig aus irgendeiner Mailbox  downge-
+loadet hatte, erm”glicht auf genial einfache Weise die Berechnung
+von Wurml”chern. Anfangs sah ich noch nicht die sich daraus erge-
+benden ungeahnten M”glichkeiten, die dieses unscheinbare Programm
+fr das Gameplay mit sich bringt ...
+
+ * Einleitendes
+ * Elite Worm Hole Calculator
+ * Wurmloch-Listen
+ * Beispiel! mit der ASP Explorer
+                                                                 
+
+Einleitendes                                                     
+
+Wie sich bei dem  einen  oder  anderen  Elite-Abenteurer herumge-
+sprochen hat, weist ELITE II Frontier einige Bugs auf,einer davon
+scheint jedoch fr das Gameplay ausgesprochen ntzlich zu sein.So
+gibt es sogenannte "Wurml”cher", in die man mit wenig Treibstoff-
+verbrauch und erheblicher Zeitersparnis hunderte  von Lichtjahren
+vom  momentanen  Aufenthaltsort  aus hineinspringen kann, um dann
+durch einen weiteren Hypersprung an das gewnschte Ziel zu gelan-
+gen.
+
+Mit  Hilfe  eines  Programmes,  des  "Elite Worm Hole Calculator"
+von Karl Foley ist es m”glich, die dafr ben”tigten Raumkoordina-
+ten zu berechnen. Anstatt also den direkten Weg von  A nach B  zu
+nehmen,kann man durch einen Hypersprung ber einen Umweg C (Wurm-
+loch) wesentlich schneller ans Ziel gelangen. Das Programm sollte
+allen Lesern mit dieser Dokumentation zur Verfgung stehen.
+
+So lassen sich  z.B. Spionage- und  Raketen-Abschu-Auftr„ge  vom
+Zeitaufwand her in der Regel zwei-bis dreimal so schnell oder gar
+noch schneller erledigen !!    Somit drfte es bei dieser Art von
+milit„rischen Auftr„gen, die bekanntlich innerhalb einer vorgege-
+benen Zeit durchgefhrt werden mssen,keine gravierenden Zeitpro-
+bleme mehr.Der Weg ber die Wurml”cher macht es mit einem kleinen
+Raumflitzer nicht mehr notwendig,praktisch nach jedem Hypersprung
+aufzutanken.
+
+Hier gengt es,beispielsweise die ASP Explorer mit 16t Treibstoff
+(Hydrogen Fuel) zu beladen, durchs All zu dsen,den Auftrag abzu-
+schlieen und an den Ausgangsort (Operationsbasis)zurckzufliegen,
+ohne auch nur ein einziges Mal auftanken zu mssen.   Desweiteren
+umgeht man hie und da die zeitraubenden, manchmal  auch  nervigen
+Kampfverwicklungen mit Raumpiraten. Es sei denn,  man  beabsicht,
+seinen Elite Status h”herzuschrauben.Hat man ein gr”eres Schiff,
+so gestalten sich die Raumk„mpfe erheblich einfacher.  Doch  dazu
+an anderer Stelle mehr ...
+                                                                 
+
+
+ASP Explorer
+Ausrstung der ASP Explorer fr den milit. Einsatz:
+
+* Class 4 Hyperdrive
+* Shield Generators: 3 units
+* Scanner
+* Automatic Pilot
+* Radar Mapper
+* Naval E.C.M. System
+* Atmospheric Shielding
+* Military Camera
+* Front Gun Mounting: 1 MW Beam Laser
+* 16t Hydrogen Fuel
+
+
+Elite Worm Hole Calculator von Karl Foley                        
+
+Elite worm hole calculator V1.00 written in LC V5.5 ½ Hisoft
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+By Karl Foley @ 2:2501/101 | 51:502/5 | 90:102/105 | 100:105/4
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+Exchangeware Notice ;-)
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+This program is free, please enjoy! If you do like it then please
+consider registering the author for one of your Atari ST programs.
+If  you  haven't  written  any,  hurry  up  and  support  the ST!
+
+No profit making organisation may store or transmit this file in
+any way without the express permission of myself.
+
+This includes magazines, public domain libraries  and  commercial
+BBS systems.
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+Elite II /Frontier(¿, ½ and probably ¾ GameTek / Konami) contains
+a few bugs as we all know,  but  it does  contain one very useful
+one. If you attempt to hyperspace over approximately 655.73 light
+years  (approx. 81.92 galactic co-ordinates)  Frontier  wraps the
+distance back down to zero, re-enabling your hyperspace drive. If
+you get a  planet  very  near to this point you  can usually jump
+655.73  light  years very  quickly  and with the minimum of fuel.
+
+If you extend this idea you  soon  see  that you can take a short
+cut when hyperspacing  from one point to  another.  Consider  the
+following diagram :
+
+                               C
+
+                              / \
+                             /   \
+                            /     \
+                           /       \
+                          /         \
+                         /           \
+                        AÿÿÿÿÿÿÿÿÿÿÿÿÿB
+
+Normally, the quickest way to hyperspace from point  A to point B
+would be a straight line. If you use a suitable system at point C
+you can jump far quicker than you  could  directly  using minimum
+fuel.  This is true even if points A and B are relatively  close.
+
+ELITEBUG,lets you calculate the co-ordinates of point C with ease.
+I'm  just starting to program in C  and  this seemed like an easy
+project to start with.
+
+Suppose you wish  to travel from Facece  [0,-4] to Sol [0,0] 34.8
+light years.   Run ELITEBUG.TOS  and input  the  coordinates, for
+accuracy let's input the coordinates as Facece [0.4,-4.1] and Sol
+[0,0.2].    ELITEBUG calculates the intermediate jump point to be
+[81.7,5.6].
+
+Now  load up Frontier, leave dock at Facece and view the Galactic
+map.  Move to sector [81,5] and start looking for a system.You'll
+notice that the  hyperdrive  fuel  required  still  shows 'Out of
+range' as it's not quite over 655.73 light years.   With a bit of
+fiddling a suitable planet can be found in sector [82,5], Famiwa.
+I'm piloting a Boa Freighter(1300 Tons) with a class 8 hyperdrive
+and the display informs me that I need 9 tons of hydrogen fuel to
+travel this far.    Hit the hyperspace icon and I arrive after 18
+hours.
+
+All that's left to do is hyperdrive back to Sol at [0,0] and this
+takes  another 9 tons of fuel / 18 hours.  A quick bit of docking
+and we're at Mars High space station some 55 hours later. A round
+trip of some 1312  light  years  taking  just  91 hours including
+docking.
+
+I suppose this little prog could really ruin your Frontier 2 game,
+you've been warned.
+
+I've tried to write ELITEBUG in strict ANSI C for portability and
+both the C source and AtariST binaries are available for download
+from my BBS (+44-(0)394-271550 10pm-8am UK time only please).
+Source filename = EBUG_SRC.ZIP
+Atari ST binary filename = EBUG_BIN.ZIP
+
+The  binaries  have  been  compiled with Lattice C V5.52 with the
+processor type set to 'Any' - Hopefully this program will work on
+any 680x0 Atari!
+
+Any bug reports or constructive criticism to :
+Karl Foley - SysOp STandard QBBS +44-(0)394-271550
+             10pm-8am BBS           8am-10pm Voice
+
+             Network addresses
+             2:2501/101@FidoNet.Org
+             51:502/5@AtariNet.Ftn
+             90:102/105@NeST
+             100:105/4@TurboNet
+                  & RSN <g>
+             standard.embassy.com
+
+Coming soon : An Atari ST class 1 Fax program, email for details!
+Acknowledgements go to : Mark Betts at 2:253/500 for the original
+idea.
+                                                                 
+
+Wurmloch-Listen                                                  
+
+M”chte man sich den Wurmloch-Effekt zunutze machen, ist es  zwin-
+gend notwendig, sich vorher eine m”glichst komplette Liste zu er-
+stellen mit den Zielkoordinaten der imperialen bzw. der federalen
+Sonnensysteme und den zugeh”rigen Wurml”chern.  Hierzu orientiert
+man sich natrlich nach der "Galaktischen Karte",  wobei etwa 130
+imperiale Sonnensysteme fr den insbesondere milt„rischen Einsatz
+infrage  kommen, wenn man beispielsweise  fr das federale System
+arbeitet.     Die Anzahl der federalen Zielsysteme drfte in etwa
+vergleichbar sein.
+
+Sinnvollerweise  entscheidet  man  sich  fr    ein   sogenanntes
+"Basis-Operations-System", in der man die infragekommenden insbe-
+sondere milit„rischen Auftr„ge annehmen kann.      Mittels seiner
+mit dem Elite Worm Hole Calculator erstellten Liste kann man  nun
+die entsprechende Route von A nach B ber das berechnete Wurmloch
+festlegen.
+
+Weiter unten sind  nun die  Auftrags-Listen der Basis-Operations-
+Systeme  SOL  und  BETA HYDRI aufgefhrt, die sich  jeder einge-
+fleischte Raumpilot, der fr die galaktische F”rderation arbeitet,
+ausdrucken kann.   Infolge des stark bev”lkerten  SOL-Systems ist
+dort die Auftragslage deutlich ergiebiger.
+
+Arbeitet man hingegen ausschlielich fr das imperiale System, so
+sind diese Listen natrlich untauglich und man  mu  sich mit dem
+Elite Worm Hole Calculator eine eigene Liste erstellen.  Dringend
+empfohlen  als  imperiales  Basis-Operations-System  sind  FACECE
+[0,-4] (imp. Milit„rbasis) bzw. ACHENAR [1,-4] (Hauptsitz d. imp.
+Systems).
+
+Um mit den folgenden Listen arbeiten zu k”nnen, ist es  sinnvoll,
+diese vorher mit ST-Guide oder noch besser mit  einem Text-Editor
+die beiliegenden ASCII-Texte "beta.txt" und "sol.txt"  ausdrucken
+zu lassen. Die in den Listen mit zwei Sternchen '**' gekennzeich-
+neten Systeme weisen daraufhin,  da diese mehr als zwei Gestirne
+besitzen.
+
+Dies bedeutet,  da diese zumeist eine recht groe r„umliche Aus-
+dehnung  haben  und dadurch  das  Erledigen  von  (milit„rischen)
+Auftr„gen wesentlich mehr Zeit beansprucht.   Also ein  wichtiges
+Kriterium und  eine ntzliche Entscheidungshilfe bei der  Annahme
+von Auftr„gen jedweder Art.
+
+I.   BETA HYDRI
+II.  SOL
+                                                                 
+
+BETA HYDRI
+
+        Basis-Operations-System    BETA  HYDRI[0,-2]
+-----------------------------------------------------------------
+        Zielkoordinaten            Wurml”cher
+
+
+        [0,-4]  Facece             [82,-2] Anedfa
+                Sohoa              [82,-2] Anedfa
+                Vequess            [82,-3] Ceiool
+
+        [0,-5]  Aandti             [82,-3] Ceiool
+                Ackdati            [80,16] Ackliada
+                Aexeth             [80,16] Ackliada
+                Anacketh           [80,16] Exethex
+                Beuress            [82,-3] Ceiool
+                Bewaack            [82,-3] Ceiool
+                Miphifa            [80,16] Ackliada
+                Oltiti             [82,-4] Urackti
+                Tisola             [82,-4] Andliafa
+                Veareth            [82,-3] Ceiool
+                Vecanlia           [82,-3] Ceiool
+
+        [0,-6]  Ackhoess        ** [82,-4] Edsoio
+                Daioack         ** [82,-4] Edsoio
+                Enfaeth            [82,-4] Fafaho
+                Ethtieth           [82,-4] Edsoio
+                Lialaa             [82,-4] Andliafa
+                Soanti             [82,-4] Edsoio
+                Tiince             [82,-4] Urackti
+
+        [1,-2]  Luyten 97-12       [60,54] Latiay
+
+        [1,-3]  Ackqua             [58,56] Dauray
+                Hocancan           [59,55] Gremiay
+                Olcanze            [58,56] Dauray
+                Phiagre         ** [58,56] Dauray
+
+        [1,-4]  Achenar            [74,34] Beolay
+
+        [1,-5]  Ackzece            [74,33] Laexqu
+                Ayfati             [79,22] Laeded
+                Cephiol            [80,16] Ackliada
+                Essaa              [79,22] Laeded
+                Insoess            [79,22] Laeded
+                Urandol         ** [74,33] Laexqu
+                Zelagre            [80,16] Ackliada
+
+        [1,-6]  Anlaol             [80,16] Enmiwa
+                Liamiess        ** [80,16] Waessphi
+                Olexti             [80,16] Ackliada
+                Soodaack           [74,33] Laexqu
+                Zeessce            [80,16] Ackliada
+
+        [1,-7]  Endaeth            [80,16] Ackliada
+
+        [2,-2]  Ackandso           [2,80]  Enlaso
+                Acklave            [2,80]  Edarur
+                Anphiex            [2,80]  Phimiess
+                Edliaze            [2,80]  Enlaso
+                Laedgre            [2,80]  Enlaso
+                Liaququ            [2,80]  Enlaso
+                Zeancan            [2,80]  Enlaso
+
+        [2,-3]  Andcefa            [59,55] Gremiay
+                Aymigre            [38,71] Laandso
+                Fawaol             [38,71] Laandso
+                Ioarqu          ** [47,65] Enurho
+                Miolze             [38,71] Laandso
+                Ollaex             [47,65] Enurho
+                Tivercan           [47,65] Enurho
+                Waessol         ** [59,55] Gremiay
+
+        [2,-4]  Behoque            [59,55] Gremiay
+                Candaess        ** [59,55] Gremiay
+                Essliagre          [59,55] Gremiay
+                Exiool             [59,55] Gremiay
+                Intiol          ** [59,55] Gremiay
+                Liabeze            [59,55] Gremiay
+        [2,-5]  Aymifa             [69,42] Laedeth
+                Daceess            [47,65] Grewaho
+                Ethgrece           [69,42] Grewaho
+                Miolgre            [69,42] Grewaho
+
+        [2,-6]  Canayce         ** [74,33] Laexqu
+                Hobegre         ** [69,42] Laedeth
+                Iolia              [74,33] Aurar
+
+        [3,-2]  Caninve            [2,80]  Enlaso
+                Edlave             [2,80]  Enlaso
+                Greayqu         ** [2,80]  Enlaso
+                Iozegre         ** [2,80]  Enlaso
+                Urlaay             [2,80]  Enlaso
+                Wainze             [2,80]  Enlaso
+                Zeaex              [2,80]  Enlaso
+
+        [3,-3]  Adaa            ** [39,70] Beedar
+                Edethex            [38,71] Ariophi
+                Tiessgre        ** [39,70] Beedar
+
+        [3,-4]  Ceessze            [47,65] Daqued
+                Ethzefa            [47,65] Enurho
+                Famiso             [47,65] Enurho
+                Faphive            [59,55] Gremiay
+                Ioququ             [47,65] Enurho
+                Micanex         ** [47,65] Andmieth
+                Soveze             [47,65] Enurho
+                Tiacan          ** [38,71] Laandso
+                Urtize             [47,65] Enurho
+                Waceol          ** [47,65] Enurho
+
+        [3,-5]  Aackess            [60,55] Lahoze
+                Beurqu             [60,55] Lahoze
+                Hoethcan        ** [60,55] Lahoze
+                Inedol             [60,55] Lahoze
+                Miandze         ** [60,54] Canackcan
+
+        [3,-6]  Aenze              [67,45] Andveol
+                Andinol            [67,45] Grebelia
+                Dainfa             [67,45] Andaan
+                Grevegre           [69,42] Laedeth
+                Inena              [67,45] Andveol
+                Lacancan           [67,45] Andveol
+                Phifaess           [67,45] Andveol
+                Qubeso             [67,45] Andveol
+
+        [4,-2]  Essethlia          [2,80]  Enlaso
+                Phiexze         ** [2,80]  Enlaso
+
+        [4,-3]  Canzeve            [20,77] Titieth
+                Enquze             [20,77] Titieth
+                Greenso            [20,77] Titieth
+                Laanex             [20,77] Titieth
+                Laesscan        ** [19,78] Iobear
+                Olaygre            [19,78] Olgreol
+
+        [4,-4]  Anacka             [38,71] Titia
+                Laiogre            [39,70] Sogregre
+                Waarze          ** [47,65] Enurho
+                Waolex          ** [47,65] Enurho
+                Zeincan            [44,68] Edaho
+
+        [4,-5]  Ayqugre            [51,62] Lamied
+                Ceexda             [51,62] Lamied
+                Cetilia            [51,62] Enqua
+                Faened          ** [51,62] Enqua
+                Iobeex             [51,62] Enqua
+                Iohoze             [51,62] Enqua
+                Ioioqu             [51,62] Enqua
+                Tiancan            [51,62] Enqua
+                Urquay             [51,62] Enqua
+                Vefafa             [51,62] Enqua
+                Waayol             [51,62] Zetiand
+
+        [5,-2]  Arayze             [2,80]  Enlaso
+                Ayliaay         ** [2,80]  Enlaso
+                Bephiin            [2,80]  Enlaso
+                Soessex         ** [2,80]  Enlaso
+                Tigrecan        ** [2,80]  Enlaso
+                                                                 
+
+SOL
+
+        Basis-Operations-System    SOL [0,0]
+-----------------------------------------------------------------
+        Zielkoordinaten            Wurml”cher
+
+
+        [0,-4]  Facece             [82,3]  Quinve
+                Sohoa              [82,3]  Quinve
+                Vequess            [82,-7] Ethwaphi
+
+        [0,-5]  Aandti             [82,3]  Quinve
+                Ackdati            [82,3]  Quinve
+                Aexeth             [82,3]  Quinve
+                Anacketh           [82,3]  Quinve
+                Beuress            [82,-7] Ethwaphi
+                Bewaack            [82,-3] Ceiool
+                Miphifa            [82,3]  Quinve
+                Oltiti             [82,-7] Ethwaphi
+                Tisola             [82,3]  Quinve
+                Veareth            [82,3]  Quinve
+                Vecanlia           [82,3]  Quinve
+
+        [0,-6]  Ackhoess        ** [82,-7] Ethwaphi
+                Daioack         ** [82,5]  Ayhoack
+                Enfaeth            [82,5]  Ayhoack
+                Ethtieth           [82,5]  Ayhoack
+                Lialaa             [82,5]  Ayhoack
+                Soanti             [82,-7] Ethwaphi
+                Tiince             [82,5]  Ayhoack
+
+        [1,-2]  Luyten 97-12       [77,29] Edsoda
+
+        [1,-3]  Ackqua             [79,22] Quwada
+                Hocancan           [77,29] Edsoda
+                Olcanze            [79,22] Quwada
+                Phiagre         ** [79,22] Quwada
+
+        [1,-4]  Achenar            [79,20] Aquda
+
+        [1,-5]  Ackzece            [79,20] Aquda
+                Ayfati             [79,20] Aquda
+                Cephiol            [80,16] Wainve
+                Essaa              [80,16] Wainve
+                Insoess            [79,20] Aquda
+                Urandol         ** [79,20] Aquda
+                Zelagre            [80,16] Wainve
+
+        [1,-6]  Anlaol             [80,16] Wainve
+                Liamiess        ** [80,16] Wainve
+                Olexti             [80,16] Wainve
+                Soodaack           [80,16] Wainve
+                Zeessce            [81,12] Quinho
+
+        [1,-7]  Endaeth            [81,12] Quinho
+
+        [2,-2]  Ackandso           [64,52] Veliaay
+                Acklave            [69,44] Zelati
+                Anphiex            [64,52] Veliaay
+                Edliaze            [64,52] Veliaay
+                Laedgre            [64,52] Veliaay
+                Liaququ            [64,52] Veliaay
+                Zeancan            [64,52] Veliaay
+
+        [2,-3]  Andcefa            [74,34] Hoandla
+                Aymigre            [69,44] Zelati
+                Fawaol             [64,52] Veliaay
+                Ioarqu          ** [70,42] Waola
+                Miolze             [64,52] Veliaay
+                Ollaex             [70,42] Waola
+                Tivercan           [70,42] Waola
+                Waessol         ** [74,34] Hoandla
+
+        [2,-4]  Behoque            [75,32] Exhoeth
+                Candaess        ** [75,32] Exhoeth
+                Essliagre          [70,42] Waola
+                Exiool             [74,34] Micanack
+                Intiol          ** [75,32] Exhoeth
+                Liabeze            [75,32] Exhoeth
+
+        [2,-5]  Aymifa             [79,20] Aquda
+                Daceess            [75,32] Exhoeth
+                Ethgrece           [75,32] Exhoeth
+                Miolgre            [75,32] Exhoeth
+
+        [2,-6]  Canayce         ** [78,25] Howaphi
+                Hobegre         ** [75,32] Exhoeth
+                Iolia              [80,16] Wainve
+
+
+        [3,-2]  Caninve            [50,65] Essdaar
+                Edlave             [50,65] Essdaar
+                Greayqu         ** [50,65] Essdaar
+                Iozegre         ** [50,65] Essdaar
+                Urlaay             [50,65] Essdaar
+                Wainze             [42,70] Edessfa
+                Zeaex              [42,70] Edessfa
+
+        [3,-3]  Adaa            ** [64,52] Veliaay
+                Edethex            [59,56] Laveio
+                Tiessgre        ** [67,47] Zeana
+
+        [3,-4]  Ceessze            [63,52] Betila
+                Ethzefa            [67,47] Zeana
+                Famiso             [67,47] Zeana
+                Faphive            [71,41] Greolar
+                Ioququ             [67,47] Zeana
+                Micanex         ** [71,41] Greolar
+                Soveze             [65,50] Anurda
+                Tiacan          ** [67,47] Zeana
+                Urtize             [67,47] Zeana
+                Waceol          ** [67,47] Zeana
+
+        [3,-5]  Aackess            [70,42] Waola
+                Beurqu             [71,41] Greolar
+                Hoethcan        ** [69,44] Zelati
+                Inedol             [69,44] Zelati
+                Miandze         ** [75,32] Exhoeth
+
+        [3,-6]  Aenze              [74,34] Hoandla
+                Andinol            [75,32] Exhoeth
+                Dainfa             [75,32] Exhoeth
+                Grevegre           [75,32] Exhoeth
+                Inena              [74,34] Hoandla
+                Lacancan           [73,36] Wamiex
+                Phifaess           [74,34] Hoandla
+                Qubeso             [74,34] Hoandla
+
+        [4,-2]  Essethlia          [38,72] Quayphi
+                Phiexze         ** [38,72] Quayphi
+
+        [4,-3]  Canzeve            [50,65] Essdaar
+                Enquze             [48,67] Aywaeth
+                Greenso            [50,65] Essdaar
+                Laanex             [50,65] Essdaar
+                Laesscan        ** [48,67] Aywaeth
+                Olaygre            [58,58] Phiioay
+
+        [4,-4]  Anacka             [61,55] Urollia
+                Laiogre            [61,55] Urollia
+                Waarze          ** [64,51] Ayinol
+                Waolex          ** [65,50] Hoolol
+                Zeincan            [58,58] Phiioay1
+
+        [4,-5]  Ayqugre            [67,47] Zeana
+                Ceexda             [67,47] Zeana
+                Cetilia            [65,50] Hoolol
+                Faened          ** [67,47] Zeana
+                Iobeex             [67,47] Zeana
+                Iohoze             [65,50] Liaeda
+                Ioioqu             [65,50] Hoolol
+                Tiancan            [65,50] Hoolol
+                Urquay             [65,50] Hoolol
+                Vefafa             [67,47] Zeana
+                Waayol             [67,47] Zeana
+
+        [5,-2]  Arayze             [35,74] Essophi
+                Ayliaay         ** [32,75] Belami
+                Bephiin            [31,76] Lialaio
+                Soessex         ** [32,75] Belami
+                Tigrecan        ** [32,75] Belami
+                                                                 
+
+Ein Rechenbeispiel mit der ASP Explorer                         
+
+Man erh„lt auf  Beta Hydri  einen Auftrag,  der im System MIOLGRE
+[2,-5] auszufhren ist.  Der direkte  Weg dorthin fhrt  mit  der
+ASP Explorer ber mehrere  Hypersprnge, bei  denen fr  Hin- und
+Rckflug insgesamt etwa 50t Treibstoff (Hydrogen Fuel) verbraucht
+werden.
+
+Nehme ich hingegen  den "Umweg"  ber ein Wurmloch,  das auf  der
+galaktischen Karte mit den SHIFT- und den Pfeiltasten anzusteuern
+ist (hier:Grewaho in [69,42]), so  komme ich insgesamt mit nur 4t
+Treibstoff aus, die allein fr die Hypersprnge ben”tigt werden !
+                                                                 
+-----------------------------------------_Andreas Kolles_--------                                                                 
+

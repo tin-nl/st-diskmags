@@ -1,0 +1,75 @@
+                       ATARI-RELATED HARDWARE NEWS
+                    ---------------------------------
+
+In this  article we will take a  short look at new  TOS-machines, acceleration-
+cards and something  like that. The market is  still alive and there are coming
+many interesting things for your ST/STE and Falcon.
+
+-------------------------------------------------------------------------------
+
+THE "CENTURBO I" ACCELERATION-BOARD FOR THE FALCON
+-------------------------------------------------
+
+This new board  was developed  by the french company OXO CONCEPT. The technical
+datas of this new board:
+
+68030 up to 40 MHz
+68882 up to 40 MHz
+DSP   up to 40 MHz
+Video-acceleration (speed: 40 to 50 MHz)
+BUS   up to 20 MHz
+
+The board will cost 890 FF (about 260 DM/100  Pound) plus postage  and package.
+You can  use the  built-in service, which  costs 250 FF (about 75 DM/30 Pound).
+OXO CONCEPT estimates  an acceleration of up to 200%. Because the BUS with only
+20 MHz will slow down the  communication between  the 68030 and the rest of the
+board these values are a bit illusory.
+
+Here comes the test with GEMBENCH...
+
+GEM Bench v4.03             ½ Ofir Gal - 3 March 95
+===================================================
+Falcon 030 TOS 4.04
+AES v3.40
+GEMDOS v0.48
+MiNT not present
+Blitter Enabled
+NVDI not present
+Video Mode: 640*480*16
+LineF FPU installed
+Run and Malloc from STRAM
+Ref: F030 + FPU, 640*480*16
+>CPU & FPU frequence normal, without NVDI<
+============================================
+GEM Dialog Box:             3.335    138%
+VDI Text:                   3.445    139%
+VDI Text Effects:           6.915    148%
+VDI Small Text:             3.290    139%
+VDI Graphics:               6.945    165%
+GEM Window:                 1.595    137%
+Integer Division:           1.235    251%+-|
+Float Math:                 0.210    176%--|
+RAM Access:                 1.530    166%--| CPU
+ROM Access:                 1.270    169%--|
+Blitting:                   2.730    134%
+VDI Scroll:                 4.825    140%
+Justified Text:             3.920    137%
+VDI Enquire:                1.300    134%
+New Dialogs:                4.300    136%
+============================================
+Graphics:                            140%
+CPU:                                 190%
+Average:                             153%
+
+The value  of the integer-division  of 251% shows that the  acceleration of the
+CPU does  a very good  job together with  the cache  in pure  calculations. The
+final value of only 190% results from the bad combination with the acceleration
+of the 68882.
+
+For more  informations you  should read the  article in the TOXIC Magazine # 12
+which was written by White Ninja / Adrenaline. I've taken this informations out
+of this article and badly translated to english. Because it's about 7 years ago
+that I had french  in the school I hadn't the motivation to translate the whole
+article for you, because it's a fucking hard language...
+
+----------------------------------------------------------------Moondog of tnb-

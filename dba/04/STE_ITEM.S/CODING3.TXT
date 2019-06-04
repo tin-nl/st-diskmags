@@ -1,0 +1,45 @@
+ASM. CODING 3
+                              ---------------------
+                              ----    CODING   ----
+                              ---------------------
+                              --- ASSEMBLER  #1 ---
+                              ---------------------
+
+   Well, in this article I don't tell you anything miraculous (cause I am
+not able to)... I tell you about one new register in STE. This register is
+ $ff820e.
+   With this register you can tell the computer, how many words you want to
+add to width of the line. For example: If you put a value of 80 to $ff820e
+(move.w #80,$ff820e), then there will be 80 words "behind" every line.
+   So the screen will be twice as big as usually (you, don't see it, but
+there it is)... This trick is really good specially when you are making
+scrollers. And if you use the hardware-scroller (I'll tell you what it is
+in my next assembly-course) at the same time, the scrolling is very, very
+fast.
+   Hmm, did you get it? I am afraid that I am not so good to explain this
+in English... Let's take another example. If you put a value of 4 to this
+register ( move.w #4,$ff820e ), there will be 16 pixels in right part of
+screen (4 words=16 pixels). Normal line is 80 words wide ($ff820e=0), but
+now one line is 84 words wide ($ff820e=4). You can copy a font to this new
+area, and no-one will see it.
+   All right I give up. Here comes a little example:
+
+     clr.l   -(sp)                   ;Supervisor
+     move.w  #$20,-(sp)
+     trap    #1
+     addq.l  #6,sp
+
+     move.w  #80,$ff820e             ;Now the line is twice as wide as
+                                      usually (80+80=160).
+
+     clr.l   -(sp)                   ;Back to Devpac (You use Devpac too?)
+     trap    #1
+
+   All right this course was not so good, but I am so tired to write these
+articles now. Hope you can understand this anyway...
+
+
+
+
+
+                                                            SANDMAN / FLASH

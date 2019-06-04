@@ -1,0 +1,41 @@
+ 
+                                 TOS2DISC
+                                 --------
+
+(Redax: Dies hier ist gleichzeitig die Anleitung zum Prog, welches ihr auf der
+        Stuffdisk findet. Thanx to Gnort...)
+ 
+TOS2DISC ist  ein  kleines  quick-and-dirty-Programm, daû nur fÅr _einen_ Zweck
+gedacht ist: Es  soll als  Mini-Shell fÅr  selbstentpackende  Programme (*.TOS)
+dienen.
+Wenn man  von seinen  freundlichen Contacts  diese selbstentpackenden Programme
+bekommt, ist das Åbliche  Procedere so: TOS-File  auf die Ram-Disk (oder Parti-
+tion) kopieren, starten  und entpacken  lassen, testen und  dann (wenn das neue
+Programm was taugt) auf eine Disk kopieren, TOS-File wieder lîschen.
+Dies hat den Nachteil, daû  das TOS-File wertvollen  Speicherplatz auf der Ram-
+Disk verbraucht. Manche groûen TOS-Files passen gar nicht zusammen mit den ent-
+packten Daten auf die RAM-Disk (vor allem bei den normalen STs).
+FÅr diesen Fall ist das Programm gedacht.
+Die Bedienung erfolgt  Åber 4 Dialogboxen, wobei ABBRUCH immer zum Programmende
+fÅhrt: Als erstes eine  Mini-Anleitung. Dann sucht  man  die  Zieldisk (zumeist
+Ram-Disk) mit dem Fileselector aus. Dann wird das  zu startende TOS-File ausge-
+wÑhlt. Zuletzt werden  beide Parameter noch  mal  gezeigt  und  dem  entsetzten
+Benutzer noch  eine Fluchtmîglichkeit  geboten. Ansonsten wird das TOS-File ge-
+startet und auf die Zieldisk entpackt.
+Da das Programm  wirklich  nur ein  Notbehelf ist  und mit GFA 2.02 zusammenge-
+schustert wurde, ist  es weder  sauber  programmiert noch  multitaskingtauglich
+noch sonstwas. Wenn irgendwas schiefgeht, gilt der Grundsatz: Benutzung auf ei-
+gene Gefahr. Es gilt  das Lucy-van-Pelt'sche: "This letter absolves me from all
+blame" ;-).
+Die paar Zeilen  Sourcecode lege ich bei. Wer will, kann das  Ding beliebig er-
+weitern.
+Ich mîchte nicht  verschweigen, daû jeder  Command-line-Interpreter das gleiche
+leistet. Ich empfehle  hier die MUPFEL. Aber  wer GEMINI  benutzt, hat wohl die
+obigen Probleme (zu wenig Speicherplatz) eh nicht.
+Sorry an  MOONDOG, dem ich eine  kaputte Vorversion geschickt  habe. Murphy war
+ein Optimist...
+
+-------------------------------------------------------------------------------
+                                                                          Gnort
+-------------------------------------------------------------------------------
+une

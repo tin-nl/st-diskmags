@@ -1,0 +1,56 @@
+                                                                                 {*f0
+-------------------------------------------------------------------------------  {*f1
+      MODRIPPER V3.41 / 1.10.1996                                                {*f0
+-------------------------------------------------------------------------------
+
+autor   : Crashman / Spain
+status  : Sourceware / Postcardware (send ASS-sources or postcards to the autor
+address : 'Crashman'
+          Jordi Mestres Ruiz
+          C\San Cristobal No25
+          08800 Vilanova I La Geltru
+          Barcelona
+          Spain
+
+Yo! This is the first right ripper for the Falcon! You surely know the good old
+ADRENALINE Ripper  which was based  on ST and  runs also on Falcon but  without
+supporting any special module-formats or picture-formats which were used on the
+Falcon. So you must use the XGRABBER to get pictures or other crude ways.
+Now this problems are  history, because this new ripper  from Spain (cool eh?!)
+offers you the possibility to ripp tons of module-formats and pictures.
+The program is GEM-based and very easy to use. You have  to load the file which
+you will ripp into  the program  and then you  can select for which formats the
+prog  should search, you  can also use the  option to search for all modules in
+the file, but this needs some more  time and if you know what the mod has for a
+format you don't  need this option. And then the prog starts... mostly it finds
+the modules.
+The program supports the following formats:
+
+modules: 4, 6 & 8 channel  modules, XM, MTM, 669, DMF, MGT, GTK, S3M, STM, NPK,
+         FAR, PS16, OKTA, DTM, TCB, MDL and MED/OctaMED
+         (it finds also ULT but cannot save them)
+grafix : EGG, FLC  & FLI  animations, GIF, IFF, INDY, JPEG, PCX, PIX, PNT, TG1,
+         TCP and IIM
+
+It supports also the  ICE and ATOMIK packers (in the latest version) but if the
+file are packed  with other crunchers you must depack them before with a multi-
+depacker or so. I think their must  be more packers supportet, like SPEED-Pack,
+FIRE-Pack  or the SENTRY packer  but we will see  what the autor will do in the
+future...
+By the pictures you have the problem that the program finds only the header but
+not the end of the picture and so it saves a lot of shit together with the pic,
+but it works.
+I for myself would wish that the program can search also for the old ST-picture
+formats like Degas Elite or NeoChrome Master.
+It has also some problems by single modules but is  doesn't matter because only
+a few of the included modules were used on the Falcon.
+Hum... what  I should  say? The  program works  fine (I've  already ripped some
+stuff) but it could contain some more features. I would like to see the ability
+to ripp also ST-demos, so  sector-reading would be nice and also to possibility
+to search for packed datas. But  also this  time the  prog is very  usefull for
+ripping all the Falcon-demos off (Even if it  can't ripp modules  which use the
+player by Flips / DNT Crew because this player changes the header of the mod.).
+Because the  prog is for  free you should  get it and please send a postcard to
+the autor!
+
+----------------------------------------------------------------Moondog of tnb-

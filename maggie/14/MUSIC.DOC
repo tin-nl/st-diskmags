@@ -1,0 +1,169 @@
+0660103030566
+9[....................................................]
+Ä
+ÖMusicMaestroPlease!Ä
+
+ÑOrwhatappearstobewhatontheFalconTrackerscene..Ä
+
+Theveryfirstthingthatoccuredtomanyprogrammersassoonas
+theysettheirhandsonaFalconwas,'whatcanwedowithall
+thesenewaudio-relatedgoodies,an8-channelsoundchipÑandÄa
+DSP,Imean!!'ThefirstFalconspecificsoftwareIreceived,a
+fewdaysafterfirstgettingthemachinewasGriff'sfirstDSPMOD
+replayroutine,averysimpleprogram,buteventhen,itwas
+outperformingestablishedpackagessuchasÑAudioSculptureÄonthe
+STEforaudioquality..Fromthere,justaboutanyonecapableof
+usinganassemblerseemstohavecomeupwiththeirownversionof
+DSPreplayforfourchannelmodfiles..Latterly,someeditorsand
+composershavestartedtoarrive,atleasttwoofthesehavinga
+full8-trackeditingcapability..
+
+Herefollowssomebriefreviews/commentsonsomeofthemore
+noteworthyonestohitmyharddrive..
+
+Firstly,theever-so-famousGriffproggie,whichislaunchedasan
+applicationandcontainsthesimplestoffront-ends,ie,none..It
+ishowever,abletoreplaystandard4-channelMODsatarateof
+50khz,andadditionallyisabletoutilisetheDSPforboosting
+thesoundqualitytoapseudo16-bitbyinterpolatingthe
+samples..WhenIfirsthadmyFalcon,thisprogrammanagedto
+impressthesocksoffpeoplewhoclaimedthattheycouldhear
+thingsinmodulefilestheyhadneverheardbefore..Averygood
+start..ItisstilloneIgetoutoccasionally,butlessnow,as
+othertrackershavesupersededit..Therewasalittlebitof
+controversyoverclaimsthatGriffhad'lifted'thesourcecode
+forDSPreplayfromDougLittleofthePixelTwins/BlackScorpion,
+butitturnsoutthatthisstoryhadbeenoverplayedsomewhat..
+
+Anotherearlyessentialitemwasaplayerthatcouldworkasan
+accessoryinthebackgroundwhilstyouwereworkingonanother
+taskintheGEMenvironment.Anearlyanswertotheseprayerscame
+intheformofÑProplay1.0Äwhichdidthatjob..ÑProplayÄwas
+somewhatdifferentinapproach,usingmoreconventionalreplay
+techniques,andscalingdownthereplayratetoaround30khz..At
+thatlevel,thelossinsoundqualitywasnottoonoticeable.
+Anotherconsequenceofusingthisplayerwasa30%dropinspeed
+onthedesktop,nottoobadontheFalcon..Thisprogramisstill
+inmyrootdirectorybeingcompactandco-operativewiththerest
+ofmyGEMapplications..IunderstandthatbetterDSPbased
+versionsnowexist,althoughattimeofwriting,I'veyettosee
+oneofthese..
+
+Oneofthefirst'fancy'replayprogramswastheÑStar-ReplayÄ
+programbytheAlienCrackingFormation..Thisplayerwasdesigned
+forallAtarimachinesfromSTFMtoFalconwithvariablereplay
+ratesdependingonhowaudiocapableyourparticularAtariwas..
+Version3.42workswiththeFalconat50khzandgivesyouarange
+ofdistortingscrollersandindicatorbarsinthetime-honoured
+style..OntheSTE,itcanhandle50khz,butnottoowell,anda
+lotoftheeffectsonscreenarelost..
+
+Aweirdone..SomeonetookituponthemselvestoconvertÑTCB
+TrackerÄtotheFalconThelogicofthatdecisionstillbypasses
+me,asnourgentlyneededimprovementstothesoundqualityhave
+beencarriedout..Yougetafasttripbacktothegoldendaysof
+1990withthereplayqualitykeptat8-10khzcracklemode.You
+couldevenpretendyouhaveanearlyversionoftheprogramas
+conversiontotheFalconmakesiterraticandpronetocrashto
+saytheleast..Youhavetoignorethemultipleerrormessages
+thatappearasnineoutoftenarewrong,itisthetenthone,of
+course,youhavetoworryabout..Oneonlyfornostalgiafreaks
+andpeoplewithembarrassinglylargecollectionsofTCB-Modfiles
+(helpp!)..
+
+Thefirstpropereditor/composerprogramtomakeitswaytothe
+FalconwasaconversionoftheÑProtracker2.0ÄprogrambyHans
+RundeandKarlOygard,theconversionbeingdonebysomeonecalled
+theFalconCommando..EverythingfromtheSTEversionisstill
+there,includinganSTE50khz8-bitreplayandfullediting
+facilities..AnyonefamiliarwithSTversionsofÑProtrackerÄwon't
+findanythingoutofplace,buttheywon'tfindanyenhancements
+either..ÑProtrackerÄshouldhaveaplaceonanyone'sFalcon,asit
+canplaycertainAmigaMODsthataredifficultforotherplayers..
+Whenyouexit,ittendstoleavethedesktopinaweirdghost-
+effecttwocolourlow-ressortofway..
+
+ÑMentionhastobemadeofapossibleeditorprogramalsobearing
+thename'Protracker'byGriff..Thishasallegedlybeennearlyor
+completelyfinishedforsometimebuthasnotbeenreleased..it
+seemstohavegoneintohidingwithanumberofotherGriff
+productionsfortheFalconwhilstheconcentratesonhis
+Universityfinalyear..
+Ä
+Thefirstworthycontenderforafullyfeaturedsoundtrackeron
+theFalconisthe0.9releaseversionofÑOctalyserÄ..Thisis
+basicallyanSTEderivedprogramcapableofuptoeight
+simultaneoustracksonthatmachine,buthasnowbeenextendedto
+caterfortheFalconaswell..ÑOctalyserÄshowsit'sSToriginsas
+theuserinterfaceisatrendyversionofthecommon-or-garden
+noisetrackertypefoundontheST(E)..Evenwitheightchannelsof
+replayimplemented,onlyfouraredisplayedonscreenatanyone
+time..Agreatdealofcaretoensuremaximumcompatibilitywith
+asmanydifferentfileformatsaspossiblehasbeentaken,andit
+respondedwelltosomePCÑFast-TrackerÄderivedmodules..Future
+add-onsaredonebyauniquemethod,ofadd-onprogrammodulesto
+themainbodyoftheprogram,asandwhentheyareready..There
+areabouthalf-a-dozenwiththeprogram,twoofwhichareFalcon-
+specific..
+
+However,ithasyieldedoneortwobugs,particularlyinloading
+ofmoduletuneswhereanon-automaticformatselectorisused..
+Forexample,ifyoudecideaMODisfourchannelsandfifteen
+samples,butgetitwrong,thenÑOctalyserÄisquitelikelynotto
+playit..Also,ÑOctalyserÄismostdefinitelyÅnotÄcrash-proof..I
+manageditwithahome-producedmodfilethatreachestheparts
+ofatrackerthatmostothermodfilesdarenotgonear!!
+
+Generally,thishasabrightfuture,asitlookslikecontinued
+developmentwillyieldbetterandbetterresults..Thisprogramis
+shareware,andtheunregisteredversionhascertainfeatures
+disableduntilyoudo..AgoodoneifyouowneitheranSTEora
+Falcon..
+
+Lastlyforthissession,thefirsttechnicallyadvancedtracker
+andeditorfortheFalcon,theskilfully8-channelÑDigital
+Tracker.ÄThisisuptoversion2.15,andisbyMCJeeofthe
+KamikazesinFrance..Inadditiontothestandard4-channel
+format,itcanloadinandplayseveralnon-STformatsincluding
+OctamedontheAmiga,andFast-Track6or8channelmodsfromthe
+PC..
+
+Ithasaverysmartfrontendwhichisfull-screenonmyRGB
+monitor,andevenworks100%onaVGAmonitor?Afeatureofthe
+latestversionsisthatsampleeditingisincluded,althoughthis
+isenabledonlyontheregisteredversion..Inversions2.15and
+above,itispossibletogetatthesampleeditingsuiteby
+scrollingdownthebottomofthescreenasitis'hidden'inan
+areaofvirtualscreen..VeryNice!Also,anoptional(upon
+registering)16-bitmodeforsamplesisavailable,replayquality
+isgood,especiallywiththerightsortofloud8-channelmusic!
+
+Itcomesveryclosetobeingoneofmyfavourites,apartfromone
+ortwoirritatingbugs..Oneortwodistortioncommandsgenerated
+withinModfilesarehandledslightlyoddly,notamajorproblem..
+Theothermoreannoyingthingisthereplacementofaperfectly
+goodGEMfileselectorwhichworks,withonewrittentowork
+withintheprogrambytheauthor,whichdoesnotlikethatmany
+ST-formattedfloppydisks,producingunreadableandunloadable
+garbageinthedirectory..Althoughitisgettingbetterwitheach
+newversion,theprogramcanlockupcompletelysometimes,
+necessitatingareboot..oncethesehavebeensortedout,then
+ÑDigitalÄwillbeÑtheÄfavouredprogramonmyFalcon..
+
+ThereisevenaÑDigiplayÄdeskaccessoryaspartofthepackage,
+butthisseemstohogthedesktopforitself,notbeingcontentto
+sitquietlyinthebackground..
+
+Anewversionseemstopopupeveryfewweeks,sorapid
+developmentisongoing..Anotherquirkofthisprogramisthat
+uponexiting,thesoundsystemispreventedfrommakinganymore
+noiseuntilyouresetthemachine..Apointtobearinmindifyou
+gostraighttoanothernoise-makingprogram..
+
+Allfornow,astheysay..Whatabouta16-channelplayer/editor?
+itshouldbepossibleontheFalcon,iftheycando8channelson
+theSTE..Pushingbacktheboundariesofthepossibleiswhat
+Atariprogrammingisallabout!!
+
+(C)CIHMarch'94..
+

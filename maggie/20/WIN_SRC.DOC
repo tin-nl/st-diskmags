@@ -1,0 +1,95 @@
+/*
+                        TOP SECRET Microsoft(c)  Code
+                        Project:          Chicago(tm)
+
+  Projected release-date:
+
+  Summer 1994^H^H^H^H^H^H^H^H^H^H^HSpring 1995
+
+*/
+
+#include 
+#include 
+#include 
+#include "win31.h"
+#include "evenmore.h"
+#include "oldstuff.h"
+#include "billrulz.h"
+
+
+/*
+  Reference:
+  Internal memo #99281-95 from:
+                        William H. Gates III
+                            to:
+                        Executive managers Chicago(tm)-project
+
+  William H. Gates III wrote:
+  "I have serious doubts about the 'EASY' installation-definition. It 
+   might prevent customers to think that they actually bought 
+   something _good_. Therefore I want the installation-definition to 
+   be 'HARD'.
+
+
+                                                Carry on,
+                                                        God^H^H^HBill
+  "
+*/
+#define INSTALL = HARD
+
+void main()
+{
+        while(!CRASHED)
+        {
+                display_copyright_message();
+                display_bill_rules_message();
+                do_nothing_loop();
+                if(first_time_installation)
+                {
+                        make_50_megabyte_swapfile();
+                        do_nothing_loop();
+                        totally_screw_up_HPFS_file_system();
+                        search_and_destroy_the_rest_of_OS/2();
+                        hang_system();
+                }
+                write_something(anything);
+                display_copyright_message();
+                do_nothing_loop();             
+                do_some_stuff();
+                if(still_not_crashed)
+                {
+                        display_copyright_message();
+                        do_nothing_loop();
+                        basically_run_windows_3.1();
+                        do_nothing_loop();
+                        do_nothing_loop();
+                }
+        }
+
+/*
+  Reference:
+  Internal memo #99683-95 from:
+                        Executive managers Chicago(tm)-project
+                            to:
+                        William H. Gates III     
+                     
+  Executive managers Chicago(tm)-project wrote:
+  "Dear Sir,
+   Since we have found that this last piece of code within the 
+   'if'-statement will never execute, we descided NOT to include it in 
+   the final code. This way we will save atleast another 5 megabytes 
+   of consumer-diskspace!
+
+                 Thank you for listening to us,
+                     the executive managers of the Chicago(tm)-project
+  "
+*/
+/*
+        if(still_not_crashed)
+        {
+                write_cheer();
+                finished();
+        }
+*/
+        create_general_protection_fault();
+}

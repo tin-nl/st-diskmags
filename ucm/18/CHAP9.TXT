@@ -1,0 +1,170 @@
+ò                        _                            _____
+ò                       | |                          !___  |
+ò                       | |ðó CHAPTER 9 : USEFUL STUFFðò   __! |
+ò                       | |                           |  __!
+ò                       '-'                           '-'
+ò                       .-.                           .-.
+ò                       '-'                           '-'
+
+Just some tricks to help you on your way to make demos, games, whatever.
+
+EVEN directive:
+
+This is not for structurising or anything. This is used to put the following
+data on a word-edge. The basic 68000 generates an error when it reads/writes
+(long)words on byte boundaries. So when you use many single bytes or buffers
+that contain an odd number of bytes, you should make sure all following
+labels are word-aligned!
+
+The usage is very simple:
+
+byte:   DC.B    0
+        EVEN
+label:  DC.L    "THIS IS EVEN"
+
+In the TEXT section this isn't necessary. The assembler automaticly word-
+aligns everything there.
+
+Assembler options:
+
+In for instance DEVPAC you have the OPT directive:
+
+        OPT     D-                              * Don't put labels in PRG.
+
+This is very handy for release versions of your stuff as well as for reducing
+the size of your executable. The labels labels in the executable take up some
+extra space.
+
+        OPT     P=68000                         * No CPU instructions >68000
+
+This is handy when you develop on a 68020 or higher and also want to make
+executables for simple and plain 68000. Sometimes you don't even notice using
+some 68020 addressing modes, when in fact these don't work on 68000. Now the
+assembler will process error-messages when it encounters these.
+
+        COMMENT HEAD=%111                       * code, alloc and data in TT-RAM
+
+When you've got a TT, Falcon with TT-RAM or a clone, this is very nice stuff.
+TT-RAM is always faster than using ST-RAM, especially so on the Falcon when the
+VIDEL is in a high resolution and the SDMA is on.
+
+But beware!!! You should never put soundbuffers or screenbuffers in TT-RAM!
+The videochip and soundchip can only access ST-RAM. They have 24-bit address-
+space you can address from 0 to 16MB.
+
+This is come accross by using the Mxalloc gemdos call:
+
+        move.w  #0,-(sp)                        * Indicate ST-RAM only!
+        move.l  #10000,-(sp)                    * Give buffersize.
+        move.w  #$44,-(sp)                      * Give gemdos code.
+        trap    #1                              * Execute gemdos-trap.
+        addq    #8,sp                           * Get parameters off the stack.
+
+Random routines:
+
+A machine can't actually figure out some random number. It's not as chaotic as
+the human mind and especially not as weird as mine =) but you can use simple
+tricks for simulating random numbers.
+
+To initialize the random routine:
+
+        move.l  #$3e8f356b,d0                   * Just as a startvalue.
+
+When needing a new random value, execute this:
+
+        rol.l   d0,d0                           * Rotate it d0 MOD 32 times.
+        addq.l  #7,d0                           * Add 7 to it.
+
+It's not very exact, but it's ideal for quick and dirty stuff. It's ideal stuff
+for simple things like starfields, simple textures and more. I have the amiga
+dude Azure to thank for this. It's dead smart.
+
+A more accurate approach would be this:
+
+        move.l  d0,d1                           * Store d0 temporarily.
+        mulu.w  d0,d0                           * Multiply d0*d0.
+        eor.l   d1,d0                           * Exclusive OR it.
+        addq.l  #7,d0                           * Add constant to it.
+
+A bit more intensive, but far more exact noisegeneration.
+
+Triple buffering:
+
+How do coders achieve smoother framerates in flexible graphics engines? In
+realtime graphics you want to move from 50fps straight down to 25 fps when
+something more happens on screen. This is the problem with waiting for the VBL
+to occur every animationframe.
+
+When your engine needs just over the interval between two VBLs. Say only 1.1
+times that amount, the waiting for the VBL will increase this amount to 2.
+That means that 50/2 = 25fps. Hhhhmmm. That's lousy. And it looks especially
+jerky when it drops from 50fps downto 25. uGlY!
+
+Hhhmmm.. Wasting a relativily large amount of time sucks, but how do not wait
+for the VBL to occur? Surely this means introducing flickering into our screen?
+
+Not true! By using an additional screenbuffer and swapping through your three
+screens you won't overdraw the active physical screen => no flickers!
+
+Doing this is easy and why some demo-coders still haven't implemented this
+technique is a big question. Simply rotate through your screens like so and
+don't wait for the VBL anymore!
+
+        move.l  screenaddress1,d0
+        move.l  screenaddress2,d1
+        move.l  screenaddress3,screenaddress
+        move.l  d1,screenaddress3
+        move.l  d0,screenaddress2
+
+If you drew to screenaddress1 this frame, then you can use d0 to install the
+new physical screen:
+
+        lsr.w   #8,d0                           * Get mid byte in low byte.
+        move.l  d0,$ffff8200.w                  * Kick in the new screen.
+
+Illegal instruction:
+
+This is for debugging purposes only! When you want to be absolutely sure
+about your programflow not getting into any nasty corners, illegal
+instructions are a must! When the CPU encounters the "illegal" opcode it
+executes an exception. Normally this throws four ugly boms on your tube =)
+
+Illegal instructions can (should) be used like this:
+
+        bsr     DO_NASTYSTUFF                   * Call a routine.
+        tst.w   d0                              * Test if returned ok.
+        bpl.s   all_clear                       * If positive -> ok!
+        illegal                                 * Unexpected result!
+all_clear:
+
+Take note that bombing your machine doesn't have to cause anything bad, but
+when you've replaced all kinds of interrupt routines and taken you own
+screen this might not be real nice. The 4boms exception doesn't restore
+screenaddresses or interrupt-routines, so watch out!
+
+Also, when you've debugged your code, you should ultimately replace the use
+of "illegal" with error-handling calls.
+
+Summary:
+
+Even directive:        Allows the coder to always make data word-aligned.
+Opcode:                Short for "operation code". This is the code a
+                       certain instruction is assembled into.
+OPT:                   Assembler directive that can be used to enable/
+                       disable certain assembler options.
+Random routine:        More like pseudo-random actually. This is a way of
+                       simulating chaos. One specific "seed" value inputted
+                       in the random routine always results in the same
+                       result.
+Triple buffering:      Often used in realtime games or demo-effects. This
+                       is flickerless and gives a smoother display than
+                       double buffering. Triple buffering owes it's name to
+                       the use of three screenbuffers.
+TTram:                 Happy owners of an Atari TT (hence the "TT" in TTram)
+                       or a good Falcon-accelerator can be souped up with
+                       fast-ram. This RAM is free from accesses by the video
+                       and soundchips and can be accessed with full 32 bits
+                       at once. Atari has provided some bits in the
+                       executable-header that enables to use or neglect the
+                       TTram.
+

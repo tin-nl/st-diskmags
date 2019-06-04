@@ -1,0 +1,171 @@
+FONTS PART 1
+                      * HOW TO PAINT A NICE FONT... *
+
+                     PART #1 : INTRODUCTION AND BASICS
+
+Hello people! This is the first part of my course on painting a font. In 
+this course I will tell you some things about the technics used in painting 
+a font, the tricks you can use, some typography and other useful things. If 
+you feel that I have got it wrong, or if you've got any additions to my 
+text, or if you just want to swap/chat or contact us, please write to:
+
+                            HAVOC of the GIANTS
+                               Ravenstraat 4
+                             6909 DV Babberich
+                              The Netherlands
+
+Well then, let's start the show...
+
+1.1. INTRODUCTION
+
+In the beginning there was nothing. 8 by 8 pixel scrollers were amazing, 
+rasters were a new invention. People thought that the ST could only produce 
+some 'Do-Sound'. Until the flood came. The flood of demos. In less than a 
+year, there were at least 4 new demos a month. Everybody released as much 
+as they could, even if it was crap. Everybody used Mad Max sound. Everybody 
+used the 'Knighthawks'-font. But after some 3 to 4 years of only bullshit 
+releases, some people came to the vision that demos are art. And that they 
+are one of the very few artforms which you have to do in a team. The teams 
+already existed, but now there is to be born a new type of member. The 
+design specialist. He has got to check all parts of the demo. Are the 
+effects original? Is the music beautiful? Are the fonts and pictures good? 
+
+After this person has come, he will notice that the visual part of the demo 
+is the most important. It is, after all, what you're looking at all the 
+time...
+
+Therefore, it is important to have good visuals. And because the main part 
+of the visuals exist of scrollers and text, fonts are important. If you can 
+paint a font, you can quite easily paint a logo. And from there you can go 
+out and try what you can do more.
+
+1.2. REQUIREMENTS
+
+For this course, you need some elementary things. I will list them here.
+
+a) An Atari ST/STe/TT (color monitor)
+b) A drawing package with zoom function
+c) A lot of patience
+
+A) shouldn't be a problem, otherwise you wouldn't read this. As for b), I 
+strongly advise you to use CrackArt because it is cheap, fast and very easy 
+to use. But if you already use DPaint, Degas or NeoChrome that will suit 
+too. You'll only have to sort out your own control tricks, because I will 
+talk only about Crack Art. If you don't have CrackArt, please send me a 
+letter with money or poststamps for a reply and mention you want Crack Art. 
+c), at last, is depending on yourself.
+
+Now bang in your drawing proggie and listen carefully...
+
+2.0. SOME BASICS
+
+To start off with, I will tell you how to make the program work for you and 
+how you can make sure you are drawing something usuable.
+
+2.0.1. STARTING OFF
+
+Before you paint any real characters, you have got to ask yourself three 
+questions. First question always is an idea for a style of characters. 
+Ideas are strange things, surely. If you need them, you don't have them. 
+Some good advise to get inspiration is putting on music, walking around in 
+a town, looking at adverts, looking at TV progs. And I mean that you've got 
+to SEE, not just to look. If people would only spend a tenth of their time 
+seeing instead of looking, the world would be a better place. Remember 
+things, ideas, colours, people, music. Everything can help you get to an 
+idea. 
+
+2.0.2. BITPLANES
+
+The second question is how many colors you'll be wanting to use. Because 
+the ST has 4 bits of information per (low-res) pixel you can maximally use 
+16 colors. Why 16 colors? Well, as you might know, a bit is a BInary digiT. 
+This means that a bit can have two values, 0 and 1 (also called off and 
+on). 2 bits can have, logically, 4 different values (= colors) because 2*2 
+is 4. And 4 bits can have 16 values (2*2*2*2=16). This is the principle of 
+bitplanes. But, you'll think that if the ST has 16 colors, why shouldn't 
+you use them all? Well, a programmer can choose to use only (for example) 2 
+bitplanes in his scroller and has because of that only 4 colors available. 
+Why does this guy do this? Becoz' it takes only half of the time needed for 
+a 4 bitplane scroller, ofcourse. In the diagram below you can see a good 
+example of how the bitplanes are arranged.
+
+~BITPLANE.BL2~
+
+
+
+
+
+
+
+
+
+
+
+In this first part I assume you want to paint a 1-bitplane font, coz that 
+is the easiest to begin with.
+
+2.0.3. THE GRID
+
+The third and last question is the size of the font you want to paint. 
+Usually the width of a font is dividable by 8 (8, 16, 24, 32 etc.). This is 
+because it's (again) easier for the programmer. The height of the font is 
+free, but it's usually dividable by 8 too. For an example, we will use the 
+common size of 16 by 16 pixels. We'll use this size too because of it's 
+conveniency of explanation. 
+
+Once you've got your size, it is quite easy to make a grid. This move will 
+make it a lot easier, because you won't have to think about every pixel you 
+put (whether or not it is beyond the boundary you've put yourself up 
+against). There are two types of grids, first one is the checkerboard (used 
+by many professional painters because it's easy for normal (non-character) 
+signs, e.g. game sprites). Second one (and in my opinion, the best for 
+font-painting) is the ordinary approach. Both possibilities are shown 
+below, I'd advise you to try both and make your own choice between these 
+types.
+
+~GRID.BL2~
+
+
+
+
+
+
+
+
+
+
+
+
+2.0.4 CHARACTER TABLE
+
+Because I assumed you wanted to paint a 16 by 16 font, you can have 
+(320/16=) 20 characters per line. But in which order should you paint them? 
+Here goes... Starting in the upper left corner, then to the right and then 
+a line down etc.
+
+                          !"    '() +,-./0123
+                         456789:; = ?@ABCDEFG
+                         HIJKLMNOPQRSTUVWXYZ
+
+3.0 THE END (AND GREETINGS)
+
+Now you know the first basics of painting a font, I think it's the right 
+time to quit and start writing the next part. What can you expect then? 
+Well, probably some tricks (time-saving), what not to do and probably a 
+review of the best and the worst fonts ever...
+
+This time, I want to send greetings to some of my good friends in the Atari 
+business. Thanks a lot guys, I hope to hear more from you soon and that our 
+contacts will last much longer than they already did.
+
+Hi to:
+   - Tolkien/?? (very cool guy, see ya)
+   - Arcay/MF (also very cool guy, see you in Holland soon...)
+   - Scorpion (yo man, what's up? I'll write soon...)
+   - Sink/HMD (the answer is coming real soon now)
+   - Fix/Odyssey (I will contact again soon)
+   - and ofcourse all Giants members!
+
+See you all in Bremen (hopefully!),
+
+                              HAVOC '93

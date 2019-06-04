@@ -1,0 +1,62 @@
+
+                       ‰Street Fighter 0.93 demo(!)
+
+      A strange little something pulled together by Patrice Mandin
+
+Okay,  I'll  lay it down straight for you people.  You remember 'Street 
+Fighter  2',  the famous SNES beatemup.  You remember the computer game 
+and console versions spawned from that success all those years ago.
+
+Think 'US Gold'...
+
+Think 'Licenceware'...
+
+Think 'Not very good'...
+
+And  you have the official ST version of that licence.  it was produced 
+almost  at the very end of the ST's mainstream commercial life,  and at 
+that stage, software houses really didn't care what they kicked out, as 
+long as it managed to bear a vague resemblance to the real thing.
+
+To  be fair,  it was sort of alright,  if you remembered that it ran on 
+the  lowest  common  demoninator hardware.  No attempt  being  made  to 
+recognise the STe for example.
+
+Now,  what  seems to have emerged blinking into the harsh daylight from 
+the  earthquake  wrecked club 'development nullity'.  is just  such  an 
+enhancement, an STe version of Street Fighter 2!
+
+This  isn't  an official project,  needless to say,  but an old  (1994) 
+attempt  by Patrice Mandin to convert the game to run on  the  enhanced 
+machine.  It  also quite likes a Falcon '030,  and runs happily on that 
+machine.  There  is  also a True colour version which runs as a  Falcon 
+only proggie.
+
+The  differences from the official US Gold version are technical,  with 
+parallax   hardscroll,   blitter   assisted  pixel  precise   collision 
+detection,  even 'ripped from the SNES' DMA sample sound support. At 50 
+frames per second on a Falcon, it is very smooth indeed.
+
+It is also very incomplete,  existing as a concept tester.  The colours 
+are  sixteen colour greyscale,  a graphics mode unique to the STe.  The 
+Falcon  has  full colour and fullscreen graphics,  but these  are  very 
+buggy,  with  incomplete  screen  clearing,  with after-images  of  the 
+sprites not clearing.
+
+The  fighters  are two of the same characters,  a siamese  'evil  twin' 
+Chung  Lee taking on her better intentioned sister,  there is only  one 
+level,  and although the energy status bar counts down,  the characters 
+don't die until the very final sanction of the space bar is invoked.
+
+It  is strange that this hasn't been seen until recently,  but it could 
+be down to us not paying sufficient attention? With Patrices other game 
+projects  (Doom  et  al)  on the go,  I'm not  sure  how  much  further 
+development  this  one  is going to get beyond the  basic  game  engine 
+demonstrator that we've got at the moment?
+
+It  would be nice to see if anything else does arise,  as Patrice says, 
+it does show what the STe is capable of with a minimum of effort!
+
+CiH - Sept '99
+
+

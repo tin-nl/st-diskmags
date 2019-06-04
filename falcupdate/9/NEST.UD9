@@ -1,0 +1,1974 @@
+NeST Pages
+
+What can NeST offer to Atari users already on the Internet?
+
+NeST (Network ST) is a Fidonet technology based network specifically for
+users of the Atari range of computers. The purpose of these pages is  to
+provide information on  NeST  members  and  BBSs  supporting  NeST,  and
+eventually give those with free  internet  access  easy  access  to  the
+programs required to be a sysop (system operator) within NeST.
+
+NeST carries a whole range of Atari  related  and  non-related  "echoes"
+that are usually more focused than their Usenet counterparts. NeST nodes
+usually also take message areas from the AtariNet and TurboNet networks,
+and many also offer Fidonet and gated Usenet newsgroups as  well.  There
+are a  group  of  NeST-related  'fileechos'  which  distribute  software
+quickly over the network.
+
+The sysop software consists of a  "mailer"  which  actually  calls  your
+uplink and gets mail packets, echoed files and requested files; a  "mail
+processor" which unpacks  incoming  mail  and  packs  outgoing  mail;  a
+"message reader" which allows you to browse mail and discussion  groups;
+and, on systems linked to file echos, a file processor.  Once  it's  set
+up, it's very easy to use and can be entirely automated to call  uplinks
+and process mail automatically. It's also very efficient as all messages
+are compressed before the call and the 'setup' time before  transfer  is
+low.
+
+The software is all shareware or freeware. It's possible to  try  out  a
+full system without registering but users prepared to pay  get  benefits
+such as faster mail processing software and the possibility  of  sending
+mail packets at the same time as receiving the which reduces the  length
+of a call.
+
+There are NeST sysops all over the world,  falling  roughly  into  three
+categories:
+
+Points are single  users  who  use  the  Fidonet  mailer  system  as  an
+efficient and easy off-line reading system.
+
+Private nodes are also single  users,  but  are  usually  (not  always!)
+slightly more active. They have full rights on  the  network,  including
+having their names in the  nodelist  which  allows  them  to  be  mailed
+without knowing their NeST address and are able to vote on  issues  such
+as echo creation.
+
+Bulletin Board operators are nodes which  have  phone  lines  which  are
+callable by bulletin board users with terminal software or other  sysops
+with fidonet mailer software.
+
+To get started, call a NeST  bulletin  board  using  a  normal  terminal
+package. You will have to fill in a  brief  introductory  questionnaire,
+after which you will be allowed a look at the board. Normally, the sysop
+will clear your registration within a day - there are no fees. The  next
+thing to do is mail the sysop asking them  to  give  you  some  help  on
+becoming a point. Most are very helpful and  they'll  usually  tell  you
+what files to download from the board and how to set them up. That's all
+there is to it!
+
+Martin Maisey - NeST WWW Page Maintainer - 90:104/105@nest.ftn
+
+
+Information currently held:
+
+NeST BBSs 
+   A list of NeST BBSs all over the world with telephone numbers. 
+NeST internet addresses list 
+   Many NeST users are also available via internet email. This is a list of all
+   the sysops (private nodes and above) in NeST with internet addresses. 
+NeST introduction 
+   By the coordinator, Daron Brewood 
+NeST echomail list 
+   A list of all of the current discussion ("echomail") areas in NeST. 
+NeST policy document 
+   The rules under which NeST members must abide. 
+
+NeST BBS list
+
+This is a list of all BBSs currently in the NeST nodelist. Thanks go to Rob
+Darling of FolkeSTone QBBS for writing his list creator.
+
+Phone numbers are from England.
+
+Zone 90   Region 1
+
+BBS Name         : Track 83
+Location         : Norfolk
+SysOp            : James Partner
+Phone            : 01953-851351
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : SMS2 NE
+Location         : Newcastle On Tyne UK
+SysOp            : Derek Stewart
+Phone            : 0191-4775472
+Speed(s)         : 9600
+Error correction : MNP
+Online           : Not known
+Other details    : V32 Terbo support
+
+BBS Name         : Aspects
+Location         : Manchester
+SysOp            : Dave Gorski
+Phone            : 0161-792-0260
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Magnum BBS
+Location         : Bradford West Yorkshire UK
+SysOp            : Keyop Troy
+Phone            : 01274-547006
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : D-TERM BBS
+Location         : Ainsdale Merseyside UK
+SysOp            : David McGarry
+Phone            : 01704-79873
+Speed(s)         : 2400
+Error correction : None
+Online           : 22:00 - 07:00
+Other details    : 
+
+BBS Name         : Desktop BBS
+Location         : Stoke On Trent UK
+SysOp            : Alan Woodcock
+Phone            : 01782-541305
+Speed(s)         : 9600
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Ad.Lib
+Location         : Chester Le Street UK
+SysOp            : Andy Curtis
+Phone            : 01913-702659
+Speed(s)         : 9600
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : DanSoft BBS
+Location         : Carnforth UK
+SysOp            : Daniel Horne
+Phone            : 01524-732957
+Speed(s)         : 14k4
+Error correction : MNP
+Online           : Not known
+Other details    : 
+
+BBS Name         : -Atlantis-
+Location         : Surrey UK
+SysOp            : Laurence Mcdonald
+Phone            : 0181-715-5420
+Speed(s)         : 16k8, HST
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : V32 Terbo support
+
+BBS Name         : 680+ BBS
+Location         : Hull NorthHumberside
+SysOp            : Peter Buscada
+Phone            : 0482-222303
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Tavern
+Location         : London
+SysOp            : Paul Baker
+Phone            : 0181-445-6514
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : V32 Terbo support
+
+BBS Name         : The Chameleon
+Location         : Yate Uk
+SysOp            : Martin Stacey
+Phone            : 01454-881-095
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : My Little Phoney
+Location         : Chipping Sodbury UK
+SysOp            : Steven Green
+Phone            : 01454-883624
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Fractal(20:00-08:00)
+Location         : Dorchester UK
+SysOp            : Tim Putnam
+Phone            : 01305-266-304
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : Not known
+Other details    : 
+
+BBS Name         : Nickelodeon
+Location         : Liverpool
+SysOp            : Mark Williams
+Phone            : 0151-709-8508
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Walk This Way BBS (21:00-06:00)
+Location         : Ballynahinch Down (UK)
+SysOp            : Demi Hamilton
+Phone            : 01238-563505
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : PMT-BBS
+Location         : Preston Lancs (UK)
+SysOp            : Paul Seed
+Phone            : 01772-794633
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : H.M.S. Intrepid
+Location         : Doncaster
+SysOp            : John Richardson
+Phone            : 01302-744241
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : Indie Head BBS (22:00-08:00)
+Location         : Liverpool (UK)
+SysOp            : Ian Kirwin
+Phone            : 0151-4491598
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : NeST Midlands
+Location         : Birmingham Midlands UK
+SysOp            : Mick Coleman
+Phone            : 0121-430-3761
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Crypt
+Location         : Derby UK
+SysOp            : Paul Carroll
+Phone            : 01159-445307
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Dream Machine
+Location         : Cardiff Wales UK
+SysOp            : David J. Thomas
+Phone            : 01222-689812
+Speed(s)         : 14k4, HST
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The RainBow BBs
+Location         : Stoke On Trent UK
+SysOp            : Kevin Sherwin
+Phone            : 01782-304362
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : FolkeSTone QBBS
+Location         : Folkestone Kent UK
+SysOp            : Robert Darling
+Phone            : 01303-249306
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Fireball BBS
+Location         : Weybridge Surrey UK
+SysOp            : Iain Mees
+Phone            : 01932-850074
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Night Hawk
+Location         : Fareham
+SysOp            : Robert Leach
+Phone            : 01329-318036
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : Night Hawk
+Location         : Fareham
+SysOp            : Robert Leach
+Phone            : 01329-318041
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : The Hate Machine
+Location         : Motherwell Scotland
+SysOp            : Brian Baird
+Phone            : 01698-275601
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : STatic2 BBS
+Location         : Edinburgh Scotland
+SysOp            : Kevin Norman
+Phone            : 0131-5569734
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : STeelers BBS
+Location         : Greenock Scotland
+SysOp            : Samuel Davidson
+Phone            : 01475-728430
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : Black Cat BBS
+Location         : Penarth Wales UK
+SysOp            : Mark Butler
+Phone            : 01222-707359
+Speed(s)         : 28k8
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : The Abbey/2
+Location         : Ferndown
+SysOp            : Chris Durham
+Phone            : 01202-873916
+Speed(s)         : 28k8
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : Penske BBS
+Location         : Kidderminster Worcester UK
+SysOp            : Andy Taylor
+Phone            : 01562-744858
+Speed(s)         : 14k4
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Lynx BBS
+Location         : Dagenham
+SysOp            : Terry Gregory
+Phone            : 0181-599-0869
+Speed(s)         : 16k8, HST
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : V32 Terbo support
+
+BBS Name         : The Dog House BBS
+Location         : Royston UK
+SysOp            : Neil Burton
+Phone            : 01763-230043
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : V32 Terbo support
+
+BBS Name         : STandard ProBBS
+Location         : Felixstowe UK
+SysOp            : Karl Foley
+Phone            : 01394-271550
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 2
+
+BBS Name         : Peace Country Computers
+Location         : Fort ST John BC Canada
+SysOp            : Bryan Webster
+Phone            : 010-1-604-785-9512
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Prime BBS
+Location         : Fort St John BC Canada
+SysOp            : Bill Marsh
+Phone            : 010-1-604-785-7098
+Speed(s)         : 14k4
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Temple of Doom
+Location         : Edmonton Alta Canada
+SysOp            : Barry Torrance
+Phone            : 010-1-403-436-0328
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Capoeira Circle ST BBS
+Location         : Victoria BC
+SysOp            : Morgan Stewart
+Phone            : 010-1-604-598-9953
+Speed(s)         : 14k4
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Miramax BBS
+Location         : Vancouver BC
+SysOp            : David Poon
+Phone            : 010-1-604-323-9698
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Jim's Place
+Location         : Etobicoke ON
+SysOp            : Jim Tindall
+Phone            : 010-1-416-234-8064
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Northern Depot
+Location         : Kitimat BC
+SysOp            : Darryl Franklin
+Phone            : 010-1-604-362-2065
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 3
+
+BBS Name         : Thieves Guild
+Location         : Suitland MD
+SysOp            : Keith Scroggins
+Phone            : 010-1-301-894-8516
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : ST Keep BBS
+Location         : Citrus Heights CA USA
+SysOp            : Andrew Studer
+Phone            : 010-1-916-729-2968
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Mind Keep
+Location         : Citrus Heights CA USA
+SysOp            : Jeff Fehlman
+Phone            : 010-1-916-723-1657
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : STar Fleet HQ
+Location         : Copley OH
+SysOp            : Drew Klenotic
+Phone            : 010-1-216-665-5983
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Akron Info & Party
+Location         : Akron OH
+SysOp            : Craig Hilles
+Phone            : 010-1-216-677-9808
+Speed(s)         : 2400
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Courts of Chaos
+Location         : Kent OH
+SysOp            : Dave A. Flanigan
+Phone            : 010-1-216-644-6963
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Akron Connection
+Location         : Akron OH
+SysOp            : Terry Russell
+Phone            : 010-1-216-253-9247
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Gateway
+Location         : Windsor ON CA
+SysOp            : Ron Gillespie
+Phone            : 010-1-519-255-7834
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : AtarIowa BBS
+Location         : Des Moines IA
+SysOp            : Mike O'Malley
+Phone            : 010-1-515-265-1005
+Speed(s)         : 9600
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : E.H.C.R.
+Location         : E. Hartford CT
+SysOp            : Tom Allard
+Phone            : 010-1-203-528-7693
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Space STation SST
+Location         : Montreal Qu Canada
+SysOp            : Luc McCarragher
+Phone            : 010-1-514-333-1683
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Sherwood ForeST
+Location         : Brooklyn NY
+SysOp            : John Przychocki
+Phone            : 010-1-718-522-0768
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : TriAxle
+Location         : Lowell MA
+SysOp            : Jim Giffen
+Phone            : 010-1-508-458-2758
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Michael's Wonderland
+Location         : Dix Hills NY
+SysOp            : Michael Meilko
+Phone            : 010-1-516-667-3630
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Byte Line BBS
+Location         : Medeir Beach FL
+SysOp            : Gavin Smits
+Phone            : 010-1-813-391-4345
+Speed(s)         : 14k4, HST
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Dateline: Atari
+Location         : New York
+SysOp            : Al Petersen
+Phone            : 010-1-718-833-0828
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Steal Your Face
+Location         : Brick NJ
+SysOp            : Ed Lynch
+Phone            : 010-1-908-920-7981
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : * The Bounty St Bbs *
+Location         : Jacksonville FL
+SysOp            : Ralph Mariano
+Phone            : 010-1-904-786-4176
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Leif's World
+Location         : Jacksonville FL
+SysOp            : Ron Satchwill
+Phone            : 010-1-904-573-0734
+Speed(s)         : 9600, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Spiderman's Web
+Location         : Dryden NY
+SysOp            : Steve Scott
+Phone            : 010-1-607-844-3744
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Aces High Bbs
+Location         : Matawan NJ
+SysOp            : Richard Guadagno
+Phone            : 010-1-908-290-1133
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Crawly Crypt
+Location         : Joplin MO
+SysOp            : Jim Collins
+Phone            : 010-1-417-624-1887
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Inside OK
+Location         : Joplin MO
+SysOp            : Jason Buchanan
+Phone            : 010-1-417-624-0000
+Speed(s)         : 16k8, HST
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : KAUG BBS
+Location         : Knoxville TN
+SysOp            : Mary Pinckard
+Phone            : 010-1-615-691-0113
+Speed(s)         : 2400
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Twilight Zone
+Location         : Longwood FL
+SysOp            : Bill Scull
+Phone            : 010-1-407-831-1613
+Speed(s)         : 9600, HST
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Mystery BBS
+Location         : Summerville SC USA
+SysOp            : David Blanchard
+Phone            : 010-1-803-556-9730
+Speed(s)         : 9600
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : JACG BBS
+Location         : Newark NJ
+SysOp            : Gary Gorski
+Phone            : 010-1-201-690-5224
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Round Table
+Location         : Shamong NJ
+SysOp            : Darren Trutzenbach
+Phone            : 010-1-609-268-7524
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : STarship
+Location         : Lake Charles LA USA
+SysOp            : Rich Tietjens
+Phone            : 010-1-318-433-4880
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Level 42
+Location         : Lake Charles LA USA
+SysOp            : Glen Kelly
+Phone            : 010-1-318-478-3960
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : The FirST Ark
+Location         : New Llano LA
+SysOp            : John Jackson
+Phone            : 010-1-318-238-5089
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Strobe II HotLine
+Location         : Baton Rouge La
+SysOp            : Herman Williams
+Phone            : 010-1-504-751-3695
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The Conqueror Connection
+Location         : Fort Hood TX USA
+SysOp            : John Curtis
+Phone            : 010-1-817-539-8228
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : MySTery BBS
+Location         : Charleston SC
+SysOp            : David Blanchard
+Phone            : 010-1-803-571-1384
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : The Space Station
+Location         : Canyon County CA USA
+SysOp            : Tony Castorino
+Phone            : 010-1-805-252-0450
+Speed(s)         : 9600
+Error correction : V42
+Online           : Not known
+Other details    : 
+
+BBS Name         : Acey BBS
+Location         : Yakima Wa
+SysOp            : Dick Grable
+Phone            : 010-1-509-966-8555
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : MASATEK
+Location         : Torrance CA USA
+SysOp            : Valeriano Meneses
+Phone            : 010-1-310-518-9524
+Speed(s)         : 9600, HST
+Error correction : V42
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : H B Smog
+Location         : Huntington Beach CA USA
+SysOp            : Jim Thingwold
+Phone            : 010-1-714-969-5486
+Speed(s)         : 9600, HST
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Target Range
+Location         : Paramount CA USA
+SysOp            : Alan Dietrich
+Phone            : 010-1-310-634-8993
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : SEVAC
+Location         : Tempe AZ USA
+SysOp            : Dennis LaFontaine
+Phone            : 010-1-602-968-5165
+Speed(s)         : 14k4, HST
+Error correction : V42
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : Star Tours II
+Location         : Cucamonga CA USA
+SysOp            : Ron Pothier
+Phone            : 010-1-909-989-7745
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Gateway
+Location         : Windsor ON CA
+SysOp            : Ron Gillespie
+Phone            : 010-1-519-255-7834
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Adventurers Inn
+Location         : Portland OR
+SysOp            : Russell Schwartz
+Phone            : 010-1-503-626-8953
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Puddle City
+Location         : Portland OR
+SysOp            : Martin Crommie
+Phone            : 010-1-503-289-9429
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 4
+
+BBS Name         : Traveller-Box
+Location         : Freiburg
+SysOp            : Alexander Bochmann
+Phone            : 010-49-761-381571
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : V32 Terbo support, Rockwell's V.Fast Class support
+
+BBS Name         : Melting Point #1 [Aminet-Mirror]
+Location         : 79353 Bahlingen
+SysOp            : Peter Stegemann
+Phone            : 010-49-7663-50103
+Speed(s)         : 9600
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : STarBase 4219-15C
+Location         : Zweibruecken
+SysOp            : John Nelissen
+Phone            : 010-49-6332-77565
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Raptor's Inn #1
+Location         : Fuerth
+SysOp            : Ludwig Strauss
+Phone            : 010-49-6253-22933
+Speed(s)         : 9600
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Raptor's Inn #2
+Location         : Fuerth
+SysOp            : Ludwig Strauss
+Phone            : 010-49-6253-931017
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Dao-Lin-H'ay
+Location         : Luegde
+SysOp            : Joerg Spilker
+Phone            : 010-49-5281-97505
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : A&M-SOFT
+Location         : Berlin
+SysOp            : Michael Vogt
+Phone            : 010-49-30-3915186
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Null Device
+Location         : Berlin
+SysOp            : Karsten Ebeling
+Phone            : 010-49-30-7422535
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : HIVNET
+Location         : Berlin
+SysOp            : Joerg Schulze
+Phone            : 010-49-30-4542605
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Travelling Bits
+Location         : Berlin
+SysOp            : Oliver Uebel
+Phone            : 010-49-30-3941431
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : SPACER
+Location         : Koeln
+SysOp            : Frank Brodmuehler
+Phone            : 010-49-2236-942058
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : ACW-Mailsystem
+Location         : Lindau
+SysOp            : Horst Kollmuss
+Phone            : 010-49-8382-75495
+Speed(s)         : 9600
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Lone STar Mailsystems
+Location         : Duesseldorf
+SysOp            : Werner Sayn
+Phone            : 010-49-211-294-251
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Scary MonSTer
+Location         : Koblenz
+SysOp            : Rolf Thieme
+Phone            : 010-49-261-54953
+Speed(s)         : 9600
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Lippebox
+Location         : Lippstadt
+SysOp            : Volker Schultz-Berendes
+Phone            : 010-49-2941-59577
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Nostromo
+Location         : Waiblingen
+SysOp            : Uwe Zerbe
+Phone            : 010-49-7151-956938
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : ALBI-Box
+Location         : Weinstadt
+SysOp            : Albi Rebmann
+Phone            : 010-49-7151-61494
+Speed(s)         : 9600, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Headline #1
+Location         : Stuttgart
+SysOp            : Rayko Balun
+Phone            : 010-49-711-606956
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Spice Box
+Location         : Kornwestheim
+SysOp            : Steffen Lamparter
+Phone            : 010-49-711-940600
+Speed(s)         : 9600, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : LippeBox 2
+Location         : Erwitte
+SysOp            : Joerg Heide
+Phone            : 010-49-2943-6000
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : LippeBox 3
+Location         : Paderborn
+SysOp            : Volker Schultz-Berendes
+Phone            : 010-49-5254-69060
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Mike's Corner
+Location         : Ostfildern
+SysOp            : Michael Braeuninger
+Phone            : 010-49-711-3430382
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Fennek's Box
+Location         : Bad Friedrichshall
+SysOp            : Wolfgang Kaempf
+Phone            : 010-49-7136-23088
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : FIDO-TeX-Support 00:00-06:00
+Location         : Stuttgart
+SysOp            : Stefan Haake
+Phone            : 010-49-711-748106
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : DreamScape BBS
+Location         : Maisach
+SysOp            : Andreas Boelt
+Phone            : 010-49-8141-30175
+Speed(s)         : 16k8, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Far Point Station
+Location         : 89432 Binswangen
+SysOp            : Gerhard Soehnel
+Phone            : 010-49-8272-6147
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 5
+
+BBS Name         : 68000 Data Server Atari
+Location         : Enschede NL
+SysOp            : Harrie Beuvink
+Phone            : 010-31-53-777522
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Willie's Atari ST(e) & TT BBS
+Location         : Oude Pekela NL
+SysOp            : Koos Kuil
+Phone            : 010-31-5978-18087
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Q Tel Inf
+Location         : Wolvega NL
+SysOp            : Dirk de.Vos
+Phone            : 010-31-5610-15121
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : QuickBBS ST Leeuwarden line #1
+Location         : Leeuwarden NL
+SysOp            : Theo Runia
+Phone            : 010-31-58-153849
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : QuickBBS ST Leeuwarden line #2
+Location         : Leeuwarden NL
+SysOp            : Theo Runia
+Phone            : 010-31-58-153804
+Speed(s)         : 9600
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Nightshift[23:00-08:00]
+Location         : Groningen
+SysOp            : Rick Speelman
+Phone            : 010-31-50-426667
+Speed(s)         : 9600
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : QuickBBS ST Arnhem
+Location         : Arnhem NL
+SysOp            : Erno Meffert
+Phone            : 010-31-85-644262
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : ST Quick BBS Haarlem
+Location         : Haarlem NL
+SysOp            : Joop Koopman
+Phone            : 010-31-23-340077
+Speed(s)         : 9600, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : CMS Spijkenisse
+Location         : Spijkenisse NL
+SysOp            : Ron De Reus
+Phone            : 010-31-1880-25521
+Speed(s)         : 2400
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : KU-EL Tel
+Location         : Roosendaal NL
+SysOp            : Frank Troost
+Phone            : 010-31-1650-37105
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Bearboard ST BBS
+Location         : Rotterdam
+SysOp            : Ton Ketting
+Phone            : 010-31-10-4840224
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : CastleView FlyByNite
+Location         : Zeist NL
+SysOp            : Jacques Limpens
+Phone            : 010-31-3404-12665
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Atari GG BBS
+Location         : Almere NL
+SysOp            : Wim Scheltema
+Phone            : 010-31-36-5333981
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : NOB-TV BBS
+Location         : Hilversum NL
+SysOp            : Werner Kriboo
+Phone            : 010-31-35-233694
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Bible Board
+Location         : Velserbroek NL
+SysOp            : Gerrit Zweers
+Phone            : 010-31-23-381885
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 6
+
+BBS Name         : Ogre BBS
+Location         : Koondoola WA Australia
+SysOp            : Craig Valli
+Phone            : 010-61-9-445-2075
+Speed(s)         : 9600
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : That Which is Not
+Location         : Adelaide Sth Australia
+SysOp            : Michael Smith
+Phone            : 010-61-8-276-4415
+Speed(s)         : 2400
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Znet South Pacific
+Location         : Wellington New Zealand
+SysOp            : Chris Thorpe
+Phone            : 010-64-4-478-2369
+Speed(s)         : 9600
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Closer To Home BBS
+Location         : Godwin Beach Qld Aust
+SysOp            : Dave Blears
+Phone            : 010-61-74-976-293
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The CrySTal
+Location         : Darwin NT Australia
+SysOp            : Rob Adams
+Phone            : 010-61-89-85-5504
+Speed(s)         : 2400
+Error correction : None
+Online           : Not known
+Other details    : 
+
+Zone 90   Region 7
+
+BBS Name         : Orsa Maggiore
+Location         : Modena
+SysOp            : Ivo Elmi
+Phone            : 010-9-59-364588
+Speed(s)         : 9600
+Error correction : None
+Online           : Not known
+Other details    : 
+
+BBS Name         : Atarian ST - TS !
+Location         : Trieste
+SysOp            : Mike De.Petris
+Phone            : 010-39-40-768412
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+Zone 90   Region 8
+
+BBS Name         : THE
+Location         : Paris France
+SysOp            : Herve Piedvache
+Phone            : 010-33-1-42511135
+Speed(s)         : 28k8
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 9
+
+BBS Name         : QBBSST Barcelona
+Location         : Barcelona Spain
+SysOp            : Jose Rodriguez
+Phone            : 010-34-3-4423827
+Speed(s)         : 14k4
+Error correction : V42
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 10
+
+BBS Name         : Powder
+Location         : Champfer
+SysOp            : John Caprez
+Phone            : 010-41-82-20431
+Speed(s)         : 28k8
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : PARADIZE
+Location         : Lucerne
+SysOp            : Roland Tobler
+Phone            : 010-41-41-329517
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 11
+
+BBS Name         : Midnight BBS
+Location         : Duved Sweden
+SysOp            : Anders Nicolausson
+Phone            : 010-46-647-23050
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : MaSTer BBS
+Location         : Ytterby Sweden
+SysOp            : Stefan Andreasson
+Phone            : 010-46-303-92083
+Speed(s)         : 28k8
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : STraight BBS
+Location         : Partille Sweden
+SysOp            : Bertil Jagard
+Phone            : 010-46-31-363973
+Speed(s)         : 28k8
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : Goteborgs BBS
+Location         : Gothenburg Sweden
+SysOp            : Rolf Johansson
+Phone            : 010-46-31-828104
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Zippo BBS
+Location         : Gothenburg Sweden
+SysOp            : Kjell Bergstrom
+Phone            : 010-46-31-416132
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Kockens BBS
+Location         : Staffanstorp Sweden
+SysOp            : Jesper Kock
+Phone            : 010-46-46-250256
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Dada & Surrealismus
+Location         : Malmo Sweden
+SysOp            : Dag Dao
+Phone            : 010-46-40-921540
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Firestorm Atari Center
+Location         : Karlstad Sweden
+SysOp            : Mikke Mattsson
+Phone            : 010-46-54-834731
+Speed(s)         : 28k8
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : Better Than Life
+Location         : Vasteras Sweden
+SysOp            : Magnus Sundin
+Phone            : 010-46-21-148651
+Speed(s)         : 28k8
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : The Dark Side of the Moon
+Location         : Harnosand Sweden
+SysOp            : Joakim Nordlander
+Phone            : 010-46-611-23464
+Speed(s)         : 9600
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Irata BBS
+Location         : Sodertalje Sweden
+SysOp            : Tommy Schmidt
+Phone            : 010-46-8-55044208
+Speed(s)         : 14k4, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : SilverSTone
+Location         : Stockholm Sweden
+SysOp            : Magnus Werner
+Phone            : 010-46-8-6417838
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : Mr Cobra BBS
+Location         : Alta Sweden
+SysOp            : Mikael Rosten
+Phone            : 010-46-8-7732795
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 12
+
+BBS Name         : Joy BBS
+Location         : Zlin
+SysOp            : Petr Stehlik
+Phone            : 010-42-67-600375
+Speed(s)         : 16k8, HST
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : CalamuSTation BBS
+Location         : Prague
+SysOp            : Matej Sychra
+Phone            : 010-42-2-731120
+Speed(s)         : 2400
+Error correction : V42B
+Online           : Not known
+Other details    : 
+
+BBS Name         : ATOS BBS
+Location         : Prague
+SysOp            : Lubosh Rampa
+Phone            : 010-42-2-24228640
+Speed(s)         : 14k4, HST
+Error correction : None
+Online           : Not known
+Other details    : 
+
+BBS Name         : SAY
+Location         : Brno
+SysOp            : Martin Bohac
+Phone            : 010-42-5-41217472
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 13
+
+BBS Name         : Kolba BBS [2200-0800]
+Location         : Poznan
+SysOp            : Sebastian Dratwa
+Phone            : 010-48-61-574644
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : mOOse BBS [2200-0800]
+Location         : Poznan
+SysOp            : Piotr Wierzejewski
+Phone            : 010-48-61-531642
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : The StarRoad BBS [2200-1000]
+Location         : Szczecin
+SysOp            : Waldek Kubicki
+Phone            : 010-48-91-480342
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : Not known
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : MASIWA BBS [24h]
+Location         : Szczecin
+SysOp            : Tomasz Murgrabia
+Phone            : 010-48-91-845468
+Speed(s)         : 28k8
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 14
+
+BBS Name         : Arendal Atari Agency BBS
+Location         : Arendal Norway
+SysOp            : Rolf Sunde
+Phone            : 010-47-370-96781
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : The MIDIots BBS
+Location         : Kraekeroey Norway
+SysOp            : Kai Wangerlandsen
+Phone            : 010-47-9-343434
+Speed(s)         : 2400
+Error correction : None
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 15
+
+BBS Name         : DigiBBS
+Location         : Nykobing F Denmark
+SysOp            : Flemming Nielsen
+Phone            : 010-45-54828383
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : DK Soft
+Location         : Taastrup Denmark
+SysOp            : Kim Andersen
+Phone            : 010-45-43717075
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Vesterbro Con.
+Location         : Copenhagen Denmark
+SysOp            : Morten Iversen
+Phone            : 010-45-31232717
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Mak Soft BBS
+Location         : Taastrup Denmark
+SysOp            : Michael Andersen
+Phone            : 010-45-43715220
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Pascal Point
+Location         : Ishoej Denmark
+SysOp            : Michael Kirch Thomsen
+Phone            : 010-45-43540559
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 16
+
+BBS Name         : Black Devil BBS Line #1
+Location         : Steinfort
+SysOp            : Serge Wagener
+Phone            : 010-352-398720
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : NoName-Box
+Location         : Sanem
+SysOp            : Daniel Gulluni
+Phone            : 010-352-595243
+Speed(s)         : 14k4
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+BBS Name         : Phoenix
+Location         : Grevenmacher
+SysOp            : Josy Minnemeister
+Phone            : 010-352-75-9022
+Speed(s)         : 9600, HST
+Error correction : V42B
+Online           : 24 hours
+Other details    : 
+
+Zone 90   Region 17
+
+BBS Name         : D'voice BBS
+Location         : Singapore
+SysOp            : Lee Chin Lim
+Phone            : 010-65-4745586
+Speed(s)         : 28k8
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : Clavis Concursis
+Location         : Singapore
+SysOp            : Jwu-Jiun Tan
+Phone            : 010-65-4442376
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+BBS Name         : STone BBS
+Location         : Singapore
+SysOp            : David Yeo
+Phone            : 010-65-3544730
+Speed(s)         : 14k4
+Error correction : V42B, MNP
+Online           : 24 hours
+Other details    : Rockwell's V.Fast Class support
+
+
+NeST Internet User List
+
+This is the NeST sysop internet user list. It details sysops with nodes only
+(i.e. points/BBS users are NOT included) who have internet addresses. Queries
+should be directed to Daron Brewood, who maintains the list.
+
+NeST InterNet User List - 27th December 1994.
+=============================================
+
+SysOp/User          InterNet Addresss                           NeST 
+Address
+------------------- ------------------------------------------- -------------
+Daron Brewood       dbrewood@nest.demon.co.uk                   90:90/0
+                    dbrewood@cix.compulink.co.uk
+
+Brian Baird         bbaird@cs.strath.ac.uk                      90:105/0
+                    Brian.Baird@phm.embassy.co.uk
+
+Kim Andersen        kim@dksoft.ping.dk                          90:1500/102
+
+Martin Maisey       M.J.Maisey@durham.ac.uk                     90:104/105
+
+John Charles        jaycee@midmarsh.demon.co.uk                 90:104/101
+
+Bertil Jagard       bertil.jagard@straight.ct.se                90:1101/104
+                    sak@straight.ct.se (Swedish Atari Club)
+
+Dag Dao             dag.dao@dada.ct.se                          90:1102/116
+                    dada@nn.apc.org
+
+Paul Civati         paul.civati@mettav.exnet.com                90:102/142
+                    paul@xciv.demon.co.uk
+
+Karl Foley          Karl.Foley@standard.embassy.co.uk           90:106/172
+                    kfoley@cnserv.dungeon.com
+                    kfoley@h649.eoo.fob.ford.com
+
+Flemming Nielsen    fbn.digisoft@scala.ping.dk                  90:15/0
+
+Morten Iversen      miversen@cph-co.bru-ro.DHL.COM (work)       90:1500/105
+                    miversen@vbrocon.ping.dk (home)
+
+Jeff Fehlman        jeff@jaguar.mcclellan.af.mil                90:300/15
+
+Stefan Andreasson   stefan_andreasson@master.ct.se              90:1101/0
+
+Jesper Kock         jesper.kock@kockens.ct.se                   90:1102/0
+
+Keith Jackson       kjackson@cix.compulink.co.uk                90:103/102
+
+James Partner       jpartner@cix.compulink.co.uk                90:100/101
+
+Joerg Spilker       Joerg_Spilker@daolin.fido.de                90:4/0
+
+Carsten Brockmann   Carsten_Brockmann@daolin.fido.de            90:400/1001
+
+Dennis Lafontaine   DLAF@nighthawk.fidonet.org                  90:303/109
+
+Adrian Eyre         aya@spuddy.uucp                             90:102/104
+
+Mark Matts          matzy@butthead.demon.co.uk                  n/a
+
+Stuart Coates       scoates@filesys.demon.co.uk                 n/a
+
+Koos Kuil           koos_kuil@textlitho.nl                      90:500/103
+
+Steve Caple         spcaple@orenda.gn.apc.org
+                    u3d69@cc.keele.ac.uk (after 26/9/94)        90:103/107
+                    spcaple@orenda.gn.apc.org
+Lindy Caple         lindy@orenda.gn.apc.org
+
+Steve Basford       Steve.Basford@mettav.exnet.com              90:102/108
+
+Andy Curtis         acurtis@theshack.demon.co.uk                90:100/308
+
+Frank Charlton      frank@theshack.demon.co.uk                  90:100/308
+
+Glen Kelly          Glen.Kelly@f142.n3807.z1.fidonet.org        90:302/2
+
+Daniel Roesen       droesen@aragon.bb.bawue.de                  90:400/602
+
+David Thomas        davtom@dream.embassy.co.uk                  90:103/103
+
+Laurence McDonald   lau@cix.compulink.co.uk                     90:102/102
+                    lau@states.demon.co.uk
+                    lau@atln.demon.co.uk
+                    laurence@bitscorp.com
+
+Wolfgang Kaempf     Wolfgang_Kaempf@hn.maus.de                  90:400/213
+
+Tom Thomason        tom.thomason@fpc.ct.se                      90:1101/117
+
+Martin Stacey       mas@cbbs.centron.com                        90:102/161
+                    mas@cbbs.demon.co.uk
+
+Dave Meaker         dsm@cbbs.centron.com                        90:102/162
+                    dsm@cbbs.demon.co.uk
+                    
+
+Rayko Balun         balun@gold.t-informatik.ba-stuttgart.de     90:400/205
+
+Herve Piedvache     herve@thebbs.freenix.fr                     90:8/0
+
+Jwu-Jiun Tan        tanjj@merlion.singnet.com.sg                90:17/0
+
+Ton Ketting         tonk@textlitho.nl                           90:500/211
+
+Mikael Karlsson     mik@viking.ct.se                            90:1103/102
+
+Mikke Mattsson      mikke@tnogobl.ct.se                         90:1103/100
+
+Danny Terweij       danny@textlitho.nl                          90:500/214
+
+John Carolin        john@johnmcar.demon.co.uk                   -
+
+Alexander Bochmann  ab@traveller.fido.de                        90:400/101
+                    galaxis@traveller.freiburg.sub.org
+
+Kevin Osborne       Kevin.Osborne@fortress.mettav.exnet.com     90:102/0
+                    arc_pub@cix.compulink.co.uk
+
+Simon Robins        srobins@cix.compulink.co.uk                 90:100/102
+
+Joakim Nordlander   jonord@solace.mh.se                         90:1103/106
+
+Mike De.Petris      michele@icgeb.trieste.it                    90:700/104
+
+Darren Trutzenbach  Darrenet@aol.com                            90:301/18
+
+Gareth Wong         Wongg@charlie.aston.ac.uk                   90:103/108
+                    Wongg@aston.ac.uk
+                    gareth.wong@theshack.seuk.com
+
+Steven Green        sgreen@cix.compulink.co.uk                  90:106/152
+                    dagger@cix.compulink.co.uk
+
+Borek Lupomesky     borek@icom.com                              90:12/0
+                    borek@Leo1.zlin.vutbr.cz
+
+Rob Hall            robh@falrealm.demon.co.uk                   90:100/110
+
+Christian Andersson di3chr@f_utbserv.adbutb.hks.se              90:1103/105
+                    *@p5.tnogobl.ct.se
+                    (*=use any name)
+
+Andy Taylor         AndyT@Penske.centron.com                    90:106/157
+
+Christian Dahl      di3dah@f_utbserv.adbutb.hks.se              90:1103/104
+                    cd@p4.tnogobl.ct.se
+
+Craig Oldfield      craig@thebrink.demon.co.uk                  90:100/107
+
+Martin Maisey       (M.J.Maisey@durham.ac.uk)
+
+Network ST International Association (NeST)
+
+What is NeST?
+
+NeST (Network ST) is an international network based on FidoNet technology which
+is dedicated to the Atari range of computers (mainly to the Atari ST and above).
+
+The aim of the network is to provide messaging facilities to all Atari users the
+world over who are interested in the world of communications and in the ST.
+
+Eventually it is planned that NeST will extend to virtually every country in the
+world. However NeST now links the following countries:
+
+   The United Kingdom. 
+   The United States of America. 
+   Canada. 
+   Australia. 
+   Sweden. 
+   Italy. 
+   The Netherlands. 
+   Germany. 
+   Switzerland. 
+   France. 
+   Norway. 
+   Denmark. 
+   Luxembourg. 
+   Singapore. 
+   Belgium. 
+
+This is by far the largest ST dedicated network in the world, and it is growing
+rapidly, with an average of a new country coming online each month.
+
+NeST members work closely together to generate a good atmosphere; within NeST
+you will not find any political battles, something which can't be said for a lot
+of other internets.
+
+NeST also has a habit of collecting programmers from every walk of life,
+including some very well known names, who are either members of the network
+itself, or affiliated with it.
+
+   Roland Bohn. 
+      Tiny Shell 
+      ACS 
+      LED (with Volkmar Wieners) 
+   Daron Brewood. 
+      F-Scan (with Phil Gadsby) 
+      LITS 
+      NeST BBS 
+      DmpCRX 
+      Today 
+      Lastcallers 
+      Greet 
+   Joe”rg Spilker 
+      Mupdate 
+      NLUpdate 
+      JetMail 
+   Phil Gadsby. 
+      SEE Fido 
+      Gate_Way 
+      F-Scan 
+   Daniel Roesen 
+      JetMail 
+      BTNC 
+      ApplyList 
+      JetStat 
+      ExitInfo 
+      XVision 
+      BinkGag 
+      PktEdit 
+      Coord 
+   Keyop Troy 
+      /\/\idas 
+   Mike De.Petris 
+      MikeNet 
+   Bryan Hall 
+      FidoDoor 
+      Jeff Mitchell 
+      PhidoZap 
+   David Thomas 
+      MakeDiff 
+      AutoFile 
+   Robert Darling 
+      Callcost 
+   Mario van der Heuvel 
+      MarShell 
+      Blackmail 
+   Ugo Rossini 
+      Log 
+   Alex Guerrazzi 
+      RepuList 
+   Paul Civati 
+      Statistics Generator 
+      NLister 
+      File-Rep (With Paul Baker) 
+   Mark Matts 
+      Auto FM 
+      GUI4GFA Suite 
+      TXT2Msg 
+
+NeST has a wealth of message and file echoes, ninety percent of which are echoed
+round the world, and replies can be achieved within three to four days. The
+message echoes cover a terrific range running from software support (ACS, LED,
+JEKYLL, JETMail, MakeDiff, etc), programming (GFA, C, etc), and general interest
+echoes like the "common room", science fiction, or mind games.
+
+Or if you are looking for something a little different why not take an interest
+in Space Empire Elite? The game runs throughout the network, using special
+programs coded by NeST members to coordinate and send inter-BBS attacks through
+the network.
+
+NeST allows the use of almost any mailing software, be it F-Net/Crossnet, or
+fidonet technology to be used to collect mail, giving a very flexible system of
+mailing. Point systems are given rights too, if they take a 'Pvt' address in the
+master NeSTList - they are allowed full participation in the network; again this
+is rarely allowed in other networks.
+
+One item that worries some users and sysops is cost - that is network fees for
+linking into the network itself. With NeST no such fees exist, as each member
+works freely to gain the best connections, minimising mail costs as much as
+possible.
+
+If you want to join a network that's friendly, fun, well informed, and conscious
+of what's going on, well why not try NeST. I don't think you'll regret it!
+
+For more information contact:
+
+The United Kingdom  - Daron Brewood        -  2:255/401.0@fidonet.org
+U.S.A               - Brian Waters         -  1:205/24.0@fidonet.org
+Canada              - Bryan Webster        -  90:2/0.0@nest.ftn
+Australia           - Ian Mackereth        -  3:712/520.0@fidonet.org
+Sweden              - Tommy Schmidt        -  2:201/303.0@fidonet.org
+Italy               - Magic Alex Badalic   -  2:331/317.1@fidonet.org
+The Netherlands     - Theo Runia           -  2:282/301.0@fidonet.org
+Germany             - Joerg Spilker        -  2:243/6207.0@fidonet.org
+Switzerland         - Roland Tobler        -  2:301/609.0@fidonet.org
+France              - Franck Arnaud        -  2:230/100.0@fidonet.org
+Norway              - Rolf Sunde           -  90:14/0.0@nest.ftn
+Denmark             - Flemming Nielsen     -  90:15/0.0@nest.ftn
+Luxembourg          - Serge Wagener        -  2:270/20.0@fidonet.org
+South East Asia     - Jwu-Jiun Tan         -  90:17/0.0@nest.ftn
+Belgium             - Herman Stevens       -  2:292/603.0@fidonet.org
+
+We look forward to hearing from you...
+
+Daron Brewood - NeST Coordinator - 90:90/0.0@nest.ftn -
+dbrewood@nest.demon.co.uk

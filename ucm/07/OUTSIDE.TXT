@@ -1,0 +1,64 @@
+{*f1
+               OUTSIDE{*f0
+                    VIRTUELL RAM FOR ALL 68030-ATARI-COMPUTERS
+             --------------------------------------------------------
+
+distributed by - MAXON Computer / Germany - Lexicor / England
+systems        - TT, Falcon and ST with PAK68030
+price          - 89,90 DeutschMark
+tested         - demoversion 3.30 ('94)
+
+You all have  had surely the problem that  your computer hadn't enough RAM left
+to start the one or  other application. The  real RAM is, at least for the TOS-
+machines very expensive  and so you have to restart your computer every time to
+start such  a program. But why  the hell you have such nice programs like NVDI,
+Selectric and so one when  you can't use  them at any time because of your very
+limited RAM-resources? For what  you've screen-resolutions over 1024*768 in 256
+colors? Hum, if  you want  a comfortable  configurated  machine with  all these
+features you'll have only 2 MB RAM left for use with your app's and this is too
+less... Ok, you can buy these  very expensive  RAM-extensions  and update  your
+system with 4, 8 or more  megabytes OR you  can  use a  program which  emulates
+virtual RAM with help of your  harddrive. "Ha!", you'll say, "a harddrive isn't
+fast enough to realise this!" but some guys have  realised an application which
+emulates the RAM with your  harddrive and not  only 4 MB! NO! Up  to 512 MB you
+can emulate with this program! This tiny little  thing is called OUTSIDE and is
+relative cheap...
+I had received a demoversion of this program. It was  version 3.30 and emulates
+only 2 MB RAM with the  D-partition of your  harddrive. The problem is that you
+can't write something on the used partition in this demo. Other limitations are
+that you can't configure the RAM. But for a little test this demo is ok...
+After  I've installed  the program  in the Auto-folder  and a reboot  a message
+appears on the screen with some information about the program. I'm running also
+the  Screenblaster (with 864*512*16), Selectric, NVDI, some  patches  and  also
+X-Control. On the  desk I take a look at the desk-inf and wow! 5,1 MB RAM left!
+Ok, this was this first success.
+After this I  started the  demoversion of PAPYRUS GOLD 4.08. Also  this program
+recognizise the memory and says  that over 4 MB are left for documents. Papyrus
+itself takes about one MB RAM. The program runs completely, without any bugs.
+So, I want to leave this application and, erm... I can't! If you  want to leave
+Papyrus the program try to grab on the harddisk and  because I've installed the
+Papyrus-package  on  drive  D  I've  received  the  message "Drive D  is write-
+protected"... But ok, it was my failure...
+After I had rebooted the machine started to system-information-programs to look
+if they can recognizise the memory. The  first one  is INFORMAT 1.16. This prog
+have located the  whole ST-RAM and  over 1 MB  of GEMDOS-memory (?!). Ok, not a
+big problem, but the  second one, SYSINFO 2.12, can't relocate  the real ST-RAM
+and says that only 1,2 MB ST-RAM are available?! I don't know why...
+At next I've tested some copy-programs. At first I've started FCOPY PRO 1.2 and
+this program  shows only  grafix-garbage in  the corner which shows normaly the
+free RAM. ECOPY 1.64 means that only 1,3 MB RAM are available as puffer. It can
+recognizise the real RAM but doesn't use it? The last  program I had tested was
+KOBOLD 2.5. This program can't add the virtual RAM  to the normal ST-RAM and so
+it can't use the extended memory.
+After this very frustrating  results I've  started some grafix-applications. At
+first I started GEMVIEW 3.01. This program don't notices the virtual RAM.
+Differently by PICSWITCH 1.01. This program relocates only the virtual RAM...
+The last program I've tested was  the DIGITAL TRACKER and also this program has
+only relocated the virtual RAM.
+The result is very  conflicted. At the  one side you can  have much more RAM by
+using  harddiskspace for only 90 DeutschMark and at  the other  side only a few
+programs can relocate and use this virtual memory.
+So I must  say that you  should buy right  RAM, even if the extensions are very
+expensive but this real RAM you can use completely.
+
+----------------------------------------------------------------Moondog of tnb-

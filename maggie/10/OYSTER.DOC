@@ -1,0 +1,165 @@
+
+ AURA: THE WORLD IS MY OYSTER
+
+‚Review by Big Alec / Delta Forceˆ
+
+Today is monday the 16th of June 1992 at around half past 1 am. This 
+is the day after I came home from Stuttgart, where I visited New Mode 
+and Slime for a couple of days. Now I am sitting in front of my 
+truSTy (and rusty!) computer since about 6 hours already. Not 
+necessary to say, that my eyelids feel like falling down any minute 
+now, but as this issue has to be filled up to the brim once again, I 
+eventually got myself up to write this article. I hope you like it. 
+Here we go...
+
+As usual, the first thing a demo does when loading itself is, to 
+switch the background colour to black. This one is not different. So 
+here we got it - darkness. A moment later a small info text comes up 
+telling you, how to copy the disk. When loading is finished and the 
+volume of your monitor speakers is not turned down completely, you 
+can hear a silent buzzing and in a way mysterious sound. An anti-
+aliased-Calamus-font text appears saying "In the year 1992 Axxis is 
+dead. A new crew was born...". The buzzing sound slowly becomes 
+louder and louder, and finally, accompanied with a rather simple 
+"AURA" logo, it turns into a clear tone. Swush! Very nice effect, 
+guys! It somewhat reminds me of the Lucasfilm THX-sound 
+advertisement in cinema. A minor disadvantage is only, that the 
+sample stops quite abruptly.
+
+After having pressed space, the loader-screen comes up. It consists 
+of an info text telling you, who coded what (But not, why. Haha!), 
+etc. The music is a relatively new one by Mad Max (Lethal Xcess 
+loading sound, I suppose, but I'm not sure...). The frog from "Magic 
+Pockets" jumps from the left to the right, and his red-flashing eyes 
+indicate, when depacking is finished. Quite nice...
+
+To get this article finished soon, I'll just give you a quick review 
+of each screen...
+ˆ
+ˆFirst screen: "Where the hell is my hankerchief?" by Shadow (BDC)
+
+Accompanied by the Thalion-Intro music, a big one-plane 1992 logo 
+comes scrolling into the screen from the right. Inside of the logo 
+dozens of rasters make the thingy more colourful, but the colours are 
+some of the worst I have ever seen. In the background there is 
+something, which looks like "scrolling achieved by colourcycling" in 
+blue. A one-plane gothic text says "Shadow of Aura". As soon as the 
+music changes, the 1992-logo starts wobbling, and a medium-sized 
+one-plane scroller rolls horizontally across the screen. Not very 
+original (to be honest, it's disgusting...).
+
+ˆSecond screen: "What a Laber Suelz Partytext" by Chris
+
+The title is a mixture of German/English and means "What a 
+drivelling real-time article". The main effect of this screen is a 
+sync-scrolling text displayer. The viewer is able to scroll it up 
+and down via the cursor keys. When <Shift> is held while scrolling, 
+it scrolls by 8 pixels per frame instead of one without shift. 
+Another effect are the (mostly) 50 Hz hidden-line vector graphics. 
+These are really well done. The objects are big, complex enough and 
+they are clipped and even faded in and out. The music comes  from 
+Lethal X-cess this time. With F1-F7 you can select different tunes. 
+Just to mention it - the music uses digidrums. The background colour 
+is NOT black as usual, but dark blue. Although it seems to be silly 
+to care about the background colour, I consider it very important 
+meanwhile. When you watch the latest Amiga demos a bit more careful, 
+you will notice, that almost none of these use black as a background 
+colour anymore. The demo automatically gains style when a decent 
+shade of, say, blue supports the scene. Very nice! Although this 
+screen seems not to be unbeatable (seen from the technical view), it 
+does make a good impression. The quite fast vector graphics, the 
+upper & lower border open, a sync-scrolling text displayer (I think 
+it is even in med-res, isn't it?) and a digi-drum tune playing - 
+This screen is definitely the best of the whole demo.
+
+
+ˆThird screen: "Do you really want this cabbage???"
+
+This screen is in fact rather a political joke than an ordinary demo-
+screen. You know, our german chancellor Kohl is not really what one 
+could call a popular person. With other words - he is made fun of. A 
+picture of a pear with a face on it (which is not very dissimiliar 
+to that of the aforementioned person) appears, and a sample is being 
+played (at around 20 kHz). This sample is in german and goes like 
+this: "Hallllooo, isch binns wieda, Euer Hellllmud!" (something 
+like: "Hello, it's me again, yours (truly) Helmut!"). This speech 
+sample is followed by a choir singing the Hallelujah by G.F. H„ndel. 
+After this the demo exits immediately. The code is by Chris, the 
+pear is by Clash, and the sample comes from the Apple Macintosh. 
+Nothing impressive really, but definitely a good laugh for the 
+germans! Funny!
+
+
+ˆFourth screen: "Klein, fies & eklig" ("Tiny, mean & disgusting")
+
+ˆby Cody
+
+This screen is another one of that kind, which switches on all the 
+effects one by one. First a scroller in the lower border and a single 
+raster line. Then a starfield in the lower border as well. Next the 
+music is switched on (a digidrum music from Turrican by MM). As the 
+main screen is still black, we can expect yet another effect. And 
+there it is - two one-plane circle-playfields swinging over each 
+other, blackness, where they overlap, and thus generating 
+interferences. Just like we've seen it before in the "Komische 
+Sackratten von der H”hle" a/k/a "Zonk!"-screen from the Ooh Crikey 
+wot a scorcher! demo by TLB. Only that the displayed playfield is 
+bigger (Not really difficult, as he doesn't play a four-channel tune 
+at 8 kHz...). Nice, but not very impressive...
+Cody announced, that it was his last demoscreen, and that he will 
+code utilities using GEM & VDI in the future. Good luck, Cody...
+
+
+ˆGreetings- & Storyscroller by Shadow (BDC)
+
+Again this is a raster-scroller like the one from Count Zero in the 
+Decade Demo, only that the Chars are more than double as high 
+(nearly 200 Pix.). It must have been an awful job to design these. 
+Some colors are disgusting, but most of them suit. At the bottom of 
+the screen there is a small (16 high) 3-plane scroller. I have not 
+read the scrollers, so I don't know, which one is the greetings- and 
+which one is the storyscroller... By pressing F1-F8 you're able to 
+look at some digitized pictures with the faces of the Aura- (and 
+Xenex-) members on them along with a satiric comment. The music is 
+from Stormlord. Well,...........
+
+
+ˆEndpart - by Chris
+
+In the middle of the screen is an Aura logo by Clash (I hope it is 
+not one of his best!). Beneath the logo there comes a 12.5 Hz (!) Up-
+scroller telling you some bullshit. Guys, that scroller is definitely 
+too SLOW!!! The music is by Lap (one of his better tracks - no, not 
+the Aciiid tune!). That is ALL! Nothing more. Very poor, guys!
+
+
+ Ratings:
+
+Graphics: 3
+Music:    8
+Code:     4
+Overall:  5
+
+As said before, the best screen is the real-time article with the 
+nice vectors, but the rest is mostly crap. Sorry guys!
+
+
+
+(c) 1992 Big Alec - the writing slave of himself!
+
+
+
+... and a MASSSSSIVE and RAAADICAL TEKKKKKKKKKKKKKKNO RRRRRRRAVE
+
+
+ SSSSSS  TTTTTTTT   OOOOOO   MM    MM  PPPPPPP   EEEEEEE  RRRRRRR
+SS          TT     OO    OO  MMM  MMM  PP    PP  EE       RR    RR
+ SS         TT     OO    OO  MMMMMMMM  PP    PP  EE       RR    RR
+  SSS       TT     OO    OO  MM MM MM  PPPPPPP   EEEEE    RRRRRRR
+    SS      TT     OO    OO  MM    MM  PP        EE       RR  RR
+     SS     TT     OO    OO  MM    MM  PP        EE       RR   RR
+SSSSSS      TT      OOOOOO   MM    MM  PP        EEEEEEE  RR    RR
+
+Hi Karl!
+
+

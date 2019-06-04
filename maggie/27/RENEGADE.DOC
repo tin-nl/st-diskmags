@@ -1,0 +1,305 @@
+
+
+       /ÿÿÿÿÿÿÿÿ7\
+      / /\ÿÿÿÿÿÿ\/                                    /ÿ7\
+     / / /ÿÿÿÿÿÿÿ                                    / / /
+    / / /ÿÿÿÿÿ7\/ÿÿÿÿÿ7\/ÿÿÿÿÿ7\/ÿÿÿÿÿ7\/ÿÿÿÿÿ7\/ÿÿÿÿ / /ÿÿÿÿÿ7\
+   / / / /\7 / / /\7 / / /\7 / / /\7 / /\ÿÿ7 / / /\7 / / /\7 / /
+  / / /  ÿÿ / / / / / /  ÿÿ / /  ÿÿ / /ÿÿÿÿ / / / / / /  ÿÿ / /
+ / / / /\ÿÿÿ\/ / / / / /\ÿÿÿ\/\ÿÿ7 / / /\7 / / / / / / /\ÿÿÿ\/ 
+/ / /  ÿÿÿ7\/ / / / /  ÿÿÿ7\ÿ  ÿ/ / /  ÿÿ / /  ÿÿ / /  ÿÿÿ7\ÿ 
+\ÿ\/\ÿÿÿÿÿ\/\ÿ\/\ÿ\/\ÿÿÿÿÿ\/ÿÿÿÿ / /\ÿÿÿÿÿ\/\ÿÿÿÿÿ\/\ÿÿÿÿÿ\/
+ ÿÿ  ÿÿÿÿÿÿ  ÿÿ  ÿÿ  ÿÿÿÿÿÿ\ÿÿÿÿÿ\/  ÿÿÿÿÿÿ  ÿÿÿÿÿÿ  ÿÿÿÿÿÿ
+                            ÿÿÿÿÿÿ        
+  /\ÿÿ\/\/\ /\ÿ7\ /\  /\ /\\ÿ7\ÿ\ /\ /\ÿ7\ /\  /\    \ÿ7\    by
+ /ÿÿ\ÿ // // // // / / // / / /ÿ / // // // /\/ /    _/_/
+ \ÿÿ\  \\/ \ÿÿ\/ \ÿÿ\\ÿÿ\/  \/   \/ \ÿÿ\/ \/  \/     \  \    MaTT
+  ÿÿÿ   ÿ   ÿÿÿ   ÿÿÿ ÿÿÿ   ÿ    ÿ   ÿÿÿ  ÿ   ÿ       ÿÿÿ    Smith
+
+It was not that long ago when there wasn't such a thing as an Atari 
+specific CD ROM. Nowadays there's quite a few to choose from, but they 
+all suffer from the same problem. After a while the software on them 
+becomes outdated and there is no way of getting updated versions of the 
+software without buying a brand new CD ROM. That's all about to change 
+now that there's 2 new types of CD ROM format on the market.
+
+The first format (CDR) enables you to write data to a CD ROM, with this 
+format you are unable to overwrite what is already contained on the CD 
+ROM. The only downside to this format is that any data that is 
+subsequently written to the disk can only be read by a multi-session 
+compatible CD ROM drive. On the plus side though the price of the CDR 
+disks vary in price from œ1 to œ4 depending on branded quality.  
+
+The second format (CDRW) enables you to write data to a CD ROM and re-
+write over it if you want. You can even erase the complete disk and 
+start again, ideal if you want or need to make regular backups of your 
+hard drive contents. The only drawback is the price of the CDRW disks 
+can vary in price from œ8 to œ12.
+
+The people at Atari Computing have used the first format in their new 
+CD ROM. So let's have a look inside to see what this CD ROM has got to 
+offer. Rather than tell you what's on the CD ROM in a random and rather 
+confusing fashion, I'll go through it folder by folder giving you a 
+rough idea of what's in them. A much more logical way, and easier on my 
+ageing senile mind 8-).
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+First of all there are a couple of audio tracks on this CD ROM, not 
+exactly the right thing to have on an Atari CD ROM I thought. But nice 
+music all the same, along the lines of Micheal Oldfield. The tracks 
+come from an album by Mark Wherry called Distant Lands. All profits 
+from the sale of the album goes to a registered charity.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ROOT DIRECTORY
+
+The best place to start, and here you'll find a copy of CAB so you can 
+browse through the integrated HTML docs on the CD ROM. Also the 
+/MODULES folder contains a CAB_JPEG.OVL for decoding JPEG's.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    The Atari Computing folder. Containing the following 
+|ÿÿÿÿÿÿÿÿÿ|    folders.. 
+|         | 
+|_________|
+ AC  
+    
+    /ÿ|        A 25 meg FLC animation advertising Atari Computing, if
+ |ÿÿÿÿ|        you were at any of the Atari shows a few years ago you
+ |____|        might have seen it.
+ AC3ANIM
+ 
+    /ÿ|        All the current Atari Computing reader disks (1 - 11) 
+ |ÿÿÿÿ|        plus a Hisoft basic disk and a help disk for people 
+ |____|        wanting to get online with CIX.
+ DISKS
+     
+    /ÿ|        Not much in here yet apart from a copy of Hellgate, a 
+ |ÿÿÿÿ|        Stos written Doom style clone.
+ |____|
+ EXTRAS
+              
+    /ÿ|        A demo version of Gemtrade v 2.2 A German to English 
+ |ÿÿÿÿ|        converter that can be used with CAB to convert German 
+ |____|        HTML pages to English while you are online.
+ GEMTRADE 
+     
+    /ÿ|        All the current Atari Computing magazines (1 -11 ) in 
+ |ÿÿÿÿ|        both HTML and plain text. In time they will all be 
+ |____|        converted into HTML format.
+ ISSUES
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    Another copy of CAB, this is version 1.5 with all the 
+|ÿÿÿÿÿÿÿÿÿ|    associated folders and files that come with it. 
+|         | 
+|_________|
+ CAB15.AC
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    The complete InterActive collection of shareware progs. 
+|ÿÿÿÿÿÿÿÿÿ|    Too mant to list, but they are all here in their latest 
+|         |    versions. There is also an off-line version of Joe's 
+|_________|    Web Site too. Top marks go to Joe on this. 
+INTERACT.IVE
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    This folder contains the following disk magazines.. 
+|ÿÿÿÿÿÿÿÿÿ|    AtariPhile   issues 1 - 5  (HTML format) 
+|         |    Atari Times  issues 1 - 15 (HTML format) 
+|_________|    Ictari       issues 1 - 52 (ascii format)
+ MAGAZINE
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    An off-line version of the Atari Computing Web Site, 
+|ÿÿÿÿÿÿÿÿÿ|    dated 19.8.98. 
+|         | 
+|_________|
+ RENEGADE
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    The resource folder is home to a variety of stuff. 
+|ÿÿÿÿÿÿÿÿÿ|    Something of interest for everyone. 
+|         | 
+|_________|
+ RESOURCE
+ 
+    /ÿ|        You'll find programs in here that don't fall into any
+ |ÿÿÿÿ|        other category. Like demos of DA's Layout v6, Texel
+ |____|        UDO and Thought. There's also a copy of Free Base too.
+ APPS
+ 
+    /ÿ|        A small collection of CPX modules for use with COPS,
+ |ÿÿÿÿ|        XControl, ZControl and Freedom. All of them written
+ |____|        by Mark S. Baines.
+ CPX
+  
+    /ÿ|        You'll find 11 gem games in this folder, ideal
+ |ÿÿÿÿ|        for use in a multitasking environment or by
+ |____|        running them as ACC's if you're not.
+ GEMGAMES
+  
+    /ÿ|        A freeware GEMScript interpreter and a collection
+ |ÿÿÿÿ|        of GEMScript plug-ins can be found in here. I've
+ |____|        no idea what they're used for. ;-)
+ GEMSCRPT
+  
+    /ÿ|        "The Atari A to Z" by Mark S, Baines can be found
+ |ÿÿÿÿ|        in here. It's described as a dictonary of modern
+ |____|        computer terms for the Atari computer enthusiast.
+ INFO
+  
+    /ÿ|        This folder is crammed full of demo programs for 
+ |ÿÿÿÿ|        the musically minded. Electronic Cow, Sound Pool
+ |____|        and Softjee all have seperate folders with demo
+ MUSIC         versions of just about all of their software.
+ 
+    /ÿ|        Here's something for the tech heads, a selection
+ |ÿÿÿÿ|        of tools, documentation, libraries, frameworks
+ |____|        and more..
+ PRGMMING
+ 
+    /ÿ|        Programs that enhance the functionality of your
+ |ÿÿÿÿ|        computer, so it says in the blurb on the CD ROM.
+ |____|        Although some of the programs are repeated in the
+ SYSTEM        Interactive folder.
+ 
+    /ÿ|        A collection of useful programs, some of them written
+ |ÿÿÿÿ|        by Mark S. Baines, (it's that bloke again).
+ |____|
+ UTILS
+ 
+    /ÿ|        This folder contains the following off-line Web pages.
+ |ÿÿÿÿ|        /MWP          Mark Wherry
+ |____|        /SND_POOL     SoundPool
+ WEBPAGES      /TITANWEB     Titan Designs 
+  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    This folder contains 42 megs worth of samples in 8 & 16 
+|ÿÿÿÿÿÿÿÿÿ|    bit AVR format. Various drum machine, synth, vocal and 
+|         |    sound effects.Useful for all Atari musicians, the vocal 
+|_________|    and sound effects are mainly for use with SAM.
+ SAMPLES.AC
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+      /ÿÿÿ|    This is the folder most people will be interested in. It 
+|ÿÿÿÿÿÿÿÿÿ|    contains full versions of the following software.. 
+|         | 
+|_________|
+ SPECIALS
+  
+    /ÿ|        This folder contains the a full version of Apex Intro.
+ |ÿÿÿÿ|        It's a cut down version of their best selling graphics
+ |____|        program Apex. Check out their off-line web site for more
+ APXINTRO      info about getting a manual for a tenner.
+ 
+    /ÿ|        You'll find a special edition of Digital Tracker by
+ |ÿÿÿÿ|        Softjee in here. It's a fully functioning version except
+ |____|        that it can only sequence up to 4 channels at a time.
+ DT
+  
+    /ÿ|        The full version of Kandinsky v 2.5, an excellent
+ |ÿÿÿÿ|        vector art program which normally cost 30 pounds
+ |____|        to buy.
+ KAND251E
+  
+    /ÿ|        In here you'll find the full version of Electronic
+ |ÿÿÿÿ|        Cow's Sound Chip Synth v2.32
+ |____|
+ SCS232.AC
+  
+    /ÿ|        All the Solution Software game releases can be found 
+ |ÿÿÿÿ|        in here. They include, Dryegg, Nightfall, ELSA III
+ |____|        Trios, Sunshine and Rollercoster Experience.
+ SSOFT_F2
+  
+    /ÿ|        Thing is a great replacement desktop, and this is a 
+ |ÿÿÿÿ|        fully working copy of version 1.09e. Plus you get a
+ |____|        bonus of being able to upgrade to the latest version
+ THING.109     for only a tenner.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      /ÿÿÿ|    This folder contains all the data files needed for your 
+|ÿÿÿÿÿÿÿÿÿ|    integrated browse of the Renegade CD ROM. It also links 
+|         |    to the off-line versions of the Web pages that are also 
+|_________|    on the CD ROM.
+ SYSTEM
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+So there you have it. A quick overview of what this CD ROM contains. 
+The combined price of the full versions of software on this CD ROM more 
+than make up for the price of the CD ROM many times over. 
+
+   
+ /\ÿ7\ /\ÿ7\ /\ÿ7\ /\ÿÿ\    The first in a new breed of Atari CD ROM. 
+/\ÿÿ\//\\ÿ\// // / \ÿ7\ÿ 
+\/ÿÿÿ \/ÿ\ÿ \ÿÿ\/ \ÿÿ\/     A good selection of software, something 
+ÿ     ÿ  ÿ   ÿÿÿ   ÿÿÿ      of interest for all Atari users.
+
+                            Updates available on a regular basis.
+ 
+
+ /\ÿÿ\ /\ÿ7\ /\  /\ /\ÿÿ\   You'll need a multi-session compatible 
+/ /ÿÿ / // // /\/ / \ÿ7\ÿ   CD ROM drive to be able to read any of 
+\ÿÿ\  \ÿÿ\/ \/  \/ \ÿÿ\/    the updates. 
+ ÿÿÿ   ÿÿÿ  ÿ   ÿ   ÿÿÿ
+                            Audio tracks are a little out of place.
+                            
+                            Some program duplication.
+                             
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After all things were taken into consideration I decided to give this 
+CD ROM a rather chair busting..
+ 
+           /ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ7\  /ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ7\  /ÿÿÿÿÿ7\ /ÿÿ7\
+          /  /\ÿÿÿÿÿÿÿ7  / / /  /\ÿÿÿÿÿÿÿ7  / / / /\7 / //  / /
+         /  / /ÿÿÿÿÿÿ/  / / /  / /ÿÿÿÿÿÿ/  / / /  ÿÿ / //  / /
+        /   ÿÿÿÿÿÿÿÿÿ  / / /  / /      /  / /  \ÿÿÿÿÿ\//  / /
+        \ÿÿÿÿÿÿÿÿÿÿ7  / / /  / /      /  / /    ÿÿÿÿÿÿ/  / //ÿÿÿÿÿ7\
+         ÿÿÿÿÿÿÿÿÿ/  / / /  / /      /  / /          /  / // /\7 / /
+     /ÿÿÿÿÿÿÿÿÿÿÿÿ  / / /   ÿÿÿÿÿÿÿÿÿ  / /          /  / //  ÿÿ / /
+     \ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ\/  \ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ\/           \ÿÿ\/ \ÿÿÿÿÿ\/
+      ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ    ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ             ÿÿÿ   ÿÿÿÿÿÿ
+
+That makes it another Maggie gold medallion winner. So if you are going 
+to buy a CD ROM this year, make sure it's this one. You can't go wrong.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~      
+
+If you're interested in getting hold of a copy of Renegade evolution #1 
+then get in contact with Atari Computing at the address below. All the 
+prices mentioned are correct at the time of this issue of Maggie.
+
+
+Initial price of Renegade evolution #1 :-
+
+œ 14.95 inclusive of postage and packaging. ( U.K. only )
+
+Price of subsequent updates :-
+
+œ 4.00 inclusive of postage and packaging. ( U.K. only )
+
+       
+CONTACT ADDRESS :-      
+       
+Atari Computing          E-mail  :-  cd@ataricomputing.com 
+73 Bentinck Drive        Web     :-  http://www.ataricomputing.com 
+Troon 
+Ayrshire 
+KA10 6HZ 
+Scotland
+
+                                 

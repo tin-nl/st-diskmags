@@ -1,0 +1,50 @@
+NO BORDER IN GFA
+
+Information for low border overscan in (fully) GFA-BASIC.
+
+Written by Corsair of      *** * * ***
+                            *  *** **
+                            *  * * ***
+          ******* ***** ******* **    * ******* *******
+          *         *   *     * * *   *    *    *
+          *  ****   *   ******* *  *  *    *    ******* 
+          *     *   *   *     * *   * *    *          *
+          ******* ***** *     * *    **    *    *******
+          (demo development)
+
+                         Hi everybody!!!
+
+This is the first time that I've sent an article in. I am a GFA-
+BASIC freak and I thought it would be nice for all the GFA 
+coders to get a rout for opening the low border.
+I've originally written this routine for the dutch magazine 
+'START', so it's documented in crappy dutch language.
+(Note from Bonus: already changed in english !) 
+
+Anyway, I tell you in short lines how the rout works: You install 
+a screen of 32000+50*160 bytes. ( 50*160 Bytes extra 'cause the 
+screen becomes bigger!) After initialising and turning off some 
+MFP interrupts (they disturb everything) you can finally open the 
+lower border. First you synchronize the shit with VSYNC and some 
+VIDEO ADDRESS COUNTERS ($ff8205, $ff8207 and $ff8209). Then the 
+program waits (->> doing other things like putting sprites etc.).
+When the electron-beam arrives at the last screenline (200 in low 
+res) and is in the right border, you put the sync at 60 hertz. 
+And a few cycles later back at 50 hertz. Wooooooow! Holy shit! 
+Potverdrie! Nou moe! m'enfin! Daž ist doch nicht war!
+The low border is on holiday!!!! (Delta force expression)
+
+Easy eh?
+
+Oh yeah, I almost forgot: you can modify some syncs by pressing 
+the +,-, and arrow keys. And the overscan only works compiled!
+
+Thanks to Mr Ni! of the Tos crew for giving me some hot hints and 
+helping me with his special (V)sync rout. (This special Vsync 
+rout is not included in the routine)
+
+My address can be found in other texts from me. (If D.B.A. has 
+included them)
+
+Corsair of the Giants.
+

@@ -1,0 +1,1120 @@
+  __________________________________________________________________________
+
+           NIGHTFALL - ein Multi User Creativ Adventure im Internet
+                       Adresse: 134.2.62.161 4242
+
+                AuszÅge aus einem Nightfall-Tag von Apache
+                         exklusiv fÅr Undercover
+                                 2. Auflage
+  __________________________________________________________________________
+
+ Ich mîchte mich kurz vorstellen:
+ Mr. Niceguy Lonely Apache the dangerous fighter [ elf, fighter, 10 ][Germany]. 
+ Das steht zumindestens  in der Playerliste  und wird sich  sicher bald Ñndern 
+ ( speziell der Level ). Andere  kennen  mich  kÅrzer  als  Mr. Niceguy Lonely 
+ Apache oder schlicht Apache. Ich bin Elf und in Lorinia beheimatet. Beruflich
+ bin  ich  bei  der "Paladin's Guild" tÑtig ( also als KÑmpfer ), welche ihren
+ Stammsitz ebenfalls in Lorinia hat. In dieser Gilde habe ich spezielle FÑhig-
+ keiten  trainieren  kînnen, die mich zu einem mÑûig gefÑhrlichen Streiter ma-
+ chen.
+
+ Dabei mîchte ich nicht verschweigen, daû es durchaus viel gefÑhrlichere Wesen
+ gibt, seien es Spieler mit hîherem Level oder gar Zauberer, von denen die Pa-
+ ladins abfÑllig als 'Handarbeiter' tituliert werden. Damit ist klar,daû es in
+ der Welt von Nightfall noch andere Gilden gibt, u.a. zwei verschiedene Zaube-
+ rergilden, die Barden,die Vampire,was weiû ich wen noch und schluûendlich die
+ Wizards - die mÑchtigste  Gilde, die aktiv an der  Weiterentwicklung der Welt
+ arbeitet. Allerdings kann man  in letztere Gilde nicht einfach eintreten, man
+ muû schon einen gewissen Level ( 20 ) erreichen und wird dann aufgenommen.
+
+ Das Leben in Nightfall  dreht sich primÑr  um das öberleben und das Erreichen
+ eines hohen Levels. Dazu tîtet man Monster und lîst sogenannte Quests ( Mini-
+ adventure  herkîmmlichen 1-Player-Musters ) wofÅr man Ehrfahrungs- und Quest-
+ punkte erhÑlt. Der grîûte Reiz liegt allerdings in der Kommunikation zwischen
+ den Spielern, die aus aller Herren LÑnder kommen. Prinzipiell ist unsere Welt
+ englischsprachig, aber die Kommunikation lÑuft (zumindest von 6 - 18 Uhr MEZ)
+ auch oft in deutsch ab.
+
+ Ich habe nun unten ein  Protokoll eines Spieltages gekÅrzt wiedergegeben. Ur-
+ sprÅnglich  war es ca. 1MB. Jedoch  wÅrden die  langen "Rum-renn"- und Kampf-
+ sequenzen den Leser nur ermÅden. Am Anfang  habe ich ( in optisch etwas ange-
+ paûter Form ) eine Einblick in die prinzipiellen  Bildschirmausgaben gegeben,
+ die einen erwarten. Leider lieûen sich die Tastatureingabe nicht mitprotokol-
+ lieren, so daû nur die Ergebnisse zu sehen sind. SpÑter habe ich nur noch die
+ GeprÑche ( genauer die Kommunikation Åber KanÑle ) wiedergegeben, um den Witz
+ der "Massenveranstaltung" Nightfall darzustellen.
+
+ In geschweifte Klammern  habe ich eigene Kommentare eingeschlossen. Die wich-
+ tigsten KÅrzungen sind durch drei Punkte gekennzeichnet. Tippfehler ( die bei
+ den meisten  Terminals nicht  zu vermeiden sind ) wurden nicht korrigiert. Es
+ empfiehlt sich, den Text durchaus  aufmerksam  zu lesen, da das Spiel Mangels
+ GFX sehr auf  Wortwitz basiert. Die Kanal-Kommunikation ist am besten zu pro-
+ tokollieren gewesen,da ich dort auch meine eigenen Eingaben ausgegeben bekom-
+ me. In der Tat lÑuft in der  letzten Zeit  immer mehr Kommunikation  Åber die
+ KanÑle. Was aber vielleicht daran liegt, daû ich nun die KanÑle auch geîffnet
+ habe...
+
+                                                         Apache of tnb
+
+ P.S.:   Inzwischen bin ich auf Level 16 aufgestiegen und hoffe bei erscheinen
+         dieses Artikels schon Wizard zu sein.
+
+ P.S.2:  Wer  interessiert ist, und es  lieber deutsch mag, dem sei  an dieser
+         Stelle UNItopia ( dort heiûe  ich Ossi ) empfohlen. Die Adresse ( und
+         die von vielen anderen MUD's) erfÑhrt man am besten im TÅbinger Game-
+         server: CASTOR.TAT.PHYSIK.UNI-TUEBINGEN.DE, Login: GAMES
+  
+ P.S.3:  Ich bin zwar immer  noch kein Wizard ( jedoch kenne ich einen persîn-
+         lich ), aber ich  bin inzwischen Level  17. Mein aktueller Titel nun:
+         " Frood Mr. Niceguy Lonely Apache the famous indian chief [ Winnetou,
+         fighter, 17 ] ".
+
+  --------------------------------------------------------------------------
+
+Trying...
+Connected to 134.2.62.161.
+Escape character is '^T'.
+GameDriver LPmud 03.02@186 (Amylaar)
+
+                       ()>~           _  _ _  __   _  _ ____ ___  __  _   _
+                      _||_            /| / / /  / /  /  /   /    /  / /   /
+                     /. \ \          / |/ / /__  /__/  /   /_   /__/ /   /
+                    /  /. .\       _/ _/_/ /__/_/ _/ _/  _/   _/ _/ /__ /__
+                   / /. . \ \
+                  |\/\/\/\/\/|
+                  | - .  _ . |                     LPmud 3.2 / NF3.0.0
+                  \_______/__/                           At  134.2.62.161 4242
+   |\/\/\/\/|      |. -  _ .|      |\/\/\/\/|            Located in Tuebingen,
+   | _ | - .|      | _ . || |      | -  . _ |                          Germany
+   \______/_/      | _  .- .|      \__\_____/
+    | ||.= |       |.||. _  |       |-  || |
+    |.  _  |\ /\ /\ /\ /\ /\ /\ /\ /|.   . |              / Use the "guest" \
+    | _   .||_||_||_||_||_||_||_||_||  =_  |             |  name if you just |
+    | ||   |  . _  .    .     .  .  | . || |\ /\ /\      |  want to look     |
+    | _ .- |= _  .  -  _   .-   _ - |   _  ||_||_||       \ around a bit.   /
+    | _   .|  ||  ___  || -  =  ||. | - _ .|.   .= -_
+    | || . |  .  /#|#\- .  . _ .    |.  || |  - . _. |      .
+    |. - = | _ . |#|#|   _  _   . = | . _  | .= -  . -     -_|=_
+    |______|_____|#|#|______________|______|__________\  ./_|=|_-_     (c) '93
+
+What is your name: Welcome back to Nightfall!
+Password: 
+You are already existing!
+Reincarnating old body...
+[news:Apache becomes alive again]
+
+Well, well, what a strange place to find a well... You are standing on
+a small spot. A very old well is here waiting to be used again after  
+lots of years. Except for the well you see a very interesting altar.
+Next to the altar is a burning torch to light this place at night.
+In front of the altar are some unlit torches lying on the ground.
+There are three obvious exits: east, north and down.
+A guild-magazine.
+
+It is day.
+You entered a huge place near the center of Lorinia. A big pile of
+brushwood surrounds a stake. A young woman is tied to the stake. Crowds
+of people are waiting for the things that will happen now. Some of them
+are shouting: 'Burn the witch!'. A townguard with a burning torch arrives
+and holds it into the pile of brushwood. The young woman that didn't say
+a word now shouts full of fear: 'Please don't burn me! I am no witch!'
+She starts to cry as she recognizes that nobody listens to her words.
+If nobody rescues her she will be burned. Then this world will loose an-
+other really good-looking woman. What a pity! Another guard is talking to
+the crowd.
+To the south in front of the townwall you can see the quarters of the guards.
+There are three obvious exits: east, west and south.
+A guard.
+  Finwe the guard sings a song:
+   Always look on the bright side of life,
+   Always look on the light side of life,
+   If life seems jolly rotten,
+   There's something you've forgotten,
+   And that's to laugh and smile and dance and sing.
+   When you're feeling in the dumps,
+   Don't be silly chumps,
+   Just purse you're lips and whistle,
+   That's the thing.
+
+Marketplace [n,w,e,s].
+
+Marketplace [n,s,w,e].
+A bard with a lute.
+
+Beginning of Mainstreet [n,s,w,e].
+
+Lorinia's shop [s,store].
+A dust-bin.
+The shopkeeper.
+
+The shopkeeper shows a list to you (all prices in copper coins):
+<nr> <cost> of <item>
+  1.    900    a scale
+  2.     18    a package filled with papers
+  3.     45    a white bandage
+  4.     30    an empty flask
+  5.     60    a torch
+
+It is day.
+Beginning of Mainstreet [n,s,w,e].
+
+Lorinia's Smithy [n,store].
+A scale.
+A dust-bin.
+The blacksmith is here, too.
+The shopkeeper.
+
+The shopkeeper shows a list to you (all prices in copper coins):
+<nr> <cost> of <item>
+  1.     60    a curved knife
+  2.   6000    a guard's blade
+  3.     36    a small knife
+  4.     30    a sword
+  5.     54    a large spear
+  6.    600    a black mask
+  7.    450    a black shield
+  8.   1500    a black helmet
+  9.   3000    a black chain mail
+
+You pay 4 copper and 5 silver coins.
+The shopkeeper gives a large spear to you.
+
+A large spear:
+This once belonged to an orc.
+
+You wield a large spear.
+
+It is day.
+Beginning of Mainstreet [n,s,w,e].
+
+Marketplace [n,s,w,e].
+A bard with a lute.
+
+Pubstreet in front of the guild [n,s,w,e].
+
+Selected group 'players'.
+Guild of the paladins [w,s,e,u].
+The Central Player board.
+The guildmaster.
+
+Guildhouses storage-room [w,store].
+The shopkeeper.
+
+The shopkeeper shows a list to you (all prices in copper coins):
+<nr> <cost> of <item>
+  1.    300    a short sword
+  2.    450    The Book of Prayers (to the gods of light)
+  3.    300    a long bow
+  4.     18    a package filled with papers
+  5.     66    a quiver filled with arrows
+  6.    330    a package filled with bandages
+  7.     60    a torch
+
+You pay 30 silver coins.
+The shopkeeper gives a long bow to you.
+
+You pay 10 silver and 2 gold coins.
+The shopkeeper gives a short sword to you.
+- Apache's quicktyper                    - Apache's Guide To NightFall
+- Apache's small shield                  - Property certificate for a house in
+- A short sword                            Viking Village, England
+- A long bow                             - The Book of Prayers (to the gods of
+- A large spear (blessed) (wielded)        light)
+- A certificate                          - 3 platinum, 175 gold, 7 silver and 2
+- A matrix inventory                       copper coins
+
+You wield a short sword (blessed).
+
+You pay 7 silver coins and receive 4 copper coins.
+The shopkeeper gives a quiver filled with arrows to you.
+
+Guild of the paladins [w,s,e,u].
+The Central Player board.
+The guildmaster.
+
+The restroom [n].
+
+You enter the guildhall.
+Guild of the paladins [w,s,e,u].
+The Central Player board.
+The guildmaster.
+
+It is day.
+Pubstreet in front of the guild [n,s,w,e].
+
+Pubstreet [n,s,w,e].
+
+The slums [se,n,s,w,e].
+A beggar.
+
+The beggar says: 'Good man could you please give me some alms?'
+The beggar shouts: 'Alms for the poor!'
+
+Doing: `know alignment beggar'
+The alignment is evil.
+Doing: `consider beggar'
+beggar is not as strong as you.
+
+Pubstreet [n,s,w,e].
+
+The slums [se,n,s,w,e].
+A beggar.
+
+You stab at beggar with a large spear (blessed) and hit beggar very hard.
+ ...
+You slash at beggar with a short sword (blessed) and hit beggar very hard.
+beggar died.
+You killed beggar.
+
+Pubstreet [n,s,w,e].
+
+You are a level 10 saintly elf and you are a member of the Fighters.
+Skills:
+Cli:26    Fig:100   Luk:15    Par:55    Ban:80    Aim:100   
+Mul:50    Cri:53    Hid:70    
+You have 29442 experience points,
+106 hit points(146) and 58 spell points(146).
+You are Mr. Niceguy Lonely Apache the dangerous fighter [elf, fighter, 10].
+Your stats are:
+Str: 13  Dex: 13  Int: 13  Con: 13  
+You are hungry.
+Wimpy mode (threshold 60).
+age:  2 days 12 hours 19 minutes 14 seconds.
+
+Marketplace [n,w,e,s].
+
+Place with a big fire [s,w,e].
+A guard.
+
+Place with old well [d,n,e].
+A guild-magazine.
+
+It is dark. You see nothing.
+
+Your book starts to glow.
+
+In the passages [w,e].
+
+In the passages [n,w].
+
+In the passages [n,s].
+A scroll (arc fire).
+You take a scroll (arc fire).
+
+In the passages [n,s].
+
+Under the grave [s,u].
+
+In a monolith grave [n].
+
+It is day.
+On a small trail [s,w,e].
+An orc disguise.
+You take an orc disguise.
+ ...
+In a big forest [s,e,n].
+An ugly toad.
+Masoch the guardian orc.
+Bonecruncher the guardian orc.
+Bonecruncher says: 'If you think I'll tell you where I hide my last barrel of
+Veltins, you are heavy on the woodway.'
+You stab at Masoch with a large spear (blessed) and graze Masoch.
+You slash at Masoch with a short sword (blessed), but miss Masoch.
+A magic missile hits Masoch.
+ ...
+You slash at Masoch with a short sword (blessed) and hit Masoch very hard.
+Masoch died.
+You killed Masoch.
+The familiar eats the corpse !
+Bonecruncher says: 'May the Balrog find you tasty!'
+
+You take orcish combat boots.
+You take An orcish shield.
+You take An orcish helmet.
+You take an ugly toad.
+You wear An orcish helmet.
+You wear orcish combat boots.
+
+You stab at Bonecruncher with a large spear (blessed) and hit Bonecruncher hard.
+You slash at Bonecruncher with a short sword (blessed) and hit Bonecruncher very hard.
+magic missile orc
+ ...
+You stab at Bonecruncher with a large spear (blessed) and hit Bonecruncher very hard.
+Bonecruncher died.
+You killed Bonecruncher.
+
+get all from corpse
+You take An orcish helmet.
+You take orcish gloves.
+You take orcish combat boots.
+You wear orcish gloves.
+
+The shore of Crescent Lake [se,n,w,e].
+A green frog.
+ ...
+In a big forest [w,e].
+A troll.
+
+Troll attacks you with left hand, but misses you.
+Troll attacks you with right hand, but misses you.
+The troll says: Prepare to die!
+You stab at troll with a large spear (blessed) and hit troll very hard.
+You slash at troll with a short sword (blessed) and hit troll very hard.
+ ...
+You hit Troll twice.
+You stab at troll with a large spear (blessed) and hit troll hard.
+troll died.
+You killed troll.
+
+Clearing [w,e].
+ ...
+You are behind a white house. In one corner of the house there is a
+window which is slightly ajar.
+There are two obvious exits: north and southwest.
+
+With great effort you manage to open the window.
+You enter the white house.
+
+Kitchen of a white house [n,s,u].
+
+You are in the livingroom. There is a door to the south. To the west is a
+wooden door with strange gothic lettering, which appears to be nailed shut.
+There is a throphy case here. In the center of the room is a large oriental
+rug which looks very heavy.
+On hooks above the mantlepiece hangs an elvish sword of great antiquity.
+There is one obvious exit: north.
+You take the elvish sword.
+
+You are in the livingroom. There is a door to the south. To the west is a
+wooden door with strange gothic lettering, which appears to be nailed shut.
+There is a throphy case here. In the center of the room is a large oriental
+rug which looks very heavy.
+There is one obvious exit: north.
+You unwield a large spear (blessed).
+You wield a long sword.
+
+You are in the attic. The only exit is stairs that lead down.
+A large coil of rope is lying in the corner.
+On the table is a nastly-looking knife.
+There is one obvious exit: down.
+You take the coil of rope.
+
+Kitchen of a white house [n,s,u].
+ ...
+a small game-trail [n,w,e].
+Mike.
+Mike hiccups.
+Mike:
+He looks a bit dull. He is just an ordinary orc.
+He carries:
+A heavy club
+
+You slash at Mike with a short sword (blessed) and hit Mike very hard.
+You slash at Mike with a long sword and hit Mike very hard.
+ ...
+AAAAAAAARRRRGGGGGHHHHHH
+Mike charges on you with a heavy club and grazes you.
+Mike says : Extinguish these fucking lights!
+You slash at Mike with a short sword (blessed) and hit Mike.
+orc died.
+You killed orc.
+You take a heavy club.
+
+A large open plain [n,s].
+ ...
+In a big forest [s,e,n].
+Masoch the guardian orc.
+Bonecruncher the guardian orc.
+Masoch says: 'Listen, Bonecruncher! Wasn't that the voice of a fairy?'
+Bonecruncher sighs: 'Oh those fairies! Whenever I try to catch one, it be-
+comes invisible! And I soooo enjoy eating fairies!'
+Masoch answers: 'So do I!!!'
+Masoch says: 'Hey Bonecrunsher! Guess what Chrusher told me yesterday!
+  He did say that the half-elves invented a disguise that can make anybody
+  look like an orc!'
+Bonecruncher answers: 'Harharhar! Good joke! Imagine a fairy that looks 
+ like an orc!'
+
+You slash at Masoch with a long sword (blessed) and hit Masoch.
+You attack Masoch with left hand, but miss Masoch.
+ ...
+You are hunted by Masoch.
+ ...
+Castle hallway [e,w].
+An ogre.
+
+Ogre attacks you with left hand, but misses you.
+Ogre attacks you with ogre sword, but misses you.
+ ...
+You are hunted by ogre.
+ ...
+- Apache's quicktyper                    - A scroll (arc fire)
+- Apache's small shield                  - 40 light arrows
+- A heavy club                           - A quiver filled with arrows
+- A large coil of rope                   - A quiver filled with arrows
+- A long sword (blessed) (wielded)       - A long bow
+- A stick                                - A certificate
+- A foxglove                             - A matrix inventory
+- A foxglove                             - Apache's Guide To NightFall
+- A stick                                - Property certificate for a house in
+- An ugly toad                             Viking Village, England
+- An orcish helmet (worn)                - The Book of Prayers (to the gods of
+- An orcish shield                         light)
+- Orcish combat boots (worn)             - 3 platinum, 174 gold and 4 silver
+- A stick                                  coins
+- An orc disguise
+ ...
+[news:Tilly enters the world]
+ ...
+You wear orcish gloves.
+Guest1 seems to fall, but takes a step and recovers.
+You wear a leather jacket.
+
+- Apache's quicktyper                    - An ugly toad
+- A torch                                - An orcish helmet (worn)
+- A knife                                - An orcish shield
+- A bottle filled with hot espresso      - Orcish combat boots (worn)
+- A leather jacket (worn)                - A stick
+- Some dark green herbs                  - An orc disguise
+- A fly agaric                           - A scroll (arc fire)
+- A large spear (blessed)                - 40 light arrows
+- A short sword (blessed)                - A quiver filled with arrows
+- Orcish combat boots                    - A quiver filled with arrows
+- An orcish helmet                       - A long bow
+- Orcish gloves (worn)                   - A certificate
+- A leather jacket                       - A matrix inventory
+- Apache's small shield                  - Apache's Guide To NightFall
+- A heavy club                           - Property certificate for a house in
+- A large coil of rope                     Viking Village, England
+- A long sword (blessed) (wielded)       - The Book of Prayers (to the gods of
+- A stick                                  light)
+- A foxglove                             - 3 platinum, 174 gold and 4 silver
+- A foxglove                               coins
+- A stick                                
+
+You wield a short sword (blessed).
+
+Castle hallway [e,w].
+Corpse of ogre.
+
+Castle hallway [e].
+A guard's blade.
+You take a guard's blade.
+
+Castle hallway [e,w].
+ ...
+Castle rampart [d].
+Some copper coins.
+You take 75 copper coins.
+
+Castle hallway [w,u].
+ ...
+> Castle hallway [n,s,e].
+ ...
+Outside you can see:
+Castle hallway [s,e,w].
+An ogre.
+You feel secure in your hideout.
+You hide yourself.
+ ...
+You killed ogre.
+ ...
+You killed ogre.
+ ...
+You cast a arc fire spell.
+An arcfire hits ogre!
+ ...
+You killed ogre.
+ ...
+You killed ogre.
+ ...
+You killed ogre.
+ ...
+You killed ogre.
+ ...
+Castle bedroom [n,e].
+You take a scroll (conjure spirit).
+ ...
+You killed ogre.
+ ...
+You killed ogre.
+ ...
+You killed ogre.
+ ...
+{ Ich bin gleichzeitig als Guest1 eingeloggt und habe von Gorgol gerade
+  2 Platin-MÅnzen abgestaubt... Er wunderte sich bloû, weil ich fragte,
+  bevor ich zugriff }
+ ...
+Guest1 gives 2 platinum coins to you.
+Guest1 says: Deshalb... Grins!
+Guest1 bows to you.
+You bow to Guest1.
+Guest1 says: Bist du wiz???
+ { Anm.: gemeint ist Gorgol, als Wizard kann er meinen Einloggpunkt
+   rausfinden... }
+Gorgol says: war nicht meine Absicht......
+Guest1 says: Kombiniere mal...
+Gorgol says: ich kombiniere.....selbe stadt......selber
+Gorgol says: character....right...???
+Guest1 says: Ich meine der guest1... :-) 'ntschuldigung...
+Gorgol says: was den....
+
+Gorgol the stone statue:
+Gorgol is an oglon. His cat-shaped body is completely covered
+with tight fur. A pair of wings might provide the ability to fly.
+The sinewy muscles betray the ferocious fighter under the agreeable look.
+He is slightly hurt.
+He carries:
+Gorgol's Xtool v1.3 [10:31:13]
+Some platinum, some gold, 4 silver and 1 copper coin
+Gorgol's extended soul
+A command
+A glowing gem
+A cute white creature
+RoomChecker
+Gorgol's belt of wizards
+Gorgol's Guide To NightFall
+A roommaker
+Gorgol's editor
+A finger
+A portable mailbox
+A MoneyTool (tm)
+Gorgol's Helptool V1.2
+Gorgol's spellbook
+
+Gorgol says: join doch eine magieguild
+ { Auf meine Bemerkung ich suche ein Spellbook }
+
+Mr. Niceguy Lonely Apache says: Beam me up, Scotty'
+Mr. Niceguy Lonely Apache glows in a strange blue light.
+Mr. Niceguy Lonely Apache begins to fade away.
+
+Gorgol says: warte...
+Gorgol says: nein ist schon ok......
+ { vermutlich hat er nachgeschaut, ob er das Geld noch braucht... }
+You smile happily.
+You bow to Gorgol.
+ ...
+> Castle hallway [w,e].
+Guest1 the new Oglon.
+Gorgol the stone statue.
+Gorgol says: I have an eye on you.....
+ { Ich: Ist ja eklig! Nimm es schnell wieder runter! }
+Gorgol says: ohne auge kann ich nichts sehen...ich finde es nicht mehr :)))
+Gorgol says: AHHHHHH....da ist es ja.....
+Gorgol take eye
+Gorgol wears glasseye
+Gorgol smiles happily.
+ ...
+You are a level 10 saintly elf and you are a member of the Fighters.
+Skills:
+Cli:26    Fig:100   Luk:15    Par:55    Ban:80    Aim:100   
+Mul:53    Cri:57    Hid:70    
+You have 144189 experience points,
+126 hit points(146) and 0 spell points(146).
+You are Mr. Niceguy Lonely Apache the dangerous fighter [elf, fighter, 10].
+Your stats are:
+Str: 13  Dex: 13  Int: 13  Con: 13  
+You are hungry.
+You are thirsty.
+Wimpy mode (threshold 60).
+age:  2 days 13 hours 4 minutes 14 seconds.
+ ...
+- Apache's quicktyper                    - A bottle filled with hot espresso
+- A stick                                - A leather jacket (worn)
+- A leather jacket                       - Some dark green herbs
+- Orcish combat boots                    - A fly agaric
+- An orcish shield                       - A large spear (blessed)
+- An orcish helmet                       - A short sword (blessed) (wielded)
+- Orcish combat boots                    - Orcish combat boots
+- Orcish gloves                          - An orcish helmet
+- An orcish helmet                       - Orcish gloves (worn)
+- Apache's small shield                  - A leather jacket
+- A bright shining blade                 - A heavy club
+- Orcish combat boots                    - A large coil of rope
+- An orcish shield                       - A long sword (blessed) (wielded)
+- An orcish helmet                       - A stick
+- An orcish helmet                       - A foxglove
+- Orcish combat boots                    - A foxglove
+- A curved knife                         - A stick
+- An orcish helmet                       - An ugly toad
+- Orcish combat boots                    - An orcish helmet (worn)
+- Orcish combat boots                    - An orcish shield
+- Orcish combat boots                    - Orcish combat boots (worn)
+- Orcish combat boots                    - A stick
+- Orcish gloves                          - An orc disguise
+- An orcish helmet                       - 40 light arrows
+- An orcish helmet                       - A quiver filled with arrows
+- An orcish shield                       - A quiver filled with arrows
+- Orcish combat boots                    - A long bow
+- A guard's blade                        - A certificate
+- 5 platinum, 192 gold, 4 silver and     - A matrix inventory
+  82 copper coins                        - Apache's Guide To NightFall
+- A scroll                               - Property certificate for a house in
+- A scroll (conjure spirit)                Viking Village, England
+- A guard's blade                        - The Book of Prayers (to the gods of
+- A torch                                  light)
+- A knife
+ ...                                
+The slums [se,n,s,w,e].
+A beggar.
+The beggar says: 'Good man could you please give me some alms?'
+
+You slash at beggar with a long sword (blessed) and graze beggar.
+You slash at beggar with a short sword (blessed) and hit beggar hard.
+ ...
+You slash at beggar with a short sword (blessed) and tickle beggar in the stomach.
+beggar died.
+You killed beggar.
+ ...
+The airport of Lorinia [n,s,w,e].
+A flying carpet.
+It will cost you 300 coins to fly with this carpet.
+ WE CAN FLY YOU TO THE FOLLOWING PLACES:
+Lorinia              Wooden city          Hobbiton             
+Crescent lake        Orccaves             England              
+NF-city              Port atlinten        Miner's town         
+Dwarven mines        Dark city            Ireland              
+Vecna                Netherhells          Wasteland            
+Camelot              Surf city            Clondike             
+Orient               Sandy island         Isle of the magi     
+Giant village        Essaman              
+ Use 'fly <name>' to fly to a certain place.
+
+You sit down on the flying carpet.
+The carpet flies away with you.
+
+Part of the main road [n,s,w,e].
+You leave the carpet.
+
+Dark City General Store [w,store].
+A dust-bin.
+The shopkeeper.
+ ...
+[Clue] why dont you speak via channel?
+[Clue] this wont cost spellpoints
+[Mutabor] alos a good idea
+[Clue] und ich kann auch deutsch
+[Mutabor] ok, (i don't need my qp)
+[Mutabor] ok,ok,ok deutsch und hannel is ja sonbstniemand da...
+
+The current listeners of the players channel are:
+Apache, Mutabor, Clue.
+
+[Mutabor] hast du die ARthur quest schonmal gemacht
+[Mutabor] ich habe sie gestern abend anf
+[Clue] hihi, ich habe inzwischen ALLE geschafft
+[Clue] was ist dein Prob?
+[Mutabor] ich bin auf ein paar probleme gestossen (APPLAUS)
+[Mutabor] ich bin beim Koenig aus keinem der R+Dume herausgekommen...
+[Clue] hast du die quest geloest?
+[news:Pumuckel becomes alive again]
+[Clue] du bist bei King Arthur?
+[Clue] hast du die schluessel nicht mehr?
+[Mutabor] da gbt es doch nen ankleideraum
+[Mutabor] Welche Schluessel???
+[Clue] eigentlich liegen gleich hinter dem Eingang 3 Schluessel
+[Mutabor] ich stehe gerade nicht drin ...
+[Mutabor] da lagen keine ah, dann ist das also eigentlich kein bug ...
+[Mutabor] kein wiz der gestern da war konnte mir das sagen ...
+[Clue] wohl nicht... kannst du teleportieren oder so?
+[Mutabor] ich bin Barde! Ich bin kein so fauler MAgier, ich benutze meinen
+   Kopf und meine Fuesse, nicht irgendwelche Tricks ... (Smile)
+[Clue] na ja.. wie willst du dann herauskommen?
+[Mutabor] Wo raus aus den abgeschlossenen Zimern? (einfach Quit gemacht)
+[Clue] das ist dumm, ich koennt dich auch zu mir teleportieren (falls ich da
+   bin)
+[Mutabor] es war gestern um 3 aber keiner mehr da nur noch 2 wizzes und die
+   waren SCHWEEEHR beschaeftigt (Im Mail schreiben oder ich weiss nicht was
+   ...)
+[news:Gorgol enters the world]
+[Mutabor] hab gedacht ich frag dich mal, gib es sonst was wichtiges worauf man
+   bei dieser Quest achten muss?
+[Clue] ja.. wenn du das lamm erledigt hast... lass es liegen und steck den
+   Sack sofort rein.. ich hatte es aufgehoben und es war mir zerfallen :(
+[news:Pumuckel is netdead]
+[Mutabor] und mit dem Pegasus, gibt es da ein Problem
+[Clue] ja
+[Clue] man auch irgendwie seinen privaten chat channel oeffen.. aber ich weiss
+   nicht wie
+[Clue] bei mir gings tadellos ...
+[Mutabor] hups meine den channel ..
+[Mutabor] Gibt es da einen Trick?
+[Clue] wobei?
+[Mutabor] beim Pegasus (ich hab calm Spell und harnetz vom Betler erfahren
+   ...)
+[Clue] nee, einfach drauf setzen
+[Mutabor] und braucht man eigentlich viel equipment (Waffen) um den drachen zu
+   toeten?
+[Mutabor] d. h. mir koennte eine halbe Stunde reichen um die quest zu loesen?
+[Clue] wenn ich nur wuesste, wie man seinen eigenen channel benutzt
+[Clue] weiss nicht.. man braucht einige zutaten
+[Mutabor] was fuer zutaten?
+ ...
+in the garden of Apache [n,s,w,e].
+Welcome at home, Apache!
+ ...
+[Mutabor smile]
+ ...
+ { Die Liste der aktuellen Mitspieler }
+Guest1 the new member of the wizards' guild [oglon, conjurer, 0] (passive) [Germany]
+Mr. Niceguy Lonely Apache the dangerous fighter [elf, fighter, 10] [Germany]
+Mic the small magician [oglon, sorcerer, 13] [Germany]
+Lord Kathuro the sovereign of Ansalon. [Germany]
+Mudlink the Mud Connector (deaf) [Localhost]
+Clue the worldwide known mage [demon, conjurer, 19] [Germany]
+Pumuckel the irish lord (*hunger hab*nach Hause geh*) [Germany]
+Gorgol the stone statue [Germany]
+Tilly the worldwide known mage [elf, sorcerer, 19] [Germany]
+ ...
+[Clue] ja genau
+[Clue] teleportier mich doch zu dir!
+[Tilly] Wo bist Du denn gerade ich woll t noch ins castle ...
+[Clue] oh mann bitte nicht.. du hast doch genug?
+[Tilly] nur wegen des Blades ...
+[Apache] was willer da?
+[Clue] das hab ich
+ ...
+ { mal wieder die Liste der Spieler - schon grîûer }
+Bart Simpson is singing: 'Do the bartman... (passive) [Germany]
+Mr. Niceguy Lonely Apache the dangerous fighter [elf, fighter, 10] [Germany]
+Legor the great Alchimist is thinking about dripping drops [Germany]
+Lord Kathuro the sovereign of Ansalon. (passive) [Germany]
+Mudlink the Mud Connector (deaf) [Localhost]
+Clue the worldwide known mage [demon, conjurer, 19] [Germany]
+Mithrandir the grand master sorcerer [Germany]
+Tilly koennte Wizz werden, aber weiss nicht , ob er das tun soll(sehr unsicher) [Germany]
+Ganymede the Master of Puppets (twisting your tenses and smashing your typos) [Germany]
+Mic the small magician [oglon, sorcerer, 13] [Germany]
+Shorn the visitor from TappMUD [demon, bard, 21] [Germany]
+Gorgol the stone statue [Germany]
+Guest1 the new player [Norway]
+
+The current listeners of the players channel are:
+Apache, Clue, Pumuckel, Tilly, Mic, Shorn, Gorgol.
+ ...
+[Apache] Was bringt der dandelion?
+[Clue] i cant believe
+ ...
+A postcard of Lake Mosken:
+The postcard shows a nice picture of
+Lake Mosken.
++-------------------------------+
+|     /\     /\             /\  |
+|   /^\ \   /  \      /^\  /  \ |
+| /^\   \\_/    \   _/   \/   /^|
+|/   \     \     \_/     /   /  |
+|^    \      \          /   /   |
+| \    \      \        /   /   /|
+|  \    \      \     /    /   / |
+|   \    \    /^\  /     /   /  |
+|    \    \  /   \      /   /   |
+| \   \       /^\      /   /    |
+|  \   \__ ~~ /^\ ~~  |   /   /^|
+|   \     ~~~~ ^ ~~~~/   /   /  |
+| \   \_ ~~~~~~~~~~     /   /   |
+|  \__  ~~~~~~~--~~~~~ /  /     |
+|     ~~~~~~~~--^-~~~~~ /   ___/|
+|\___  ~~~~~~~~--~~~~~/    /    |
+|    \___ ~~~~~~~~~ /  __/      |
+|        \___/^\___/  /         |
++-------------------------------+
+Use 'send postcard to <person>' if you want to send greetings to someone,
+    'mail postcard to <person>' to send it by mail.
+You may add one line of text by 'write greeting <text>'
+ ...
+[Tilly] Weiss jemand was Terrasse auf english heisst ?
+[Mutabor] terace?
+[Tilly] Na mindestens zwei r
+[Apache] de' rasse heest the race :-)
+[Apache] Schuldchung , bin hobby-sachse...
+[Tilly] Danke Apache Du bist mir immer wieder die groesste Hilfe :)
+[Apache] Sorry, hab aber heute kein woerterbuch bei...
+[Tilly] Ich auch nicht, deshalb frag ich ja !
+[Apache] Andreas auch nicht... :-(
+[Tilly] Andreas ?
+[Apache] Sitzt hier so neben mir rum und guckt zu...
+[Apache] He Habs gefunden: hier steht in ner raumbeschreibung was von narrow
+   terrace
+[Apache] Hilft das???
+[Tilly] Zu spaet bin schon aus meinem Haus raus , das naechste mal etwas fixer
+   bitte :)
+[Apache] Kann am Lake Mosken auch nicht so einfach rumhirschen...
+[Apache] Bringen die haeuser nochwas essentielles?
+[Apache] Du baust je staendig dran.
+[Tilly] Naja soll halt nen richtiges Haus werden und nicht nen Zimmer mit nem
+[Mateese] Mehr brauchst du doch nicht: ein Zimmer, ein Bett ... und natuerlich
+   ein Internetsocket.
+[Apache] Wozu ist das Bett noetig?
+[Mateese] Zum Schlafen (waehrend der Netlags)
+[Apache] Eh, Mr. Pumuckel!!! Das LakeMosken-Lab ist ja auch wieder so
+   bloede... :-(
+[Pumuckel] Kann ich was dagegen? Aeh...dafuer?
+[Apache] Ja. Verdrisch den Wiz ders verbrochen hat :-)
+[Pumuckel] Ich verhau den nich, ich trau mich nich... Du muesstest mal den wiz
+   (LOCO) kennen... =)
+[Apache] Angsthase!
+[Tilly] Oh gott Mutabor ist zurueck Hat mal jemand Ohropax ?
+[Apache] Hier diskutieren auch die Poolwaechterinnen ueber Gott und sein aeh
+   ihre Familie...
+[Pumuckel] Apache: Immer noch?
+[Apache] Bei Lake Mosken? Ja.
+[Pumuckel] Ich meinte eigentlich die Tanten, die da so fleissig schwatzen.. =)
+[Apache] Jaja. Kennste ja.
+[Tilly] Wird man eigentlich automatisch Wiz bei Level 20 oder darf man den
+   anderen noch helfen ?
+[Pumuckel] Man wird nix automatisch
+[Clue] einfach so
+[Mutabor] aha, alter R]uber
+[Tilly] Ich darf doch noch solange helfen, bis ich seer geworden bin oder ?
+[Thragor] Sicher. Du bist ja immer noch normaler Spieler ...
+[Mateese] Naja, du darfst deine extra-Seerfaehigkeiten natuerlich nicht
+   missbrauchen
+[Tilly] Nein ich meinte eigentlich Hilfe beim Loesen von Quests oder so. Das
+   ist doch auch Seern verboten oder ?
+[Thragor] Endlich mal eine interessante Diskussion ueber Seer ....
+[Pumuckel] Wow, lange nicht gehabt!
+[Thragor] Ja, wie entscheiden wir nun? Wer hat sich das ueberhaupt ausgedacht
+[Apache] Kann mir mal einer sagen was seer heisst?
+[Mateese] Tips sind ok; aktives Durchschleifen auf Playerart auch; ausnuetzen
+   von Teleport etc so dass der Player selber gar nix mehr tun braucht, ist
+   nicht ok.
+[Mateese] Die Idee der Seerhood kommt aus den Anfangstagen...
+[Tilly] Ich weiss noch nicht mal was die koennen .. Die Doku ist echt
+   b*sch*ss*n
+[Thragor] =players Seer = Seher/Prophet ... Hat hiermit aber wenig zu tun ...
+[Pumuckel] Zieh es doch mal auseinander.. see(r)...das ist wizard mit Level 1,
+   der schon teleport etc machen kann.
+[Apache] Mich hat das fehlende h gestoert, danke...
+[Whimp] mich auch!
+[Thragor] seer ist ja auch Englich .... *giggle* .... Das war nur eine
+   Uebersetzung ...
+[Apache] wer hat die doku von tilly eigentlich so eingesaut, weil er sich doch
+   beschwert :-)
+[Whimp] deutshes sprach, schweres sprach.
+[Tilly] Es gibt keine Doku, darueber beschwer ich mich !
+[Thragor] Deutscher sprach schwere Sprache? *puzzle* ;-)
+[Tilly] get deutsche sprache -> you cannot carry anymore :)
+[Thragor] Oh .... think I should advance my strength .... Deutscher Duden,
+   schwerer Duden .... ;-)
+[Tilly] Kann man dieses smore eigentlich auf mehr als 16 Zeilen einstellen ?
+[Pumuckel] Klaro..
+[Mateese] pagesize n
+[Tilly] Du solltest der Guard besser zuhoeren da stehts naemlich ..
+[Apache] Mist ich muss mal ( reallife ). Da hilft leider kein "pee" tippen.
+   Grlwmpf...
+[Whimp] hahaha...
+[Tilly] Lass es aber nicht durch den Raum laufen
+[Thragor] Auf der Tastatur soll es sich auch schlecht machen ...
+[Tilly] Meine Tastatur hat auch schon ne Kanne Kaffee ueberlebt :)
+[Thragor] *sniff* ... meine ist an einer Flasche Cola gestorben .... RIP
+[Mutabor] Ueberleben auch Schweppes (getestet ...)
+[Mutabor] da sieht man wie schlimm Coke ist (also liebe kinder ...)
+[Thragor] ... gebt fein Acht, ich habe euch ne Flasche Cola mitgebracht??? ;-)
+[Apache] Hey tolle statements :-)
+[Mutabor] Nein der bundesgesundheitsminister: Coke schadet ihrer Gesundheit ..
+[Apache] Trinke aber die ganze zeit PUNICA ( die aus der Oase... )
+[Tilly] Wir werden halt erst richtig produktiv , wenn du dich vrefluessigsts !
+[Apache] ... und mit dem Computerspiel ( *wuerg* )
+[Thragor] Diese Coke enthaelt 40% tastaturzersetzenden Zucker ...
+[Mateese starts to bounce and chant 'toetet Onkel Dittmeier...']
+[Thragor giggles ...]
+[Mutabor] jetzt gib es schon coke ohne koffein und zucker, was ist dann noch
+   drin
+[Apache] n kollege hat sich mal seinen AMIGA mit wein verklebt: ESC, F10 und
+   HELP...
+[Apache] Ohne Farbe. Wird in amerika erfoscht
+[Thragor] Mathematisch gesehen: Cola-Zucker-Coffein-Farbe = labbriges Wasser
+   fuer den Ausgus ....
+[Tilly] Solang es nicht CTRL AMIGA AMIGA war ... Die Amiga Soft hat ja nie
+   einen Exit Befehl (naja fast nie)
+[Mateese] Bist wohl ein Demo-Mensch, was?
+[news:Clue is now Clue the apprentice wizard [demon, conjurer]]
+[Apache] CTL-CTL-AMIGA wars nicht, aber belastend...
+[Whimp] Amiga 4ever!!
+[Mutabor] uaaahh reden wir jetzt ueber den Amiga, dann schalt ich naemlich ab
+   .. (den kanal macht euch keine hoffnunf der comp bleibt an..
+[Apache] Nieder mit AMIGA. Falcon for ever...
+[Pumuckel] Apropos: Coke ohne Coffein...ich habe  vor zwei Tagen eine Annonce
+   gesehen: JETZT NEU!!! Die weisse Cola!!! (Sieht aus wie Selters)
+[Mutabor] Jea jea jea !!!!!! (hast du einen Falcon?)
+[Apache] Richtig!
+Mr. Niceguy Whimp tells you: falcon ist ok, aber das ist leider ne totgeburt!!
+[Apache] Nanana!!!!
+[Apache] Vorsicht!
+[Mutabor] darueber muessen wir uns mal in ruhe unterhalten (brauche neuen
+   comp)
+[Apache] Der ami1200 mit 8-bit-sound ist lebendiger?
+[Whimp] Yep.
+[Apache] Siehst du...
+[Mutabor] Hilfe wir brauchen einen Computer channel
+[Mutabor] Tilly !!!
+[Mutabor] Ich singe gleich ...
+[Pumuckel] Argh, macht euch auf den AMIGA channel!
+[Apache] ICH NICHT!!!
+[Mutabor] get all from corpse
+[Mateese] Solange es kein PC unter MS-DOS/-Windows ist, ist es in Ordnung. :-)
+[Mutabor] UUUPs sorry
+[Apache] Wie kann man andere als den Playerchannel eigentlich erreichen?
+[Tilly] Wie waers denn mal mit OS/2
+[Whimp] jawoll!
+[Pumuckel] Probiers doch mal mit =AMIGA
+[Apache] So???
+[Mutabor] Hey leute labert nich so viel mein Bildschirm kommt mit dem scrollen
+   nich mehr nach ..
+Someone sings loudly: TILLLYYYY !!!!!
+[Whimp] ich meinte: nieder mit PCs! Aber jetzt Schluss mit den Computern!!
+[Apache] Mutabor: 300-Baudterminal???
+[Pumuckel] Mutabor: Schon wieder am ST?
+[Mutabor] klar, wo denn sonst PC Pool gehoert den Tusteppern
+[Apache] Pumuckel: keine Kritik bitte!
+[Pumuckel kicks all TuSteppers. Ouch!]
+Player channels:
+  #sports ... on     daydream .. off    news ...... on     vecna ..... off
+  #tuebingen  off    exu ....... off    orc ....... on     volcano ... off
+  AMIGA ..... off    halfling .. off    orient .... off    wasteland . off
+  atlantis .. off    hell ...... on     players ... on     woodland .. on
+  avalon .... off    iof ....... off    plex ...... off  
+  darkness .. off    ireland ... off    valhalla .. off  
+[Mutabor] P.s. Pum,uckel da steh timmer noc hnirgends wie man Befelhe in
+   channels implementiert ..
+[Whimp] toll! ich bin de einzige AMIGA-channel listener!
+[Mutabor] Tilly tolle sache das namensaendern was
+[Pumuckel] Die Doc muss noch geschrieben werden! PS: Schau doch mal ins guide!
+[Tilly] guide Wizards mostly harmless guide seer mostly harmless !
+[Mutabor] hab ichm nuetzt aber auch nix (hab ich so probiert funzt nich)
+[Pumuckel] Namen aendern?
+[Tilly] Hmm ?
+[Mutabor] ne, channels
+[Tilly] Ach ich dachte ihr bezieht euch noch auf meine Message 500 Zeilen
+   vorher :)
+[Mutabor smile]
+PuMuCkEl sings loudly: Armageddon, where are you???
+[Mutabor] AAh bitte nicht den ...
+Armageddon sings silently: Here PuMuCkEl, why do you ask?
+PuMuCkEl sings loudly: Wollt ja bloss wissen, ob Du noch existierst.. =) Psst!
+[Apache] Pumuckel: veschuechtere die Leute nicht!
+[Mutabor] AAAAAAAAAAAHHHHHHH Pumuckel mein HErz BADUMBADUM
+[Tilly] Komisch gestern wollte Shadowren noch ein 9600 Modem kaufen.
+Armageddon sings silently: What do you mean? Sing english please.
+the dragon airport in the village [e].
+Armageddon shouts: Give me an 'S'!
+Mutabor sings loudly: S
+[Tilly] S
+Armageddon shouts: Give me an 'H'!
+Mutabor sings loudly: H
+Mutabor sings loudly: I?
+Armageddon shouts: Give me an 'U'!
+Mutabor sings loudly: U
+[Tilly] Hey Mutabor Bards tune on an 'A' not an 'S'
+Mutabor sings loudly: T?
+[Apache]  Hey NO SHUTDOWN
+Armageddon shouts: Give me an 'T'!
+[Tilly] UP
+Mutabor sings loudly: oh no dear boy i will not give you tthis toy
+Armageddon shouts: Give me an 'DOWN'! *laugh VERY demonicaly*
+[Apache] Richtig richtig
+[Mutabor] ich glaube jetzt funktioniert es wart nur ab tilly ..
+[Mutabor sing 1]
+[Mutabor sings a beatifull song about NF and the stupid titel changing tilly]
+Armageddon shouts: 10 minutes til the Apocalypse!
+Mutabor sings loudly: Armageddon please tel us play we all want to stay
+[Tilly] tell armageddon shop
+[Mutabor] you mean stop
+Armageddon tells you: Play play and then go.
+[Mutabor] vor lauter Gelabere wuste ich nich mal mehr was koenig auf englioch
+   hweist
+[Tilly] Wie ist denn das eigentlich ? Duerfen Seer noch helfen ? Oder nicht???
+[Thragor] Die Diskussion brodelt z. Z. in Wizardkreisen ... Ich befuerchte
+   fast, so recht weiss es keiner ... Ich wuerd mal sage, solange sie nicht
+   ihre speziellen Faehigkeiten zum Helfen nutzen sollte es in Ordnung sein
+   .... Aber nur eine pers. Meinung ..
+[Pumuckel nods at Thragor.]
+[Mateese] Ich wuerde vorschlagen, das Seer von Wizards ernannt werden, um
+   spezielle Aufgaben zu uebernehmen (Gildenkommander, Boersenmakler)
+[Tilly] Dann werde ich doch einfach mal seer
+[Mateese] und ansonsten das 'Seer'en als Kroenung des Playerdaseins gestrichen
+   wird.
+[Tilly] Irgendwelche Einwaende ?
+[Thragor] Tilly, was nicht verboten ist (bis jetzt) ist erlaubt .... ;-)
+[Tilly] Bis gleich
+[Thragor] Hm, also das mit den Seern ... Es waere wesentlich besser wenn wir
+   eher auf HLP's umsteigen ... aber die Diskussion laeuft ja schon ....
+[Whimp] Nix mehr los hier????
+[Apache] Finde ich alles fuer die Lake-Mosken-Quest dort in der Gegend?
+[Mutabor] JA
+ ...
+A postcard of a dangerous dragon:
+The postcard shows a nice picture of
+a dangerous dragon.
+                                               __----~~~~~~~~~~~------___
+                                    .  .   ~~//====......          __--~ ~~
+                    -.            \_|//     |||\\  ~~~~~~::::... /~
+                 ___-==_       _-~o~  \/    |||  \\            _/~~-
+         __---~~~.==~||\=_    -_--~/_-~|-   |\\   \\        _/~
+     _-~~     .=~    |  \\-_    '-~7  /-   /  ||    \      /
+   .~       .~       |   \\ -_    /  /-   /   ||      \   /
+  /  ____  /         |     \\ ~-_/  /|- _/   .||       \ /
+  |~~    ~~|--~~~~--_ \     ~==-/   | \~--===~~        .\
+           '         ~-|      /|    |-~\~~       __--~~
+                       |-~~-_/ |    |   ~\_   _-~            /\
+                            /  \     \__   \/~                \__
+                        _--~ _/ | .-~~____--~-/                  ~~==.
+                       ((->/~   '.|||' -_|    ~~-/ ,              . _||
+                                  -_     ~\      ~~---l__i__i__i--~~_/
+                                  _-~-__   ~)  \--______________--~~
+                                //.-~~~-~_--~- |-------~~~~~~~~
+                                       //.-~~~--\
+Use 'send postcard to <person>' if you want to send greetings to someone,
+    'mail postcard to <person>' to send it by mail.
+You may add one line of text by 'write greeting <text>'
+You send the postcard to Pumuckel.
+ ...
+[Tilly] Kann ich mich mit Goto nicht an einen Ort teleportieren ?
+Pumuckel shouts to all players: Help!?
+[Apache] Wobei?
+[Apache] was bringt der finger
+[Apache] Hey, was kann man schoenes mit einem Hund machen?
+[Mutabor] streicheln?
+[Apache] Ausser knuddeln?
+[Pumuckel] Mit einem Schwein kreuzen?
+[Apache] Da muesste ich nochmal zue Farm zurueck...
+[Mutabor] gassie gehen?
+[Apache] Mach ich gerade...
+[Apache] Hey. Hat den noch nie einer den Hund gassi gefuehrt? Gehoert der zu
+   ner Quest?
+[Mutabor] was is denn ein aperient ?
+ ...
+ { Mal wieder alle Spieler }
+Legor the great Alchimist is thinking about dripping drops [Germany]
+Mr. Niceguy Lonely Apache the dangerous fighter [elf, fighter, 10] [Germany]
+SUPER Mr. Niceguy Acer the dangerous fighter [oglon, fighter, 10] [USA]
+Lord Kathuro the sovereign of Ansalon. [Germany]
+Mudlink the Mud Connector (deaf) [Localhost]
+Smiling Flash the harlequin (melancholic and away) [Germany]
+Pumuckel the irish lord [Germany]
+Mateese compiles instantiations (partially relevant!) [Germany]
+Tilly really loves it when Mutabor does things on his own :) [Germany]
+Master Cygnus the very dangerous fighter [oglon, fighter, 11] [USA]
+Lord Sique the scarface (Teacher of LPC) [Germany]
+Shorn the frog (passive) [Germany]
+Mutabor the wise musician [elf, bard, 15] [Germany]
+Lya has now a nice little zwiper :-) [Germany]
+The dreaming Thragor is VERY busy (for answers please check help,man,xman first ... then you might beep me) [Germany]
+Dagobert the confused billionaire (pondering over his 3 cubic acres of money) [Germany]
+Thomas the not so new player (passive) [Germany]
+Jondalar has a new title (passive) [Germany]
+Grandpa Cedric called Cedric (repairing typos and ideas..) (passive) [Germany]
+Don Arathon the new human [Germany]
+Frood Mak the MAK [Germany]
+Matze the new player [Germany]
+Mystre the skillful enchanter [human, sorcerer, 12] [USA]
+Dodger realizes it is Bresenham's Algorithm that he needs (passive) [USA]
+Belphegor tries to reincarnate John Difool but fails.... [Germany]
+ ...
+[news:Pumuckel is now Pumuckel ist's zu langsam->geht heim.]
+
+
+ (Anm.d.Redax: Da dieser Auszug einen meines  Erachtens guten  Einblick in das
+               Spiel gibt, habe ich ihn  mit die Rubrik "Spiele" genommen. An-
+               fangs war er fÅr die Rubrik "Overall" vorgesehen...)

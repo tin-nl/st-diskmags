@@ -1,0 +1,1526 @@
+06601030305800
+F0110030
+9[.........................................................]001
+ˆSpecifications for the Atari 2600/7800€
+
+
+                2600                          7800
+
+CPU:            6507                          6502C (custom, NOT 65C02)
+RAM:            128 Bytes, in VLSI            4K, high speed
+ROM:            6K max                        52K max
+Cpu Clock:      1.19 MHz                      1.79 MHz
+Graphics Clock: 3.58 MHz                      7.16 MHz
+Slot Config:    Rom access only              Most CPU lines+video/audio
+CPU Avail:      less than 50%                 over 90%
+
+
+Notes:
+1. ROM specs are based on a non-bank select scheme.
+2. Graphics Clock is the master clock used to drive the video chips.
+
+Programming the 2600 in a nutshell.
+        The Atari 2600 consists of 3 important ICs: the CPU (6507),
+the Television Interface Adapter (TIA or Stella), and the RIOT (6532).
+The 7800 has a CPU (6502C or Sally) instaed of the 6507 and a GCC1702 
+(Maria) chip in addition to the Stella chip.
+
+The CPU:
+        The 6507 CPU is a 6502 with 2 important exceptions: it only has
+external address lines for 8K of memory and there are NO interrupt lines
+connected.  This is not as limiting as it seems if you examine some of
+the games for the machine.
+
+The Stella chip:
+       This chip makes all the video displays and sounds for the 2600
+VCS.It also has 6 registers which are used as A/D converters and for
+thetriggerbuttons on the joysticks.  The chip also controls the RDY
+line ofthe CPUto initiate horizontal syncronization control.  The chip
+is NOT aDMA chip.The CPU must write each line of data into the chip
+registers ASit drawsthe screen.  This accounts for the low CPU
+availability. The Chipis addresedthrough 44 write only registers, and
+13 read only registersmapped tothe low end of page 0.  For those
+familiar with the Atari 800,this chipis about 1/2 of a TIA/Pokey in
+all respects.  But, there is noANTIC chip todrive it; the CPU must do
+all the work that the ANTIC doesin the 800.
+
+The RIOT
+        This chip reads all the console switches (excluding power), the
+joysticks, and other controllers.  It also contains the only RAM in the
+system and a general purpose timer.  The RAM is mapped to the high end
+ofbothpage 0 and page 1.  This means that it acts as both page 0 fast
+access memoryand the 6502 stack.  The timer and I/O ports are mapped to
+Page 2 and 3.
+
+
+     In order to produce a video display, a program must do the
+following:
+€1. Start the vertical blanking interval
+2. Start the vertical sync interval immediately
+        there is time for about 80 instructions after this
+3. End vertical sync
+       the game computations must be done now as there won't be time
+later
+4. End vertical blanking
+5. Set up each line of the video display as it is drawnthere is time
+ for about 6 instructions to the video chip beforethe current line
+ starts being displayed. Atari recommends changing the display
+ every other line to gain processing time.
+6. Loop back to step 1
+
+The Cartridge:
+        A standard cartridge contains the equivalent of a 2716 or 2732/
+2532with one notable exception: the chip select line is active high,
+notlow.The high order address line of the 6507 (A12) is used as the
+chipenable.There was at least one company that used EPROMs with a
+74LS04inverter tocompensate for this.
+
+The Pinouts:
+Note:   numbers indicate left to right numbering
+
+        Top Row                 Bottom Row
+Slot    2716    CPU             2716    CPU
+
+1       13      D3              1       A7
+2       14      D4              2       A6
+3       15      D5              3       A5
+4       16      D6              4       A4
+5       17      D7              5       A3
+6       *       A12             6       A2
+7       19      A10             7       A1
+8       NC      A11             8       A0
+9       22      A9              9       D0
+10      23      A8              10      D1
+11      24      +5V             11      D2
+12      12      Shield Ground   NC      Ground
+    * to inverter and back to 18 for chip select
+
+Major differences between 2600 and 7800 mode:
+     2600 mode is default in the 7800.  If it finds 128 bytes at the
+highend of memory to match its encryption scheme, it will enable 7800
+mode.Thereis a small ROM inside the unit which displays the Atari
+pattern onscreen asit does this.
+      The 7800 mode is DMA driven, so the processor is free most of the
+timeto do other things, as the graphics chip runs 4 times faster than
+theCPU.
+      The 7800 cartridge slot includes 8 more lines: A13, A14, A15, R/W,
+phase 2 clock, audio, video, and HALT (unique to Atari 6502).
+      The 2600 video has foreground/background, 2 player/missiles, and
+oneball.The 7800 can display as many objects as the DMA can read in one
+line.
+      The sound is exactly the same as it still uses the Stella chip
+€(except Ballblazer which has its own sound chip in the cartridge).
+
+
+Atari 2600      Stella Memory Map
+
+Write Address Registers
+Addr    Assy Name       Bits Used       Function
+
+00      Vsync           0000 00x0       Vertical Sync Set-Clear
+01      Vblank          xx00 00x0       Vertical Blank Set-Clear
+02      Wsync           ---- ----       Wait for Horizontal Blank
+03      Rsync           ---- ----       Reset Horizontal Sync Counter
+04      Nusiz0          00xx 0xxx       Number-Size player/missile 0
+05      Nusiz1          00xx 0xxx       Number-Size player/missile 1
+06      Colup0          xxxx xxx0       Color-Luminance Player 0
+07      Colup1          xxxx xxx0       Color-Luminance Player 1
+08      Colupf          xxxx xxx0       Color-Luminance Playfield
+09      Colubk          xxxx xxx0       Color-Luminance Background
+0A      Ctrlpf          00xx 0xxx       ControlPlayfield,Ball,Collisions
+0B      Refp0           0000 x000       Reflection Player 0
+0C      Refp1           0000 x000       Reflection Player 1
+0D      Pf0             xxxx 0000       Playfield Register Byte 0
+0E      Pf1             xxxx xxxx       Playfield Register Byte 1
+0F      Pf2             xxxx xxxx       Playfield Register Byte 2
+10      Resp0           ---- ----       Reset Player 0
+11      Resp1           ---- ----       Reset Player 1
+12      Resm0           ---- ----       Reset Missile 0
+13      Resm1           ---- ----       Reset Missile 1
+14      Resbl           ---- ----       Reset Ball
+15      Audc0           0000 xxxx       Audio Control 0
+16      Audc1           0000 xxxx       Audio Control 1
+17      Audf0           000x xxxx       Audio Frequency 0
+18      Audf1           000x xxxx       Audio Frequency 1
+19      Audv0           0000 xxxx       Audio Volume 0
+1A      Audv1           0000 xxxx       Audio Volume 1
+1B      Grp0            xxxx xxxx       Graphics Register Player 0
+1C      Grp1            xxxx xxxx       Graphics Register Player 1
+1D      Enam0           0000 00x0       Graphics Enable Missile 0
+1E      Enam1           0000 00x0       Graphics Enable Missile 1
+1F      Enabl           0000 00x0       Graphics Enable Ball
+20      Hmp0            xxxx 0000       Horizontal Motion Player 0
+21      Hmp1            xxxx 0000       Horizontal Motion Player 1
+22      Hmm0            xxxx 0000       Horizontal Motion Missile 0
+23      Hmm1            xxxx 0000       Horizontal Motion Missile 1
+24      Hmbl            xxxx 0000       Horizontal Motion Ball
+25      Vdelp0          0000 000x       Vertical Delay Player 0
+26      Vdelp1          0000 000x       Vertical Delay Player 1
+27      Vdelbl          0000 000x       Vertical Delay Ball
+28      Resmp0          0000 00x0       Reset Missile 0 to Player 0
+29      Resmp1          0000 00x0       Reset Missile 1 to Player 1
+2A      Hmove           ---- ----       Apply Horizontal Motion
+2B      Hmclr           ---- ----       Clear Horizontal Move Registers
+2C      Cxclr           ---- ----       Clear Collision Latches
+
+€Read Address Registers
+                                                        bit 6   bit 7
+0       Cxm0p           xx00 0000       Read Collision  M0-P1   M0-P0
+1       Cxm1p           xx00 0000                       M1-P0   M1-P1
+2       Cxp0fb          xx00 0000                       P0-PF   P0-BL
+3       Cxp1fb          xx00 0000                       P1-PF   P1-BL
+4       Cxm0fb          xx00 0000                       M0-PF   M0-BL
+5       Cxm1fb          xx00 0000                       M1-PF   M1-BL
+6       Cxblpf          x000 0000                       BL-PF   -----
+7       Cxppmm          xx00 0000                       P0-P1   M0-M1
+8       Inpt0           x000 0000       Read Pot Port 0
+9       Inpt1           x000 0000       Read Pot Port 1
+A       Inpt2           x000 0000       Read Pot Port 2
+B       Inpt3           x000 0000       Read Pot Port 3
+C       Inpt4           x000 0000       Read Input (Trigger) 0
+D       Inpt5           x000 0000       Read Input (Trigger) 1
+
+Atari 2600      RIOT Memory Map
+
+80-FF                                   Ram     also at 180-1FF
+
+280     Swcha                           Port A data register (sticks...)
+281     Swacnt                          Port A data direction register
+282     Swchb                           Port B data (console switches)
+283     Swbcnt                          Port B DDR
+284     Intim                           Timer output
+
+294     Tim1t                           set 1 clock interval
+295     Tim8t                           set 8 clock interval
+296     Tim64t                          set 64 clock interval
+297     T1024t                          set 1024 clock interval
+                                                these are also at 380-397
+
+Atari 2600      ROM Memory Map
+
+E000-FFFF                               Rom     also 1000-1FFF
+                                                     3000-3FFF ....
+
+Wsync   Wait for sync
+This address halts microprocessor by clearing RDY latch to zero.  RDY is
+set true again by the leading edge of horizontal blank.
+        Data bits not used.
+---
+Rsync   Reset Sync
+This address resets the horizontal sync counter to define the begining of
+horizontal blank time, and is used in chip testing.
+        Data bits not used.
+---
+Vsync
+This address controls vertical sync time by writing D1 into the Vsync
+latch.
+        D1 -    1: start vertical sync
+                0: stop vertical sync
+---
+€Vblank
+This address controls vertical blank and the latches and dumping
+transistorson the input ports by writing into bits D7,D6, and D1 of the
+Vblank register.
+        D1 -    1: start vertical blank
+                0: stop vertical blank
+        D6 -    1: enable I4 and I5 latches
+                0: disable latches - also resets latches to logic true
+        D7 -    1: Dump I0,I1,I2,I3 ports to ground
+                0: Remove dump path to ground
+---
+Pf0, Pf1, Pf2
+These addresses are used to write into the playfield registers.
+
+                        horizontal scan line map
+                      (160 clocks, each bit =4 clocks)
+                                                              Ctrlpf bit 0
+bits            4-7     7-0     0-7  |  4-7     7-0     0-7
+register        Pf0     Pf1     Pf2     Pf0     Pf1     Pf2     0
+
+bits            4-7     7-0     0-7  |  7-0     0-7     7-4
+register        Pf0     Pf1     Pf2     Pf2     Pf1     Pf0     1
+---
+Ctrlpf
+This address is used to write into the playfield control register.
+if bit is 1 then:
+        D0 -    (REF)   reflect playfield, see above
+        D1 -    (SCORE) left half of playfield gets color of player 0
+                        right half gets color of player 1
+        D2 -    (PFP)   playfield gets priority over players so they move
+                        behind playfield
+        D5,D4 - Ball Size       if 00,  1 clock wide
+                                if 01,  2 clocks wide
+                                if 10,  4 clocks wide
+                                if 11,  8 clocks wide
+---
+Nusiz0, Nusiz1
+These addresses control the number and size of players and missiles.
+        D5,D4 -         Missile Size    see Ball Size above
+        D2,D1,D0 -      Player number/size
+                        if 000,         X               one copy
+                        if 001,         X X             two copies, close
+                        if 010,         X   X           two copies,medium
+                        if 011,         X X X           threeCopies,close
+                        if 100,         X       X       Two copies, far
+                        if 101,         XX              one copy,2x width
+                        if 110,         X   X   X       3 copies, medium
+                        if 111,         XXXX            one copy,4x width
+---
+Resp0, Resp1, Resm0, Resm1, Resbl
+These addresses are used to reset players, missiles and the ball.  The
+objectwill begin its serial graphics at that time of a horizontal line
+atwhich thereset address occurs.
+        Data bits not used.
+€---
+Resmp0, Resmp1
+These addresses are used to reset the horizontal location of a missile to
+the center of its corresponding player.  As long as this control bit is
+true (1), the missile will remain locked to the center of its player and
+themissile graphics will be disabled.  When a zero is written into this
+location,the missile is enabled, and can be moved independently from the
+player.
+        D1 -    0: allow missile to move
+                1: lock missile to player
+---
+Hmove
+This address causes the horizontal motion register values to be acted
+uponduring the horizontal blank time in which it occurs.  It must occur
+at thebeginning of horizontal blanking in order to allow time for
+generation ofextra clock pulses into the horizontal position counters.
+If motion isdesired, this command must immediately follow a Wsync
+command in theprogram.
+        Data bits not used.
+---
+Hmclr
+This address clears all horizontal motion registers to zero (no motion).
+        Data bits not used.
+---
+Hmp0, Hmp1, Hmm0, Hmm1, Hmbl
+These addresses write data (horizontal motion values) into the horizontal
+motion registers.  These registers cause horizontal motion only when
+commandedto do so by the horizontal movement command Hmove.  The motion
+values use theupper 4 bits of the byte. They are signed numbers with a
++7to -8 range. Thepositive numbers indicate left movement, the negative
+indicate right.Warning: These registers should not be modified during
+the24 computer cyclesfollowing an Hmove command.  Unpredictable motion
+values may result.
+---
+Enam0, Enam1, Enabl
+These addresses write into the single bit missile or ball graphics
+registers.
+        D1 -    0: disables object
+                1: enables object
+---
+Grp0, Grp1
+These addresses write data into the player graphics registers
+
+                        horizontal scan line map
+                          (each bit =1 clock)
+
+bits 7-0        if Refp0 (Refp1) is 0
+bits 0-7        if Refp0 (Refp1) is 1 (reflected)
+---
+Refp0, Refp1
+These addresses write data into the the single bit player reflect
+registers.See above.
+        D3 -    0: normal
+                1: reflected
+€---
+Vdelp0, Vdelp1, Vdelbl
+These addresses write data into the single bit vertical delay registers,
+todelay players or the ball by one vertical line.
+        D0 -    0: no delay
+                1: delayed
+---
+Cxclr
+This address clears all collision latches to zero (no collision)
+        Data bits not used.
+---
+Colupb, Colup1, Colupf, Colubk
+These addresses write data into the player, playfield, and background
+color-luminance registers.
+        D3, D2, D1 -    Luminance values 000 is dark, 111 is bright.
+        D7,D6,D5,D4 -   Colors  0000    Grey
+                                0001    Gold
+                                0010    Orange
+                                0011    Red orange
+                                0100    Pink
+                                0101    Purple
+                                0110    Blue purple
+                                0111    Blue
+                                1000    Blue
+                                1001    Light blue
+                                1010    Turquoise
+                                1011    Green blue
+                                1100    Green
+                                1101    Yellow green
+                                1110    Orange green
+                                1111    Light orange
+---
+Audf0, Audf1
+These addresses write data into the audio frequency divider registers.
+        D4,D3,D2,D1,D0 -        00000   30KHz divided by 1
+                                00001   "              " 2
+                                .....
+                                11111   "              " 32
+---
+Audc0, Audc1
+These addresses write data into the audio control registers which control
+the noise content and additional division of the audio output.
+
+                bits            value           noise type      division
+        D3, D2, D1, D0 -        0000                            set to 1
+                                0001            4 bit poly
+                                0010                /15 into 4 bit poly
+                                0011           5 bit poly to 4 bit poly
+                                0100                        divide by 2
+                                0101                         divide by 2
+                                0110                        divide by 31
+                                0111                5 bit poly into /2
+                                1000            9 bit poly
+                                1001            5 bit poly
+€                                1010                         divide by 31
+                                1011                set last 4 bits to 1
+                                1100                          divide by 6
+                                1101                          divide by 6
+                                1110                         divide by 93
+                                1111              5 bit poly divided by 6
+---
+Audv0, Audv1
+These addresses write data into the audio volume registers which set the
+pulldown impedance driving the audio output pads.
+        D3, D2, D1, D0 -        0000    no output
+                                ....
+                                1111    loudest output
+---
+End
+
+;                               Atari Combat Game
+; suspected RAM addresses
+;
+; E0-E3         score pattern offsets
+; DE-DF         score pattern calculation temporaries
+; A1-A2         scores
+; D2            score conversion temporary
+;
+; 9B-9C         sound pitch storage
+; B5-BA         lo-res indirect addresses
+; DA            hi-res patterns
+; D6-D7         colors
+        SEI  
+        CLD  
+        LDX  #FF
+        TXS  
+        LDX  #5D
+        JSR  J15BD ;            zero out $00 thru $A2
+        LDA  #10
+        STA  SWCHB+1
+        STA  88
+        JSR  J11A3
+MLOOP   JSR  NWSCR ;            $1014
+        JSR  J1157
+        JSR  J1572
+        JSR  J12DA
+        JSR  J1444
+        JSR  J1214
+        JSR  J12A9
+        JSR  J11F2
+        JSR  J1054
+        JMP  MLOOP
+;
+NWSCR   INC  86 ;               initial blanking and retrace start
+        STA  HMCLR
+        LDA  #02
+        STA  WSYNC
+        STA  VBLANK
+€        STA  WSYNC
+        STA  WSYNC
+        STA  WSYNC
+        STA  SYNC
+        STA  WSYNC
+        STA  WSYNC
+        LDA  #00
+        STA  WSYNC
+        STA  SYNC
+        LDA  #2B
+        STA  TIM64T
+        RTS  
+;
+J1054   LDA  #20
+        STA  B4
+        STA  WSYNC
+        STA  HMOVE
+B105C   LDA  INTIM
+        BNE  B105C
+        STA  WSYNC
+        STA  CXCLR
+        STA  VBLANK
+        TSX  
+        STX  D3 ;               Save stack pointer
+        LDA  #02
+        STA  CTRLPF
+        LDX  DC
+B1070   STA  WSYNC
+        DEX  
+        BNE  B1070
+        LDA  DC
+        CMP  #0E
+        BEQ  B10CD
+        LDX  #05
+        LDA  #00
+        STA  DE
+        STA  DF
+J1083   STA  WSYNC
+        LDA  DE
+        STA  PF1
+        LDY  E2
+        LDA  L15C5,Y
+        AND  #F0
+        STA  DE
+        LDY  E0
+        LDA  L15C5,Y
+        AND  #0F
+        ORA  DE
+        STA  DE
+        LDA  DF
+        STA  PF1
+        LDY  E3
+        LDA  L15C5,Y
+        AND  #F0
+€        STA  DF
+        LDY  E1
+        LDA  L15C5,Y
+        AND  87
+        STA  WSYNC
+        ORA  DF
+        STA  DF
+        LDA  DE
+        STA  PF1
+        DEX  
+        BMI  B10CD
+        INC  E0
+        INC  E2
+        INC  E1
+        INC  E3
+        LDA  DF
+        STA  PF1
+        JMP  J1083
+;
+B10CD   LDA  #00 ;              Inner Display Loop
+        STA  PF1
+        STA  WSYNC              
+        LDA  #05
+        STA  CTRLPF
+        LDA  D6
+        STA  COLUP0
+        LDA  D7
+        STA  COLUP1
+B10DF   LDX  #1E
+        TXS ;                   Very Sneaky - set stack to missile
+ registers
+        SEC  
+        LDA  A4
+        SBC  B4
+        AND  #FE
+        TAX  
+        AND  #F0
+        BEQ  B10F2
+        LDA  #00
+        BEQ  B10F4
+B10F2   LDA  BD,X
+B10F4   STA  WSYNC ;            End of 1 line
+        STA  GRP0
+        LDA  A7
+        EOR  B4
+        AND  #FE
+        PHP ;                   This turns the missile 1 on/off
+        LDA  A6
+        EOR  B4
+        AND  #FE
+        PHP ;                   This turns the missile 0 on/off
+        LDA  B4
+        BPL  B110C
+        EOR  #F8
+€B110C   CMP  #20
+        BCC  B1114
+        LSR  A
+        LSR  A
+        LSR  A
+        TAY  
+B1114   LDA  A5
+        SEC  
+        SBC  B4
+        INC  B4
+        NOP  
+        ORA  #01
+        TAX  
+        AND  #F0
+        BEQ  B1127
+        LDA  #00
+        BEQ  B1129
+B1127   LDA  BD,X
+B1129   BIT  82
+        STA  GRP1
+        BMI  B113B
+        LDA  (B5),Y
+        STA  PF0
+        LDA  (B7),Y
+        STA  PF1
+        LDA  (B9),Y
+        STA  PF2
+B113B   INC  B4
+        LDA  B4
+        EOR  #EC
+        BNE  B10DF
+        LDX  D3 ;               Restore stack pointer
+        TXS  
+        STA  ENAM0
+        STA  ENAM1
+        STA  GRP0
+        STA  GRP1
+        STA  GRP0
+        STA  PF0
+        STA  PF1
+        STA  PF2
+        RTS  
+;
+J1157   LDA  SWCHB
+        LSR  A
+        BCS  B1170
+        LDA  #0F
+        STA  87
+        LDA  #FF
+        STA  88
+        LDA  #80
+        STA  DD
+        LDX  #E6
+        JSR  J15BD ;            zero out $89 thru $A2
+€        BEQ  B11D0
+B1170   LDY  #02
+        LDA  DD
+        AND  88
+        CMP  #F0
+        BCC  B1182
+        LDA  86
+        AND  #30
+        BNE  B1182
+        LDY  #0E
+B1182   STY  DC
+        LDA  86
+        AND  #3F
+        BNE  B1192
+        STA  89
+        INC  DD
+        BNE  B1192
+        STA  88
+B1192   LDA  SWCHB
+        AND  #02
+        BEQ  B119D
+        STA  89
+        BNE  B11F1
+B119D   BIT  89
+        BMI  B11F1
+        INC  80
+J11A3   LDX  #DF
+B11A5   JSR  J15BD
+        LDA  #FF
+        STA  89
+        LDY  80
+        LDA  L17D8,Y
+        STA  A3
+        EOR  #FF
+        BNE  B11BB
+        LDX  #DD
+        BNE  B11A5
+B11BB   LDA  81
+        SED  
+        CLC  
+        ADC  #01
+        STA  81
+        STA  A1
+        CLD  
+        BIT  A3
+        BPL  B11D0
+        INC  85
+        BVC  B11D0
+        INC  85
+B11D0   JSR  J1525
+        LDA  #32
+        STA  A5
+        LDA  #86
+        STA  A4
+€        BIT  A3
+        BMI  B11F1
+        STA  A5
+        STA  POSH2
+        LDA  #08
+        STA  96
+        LDA  #20
+        STA  HMP0
+        STA  HMP1
+        STA  WSYNC
+        STA  HMOVE
+B11F1   RTS  
+;
+J11F2   LDX  #01 ;            convert BCD scores to score pattern offset
+B11F4   LDA  A1,X
+        AND  #0F
+        STA  D2
+        ASL  A
+        ASL  A
+        CLC  
+        ADC  D2
+        STA  E0,X
+        LDA  A1,X
+        AND  #F0
+        LSR  A
+        LSR  A
+        STA  D2
+        LSR  A
+        LSR  A
+        CLC  
+        ADC  D2
+        STA  E2,X
+        DEX  
+        BPL  B11F4
+        RTS  
+;
+J1214   BIT  83
+        BVC  B121C
+        LDA  #30
+        BPL  B121E
+B121C   LDA  #20
+B121E   STA  B1
+        LDX  #03
+        JSR  J1254
+        DEX  
+        JSR  J1254
+        DEX  
+B122A   LDA  8D,X
+        AND  #08
+        LSR  A
+        LSR  A
+        STX  D1
+        CLC  
+        ADC  D1
+€        TAY  
+        LDA  00A8,Y
+        SEC  
+        BMI  B123D
+        CLC  
+B123D   ROL  A
+        STA  00A8,Y
+        BCC  B1250
+        LDA  AC,X
+        AND  #01
+        ASL  A
+        ASL  A
+        ASL  A
+        ASL  A
+        STA  B1
+        JSR  J1254
+B1250   DEX  
+        BEQ  B122A
+        RTS  
+;
+J1254   INC  AC,X
+        LDA  95,X
+        AND  #0F
+        CLC  
+        ADC  B1
+        TAY  
+        LDA  L15F7,Y
+        STA  B0
+        BIT  82
+        BVS  B127A
+        LDA  95,X
+        SEC  
+        SBC  #02
+        AND  #03
+        BNE  B127A
+        LDA  AC,X
+        AND  #03
+        BNE  B127A
+        LDA  #08
+        STA  B0
+B127A   LDA  B0
+J127C   STA  HMP0,X
+        AND  #0F
+        SEC  
+        SBC  #08
+        STA  D4
+        CLC  
+        ADC  A4,X
+        BIT  A3
+        BMI  B1290
+        CPX  #02
+        BCS  B12A0
+B1290   CMP  #DB
+        BCS  B1298
+€        CMP  #25
+        BCS  B12A0
+B1298   LDA  #D9
+        BIT  D4
+        BMI  B12A0
+        LDA  #28
+B12A0   STA  A4,X
+        CPX  #02
+        BCS  B12A8
+        STA  VDELP0,X
+B12A8   RTS  
+;
+J12A9   LDA  #01
+        AND  86
+        TAX  
+        LDA  95,X
+        STA  REFP0,X
+        AND  #0F
+        TAY  
+        BIT  83
+        BPL  B12BB
+        STY  97,X
+B12BB   TXA  
+        EOR  #0E
+        TAX  
+        TYA  
+        ASL  A
+        ASL  A
+        ASL  A
+        CMP  #3F
+        CLC  
+        BMI  B12CB
+        SEC  
+        EOR  #47
+B12CB   TAY  
+B12CC   LDA  (BB),Y
+        STA  BD,X
+        BCC  B12D4
+        DEY  
+        DEY  
+B12D4   INY  
+        DEX  
+        DEX  
+        BPL  B12CC
+        RTS  
+;
+J12DA   LDA  8A
+        SEC  
+        SBC  #02
+        BCC  B130C
+        STA  8A
+        CMP  #02
+        BCC  B130B
+        AND  #01
+€        TAX  
+        INC  95,X
+        LDA  D8,X
+        STA  D6,X
+        LDA  8A
+        CMP  #F7
+        BCC  B12F9
+        JSR  J1508
+B12F9   LDA  8A
+        BPL  B130B
+        LSR  A
+        LSR  A
+        LSR  A
+J1300   STA  AUDV0,X
+        LDA  #08
+        STA  AUDC0,X
+        LDA  L17FE,X
+        STA  AUDF0,X
+B130B   RTS
+;
+B130C   LDX  #01
+        LDA  SWCHB
+        STA  D5
+        LDA  SWCHA
+B1316   BIT  88
+        BMI  B131C
+        LDA  #FF
+B131C   EOR  #FF
+        AND  #0F
+        STA  D2
+        LDY  85
+        LDA  L170F,Y
+        CLC  
+        ADC  D2
+        TAY  
+        LDA  L1712,Y
+        AND  #0F
+        STA  D1
+        BEQ  B1338
+        CMP  91,X
+        BNE  B133C
+B1338   DEC  93,X
+        BNE  B1349
+B133C   STA  91,X
+        LDA  #0F
+        STA  93,X
+        LDA  D1
+        CLC  
+        ADC  95,X
+        STA  95,X
+B1349   INC  8D,X
+        BMI  B136B
+        LDA  L1712,Y
+        LSR  A
+€        LSR  A
+        LSR  A
+        LSR  A
+        BIT  D5
+        BMI  B137B
+B1358   STA  8B,X
+        ASL  A
+        TAY  
+        LDA  L1637,Y
+        STA  A8,X
+        INY  
+        LDA  L1637,Y
+        STA  AA,X
+        LDA  #F0
+        STA  8D,X
+B136B   JSR  J1380
+        LDA  SWCHA
+        LSR  A
+        LSR  A
+        LSR  A
+        LSR  A
+        ASL  D5
+        DEX  
+        BEQ  B1316
+        RTS  
+;
+B137B   SEC  
+        SBC  85
+        BPL  B1358
+J1380   LDA  A3
+        BMI  B138C
+        AND  #01
+        BEQ  B138C
+        LDA  DB
+        STA  D6,X
+B138C   LDA  99,X
+        BEQ  B13B7
+        LDA  D8,X
+        STA  D6,X
+        LDA  99,X
+        CMP  #07
+        BCC  B13AE
+        BIT  D5
+        BPL  B13A2
+        CMP  #1C
+        BCC  B13AE
+B13A2   CMP  #30
+        BCC  B13C5
+        CMP  #37
+        BCS  B13CB
+        BIT  83
+        BVC  B13CB
+J13AE   LDA  #00
+        STA  99,X
+€        LDA  #FF
+B13B4   STA  RESMP0,X
+        RTS  
+;
+B13B7   BIT  88
+        BPL  B13BF
+        LDA  INPT4,X
+        BPL  B13F6
+B13BF   JSR  J1410
+        JMP  J13AE
+;
+B13C5   JSR  J1410
+        JMP  J13DE
+;
+J13CB   LDA  9F,X
+        BEQ  B13D9
+        JSR  J1410
+        LDA  #30
+        STA  99,X
+        JMP  J13DE
+;
+B13D9   LDA  99,X
+        JSR  J1300
+J13DE   LDA  86
+        AND  #03
+        BEQ  B13F0
+        BIT  84
+        BVS  B13F2
+        BIT  82
+        BVC  B13F0
+        AND  #01
+        BNE  B13F2
+B13F0   DEC  99,X
+B13F2   LDA  #00
+        BEQ  B13B4
+B13F6   LDA  #3F
+        STA  99,X
+        SEC  
+        LDA  A4,X
+        SBC  #06
+        STA  A6,X
+        LDA  95,X
+        STA  97,X
+        LDA  #1F
+        STA  9B,X
+        LDA  #00
+        STA  9D,X
+        JMP  J13CB
+;
+J1410   LDA  9F,X
+        BEQ  B1421
+        LDA  #04
+        STA  AUDC0,X
+        LDA  #07
+€        STA  AUDV0,X
+        LDA  9B,X
+        STA  AUDF0,X
+        RTS  
+;
+B1421   LDY  85
+        LDA  L1733,Y
+        AND  88
+        STA  AUDV0,X
+        LDA  L1736,Y
+        STA  AUDC0,X
+        CLC  
+        LDA  #00
+B1432   DEY  
+        BMI  B1439
+        ADC  #0C
+        BPL  B1432
+B1439   ADC  8B,X
+        TAY  
+        TXA  
+        ASL  A
+        ADC  L1739,Y
+        STA  AUDF0,X
+        RTS  
+;
+J1444   LDX  #01
+J1446   LDA  CXM0P,X
+        BPL  B1476
+        BIT  84
+        BVC  B1454
+        LDA  9B,X
+        CMP  #1F
+        BEQ  B1476
+B1454   INC  95,X
+        INC  97,X
+        SED  
+        LDA  A1,X
+        CLC  
+        ADC  #01
+        STA  A1,X
+        CLD  
+        TXA  
+        CLC  
+        ADC  #FD
+        STA  8A
+        LDA  #FF
+        STA  RESMP0
+        STA  RESMP1
+        LDA  #00
+        STA  AUDV0,X
+        STA  99
+        STA  9A
+        RTS  
+;
+€B1476   BIT  A3
+        BPL  B147D
+        JMP  J1501
+;
+B147D   LDA  9F,X
+        BEQ  B148B
+        CMP  #04
+        INC  9F,X
+        BCC  B148B
+        LDA  #00
+        STA  9F,X
+B148B   LDA  CXM0FB,X
+        BMI  B1496
+        LDA  #00
+        STA  9D,X
+        JMP  J14D6
+;
+B1496   BIT  82
+        BVC  B14D0
+        LDA  9D,X
+        BNE  B14B7
+        INC  9F,X
+        DEC  9B,X
+        LDA  97,X
+        STA  B2,X
+        EOR  #FF
+        STA  97,X
+        INC  97,X
+        LDA  97,X
+        AND  #03
+        BNE  B14B4
+        INC  97,X
+B14B4   JMP  J14D4
+;
+B14B7   CMP  #01
+        BEQ  B14C6
+        CMP  #03
+        BCC  B14D4
+        BNE  B14D4
+        LDA  B2,X
+        JMP  J14C8
+;
+B14C6   LDA  97,X
+J14C8   CLC  
+        ADC  #08
+        STA  97,X
+        JMP  J14D4
+;
+B14D0   LDA  #01
+        STA  99,X
+J14D4   INC  9D,X
+J14D6   LDA  CXP0FB,X
+        BMI  B14DE
+        LDA  CXPPMM
+€        BPL  B14E7
+B14DE   LDA  8A
+        CMP  #02
+        BCC  B14ED
+        JSR  J1508
+B14E7   LDA  #03
+        STA  E4,X
+        BNE  B1501
+B14ED   DEC  E4,X
+        BMI  B14F7
+        LDA  8B,X
+        BEQ  B1501
+        BNE  B14F9
+B14F7   INC  95,X
+B14F9   LDA  95,X
+        CLC  
+        ADC  #08
+        JSR  J150F
+B1501   DEX  
+        BMI  B1507
+        JMP  J1446
+B1507   RTS  
+;
+J1508   TXA  
+        EOR  #01
+        TAY  
+        LDA  0097,Y
+J150F   AND  #0F
+        TAY  
+        LDA  L1627,Y
+        JSR  J127C
+        LDA  #00
+        STA  A8,X
+        STA  AA,X
+        STA  8D,X
+        LDA  D8,X
+        STA  D6,X
+        RTS  
+
+J1525   LDX  85
+        LDA  L17C6,X
+        STA  BB
+        LDA  L17C9,X
+        STA  BC
+        LDA  A3
+        LSR  A
+        LSR  A
+        AND  #03
+        TAX  
+        LDA  A3
+        BPL  B1546
+        AND  #08
+        BEQ  B1544
+        LDX  #03
+€        BPL  B1548
+B1544   LDA  #80
+B1546   STA  82
+B1548   LDA  A3
+        ASL  A
+        ASL  A
+        BIT  A3
+        BMI  B1556
+        STA  WSYNC
+        STA  84
+        AND  #80
+B1556   STA  83
+        LDA  #F7
+        STA  B6
+        STA  B8
+        STA  BA
+        LDA  L17CC,X
+        STA  RESP0
+        STA  B5
+        LDA  L17D0,X
+        STA  B7
+        LDA  L17D4,X
+        STA  B9
+        RTS  
+;
+J1572   LDA  A3
+        AND  #87
+        BMI  B157A
+        LDA  #00
+B157A   ASL  A
+        TAX  
+        LDA  L175D,X
+        STA  NUSIZ0
+        LDA  L175E,X
+        STA  NUSIZ1
+        LDA  A3
+        AND  #C0
+        LSR  A
+        LSR  A
+        LSR  A
+        LSR  A
+        TAY  
+        LDA  88
+        STA  SWCHB
+        EOR  #FF
+        AND  DD
+        STA  D1
+        LDX  #FF
+        LDA  SWCHB
+        AND  #08
+        BNE  B15A7
+        LDY  #10
+        LDX  #0F
+B15A7   STX  D2
+€        LDX  #03
+B15AB   LDA  L1765,Y
+        EOR  D1
+        AND  D2
+        STA  COLUP0,X
+        STA  D6,X
+        STA  D8,X
+        INY  
+        DEX  
+        BPL  B15AB
+        RTS  
+;
+J15BD   LDA  #00
+B15BF   INX  
+        STA  A2,X
+        BNE  B15BF
+        RTS  
+;
+;                               Patterns for numbers
+;
+L15C5   .BYTE  $0E ,$0A ,$0A ,$0A ,$0E ;  0   leading zero suppressed
+        .BYTE  $22 ,$22 ,$22 ,$22 ,$22 ; 11
+        .BYTE  $EE ,$22 ,$EE ,$88 ,$EE ; 22
+        .BYTE  $EE ,$22 ,$66 ,$22 ,$EE ; 33
+        .BYTE  $AA ,$AA ,$EE ,$22 ,$22 ; 44
+        .BYTE  $EE ,$88 ,$EE ,$22 ,$EE ; 55
+        .BYTE  $EE ,$88 ,$EE ,$AA ,$EE ; 66
+        .BYTE  $EE ,$22 ,$22 ,$22 ,$22 ; 77
+        .BYTE  $EE ,$AA ,$EE ,$AA ,$EE ; 88
+        .BYTE  $EE ,$AA ,$EE ,$22 ,$EE ; 99
+;
+L15F7   .BYTE  $F8 ,$F7 ,$F6 ,$06 ,$06
+        .BYTE  $06 ,$16 ,$17 ,$18 ;     $15FC
+        .BYTE  $19 ,$1A ,$0A ,$0A ;     $1600
+        .BYTE  $0A ,$FA ,$F9 ,$F8 ;     $1604
+        .BYTE  $F7 ,$F6 ,$F6 ,$06 ;     $1608
+        .BYTE  $16 ,$16 ,$17 ,$18 ;     $160C
+        .BYTE  $19 ,$1A ,$1A ,$0A ;     $1610
+        .BYTE  $FA ,$FA ,$F9 ,$E8 ;     $1614
+        .BYTE  $E6 ,$E4 ,$F4 ,$04 ;     $1618
+        .BYTE  $14 ,$24 ,$26 ,$28 ;     $161C
+        .BYTE  $2A ,$2C ,$1C ,$0C ;     $1620
+        .BYTE  $FC ,$EC ,$EA ;          $1624
+;
+L1627   .BYTE  $C8 ,$C4 ,$C0 ,$E0 ,$00
+        .BYTE  $20 ,$40 ,$44 ,$48
+        .BYTE  $4C ,$4F ,$2F ,$0F
+        .BYTE  $EF ,$CF ,$CC
+;
+L1637   .BYTE  $00 ,$00 ,$80 ,$80 ,$84
+        .BYTE  $20 ,$88 ,$88 ,$92 ;     $163C
+        .BYTE  $48 ,$A4 ,$A4 ,$A9 ;     $1640
+        .BYTE  $52 ,$AA ,$AA ,$D5 ;     $1644
+        .BYTE  $AA ,$DA ,$DA ,$DB ;     $1648
+€        .BYTE  $6D ,$EE ,$EE ,$00 ;     $164C
+        .BYTE  $FC ,$FC ,$38 ,$3F ;     $1650
+        .BYTE  $38 ,$FC ,$FC ,$1C ;     $1654
+        .BYTE  $78 ,$FB ,$7C ,$1C ;     $1658
+        .BYTE  $1F ,$3E ,$18 ,$19 ;     $165C
+        .BYTE  $3A ,$7C ,$FF ,$DF ;     $1660
+        .BYTE  $0E ,$1C ,$18 ,$24 ;     $1664
+        .BYTE  $64 ,$79 ,$FF ,$FF ;     $1668
+        .BYTE  $4E ,$0E ,$04 ,$08 ;     $166C
+        .BYTE  $08 ,$6B ,$7F ,$7F ;     $1670
+        .BYTE  $7F ,$63 ,$63 ,$24 ;     $1674
+        .BYTE  $26 ,$9E ,$FF ,$FF ;     $1678
+        .BYTE  $72 ,$70 ,$20 ,$98 ;     $167C
+        .BYTE  $5C ,$3E ,$FF ,$FB ;     $1680
+        .BYTE  $70 ,$38 ,$18 ,$38 ;     $1684
+        .BYTE  $1E ,$DF ,$3E ,$38 ;     $1688
+        .BYTE  $F8 ,$7C ,$18 ,$60 ;     $168C
+        .BYTE  $70 ,$78 ,$FF ,$78 ;     $1690
+        .BYTE  $70 ,$60 ,$00 ,$00 ;     $1694
+        .BYTE  $C1 ,$FE ,$7C ,$78 ;     $1698
+        .BYTE  $30 ,$30 ,$30 ,$00 ;     $169C
+        .BYTE  $03 ,$06 ,$FC ,$FC ;     $16A0
+        .BYTE  $3C ,$0C ,$0C ,$02 ;     $16A4
+        .BYTE  $04 ,$0C ,$1C ,$FC ;     $16A8
+        .BYTE  $FC ,$1E ,$06 ,$10 ;     $16AC
+        .BYTE  $10 ,$10 ,$38 ,$7C ;     $16B0
+        .BYTE  $FE ,$FE ,$10 ,$40 ;     $16B4
+        .BYTE  $20 ,$30 ,$38 ,$3F ;     $16B8
+        .BYTE  $3F ,$78 ,$60 ,$40 ;     $16BC
+        .BYTE  $60 ,$3F ,$1F ,$1E ;     $16C0
+        .BYTE  $1E ,$18 ,$18 ,$00 ;     $16C4
+        .BYTE  $83 ,$7F ,$3E ,$1E ;     $16C8
+        .BYTE  $0C ,$0C ,$0C ,$00 ;     $16CC
+        .BYTE  $8E ,$84 ,$FF ,$FF ;     $16D0
+        .BYTE  $04 ,$0E ,$00 ,$00 ;     $16D4
+        .BYTE  $0E ,$04 ,$8F ,$7F ;     $16D8
+        .BYTE  $72 ,$07 ,$00 ,$10 ;     $16DC
+        .BYTE  $36 ,$2E ,$0C ,$1F ;     $16E0
+        .BYTE  $B2 ,$E0 ,$40 ,$24 ;     $16E4
+        .BYTE  $2C ,$5D ,$1A ,$1A ;     $16E8
+        .BYTE  $30 ,$F0 ,$60 ,$18 ;     $16EC
+        .BYTE  $5A ,$7E ,$5A ,$18 ;     $16F0
+        .BYTE  $18 ,$18 ,$78 ,$34 ;     $16F4
+        .BYTE  $36 ,$5A ,$78 ,$2C ;     $16F8
+        .BYTE  $0C ,$06 ,$0C ,$08 ;     $16FC
+        .BYTE  $6C ,$70 ,$B8 ,$DC ;     $1700
+        .BYTE  $4E ,$07 ,$06 ,$38 ;     $1704
+        .BYTE  $10 ,$F0 ,$7C ,$4F ;     $1708
+        .BYTE  $E3 ,$02 ,$00 ;          $170C
+;
+L170F   .BYTE  $00 ,$0B ,$16
+L1712   .BYTE  $00 ,$10
+        .BYTE  $00 ,$FF ,$01 ,$11 ;     $1714
+        .BYTE  $01 ,$FF ,$0F ,$1F ;     $1718
+€        .BYTE  $0F ,$50 ,$5F ,$51 ;     $171C
+        .BYTE  $FF ,$30 ,$3F ,$31 ;     $1720
+        .BYTE  $FF ,$70 ,$7F ,$71 ;     $1724
+        .BYTE  $90 ,$B0 ,$70 ,$FF ;     $1728
+        .BYTE  $91 ,$B1 ,$71 ,$FF ;     $172C
+        .BYTE  $9F ,$BF ,$7F ;          $1730
+;
+L1733   .BYTE  $08 ,$02 ,$02 ;          sound volumes
+L1736   .BYTE  $02 ,$03 ,$08 ;          sound types
+L1739   .BYTE  $1D ,$05 ,$00 ;          sound pitches
+        .BYTE  $00 ,$00 ,$00 ,$00 ;     $173C
+        .BYTE  $00 ,$00 ,$00 ,$00 ;     $1740
+        .BYTE  $00 ,$00 ,$00 ,$1D ;     $1744
+        .BYTE  $1D ,$16 ,$16 ,$0F ;     $1748
+        .BYTE  $0F ,$00 ,$00 ,$00 ;     $174C
+        .BYTE  $00 ,$00 ,$00 ,$00 ;     $1750
+        .BYTE  $00 ,$00 ,$12 ,$10 ;     $1754
+        .BYTE  $10 ,$0C ,$0C ,$07 ,$07 ;        $1758
+;
+L175D   .BYTE  $00
+L175E   .BYTE  $00 ,$01
+        .BYTE  $01 ,$00 ,$03 ,$27 ,$03
+;
+L1765   .BYTE  $EA ,$3C ,$82
+        .BYTE  $44 ,$32 ,$2C ,$8A ;     $1768
+        .BYTE  $DA ,$80 ,$9C ,$DA ;     $176C
+        .BYTE  $3A ,$64 ,$A8 ,$DA ;     $1770
+        .BYTE  $4A ,$08 ,$04 ,$00 ;     $1774
+        .BYTE  $0E ,$F0 ,$10 ,$10 ;     $1778
+        .BYTE  $10 ,$10 ,$10 ,$10 ;     $177C
+        .BYTE  $10 ,$10 ,$10 ,$10 ;     $1780
+        .BYTE  $10 ,$FF ,$00 ,$00 ;     $1784
+        .BYTE  $00 ,$38 ,$00 ,$00 ;     $1788
+        .BYTE  $00 ,$60 ,$20 ,$20 ;     $178C
+        .BYTE  $23 ,$FF ,$80 ,$80 ;     $1790
+        .BYTE  $00 ,$00 ,$00 ,$1C ;     $1794
+        .BYTE  $04 ,$00 ,$00 ,$00 ;     $1798
+        .BYTE  $00 ,$FF ,$00 ,$00 ;     $179C
+        .BYTE  $00 ,$00 ,$00 ,$00 ;     $17A0
+        .BYTE  $00 ,$00 ,$00 ,$00 ;     $17A4
+        .BYTE  $00 ,$00 ,$07 ,$1F ;     $17A8
+        .BYTE  $3F ,$7F ,$FF ,$00 ;     $17AC
+        .BYTE  $00 ,$00 ,$00 ,$00 ;     $17B0
+        .BYTE  $00 ,$00 ,$00 ,$60 ;     $17B4
+        .BYTE  $20 ,$21 ,$FF ,$00 ;     $17B8
+        .BYTE  $00 ,$00 ,$80 ,$80 ;     $17BC
+        .BYTE  $80 ,$80 ,$00 ,$00 ;     $17C0
+        .BYTE  $00 ,$07
+;
+L17C6   .BYTE  $4F ,$CF ,$8F
+L17C9   .BYTE  $F6 ,$F6 ,$F6
+L17CC   .BYTE  $75 ,$75 ,$75 ,$9A
+L17D0   .BYTE  $81 ,$99 ,$AA ,$9D
+L17D4   .BYTE  $8D ,$99 ,$B6 ,$9D
+€L17D8   .BYTE  $24 ,$28 ,$08 ,$20
+        .BYTE  $00 ,$48 ,$40 ,$54 ;     $17DC
+        .BYTE  $58 ,$25 ,$29 ,$49 ;     $17E0
+        .BYTE  $55 ,$59 ,$A8 ,$88 ;     $17E4
+        .BYTE  $98 ,$90 ,$A1 ,$83 ;     $17E8
+        .BYTE  $E8 ,$C8 ,$E0 ,$C0 ;     $17EC
+        .BYTE  $E9 ,$E2 ,$C1 ,$FF ;     $17F0
+        .BYTE  $00 ,$00 ,$00 ,$00 ;     $17F4
+        .BYTE  $00 ,$00
+;
+        .WORD  $0000 ;          NMI
+        .WORD  $F000 ;          Reset
+L17FE  .BYTE  $0F, $11 ;        IRQ - (used as pitch for sound generator)
+
+
+;       Color Demo
+;       Taken from the Magicard Manual
+;       shows almost all the colors on the left side
+;       of the screen and cycles slowly on the right
+;
+Start   LDA     $81 ;   get contents of memory
+        STA     $0F ;   save into a pattern control register
+        LDA     #$03
+        STA     $0A ;   set background control register
+        LDA     #$55
+        STA     $07 ;   set right side color
+        LDY     #$00
+        DEY
+        STA     $02 ;   wait for horizontal sync
+        STA     $01 ;   start vertical blanking
+        STA     $00 ;   start vertical retrace
+        LDA     #$2A
+        STA     $0295 ; set timer for appropriate length
+Loop1   LDY     $0284
+        BNE     Loop1 ; waste time
+        STY     $02 ;   wait for horizontal sync
+        STY     $00 ;   end vertical retrace period
+        LDA     #$24
+        STA     $0296 ; set timer for next wait
+        LDA     $0282
+        AND     #$01 ;  check for reset switch
+        BNE     NReset
+        BRK ;           only interrupt available - must have vector set
+NReset  INC     $80 ;   increment right side color cycle counter
+        BNE     Loop2
+        LDA     #$E0
+        STA     $80 ;   reset counter
+        INC     $81
+        LDA     $81 ;   increment right side color
+        STA     $06 ;   store it in color register
+Loop2   LDY     $0284
+        BNE     Loop2 ; waste time
+        STY     $02 ;   wait for horizontal sync
+        STY     $01 ;   end vertical blanking
+€        LDX     #$E4 ;  number of line to draw on screen
+Loop3   STY     $02 ;   wait for horizontal sync
+        STX     $0E ;   change a background pattern with each line
+        STX     $07 ;   change right side color with each line
+        DEX
+        BNE     loop3
+        JMP     Start ; do next screen (every 1/60th second)
+        .END
+
+
+;       Billboard Demo
+;       displays sonething close to, but not quite like
+;       the colored billboard used in "Close Encounters..."
+;       just a small demo to see what could be done
+;
+Start   LDX     #$FF
+        TXS
+        JSR     Sub0
+        LDA     #$06
+        STA     $09
+        LDA     #$02
+        STA     $0A
+        LDA     #$35
+        STA     $B1
+        STA     $B4
+        LDA     $1B
+        STA     $B2
+        STA     $B3
+        LDA     #$00
+        STA     $B6
+        LDA     #$AA
+        STA     $B5
+Main    JSR     Sub1
+        LDA     #$50
+        STA     $06
+        LDA     #$80
+        STA     $07
+        LDA     #$08
+        STA     $19
+        JSR     Sub2
+        LDA     $0282
+        AND     #$02
+        BEQ     Start
+        JSR     Sub3
+        LDX     #$10
+Loop1   NOP
+        STY     $02
+        DEX
+        BNE     Loop1
+        LDY     #$06
+        LDX     #$04
+Loop2   STY     #$02
+        LDA     $B1
+        STA     $0D
+€        LDA     $B2
+        STA     $0E
+        LDA     $B3
+        STA     $0F
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        LDA     $B4
+        STA     $0D
+        LDA     $B5
+        STA     $0E
+        LDA     $B6
+        STA     $0F
+        DEX
+        BNE     Loop2
+        LDA     #$06
+        STA     $06
+        STA     $07
+        LDX     #$A6
+Loop3   NOP
+        STY     $02
+        DEX
+        BNE     Loop3
+        JMP     Main
+Sub0    CLD
+        SEI
+        LDX     #$00
+        STX     $0281
+        STX     $0283
+        LDY     #$04
+Loc0    STX     $00,Y
+        INY
+        CPY     #$20
+        BNE     Loc0
+        STX     $2B
+        RTS
+Sub1    LDY     #$FF
+        STY     $02
+        STY     $01
+        STY     $00
+        LDA     #$2A
+        STA     $0295
+        LDA     $0282
+        AND     #$01
+        BNE     Loc1
+        BRK
+Loc1    RTS
+Sub2    LDY     $0284
+        BNE     Sub2
+        STY     $02
+€        STY     $00
+        LDA     #$19
+        STA     $0296
+        RTS
+Sub3    LDY     $0284
+        BNE     Sub3
+        STY     $02
+        STY     $01
+        STY     $2A
+        RTS
+        .END

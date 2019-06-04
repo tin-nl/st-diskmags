@@ -1,0 +1,280 @@
+066030202030000132006004004006000
+11
+21
+F0110030001
+9[............................................................]0010
+
+Maggie 22: Programming
+
+
+                 A r t i f i c i a l  T e x t u r e s
+                  2D and 3D textures the "easy" way
+
+
+
+This article is an introduction to the method of texturing objects 
+(usually 3D objects) that is most commonly used in computer graphics 
+today. Although its principles are very simple, it can be used to 
+create a wide range of textures such as marble, water and clouds. A 
+good example is the Persistence of Vision (PoV) Raytrace package which 
+uses these algorithms, or even some of the ground-breaking films from 
+Hollywood. Remember the funny water-creature in "The Abyss" ? The 
+water textures for it we're creating with these very same techniques.
+
+The ideas behind the methods involve simple maths, and on this disk 
+you should find some example source code to demonstrate how it works. 
+Unfortunately it's in Pascal (!!) which most of you won't have. 
+However, rather than supply a version in BASIC or C, the Pascal shows 
+better the underlying principles. Pascal is very easy to "read" 
+because of the structures it uses, and certainly the finished code 
+looks a good deal better than the equivalent code in any other 
+language I've seen. Some notes on how to convert the code to the 
+language of your choice are provided with the source code.
+
+
+
+
+                           Basic Principle
+
+The basic thing we need is a mathematical function that looks random 
+but varies smoothly from point to point, can repeat itself or go one 
+indefinitely.
+
+The original idea for artificial textures came from the creation of 
+fractals and fractal landscapes, where a surface is divided up into 
+triangles with random heights, then subdivided again to give 
+increasing levels of detail (see the game "Midwinter" for a good 
+example of these techniques.)
+
+However, a technique was needed for 3D rendering which required a 
+seemingly random value, which varied slightly in neighbouring points 
+to give an impression of texture, but not too much texture. We will 
+then use this "random" value to create textures later on. The creator 
+of this technique called such a function the "Noise" function. In 
+mathematical language we get:
+
+noise(x,y,z) --> [a real number]
+
+
+
+
+                          The Noise Function
+
+The way to create the Noise Function is to split up any 2D or 3D space 
+into a grid and assign various values to a series of all points at a 
+certain interval. Let's take 2D space as a starting point, because 
+that is easier to represent on screen. The x-values are the horizontal 
+scale, the y-values the vertical:-
+
+(0,0)+--+--+--+--+--+(5,0)
+     :  :  :  :  :  :
+     +--+--+--+--+--+
+     :  :  :  :  :  :
+     +--+--+--+--+--+
+     :  :  :  :  :  :
+     +--+--+--+--+--+
+     :  :  :  :  :  :
+     +--+--+--+--+--+
+     :  :  :  :  :  :
+(0,5)+--+--+--+--+--+(5,5)
+
+Now we assume that our texture will never be more than 5x5 units. If 
+it is, the texture will "wrap round" and start again. Now for each 
+point on this lattice we have created, we will create and store 3 
+random values: an x-gradient, a y-gradient and a "height" value. In 
+fact this height value is 
+only to help us to visualise this concept: it isn't really a height at 
+all.
+
+If we imagine a flat landscape, where at the corner of each square one 
+value is a "height" we can see that for any value of x or y not lying 
+on these vertices, by using a bit of maths we can create another 
+"height" value from the values of the 4 corners. But how do we create 
+the in-between values?
+
+
+
+                       1. Linear Interpolation
+
+One way is to simply draw a straight lines between the corners (so 
+called "linear interpolation" - "interpolation" as in finding the 
+point in-between, "linear" as in using straight lines.)
+
+Let us look at point (0.5,0.5) from above our "landscape" and assume 
+that the values are as follows:
+
+(0,0)     (1,0)
+    2-----4----- ---...
+    :     :     :
+    :  X  :     :    X marks the spot we want
+    :     :     :
+    6-----8----- ---...
+(0,1)     (1,1)
+
+
+This is where the x- and y- gradient values mentioned above come in. 
+First we interpolate the x values. Since we are taking x=0.5 we only 
+need to find the halfway point between them: first from 2 to 4, giving 
+3; then from 6 to 8, giving 7. Then we find the halfway point in the y 
+direction. Halfway from 3 to 7 gives 5. Hence at (0.5,0.5) the value 
+is 5.
+
+Simple enough, but if we apply this to textures, it gives a curious 
+"straight line" appearance that isn't very satisfactory. What we need 
+is a smoother way of creating in-between values...
+
+
+
+                     2. Polynomial Interpolation
+
+Now, don't panic... this is a lot easier than it sounds... in fact, 
+I've done all the maths for you in this article.
+
+If you read the above text again, you will notice that when I 
+described each point on the lattice structure, I mentioned *three* 
+values rather than the one we have used above. This is to describe a 
+curve between lattice points rather than a straight line. Let's look 
+at the interpolation along the x-lattices again. Imagine we are 
+looking at the landscape again, but this time from the side. The 
+"heights" now look like this:
+
+
+                      4
+            ?         :      ^
+  2         :         :      :
+  :         :         :      :Height axis
+(0,0)    (0.5,0)    (1,0)    :
+--+---------+---------+-----> X axis
+
+
+To give a smoother interpolation, we give each point an x-gradient, 
+that is how steep the "slope" at this point is. Let's say that at 
+(0,0) this is 0 (ie flat) but at (1,0) this is 1 (ie at an angle of 45 
+degrees)
+
+Now I said that I've done all the maths for you. 
+If v0 and v1 are the heights at 0 and 1 respectively, and g0 and g1 
+are the gradients then we need an equation which describes this curve. 
+Not only this, but to get a genuinely smooth translation, the 
+"gradient of the gradient" ie. how the gradient is changing from one 
+point to the next, must be 0 at both points.
+
+This assumed, then the equation to define this curve is:
+
+             new_height = (-2*v1 + 2*v0 + g0 + g1 ) * x*x*x
+                        +  (-2*g0 - g1 - 3*v0 + 3*v1) * x*x
+                        +  (g0) * x
+                        +  (v0)
+
+We also need to interpolate the gradients between these points:
+
+           new_gradient = 3 * (-2*v1 + 2*v0 + g0 + g1 ) * x*x
+                        +  2 * (-2*g0 - g1 - 3*v0 + 3*v1) * x
+                        +  (g0)
+
+(Who says Maggie never gives you anything? These equations took me 
+hours. Proof available on request for a small fee)
+
+
+Now all we need to do is interpolate the new heights and gradients at 
+(0.5,0) and (0.5,1), then do this again to give the value at (0.5,0.5)
+Voila! the noise function is complete.
+
+
+
+                       The Turbulence Function
+
+Alternatively, we can use the results of the Noise function in more 
+complicated ways (what do you mean, "even" more?) You can make a very 
+realistic marble effect by making what is called a Turbulence 
+function. In pseudocode, the basic algorithm for this is something 
+like:
+
+-------------------------------------------------
+function (x,y,z) : real
+turbulence = 0                  { set to zero to start }
+scale = 1
+
+while (scale > some_size)       { some_size is how far we want to go }
+
+ turbulence = turbulence +
+                   (abs (Noise (x/scale,y/scale,z/scale) * scale ))
+ scale = scale / 2
+
+wend
+
+return turbulence
+end function
+
+-------------------------------------------------
+
+The function repeatedly "zooms" the Noise function, but the bigger the 
+scale the less notice is taken of the result. Also if the value of 
+"Noise" allows negative results, the use of "abs" here will cause 
+discontinuities which give effects such as ridges or veins in the 
+textures. Suitable code is provided in the example on disk.
+
+
+
+                        So how is this useful?
+
+Firstly, you can use this technique to create some very pretty 
+patterns. If we simply limit the height values to between 0 and say 
+15, then we use the result as a colour value to create a smooth 
+texture - good for colour-cycling effects, too! Alternatively, many 
+overlaid Noise functions give realistic impressions of lapping water 
+(which you could even animate)
+
+In addition, you can extend this method to cover 3 dimensions, as POV 
+or NeoN-3D do. This is extremely hairy to code in something like STOS 
+though, and the "height" analogy I used to explain the 2D method will 
+fall down. However, converting it to 3D gives you the idea of the 
+"solid" texture for objects made of wood, stone etc.
+
+If you have 3D, then the Noise can make surface ripples for bump 
+mapping or texture mapping, some of the sexiest techniques around in 
+graphics at the moment (especially on an ST!)
+
+Using the Turbulence function gives a "mottled" look suitable for 
+marble, other water effects or even cloud formations, the choice is 
+yours. More detailed examples (using a kind of bastardized C code) are 
+available in teh original paper by Perlin (see the bibliography)
+
+
+
+                              Conclusion
+
+Hopefully you will have some idea of how the textures in the above 
+packages work now, and with a bit of practice can create your own. 
+Problems with getting it to work can be sent to:
+
+Steve Tattersall
+6 Derwent Drive
+Littleborough
+Lancs OL15 0BT
+England
+s.j.tattersall@cms.salford.ac.uk
+
+...and I'll try to fix them.
+
+----------------------------------------------------------------------
+Bibliography:
+
+1) "An Image Synthesizer" (Perlin) "Computer Graphics" (Proceedings of 
+SIGGraph Volume 19 Number 3, 1985), pages 287-296.
+Try the Periodicals section of your local library under "Computer 
+Graphics." This was in my University library, so if Salford have it 
+most other places will too?
+
+2) "Computer Graphics: Principles and Practice" (Foley, Van Dam, 
+Feiner, Hughes) Addison-Wesley Publishing ISBN 0-201-12110-7.
+Good all-round reference; (dodgy) translations into other languages 
+are also available. The German version is rubbish though: it even 
+misses chapters out
+
+3) "Introduction to Computer Graphics" (Foley, Van Dam, Feiner, 
+Hughes, Phillips) Addison-Wesley Publishing ISBN 0-201-60921-5.
+Not as good as (2) on most areas of graphics - but cheaper
+
+4) Any decent A-level book on maths to do the interpolation!
+----------------------------------------------------------------------

@@ -1,0 +1,68 @@
+             Frequently asked questions about the Atari ST/STE/Falcon
+            -========================================================-
+
+This  text  tries to  answer some  questions often  found in computer magazines
+(especially in the C. F.) Feel free to add more and to spread this text.
+
+(IMHO = in my humble opinion)
+;-)   = ironic
+
+Q: How can I exchange data between the Atari and the IBM-PC or the Amiga?
+
+ This is best accomplished via disks. All three computers can format IBM-compa-
+ tible disks. on the ST, FCOPY (and TOS >1.4 and several other format programs)
+ creates disks that can be read without problems by an IBM-PC.
+ You should format simple 720 Kbyte DD 3.5 inch (in Germany: 8.89 cm) disks, no
+ Hyperformats  or else ( although PCs  with F_READ  accept  these disks, so I'm
+ told).
+ If this won't work, check the boot sector. Any boot program confuses the  poor
+ old PC ;-).
+ On the Amiga there are programs (DOS2DOS ?) that can read and write IBM disks.
+ So I'm told, I don't have one.
+ 
+(Redax: I know, that DOS2DOS can  read and write IBM-disx. A other program with
+        the self meaning is CROSSDOS.)
+
+Q: Is Hyperformatting save?
+
+ Well,the normal ST format  means 80 tracks with  9 sectors. If you format with
+ 10 sectors, you can store more data. These "10 sector disks" are  rather save,
+ even commercial  software houses use them, although they won't load as fast as
+ 9 sector disks.
+ With tricks you can add one  more sector. These disks are (IMHO) not save. You
+ can also increase the number of tracks. Not every floppy disk likes this, some
+ may work with 83 tracks, some not.
+ A simple disk costs  today 1-2 DM. Better  take another  than risks  that your
+ (valuable?) data goes into the bit bucket.
+
+Q: What to do against virusses?
+
+ Most ST virusses  are bootsector  virusses. They can  only work if you boot up
+ your ST with them. So, never boot with  an unknown disk! Always  boot with the
+ same write-protected disk.
+ Check any unknown disk with a virus scanner (SAGROTAN,VIRENDETECTOR etc.).
+ If possible, write-protect your disks.
+ 
+(Redax: I can only warn for using only the old Sagrotan-protector! This program
+        is absolutly not up to date! Sagrotan 4.17 (last PD-version) knows only
+        15 bootsector-virusses! Today  there are more than 60 bootsector-virus-
+        ses on the good  old ST AND falcon! Use online-detectors  like VACCINE!
+        or something like that! Only this programs can totally save your disx!)
+
+Q: What is STOS?
+
+ STOS is a special program language for games. A BASIC interpreter and compiler
+ from Britain. Lots  of extensions are available via  english ST magazines (ST-
+ FORMAT etc.)
+
+(Redax: You can also make demos with STOS!)
+
+Q: How do I find out my ST's TOS-Version?
+
+ 1. Programs to do this: RAPUNZEL,SYS-INFO, STKONFIG etc.
+ 2. It is coded into the DESKTOP INFO ( e.g. Copyright Atari 1985,86,87,88,89 )
+    means TOS 1.04 (TOS 1.4, Rainbow-TOS)
+
+                                                            G'nort / 26.02.1994
+
+ 

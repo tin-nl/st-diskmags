@@ -1,0 +1,601 @@
+
+ñ                               Application review
+
+{*f1N.AES 2.0{*f0
+
+
+ñIntroductionğ
+------------
+Did it ever happen to you that you a lot of your friends bought some stuff and
+considered it great that never appealed to you ? Did you find yourself lost in
+endless debates between your friends about this current hyper-product you had
+really no interest in ?
+Well, if that sounds familiar, picture yourself as a happy ñSingleTOSğ-User
+on IRC #atariscne (Hi Thomas :-), surrounded by ñMiNTğ-fanatics.
+You are constantly told how great ñMiNTğ (and all related products) are, how
+cool, how reliable, how efficient and how dumb you are that you are still using
+the plain stupid ñSingleTOSğ, which seems to be only good enough if ñMiNTğ has
+- heaven forbid - caused some trouble and some òINFğ- or òCNFğ- or basically
+any of the ò/etcğ-files need to be altered.
+
+Well, anyway, i finally decided to òbuyğ ñN.AES 2.0ğ by òWoller Systemeğ 
+from Berlin because i thought it would be nice to support the ñN.AESğ 
+development and because the CD features a lot of ñMiNTğ-stuff as well. So i 
+considered it a good idea to have a look myself and this is my first 
+impression.
+Of course an operating system as essential as ñN.AES 2.0ğ can't be tested in 
+a week so this is more a preliminary review.
+
+
+ñContent of the packageğ
+----------------------
+Even i had the original package of ñWindowsğ in my hand. The manual sled out 
+of the package and fell on my foot which was blue after that for about one 
+week. Even if the ñWindows 3.1ğ-manual contains only junk, there óisğ a 
+manual. When we ordered a copy of ñSuSE Linuxğ for a few computers at the 
+office, we were told that we mainly pay for the documentation - which is one 
+of ñSuSEğ's strong points - and the support.
+Guess how much documentation you get with ñN.AES 2.0ğ.
+None.
+Zero.
+Nothing.
+Nichts.
+Nada.
+ñN.AES 2.0ğ is being shipped in a more or less plain blue òDVDğ-box, 
+containing nothing but the CD-ROM.
+Well, that makes "Open the box and see if all of the content listed below is 
+in it" really easy. CD-ROM is there, nothing else, so let's get started.
+
+
+ñThe CD-ROMğ
+----------
+After putting in the CD-ROM and booting my Falcon, i opened drive P:, which 
+is my CD-ROM (a trusty Toshiba, that only decided to kill me once so far but 
+luckily failed) and found nothing besides a ñMiNTğ-folder on it.
+Cool.
+This ñMiNTğ-folder contains only packed files named òETC_SBIN.TGZğ or
+òBIN.TGZğ, but no ñN.AESğ-related files and no documentation either. I found 
+the "competitors" ñXaAESğ and ñoAESisğ though.
+Remembering that my CD-ROM refused to load the ñNeoNğ CD-ROM once as well i 
+considered installing another CD-ROM driver. So far i was running òURAnğ's
+ñBetaDOSğ and had no problems yet.
+I decided to go for ñExtenDOS Proğ - which was advertised as the best for 
+ñSingleTOSğ by lots of people. And since i could not run ñN.AESğ yet i dug 
+out the archive somewhere and installed it.
+No changes to report. The ñN.AESğ CD-ROM still seems only to contain the 
+lonely ñMiNTğ-folder.
+Back to ñBetaDOSğ, but this time with òHard & Softğ's ñCD-Toolsğ drivers.
+And suddenly, the ñN.AESğ CD-ROM contains something.
+
+Not too much to read about on the CD-ROM though - there still isn't one 
+single òREAD.MEğ or òREADME.1STğ on the CD-ROM. The only òHypertextğ i can 
+find on the root directory is the one for the òSetupğ-program, but this 
+hypertext isn't about ñN.AESğ but about the ñGEM-Setupğ by Joachim Fornallaz 
+and doesn't help me much.
+The only executable file i can find is the òSETUP.PRGğ so my choice is very 
+limited. Let's go.
+
+ñThe Installationğ
+----------------
+Like ñMultiTOSğ (i'll get back to that later), ñN.AESğ is mainly intended 
+for people who don't like to screw around in òINIğ, òCNFğ or ò/etcğ-files.
+Luckily, the installer of òN.AESğ claims to do all those nasty jobs for you 
+so you only need to do a few clicks and reboot.
+Actually, the installer is a more generalized ñGEMğ-installer and not purely 
+intended for installing ñN.AESğ.
+Even though it scans a lot of pathes and lets you select a lot of pathes on 
+startup, it hung up a few times without any error message when i tried the 
+first times.
+It reported a few odd error messages when i skipped some ñAUTO-ğfolder 
+programs but finally, it ran.
+Now comes the good-looking part.
+A few menus let you select ówhatğ you want to install ówhereğ, what pathes 
+the system knows about so far. You can even select funky submenus and thus 
+set detailed parameters for the exact installation.
+Unfortunately, at no point so far the user has been told anything detailed 
+about òwhatğ is going to be installed òwhereğ. Okay, you can set the pathes 
+but you're not being told what you essentially need, what the different 
+utilities are and wether you want them or not. A bit documentation would 
+have been nice but there is ónoneğ.
+So finally, there is really no other choice than clicking the "Go" button.
+Here goes.
+
+My Falcon was busy some time, depacking the archives and copying all the 
+essential stuff to where it belongs. This is presented very nice with a few 
+dialogue-boxes that tell you what the installer currently does and how 
+things procede.
+All of a sudden, i am being asked for an additional pathname, but i am not 
+being told what this pathname shall be used for. Guess what - no readme-file
+or online-help tells me either.
+I still haven't found out why this path-name has to be entered as it is the 
+path where ñN.AES 2.0ğ itself is going to be installed to. Again, you'll 
+only find this out when you install it a second time.
+My first installation of ñN.AES 2.0ğ ended in òC:\MULTITOS\NAES.20\SETUP\ğ
+where i didn't want to have it in the first place.
+Since i considered that the installer was also setting up pathnames in the 
+config-files i decided to redo the installation.
+
+Once the installer is done, it tells you that everything has been done and 
+that you only need to reboot to activate ñN.AES 2.0ğ.
+Pushing the reset button ...
+
+
+ñThe first impressionğ
+--------------------
+Okay, so ñN.AES 2.0ğ was supposed to be installed and yes, my boot-selector 
+reports that there is a ñMINTNP.PRGğ in my ñAUTOğ-Folder. Good.
+After the boot-sequence i find myself surprised in the normal ñSingleTOSğ-
+desktop. Did i forget to install ñThingğ and ñN.AESğ decided to boot the 
+ñGEM Desktopğ instead ?
+Definetly not as the ñAESğ in the Falcon's ROM is not capable of 
+òmultitaskingğ and hence is not really suitable to work with ñMiNTğ.
+A short look at the remaining memory made it clear: Either ñN.AESğ consumes 
+no memory at all or has not been loaded at all.
+
+At the office, i maintain our ñUnixğ-machines a little, a few older òIBM 
+òAIXğ-machines and a few more up-to-date òDigital Unixğ-workstations and i 
+personally consider myself not too dumb when it comes to setting up a òUnixğ 
+or a òUnix-likeğ system.
+So i remembered something about a òMINT.CNFğ-file that has to be put either 
+into the root- or a directory called òMULTITOSğ.
+Look there.
+No òMINT.CNFğ in neither of those directories.
+
+At that time, i was slowly, but surely getting a little angry.
+There is no documentation on the CD-ROM that is at least a bit helpful. The 
+installer looks nice, but is obviously not really suitable to install a 
+complete operating system - not to mention the prompt for an additional path 
+that has been asked for some time ago.
+The installer didn't create an appropriate òMINT.CNFğ-file that featured my 
+selection of pathes, it didn't even copy a non-working òMINT.CNFğ-file 
+somewhere.
+Unwilling to write an òMINT.CNFğ-file myself, i reran the installer, my only 
+way of influencing the installation, óagainğ - sharply looking if i maybe 
+missed some options i should have done or parameters i should have entered.
+Negative.
+I did all i could do to control the installation and it did still not work.
+
+I used to make fun of people who reinstall òWindows 95ğ over and over again.
+I should be more careful now that i installed ñN.AES 2.0ğ three times in one 
+day myself.
+
+
+ñOn the huntğ
+------------
+
+Well, at least now there is an òNAES.HYPğ on my harddisk that gives me some 
+hint of what to do.
+In a more or less side-trip it tells me that i should have a file called 
+òMINT.CNFğ in a folder called ñMULTITOSğ and that this should feature an 
+entry called GEM=C:\somewhere\N_AES.SYS.
+Of course i have no N_AES.SYS in any of my directories.
+But i was wise enough to realise that i should enter N_AES030.SYS there.
+Where ?
+There is only one explanatory òMINT.CNFğ-file on the CD-ROM somewhere and it 
+does neither load ñN.AESğ nor anything i wanted to fiddle around with for 
+now. I just wanted to run ñN.AESğ, not a complete multi-user networking
+operating system with lots of different file-systems.
+Luckily i remembered my good old òMultiTOSğ-installation on some of my 
+disks. There i found a short, but precise òMINT.CNFğ that didn't feature any 
+entries i couldn't follow. 
+I only commented òSpeedUpğ out and put the óGEM=ğ-entry in it and set the 
+óAESğ and óTHINGDIRğ-environment variables in it.
+There. Let's boot it again.
+
+This time i was more lucky.
+I was greeted with a few ñMiNTğ-like lines during boot-up and shortly after 
+that, ñN.AES 2.0ğ showed me its introductory message. It crashed more or 
+less immediatelly afterwards since Videlity needs to be either called from 
+within ñMiNTğ or after ñMiNTğ from the ñAUTO-ğfolder.
+But that can be excused, so i reran everything without Videlity.
+
+This time, ñN.AES 2.0ğ booted - but it didn't go very far.
+The òN_AES.CNFğ-file was right where it was supposed to be, but it didn't 
+feature my pathes but some kind of standard-pathes. This way, ñN.AES 2.0ğ
+of course couldn't find essential files and didn't boot the way it was 
+supposed to.
+Obviously, the installer did not only fail to put a proper òMINT.CNFğ where 
+it belongs but also didn't bother to change any of the entries in the 
+òN_AES.CNFğ-file.
+Okay, back to ñSingleTOSğ, back to ñEverestğ, back to manually changing the 
+entries in the config-files, back to another reboot.
+
+Welcome to ñN.AES 2.0ğ - which started with an error-message.
+It wasn't ñN.AESğ that generated that error-message but ñTosGem2ğ, a program 
+that redirects TOS-console output into windows, a bit similar to X-Windows 
+on òUnix/Linuxğ-machines.
+This program is called from within the òNAES.CNFğ-file and considers itself 
+in a multi-user, full ñMiNTğ-environment. Since i chose to ónotğ go that 
+far, it couldn't find any of the user-relevant data so it gave me an error- 
+message.
+Rescanning the òN_AES.CNFğ-file a few times, asking some people on IRC and 
+some logical thinking made it obvious that the parameter ó-lğ, which 
+appeared right behind the òTOSGEM2.APPğ in the òN_AES.CNFğ-file probably 
+means ò-loginğ and thus makes òTosGem2ğ look for the user-information.
+Of course there is no single line in any of the hypertexts about ñTosGem2ğ.
+
+Finally, i managed to get a running installation of ñN.AES 2.0ğ.
+
+
+ñConclusion so farğ
+-----------------
+I am very very very disappointed about the basic presentation, the supply of 
+documentation and the installer ñN.AES 2.0ğ comes with.
+
+First it is not a trivial procedure to get the contents of the CD-ROM. Why 
+did it have to be a multi-session CD ? I see no reason for it. Perhaps i am 
+picky and ignorant to not run ñSpin!ğ - but if that is a necessity to get 
+the content of the CD-ROM, i would have at least put a label on the CD 
+itself "Recommended to use with Spin!" or something.
+
+Second, there is no printed documentation anywhere. Okay, i agree that there 
+is probably no need for printed documentation due to the massive amount of 
+documentation that could be put on the CD (even if there is practically none 
+available at the beginning) - but at least one sheet of paper telling the 
+user how to run the installer and what pathnames to set wouldn't have been 
+too much to ask for - especially as the CD-ROM costs something around 80.-
+Euro, which is not really óthatğ cheap.
+
+Third, the installer just plainly sucks.
+I correct myself: The installer is actually quite neat and i don't blame 
+Joachim Fornallaz for the fact that it does not do its job well with ñN.AES 
+ñ2.0ğ.
+The installer is simply being abused a little here and has probably not been 
+setup by the ñN.AESğ-creators themselves. It tends to hang up, it asks for a 
+pathnames without any comment in the middle of the installation and worst of 
+all, it does ónotğ change any of the pathes in the òMINT.CNFğ or the 
+òN_AES.CNFğ - which i personally consider the main task i run this installer 
+for. Extracting the files into preselected directories is not too hard to do 
+with a shell-based depacker like ñLHarc 3.10ğ, but putting in all the 
+correct pathes is something i wanted to have an installer for.
+I had to do it myself though.
+I also consider it very very annoying that the installer terminates itself 
+with the message that the system needs to be rebooted only to start ñN.AESğ 
+because this is simply a lie.
+
+Installation of ñN.AES 2.0ğ is no fun at all, the user finds himself left 
+helpless inside a huge package of archives he is not being told details 
+about. Without a basic knowledge of ñMiNTğ (or Unix-like systems in common), 
+the user is more or less doomed to screw up his ñN.AES 2.0ğ installation 
+several times.
+Once the òN_AES.HYPğ-files have been extracted, things brighten up a bit as 
+there is some information about all the modules that come with ñN.AES 2.0ğ 
+and also about how the òN_AES.CNFğ works, but at this point, the user has 
+been tortured with missing documentation and uncommented steps in the 
+installation procedure to the max.
+A lot more sense for details would have been necessary here to make the 
+installation more suitable. 
+Even i could code a small program in GFA-Basic that lets the user select a 
+few pathes and put those names into the ò.CNFğ-files afterwards, so why 
+does ñN.AES 2.0ğ refuse to do this simple job during the installation ?!
+There could be at least óoneğ small installation guide on paper to tell the 
+user how to operate the installer - especially as it is a bit bumpy.
+Even without no printed documentation there óshouldğ have been some 
+unpacked, readable files on the CD-ROM the user can cling to in case his 
+first attempts of installation fail.
+
+But there is none and so the first insights into the wonderful world of 
+ñN.AES 2.0ğ are covered in large black clouds that spoil all the fun.
+
+
+
+ñN.AES 2.0 itselfğ
+----------------
+
+ñN.AES 2.0ğ itself is being advertised as "The fast MultiTOS".
+So how fast is it ? How much memory does it consume ? What comes with it ?
+How well does it run ? Is it reliable ?
+With the main competitor being ñMagiC!ğ, ñN.AES 2.0ğ is -even though i don't
+like ñMagiCğ very much - in pretty tight competition. I installed ñMagiC 4.0ğ
+a while ago for test purposes and i think i still have an evaluation copies
+out of my "commercial" times at òSolution Softwareğ somewhere.
+
+With ñMiNTğ running beneath ñN.AES 2.0ğ, it has a very much òUnix-likeğ 
+operating system as a solid basis. However, the one who runs ñN.AES 2.0ğ is 
+usually less interested in the capabilities of ñMiNTğ than in the 
+capabilities of ñN.AES 2.0ğ in conjunction with ñMiNTğ. Therefore, this is 
+not going to be a full ñMiNTğ-review, only as far as it concerns ñN.AES 
+2.0ğ.
+
+After booting ñMiNTğ and ñN.AES 2.0ğ, you usually find yourself in the midst 
+of a user-interface called ñN.Thingğ by òThomas Binderğ (since v1.09).
+The first visible differences to the original ñGEMğ are the completely new 
+but in-animated colour icons, 3D-windows with òMac-likeğ stripes on them, an 
+additional 3rd button on the right side of the title-bar of each window, 
+realtime sliders and realtime movement of filled windows.
+So these funky gadgets are really part of the ñAESğ and thus ñN.AES 2.0ğ.
+Additionally, you find a drive called òU:ğ on your desktop which hides a few 
+very interesting secrets but are usually not too interesting in someone 
+not interested in the interiors of ñMiNTğ.
+The second visible differences to the original ñGEMğ is the fact that the 
+desktop doesn't disappear when you load a ñGEM-programğ. And why should it ?
+This is a multitasking system, why should the desktop stop when you run an 
+application ? This is not too new though as even the old ñMultiTOSğ did 
+that.
+
+Basically, to cut a long story short, picture ñMultiTOSğ in a very very neat 
+replacement desktop and you have a good picture of what ñN.AES 2.0ğ looks 
+and feels like - the slogan "The fast MultiTOS" is not that far from 
+reality.
+òBut how fast is it ?
+You'll find the benchmarks below. I'd like to talk a bit about the "feel" of 
+its speed. It surely outruns the original ñMultiTOSğ - but that wasn't a 
+real challenge. Even if you run only 1 application (for example ñGEMBenchğ)
+ñN.AES 2.0ğ "steals" itself between 5 and 10% CPU-time.
+That's not too bad. ñMultiTOSğ fakes itself some better values here but only 
+due to the fact that ñGEMBenchğ is allowed to totally slaughter all other 
+jobs running which is not allowed within ñN.AES 2.0ğ.
+But who wants to run one simple job within a system like this ? No one. So i 
+started them all at once. I had the ñAPEX JPeg compression utilityğ work, 
+played òMario Becroft'sğ ñGEM-Asteroidsğ via keyboard while at the same time 
+Everest searched and replaced a few characters in a far too long text and i 
+also played around in ñN.Thingğ a little with the mouse.
+After that i can fully agree to òWoller'sğ slogan "The ófastğ MultiTOS".
+Even though the ñAPEX JPEG Compressorğ is not very clean, even though i 
+abused keyboard and mouse for 2 totally different jobs i have to admit that 
+the system - even ñGEM-Asteroidsğ stayed at a reasonable speed and supplied 
+a reasonable response to anything i requested from it.
+If left alone, it tends to appear slightly slower than ñMagiCğ, but when 
+kicked with a few time-intensive (and less time-intensive) jobs, the power 
+of ñMiNTğ seems to kick in and keep the system alive.
+
+òBut how reliable is it ?ğ
+This is hard to tell. ñN.AES 2.0ğ crashed a few times on me. Even programs 
+that cooperate under ñSingleTOSğ (one as acc, one as main program) tend to 
+create problems under ñN.AES 2.0ğ. But that might also be the fault of
+running ñMiNTğ without a memory protection or running an outdated harddisk-
+driver named ñHuSHiğ which doesn't handle òIDE-disksğ very well anyway.
+But ñMultiTOSğ didn't crash less often whenever i tried it and i never ran 
+ñMagiCğ long enough to give a detailed answer here, but even the few times i 
+ran it, it crashed a few times just as well.
+Generally speaking, all ócleanğ applications run fine next to each other 
+under ñN.AES 2.0ğ. Software, that is intended for use with ñMagiCğ for 
+instance, will run fine on ñN.AES 2.0ğ in most cases just as well.
+For running games or demos, booting ñN.AES 2.0ğ is just a waste of memory. 
+Demos/Games will either not run on it or behave very strange and even if 
+they do, you can be sure all your background tasks are being dumped just as 
+well.
+
+òBut how much memory does it consume ?ğ
+Difficult to answer. When ñN.AES 2.0ğ loads, it also loads -by default- a 
+few nice utilities, like for example ñTosGem2ğ, ñMultiStripğ and of course
+ñN.Thingğ. Odd as it sounds, ñN.Thingğ is relatively modest, consuming 
+something between 600k and 1.5 MB, even though it is feature packed. 
+Nevertheless, since a replacement desktop is ónecessaryğ to run with ñN.AES 
+2.0ğ, you can either settle for an even more modest replacement desktop like 
+for example ñTeradeskğ - which doesn't have half of the features that 
+ñThingğ offers, if you want to reserve more memory.
+ñN.AES 2.0ğ itself reports to reserve around 1 MB for itself. ñTosGem2ğ 
+stays modest with about 200k, however, MultiStrip needs additional 150k.
+In comparison to ñMagiCğ, i would personally judge ñN.AES 2.0ğ a little more 
+memory hungry than its direct competitor. That is not even hard to 
+understand because first, ñMagiCğ contains multitasking kernel and AES more 
+or less in one piece while ñN.AES 2.0ğ is based on ñMiNTğ, which is more a 
+full unixlike operating system basis than a highly specialised OS-kernel 
+like ñMagiCğ. Then, ñMagiCğ automatically runs the less flexible and less 
+feature packed ñMagXDeskğ on startup which consumes less memory than ñN.Thingğ
+does, but doesn't offer as many features. If you decide to run the current 
+version of ñJinneeğ however, kiss your memory good-bye.
+Running ñN.AES 2.0ğ on anything but a ó4 MBğ is totally senseless. You might 
+get it to work on a ó2 MBğ machine, but you won't have enough RAM left to 
+run larger applications - even on a very very basic setup.
+On a ó4 MBğ system, ñN.AES 2.0ğ is not really very much fun either. You can 
+run a few things on it then, but no major applications and especially not 
+several major applications at once.
+A ó14 MBğ Falcon is something ñN.AES 2.0ğ runs on nicely. You have between 
+ó11 MBğ and ó9 MBğ left for applications, depending on your system-setup.
+Considering the fact that ñN.AES 2.0ğ was rather intended to be used with the 
+current òHadesğ or òMilanğ Atari-clones which can go beyond ó64 MBğ easily,
+i personally would consider ñN.AES 2.0ğ rather modest in memory usage.
+
+
+òBut how compatible is it ?ğ
+This is a split question: Compatible to what ? Basically, any kind of ñAtari 
+STğ-software runs. Like said before, óGamesğ and óDemosğ will either refuse 
+to work, hang up the system or behave very funny, but concerning the fact 
+that some (especially older) demos even screw up on modern ñTOSğ like 2.06, 
+this is not really surprising.
+Being based on the unix-like ñMiNTğ, ñN.AES 2.0ğ can even do tricks that 
+ñSingleTOSğ or ñMagiCğ can't do in a similar way, like excellent ópipingğ,
+óforkingğ - As far as i know, ñMagiCğ can do similar, but not following the 
+usual óUnixğ-protocols. This of course makes ñN.AES 2.0ğ compatible to all 
+the funky software you can find in óftp.funet.fi/pub/atari/mintğ that you 
+always wondered about.
+Running the óBASHğ for example, my favourite command line interpreter, a 
+shell, is as simple as running other little utilities and programs that 
+originated from the óUnixğ-hemisphere (BASH = óBğourne óAğgain óSğHell).
+There are quite some other programs for ñMiNTğ only as they are "cross- 
+compilates" from óUnix/Linuxğ - meaning that their source-code has been 
+compiled under ñMiNTğ and due to the fact that these programs usually only 
+do òconsole-inputğ and òconsole-outputğ, they run fine under ñN.AES 2.0ğ, 
+with ñTosGem2ğ (or any other console-output redirection program) even in a 
+window.
+This way you get more or lest the best of both worlds, ñMiNTğ and ñGEMğ, 
+which for example ñMagiCğ can't offer that way. However, there seem to be 
+some (very rare) programs especially written for ñMagiCğ. Those of course 
+can't and won't run on ñN.AES 2.0ğ.
+
+
+ñPreliminary conclusionğ
+----------------------
+Let's compare the replacement operating systems available for the óAtari ST,
+óSTE, TT and Falconğ computer series, shall we:
+
+			TOS	MTOS	N.AES	MagiC	Geneva	MiNT	hint
+-----------------------------------------------------------------------------
+Stored in		ROM	Disk	Disk	Disk	Disk	Disk
+Based on		-	MiNT	MiNT	-	-	-	(0)
+preemptive Multitask.	No	Yes	Yes	Yes	No	Yes
+cooperative Multitask.	No	No	No	No	Yes	No
+Unixlike		No	Yes	Yes	No	No	Yes
+
+Memory usage		++	+	-	+	+	+   	
+Reliability		++	-	+	+	-	++
+Speed			++	-	+	+	++	++
+System maintenance	++	+	+	0	0	+       (1)
+System transparence	++	++	++	0	0	++	(2)
+Flexibility		--	-	++	0	0	++	(3)
+Installation		++	+	--	++	++		(4)
+Upgrading		--	+	++	+	+	++	(5)
+Compatibility to
+- Normal TOS/GEM apps	++	+	++	++	++	--	(6)
+- MiNT-apps		--	++	++	-	-	++	(7)
+- MagiC-apps		--	--	--	++	--	--	(8)
+
+Hints:	(1)	This considers questions like: Do i have to reboot often ?
+		Do crashed applications leave junk on the harddisk ? Do i 
+		have to manually change entries in certain config-files ?
+		Can i access system-config files ? Are there many parameters
+		to handle ?
+	(2)	This more or less means how easy it is to see through the
+		system's structure, if essential config-files can be 
+		accessed/read/altered and if so, what consequences does
+		that imply ?
+	(3)	Flexibility means how easy it is to alter essential parts of
+		the operating system, like device-drivers, file-systems,
+		network-protocols (if any), leave out or add utilities or
+		parts of the operating system etc.
+	(4)	Usually, a replacement is nowadays installed by an 
+		installer. This point should evaluate how easy it is to
+		work with this installer, if the installer creates a fully
+		working system or if some other things have to be done by
+		hand.
+	(5)	Upgrading means installing the newest version upon the old
+		one. In TOS this means exchaning ROMs, in all other cases
+		it means accessing/altering potentially essential system-
+		files.
+	(6)	A normal TOS/GEM app is usually any application written for
+		the Atari ST, STE, TT and Falcon series.
+	(7)	MiNT-apps are usually Unix/Linux-programs that have been
+		compiled under MiNT. There are some like for example shells,
+		file-system drivers, network-drivers, some utilities etc.
+	(8)	There are some very rare applications that have been 
+		intended for usage on MagiC only.
+		
+	(0)	Geneva is a cooperatively multitasking operating system, but
+		it can be used together with MiNT for MiNT compatibility and
+		preemptive multitasking.
+
+This list is based on my personal impressions. If i am completely utterly 
+wrong, please let me know and i will of course rectify it. If i just have 
+happend to object to your personal opinion, feel free to write your own 
+article about ñN.AES 2.0ğ in the forthcoming issues of òUCMğ.
+
+
+
+ñComparison to other multitasking replacement operating systemsğ
+---------------------------------------------------------------
+
+òN.AES 2.0 and MagiCğ
+Both have their pros and cons. Due to the tacky installer of ñN.AES 2.0ğ and 
+the relatively large amount of parameters to control within it, ñMagiCğ may 
+be the better choice for people just wanting a reliable and quick 
+multitasking operating system who consider this question a question of 
+rational reasons and facts and not a religios discussion.
+Of course - since ñN.AES 2.0ğ is based on ñMiNTğ, the possibilities of the 
+operating system are a lot more expanded than ñMagiCğ can offer. However, 
+for most jobs in the everyday life of an Atari user, ñN.AES 2.0ğ will do the 
+required jobs just as well as ñMagiCğ does. Of course, ñMagiCğ isn't as 
+flexible as ñN.AES 2.0ğ is, but again, this is totally uninteresting for a 
+simple user like me.
+ñN.AES 2.0ğ may seem a little more complicated due to the hierarchical and 
+consequent ñMiNTğ-structure. This gives the user more power of his own 
+system that ñMagiCğ likes to keep for itself. However, people who are scared 
+of editing system-relevant config-files by hand should probably stick to 
+ñMagiCğ until òWollerğ gets the installer of ñN.AES 2.0ğ done
+
+òN.AES and Genevağ
+ñGenevağ is not in the same league as ñN.AES 2.0ğ is. ñGenevağ is 
+cooperative instead of preemptive, causing trouble with some older 
+applications, even though ñGenevağ has relatively good ways of preventing 
+certain multitasking-unfriendly applications from blocking the system beyond 
+control. ñGenevağ tends to be a little more compatible to some TOS/GEM 
+applications due to the fact that it is more similar to ñTOSğ than ñN.AES ğ
+ñ2.0ğ is. But since this only counts for really old and odd applications 
+like ñDegasEliteğ, ñCyberPaintğ etc, this point is not really essential.
+In contrast to that, ñN.AES 2.0ğ is more reliable, more flexible, easier to 
+control and of course offers everything that ñMiNTğ offers.
+Geneva runs with ñMiNTğ as well, but even then Geneva is inferior to ñN.AES 
+2.0ğ due to its less flexible structure and maybe the fact that it 
+originally has been designed for different purposes.
+
+òN.AES and MultiTOSğ
+Not a fair comparison. It's obvious that the authors of ñN.AES 2.0ğ have 
+learned a lot from the mistakes done within ñMultiTOSğ. ñMultiTOSğ isn't 
+anywhere as fast as ñN.AES 2.0ğ is and hangs up a lot more often. It tends 
+to be a little more incompatible (at least i had to experience that, but 
+maybe that's just my bad luck) and additionally, it doesn't use the features 
+of ñMiNTğ very well - in contrast to ñN.AES 2.0ğ, which does exactly that.
+ñMultiTOSğ is on the other hand less memory hungry, brings its own 
+replacement desktop which is modest in memory usage and can be made a little 
+quicker by using ñSpeedUpğ (which does not solve the basic speed problem in 
+ñMultiTOSğ though).
+The only excuse to run ñMultiTOSğ instead of ñN.AES 2.0ğ is if you definetly 
+need to run a multitasking AES on a 2 MB/4 MB machine and don't want to use 
+ñMagiCğ at all cost.
+
+
+
+ñFinal conclusionğ
+----------------
+I was a happy ñSingleTOSğ-user.
+I bought ñN.AES 2.0ğ to see what it's like and to support its development.
+I installed it.
+I toyed around with it.
+I worked (currently write this) with it.
+But it didn't get me away from ñSingleTOSğ. Even though pretty quick, pretty 
+reliable and pretty flexible, ñN.AES 2.0ğ is a little less quick, a little
+less reliable than ñSingleTOSğ is. Accessories have crashed when being used 
+together with a certain application under ñN.AES 2.0ğ that run happily 
+together under ñSingleTOSğ. ñN.Thingğ has suddently terminated itself in the 
+middle of a data-operating where ñThingğ doesn't crash.
+The reboot/shutdown sequence can hang up and if you don't setup your 
+res-changer program properly, it might hang your system up under ñN.AES 2.0ğ 
+which doesn't happen under ñSingleTOSğ.
+To put it in a nutshell: I still prefer ñSingleTOSğ together with a few 
+accessories. It does everything i need, it did it well the past 10 years, it 
+will still do that in the future and i will be using it most of the time in 
+the future.
+However, ñMiNTğ, ñN.AES 2.0ğ and ñN.Thingğ are impressive and i can't say i 
+am sorry that i have purchased this set. ñMiNTğ is extremely flexible and 
+allows you to turn your òAtariğ into a unix-like workstation featuring a set 
+of compilers, file-systems, tools, utilities, making it a multitasking, 
+multithreading, multiuser operating system.
+ñN.AES 2.0ğ is -in my eyes- the correct AES to go with if you want to run 
+TOS/GEM applications on ñMiNTğ. It is surely more compatible and reliable 
+than the free ñXaAESğ and ñoAESisğ and it features a lot of goodies.
+ñN.Thingğ is an excellent desktop that has everything i need and has a lot 
+more that i don't really need, but like to have. In fact, i enjoyed ñThingğ 
+so much that i registered for it to use it under ñSingleTOSğ as well.
+
+òBTW, as i write these final lines, ñN.AES 2.0ò has totally and hopelessly 
+òcrashed and i had to reboot. Thus i am finishing this article under 
+ñSingleTOSò.
+
+òWollerğ needs to fix that installer badly as it totally spoiled my first 
+impression of ñN.AES 2.0ğ - it can't be that hard to write a decent shell 
+for an LHarc-extractor, can it ?
+Otherwise, i will stay happy with ñSingleTOSğ and if decide to need a 
+multitasking system, i can boot ñN.AES 2.0ğ.
+
+
+				ñThe Paranoidğ
+				  òParanoiağ
+			 ó(from the Lunatic Asylum)ğ
+			 òThink you can handle it ?!ğ
+			 
+
+P.S.:	Which operating system you run on your Atari however is no longer a
+	question of logic and ration, but a religious question.
+	Certain people tend to behave a little like Micro$oft, permanently
+	and constantly telling everyone how special, fantastic and great a
+	certain OS is and how we all need to upgrade/switch to it, even if
+	we don't like to.
+	Advertising one certain operating system is one point. Insulting
+	other people who refuse to install that certain operating system
+	out of their own personal reasons is another.
+	I don't think we need that in our small scene.
+	It's good that we have so many different operating systems on our
+	beloved machines and it is good that they compete with each other.
+	Let everyone run the operating system one likes best and don't call
+	him dumb if that's not your favourite operating system.

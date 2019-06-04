@@ -1,0 +1,261 @@
+-----------------------------------------------------------------------
+
+                            System Variables
+
+-----------------------------------------------------------------------
+
+Unless indicated all system variables are longwords
+
+$400                                                          etv_timer
+
+    Timer handoff vector
+
+$404                                                         etv_critic
+
+    Critical error handoff vector
+
+$408                                                           etv_term
+
+    Process terminate handoff vector
+
+$40c                                                           etv_xtra
+
+    Space for logical vectors $103 to $107
+
+$420                                                           memvalid
+
+    Contains the magic number $752019f3 which together with memval2
+    validates 'memcntlr' and indicates a successful coldstart.
+
+$424                                                    memcntlr (byte)
+
+    Contains memory controller configuration nibble (lowest 4 bits)
+
+$426                                                           resvalid
+
+    If 'resvalid' contains the magic numer $31415926 on system reset,
+    the system will jump through 'resvector'.
+
+$42a                                                          resvector
+
+    System reset bailout vector. Called early on in system
+    initialization (before any memory/hardware is accessed).
+    A6 contains a return address, all other registers, including stack
+    pointers will contain garbage.
+
+$42e                                                            phystop
+
+    Physical top of RAM. Contains a pointer to the first unusable byte.
+    ($80000 on 1/2 meg machines.
+
+$432                                                            _membot
+
+    Bottom of availble memory. The BIOS 'getmpb' function uses this
+    value as the start of the GEMDOS tpa.
+
+$436                                                            _memtop
+
+    Top of the available memory. The BIOS 'getmpb' function uses this
+    value as the start of the GEMDOS tpa.
+
+$43a                                                            memval2
+
+    Contains the magic number $237698aa, wwhich together with memvalid
+    validates 'memcntrl' and indicates a successful coldstart.
+
+$43e                                                              flock
+
+    Used to lock the DMA chip. Should be nonzero to ensure that the OS
+    does not touch the DMA chip registers during vblank.
+
+$440                                                    seekrate (word)
+
+    Default floppy seek rate. Bit zero and one contain the default seek
+    rate for both floppys.
+
+    0 = 6 ms     1 = 12 ms    2 = 2 ms    3   = 3 ms
+
+$442                                                    _timr_me (word)
+
+    System timer calibration (in ms). Should be $14, since the timer
+    handoff vector is called at 50 hz. Returned by the BIOS function
+    '_tickcal', and passed on the stack to the timer handoff vector.
+
+$444                                                    _fverify (word)
+
+    Floppy verify flag. When nonzero, all writes to floppies are read
+    verified. When zero, no write verifies take place. Default is to
+    verify.
+
+$446                                                    _bootdev (word)
+
+    Contains the device number the system was booted from. The BIOS
+    constructs an environment string from this variable before bringing
+    up the desktop.
+
+$448                                                     palmode (word)
+
+    When non zero, indicates the system is in PAL mode. When zero the
+    system is in NTSC mode.
+
+$44a                                                  defshiftmd (byte)
+
+    Default vidoe resolution. If the system is forced to chande from
+    monochrome mode to a color resolution, 'defshiftmd' contains the
+    resolution the system will switch to.
+
+$44c                                                    sshiftmd (word)
+
+    Contains shadow for 'shiftmd' hardware register.
+    0 = lo rez   1 = med rez   2 = hi rez.
+
+$44e                                                          _v_bas_ad
+
+    Pointer to base of screen memory. Always on a 256 byte boundary.
+
+$452                                                      vblsem (word)
+
+    Semaphore to enforce mutual exclusion in vertical blank interrupt
+    vector. Should be '1' to enable vblank processing.
+
+$454                                                       nvbls (word)
+
+    Number of longwords that '_vblqueue' points to.
+
+$456                                                          _vblqueue
+
+    Pointer to a vector of pointers to vblank handlers.
+
+$45a                                                           colorptr
+
+    Pointer to a vector of 16 words to load into the hardware palette
+    registers on the next vblank. If null the palette is not loaded.
+    'colorptr' is nulled after the palette is loaded.
+
+
+$45e                                                           screenpt
+
+    Pointer to the base of the screen memory, to be set on the next
+    vblank. If null, no value is set.
+
+$462                                                           _vbclock
+
+    Count of the vertical blank interrupts.
+
+$466                                                           _frclock
+
+    Count of the vertical blank interrupts that were processed, not
+    blocked by 'vblsem'.
+
+$46a                                                           hdv_init
+
+    Vector to hard disk initialization. Null if unused.
+
+$46e                                                            swv_vec
+
+    The system follows this vector when it detects a transition on the
+    monochrome monitor detect input. 'swv_vec' initially points to the
+    system reset handler.
+
+$472                                                            hdv_bpb
+
+    Vector to routine to return a hard disk's bios parameter block.
+    Same calling conventions as the BIOS function 'getbpb'. Null if
+    unused.
+
+$476                                                             hdv_rw
+
+    Vector to routine to read or write on a hard disk. Same calling
+    conventions as the BIOS function 'rwabs'. Null if unused.
+
+$47a                                                           hdv_boot
+
+    Vector to routine to boot from a hard disk. Null if unused.
+
+$47e                                                        hdv_mediach
+
+    Vector to routine to return a hard disk's media change mode. Same
+    as BIOS bindind for floppies. Null if unused.
+
+$482                                                           _cmdload
+
+    When nonzero an attempt is made to load and execute 'command.prg'
+    from the boot device. ( Load a shell or application in place of the
+    desktop ). Can be set to non zero by the bootsector.
+
+$484                                                            conterm
+
+    Contains attribute bits for the console system.
+    Bit   Function
+    0     1 enable bell when ^G is written to 'CON'
+    1     1 enable key-repeat
+    2     1 enable key-click
+    3     1 on BIOS conin function, return the current value of kbshift
+            in bits 24 to 31 of d0.l
+
+$48e                                                              themd
+
+    Filled in by the BIOS on a 'getmpb' call, indicates to GEMDOS the
+    limits of the TPA.
+
+$4a2                                                             savptr
+
+    Pointer to register save area for BIOS functions.
+
+$4a6                                                            _nflops
+
+    Number of floppy disks actually attached to the system (0 to 2).
+
+$4ae                                                        sav_context
+
+    Pointer to saved processor content.
+
+$4b4                                                              _bufl
+
+    Two GEMDOS buffer list headers. The first list buffers data sectors
+    , the second list buffers FAT and Directory sectors. Each of these
+    pointers points to a BCB (buffer control block)
+
+$4bc                                                            _hz_200
+
+    Raw 200 Hz system timer tick. Used to /4 for a 50 hz timer.
+
+$4be                                                            the_env
+
+    The default enviroment string. Four bytes of $00.
+
+$4c4                                                           _drvbits
+
+    32 bit drive map, of live block devices. bit 0=a , etc.
+
+$4c6                                                           _dskbufp
+
+    Pointer to a 1024 byte disk buffer somewhere in the system's BSS.
+    The buffer is also used for some GSX graphics operations, and
+    should not be used by interrupt routines.
+
+$4ee                                                           _prn_cnt
+
+    Initialized to -1. Pressing the alt help key increments this. The
+    screen dump code checks for zero to image the screen to the printer
+    and checks for nonzero to abort the screen print.
+
+$4f2                                                           _sysbase
+
+    Points to the base of the OS (ram or rom).
+
+$4f6                                                           _shell_p
+
+    Points to the shell specific context.
+
+$4fa                                                             end_os
+
+    Points just past the last byte of low ram used by the operating
+    system. This is used as the start of the TPA (end_os is copied into
+    _membot).
+
+$4fe                                                            exec_os
+
+    This points to the shell that gets exec'd by the BIOS after system
+    initialization is complete. Normally this points to the first byte
+    of the AES text segment.

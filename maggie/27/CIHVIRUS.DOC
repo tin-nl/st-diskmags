@@ -1,0 +1,131 @@
+
+
+No cure for next generation virus!
+
+Complete system failure is the goal  of  a virus claimed by experts to 
+be the first of its type and  able  to paralyse a PCs bios - the low 
+level system that kickstarts your  PC.  Thus  far no cure has been 
+found.
+
+The CIH virus; discovered  this  week;  is generally agreed by experts 
+to have  originated  from  South  East  Asia  and  is  able to override 
+the Flash Bios in  PCs  running  Windows 9x although NT users will not 
+be affected.
+
+Once the virus attacks - scheduled  for  the  26th of each month - its 
+payload attempts to overwrite the  Flash  Bios.  If  the Flash Bios is 
+write-enabled; which is the case for many modern machines; the PC is 
+crippled to the point of not  being able to boot-up. At the same time  
+CIH  has  been   known   to   overwrite   the  hard  drive  with 
+'garbage'  according  to   Graham   Cluley  senior technical consultant 
+at Dr Solomon's. "We've never seen a virus that can do this before,"  
+Cluley  said. "There are three known variants and at least  two  of  
+these  have  been  found  in the wild. Although none of our  customers  
+have  reported  complete failure they have experienced serious 
+symptoms."
+
+The infection is spread over  the  Internet  by  either hiding in news 
+groups or lurking as  downloadable  executable  files.  Although it is 
+known to execute once per month,  it  is not known whether CIH can 
+replicate itself. "The virus is a fragmented cavity virus" according to 
+Paul Ducklin head of research at anti-virus software company Sophos.  
+"We  have  seen tests in our labs and it definitely works."
+
+Although Sophos is unaware  of  any  cases  in  the UK, CIH's nature as 
+a "program parasitic  virus"  means it has partial stealth capabilities 
+and  can  hide  in  the  unused  space of Windows Portable Executble 
+files - the most  common  type of EXE. Although the contents of a file 
+change, the  file  size does not making it very difficult to spot.
+
+Such Win32/CIH viruses are able to split up the body of the virus code 
+and place it  within  unused  parts  of  the  infected  file.  Both Dr 
+Solomon's and Sophos offer detection but are still working on a cure. 
+Prevention  is  available   for   some   motherboards  however.  Those 
+motherboards fitted with jumpers can be set to stop flash updates.
+
+
+Wireplay hit by CIH virus
+
+Over the past two  weeks,  at  least  three Internet gaming sites 
+caught the WIN95.CIH virus. In two  cases, they may have passed it on 
+to their users.
+
+According to official notices on their  sites, both No. 3 Internet 
+gaming service  mplayer.com  and  BT's  Wireplay  posted infected 
+updates to  their  sites,  which  automatically  upgraded  --  and 
+infected -- customer computers. "Anywhere  from zero to 500 of our 
+customers could have  downloaded the virus." said Paul Matteucci, CEO  
+of  Mpath  which  owns  mplayer.com.  "We are extremely sorry. Mplayer 
+is as much a victim as anyone else who got infected."
+
+British  Telecom's  Wireplay  also   posted  an  infected  update 
+program, according to an  official  Internet  posting on its site. 
+"Anyone who downloaded Wireplay  version  2.2  between  3 p.m. on 
+Monday afternoon and 6.30 p.m.  on  Tuesday  evening should delete the 
+installation file  and  take  immediate  action." stated the posting. A 
+spokesman for BT told  ZDNet  News: "The CIH virus was up there but we 
+acted extremely quickly and responsibly. As soon as we found out it was 
+there it  came down and we've contacted everyone who downloaded the 
+affected client  software.  They have all been sent patches."
+
+According to  BT's  spokesman,  the  Dr  Solomons  anti virus software, 
+used to protect  the  client  download site, did not recognise the 
+virus at first  but  is  now  equipped  to deal with the problem.
+
+The  CIH  virus  is  deadly.  When  triggered,  it  reformats  any 
+connected hard drive and on susceptible computers causes the system 
+BIOS chip to erase  itself  --  essentially making the computer 
+"forget"  its  internal  language,   according  to  Nick FitzGerald, 
+editor of the Virus Bulletin.
+
+The virus activates on April 26th,  June 26th, and the 26th of every 
+month, depending on the version. It is the latter variant -- known 
+alternatively as WIN95.CIH1.4  and WIN95.CIH.SPACEFILLER -- that 
+Mplayer.com found in its systems.  For Math's Matteucci, the virus 
+represents  the  worst  kind  of   Internet  terrorism.  "We  are 
+absolutely outraged," he said. "I would love to find the guy who  wrote  
+this  thing."  Matteucci  told  ZDNet  News  that mplayer.com was 
+infected on  Tuesday  morning  at  10 a.m. and noticed problems around  
+4  p.m.  "By  5  p.m.,  we  knew  we  had  a virus." he said. "Within  
+15  minutes,  we shut down the system."
+
+Mplayer.com  has  800,000   registered   users,  according  to industry 
+analyst Forrester Research.   By late Thursday, Matteucci said 
+Mplayer.com expects to  post  a  utility  that will automatically 
+detect the virus in the mplayer.com client  -- whether or not the user 
+caught it from Mplayer -- and tell customers how to get rid of it. 
+
+While the total number of users  who  have caught the virus from these 
+incidents is unknown, several  victims  have contacted ZDNet News. "I 
+am positive  that  I  got  it  from mplayer.com", one Quake player, who 
+asked to remain anonymous, said via e-mail. "Over ten  friends  have 
+gotten it as well. Mplayer obviously isn't going to say anything."  
+While the company had posted a notice that it had  temporarily shut 
+down its gaming news due to the virus, the note  made  no  mention of 
+the possible user infection. Matteucci told ZDNet  News  this  was 
+because "we were not sure if we infected anyone at all."
+
+Because the site was contaminated  after  July  26th  -- and the virus 
+does not trigger again until August 26th -- Mplayer subscribers should 
+be able to purge the virus before it overwrites their hard drives. 
+
+The incidents raise the  question:  Are  multiplayer  gaming sites the 
+cholera-laced wells of  the  Internet?   The  people  who visit gaming 
+sites are a high-risk population, said  the product manager of the 
+Internet entertainment site that had a  close call with the CIH virus. 
+
+"Basically, the kind  of  people  who  visit  games  site are Internet 
+savvy people, they are  on  the  Net  and download on the  many  
+'warez' sites they  go  to, it's   pretty   likely   that  they  will  
+get contaminated."
+
+Adding fuel to the fire,  many  companies  do not regularly update 
+their anti-virus software  signature  files. "If  they choose to update 
+on a quarterly  basis,  then  they  won't  be able to catch these types 
+of viruses." said Vincent Gulotto." manager of anti-virus and  security 
+firm Network Associates' McAfee Labs.
+
+  CIH Virus news c/o and (C) ZDNet news.
+
+
+

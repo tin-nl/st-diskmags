@@ -1,0 +1,175 @@
+*******************************************************************************
+ 
+                    >  DELMPAINT, INDYPAINT UND ANDERE  <
+                      Szene-Malprogramme auf dem Falcon
+ 
+*******************************************************************************
+ 
+ 
+Kurz nachdem  ich meinen Falcon bekommen hatte, ging  auch schon die Suche nach
+einem geeigneten  Zeichenprogramm los, denn ich wollte endlich mal die M”glich-
+keiten des Falcons  austesten. Und bei aller Liebe  zu Crackart, aber irgendwie
+reichten mir die 16 Farben nicht  mehr. Auf jeden  Fall sollte es ein GEM-unab-
+h„ngiges Programm sein, welches etwas an  Crackart angelehnt ist. Ich entschied
+mich recht schnell fr eines, aber dazu sp„ter; erstmal die anderen vorstellen.
+
+-------------------------------------------------------------------------------
+
+INDYPAINT
+---------
+ 
+Als erstes h„tten wir da INDYPAINT von Photon/Lazer. Meine aktuelle Version ist
+die V1.59. INDYPAINT  ist ein Truecolor-Malprogramm  fr VGA- und RGB-Monitore.
+Auf dem RGB-Monitor  werden 4 Aufl”sungen untersttzt: LowRes (320x200), LowRes
+Overscan, HighRes (640x400) und  Highres Overscan. Letztere funktioniert aller-
+dings nicht. (zumindest  auf meinem Rechner) Es  sind zwei Lupenarten implemen-
+tiert, eine Realtimelupe wie  bei NEOCHROME oder  DELUXE PAINT und  eine Degas-
+Lupe (stillstehend). Leider  gibt es nur eine Zoomst„rke. (oder ich habe zumin-
+dest noch  nicht herausbekommen, wie  man die anderen  anw„hlt. Das  w„re sonst
+n„mlich etwas  mager !) Gut ist aber, daž man in beiden Lupen  alle Grafikfunk-
+tionen benutzen kann.
+Logischerweise gibt es alle wichtigen Zeichen- und Blockfunktionen,das Anw„hlen
+der selbigen  ber die F-Tasten finde  ich aber nicht so gelungen, da jedes Mal
+ein riesiges Menu aufgemacht wird, aus dem man dann aussuchen muž. Es gibt zwei
+Grnde, warum ich NICHT mit INDYPAINT male: Der erste ist,daž Truecolor genutzt
+wird. Man hat praktisch  keine Palette mehr. Praktisches Beispiel: Wenn man auf
+dem Bildschirm  einen  Strich  malt und  desses  Farbe  in der "Pseudo-Palette"
+„ndert,so „ndert sich die Farbe des Punktes selbst nicht. Das finde ich ehrlich
+gesagt etwas belastend, aber es wird sicher einige geben, die damit zurechtkom-
+men. Der zweite  Grund ist, daž INDYPAINT keine vernnftigen Formate verwaltet.
+Man kann zwar  EGGPAINT laden und  speichern (der Photon ist  auch eine "Type",
+macht der die Funktion wegen einem Painter (MC FLY) rein  und der malt  sowieso
+nicht damit!), es hat auch ein eigenes Format und kann  ungepackte Degas-Bilder
+lesen, aber ich vermisse eine Schnittstelle zu 256-Farb-Bildern (bspw. GIF oder
+PI9). Trotzdem ist das Programm im Gesamtkonzept nicht schlecht.
+
+-------------------------------------------------------------------------------
+
+FUCKPAINT
+---------
+
+Der n„chste  Kandidat ist FUCKPAINT von RISK. Es  ist eines  der ersten Grafik-
+programme fr  den Falcon gewesen. Seine Weiterentwicklung wurde bereits aufge-
+geben. Fuckpaint besitzt die n”tigsten Funktionen, eine h„žliche Paletten-Funk-
+tion, eine  annehmbare  Lupe  aber  mehr  auch  nicht. (Ist halt  nur ein  Joke
+gewesen.)
+Man kann  aužerdem PI9- und Degasbilder  lesen. Einige werden  sich nun fragen,
+warum die  Weiterentwicklung  aufgeben  wurde. Ganz  einfach, RISK  arbeiten an
+einem neuen, wahrscheinlich kommerziellen Malprogramm. Sein Name...
+
+-------------------------------------------------------------------------------
+
+RAG D
+-----
+
+...RAG D ( Risk Aided Grafic Design ). Es basiert auf einer GEM-Oberfl„che, was
+schonmal schlecht  ist. Alle wichtigen Funktionen  sind in der mir vorliegenden
+Preview  enthalten. Sch”n ist, daž RAG D  in jeder Aufl”sung  l„uft (ich glaube
+sogar auf  dem ST !). Vielleicht  deshalb  die  GEM-Oberfl„che. Die  eingebaute
+Degas-Lupe hat  nur zwei Zoomstufen, n„mlich eine 8- und eine 16-fache Vergr”s-
+serung. Letztere ist aber vollkommen sinnlos, da niemand sein Bild in 16-facher
+Vergr”žerung malt. In der  Vollversion wird man ca.20 Formate lesen k”nnen, da-
+runter JPEG, TRP, DEL, PI9, GIF und  viele andere. Wegen  der GEM-Umgebung fiel
+auch dieser Kandidat aus dem Rennen.
+
+-------------------------------------------------------------------------------
+
+EGGPAINT
+--------
+ 
+Als n„chstes  ein hoffnungsloser  Kandidat, den  man nur  von den Sagen und Ge-
+schichten der Stammes„ltesten kennt: EGGPAINT von Eclipse.
+Im Moment scheint  nur eine Person dieses  Programm zu haben und aktiv damit zu
+malen : MC FLY. Eggpaint  ist ein Truecolor-Malprogramm, welches beliebige Auf-
+l”sungen untersttzt. Obwohl Eclipse das Programm kommerziell verkaufen wollte,
+ist bis jetzt  nichts in Sicht (und ich  denke, daž das  auch nicht  mehr raus-
+kommt). F„llt aus der Auswahl, da unerreichbar.
+ 
+-------------------------------------------------------------------------------
+
+CHROMA 24
+---------
+
+Es folgt ein  Programm, von dem man einiges  erwarten darf: CHROMA 24 von einem
+ehemaligen  Mitglied der Pixel Twins. Ich habe im Moment nur die ž-Version 0.2,
+die sieht aber schon sehr vielversprechend aus. In der endgltigen Version wird
+Chroma eine Morph-Funktion haben, man wird Animationen erstellen und ca. 10 der
+wichtigsten  Formate lesen k”nnen. Chroma untersttzt sowohl VGA- als auch RGB-
+Monitore. Man kann in LowRes oder in HighRes wahlweise in Truecolor, Planemodus
+oder 256  Graustufenmodus (!) arbeiten. Eine interessante Zoomfunktion ist ein-
+gebaut: man bewegt seinen Mauspfeil ber den Bereich,der angezoomt werden soll,
+dann drckt  man auf "+" oder "-" und schon wird die Lupe eingeschaltet. So in-
+novativ die  Lupe aber auch ist, man kann sich, wenn man einmal  angezoomt hat,
+nicht mehr auf  dem Bildschirm  bewegen... Das Effektemenu wird  im oberen Teil
+des Screens  angezeigt, so daž  man das  bearbeitete Bild noch  sieht. Aužerdem
+werden sch”ne  Dialogboxen benutzt. Man sieht dem Programm  wirklich an, daž es
+mit viel Liebe zum  Detail gecodet wurde und man darf auf die kommerzielle End-
+Version gespannt sein. Leider sind einige wichtige Zeichenfunktionen bei meiner
+Version gesperrt, daher wird das Malen unm”glich.
+
+-------------------------------------------------------------------------------
+
+DUNE GRAPH
+----------
+
+Vor einigen Wochen habe ich dann noch ein Programm erhalten, welches die Herzen
+der Deluxe Paint/NeoChrome-Fans h”her  schlagen lassen wird: DUNE GRAPH (V0.33)
+von Evil Metal/Dune. Die  Žhnlichkeiten, besonders zu DPAINT sind unverkennbar.
+So  hat man  beispielsweise eine  sch”ne Realtimelupe  in 4 Zoomstufen  und ein
+DPAINT-typisches Menu-Outfit. Man kann DEL, PI9, GIF, P*1 und DOO-Bilder  laden
+und  speichern. Aužerdem  hat  man  die  M”glichkeit  zwischen insgesamt 8 Auf-
+l”sungen zu w„hlen.
+In einer  sp„teren Version  werden auch Aufl”sungserweiterungen  wie Screenpain
+oder BlowUp  untersttzt. Da mir aber auch schon DPAINT nicht  so gefallen hat,
+gefiel mir dieses hier auch nicht so recht...
+
+-------------------------------------------------------------------------------
+
+DELMPAINT
+---------
+ 
+Aber nun  mein Favorit: DELMPAINT von Mr.Coke/Avena. (meine Version: 3.2c) Dies
+ist ein Malprogramm fr den Planemodus des Falcons und es scheint mir im Moment
+das ausgereifteste zu sein.
+Deshalb schreibe ich ber dieses Programm auch etwas mehr als  bei den anderen.
+Am Anfang sei gesagt, daž sich DelmPaint in zwei Teile unterteilt, in den Menu-
+screen, in  dem  die  Zeichen- und  Diskfunktionen  dargestellt  sind, und  den
+Arbeitsscreen, auf dem  man sein Bild malt. (also wie bei Crackart auf  dem ST)
+Logischerweise  gibt es auch hier alle ntzlichen  Funktionen: Linien, Striche,
+Punkte, Kreise, Ellipsen, Frames, gefllte  Frames, Remap-Funktion, Animationen
+(noch nicht ganz fertig), Farbverl„ufe  und einiges  mehr. Bl”cke kann man ver-
+gr”žern / verkleinern, spiegeln, und sie im  Transparenz- oder Block-Modus dar-
+stellen. Eine zehnstufige  Lupe ist eingebaut, welche bequem ber die F-Tasten
+zu erreichen ist. Die Lupe selbst  besteht aus der Palette im oberen linken Be-
+reich, dem Originalausschnitt im  unteren linken Bereich und  der  eigentlichen
+Vergr”žerung rechts daneben.
+Aužerdem ist  m”glich mit der rechten Maustaste die Farbe eines Punktes als ak-
+tuelle Farbe zu  bestimmen und die Farben per Tastatur umzuschalten. Die Palet-
+tenfuntion ist auf das mindeste (und wichtigste beschr„nkt): Farbeinstellungen,
+Farbverl„ufe, Einzelfarben- und Farbbereich-Kopieren.
+DELMPAINT verwaltet  4 Arbeitbildschirme. So hat man die  M”glichkeit, HighRes-
+Bilder zu malen, welche man  sich dann ber eine eingebaute  Funktion anschauen
+kann. Weiterhin  kann man auch  die  Grenzbereiche  zwischen  diesen  ber- und
+nebeneinander  liegenden  Screens ber eine  Funktion  bearbeiten. Das Programm
+kann  sein  eigenes, hochkomprimiertes  Format DEL (welches  brigens nach  dem
+Crackart-Format-Prinzip arbeitet!), FuckPaint-Bilder, HighRes-Pic's, GIF-Bilder
+und bald auch Truecolor-Bilder lesen. Leider k”nnen GIF's im Moment  noch nicht
+gespeichert werden, so daž eine  direkte Schnittstelle zur Datenwelt  fehlt. Es
+wird aber ein File fr GemView im Programmpaket mitgeliefert,welches PI9-Bilder
+lesen und dann auch konvertieren kann.
+Tja, was w„re noch erw„hnenswert? Vielleicht, daž ein  MOD-Player implementiert
+wurde, aužerdem die  Anleitung als Funktion eingebaut ist und das man mit einer
+LOCK-Funktion DelmPaint vor nervigen Geschwistern oder neugierigen  Partyg„sten
+abschliežen kann.
+
+-------------------------------------------------------------------------------
+
+Weiter gibt es eigentlich nichts zu erz„hlen. Vor kurzem habe ich noch ein mehr
+oder minder  schlechtes Malprogramm  aus England  gesehen, welches im  mir aber
+nicht gezogen habe. Letztlich bleibt nur zu sagen,daž die Wahl des Malprogramms
+jedem selbst berlassen  sein sollte. Also Leute, kauft  euch einen Falcon  und
+fangt an zu pixeln: Es lohnt sich !
+ 
+-------------------------------------------------------------------------------
+                                             						   m.O.d. of tnb
+-------------------------------------------------------------------------------

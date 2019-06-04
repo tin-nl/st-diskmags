@@ -1,0 +1,33 @@
+BOOTWRITE 2.7
+                                BOOTWRITE 2.7
+                                =============
+
+
+This is a GEM-based bootsector install program, once installed on one of your
+disk, the computer will do this every time you bootup that disk:
+
+                    - Check for possible virusses in memory
+                    - See if your available diskspace is less than 100kb
+                      and warn you if it is.
+                    - You can toggle herz-frequencies by pressing Alternate
+                      during bootup.
+
+I've tried to eliminate any bugs but hey, nobody's perfect!
+Also, I can not be held responsible for any damage to your disks caused by this
+program ( sorry ).
+Don't worry, that's not likely to happen.
+
+Ok, fellow Atarians, if you want to contact me for any reason at all, write to:
+
+Marcel Lammerse
+G.P. Blankmanstraat 54
+1785 CJ
+Den Helder
+(Holland)
+
+
+P.S. THE PROGRAMS ARE ON THE A DISK OF THE MAGAZINE.
+
+
+
+

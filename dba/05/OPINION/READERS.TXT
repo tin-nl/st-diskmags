@@ -1,0 +1,78 @@
+READERS OPINION
+
+OPINION - FROM MUG U.K
+----------------------
+
+1.  What do you think of this magazine?
+
+On the whole, your magazine is very good.  I only have the one issue so
+I do not know how much you have improved since issue 1.  What I see in
+issue 3 is very nice.
+
+2.  Which corner(s) are you missing?
+
+I think you should expand your programming, latest demos (even if they are
+two weeks old !!) and the latest news sections.
+
+3.  What do you think of the used fonts?
+
+The varied fonts are a nice touch.  Keep them in !!
+
+4.  Which diskmagazines do you also read?
+
+Ledgers, Maggie, HP Source, STEN (in that order or priority !)
+
+5.  Did you find any bugs? If so, which one(s)?
+
+Why does the palette not revert back to the original colours ??  Try this
+GFA routine !!
+
+'
+' Start of your program
+'
+INLINE old_palette%
+super%=GEMDOS(32,L:0)
+BMOVE &Hff8240,old_palette%,32
+~GEMDOS(32,L:super%)
+
+'
+' Say Goodbye
+'
+~XBIOS(6,L:old_palette%)
+EDIT
+
+6.  Which ST do you own? (520/1040ST/STE/mega...etc.)
+
+I have a 1040STFM (TOS v1.2) with 1 Megabyte of memory
+
+7.  How does this magazine compare with the other ones?
+
+Same answer as for question 1 - I like what I see, so carry on !!
+
+8.  What do you like/dislike in this magazine?
+
+I can't comment as I have only got the one issue.  There is no point in
+criticising your English, as I can't speak/write a word of Dutch !!
+
+***************************************************************************
+
+THE OPINION OF THE EQUALIZER( F.O.D.)
+
+In the 'opinion' section, you asked the readers for there (honest) opinion, so
+here it goes:
+
+Answers:
+
+1=It's a great magazine with much information.
+2=none.
+3=They're nice, but by reading text,I prefer the system font!
+4=I also read ST=Maggie.
+5=Nope, very good!!
+6=I own a 520ST+, my brother owns a Mega STe 4, and The Equalizer a 1040 STfm.
+7=It's, well, it's just great!
+8=Well, I like everything, accept the laughbox. Some jokes are nice, but not
+  all of them. And... I would like some better reviews of the LATEST games!
+
+Ahh.. that was my honest opinion!
+
+***************************************************************************

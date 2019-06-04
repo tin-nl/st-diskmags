@@ -1,0 +1,371 @@
+AUDIO FAQ 4
+
+10.14 Where can I buy electronic parts to make an amplifier?
+ There are many commercial parts distributors that sell only to
+ Corporations.  Their prices are often list, their supply is 
+ often good, and their service varies.  Common ones are Arrow 
+ Electronics, Gerber Electronics, Hamilton Avnet, and Schweber
+ Electronics.  See your local phone book.
+
+ There are also distributors that cater to smaller buyers  These
+ typically have only one office.  Some have lousy selections but 
+ great prices.  In the following list, (+) means that the dealer 
+ has a good reputation, (?) means that the dealer has 
+ insufficient reputation, and (X) means that some have reported 
+ problems with this dealer. (C) means they have a catalog.
+
+ All Electronics Corporation (Surplus, Tools, Parts) (?) (C)
+  PO Box 567
+  Van Nuys CA  90408 USA
+  800-826-5432
+  818-904-0524
+ Allied Electronics (Full Line of Parts) (+) (C)
+  800-433-5700
+ Antique Electronics Supply (Tubes, capacitors, etc) (?)
+  688 First St
+  Tempe AZ  85281 USA
+  602-894-9503
+ DigiKey Corporation (Full Line of Parts) (+) (C)
+  701 Brooks Avenue South
+  PO Box 677
+  Thief River Falls MN  56701-0677 USA
+  800-344-4539
+ Maplin (European Parts) (?) (C)
+  +44 702 554161 (For Orders Only)
+  +44 702-552911 (Customer Service)
+ Marchand Electronics (?) (Crossover kits)
+  1334 Robin Hood Lane
+  Webster NY  14580 USA
+  716-872-5578
+ MCM Electronics (Speakers, A/V Repair Parts, Etc) (+) (C)
+  650 Congress Park Dr
+  Centerville Ohio 45459-4072 USA
+  513-434-0031
+ MesaBoogie (Tubes, instrument speakers) (?)
+  707-778-8823
+ Mouser Electronics (Full Line of Parts) (+) (C)
+  PO Box 699
+  Mansfield TX  76063-0699 USA
+  800-346-6873
+  817-483-4422
+ Newark Electronics (Full Line of Parts) (+) (C)
+ Parts Express (Speakers, Cables, Connectors) (+) (C)
+  340 East First Street
+  Dayton OH  45402-1257 USA
+  513-222-0173
+ Radio Shack (Parts, Low-End Audio) (+) (C)
+ Old Colony Sound (Audio parts and audio kits) (+) (C)
+  PO Box 243
+  Peterborough NH  03458-0243 USA
+  603-924-9464
+ Michael Percy (Connectors, MIT, Wonder Caps, Buf-03) (+)
+  PO Box 526
+  Inverness CA 94936 USA
+  415-669-7181 Voice
+  415-669-7558 FAX
+ Tanner Electronics (Surplus Parts) (+)
+  214-242-8702
+ Triode Electronics (Tubes, transformers, boxes) (?)
+  2010 Roscoe Street
+  Chicago IL  60618
+  312-871-7459
+ Welborne Labs (Connectors, Linear Tech ICs, Wima Caps) (?)
+  6836 South Universtiy Blvd. #70
+  Littleton CO  80122 USA
+  303-470-6585 Voice
+  303-791-7856 FAX
+
+10.15 Where can I buy audio amplifier kits?
+ Alas, Heath is no longer making Heathkits. Alternatives:
+ Audio Synthesis (Many kits from Ben Duncan designs) (?)
+  99 Lapwind Lane
+  Manchester M20 0UT, UK
+  061-434-0126 Voice
+  060-225-8431 FAX
+ Old Colony Sound (+) (See 10.14)
+ Hart Electronics (UK) (?)
+ Hafler (+)
+ Crimson (UK) (?)
+ Mark V Electronics (?)
+  8019 E Slauson Ave
+  Montebello CA  90640 USA
+  800-423-3483
+  213-888-8988
+ Sonic Frontiers Inc (Tube amp and preamp kits) (?)
+  760 Pacific Road Unit #19
+  Oakville, Ontario Canada L6L 6M5
+
+10.16 Where can I read more about building amplifiers, preamps, etc.?
+ Analog Devices Audio/Video Reference Manual
+ Audio Amateur Magazine 
+  Audio Amateur Publications
+  PO Box 494
+  Peterborough NH  03458 USA
+  603-924-9464
+ Electronic Music Circuits, by Barry Klein
+  Howard D Sams & Co ISBN 0-672-21833-X
+ Electronics Australia (Magazine with audio projects)
+  AUD47 per year 12 issues, often discounted
+  PO Box 199
+  Alexandria, Austrailia
+  +612 353 9944 or +612 353 6666
+ Elektor Electronics (How it works and you-build articles)
+  (no longer published in US. Still available in Europe)
+  PO Box 1414
+  Dorchester DT2 8YH, UK
+ Enhanced Sound: 22 Electronic Projects for the Audiophile
+  (Some basic projects and some "how it works")
+  by Richard Kaufman
+  Tab Books #3071/McGraw Hill
+  ISBN 0-8306-9317-3
+ Glass Audio Magazine 
+  Audio Amateur Publications
+  PO Box 494
+  Peterborough NH  03458 USA
+  603-924-9464
+| IC Op-Amp Cookbook, Third Edition by Walter G. Jung
+|  ISBN 0672-23453-4, Howard W. Sams, Inc.
+|  buy from any book store or from:
+  OpAmp Technical Books 213-464-4322
+ Journal of the Audio Engineering Society (Theory & Experiment)
+  Audio Engineering Society
+  60 East 42nd Street
+  New York City NY  10165-0075 USA
+  212-661-2355
+ Popular Electronics     
+ Radio-Electronics
+ Radiotron Designer's Handbook, Fourth Edition (old, tube info)
+ The Technique of Electronic Music, by Thomas H Wells
+  Schirmer Books ISBN 0-02-872830-0
+ Vacuum Tube Amplifiers, MIT Radiation Lab series
+ Wireless World
+
+10.17 What is Amplifier Class A?  What is Class B?  What is Class AB?
+ What is Class C?  What is Class D?
+
+ All of these terms refer to the operating characteristics 
+ of the output stages of amplifiers.
+
+ Briefly, Class A amps sound the best, cost the most, and are the 
+ least practical. They waste power and return very clean signals.
+ Class AB amps dominate the market and rival the best Class A 
+ amps in sound quality.  They use less power than Class A, 
+ and can be cheaper, smaller, cooler, and lighter.  Class D amps 
+ are only used for special applications like bass-guitar amps and 
+ subwoofer amps.  They are even smaller than Class AB amps and 
+ more efficient, yet are often limited to under 10kHz (less than 
+ full-range audio). Class B & Class C amps aren't used in audio.
+ 
+ In the following discussion, we will assume transistor output 
+ stages, with one transistor per function.  In some amplifiers, 
+ the output devices are tubes.  Most amps use more than one 
+ transistor or tube per function in the output stage to increase 
+ the power.
+ 
+ Class A refers to an output stage with bias current greater than 
+ the maximum output current, so that all output transistors are 
+ always conducting current.  The biggest advantage of Class A 
+ is that it is most linear, ie: has the lowest distortion.
+ 
+ The biggest disadvantage of Class A is that it is inefficient, 
+ ie: it takes a very large Class A amplifier to deliver 50 watts, 
+ and that amplifier uses lots of electricity and gets very hot.  
+ 
+ Some high-end amplifiers are Class A, but true Class A only 
+ accounts for perhaps 10% of the small high-end market and none 
+ of the middle or lower-end market.
+ 
+ Class B amps have output stages which have zero idle bias 
+ current.  Typically, a Class B audio amplifier has zero bias 
+ current in a very small part of the power cycle, to avoid 
+ nonlinearities.  Class B amplifiers have a significant advantage 
+ over Class A in efficiency because they use almost no 
+ electricity with small signals.  
+ 
+ Class B amplifiers have a major disadvantage: very audible 
+ distortion with small signals.  This distortion can be so bad 
+ that it is objectionable even with large signals.  This 
+ distortion is called crossover distortion, because it occurs at 
+ the point when the output stage crosses between sourcing and 
+ sinking current.  There are almost no Class B amplifiers on the 
+ market today.
+ 
+ Class C amplifiers are similar to Class B in that the output 
+ stage has zero idle bias current.  However, Class C amplifiers 
+ have a region of zero idle current which is more than 50% of 
+ the total supply voltage.  The disadvantages of Class B 
+ amplifiers are even more evident in Class C amplifiers, so 
+ Class C is likewise not practical for audio amps.
+ 
+ Class A amplifiers often consist of a driven transistor 
+ connected from output to positive power supply and a constant 
+ current transistor connected from output to negative power 
+ supply.  The signal to the driven transistor modulates the 
+ output voltage and the output current.  With no input signal, 
+ the constant bias current flows directly from the positive 
+ supply to the negative supply, resulting in no output current, 
+ yet lots of power consumed.
+ 
+ Class B amplifiers consist of a driven transistor connected 
+ from output to positive power supply and another driven 
+ transistor connected from output to negative power supply.  
+ The signal drives one transistor on while the other is off, 
+ so in a Class B amp, no power is wasted going from the 
+ positive supply straight to the negative supply. 
+ 
+ Class AB amplifiers are almost the same as Class B amplifiers 
+ in that they have two driven transistors.  However, Class 
+ AB amplifiers differ from Class B amplifiers in that they 
+ have a small idle current flowing from positive supply to 
+ negative supply even when there is no input signal.  This idle 
+ current slightly increases power consumption, but does not 
+ increase it anywhere near as much as Class A.  This idle current 
+ also corrects almost all of the nonlinearity associated with 
+ crossover distortion.  These amplifiers are called Class AB 
+ rather than Class A because with large signals, they behave like 
+ Class B amplifiers, but with small signals, they behave like 
+ Class A amplifiers.  Most amplifiers on the market are Class AB.  
+ 
+ Some good amplifiers today use variations on the above themes.  
+ For example, some "Class A" amplifiers have both transistors 
+ driven, yet also have both transistors always on.  A specific 
+ example of this kind of amplifier is the "Stasis" (TM) amplifier 
+ topology promoted by Threshold, and used in a few different 
+ high-end amplifiers.  Stasis (TM) amplifiers are indeed 
+ Class A, but are not the same as a classic Class A amplifier.
+ 
+ Class D amplifiers use pulse modulation techniques to achieve 
+ even higher efficiency than Class B amplifiers.  As Class B 
+ amplifiers used linear regulating transistors to modulate output
+ current and voltage, they could never be more efficient than 
+ 50%.  Class D amplifiers use transistors that are either on or 
+ off, and almost never in-between, so they waste the least amount 
+ of power. 
+ 
+ Obviously, then, Class D amplifiers are more efficient than 
+ Class A, Class AB, or Class B.  Some Class D amplifiers have 
+ >80% efficiency at full power.  Class D amplifiers can also have 
+ low distortion, although not as good as Class AB or Class A.
+ 
+ Class D amplifiers are great for efficiency.  However they are 
+ awful for other reasons.  It is essential that any Class D amp 
+ be followed by a passive low-pass filter to remove switching 
+ noise.  This filter adds phase shift and distortion.  It also
+ limits the high frequency performance of the amplifier, such
+ that Class D amplifiers rarely have good treble.  The best 
+ application today for Class D amplifiers is subwoofers.  
+ 
+ To make a very good full range Class D amplifier, the switching 
+ frequency must be well above 40kHz.  Also, the amplifier must be 
+ followed by a very good low-pass filter that will remove all of 
+ the switching noise without causing power loss, phase-shift, or 
+ distortion.  Unfortunately, high switching frequency also means 
+ significant switching power dissipation.  It also means that the 
+ chances of radiated noise (which might get into a tuner or phono 
+ cartridge) is much higher.
+
+10.18 Why do I hear noise when I turn the volume control? Is it bad?
+ Almost all volume controls are variable resistors.  This goes
+ for rotary controls and slide controls.  Variable resistors 
+ consist of a resistive material like carbon in a strip and a
+ conductive metal spring wiper which moves across the strip as
+ the control is adjusted.  The position of the wiper determines
+ the amount of signal coming out of the volume control.
+
+ Volume controls are quiet from the factory, but will get noisier
+ as they get older.  This is in part due to wear and in part due
+ to dirt or fragments of resistive material on the resistive
+ strip.  Volume control noise comes as a scratch when the control
+ is turned.  This scratch is rarely serious, and most often just
+ an annoyance.  However, as the problem gets worse, the sound of
+ your system will degrade.  Also, as the problem gets worse, the
+ scratching noise will get louder.  The scratching noise has a
+ large high-frequency component, so in the extreme, this noise
+ could potentially damage tweeters, although I have never seen
+ a documented case of tweeter damage due to control noise.
+
+ Some controls are sealed at the factory, so there is no
+ practical way to get inside and clean out the dirt.  Others have
+ access through slots or holes in the case.  These open controls
+ are more subject to dirt, but also are cleanable.  You can clean
+ an open volume control with a VERY QUICK squirt of lubricating
+ contact cleaner, such as Radio Shack 64-2315.  Even better is a
+ non-lubricating cleaner, such as Radio Shack 64-2322.  With any
+ cleaner, less is better.  Too much will wash the lubricant out
+ of the bearings and gunk up the resistive element.
+
+ You can also clean some controls by twisting them back and forth
+ vigorously ten times.  This technique pushes the dirt out of the
+ way, but is often just a short term fix.  This technique is also
+ likely to cause more wear if it is done too often.  Try to do it
+ with the power applied, but the speaker disconnected, so that 
+ there is some signal on the control.
+
+ Sealed and worn controls should be replaced rather than cleaned.
+ Critical listeners claim that some controls, such as those made
+ by "Alps" and by "Penny and Giles" sound better than common
+ controls.  Regardless of the brand, however, it is essential
+ that whatever control you buy have the same charcteristics as
+ the one you are replacing.  For most volume controls, this
+ means that they must have AUDIO TAPER, meaning that they are
+ designed as an audio volume control, and will change the level
+ by a constant number of dB for each degree of rotation. 
+
+ Badly designed circuits will wear out volume controls very
+ quickly.  Specifically, no volume control is able to work for
+ a long time if there is significant DC current (or bias current)
+ in the wiper.  If the output of the control goes to the input of
+ an amplifier, the amplifier should be AC coupled through a
+ capacitor.  If there is a capacitor there, it might be leaky,
+ causing undesirable DC current through the volume control.
+
+ If you have a circuit with no blocking capacitor or a bad
+ blocking capacitor, you can add/replace the capacitor when
+ you replace the control.  However, get some expert advise
+ before modifying.  If you add a capacitor to a device which
+ doesn't have one, you will have to make other modifications
+ to insure that the amplifier has a source for its bias current.
+
+11.0 CD Players, CDs, Turntables, and LPs
+
+11.1 What should I listen for when evaluating a turntable or CD player?
+ For tape decks and turntables, beware first of speed variations 
+ (wow and flutter).  A good check for this is Richard Strauss' 
+ "Also Sprach Zarathustra" (aka: The Theme From 2001), which has 
+ a long, low, sustained organ note that comes in well before the 
+ main theme starts, and is held through the first movement.  
+ Concentrate on that.  Make sure it doesn't wobble or warble.  
+ There's also a good bit at the beginning of Pink Floyd's 
+ "The Wall", but it doesn't go on as long, so you've got less 
+ time to think about it.  Tape decks are prone to losing 
+ high-frequency notes, so pick something you like which has lots 
+ of treble, and make sure it is clear.
+
+ The sound of a turntable is largely bound up in the kind of 
+ cartridge mounted on it.  Make sure to listen to a table with 
+ a cartridge similar to what you're buying, and not one in a 
+ different price bracket.  If possible, audition the turntable 
+ with the same arm and cartridge, so that you will experience 
+ potential cartridge/arm interactions, too.  Most cartridges 
+ work better with one arm than another.  Treat the 
+ tonearm/cartridge pair as a system, rather than independent 
+ parts.
+
+ For CD players, try some piano music.  See if the high notes 
+ sound tinny.  Also, try something which has some soft parts,
+ not the same as turning the volume down.  Distortion for CD 
+ players (as for other devices) is measured at a high output, 
+ but in fact in CD players (unlike others) it's likely to be 
+ worse in soft passages of music.  Most classical recordings 
+ contain a suitable soft passage.  Most rock music won't.
+
+ Distortion in CD players, if you want to call it that, is 
+ a function of the granulation noise, or time-delay pre-echo that 
+ can come out of the filtering.  To listen for this, use material 
+ that is rich in high-order harmonics, such as brass music.
+ Unfortunately, you can't reliably predict how a CD player 
+ will sound by looking at specifications, features, or the 
+ technology it uses.  If you want to know how a player will 
+ sound, you MUST listen to it.
+
+

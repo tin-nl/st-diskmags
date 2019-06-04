@@ -1,0 +1,182 @@
+DELMPAINT (FALCON)
+
+
+     DELMPAINT vMCXXL ( THIS IS A TOS-CREW 'INFINITE-5' RELEASE
+                              FOR DBA MAGAZINE #9 )
+
+          IDEA BY........................JURI OF NEWLINE
+          CODED BY.......................MR.COKE OF THE INDEPENDENT
+          BUG REPORTS BY.................STALLION OF AURA
+          SWAPPED BY.....................BULL OF THE INDEPENDENT
+          
+     TECHNICAL DATA:     - DELMPAINT vMCXXL RUNS ONLY ON THE
+                           ATARI FALCON 030.
+                         - IT RUNS ON VGA AND ON TV MODES
+                             a) ON VGA MODE: 320 * 240
+                             b) ON TV MODE:  320 * 200
+                         - IT IS POSSIBLE TO LOAD PI1 PICTURES
+                           (16 TO 256 COLOR CONVERTER INCLUDED)
+                         - IT IS POSSIBLE TO LOAD PI9 PICTURES
+                           (PICTURES FROM RISKS 'FUCKPAINT')
+                         - A NEW PACKED PICTURE FORMAT THE '*.DEL'
+                         - LOAD/SAVE PALETTE FUNCTION
+                         - BLOCKED AND TRANSPARENT BLOCK FUNCTION
+                         - SHADEBOBS AND SHADEDOTS FUNCTION
+                         - EASY COLORRANGE FUNCTION IN PALETTE
+                              
+     HOW TO USE DELMPAINT:
+
+          THE MOUSE INSTRUCTIONS:  DON'T HOLD THE MOUSE !!!
+                                   THAT MEANS THAT IF YOU 
+                                   WANT TO MAKE A LINE FOR
+                                   EXAMPLE THEN CLICK THE
+                                   BUTTON ONCE! THEN MOVE
+                                   THE MOUSE AND THE LINE 
+                                   WILL FOLLOW IT, THEN 
+                                   CLICK AGAIN AND THE LINE 
+                                   WILL BE DRAWN. 
+          
+          THE MAIN MENU:      TO GET INTO THE WORKSCREEN (1-4)
+                              PRESS SPACE - TO GET OUT PRESS 
+                              SPACE AGAIN.
+                              IF YOU HOLD ANY WORKSCREEN (1-4)
+                              YOU CAN PULL THE SCREEN ONTO 
+                              ANOTHER ONE. 
+                                - LEFT  BUTTON=COPY GRAPHIC
+                                - RIGHT BUTTON=COPY PALETTE
+                               
+          THE WORKSCREEN:     TO CHANGE THE COLOR PRESS 'S'                                                
+                              (LIKE SETCOLOR). NOW YOU ARE
+                              IN THE SETCOLOR SCREEN. LEAVE IT
+                              BY PRESSING SPACE.
+                              TO ENTER THE ZOOM PRESS F1-F6.
+                              NOW YOU CAN CHOOSE YOUR ZOOM 
+                              FIELD. CLICK ONCE AND YOU ARE IN 
+                              THE ZOOMSCREEN.
+                              PRESS ESC TO REACH THE BLOCK FUNCTION.
+                              PRESS 'B' TO GET YOUR OLD BLOCK
+                              FROM BUFFER.
+
+          THE BLOCK:     SELECT YOUR BLOCK. FIRST CLICK ONCE THE 
+                         UPPER LEFT START POINT, THEN CLICK THE
+                         LOWER RIGHT ENDING POINT. NOW PLACE YOUR
+                         BLOCK SOMEWHERE IN THE PICTURE...
+                         IF YOU WANT TO HAVE A TRANSPARENT BLOCK,
+                         PRESS 'T' - PRESS AGAIN TO CHANGE TO
+                         BLOCKED. AFTER SELECTING A BLOCK THE
+                         BLOCK IS IN THE BUFFER. 
+
+          THE ZOOMSCREEN:     CHOOSE YOUR COLOR AND DRAW YOUR
+                              WAY THROUGH THE PICTURE.
+                              TO MOVE YOUR ZOOMFIELD USE THE
+                              ARROWKEYS. TO INCREASE OR DECREASE 
+                              THE COLOR PRESS '.' OR ',' TO DRAW
+                              WITH THE COLOR SET.
+                              PRESS LEFT BUTTON TO PAINT - TO GET THE
+                              COLOR PRESS RIGHT BUTTON.
+                              TO FILL AN AREA PRESS 'F'
+                                   
+          THE SETCOLOR SCREEN:     CLICK YOUR FAVORITE COLOR.
+                                   NOW YOU CAN CHANGE THE RGB VALUES. 
+                                   IF YOU CLICK ON
+                                   A COLOR WITH THE RIGHT BUTTON
+                                   THEN DELMPAINT WILL CALCULATE
+                                   A RANGE BETWEEN THE CHOOSEN
+                                   COLOR AND THE LAST COLOR.
+                                   HERE ARE THE FOLLOWING KEYPAD KEYS:
+
+                                        + TO LIGHT THE COLOR
+                                        - TO DARK THE COLOR
+
+                                        7 INCREASE RED                         
+                                        8 INCREASE GREEN
+                                        9 INCREASE BLUE
+
+                                        4 DECREASE RED
+                                        5 DECREASE GREEN
+                                        6 DECREASE BLUE
+                                        
+
+                                   TO COPY A COLOR PRESS 'C'.
+                                   IF YOU ARE USING A VGA 
+                                   MONITOR, YOU CAN MOVE YOUR
+                                   PAINTING PICTURE IN THE BOTTOM
+                                   OF THE SCREEN, WHILE PRESSING
+                                   THE LEFT OR RIGHT MOUSE 
+                                   BUTTON THERE.    
+
+          DRAW:     CLICK BUTTON TO DRAW. IF YOU WANNA SET THE SLOW
+                    DRAW FUNCTION PRESS '<'. THE CURSOR WILL FLASH(!).
+                    PRESS '<' ANOTHER TIME TO CHANGE TO NORMAL.
+                    PRESS 'H' AND IT'S POSSIBLE TO USE THE
+                    DRAWSHADER.
+
+          LINE:     CLICK ONCE TO SELECT THE STARTPOINT, THEN 
+                    POSITION THE MOUSE TO THE ENDPOINT AND CLICK
+                    TO SET THE ENDPOINT. 
+          
+          AIRBRUSH: CLICK ONCE AND SELECT THE HEIGHT OF THE AIR-
+                    BRUSHER, THEN CLICK ANOTHER TIME, NOW SPRAY
+                    NORMALLY YOUR WAY. TO SELECT THE HEIGHT 
+                    AGAIN PRESS RIGHT MOUSE BUTTON.
+                    TO ENTER THE SHADEBRUSH OPTION PRESS 'H'
+                    TO CHANGE TO NORMAL BRUSH PRESS 'H' AGAIN.
+                    
+          X-ER:     DURING N_CORNER MODE PRESS 3-0 FOR CHANGING N(!).
+
+          UNDO:     YES, AN UNDO FUNCTION IS BUILD IN, BUT NOT IN 
+                    THE ZOOMSCREEN (SHIT!) - WAIT FOR THE NEXT
+                    VERSION AND YOU SHALL SEE...
+
+     FILE FORMATS:
+
+     '*.PI1' [DEGAS (ELITE)]:
+            2 BYTES RESOLUTION   ($0000)
+           32 BYTES PALETTE DATA (COLORS #0 TO 15)
+        32000 BYTES GRAPHIC DATA
+        (  32 BYTES ANIMATION DATA (WILL BE IGNORED) )
+        THIS FORMAT CAN'T BE SAVED!
+
+     '*.PI9' [FUCKPAINT]:
+         1024 BYTES PALETTE DATA (COLORS #0 TO 255)
+        76800 BYTES GRAPHIC DATA
+        THIS FORMAT CAN BE SAVED!
+
+     '*.DEL' [DELMPAINT]:
+         '*.DEL' IS A PACKED FORMAT (USING THE 'CRACK ART' PACKER).
+         THAT MEANS YOU'LL HAVE 3 BLOCKS (3*32000 BYTES).
+         IF YOU WANT TO USE DEL-PICS IN YOUR OWN PROJECTS:
+         THE FIRST 2 LONGS ARE POINTERS THAT SHOW ON THE 2 OTHER
+         PACKED BLOCKS (STARTPOINTS TO DEPACK).
+         NOW YOU HAVE TO DEPACK ALL 3 BLOCKS (WITH THE CRACK ART
+         DECRUNCHER).
+         AFTER YOU HAVE DECRUNCHED THE BLOCKS THE FIRST 1024 BYTES
+         ARE THE PICTURE PALETTE(!!!).
+         THE NEXT (76800/VGA; 64000/TV) BYTES ARE THE GRAPHIC DATA.
+
+         ATTENTION !!!
+         THIS FORMAT IS SUBJECT TO CHANGE WITH THE VERY NEXT VERSION 
+         OF DELMPAINT! (THE INFORMATION ABOUT '*.DEL' IS INCLUDED
+         ONLY FOR THOSE GUYS WHO JUST CAN'T WAIT FOR THE VERY NEXT
+         VERSION)
+
+    NOTE FROM COKE:
+                              
+          IF YOU HAVE ANY NICE CODE, SOME PICS DONE WITH DELMPAINT OR
+          SOME NEW IDEAS, OR A BUGREPORT, SEND IT TO ME.
+          MY ADDRESS:
+                              J™RG TOBERGTE
+                              ADELBERT-STIFTER-STR.10
+                              27753 DELMENHORST
+                              GERMANY
+
+          DON'T FORGET TO ENCLOSE INTERNATIONAL REPLY COUPONS!
+       
+                                 HI TO
+           TOM G, JURI, STALLION, BULL, ANZAC, SMART, MR.NI
+         TOMMY, MC FLY, CHAOS, THYROXIN, JET POWER, INSH_ALLAH
+         TRAITOR, INNOVATOR, SAMURAI, QUESTOR, ULF, WINGLEADER
+                              BAT, JESTER
+                                  AND
+                                DANNY O.
+                                        

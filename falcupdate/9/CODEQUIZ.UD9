@@ -1,0 +1,581 @@
+* This file was originally  from  a  programming  contest  published  in
+Current Notes magazine and written by Dave Small  (of  the  now  defunct
+Gadgets by Small Company). There was a large introduction about  writing
+a stunning demo or application for the ST and then a  programmers  quiz,
+50 questions to tax the most assembly minded brains. That is what I have
+included here, I hope you find it interesting!
+
+
+                 --------------------------------------
+                 Second: Show Us Your Working Knowledge
+                 --------------------------------------
+
+
+
+   The Other Contest is a set of questions immediately following, 
+which  cover some *working knowledge* of the ST which can, in  my 
+opinion, ONLY be acquired through long, hard experience and  work 
+and  really "hanging in there" (look, *where do you think  I  got 
+these  questions*?  I found them out *the hard way*,  on  the  ST 
+since 1985, folks.) 
+
+   If   you  haven't  programmed  the  ST,  you  may  find   them 
+entertaining, in an odd sort of way...
+
+   So  here's  some questions about the ST.  They  are  generally 
+"been  there,  done  that" sorts of questions  that  really  good 
+programmers  have had to solve; and because of what I've  been  doing 
+(Mac emulation), there's a few related to that as well.
+
+   The rules are simple. The FIRST entry (as judged by  postmark, 
+so everyone starts at the same place) with the maximum number  of 
+right answers wins. In case of a tie, I'll think of something.
+
+   You can email me the answers at the addresses above; they will 
+count as being "postmarked" *when you mailed them*. Look, there's 
+no way I can be responsible if a machine on the Net sits on  your 
+mail for a few hours, any more than if a letter sits in some post 
+office en route for a few hours; fair is fair.
+
+   I  honestly  don't  expect anyone to  complete  all  of  these 
+questions  correctly.  I will be very pleased  if  someone  does! 
+(Actually, some time in front of a keyboard will answer a  number 
+of  them; getting to the point where *I understood the  problem*, 
+and  can so quickly state it here, is what took so long over  the 
+years, so maybe I'm overstating the difficulty level.)
+
+   I  also spent some time looking through listings, looking  for 
+comments saying:
+*
+*--------------------------------------------------------
+* This one was HARD! It didn't work like it said...
+* Even though it should work, DON'T DO THIS!
+*--------------------------------------------------------
+*blah:  blah
+*
+   and so forth.
+
+   CAUTION:  The answers to a few of these are of the  type  of 
+"Who  is  buried  in Grant's Tomb?" answer. It  wouldn't  be  fun 
+without a few really easy ones.
+
+   As  you will see, a few of these are going to require  you  to 
+get  out an assembler ... I'm not yet enough of a "C"  wizard  to 
+pose assembly questions in "C". 
+
+   All numbers in here are in Hex (base 16) and none of them  are 
+trick  questions.  I've marked some  questions  "Oldtimers"  that 
+apply to early ST developers (and, actually, a little before); if 
+you're newer than 1985 / 1986, you probably won't know these. The 
+people  who  have seen them won't forget them soon,  "I  betcha." 
+I've also tried to label the questions as to difficulty, sort  of  
+like  skiing runs are rated for difficulty. However,  "OldTimers" 
+I'm  going  to assume hacked though the same stuff I did,  so  no 
+ratings there.
+
+   If  you  find  out and answer these (I'll  run  answers  in  a 
+later column, Explaining All, once the Competition is over),  you 
+will  have  learned  some REALLY cool stuff,  some  of  which  is 
+extremely useful.
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+             
+    The International ST/TT *Expert* Programming Competition
+                 Programming & Related Questions
+                  Copyright 1994, David M. Small
+
+
+
+1.  [OldTimers]: 
+
+   Why is it a poor idea to use conditional  assembly 
+        with AS68?
+
+   (AS68  is  an  Atari development tool  superceded  by  another 
+   assembler). What *exactly* goes wrong? Why is this gruesome?
+
+
+
+2. [OldTimers]:
+
+   Why is it a bad idea to do this in AS68:
+
+;--------------------------------------------
+;   (previous code -- whatever, long as it's legal)
+;
+   RTS
+;---------------------
+; Next routine has 2 entry points, with no opcodes on them.
+;
+VIDEOROUTINE
+RELOOP
+ (routine code)
+   BRA RELOOP
+; end of routine
+;---------------------
+   What exactly goes wrong? Why is this grim?
+   
+3. [OldTimers]:
+
+   What GHASTLY thing will happen if you assemble an 
+assembly  language file named, oh,  "DSMALL.S" (just some  random 
+name I picked out of nowhere), using AS68, like this:
+
+   AS68 -l DSMALL
+
+4. [OldTimers]: 
+
+   What happens if you try to LO68/RELMOD a file  that 
+doesn't exist? For instance, as part of a batch file to assemble, 
+link, and RELMOD (change from CP/M-68K to TOS format) a file.
+
+5. [POINTS FOR WITTY, ORIGINAL REPLIES]
+
+        Why  do I not use AS68 nor LO68/RELMOD any  more?  (HINT: 
+        See 1-4)
+             
+
+6. [HARD ASSEMBLY QUESTION]
+
+    Assume these registers (data registers all equal corresponding
+   address registers):
+
+   D0 = A0 = 12345678  A1 = 23456789  A2 = 34567890 A4 = 45678901
+   D5 = A5 = 56789012  A6 = 67890123  
+   D7 = userA7= 00001234  supervisorA7 = 1235 Status Reg. = 2307
+   PC = $5000 (and is in a legal program, etc.)
+
+   You are in supervisor mode (e.g., SSP & current A7 = 1235).
+
+   You  perform  a  multiply instruction using D0  and  D1.  (Any 
+multiply, I don't care!)
+
+   WHY, exactly, do you get 3 instant bombs (yes, 3)?  (Remember, 
+we're at IPL 7, so interrupts are not distracting us.)
+
+7. [HARD ASSEMBLY QUESTION]
+
+   Assume you MUST shut down RAM for a time (probably by  writing 
+some  value  into the Atari Memory Controller,  the  MCU).  (Say, 
+you're working on the 3 MB of RAM upgrade developed in Germany we 
+had to tweak Spectre for -- those folks HAD to tweak the MCU.) Of 
+course,  interrupts  are off. Now, do a division. Will  it  work? 
+Why?
+
+   Once  you  figure out 6 & 7, "you're welcome". Believe  me,  I 
+wish I had known it too!
+
+8. [HARD ASSEMBLY QUESTION]
+
+   How, exactly, can you "legally" (e.g., not by directly jumping 
+to the exception vector!) generate a "spurious interrupt" on  the 
+ST-series hardware? NOTE: Atari assures me it is "impossible".
+
+9. [HARD FLOPPY DISK CONTROLLER/DISK DRIVE QUESTION]
+
+   Many people are aware you can step the disk head past the 80th 
+track; some programs even use this to store data (shriek!).  [Not 
+all  drive  will  step  past track  80].  However,  what  is  NOT 
+generally known is that there ARE accessible tracks -1,-2, and -3 
+OUTSIDE  of  TRACK 00. (I have just told you a secret  that  will 
+have  copy protection makers/breakers turning pale). How can  you 
+consistently  access tracks -1, -2, and -3, to  either  implement 
+copy protection or just store data?
+
+   [NOTE:  This question does not apply to disk  drive  mechanisms 
+which  really have a "Track 00 Stop" where the head is forced  to 
+stop  at 00; however, there are a bunch of drives out there  that 
+go  to -1, -2, and -3. In fact, I don't think I've seen a Track 00 
+mechanical  "stop"  on  a 3.5" disk; they're  common  on  5  1/4" 
+disks.]
+
+10. [HEAVY FLOPPY DISK CONTROLLER/DISK QUESTION]
+
+   Why is it a good idea to ALWAYS step outwards 5 times  before 
+doing a RESTORE (seek to TRACK 0)? Note this is done on the  ATR-
+8000.
+
+11. [HEAVY ASSEMBLY/C QUESTION]
+
+   Assume  you are trying to write a Mac emulator (just  to  pick 
+something  incredibly  masochistic to do). Assume  the  Mac  uses 
+memory  from $100-$13f, and on up to $B00, for that  matter)  for 
+"Global Variables", which are often directly accessed by programs 
+(for instance, ol' "MemTop", the top of RAM, at $108). 
+
+        Why does this spell *absolute disaster* for a Mac Emulator
+        on the ST hardware?
+
+        (HINT: It stopped me for a month! and almost, almost  for 
+             good).
+
+   12.  When  I  solved  it, it was the  last  "big"  problem  in 
+        implementing a Mac emulator. I literally woke up with the
+        solution at 3 AM. Two months later Mac mode ran. 
+        So: How'd I solve this problem?
+
+13.  [LIGHT ASSEMBLY QUESTION]
+
+   What  does Test and Set (TAS opcode) do on an Atari  ST?  Why? 
+Should  it?  (TAS  is  traditionally  used  to  implement  kernal 
+operations on multi-tasking, multi-CPU machines).
+
+14.  [EXTREMELY HEAVY ASSEMBLY QUESTION]
+
+   Assume  you  are  working with a program  that  generates  Nil 
+pointers (in other words, address registers that equal zero,  0.) 
+The programs write to this address. On the ST, that's writing  to 
+ROM, and you bus-error. Assume the registers are all in valid RAM 
+(except, probably, the one that's pointing to 0.)
+
+   How  can  you  then RECOVER from the  bus  error,  given  that 
+Motorola's  68000 books say you can't, and keep going?  (Motorola 
+says  you  need  a 68010 to recover,  and  to  implement  Virtual 
+Memory,  as  the  68000 buserr stack frame  doesn't  have  enough 
+data.) 
+
+   Assume  that  data written to a Nil  pointer  is  unimportant, 
+because the program should not be doing that anyway! -- the  data 
+is unrecoverable.
+
+   HINT: Look at a bus error stack frame.
+
+   NOTE:  About  1/3  of  Mac  programs  do  this;  we  help  Mac 
+Developers  Beta-Test just by seeing if they "Nil-Pointer" and  try 
+to  crash  the Spectre by writing to 0. Frankly, until  I  solved 
+this  problem,  they would crash the Mac emulator;  when  it  was 
+solved  was  the beginnings of major success for  Mac  Emulation. 
+That's when the "biggie" programs went stable.
+
+15.  [FUNNY ASSEMBLY QUESTION]
+
+   Does Atari's TOS *ever* access location 0 because of  a  Nil 
+Pointer?  Pick any version of TOS. Show the statement &  address. 
+Please, no printouts over 10 pages long.
+
+16.  [TT USER QUESTION; ASSEMBLY/C ANSWER]
+
+   Why  does  having  TT RAM (or  equivalent)  in  the  TT  (or 
+equivalent 68030 accelerated) machine end up usually accelerating 
+the  TT  about  11%  (depends a little  on  what  you're  doing), 
+*provided* the RAM is there AT STARTUP?
+
+17.  [EXTREMELY HEAVY HARDWARE/SOFTWARE QUESTION]
+
+   You need to startup a 68030 with the first 68030  compatible 
+TOS, TOS 1.62, to begin to debug a 68030 board. The TOS chips are 
+plugged  in through the Mega ST bus connector and a  PAL  address 
+decoder  (thus allowing all 256K of ROM to be accessed)  and  are 
+properly mapped at $00E00000 (by the way, the 24-bit address  has 
+nothing  to  do with this question!) The old TOS  1.4  chips  are 
+removed.
+
+   Trouble is, you're doing this on a *Mega-ST*, and TOS 1.62  is 
+for *STE* machines, with their added video/sound registers.  When 
+you  try  to startup, you crash, as TOS  initializes  video/sound 
+registers that *don't exist on a Mega-ST* and bus-errors out  (no 
+DTACK/DSACK  generated since "that location don't exist"  to  the 
+GLUE/Shifter chips).
+
+   WITHOUT  MODIFYING  THOSE  TOS ROMS, (like,  NOP'ing  out  the 
+inconvenient  MOVE's)  and without some big fancy  PAL  disabling 
+certain  ROM  addresses,  how can you get around  this  stuff  in 
+startup  and  in  the VBLANK (vertical  blank)  code  (where,  of 
+course,  the  low  byte of the video address is  updated  if  you 
+changed the register for it). 
+
+   In other words, I'm asking you how to run ROM code and  change 
+the path of execution in "firm"ware.
+
+   ANSWER NOT ALLOWED: "This is impossible. That's why it's ROM."
+
+   ANSWER  NOT ALLOWED: No, you can't use the 68030 MMU  to  copy 
+the  ROMs and move RAM under it; this technique  doesn't  require 
+anything so sneaky. It require sneakier.
+
+   NOTE: This is an EXTREMELY valuable technique to know.
+
+18. [MEDIUM HARDWARE QUESTION]
+
+   What  *usually*  happens if you directly switch on  video?  In 
+other words, do a MOVE right into the hardware location that  has 
+the display mode (low, medium, high rez) to turn the screen on. 
+(Something like, MOVE.B, #2,hwdisp_mode      ; kick on mono)
+
+   HINT: "Two men looked out ______________ "
+         "One saw the mud, one saw the stars."
+
+19. [MEDIUM HARDWARE QUESTION]
+
+   What's probably going wrong in what happens in question 18?
+   
+20. [MEDIUM HARDWARE QUESTION]
+
+   What does "ST" stand for officially, and what does it have  to 
+do with question 18?
+
+21. [MEDIUM SOFTWARE QUESTION]
+
+    What's  the  solution  to 18? How  can  you  kick  video  on 
+yourself?
+
+22. [LIGHT HARDWARE QUESTION]
+
+    Assume  you are running on a TT. The cartridge you  have  in 
+there  (let's  stay  away from Spectre so you  don't  think  it's 
+related  ...  say, some video digitizer cartridge, ..  well,  the 
+cartridge  suddenly fails with a gruesome direct  short  circuit. 
+You  sensibly  turn  the TT off and  remove  the  cartridge.  You 
+replace it with a new cartridge. The TT has (at best)  difficulty 
+using  the  new cartridge, to say the least! (It  probably  won't 
+work at all.)
+
+   ASSUME  that  the ROM-decode, read, PAL logic,  and  all  that 
+stuff, was not damaged. 
+
+   What's wrong? And why is this something EVERY TT owner  should 
+know? (I believe it applies to Mega-STE's as well).
+
+23. [HEAVY HARDWARE QUESTION]
+
+     What  did  Atari NOT keep constant between  the  ST  and  TT 
+cartridge timing? Why does this foul up cartridges?
+
+24. [HEAVY SOFTWARE/HARDWARE QUESTION]
+
+   Certain Atari chips *must not* be accessed too quickly.  For 
+example, the Zilog 8530 serial chip (runs 2 9-pin ports on the TT 
+and the Localtalk-size-compatible connector) cannot be written to 
+faster  than  2.2  microseconds  per  write.  Since  the  TT   is 
+smoking... errr, zooming along at 33 Mhz (33 cycles/microsec), it 
+would  be easy to write again too quickly, overrun and  zonk  out 
+the  SCC.  (The same thing applies to writing to the  ACSI  "disk 
+chips".)
+
+   What's  the  documented, sorta "official" way  of  assuring  a 
+"slow",  125 nanosecond or "8 Mhz" cycle to provide an  *enforced 
+slowdown* for the SCC and disk chips on a faster machine, like an 
+accelerator or TT?
+
+25.  [HEAVY HARDWARE QUESTION]   
+
+   What happens when you try that assured, guarenteed 8 Mhz cycle 
+technique on a TT machine?
+
+26. [HEAVY SOFTWARE/HARDWARE QUESTION] 
+
+   Assume you're using the ST Atari's  mouse with your own driver 
+for  it  (like, say, some emulator might ..  *grin*).  The  mouse 
+moves.  Assume  a  byte  comes in  from  the  mouse.  Assume  the 
+processor is busy doing an IPL=7 task (that means, all interrupts 
+are  disabled,  like when reading a Mac disk with  Spectre  GCR). 
+Assume  this continues long enough for the next byte to  come  in 
+(after  all,  mouse movements are transmitted in 3 byte  packets, 
+containing  button,  change X, change Y  information).  Then  the 
+IPL=7  task is done and the normal ST Interrupt Priority  Level,3 
+is  set.  (The mouse has IPL 6 via the MFP chip, as  the  manuals 
+say).
+
+   Why  have your keyboard and mouse just locked up? What is  the 
+ESSENTIAL thing wrong?
+
+   What's a fairly good way of fixing this in your mouse handler? 
+(I call mine "QuickMouse", by the way.)
+
+27.  [HARD SOFTWARE/HARDWARE QUESTION]
+
+   What is a *working* method of shutting down the  keyboard  and 
+mouse, then waking them back up, so that the keyboard buffer  and 
+mouse  don't  overrun?  As you can see from #26,  this  could  be 
+necessary for extended work at IPL=7 (no interrupts  whatsoever). 
+NOTE: By *working*, I mean it really works, not what some  manual 
+says.
+
+28.  [REALLY HEAVY HARDWARE/SOFTWARE QUESTION]
+
+   Well, if you're smart enough to get 27, how do you do it  so 
+it works on BOTH the ST and the TT?
+
+29. [OldTimer] [REALLY EASY SOFTWARE QUESTION ... if you know.]
+
+   What did the "bombs" of the crash mechanism look like in  the 
+pre-TOS-ROMs  version of TOS (that booted up off disk)? (HINT:  I 
+want to give you an easy question!)
+
+29. [HARD FLOPPY DISK HARDWARE/SOFTWARE QUESTION]
+
+   What  precisely is the bug that cuts the floppy  disk  drive 
+datarate capability to drop by half in most ST's (Atari corrected 
+this  after  TOS 1.4, I believe ... might have been  TOS  3.  Yet 
+another  reason  to  get a 2.06 card;  your  floppies  will  work 
+faster!)
+
+30. [HARD FLOPPY DISK HARDWARE/SOFTWARE QUESTION]
+
+How  precisely  does  Twister  (published in  the  USA  in  START 
+magazine,  has  since  become at least an option  on  most  "disk 
+format"  programs) work to max-out the data rate to/from  Floppy? 
+HINT:  It  fixes problem 25 by changing the  disk  layout.  (This 
+isn't  so hard -- when it was published, we gave out  the  SOURCE 
+CODE; Twister is the basis for the Meg-a-Minute backup to  floppy 
+program.  The best you can get from floppies is about 1  meg  per 
+minute.
+
+31. [HARD FLOPPY DISK HARDWARE QUESTION]
+
+Why should you definitely wait 30 milliseconds after a  step 
+before  beginning to write to disk? What are the consequences  if 
+you don't?
+
+32. [OldTimers]:
+
+    CP/M-68K  had a debugger. It could not disassemble  one  very 
+popular opcode (especially in interrupt code!!). I saw this on  a 
+machine called Dimension 68000, which ran CP/M-68K. It was passed 
+on  to  AtariFolk as a debugger, and still had the  bug.  It  was 
+finally fixed. What was the opcode?
+
+33. [Humans / Electrical Engineering-Hobbyists]:
+
+   What is the A.C. voltage on the heat-sink of the power  supply 
+found  inside the Mega ST's? Measure against, say, board  Ground. 
+Be sure meter scale is on multiple hundreds of volts!
+
+
+             (CAUTION WHILE MEASURING!!!, REALLY!!!)
+
+
+34. [Humans/Don't Try This!]:
+
+     How  far will you be thrown if you brush your  hand  against 
+that heat sink? (Please convert kilometers to miles.)
+
+
+             [POINTS FOR ORIGINAL, FUNNY REPLIES]
+
+
+35. [Humans/Don't Try This!]:
+
+     How  many days will your arm and chest  muscles  ache  after 
+brushing your hand against this heat sink? (Please convert months 
+to days).
+
+
+              [POINTS FOR ORIGINAL, FUNNY REPLIES]
+
+36. [Humans/Don't Try This!]:
+
+   How many days will it take before your hair stops looking like 
+"Young Einstein"'s hair?
+
+             [POINTS FOR ORIGINAL, FUNNY REPLIES]
+
+37. [Overseas Travellers, EASY]
+
+   Summarize  quickly  the major difference between  US  and  UK, 
+French, German, and Swedish keyboards.
+
+38.  [HARD HARDWARE/SOFTWARE QUESTION]
+
+   What  is  the exact bug, and when was it  fixed,  in  serial 
+(modem) handshaking?
+
+39.  [HISTORICAL: Easy SOFTWARE QUESTION]
+
+   Which  TOS  fixed the interminable delay on saving a  file  if 
+your disk was getting full?
+
+40.  [HISTORICAL: Easy SOFTWARE QUESTION]
+
+   Who  rewrote  the Disk Operating System section of TOS  to  do 
+this?
+
+41.  [HISTORICAL: Easy SOFTWARE QUESTION]
+
+   Okay, who wrote it in the slow way to begin with?
+
+   HINT: Usenet users have an advantage on these questions as The 
+History of TOS was given out there.
+
+42.  [VERY, VERY, HARD SOFTWARE QUESTION]
+
+   How  many  birthdays are celebrated in Spectre  GCR  3.0  upon 
+startup?
+
+43.  [VERY, VERY, HARD SOFTWARE QUESTION]
+
+   How  many  different  quotes are  randomly  selected  from  in 
+Spectre GCR 3.0 (if it's not a birthday) upon startup?
+
+44.  [MEDIUM SOFTWARE QUESTION] 
+
+   What  was  one major anti-piracy protection  placed  on  the 
+Spectre 1.51 release disk?
+
+45.   [MEDIUM SOFTWARE QUESTION] 
+
+   Why was this protection so hilarious?
+
+46. [TRIVIA QUESTION]
+
+   Why didn't the "Alarm Clock" work for SO LONG in Spectre?
+
+47. [TRIVIA QUESTION]
+
+   Name all the releases of Spectre. How many are there that made 
+it out into the world? Include Spectre 128 and Spectre GCR.
+
+48. [TRIVIA QUESTION]
+
+   What  was the sound in the hidden dedication page  of  Spectre 
+1.51?
+
+49. [HARDER TRIVIA QUESTION]
+
+   What  was the updated sound made available to  Spectre  users, 
+with  the advice it was wind-chimes and hard to hear,  so  they'd 
+better turn it up?
+
+50. [Awww, Heck, Give 'em a point]
+
+   Who's buried in Grant's Tomb?
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+   There you are, an expert-level quiz on the Atari. Given  time, 
+I  could think of some really obscure questions (why doesn't a  5 
+1/4"  drive  always  work when you plug it in, or,  what  is  the 
+termination  situation  on  the  floppy bus?),  but  I  think  50 
+questions is enough to seperate the Hackers from ... the  general 
+populace.
+
+   Best  of  luck, I promise there ARE answers, and I  hope  this 
+brings back a few memories, too!
+
+
+   See you next time, and I hope you had some fun!
+
+
+
+                                 Dave  Small / VP
+                                 (Gadgets by Small) 
+
+                                 Genie: DAVESMALL
+                                 Internet: Changing; 
+                                 for right now, dsmall@
+                                      well.sf.ca.us will be ok.
+                                 CompuServe: 76606,666
+
+
+
+
+
+
+
+
+
+
+
+
+
+

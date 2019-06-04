@@ -1,0 +1,183 @@
+
+			    The Ultimate Ripper
+			    =-=-=-=-=-=-=-=-=-=
+
+	         Reviewed by -BOD- of The Teutonick Knights
+
+
+Previewed in last issue of 'Maggie' by Sammy Joe this cartridge is 
+totally amazing!!!
+
+All you have to fo is sit back, wait for the game or demo to come
+to the point you want, press reset then flick the switch on the 
+side of the cartridge and press 'F1' you are then presented with
+a main menu. You can access any of the rippers functions from here,
+and they are....
+
+                   F1) THE PICTURE RIPPER
+
+		   F2) THE MEMORY RIPPER
+
+		   F3) THE DISK UTILITY
+
+		   F4) THE EXTERNAL CALL
+
+		   F5) THE MUSIC RIPPER
+
+   		   F6) THE DISK RIPPER
+
+		   F7) THE INFORMATIONS
+
+         	   F10) EXIT
+
+
+The Picture Ripper
+==================
+
+This little utility enables you to rip static screens, fonts and
+sprites from any game or demo. You can change the palette of the
+picture, change the number of bitplanes on the picture, the number
+of superpo's or the resolution you want to display the picture in.
+When you have finished just press 'F3' and you can save the picture
+to disk in DEGAS format.
+
+I did encounter a number of problems with this option. You cannot
+save SPECTRUM 512 pictures to disk and the palette of the picture
+changes if the demo or game is full screen or contains rasters!!
+
+The Memory Ripper
+=================
+
+The Memory Ripper enables you to work directly on the memory of your
+ST, you can check the contents of your programming addresses, the
+state of your program and the content of the ST's memory in
+general. You can copy party of memory from one place to another, 
+search memory with the built in search string facility, print 
+memory and save in source code or binary format!!
+
+Disk utility
+============
+
+This is just a simple disk utility that allows you to format a disk,
+create a directory, rename files and print the free space on the disk.
+
+External Call
+=============
+
+This option allows you to execute a program that has no GEM call's
+(Windows, icons, pulldown menu's etc.).
+
+External Loader
+===============
+
+This option allows you to load files or tracks off a disk at the
+desired address. You can load several consecutive tracks at the 
+desired address indicated by you!
+
+The Music Ripper
+================
+
+When you go into the music ripper you are presented with a sub
+menu. You can either search for music, save music or search for
+sound samples.
+
+If you want to search for music then press 'F1' and enter the
+two memory addresses the computer will do all the rest.
+
+If the music you have searched for is of a weird file format
+(such as music with digi-drums.) the it will only find 
+it around 30% or not find it at all. If it has found a piece 
+of music that it does recogzise then it will give you two 
+addresses on screen, it will also ask you if you wish to 
+play the music.
+
+If you would like to save a piece of music to disk then select
+'F2'. The computer will ask you if you would like to save the
+music as a binary file (for calling from your own programs) or
+as an executable file (for clicking on from the desktop). You
+then have to enter two addreses and a filename and the music
+is saved for you.
+
+If you would like to save sampled sound then all you have to do
+is press 'F3' and you are presented with a menu bar at the top
+of the screen. First you need to enter the start and end address
+of the part of memory you wish to play, do do this all you have
+to do is press 'F1' (for start address) or 'F2' (for end address).
+
+If the sound sample you hear is to fast or to slow just press
+'F3' and the sample speed is changed. Press 'F4' to play the sample,
+if the sound is interfered the press 'F6' to alter the "Sign" and
+'F5' allows you to save the sample. 
+
+There is also an option in the sample ripper for STE owners to
+alter the bass and treble of the sound but as i do not have an
+STE i couldn't try this out!
+
+The Disk Ripper
+===============
+
+This option is just a sector editor. You can search part of a disk,
+read the bootsector and do anything to edit a disk but the best 
+option in this part of the cartridge is the ability to disassemble
+the sectors to source code and save them to disk!
+
+Informations
+============
+
+Just a list of credits!
+
+Exit
+====
+
+You can exit with this option with the cartridge left on so all you
+have to do is press reset to call the cartridge and the software
+will re-appear!
+
+
+There are a few other options built into the caretridge which are...
+
+If you flick the switch and press F2 you get access to the 
+Ultimate Ripper main menu without saving the overwritten ram.
+
+If you want to go into trainer mode, just flick the switch press
+'F7' and boot up your game when you have come to the point in the
+game you want, press the ring indicator switch (which you have
+to wire up to your RS232 (full intructions on how to do this
+supplied!)) and you are presented with a menu bar. From here you
+can search for infinite lives. To search for lives for example
+you have to enter a search string of say 3 if you have 3 lives
+then when the computer has searched for the first 3 it comes to
+you can change that number to say 100 for 100 lives, however
+it may not be the right number and your game may crash!!
+
+For programmers if you flick the switch and press 'F9' you can
+read content of address $30 at RESET and do a jump. This option
+can be good for debugging a program.
+
+Flick the switch and press 'F10' to boot with the cartridge on!
+
+
+Ratings...
+
+
+Name			:	Ultimte Ripper
+By			:	Power Computing
+Price			:	œ40.00
+Value for money		:	7
+Amount on disk		:       -
+Graffix			:       -
+Sound			:       -
+Lasting Interest	:       -
+Programming		:	9
+----------------------------------------
+Overall			:       8
+----------------------------------------
+
+
+This cartridge is good but after some considerable use
+i have found a number of bugs, such as it plays music
+when you have found it and then when you save it to disk
+as an executable file the music refuses to play, It bombs
+out occasionally and some times totally locks up. But
+Power have promised updates in the form of new software!
+

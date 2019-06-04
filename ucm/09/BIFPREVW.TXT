@@ -1,0 +1,163 @@
+                                                                                   
+                         BACK IN FRANCE - THE PREVIEW!                             
+                         =============================
+
+
+The  world  famous  crew  NLC (No Limit Coding) hasn't  finished  its  new  GFA
+megademo  but ST Survivor send me a preview and I (The Beast/Typhoon) am  going
+to test it exclusively for Undercover Magazine!
+
+                                     *****
+                                                                                   
+The intro                                                                          
+---------
+
+At the beginning, a good NLC logo appears (drawn by ST Survivor) by a nice tune
+by Lap/Next. A  starfield begins (you'll  note there  are tons of starfields in
+this demo) with a text.  The text seems to be quite old (it speaks about TSB, a
+dead crew).
+After pressing  the space  bar, the loader  is loading (!!!). The loader is the
+same than in  the "Froggies over the Fence" (but  in GFA this time) : a big dot
+sphere is turning while some text is displayed. Good tune by Jess/OVR.
+                                                                                   
+The main menu                                                                      
+-------------
+
+It looks like  the "Vodka Demo" menu (by Equinox).  The gfx are ripped from the
+wonderfull  game "Lethal XCess" and a logo "Back in France" is displayed at the
+top of the screen. At the bottom, there's an horizontal scrolltext. The zik was
+composed  by Tao/ACF. In the menu, you have to control a little space ship with
+the numeric keyboard or the joystick and the screen moves verticaly only.
+The  screens  are  symbolised  by  little  brown  things  and you have to press
+"Return" or to press the fire button to enter those screens.
+But there are 2 problems concerning the main menu:
+1. The main menu isn't RAM resident, it loads itself after each demo part...
+2. When  you enter  the main  menu, your  previous position wasn't saved so you
+   have to drive your space ship until the screen you would like to see.
+Note that  in each screen, you  can press "Alternate" in  order to see the time
+machine (cool option). Now, I'm going to describe each screen:
+
+1. Starfield                                                                       
+------------                                                                       
+
+I must  admit this boring  screen isn't very good. Okay, CTS and Thyrex/NLC can
+display 500  dots with  precalculation but  the precalculation is very long and
+there is no design...
+
+2. My Pixel Dream                                                                  
+-----------------                                                                  
+
+A "Back in France" logo  in 1 plane  is distorting with a starfield. That's a 1
+pixel distortion but where is the dezign ?  8-)
+                                                                                   
+3. Greetings                                                                       
+------------
+
+The greetings are  quite old (remember  Thyrex wanted to  release his  demo two
+years ago). There is  a starfield  in the bottom of the screen and a scrolltext
+in the middle (with a mirror effect). Not very original but quite good however.
+                                                                                   
+4. Four for one                                                                    
+---------------
+
+That's a quite impressive  screen (it's hard  to believe  that's pure  GFA code
+isn't it !?). The screen is splitted into 4 parts. The first part consists of a
+moving background. In  the  second one, there are vertical rasters and a moving
+NLC  logo in  1 plane. In  the  third one, there  is a  starfield and a another
+moving NLC  logo (but I think  it's the same as in the 2nd  part). Finally, the
+fourth part consists of a picture representing an Atari ST and its monitor, and
+there's  a  scrolltext  on  this  monitor.  Well, this  screen  looks  like the
+"Flashback" demo by The CareBears!
+                                                                                   
+5. Meet Your Stars in the Bar                                                      
+-----------------------------
+
+That's a  24 hours  screen. The  screen is  splitted into 2 parts. At  the top,
+there are pretty vertical rasters. Their lenght is 100 lines with 1 palette per
+line (very good!).  At  the bottom of the screens : starfield and scrolltext! A
+good screen!
+                                                                                   
+6. Cool Land                                                                       
+------------
+
+As  for me, that's  the  BEST screen  in this  demo! It  consists  of  a raster
+scroller  in  overscan...  yeah,  GFA  makes it possible!  You have to move the
+rasters with the cursor keys. It's a kind of zoom of a pretty NLC logo drawn by
+Flanker during the MegaFun Party 4 (that's oooooooold!).  The scrolling is very
+smooth and in 1 VBL. Note this screen was coded in 3 hours only...!
+                                                                                   
+7. The Big One                                                                     
+--------------
+
+This screen doesn't work... Hey, that's just a preview!
+                                                                                   
+8. Let Them Turn                                                                   
+----------------
+
+An  enormous  sphere made  with  380 points is  moving  verticaly... Obviously,
+Thyrex is a good coder because he has added an horizontal  scroller and all the
+screens only eats 80% of the machine times... Not so good for GFA, eh?
+                                                                                   
+9. Info Screen                                                                     
+--------------
+
+That's probably  the oldest screen of the megademo. It displays information (in
+French) about participating to  this demo. There are  just a text, a  music and
+some sprites.
+                                                                                   
+10. Banal Screen 2                                                                 
+------------------
+
+A good  screen  too: imagine  a moving  background  with 4 plane sprites... The
+music was  composed  by  Big Alec and there is a scroller and the bottom of the
+screen.
+                                                                                   
+11. Flexiscroll                                                                    
+---------------
+
+A classic  screen too but  impressive (don't forget it's GFA Basic !). That's a
+2 pixel flexiscrolltext with a good muzak by Count Zero.
+                                                                                   
+12. Bubbles                                                                        
+-----------
+
+This screen  is good and  impressive. It looks like a "Flip-O-Demo" part 'coz 4
+jelly bubbles (3 big and a little one) are dancing on the screen with  a scroll
+text at the top. Cool screen, in fact !
+                                                                                   
+13. STE only                                                                       
+------------
+
+Thyrex wanted  to explore the STE capacities but... this screen is strange! OK,
+the soundtrack is played at 25 KHz but where is the blitter stuff??? I just see
+monochrom pictures... what's happened? Is this screen bugged?
+                                                                                   
+14. Hidden Screen!                                                                      
+------------------
+
+I don't want  to describe it... I can just  tell you there is a distorter and a
+crazy kind of starfield... 8-)
+                                                                                   
+15. Reset Screen                                                                   
+----------------
+
+Two bombs. Obviously, there are bugs... Sh*t !
+
+                                                                                   
+The VERDICT!                                                                       
+============
+
+Well, I must admit this GFA megademo has goth both excellent and shitty screens
+(some of  them are too old). The graphics aren't excellent, there is a lack  of
+colors in several screens, some gfx are ripped and there isn't enough design.
+Concerning  the musics, that's always the same well-known tunes. But the coding
+and technical levels are quite high because the demo was coded in GFA Basic and
+that's quite hard to do it.
+That's only a  preview and  I hope Thyrex  will erase  all the bugs. I've heard
+that ST Survivor has drawn tons of pictures for the demo... good news!
+
+You will  have to  wait  for the  final version, guys, because  I must not (and
+don't want) to swap it now. According to NLC members, the demo will be released
+in a few months... wait and see !
+
+----------------------------------------------------------- The Beast/Typhoon -

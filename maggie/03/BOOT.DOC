@@ -1,0 +1,165 @@
+
+
+BOOTSECTOR BLUES    By Oberje' of The Fingerbobs
+
+
+Having just finished my Exams and managing to avoid being  kicked 
+off my college course ( Yet!  ),  I feel I have enough love in my 
+heart,  to  tell  all those not in  the  know,  about  bootsector 
+programs!
+
+So listen up!
+
+
+N.B. I make NO Guarantees that this article or the example
+     source code are accurate. So if it f**ks your disks, its
+     your problem, not mine.
+ 
+Some knowledge of Assembly Language would be a definite advantage 
+because otherwise this is going to seem like gibberish.
+
+This  ( short but sweet ) article is intended to explain  how  to 
+create  those cutsey little programs that sit in  the  bootsector 
+and  greet  the  user when he boots.  Of course  Virii  (??)  are 
+bootsector programs too,  but they are nasty, so lets just ignore 
+them.
+
+The  source  code,  to  illustrate this  article,  can  be  found 
+somewhere on this disk, probably in a folder called PROGRAMS. The 
+file  is  called 'boot.s' and is designed to be  assembled  using 
+Hisoft's Devpac.
+
+Lets start with basics.  Your ST uses a floppy disk drive, unless 
+of  course  you  are loaded in which case you have  a  sexy  hard 
+drive!  The disk is split into a number of tracks ( usually 80  ) 
+each of which containing a number of sectors ( usually 9 ).
+The  ST  operating  system  ( which is  a  rip-off  of  MS-DOS  ) 
+specifies that the first sector of the disk, is a 'boot' sector.
+This bootsector contains important information about the format of 
+the disk, and optionally a piece of executable code. It sometimes 
+contains silly messages from lamers too, but that is not important.
+
+The bootsector format is as follows:
+
+ $00  bra.s xxxx  Branch to boot code ( if any )
+ $02  OEM Space   Reserved. Sometimes contains 'loader'
+ $08  Serial #    24-Bit Volume Serial Number
+ $0B  BPS         Number of Bytes/Sector
+ $0D  SPC         Number of Sectors/Cluster
+ $0E  RES         Number of reserved sectors
+ $10  NFATS       Number of File Allocations Tables on disk
+ $11  NDIRS       Number of Directory entries
+ $13  NSECTS      Number of sectors on disk
+ $15  MEDIA       Media descriptor bytes ( Ignore )
+ $16  SPF         Number of sectors/FAT table
+ $18  SPT         Number of sectors/track
+ $1A  NSIDES      Number of sides on disk ( 1 or 2 usually! )
+ $1C  NHID        Number of hidden sectors ( Ignore )
+ $1E  Boot Code   if any
+$1FE  Checksum    Bootsector checksum word
+
+When your ST boots up,  the bootsector checksum is calculated  to 
+see  if  the  bootsector is executable,  and if it  is  then  the 
+operating system will execute it.
+In  order  for the operating system to  recognise  an  executable 
+bootsector  the Checksum of the bootsector must be equal  to  the 
+'magic' number $1234.
+
+To  make  the  checksum equal to $1234,  we  work  out  what  the 
+checksum for the bootsector is and place $1234 - This checksum in 
+the Checksum word at $1FE.
+
+Or  alternatively we could ask the BIOS do all the hard work  for 
+us, viz.
+
+XBIOS ( Trap #14 ) $12 ( 18d ) _protobt
+
+do_it move.w   #1,-(a7)   ; Executable bootsector
+      move.w   #2,-(a7)   ; 0 - 40 track SS
+                          ; 1 - 40 track DS
+                          ; 2 - 80 track SS
+                          ; 3 - 80 track DS
+      pea      $1000001   ; Give us a random serial number
+      pea      boot_buff  ; Generate buffer here!
+      move.w   #$12,-(a7) ; _protobt
+      trap     #14        ;
+      lea      14(a7),a7  ; Tidy stack
+
+This is quite handy,  but not very helpful in cases where we  are 
+going to be writing to a disk that already has stuff on  it,  and 
+that disk may conceivably have a different format! 
+In  that case we could confuse the operating system and lose  the 
+contents of the disk.
+
+To reduce the possibility of data loss what we need to do is
+
+1. Read in the format of the disk we want to alter
+2. Generate a new bootsector with this format
+3. Write the new bootsector to the disk
+
+
+The Actual Boot Program!
+
+So now we have that sorted out, what about the bootsector program 
+itself?  Well  it  can be almost anything you like,  but  with  a 
+couple of important restrictions
+
+a) You only have 478 bytes ( Eeeeeek! )
+b) The code MUST be position independent
+
+The  example  bootsector  for  this  article  is  my  'Fingerbobs 
+Parallax Stars Intro'. 
+The source code can be found in the PROGRAMS folder, somewhere on 
+this disk. The code is fully commented, and should be fairly easy 
+to follow.
+
+The  source  code  can  be easily  modified  to  write  your  own 
+bootsectors  by just replacing the bootcode with  your  own.  But 
+remember  bootsectors  are  not big,  only about  478  bytes  are 
+actually usable!  The code must be position independent as  there 
+is  no  guarantee that the code will be loaded  at  any  specific 
+address.
+On  my  computer  bootsectors are loaded at  $16DA,  but  on  the 
+machines   belonging  to  my  fiends  the  addresses  are   quite 
+different.
+
+It is possible to place quite complex programs in the bootsector, 
+although it becomes necessary to be quite clever in order to  fit 
+it  all  into such a small space.  
+
+Points to note:
+
+o The Bootsector is always executed in Supervisor mode.
+
+o Ending with an RTS will continue the normal boot-up sequence.
+  You don't have to use an RTS,  it is easy to chain in a program 
+  of your choice and bypass the AUTO folder and desktop!
+
+o On colour system, default resolution is Low.
+
+o Remember only about 478 bytes
+
+o Absolutely MUST be position-independant!
+  
+o Virus killers will most likely ring their bells & whistles when 
+  they meet your bootsectors, they certainly don't like mine!
+
+o Uninitialised storage can be anywhere, not just in the 
+  bootsector. The Parallax stars Bootsector stores the points
+  data above the screen. If it had tried to keep the points
+  data in the bootsector, there would have been no room for
+  the code!
+
+Good luck, I hope this makes creating your own bootsectors just a 
+little bit easier.  But just,  don't you dare create a Virus,  or 
+you'll end up regretting it!
+
+If you have any questions, etc...
+
+     Contact me via The Lost Boys
+     or use the contact address in my New Year Demo
+     shouting probably won't work!
+
+
+.END.
+

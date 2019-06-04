@@ -1,0 +1,497 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+                                   GOD - BOY
+
+                           " NINTARI'S COMING HOME! "
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-----------                                -------------------------------------
+By Mr. Pink                                Official Nintari GodBoy Correspondant
+-----------                                -------------------------------------
+
+The Falcon has not been blessed  with  an  abundance of good emulators. But, say
+the kids, when  you  have  a  machine  as  good  as  the  Falcon  you don't need
+emulators. Right?
+
+Well, maybe not. Just look at the  popularity  of the Spectrum emulator. Some of
+the enthusiasm for this may  be  down  to  nostalgia,  but people are definitely
+looking to run different types of software on the Falcon.
+
+Good though the  Spectrum  emulator  is,  there  haven't  really  been  many new
+Spectrum games released this  decade.  Most  of  what  are considered the "great
+games" on this machine were made long ago, in the days when we actually had real
+Spectrums to play them on, and lets face  it  they  were far more fun on the old
+pregnant calculator than on any emulator.
+
+On the more serious front we have  had  a number of PC emulators, most requiring
+expensive hardware (er, why not just buy  a cheap PC instead!) Excitement levels
+over this failed to even register on any known excitement measuring equipment.
+
+Then there was Dave Small's Mac emulator  which  was probably very good but only
+really bought by rich ST Dads. And lets face it, Macs are only good if they have
+billions of colours and nice sound  and  a  hard  drive the size of Ken Clarke's
+arse.
+
+If emulators are the new rock and roll,  then these two efforts fell firmly into
+the Ocean Colour Scene / Paul  Weller  Dadrock  category  - dull but worthy. The
+Spectrum emulator was a vibrant  Silver  Sun,  eager,  energetic, but not really
+offering anything new. Hot Dog. Jumping Frog. It was time for a new King Of Rock
+And Roll.
+
+The best thing about working instead of  being  a student is not actually having
+to do any work! My job involves very  little  so  I get a lot of time to (ab)use
+the company's e-mail and WWW facilities. During one of these sessions I stumbled
+upon the complete documentation to  a  Unix  Gameboy  emulator.  It was like the
+story of that young goatminder who  through  a  stone  into a cave and found the
+dead sea scrolls. But without  the  stone  or  the  cave.  Or the goats for that
+matter.
+
+Anyroad, I had some very interesting  documents  on  the hardware of the Gameboy
+and some C code for an emulator.  If  I  was  an Amiga dood (Fact! Kula Shaker's
+"Hey Dude" is an ode to Amiga owners) I would have no doubt just whacked it into
+my C compiler, changed the video  routines,  and  hey presto a crap slow Gameboy
+emulator that would only be playable on 50mhz machines.
+
+On the Falcon, C would obviously  be  far  too  slow  so I decided to recode the
+whole thing from scratch in  assembly.  The  first  part  to  tackle was the Z80
+assembler, the thumping heart that pumped electronic pulses around the Gameboy's
+fragile body.
+
+Using the very handy debugger in the  Spectrum emulator, I set about finding all
+the possible Z80 codes. As the processor just fetches single byte instructions I
+reasoned there would only  be  256.  I  was  wrong!  Some  bytes  cause an extra
+processor read and the next byte is the  instruction. There were about 3 or 4 of
+these escape bytes so I set about coding 1000 instructions...
+
+...only to find out that  the  Gameboy  had  a  reduced instruction set from the
+standard Z80! It only used one escape  byte  ("CB"). It also had less register -
+the shadow registers featured on the  normal  Z80  didn't exist, neither did the
+index registers.
+
+Even some of  the  standard  instructions  had  been  changed.  For some bizarre
+reason, one of the most useful instructions on the Z80 had been omitted.
+DJNZ was  equivalent  to  the  680x0  DBRA  instruction,  basically  decrement a
+register and loop until this  register  became  zero.  In their wisdom, Nintendo
+decided to replace this with a STOP instruction (which no-one uses).
+
+Loops, which are an amazing common  construct in coding, would therefore contain
+more instructions and take longer for the emulator to decode. Nice one Nintendo.
+
+Also missing was the seminal LDIR  instruction  which  copies a large section of
+memory. This is basically a blitter in one instruction, and the good thing about
+it is you can emulate it very quickly!
+
+Nintendo had introduced some useful instructions which include postincrement and
+postdecrement indirect addressing, which is  pretty  novel  for  a Z80. There is
+also an instruction that lets  you  access  the  hardware registers easily and a
+couple of other not so interesting things.
+
+The Z80 assembler was the first thing  I finished, and inevitably the thing with
+the most bugs in it! Next, I  coded  the loading system for Gameboy "cartridges"
+which calculated the checksum and allocated  the  right amount of memory for the
+various ROM and RAM banks.
+
+The Gameboy only has  64k  of  main  memory,  most  of  which  is  mapped to the
+cartridge. Video memory takes up 8K - this includes all tiles which are going to
+made into the backgrounds or used as  sprites  plus two character maps, one used
+for the background and one for the main window. The last 256 bytes of memory are
+mapped to various hardware addresses like the LCD controller and serial port.
+
+The memory is very flexible - it uses  a paging system to map different parts of
+the cartridge to main memory. Each cartridge is made up of a number of ROM pages
+and a smaller number of RAM pages.  Because  of  this switching, GB games can in
+theory be up to 2 megabytes in size!  In  practice, the biggest game I have seen
+is 512k.
+
+The next part of God-Boy was the most difficult. The video chip emulator.
+
+The Gameboy has a screen size of 160x144  in 2 planes. The screen uses a similar
+bitplane principle to the ST, but as it  is  an 8 bit machine the planes come in
+single byte chunks of  8  pixels  rather  than  Word  chunks  of 16 pixels. This
+initially makes things awkward as the  Falcon, being inherently a 16bit machine,
+is more geared to moving and shifting  words  about. If you are doing everything
+as bytes you are losing 50% of its  performance. Worst of all, the blitter can't
+operate with bytes.
+
+If you have ever tried to code a  platform game you will know that you construct
+each level using "maps". Instead of  storing  everything  as one single piece of
+graphics (which would take up vast  amounts  of memory) you construct the screen
+out of blocks. The map is a  series  of indexes into this collection of graphics
+blocks.
+
+So if screen was made out  of  16x16  pixel chunks, instead of storing 16*16=256
+bytes for each chunk of screen area, you  would store one byte which would be an
+offset into the graphics  data.  Then  you  can  easily  repeat bits of graphics
+without having to store them multiple times.
+
+This is a fairly simple theory, and has been used in every platform game ever.
+
+The Gameboy has this routine built into  hardware.  It has a memory area for the
+background map, you simply write the tile numbers  to it and it draws the screen
+by extracting the graphics from the relevant place in tile memory.
+
+There are two screens that the gameboy constructs from maps.
+
+The background screen is a 256x256 scrolling area (with wraparound). This can be
+hardware scrolled vertically and horizontally with two hardware registers.
+
+The window screen can't be "scrolled" as such, but can occupy a different offset
+from the top left corner of the screen. It too is made up of a character map but
+never exceeds the Gameboy screen size of 160x144.
+
+The "Window" is overlayed over the "Background".
+
+The "Background" is used for all the graphics that make the levels of games: the
+platforms, background scenery etc.
+
+The "Window" is used mainly for the score panel, lives etc.
+
+The other part of the video chip is the  sprite engine. This can handle up to 40
+8x16 sprites. There is a 40 entry  sprite  table  near the top of memory and you
+simply write 4 bytes to  this  for  each  sprite.  These  represent  the X and Y
+position, the offset of the sprite  in  tile  memory  and a byte containing flag
+information.
+
+Sprites can be X flipped and Y  flipped  in  hardware  - very handy on a machine
+that is tight on memory as many objects are symmetrical.
+
+The Gameboy has no direct screen memory.  There  is  no way to write directly to
+the screen. The screen is  simply  a  combination  of the Background, Window and
+Sprites. This makes emulation a  little  trickier  -  you can't just convert the
+screen with one pass through a section of  memory, you have to build it all from
+its various components.
+
+So you can have  two  160x144  areas  which  needs  to  be  shifted plus 40 8x16
+sprites. Shifting an area  of  160x144  is  slow  enough  if  the data is stored
+continuously - which it isn't on the Gameboy!  You have to decode each 8x8 pixel
+block separately, shift it, then place it  on the background. This whole process
+is pretty slow.
+
+The Unix GB emulator  actually  draw  the  screen  a  scanline  at a time. Every
+1/144th  of  a  frame  it  would  interrupt  the  processor  and  construct  the
+background, window and sprites for that particular scanline.
+
+This was a terribly inefficient process as  the  40  entry sprite list had to be
+traversed 144 times even if there was nothing to be drawn or all the sprites had
+been completed.
+
+I decided to construct the entire screen at  the start of the VBL therefore only
+having to traverse the list once  plus  gaining  the efficiency of not having to
+repeatedly set up the same registers. For some bizarre reason (which seemed good
+at the time) I decided to  draw  the  screen  in vertical strips, a routine that
+would later have to be radically reworked as I found games that split the screen
+on interrupt!
+
+With the Video Chip in a working  but  far from perfect state, I concentrated on
+the last key component of the emulator - the interrupts.
+
+On the ST and Falcon  there  are  interrupts  for  the  Vertical Blank (when the
+scanline reaches the top of the screen),  Horizontal Blank (at the start of each
+scanline), Keyboard (when a keyboard  event  is  received) amongst other things.
+When an interrupt occurs, the routine  the processor is executing is temporarily
+halted. The CPU moves to the interrupt routine, processes this then goes back to
+the original routines. This is all  done  by  hardware,  if your software had to
+keep checking if an interrupt should occur things would be very slow.
+
+On an emulator you have to emulate all the interrupts by software.
+A simplified version of the  main  loop  of  most emulators looks something like
+this:
+
+loop    .. read memory byte
+        .. convert byte to offset for instruction table
+        .. jump to subroutine to process relevant instruction
+        .. decrement interrupt counter
+        .. if not zero, goto loop
+        .. process interrupts
+        .. goto loop
+
+in assembly this would look something like this:
+
+.loop   move.b  (a0)+,d0                        ;read instruction
+        jsr     ([instruction_table,d0.w*4])    ;execute instruction
+        subq.w  #1,d7                           ;d7 is interrupt counter
+        bpl.s   .loop
+        bsr     process_interrupts
+        bra.s   .loop
+
+
+( Note: the read instruction is much more  complex than a move.b (a0)+,d0 as the
+whole Gameboy memory paging system needs to be taken into consideration).
+
+So for every instruction you have to  decrement  an interrupt counter - an added
+burden. When this reaches zero you then  need  to check if any interrupts should
+occur. The main gameboy interrupts are the VBL  and  HBL but it also has a timer
+(user defined), LCD interrupt plus a serial interrupt.
+
+How often should these interrupts be processed?
+
+Well the Gameboy has roughly 69905 clock  cycles  per vbl, and the HBL interrupt
+needs to occur every scanline  so  every  69905/154  cycles. (The gameboy has 10
+scans that aren't displayed). Every 154 HBLs you then have to trigger the VBL.
+
+Each interrupt has a number  of  associated  registers for enabling/disabling it
+and indicating whether it has occurred or not and these have to be consulted and
+modified on every pass of the interrupt handler.
+
+The main hassle with interrupts  is  having  those  two extra instructions which
+HAVE to be executed after EVERY Gameboy instruction.  A lot of GB games are very
+timing critical so you have to get the interrupts right.
+
+The Gameboy runs at 4mhz which  is  a  quarter  of  the speed of the Falcon. The
+Falcon to Gameboy clock cycle ratio is  about  the same. As Z80 instructions can
+be as quick as 4 cycles, you don't have much of an advantage with 68000 series.
+
+To put things in a very over simplified fashion, to retain the Gameboy speed you
+need to replace each Gameboy  instruction  with  4 Falcon instructions. Anything
+over this and you are starting to run slower than the Gameboy. Realistically the
+figure is dependent on the type of instructions, but 4 gives you a good target.
+
+But for each Gameboy  instruction  you  must  read  it,  decode  it, jump to the
+relevant instruction subroutine, update the  Program  Counter, update the stack,
+decrement the interrupt counter and see if  any interrupts should occur. Even if
+the direct 680x0 emulation of the Z80  command is less than 4 instructions, this
+extra overhead will ensure that it performs slower.
+
+The Z80 is a chip that has lot in common with the Intel 8086 series, but is less
+closely related to the more advanced Motorola  series.  As  an 8 bit chip it can
+access registers as bytes or  combine  them  into  words,  something that can be
+easily done on the Intel, but not on our friendly 68000.
+
+For speed God-Boy uses direct register for  register emulation, that is each Z80
+register has a related 68000 register.  Accessing  the low byte of this register
+is easy, the high byte is more remote.
+
+For example, Z80 register "BC"  is  made  up  of  8  bit  register "B" and 8 bit
+register "C". On God-Boy this is stored in the low word of D4. To access "C" you
+just use byte instructions on D4. To access  "B"  you  have to ROL D4 by 8, make
+your modifications, then ROL D4 by 8 again.
+
+This ROLing is especially tiresome on what should be a fast instruction like
+
+        LD B,D
+
+Which is equivalent to MOVE D,B.
+This requires 4 ROLs and one move!
+
+It's swings  and  roundabouts.  What  you  gain  on  some  of  the  more  exotic
+instructions by storing registers in registers  is  lost  on some of the simpler
+instructions.
+
+As you can see it is hard enough  to  emulate  a  4Mhz Z80 on a 16Mhz machine at
+full speed. We also have the overhead  of interrupts plus the nice Gameboy video
+hardware to emulate (2 full screens to  scroll  and overlay over each other plus
+40 sprites).
+
+When I finally got the emulator running  at  the Siliconvention I expected it to
+be slow, but I hadn't quite  anticipated  just  how  slow! It was making about 1
+frame a second at best  and  the  title  screens  of  games  were taking about 2
+minutes to come up.
+
+I knew there was still a lot of  bugs  in the emulator and hoped that once these
+had been cleared up it would steam along. Oh dear.
+
+I spend one of the nights  at  Sili  coding  a  debugger for God-Boy. I wanted a
+program in the style of Mon-ST  that  could  step  through Gameboy games and you
+could add breakpoints and alter memory, view  the registers etc. If I had really
+planned this program and thought about it,  then it would have probably taken me
+about a month to code. As I was  as  Sili  and  in a mad coding frame of mind, I
+completed it one night! Bonkers!
+
+Mon-GB has been invaluable and  instrumental  in  the development of God-Boy. It
+has allowed me to find bugs in my  Z80 emulator, bugs in the Video Chip emulator
+and also understand the interrupt structure  of  the Gameboy. Obviously it was a
+great help when it came to adding trainer modes too.
+
+I finally got Bubble Bobble running at  Agent  T's  house after the party and it
+was making about 3 frames a second.
+
+I knew then that I would have  to  radically  rethink my whole strategy or ditch
+the entire project.
+
+I quickly changed the video  system  from  scanline  based  drawing to VBL based
+drawing which helped ease congestion a  bit.  Everything seemed dependent on the
+interrupt timing -  somewhere  in  the  emulator  there  was  a  budding Michael
+Schumacher waiting to get into top gear, but  it seemed to be doing all its time
+waiting for interrupts or calling interrupts.
+
+I found out that  Bubble  Bobble  only  used  the  VBL  interrupt, so changed my
+interrupt handler to reflect this which  helped.  Then  I noticed that the whole
+game ran from a single HALT instruction that would trigger the VBL anyway - so I
+could ditch all the clock cycle counting!
+
+This gave is a massive speed increase and it  was now clocking in at about 10-12
+frames a second.
+
+It still needed more.
+
+I rewrote the Z80 emulator so  its  entire  conditional code system was based on
+the Motorola one, not the Z80 one. This gave the emulator a noticeable injection
+of pace.
+
+One of the things that was really  holding  back performance was the GB's paging
+system. As I mentioned before, different parts of the carts memory can be mapped
+to parts of the GB's 64K address space.  This means you can't simply read memory
+as a continous block, or use a simple offset in a 64k memory area.
+
+For each 64k address you access, you  have  to calculate which page that address
+resides in. Then you have to look up the  page in a table to see what portion of
+cartridge memory it is mapped too. Then  you  have to subtract the start address
+of the the page from the actual 64k  address  and use that as an offset into the
+page.
+
+This process had to be done for every single instruction! As the program counter
+moved through memory it  may  move  into  different  pages  so  you  had to keep
+calculating which page the memory you  were  accessing  was in. I optimised this
+process as much as I could:
+
+        move.w  d2,d0           ;Program counter
+        rol.w   #3,d0           ;top 3 bits=page number
+        and.w   #%111,d0        ;mask off unwanted bits. d0 now=page.
+        move.l  (page_ptrs,d0.w*4),a0   ;get address of page.
+        move.w  d2,d0           ;PC
+        and.w   #$1fff,d0       ;get offset in page
+        move.b  (a0,d0.w),d0    ;read byte from memory
+
+
+That was 7 instructions which had to be executed to read the byte at the Z80 PC.
+And these had to be executed for every single Z80 instruction.
+
+There seemed to be no way round this.
+
+I thought of storing numerous  copies  of  64k,  which  would cover all possible
+permutations of ROM and RAM banks, but  this  would take a huge amount of memory
+and also mean that each write to RAM would have to be duplicated numerous times.
+
+Inspiration struck and I managed  to  reduce  this  memory  sequence down to two
+instructions by adding some additional  code  to  Z80 instructions that modified
+the program counter. The downside  was  that  programs  that flowed from one ROM
+bank into another without using JP, JR or CALL may not work.
+
+The plus side was that I got this memory read sequence down to 2 instructions!
+Again, the performance of the emulator was boosted massively.
+
+I did some clock cycle counting. My GB debugger has a clock cycle mode where you
+can put a breakpoint after an instruction and  it will count the clock cycles in
+the sub routine. I found a couple  of  the slowest most frequently used loops in
+the game and hard coding them in  assembly which pushed things towards the 25fps
+mark.
+
+I checked the code again and found the main burden was being placed on the video
+system.Constructing the screen was taking anything from half a frame to almost a
+whole VBL. There had to be a way of speeding this up...
+
+The Blitter seemed ideal for a project like this - bitplane mode, large graphics
+need shifting. You can't do it faster than  the blitter (not when you don't know
+where the graphics  are  going  to  be  in  advance).  It  had  been Tat's first
+suggestion to me when I told him about  the project - "Use The Blitter!" he said
+in an Obi-Wan Kenobi sort of  way,  as  his  Burnley  shirt flapped in a ghostly
+wind. But the problem was that Gameboy's  screen  was byte based and the blitter
+only works in words - Tat even suggested  storing the entire GB memory was words
+instead of bytes just so  the  blitter  could  be  used,  but this wouldn't have
+solved the problem as the screen isn't actually stored in memory.
+
+Whilst doodling away doing nothing of importance  at  work  an idea hit me - why
+not implement a Video  Cacheing  system  for  the  screen  -  that way you could
+actually use the blitter. After a  couple  of  hours of frantic scribbling I had
+the whole system laid out. It  was  rather  complex involving a series of linked
+lists and screen buffers holding  all  the  relevant  data,  but it would mean I
+could Blit everything directly to the screen.
+
+That night I laid it all down in code, assembled the thing and prayed.
+
+I couldn't believe it!
+
+The emulator was running at 50 frames a second!
+
+My house was treated  to  the  sight  of  me  merrily  dancing through the rooms
+singing odes about the  blitter  and  video  cacheing.  I'm  surprised that more
+lyricists have not picked up on these subjects.
+
+The emulator was running very close to  the  edge and would slow down when there
+was a lot of sprites on  screen  or  when  it  had  to go through very processor
+intensive routines. But I was satisfied that I had got it as fast as it could go
+and the games were definitely playable.
+
+Just for fun I tried the best PC gameboy emulator "Virtual Gameboy" on the 16Mhz
+386 PC at work - the Intel equivalent of the Falcon. It was slower than my early
+bugged version taking over 2 minutes  for  the  title  screen to come up! It was
+nice to see the Falcon outperforming the PC!
+
+Ironically our first release on God-Boy was to  be Bubble Bobble, a game that we
+had already converted the Falcon. This  was  not  intentional, it was simply the
+first game I got working properly. It is a bit of a spooky coincidence though!
+
+One thing a lot of people  have  noticed  about  Bubble Bobble is the flickering
+sprites. This is not a bug in the emulator, merely a feature of the game.
+
+Bubble Bobble has to compensate for the fact that the Gameboy can only handle 40
+sprites on screen, and when the  game  fills  with bubbles and baddies there are
+considerably more than 40 sprites  on  screen.  It  does  this via a cunning LCD
+trick.
+
+The gameboys LCD display is very slow compared to modern monitors. When you turn
+a pixel off, it won't go blank immediately  as liquid crystal residue is left in
+it. The pixel will fade before going  off,  but its original shape will be still
+visible for a couple of frames. This leads to the blurring that you see on large
+scrolling object.
+
+When Bubble Bobble flickers the sprites (notice  how the left and right sides of
+each sprite are alternately  drawn  ever  other  frame)  this  will  give them a
+halftone effect on the GB's  screen.  You  won't  see  the  flicker, but you may
+notice that the sprites are lighter than the surrounding objects.
+
+I went through the Bubble Bobble  code  and  added  some trainer modes. This was
+originally done because the password system didn't  work, but then I found a bug
+in a Z80 instruction and this ironed the problem out. I then put together a very
+simple front end. This was  knocked  up  very  quickly  on  the night before the
+Birmingham Atari show and  was  intended  to  be  functional rather than flashy.
+Hopefully I will tart it up a bit for future releases.
+
+SH3 painted some inspirational graphics for  the  intro  and another of his nice
+fonts. He then customised  the  God-Boy  palette  to  make  the  best use of the
+available colours.
+
+Webmaster MSG remixed SH3's Double Bobble tune specially for the game. He turned
+the catchy but short loop into  an  epic  blissed  out production which keep the
+originals motif, but also brought in a host of new elements.
+
+I had hacked the music routine  from  Bubble  Bobble so instead of playing weedy
+squeaks and beeps we could play sampled sound effects through Tat's DSP tracker.
+We gleefully went about obtaining around 30  fine  noises which add a lot to the
+game.
+
+God-Boy is not  a  generic  Gameboy  emulator.  We  will  be releasing specially
+modified versions with each game. This  allows  us  to  patch the interrupts and
+hard code slow parts of  the  games  as  well  add  specially composed music and
+sampled sound effects. We will also bolt on trainer modes at the beginning.
+
+We could release a generic emulator, but  it  would  be pretty slow and a lot of
+games would be rendered unplayable.
+
+Instead we are releasing games individually which  gives you more chance to play
+them and appreciated them. I know  that  when  I  get  hundreds of games with an
+emulator I don't give them all a fair  try. The games will also be improved with
+better colours and better sound.
+
+The funny thing is that I have never  played  on a gameboy! I've never ever seen
+one running, so I've no idea what these  games are actually like. Its really fun
+to create an emulator that plays new and different games and takes you to places
+you haven't visited before. For me  its  just  one big magical mystery tour! For
+other Falcon owners it should be a rich source of new games.
+
+You can find God-Boy with Bubble Bobble on our website:
+
+
+http:\\www.basil.acs.bolton.ac.uk\~msg1css\masion.htm
+
+
+Nintendo may have sneered at Atari in the past, but we shall get the laugh as we
+will get to play all the Nintendo game on our Atari for free!
+
+A new catchphrase amongst the console kidz shall be born...
+
+
+        Have You Played Nintari Today?
+

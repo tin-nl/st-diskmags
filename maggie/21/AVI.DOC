@@ -1,0 +1,113 @@
+
+                      The new AVI-QT Player v1.10 
+
+At last, a long overdue utility for the Falcon, a proper fully featured 
+.AVI and Quicktime (.MOV) animation player takes its bow.. 
+
+No  disrespect  to the Dieter Fiebelkorn product which  has  stalwartly 
+done  its 'one frame a second' type of thing up to now,  but we  really 
+needed  something  better..  Actually this is an extrapolation  of  the 
+original proto-player,  which was coded in 'C',  and was translated and 
+improved in assembly language by the rather talented French guy,  whose 
+name appears at the end of this review..
+
+It  can play both principal animation formats,  although I've not  come 
+across  any  Quicktime files to try it out..  However,  I do have  some 
+.AVIs  in my possession on various CDs,  and gave them a spin up to see 
+how it got on with those..
+
+Reading  the  docfile  enclosed,   you  need  to  set  your  Falcon  to 
+Truecolour,  (the  dirt slow in GEM mode) an alternative is a TT with a 
+suitable  Truecolour  capable graphics card (at  least  32768  colours) 
+which is the native system that the author developed this program  on.. 
+This makes you think immediately that certain Falcon specific bits, ie. 
+the DSP chip,  haven't been involved..  Plenty of RAM is suggested,  as 
+the  author has come up with a novel way of getting the  soundtrack  to 
+play with the video output..
+
+A GEM dialogue box comes up when you run the program,  this is the main 
+user  interface and you read the text contained therein..  Clicking  on 
+this  brings  up  the  ubiquitious file selector,  and  you  load  your 
+animation..  A  further  dialogue box containing information about  the 
+animation  appears,  and you are given the option of having it with  or 
+without  soundtrack (assuming audio is present) having  the  soundtrack 
+synchronised,  or not, a big button called 'Go!', or not going ahead at 
+all..
+
+Most of the time,  you will want a soundtrack, and have it synchronised 
+with the animation, so press 'go!'
+
+A lengthy pause follows,  especially if you are loading from CD, as the 
+soundtrack is loaded first,  stored in memory to await the main part of 
+the animation,  and also converted to an STe friendly sound frequency.. 
+
+The animation plays, the soundtrack tags along thanks to the miracle of 
+DMA  access,  and  the  two  blend  together in  a  glittery  whirl  of 
+multimedia.. STe friendly? Yes, another one of those cases where Falcon 
+specific bits are ignored,  and the sound device used in this case,  is 
+the  DMA stereo sample player as found in the TT and  Falcon,  although 
+the  main  program uses specific features of the 68030  processor,  and 
+can't  be  used on the STe..  It can support stereo soundtracks,  but I 
+haven't  found  any  of those yet,  the animations I've  seen  so  far, 
+preferring to use mono sound..
+
+Trying it out,  the results were generally satisfactory, getting on for 
+good..  The  animations on the 'Transmission' CD,  generally unviewable 
+before,  unless  you  had reserves of infinite patience,  came to  life 
+here,  especially when a soundtrack was included..  A series of timings 
+taken  suggest  a  playback speed from 10 frames  to  14.8  frames  per 
+second,  from a SCSI double speed CD (300kb/sec transfer rate) and with 
+the  soundtrack  included..  Synching  the soundtrack meant  that  some 
+animation  frames on the slower animations were left out,  but this did 
+not  amount  to more than 30% of the whole and apart from  one  or  two 
+pauses in the action,  did not affect the viewing quality..  The faster 
+animations  played through in their entirety..  Sound quality was good, 
+if  very loud on one or two films..  The 'Transmission' animations were 
+shown as 192x144 images..
+
+Trying  out  the  huge .AVI files on the NeoN demo  CD,  a  significant 
+slowdown  was  noted..  These were displaying bigger animations  up  to 
+340x252  pixels,  and were a lot slower than the 'Transmission' anims.. 
+Trying out the Team Computers 'Ghost escaping from a computer  monitor' 
+animation,  we  got  a wide range of results according to what we  were 
+doing..
+
+Worst case was from the CD with soundtrack synched with a lowly, not to 
+mention  jerky 3.4 frames per second,  and only 14% of the total frames 
+displayed..  Transferring  the file to hard disk eliminated some of the 
+bottleneck,  as we got up to 6.3 frames per second, but the anim looked 
+like  it  was going to crash any second  (25% of  the  total  animation 
+displayed..)  Taking out the soundtrack pushed the playback up  to  7.2 
+frames  per  second  (6.7 sec from CD) and you got  to  see  the  whole 
+animation  too,  and it didn't look like it was going to fall over  and 
+take your Falcon off to a dark place forever..
+
+The  author  had his own selection of animations to try  out,  and  got 
+anything  from a 74% success rate for combined animation and audio,  up 
+to  92%  for  animation only,  or audio only..  There were one  or  two 
+animations  that  refused  to run from the 'Transmission'  CD,  but  we 
+assume  that  a  non-standard compression format was  used..  The  .AVI 
+format  is yet another sufferer from that curse of computing,  the urge 
+for   programmers  to  make  continual  small  incompatibilities,   erm 
+improvements to existing code..
+
+These tests were performed on a standard 16mhz Falcon and it remains to 
+be seen how additional acceleration will affect the outcome (a possible 
+update  on this with 'Nemesis' installed may be worth  looking  into..) 
+The author's 32mhz TT should be more than up to the job of course..
+
+The French chappie who did this..
+
+ Tello Guillaume
+  240 Rue Estienvrin
+     49260 Montreuil Bellay
+        France
+
+E-Mail:-   gtello@planete.net
+
+Summary:-  Essential gear for Falcon Multi-Tedia Fans!!  Another reason 
+not to have to get a PC!! 
+
+(C) CiH - Aug '96
+ 
+

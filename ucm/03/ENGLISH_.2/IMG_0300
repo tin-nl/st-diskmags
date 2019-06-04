@@ -1,0 +1,18 @@
+ 
+                                  IMG-0300.SYS
+                                  ~~~~~~~~~~~~
+ 
+There are  a lot  of paint programs  around which  use GDOS and  generate those
+fine, resolution-independent  GEM-files. Only most  text processors  won't load
+them! And it's not easy to convert GEM-files to more common pixel formats.
+But now there is a simple solution. Just get the IMG-0300-GDOS driver.
+It generates a monochrome 300 dpi IMG-file on disk. To do this you have to copy
+the driver into your GEMSYS-folder and to install it in your ASSIGN.SYS.
+By the way,the fine ASSIGN.PRG (Author: Dirk Sawialsky) is a great help dealing
+with your ASSIGN.SYS.
+I've put it in position 21 so that I get an IMG-file everytime to program sends
+the data to the printer.
+Works like a charm.
+Thanks to Julian Reschke for this great program.
+
+                                                            G'nort / 25.02.1994

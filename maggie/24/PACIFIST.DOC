@@ -1,0 +1,265 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0010
+Ä
+
+Å..PaCifiST..
+
+ARichDee'sguide!
+Ä
+It was just another  day  on  the  'net  -  the  normal usual mindless
+cruising of sites, http here  ftp  there. Nothing particularly amazing
+to report back or make the  software tastebuds tingle with excitement.
+And then I read my email. It was a simple harmless message from a long
+lost friend, all it recommend was that I check out this obscure French
+web site and download a copy  of  the  program  on offer there. It was
+going to change my life. Apparently. I filed the email away and didn't
+touch it again.
+
+Several weeks later while backing  up  my  mail  folders I came across
+that same message, work was slow,  time  was  on hand so I slammed the
+URL into the browser and waited. A  few moments later there it was. An
+Atari ST emulator for the PC  running under the title PaCifiST. Hmmm..
+I'd seen attempts  at  ST  emulators  before  and  quite  frankly they
+weren't worth the disk space  they  occupied. However the screen shots
+made this one look suitably  different  and the compatability seemed a
+lot higher. I downloaded the relatively  small file, stuffed it into a
+folder somewhere and went back to my work.
+
+A couple of weeks after this while  cleaning  out my hard drive I came
+across the file again, wanting to  give  it  at least it's fair chance
+before I sent it to recycle bin heaven  I unzipped it and took a peek.
+Thankfully I'd bothered to get hold of a TOS ROM image for it and some
+little thing called AssiST which was  supposedly  going to make it all
+so much easier. I installed  the  lot,  ran  AssiST, played with a few
+vague settings and let it rip.
+
+Good God.. that's GEM! Albeit  a  very  early TOS 1.00 implementation,
+but it was my beloved  GEM  none-the-less.  I  moved the mouse around,
+grabbed windows, hit the drop  downs,  created folders and wallowed in
+long lost love until it occured to me that I might like to try running
+Äsomething. I had a copy of TEX's LCD  demo as part of the download and
+double-clicked it, not expecting much. Thankfully  I was so wrong! LCD
+sprang to life on-screen, music, scroll texts, colour cycling and all.
+I nearly fainted.
+
+That was all the proof I needed, from  that  point on I went on a mild
+download frenzy bagging all  the  files  I  could.  In those tentative
+first few hours I saw old  Pompey  menus, classic ST demos, little GEM
+applications, TCB Tracker,  STOS  Basic  and  a  handful  of  apps all
+running on my PC. This was truly emulation heaven.
+
+PaCifiST
+========
+
+At the time of writing the  current  release  is 0.47b and things just
+keep on getting better. Since my first few days with it, I've grown to
+love PaCifiST and really appreciate  what  it  can  do. I've wasted so
+many hours playing old games  such  as  Buggy  Boy and Xenon, watching
+classics like the Union demo  and  Flashback  scroll across my screen,
+listen to wonderful ST  chip  music  and  even some hissy soundtracker
+offerings. It has been an  absolute  nostalgia  joyride right from the
+start and my only regret was leaving  it alone for a month before even
+trying it.
+
+So.. who exactly needs PaCifiST? Well for a start it's ideal for those
+who, like me sold up their Atari gear and moved into the PC world many
+moons ago but still ache for  the  "scene" and all that that entailed.
+If you've got a PC good  enough  to  run  the emulator (a P120 is more
+than fast enough for most requirements) then you are set.
+
+But even if you still own  an  ST it's worth installing PaCifiST. Why?
+well for a start you can assign up  to 14 meg's worth of memory to the
+emulator, swap between TOS roms  with  the  slap  of a key, include PC
+hard drives as Atari drives thus allowing gigabytes worth of cheap and
+fast hard drive space!  You  can  boot  between  low,  medium and mono
+resolutions without unplugging  cables  or  switching  monitors. It is
+infact the almost perfect development system!
+Ä
+However I'm not claiming  it's  100%  perfect,  there  are indeed many
+things still to be fixed  and  GEM applications will function *almost*
+perfectly. Speed wise you  can  toggle  between  Max  speed and normal
+speed. Max speed is ideal for  working  with GEM is it can effectively
+increase the speed of a  normal  ST  by  up  to  350% (if running on a
+Pentium Pro 200 like I do) so if you are therefore compiling a program
+for example, it'll compile  a  darn  sight  faster! Window movement is
+also a lot cleaner.
+
+Programs available for download such  as  ImageBuild will allow you to
+image your real ST disks for use  with  PaCifiST. One thing to note is
+that it doesn't use the Pc's  actual  floppy drive (unless you tell it
+to, but it's not recommended) instead  it  works on images of the real
+disks. For example you  can  take  a  real  ST  disk,  image it into a
+PaCifiST file (.ST) and then load  that  into the emulator. The result
+is a disk image which boots considerably faster, can be written to and
+even formatted! It can  also  load  MSA  files (Magic Shadow Archives)
+which was the most popular  format  used  to  image real ST disks into
+single compressed files. Utilities exist to  convert MSA to ST images,
+or you can just load the  MSA  direct  into PaCifiST (except you can't
+write to it).
+
+As I write this the PaCifiST emulation scene is seriously undergoing a
+large change. Lots of old "scene"  people  are slowly starting to move
+back to the ST, albeit  in  a  emulated  form  on their PC's. Old demo
+crews are re-appearing and even releasing  new titles and screens! Old
+cracking crews are coming back and  are  free  to talk about the "good
+old days" without fear  of  incrimination  or  law suits. I personally
+know several people who have gone  out  and purchased REAL ST's simply
+because of PaCifiST and the nostalgia it welled up inside of them.
+
+Available  on  the  Internet  are  thousands  of  programs  ready  for
+download, including  selections  such  as  the  entire  Pompey Pirates
+archive - if you want to play  an  old classic game that you'd be hard
+pushed to find stocked in any shop  anywhere  or even sold as 2nd hand
+software - worry no more, most of it is downloadable from the 'net for
+Äfree. That is the way it should  be - although it is still technically
+pirated software the software houses !  are no longer making any money
+from the sale of it and  indeed  probably  havn't  been for the past 5
+years or so. So to have the  images available for FREE download is the
+right step in the ST emulation scene.
+
+If you'd like to learn more  about  PaCifiST  make your first stop the
+official web site at http://pacifist.fatal-design.com  - and then move
+onto The Little Green  Desktop at http://www.fatal-design.com/desktop/
+where you will find a dedicated bulletin  board, Game Of The Week, all
+the latest versions of  PaCifiST  and  associated  utilities, a screen
+shots Gallery, hundreds of games  for  download,  live Java Chat and a
+plenty more.
+
+Those new to PaCifiST who have email access can request a newbies help
+file by sending an  email  to  pacifist-help@fatal-design.com. It will
+email the file directly back to you.
+
+If you'd like  to  join  in  an  active  mailing  list  about PaCifiST
+development  and  experiments,  send   a   message  to  pacifist-list-
+request@fatal-design.com with the word SUBSCRIBE  in the subject field
+and leave the body empty. You'll find most the old lot hang out on the
+list as well as PaCifiST's developer.
+
+Finally if you don't have  Internet  access  but  want to get PaCifiST
+running on your PC anyway -  you  can  send  a blank high density disk
+with *two* first class stamps  to  the  following address: Rich Davey,
+PaCifiST Request, 162 Wells  Road,  Bristol,  BS4  2AX, England. Disks
+will be returned within  a  week  (unless  you  forget  to enclose the
+stamps in which case you won't ever see the disk again)
+
+Oh and yes.. Maggie works perfectly under  PaCifiST - how do you think
+I managed to read the last 5 issues? :)
+
+Contact me if you've got  questions.  Visit  my  web  site if you want
+answers.
+
+ÄRich Davey
+rich@fatal-design.com
+
+
+ÑAsecondviewpointtofollowfromFelice!
+Gosh,there'salotofthissortofthingaboutinthisissue??
+Ä
+
+PACIFIST
+
+FelicetellsusallaboutthisnewSTemulator...
+
+WehavebecomeaccustomedtotheuseofAtariemulatorsonthePC,
+enablingAtariuserstohaveaccesstotheirfavouritesoftware.
+Gemulator,forinstance,isoneoftheseproducts,whichworksvery
+well,butifyouareintomoreoftheleisuresideoftheAtariscene,
+thenthelikelihoodofgettingagametoworkwasaveryhitandmiss
+affair.
+
+PacifiSTiscertainlyverymuchtheanswertoallourprayersasfaras
+thissituationgoes.Asmallarchive,totallingaround180Kinsize,
+ithasbeenavailablefromtheInternetforsometimenow,buthas
+justbecomeavailableon42BBS.ItshouldalsobeonyourlocalNeST
+supportingBBSbythetimeyoureadthis,whereveryouareinthe
+world.Theprogram,however,isnotgenerallyaimedatthefaint-
+hearted,asasmallamountoftechnicalknowledgeisneededtoset
+PacifiSTuptoworkwithaPC.AfilecalledPACIFIST.INIcanbe
+loadedintoNotePadandalteredeasilyfromthere.Userswillneedto
+informtheprogramviathissmallfilethepathsofwheretolookfor
+thevariousdatafilesthatareneededbyPacifiSTtoenableitto
+operateproperly.
+
+YouarestronglyrecommendedtopossessanST,inordertousePacifiST
+legally.WhatisrequiredisagraboftheTOStodisk,thisismade
+easyforyoubyaprogramsuppliedwithPacifiSTcalledDUMP_ROM.PRG.
+TheTOSwhichcanbeusedwithPacifiSTcaneitherbev1.00,v1.62or
+v2.06,inthisversionofPacifiST(v46).PacifiSTworksbestonaPC
+ÄofDX4/100specificationorbetter,butwehavefoundthatthebest
+performancecomesthroughonaPentiumPC.Theauthordoesassureus
+thatlowerspecificationPCs,suchasa486,canbeused.
+
+Theprogramitself
+PacifiST,onstartup,willpresentyouwithaDOSscreen,similartoa
+dissassembler.Itdoesnotlooktoobad,however,andifeverythingis
+setupOK,youwillgetaCLI-typeprompt.Typethelettergandpress
+RETURN.PacifiSTwillthenbringupthestandardSTDesktop.DriveA
+willbeconfiguredtousewhateverisbeingemulatedasthoughyou
+wereusingastandardST.
+
+However,thingsarenotquiteasstraightforwardasthat.Aprogram
+calledIMGBUILD,suppliedinthePacifiSTarchive,allowsyoutobuild
+upaDOSimageofastandarddoubledensitySTdisk.Thisisbestused
+withdisksthatareformattedintheusualway,ratherthanprotected
+commercialgamesdisks.Thereisawaytobootdirectlyfrom
+commercialdisks.butthiswillneedamoreindeptharticle.Ifthere
+isinterestthenthiswillappear.BysettingthePACIFIST.INIfileto
+accessthediskimagefordriveAthatyouhavebuiltusingIMGBUILD,
+youwillbeabletoaccessthediskinthenormalwaythroughthe
+desktop,eventhoughitisemulatedaswell.Loadingprogramsisdone
+inthenormalway,clickingtwicewiththeleftmousebuttonasusual.
+
+PacifiST,beingalotmorecompatiblewiththeleisuresideofthe
+Atariscene,isabletorunalargeamountofgames,suchasthe
+classics,DungeonMasterandGauntlet2,tonamebuttwo.Demodisks
+alsoworkunderPacifiST,thoseuserswhoarefamiliarwithcrewssuch
+asTheLostBoysandnamessuchasAnCoolwillbepleasedtohear
+thatmostolddemosworkfineunderPacifiST.
+
+MoreserioussoftwaredoesworkfinealsounderPacifiST,therehave
+beenrumourscirculatingaroundthatsomepeoplebrowsingtheWorld
+WideWebhavebeendoingthisviaCAB,runningunderPacifiST.With
+CABbeingbetterdesignedthansomeotherPCbrowserswecould
+mention,thisisnotsurprising!ToshowyoujusthowgoodPacifiSTis
+asanemulator,youwouldthinkthatonethingitwouldfoulupon
+ÄwouldbeSTOS.ThisparticularpackagedidhaveproblemswhenTOSwas
+beingupgradedontheSTafewyearsago,however,itrunsperfectly
+wellwithoutanyproblemsatallunderPacifiST.Thishasbeenverified
+byTonyGreenwood,theSTOSmasterhimself.
+
+Apartfromtheslightlytrickyinitialsetting-upprocedure,I
+personallyrecommendthatanyPCuserswhoharkbacktothedaysof
+theSTshouldgetthis.Beinggiftware(similartoshareware)the
+authorwouldlovetohearyourfeedback.PacifiSTitselfisa
+remarkablystableandpowerfulprogram.Apartfromoneortwominor
+hitches,themixtureofcommercialandPDsoftwareworkedwithno
+problemsatall.EvenonaPentium200specificationPC,itworksfine.
+PacifiSTrunsfinewithWindows95andfromDOS.Theauthoralso
+assuresusthatitworksunderWindows3.1aswell-andtobehonest
+Idontseewhyitshouldn't.
+
+ItisintendedtohaveaPCsetupshowingthebenefitsofPacifiSTat
+theforthcomingOctoberAtariShows.Keepyoureyespeeledforit!
+DocumentationissuppliedelectronicallywithPacifiST,thisisvery
+informativeandaddstoyourenjoyementofusingtheprogram.Finally,
+itisworthpointingoutthatPacifiSTisnosubstituteforarealST.
+IfyouwanttoplaytheoddAtarigameonyourPC,fairenough.
+However,ifyouareanSTenthusiastwhowantstoshowofftoPC
+ownersthebenefitsoftheAtarisceneandhowitworks,thisisthe
+programforyou.PacifiSTdoesnot,asfarasweknow,recogniseMIDI
+devicesorotherhardwareplug-ins(insoftwareformat)toenable
+packagessuchasCubaseorNotatortowork.Thisparticularsideof
+theAtariscenedoesstillrequire,asdootherpartsofthescene,a
+realSToraFalcon.
+
+Rating:96%
+
+Pros:RunsmostSTleisuresoftware,excellentrunningspeed,good
+manual
+
+Cons:Fiddlytosetup,requiresPentiumPCforbestperformance
+
+Ä

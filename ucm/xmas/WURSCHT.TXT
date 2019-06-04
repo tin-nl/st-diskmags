@@ -1,0 +1,126 @@
+                                Demoreview
+
+{*f1
+    "Wurscht wie der Ordner heit"{*f0
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                by Therapy
+
+Gestern kam mal wieder eine kleine Sendinx von Moondog in mein trautes Heim ge-
+flattert, anbei  das mittlerweile schon etwas „ltere Demo von "Therapy" und die
+Bitte, es fr das  neue UnderCover  zu testen. Und da nun nicht mehr sonderlich
+viel  Zeit bis  zum Release  der X-mas-Issue ist, setze  ich  mich auch  gleich
+daran...
+Viele werden  sich wundern, warum  nicht irgendjemand  dieses Demo testet. Nun,
+das mag  daran liegen, da es gerchteweise nur auf einem Falcon mit FPU l„uft.
+Ulkig. Jedenfalls  funktionierte es  bei mir einwandfrei (bis auf einige kleine
+Bugs (?)) und so kommt nun ein ausfhrlicher Test des Demos, welches den ersten
+Platz auf der Symposium'96 in der Democompo belegte.
+
+Vorweg sei gleich noch gesagt, da ich das Demo aus den subjektiven Augen eines
+Grafikers und  Designers betrachte. Somit k”nnte Eure eigene Meinung von meiner
+ein wenig abweichen. Letztlich  sollte sich jeder selbst ein Urteil bilden, in-
+dem er sich das Teil irgendwo zieht.
+
+"Wurscht wie der Ordner heit" hat eine ungepackte L„nge von 1.9MB und mu nach
+einem Reset bei gedrckter Control-Taste in der Aufl”sung 640x400x256 gestartet
+werden. Nach  einer  kurzen  Unterbrechung, bei der  der Screen fr  5 Sekunden
+schwarz ist (fast h„tte  ich schon wieder RESET gedrckt), beginnt das Demo mit
+einer Renderanimation. Man sieht  ein Starfield  und eine Art  Zielscheibe, wie
+sie auch  beim Bogenschieen verwendet wird, in der die einzelnen Kreise gegen-
+einander rotieren. Nebenbei  ert”nen die ersten Kl„nge eines Moduls von Stax of
+Lazer, welches schon im alten "Autowaschen"-Demo verbraten wurde und daher doch
+reichlich saugt. Dann schwirrt  ein orangenes "Therapy"-Logo  auf diese Scheibe
+zu, der Screen  wird umgeblendet (warum erscheint eigentlich am oberen Rand ein
+h„liches wei-graues Raster, wenn der Screen umblendet? Design oder Bug?). Die
+nun  folgenden  in  sich  morphenden grnen  Schriftzge "presents", "their 2nd
+demo" und "called" sind  h”chstwahrscheinlich auch gerendert. Das Titelbild des
+Demos mit dem wunderbaren Namen (gut Idee, Jungs!) ist leider etwas verwirkt.
+Der Knstler scheint  sich nicht gerade  groe Mhe gegeben zu haben, ein wenig
+freie Buchstabengestaltung h„tte hier sicher nicht geschadet.
+
+Der Effektpart des Demos beginnt mit einem Bild voll Wassertropfen, welches von
+unten her eingescrollt wird. šber dieses bewegen sich jetzt verschiedene trans-
+parente Objekte. Besonders sch”n erscheint hierbei, da die Objekte selbst auch
+noch Lichtreflexe  besitzen. Diese  sind zwar nicht sonderlich perfekt geraten,
+doch wei man, was damit gemeint ist.
+Als n„chstes  folgt ein Zoomer, bei dem ein kleines  Auge (vermutlich HR Giger)
+vielfach  neben- und bereinander  gesetzt wurde. Der Zoomer ist sch”n flssig;
+dies war aber bei einem FPU-Demo nicht anders zu erwarten.
+Besonders  gef„llt mir  der anschlieende Effekt, bei  dem der selbe Zoomer aus
+einer  Art "Triso"-Sicht gezeigt  wird (so haben  das MJJ mal  formuliert). Man
+sieht dabei  den Screen  aus der Sicht einer Eintagsfliege, die auf einen Tisch
+mit Tischdecke  zufliegt. Gut  gemacht, auch  wenn ich  den selben Effekt schon
+einmal  gesehen habe. Nun  werden ber diesen  Zoomer noch rote horizontale und
+vertikale Rasterbars  gelegt, die  auch  kr„ftig  mitzoomen. Auch dies ist sehr
+hbsch anzuschauen.
+Sehr r„udig ist dagegen ein Zoomer geraten, bei dem viele mit einem grnen Ras-
+ter belegte  Vierecke aus  der Tiefe des Raumes auf den Betrachter zurasen. Der
+Screen flackert auf meinem Rechner auch nach mehrmaligem Starten  dabei st„ndig
+in wei und blau. Design oder Bug?
+Die besten Effekte des Demos sind die nun folgenden: als erstes  mal eine grne
+Landscape, welche  von vier Ecken begrenzt wird und dabei rotiert, auerdem to-
+tal verrckte  geshadete tridis, welche aus vielen Ecken bestehen und permanent
+ihre Form  ver„ndern. Weiterhin  folgt nun  ein h„licher "Falcon-Rulez" Block,
+mit dem  kr„ftig melt-o-vision betrieben wird, und der nach einiger Zeit in "Pc
+sucks" umgeblendet wird. Ganz locker und fast nebenbei machen "Therapy" nun ein
+Z-Buffering mit zwei Polyedern, die nur ein einziges Mal ineinander tauchen und
+recht flssig wirken.
+Als Guestpart (ich  hatte da sowas  gelesen?) wird nun ein Tunnel eingeblendet,
+der von no/escape  gecodet wurde. Dieser  bewegt sich erst statisch auf den Be-
+trachter zu, um schlielich in sich zu drehen. Leider wurde die Textur des Tun-
+nels irgendwie falsch gew„hlt, so da der Tunnel nicht ganz so rberkommt.
+Als letzten Effekt gibt es ein krankes Vektorbjekt, auf das eine dstere Textur
+gemappt (?) wurde. Kultig.
+
+Die Musik bricht nun abrupt ab, um den Weg fr den Endpart zu ebenen. Hier h”rt
+man eine ganz  gute Musik  von Juri (ist  Tekkno, also  nicht ganz  so mein Ge-
+schmack - aber trotzdem  GUT) gew„hlt. Dies  ist im šbrigen  das Modul, welches
+zur Music-Compo der Symposium  nicht angenommen wurde. In einem Abspann erf„hrt
+man nun die Credits, Greetings und diverse andere Informationen. Der dabei ver-
+wendete Font wurde  nicht sonderlich sauber ausgeschnitten, so da es teilweise
+so aussieht: "g reet i ngs". Ist  wohl etwas  berspitzt, aber das Prinzip habt
+ihr erkannt.
+Interessant  erscheint mir noch  folgendes (vielleicht lesen Therapy ja irgend-
+wann mal diesen Text): in den Greetings wird eine Gruppe namens "BSE+" gegrt.
+Hmmnjaa, also, die  gibt es freilich  nicht. In Zukunft werden WIR aber unseren
+Gruppennamen  vor die Productions  setzen, so da Verwechslungen ausgeschlossen
+sind. ;)
+
+Overall:
+Therapy haben mit ihrem zweiten Demo gezeigt, da die 'youngster' erwachsen ge-
+worden sind. Die alten Szene-Gruppen werden langsam aber sicher verdr„ngt, neue
+Talente kommen nach. Von Therapy wird wohl noch einiges zu erwarten sein.
+Das vorliegende Demo ist grunds„tzlich nicht schlecht geraten. Kritikpunkte w„-
+ren zum  einen, da alle  Effekte irgendwo schonmal gezeigt wurden, zum anderen
+das v”llige  Fehlen eines  Designs. Wenn man Demos (wie ich) als Kunstform ver-
+steht, dann mte dies auch im Produkt erkennbar sein.
+Eine klare Linie mu sich durch das gesamte Werk ziehen, von der nach links und
+rechts abgebogen  wird, auf die aber immer wieder zurckgegriffen wird. Ein we-
+nig mehr Raster, saubere šberblender, Soundtiming und vor allem freaky-gfx h„t-
+ten  dem Demo  sehr  gut getan. Zum  anderen verstehe  ich das Problem, da kein
+artist von  Therapy am  Demo mitgearbeitet hat, und vom sthetikgefhl gewisser
+Coder kann ich selbst ein Lied singen.
+Somit  bleibt zum  Schlu der  Aufruf an  Therapy, ihren Codingstil  wie gehabt
+fortzusetzen, fr das n„chste Demo allerdings einen Designer zu bestellen.
+
+
+Wertung (Notensystem):         coding.............2-
+======================         gfx................4
+                               musix..............2-
+                               design.............5
+                               ideen..............3
+                               --------------------
+                               gesamt             3
+                               ====================
+
+
+
+Hoffentlich habe ich mir nun nicht den Ha gewisser  Leute zugezogen. Aber dies
+ist ein Review, was man auch mit Kritik bersetzen kann. Und  wichtig ist doch,
+da man die Fehler  anspricht, damit sie beim  n„chsten Mal nicht  mehr gemacht
+werden.
+
+-------------------------------------------------------------------------------
+ 69/stay naughty!                                       m.O.d. of tnb/12-12-96
+-------------------------------------------------------------------------------

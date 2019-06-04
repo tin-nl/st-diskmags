@@ -1,0 +1,279 @@
+0660302020370
+11
+21
+9[............................................................]0010
+
+                                        ÑMaggie 26: ProgrammingÄ
+
+Å                               Splines
+Ä
+... oh dear, you think, not splines again. Someone comes up with this 
+topic every few months. How can that possibly be useful?
+
+The fact is that 90% of demos nowadays ÑstillÄ use the "easy" method of 
+interpolating between two values in non-time critical routines. Yours 
+truly is guily of this too: Look at Sonolumineszenz and see how all 
+the zooms, all the camera movement and object rotation is linear, so 
+you can see it "jerk" whenever anything changes direction.
+
+Of course simply drawing a line between two points is much less work 
+for the processor to do, but in many cases much better effects can be 
+achieved by using splines, and they are relatively easy to set up as 
+long as you use the code I have supplied for you. Then I'll give some 
+examples of a useful application of the routines.
+
+                   ÅSome general info about splinesÄ
+
+(most of you will have heard this bit before, so skip it if necessary)
+
+There are two main types of splines: Bezier splines and Hermite 
+splines. The underlying formulas are the same, but the values you 
+supply to control the curve have different meanings.
+
+For simplicity we will define a curve in "one" dimension to start 
+with. Imagine a 2D graph with 2 axes. The horizontal axis we shall 
+call "t" and it shall vary between 0 and 1.
+
+The vertical axis contains the scale of the two values that we want to 
+interpolate between. In this case we shall interpolate between 2 and 
+4. This range of values can have multiple meanings: for example the 
+"zoom" setting on my 3D camera routine.
+
+Doing a linear interpolation gives the following result:
+
+     ^
+     |
+   5 |                             ....X
+     |                        .....
+   4 |                   .....
+     |              .....
+   3 |         .....
+     |    .....
+   2 X....
+     |
+   1 |
+     |
+   0 +---------------------------------+----> t
+     0                                 1
+
+This is OK, but gives little control and when you link 2 
+interpolations, there is a sudden change in gradient/direction at the 
+"knots"
+
+Instead we can define the line in terms of the start and end points, 
+plus the gradients at the starts and ends. For instance, let's say 
+that the gradients on the above example are both 0 (i.e. make them 
+"flat"):-
+
+     ^
+     |
+   5 |                           ......X
+     |                     ......  
+   4 |                  ...    
+     |               ... 
+   3 |           ....
+     |      .....
+   2 X......
+     |
+   1 |
+     |
+   0 +---------------------------------+----> t
+     0                                 1
+
+This gives a nice smoother curve. Defining a curve like this is known 
+as a àHermite CurveÄ. The four values needed are:-
+
+        p0 - start point value
+        g0 - start gradient
+        g1 - end gradient
+        p1 - end point value
+
+(see the picture)
+
+Alternatively we can define the curve in terms of 4 points. We have 
+the equivalents of points p0 and p1, but to define the curve gradients 
+we let the gradient have the same direction as the line between p0 and 
+another, third, point. And the same with the end gradient.
+
+(see the picture again)
+
+This is known as the àBezier CurveÄ.
+
+
+Å                          Spline Matrices
+Ä
+We shall define the curve in terms of matrices, simply because it is 
+easier to show in a document. First we define the matrix of points 
+used to define the curve.
+
+For a Hermite matrix this is    [ àp0Ä ]
+                                [ àp1Ä ]
+                                [ àg0Ä ]
+                                [ àg1Ä ]
+
+We can define a curve in more than one dimension. For example, this 
+curve will start at (0,0) with a gradient of (10,20), and end at 
+(50,100) with a gradient of (25,15):-
+
+        [   0   0 ]
+        [  50 100 ]
+        [  10  20 ]
+        [  25  15 ]
+
+... and so on for ÑnÄ dimensional points.
+
+For a Bezier matrix, the matrix is just [àp0Ä] [àp1Ä] [àp2Ä] [àp3Ä] where p0-
+p3 are shown in the supplied picture.
+
+Now I won't bother explaning all the mathematics behind splines 
+because they should be available in any good maths book. Instead I 
+will give you the formula and show that this does give the correct 
+output, and how to implement the curve in code.
+
+OK, the interval that we define the curve over is 0<=t<=1. At t=0 we 
+are at the starting point, at t=1 we are at the end point. To give the 
+correct curve, the formula for àbothÄ types of splines is of the form:-
+
+        àpÄ   =   (a * t^3)  + (b * t^2) +  (c * t)  +  (d)
+
+.. where p is the outcome point.
+
+We can express this in matrices as:-
+
+        àpÄ =  [ t^3, t^2,  t, 1 ][ àaÄ ]
+                                [ àbÄ ]
+                                [ àcÄ ]
+                                [ àdÄ ]
+
+a, b, c and d all depend on the point settings we have supplied. We 
+let [ a b c d ] be our "basis" matrix which we calculate when first 
+"initialising" the spline. It calculates the input matrix once, and 
+this can be re-used for the whole spline.
+
+For Hermite curves, the input matrix is calculated by:-
+
+        àbmÄ =  [  2 -2  1  1 ] [ àp0Ä ]
+              [ -3  3 -2 -1 ] [ àp1Ä ]
+              [  0  0  1  0 ] [ àg0Ä ]
+              [  1  0  0  0 ] [ àg1Ä ]
+
+And for Bezier curves:
+
+        àbmÄ =  [  1  3 -3  1 ] [ àp0Ä ]
+              [  3 -6  3  0 ] [ àp1Ä ]
+              [ -3  3  0  0 ] [ àp2Ä ]
+              [  1  0  0  0 ] [ àp3Ä ]
+
+... don't forget that the matrix [ àp0Ä ... ] can have more than one 
+dimension! For example, let's try our Hermite example from before:
+
+
+       àbmÄ = [  2 -2  1  1] [  0   0 ] = [ -75 -155 ]
+            [ -3  3 -2 -1] [ 50 100 ]   [ 115  235 ] 
+            [  0  0  1  0] [ 10  20 ]   [  10   20 ]
+            [  1  0  0  0] [ 15  25 ]   [   0    0 ]
+
+We now save the basis matrix before calculating any points along the 
+curve.
+
+Now we can calculate a point on the curve using the formula above. 
+Let's say that t =1 so that we calculate the end point. Using our 
+formula,
+
+       àbmÄ = [  2 -2  1  1][  0   0 ] = [ -75 -155 ]
+            [ -3  3 -2 -1][ 50 100 ]   [ 115  235 ] 
+            [  0  0  1  0][ 10  20 ]   [  10   20 ]
+            [  1  0  0  0][ 15  25 ]   [   0    0 ]
+
+
+        àpÄ = [ t^3 t^2 t 1 ] . àbmÄ
+
+
+            [ 1^3  1^2  1  1 ][  75 -155 ] = [  -75+115+10 ]
+                              [ 115  235 ]   [ -155+235+20 ]
+                              [  10   20 ]
+                              [   0    0 ]
+          = [  50 ]  .. which is the point we defined as p1
+            [ 100 ]
+
+Now all this looks like magic, but does work for all values of t 
+between 0 and 1.
+
+Å                             Deep breath
+Ä
+The code to implement this in assembler is supplied on disk! It is 
+very small (easy to fit in a 4k demo). Here's how to use it:-
+
+à1. Initialising the splinesÄ
+
+There are two routines to initialise a spline, one for Hermite curves, 
+another for Bezier. You supply the input matrix of points, the number 
+of "columns" of the points, and the output buffer, which is always 4 * 
+(the number of columns) words in size.
+
+The important point is that you must supply the matrix of points in a 
+"downwards" format, for example our test points above of:-
+
+
+        [   0   0 ]
+        [  50 100 ]
+        [  10  20 ]
+        [  25  15 ]
+
+convert to the buffer and code:
+
+; -----------------------------------------------------------------
+my_test_matrix:         dc.w 0,50,10,25
+                        dc.w 0,100,20,15
+
+my_basis_matrix:
+                        ds.w 4*2
+
+my_test_code:
+                        lea my_test_matrix(pc),a0   ;input
+                        lea my_basis_matrix(pc),a1  ;output
+                        move.w #2,d0                ;matrix has 2
+                                                    ;columns
+                        bsr spl_init_matrix_hermite ;go!
+
+; -----------------------------------------------------------------
+
+Now you can calculate a point on the curve:
+To do this we need to supply:-
+- the basis_matrix in a0
+- the number of dimensions of the basis matrix, ie 2 here, in d1
+- the value of "t" for the point, in d0. This is a word value.
+   For t=0,      d0 = $0000
+   For t=0.99999 d0 = $7fff
+
+... a value of t=1 is "impossible" here, so use $7fff instead.
+
+
+; -----------------------------------------------------------------
+my_test_value:          ds.w    2                   ; has 2 dimensions
+
+calc_my_test_point:
+                        lea my_basis_matrix(pc),a0  ;input
+                        lea my_test_value(pc),a1    ;
+                        move.w #2,d1                ;matrix has 2
+                                                    ;columns
+                        move.w #$4000,d0            ;t = 0.5
+                        bsr spl_calc_spline_value   ;go!
+
+; -----------------------------------------------------------------
+
+Å                                 Fin
+Ä
+... so there you go. I use this technique to give smooth camera 
+movement in demos (the code is supplied on disk), but there are all 
+kinds of uses. If you ensure that the gradients at start and end 
+points of consecutive points have the same direction (not necessarily 
+the same magnitude!) then several curves in succession will give a 
+smooth "piecewise" curve where it is impossible to work out where the 
+"knots" are.
+
+Steven Tattersall
+tattersall@zetnet.co.uk
+http://www.users.zetnet.co.uk/tattersall
+
+

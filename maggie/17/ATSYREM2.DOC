@@ -1,0 +1,1655 @@
+06601030305800
+F0110030
+9[........................................................]001
+€
+     
+                        ˆAtari* System Reference manual€
+    
+                            ˆ(c) 1987 By Bob DuHamel€
+     
+     
+                                  Bob Duhamel
+                             6915 Casselberry Way
+                             San Diego, CA  92119
+     
+     
+     
+                *Atari is a registered trademark of Atari Corp.
+                                                                          
+
+
+                                   CHAPTER 7
+     
+     
+                              SCREEN EDITOR (E:)
+     
+     
+  The screen editor uses both the keyboard handler and the screen
+  handler to provide interactive control of the computer.  In fact, the
+  keyboard handler, the screen handler and the screen editor are
+  contained in a single section of code and are therefore very closely
+  related.
+     
+  The editor works with one line of characters at a time.  The lines it
+  works with are called logical lines and are up to three screen lines
+     long.
+     
+The screen editor inputs data from the keyboard and then prints the
+data on the screen.  When the [RETURN] key is pressed,  the editor
+inputs all of the data on the present logical line for processing by
+CIO.
+
+If characters are typed on the screen, and then the cursor is moved
+off the line, then back on the line, and new characters are typed,
+only the characters to the right of the reentry point of the cursor
+are input when [RETURN] is pressed.  However, if the cursor is moved
+off the line again, then moved back on, all characters on that logical
+line are input.
+
+If bit 0 of ICAX1 is 1, the editor will act as if the [RETURN] key is
+being held down.  This bit may be changed at any time.
+
+Editor control codes
+
+The screen editor treats certain ATASCII codes as special control
+codes.
+
+
+€ Screen editor control codes
+
+KEY  HEX  DEC  FUNCTION
+
+    [RETURN]   $9B  155  carriage return or EOL
+    [CLEAR]    $7D  125  Clear screen,put cursor in upper left
+    [UP ARROW] $1C   28  Move cursor up one screen line
+    [DOWN]$1D   29  down one line
+    [LEFT]$1E   30  left one character
+    [RIGHT]    $1F   31  right one character
+    [BACK S]   $7E  126  Back-space operation
+    [SET TAB]  $9F  159  sets tab stop at cursor
+    [CLEAR
+    TAB]  $9E  158  Clear tab stop at cursor
+    [TAB] $7F  127  move to next tab stop
+    [SHIFT]
+    [INSERT]   $9D  157  Make space for a new line
+    [SHIFT]
+    [DELETE]   $9C  156  delete the logical line at the cursor
+    [CTRL]
+    [INSERT]   $FF  255  make room for a character
+    [CTRL]
+    [DELETE]   $FE  254  delete character at cursor
+    [ESCAPE]   $1B  27   causes next non-EOL code to be 
+  displayed as an ATASCII character, even if it is an editor
+  control code
+    [CTRL][1]  screen print start/stop
+    [CTRL]$FD
+
+CHAPTER 8
+
+
+  THE DISPLAY HANDLER (S:)
+
+
+The display handler manages the computer's video display.  Although no
+data ever leaves the computer through it, the display is treated like
+any other CIO device.  Data sent to the screen may be displayed as
+either characters or point by point graphics.  Although it is only
+visible in the 40 column text mode, mode 0, there is a cursor on the
+screen in all of the text or graphics modes.  Whenever a character or
+graphics point is put on the screen, the cursor moves just as in mode
+0.
+
+The display is capable of both input and output.  Information can be
+put on the screen with any of the CIO output commands.  An input
+command will find whatever is on the screen at the position of the
+cursor.
+
+When text or graphics is sent to the screen it is actually stored in
+an area of memory called the display buffer.  What you see on the
+screen is the computer's interpretation of the data stored there. 
+This will be explained further as each mode is covered.
+
+€
+DISPLAY HANDLER SPECIAL FUNCTIONS:
+
+DRAW
+FILL
+
+SPECIAL ERROR STATUSES:
+
+$84 (132) Invalid special command.
+$8D (141) Cursor out of range.
+$91 (145) Nonexistant screen mode.
+$93 (147) Insufficient ram for screen mode.
+
+
+TEXT MODE 0
+
+In graphics mode 0, data passes through CIO, and is stored in the
+display buffer in the following format.
+
+ 7 6 5 4 3 2 1 0
+-----------------
+|I|    Data|
+-----------------
+
+I  1 = displays character in inverse video.
+
+
+Bits 0 through 6 select one of the 128 characters in the ATASCII set.
+
+
+If bit seven = 1, the character is displayed in inverse video. 
+Converting the above byte to decimal will give the BASIC ASC(x)
+equivalent.
+
+
+The characters displayed in the text modes are determined by tHE
+ATASCII character set.  This is a bit by bit representation of how the
+characters appear on the screen.  The character set starts $E000
+(57344) in the operating system ROM.  From there, for 1K of memory,
+each eight bytes holds a "bit map" of a particular character.  Below
+is how the letter A is stored in the character set.
+
+
+ Letter A as represented in the C-set
+
+    7 6 5 4 3 2 1 0
+   -----------------
+ $E208  |0 0 0 0 0 0 0 0|
+   -----------------
+   |0 0 0 1 1 0 0 0|   * *
+   -----------------
+   |0 0 1 1 1 1 0 0| * * * *
+   -----------------
+   |0 1 1 0 0 1 1 0|    * ** *
+€   -----------------
+   |0 1 1 0 0 1 1 0|    * ** *
+   -----------------
+   |0 1 1 1 1 1 1 0|    * * * * * *
+   -----------------
+   |0 1 1 0 0 1 1 0|    * ** *
+   -----------------
+ $E20F  |0 0 0 0 0 0 0 0|
+   -----------------
+
+XL and XE models have an international character set starting at $CC00
+(55224).  In this character set the graphics characters are replaced
+by international characters.
+
+Custom characters sets may be loaded at any free address which is a
+multiple of 1,024 ($0400, or 1K).  The database variable CHBAS [$02F4
+(756)] stores the most significant byte (MSB) of the address of the
+active C-set.  Since the LSB of the C-set address is always $00, no
+LSB is needed to find it.
+
+The data stored in the display buffer does not use the ATASCII code. 
+A special code needed by the ANTIC chip is used.
+
+DISPLAY CODE / ATASCII CODE CONVERSION:
+
+  ATASCII   display
+
+ $00 - $1F ( 0 - 31)=$40 - $5F (64 - 95)
+ $20 - $5F (32 - 95)=$00 - $3F ( 0 - 63)
+ $60 - $7F (96 - 127)    =unchanged
+
+
+The codes for inverse video (the above codes with bit 7 set (= 1) or
+the above codes + 128 in decimal) are treated likewise.
+
+When you first turn on the computer, BASIC opens channel 0 to the
+screen editor (E:).  The screen editor uses both the keyboard handler
+and the screen handler, in mode 0, to display characters when they are
+typed in.
+
+
+TEXT MODES 1 AND 2
+
+Graphics modes 1 and 2 offer a split screen configuration if desired. 
+The split screen has four lines of mode 0 at the bottom of the
+screen.
+
+In mode 1 the screen holds 20 characters horizontally and 24
+characters vertically.  In mode 2 the characters are twice as tall so
+the screen holds 12 vertically.
+
+In BASIC, characters are sent to the screen with the PRINT command. 
+Since BASIC uses channel 6 for graphics you must specify channel 6 in
+the command.  For example:
+€
+
+ ? #6;"HELLO"
+
+
+If you use a comma in place of the semicolon, ten spaces will print
+before the "HELLO"
+
+You can also use the PLOT and DRAWTO commands.  In this case the COLOR
+command determines the character, as well as the color to be
+displayed.
+
+Data passes through CIO in the following form:
+
+
+ 7 6 5 4 3 2 1 0
+-----------------
+|  C  |    D    |
+-----------------
+
+ C determines the color.
+
+C    Default   ColorShadow
+ColorRegister  Register
+
+0    greenCOLPF1    COLOR1
+1    gold COLPF0    COLOR0
+2    gold COLPF0    COLOR0
+3    greenCOLPF1    COLOR1
+4    red  COLPF3    COLOR3
+5    blue COLPF2    COLOR2
+6    blue COLPF2    COLOR2
+7    red  COLPF3    COLOR3
+
+D is a 5 bit ATASCII code which selects the character to be displayed.
+The database variable CHBAS selects between upper case (CHBAS=$E0
+(224)) and lower case (CHBAS=$E2 (226)).
+
+
+GRAPHICS MODES 3 THROUGH 11
+
+Modes 3 through 8 offer a split screen mode.  In modes 9 through 11
+special programming is required for split screens.
+
+These modes use dot by dot (pixel by pixel) graphics instead of
+character sets.  Before explaining how graphics are sent to the screen
+through CIO, I will describe how the data in the display buffer is
+interpreted by the ANTIC chip.
+
+
+Mode 8 is the simplest of the graphics modes.  Each byte of the
+display buffer controls eight pixels horizontally.  The first 40 bytes
+of the display buffer control the first horizontal line of graphics. 
+This makes a total of 320 pixels horizontally.  If one of the eight
+€bits of a byte is a 1 then the pixel it controls is on.  If a bit is a
+0 then it's pixel is off.  For example, if a particular byte is equal
+to $9B (binary 10011011) then its' part of the screen would look
+like...
+
+  *  ** **
+
+ (10011011)
+
+
+
+In reality the pixels are assigned to different color registers.  A
+color register is a byte of memory which controls the color of all
+pixels assigned to it.  In mode 8, if a bit is = 0 it's pixel is
+assigned to the register called COLBK.  If a bit is one, it's pixel is
+assigned to COLPF0.  See COLORS below for more information on the
+color registers.
+
+You may notice a close similarity between mode 0 and mode 8.  The
+major difference between these modes is where the dot by dot
+information comes from.  In mode 8 this information comes from the
+display buffer.  In mode 0 the display buffer contains codes telling
+what characters to display.  The actual dot by dot information comes
+for the character set at $E000.
+
+In mode 7 each pixel is controlled by two bits.  Therefore each byte
+only controls four pixels.  There are also only 1/4 as many pixels on
+the screen as in mode 8.  See mode 3 below for an explanation of how
+the each byte affects the pixels.
+
+
+In a graphics mode, when CIO sends a byte of data to the screen
+handler, that byte has information for only one pixel.  Do not confuse
+a byte which CIO sends to the screen handler with the bytes in the
+display buffer.
+
+CIO sends data to or retrieves data from the screen in the following
+forms.
+
+
+ 7 6 5 4 3 2 1 0
+-----------------
+|0 0 0 0 0 0| D |   Modes 3,5,7 -- D = color
+-----------------
+
+-----------------
+|0 0 0 0 0 0 0|D|   Modes 4,6,8 -- D = Color
+-----------------
+
+-----------------
+|0 0 0 0|   D   |   Modes 9,10,11 -- D = data
+-----------------
+
+
+€Mode 3 uses a screen which is 40 pixels horizontally and 24
+vertically.  Each pixel is a square the size of a mode 0 character. 
+It requires 273 bytes of RAM where each byte controls 4 pixels.  Each
+pair of bits controls which of the four color registers their pixel is
+assigned to.
+
+    display buffer byte for mode 3
+
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| D | D | D | D |
+-----------------
+ P1  P2  P3  P4
+
+
+ Pixel/color register assignments:
+
+ D = 00    COLBK    (COLOR4)
+01    COLPF0   (COLOR0)
+10    COLPF1   (COLOR1)
+11    COLPF2   (COLOR2)
+
+
+Mode 4 uses a screen of 80 columns by 48 rows.  Each pixel is half the
+size of those in mode 3.  Mode 4 requires 537 bytes of RAM where each
+byte controls 8 pixels.  This mode is very similar to mode 8 except
+there are fewer but larger pixels.
+
+Mode 5 uses a screen of 80 columns by 48 rows.  The pixels are the
+same size as in mode 4.  Mode 5 requires 1,017 bytes of RAM where each
+byte controls 4 pixels in the same manner as in mode 3.
+
+Mode 6 uses a screen of 160 columns by 96 rows.  It requires 2,025
+bytes of RAM where each byte controls 8 pixels as in mode 4.
+
+Mode 7 uses a screen of 160 columns by 96 rows.  It requires 3,945
+bytes of RAM where each byte controls 4 pixels as in modes 3 and 5.
+
+
+Modes 8 through 11 (and 15 on XL and XE models) each require 7,900
+bytes of RAM and are very similar in display set up.  The main
+differences between these modes is the interpretation of data in the
+display buffer.
+
+Mode 15 (sometimes called mode 7.5) uses a screen of 160 columns by
+192 rows.  Each byte controls 4 pixels as in mode 7.  The main
+difference between mode 15 and its related modes is bit 0 of each
+instruction byte in the display list (the program which the ANTIC chip
+uses).  If this bit is 0 the screen is interpreted as mode 15.  If the
+bit is 1 the screen is interpreted as modes 8 through 11.
+
+Modes 8 through 11 are set up identically in memory, including the
+display list.  The only difference is the data in the PRIOR register
+€of the GTIA chip.  The shadow register for PRIOR is GPRIOR [$026F
+(623)].
+
+Mode 8 (PRIOR = $00 - $3F (0 - 63)), uses a screen of 320 columns by
+192 rows.  Each byte controls 8 pixels as in modes 4 and 6.
+
+Mode 9 (PRIOR = $40 - $7F (64 - 127)) uses a screen of 80 columns by
+192 rows.  Each byte controls 2 pixels.  The pixels are all of the
+same color, controlled by COLBK.  Each half of a byte in the display
+buffer controls the luminance of the assigned pixel.  The format of
+each byte is as follows.
+
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| data  |  data |
+-----------------
+ pixel 1|pixel 2
+
+
+Mode 10 (PRIOR = $80 - $BF (128 - 191), is the same as mode 9 except 9
+color luminance combinations are available.  The data in each half
+byte chooses one of the 9 color registers for the assigned pixel.
+
+Mode 11 (PRIOR = $C0 - FF (192 - 255), is the same as mode 9 except
+there is one brightness but 16 colors.  The pixel data chooses one of
+the 16 available colors.  The luminance is that of the background
+(COLBK).
+
+
+USING THE SCREEN HANDLER
+
+
+OPENING A CHANNEL TO THE SCREEN HANDLER
+
+When a channel is opened to the screen handler the following actions
+take place:
+
+The area of memory to be used for the screen data is cleared.
+
+A display list (program for the ANTIC chip) is set up for the proper
+graphics mode.
+
+The top-of-free-memory pointer, MEMTOP [$02E5,2 (741)], is set to
+point to the last free byte before the display list.
+
+Before opening a channel to the screen handler, the pointer to the
+highest memory address needed by the program, APPMHI [$000E,2 (14)],
+should be properly set.  This will prevent the screen handler from
+erasing part of the program when it sets-up the screen data region.
+
+
+When the channel is opened, two special options can be sent with the
+direction parameter (ICAX1).
+€
+    ICAX1 for screen open
+
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |    C S W R    |
+    -----------------
+1 6 3 1 8 4 2 1
+2 4 2 6
+8
+
+ C   1 = don't clear the screen
+ S   1 = split screen
+ R   1 = input
+ W   1 = output
+
+Before the open command, the graphics mode number is placed into
+ICAX2.
+
+    ICAX2 for screen open
+
+7 6 5 4 3 2 1 0
+    -----------------
+    |  : mode  |
+    -----------------
+
+  mode = $00 through $0B  (0 - 11 (0 - 15 on XL/XE))
+
+To open a channel to the screen in BASIC use the GRAPHICS command.
+
+
+
+
+
+  BASIC screen open format
+
+ GRAPHICS mode
+
+   For Example:
+
+ GRAPHICS 8
+
+This will set up a mode 8 graphics screen and open channel 6 to it. 
+If the graphics mode is 1 - 8, a split screen will be set up.  For
+example, GRAPHICS 8 will set up a mode 8 screen with a four line text
+window at the bottom.
+
+If 16 is added to the mode number, a full screen will be set-up.  For
+example, GRAPHICS 8+16 or GRAPHICS 24 will set up a mode 8 screen,
+with no text window, a full 192 pixels high.  If the number 32 is
+added to the mode number, the screen will not clear when the channel
+opens.
+
+€If you want to use a channel other than #6, you will have to use the
+open command.  It is used in the following format.
+
+ screen open without GRAPHICS command
+
+ OPEN #channel,direction/special,mode,S:
+
+   For example:
+
+ OPEN #1,8,7,S:
+
+This will open channel 1 to a mode 7 screen for output only.  For use
+of special parameters, see ICAX1 above.
+
+USING AN OPEN CHANNEL TO THE SCREEN
+
+Once a channel is opened to the screen it is used like any other input
+or output device.  In other words, data is placed on the screen by the
+PRINT and PUT commands.  Data is retrieved from the screen with the
+INPUT and GET commands.  The part of the screen which the data will be
+put in or taken from is determined by the X,Y coordinants in the
+database variables COLCRS [$0055,2 (85)] and ROWCRS [$0054 (84)]. 
+What appears on the screen depends on what graphics mode the computer
+is in.
+
+Before sending data to the screen in BASIC, a color register must be
+assigned to the data.  Once a point is plotted on the screen, it's
+color will be determined by the color register it was assigned to.
+
+To assign a color to a ploted point, the COLOR command us used as
+follows.
+
+    COLOR command format
+
+
+ COLOR register
+
+   For example,
+
+ COLOR 1
+
+After using the above command, all points plotted will be controlled
+by color register 1.  To change color registers, use the COLOR command
+again.
+
+In assembly language, the color is determined by the data sent to the
+screen.  See the above section on graphics modes for color
+information.
+
+In BASIC the PLOT command is used to put data on the screen.  The PLOT
+command is used as follows.
+
+   The BASIC PLOT command
+
+€ PLOT x,y
+
+x and y are the horizontal and vertical coordinates for the plotted
+point.
+
+
+In modes 3 through 11 a single point will be plotted.  In modes 1 and
+2 a text character will be printed on the screen by the PLOT command.
+
+The PRINT and PUT commands can also be used in basic.  What appears on
+the screen depends on the graphics mode.
+
+In modes 1 and 2 the ATASCII characters sent to the screen will be
+printed just as in mode 0.  See the paragraph on modes 1 and 2 above
+for more information.  In the other modes what appears depends on how
+the ANTIC chip interprets the data bytes sent to the screen.  For
+example, in mode 8, even numbered characters will be single pixels in
+color 1.  Odd numbered characters will be in color 0 (background).
+
+There are two special commands for the screen handler, DRAW and FILL
+
+DRAW (ICCOM = $11 (17))
+
+The draw command works exactly like the plot command except a straight
+line is drawn from the previous pixel to the new one.  In BASIC it is
+used in the following format.
+
+   the BASIC DRAW command
+
+ DRAWTO x,y
+
+
+FILL (ICCOM = $12 (18))
+
+
+Fill works like draw except the area to the right of the drawn line
+will be filled with the color in FILDAT [$02FD (765)].  The fill
+command expects to find a boundary to the right.  If no boundary is
+found, the entire horizontal screen between the ends of the line is
+filled.
+
+To use the fill command in BASIC the XIO command must be used in the
+following format.
+
+ POSITION x,y
+ XIO 18 #6,0,0,"E:"
+
+Note that the cursor is first moved by the POSITION command.  Below is
+an example of how to prepare for and use the fill command.
+
+   using the fill command
+
+
+   2nd DRAWTO  .____.  DRAWTO here
+€|    |
+|    |
+|    |
+  fill to here !    !  PLOT here
+
+
+This will draw and fill a box on the screen.
+
+THE COLOR REGISTERS
+
+There are nine bytes of memory which control the colors on the screen.
+These bytes are called color registers.  The color registers have the
+following names and relationships.
+
+
+
+   Color registers and relationships
+
+Register Registermodes
+nameaddress
+  0 & 8    1 & 2    3 5 7    4 & 6   9 & 11  
+10
+
+    HEX decimal  COLOR numbers
+
+PCOLR0   $02C0704   
+0
+PCOLR1   $02C1705   
+1
+PCOLR2   $02C2706   
+2
+PCOLR3   $02C3707   
+3
+COLOR0   $02C4708    0  - 63    1   1   
+4
+COLOR1   $02C57091 - 255  64 -127    2  
+5
+COLOR2   $02C67100   128-191    3  
+6
+COLOR3   $02C7711    192-255  
+7
+COLOR4   $02C8712border   backgnd    0backgnd  backgnd 
+8
+
+
+The color numbers are in decimal.  These are actually shadow
+registers.  See the O.S. equates below for relationships.  In modes 0
+- 3 the COLOR number actually determines the character printed
+
+The register to which a pixel/character is assigned to is determined
+by the data byte sent to the screen through CIO.
+
+The data in the color registers in in the following format.
+
+€ Color register data format
+
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| color |bright |
+-----------------
+
+color  = one of 16 possible colors
+bright = one of 8 possible brightnesses 
+   (even numbers, 0 - E)
+
+
+In basic, the COLOR command is used to assign color registers.  The
+corresponding registers depends on the graphics mode.  For example,
+COLOR 0 is COLOR2 in mode 8.  In most other modes COLOR 0 is COLOR4. 
+See the above chart for the register relationships.
+
+To change the contents of the color registers in BASIC, the SETCOLOR
+command is used.  In all modes except mode 10, the SETCOLOR command
+refers to the registers COLOR0 to COLOR4.
+
+    SETCOLOR/register relationships
+
+SETCOLOR 0    COLPF0    (COLOR0)
+SETCOLOR 1    COLPF1    (COLOR1)
+SETCOLOR 2    COLPF2    (COLOR2)
+SETCOLOR 3    COLPF3    (COLOR3)
+SETCOLOR 4    COLBK(COLOR4)
+
+The format for the SETCOLOR command is...
+
+
+   SETCOLOR command format
+
+ SETCOLOR register,hue,brightness
+
+ register   = 0 - 4 (0 - 8 in mode 10)
+ hue   = 0 - 15 (16 colors)
+ brightness = 0 - 16 (even numbers only (8 brightnesses)
+
+
+The following chart gives the colors represented by the hue number.
+
+
+   colors represented by hue numbers
+
+
+0    grey 8    blue
+1    gold 9    cyan
+2    gold-orange   10    blue-green
+3    red-orange    11    blue-green
+4    orange   12    green
+5    magenta  13    yellow-green
+€6    purple-blue   14    yellow
+7    blue15    yellow-red
+
+
+The attract mode
+
+If a key is not pressed for more than 9 minutes the computer will
+enter the attract mode.  This mode is used to prevent burning of the
+TV phosphors by lowering the brightness and constantly changing the
+colors.  The attract mode timer, ATRACT [$004D (77)], is set to 254
+($FE) when the the attract mode is entered.  To force the computer out
+of the attract mode, poke a number less than 127 into ATRACT.
+
+    Useful database variables and OS equates
+
+    
+APPMHI $000E,2 (14): lower limit for screen region
+ATRACT $004D   (77): attract mode timer and flag
+LMARGN $0052   (82): left margin
+RMARGN $0053   (83): right margin
+ROWCRS $0054   (84): horizontal cursor position
+COLCRS $0055,2 (85): vertical cursor position
+DINDEX $0057   (87): current graphics mode
+SAVMSC $0058,2 (88): starting address of display buffer
+OLDROW $005A   (90): previous cursor position
+OLDCOL $005B,2 (91):    "  "   "
+OLDCHR $005D   (93): character currently at the text cursor
+OLDADR $005E,2 (94): memory address of cursor
+RAMTOP $006A  (106): end-of-RAM + 1 (MSB only)
+SDLSTL $0230,2(560): shadow register of display list address
+TXTROW $0290  (656): text window cursor position
+TXTCOL $0291,2(657):  " "" "
+TXTMSC $0294,2(660): starting address of text window data buffer
+RAMSIZ $02E4  (740): permanent end-of-RAM + 1 (MSB only)
+CRSINH $02F0  (752): cursor inhibit, 1 = no cursor
+FILDAT $02FD  (765): color data for fill
+DSPFLG $02FE  (766):  if >0 screen control codes are displayed as
+  ATASCII characters (EOL is uneffected)
+SSFLAG $02FF  (767): > 0 = stop screen print
+COLPM0 $D012(53266): actual color registers
+COLPM1 $D013(53267): loaded from shadow
+COLPM2 $D014(53268): registers during
+COLPM3 $D015(53269): vertical blank
+COLPF0 $D016(53270):
+COLPF1 $D017(53271): see above
+COLPF2 $D018(53272): for use
+COLPF3 $D019(53273):
+COLBK  $D020(53274):
+
+
+
+OS shadow registers
+
+
+€
+PCOLR0 $02C0  (704): COLPM0
+PCOLR1 $02C1  (705): COLPM1
+PCOLR2 $02C2  (706): COLPM2
+PCOLR3 $02C3  (707): COLPM3
+COLOR0 $02C4  (708): COLPF0
+COLOR1 $02C5  (709): COLPF1
+COLOR2 $02C6  (710): COLPF2
+COLOR3 $02C7  (711): COLPF3
+COLOR4 $02C8  (712): COLBK
+
+CHAPTER 9
+
+
+  THE RESIDENT DISK HANDLER
+
+
+The resident disk handler is separate from DOS and is part of the
+permanent operating system ROM.  The disk handler does not use CIO.
+
+The resident disk handler works with one sector at a time.  It is used
+by setting the drive number, sector number, and operation code in the
+device control block.  The program then jumps (JSR) to the handler
+entry vector, DSKINV [$E453 (58451)].
+
+Device control block (for resident disk handler)
+
+
+DDEVIC [$0300 (768)]
+
+Serial bus I.D.  Set by handler
+
+DUNIT  [$0301 (769)]
+
+Drive number
+
+DCOMND [$0302 (770)]
+
+Command byte
+
+DSTATS [$0303 (771)]
+
+status byte
+
+DBUFLO [$0304 (772)]
+DBUFHI [$0305 (773)]
+
+Pointer to 128 byte memory block for data storage.
+
+DTIMLO [$0306 (774)]
+
+Timeout value (response time limit) in seconds
+
+DBYTLO [$0308 (776)]
+€DBYTHI [$0309 (777)]
+
+number of bytes transferred, set by handler
+
+DAUX1  [$030A (778)]
+DAUX2  [$030B (779)]
+
+sector number
+
+DISK HANDLER COMMANDS
+    
+GET SECTOR
+
+Before the JSR to DSKINV is made the following parameters are set.
+
+    GET SECTOR parameters
+
+
+DCOMND = $52 (82)
+DUNIT  = (1 - 4)
+DBUFHI
+and
+DBUFLO = address of 128 byte buffer
+DAUX1
+and
+DAUX2  = Sector number (LSB,MSB)
+
+This operation will read the specified sector and put the data into
+the specified buffer.
+
+PUT SECTOR
+
+PUT SECTOR is used the same as GET SECTOR except for DCOMND.
+
+    PUT SECTOR parameters
+
+DCOMND = $50 (80)
+
+This operation sends the data in the specified buffer to the specified
+disk sector.
+
+PUT SECTOR WITH VERIFY
+
+PUT SECTOR WITH VERIFY is used the same as PUT SECTOR except for
+DCOMND.
+
+   PUT SECTOR WITH VERIFY parameters
+
+DCOMND = $57 (87)
+
+This operation sends the data in the specified buffer to the specified
+disk sector then checks for errors.
+
+GET STATUS
+€
+Only the DUNIT and DCOMND need to be set
+
+    GET STATUS parameters
+
+
+DCOMND = $53 (83)
+DUNIT  = (1 - 4)
+    
+    
+The status information will be put in three bytes starting at DVSTAT
+[$02EA (746)].
+
+
+   Status format
+
+ 7 6 5 4 3 2 1 0
+-----------------
+DVSTAT + 0| command stat   |
+-----------------
+  + 1| hardware stat  |
+-----------------
+  + 2| timeout value  |
+-----------------
+
+
+The command status byte gives the following information.
+
+
+   Bit
+
+
+0    1 = invalid command frame received
+1    1 = invalid data frame received
+2    1 = unsuccessful PUT operation
+3    1 = disk is write protected
+4    1 = active/standby
+
+
+The hardware status byte contains the status register of the ISN1771-1
+disk controller chip.
+
+The timeout byte contains the maximum allowable response time for the
+drive in seconds.
+
+FORMAT DISK
+
+The handler will format then verify the the disk.  The numbers of all
+bad sectors (up to 63) will be put into the specified buffer followed
+by two bytes of $FF.
+
+The following parameters are set before the call.
+
+ FORMAT parameters
+€
+DCOMND = $21 (33)
+DUNIT  = (1 - 4)
+DBUFLO
+and
+DBUFHI = address of bad sector list (buffer)
+
+
+After the operation the status byte is set.  Also, DBYTLO and DBYTHI
+will contain the number of bytes of bad sector information (not
+including the two $FF bytes).
+
+
+    Useful data base variables and OS equates
+
+
+DVSTAT $02EA,3 (746): device status block, 3 bytes
+DDEVIC $0300   (768): serial bus I.D.
+DUNIT  $0301   (769): device number
+DCOMND $0302   (770): command byte
+DSTATS $0303   (771): status byte
+DBUFLO $0304   (772): data buffer
+DBUFHI $0305   (773):  pointer
+DTIMLO $0306   (774): timeout value
+DBYTLO $0308   (776): number of bytes transfered
+DBYTHI $0309   (777):
+DAUX1  $030A   (778): sector
+DAUX2  $030B   (779):  number
+DSKINV $E453 (58451): disk handler entry vector
+ 
+    CHAPTER 10
+
+
+ SYSTEM INTERRUPTS
+
+
+There are four types of interrupts which can occur with the 6502
+microprocessor:
+
+  6502 interrupts
+
+
+1.   chip reset
+2.   IRQ, interrupt request (maskable)
+3.   MNI (non-maskable interrupt)
+4.   software interrupt (BRK instruction)
+
+CHIP RESET
+
+On the 400/800 the chip reset occurs only upon power-up and causes the
+computer to do a cold start.  On later models, pressing [SYSTEM RESET]
+will cause a chip reset but the computer then does a warm start.  On
+the 400/800, the [SYSTEM RESET] key generates a NMI interrupt.
+
+€COLD START
+
+This is a synopsis of the cold start routine.
+
+1
+The warm start flag [$0008] is set to 0 (false)
+
+2
+If a cartridge slot contains a diagnostic cartridge, control is handed
+to the cartridge.
+
+3
+The end of RAM is determined by trying to complement the first byte of
+each 4K block of memory.
+
+4
+Hardware registers at $D000 - $D4FF (except $D100 - $D1FF) are
+cleared.
+
+5
+RAM is cleared from $0008 to the top of ram.
+
+6
+The user program jump vector, DOSVEC [$000A] is set to point to the
+black board mode (Atari logo display mode in XL/XE models).
+
+7
+The screen margins are set to 2 and 39
+    
+8
+Interrupt vectors are initialized.
+
+9
+Bottom of free RAM pointer, MEMLO [$02E7], is set to point to $0700.
+
+10
+Resident CIO handlers are initialized.
+
+11
+If the [START] key is pressed the cassette boot request flag, CKEY
+[$004A], is set.
+
+12
+The CIO device table is initialized.
+
+13
+If a cartridge is present it is initialized.
+
+14
+Channel 0 is opened to the screen editor.  The top-of-free-RAM
+pointer, MEMTOP [$02E5], is set to point below the screen region.  The
+computer then waits for the screen to be established before
+continuing.
+
+€15
+If the cassette boot flag is set the cassette is booted.
+
+16
+If there is no cartridge present or a cartridge doesn't prevent it,
+the disk is booted.
+
+17
+The cold start flag is reset.
+
+18
+If there is a cartridge present, the computer jumps to the cartridge's
+run vector.
+
+19
+If there is no cartridge present the computer jumps through the vector
+DOSVEC [$000A (10)].  DOSVEC will point to either a booted program,
+the memo pad routine (400/800) or the logo display routine (XL/XE).
+
+WARM START
+
+
+1
+The warm start flag is set to $7F (true).
+
+2
+cold start steps 2 - 4 are executed.
+
+3
+RAM is cleared from $0010 - $007F and $0200 - $03FF.
+
+4
+Cold start steps 7 - 14 are executed.
+
+5
+If cassette booted software is present the computer JSRs through
+CASINI [$0002].
+
+6
+If disk booted software is present the computer JSRs through DOSINI
+[$000C (12)].
+
+
+The difference between cold start and warm start is the condition of
+the warm start flag, WARMST, [$0008].  If this flag is 0 a complete
+cold start is executed.  If the flag is anything other than 0 then
+only the warm start part of the warm start/cold start code is
+executed.
+
+NON-MASKABLE INTERRUPTS (NMI)
+
+NMI interrupts are generated by the following conditions:
+
+
+€1.   Display list interrupt, generated by the ANTIC chip.
+2.   TV vertical blank interrupt, generated by the ANTIC
+chip.
+3.   [SYSTEM RESET] key (400/800).
+
+
+When an NMI interrupt occurs, the hardware register NMIST [$D40F] is
+examined to determine what type of interrupt occurred.  The computer
+is then directed through the proper ram vector to service the
+interrupt.
+
+DISPLAY LIST INTERRUPTS (DLIs)
+
+The computer makes no use of DLIs.  The ram vector points to an RTI
+instruction.
+
+
+VERTICAL BLANK INTERRUPTS (VBIs)
+
+There are two stages to the VBI service routine.  The second stage is
+only done if a critical function was not interrupted.
+
+
+Stage 1 (VBI)
+
+
+The real time clock, RTCLOK [$0012 - $0014], is incremented.
+
+The attract mode variables are processed.
+
+System timer 1 is decremented.   If it goes to zero the computer JSRs
+through system time-out vector 1.
+
+
+
+Stage 2 (VBI)
+
+
+The hardware registers are loaded with the data in their shadow
+registers.
+
+System timer 2 is decremented.   If it goes to zero the computer JSRs
+through the system time-out vector 2.
+
+System timers 3, 4, and 5 are decremented.   If a timer goes to zero
+the computer sets system timer flags 3, 4, and/or 5.
+
+If auto-repeat is active, the auto-repeat process is done.
+
+The keyboard debounce timer is decremented if not 0.
+
+Information at the controller port registers is read, processed and
+placed in the proper shadow registers.
+
+€
+[SYSTEM RESET] INTERRUPT
+
+If a [SYSTEM RESET] interrupt is generated on the 400/800 the computer
+jumps to the warm start routine.
+
+
+
+INTERRUPT REQUESTS (maskable interrupts (IRQs))
+
+When an IRQ interrupt occurs the hardware register IRQST [$D20E], the
+PIA status registers, PACTL [$D302] and PBCTL [$D303] are examined to
+determine what caused the interrupt.
+
+For each interrupt, the 6502 accumulator is pushed to the stack.  The
+computer is then directed to the proper ram vector to service the
+interrupt.
+
+SOFTWARE INTERRUPT (BRK instruction)
+
+The operating system doesn't use software interrupts.  The software
+interrupt vector points to a PLA followed by an RTI.
+
+
+ Interrupt vectors
+
+Label  address type function
+
+VDSLST $0200   NMI  DLI  Points to an RTI
+VVBLKI $0222   NMI  stage 1 VBI
+VVBLKD $0224   NMI  return-from-interrupt routine
+CDTMA1 $0226   NMI  time-out 1 (used by SIO)
+CDTMA2 $0228   NMI  time-out 2 (not used by OS)
+VPRCED $0202   IRQ  not used (points to PLA,RTI)
+VINTER $0204   IRQ  not used (PLA,RTI)
+VKEYBD $0208   IRQ  keyboard interrupt
+VSERIN $020A   IRQ  used by Serial I/O routine
+VSEROR $020C   IRQ  used by SIO
+VSEROC $020E   IRQ  used by SIO
+VTIMR1 $0210   IRQ  not used by OS (PLA,RTI)
+VTIMR2 $0212   IRQ  not used by OS (PLA,RTI)
+VTIMR4 $0214   IRQ  ?
+VIMIRQ $0216   IRQ  main IRQ code
+VBREAK $0206   BRK  unused by OS (PLA,RTI)
+
+
+SYSTEM TIMERS
+
+The following timers are updated during vertical blank (VBI) as noted
+above.  If a timer is decremented to 0 the computer jumps through it's
+associated vector or sets it's associated flag.
+
+
+Label  address  flag/vector
+€
+RTCLOK $0012    3 byte clock ($0012 = MSB)
+CDTMV1 $0218    CDTMA1 $0226  vector (SIO time-out)
+CDTMV2 $021A    CDTMA2 $0228  vector
+CDTMV3 $021C    CDTMF3 $022A  flag
+CDTMV4 $021E    CDTMF4 $022C  flag
+CDTMV5 $0220    CDTMF5 $022E  flag
+
+
+HARDWARE INTERRUPT CONTROL
+
+There are two registers on the antic chip which control interrupts. 
+These registers can be used to disable interrupts if necessary.  There
+are also two associated interrupt status registers.
+
+The IRQ enable and status registers use the same address.  The result
+is that reading the register does not reveal the enabled interrupts
+but the interrupts pending.  IRQ interrupt enable data should usually
+be written to the OS shadow first.  Reading the OS shadow tells which
+interrupts are enabled.
+
+Non maskable interrupt enable
+
+
+NMIEN  $D40E
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| | | not used  |
+-----------------
+
+ bit 7  1 = DLI enabled
+6  1 = VBI enabled
+
+
+Non maskable interrupt status
+
+
+NMIST  $D40F
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| | | | not used|
+-----------------
+
+ bit 7  1 = DLI pending
+6  1 = VBI pending
+5  1 = [SYSTEM RESET] key pending
+
+
+  Interrupt request enable
+
+
+
+€IRQEN  $D20E
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| | | | | | | | |
+-----------------
+
+
+
+ bit 7  1 = [BREAK] key interrupt enable
+6  1 = keyboard interrupt enable
+5  1 = serial input interrupt enable
+4  1 = serial output interrupt enable
+3  1 = serial output-finished interrupt enable
+2  1 = timer 4 interrupt enable
+1  1 = timer 2 interrupt enable
+0  1 = timer 1 interrupt enable
+
+ IRQEN has a shadow register, POKMSK [$0010 (A)].
+
+
+  Interrupt request status
+
+
+
+IRQST  $D20E
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| | | | | | | | |
+-----------------
+
+ bit 7  1 = [BREAK] key interrupt pending
+6  1 = keyboard interrupt pending
+5  1 = serial input interrupt pending
+4  1 = serial output interrupt pending
+3  1 = serial output-finished interrupt pending
+2  1 = timer 4 interrupt pending
+1  1 = timer 2 interrupt pending
+0  1 = timer 1 interrupt pending
+
+
+WAIT FOR HORIZONTAL SYNC
+
+Writing any number to WSYNC [$D40A (54282)] will cause the computer to
+stop and wait for the next TV horizontal sync.
+
+It is wise to use DLIs one TV line before needed then writing to
+WSYNC.  This will keep other interrupts from causing DLIs to be
+serviced late.  This can cause a DLI to change something in the middle
+of a scan line.
+
+
+    Useful database variables and OS equates
+€
+
+POKMSK $0010  (16): IRQEN shadow
+IRQEN  $D20E    (53774): enables IRQs when written to
+IRQST  $D20E    (53774); gives IRQs waiting when read
+PACTL  $D302    (54018): bit 7 (read) peripheral A interrupt status
+bit 0 (write) peripheral A interrupt enable
+PBCTL  $D303    (54019): bit 7 (read) peripheral B interrupt status
+bit 0 (write) peripheral B interrupt enable
+WSYNC  $D40A    (54282): wait for horizontal sync
+NMIEN  $D40E    (54286): NMI enable
+NMIST  $D40F    (54287): NMI status
+
+    CHAPTER 11
+
+
+ THE FLOATING POINT ARITHMETIC PACKAGE
+
+
+The routines which do floating point arithmetic are a part of the
+operating system ROM.  The Atari computer uses the 6502's decimal math
+mode.  This mode uses numbers represented in packed Binary Coded
+Decimal (BCD).  This means that each byte of a floating point number
+holds two decimal digits.  The actual method of representing a full
+number is complicated and probably not very important to a programmer.
+However, for those with the knowledge to use it, the format is given
+below.
+
+ Floating point number representation
+
+
+byte 0    xx   excess 64 exponent + sign
+xx \
+xx  \
+xx   > 10 BCD digits
+xx  /
+byte 7    xx /
+
+
+The decimal point is shifted to left of the MSD and the exponent is
+adjusted accordingly.  Therefore, the decimal point doesn't need to be
+represented.
+
+For programming purposes, floating point numbers can be in ASCII code.
+It takes up to 14 bytes to store a floating point number in this
+manner.  The floating point package has a routine to convert numbers
+between ASCII and floating point.
+
+USE OF THE FLOATING POINT PACKAGE
+
+The floating point package has several routines to convert between
+ASCII and FP and to do the arithmetic functions.  These are the
+important data base variables.
+
+€  Floating point data base variables
+
+
+FR0    $00D4,6    (212): 6 byte buffer for floating point number
+FR1    $00E0,6    (224): 6 byte buffer for floating point number
+CIX    $00F2 (242): index for INBUFF address
+INBUFF $00F3,2    (243): 2 byte pointer to ASCII floating point number
+FLPTR  $00FC,2    (252): 2 byte pointer to user buffer for floating
+ point number
+LBUFF  $0580,?   (1408): result buffer for FASC routine
+
+MAKING THE CALL
+
+To do a floating point function, first set the proper pointers and JSR
+to the operation entry point.  Below is a list of the entry points and
+parameters.
+
+ASCII to floating point
+
+Converts ASCII representation pointed to by INBUFF to FP in FR0.
+
+ AFP    = $D800
+
+ INBUFF = address of ASCII number
+
+ CIX    = buffer offset if any
+
+ JSR AFP
+
+
+FLOATING POINT TO ASCII
+
+Converts floating Point number  in FR0 to ASCII.  The result will be
+in LBUFF.  INBUFF will point to the ASCII number which will have the
+bit 7 of the last byte set to 1.
+
+ FASC   = $D8E6
+
+ JSR FASC
+
+INTEGER TO FLOATING POINT CONVERSION.
+
+Converts a 2 byte unsigned integer (0 to 65535) in FR0 to floating
+point in FR0.
+
+ IFP    = $D9AA
+
+ JSR IFP
+
+FLOATING POINT TO INTEGER CONVERSION.
+
+Converts floating point number in FR0 to 2 byte integer in FR0.
+
+ FPI= $D9D2
+€
+ JSR FPI
+ BCS overflow
+
+ADDITION
+
+Adds floating point numbers in FR0 and FR1 with result in FR0.
+
+ FADD    = $DA66
+
+ JSR FADD
+ BCS out of range
+
+
+SUBTRACTION
+
+subtracts FR1 from FR0 with the result in FR0.
+
+ FSUB    = $DA60
+
+ JSR FSUB
+ BCS out of range
+
+MULTIPLICATION
+
+Multiplies FR0 by FR1 with the result in FR0.
+
+ FMUL    = $DADB
+
+ JSR FMUL
+ BCS out of range
+
+DIVISION
+
+Divides FR0 by FR1 with result in FR0.
+
+ FDIV    = $DB28
+
+ JSR FDIV
+ BCS out of range or divisor is 0
+
+LOGARITHMS
+
+Puts logarithm of FR0 in FR0
+
+ LOG= $DECD
+ LOG10   = $DED1
+
+ JSR LOG ;for natural log.
+
+or
+
+ JSR LOG10 ;for base 10 log.
+ BCS negative number or overflow
+€
+
+EXPONENTIATION
+
+Put exponentiation of FR0 in FR0
+
+ EXP= $DDC0
+
+ EXP10   = $DDCC
+
+ JSR EXP ;for e ** Z
+
+or
+
+ JSR EXP10 ;for 10 ** Z
+
+
+POLYNOMIAL EVALUATION
+
+Puts the result of an n degree polynomial evaluation  of FR0 in FR0.
+
+ PLYEVL  = $DD40
+
+ LDX LSB of pointer to list of floating point
+coefficients, ordered high to low.
+ LDY MSB of above
+ LDA number of coefficients in list
+
+ JSR PLYEVL
+ BCS overflow
+
+CLEAR FR0
+
+Sets FR0 to all zeroes
+
+ ZFR0    = $DA44
+
+ JSR ZFR0
+
+CLEAR ZERO PAGE FLOATING POINT NUMBER
+
+Clears user floating point number in page zero.
+
+ ZF1= $DA46
+
+ LDX address of zero page FP buffer
+
+ JSR ZF1
+
+LOAD FR0 WITH FLOATING POINT NUMBER
+
+Loads FR0 with user FP number in buffer pointed to by 6502 X and Y
+registers or by FLPTR.  After either operation below, FLPTR will point
+to the user FP buffer.
+€
+ FLD0R   = $DD89
+
+ LDX lsb of pointer
+ LDY msb
+
+ JSR FLD0R
+    
+or
+
+ FLD0P   = $DD8D
+
+ FLPTR   = address of FP number
+
+ JSR FLD0P
+
+LOAD FR1 WITH FLOATING POINT NUMBER
+
+Loads FR1 with user FP number in buffer pointed to by 6502 X and Y
+registers or by FLPTR.  After either operation below, FLPTR will point
+to the user FP buffer.
+
+ FLD1R   = $DD98
+
+ LDX lsb of pointer
+ LDY msb
+
+ JSR FLD1R
+
+or
+
+ FLD1P   = $DD9C
+
+ FLPTR   = address of FP number
+
+ JSR FLD1P
+
+STORE FR0 IN USER BUFFER
+
+stores the contents of FR0 in user FP buffer pointed to by 6502 X and
+Y registers or by FLPTR.  After either operation below, FLPTR will
+point to the user FP buffer.
+
+
+ FST0R   = $DDA7
+
+ LDX lsb of pointer
+ LDY msb
+
+ JSR FST0R
+
+or
+
+ FST0P   = $DDAB
+€
+ FLPTR   = address of FP number
+
+ JSR FST0P
+
+MOVE FR0 TO FR1
+
+
+Moves the contents of FR0 to FR1
+
+
+ FMOVE   = $DDB6
+
+ JSR FMOVE
+
+
+The usual use sequence of the floating point package might be to:
+
+load FR0 and FR1 with FP numbes from user specified buffers
+
+do the math
+
+then store FR0 in a user buffer.
+
+An alternative might be to:
+
+convert an ASCII representation to FP (the result is automatically in
+FR0).
+
+move FR0 to FR1.
+
+Convert the second ASCII number.
+
+Do the math.
+
+Convert FR0 back to ASCII.
+
+Store the number back into a user buffer.
+
+
+The floating point package uses the following blocks of RAM.
+
+
+  RAM used by floating point package
+
+
+$00D4 - $00FF
+$057E - $05FF
+
+
+If the floating point package is not used the above ram is free.
+
+
+
+€    Useful data base variables and OS equates
+
+
+FR0    $00D4,6 (212): system FP buffer
+FR1    $00E0,6 (224): system FP buffer
+CIX    $00F2   (242): INBUFF index
+INBUFF $00F3,2 (243): pointer to ASCII FP buffer
+FLPTR  $00FC,2 (252): pointer to user FP buffer
+LBUFF  $0580  (1408): result buffer for FP to ASCII
+AFP    $D800 (55296): ASCII to FP
+FASC   $D8E6 (55526): FP to ASCII
+IFP    $D9AA (55722): integer to FP
+FPI    $D9D2 (55762): FP to integer
+ZFR0   $DA44 (55876): clear FR0
+ZF1    $DA46 (55878): clear zero page FP buffer
+FSUB   $DA60 (55904): FR0 - FR1
+FADD   $DA66 (55910): FR0 + FR1
+FMUL   $DADB (56027): FR0 * FR1
+FDIV   $DB28 (56104): FR0 / FR1
+FLD0R  $DD89 (56713): load FR0 by X,Y pointer
+FLD0P  $DD8D (56717): load FR0 by FLPTR pointer
+FLD1R  $DD98 (56728): load FR1 by X,Y pointer
+FLD1P  $DD9C (56732): load FR1 by FLPTR pointer
+FST0R  $DDA7 (56743): store FR0 at buffer by X,Y pointer
+FST1P  $DDAB (56747): store FR0 at buffer by FLPTR pointer
+FMOVE  $DDB6 (56758): move FR0 to FR1
+EXP    $DDC0 (56768): e exponentiation
+EXP10  $DDCC (56780): base 10 exponentiation
+PLYEVL $DD40 (56640): polynomial evaluation
+LOG    $DECD (57037): natural log of FR0
+LOG10  $DED1 (57041): base 10 log of FR0
+

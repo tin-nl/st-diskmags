@@ -1,0 +1,45 @@
+FLOPTICAL DRIVE
+
+                              FLOPTICAL DRIVE
+                         ------------------------
+
+The latest technology to appear in the ST world is the floptical drive.
+A floptical drive looks exactly the same as a standard 3.5 inch floppy-
+disk, the major difference is in the high density magnetic coating giving
+a storage capacity of 21 megabyte on a single disk.
+
+Floptical disks use barium ferrite (BaFe) for the magnetic coating on
+the floppy, a material which is much more reliable than standard ferrite 
+coatings. This enables much higher track densities to be created, 
+1,245 tracks per inch (tpi) instead of the 135 tpi of standard disks.
+
+The optical part of the drive is the tracking mechanism. Because of the 
+high track density of the disk, an extremely accurate tracking system is 
+necessary to read and write to the disk.
+The surface of the disk has concentric tracks (servo tracks) embossed 
+on to it which cannot be altered, damaged or erased in any way.
+An infrared LED shines on to the servo tracks and the reflected light is 
+picked up by an optical lens which guides the read/write heads to the
+correct position over the data.
+In this way, these servo tracks act as highly accurate guides for the drive
+heads ensuring pinpoint positioning and elimination of errors.
+
+The actual drives are SCSI divices and can be driven by ICD host adaptors
+and software, physically the floptical drives are the same size as a 3.5
+inch floppy drive.
+Floptical drives can also read and write to standard 720 K and 1.44 MB
+floppy disks, so you can use a floptical drive to read any 3.5 inch
+floppy disk.
+
+The large amount of data that can be stored on a floptical disk makes it 
+an ideal medium for multi-media applications - with 40 MB and 80 MB
+3.5 inch floptical disks under development this medium is likely to
+become popular.
+
+The drive will cost    œ 439.99
+A 21 MB disk will cost œ  24.99
+
+---------------------------------------------------------------------------
+ARTICLE BY : VIGO OF D.B.A.         SOURCE : ST FORMAT DECEMBER 1992
+---------------------------------------------------------------------------
+

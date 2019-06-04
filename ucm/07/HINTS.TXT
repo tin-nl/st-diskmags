@@ -1,0 +1,736 @@
+ {*f1
+     HINTS & TIPS FOR ATARI-GAMES
+    ------------------------------ {*f0
+
+I know, there aren't many games around which use levelcodes and cheatmodes this
+time but we have already some little things for you...
+This time we have for you the following things:
+
+CONFUSION                    (WBW Gameline)       ATARI FALCON       cheatmode
+CONFUSION                    (WBW Gameline)       ATARI FALCON       levelcodes
+CONQUEST OF ELYSIUM          (shareware)          ATARI FALCON       cheatmode
+CONQUEST OF ELYSIUM          (shareware)          ATARI FALCON       hints
+DYNABUSTERS+                 (shareware)          ATARI STE/FALCON   cheatmode
+IMPULSE                      (freeware)           ATARI FALCON       levelcodes
+OXYD MAGNUM                  (Dongleware)         ALL ATARI's        levelcodes
+SHEER AGONY                  (Logitron)           ATARI ST/FALCON    hints&tips
+SUPER STARIO LANDS           (Top Byte Software)  ATARI ST/STE       cheatmode
+TEKKNOBALL                   (shareware)          ATARI FALCON       hints
+THE ROLLERCOASTER EXPERIENCE (Solution Software)  ATARI ST/STE       levelcodes
+
+-------------------------------------------------------------------------------
+
+IMPULSE (freeware)
+-------
+ATARI FALCON
+
+level-codes
+
+05 - CHIP        25 -
+10 - OH NO       30 -
+15 - ROAD        35 -
+20 - JERRY       40 -
+
+----------------------------------------------------------------Moondog of tnb-
+
+ -------------------------------------------
+/ Cheats und Tips fr CONQUEST OF ELYSIUM /
+------------------------------------------
+ATARI FALCON
+
+Die Infos ber den Cheatmode stammen von Carsten Meyer-Ii (Danke nochmal!).
+
+-------- schnipp ---------
+
+Thema Cheat-Mode:
+Den haben wir durch Zufall erntdeckt. Ein Freund von mir hat beim Eingeben sei-
+nes Namens  die CAPS-LOCK-Taste  benutzt. Als ich dann drann war und wie gewoht
+mit "c" meine  Truppen zuordnen wollte, entbl”žte  sich mir  die gesamte  Karte
+(huch !!!). Also SHIFT-C ist der Cheat-Mode.
+Das veranlasste  mich natrlich zur weiteren Forschung: Ist der Cheatmode erst-
+mal aktiviert, kann man mit SHIFT-M seine Moneten auf 10000 setzen. Mit SHIFT-I
+gibts Infos ber die Speicherverteilung des Systems (fr Programmierer).
+
+Thema Debug-Mode:
+Mit SHIFT-D erscheint  die Meldung DEBUG, gefolgt von einer Zahl. Debug-Level 2
+ist von daher interessant, weil man mit Doppelclick-Rechts dann alle Infos ber
+ein Feld bekommt (Congregation, Sacrifices, Dead, Edelsteine, ...).
+Den sollte man aber vor dem Beenden der Runde wieder abschalten, da er auch de-
+tailierte Infos ber die Zge der Computergegner gibt (das dauert ....).
+
+-------- schnapp ---------
+
+ -------
+/ Tips /
+-------
+
+Hexe:
+easy, keine Tips
+
+Druide:
+Im Gebirge gibt's die besten Wesen. Aber auch im tiefen Wald gibt's gute Wesen.
+
+Necromancer:
+Friedh”fe, Schlachtfelder, alte Gem„uer  sind zum Tote erwecken sehr gut geeig-
+net.
+Hands of Glory gibt's in St„dten und bei der Tempelpyramide.
+
+Demonologist:
+Erst mal auf  nen grožen D„mon sparen, der kann n„mlich meist besser beschw”ren
+als man selber. Vorsicht vor Revolten!
+
+Enchanter:
+Sparen und dann dicke Golems erschaffen.
+Necrotod (kann charming!) gibt's berall, wo's Tote gibt (-> Necromancer).
+Flesh: wo's Tote gibt (-> Necromancer)
+Ice  : auf dem Nachbarfeld muž Wasser sein
+Clay : man muž im Sumpf oder Marsch sein
+Wood : im Wald
+Oak  : im Wald wo die dicken B„ume sind
+Stone: coal mine
+Iron : iron mine
+Onyx : silver mine
+Crystal: goldstream
+
+Warlock:
+Edelsteine gibt es in Minen (zuf„llige Anzahl) und in grožen St„dten.
+Aužerdem in den Heimst„dten der 4 Elemente.
+
+
+ --------------
+/    Wesen    /
+--------------
+
+Hit: Hitpoints
+Atk: Attackpoints
+Anz: Anzahl Attacken
+MR : Magic Resistance
+Pos: Wo das Wesen i der Armee steht (V)orne/(M)itte/(H)inten
+Magci: Magie oder Fernkampfwaffe
+
+Die ?? Werte hab ich noch nicht entschlsselt.
+
+Fliegende  Wesen haben  den Vorteil, daž  sie ber alle  Felder mit *einem* Zug
+k”nnen, sie verlieren also nicht wie andere Wesen 2 Zge, wenn sie ber Gebirge
+laufen.
+
+   Name               Hit  Atk Anz  MR  Pos  Magic
+
+air elemental         20    0   1   6    H   14??    flying
+angel                 49    7   3   9    M   44??    flying
+angel of death        144   11  2   9    M   68??    flying
+angry mob             7     3   2   4    M
+animated armour       17    6   2   5    M
+apprentice            4     2   1   7    M   79??
+apprentice            4     2   1   7    M   103??
+apprentice            4     2   1   6    M   43??
+apprentice            3     2   1   8    M   charme
+archer                5     3   1   4    H   bow
+archmage              5     2   1   10   M   56??
+assassin              6     5   2   4    M   25??
+ballista              10    3   2   5    M   46??
+banshee               32    0   1   8    H   30??    flying
+barbarian leader      13    7   2   3    M
+barbarian cavalry     10    6   1   3    M   66??    2??
+barbarian bowman      5     3   1   3    H   bow
+barbarian warrior     6     6   1   3    M
+bard                  5     3   1   4    M
+basilisk              13    3   1   5    H   50??    flying
+bear                  24    5   2   2    M           4??
+beast of disorder     81    0   1   6    M   100??
+beholder              24    4   1   9    M   29??
+bishop                6     5   1   7    M   2??
+black cat familiar    2     1   1   7    M
+black draconian       50    10  3   8    H           flying
+blessed spearman      7     6   1   5    M   69??
+blessed archer        6     4   1   5    H   bow
+blessed crossbowman   6     4   1   5    H   crossbow
+blessed swordsman     6     8   1   5    M
+blue draconian        27    15  1   6    M           flying
+bowman                4     3   1   4    H   bow
+breath of baal        53    5   4   7    M   18??    flying
+brigand               8     4   2   4    M
+bullywug              5     5   1   3    M           6??
+captain               9     6   1   4    H
+caravan guards        8     4   2   4    M
+cardinal              9     5   1   8    M   2??
+carrion               18    6   2   5    M           flying
+catapult              10    3   2   5    M   36??
+cauldron              10    3   2   4    M   54??
+cavalryman            10    7   1   4    M   47??    2??
+centaur               18    5   1   6    H   bow     2??
+champion of fire      23    20  1   7    H   33??    2??
+champion of air       20    11  2   7    H   96??    flying
+champion of water     28    9   2   7    H   97??    2??
+champion of earth     38    13  2   7    H           2??
+chimeara              27    7   2   5    M   51??    3??
+clay golem            68    11  2   6    M   73??    giant size
+cloud elemental       5     0   1   5    H   72??    flying
+colossus              174   40  1   10   M           giant size
+creeping doom         127   1   1   10   M   19??    6??
+crocodile             30    5   1   2    M           6??
+crossbowman           5     3   1   4    H   crossbow
+crystal               12    0   0   1    M   80??    immobile
+crystal golem         227   26  4   9    M   80??    giant size
+crystal focus         44    0   1   10   M   90??    immobile
+cultist               5     2   1   6    M   35??
+dancing sword         6     6   2   5    M           flying
+dao                   288   40  1   8    M   60??    giant size
+death knight          33    12  1   8    H   107??   2??
+death                 140   40  1   10   M   113??   giant size
+deer                  6     3   1   2    M           7??
+demonologist          5     2   1   8    M   4??
+demon lord            160   10  1   10   M   20??    flying
+dire wolf             47    17  1   4    M   109??   giant size
+djinn                 100   0   1   8    M   59??    flying
+dodo                  18    1   1   7    M   99??    immobile
+domesticated elephant  58   8   1   4    M   89??    giant size
+domesticated tiger    24    7   2   4    M
+doppelganger          31    6   3   7    M   42??
+doppelvictim          4     2   3   2    M
+doppelganger          36    6   3   7    H   42??    6??
+dragon hatchling      8     4   1   5    H   82??    immobile
+dragon lord           41    7   1   9    M   94??    flying
+druid                 7     4   1   8    M   27??
+duke of hell          107   5   2   10   M   83??    giant size
+dwarf                 7     4   1   4    M           3??
+dwarf lord            13    5   2   4    M           3??
+dwarven king          15    5   2   6    M   24??    3??
+dwarf                 6     6   1   4    M           3??
+dwarven king          16    5   2   6    M           3??
+earth elemental       60    10  2   6    M           3??
+efreet                120   40  1   8    H   57??    giant size
+elder dragon          228   35  2   10   M   108??   immobile
+elephant              52    8   1   2    M           giant size
+elf                   5     4   1   8    H   bow     4??
+elf mage              5     4   1   9    M   7??     4??
+elf queen             4     1   1   9    M   49??    4??
+elite spearman        6     6   1   4    M   69??
+elite archer          5     4   1   4    H   bow
+elite goblin          3     4   1   3    M           3??
+elite swordsman       5     8   1   4    M
+elite crossbowman     5     4   1   4    H   crossbow
+enchanter             5     2   1   9    M   78??
+ent                   310   8   5   9    M           4??
+expected hero         12    7   2   4    M
+eye of the gods       117   6   8   9    H   45??
+fakir                 5     2   1   5    M   92??
+famine                115   10  2   10   M   112??   giant size
+fiery imp             5     6   1   8    M   62??
+fingers of baal       7     3   3   5    M           immobile
+fire elemental        30    25  1   6    M
+fire giant            144   35  1   8    M           giant size
+flesh golem           21    4   2   4    M
+forest troll          27    10  1   5    M           4??
+forest giant          76    18  1   4    H   63??    giant size
+forest                50    0   0   1    M           immobile
+frog                  2     1   1   2    M           6??
+frost giant           108   25  1   8    M           giant size
+frostbeast            90    12  1   6    M           giant size
+gammel smurf          3     3   1   6    H
+gargoyle              25    5   2   5    M           flying
+gasspore              5     1   1   4    M   80??
+ghost warrior         19    6   1   6    M
+ghost                 29    0   1   8    H   10??    flying
+ghoul                 10    4   1   5    M   17??
+giant toad            6     3   1   2    M   17??    6??
+giant spider          28    5   1   3    M   19??
+giant moose           130   25  2   2    M           7??
+giant ant             19    6   1   2    M   17??
+gladiator             9     5   2   4    M
+gladiator             11    8   1   4    M   69??
+goblin                2     3   1   3    M           3??
+goblin chieftain      3     4   1   4    M   bow     3??
+god                   212   0   1   10   M   91??    flying
+greater demon         90    15  1   9    M   8??
+greater devil         98    21  2   8    H   32??
+great eagle           15    3   2   2    M   65??    flying
+green blob            16    7   1   1    M           6??
+green draconian       25    9   2   6    M           flying
+green dragon          181   25  3   9    M   95??    immobile
+griffin               26    7   2   4    M           flying
+guardian              22    7   1   6    M           immobile
+heavy infanterist     9     7   1   4    M
+high priestess        7     6   1   8    M   6??
+high lord             13    7   2   5    H           2??
+hill giant            123   30  1   3    M           giant size
+hobbit                2     2   1   8    H
+hydra                 142   4   9   8    M   18??    6??
+ice golem             101   13  1   6    M   80??    giant size
+illusionist           5     2   1   10   M   105??
+illusion              20    6   1   10   M   104??
+image                 1     0   1   10   M
+imp                   6     4   1   8    M           flying
+imp horde             31    4   6   8    H   62??
+iron golem            205   20  1   8    M   74??    giant size
+king                  6     5   1   5    M
+knight                12    5   2   4    M   40??    2??
+large spider familiar  8    2   1   7    M   18??
+large spider          8     2   1   2    M   18??
+larvae                6     3   1   6    H   77??
+lesser demon          40    8   3   7    M           flying
+lesser devil          20    14  2   7    H   24??
+lesser demon          50    4   4   7    M
+lesser devil          42    5   2   7    H   33??    flying
+lesser fire           5     7   1   5    M
+lesser water          7     2   3   5    M
+lesser earth          9     3   2   5    M
+lich                  18    3   1   10   M   31??
+lion                  20    7   2   2    M           4??
+magician              5     2   1   6    M   11??
+maharaja              61    8   1   5    M   89??    giant size
+manticore             25    6   2   5    H   52??    flying
+marid                 110   20  1   8    H   58??    giant size
+merchant              4     1   1   4    M
+mermaid               4     1   1   7    M   86??    immobile
+militia               5     4   1   4    M
+mindflayer            15    4   1   8    M   75??
+minotaur              26    14  1   4    M
+minotaurus            114   32  2   7    M   64??    giant size
+mirror                15    0   1   10   M   90??
+moose                 20    7   1   2    M           7??
+mounted goblin        5     5   2   3    M           7??
+mounted chief         12    7   1   4    H           2??
+mountain giant        172   22  1   8    M           giant size
+mummy                 22    4   1   6    M
+murder of crows       3     1   1   3    H   67??    flying
+mushroom              10    0   1   1    M   71??    immobile
+necromancer           5     2   1   9    M   3??
+necrotod              9     4   1   7    H   charme
+nymph                 3     1   1   8    M   41??    4??
+oak golem             132   13  2   7    M           giant size
+ogre                  22    10  1   3    M           3??
+old weapon master     5     5   4   6    H
+onyx golem            270   30  2   9    M           giant size
+orc                   7     5   1   3    M   69??    3??
+orc                   6     7   1   3    M           3??
+orc                   11    5   1   3    H   bow     2??
+orc leader            11    10  1   4    H   69??    3??
+orc warlord           20    8   2   5    H           3??
+orc ram               18    14  1   3    M   38??    3??
+orc drum              6     5   1   3    M   87??    3??
+orc scout             6     5   1   3    M           3??
+paladin               15    6   2   6    M   40??    2??
+pegasus               12    4   1   6    H           flying
+phantasm              50    0   1   10   M   16??    flying
+phantom               50    0   1   10   M   10??    flying
+phoenix               17    7   1   7    M   80??    flying
+plague                150   15  2   10   M   111??   giant size
+plasma spirit         33    0   1   8    H   14??    flying
+priest of baal        6     6   1   7    M   35??
+prince of death       111   7   2   10   M   81??    flying
+princess              3     1   1   4    M   charme
+purple worm           103   20  1   2    M           2??
+rabbit                1     0   1   1    M
+rain bird             16    5   1   7    M   12??    flying
+rakshasa              25    6   1   9    M   106??
+ram                   15    12  1   6    M   38??
+raven familiar        2     1   1   7    M           flying
+red draconian         32    11  2   7    M           flying
+retarius              8     6   1   4    M   114??
+roc                   122   22  2   3    M   53??    flying
+rootmonster           87    15  1   1    M           giant size
+saint                 3     1   1   7    M           88??
+scorpion              1     0   1   1    M   17??
+scout                 5     4   1   4    H   bow
+shaman                5     3   1   10   M   26??
+siege tower           70    6   3   7    M   39??
+skeleton              4     5   1   1    M
+slinger               4     2   1   4    H   slinger
+small snake familiar  2     1   1   7    M   19??
+small snake           2     1   1   2    M   19??
+small spider          1     0   1   1    M   17??
+small copper dragon   24    8   1   7    M   61??    immobile
+smurfer               3     2   1   5    M
+snake                 7     4   1   2    M   18??
+snake charmer         5     2   1   4    M   93??
+spawn of baal         27    1   4   7    M   16??
+spearman              6     5   1   4    M   69??
+spirit of onus        200   0   1   10   M   22??    flying
+spirit                100   0   1   8    M   21??    flying
+spirit of fate        66    0   1   10   H   70??    2??
+spirit of fury        244   0   1   9    M   76??    flying
+spirit of fear        55    0   0   8    M   23??    flying
+spirit of vengeance   274   33  1   10   M           flying
+spirit of life        64    0   1   8    M   16??    flying
+stone golem           156   15  2   7    M           giant size
+storm giant           84    30  1   8    H   98??    flying
+succubus              66    6   2   9    H   84??    flying
+swamp thing           20    5   1   1    M           6??
+swamp god             90    0   2   8    M   15??    6??
+swamp ghost           15    0   1   6    M   71??    6??
+swamp god             162   10  8   7    M           6??
+swamp monster         18    7   1   2    M           6??
+swamp king            71    15  1   4    M           6??
+swordsman             5     7   1   4    M
+templar               14    6   2   5    M   40??    2??
+thunderbird           19    6   1   7    M   14??    flying
+tiger                 21    7   2   2    M           4??
+totem pole            26    0   1   9    M   98??    immobile
+trebuchet             15    3   3   6    M   37??
+troll                 36    12  1   4    M           3??
+troll king            105   30  2   5    M           giant size
+undead dragon         150   19  3   7    M   102??   giant size
+unexpected hero       15    8   2   3    M
+unknown priest        6     6   1   7    M   48??
+vampire               28    5   1   8    M   55??    flying
+venus trap            10    10  1   1    M           immobile
+war                   180   30  2   10   M   110??   giant size
+war chariot           13    6   1   4    H   bow     2??
+warlord               17    7   3   6    H
+warlock               5     2   1   8    M   43??
+water elemental       40    0   1   6    M   12??
+werewolf              20    8   3   5    M
+werebear              28    6   3   5    M
+white dragon          110   20  3   8    M   13??    immobile
+white draconian       21    7   2   5    M           flying
+wight                 20    1   1   6    M   16??
+will o the wisp       45    0   0   8    M   charme  flying
+winterwolf            20    8   1   2    H   101??
+witch                 5     3   1   10   M   5??
+wizard                5     2   1   9    M   85??
+wolf                  4     6   1   2    M           2??
+woodman               22    4   2   3    M           4??
+wood golem            53    10  1   5    M           giant size
+wraith                25    10  2   7    H   23??
+wyrm                  177   33  1   6    M   74??    giant size
+zombie                5     3   1   1    M
+
+ -----------------
+/  Landschaften  /
+-----------------
+
+Inc : Income
+F/H : Fungus/Herbs
+Sac : Sacrifices
+Con : Congregation
+Move: Anzahl Schritte, die zum šberschreiten ben”tigt werden
+      (99 = nicht begehbar)
+
+??? : Hat wahrscheinlich was mit Death zu tun
+      Death ist aber meist zuf„llig und ver„nderlich
+
+Hands of Glory  xHG
+Edelsteine xR, xS, xE, xD (xx = zuf„llig)
+
+
+   Name                      Inc  F/H  Sac  ???  Con  Move
+
+ancient forest                0    5    0    0    0    3
+ancient temple                0    0    0    2    20   1
+archmage citadel              1    2    1    3    0    1
+atlantis                      3    0    0    2    0    2   5S
+barbarian camp                1    0    1    1    5    1
+bridge                        0    0    0    0    0    1
+brigand lair                  0    2    0    2    2    2
+capital                       4    0    3    5    30   1
+capital                       2    0    5    5    40   1
+capital                       4    0    3    4    75   1
+capital                       5    0    3    7    40   1
+castle                        2    0    0    2    2    1
+castle                        3    0    0    0    10   1
+cathedral of neith            2    0    0    21   0    1
+cave                          4    0    0    0    0    2   5E
+city                          5    0    4    5    60   1   3HG xx
+cloudcastle                   3    0    0    0    0    3   5D
+coal mine                     3    0    0    1    0    2   xx
+coastline                     0    0    0    0    0    99
+coastal village               2    0    1    2    8    1
+colossus                      0    0    0    0    0    1
+crystal globe                 0    0    0    0    0    1
+crystal tower                 2    0    0    2    0    1
+dead forest                   0    0    0    0    0    1
+demonologist's citadel        2    0    0    5    0    1
+desert                        0    0    0    1    0    2
+destroyed jungle              0    1    0    0    0    2
+druid's hut                   0    1    0    0    0    2
+dwarven city                  5    0    0    3    0    3
+elven court                   1    7    0    0    0    3
+elven forest                  0    3    0    0    0    3
+farm                          1    0    0    1    5    1
+ferry                         0    0    0    0    0    1
+forest                        0    1    0    0    0    2
+gold stream                   7    0    0    1    0    3   xx
+gold mine                     20   0    0    3    0    3   xx
+grassland                     0    0    0    0    0    1
+graveyard                     0    0    0    10   16   1
+guard tower                   0    0    0    1    1    1
+guard tower                   0    0    0    1    0    1
+haunted city                  1    0    0    10   0    1
+hills                         0    0    0    0    0    2
+hobbit village                3    1    0    2    5    1
+huge cave                     1    1    0    0    0    3
+idyll                         0    0    0    0    0    2
+iron mine                     5    0    0    1    0    3   xx
+island                        1    0    0    1    5    1
+jungle                        0    2    0    0    0    3
+ka'ba                         2    0    0    0    70   1
+labyrinth                     0    0    0    3    0    9
+lake                          0    0    0    0    0    99
+maharaja palace               3    1    0    4    0    2
+marsh                         0    2    0    0    0    3
+mesa                          0    0    0    0    0    2
+mountains                     0    0    0    0    0    3
+mystical column               0    3    0    0    0    3
+necromancer's citadel         0    0    0    3    0    1
+old battlefield               0    0    0    12   0    1
+old castle                    0    0    0    4    0    1
+orc lairs                     1    1    0    4    0    3
+pit                           0    1    0    0    0    2
+port                          5    0    3    4    40   1   2HG
+river                         0    0    0    0    0    99
+ruined citadel                0    0    0    4    0    2
+savannah                      0    0    0    0    0    1
+sea                           0    0    0    0    0    99
+shadow wood                   0    0    0    0    0    2
+shaman's hut                  0    3    0    0    0    2
+ship stones                   0    0    0    0    0    1
+silvermine                    10   0    0    1    0    3   xx
+small village                 2    0    1    2    10   1
+smurfby                       1    6    0    0    0    2
+stonehenge                    0    1    0    0    0    2
+swamp                         0    2    0    1    0    4
+temple of el                  2    0    0    2    0    1
+temple                        1    0    0    1    60   1
+temple pyramid                1    1    5    10   0    2   4HG
+town                          4    0    3    4    40   1   2HG
+troll pit                     0    7    0    4    0    2
+village                       3    0    2    3    20   1   1HG
+vulcano                       0    0    0    0    0    3   5R
+warlock's cave                0    0    0    0    0    2   xx
+warlord's castle              2    0    0    3    0    1
+witch's tower                 0    2    0    1    0    1
+wooden tower                  0    0    0    1    1    1
+
+-------------------------------------------------------------------------------
+
+FALCONCROSS (shareware)
+-----------
+ATARI FALCON
+
+all levelcodes
+
+ 1. LUJABA     11. WIGUGA
+ 2. RYLEFO     12. KOWYKO
+ 3. XARIWA     13. PUKASA
+ 4. ZEXOPO     14. SYPENO
+ 5. TIZUMA     15. MASILA
+ 6. VOTYJO     16. NEMOXO
+ 7. BUVARA     17. JINUTA
+ 8. DYBEZO     18. LOJYBO
+ 9. FADIVA     19. RULAFA
+10. GEFODO     20. XYREWU
+
+(after level 20 the pics are the same...)
+
+-----------------------------------------------------------------Moondog of tnb
+
+TEKNOBALL (shareware)
+---------
+ATARI FALCON
+
+There isn't much to say...
+The save-files aren't very big and containing only some datas:
+level-number (must *not* be divisible through 5)
+number of lives
+number of bombs
+score
+(and something more)
+
+Ok, what is what you must discover by your own... ;-))))
+
+-------------------------------------------------------------------------------
+
+CONFUSION (WBW Game-line)
+---------
+ATARI FALCON
+
+levelcodes
+
+001 -------           021 patrimony         041 manufactory
+002 beginner          022 confounded        042 lyceum
+003 king-ra           023 increment         043 interchangeable
+004 revenge           024 garment           044 shop-assistant
+005 provost           025 socular           045 scrubby
+006 gratuitous        026 oppressiveness    046 pleasurable
+007 costliness        027 thankful          047 incommode
+008 observation       028 wetback           048 hundredweight
+009 murmurous         029 nostalgic         049 house-fly
+010 judgement         030 moroccan          050 double-dealer
+011 harmonize         031 lexicon           051 chimpanze
+012 gnastliness       032 friendliness      052 blood-relation
+013 eyewitness        033 auscination       053 quill-driver
+014 dunghill          034 discretion        054 presuppose
+015 cyclopean         035 contingencies     055 perfidiousness
+016 submission        036 submissive        056 manslaughter
+017 xylophone         037 sneering          057 launching-tube
+018 zoological        038 rarefaction       058 kinematograph
+019 stringency        039 poeties           059 jurisdiction
+020 stultification    040 medicament        060 horsemanship
+
+061 horror-stricken   081 gyrocompass
+062 hooping-conga     082 experimentation
+063 frustration       083 confutable
+064 frequency         084 asymmetry
+065 floor-lamp        085 fruit-machine
+066 fish-hatchery     086 honeycomb
+067 diversification   087 influorescence
+068 worcester         088 patchwork
+069 remote-control    089 sasu-window
+070 wrongneaded       090 thievishness
+071 walkietalkie      091 vindictive
+072 unstressed        092 ophthalmia
+073 transparency      093 kettledrum
+074 synagogue         094 promenade
+075 rumrunner         095 systematic
+076 olympic-games     096 volute
+077 luminary          097 obsession
+078 grossness         098 featherstitch
+079 indemnification   099 nonresident
+080 guarantee         100 end is near
+
+cheats
+
+type in: 'COKE IS FULL!' for unlimited lifes
+         right shift-key -> level-swap
+
+----------------------------------------------------------------------? & Coke-
+
+DYNABUSTERS and DYNABUSTERS+
+----------------------------
+ATARI STE/FALCON
+
+cheat-modes
+
+In  the  old  version (1/94) you  have to  enter "BOSSKEY" in the  titlepicture
+(Note: German Keyboard!!!) and after  that two  numbers from 1-10 (not from the
+numeric pad!). The first  number sets  the amount  of bombs you  can lay at the
+beginning and the second number how far you can bomb at the beginning.
+ESC=0, 1=1, 2=2 [...] 0=10 and ?=11.
+
+In the Plus-Version  from 7/94 you have to enter "CODEWORD" in the titlepicture
+and after  you have to  enter 3  numbers (not  from the  numeric pad). The last
+number sets  the amount of  bombs you can kick at the beginning. The rest works
+like in the older version. I hope you have no problems to use the cheats.
+
+--------------------------------------MC LASER of tHe sIRIUs cYBERNETICs cORp.-
+
+OXYD MAGNUM! (dongleware)
+------------
+ALL TOS-COMPUTERS
+
+level-codes
+
+  1 - 12315524   11 - 44598444   21 - 30124217   31 - 62087948   41 - 76588783
+  2 - 98242163   12 - 35787325   22 - 70220598   32 - 64526776   42 - 85245124
+  3 - 89693796   13 - 68099940   23 - 65870799   33 - 58468944   43 - 52876649
+  4 - 12343596   14 - 88815926   24 - 20527223   34 - 14213476   44 - 50310209
+  5 - 93255867   15 - 13236967   25 - 06002006   35 - 76231232   45 - 57899374
+  6 - 07659199   16 - 24629215   26 - 94254906   36 - 27333386   46 - 13834195
+  7 - 96549204   17 - 49344163   27 - 86510660   37 - 18604278   47 - 96169827
+  8 - 31222519   18 - 11076228   28 - 86993842   38 - 03298891   48 - 89062821
+  9 - 63343665   19 - 65670965   29 - 98493601   39 - 99454196   49 - 99490654
+ 10 - 40222617   20 - 27763196   30 - 04496947   40 - 41961156   50 - 39284938
+
+*51 - 17129395   61 - 07993986   71 - 42447856   81 - 17189650   91 - 99898913
+ 52 - 70370609   62 - 91069662   72 - 27623703   82 - 53113536   92 - 57587967
+ 53 - 23326211   63 - 90262957   73 - 67214017   83 - 47640135   93 - 08110454
+ 54 - 95626932   64 - 83333677   74 - 63838940   84 - 06979920   94 - 45289502
+ 55 - 68165303   65 - 89882818   75 - 59147171   85 - 65914917   95 - 48529617
+ 56 - 86729336   66 - 75562082   76 - 47682221   86 - 10514120   96 - 78059932
+ 57 - 64194675   67 - 36485136   77 - 26093418   87 - 96204636   97 - 43134777
+ 58 - 86223230   68 - 56988310   78 - 11676607   88 - 16550005   98 - 20067137
+ 59 - 64811274   69 - 15352071   79 - 69421493   89 - 17561760   99 - 79231045
+ 60 - 80411666   70 - 88079866   80 - 58632123   90 - 34493724  100 - 82705689
+
+
+print-secretcode - 48724993
+
+* stay on the middle plate below for at least one minute
+
+-------------------------------------------------------------------------------
+
+THE ROLLERCOASTER EXPERIENCE (Solution Software)
+----------------------------
+ATARI ST/E
+
+levelcodes
+
+01 - NONE
+11 - THESEUS
+21 - TROUBLE
+31 - STEIGER
+41 - CHAOTIK
+51 - PERSEUS
+61 - DAUBORN
+71 - ATARIST
+81 - CURVING
+91 - NOHINTS
+
+----------------------------------------------------------------Moondog of tnb-
+
+SUPER STARIO LANDS (Top Byte Software)
+------------------
+ATARI ST/E
+
+Try to type in AUSTRALIA as name in the highscore-table to play a very stunning
+version of the game...
+
+----------------------------------------------------------------Moondog of tnb-
+
+SHEER AGONY (Logitron)
+-----------
+ATARI ST/E - FALCON
+
+This should be no solution for  the game. At first I want to write one but I've
+lost the motivation to do this. So here are  some hints and tips and so you can
+save many time while playing the game...
+At the following text I'll tell you where you can find usefull things...
+
+-
+At the graveyard you can get a key under the deathstone left over the stone in
+front of you.
+At the little bush besides the deathstone in front of you you can find a knife.
+-
+At the lake you can find a stick. There is the entry to a cave but you'll need
+a candle and a lighter...
+-
+In the ground floor...
+In the  right room is a bookboard  with 2 books about the house and magic. Read
+them... On the  little chest of drawers on the right side  is standing a figure
+without a head. You must get this head to open the chest.
+In the kitchen (after the bibliothek and  the dining room) you can find several
+things  like spoons, a  cup, a coffe mill, a  teapot, wine, a lighter... In the
+oven you can find the key for the closed door in the first floor.
+In the left room you can find tabac and  you can go to the living room. In this
+room you can find  several books (besides others  also a map of  the house) and
+a candle (!).
+-
+At the first floor...
+The  right room  is a sleeping  room. After this  follows Phils sleeping  room.
+Behind  the picture at the wand is a safe  which can be opened with  the little
+key from the graveyard. In the safe you'll find the mixture for the antidote.
+In the bathroom, left  at the wand is a secret with the code for the electronic
+safe in the third floor... The code is 6825...
+-
+At the second floor...
+In the  left room  is a board with other  books. In the  big vase is one of the
+needed  medaillons. In the  room after this is another board where you can find
+a kruzifix and a another book about magic.
+In the right room you can find several things like a cardgame.
+In the room at the left side, which was  closed, you  can find  a picture which
+shows how you must put down the four medaillons at the table in the third floor
+and  also the second  medaillon (over  the bed at the wand). At nearly the same
+place is also a secret...
+-
+At the third floor...
+In the middle of the screen, behind the wand is a electronic safe. In this safe
+you will find the "vase of mooz".
+-
+In the basement...
+In the cupboard in the  big room at the basement you can find motoroil and also
+a fork, a knife and a lighter.
+Behind the right  door in the  basement there  is a cave. This cave take you to
+the waterfall at the little lake behind the house.
+
+----------------------------------------------------------------Moondog of tnb-

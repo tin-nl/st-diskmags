@@ -1,0 +1,403 @@
+
+
+            N e w    R e a d e r s    S t a r t    H e r e 
+
+This  is  your editor speaking,  this glossary was originally found  in 
+issue 12 of the Diskbusters Mag,  and looking at it, I thought, hey, as 
+we're  due  to get several million new readers as a  result  of  seeing 
+Maggie  at  the Autumn Atari Shows for the first time,  I thought  that 
+such  a glossary would be very useful for Maggie where such  terms  are 
+bandied  about  a lot in articles and are a bit of a  mystery  to  many 
+casual or novice readers.. 
+
+I  did  not  feel like writing one from scratch,  so in the  spirit  of 
+mutual assistance and brotherhood of Magnetic Interlude, I pinched this 
+one instead!!  However,  to make up for this, I have added some entries 
+of my own,  coming over all trainspottery and showing off my knowledge, 
+or lack thereof of certain favourite subjects.. 
+
+I've  also pinched this from Maggie issue 18,  and added some more bits 
+since then.. This makes me a really cheeky spacefilling git!!
+
+Thanks  to  Slimer  (The tall Dutch bloke who looks a  bit  like  Robin 
+Asquith) for the original..
+     
+On wit' the show folks..CIH..
+
+
+                           GLOSSARY
+        EXPLANATION OF USED COMPUTER TERMS IN THIS MAGAZINE
+
+
+Re-re-edited version.. (Just how many times!)
+
+There are many "unknown" words in this magazine for some people who
+are not familiar with certain computer terms.You will find a list with
+the most used words from the computer scene (there are many more but I
+decided to do only the important ones). We reach many people who don't
+know that there is a computer scene or just don't participate on the
+scene. So when those people start to read this magazine they stumble
+on words that they never have heard of. For those people we made the 
+following list:
+
+--------------------------------------------------------------------------
+
+Coder         : Is a programmer.
+
+GFX-man       : An artist that creates graphics with aid of the        
+                computer(see GFX).
+
+Music-man     : Someone who composes music with aid of a computer
+                (see musax).
+
+Cracker       : Someone who removes protections out of programs.
+
+Hacker        : Someone who breaks into computer systems often 
+                using a modem. 
+
+Swapper       : Someone who trades computer programs with other        
+                people mostly by mail.
+
+Modem trade  : Someone who swaps programs with the aid of a modem.
+
+Ripper       : That's a guy who steals/takes code/music and   
+               graphics for use in his own demo or intro.
+
+Phreaker       :Someone who does illegal and interesting things 
+                with the phone system,  a term more often found 
+                in 'underground' diskmags than the  mainstream 
+                diskmags or press..  
+
+--------------------------------------------------------------------------
+
+Code        : Code is just another word for a program or piece of    
+              program language.
+
+Routines    : Small piece of code that performs a specific task like
+              playing a module or showing a picture. Lots of routines
+              may well go on to make up a demo or game..Some Routines
+              are repeatedly used, and may form part of a LIBRARY of
+              often used bits of code.. This can save a lot of time
+              for a programmer who does not have to REINVENT THE WHEEL.
+          
+              Rumours that Ocean Software had a standardised set of
+              routines for their film licence games, in which they 
+              just  changed the graphics a little  bit for each new 
+              release are  probably true!! 
+
+Scrolline    : Line of text that scrolls horizontal/vertical over     
+               your screen.  Can  be  fancy text fonts,  large 
+               sizes, fifteen million colours etc.. Usually used 
+               to communicate non-vital information about the
+               personal lives of the programmers and their friends..
+
+GFX          : Grafix or just Graphics which means drawings and 
+               pictures on the computer screen.
+
+Piccy/pic    : A Picture (computer generated).
+
+Vector       : Lines that can form 3-D objects on your screen.
+
+Filled Vectors : The same objects but then they are filled with colors.
+
+Shaded Vectors : Filled vectors, but with graduated light/dark
+                 shading with a simulated light source for better
+                 realism.. Can be depth shaded, darker as it gets
+                 more distant onscreen, Gouraud, Phong etc,
+                 according to the mathematical principles used
+                 to generate the shading effect.. 
+
+Texture mapped   : Pictures/graphics that are used on/as walls/objects
+                   in games and demo's. Something like wallpaper made 
+                   from computer graphics.
+
+Logo            : The logo of the group who created an intro/demo, game  
+                  or for instance a diskmagazine. logo is a recognition  
+                  sign just like the one of a firm/company.
+
+Distorted        : A waving effect(moving screen lines).
+
+Raster(s)        :A  technique  of getting loads  of  colours  on 
+                  screen  in  an  'all  colours  of  the  rainbow'  
+                  fashion, commonly used to get more colours on
+                  a limited palette computer such as the ST..
+                  Usually used for background 'skyline' effects..
+
+Plasma           :What happens if you distort and wave loads of
+                  colours around.. Many variations on this theme.                     
+
+Borders          :Those annoying white areas around the edge of the 
+                  screen not used by your ST.. One very early staple
+                  of demo coders was to try to eliminate these by
+                  various means and put the wasted screen area to 
+                  good use.. Hence, BOTTOM BORDER SCROLLERS which
+                  used previously wasted screen area.. Also see
+                  OVERSCAN..
+
+Overscan         :A Hardware feature of the Falcon, which does
+                  away with the border areas on Philips type
+                  Monitors allowing you to use the whole screen
+                  area.. Also standard on Amiga, and available
+                  as a hardware fix for the STFM at least.. 
+
+Truecolour       :A Falcon specific screen mode referring to the
+                  number of colours available.. The Atari version
+                  of 'Truecolour' is 65,536 colours available, or
+                  sixteen bit.. This is a 'paletteless' screen
+                  mode, where there are no restrictions on how 
+                  you place the colours onscreen.. Purists consider
+                  'Truecolour' to be Twenty-Four bit or 16 million
+                  colours available, the Atari version is sometimes
+                  referred to as 'Highcolour'.. Any Falcon specific
+                  articles in Maggie will always refer to the Atari
+                  version unless otherwise advised..
+
+--------------------------------------------------------------------------
+
+Animation         :A computer generated 'movie' sequence, composed 
+                   of a number of frames reminiscent of how a film
+                   is stored but in a digital fashion.. Unlike most
+                   decent demo effects, not generated in realtime
+                   but still often impressive if done well.
+
+.FLI              :The animation format generated by the PC animation
+                   package '3-D Studio' - For a long time,the industry
+                   standard on that machine - 16 and 256 colour
+                   animations, variants include .FLC and .FLH 
+                   truecolour versions..
+                   Supported particularly well by Apex Media on the
+                   Falcon..
+
+.MPEG              :A more advanced animation format which also 
+                   supports an audio soundtrack.. More commonly used 
+                   for video clips and pre-recorded video disk movies
+                   rather than computer generated material.. There are
+                   a couple of public domain or shareware MPEG players
+                   for the Falcon, which use the DSP. Other platforms
+                   need special hardware, such as an MPEG card, or 
+                   Philips CDI player, although the Falcon can only
+                   run video at present there is a rumour of a full
+                   MPEG player that supports audio as well..
+
+.AVI              ;Also known as Video for Windows, a similar sort
+                   of thing to MPEG, but this is the format most
+                   supported on the PC, and indeed, built into 
+                   Microsoft operating systems.. A difficult one 
+                   on the Falcon at first, but now a decent .AVI 
+                   player has finally arrived.. 
+
+Quicktime         :The Apple Mac equivalent of the .AVI format, 
+                   with a .MOV file extender..
+
+----------------------------------------------------------------------
+
+Musax           : This is of course music and can be taken as 3        
+                  different basic forms,
+      
+Chipmusic       : This is music that is composed on the built in
+                  Yamaha YM2149 soundchip of a 'ordinary' ST.
+
+Module       : This is music made up of small samples like a drumbeat
+               a guitar Riff and many other small pieces. These small 
+               samples can get sequenced. All those little samples    
+               are forming a soundtrack which is called a module(also     
+               known as mod.). This is the most popular form of music 
+               because the quality is good and through the use of
+               small samples the module stays small.
+               
+               Modules are very common and now take several forms..  
+               Firstly, and most commonly is the Amiga four channel
+               'Protracker' format. This with variations is the
+               most common also on Atari ST and Falcon.. More 
+               recently, there are Amiga eight-channel (Octamed),
+               PC eight-channel (Fast Tracker), and a whole load
+               of newer multi-channel formats including a Falcon
+               specific Digital Tracker one of up to 32 channels
+               (.DTM extender).. Another format of interest includes
+               Screamtracker (PC, 32 channels, .S3M extender..)
+               which is a more complex and effects laden format
+               than usual.. The very latest PC format is Fasttracker
+               two, which at least one Falcon tracker supports..  
+
+Samples         : A piece of sound that is "recorded" with a sound-
+                  sampler. The height of the sampling rate (kHz.) is      
+                  related to the quality of the recorded sound. 
+                  Disadvantage of a high sampling rate is the enormous   
+                  flow of data. With a Falcon sampling a 20 seconds of   
+                  music at 50 kHz you will wind up with many megabytes   
+                  of data ! 
+(Also)         
+Sequenced samples : Repeating of samples in a music piece and thus
+                    saving precious memory. For instance if the same
+                    guitar Riff appears 4 times in a music piece,
+                    you only have to record it once. This technique is
+                    also used in modules.
+
+Yamaha YM2149    :Sound  quality is  relatively  crude  synthesis
+Basic Soundchip   method, generally sounds like the sort of noise
+whole ST family   made by fruit machines, but some good composers
+                  have achieved miracles even with this poor chip..
+                  Latest efforts have managed to get a sound 
+                  quality not too far off the venerable and fondly
+                  remembered Commodore 64 SID chip..
+
+DMA Sound        :This refers to the extra hardware present in the
+STe, TT,          STe, which allowed direct memory access for sampled 
+Mega STe          sounds, nominally a two channel left and right
+Falcon            stereo output, but module players have managed 
+                  four channels with ease, and stretched to fit in
+                  eight channels.. One program under development
+                  even allows up to thirty-two channels, but at a 
+                  severe cost to sound quality.. Interestingly, the
+                  Yamaha YM2149 sounds can be mixed in with the DMA
+                  channels, though who would want to do that beats me!
+
+Codec            :The advanced sound chip on the Falcon which allows
+Falcon only       a normal eight channels at sixteen bit quality, but
+                  this has been stretched again,  as it can produce 
+                  up to thirty-two channels without too much of a
+                  problem.. The Falcon can also sample in sound, as
+                  well as play it out..
+
+
+Summary:         :STFM, can play soundchip music with ease, four
+                  channel modules with medium difficulty and medium
+                  sound quality.. Sampling needs extra hardware..
+
+                 :STe, can play soundchip music with ease, four
+                  channel modules with ease, and at a good sound 
+                  quality, more channels with deteriorating sound 
+                  quality.. Sampling needs extra hardware.. The
+                  TT and Mega STe are part of this category having
+                  identical sound hardware..
+
+                 :Falcon, can breeze four channel modules, can 
+                  happily handle more, can also handle 'real-world'
+                  digital audio, and was designed for this purpose..
+                  Sampling hardware built in, and software also
+                  available for direct to hard disk recording, both
+                  at a professional and hobbyist level..
+
+--------------------------------------------------------------------------
+
+Lamer             : Someone who doesn't belong on the scene and is not     
+                    part of some kind of (well) known computer group.
+                    It also could simply be an unpleasant person. 
+
+Greetings         : A form of recognition that other groups know you.
+
+Fuckings          : The opposite of greetings, often sprouted from 
+                    competition or the ripping of code/graphs/music.
+                    Much rarer these days, unless you are involved 
+                    in the French scene and suffer from light
+                    fingered Amiga owners.. (See Maggie 20)
+
+--------------------------------------------------------------------------
+
+Mag.              : Magazine (can be either paper or digital).
+
+Diskzine          : Diskmagazine (see Diskmagazine)
+
+Diskmagazine      : Digital magazine on a computer floppydisk, often 
+                    containing articles and programs. Advantages in
+                    comparison with a paper magazine are,
+
+                    Low costs to make
+                    Small & compact (fits in your pocket)
+                    Interactive 
+                    Contains music 
+                    It's Public Domain (in most cases). 
+                    Articles with good coding tips
+                    Not restricted to any rules, 
+                    free to express opinions of any kind
+
+--------------------------------------------------------------------------
+                                      
+Intro             : A piece of code ( presentation screen ) in front
+                    of a program. It's a series of effects/programming
+                    tricks accompanied by music. The difficulty rate,
+                    style, originality and execution of the performed
+                    tricks is what's important.
+                    
+(Mega)Demo        : Demonstration of effects/programming tricks. Demo's    
+                    are mostly intro's accessible through a main-menu.
+                    Although a lot of megademos now tend to dispense
+                    with the main menu, and are run-through affairs..
+
+Dentro            : Something between an intro and a demo( without a 
+                    main-menu ). Effects/tricks are shown in a
+                    preordered sequence.
+
+--------------------------------------------------------------------------
+
+Packed/Crunched  : Programs that are made smaller to save disk space
+                   with a special (compression) packing program. If
+                   commands appear several times in a program, they get
+                   replaced for instance by one character. Space can
+                   also be compressed, all this leads to space saving.
+                   Good packers can compress certain programs more than
+                   60 percent or even higher !
+                   On one Falcon demo, a 100+Kilobyte module was 
+                   squeezed down to 22K, a compression ratio of
+                   around 5 to 1!! Has this been bettered yet? 
+
+Compil           : Compilation of many packed programs. Often 
+                   compressing several diskfilling programs on one
+                   single disk. These compils were very popular on
+                   the ST/STE, on the Falcon however they are rare
+                   (for the time being). 
+
+------------------------------------------------------------------------
+
+Pseudo name   : The codename of an individual computer freak on the    
+                scene. Pseudo names are mostly used by Hackers &
+                Crackers in order to cover up their real name for
+                obvious reasons. Other people who don't roam the
+                illegal circuit use them just for fun.
+
+Crew/group        : Several mostly talented individuals forming a
+                    group. Their main goal is to code better programs
+                    than the competition or simply to have some fun.
+                    These groups also have names ( like for instance
+                    the D.B.A. ).
+
+Alliance         : Many groups gathered in one big one, also under
+                   a name. (like the Independent). Sometimes they
+                   produce big megademos or other productions by
+                   joining forces.
+
+Scene            : Gathering of active computer groups and individuals.   
+                   Mostly elite coding groups or individuals. A
+                   parallel world beside the normal computer circuit.
+
+P.D.L.           : Public Domain Library ( Library filled with free       
+                   or low cost software made by mostly non commercial 
+                   individuals/groups ).
+                
+--------------------------------------------------------------------------
+
+DSP           : The Digital Signal Processor in the Falcon computer.   
+                This processor can perform tasks without disturbing    
+                the main-processor (68030). The DSP is especially       
+                designed to process digital information like samples,  
+                picture compression, speech recognition with incredible 
+                speed. It can also do other things as well, although   
+                it can't perform every task. The DSP is what makes the 
+                Falcon special ! There are three versions of this chip
+                a 16, 24 and 32 bit version. The Falcon has the special
+                24 bits one.
+                Otherwise known as the Motorola DSP56001, it can
+                also perform very fast (pre)calculation of 3-D
+                objects, more so than the main Motorola 68030 could
+                ever manage - even very fast, almost realtime
+                rendering is possible if your name is Douglas Little!                    
+
+--------------------------------------------------------------------------
+
+I hope you have enough information to make you understand most of the
+articles in this magazine. Like I said before; there are many more
+words that are being used on the scene but I just made a short list of
+the most used ones. Now go and read some articles...........
+                        
+                             Slimer (with add-ons by CiH)
+           

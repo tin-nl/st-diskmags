@@ -1,0 +1,257 @@
+
+
+
+
+       T H E  B O D G E R ' S  G U I D E  T O  T H E  A T A R I
+
+               Part One in an Occasional Series of One:
+
+                       - 020 Addressing Modes -
+
+
+
+
+NOTE:   These articles assume a reasonable knowledge of basic assembly
+terms such as registers, offsets and indirect addressing. If you don't
+know what (a0,d0.w) means yet, then this article is pretty useless for
+you...
+
+
+
+
+                       I N T R O D U C T I O N
+                       -----------------------
+
+If you have a knowledge of assembly,  a TT or Falcon, and an assembler
+such as Devpac 3, (or you just like to hack programs to find the cheat
+modes for games) then you may  have come across strange commands which
+have lots of brackets in them -  these use the addressing modes of the
+68020 (and 68030) processors, and they range from the cunningly simple
+to  the  mind-bendingly  unreadable,  depending  on  how  devious  the
+programmer wants to be. Or how much he wants to show off.
+
+These modes are powerful, allowing one command  to do the job of up to
+maybe 5 normal 68000 processor instructions, but are often not used by
+programmers, usually because  of  their  scary  appearance. So what on
+earth do they mean? And more importantly, are they any use?
+
+Users of Devpac 3 have a short  guide  on  the 020 modes, but it's far
+too short and unreadable to make any decent sense (well to me anyway.)
+The only people to understand  it  are  those  who  used to love doing
+French Reading Comprehension at  school,  apart  from French people of
+course. The rest of us will have to do with this quick guide...
+
+
+
+
+
+    O R I G I N A L   6 8 0 0 0   A D D R E S S I N G   M O D E S
+    -------------------------------------------------------------
+
+First of all, let's start with  the  basic terminology. I hate jargon,
+but in this case it's pretty essential. Sorry. You will of course know
+all these modes already, but I  will  be using these terms to describe
+the features below, so tough!
+
+
+[TYPE]  [IN ASSEMBLER]  [NAME OF MODE]
+(A)     (a0)            address register indirect
+        (a0)+           address register indirect with postincrement
+        -(a0)           address register indirect with predecrement
+
+(B)     x(a0)           address register indirect with displacement
+        x(pc)           program counter indirect with displacement
+
+(C)     x(a0,d0.l)      address register indirect with index
+        x(a0,d0.w)         "       "         "      "    "
+        x(pc,d0.l)      program counter indirect with index
+        x(pc,d0.w)         "       "        "      "    "
+
+(D)     xxxxxx.l        absolute long
+        xxxx.w          absolute word
+
+These are of course not  all  the  68000  modes  but are the ones with
+relevance to this article.  68020  modes  are  more complicated but in
+fact more logical, particularly with respect  to the examples of group
+(C) above.
+
+
+        68000 NOVELTIES
+        ---------------
+
+-1-  Scaling of Index Registers. The  values of index registers can be
+scaled (multiplied) by a factor of 2,4  or  8.  So now you can look up
+easily in tables of word- or longword data.
+
+e.g.    move.b  100(a0,d0.w*2),d1
+
+-2-  Index registers,  previously  only  data  registers,  can  now be
+replaced by address registers.
+e.g.    move.b  100(a0,a1.w*2),d1
+
+These additions appear to make  no  difference to execution time. Even
+when registers are scaled and an address register is used, it is still
+quicker than the new ones.... speaking of which:
+
+
+
+
+
+
+                      T H E   N E W   M O D E S
+                      -------------------------
+(I was going to put in  a  joke  about  Delta Force here, but couldn't
+think of one)
+
+
+        BASIC SYNTAX
+        ------------
+New 020 modes  follow  the  conventions  of  the  old 68000 addressing
+modes, but of course go quite a bit further in scope. The same concept
+of "add up the values in the brackets,  and use this as the address to
+look up data from"  applies,  but  with  the  addition that addressing
+modes of type (C) above now become:
+
+                 x(a0,d0.w) --> (x,a0,d0.w)
+Or more generally:
+
+displacement(An,index.size) --> (displacement.size,An,index.size)
+
+This placement of the displacement  (!)  to  inside the brackets makes
+the whole shebang more logical in syntax  and is followed by *all* new
+68020 modes. Got that? Even if  you  don't, assemblers such as Devpac3
+are quite accommodating in their use  of  loose syntax (I should know)
+so don't panic.
+
+Incidentally, the old 68000 modes  can  all  be re-written in this way
+with the displacement  inside  the  parentheses,  at  least  in decent
+assemblers...
+e.g.    move.b  (100.b,a0,d0.w*2),d1 ..is the same as
+        move.b  100(a0,d0.w*2),d1
+
+           This new syntax forms  the  basis  for  all  the 020 modes.
+Let's throw in a few twists...
+
+
+        NOVELTIES
+        ---------
+Now things get "fun". Here are the new features:-
+
+(Most people who code in assembly will  know this anyway, so skip this
+section if you want, but we have a few novel uses for it.)
+
+-1-  The displacement can now be  of  any size. It was previously only
+(-128) to (+127) (i.e. 8 signed bits) in size. Use of ".w" and ".l" to
+denote the size of the  offset  is  optional  -  in Devpac, a longword
+value is normally assumed:
+e.g.    move.b  100(a0,d0.w),d1                 ;old 68000 version
+        move.b  ($100000.l,a0,d0.w),d1          ;new 68020 version
+
+-2-  Any of the above parts can be omitted! (This IS useful, honest!)
+In fact the 68020 treats all  new instructions like this as containing
+a base register. When a base  register  is omitted, the assembler will
+use a "Z-register" (called "ZAn" or  "ZPC")  which has no influence on
+the effective address created by  the  processor. To see this register
+in MonST  when  you  have  omitted  a  base  register,  use  the MonST
+Preferences page to display them in dissassembly.
+
+Why omit  a  register?  Well,  only  when  you  don't  want  to bother
+allocating an address register, you can use an instruction such as:
+
+        move.w (Cosine_Table.l,d0.w*2),d0       ; look up cos(d0)
+
+Omission of  a  base  register  appears  to  make  no  improvement  on
+execution speed... in fact all the new 020 modes are SLOWER than their
+68000 counterparts, so use  them  instead.  Omitting an index register
+creates the old 68000  instruction  (think  about  it!)  which is much
+quicker.
+
+
+
+        NOW LET'S GET REALLY "INTERESTING"
+        ----------------------------------
+The final modes are called "memory indirect post-indexed" and  "memory
+indirect pre-indexed":
+
+        move.b  ([4.w,a0,d0.L],8.l),d1          ;pre-indexed
+        move.b  ([4.w,a0],d0.L,8.l),d1          ;post-indexed
+
+The first thing to remember is: don't panic!
+The non-panicking programmer  may  have  spotted  that  these examples
+still look suspiciously like standard  68020 instructions, (and they'd
+be right)...
+
+
+FOUR EASY STEPS:
+1.    Take the contents of  the  inner  [square]  brackets and treat
+      them as one of the simple 020 modes.
+
+      e.g.  [4.w,a0] means add #4 and a0 together.
+            [4.w,a0,d0.l] means add #4,a0 AND d0 together.
+
+2.    Use this as the  first  effective  address.  Take the LONGWORD
+      stored at this address.
+
+3.    Add the contents of the outer  (round)  brackets to the new value
+      taken.
+
+4.    Use this final value as the final effective address.
+
+--------------------------------------------------------------
+EXAMPLES:
+a0=$10000    d0=$C      contents of ($10010).L: $12345
+                        contents of ($10004).L: $23456
+
+1.      move.b  ([4.w,a0,d0.L],8.l),d1          ;pre-indexed!
+First effective address: 4 + $10000 + $C = $1000C
+Second effective address: ($1000C.L) + 8 = $1234D
+
+2.      move.b  ([4.w,a0],d0.L,8.l),d1          ;post-indexed
+First effective address: 4 + $10000 = $10004
+Second effective address: ($10004.L) + C + 8 = $2346A
+--------------------------------------------------------------
+
+This type of  instruction  comes  into  use  when  you  have  a set of
+longword tables which point  to  other  sets  of  lists. Here A0 would
+point to the first longword table,  each longword entry of which would
+point to another table. Using  this,  just  one instruction can do two
+lookups straight away.
+
+As above, parts of  the  above  instructions  can  be  omitted, but be
+warned, indexes and displacements should really always have their size
+denoted by the ".w" or  ".l"  otherwise unexpected results will occur.
+Most assemblers assume word sizes  for  indexes, but not always... but
+base registers are ALWAYS longwords.
+
+Also on disk should be  an  example  file  020MODES.S (Look in the 
+'Motorola  Dox'  sub-folder  in  the goodies  folder  for  this  - 
+CiH) which provides a couple of practical examples to step through 
+with a debugger.
+
+
+
+                T H E   U N S E E N   T W I S T
+                -------------------------------
+
+These extended instructions are S-L-O-W!  Technical heads should refer
+to the Motorola Document (hopefully)  included  on this disk, the file
+8_TIMINGS.DOC shows that that speed freaks  should continue to use the
+old 68000 modes! Makes you wonder why I wrote this article doesn't it?
+However, the addition of scaled  index  registers  is quite useful, so
+let's be thankful for small mercies.
+
+We hope to include more information on cycle timings in the next issue
+of Maggie but don't hold your breath!
+
+Finally, many thanks to Bjorn Ove èrthun (Zynx of Inferiors) who wrote
+the great Motorola documents.  He  is  also  writing a rather splendid
+Defender-type game, definitely one to look out for....
+
+                        The Bodger,
+                        Full of Christmas Turkey,
+                        26 December 1995
+
+
+P.S. Happy New Year, and may your turkeys always be stuffed
+
+

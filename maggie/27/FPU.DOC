@@ -1,0 +1,759 @@
+
+                         +-----------------+
+                           FPU PROGRAMMING
+                         +-----------------+
+
+
+It all really started with  DHS.  Although  they  were by no means the
+first people to code FPU stuff on  the  Falcon, they were the first to
+create a demo so good it made  buying an FPU worthwhile. That demo was
+'4ever' and ever since  coders  have  been  scratching  their head and
+thinking 'perhaps that FPU thing may be worth a look'.
+
+From this starring role, the FPU has gone on to make cameo appearances
+in numerous other 4k demos 128 byte intros - mainly due to its inbuilt
+sine and  cosine  table.  It  has  enough  functionality  to  make  it
+worthwhile using in full demos  as  well  as  intros, even more so now
+that most Falcon owners own one of these chips.
+
+As demo  effects  become  more  complex  and  3D  worlds  become  more
+prevalent,  hardware  floating  point   calculations  becomes  a  very
+tempting option. Although you  can  get  away  with using fixed point,
+floats give you so much more flexibility and power.
+
+Fair enough, you say. But how do I program the damn thing?
+
+Fear no more because the maggie  team  are  here to lift the shroud of
+secrecy from FPU programming.
+
+
+----------------------------------------------------------------------
+ DATA FORMATS
+----------------------------------------------------------------------
+
+On the 68030 you have these basic data types :
+
+ +----------+------+
+ | NAME     | BITS |
+ +----------+------+
+ | Bits     | 1    |
+ | BitField | 1-32 |
+ | BCD      | 8    |
+ | Byte     | 8    |
+ | Word     | 16   |
+ | LongWord | 32   |
+ | QuadWord | 64   |
+ +----------+------+
+
+These are all integer formats. As the  FPU is floating point based the
+data formats are very different, although there is some overlap.
+
+The 68881/68882 support three integer types:
+
+ +----------+------+
+ | NAME     | BITS |
+ +----------+------+
+ | Byte     | 8    |
+ | Word     | 16   |
+ | LongWord | 32   |
+ +----------+------+
+
+These are completely compatible with the 030 integer types.
+
+The 68881/68882 has three floating point types:
+
+ +----------+------+----------+----------+
+ | NAME     | BITS | EXPONENT | MANTISSA |
+ +----------+------+----------+----------+
+ | Single   | 32   | 8        | 23       |
+ +----------+------+----------+----------+
+ | Double   | 64   | 11       | 53       |
+ +----------+------+----------+----------+
+ | Extended | 96   | 15       | 64       |
+ +----------+------+----------+----------+
+ | Packed   | 96   | 12       | 68       |
+ +----------+------+----------+----------+
+
+The 'Single' format  is  equivalent  to  C's  "float"  data type, with
+'Double' being, erm, 'the double' of  C's  "double" type. (Now you are
+just confusing everyone! -ED)
+
+Whilst the 'Extended' type requires 96  bits  of storage in memory (12
+bytes) only 80 bits of this are actually  used by the FPU. The rest is
+for 'future expansion'. So its a bit  of of a waste using this format,
+especially if saving large chunks of floats in memory.
+
+Internally, the FPU performs  all  calculations  to  80 bit precision,
+first  converting  from  the  source   type  then  converting  to  the
+destination type (if necessary).
+
+Use of Double and Extended  types  requires  more memory overhead thus
+more time featching/storing data so I recommend sticking to the Single
+type - the overhead of the FPU conversions from Single to Extended are
+negligble compared to memory speed.
+
+Another big advantage of the  Single  type  is  that it fits neatly in
+68030 data registers so you can  use these for temporary stored and/or
+calculations!
+
+
+----------------------------------------------------------------------
+ REGISTERS
+----------------------------------------------------------------------
+
+The FPU follows the 68k  by  having  8  general purpose data registers
+named FP0-FP7. Each of these  are  80  bit  (extended format) and when
+data is moved into them it is converted into 80 bit precision.
+
+There are also status  and  control  registers  and a program counter.
+Full discussion of this is beyond  the  scope  of this article - after
+all, this is meant to be an introduction.
+
+----------------------------------------------------------------------
+ ADDRESSING MODES
+----------------------------------------------------------------------
+
+The FPU has access to all addressing modes of the host processor. This
+means you can use all the types  of  addressing you are used to on the
+030. The FPU can carry out  instructions  on memory and 030 registers,
+not just FPU registers! Obviously things  are faster in FPU registers,
+but you are not limited to just using these 8 registers.
+
+----------------------------------------------------------------------
+ CONDITIONAL CODES
+----------------------------------------------------------------------
+
+Like the 68000, the FPU has  a  status register with bits representing
+conditions. The condition codes reflect  the last arithmetic operation
+that occured in the FPU and can be tested.
+
+The following conditions are supported
+
+ +------+----------------------------------+
+ | EQ   | Equal                            |
+ +------+----------------------------------+
+ | NE   | Not ( Equal )                    |
+ +------+----------------------------------+
+ | GT   | Greater Than                     |
+ +------+----------------------------------+
+ | NGT  | Not ( Greater Than )             |
+ +------+----------------------------------+
+ | GE   | Greater Than or Equal            |
+ +------+----------------------------------+
+ | NGE  | Not ( Greater Than or Equal )    |
+ +------+----------------------------------+
+ | GL   | Greater or Less Than             |
+ +------+----------------------------------+
+ | NGL  | Not ( Greater or Less Than )     |
+ +------+----------------------------------+
+ | GLE  | Greater or Less or Equal         |
+ +------+----------------------------------+
+ | NGLE | Not ( Greater or Less or Equal ) |
+ +------+----------------------------------+
+ | OGT  | Ordered Greater Than             |
+ +------+----------------------------------+
+ | ULE  | Unordered or Less or Equal       |
+ +------+----------------------------------+
+ | OGE  | Ordered Greater Than or Equal    |
+ +------+----------------------------------+
+ | ULT  | Unordered or Less Than           |
+ +------+----------------------------------+
+ | OLT  | Ordered Less Than                |
+ +------+----------------------------------+
+ | UGE  | Unordered or Greater or Equal    |
+ +------+----------------------------------+
+ | OLE  | Ordered Less Than or Equal       |
+ +------+----------------------------------+
+ | UGT  | Unordered or Greater Than        |
+ +------+----------------------------------+
+ | OGL  | Ordered Greater or Less Than     |
+ +------+----------------------------------+
+ | UEQ  | Unordered or Equal               |
+ +------+----------------------------------+
+ | OR   | Ordered                          |
+ +------+----------------------------------+
+ | UN   | Unordered                        |
+ +------+----------------------------------+
+
+
+----------------------------------------------------------------------
+ INSTRUCTIONS
+----------------------------------------------------------------------
+
+Here follows a list of all the FPU instructions.
+Syntax:
+
+ <fmt>   is one of
+         .B ( byte - 8 bits Integer)
+         .W ( word - 16 bits Integer )
+         .L ( long - 32 bits Integer )
+         .S ( single - 32 bits Float )
+         .D ( double - 64 bits Float )
+         .X ( extended - 96 bits Float )
+         .P ( packed - 96 bits BCD Float )
+
+ <ea>    Any 68030 addressing mode
+
+ <label> A label
+
+ <list>  List of FPU data or control registers
+
+ FPcr    FPU control register (FPCR, FPSR or FPIAR)
+
+ FPn     FPU data register (FP0-FP7) this is the destination register
+
+ FPm     FPU data register (FP0-FP7) this is the source register
+
+ FPc:FPs Two FPU data register (FP0-FP7)
+
+ d       Displacement
+
+ k       An integer
+
+ ccc     An index into FPCP constant ROM
+
+
+Some basic instruction timings is given. This is based on FPU register
+to register operations. The numbers in  brackets represent the time of
+the head and tail of the instruction respectively.
+
+ e.g.
+
+ FDIV 108(17/87)
+
+108 cycles is the total execution time,  17 cycles for the head and 87
+cycles for the tail. Don't forget that the tail of one instruction can
+overlap with the head of  the  next  instruction to give you increased
+performance!
+
+These instruction  timings  will  not  given  accurate  timings,  that
+depends on the type of  input/output  format and addressing mode used.
+However, they do give  an  indication  of  the  relative  speed of the
+instructions.
+
+----------------------------------------------------------------------
+ FABS                                                       38(17/17)
+----------------------------------------------------------------------
+ FABS.<fmt>     <ea>,FPn
+ FABS.X         FPm,FPn
+ FABS.X         FPn
+
+Calculates the absolute value  of  the  source  operand and stores the
+result is the destination FPU register.
+
+----------------------------------------------------------------------
+ FACOS                                                    628(17/607)
+----------------------------------------------------------------------
+ FACOS.<fmt>    <ea>,FPn
+ FACOS.X        FPm,FPn
+ FACOS.X        FPn
+
+Calculates the arc cosine of the source operand. The source must be in
+the range [-1...+1] and the result is in the range [0...Pi]
+Arc cosine is basically and inverse  cosine. The result is [0...Pi] as
+the FPU works in radians - to convert to degrees multiply by 180/Pi.
+
+----------------------------------------------------------------------
+ FADD                                                      56(17/35)
+----------------------------------------------------------------------
+ FADD.<fmt>     <ea>,FPn
+ FADD.X         FPm,FPn
+
+Adds the source operand to the destination operand.
+
+----------------------------------------------------------------------
+ FASIN                                                    584(17/563)
+----------------------------------------------------------------------
+ FASIN.<fmt>    <ea>,FPn
+ FASIN.X        FPm,FPn
+
+Calculates the arc sine of the  source  operand. The source must be in
+the range [-1...+1] and the result is in the range [-Pi/2...+Pi/2]
+Arc sine is basically and inverse sine.
+
+----------------------------------------------------------------------
+ FATAN                                                    406(17/385)
+----------------------------------------------------------------------
+ FATAN.<fmt>    <ea>,FPn
+ FATAN.X        FPm,FPn
+
+Calculates the arc tangent of the  source  operand. The source must be
+in the range [-1...+1] and the result is in the range [-Pi/2...+Pi/2]
+Arc tangent is basically and inverse tangent.
+
+----------------------------------------------------------------------
+ FATANH                                                   696(17/675)
+----------------------------------------------------------------------
+ FATANH.<fmt>   <ea>,FPn
+ FATANH.X       FPm,FPn
+
+Calculates the hyberbolic  arc  tangent  of  the  source  operand. The
+source must be in the range [-1...+1]
+
+----------------------------------------------------------------------
+ FBcc                                                     23
+----------------------------------------------------------------------
+ FBcc.<size>    <label>
+
+If  the   condition   is   met,   program   execution   continues   at
+PC+Displacement. <size> determines the size  of the distplacement - if
+the label is +-32768 bytes away then  size  can be a word otherwise it
+is a longword.
+
+
+----------------------------------------------------------------------
+ FCMP                                                      38(17/17)
+----------------------------------------------------------------------
+ FCMP.<fmt>     <ea>,FPn
+ FCMP.X         FPm,FPn
+
+Subtracts the source operand from the  destination operand and set the
+condition code flags accordingly.
+
+
+----------------------------------------------------------------------
+ FCOS                                                     394(17/373)
+----------------------------------------------------------------------
+ FCOS.<fmt>     <ea>,FPn
+ FCOS.X         FPm,FPn
+ FCOS.X         FPn
+
+Calculates the cosine of the source operand. The source must be in the
+range [-2Pi...+2Pi] and the result is in the range [-1...+1]
+
+----------------------------------------------------------------------
+ FCOSH                                                    610(17/598)
+----------------------------------------------------------------------
+ FCOSH.<fmt>    <ea>,FPn
+ FCOSH.X        FPm,FPn
+ FCOSH.X        FPn
+
+Calculates the hyperbolic cosine of the  source operand and stores the
+result in the destination operand.
+
+----------------------------------------------------------------------
+ FDBcc                                                     32
+----------------------------------------------------------------------
+ FDBcc          Dn,<label>
+
+Decrements  the   specified   68030   data   register   and   branches
+conditionally to the specified label. This instruction is analogous to
+the 68K DBcc instruction (dbra etc). For condition codes see above.
+
+----------------------------------------------------------------------
+ FDIV                                                     108(17/87)
+----------------------------------------------------------------------
+ FDIV.<fmt>     <ea>,FPn
+ FDIV.X         FPm,FPn
+
+Divides the destination FPU register by the source operand.
+
+----------------------------------------------------------------------
+ FETOX                                                   500(17/479)
+----------------------------------------------------------------------
+ FETOX.<fmt>    <ea>,FPn
+ FETOX.X        FPm,FPn
+ FETOX.X        FPn
+
+Calculates e  to  the  power  of  the  source  operand  and  stores in
+destination FPU register.
+
+----------------------------------------------------------------------
+ FETOXM1                                                  548(17/527)
+----------------------------------------------------------------------
+ FETOXM1.<fmt>  <ea>,FPn
+ FETOXM1.X      FPm,FPn
+ FETOXM1.X      FPn
+
+Calculates e to the power of the source operand then subtracts one and
+stores in destination FPU register.
+
+----------------------------------------------------------------------
+ FGETEXP                                                  48(17/27)
+----------------------------------------------------------------------
+ FGETEXP.<fmt>  <ea>,FPn
+ FGETEXP.X      FPm,FPn
+ FGETEXP.X      FPn
+
+Extracts the exponent  from  the  source  operand  and  stores  in the
+destination FPU register.
+
+----------------------------------------------------------------------
+ FGETMAN                                                   34(17/13)
+----------------------------------------------------------------------
+ FGETMAN.<fmt>  <ea>,FPn
+ FGETMAN.X      FPm,FPn
+ FGETMAN.X      FPn
+
+Extracts the mantissa  from  the  source  operand  and  stores  in the
+destination FPU register.
+
+----------------------------------------------------------------------
+ FINT                                                       58(17/37)
+----------------------------------------------------------------------
+ FINT.<fmt>     <ea>,FPn
+ FINT.X         FPm,FPn
+ FINT.X         FPn
+
+Extracts the integer part  of  the  source  operand  and stores in the
+destination FPU register.
+
+----------------------------------------------------------------------
+ FINTRZ                                                     58(17/37)
+----------------------------------------------------------------------
+ FINT.<fmt>     <ea>,FPn
+ FINT.X         FPm,FPn
+ FINT.X         FPn
+
+Extracts the integer part of the  source operand, rounds down (towards
+zero) and stores the result in the destination FPU register.
+
+----------------------------------------------------------------------
+ FLOG10                                                   584(17/563)
+----------------------------------------------------------------------
+ FLOG10.<fmt>   <ea>,FPn
+ FLOG10.X       FPm,FPn
+ FLOG10.X       FPn
+
+Calculates  the  logarithm  of  the   source  operand  using  base  10
+arithmetic and stores in the destination FPU register.
+
+
+----------------------------------------------------------------------
+ FLOG2                                                    584(17/563)
+----------------------------------------------------------------------
+ FLOG2.<fmt>    <ea>,FPn
+ FLOG2.X        FPm,FPn
+ FLOG2.X        FPn
+
+Calculates the logarithm of the source operand using base 2 arithmetic
+and stores the result in the destination FPU register.
+
+
+----------------------------------------------------------------------
+ FLOGN                                                    528(17/507)
+----------------------------------------------------------------------
+ FLOGN.<fmt>    <ea>,FPn
+ FLOGN.X        FPm,FPn
+ FLOGN.X        FPn
+
+Calculates the natural logarithm of the  source operand and stores the
+result in the destination FPU register.
+
+
+----------------------------------------------------------------------
+ FLOGNP1                                                  574(17/553)
+----------------------------------------------------------------------
+ FLOGNP1.<fmt>  <ea>,FPn
+ FLOGNP1.X      FPm,FPn
+ FLOGNP1.X      FPn
+
+Adds ones to the source  operand  and calculates the natural logarithm
+of this value  and  then  stores  the  result  in  the destination FPU
+register.
+
+----------------------------------------------------------------------
+ FMOD                                                       75(17/54)
+----------------------------------------------------------------------
+ FMOD.<fmt>     <ea>,FPn
+ FMOD.X         FPm,FPn
+ FMOD.X         FPn
+
+Calculates the modulo remainder of  the destination operand divided by
+the source operand and stores in the destination FPU register.
+
+
+----------------------------------------------------------------------
+ FMOVE                                                       21(10/0)
+----------------------------------------------------------------------
+ FMOVE.<fmt>    <ea>,FPn
+ FMOVE.<fmt>    FPn,<ea>
+ FMOVE.L        <ea>,FPcr
+ FMOVE.L        FPcr,FPcr
+
+Moves the  source  operand  into  the  destination  operand  doing any
+necessary conversion.
+
+----------------------------------------------------------------------
+ FMOVEM                                                     54+25n/9
+----------------------------------------------------------------------
+ FMOVEM.X       <list>,<ea>
+ FMOVEM.X       Dn,<ea>
+ FMOVEM.X       <ea>,<list>
+ FMOVEM.X       <ea>,Dn
+
+Moves a set of FPU register to/from the specified address.
+This is analogous to the 68k MOVEM instruction.
+
+----------------------------------------------------------------------
+ FMUL                                                       76(17/55)
+----------------------------------------------------------------------
+ FMUL.<fmt>     <ea>,FPn
+ FMUL.X         FPm,FPn
+
+Multiplies the source operand  by  the  destination operand and stores
+the result in the destination FPU register.
+
+----------------------------------------------------------------------
+ FNEG                                                       38(17/17)
+----------------------------------------------------------------------
+ FNEG.<fmt>     <ea>,FPn
+ FNEG.X         FPm,FPn
+ FNEG.X         FPn
+
+Inverts the sign of the mantissa of  the source operand and stores the
+result in  the  destination  FPU  register.  Works  like  the  68k NEG
+instruction but on floats instead of integers.
+
+----------------------------------------------------------------------
+ FNOP                                                       19
+----------------------------------------------------------------------
+
+No operation. This is useful  for  forcing  synchronisation of the FPU
+with the 030 or to force processing of pending exceptions.
+
+
+Usually the FPU doesn't  wait  for  the  current operation to complete
+before starting the next operation. FNOP  causes the 030 to wait until
+the previous instruction has completed.
+
+----------------------------------------------------------------------
+ FREM                                                     105(17/84)
+----------------------------------------------------------------------
+
+ FREM.<fmt>     <ea>,FPn
+ FREM.X         FPm,FPn
+
+Calculates the modulo remainder of  the destination operand divided by
+the source operand. Stores the result in the destination operand.
+
+----------------------------------------------------------------------
+ FRESTORE                                                  340
+----------------------------------------------------------------------
+
+ FRESTORE       <ea>
+
+Aborts execution of  any  operation  in  progress  and  loads  the new
+internal state from the specified effective  address. This can be used
+with the FMOVEM to restore the complete FPU context.
+
+----------------------------------------------------------------------
+ FSAVE                                                     336
+----------------------------------------------------------------------
+
+ FSAVE          <ea>
+
+Saves the  internal  state  of  the  FPU  to  the  specified effective
+address. This state can be restore with the FRESTORE instruction.
+
+----------------------------------------------------------------------
+ FSCALE                                                    46(17/25)
+----------------------------------------------------------------------
+
+ FSCALE.<fmt>   <ea>,FPn
+ FSCALE.X       FPm,FPn
+
+Multiplies the destination operand by  2  to  the  power of the source
+operand. Faster than a standard FMUL when working with integer values.
+
+----------------------------------------------------------------------
+ FSCC                                                      25
+----------------------------------------------------------------------
+
+ FScc.<size>    <ea>
+
+Sets a byte conditionally. If the specified condition is true then the
+byte at the specified effective address is set to TRUE (all ones) else
+it is set to zero. For condition codes see the earlier section.
+
+----------------------------------------------------------------------
+ FSGLDIV                                                   74(17/53)
+----------------------------------------------------------------------
+
+ FSGLDIV.<fmt>  <ea>,FPn
+ FSGLDIV.X      FPm,FPn
+
+Divides the destination operand by  the source operand. Both registers
+are assumed to be in single precision format.
+
+----------------------------------------------------------------------
+ FSGLMUL                                                   64(17/43)
+----------------------------------------------------------------------
+
+ FSGLMUL.<fmt>  <ea>,FPn
+ FSGLMUL.X      FPm,FPn
+
+Multiplies the desitination operand by  the  source operand and stores
+the result in the desitination  operand.  Both operands are assumed to
+be in single precision format.
+
+----------------------------------------------------------------------
+ FSIN                                                     394(17/373)
+----------------------------------------------------------------------
+
+ FSIN.<fmt>     <ea>,FPn
+ FSIN.X         FPm,FPn
+ FSIN.X         FPn
+
+Calculates the sine of the source operand and stores the result in the
+destination operand. This operation  works  in  radians. The source is
+assumed to be in the rand [-2pi...+2pi].  The result is in the rand [-
+1...+1]
+
+----------------------------------------------------------------------
+ FSINCOS                                                  454(17/433)
+----------------------------------------------------------------------
+ FSINCOS.<fmt>  <ea>,FPc:FPs
+ FSINCOS.X      FPm,FPc:FPs
+
+
+Simultaneous sine and cosine. Calculates  the  sine  and cosine of the
+source operand and stores the results in the two destination operands.
+This operation works in radians.
+
+----------------------------------------------------------------------
+ FSINH                                                    690(17/669)
+----------------------------------------------------------------------
+ FSINH.<fmt>    <ea>,FPn
+ FSINH.X        FPm,FPn
+
+Calculates the hyperbolic sine of  the  source  operand and stores the
+result in the destination operand.
+
+----------------------------------------------------------------------
+ FSQRT                                                     110(17/89)
+----------------------------------------------------------------------
+ FSQRT.<fmt>    <ea>,FPn
+ FSQRT.X        FPm,FPn
+ FSQRT.X        FPn
+
+Calculates the square root of the source operand and stores the result
+in the destination FPU register.
+
+----------------------------------------------------------------------
+ FSUB                                                      56(17/35)
+----------------------------------------------------------------------
+ FSUB.<fmt>     <ea>,FPn
+ FSUB.X         FPm,FPn
+
+Subtracts the source operand from  the  destination operand and stores
+the result in the destination FPU register.
+
+----------------------------------------------------------------------
+ FTAN                                                     476(17/455)
+----------------------------------------------------------------------
+ FTAN.<fmt>     <ea>,FPn
+ FTAN.X         FPm,FPn
+
+
+Calculates the tangent of the source  operand and stores the result in
+the destination FPU register. This operation works in radians.
+
+----------------------------------------------------------------------
+ FTANH                                                    664(17/643)
+----------------------------------------------------------------------
+ FTANH.<fmt>    <ea>,FPn
+ FTANH.X        FPm,FPn
+
+
+Calculates the hyperbolic tangent of the source operand and stores the
+result in the destination FPU register.
+
+----------------------------------------------------------------------
+ FTENTOX                                                  570(17/549)
+----------------------------------------------------------------------
+ FTENTOX.<fmt>  <ea>,FPn
+ FTENTOX.X      FPm,FPn
+
+Calculates ten to the  power  of  the  source  operand  and stores the
+result in the destination FPU register.
+
+----------------------------------------------------------------------
+ FTRAPcc                                                  52
+----------------------------------------------------------------------
+ FTRAPcc
+ FTRAPcc.W      #<data>
+ FTRAPcc.L      #<data>
+
+If the specified condition is true  is  true an exception is generated
+and processing jumps to  a  vector.  Optionally  a  data  value can be
+specified which is pushed onto the  stack  and can be processed by the
+exception handler.
+
+----------------------------------------------------------------------
+ FTST                                                       36(17/15)
+----------------------------------------------------------------------
+ FTST.<fmt>     <ea>
+ FTST.X         FPm
+
+Tests  the  specified  operand  and  sets  the  condition  code  flags
+accordingly.
+
+----------------------------------------------------------------------
+ FTWOTOX                                                 570(17/549)
+----------------------------------------------------------------------
+ FTWOTOX.<fmt>  <ea>,FPn
+ FTWOTOX.X      FPm,FPn
+ FTWOTOX.X      FPn
+
+Calculates two to the  power  of  the  source  operand  and stores the
+result in the destination FPU register.
+
+
+
+----------------------------------------------------------------------
+
+
+Let's not pretend here, the  FPU  is  slow.  But  it is damn accurate!
+Fixed point maths on the 030  is  always  going to outperform the FPU,
+but the old 16:16 format doesn't give  you  a great amount of space to
+play around with and once you  start  extending beyond 32 bits you run
+into a whole host of complexities  and  speed issues so once again the
+FPU becomes a viable option.
+
+If you are going to do a 3D  world system, I recommend that you DO NOT
+use the FPU for the transformation  of  all  your vertices! The FPU is
+very useful for all the  initial  matrix  stuff, the concantanation of
+various matrices. If you are  going  to  be using Quaternions then the
+FPU is ideal.
+
+Let the FPU loose on any sort of  3D maths you are needing to do, just
+keep it away from tight  inner  loops  that  process a great amount of
+data.
+
+Functions like the FPU  Square  Root  are  extremely  useful. Sure you
+could write a 68k version in  less  than  110  cycles, but if you want
+accuracy and compactness here is your solution. This is very handy for
+4k intros and 128 byte demos!
+
+Be aware that the sin  and  cos  stuff  works  in  radians so you will
+probably want to convert it  into  degrees  before using it unless you
+are the type of masochist who  enjoys  working in radians. As the sine
+and cosine stuff is so slow  I  recommend using the FPU instruction to
+precalculate sin/cosine tables.
+
+Use the single precision format where you can  - it is 32 bits so fits
+neatly in a longword plus there is less to transfer to/from memory. Be
+aware that you cannot perform  standard  68k  instructions on FPU data
+and then expect it to make sense!
+
+For example, if you move a single precision float from an FPU register
+into D0, then negate D0 with a  NEG  D0 instruction you will not a the
+negative version of the original  data!  This  means you will probably
+also want to create negative  sine  and  cosine  tables as well as the
+positive ones.
+
+The beauty  of  the  FPU  is  that  allows  you  tackle  some  complex
+mathametical problems without the  limitations  imposed by fixed point
+maths. But be warned, once  you  start  programming  the FPU you won't
+want to go back!
+
+                   Mail me with your FPU questions:
+
+                         [ mrpink@atari.org ]
+
+
+REFERENCES:
+
+MC68881/882 Floating-Point Coprocessor User's Manual, Second Edition.
+[ Motorola, MC68881UM/AD, ISBN 0-12-567009-8 ]

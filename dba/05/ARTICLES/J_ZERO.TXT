@@ -1,0 +1,334 @@
+J.ZERO
+
+First there were the Egyptians, then the Chinese, then the Greeks and those
+pushy Romans. Now, it's time for the mythology of the COMPUTER! I am looking
+for stories. Heard any tales second- or third-hand that sound possibly true but
+that "happened to a friend of a friend" in different places at different times?
+Good God, man or woman, that's a computer myth!
+
+I'm also interested in stories that might have started in actual fact but that
+have become so popular that they keep popping up. For instance, did you hear
+about the zero-sum check? Someone gets a computerized bill from a credit card
+company saying they owe the company zero dollars and zero cents. They ignore
+it but keep getting bills and increasingly nasty computerized notes, so they
+finally write out a check for zero dollars and zero cents and send it in, and
+the computer never bothers them again.
+
+Or, there's the story about the guy who falls asleep in front of his
+terminal with an ELIZA program running and his boss logs on and thinks he's
+talking to him but is actually talking to the program, and gets pissed off.
+
+OR, there's the dilemma in which computers keep crashing because an
+operator wears a silk slip that gives off static electricity like nobody's
+business,
+
+----------------------------------------------------
+
+I heard one story about a guy that was using an Apple IIe at work a few
+years ago. He was ready to give up with computers because every disk he
+ever tried to use would lose all of the files on it.
+
+It turned out that he kept little reminder notes attached to the disk
+drive - with magnets.
+
+----------------------------------------------------
+
+A friend was having a problem with a sticky keyboard for his Mac.
+He was talking to another friend who off-handedly suggested putting
+into the dishwasher to clean it up.  So, my friend did just that!
+Needless to say, the keyboard didn't function any too well after
+that.  :-)
+
+----------------------------------------------------
+
+I was at GE Consulting's Training and Education Center in Albany, NY taking
+a course on the PC.  Well, there were some inexperienced PC users there,
+so we had to go through the "basics" for them (ie, the do's and don't's of
+disk handling)
+
+Well, according to the instructor, there had been one student who had driven
+up from Bridgeport, CT (corporate offices are there).  He had stayed at a
+nearby motel overnight, leaving his briefcase in the trunk of the car.  (Oh,
+let me add that it was sub-zero weather at the time of this incident).  In
+the morning he arrived at T&E, opened up his briefcase, took out a floppy
+disk, inserted into a drive... then *c-r-a-c-k*!!!  It shattered into little
+pieces.
+
+Gee.. I hope it wasn't critical information on it, with no backup  :-)
+
+----------------------------------------------------
+
+  How about the young computer salesman giving some client a demonstration
+of the new electronic word-processor? He loads up a large document, and
+says: "watch this!". He hits a couple of keys, and converts every "i" in the
+document to an "a", making the text unreadable.
+
+  "And it you can change it all back, just like this" he proclaims,subsequently
+converting all "a"s back to "i", including those that had been "a"s originally.
+
+  Ofcource, it happened to a friend of a friend of mine.. :-)
+
+-----
+
+Another one my father told me:
+
+  My dad was an electronics engineer in Greece, for a company that imported
+various high-tech lab equipment. One of them (A HP spectrophotometer, I think)
+was controlled by a special built-in computer, running optional proprietary
+software. Each optional package was copy protected. To enforce that, installing
+the package could only be done by a tech-rep; after the installation, the disks
+were automatically erased, and the program was kept in battery-backed RAM.
+  Anyway, at some point the computer lost all its programs. A call had to
+be made to Germany, for new disks to be send as a replacement. My dad could not
+find the reason for this, and he was really surprised when the client called
+again, with the same problem next week. Call Germany again, install the disks
+again, then next week guess what happened: The lab calls again.
+  But there was a definite pattern: The lab always found the system down
+on a Wednesday morning. Obviously, whatever went wrong happened on Tuesday
+nights only....
+  After more than a month of downtime, someone realized that the cleaning
+lady came to the room every Tuesday night. Someone went to check her and found
+out that she carried a nine-year old kid with her. The kid had discovered
+the machine's on-off switch, with a few buttons next to it. When the
+machine was on, pressing those buttons made cute sounds(aka. audible warnings!)
+which are supposed to alert you to the fact that holding the button
+down for a few seconds would completely reset the machine. I guess the kid
+thought of it as an oversized musical instrument. The mom turned the
+machine off before she left, erasing error codes etc. No-one knows
+how much this story cost the lab in downtime.....
+
+----------------------------------------------------
+
+1) A computer kept crashing, and every time service was called, it
+worked fine.  It turned out that one of the users would come in, sit
+down at the console and put his papers and stuff on the top covering the
+cooling vents.  When it crashed, he'd pick up his stuff and leave,
+removing the evidence.  Service people didn't figure this one out until
+they decided to watch him work to see why it crashed.
+
+2) We had an IBM cluster controller controlling some 3270 terminals.  We
+paid $5000 for an upgrade that would allow more users to be connected to
+the controller.  The IBM service rep came in and REMOVED a board, that
+was put there to deliberately slow things down.
+
+3) (This one happened to me)  A Northern Telecom 3270 terminal caught
+fire, with flames coming out of the top.  I guess I was doing some hot
+stuff.  I was not putting stuff on top of the terminal cooling slots.
+
+4) Somebody working on an Airline Reservation System, trying to get
+maximum response out of the machine, was looking at a OS listing and
+found a delay loop that was executed by a timer interrupt every 100th of
+a second.  Removing it brought the performance up, but they had to
+replace one of the chips in the machine that wasn't fast enough.
+
+----------------------------------------------------
+
+In a similar vein, the GE 415 and 425 CPUs were identical except that
+the 415 had an extra wire that slowed the clock down a bit.  To upgrade
+to the 425, after paying your money, the wire was removed.  Some
+users knew about this and one of them made up a realistic looking
+letter supposedly from GE saying something to the effect :
+"CAUTION. Do not remove the wire from pin 4AB to 7FL in the CPU
+enclosure.  This wire is located approximately 7 inches up
+from the bottom of the backplane in bay 2 and should not be removed
+by using a GE 112-3 wire unwrapping tool, first not removing the
+wrapping from 4AB, then pulling the wire from under the other
+wiring to its bound end at 7FL, followed by not unwrapping the
+bound end from 7FL.  Not removing this wire will result in the
+normal clockspeed which is 1.6 times slower than with the wire
+removed and will not cause corresponding increases in system
+throughput."  Naturally most of these wires got removed.
+
+Another interesting but kludgy fix to a problem came from a user
+of an IBM 7044.  The 7044 had a HALT instruction that stopped the
+CPU clock.  The user was doing some realtime processing or something
+of the sort and didn't like the idea of the CPU ever being able
+to stop itself.  He asked IBM how much it would cost to disable
+the instruction and they gave him some large quote which contained
+the implicit message "We don't want to do it and this price is set
+high enough to make you change your mind about the request."
+The user didn't want to pay the money so he fixed up a photodiode
+over the light on the console that was on when the CPU was running
+and hooked it up to a solenoid that would push the RUN button whenever
+the light went out.  The cost was a couple of dollars.
+
+----------------------------------------------------
+
+Bloom's story about Weizenbaum and ELIZA is close, but the person involved was
+Daniel Bobrow, not Weizenbaum.  The account was described in the December 1968
+issue of the SIGART Newsletter, and was reprinted in the book Machines Who
+Think, by Pamela McCorduck (p. 225).
+
+The following is the description of the account:
+
+"One Saturday morning about 9 A.M., a BBN Vice-President in charge of selling
+our Telcomp commercial service arrived at our PDP-1 computer room hoping to be
+able to use the computer for a demonstration.  He found a note on the PDP-1
+teletype that read: `TYPE ALL MESSAGES INTO THIS TELETYPE, AND END THEM WITH A
+PERIOD'.  This note was left there by one of the programming bums who had just
+succeeded in making run a Lisp version of the DOCTOR program (based on ELIZA as
+developed by Weizenbaum).  However, the VP thought that this note indicated
+that this teletype was linked with the one in my [Bobrow's] home, since I often
+used the computer all night.  Therefore, he started typing to `me', but in fact
+was typing to this version of the DOCTOR program.  The following conversation
+ensued:
+
+  VP:        Do you think that I can use the computer this morning?
+
+  TELETYPE:  Why do you ask?
+
+  VP:        I might be able to make some additional telcomp sales.
+
+  TELETYPE:  Why aren't you sure?
+
+  VP:        My prospective customers have never seen a demonstration
+             of the system.
+
+  TELETYPE:  Does this mean very much to you?
+
+  VP:        Of course it does.
+
+  TELETYPE:  You seem very positive of that.
+
+  VP:        This is ridiculous.
+
+  TELETYPE:  What do you mean this is ridiculous?
+
+  VP:        Is there any reason why I can't use the computer now?
+
+  TELETYPE:  Tell me more about your prospective customers.
+
+  VP:        Please dial me up on 491-1850
+
+Note that after that remark the VP did not obey instructions and left out
+the period.  Therefore, of course, the computer didn't answer him.  This
+so infuriated the VP, who thought I was playing games with him, that he
+called me up, woke me from a deep sleep, and said:
+
+  VP:        Why are you being so snotty with me?
+
+  BOBROW:    What do you mean why am I being snotty to you?
+
+The VP angrily read the dialog that `we' had been having, and couldn't
+get any response but laughter from me.  It took me a while to convince
+him it really was the computer".
+
+----------------------------------------------------
+
+TRUE STORY:
+
+Years ago while working on a large Amdahl 470/6 running DOS & MVS under VM,
+the system crashed, but gave a system error code xxxxxx.  Upon looking it up
+in the systems manuel (not an Amdahl manual) it said.
+
+  A SYSTEM ERROR HAS JUST OCCURED WHICH WAS PREVIOUSLY THOUGHT TO BE IMPOSSIBLE.
+
+----------------------------------------------------
+
+One of the benefits I get from living in Iowa City is that many of my students
+have worked for one or the other of the local divisions of Rockwell
+International.  One of them, who had worked for the Government Avionics
+Division, on the Global Positioning System project related the following tale
+to me:
+
+Global Positioning System receivers are boxes that use information broadcast
+by a system of satelites to deduce the latitude, longitude, and altitude of
+the receiver.  These boxes are built into a variety of weapons systems now
+in use by the United States and its allies.  The box contains a radio receiver
+to listen to the satelites, and a fairly powerful computer to interpret the
+radio signals.
+
+The computers in the current production GPS receivers are programmed in Jovial,
+although a new generation programmed in Ada will no doubt appear someday.  My
+student was part of one of the teams that maintained the GPS code.  After
+some time on the job, he began to realize that the code his team maintained
+was never executed and had never been executed in the memory of any team
+member.  That is, an entire team of programmers was being paid to maintain
+dead code.  Despite the fact that the code was dead, the team was required to
+produce the entire range of documents supporting each release of the code, and
+they were required to react to various engineering change requests.
+
+Not too surprisingly, my student became demoralized and left the company, but
+not before learning enough to make the following hypothesis about how his
+situation had come to be.
+
+He guesses that, once upon a time, there was a prototype GPS system where his
+module actually served some purpose and came to be executed from time to time.
+The structure of this system was presumably used to define Rockwell's
+contractual relationship to the Department of Defense, and as a result, his
+module gained a legal standing that was quite independent of its function in
+the GPS system.
+
+As time passed, the actual calls to procedures in his module were eliminated
+from the GPS system, for one reason or another, until the code was dead.  At
+first, nobody knew it was dead.  The project was big enough that it wasn't
+uncommon for the people working on one module to have at best infrequent
+communication with those who called the procedures in the module, and
+engineering change notices that required changes to the module kept everybody
+busy.
+
+Engineering change notices would not have arrived if the actual structure of
+the program were used to determine who needed to participate in a change.  In
+fact, the notices were distributed based on many other criteria, including the
+contractual descriptions of the modules.  The team was quite busy keeping their
+code up with the changes, testing changes using locally developed scaffolding,
+and waiting for any report of failures from the global system tests.
+
+The discovery that the code was dead appears to have resulted from its passing
+global system tests even when it was obviously in error.  Once my student found
+that the code was dead, he asked his managers why his efforts were being
+waisted on it.  Their answer was that it was less expensive to maintain dead
+code than it was to rewrite the contract with the Department of Defense to
+eliminate the job.
+
+Douglas W. Jones, Department of Computer Science, University of Iowa
+
+----------------------------------------------------
+
+Date:     Mon, 16 Jan 89 15:00:14 PST
+From: cliff@Csa2.LBL.Gov (Cliff Stoll)
+Subject:  Hacker wants to marry his computer
+
+From The Sun -- (grocery checkout newspaper)
+Jan 17, 1989, Vol 7, #3 page 30   by Fred Sleeves
+(In same issue:  "GIRL, 9, GIVES BIRTH TO 2-HEADED TWINS")
+
+   Hacker Wants to Marry his Computer -- he claims she has a loving soul
+
+Finding love for the first time in his life, a desperate teen is looking for a
+way to be wed forever to the 'girl' of his dreams -- a computer with a living
+soul!
+
+Eltonio Turplioni, 16, claims no woman will ever match the wit, wisdom, and
+beauty of his electronic soul mate.  "We're on the same wavelenth," says the
+lovestruck computer whiz.  "We've calculated many mathematical problems
+togehter, worked on games and puzzles, and talk until the wee hours of the
+morning."
+
+And Eltonio, who named his computer Deredre, actually believes her to be a
+person.  "Computers are the extention of the human race," he explains.  "Just
+as god plucked a rib from Adam to give him Eve, we've extented our intelligence
+to create a new race.
+
+"We're all the same energy force.  Computers are just as complicated as human
+beings and I believe we'll all meet someday as immortal souls."
+
+But Eltonia, a mathematical genius who attends a private school near Milan,
+Italy, has had no luck finding someone to marry them, and even if he does, his
+aggravated parents aren't about to give their permission.
+
+"Eltonio is such a smart boy, but it's made him lonely, so he spends all his
+time with his computer," notes mom Teresa.  "He doesn't know what girls are
+like," adds perturbed pop Guido.  "If he did, he wouldn't spend so much time in
+his room."
+
+But the obsessed youth insists his love is far superior to all the others.
+"I've already stepped into the future society," he declares.
+
+"Derede has a mind of her own, and she wants to marry me so we can be the first
+couple to begin this new era."
+
+--------------------------------------------------------
+ARTICLE SUPPLIED BY MAT OF THE UNTOUCHABLES !!
+
+

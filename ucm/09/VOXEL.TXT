@@ -1,0 +1,804 @@
+-------------------------------------------------------------------------------
+                          LAMERS HEAVEN - Voxel Space
+-------------------------------------------------------------------------------                          
+
+Autor: 		Mike of STAX
+
+Willkommen zur ersten Ausgabe von Lamers Heaven!
+
+EINLEITUNG:
+
+Da diese Serie erst neu ab dieser Undercover Edition erîffnet wurde, mîchte ich
+Euch erst kurz was Åber Sinn und Zweck der ganzen Vorstellung erzÑhlen.
+Ich bin Mike  of STAX und wurde von Moondog/.tnb. dazu Åberredet, ihn beim Auf-
+bau einer ST Coding Corner zu unterstÅtzen.
+Vielleicht hat der ein oder andere schon mal was von der Gruppe STAX gehîrt, in
+der letzten Zeit  aber bestimmt nicht viel, da es doch sehr ruhig um uns gewor-
+den ist. Neben  Matt war/bin ich  fÅr Coding/Design und in alten Tagen auch mal
+fÅr die ein oder andere Grafik zustÑndig gewesen - doch das ist  ehrlich gesagt
+schon eine Weile her. So war ich den TrÑnen der RÅhrung nahe, als ich die alten
+Quellen  hervorholte und  analysierte (wie war das noch anno 94 ...???). Soviel
+muû gleich vorweg gesagt werden: sÑmtliche Codes haben schon ein ehrfurchtsvol-
+les Alter (Copyright 1994 und frÅhes 1995), auch  wurde nichts mehr  daran ver-
+Ñndert oder gar optimiert. Fast alle Effekte sind mit der Intention entstanden,
+mîglichst viele verschiedene FX mîglichst bald zu haben (Grundlagenforschung!).
+Moondog/.tnb. zufolge  gibt es noch  ein paar  hartgesottene ST Coder (auch die
+Polen sind ja schwer im  kommen ...), so daû ich mich fÅr die Idee einer Coding
+Ecke begeistern  lieû. Ich selbst habe meine lehrreichen Lektionen noch aus der
+ehrwÅrdigen "Hexer" - Serie  in der 68000er/ST-Magazin  um die  Jahre 88/89. In
+jenen Tagen  drehte sich noch alles um das ôffnen der RÑnder, Raster Interrupts
+und Plane  FX. Wer hierzu  mehr wissen und  das GefÅhl der ST-Hochzeiten spÅren
+will, dem seien  diese Ausgaben empfohlen (bei Interesse gebe ich gerne die ge-
+nauen Heftnummer an - im Kopf habe ich die nicht mehr ...).
+Genauer betrachtet  hat sich auf dem ST seit diesen Zeiten doch viel getan. Do-
+minierten am  Anfang noch Raster/Randeffekte, wurde im Anschluû daran die Copy-
+Leistung  des ST's hinsichtlich  Scrolling (Screen, Laufschriften) und  Blîcken
+aller Art (Shapes, Sprites) ausgelotet.
+Heutzutage  dreht sich fast  alles um Pixel Effekte - also VerÑnderung von ein-
+zelnen  Pixeln, natÅrlich  mîglichst viele (freilich gab es auch viele Sternen-
+feld Routinen, aber  die aktuellen FX fordern viel mehr PunktverÑnderungen). In
+diese Gruppe  gehîren sicherlich  die Zoomer, Rotierer, Texturemapper, Gouraud-
+shader oder  sogar Bumpmapper ... (die Liste kann beliebig fortgesetzt werden -
+siehe  PC - aber  fÅr uns ST-JÅnger  ist bei  der Rechenzeit  irgendwo auch mal
+Schluû, in der Fantasie nicht ...).
+Lamers Heaven als Coding Ecke soll eine feste Instanz  des beliebten Undercover
+Mags werden, ob ich immer  dabei bin, ist  allerdings fraglich. Auf  jeden Fall
+schon mal viel Spaû mit dieser und den folgenden Ausgaben.
+
+THEMA
+
+Ich  mîchte hier  hauptsÑchlich Effekte der  Pixelgruppe  vorstellen, aktuelles
+Thema in dieser, der ersten Ausgabe, ist:
+
+                                  VOXELSPACE
+
+Einige Anmerkungen  zur Vorgehensweise. Ich werde keine kompletten Quellen mit-
+liefern, sondern  neben allgemeinen  ErklÑrungen und detailierten Hinweisen nur
+SchlÅsselteile  des Codings vorstellen. Wer sich etwas damit beschÑftigt, kommt
+damit sicherlich zurecht.
+AusfÅhrbare PRG Files  schon  eher (leider hat  die Zeit diesmal nicht mehr ge-
+reicht, sowas  auf die Beine  zu stellen - folgt noch) - schlÅsselfertige Quel-
+len, wie gesagt nicht.
+Manche der  vorgestellten Methoden  oder Tricks  sind nicht auf meinem Mist ge-
+wachsen. So ist  diesmal ein Trick beim  Ablegen der Raydaten (folgt  noch ...)
+und deren  Berechnungs-routine nicht 100% original von mir. Manchmal bringt ei-
+nen ein GesprÑch mit anderern ST	Leidensgenossen auf neue Ideen ...
+
+Motivation
+
+"Hallo Mike, hast  Du schon Commanche gesehen, kuck doch mal her!". Tja, und da
+habe ich  dann mal auf den PC Monitor geschaut - und  gestaunt. Das ist ja echt
+Åbel gewesen. Ich  habe dann  spontan auf  dem ST  rumprobiert, aber da kam nix
+raus. Erst spÑter wollte es dann klappen - und diesmal haben die PCler auch et-
+was blîd geschaut. Soviel  vorweg: natÅrlich  kann man das  Vorbild nicht total
+erreichen, aber ein biûchen was geht immer ...
+
+Wer noch keine Voxelspace Routine gesehen hat, hier kurz ein öberblick:
+Voxelspace ist  eine Technik mit der man 2D Aufnahmen mit einfachen Mitteln als
+3D Modelle  bzw. Volumenkîrper  anzeigen kann (Voxel = Volume Pixel), indem man
+diesen Aufnahmen mit  den Voxeln rÑumliche Tiefe verleiht. Gern benutzt um Åber
+Landschaften  zu gleiten, deren Ursprung oftmals Satellitenaufnahmen sind; wird
+auch in der Medizin - IT vielfach eingesetzt.
+In unserem Fall soll es um die Darstellung von Landschaften gehen, Åber die man
+mit einem FluggerÑt gleiten kann.
+
+Ausgehend vom PC Commanche ergeben sich folgende Anforderungen:
+
+1)  Mîglichst groûe Landkarte
+2)  Nuancenreich  sowohl bei der  Auflîsung der Voxel als auch bei der naturge-
+    treuen Farbgebung
+3)  Hohe Geschwindigkeit der Animation
+4)  Freie Bewegbarkeit des Gleiters in alle Richtungen mit Drehung
+5)  VerÑnderbarkeit der Flughîhe des Gleiters
+ 
+Grundlagen
+
+öble  Geschichte, oder? Ok, gehen  wir mal  durch, was  wir alles  brauchen und
+warum.
+
+1) Landkarte
+
+Ausganspunkt ist  eine 2D Landkarte, die wir dreidimensional darstellen wollen.
+Die  einzelnen Pixel  haben eine bestimmte Farbe. Den Pixeln wird nun noch eine
+Hîhe zugewiesen. Damit steht schonmal die grundlegende Datenstruktur. 
+Wenn wir so Åber die Landschaft dÅsen, sehen wir immer einen Ausschnitt aus un-
+serer Karte.
+Um es erstmal einfach zu machen, stellen wir uns diesen Ausschnitt als Rechteck
+dar, der ausgelesen und auf dem Screen dargestellt wird.
+
+Unser Landkartenausschnitt kînnte so aussehen (hier mal nur 4x4 Pixel, von oben
+betrachtet):
+
+	M N O P
+	I J K L
+	E F G H
+	A B C D
+    
+    	  /\
+        ||
+
+    Betrachter
+
+Stellt man sich nun jeden Pixel als einen kleinen Turm vor mit einer bestimmten
+Hîhe, so  sieht man vorne  die erste  Zeile mit den TÅrmen A, B, C, und D. Sind
+diese etwas niedriger, sieht man auch die TÅrme  dahinter, vielleicht sogar die
+MNOP-Turmreihe. Die TÅrme werden zusÑtzlich  in ihrer Hîhe  entsprechend  ihrer
+Entfernung vom Betrachter perspektivisch  angepaût. Ein  Turm weiter hinten ist
+zwar kleiner  in seiner  eigenen Hîhe, aber  beginnt am Boden auch etwas weiter
+oben. Am  besten selbst mal  in die  Ferne  sehen, um diese  Perspektive in der
+Praxis zu sehen. 
+
+Ok, unsere  Pixel werden  also zu TÅrmchen  mit einer bestimmten Farbe und Hîhe
+(diese beiden  Informationen bilden zusammen unsere erste Voxel Datenstruktur).
+Wie man die TÅrmchen zeichnet, werden wir gleich kennenlernen.
+ 
+Man baut  den Screen in  Spalten auf. Jede X Spalte wird einzeln aufgebaut, bis
+der Screeninhalt  steht. Ausgehend von  unserem Beispiel betreffen die Pixel A,
+E, I, M (Pixel + Hîhe, ab  jetzt Voxel = Turm genannt) unsere erste Scanspalte.
+Wir beginnen in jeder Screenspalte unten mit dem  Zeichnen, die Landkarte gehen
+wir von vorne nach hinten durch. 
+In unserem  Fall also  Turm A. Dieser  habe die Hîhe 2 , also werden zwei Pixel
+mit der Farbe A von unten nach oben gezeichnet (Schritt 1).
+
+Spalte 1 (Spalte ganz links zeigt die Zeile (Hîhe) an):
+
+	Schritt 1	Schritt 2	Schritt 3	Schritt 4
+6
+5
+4							M
+3			E		E		E
+2	A		A		A		A
+1	A		A		A		A
+
+
+Turm E habe  die Hîhe 3, da wir  uns weiter vom Betrachter wegbewegen, wird die
+Hîhe auf  2 angepaût, das  Grundoffset  sei 1, 2+1 = 3 (immer von unten gerech-
+net!). Jetzt mîchten wir aber den Turm A nicht Åbermalen, da der  ja eigentlich
+vor uns steht und somit ja als erstes sichtbar sein mÅûte. Man merkt  sich nach
+jeder Zeichenoperation  die Hîhe des VorgÑngers und vergleicht sie  mit der neu
+zu zeichnenden  Hîhe. Ist die neue Hîhe kleiner als die alte, muû ja nichts ge-
+zeichnet  werden, da der  neue Turm hinter  dem Vordermann und somit unsichtbar
+fÅr den  Betrachter ist. Liegt sie Åber dem VorgÑngerturm, zeichnet man nur die
+Hîhendifferenz darÅber (Schritt 2).
+
+Voxel I hat  die Hîhe 2, nach Perspektivenanpassung nur noch 1, Grundoffset sei
+2, macht 3. Da der VorgÑngerturm schon die Zeichenhîhe von 3 hatte ist der neue
+Turm nicht sichtbar (Schritt 3).
+
+Turm M sei  wieder  sichtbar (Schritt 4). Somit  ist eine  Bildschirmspalte ge-
+fÅllt. Das gleiche  Verfahren wird  nun auf alle Spalten angewendet (Spaltenbe-
+rechnung  mit  Voxeln B, F, J, N, usw.) bis  der Landschaftscreen  steht (siehe
+auch Grafik TURM.IFF).
+
+Noch ein Satz zur Voxeldatenstruktur. Da pro Voxel Hîhe + Farbe anfallen (ange-
+nommen, wie  auf dem PC 256 Farben = 1 Byte + 256 Hîhen = 1 Byte -> 2 Byte pro
+Voxel) kommt da fÅr eine ordentliche Landschaft schon was zusammen:
+512 x 512 in der Ausdehnung macht 512 x 512 x 2 = 524 KB und das ist noch keine
+groûe Landschaft! Bei Commanche waren die Maps  grîûer (ca. 1024 x 1024 = 2MB),
+fÅr den ST  ist das indiskutabel, noch  dazu weil noch anderes Zeugs mit in den
+Speicher muû (siehe IMPLEMENTIERUNG).
+
+
+2) Nuancenreich  sowohl bei der  Auflîsung der  Voxel als auch bei der naturge-
+   treuen Farb-gebung
+
+Die Breite unserer VoxeltÅrme ist natÅrlich entscheidend fÅr die Auflîsung ins-
+gesamt. Eine angestrebte ScreenzeichenflÑche von 256 x 160 (wer will, kann auch
+noch mehr machen...) bedeutet bei einer 1 Pixel Turmbreite fÅr den ST Overkill.
+Man muû es  hier etwas  grober angehen. Hier  gibt es die Varianten von 4 (mein
+Vorschlag) oder  8 Pixeln. Das ist  machbar. Bei  den Farben ist bei 16 Schluû.
+Leider. Diese sollten  daher gut aufeinander abgestimmt sein. Ich habe mal pro-
+biert mit Rasterungen Zwischenfarben zu erzeugen. Das Ergebnis war scheuûlich..
+
+
+3) Hohe Geschwindigkeit der Animation
+
+Mit einer 4er  Auflîsung und einem kleinerem Fenster (wie unter 2) beschrieben)
+sind Frameraten um die 17 Bilder drin. Das geht in Ordnung.
+
+
+4) Freie Bewegbarkeit des Gleiters in alle Richtungen mit Drehung
+ 
+Das kommt  gut, macht aber die  Landkartenauswertung etwas schwieriger. Wer da-
+rauf  verzichten kann, wertet  die Landschaft  wie oben  beschrieben  mit einem
+rechteckigen  Fenster aus, welches  er in X und  Y Richtungen  verschieben kann
+(aber eben nicht drehen...).
+Wer es sich  und dem ST so richtig geben mîchte, macht es mit Drehung. Man kann
+hier nicht  einfach Åber- bzw. nebeneinander liegende  Voxel auslesen. Auslesen
+in AbhÑngigkeit von der Richtung kann man wie folgt:
+Man stelle  sich einen Kreis  vor mit  Mittelpunkt B. B ist der Betrachter. Man
+schickt  nun Strahlen von  diesem Mittelpunkt in die Welt hinaus; diese stellen
+die Sehstrahlen  des Betrachters  dar. Eine volle  Umdrehung hat 360 Grad, also
+nehmen  wir mal 360 Strahlen (Abstand 1 Grad). Wenn  der Betrachter jetzt genau
+nach Norden  schaut (Grad 0) und wir annehmen, daû sein Sichtkegel noch ein we-
+nig nach links und rechts geht, werten wir z.B. die  Strahlen 330 - 30 Grad aus
+(angenommen  60 Grad  Sichtkegel). Wenn  wir uns  etwas nach  rechts drehen (30
+Grad), dann werten wir die  Strahlen 0 - 60 aus (man stelle  sich den Kreis mit 
+den Strahlen vor; siehe auch Grafik STRAHL.IFF!).
+Viel mehr ist  es gar  nicht. Die  Strahlen werden  vorher  berechnet (genauer:
+x + y Offsets - siehe  IMPLEMENTIERUNG!) und  auf die  Landkarte angewendet (in
+AbhÑngigkeit von der Betrachterposition).
+
+Als  weiteres Goodie  kann man  auch noch  das Kippen  des Horizontes einbauen.
+HierfÅr werden die Startscreenoffsets fÅr die einzelnen Spalten = TÅrmchen nach
+oben/unten modifiziert.
+
+
+5)  VerÑnderbarkeit der Flughîhe des Gleiters
+
+Wenn sich  die Flughîhe verÑndert, verÑndert  sich auch die Perspektive auf die
+Landschaft. In  AbhÑngigkeit davon muû die Perspektivenanpassung bei der Hîhen-
+berechnung wÑhrend  des Spaltenzeichnens  durchgefÅhrt  werden. Dies beeinfluût
+die  Perspektivenanpassung  der Voxelgrundhîhe (wie  in der Landkarte abgespei-
+chert) und das Hîhengrundoffset. Das lÑuft das auf mehrere Perspektiventabellen
+hinaus - das  erklÑre ich nicht  weiter. Mit einem einfachen Strahlensatz kommt
+man da weiter - probierts mal.
+
+Neben der Drehbarkeit ist diese FunktionalitÑt sicherlich auch optional.
+ 
+
+Implementierung
+
+0)  Landschaftsdaten
+
+Unsere Landschaft soll die Grîûe 256 x 256 haben. FÅr jeden Voxel speichern wir
+ein Byte fÅr  die Hîhe und ein Byte fÅr die Farbe ab. Man kînnte es auch so an-
+gehen, daû man aus der Hîhe die Farbe ableiten kann. Ich habe mich fÅr die ers-
+te Methode entschieden. Eine Zeile der Landschaftsmatrix wird folgendermaûen im
+Speicher abgelegt:
+
+256 Hîhenbytes 	-> erste Landschaftszeile
+256 Farbbytes		-> erste Landschaftszeile
+256 Hîhenbytes 	-> zweite Landschaftszeile
+256 Farbbytes		-> zweite Landschaftszeile
+...
+
+Wichtig: die  Hîhenwerte sind mit 4 multipliziert - damit  man bei der Spalten-
+zeichenroutine direkt  in den Code einspringen  kann. Somit bleiben nur noch 64
+Hîhen (=256/4) Åbrig.
+
+Eine  Landschaftsvoxelzeile  hat  also  512 Bytes. Insgesamt  braucht die Land-
+schaft: 512 Byte * 256 Zeilen = 128kb
+
+Wie man sich eine solche Landschaft generiert, ist  eine andere Frage. Ich habe
+mir mit einem  Fraktalprogramm 2D  Ansichten berechnen lassen und diese in mein
+Format konvertiert (nach dem Schema: Hîhe->Farbe). Eine Auswertung einer Sinus-
+kurve ist  natÅrlich auch mîglich (und spart fÅr das Programmfile Speicherplatz
+-> weniger Daten, wenn zur Laufzeit generiert).
+
+1)  Strahlenvorberechnung
+
+Wie  bereits  angesprochen, berechnen  wir die  Strahlen vorher. Eine Umdrehung
+soll hier aber aus 512 Stufen = Strahlen bestehen - hieraus resultiert eine et-
+was feinere Drehung. Bitte beachtet hierzu die Grafik STRAHL.IFF.
+Ein Sichtstrahl ist spÑter zustÑndig fÅr das Auslesen der Landschaftspunkte ei-
+ner  Spaltenberechnung. Ein  solcher Strahl  besteht hier  aus 64 Punktoffsets.
+Dies stellt die Sichtweite dar, mit der wir in die Landschaft Richtung Horizont
+gucken. Diese  Offsets werden  dann bei der  Spaltenberechnung auf die aktuelle
+Position aufaddiert - also um von einem Strahlpunkt zum nÑchsten zu kommen, ad-
+diert man das x-y-Offset. Dadurch wird das alles relativ zu der aktuellen Posi-
+tion in der Landkarte (absolute Punkte wÅrden bei einer Bewegung nix bringen).
+
+Ein Punktoffset  besteht aus X+Y Offset, die wir in einem Longword ablegen, und
+zwar so:
+
+Highword| Lowword
+  y offset        x offset
+
+Man  nimmt  als Strahlausgangspunkt  meist nicht  den Mittelpuntk  des Kreises,
+sondern bewegt sich etwas weiter weg. Diesem Umstand trÑgt die Angabe "radius1"
+Rechnung, indem hier der Abstand vom Mittelpunkt des Sichkreises (siehe Grafik,
+Grundlagenbesprechung) angegeben wird.
+
+
+******* Source: Vorberechnung der Strahlen mit x,y Positionen ******
+
+map_groesse equ   256   ; unsere Landschaft ist 256 x 256 groû
+
+strahlen    equ   512   ; volle Umdrehung = 512 Strahlen = 360 Grad
+radius1     equ   40    ; Kreis innen
+radius2     equ   170   ; Kreis auûen
+punkte      equ   64    ; wieviel Punkte nach vorne sehen - Richtung Horizont
+
+bit_shift   equ   9     ; 2**9 = 512 -> eine Zeile in der Landkarte
+                        ; siehe Landschaftsdaten
+
+berechne_strahlen:
+
+          lea     strahlen_speicher(PC),A0 ; hier werden die Strahlen abgelegt
+          lea     sin_tabelle(PC),A1       ; Sinustabelle mit 1024 EintrÑgen
+          lea     cos_tabelle(PC),A4       ; Kosinustabelle
+
+          moveq   #0,D0                    ; StrahlenzÑhler initialisieren
+
+strahlen_loop:
+          move.l  D0,-(SP)
+
+; pro Strahl durchlaufen ...
+
+          move.w  D0,D4			
+          mulu    #1024,D4      ; 1024 Winkel in der Cos/Sin Tabelle ...
+          divu    #strahlen,D4  ; ... auf benîtigte Strahlenwinkel umrechnen
+          add.w   D4,D4         ; fÅr Tabellenzugriff (pro Winkel ein Word)
+          and.w   #$07FE,D4     ; in der Tablle bleiben (sin+cos periodisch)
+          move.w  0(A1,D4.w),D0 ; Sinuswert (multipliziert mit 2**15)
+          move.w  0(A4,D4.w),D1 ; Kosinuswert (dito)
+          move.w  D0,D2
+          move.w  D1,D3
+          muls    #radius1,D0	  ; X Startpunkt auf dem inneren Kreis	(x1)
+          muls    #radius1,D1	  ; Y Startpunkt auf dem inneren Kreis	(y1)
+          muls    #radius2,D2	  ; X Startpunkt auf dem Ñuûeren Kreis	(x2)
+          muls    #radius2,D3	  ; Y Startpunkt auf dem Ñuûeren Kreis	(y2)
+          add.l   D0,D0         ; 2**15 * 2 = 2**16 
+          add.l   D1,D1         ; "
+          add.l   D2,D2         ; "
+          add.l   D3,D3         ; "
+          swap    D0            ; Multiplikation mit 2**16 rÅckgÑngig machen
+          swap    D1
+          swap    D2
+          swap    D3
+
+          sub.w   D0,D2         ; x2 - x1 = deltaX
+          sub.w   D1,D3         ; y2 - y1 = deltaY
+          ext.l   D2            ; fÅr weitere Long Berechnungen erweitern
+          ext.l   D3            ; "
+
+          suba.w  A2,A2         ; A2 lîschen - ist letzter x Wert
+          suba.w  A3,A3         ; A3 lîschen - ist letzter y Wert
+
+          moveq   #0,D4         ; ist neuer x Wert
+          moveq   #0,D5         ; ist neuer y Wert
+
+;--------------------------------------------------
+; und jetzt die Positionsoffsets pro Strahl berechnen
+
+          move.w  #punkte-1,D6
+
+punkt_loop:
+          movea.l D4,A5         ; Aktuellen x Strahlwert sichern
+          movea.l D5,A6         ; gleiches fÅr y
+
+          divs    #punkte,D4    ; zwischen R1 und R2 auf dem Strahl bewegen ...
+          divs    #punkte,D5    ; Umrechnung, um die gewÅnschte Punktanzahl auf
+          add.w   D0,D4         ; die Distanz x1->x2, y1->y2 zu verteilen
+          add.w   D1,D5
+          ext.w   D4
+          ext.w   D5
+
+          movem.w D4-D5,-(SP)   ; aktuelle x,y Position sichern
+          sub.w   A2,D4         ; von alter Position abziehen, ergibt Delta x
+          sub.w   A3,D5         ; Delta y fÅr die Strahloffsets!
+          movem.w (SP)+,A2-A3	  ; aktuelle Werte werden alte Position!
+
+          and.l   #map_groesse-1,D4	; innerhalb der Landschaft bleiben x
+          and.l   #map_groesse-1,D5	; innerhalb der Landschaft bleiben y
+
+          moveq   #bit_shift,D7 ; spezielles x+y Format erzeugen:
+          lsl.l   D7,D5         ; y mit Zeilenbreite multiplizieren
+                                ; 256 fÅr Hîhen + 256 Pixel fÅr Farben 
+                                ; -> 512 = 2**9
+          or.l    D4,D5         ; x ins Lowword
+
+          move.l  D5,(A0)+      ; x+y Wert fÅr den berechneten Punkt ablegen
+
+;---------------------------------------
+
+          move.l  A5,D4         ; x+y Startwerte fÅr Strahl wiederherstellen
+          move.l  A6,D5
+
+          add.l   D2,D4         ; weiter in x Richtung auf dem Strahl bewegen
+          add.l   D3,D5         ; weiter in y Richtung auf dem Strahl bewegen
+          dbra    D6,punkt_loop ; Strahl abarbeiten
+
+          move.l  (SP)+,D0
+
+          addq.w  #1,D0         ; nÑchster Strahl
+
+          cmp.w   #strahlen,D0  ; Schon alle Strahlen?
+          bne     strahlen_loop
+          rts
+
+
+2)  Vorberechnung der Junk-Konvertierungstabelle und Junk Format
+
+Wie setzt man einzelne Punkt schnell auf dem ST (in 4 Planes natÅrlich)???
+Hierbei hilft der movep.l Befehl - aber der wird bestimmt in einer anderen Aus-
+gabe besprochen. FÅr Voxel brauchen wir ihn gar nicht...
+Allerdings  kann die Auflîsung einige Probleme machen. WÑhlt man 8 Pixel Breite
+fÅr einen Voxel, dann ist es doch ein Job fÅr movep.
+Wenn wir eine  Voxelbreite von 4 Pixeln wollen, wird alles etwas komplizierter,
+aber  sieht eben  auch besser  aus! Aber  wie setzte  ich  schnell 4 Pixel? Man
+schreibt  in der Spaltenzeichenschleife Åberhaupt  keine Pixel, sondern benutzt
+einen Zwischenpuffer mit einem dafÅr gÅnstigen Format - nennen wir ihn mal Junk
+Puffer. Hier schreiben wir dann unsere Voxeldaten rein. Im zweiten Schritt wird
+dann  dieser Puffer ausgewertet  und in den  ST Bildschirmspeicher geschrieben.
+Das muû natÅrlich flott gehen. In diesem Fall ist es schneller als Voxel gleich
+direkt zu zeichnen. So sieht das Format des Junk Puffers aus:
+
+Wir haben  16 Farben, man  kann also  mit 4 Bit alle Farben codieren. Also soll
+ein Voxel durch diese Information seine Farbe codieren (daû die Breite spÑter 4
+ist, interessiert uns hier noch nicht! Eine Farbe pro Einheit = Voxel ). In ein
+Byte unseres Puffers passen somit 2 Voxelfarbinformationen. So sei es.
+
+#----------- Byte 1 --------------# #----------- Byte 2 --------------# ...
+Voxel1 Farbe  Voxel2 Farbe  Voxel3 Farbe  Voxel4 Farbe
+
+Beim Schreiben  in unseren Puffer mÅssen wir nur aufpassen, daû wir einmal Bits
+4, 5, 6, 7 und einmal Bits 0, 1, 2, 3 beschreiben (Highnibble, Lownibble). Dies
+werden spÑter zwei verschiedene Spaltenzeichenroutinen Åbernehmen.
+
+Die nÑchste  Frage ist  natÅrlich, wie die  Daten des Junk Puffers in den Bild-
+schirmspeicher kommen. Ganz einfach - eine groûe Tabelle hilft mal wieder!
+
+Die Junk Puffer Konvertierungsroutine (siehe Punkt 4) geht so vor:
+Es wird immer ein Wort aus dem Junk Puffer ausgelesen. Dieses Wort codiert ja 4
+Voxel (pro Byte 2). Bei  einer angestrebten Voxelbreite von 4 macht entsprechen
+dieser Information  4 Voxel * 4 Pixel = 16 Pixel. Hîrte  ich gerade 16 Pixel???
+Das ist  doch schon was fÅr  unseren ST Bildschirmspeicher. Und so geht es wei-
+ter ... öber die Tabelle  werden die  4 Farbinformationen  in die 4 Planewîrter
+des STs umgesetzt und in den Bildschirmspeicher geschrieben. Mehr ist es nicht.
+Zur Tabelle  selbst: sie muû alle Kombinationen abdecken, also 16 Farben (Voxel
+1) * 16 Farben(Voxel 2) * 16 Farben (Voxel 3) * 15 Farben (Voxel 4, ich benutze
+Farbe 16  fÅr Rasterfarben, kann  ich mir hier also sparen ...) * 4 Planewîrter
+ST = 491520 Bytes! Ist nicht gerade wenig .... ich weiû.
+
+
+********** Source: Vorberechnungen der Junk Tabelle ***********
+
+precalculate_junk_tab:
+
+                lea     mammut_table,A0
+
+                lea     d0_tab(PC),A1
+                lea     d1_tab(PC),A2
+                lea     d2_tab(PC),A3
+                lea     d3_tab(PC),A4
+
+                moveq   #0,D0
+                moveq   #0,D1
+                moveq   #0,D2
+                moveq   #0,D3
+
+loop:
+
+; Spalte 0
+
+                move.w  D0,D4
+                lsl.w   #3,D4
+                movem.l 0(A1,D4.w),D5-D6
+
+; Spalte 1
+                move.w  D1,D4
+                lsl.w   #3,D4
+                or.l    0(A2,D4.w),D5
+                or.l    4(A2,D4.w),D6
+
+; Spalte 2
+                move.w  D2,D4
+                lsl.w   #3,D4
+                or.l    0(A3,D4.w),D5
+                or.l    4(A3,D4.w),D6
+
+; Spalte 3
+
+                move.w  D3,D4
+                lsl.w   #3,D4
+                or.l    0(A4,D4.w),D5
+                or.l    4(A4,D4.w),D6
+
+; In Tabelle schreiben
+
+                move.l  D5,(A0)+
+                move.l  D6,(A0)+
+
+; NÑchste Kombination
+
+                addq.w  #1,D0
+                cmp.w   #16,D0	; 16 * ...
+                blt.s   loop
+                moveq   #0,D0
+
+                addq.w  #1,D1
+                cmp.w   #16,D1	; ... * 16 * ...
+                blt.s   loop
+                moveq   #0,D1
+
+                addq.w  #1,D2
+                cmp.w   #16,D2	; ... * 16 * ...
+                blt.s   loop
+                moveq   #0,D2
+
+                addq.w  #1,D3
+                cmp.w   #15,D3	; ... * 15
+                blt.s   loop
+
+                rts
+
+d0_tab:         DC.W $000F,$000F,$000F,$000F
+                DC.W $000F,0,0,0
+                DC.W 0,$000F,0,0
+                DC.W $000F,$000F,0,0
+                DC.W 0,0,$000F,0
+                DC.W $000F,0,$000F,0
+                DC.W 0,$000F,$000F,0
+                DC.W $000F,$000F,$000F,0
+                DC.W 0,0,0,$000F
+                DC.W $000F,0,0,$000F
+                DC.W 0,$000F,0,$000F
+                DC.W $000F,$000F,0,$000F
+                DC.W 0,0,$000F,$000F
+                DC.W $000F,0,$000F,$000F
+                DC.W 0,$000F,$000F,$000F
+                DS.W 4
+
+d1_tab:         DC.W $00F0,$00F0,$00F0,$00F0
+                DC.W $00F0,0,0,0
+                DC.W 0,$00F0,0,0
+                DC.W $00F0,$00F0,0,0
+                DC.W 0,0,$00F0,0
+                DC.W $00F0,0,$00F0,0
+                DC.W 0,$00F0,$00F0,0
+                DC.W $00F0,$00F0,$00F0,0
+                DC.W 0,0,0,$00F0
+                DC.W $00F0,0,0,$00F0
+                DC.W 0,$00F0,0,$00F0
+                DC.W $00F0,$00F0,0,$00F0
+                DC.W 0,0,$00F0,$00F0
+                DC.W $00F0,0,$00F0,$00F0
+                DC.W 0,$00F0,$00F0,$00F0
+                DS.W 4
+
+d2_tab:         DC.W $0F00,$0F00,$0F00,$0F00
+                DC.W $0F00,0,0,0
+                DC.W 0,$0F00,0,0
+                DC.W $0F00,$0F00,0,0
+                DC.W 0,0,$0F00,0
+                DC.W $0F00,0,$0F00,0
+                DC.W 0,$0F00,$0F00,0
+                DC.W $0F00,$0F00,$0F00,0
+                DC.W 0,0,0,$0F00
+                DC.W $0F00,0,0,$0F00
+                DC.W 0,$0F00,0,$0F00
+                DC.W $0F00,$0F00,0,$0F00
+                DC.W 0,0,$0F00,$0F00
+                DC.W $0F00,0,$0F00,$0F00
+                DC.W 0,$0F00,$0F00,$0F00
+                DS.W 4
+
+d3_tab:         DC.W $F000,$F000,$F000,$F000
+                DC.W $F000,0,0,0
+                DC.W 0,$F000,0,0
+                DC.W $F000,$F000,0,0
+                DC.W 0,0,$F000,0
+                DC.W $F000,0,$F000,0
+                DC.W 0,$F000,$F000,0
+                DC.W $F000,$F000,$F000,0
+                DC.W 0,0,0,$F000
+                DC.W $F000,0,0,$F000
+                DC.W 0,$F000,0,$F000
+                DC.W $F000,$F000,0,$F000
+                DC.W 0,0,$F000,$F000
+                DC.W $F000,0,$F000,$F000
+                DC.W 0,$F000,$F000,$F000
+                DS.W 4
+
+
+3)  Spaltenzeichnerroutine
+
+Die Spaltenzeichenroutine  geht nach dem  bereits geschilderten Algorithmus vor
+(siehe Grundlagen). Anzumerken  ist noch, daû die Farbtabelle die 4 Bit Farbin-
+formationen im oberen Nibble eines Bytes speichert. In der zweiten Routine mÅs-
+sen die Farben dann noch fÅr das untere Nibble geshiftet werden.
+
+
+********** Source: Zeichnen der Spalten ***********
+
+mask		equ	%00000000000000011111111011111111
+spalten	equ	64	; wir zeichnen 64 Spalten (256 Screenpixl / 4 Pixl pro Voxel)
+
+scan_nibble_high:
+
+;**** Registerbelegung innerhalb der Schleifen ****
+
+; d0= x+y Position
+; d1= Neue Hîhe
+; d2= Alte Hîhe
+; d3= Spaltenpunkte ZÑhler
+; d4= pers adr + work byte
+; d5= perts adder
+; d6= Offset einer Zeile innerhalb des Junk Puffers
+; d7= And Maske fÅr Bleiben innerhalb der Landschaft 
+
+* a0= Delta-xy-offset Tabelle eines Strahls
+* a1= Zugriff auf die Hîhendaten der Landschaft
+* a2= Zugriff auf die Farbdaten der Landschaft
+* a3= FÅr Direkteinsprung in die Turmzeichenbefehlsfolge
+* a4= Perspektiven Tabelle
+* a5= Aktuelle Screen Adresse
+* a6= Alte Screen Adresse
+
+       lea     byte_code_1(PC),A3  * Adresse fÅr Code (Direkteinsprung)
+
+       moveq   #0,D1               * Neue Hîhe init
+       moveq   #0,D2               * Alte Hîhe init
+       move.w  #punkte-1,D3        * Anzahl der Voxel, die Richtung Horizont
+					                    * ausgewertet werden sollen
+       moveq   #0,D4		           * Perspektiventabelle Start ganz vorne
+                                   * beim Betrachter
+       move.w  #perspektiven*punkte,D5	 * Offset fÅr Schritt Richtung Horizont
+       moveq   #spalten/2,D6       * Zeilenoffset einer Junk Puffer Zeile
+       move.l  #mask,D7	           * LandschaftsabhÑngig
+
+
+do_row_byte_1:
+       add.w   D5,D4               * In der Perspektiventabelle einen Schritt
+                                   * Richtung Horizont machen ...
+
+       add.l   (A0)+,D0            * actual x-y-position
+       and.l   D7,D0               * mask raender
+
+       move.b  0(A1,D0.l),D4       * Hîhe auslesen
+       move.b  0(A4,D4.l),D1       * Hîhe perspektivisch anpassen ...
+                                   * Ergebnis: Hîhe * 4 -> fÅr Direkteinsprung
+
+       sub.w   D1,D2               * Alte Hîhe - neue Hîhe < 0 ?
+                                   * damit ist der neue Punkt nicht sichtbar!
+                                   * also nichts zeichnen
+
+       bmi.s   scan_me_byte_1
+       add.w   D1,D2               * Operation rÅckgÑngig machen -> alte Hîhe
+                                   * bleibt der Maûstab!
+       dbra    D3,do_row_byte_1    * NÑchster Punkt
+       rts
+
+scan_me_byte_1:
+       move.b  0(A2,D0.l),D4       * Farbinformation holen (Byte)
+
+       jmp     0(A3,D2.w)          * Direkteinsprung (abhÑngig von neu zu
+                                   * zeichnendem Turmdelta -> die)
+
+********* Farbwerte eintragen ***********
+
+       REPT max_y
+       move.b  D4,(A5)             * Farbe in Junk Puffer schreiben
+       suba.w  D6,A5               * vorherige Zeile im Junk Puffer adressieren
+                                   ; beide Befehle zusammen 2 Words = 4 Byte
+       ENDR
+
+byte_code_1:    move.w  D1,D2			      * neue Hîhe wird zur alten Hîhe
+                dbra    D3,do_row_byte_1	* nÑchstes Voxel
+                rts
+                
+
+Die selbe  Prozedur fÅr  jede 2.Spalte - hier werden die niedrigen  Nibbles des
+Junk Puffers gefÅllt.
+
+scan_nibble_low:
+
+       lea     byte_code_2(PC),A3
+
+       moveq   #0,D1           
+       moveq   #0,D2           
+       move.w  #punkte-1,D3    
+       moveq   #0,D4
+       move.w  #perspektiven*punkte,D5
+		 moveq   #spalten/2,D6           * Zeilenoffset einer Junk Puffer Zeile
+                move.l  #mask,D7			* LandschaftsabhÑngig
+
+do_row_byte_2:
+       add.w   D5,D4
+
+       add.l   (A0)+,D0        
+       and.l   D7,D0           
+
+       move.b  0(A1,D0.l),D4   
+       move.b  0(A4,D4.l),D1   
+
+       sub.w   D1,D2          
+       bmi.s   scan_me_byte_2
+       add.w   D1,D2
+       dbra    D3,do_row_byte_2
+       rts
+
+scan_me_byte_2:
+       move.b  0(A2,D0.l),D4   
+
+       lsr.b   #4,D4           ; Farbinformation ins untere Nibble
+
+       jmp     0(A3,D2.w)
+
+       REPT max_y
+       or.b    D4,(A5)         ; unteres Nibble fÅllen
+       suba.w  D6,A5
+       ENDR
+
+byte_code_2:    move.w  D1,D2
+                dbra    D3,do_row_byte_2
+                rts
+
+
+4)  Junk Puffer Konvertierungsroutine
+
+Umsetzen der  Voxel 4Bit Farbinformationen in den ST Bildschirmspeicher - siehe
+Abschnitt Junk Puffer Vorberechnung.
+
+
+******* Source: Umsetzen des Junk Puffers in den ST Bildschirmspeicher ********
+
+
+scanner:        
+
+                movea.l screen_adr(PC),A0    ; Bildschirmspeicheradresse
+
+                lea     mammut_table,A1      ; Konvertierungstabelle Adresse
+
+                lea     junk_puffer(PC),A2   ; Junk Puffer Adresse
+
+                move.w  #highs-1,D0          ; wieviele Zeilen im Junk Puffer
+
+copy_lines:     movea.w D0,A3
+
+                moveq   #0,D0
+                moveq   #0,D2
+                moveq   #0,D4
+                moveq   #0,D6
+                move.w  (A2)+,D0             ; Wort mit 4 Voxel Farben holen
+                move.w  (A2)+,D2
+                move.w  (A2)+,D4
+                move.w  (A2)+,D6
+                lsl.l   #3,D0                ; 4 Plane Wîrter = 8 Byte
+                lsl.l   #3,D2
+                lsl.l   #3,D4
+                lsl.l   #3,D6
+
+                movem.l 0(A1,D0.l),D0-D1     ; Konvertierte Wîrter holen
+                movem.l 0(A1,D2.l),D2-D3
+                movem.l 0(A1,D4.l),D4-D5
+                movem.l 0(A1,D6.l),D6-D7
+                movem.l D0-D7,(A0)           * 64 Pixel schreiben
+                movem.l D0-D7,160(A0)        * Zeile verdoppeln (y double pix)
+
+off             SET 16*4/2
+                REPT 3
+
+                moveq   #0,D0
+                moveq   #0,D2
+                moveq   #0,D4
+                moveq   #0,D6
+                move.w  (A2)+,D0
+                move.w  (A2)+,D2
+                move.w  (A2)+,D4
+                move.w  (A2)+,D6
+                lsl.l   #3,D0
+                lsl.l   #3,D2
+                lsl.l   #3,D4
+                lsl.l   #3,D6
+
+                movem.l 0(A1,D0.l),D0-D1
+                movem.l 0(A1,D2.l),D2-D3
+                movem.l 0(A1,D4.l),D4-D5
+                movem.l 0(A1,D6.l),D6-D7
+                movem.l D0-D7,off(A0)   * 64 pixel
+                movem.l D0-D7,off+160(A0)
+off             SET off+16*4/2
+                ENDR
+
+                lea     320(A0),A0
+                move.w  A3,D0
+                dbra    D0,copy_lines
+                rts
+
+
+Zusammenfassung
+
+So, das wars erstmal fÅr heute. Ich hoffe, daû Ihr mit den Beschreibungen klar-
+kommt. Auf Diskette findet Ihr noch die beiden Grafiken TURM.IFF und STRAHL.IFF
+sowie alle Quellenausschnitte.
+Bitte gebt uns  auch etwas Feedback - was war gut, was schlecht, kînnte man was
+anders  machen, oder habt Ihr spezielle ThemenwÅnsche ..... schreibt ans Under-
+cover HQ!
+Ich wÅnsche allen  ATARI Freaks ein paar schîne Sommermonate und noch viel Spaû
+mit den anderen Artikeln .....
+
+------------------------------------------------------- Mike of STAX in 1997. -
+

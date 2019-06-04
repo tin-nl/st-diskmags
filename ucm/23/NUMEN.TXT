@@ -1,0 +1,210 @@
+ó--------------------------------------------------------------------------------
+                              "Numen" by TAQUART
+ó--------------------------------------------------------------------------------
+
+system... Atari XL/XE, 32o KB RAM, tested on AtariWin on P233MMX
+
+size..... 2 disksides
+
+release.. o8/o2
+
+ó--------------------------------------------------------------------------------
+
+It was a damn long time quiet around òTAQUARTð who belong to the top coding groups
+on the 8bit Atari scene and  now ó"Numen"ð shows why. Atm I  really don't remember
+when their last demo was  released, but I think  it was in the late nineties and
+since then only silence. Even if I didn't followed the 8bit demo scene that much
+I got the  impression that another  band has left  the lines. But after all, the
+year 2oo2 that brought a diet to the  ST/Falcon scene, was a golden year for the
+8bit Ataris, not only that there were a lot of coding parties and  meetings, no,
+also some major demo releases  have seen  the light, as you  also can see in the
+menu of this UCM... and since there wasn't that much to observe on the 16/32 bit
+scene, it was time to show what there is going on... and óNUMENð made me think...
+
+óEnough words around the hot pot... let's go on with the review...
+
+The demo starts with a grey hires picture that offers the menu as well where you
+can choose  if you want  to load the  demo, change  the setup  or read some info
+about it. And  as I  have seen a lot  of ñimpressive  screenshots on the internet
+that are from this demo I stepped straight to the demo ofcourse and a status bar
+appears showing how many  percent of the demo  are loaded so far. The picture is
+not bad, showing a comic cat and a big clock.
+
+Then the screen turns black for a while and like some rays of light some strange
+effect enlightens the screen again, accompanied  by some chip noises. Those rays
+that are  swirling on the screen  are building up a TAQUART logo in blue colours
+and as the  music really  starts to  play it opens the view onto a  3d landscape
+with bitmapped trees and stuff and then you're starting to move.
+
+So you're following  a way, seeing some buildings in the distance, going through
+them, moving over a bridge and so on... not bad but I have to admit that ñit is a
+ñbit slowð, but later for this...
+
+As you're reaching a building two persons are staying in front of it, maybe some
+kind of  guards? Anyway, you're  going into a  window of the building and a ñcool
+ñdemo logoð in interlace featuring a ñreal colour burstð comes up!
+And as it  disappears you're  starting to  move through the building... here the
+engine  runs ña bit  fasterð and  the whole surroundings  are made  out of  vector
+grafix, in  some  parts  overlayed  with  another  pixel  grating  to  give  the
+surroundings more colour steps, or least the impression, so take this one!
+
+{*i NUMEN1.PI1 m 11 20 101 200}
+
+óWhich door we will use?
+
+So you're moving  through floors and rooms, seeing  doors opening  and as you're
+moving  into one a  floor/sky mapper  appears, hold  in  green colours... but it
+isn't static  since it starts to turn  around its axis, ñreally cool looking!ð And
+as this runs  the music tops  itself with  drums and  strange beeping noises and
+effects.
+
+{*i NUMEN1.PI1 m 11 20 0 100}
+
+óYeah! Turn me baby!
+
+Then the screen  turns into  purple colours, changing  from the mapper into some
+texture  rotator and aaaargh... ñslowing  down the whole screenð a big environment
+mapped torrus comes from above...
+
+{*i NUMEN1.PI1 m 0 10 0 100}
+
+óThis one isn't only slow in the emulation...
+
+After turning into green the stuff was removed from the screen and another hires
+interlaced  picture in  monochrome comes up, showing some fantasy women, that is
+followed  again by ña  real hi-quality bumpmapperð in brown colours that kicks out
+even some bumpers on ST! ñVery impressive!
+
+After that you're  back in the  dungeon, moving upstairs, using some switches to
+open the doors of an elevetor  and to find yourself back in a red/brown coloured
+floor, opening  a door and seeing  even some furniture standing around and while
+moving through another  window you find yourself back in a tunnel-a-like screen,
+followed  by a cool zoomer that  goes deeper and  deeper, changing the pixels to
+create always new letters (the bands' name) to go on...
+
+Then  you're  back in  the room, going  through  another  door onto  some  other
+elevator, then  leaving it and  jumping (!) from plattform to plattform. ñThat is
+ñrealised  quite well...ð even in  that low resolutions it is leaving some special
+feeling. Then you're  coming to a  room that includes a pool and ofcourse you're
+jumping into  it... ;) and this causes another ñnice overlayed swirling effectð in
+blue colours that later on is getting some pixeled TQA logo in the background.
+
+And the  next effect  comes up, showing  us some circle distorter in red colours
+with the  TQA logo... back  in the  pool an underwater  door opens  and swimming
+through  another floor  you're finding  a point  to go up  again and leaving the
+water is  realised in  ña very stylish effectð, followed  by a ñmind blowing effect
+then, another ñcircle distorter accompanied with a interlaced flower!ð That brings
+more colours onto the screen  and ñlooks just marvellousð, unfortunately it wasn't
+easy to make some  good snapshot  here since  the interlace  mode kicked out any
+good possibility to convert the things in a way they were still looking good :(
+
+But still it isn't  enough, after  the screen  turns black  a huge  TAQUART logo
+scrolls from right to  left, bringing  again a lot of colours since every letter
+got a different palette! Reminds me  a bit to  the òSIX SIEVERTð logo  in the same
+named demo on Falcon by .tSCc. ;)
+
+And  then  we're  reaching  the  outer  world  again, running  to some temple or
+something, seeing spiders sitting on the grass besides the way, entering another
+room with some  moving thing in the middle, maybe something like a victim table?
+Jumping onto it makes the screen black again...
+
+Now some  moving tiles  puzzle game in  grey colours follows, starting to puzzle
+untill a wormhole  tunnel is  build together, while  on the right  border of the
+screen little  wormholes in  different colours are scrolling up and down... ñalso
+ñvery cool stuff!ð Those are changing the colours, moving very fast and giving way
+for another  interlaced  picture, showing a  brain and a numen logo. And then...
+What's this?
+
+{*i NUMEN2.PI1 m 0 10 0 100}
+
+ó"Terrorise Your Soul" for 8bit Ataris!
+
+Yes, Rubicks  magic cube comes  onto the screen, starting to assemble its single
+sides  and this  in a ñvery good  speed and quite  good resolutionð, using rasters
+in the background to brighten up the whole thing much more... ñvery impressive!
+And this goes  on as the  cube mixes  up itself again  and starting  to assemble
+again, ñin highspeed now!
+
+And we still  haven't reached  the end, since  now some green line vector person
+appears on the screen, including  its shadow and it jumps around and dances with
+very realistic moves! ñAlso a really good one!
+
+{*i NUMEN1.PI1 m 0 10 101 200}
+
+óMake the breakdance, baby!
+
+The next effect is a big filled vector cube on black background, not bad but not
+as impressive  like all the  other effects seen  so far. It is followed by other
+objects, that are also light sourced.
+
+Then you find  yourself back in the dungeon, showing a room with people standing
+in it, aaah, that's the credits screen and those are the makers... and after you
+took a look into  other rooms to  see them all you're finally reaching the exit,
+bringing  again  that  ñgreat  bumpmapper  in green  coloursð  now and  showing an
+"the end" followed by a black screen showing in the right lower corner saying...
+
+ò"(c) 1997 - 2oo2 Taquart"...
+
+Jau! What a  great demo  and what  a fuck that  the shell  can't deal  with more
+screenshots since I took about  3o screenshots while  running the demo and now I
+have to browse through them to show you the best snippets of the demo... And let
+me tell you... remapping sucks ;)
+
+òfinal words... "Numen" shows where the  guys of TAQUART were  lost over the last
+ò               years since a development  time of 5 years isn't usual. But after
+ò               all the result of those 5 years of work beats the shit out of any
+ò               demo on the 8bit Ataris and even some later productions on the ST
+ò               are just a shadow in comparison  with this  demo, really! Even if
+ò               some screens are braking  out the whole system and turning the fx
+ò               into slideshows it is just astonishing what the TQA made possible
+ò               on the little Atari. But not  only the  burning effex, and as you
+ò               could read and see there  were a lot of them, also  the design is
+ò               well done and it is a  nice idea to  use the  3d scenery to guide
+ò               through all  the effects, furthemore the grafix are marvellous as
+ò               well, well drawn logos and pictures using always a max of colours
+ò               and  resolution... Last but  not least  the music  is outstanding
+ò               since it accompanies the whole trip very  well without going onto
+ò               the nerves and giving  the demo  some more atmosphere... Just one
+ò               thing to say, if you haven't an 8bit machine, try to check it out
+ò               on emulation then, it's really worth a look!
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals.......ð  95 % ñ- great pictures, logos, animations, textures...
+ñaudio.........ð  85 % ñ- very good chiptune that goes along the whole demo...
+ñeffects.......ð  95 % ñ- read the review! unfortunately sometimes hardcore slow
+ñdesign........ð  9o % ñ- many cool transitions, colours, ideas, 3d scenery!
+ñoriginality...ð  9o % ñ- the 3d scenery is a hype itself, a lot of cool effex!
+
+ó___ðoveralló______ð91ó_ð%ó____________________________________________________________
+
+òThe 8bit Atari demo scene got a new milestone and I doubt  that there is someone
+òaround who can make a better demo in the next time... maybe in 5 years again? ;)
+
+But now a few last  words as announced. The coder of the 3d engine wanted to use
+this engine in  a game project called ó"Vector"ð that seems to be some kind of òego
+òshooterð. Because of  some support reason  or something it  is laying on ice, but
+over all I  doubt that this engine is fast enough to create a whole 3d game with
+it and I think somewhere the  makers should see that ñsomewhen the performance of
+ñANY machine reaches his end.ð I don't know if this engine is optimized untill the
+final frontier, but several  parts where the  whole environment is  slowing down
+are showing that those frontiers are reached now on  the little Atari and I have
+to say  that ñI'm no  fan of "bend and break projects"ð since  what use has an ego
+shooter with  ñslideshow frameratesð on  the screen? I think only to show that you
+have such a game  shouldn't be the  reason  for this, just  remember to the dull
+"Wing Commander" thing on the  Amiga, anybody  wanted the game, it took years to
+port it from the PC and ñthen it was crapð and the PC arses had a reason to laugh.
+
+Sure, in some parts the  engine runs  quite well but as far as bitmaps appearing
+on the screen and the  rooms got a few more colours and vector objects, it slows
+down a lot but you need those things to  make a game out  of it. Furthermore the
+limits of the grafix output are  reached here, the 8coloured outerworld looks in
+this resolution ñvery  blockyð but the higher resolution=less colours rule catches
+here and  even with 8colours you  need a lot of  imagination and fantasy  to see
+what the pixel-things on the screen should be...
+
+Anyway, at least they have thought about it and maybe they have faced the truth,
+maybe they will try  to optimize the routines  even more, it doesn't matter what
+will happen, we will report the things to come for you!
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_òo9/2k2ó_

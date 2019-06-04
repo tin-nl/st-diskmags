@@ -1,0 +1,334 @@
+ATARI CD-ROM SUMMARY 8
+~DROPS.FIL~
+ 
+net-042.tgz    379     Ver0.42 of MintNet, a networking extension w/BSD
+socket 
+nfs-042.tgz    183     Networking file system for MiNT+net.
+ntalk-01.tgz   92      Ntalk for Mint + net.   
+portlib-02.tgz 13      Pl2 of library software for porting unix stuff
+rpc-01.tgz     450     Pl1 of Sun RPC for Mint + MintNet       
+sinetd-00.tgz  19      Simple inetd for MiNT+MintNet
+term-1.08.tgz  244     A port of term for MiNT+net             
+tftp-00.tgz    37      Pl0 of trivial ftp for Mint+MintNet
+tftpd-00.tgz   27      Pl0 of the tftp server program for MiNT+MiNTNet
+udpprobe.tgz   23      Prg for testing connectivity in M+MN.  Similar to ping
+Mint/Shells/Shells (CLIs) for use with MiNT
+bashsrc.zoo    404     Source for bash.
+init9akp.zoo   32      Apratt's init shell, with history and cmd line
+editing 
+ksh_v04a.lzh   74      Korn shell binaries for mint, version 4.
+mintbash.zoo   151     A port of the GNU Bourne Again Shell specifically
+                        designed to work with MiNT. Dated June 8, 1991.
+sh03bin.zoo    83      Bourne shell binaries   
+sh03src.zoo    303     Bourne shell sources    
+tcshsrc.zoo    473     Source code for Eric's tcsh port.
+tcsh602.zoo    303     Diffs and binaries, tcsh 6.02
+tcsh6033.zoo   353     Tcsh 6.033.  
+zsh231b.tgz    299     Zshell, needs MiNT and MinixFS to run
+Mint/Telecomm/         Communications programs for MiNT
+st52.zoo       21      Dumb terminal emulator, runs under mgr.
+tip.arc        9       Howard's dumb terminal emul. for mgr and rmgr.Mint/Tt/
+bash-112.zoo   143     Bash for MiNT on Tts and Falcons.
+emacs1859tt.zoo 629    Emacs 1859 for MiNT on Tts and Falcons.
+Mint/Utilities/        Utilities for use with MiNT
+agrep204.zoo   51      agrep - faster than grep,egrep,fgrep v2.04
+agrepsrc.zoo   46      agrep - source code
+akputil7.zoo   51      Miscellaneous file utilities by A. Pratt; most run
+                       under TOS, one or two are MiNT specific.
+bison120.zoo   54      MiNT friendly bison by Hildo
+bmintzoo.tos   102     MiNT friendly version of zoo.
+diff21.zoo     189     MiNT friendly version of GNU diff
+elm-2.4.PL23.tgz       128     Elm email program
+fgrep11.zoo    41      Mike Dorman's fgrep for MiNT
+filutl34.zoo   368     MiNT friendly version of GNU file utilities 3.4
+find-37.zoo    91      MiNT friendly version of GNU find utility
+flut39st.zoo   421     MiNT friendly version of GNU file utilities v 3.9
+futilbin.zoo   258     Binaries for gnu file utils v3.1
+futilsrc.zoo   264     Source for gnu file utils v3.1
+gemtrm12.zoo   77      xterm clone for MiNT
+gdb35bin.zoo   325     Gnu Debugger.  Needs MiNT to run.
+gdb35src.zoo   963     Gnu Debugger source.  Needs minixfs to compile.
+gdb36p4b.zoo   246     GNU debugger.
+gdb36p4s.zoo   654     GNU debugger source.  Needs minixfs to compile.
+grep16.zoo     64      Mint friendly GNU grep/egrep by Hildo
+groff-1.07.readme 3    Readme for groff, check this first before d/l'ing
+                       others
+groffbin.zoo   708     Binaries for Hildo's groff
+groffvar.zoo   434     Library files and man pages for groff binaries.
+initbin.zoo    314     Steve's init for mint, binaries
+initsnb.zoo    695     Steve's init, source and binaries
+initsnb_tesche_update.zoo  50      An unofficial bug fix for init
+inisrc11.tgz   299     Steve's init, newest version, source, gzip'd tar
+file.
+lack.zoo       60      Load/unload acc's under MiNT
+mintosbn.tgz   356     Binaries for update of Init package. Requires Minix
+                       file system.
+mintossc.tgz   383     Source for update of Init package.  Requires Minix
+                       file system.
+mpack13b.zoo   56      encodes/decodes MIME messages, decodes uuencoded
+files
+mperl.zoo      142     Perl 4.035 for MINT using Bammi's latest sources
+patch.zoo      44      MiNT friendly patch, by Hildo
+ps_cpx.lzh     6       A CPX to view processes, send signals, etc.
+pstopls.zoo    58      Apratt utils for MiNT. Unixlike ps, top, and new ls
+rg10.zoo       19      Runs gem apps from tcsh/MiNT. Like gulam's gem cmd.
+screen01.tgz   123     MiNT version of screen 3.5.2
+sed114.zoo     49      sed for MiNT, again courtesy of Daniel.
+shu194st.zoo   387     MiNT friendly version of GNU Shell Utilities v.1.9.4
+stcron4.lzh    50      Cron, at, and crontab utilities for MiNT
+stelm3.lzh     33      Cut-down clone of Elm (Mailreader) for MiNT
+stlogin4.lzh   94      Login over modem, talk, getty, more, etc. Version 4
+tar-1112.zoo   75      MiNT friendly version of GNU tar 1.11.2
+trn341.tgz     288     Trn newsreader, requires GNU fileutils and sed
+tuu103_3.zoo   588     Port of Taylor UUCP package for MiNT (binaries +
+diffs)
+tuu103d3.zoo   52      Diffs for MiNT port of Taylor UUCP package.  You'll
+                       need to fetch the GNU source code to compile.
+txtutl16.zoo   401     MiNT friendly GNU text utils by Daniel 
+xxxx_it.lzh    5       Mint_it, mac_it! (Boot selection program or somet-
+hing)
+diff1819.zoo    5      Diffs to upgrade Mint v.1.08 to v.1.09 source.
+mint095b.zoo   170     MiNT v.0.95 Binaries and docs
+mint095s.zoo   227     MiNT v.0.95 Sources and docs
+mint96sb.zoo   320     MiNT v.0.96 beta Sources and docs
+mint104s.zoo   304     MiNT v.1.04 beta sources and docs       
+mint108s.zoo   302     MiNT v.1.08 beta sources and docs       
+mint110s.zoo   326     MiNT v.1.10 beta sources and docs
+mintman3.zoo   96      Manual page reader for MiNT
+miwm.zoo       13      Kurt's version of mw.  Mono only.  
+mntdoc01.zoo   550     Hildo's docs for MiNT and the MiNTlib
+mntman95.zoo   45      Manual pages for system calls in Mint v. 0.95
+mntscalc.zoo   144     Mint-based port of UNIX spreadsheet  ("SC")
+mntscalc_fix.zoo 145   mntscalc version 1.1
+mntutl95.zoo   167     Newer MiNT utilities needed for v 0.95.
+mntutm94.zoo   25      Manual pages for v 0.94 MiNT utilities
+mw2.zoo        62      Apratt's MiNT window manager. 11/4/91
+pc_m109s.tos   335     Mint sources w/patches applied for pure C users
+toswin14.zoo   45      TOS window manager, version 1.4
+toswinsc.zoo   86      Source for TOSwin 1.4
+tw14w12b.zoo   71      TOSwin 1.4 with Extensions. Binary
+tw14w12s.zoo   91      TOSwin 1.4 with Extensions. Source
+
+============================================================================
+Misc:
+
+0index          ??      This incredibly wonderful index you are perusing    
+2_5ram.zoo      6       Describes a DIY ram upgrade from 512 to 2.5M
+4plradap.txt    1       Instructions to make 4 player joystick adaptor 
+artweird.arc    32      "Artificial Weirdness Generator - Virgin 4.0"
+aua_info.Z      ??      Link to binaries on atari user's group stuff.
+autorais.zoo    5       Change top win. automatically under TOS/MiNT/MultiTOS
+bit36_e.lzh     16      German disk copier      
+cap.arc         81      Circuit analysis program        
+cea05150.lzh    73      CyRel ElectroAD #5
+cea06150.lzh    63      CyRel ElectroAD #6
+chi_rtc1.lzh    8       Chicago computerfest :GEnie RTC
+cmi.arc         81      Discussion of CMI accelerator boards
+cyber_co.lzh    14      GEnie roundtable on the CyberCube graphics card.
+dancer.lzh      47      GO-go dancer d/a
+dead_mon.lzh    6       Info on repairing dead monitors
+dealers2.txt    3       A list of Atari dealers
+dvorak.zoo      11      Accs to make your keyboard a dvorak layout.
+eliza.arc       2       venerable psychiatrist program
+free_bob.lzh    2       Put in auto folder, will show you bob
+fujidesk.lzh    9       Make the fuji in the corner spin.  Fun, fun, fun.
+gimmicks.lzh    33      A whole lot of fun d/a stuff.
+gnva_003.lzh    222     Patches Geneva Release 2 --> Release 3
+greeting.lzh    14      Create bootup messages
+guide_01.lzh    32      ST Guide hypertxt files: UFSL, GEMENV, AES, MIDIfiles
+hardware.lzh    10      Description of atari hardware, w/ pinouts, etc.
+hebib302.lzh    227     Hebrew bible concordance - working demo
+hype.zip        354     "PD Hypermedia construction program"
+iaad.lzh        5       Independent Association of Atari Developers list 5/94
+lckylt_c.lzh    47      Good lottery database.
+limmerick.lzh   7       Produces random limericks. Some even rhyme. :)
+lynz_rtb.zoo    24      GEnie roundtable discussion on the lynx.
+n_menmmin.lzh   5       Empty drop-down menu items use alternate chars.
+nbm11.lzh       16      New Bench Mark 1.1
+nexmsync.arc    6       Info on NEC multisync moniter   
+os.arc          7       Operating system info?
+pornacc.arc     19      You figure it out.... Low rez only.
+postal120.arc   17      Enter the city and state, get a zip code.
+pwrsupply.lzh   8       Do it yourself power supply construction
+quote2.zoo      111     Gareth's prg that prints random quotes on the screen
+rgbtocom.arc    13      Title says it all.  the docs.
+scode.arc       12      Old, obsolete coder, goes with rgbtocom.arc          
+
+ 
+sex.lzh         6       Mickey: "Haha, I'll let you find out." Doesn't end.
+spcspu.lzh      8       Spectrum uncompresser. Very crude       
+speak_ez.lzh    20      Speech synthesizer
+specdeg.lzh     1       Spectrum to degas       
+stdisc.zoo      10      Comments on the pros/cons of buying an st.
+sttalkcl.lzh    13      Talking clock acc
+tac-errata.lzh  6       Errata sheet for "The Atari Compendium".
+timesvr2.lzh    31      Time$aver 2 - North American registr. for Kandinsky
+timesvr3.lzh    30      Time$aver 3 - North American registr. for TT Artist
+tos206up.zoo    10      DIY installation of TOS 2.06 into 520/1040 (Rev. C)
+tos_14.lzh      36      Rainbow TOS enhancements and fixes      
+ud.arc          2       Acc to flip the desktop over.  Silly.
+unixmode.lzh    7       Converts tos to unix filenames  ('\' => '/' )   
+vanity.lzh      8       Vanity plate appears on your st.  CPX module.
+wrksupdt.tos    69      Updates AtariWorks for compat. w/ TOS 1.0/1.02
+xxxxbin.lzh     4       Finds raffle ticket winner from list of numbers
+
+============================================================================-
+Music:
+
+0index          ??      you guessed it!
+1st_note.lzh    28      Midi application
+32track.lzh     22      Midi seqeuncer, not too bad.
+accomp25.tos    172     ver 2.5 of Henry Cosh's MIDI sequencer (16 track)
+agtrak12.lzh    23      MOD player, low/med rez
+alchemjr.arc    160     Gem based, 48 track midi sequencer. shareware.  
+arpeg.arc       16      An arpeggiator for midi keyboards
+clab_tip.arc    2       Tips for using C-Lab / Notator
+club70.lzh      105     Patch editor/librarian for the Yamaha DTS70     
+concerto.lzh    87      Demo of the midi software.
+czphonix.lzh    40      Gem based patch editor and librarian for Casio CZs
+d110_mng.zip    173     Librarian/editor for Roland D110
+d10dump.lzh     110     Dump program for roland d10.
+d70rxtx.zoo     37      Loads and saves sounds from D70.  
+d.arc           56      ???
+d_calc11.lzh    23      "Delay Calc" performs variety of musical calculations
+desksong.arc    12      Play a song from a desk acc.
+dlxpiano.arc    38      Turns the keboard into a 'piano'.  Yeah right.
+ekseq1.zoo      61      Nice sequencer program.
+fb01.arc        55      Librarian for Yamaha FB01 sound module
+gigmus14.arc    89      Play several music formats in background, ACC/PRG
+gutarist.lzh    153     Guitaristics demo.  Tune and play your guitar.
+inst_22k.zoo    377     22khz .AVR samples
+inst_33k.zoo    139     33khz .AVR samples
+inst_od1.zoo    621     Various .AVR samples
+inst_od2.zoo    359     Same as above
+juno2lib.lzh    59      Roland Alpha Juno 1 or 2 patch loader/saver
+k1edit.zip      58      Librarian editor for Kawai K1/K1M
+ksclpt14.zip    63      Kawai K1 Synthesizer Librarian 1.4
+lehrer.arc      12      .SNG music files of Tom Lehrer songs.   
+m1_banks.arc    321     Librarian and matching dump acc for Korg M1
+master.lzh      ??      The demo for master.???
+midibeat.arc    31      Drum seq. editor for DR550 
+midiplay.lzh    22      Plays midi file formats, version 0.5
+midiseq.arc     36      Th original midi sequencer. Useful, but not serious.
+midispec.lzh    13      Midi specs.  Helps explain the mysteries
+miditalk.arc    17      See what's travelling over midi lines   
+mks_50.lzh      80      Patch/Tone editor for Roland MKS 50
+mmm226.lzh      101     Plays a gazillion sound file types to MIDI device
+mouth3.arc      38      A talking mouth (uses speech.tos)       
+mspydem3.lzh    21      Demo of Codeheads midi spy 
+musedt.arc      100     Create, edit, play .TUN files (some included.)
+music.zoo       103     Make Music! - non MIDI music editor/player.  All res.
+musicdb2.lzh    17      Music inventory database        
+muzak.lzh       4       Plays songs in the background.
+patchkng.zoo    92      Demo of patch king - a patch librarian
+patchlib.arc    114     Patch librarian.
+perfpich.arc    16      See if you have perfect pitch
+pian1_03.lzh    30      SMF MIDI tutor
+playback.zoo    52      New version of midifile player/converter
+quartet.lzh     45      Has anyone gotten this to work?  If so, how?
+resound.arc     11      Plays a sample upon exiting an application      
+slave.lzh       221     Maps sequences to various controllers.  Demo.
+smfplay.lzh     3       Source for a midi file player
+sngfile2.arc    23      Music studio song files, not midi song files    
+sngfiles.arc    81      more Music studio song files    
+speak_ez.lzh    ??      Linked to a speech synthesizer.
+speeh.arc       15      A different speech synthesizer.
+st_m2t11.arc    116     Midi files -> musical notation in TeX output
+staccato.arc    110     Compose and play songs. Nate says, "Lame."
+stmidiex.lzh    16      Loads and saves Raw SysEx Data
+stmzax01.lzh    501     Napalm Soldiers' 1st mod player and music disk  
+storm.zip       63      MOD editor
+stsynth.arc     29      Turn your st into a synth.  Yeah, right.
+sync_swt.lzh    13      How-to on building a sync box
+tcbsound.lzh    52      The care bears sound tracker demo.
+tx81z.arc       65      Sound librarian for Yamaha Tx81Z
+
+============================================================================-
+Network:
+
+***UNDER CONSTRUCTION at a.a.u.e***
+
+EtherNet:  Software for handling Ethernet controllers on the Atari 680x0.
+
+        readme             5109 Readme about tuw pakage
+        readme.pkd         3740 Description of how to write packet driver 
+                                for tuw-tcp.
+        tn.rsc             4398 RSC file for TNFTP.ACC
+        tnftp.acc         39583 version 1.32 of Telnet/Ftp for tuw-tcp.
+        tuw-tcp.1.22.lzh 142575 Complete Tuw-tcp version.1.22
+
+Ka9q:   This area houses various adaptations of the Ka9q source.
+        Ka9q in general handles SLIP and PPP protocols.
+
+        ka9q_doc.arc    148     Ka9q docs
+        ka9q_src.arc    247     Sources for ka9q package
+        ka9q_st.arc     153     Binaries for ka9q.
+        ka9qst.arc      69      Some sort of ka9q.
+        n890421.zoo     126     ka9q binaries
+        nhclb120.zoo    428     ka9q sources
+        newnet.zoo      97      Yet another net.tos binary (ka9q)
+        sticp.lzh       595     Your own icp software.
+        sticpsrc.lzh    701     Sources for your own icp software.
+
+Ka9q/Nos: D. Nash's port of Ka9q-NOS. 
+
+        README             2363 Description of Ka9q-NOS
+        nos041.tos       181220 Binaries to Ka9q-NOS version 4.1
+        nos041_s.tos     511396 Source code to Ka9q-NOS version 4.1
+        nosdoc.lzh        57013 Documentation to Ka9q-NOS
+        nosfiles.lzh      13418 Extra files for Ka9q-NOS 
+
+Ka9q/Nos/Install:  This is a startup package for Ka9qNOS
+
+        stnet110.tos     913518 All the current binaries w/install program
+
+Local:  Files for connecting two machines at your site without running
+        SLIP software.  ie. *Quick* and *Simple* networking.
+
+Local/Midi: Link to the Network/Midi directory.
+
+Mail:   Mail readers and tools for managing mail readers.
+
+        bm.tos            36120 The BM mailer for use with KA9Q NOS
+        mail110.lzh       52322 A simple mail program with source (Ka9q-NOS)
+
+Midi:   *Quick* and *Simple* Networking via Midi ports.
+
+        lit_net.lzh        5190 Litle Net - Midi Net .ACC nice and easy way
+                                to access drives on another machine.
+                                Does not like Falcon resolution switching.
+        midi_com.lzh     117902 Demo of German MIDI networking software
+        midinet.arc       46940 Midi Networking package
+        miknet13.arj      20065 Sharware midi-network (DOS end supposedly 
+                                                        exists)
+        mx2doc.lzh        27484 Documentation for mx2net
+        mx2net20.lzh      34578 Networking system including modula2 source.
+                                        Allows cross net file execution.
+
+
+News:   News readers and tools for managing news readers.
+ 
+        ng_dir.zoo         9251 Utility for managing news groups
+        nn13.lzh         353445 
+        o_024.zip        439749 Okami News-Reader
+        snz128e.tos      231418 News package for use with Ka9qNOS
+        snz128s.tos      164864 Source code for snz128e.tos
+
+Uucp:   Programs for managing and running UUCP on your Atari.
+
+        herm103b.zoo     760425 Hermes 1.03 beta.  uucp/mail/news/etc.
+        herm_114.zip    1248441 Hermes 1.14  uucp/mail/news/etc. 
+                                                        now supports pgp.
+        mercbin.lzh      322350 Mercury (binaries) uucp/mail/news/etc.
+                                predecesor to Hermes
+        upoint_l.lzh     365078 Upoint_light version of August 94       
+        upoint_l.lzh.old 323099 UPoint-Light Gem uucp/mail/news/etc. 
+                                             version of spring 94
+        uucico.arc        33152 
+
+
+tcpip.faq   - TCPIP.FAQ - info on SLIP/PPP/UUCP software for the Atari 680x0
+
+============================================================================-
+ 
+END OF PART 8

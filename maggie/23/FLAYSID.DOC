@@ -1,0 +1,102 @@
+
+                         F l a y S I D  v. 1.1 
+
+                 C64 Soundchip emulator for the Falcon
+
+There  seems to be some kind of strange symmetry involved here,  as  we 
+were waiting for a very long time for a SID chip emulator on the ST  or 
+Falcon  and  had to put up with countless very good imitations  in  the 
+meantime.. Then Cream release their SID player which is first seen last 
+summer,  and  gets  loud cheers and rave reviews from us.. Now,  at the 
+beginning of 1997,  we get an entirely new team working on the problem, 
+and  coming  up  with a very different solution..  The new  upstart  is 
+FlaySID,  and  we  have the team of David Carrere and Mikhael Myara  to 
+thank for that..
+
+The  version of FlaySID is version 1.1,  released in January 1997..  In 
+contrast to the Cream program,  this is GEM based,  and uses some quite 
+nice  design,  including  3-D  buttons,  and is clearly intended for  a 
+Falcon  only..  FlaySID  can  be run as a standalone program,  or  even 
+better,  as  a desk accessory..  This overcomes the one weakness of the 
+Cream  effort,  which  basically  seized total control of  your  Falcon 
+whilst  you used it..  FlaySID allows you to have SID music whilst  you 
+work, without too much of a performance penalty, although we'll discuss 
+that again a bit later..
+
+FlaySID  is designed to be as robust as possible,  and even to be MagiC 
+and   NVDI   compatible,   although  the  authors  warn  agains   using 
+MiNT/MultiTOS..  Loading  files overcomes the restrictions of the Cream 
+player,  as  it  recognises both the Amiga *.PSD format files,  and the 
+two-part  files used by the PC players..  
+
+Playback quality is good,  if not quite up to the superb quality of the 
+Cream  player,  as  we get a choice of 20 or 25 khz replay,  the latter 
+being  the  default  mode..  The choice is made  available  as  earlier 
+versions of the player did have speed problems in playing back  certain 
+tunes,  and  there  is still a more noticeable slowdown in relation  to 
+using  other  applications,  say if you get a tune with copious  sample 
+data playing..  However,  on the plus side, SID replay is more accurate 
+in  places  than on the version 1.0 of the Cream player,  with  effects 
+such  as  the Galway Digi-drums interpreted correctly,  and one or  two 
+others  that  refused  to  play at all previously,  now  happy  to  co-
+operate..
+
+For  fans of general weirdness,  there is even a selectable mode for ST 
+soundchip  emulation,  which  uses  the  Yamaha YM2149  directly  in  a 
+passable imitation of Mad Max sound (at a greatly reduced volume)..
+
+Technically, this one does use the DSP and main processor together, the 
+player emulates both the SID chip itself, and the 6502 main CPU used by 
+the C64..  As a deskacc,  it takes up 300kb of RAM..  (Well worth it, I 
+might add!)
+
+The  GEM  interface  is based on the universally  understood  audio  CD 
+player  front  panel principle,  with the usual controls  for  loading, 
+running,  pause, stop, fast forward etc.. This is recommended to run in 
+any 80 column mode, but not Truecolour as this is too slow.. Other user 
+definable  controls  include  the switch  to  ST  soundchip  previously 
+mentioned,  variable  scan  rates  for  NTSC video  mode,  double  host 
+buffering,  with  some  more tantalisingly blank boxes still yet to  be 
+filled in..
+
+In use, FlaySID does not impose a noticeable performance penalty if you 
+are  using  a low-powered application such as the one I'm  typing  with 
+now..  It is more robust and less crash prone than most, and whilst not 
+completely   bombproof,   is   pretty  good,   even  surviving  another 
+application  going down..  The program is supplied with several example 
+music  files,  some  of which I'm already familiar with,  but there are 
+also  many  unknown tunes,  some of which are dated sometime after  the 
+supposed  heyday of Commodore 64 activity,  and seem to have originated 
+from the activities of the still busy demo scene on that machine.. 
+
+The   amazing   reliability  of  FlaySID,   combined  with  the   total 
+desirability of a 'must have' musical application means it has earned a 
+permanent place on my accessories slot..
+
+Finally, to finish up, here are the two brilliant people responsible..
+
+*To  discuss  about 6502 emulation,  SID emulation,  DSP and 68030 
+programming, system compatibility or about the C64, please contact 
+David:
+
+email: dcarrere@crit2.univ-montp2.fr
+
+Ordinary mail:     David CARRERE, 
+                   Mas du Cres, 
+                   30140 BOISSET ET GAUJAC,
+                   FRANCE.
+
+*To discuss  about  GEM  interface programming,  C programming and 
+about numeric filters, please contact Mikha‰l:
+
+email: mmyara@crit2-univ-montp2.fr
+
+Ordinary mail:     Mikhael MYARA,
+                   13, Impasse du Caroux        
+                   34500  BEZIERS,
+                   FRANCE.
+
+Sometimes on IRC : "Myself" on #Atari or #Atarifr.
+
+ - CiH, March '97 - 
+

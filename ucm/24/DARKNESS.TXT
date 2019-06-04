@@ -1,0 +1,113 @@
+ó--------------------------------------------------------------------------------
+                   "Moving Into Darkness" by Dead Hackers Society
+ó--------------------------------------------------------------------------------
+
+system... ST, STe, Falcon, 1 MB RAM, RGB/VGA
+
+credits.. code - evl of dhs
+                 gizmo of dhs
+          gfx  - c-rem of mjj prod
+          msx  - 5o5 of checkpoint
+
+release.. Error In Line 2k3, took 2nd place at ST demo competition
+
+ó--------------------------------------------------------------------------------
+
+We had to wait quite long for  DHS' new ST demo if we don't count  their nice ST
+intros that appeared for different purposes over the past years, but in fact the
+"Moving Into  Darkness" is  their  first "fulltime" ST demo  since "Sweety". DHS
+avoided it, again, to bring  us some disk-image  thing, but  a normal filed demo
+that runs on any ST or Falcon machine.
+
+The demo  starts with a black screen and a  very soft chip  tune that reminds me
+hard to Rings of Medusa at the first moment, but then the usual sid voices start
+to  come in  as well as  the first  effects. In the  background you can see some
+strange  circling texture  effect and in front  the credits  are faded in with a
+blinking white screen and fading away  slowly. As I don't know right how to name
+the effect, just take a look at this one...
+
+{*i DARK1.PI1 m 0 20 0 200}
+
+ñEuh... this looks a bit static now...
+
+At next  there is a  logo shown  saying "darkness" while  in the background some
+bones or  something are  displayed... urg. And  in such  dark mood we go on, the
+next  screen offers  us some  pixeled Alien head in red colours on the left side
+while on the right side a big environment mapped vector star turns its rounds.
+Since this one has a lower resolution, a  part of the  screen with the Alien got
+this lower resolution as well. This looks  at first a bit  strange but allows it
+to move with parts of the vector over the Alien grafix.
+
+At next we get some bumpmapper in blue green  colour that looks a bit different,
+as the lightsource is static  while the texture  scrolls to  the left. The thing
+stops and again some environment mapped vectors are coming in. This  time we see
+5 objects, one big in the  middle and the 4 others  spreaded  around  it. Also a
+ònice screen, esp. when the background with the bumpmap starts to move again.
+
+And we get even more environment mapping, this time we see 5 mapped  vector bars
+on the  screen moving in a wave  form. Not  that  bad but  the first versions of
+this effect are  much better. Therefore the next one looks cool, it  seems to be
+some texture  mapped room with a column  in the middle  while  the whole room is
+moving around its axis (the column). To imagine this one, take this  screenshot:
+
+{*i DARK2.PI1 m 0 20 0 200}
+
+ñApart from the environment mappers the best effect in the demo!
+
+We go on  with another  environment mapped  vector  object, this  time some long
+vector bar that stucks into another cube. This  one  moves  around in front of a
+window-a-like  grafic and  finally zooms  away into  the picture. After  a while
+some  enlighting  beams  coming  out of  the center  of the  picture and  with a
+loading picture the first part is over.
+
+With some text the second part is  introduced, that also offers a new music, and
+we get an a  bit similar effect  as  the one mentioned  above with  the textured
+room  thingie, but  this one is a bit  smaller and  apart  from the rotation  it
+seems to feature  some whirl effect  as well... arf... dunno how to say... looks
+not bad, but I like  the other one much more. It changes its  colours and we get
+a strange  grey/white picture with a quite big  environment mapped vector object
+onto the screen. òGood one...
+
+The  next thing  is a picture  of an ork  or  something  and a few greetings are
+scrolling  over the  screen. After  that a texture  in  quite low resolution  is
+build up on the screen and a  transparent environment mapped  DHS vector logo is
+moving around on the screen. òAgain a nice effect!ð And somehow  this was the last
+one as we then can  take a look at a  picture that shows  some  strange wound or
+something  together with  the  saying "68000" inside... This one  fades  to dark
+blue and we get the end scroller with some credits and informations.
+
+Last but not least we get  òa nice pixeled logoð  by C-Rem again  that is the best
+grafic in the demo  at all. Well done mate. To see  a few more screenshots, take
+the link below...
+
+ò-> some more screenshots <-                                                        {*\DARK1.TXT}
+
+ñFinal words ... "Moving Into Darkness" is a nice little demo with  good technics
+ñ                and  nice  artwork, as well  as good  music. The environment map
+ñ                stuff is well  done and quite big and fast as well  as the other
+ñ                effects  are nice  looking too. But  the demo  suffers under the
+ñ                same problem  as "Hallucinations" by the Reservoir Gods, here we
+ñ                have to  see over all  only a  few effects but in many different
+ñ                shapes. One or two  environment  mappers are  fine and cool, but
+ñ                to build a whole around this routines  is a bit too much. But in
+ñ                comparison to the Reservoir Gods the DHS gang  matched it to add
+ñ                different  view points onto  this effect that makes  it not that
+ñ                boring and so they were able to avoid it to rode  the quite good
+ñ                effects completely  to death. I just  wish they  will  have more
+ñ                time next time to include a  bit alternation  as the  DHS coders
+ñ                belong without any doubt to the nowadays ST top coders.
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals.......ð  75 % ñ- nice grafix and logos
+ñaudio.........ð  85 % ñ- very cool chip tunes by the master himself... 5o5
+ñeffects.......ð  8o % ñ- mainly environment mappers, bump maps, texture stuff
+ñdesign........ð  75 % ñ- not that straight but some nice screens, dark styling
+ñoriginality...ð  7o % ñ- take care to rode good effects not to death!
+
+ó___ðOveralló______ð77ó_ð%ó____________________________________________________________
+
+A nice little demo with cool effects, but as said above, a bit  more alternation
+would have done wonders here...
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_òo5/2k3ó_

@@ -1,0 +1,109 @@
+0660103030572
+9[.........................................................]
+
+…DBE Tracker Preview 
+
+(32-Channel Music Mayhem for your STe!)
+
+This is probably the first attempt to take the tracker/ modfile composer 
+market on the STe to the sort of elevated heights only attained by users 
+of Falcons and PC's.. DBE is the first serious attempt to squeeze 32 
+channels of sound out of the humble old STe!! This tracker can run with 
+just about any Atari series machine with an STe type DMA chip, thus 
+taking in Mega STe's, TT and Falcon, although we did not have a TT to 
+test this assumption out on..
+
+There are certain reservations and qualifications that will become 
+clearer as the preview goes on, but first, what of the package itself..
+
+The demo version disk was supplied by Effect PDL, the disk considerately 
+came with several sample S3M modules to try out.. This compensated for 
+the fact that this demo version of DBE was not particularly Falcon 
+friendly, refusing to run from the desktop, and needing 'Backwards' to 
+boot the disk from scratch.. Running a depacker through it found that 
+the dreaded Atomic 3.5 had been used, but repacking with another more 
+Falcon compatible packer, killed the program altogether.. Still, we must 
+do what we can.. 
+
+There were various .doc files in English and French,, including a 
+.README message from Effect PDL, Mr Tronic himself which had an 
+intriguing punchline that went thus;
+  ____________________________________________________________________
+  You can have my isolation,  you can have the hate that it brings!!!!
+  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+Err, thanks for the offer John, but we'll leave that one with you for 
+now..
+
+Anyway, it was to Backwards that I turned, and soon enough, there was 
+the front end for DBE in my sight.. At first appearance, DBE is another 
+Protracker style interface, with the controls dominating the top half of 
+the screen, the note displayer/input area sitting at the bottom, and 
+arranged in patterns of four columns and 64 notes, entered in 
+hexadecimal fashion in the time honoured manner ever since the first 
+Amiga Noise Tracker program was produced back in the late 'eighties. The 
+interface is slightly less slick looking than something like Protracker, 
+but it does the job..
+
+One important difference is the presence of a couple of extra buttons 
+which allow you scroll over the number of extra channels made 
+available.. An eight channel mod gives you access to channels 5-8, more 
+will take you further across the screen, making editing and composing 
+multichannel music a real possibility on the STe.. This demo version 
+tends to have things like 'Save' disabled, but the finished version will 
+support its own proprietary modfile format for composition and file 
+export purposes.. 
+
+The list of what it can load in is impressive too, taking in standard 
+four channel .MOD, Octalyser and Fast Tracker 6 and 8 channel MODs, 
+.669. .MTM, and even .S3M.. The final version will also support the 
+Falcon specific Digital and Graoumf module formats..
+
+Well this sounds all fine and dandy, but as you might expect, not 
+everything is perfect in paradise.. If you are dealing with a bog-
+standard STe as your base hardware, the 'something' that would have to 
+give, would be the sound quality.. Very simply, the more sound channels 
+used, the worse the sound quality.. On testing on an STe, 8 channel 
+replay came up at a listenable quality, say 12.5 khz.. Getting above 
+that rapidly drops down what is coming out of your speakers.. People 
+with higher rated processors, say Mega STe's or TT's should get a better 
+khz replay with higher numbers of sound channels, Falcon owners 
+certainly do, even if this tracker does not use the DSP..
+
+Replay quality, especially on some of the more complex modfile types, is 
+uneven as well.. Basic four channel Protracker it managed with no 
+problem.. It coped, on the whole with Octalyser and Fast Tracker type 
+tunes, although some of the samples on the 'Lost Blubb' module sounded 
+like lead weights had been attached to their scrotums, slightly 
+strained, in other words.. Screamtracker (S3M) implementation was about 
+two-thirds of the way there, with some effects sounding decidely off-
+key..
+
+Another noteworthy point is that the more memory there is available, the 
+better DBE likes it.. On a lot of the bigger tunes, DBE complains if you 
+are running a 1 meg system.. Two megabytes and above is much better for 
+it..
+
+At the time this demo version was produced, several things were promised 
+for this tracker, there was going to be a sample editor, MIDI input, 16 
+bit sample replay for the Falcon, with a possible DSP assisted version 
+as well.. It would be interesting to find out if this tracker has 
+progressed as the author intended it to.. 
+
+Conclusion: From my own experience of the preview/demo, it does not 
+offer an awful lot to Falcon owners, who already have access to better 
+alternatives.. Things may have changed with newer versions though.. On 
+the other hand, STe owners, and people with a similar level of sound 
+hardware (TT's et al) may well have something well worth checking out..
+
+The person to contact about this tracker is;
+
+             HUGUET  Denis
+   104bis Avenue du General de Gaulle
+         18500 Mehun sur Yevre
+                FRANCE
+
+Otherwise known as STGhost of Sector One..
+
+ (C) CiH, Jan '97
+
+

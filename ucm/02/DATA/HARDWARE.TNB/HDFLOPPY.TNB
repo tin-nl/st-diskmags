@@ -1,0 +1,65 @@
+
+                                  HD-FLOPPY
+                                  ~~~~~~~~~
+                                  
+ So,los geht's mit dem 2. Teil des Atari-Tuning-Projektes  fÅr das Undercover-
+ Magazin!                      
+ FÅr Leute, die immer kanpp bei 'Diskette' sind, habe ich hier  mal eine nÅtz-
+ liche Bauanleitung welche sich HD schimpft.
+ Allerding gibt es einige EinschrÑnkungen:
+
+ 1. Es muû ein Pin des Floppy-Controllers auf der Mitte gekappt werden.
+ 
+ 2. Die Schaltung funktioniert  nicht mit allen  Floppy-Controllern  ( bei mir
+    funktioniert der  Typ VL 1772 -02FC mit  maximal 10 MHz, das entspricht 13
+    Sektoren und bei 82 Tracks macht das ca. 1,2 MB auf  einer normalen  Stan-
+    dart-Diskette (DD)).
+    
+ 3. Es ist Treibersoftware nîtig.
+    (Nur eine Stepraten-Umstellung - ist auf der Diskette drauf (STEP6.PRG)
+
+ 4. Zum formatieren braucht ihr z.Bsp. HYPERFORMAT (das dÅrfte aber jeder wohl
+    haben,oder?)
+    
+ (Anm.d.Redax: Falls nicht,es ist auf der Stuff-Disk mit drauf...)
+ 
+ Genug der Miesmacherei,los gehts:
+ 
+ StÅckliste: 1 * Zweifachschalter
+             1 * Quarzosszilator 10 MHz ( 10.24 MHz Typen sind verdammt schwer
+                 zu kriegen)
+             1 * IC 74 LS 157
+             eventuell noch Sockel fÅr den IC und den Quarz
+
+ Anleitung: 
+ 
+ - Pin 4 des Quarzes  und Pin 16 des IC's und Pin 1 des  Schalters legt  schon
+   mal auf 5 Volt.
+ - Pin 2 des Quarzes  und Pin 8 und 15 des  IC's und Pin 3 des  Schalters legt
+   auf Masse.
+ - Den Pin 2 des Schalters verbindet ihr mit Pin 1 des IC's.
+ - Pin 3 des Quarzes verbindet mit Pin 3 des IC's.
+ - Nun kneift am  Floppy-Controller (WD oder VL Type 1772) Pin 18 etwa auf der
+   Mitte durch (ist ein biûchen schwierig,deshalb nur die Ruhe bewahren).
+ - An den unteren Teil des durchgekniffenen Pins lîtet einen Draht welcher mit
+   seinem anderen Ende an Pin 2 des IC's kommt.
+ - an den oberen Teil das gleiche,nur diesmal an Pin 4 des IC's anlîten
+ 
+ Das war's auch schon.
+
+ Achso,ich habe es mit einer NEC 1037 Floppy  ausprobiert und es  funtkioniert
+ einwandfrei. (Ist keine HD-Floppy.)
+ Ihr kînnt den Takt umstellen,indem ihr  einfch den Schalter betÑtigt. (Vorher
+ einmal STEP6 laden (kann resident bleiben).)
+ ACHTUNG! Diese  Hardware-Lîsung  bietet keine Mîglichkeit  eines Gemischt-Be-
+ triebes HD/DD.
+ DafÅr werde  ich demnÑchst auch  eine modifizierte  Lîsung per Software raus-
+ bringen.
+ Diese Bastelei ist aber wesentlich betriebssicherer als eine per Software.
+ Ihr kînnt ja mal ausprobieren,was euer Floppy-Controller 'vertrÑgt',indem ihr
+ einfach hîhere Quarze einbaut (bis 16 MHz).
+ Schreibt mir doch mal,was es gebracht hat,bei welchem Controller.
+
+                        SASCHA OF CAST
+ 
+

@@ -1,0 +1,350 @@
+0660300030472
+11
+2#1
+9[.........................................................]
+
+                                ÅMiDiProgrammingÄ
+
+                           ÅbyMrPinkofReservoirGodsÄ
+
+Ifatarionlygotonethingrightintheirentirehistory,itwasthe
+inclusionofMiDiportsintheST.Whetherthiswasanactofprophetic
+geniusoratotalflukeisopentodebate.Itwasn'tlongbefore
+someonecodedasequencer,andtherest,astheysay,ishistory.
+
+DespitethefactsthatthepowerofthetopendMacsandPCstotally
+dwarvestheST,andtheirSequencersoftwarehasoptionsandfeatures
+comingoutofeveryorifice,theAtariisstillinlargenumberof
+recordingstudios.Whilsteveryoneelseseemedtothrowawaytheir
+belovedSTswhentheysawDoom,theCubasedadshungontothemwitha
+touchingdisplayofaffection.
+
+Theyarestillchampionedbypopularbeatcombosoftoday.Fatboy
+Slim,RoniSize,SuperDiscountandJohnBallswearbythem.Andof
+courseAlecEmpirewouldn'tbeseendeadwithouthisbeloved1040.
+
+ThelackofFalconspecificMiDistuffhasconsequentlycomeasa
+bitofasurprise.Sure,wehavehadthebiggunslikeCubaseAudio,
+butthisitoutofmostpeople'spricerange.Wherearethepatch
+editors,miditrackersorevenmidiplayers?Itwouldbecoolifwehad
+someMiDimusicdemostogoalongsidethestandardchipandtracker
+ones.
+
+TheMiDistandardhastwodrawbacks:
+1.Itisnotexactlystandard(butmoreaboutthislater)
+2.Thenumberofchannelsisquitelimiting
+3.Thedatatransferrateisprettyslow
+
+OK,nowitistimetounravelsomemysteries,likewhydoesMIDIhave
+only16channels?HowisMIDIinformationsentbetweeninstruments?
+Howdotheymanagetosynchronisewitheachother?
+
+Anyonewithanyexperienceof'real'networkprotocolsknowswhat
+overheadcanbeplacedonjustonebyteofinformation.Thedatais
+enclosedinapacket(calledaframe)whichincludesheaderinformation
+suchassizeoftheframe,sourceaddress,destinationaddress,a
+numberofinformationflagsandsomechecksumsattheend.
+
+MiDidoesn'tbotherwiththis.Althoughthe'packets'ofdataareof
+differentsizes(e.g.threebytesforNoteOn,twobytesforprogram
+change),thereisnoframeconstruct.Sohowdoesitwork?
+
+MiDiinformationisdividedintocontrolbytesanddatabytes.Control
+bytesarerecognisedbythefactthattheyhavetheirhighestbitset.
+Databytesneverhavetheirhighestbitset.
+
+ThismeansMiDidatacanonlyrangefrom0-127.
+Iwillexplainhowitcansupportbiggervalueslateroninthisdoc.
+
+Soifthereare128possibledatavalues,theremustbe128different
+controlbytetypes?Wrong.Thereare7.Howso?
+
+Thecontrolbytesaresplitintotwonibbles.
+Thehighnibblerepresentsthetypeofcontrolbyte.
+ThelownibblerepresentstheMiDichannel.
+
+Letslookatasimpleexample,thatofaprogramchange.
+
+Aprogramchangeconsistsoftwobytes:
+
++--------------+-----------+
+|ControlByte|DataByte|
++--------------+-----------+
+|    0xCn      |Program|
+|n=channel   |           |
++--------------+-----------+
+
+SoapacketindicatingwewantMiDichannel8toswithtoinstrument
+0x32is:
+
+0xC7,0x32
+
+Why0xC7not0xC8?WellmostpeoplecountMiDichannels1-16
+whilsttothecomputertheyare0x0-0xF.Thisisalsothereasonwhy
+thereareonly16midichannels-thatisthemostyoucanfitina
+nibble!
+
+
+Yougetthegeneralidea.HereisthelistofMiDicontrollers
+
+ÅName                    ControlVal0      Val1Ä
+NoteOff                 0x8n   Note      Velocity
+NoteOn                  0x9n   Note      Velocity
+PolyphonicKeyPressure0xAn   Note      Pressure
+Controller               0xBn   Type      Data
+ProgramChange           0xCn   Program    ---
+Aftertouch               0xDn   Pressure   ---
+PitchBend               0xEn   Bend-Hi   Bend-Lo
+
+Thecontrollersofthe0xF0-0xFFfamilygeneratenon-channel
+specificsystemwideinformation.ThesearemainlyusedtosendSystem-
+Exclusivedata.
+
+ÅName           ControlÄ
+StartSys-Ex    0xF0
+EndSys-Ex      0xF7
+TimingClock    0xF8
+ActiveSensing0xFE
+
+We'llcomebacktosys-exstufflater,butfirstlet'slookatthemore
+standardcommands.
+
+Whenyoupressanoteonyourcontrollerkeyboarditwillsenda
+'NoteOn'command.Let'ssayyouaresettooutputonmidichannel1,
+andyoutapmiddlec,thisdatawillbesentfromyourkeyboard:
+
+                        0x90           0x3B        0x40
+
+                     Noteoncommand,NoteNumber,Velocity
+
+Thefirstvaluesindicatesa'NoteOn'commandonchannel1.
+MiddleCisdefined0x3B.ThusBis0x3AandCSharpis0x3C.Togoan
+octaveupadd12,andforanoctavedownsubtract12.
+
+Thevelocityvaluehere,0x40,itprettyaverageformostkeyboards.
+Ifyouhaveatouchsensitivekeyboard,thisvaluewilldependonhow
+hardyoupressthekey.Rememberthatvelocityisnotthesameasvolume
+-althoughitisrelated.Velocitychangesboththesound'svolumeand
+itstimbre.
+
+Whenyoureleasethekey,anoteoffcommandswillbesent:
+
+
+                        0x80           0x3B        0x00
+
+                    Noteoffcommand,NoteNumber,Velocity
+
+ThesenoteoffcommandsareessentialtoMiDiprogramming!Iftheydo
+notexist
+
+thenyouwillgethangingnotesallovertheplaceandyourMIDI
+instrumentwillrunoutofpolyphony.
+
+ThePitch-Bendcommandsillustratesaneatexpansiontothedatabyte
+range.Itsends2databytessothepitchbendrangecovers8192values.
+
+That'sallverywell,youmightbesaying,buttheremustbemoreMidi
+commandsthanpressure,aftertouchandpitchbend?Andofcourse,you
+areright!.Theyarehiddenawayinthe0xBnfamilyofMIDIcontrollers.
+
+ThesetofaMIDIcontrollersisagoodexampleofhowthestandardof
+MIDIisactuallynonstandard.Ironically,thefactthatthe
+standardisloosehashelpedstrengthenthestandard.I'llexplain
+more...
+
+TheMIDIcontrollerpacketisinthisformat:
+
+ControllerCommand,ControllerType,ControllerData
+
+AsthecontrollerTypebyteoccupiesthespacenormallytakenby
+data,thismeansitcanhave128differentfamilies-sothis
+effectivelygivesus128differentcontrollers!
+
+AlotofthesecontrollertypeshavebeensetinstonebytheMIDI
+standard.So,forexample,everysynthshouldrecogniseacontroller
+typeof0x0AasPAN.
+
+Butalotofcontrollertypesare'free',andeachsynthcanrespondto
+themastheywant.ThisgivestheMIDIstandardalotof
+flexibilityandalsotheabilitytoexpand.
+
+Hereisalistofthestandardcontrollers:
+
++--------+------------------+
+|ÅNumberÄ|ÅControllerÄ      |
++--------+------------------+
+|0x00|BANKHI         |
+|0x01|MODULATION      |
+|0x02|BREATH          |
+|0x04|FOOT            |
+|0x05|PORTAMENTOTIME|
+|0x06|DATAENTRYMSB|
+|0x07|VOLUME          |
+|0x08|BALANCE         |
+|0x0A|PAN             |
+|0x0B|EXPRESSION      |
+|0x20|BANKLO         |
+|0x21|MODULATIONLSB|
+|0x22|BREATHCTRLLSB|
+|0x24|FOOTCTRLLSB   |
+|0x25|PORTAMENTOLSB|
+|0x26|DATAENTRYLSB|
+|0x27|MAINVOLUMELSB|
+|0x28|BALANCELSB     |
+|0x2A|PANLSB         |
+|0x2B|EXPRESSIONLSB|
+|0x40|HOLD1           |
+|0x41|PORTAMENTO      |
+|0x42|SOSTUNETO       |
+|0x43|SOFTPEDAL      |
+|0x45|HOLD2           |
+|0x54|PORTAMENTOCTRL|
+|0x5B|EFFECTDEPTH    |
+|0x5C|TREMOLODEPTH   |
+|0x5D|CHORUSDEPTH    |
+|0x5E|CELESTEDEPTH   |
+|0x5F|PHASERDEPTH    |
+|0x60|DATAINCREASE   |
+|0x61|DATADECREASE   |
+|0x62|NRPNLSB        |
+|0x63|NRPNMSB        |
+|0x64|RPNLSB         |
+|0x65|RPNMSB         |
+|0x78|ALLSOUNDSOFF|
+|0x79|RESETCONTROL   |
+|0x7A|LOCALCONTROL   |
+|0x7B|ALLNOTESOFF   |
+|0x7C|OMNIOFF        |
+|0x7D|OMNION         |
+|0x7E|MONO            |
+|0x7F|POLY            |
++--------+------------------+
+
+Notallthesecontrollerswillberecognisedbyeverysynth.
+Asyoucanseetherearelotsofunusedvaluesfornewsynthstouse
+forextracontrollers.
+
+Finally,letusgobackandlookatSys-Exdata.
+
+Sys-Exdiffersfromstandardmididatainsomuchasitinvariablyit
+involvesshiftingagreatdealmoredataaround.
+
+Sys-Exisusuallyusedtodumpeditedinformationfromyoursynth
+toyoursequencerpackage.Youmighthavefiddledaroundwithlotsof
+patchparametersforaparticularsongandyouwantthesechangessaved.
+
+SamplersalsouseSys-Extodumpsamples.
+
+TheformatofSys-Expacketsvariesfrommachinetomachine.Iwill
+giveyouanexamplesys-expacket,thisoneisfromtheRolandSuper-JV
+1080:
+
+0xF0BeginSystemExclusive
+0x41ManufactureID(0x41=Roland)
+Dev   IDstatusofUnit
+0x6AModelID(0x6A=JV1080)
+
+aa    AddressMSB
+bb    Address
+cc    AddressLSB
+ee    Data
+:
+ff    Data
+sum   Checksum
+
+0xF7EndofSystem-Exclusive
+
+InthecaseoftheRoland,eachSys-Expackethasachecksum.But
+notallinstrumentsusechecksumsintheirsys-ex,andiftheydo
+theyusedifferentwaysofcalculatingthevalue.
+
+
+OK,youknowhaveageneralgroundinginMIDIcommands.Nowontoto
+actuallysendingdatatoyoursynth...
+
+TheBIOSgivesyousimpleaccesstoyourMIDIports.
+
+ToreadabytefromyourMIDIdevice,youmustfirstcheckthatthere
+arebyteswaitingtobereadbeforereadingthem.
+
+ThisisachievedusingthebioscommandsBconstatandBconin.They
+checkandreadfromaspecifieddevice,respectively.
+
+TheformatofBconstatis:
+
+
+Thisreturns0ifnocharactersarewaiting,or-1ifthereissomething
+there.
+
+ThedevnumberfortheMIDIinterfaceis3.Thisshouldbedefined
+inmostClibrariesasDEV_MIDI.
+
+Toreadacharacter,weuseBconin:
+
+
+
+
+Sothelogicwewoulduseis..
+
+charget_midi_byte()
+{
+charc;
+
+while(!Bconstat(DEV_MIDI));
+return(Bconin(DEV_MIDI));
+}
+
+Tosendmidiinformation,wefirstcheckiftheMIDIdeviceisreadyto
+receivedata,thenwesendit:
+
+ThetrapcallsforoutputareBcostat:
+
+move.w#dev,-(a7)
+move.w#8,-(a7)
+trap   #13
+addq.l#4,a7
+
+Againthisreturns0ifthedeviceisnotok,-1ifeverythingishunky
+dory.
+
+Tosendacharacter,youcanuseBconout:
+
+move.w#char,-(a7)
+move.w#3,-(a7)
+trap   #13
+addq.l#4,a7
+
+voidsend_midi_byte(charc)
+{
+while(!Bcostat(DEV_MIDI));
+Bconout(DEV_MIDI,c);
+}
+
+
+Ifyouwanttosendalotofdatathenitispreferabletousethe
+XbioscallMidiws()whichsendsastringofdatatotheMIDIport.The
+formatofthiscallis:
+
+pea     buffer
+move.w#count,-(a7)
+move.w#$C,-(a7)
+trap    #14
+addq.l#8,a7
+
+count+1charactersaretransferredfromthebuffertotheMIDIdevice.
+
+Ifyouwanttobypasstheoperatingsystemcompletelyandaccessthe
+hardware,hereishowtosenddatadirect:
+
+rlkb_send_midi:
+        btst    #1,$fffffc04.w          ;isdataregempty?
+        beq.s   rlkb_send_midi          ;no,waitforempty
+        move.bd0,$fffffc06.w          ;writetoMIDIdatareg
+        rts                             ;return
+
+IhopethishasgivenyouausefulinsightinthewackyworldofMIDI!
+
+Keepsyoureyes(andears!)peeledforGodTracker,ourforthcoming
+MidiTrackerfortheSTeandFalcon!
+
+

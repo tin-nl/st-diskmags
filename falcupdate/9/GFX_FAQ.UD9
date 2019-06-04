@@ -1,0 +1,4047 @@
+* This is ESSENTIAL reading  for  anyone  even  remotely  interested  in
+coding a graphics package for the Falcon, indeed  its  even  of  limited
+interest to those who just like to know about how graphics  work.
+
+Considering it covers tricks and tips and the new PNG file  format  (the
+Compuserve GIF replacement) I'd  recommend  reading  some  of  the  more
+relevant sections (although there is a lot that  doesn't  apply  to  the
+Atari I've left it in because I know lots of you own PC's  or  Mac's  as
+well).
+
+- RiCH
+
+This FAQ (Frequently Asked Questions) list contains information on graphics
+file formats, including, raster, vector, metafile, Page Description Language,
+3D object, animation, and multimedia formats.
+
+This FAQ is divided into four parts, each covering a different area of
+graphics file format information:
+
+  Graphics File Formats FAQ: General Graphics Format Questions (Part 1 of 4)
+  Graphics File Formats FAQ: Image Conversion and Display Programs (Part 2 of 4)
+  Graphics File Formats FAQ: Where to Get File Format Specifications (Part 3 of 4)
+  Graphics File Formats FAQ: Tips and Tricks of the Trade (Part 4 of 4)
+
+Please email contributions, corrections, and suggestions about this FAQ to
+jdm@netcom.com. Relevant information posted to newsgroups will not
+automatically make it into this FAQ.
+
+-- James D. Murray <jdm@netcom.com>  ;-{)>>>>
+
+----------------------------------------------------------------------
+
+Subject: 0. Contents of General Graphics Format Questions
+
+Subjects marked with <NEW> are new to this FAQ.
+Subjects marked with <UPD> have been updated since the last release
+ of this FAQ.
+
+I. General questions about this FAQ
+
+0. Maintainer's Comments
+1. What's new in this latest FAQ release?
+2. Why does a graphics formats FAQ exist?
+3. Where can I get the latest copy of this FAQ?
+4. Are there other related FAQs I should read as well?
+5. I have a question, correction, or some information concerning this FAQ.
+6. This FAQ doesn't contain enough detail!
+7. Why isn't the XXX file format covered?
+8. Why aren't audio file formats covered? <UPD>
+9. Why aren't word processing formats covered?
+10. What about multimedia file formats? 
+
+II. General Graphics File Questions
+
+0. Who cares about graphics file formats?
+1. What is raster, vector, metafile, PDL, and so forth?
+2. Why should I care about previous versions of a file format?
+3. Can graphics files be infected with a virus?
+4. Can graphics files be encrypted? 
+5. Can a graphics file be copyrighted?
+6. How can I convert the XXX format to the YYY format? 
+7. Do I really need the specification of the format I'm using?
+8. How can I tell if a graphics file is corrupt? <UPD>
+9. What do I put in my own graphics file format specification? <NEW>
+10. How do I submit a file format specification to an archive? <NEW>
+
+V. Graphics Formats Misnomers, Misgivings, and Miscellany
+
+0. Why aren't JPEG, MPEG, LZW, and CCITT Group 3 & 4 file formats?
+1. Why aren't IGES, GKS, NAPLPS, PCL, and HPGL file formats either?
+2. Is it "Tag" or "Tagged" Image File Format?
+3. Whaddya mean there's no "Targa" file format?
+4. Choosy programmers choose "gif" or "jif"?
+5. Why are there so many ".PIC" and ".IMG" formats?
+6. Is it now illegal to use CompuServe's GIF format? <UPD>
+
+III. Graphics File Resources
+
+0. File Format Specifications FTP Archives and WWW Pages <UPD>
+1. Graphics and Image File FTP Archives and WWW Pages <UPD>
+2. Internet Mailing Lists for Graphics and Imaging <UPD>
+3. Books on Graphics File Formats
+4. Magazine Articles on Graphics File Formats
+5. U.S. Government and Military Standards Sources
+6. Other Standards Document Sources
+
+VII. Kudos and Assertions
+
+0. Acknowledgments 
+1. About The Author 
+2. Disclaimer 
+3. Copyright Notice
+
+------------------------------
+
+Subject: I. General questions about this FAQ
+
+------------------------------
+
+Subject: 0. Maintainer's Comments
+
+Welcome to another monthly release of the Graphics File Format FAQ!
+
+I finally had a look at the WWW page for this FAQ at www.cis.ohio-state.edu
+(see Subject 3: Where can I get the latest copy of this FAQ?). The Ohio State
+server does an excellent job of converting this FAQ into hypertext for Web
+access, but I did notice a few glitches in the text on my part--mostly to do
+with URLs. These have been fixed in this FAQ release. I also picked up a few
+ideas for the time when I make a true HTML version of this FAQ for the Web
+(but when? but when?).
+
+And it looks as though I'll be in the O'Reilly & Associates booth at SIGGRAPH
+in Los Angles on August 8th, 9th, and 10th. I'll be the long-haired computer
+nerd with the long, braided beard. ;-{)>>>>
+
+------------------------------
+
+Subject: 1. What's new in this latest FAQ release?
+
+  o Fixed a few URLs for the WWW version of this FAQ
+  o Added another graphics-oriented mailing list
+  o Added a bit of new info to the corruption section
+  o Included the kodak WWW images page in the archives list
+  o And I finally obtained information on the current GIF/LZW controversy
+
+------------------------------
+
+Subject: 2. Why does a graphics formats FAQ exist?
+
+The purpose of this FAQ is to answer many of the frequently asked questions
+about graphics file formats posted on Usenet. You will find definitions of
+terms, references to format information, very general descriptions of many
+formats, information on programs which read, write, convert, and display
+graphics files, and some handy programming tips for writing your own code. 
+This FAQ is not a substitute for actual file format specifications, nor can
+it possibly go into a great amount of specific detail on graphics file
+formats.
+
+------------------------------
+
+Subject: 3. Where can I get the latest copy of this FAQ?
+
+This FAQ is distributed monthly on the Usenet newsgroups comp.graphics
+comp.answers, and news.answers as four separate files. It may also be
+obtained via anonymous FTP from:
+
+  ftp://rtfm.mit.edu/pub/usenet/news.answers/graphics/fileformats-faq
+  ftp://rtfm.mit.edu/pub/usenet/comp.graphics
+
+To receive a copy of this FAQ via email, send an email message to
+mail-server@rtfm.mit.edu with the body:
+
+  send usenet/news.answers/graphics/fileformats-faq/part1
+  send usenet/news.answers/graphics/fileformats-faq/part2
+  send usenet/news.answers/graphics/fileformats-faq/part3
+  send usenet/news.answers/graphics/fileformats-faq/part4
+
+or via UUCP:
+
+  uunet!/archive/usenet/news.answers/graphics/fileformats-faq/part1
+  uunet!/archive/usenet/news.answers/graphics/fileformats-faq/part2
+  uunet!/archive/usenet/news.answers/graphics/fileformats-faq/part3
+  uunet!/archive/usenet/news.answers/graphics/fileformats-faq/part4
+
+To access this FAQ on the World Wide Web, use the address:
+
+  http://www.cis.ohio-state.edu/hypertext/faq/usenet/graphics/fileformats-faq/top.html
+
+And you can access all of the FAQs associated with the comp.graphics 
+newsgroup via the WWW page:
+
+  http://www.cis.ohio-state.edu/hypertext/faq/usenet/graphics/top.html
+
+------------------------------
+
+Subject: 4. Are there other related FAQs I should read as well?
+
+Information related to file formats not covered by this FAQ may be
+found in the following FAQs:
+
+  Newsgroup                Archive-name
+
+  alt.binaries.pictures    pictures-faq/part[1-2]
+  alt.graphics.pixutils    pixutils-faq
+  alt.image.medical        medical-image-faq/part[1-3]
+  comp.compression         compression-faq/part[1-3]
+                           mpeg-faq[1-6]
+  comp.dsp                 dsp-faq[1-4]
+                           audio-fmts[1-2]
+  comp.fonts               fonts-faq/part[1-2]
+  comp.graphics            graphics/faq
+                           graphics/colorspace-faq
+                           graphics/resources-list/part[1-3]
+                           jpeg-faq/part[1-2]
+  comp.graphics.animation  graphics/animation-faq
+  comp.infosystems.gis     geography/infosystems-faq
+  comp.multimedia          comp-multimedia-faq
+  comp.speech              comp-speech-faq/
+  comp.sys.sgi.misc        sgi/faq/
+  sci.data.formats         sci-data-formats
+  sci.image.processing     image-processing/Macintosh
+                           image-processing/Medical_Image_Volume_Visualization
+
+These FAQs may also be found the newsgroups alt.answers, comp.answers,
+sci.answers, and news.answers, and in the FAQ archives at rtfm.mit.edu
+and mirror sites. 
+
+To FTP any of these FAQs use the listed Archive-name with the following FTP
+address:
+
+  ftp://rtfm.mit.edu/pub/usenet/news.answers/ [Archive-name]
+
+To receive a copy of these FAQs via email, send an email message to
+mail-server@rtfm.mit.edu with the body:
+
+  send usenet/news.answers/[Archive-name]
+
+------------------------------
+
+Subject: 5. I have a question, correction, or some information concerning this FAQ.
+
+All questions, comments, additions, and corrections should be sent to the
+author of this FAQ at jdm@netcom.com. I don't always read the newsgroups this
+FAQ is posted to, so please contact me directly via email rather than
+attempting to reach me by posting to a newsgroup. All suggestions and
+contributions within the scope of this FAQ are welcome and contributors
+receive full credit in the Acknowledgments section of this FAQ.
+
+------------------------------
+
+Subject: 6. This FAQ doesn't contain enough detail!
+
+This FAQ only attempts to answer Frequently Asked Questions. It is not a book
+on graphics file formats. It is instead a thick source of information that
+will help you obtain more information that you need. Or perhaps even clear
+up a few of your misconceptions and thereby saving you from wasting some
+time.
+
+------------------------------
+
+Subject: 7. Why isn't the XXX file format covered?
+
+If you have read and/or grepped this FAQ and not found information on the
+format you need the reason might be that:
+
+  * You are looking for the format under the wrong name.
+
+  * This FAQ is new and the information you need hasn't been included yet.
+
+  * I don't know about the format and I need you to email me information
+    on it (See 4.).
+
+  * The format is proprietary and its caretakers do not wish information
+    on the format distributed in this FAQ.
+
+------------------------------
+
+Subject: 8. Why aren't audio file formats covered?
+
+Information on file formats used specifically for storing audio data are
+already covered quite nicely by a FAQ posted to comp.dsp. You may obtain
+this FAQ from the Usenet newsgroups comp.dsp, comp.answers, and news.answers,
+or from the FTP archive site (and mirrors):
+
+  ftp://rtfm.mit.edu/pub/usenet/news.answers/comp.dsp/
+
+The FAQ for comp.speech may of also be of interest to audio people. It is
+available at:
+
+  ftp://rtfm.mit.edu/pub/usenet/news.answers/comp-speech-faq/
+  ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/FAQ-complete
+
+------------------------------
+
+Subject: 9. Why aren't word processing formats covered?
+
+It is true that there are many types of file formats that cannot store
+graphics data (older word processor and spreadsheet formats, and so forth). 
+These formats are not within the scope of this FAQ and are therefore not
+covered. Perhaps someone who works in the biz of writing file translators for
+these formats will put together such a FAQ one day.
+
+------------------------------
+
+Subject: 10. What about multimedia file formats?
+
+Multimedia file formats store more than just graphics data. They may also
+contain audio, video, animation, and textual data in addition to bitmapped
+and vectored graphics. Such formats, although a superset of graphics formats,
+are considered to be within the scope of this FAQ and are therefore covered.
+Also check the comp.multimedia FAQ for additional information you may
+require.
+
+------------------------------
+
+Subject: II. General Graphics File Questions
+
+------------------------------
+
+Subject: 0. Who cares about graphics file formats?
+
+Well, programmers do mostly. But end-users (that is, non-programmers) do too.
+
+The typical end-user only cares about storing their graphics information
+using a format that most graphics programs and filters can read. End-users
+are typically not concerned with the internal arrangement of the data within
+the graphics file itself. They only want the format to do its job by
+representing their data correctly in a permanent form.
+
+Programmers, on the other hand, are that rare breed of human that just can't
+leave information well enough alone. They need to know how every byte is
+arranged to see if someone knows something that they don't (and often snicker
+contentedly to themselves when they find that it is really they that know
+more). Programmers will then use this information to write code that may
+never see the light of distribution, but nevertheless, they will have had fun
+and gained enlightenment from writing it.
+
+It doesn't matter which of these two types of people you are. If you have
+even the slightest interest in graphics file formats then you may be counted
+as one who cares.
+
+------------------------------
+
+Subject: 1. What is raster, vector, metafile, PDL, and so forth?
+
+These terms are used to classify the type of data a graphics file contains. 
+Raster files (also called bitmapped files) contain graphics information
+described as pixels, such as photographic images. Vector files contain data
+described as mathematical equations and are typically used to store line art
+and CAD information. Metafiles are formats that may contain either raster or
+vector graphics data. Page Description Languages (PDL) are used to describe
+the layout of a printed page of graphics and text. Animation formats are
+usually collections of raster data that is displayed in a sequence. 
+Multi-dimensional object formats store graphics data as a collection of
+objects (data and the code that manipulates it) that may be rendered
+(displayed) in a variety of perspectives. Multimedia file formats are
+capable of storing any of the previously mentioned types of data, including
+sound and video information.
+
+------------------------------
+
+Subject: 2. Why should I care about previous versions of a file format?
+
+When version 2.0 of the XXX format is released all of the thousands of files
+created using version 1.0 of the XXX format don't magically disappear or
+transform to version 2.0 overnight. Although version 2.0 might claim to be
+fully backwards compatible, the new specification may obfuscate or even omit
+details of the previous version of the format. In short, never throw away
+older information just because you have something newer. At one point in time
+that "out dated" format spec was state-of-the-art, and it may still contain a
+singular precious tid-bit of information that the caretakers of the format
+didn't carry over to the new spec (but Murphy will make sure you desperately
+need to know).
+
+------------------------------
+
+Subject: 3. Can graphics files be infected with a virus?
+
+For most types of graphics file formats currently available the answer is
+"no". A virus (or worm, Trojan horse, and so forth) is fundamentally a
+collection of code (that is, a program) that contains instructions which are
+executed by a CPU. Most graphics files, however, contain only static data
+and no executable code. The code that reads, writes, and displays graphics
+data is found in translation and display programs and not in the graphics
+files themselves. If reading or writing a graphics file caused a system
+malfunction is it most likely the fault of the program reading the file and
+not of the graphics file data itself.
+
+With the introduction of multimedia we have seen new formats appear, and
+modifications to older formats made, that allow executable instructions to be
+stored within a file format. These instructions are used to direct multimedia
+applications to play sounds or music, prompt the user for information, or
+display other graphics and video information. And such multimedia display
+programs may perform these functions by interfacing with their environment
+via an API, or by direct interaction with the operating system. One might
+also imagine a truly object-oriented graphics file as containing the code
+required to read, write, and display itself.
+
+Once again, any catastrophes that result from using these multimedia
+application is most like the result of unfound bugs in the software and not
+some sinister instructions in the graphics file data. Such "logic bombs" are
+typically exorcised through the use of testing using a wide variety of
+different image files for test cases.
+
+If you have a virus scanning program that indicates a specific graphics file
+is infected by virus, then it is very possible that the file coincidentally
+contains a byte pattern that the scanning programming recognizes as a key
+byte signature identifying a virus. Contact the author (or even read the
+documentation!) of the virus scanning program to discuss the probability of
+the mis-identification of a clean file as being infected by a virus. Save the
+graphics file, as the author will most likely wish to examine it as well.
+
+If you suspect a graphics file to be at the heart of a virus problem you are
+experiencing, then also consider the possibility that the graphics file's
+transport mechanism (floppy disk, tape or shell archive file, compressed
+archive file, and so forth) might be the original source of the virus and not
+the graphics file itself.
+
+------------------------------
+
+Subject: 4. Can graphics files be encrypted?
+
+Of course you can encrypt a graphics file. After all, most encryption
+algorithms don't care about the intellectual content of a file. All they chew
+on is a series of byte values. Therefore, most any encryption program that
+works on ordinary text files will work on graphics files as well.
+
+Why would you want to encrypt a graphics file? Mostly to control who can view
+its contents. You can invent a proprietary file format and that might slow a
+file format hack down for, say, five or ten minutes. You could add a
+proprietary data compression scheme, possibly a twisted variation of an
+already public algorithm. But there are so many people out there with nothing
+better to do than hack at unknown data formats that your data would probably
+be exposed in little time. But suppose we top off all this effort by
+encrypting the graphics file itself as we would an ordinary text file. Would
+your data then be safe?
+
+Realize that an encrypted graphics file still might not be very secure. For
+every data encryption algorithm there exists at least one method of getting
+around it, although it may take hundreds of computers and many years to fully
+employ and execute that method!
+
+For example, one of the more popular methods used to encrypt data is the
+Vernam or XOR cipher. This cipher Exclusive ORs the plain-text data with a
+single, random, fixed-length key. The longer the key the harder it is to
+break the cipher. A totally random key the length of your data is impossible
+to break. Shorter and less-random keys are easier to break.
+
+XOR is very simple and fast, which is a must for a graphics file
+translators/viewers that must decrypt a file on the fly. A problem, however,
+is that most graphics files contain fixed size headers which vary only
+slightly in content from file to file. If you knew the approximate contents
+of the header of an encrypted file you could XOR a "decrypted" header with
+the encrypted file and possibly produce the key used to encrypt the file. A
+short key might be very easily discovered in this way.
+
+If you really need to make the contents of a graphics file secure, then I'd
+suggest not only using some form of data encryption, but also create an
+unconventional and proprietary file format and do not publish its format
+specification.
+
+For more info on data encryption:
+
+  Bruce Schneier, "Applied Cryptography: Protocols, Algorithms,
+    and Source Code in C", John Wiley & Sons, 1994.
+
+------------------------------
+
+Subject: 5. Can a graphics file be copyrighted?
+
+No. A graphics file cannot normally be copyrighted under United States
+copyright laws (although the rulings of some judges may disagree on this). The
+specification of a format and the contents of a graphics file, however, are
+subject to copyright.
+
+For anything to be copyrighted it must be:
+
+  1) A work of authorship
+  2) Fixed in a tangible medium of expression
+
+The description of a graphics format does meet both of these criteria (it is
+fixed in a medium and a work of authorship) and is therefore protected under
+the copyright laws. A graphics file created using the format description,
+however, meets the second criteria, but not the first (that is, it is not
+considered to be a work of authorship). The format itself is considered
+instead to be an idea or system, and is therefore not protected by copyright.
+
+So the description of a file format is copyrightable, but the format as it
+exists in its medium is not. What about the graphics data that the file
+contains?
+
+If the graphical data written to a graphics file also meets the above two
+criteria, then it is also protected by the copyright laws as intellectual
+property. You will not wave your copyright protection by storing any original
+information using a graphics file format.
+
+------------------------------
+
+Subject: 6. How can I convert the XXX format to the YYY format?
+
+With a file conversion program, of course! Without a doubt one of the most
+frequently asked categories of questions on comp.graphics is how to convert
+one format to another. In every case the answer is some type of conversion
+program or filter, but which one?
+
+Section IV of the FAQ is an attempt to list every known graphics file display
+and conversion program and application. Although far from complete, this list
+may contain the program you need. Go to the subsection of the particular
+operating system you are using and scan through Imports: and Exports: formats
+listed and see if the formats you needs to use are there.
+
+In some cases the information in a listing may make the conversion
+capabilities of a program a bit misleading. For example, a program that can
+import a vector .DWG file and export a raster .BMP file may not necessarily
+be able to perform a .DWG->.BMP (vector->raster) conversion (AutoCAD R12 can,
+BTW). And just because a program can both import and export TIFF files
+doesn't mean it's capable of a TIFF(CMYK)->TIFF(RGB) conversion (as Adobe
+Photoshop can do). As always, read the documentation, contact and ask the
+author of the program, or find a user of the program and ask them.
+
+------------------------------
+
+Subject: 7. Do I really need the specification of the format I'm using?
+
+It depends upon the results you are trying to obtain. If you have code that
+supports the XXX format and you find it easy (and legal) to integrate that
+code into your program, then you may be tempted to do so. But realize that
+your program will support the XXX format in just the same way as the previous
+program did. In other words, your program will now work the same, but it will
+really be no better.
+
+By obtaining the format specification you can make an attempt to fully
+support all of the features and capabilities a graphics or multimedia file
+format has to offer. If you use pre-written code that only supports a small
+subset of the format's features then you are not doing justice to the
+format and cheating your users out of functionality they might need.
+
+Always strive to create the best programs possible within reason of time and
+money. Obtain the specs, look at code, and talk to programmers who have
+worked with the format before. You might gain some insight and save yourself
+some hair-pulling by supporting a feature that someone didn't think to
+include in the original requirements for your program.
+
+------------------------------
+
+Subject: 8. How can I tell if a graphics file is corrupt?
+
+The easiest way is to display the file and decide if what you see on the
+screen or the printer is correct. This method is not fool-proof, however,
+because not all information stored in a graphics file is used for displaying
+the data it contains. Textual comments, alternate color maps, and unused
+fields in the header might be munged and go undetected.
+
+A frequent source of corruption occurs when 8-bit graphics data is
+transported via a 7-bit communications channel. The 8th bit of each byte is
+cleared (set to zero) and you are left with garbage. The PNG file format
+supports an elegant solution to the quick detection of this type of
+corruption. The First character of every PNG file is the 8-bit value 89h. If
+this value is read as 09h, the 8th bit has been zeroed and you know the file
+is corrupt.
+
+Most graphics files do not contain any real, built-in error detection
+features. The standard way to check for corruption of any type of data file
+is to perform some sort of error-detection scheme on the file. Such schemes
+commonly used are Checksum calculations and the Cyclic Redundancy Check
+(CRC).  These algorithms are commonly used in the world of synchronous serial
+communications for detecting errors in data streams.
+
+If you only wanted to provide error detection for the graphical data
+contained in a file, but not the header, then a 2- or 4-byte field in the
+header could be used to store the CRC-16 or CRC-32 value of the data. But
+what good is pure data if the header is possibly corrupt? 
+
+If we calculate the CRC value of the entire file and then store that
+calculated value in the header we will have just "corrupted" the file! You
+could initialize the CRC field with zeros, calculate the value, store the
+value, and specify that the entire file need be read into memory and the CRC
+value field set to all zeros before the CRC calculation is made. 
+
+File formats that segment their data into blocks or chunks would be able to
+perform a CRC on each section individually (another feature found in the PNG
+file format). Each section would store the CRC value as the last 2 or 4 bytes
+of the block and the CRC value field would never be read for the purpose of
+the CRC calculation. This method makes it easier to find the location of the
+error(s) in a file. If the CRC error occured in an unnecessary block of data,
+the file might still be useful anyway. This block-style CRC checking also
+saves the reader from performing a time-consuming CRC calculation an entire,
+possibly very large, graphics file.
+
+But all this can be quite a pain. Can't we avoid modifying a file and just
+store the CRC value externally to the file? Maybe using some sort of
+encapsulating "wrapper"?
+
+If you want to make sure a graphics file (or any file for that matter) has
+been transported through a communications channel without sustaining any
+corruption, first store it using a file archiving program that supports error
+checking of the files contained in the archive. (Several good error-checking
+file archiving programs include PKZIP, gzip, and zoo. The ar and tar Unix
+archiving programs do not support error checking). When the graphics file is
+stored, the archival program calculates the CRC value of the file. If the CRC
+value does not match the file's calculated CRC after it is unarchived after
+transport, you know that the file has been corrupted.
+
+Note: make sure you turn compression OFF when archiving many types of
+graphics files. File archival programs use compression by default and will
+attempt to make your compressed data even smaller (which usually results in
+larger data, unless the archiver is smart enough to detect the negative
+compression and not attempt to compress the file). ASCII-based files (such as
+PostScript and DXF) and some RLE-encoded files (such as PCX) will be
+compressed, while other formats supporting more advanced data compression
+methods (such as JPEG and LZW) will surely grow in size.
+
+------------------------------
+
+Subject: 9. What do I put in my own graphics file format specification?
+
+For people that are faced with the task of writing up a specification for
+their own format (or perhaps to better document someone else's), a few
+suggestions are hereby offered.
+
+  A large spec needs a table of contents, bibliography, and an index.
+  Most specs do not fall into this category though.
+
+  On the cover sheet give the full information of your company, products
+  associated with the format, the format version, date of release, 
+  where the latest copy of the spec may be obtained, and how developers
+  may get in contact with you to ask questions.
+
+  Detail the full history of the spec and not just the dates of its
+  revision. Tell why the format was created. Detail some insights of
+  how it was designed. Speculate on what features future version might
+  contain. And give the names of your developers and other people
+  involved. Show the human thought that exists behind the cold chunk of
+  data that is your format.
+
+  List the features of your format and explain how you intend that it
+  should be used and not used (tell what your format is and is not).
+  Give the developer your reasons that they should use your format (and
+  why they should not bother with others).
+  
+  Include both block diagrams and ANSI C code examples of the format's
+  internal data structures. Illustrate actual examples of ASCII file
+  format data and hexadecimal dumps of binary format data (very useful
+  to programmers, I might say).
+
+  If your format includes one or more forms of data compression, error
+  checking, encryption, etc., place this information in a separate
+  section and give plenty of examples (both written and code) of how
+  these algorithms work. Include mathematical formulas if you believe it
+  makes your concepts clearer.
+
+  Make the specification available both in hardcopy and electronic
+  form. The hardcopy version should be formatted as a technical
+  document and using a font that won't degrade badly when the spec is
+  photocopied or faxed. Use a standard sized page layout so the spec
+  isn't a hassle to fit in an envelope when mailed. The electronic
+  version should be available as both ASCII text and PostScript files.
+  Making the spec available in a word processing format (such as
+  Microsoft Word or Framemaker) is nice, but not absolutely necessary.
+
+  Consider making a developer's toolkit for your format. A collection
+  of benchmark graphics files (one of each flavor of your format), and
+  a parser written in ANSI C that reads and writes your format, is of
+  tremendous help to programmers. Such a kit will allow developers to
+  implement your format quickly in their products and helps minimize
+  the chances of numerous software packages appearing which create
+  graphics files that don't meet your spec. Examples of formats with
+  toolkits include TIFF, TGA (Truevision), and WordPerfect Graphics
+  (WPG).
+
+  Submit your specification to every FTP/Gopher/WWW site and BBS that
+  archives file format specs. Notify the maintainers of related FAQs
+  (graphics, animation, multimedia, audio, medical, etc.) that your
+  format exists and ask for a mention. Send your literature to graphics
+  and imaging software companies to sell support of your format and/or
+  software products.
+
+And a few guidelines on good technical writing in general:
+
+  Write in a tutorial style with explanations and examples of your
+  topics. Don't just give a terse, dictionary description of a topic
+  which often leaves the readers confused and needing more.
+
+  Write in simple terms. Don't assume your readers enjoy 70-word
+  sentences, or have advanced degrees in mathematics or computer
+  graphics. 
+
+  Have other people read and attempt to understand your spec. Don't
+  assume that just because you understand what you've written that
+  every reader will too. You, as the file format specification's
+  author, understand the format inside and out. Your readers, however,
+  do not. An explanation that may seem clear to you may be just
+  another confusing paragraph to your readers.
+
+  Write for a world-wide audience of programmers. Omit slang or regional
+  expressions that a developer living on the other side of the planet
+  might not understand.
+
+  Programs that check spelling and grammar are our friends. Use them.
+
+------------------------------
+
+Subject: 10. How do I submit a file format specification to an archive?
+
+There are several FTP and WWW sites which act as archives for graphics file
+format specifications (see the section "Graphics and Image File FTP Archives
+and WWW Pages"). If you have a file format specification that is legal to
+share with the rest of the world-wide Internet community, then you may wish
+to submit it to one or more of these archives.
+
+There are generally two ways to submit a file format specification to an
+FTP archive:
+
+  1) Upload (or "put") the file in the /incoming or /pub/incoming directory.
+  2) Email the file to the archive maintainer (the email address is usually
+     in the README or similar file in the root FTP directory).
+
+Realize that most FTP sites don't allow unsolicited uploads and instead
+require you to contact the archive maintainer to make a submission. Many
+sites are simply mirrors for other archives and don't accepts any kind of
+submissions at all. 
+
+In any case, it's usually good form to include a description file with your
+submission to describe in a few words what you have uploaded and where it
+originated. If your upload is named foo.doc then the description file should
+be named foo.txt.
+
+------------------------------
+
+Subject: III. Graphics File Resources
+
+------------------------------
+
+Subject: 0. File Format Specifications FTP Archives and WWW Pages
+
+The following anonymous FTP and WWW sites are known to archive file format
+specifications and information. These documents may be official releases of
+specifications by the creator/caretaker of the formats, or information
+transcribed by people from various sources and released onto the net,
+possibly without permission from the format's owner.
+
+  ftp://avalon.chinalake.navy.mil/pub/format_specs
+  ftp://avalon.vislab.navy.mil/pub/format_specs
+  ftp://ftp.nau.edu/graphics/formats
+  ftp://ftp.ncsa.uiuc.edu/misc/file.formats/graphics.formats
+  ftp://ftp.std.com/obi/Standards/Graphics/Formats
+  ftp://ftp.uu.net/doc/literary/obi/Standards/Graphics/Formats
+  ftp://ftp.wustl.edu/doc/graphic-formats
+  ftp://peipa.essex.ac.uk/ipa/file.formats
+  ftp://telva.ccu.uniovi.es/pub/graphics/file.formats
+  ftp://x2ftp.oulu.fi/pub/msdos/programming/formats
+  ftp://zamenhof.cs.rice.edu/pub/graphics.formats
+
+  http://www.dcs.ed.ac.uk/home/iat/index.html
+  http://speckle.ncsl.nist.gov/~lsr/cgm_std.html
+  http://www.tnt.uni-hannover.de/data/info/www/tnt/soft/sci/sig/image/fileformats/overview.html
+  http://www.tnt.uni-hannover.de/data/info/www/tnt/soft/sci/vis/compgraph/fileformats/overview.html
+
+------------------------------
+
+Subject: 1. Graphics and Image File FTP Archives and WWW Pages
+
+The following anonymous FTP sites are known to archive image, graphics, and
+multimedia files and information:
+
+  ftp://ames.arc.nasa.gov/pub/SPACE
+    NASA/Ames Archives. Space images in GIF format.
+
+  ftp://amiga.physik.unizh.ch/amiga/gfx/misc
+    VistaPro graphics
+
+  ftp://asterix.inescn.pt/pub/PC/flidemos
+    FLI and FLC animations
+
+  ftp://ftp.catt.ncsu.edu/pub/graphics
+    FLIC and QuickTime movies and many GIF and JPG images
+      
+  ftp://ftp.cdrom.com/pub/aminet/pix
+    JPG, GIF, and Multimedia files
+
+  ftp://ftp.cnam.fr/Fractals/anim
+    Fractal animation files
+
+  ftp://edcftp.cr.usgs.gov/pub/data/DEM/250
+  ftp://edcftp.cr.usgs.gov/pub/data/DLG/{2M,100K}
+    Digital Elevation Model (DEM) and Digital Line Graph (DLG) archives
+
+  ftp://ftp.povray.org/pub/povray/images
+  ftp://ftp.povray.org/pub/povray/scenes
+    GIF, JPEG, and POV scene files rendered using PovRAY
+
+  ftp://ftp.sdsc.edu/pub/sdsc/images
+  ftp://ftp.sdsc.edupub/sdsc/sound
+    San Diego Supercomputer Center sound and image file archives
+
+  ftp://ftp.sunet.se/pub/graphics
+  ftp://ftp.sunet.se/pub/multimedia
+    MPEG, JPEG, FLC, HDF, AF, VR, and GIF files.
+    Also /pub/pictures and /pub/comics contain many images
+
+  ftp://ftp.tcp.com/pub/anime
+  ftp://ftp.tcp.com/pub/anime-manga/anim
+    Animation and multimedia files in MPEG, QuickTime, AVI, and FLI formats
+
+  ftp://omicron.cs.unc.edu/pub/softlab/CHVRTD
+    MRI and CT scan volume data of human anatomy
+
+  ftp://photo1.si.edu/images
+    Smithsonian Institution photoimage archives
+
+  ftp://ftp.povray.org
+     POV animation files
+
+  ftp://ftp.uni-erlangen.de/pub/pictures/mpeg/LOCAL/RedsNightmare.tar
+    Red's Nightmare (a ray-traced animation)
+
+  ftp://ftp.univ-rennes1.fr/Images/ASTRO/anim
+    Space animation files
+
+  ftp://ftp.wustl.edu/pub/aminet/gfx/anim
+    Various Amiga anims (also on other aminet sites)
+
+  ftp://pubinfo.jpl.nasa.gov/images
+    Space images in GIF format
+
+  ftp://spectrum.xerox.com/pub/map/dem
+  ftp://spectrum.xerox.compub/map/dlg
+    Digital Elevation Model (DEM) and Digital Line Graph (DLG) archives
+
+  ftp://src.doc.ic.ac.uk/gfx/misc
+    Digital Elevation Model (DEM) and Digital Line Graph (DLG) archives
+
+  ftp://sunsite.unc.edu/pub/multimedia/pictures
+  ftp://sunsite.unc.edu/pub/multimedia/animation
+    Graphics and MPEG file collection
+
+  ftp://toybox.gsfc.nasa.gov/pub/images
+    NASA images in GIF, JPEG, PostScript, Sun Raster, and X Bitmap formats
+
+The following WWW sites are known to archive image, graphics, and multimedia
+files:
+
+  http://afrodite.lira.dist.unige.it/
+    European Network of Excellence in Computer Vision
+
+  http://archpropplan.auckland.ac.nz/People/Mat/gallery/animations.html
+    Mat Carr's animations
+
+  http://cui_www.unige.ch:80/OSG/MultimediaInfo/
+    Index to Multimedia Information Resources
+
+  http://found.cs.nyu.edu/
+    NYU State Center for Advanced Technology
+ 
+  http://fuzine.mt.cs.cmu.edu/im/informedia.html
+    Informedia Digital Video Library Project
+ 
+  http://mambo.ucsc.edu:80/psl/thant/thant.html
+    Thant's Animation index
+
+  http://netlab.itd.nrl.navy.mil/imaging.html
+    Listings of imaging resources and archive sites
+
+  http://scorch.doc.ic.ac.uk/~np2/multimedia/
+
+  http://sunsite.unc.edu/louvre/about/tech.html
+  http://mistral.enst.fr/louvre/about/tech.html
+    WebLouvre - Using and troubleshooting the web
+
+  http://w3.eeb.ele.tue.nl/mpeg/index.html
+    Various MPEG animations
+
+  http://web.msi.umn.edu/WWW/SciVis/umnscivis.html
+    Scientific visualization and graphics
+
+  http://www.best.com/~bryanw/index.html
+    The Graphics Archive
+  
+  http://www.cs.ubc.ca/nest/imager/imager.html
+    MPEG animations done using hierarchical b-splines
+
+  http://www.delphi.com/fx/fxscreen.html
+    fX Networks' Download Goodies promo videoclips in AVI and QT formats
+ 
+  http://www.demon.co.uk/
+    Demon Internet 
+
+  http://www.infomedia.com:8600
+    Liquid Mercury's new WWW Site designed for "New Media" professionals.
+    Current industry data and product profiles. Email: info@infomedia.com
+
+  http://www.kodak.com/digitalImages/samples/samples.shtml
+    Kodak Sample Digital Images archive
+
+  http://www.lightside.com/~dani/cgi/images-index.html
+    3DWEB - World Wide Web site for 3D Computer Graphics
+
+  http://www.sd.tgs.com/~template
+    Web3D - World Wide Web site for 3D Graphics
+
+  http://www.state51.co.uk/state51/
+    State51 Interactive Media
+ 
+  http://www.univ.trieste.it/mmwwwpc/mmwwwpc.html
+    MultiMedia WWW PC v1.1
+
+------------------------------
+
+Subject: 2. Internet Mailing Lists for Graphics and Imaging
+
+This section contains a listing of Internet mailing lists that often contain
+discussions and information on graphics and image file formats. Mailing lists
+are a good alternative form of communication for those netters that do not
+have Usenet access.
+
+  agocg-ip@mailbase.ac.uk
+    Discussion of all aspects of image processing. To subscribe:
+    send an email message to mailbase@mailbase.ac.uk with the body
+    "join agocg-ip yourfirstname yourlastname".
+
+  digvid-l@ucdavis.edu
+    Discussion of digital video, mostly of the desktop variety.
+    To subscribe: send an email message to listserv@ucdavis.edu
+    with the body: "subscribe digvid-l yourfirstname yourlastname".
+
+  geotiff@tazboy.jpl.nasa.gov.
+    Discussion regarding the establishment of a set of TIFF tags for
+    storing geographic map projection information, such as UTM zones,
+    Lambert Standard parallels, etc. Participants include
+    representatives from SPOT, Intergraph, ERDAS, ESRI, and USGS. To
+    subscribe: send an email message to geotiff-request@tazboy.jpl.nasa.gov.
+
+  graphuk@cs.man.ac.uk
+    GraphUK mailing list. Discussion of graphics systems such as PHIGS 
+    and GKS, and training in the area of graphics. To subscribe: send an
+    email message to graphuk-request@cs.man.ac.uk with the body "subscribe
+    graphuk".
+
+  listserv@info.kodak.com
+    Information on the Kodak Photo-CD format. To subscribe: send an
+    email message to listserv@info.kodak.com with the body:
+    "INFO PHOTO-CD".
+
+  listserv@soils.umn.edu
+    NIH image processing discussion. To subscribe: send an email message
+    to listserv@soils.umn.edu with the body "subscribe nih-image 
+    yourfirstname yourlastname".
+
+  medimage@polygraf
+    Medical imaging discussion. To subscribe: send an email message
+    to listserv%polygraf.bitnet@mitvma.mit.edu with the body
+    "subscribe medimage".
+
+  nucmed@uwovax.uwo.ca
+    Nuclear medicine and medical imaging discussion. To subscribe: 
+    send an email message to nucmed-request@uwovax.uwo.ca with the
+    body "subscribe nucmed".
+
+  pixel@essex.ac.uk
+    British Machine Vision Association newsletter for machine vision,
+    image processing, pattern recognition, remote sensing, etc. To
+    subscribe: send an email message to pixel-request@essex.ac.uk.
+
+  ximage@expo.lcs.mit.edu
+    Discussion of image processing using The X Window System. To 
+    subscribe send an email message to ximage-request@expo.lcs.mit.edu
+    with the body "subscribe ximage".
+        
+------------------------------
+
+Subject: 3. Books on Graphics File Formats
+
+This section contains bibliographical listing of books containing information
+on graphics file formats. This list is alphabetized by title and information
+on how to order each book is included where known.
+
+  The AutoCAD Database Book, F.H. Jones and L. Martin, Ventana Press,
+    ISBN 0-940087-04-9. Order: 919.490.0062 voice.
+
+  Bit-mapped graphics (2nd ed.), Steve Rimmer, Windcrest/McGraw-Hill
+    1993. 484 pages.
+
+  CGM and CGI: Metafile and Interface Standards for Computer 
+    Graphics, David B. Arnold and Peter R. Bono, Springer-Verlag
+    1988. ISBN 3-540-18950-5, 279 pages.
+
+  The CGM Handbook, Lofton R. Henderson and Anne M. Mumford,
+    Academic Press 1993. ISBN 0-12-510560-6, $59.95 hardcover, 
+    446 pages.
+
+  Encyclopedia of Graphics File Formats, James D. Murray and 
+    William vanRyper, O'Reilly & Associates Inc. 1994.
+    ISBN 1-56592-058-9, $59.95 softcover, 928 pages.
+    Order: order@ora.com, 800.998.9938 voice, 707.829.014 fax.
+
+  File Formats for Popular PC Software: A Programmer's Reference,
+    Walden, Jeff, John Wiley & Sons, Inc. 1986. ISBN 0-471-83671-0, 
+    287 pages.
+
+  Graphics File Formats (2nd ed.), David C. Kay and John R. Levine, 
+    Windcrest Books/McGraw-Hill 1995. ISBN 0-07-034025-0, $26.95 
+    softcover, 476 pages.
+    Order: Tab Software Department, Blue Ridge Summit, PA 17294-0850.
+
+  The Graphic File Toolkit: Converting and Using Graphic Files,
+    Steve Rimmer, Addison-Wesley, 1992. 335 pages.
+
+  Inside Windows File Formats, Tom Swan, Sams Publishing 1993.
+    ISBN 0-672-30338-8 $24.95 softcover, 337 pages.
+    Order: Sams Publishing, 2201 West 103rd Street, Indianapolis,
+    IN 46290
+
+  More File Formats for Popular PC Software: A Programmer's Reference,
+    Jeff Walden, John Wiley and Sons 1987. 369 pages.
+
+  PC Graphics with GKS, P.R. Bono, J.L. Encarnacao and W.R. Herzner,
+    Prentice-Hall, 1990.
+
+  PostScript Language Reference Manual, Adobe Systems Inc. (2nd ed.), 
+    Ed Taft and Jeff Walden, Addison-Wesley 1990.
+
+  Programming for Graphics Files in C and C++, by John R. Levine, 
+    John Wiley & Sons 1994. ISBN 0-471-59854-2, $29.95 softcover,
+    494 pages. 
+
+------------------------------
+
+Subject: 4. Magazine Articles on Graphics File Formats
+
+This section contains bibliographical listings of periodicals containing
+information on graphics file formats. This list is alphabetized by title.
+
+  .mrb and .shg File Formats, Windows/DOS Developer's Journal, Pete Davis,
+    February 1994 (Vol 5, No 4), pp. 37-46.
+
+  The BMP File Format, Dr. Dobb's Journal, Marv Luse, #219 September
+    1994 (Vol 9, Issue 10), pp. 18-22.
+
+  The BMP File Format: Part I, Dr. Dobb's Journal, David Charlap, #228
+    March 1995 (Vol. 20, Issue 3).
+
+  The BMP File Format: Part II, Dr. Dobb's Journal, David Charlap, #229
+    April 1995 (Vol. 20, Issue 4).
+
+  PCX Graphics, C Users Journal, Ian Ashdown, Vol 9, Num 8, August 1991,
+    pp. 89-96.
+
+  Printing PCX Files, C Gazette, Marv Luse, Vol 5, Num 2, Winter 1990-91,
+    pp. 11-22.
+
+  Reading GIF Files, Dr. Dobb's Journal, Wilson MacGyver Liaw, #227 
+    February 1995 (Vol 20, Issue 2), pp. 56-60.
+    
+  TIFF File Format, C Gazette, James Murray, Vol 5, Num 2, Winter 1990-91,
+    pp. 27-42.
+
+  Translating PCX Files, Dr. Dobb's Journal, K. Quirk, Vol 14, Num 8, 
+    August 1989, pp. 30-36, 105-108.
+
+  Working with PCX files, Microcornucopia, Number 42, July-August 1988,
+    p. 42.
+
+------------------------------
+
+Subject: 5. U.S. Government and Military Standards Sources
+
+The following organizations provide U.S. Government and Military documents
+concerning graphics formats and standards:
+
+  Department of Defense
+  Joint Interoperability Engineering Organization
+  Center for Standards
+  10701 Parkridge Boulevard
+  Reston, VA 22091-4398 USA
+
+  Standardization Documents Ordering Desk
+  700 Robbins Avenue
+  Building 4D
+  Philadelphia, PA 19111-5094 USA
+
+  Naval Publications & Forms Center
+  Code 3051
+  5801 Tabot Ave.
+  Philadelphia, PA 19120 USA
+
+  Defense Information Systems Agency
+  Center for Standards
+  Attn: TBCE, Rm 3304
+  10701 Parkridge Blvd
+  Reston, VA 22091 USA
+  Voice: 703.487.3536
+  Email: edi@itsi.disa.mil
+
+  Department of Defense Single Stock Point (DODSSP)
+  Special Assistance Desk
+  Open 7:30AM to 4PM EST Mon-Fri
+  Voice: 215.697.2667
+  Voice: 215.697.2179
+
+  Department of Defense Single Stock Point (DODSSP)
+  Subscription Services Desk
+  700 Robbins Avenue
+  Building 4D
+  Philadelphia, PA 19111-5094 USA
+  Voice: 215.697.2569
+
+  Navy Print On Demand System (NPODS)
+  Telespecs automated document ordering system
+  Open 7AM to 10PM EST Mon-Fri
+  Voice: 215.697.1187 thru .1198
+
+  Global Engineering Documents
+  2805 McGaw Avenue
+  Irvine, CA 92714 USA
+  Voice: 800.854.7179
+  Voice: 714.261.1455
+ 
+  Global Info Center
+  18201 McDurmott West
+  Suite B
+  Irvine, CA 92714 USA
+  Voice: 714.474.5070
+  Fax:   714.474.4066
+
+------------------------------
+
+Subject: 6. Other Standards Document Sources
+
+Many graphics file formats and graphical information transfer protocols are
+ANSI/ISO standards and may be obtained through the following offices:
+
+  International Standards Organization (ISO)
+  1 rue de Varembe
+  Case Postal 56
+  CH-1211 Geneva 20 Switzerland
+  Voice: +41 22 749 01 11
+  Fax:   +41 22 733 34 30
+
+  American National Standards Institute (ANSI)
+  Sales Department
+  11 West 42nd Street
+  New York, NY 10036
+  Voice: 212.642.4900
+
+  Canadian Standards Association (CSA)
+  Sales Group
+  178 Rexdale Blvd.
+  Rexdale, Ontario, M9W 1R3
+  Voice: 416.747.444
+
+------------------------------
+
+Subject: V. Graphics Formats Misnomers, Misgivings, and Miscellany
+
+------------------------------
+
+Subject: 0. Why aren't JPEG, MPEG, LZW, and CCITT Group 3 & 4 file formats?
+
+One of the most commonly confused concepts found in file formats is the
+difference between the file format and the method(s) of data encoding that
+has been used to reduce the size of the data the file contains. JPEG, MPEG,
+LZW, and CCITT are all algorithms, or algorithm toolkits, which encode a
+stream of data to a physically smaller size. None of these data compression
+methods define a specific format used to store data. 
+
+Several formats have become popular based on their use of one or more of
+these methods of compression, such as GIF (LZW), JFIF (JPEG), and TIFF (CCITT
+Group 3 and Group 4). So if you ask for a "CCITT Group 3" image file you will
+most likely get a file containing only CCITT Group 3 data and not a TIFF file
+containing bitmapped data compressed using the CCITT Group 3 algorithm, which
+might have been what you were expecting.
+
+------------------------------
+
+Subject: 1. Why aren't IGES, GKS, NAPLPS, PCL, and HPGL file formats either?
+
+IGES (Initial Graphics Exchange Specification), GKS (Graphics Kernel System),
+and NAPLPS (North American Presentation Layer Protocol Syntax) are not
+actually file formats. They are instead protocols which specify how graphical
+data should be transmitted over a communications link (such as a telephone
+line) to a remote device (such as a graphical workstation).  HPGL  
+(Hewlett-Packard Graphics Language) and PCL (Printer Control Language) are
+data stream definition standards used to transfer and manipulate data used by
+printers and plotters.
+
+In most cases, each of these protocols define a previously existing file
+format, such as CGM or JFIF, to be the actual format used to store the
+graphics data (HPGL uses a raw or compressed bitmap). Occasionally the
+transmitted data stream may be stored to a file for buffering or archival
+purposes. This file is then often identified as using the
+"{IGES,GKS,NAPLPS,PCL,HPGL} file format".
+
+Descriptions of each of these standards may be found in Part 3 (Where to Get
+File Format Specifications) of this FAQ.
+
+------------------------------
+
+Subject: 2. Is it "Tag" or "Tagged" Image File Format?
+
+Revision 5.0 of TIFF specification specifically states the acronym "TIFF" is
+"Tag Image File Format". The majority of people, however, intuitively say
+"Tagged" rather than "Tag". Interestingly enough, the TIFF 6.0 specification
+does not spell out the acronym TIFF.
+
+------------------------------
+
+Subject: 3. Whaddya mean there's no "Targa" file format?
+
+The popular "Targa" file format is really the "TGA format". "Targa" is the
+name of the Truevision graphics display adapter which first used the TGA
+format. Specifically, Revision 1.0 of TGA is designated the "Original TGA
+format" and Revision 2.0 is the "New TGA Format".
+
+------------------------------
+
+Subject: 4. Choosy programmers choose "gif" or "jif"?
+
+The pronunciation of "GIF" is specified in the GIF specification to be "jif",
+as in "jiffy", rather then "gif", which most people seem to prefer. This does
+seem strange because the "G" is from the word "Graphics" and not "Jraphics".
+
+------------------------------
+
+Subject: 5. Why are there so many ".PIC" and ".IMG" formats?
+
+Because people with very little imagination are allowed to choose file
+extensions for graphics files, that's why.
+
+But seriously, there does seem to be a proliferation of file formats with the
+file extension ".PIC" (for "picture") and ".IMG" (for "image"). Other popular
+extensions (in both upper and lower case) are ".RGB", ".RAW", ".ASC", and
+".MAP".
+
+My advise to you is never assume the format of a data file based only on it's
+file extension. The name and the extension of any file are completely
+arbitrary and therefore could be anything. This is why the most graphics file
+conversion and display programs attempt to recognize graphics files based on
+their internal structure and not their file name or extension.
+
+------------------------------
+
+Subject: 6. Is it now illegal to use CompuServe's GIF format?
+
+It is not illegal to own, transmit, or receive GIF files (provided that no
+unlicensed compression and/or decompression of the files occurs). You must
+realize, however, that GIF files are not the issue. The issue is, in fact,
+the LZW data compression algorithm.
+
+In 1984, while working for Sperry Corporation, Terry Welch modified the
+Lempel-Ziv 78 (LZ78) compression algorithm for greater efficiency for
+implementation in high-performance disk controllers. The result was the LZW
+algorithm. The world was informed of the existence of LZW by the following
+journal article, published by Mr. Welch after he left the employment of
+Sperry:
+
+  Welch, T. A., "A Technique for High Performance Data Compression,"
+  IEEE Computer, Volume 17, Number 6, June 1984.
+
+In 1985, Sperry Corporation was granted a patent (4,558,302) for the Welch
+invention and implementation of the LZW data compression algorithm. Since
+that time, this LZW patent has been publicly available for all to see in the
+US Patent Office and many public libraries, and is available through many
+on-line services.
+
+In 1987, CompuServe Corporation created the GIF (Graphical Interchange
+Format) file format to be used for the storage and on-line retrieval of
+bitmapped graphical data. The GIF specification required the use the LZW
+algorithm to compress the data stored in each GIF file. It is very possible
+that CompuServe did not check the patent files to determine whether the GIF
+format infringed on any patents. Such a check would have found the Welch LZW
+patent, which was then owned by Unisys as a result of their having purchased
+Sperry in 1986. At that time, Unisys also did not know that LZW was the
+method of compression used by the very popular GIF file format.
+
+In 1988, Aldus Corporation released Revision 5 the TIFF file format. This
+revision added a new feature giving TIFF the ability to store RGB bitmapped
+data using either a raw format, or a compressed format using the LZW
+algorithm. (Although the LZW algorithm used by TIFF is considered to be
+"broken", it is still covered by the Unisys patent). Since 1991, in
+accordance with their agreement with Unisys, Aldus has been required to place
+a notice regarding the Unisys patent and its applicability to TIFF, in Aldus
+documentation. The 1992 release of Revision 6 of the TIFF specification
+includes this notice of the Unisys patent regarding LZW. The TIFF Revision 6
+specification also recommends against using LZW to compress RGB bitmaps
+stored using the TIFF format.
+
+In 1990, Unisys licensed Adobe for the use of the Unisys LZW patent for
+PostScript.
+
+In 1991, Unisys licensed Aldus for the use of the Unisys LZW patent in TIFF.
+
+In 1994, Unisys and CompuServe came to an understanding whereby the use of
+the LZW algorithm would be licensed for the application of the GIF file
+formats in software. Published information indicates that Unisys licensing
+policies are as follows:
+
+ 1) Unisys considers all software created or modified before January 1, 1995
+    that supports the GIF and/or TIFF-LZW formats to be inadvertently
+    infringing upon its patent; Unisys will therefore not require a license
+    for GIF software products delivered before January 1, 1995. Unisys will
+    therefore not pursue legal actions against such pre-1995 software 
+    products.
+
+ 2) However, Unisys expects developers of commercial or for-profit software
+    to obtain a GIF-LZW license agreement from Unisys if, after December 31,
+    1994, the developer creates new software or updates or modifies existing
+    software, or issues a new release of software that supports the GIF file
+    format.
+
+ 3) Unisys does not require licensing of non-commercial, not-for-profit
+    software applications that support the GIF file format.
+
+ 4) With respect to TIFF, if a license is entered before July 1, 1995, there
+    will be no liability for pre-1995 software with respect to that software's
+    support of TIFF which uses LZW.
+
+Unisys has drafted licenses for several different applications of the LZW
+algorithm. The two license agreements of most interest in this FAQ are
+applicable to software supporting the GIF file format alone and the agreement
+applicable to software supporting both GIF and the TIFF file format's LZW
+compression feature.
+
+
+Realizing that you have many questions about GIF-LZW and TIFF-LZW licensing,
+the remainder of this section is arranged in a Question/Answer format to help
+convey information about this subject more clearly.
+
+Q: Just what is this all about?
+A: Unisys has asserted its claim to the ownership of the LZW compression and
+   decompression algorithm. If you wish to implement LZW in a software or
+   firmware application, you must arrange to pay a small royalty to Unisys
+   for every software package that you sell. You do this by applying to
+   Unisys for an LZW license agreement for your software.
+
+Q: What file formats are effected?
+A: GIF, TIFF, PDF, and PostScript Level II. All of these formats use, or
+   can use, LZW compression. For example, a TIFF or PostScript Level II file
+   may or may not use the LZW algorithm to compress the data it contains. 
+   GIF files, and most PDF files, always store bitmap data that is compressed
+   using LZW.
+
+Q: How does this agreement affect my use of GIF and TIFF files?
+A: It does not affect the ownership, transmission, or reception of GIF and
+   TIFF-LZW files themselves. Only the software that performs compression
+   and/or decompression of GIF may be effected in any way by license
+   agreements. You are free to store and transport GIF and TIFF-LZW files
+   without fear of legalities or cost from the Unisys licenses provided that
+   any compression and/or decompression on GIF files is performed by licensed
+   software, or by software products delivered prior to 1995.
+
+Q: Which agreement do I need?
+A: If your software supports only GIF then you need the GIF-LZW agreement.
+   If it supports TIFF-LZW or both GIF and TIFF-LZW then you need the TIFF-LZW
+   and GIF-LZW agreement.
+
+Q: My software supports TIFF-LZW, but not GIF.
+A: You still need to obtain the TIFF-LZW and GIF-LZW agreement.
+
+Q: So if my software only supports non-LZW versions of TIFF and PS Level II
+   I don't need to worry about obtaining a license agreement?
+A: That is correct. Only software that is capable of using the LZW 
+   algorithm requires an agreement. This includes all software that supports
+   the GIF file format.
+
+Q: What about file compression programs such as compress, PKZIP, zoo, and
+   lha? Don't they use LZW too?
+A: Most file compression programs use the LZ77 algorithm for compressing
+   text. The LZ77 compression algorithms (and several of its derivatives)
+   predates LZW by several years and is covered by its own series of patents.
+   The predecessor to LZW, LZ78, is used primarily for compressing binary
+   data and bitmaps. Any software that uses the LZ77 and/or LZ78 algorithms 
+   without the LZW improvement is not affected by the Unisys LZW patent.
+   Of the mentioned software packages, the Unix compress utility does use LZW
+   and therefore requires a license.
+
+Q: Doesn't IBM also hold a patent on LZW?
+A: IBM was granted a patent (4,814,746) for use of LZW in disk drive 
+   technology. This patent does not award ownership of LZW to IBM.
+
+Q: I use LZW in my programs, but not for GIF or TIFF graphics. What should
+   I do?
+A: If you are not a business, and the programs are for your own personal
+   non-commercial or not-for-profit use, Unisys does not require you to 
+   obtain a license. If they are used as part of a business and/or you sell 
+   the programs for commercial or for-profit purposes, then you must contact 
+   the Welch Patent Licensing Department at Unisys and explain your 
+   circumstances. They will have a license agreement for your application of
+   their LZW algorithm.
+
+Q: Where can I apply for a GIF-LZW, TIFF-LZW and GIF-LZW, PDF, PostScript 
+   Level II, or any other LZW license?
+A: You can write to:
+
+  Welch Patent Licensing Department
+  Unisys Corporation 
+  Mail Stop C1SW19
+  P.O. Box 500
+  Blue Bell, PA 19424 USA
+
+Or fax:    215.986.3090
+
+Or email:  lzw_info@unisys.com
+
+General licensing information may also be obtained from the home page of the
+Unisys Web Server:
+
+  http://www.unisys.com
+
+Q: How much does a license cost?
+A: For a GIF-LZW license there is a $25US non-refundable registration fee to
+   start. You will then pay 0.45% of the selling price of your software per 
+   unit sold per calendar quarter with a minimum of $0.10US and a maximum
+   $10US per unit. For a TIFF-LZW and GIF-LZW license, the non-refundable 
+   registration fee is $50US and you will pay 0.65% of the selling price of
+   your software per unit sold per calendar quarter, with a minimum of
+   $0.20US and a maximum of $25US per unit. The license agreement contains
+   various other terms and conditions, such as those which define the field
+   of use.
+
+Q: Do I need a separate license for each GIF-using software product I sell?
+A: If you sell three products that all use the GIF format, for example, then
+   you will need only one license. License fees must be paid for each product
+   sold.
+
+Q: Do I need to obtain a new license if I release a new version of my
+   software?
+A: No. However, a license fee is required for each update, improvement, or
+   enhancement of your software that is sold.
+
+Q: What if I give my software away?
+A: If you distribute for free your product directly to end-users for their
+   personal use and your distributing the software is non-commercial and
+   not-for-profit use and you receive no financial gain (such as Shareware
+   donations, royalties for CD-ROM distributions, or as advertising to 
+   attract for-profit business), then you do not need a license.
+
+Q: But what about Shareware donations?
+A: Each Shareware "payment" you receive is considered the selling price of
+   that unit. Whatever a user pays to you for your GIF-using software is
+   required to be included in your quarterly license fee payment to Unisys.
+   However, minimum license fees per unit must be always paid.
+
+Q: My Shareware GIF software is being sold for-profit on a CD-ROM, but I do
+   not make any profit from its sale. Can I get in trouble? Do I need a 
+   license?
+A: The person/business that is selling your program for profit on their CD-ROM
+   is responsible for obtaining the proper license. You would only need a
+   license if you received any payments from the CD-ROM vendor or from users
+   of your Shareware.
+
+Q: I do not live in the United States and my software is not available there.
+   Do I still need to obtain a license agreement?
+A: Yes, you do. The Unisys patent has many foreign counterparts and the
+   legalities of using LZW apply to most other countries in addition the US.
+
+Q: What will happen to me if I continue to revise my GIF-using software,
+   sell it for profit, and yet not bother to obtain a license?
+A: Most likely, when your unlicensed program is discovered by Unisys,
+   you will be notified of your need to obtain a license for your product.
+   If you then fail to obtain the proper license, Unisys may seek an 
+   injunction against your product including damages. You could also be 
+   charged with willful infringement, which could result in treble damages.
+
+Q: On what Usenet newsgroups is this LZW agreement being discussed?
+A: You will find threads appearing on comp.graphics and other related
+   graphical newsgroups. The official newsgroup where much discussion
+   takes place is alt.gif-agreement.
+
+Q: What are my alternatives to GIF and TIFF-LZW file formats?
+A: The most popular alternative is JPEG compression and the JFIF file format.
+   JFIF-JPEG files are smaller and store far more colors than GIF files.
+   Another newer alternative is the PNG format, which is currently under
+   development (see the section "PNG - Portable Network Graphics" in Part 3
+   of this FAQ). PNG is unencumbered by patent licenses and has much 
+   potential and promise in replacing GIF. But, most software that supports 
+   PNG will likely have been written after January 1, 1995, so make sure that
+   your GIF-to-PNG conversion program has the proper Unisys license.
+
+Q: This agreement is bogus! I refuse to ever use GIF again!
+A: As an end-user you are free never to read, write, or archive another
+   LZW-encoded file as long as you live. As a developer you are only
+   free of the legal implications of the Unisys patent if you remove any
+   LZW code from your programs, including those shipped to your customers
+   after 1994.
+
+Q: Wait! I have more questions!
+A: Contact the Welch Patent Licensing Department at the aforementioned
+   addresses. I (the author of this FAQ) am not an employee nor legal
+   representative of Unisys.
+
+Disclaimer: The information in this FAQ regarding the Unisys LZW licensing
+agreement has been presented in an attempt to allow the reader to understand
+some of the legalities they may face by the use of the LZW algorithm. The
+author has rendered this explanation and example questions using the most
+accurate information available to him at the date of this FAQ. In no regard
+should this text be considered an official publication of Unisys Corporation
+or a legal representation of the policies of Unisys, or in any way obligating
+Unisys to enter into a license agreement based upon the terms,
+interpretations, and/or answers to question provided in this text.
+
+------------------------------
+
+Subject: VII. Kudos and Assertions
+
+------------------------------
+
+Subject: 0. Acknowledgments
+
+The following people have made this FAQ take just a little bit longer to read
+since the last time you looked at it (blame them and not me):
+
+  Bruce Garner <garner@tis.llnl.gov>
+  Oliver Grau <grau@tnt.uni-hannover.de>
+  John T. Grieggs <grieggs@netcom.com>
+  Lee Kimmelman <lee.kimmelman@twwde.com>
+  David Kuo <dkuo@dabulls.kodak.com>
+  Tom Lane <tgl@netcom.com>
+  Angus Montgomery <angus@cgl.citri.edu.au>
+  Glen Ozymok <oz@ludwig.virtualprototypes.ca>
+  Daniel Sears <sears@netcom.com>
+  Marc Soucy <msoucy@imetric.qc.ca>
+  Bjoern Stabell <bjoerns@acm.org>
+  Mark T. Starr <StarrMT@po4.bb.unisys.com>
+
+------------------------------
+
+Subject: 1. About The Author
+
+The author of this FAQ, James D. Murray, lives in the City of Orange, Orange
+County, California, USA. He is the co-author of the book Encyclopedia of
+Graphics File Formats published by O'Reilly and Associates, makes a passable
+living writing Microsoft Windows applications in C++, and may be reached as
+jdm@netcom.com, or via U.S. Snail at: P.O. Box 70, Orange, CA 92666-0070 USA.
+
+GCS d-- H++ s g- p? au+ a w+ v++ C+++(++++) US+++ p++>++++ L>++ 3 E--- N++ K-
+W---$ M-@ V-- po Y+ t++ 5-- j>x R+>-- G' tv-->! b+++ D++ B e- u* h- f r-->+++
+n++ y*(**)
+
+------------------------------
+
+Subject: 2. Disclaimer
+
+While every effort has been taken to insure the accuracy of the information
+contained in this FAQ list compilation, the author and contributors assume no
+responsibility for errors or omissions, or for damages resulting from the use
+of the information contained herein.
+
+------------------------------
+
+Subject: 3. Copyright Notice
+
+This FAQ is Copyright (C) 1994-95 by James D. Murray. All Rights Reserved. 
+This work may be reproduced, in whole or in part, using any medium,
+including, but not limited to, electronic transmission, CD-ROM, or published
+in print, under the condition that this copyright notice remains intact.
+
+From news.staffs.ac.uk!strath-cs!str-ccsun!news.dcs.warwick.ac.uk!hgmp.mrc.ac.uk!sunsite.doc.ic.ac.uk!agate!howland.reston.ans.net!swrinde!gatech!nntp.msstate.edu!olivea!charnel.ecst.csuchico.edu!csusac!csus.edu!netcom.com!jdm Thu May 18 12:22:12 1995
+Newsgroups: comp.graphics,comp.answers,news.answers
+Path: news.staffs.ac.uk!strath-cs!str-ccsun!news.dcs.warwick.ac.uk!hgmp.mrc.ac.uk!sunsite.doc.ic.ac.uk!agate!howland.reston.ans.net!swrinde!gatech!nntp.msstate.edu!olivea!charnel.ecst.csuchico.edu!csusac!csus.edu!netcom.com!jdm
+From: jdm@netcom.com
+Subject: Graphics File Formats FAQ: Image Conversion and Display Programs (Part 2 of 4)
+Message-ID: <graphics/fileformats-faq-2-799731112@netcom.com>
+Followup-To: poster
+Summary: This document answers many of the most frequently asked 
+	questions about graphics file formats on Usenet.
+Keywords: FAQ, GRAPHICS, FORMAT, IMAGE
+Sender: jdm@netcom20.netcom.com
+Supersedes: <graphics/fileformats-faq-2-796783512@netcom.com>
+Reply-To: jdm@netcom.com (James D. Murray)
+Organization: None Whatsoever
+References: <graphics/fileformats-faq-1-799731112@netcom.com> 
+Date: Sat, 6 May 1995 03:32:04 GMT
+Approved: news-answers-request@MIT.EDU
+Expires: Mon, 5 Jun 1995 03:31:52 GMT
+Lines: 558
+Xref: news.staffs.ac.uk comp.graphics:15141 comp.answers:4496 news.answers:15304
+
+Posted-By: auto-faq 3.1.1.2
+Archive-name: graphics/fileformats-faq/part2
+Posting-Frequency: monthly
+Last-modified: 01May95
+
+This FAQ (Frequently Asked Questions) list contains information on graphics
+file formats, including, raster, vector, metafile, Page Description Language,
+3D object, animation, and multimedia formats.
+
+This FAQ is divided into four parts, each covering a different area of
+graphics file format information:
+
+  Graphics File Formats FAQ: General Graphics Format Questions (Part 1 of 4)
+  Graphics File Formats FAQ: Image Conversion and Display Programs (Part 2 of 4)
+  Graphics File Formats FAQ: Where to Get File Format Specifications (Part 3 of 4)
+  Graphics File Formats FAQ: Tips and Tricks of the Trade (Part 4 of 4)
+
+Please email contributions, corrections, and suggestions about this FAQ to
+jdm@netcom.com. Relevant information posted to newsgroups will not
+automatically make it into this FAQ.
+
+-- James D. Murray <jdm@netcom.com>  ;-{)>>>>
+
+----------------------------------------------------------------------
+
+Subject: 0. Contents of Image Conversion and Display Programs
+
+Subjects marked with <NEW> are new to this FAQ.
+Subjects marked with <UPD> have been updated since the last release
+ of this FAQ.
+
+I. General questions about this FAQ
+
+0. Maintainer's Comments
+1. What's new in this latest FAQ release?
+
+II. Image Conversion and Display Programs
+
+0. Image Conversion and Display Programs for MS-DOS
+1. Image Conversion and Display Programs for Windows
+2. Image Conversion and Display Programs for Macintosh
+3. Image Conversion and Display Programs for Unix and X Window <UPD>
+4. Image Conversion and Display Programs for Amiga <NEW>
+5. Platform-Independent Image Conversion Toolkits 
+
+III. Kudos and Assertions
+
+0. Acknowledgments 
+1. About The Author 
+2. Disclaimer 
+3. Copyright Notice
+
+------------------------------
+
+Subject: I. General questions about this FAQ
+
+------------------------------
+
+Subject: 0. Maintainer's Comments
+
+This FAQ is for all of you looking for that special display or image
+conversion program to run on your system and to work with all those graphics
+files you've been downloading from the alt.binaries.pictures.* newgroups for
+whose-knows-what reasons.
+
+And the world is not only Unix and Windows! This month we see the
+introduction of a section of graphics file applications for the Commodore
+Amiga. I know absolutley nothing about the Amiga, so you people had better
+help me out with the software available. I wouldn't mind some input from the
+Apple Macintosh community either.
+
+And it looks as though I'll be in the O'Reilly & Associates booth at SIGGRAPH
+in Los Angles on August 8th, 9th, and 10th. I'll be the long-haired computer
+nerd with the long, braided beard. ;-{)>>>>
+
+------------------------------
+
+Subject: 1. What's new in this latest FAQ release?
+
+  o New Amiga section added!
+  o New Mac, Unix, and MS-DOS applications added
+
+------------------------------
+
+Subject: II. Image Conversion and Display Programs
+
+------------------------------
+
+Subject: 0. Image Conversion and Display Programs for MS-DOS
+
+  Name:     DISPLAY
+  Purpose:  Image display and conversion
+  Version:  1.87
+  Author:   Jih-Shin Ho <u7711501@bicmos.ee.nctu.edu.tw>
+  FTP:      ftp://NCTUCCCA.edu.tw/PC/graphics/disp
+  Imports:  GIF, Japan MAG, Japan PIC, Sun Raster, JPEG, XBM, Utah RLE,
+            PBM, PGM, PPM, PM, PCX, Japan MKI, TIFF, TGA, XPM, Mac Paint, 
+            GEM/IMG, IFF/ILBM, BMP, QRT, Mac PICT, VIS, PDS, VIKING, VICAR,
+            FITS, Usenix FACE, IRIS, YUV, RAW RGB, PCPAINT/Pictor, RAW GREY,
+            Photo-CD, DL, FLI, FLC, RAW, MPEG, AVI, and GL.
+  Exports:  GIF, Sun Raster, JPEG, XBM, PBM, PGM, PPM, PM, Tiff, Targa,
+            XPM, Mac Paint, Ascii, Laser Jet, IFF/ILBM, Windows BMP,
+            Mac PICT, VIS, FITS, FACE, PCX, GEM/IMG, IRIS, YUV, RAW RGB,
+            Postscript, and RAW GREY.
+  Features: Batch conversion, image preview, command-line configuration,
+            contact sheet creation, slide shows.
+  Comments: I am impressed with the large number of file formats
+            supported, including all of their eccentric variations, and
+            several formats I have not seen supported in other packages.
+            The DOS file directory navigation and maintenance features are
+            easy to use and the command line usage is very convenient,
+            especially for batch format conversions of images.
+
+  Name:     Graphics Display System (GDS)
+  Purpose:  Image display, conversion, thumbnail catalogs
+  Version:  3.1e
+  Author:   Photodex Corporation <photodex@netcom.com>
+  FTP:      ftp://ftp.netcom.com/pub/ph/photodex
+  CIS:      GO PHOTODEX, GDS Viewing Software (Lib 3)
+  Imports:  ANS (ANSI text), BBM, BMF, BMP, CUT/PAL (Dr. Halo), DIB, DL,
+            FLC, FLI, FLX, GDS, GIF, GL, HAM, ICO, IFF/ILBM, IMG, JFI,
+            JPG (JFIF), LBM, MAC, MP2 & MPA (MPEG Audio), MPG, PCC,
+            PCX, RAX, RFX, RLE, SC? (ColoRIX), TGA, TIFF and TXT (text).
+  Exports:  ANS (ANSI text), BBM, BMP, CUT/PAL (Dr. Halo), GDS, GIF,
+            IFF/ILBM, IMG, JFI, JPG (JFIF), LBM, PCC, PCX, RAX, RFX,
+            RLE, SC? (ColoRIX), TGA, and TIFF.
+  Features: File viewing, batch conversions, easy thumbnail catalog
+            creation with many options, slide shows, automatic
+            configuration.  Includes 5000+ lines of hypertext help
+            and prints 98 page cross referenced manual.  Supports HGC,
+            CGA, EGA, S-EGA, VGA, SVGA, XGA, TIGA and VESA. Registered
+            versions print to HP PCL & 100% compatible laser and inkjet
+            printers.
+  Comments: Used by CompuServe sysops to catalog over 40,000 images
+            regularly.  ASP approved shareware.  
+  
+  Name:     pbmplus - Portable Bitmap Utilities (MS-DOS version)
+  Purpose:  Graphical file format conversion
+  Version:  1.91d (10 December 1991)
+  Author:   Mike Castle <mcastle@cs.umr.edu> and D.J. Delorie <dj@ctron.com>
+  FTP:      ftp://oak.oakland.edu/pub/msdos/graphics/pbmp191d.zip
+  Imports:  
+  Exports:  
+
+------------------------------
+
+Subject: 1. Image Conversion and Display Programs for Windows
+
+  Name:     ImagePals 2
+  Purpose:  Image editor and DTP media management tool
+  Version:  2.0
+  Author:   Ulead Systems Inc., 970 W. 190th St., #520, Torrance, CA 90502
+            Voice: 800.858.5323, 310.523.9393; Fax: 310.523.9399
+  Cost:     ImagePals 2, $129; upgrade from ImagePals 1.x, $49;
+  Formats:  BMP, CLP, CUR, DCS, EPS, GIF, ICO, IFF, IMG, JPG, MAC, MSP, PCD,
+            PCT, PCX, PSD, CGM, CLP, DRW, DXF, HGL, PCT, PIC, WMF, WPG, PXR,
+            RAS, RLE, SCT, TGA, TIF, WMF, VOC, WAV, MID, RMI, AVI, FLC, FLI,
+            FLX, WRI, TXT, DBF, DOC, PPT, RTF, CDR
+  Features: Photo album image cataloger, image editor and graphics toolbox,
+            screen capture, file format conversion, Kodak PhotoCD browser,
+            slide show, TWAIN and OLE compatible.
+  Reviews:  PC Magazine  May 17, 1994 v13 n9 p52(1)
+            InfoWorld, June 13, 1994, v16 n24 p97(2);
+            PC Magazine  July 1994 v13 n13 p224(2)
+            Windows Sources  August 1994 v2 n8 p82(2)
+            Windows Magazine  August 1994 v5 n8 p274(9)
+
+  Name:     MediaStudio
+  Purpose:  Video/audio authoring and multimedia presentation
+  Version:  1.0
+  Author:   Ulead Systems Inc., 970 W. 190th St., #520, Torrance, CA 90502
+            Voice: 800.858.5323, 310.523.9393; Fax: 310.523.9399
+  Cost:     $349 (CD-ROM)
+  Formats:  BMP, CLP, CUR, DCS, EPS, GIF, ICO, IFF, IMG, JPG, MAC, MSP, PCD,
+            PCT, PCX, PSD, CGM, CLP, DRW, DXF, HGL, PCT, PIC, WMF, WPG, PXR,
+            RAS, RLE, SCT, TGA, TIF, WMF, VOC, WAV, MID, RMI, AVI, FLC, FLI,
+            FLX, WRI, TXT, DBF, DOC, PPT, RTF, CDR
+  Features: Photo album image cataloger, image, audio, and video editor,
+            screen and video capture, file format conversion, morphing editor,
+            Kodak PhotoCD browser, HQ-9000, TWAIN, and OLE compatible.
+  Reviews:  Computer Shopper, Nov 1994, v14 n11 p796(1);
+  Comments: MediaStudio is a very nice collection of utilities for creating,
+            modifying, and maintaining multimedia files and resources under
+            the Microsoft Windows environment. I am especially impressed with
+            its professional appearance, large selection of features, and
+            ease of use.
+
+  Name:     Picture Man 
+  Purpose:  Image conversion and manipulation application 
+  Version:  1.55 (Shareware)
+  Author:   Dr. Igor Plotnikov <igor@corvette.insoft.com>
+  FTP:      ftp://oak.oakland.edu/pub/msdos/windows3/pman155.zip
+  Imports:  TIFF, PCX, GIF, TGA, JPEG, BMP
+  Exports:  TIFF, PCX, GIF, TGA, JPEG, BMP, EPS 
+  Features: Paint, filter, and transform functions, virtual memory on disk,
+            TWAIN driver interface for scanners, digital cameras, and 
+            video capturing boards, and runs multiple instances.
+
+  Name:     R2V for Windows
+  Purpose:  Raster to vector conversion application
+  Version:  1.7.2
+  Author:   Able Software Co.
+            Voice: 617.862.2804, Fax: 617.862.2640, Email: able@world.std.com
+  Cost:     US$1895.00 (USA), US$2400.00 (International)
+  FTP:      ftp://ftp.std.com/pub/r2v/r2vdemo.zip
+  Imports:  TIFF, Arc/Info, and SPOT satellite image formats
+  Exports:  MapInfo, DXF and Arc/Info, and TIFF
+  Features: Batch processing, vector editing and image processing functions,
+            vector registration and merge, and printer support.
+
+------------------------------
+
+Subject: 2. Image Conversion and Display Programs for Macintosh
+
+  Name:     CH-Interchange 2
+  Purpose:  JPEG toolkit (CH-Interchange, CH-JPEG, and CH-PegIt)
+  Author:   HighWater Designs Inc., 6 Bedford Farms, Bedford, NH
+            03110-6532 USA. Voice: 603.669.7466, Fax: 603.669.7456
+  Imports:  TIFF (RGB and CMYK), EPSF, JPEG, EPSJPEG, DCSJPEG
+  Exports:  TIFF (RGB and CMYK), EPSF, JPEG, EPSJPEG, DCSJPEG
+  Features: CH-Interchnage provides file format conversion. CH-JPEG is an
+            Adobe Photoshop Plug-in that allows acquire/export of JPEG and
+            EPSJPEG formats. CH-PegIt provides low-resolution compression for
+            EPS and DCS files and uses the Mac's QuickTime extension.
+
+  Name:     GIFConverter
+  Purpose:  Image display, conversion, and printing
+  Version:  2.3.7
+  Author:   Kevin Mitchell <kam@mcs.com>
+  FTP:      ftp://mac.archive.umich.edu/mac/graphics/graphicsutil/gif-converter-237.hqx
+  Imports:  GIF, JPEG, JFIF, TIFF, RIFF, MacPaint, Thunderscan, PICT
+  Exports:  GIF, JPEG, JFIF, TIFF, RIFF, MacPaint, Thunderscan, PICT, EPS
+  Features: Dithers and halftones, laser printer support
+
+  Name:     GraphicConverter
+  Purpose:  Graphics file format conversion
+  Version:  
+  Author:   
+  FTP:      
+  Imports:  PICT, Startup-Screen, MacPaint, TIFF (raw, packbits, CCITT 3/4,
+            LZW), RIFF, PICS, 8BIM, 8BPS/PSD, JPEG/JFIF, GIF, PCX/SCR,
+            GEM-IMG/-XIMG, BMP (raw and RLE), ICO/ICN, PIC (16 bit), FLI/FLC,
+            TGA, MSP, PIC (PC Paint), SCX (ColoRIX), SHP, WPG, PBM/PGM/PPM,
+            CGM (binary only), SUN (uncompressed), RLE, XBM, PM, IFF/LBM, PAC,
+            Degas, TINY, NeoChrome, PIC (ATARI), SPU/SPC, GEM-Metafile, 
+            Animated NeoChrome, Imagic, ImageLab/Print, Technic, HP-GL/2, 
+            FITS, SGI, DL, XWD, WMF, Scitex-CT, DCX, KONTRON
+  Exports:  PICT, Startup-Screen, MacPaint, TIFF (raw, packbits, LZW), GIF,
+            PCX, GEM-IMG/-XIMG, BMP, IFF/LBM, TGA, PSD, JPEG/JFIF, HP-GL/2,
+            EPSF, Movie (QuickTime), SUN, PICS, PICT in Resource, PBM/PGM/PPM
+  Features: 
+
+  Name:     JPEGView
+  Purpose:  Image file viewer
+  Version:  3.2.1
+  Author:   Aaron Giles <giles@med.cornell.edu>
+  FTP:      ftp://guru.med.cornell.edu/pub/jpegview/jpegview32.sit.hqx
+  Imports:  JPEG, TIFF, BMP, GIF, PICT, Startup Screen
+  Exports:  
+  Features: Uses QuickTime
+
+------------------------------
+
+Subject: 3. Image Conversion and Display Programs for Unix and X Window
+
+  Name:     HighWater JPEG Library
+  Purpose:  High-speed JPEG compression/decompression for Solaris-2
+  Version:  1.2
+  Author:   HighWater Designs Inc., 6 Bedford Farms, Bedford, NH
+            03110-6532 USA. Voice: 603.669.7466, Fax: 603.669.7456
+  Imports:  JPEG
+  Exports:  JPEG
+  Features: Library of functions callable from C programs, optimized for
+            high-speed operation, fully compliant with the JPEG
+            specification, operates on all SPARC-based platforms, and
+            example source code included.
+
+  Name:     fbm - Fuzzy pixmap manipulation
+  Purpose:  Graphics file format manipulation and conversion toolkit
+  Version:  1.0
+  Author:   Michael L. Mauldin <mlm@cs.cmu.edu>
+  FTP:      ftp://ftp.wustl.edu/graphics/graphics/packages/fbm.tar.Z
+            ftp://nl.cs.cmu.edu/usr/mlm/ftp/fbm.tar.Z
+  Imports:  Sun Rasterfile, GIF, IFF ILBM/HAM, TIFF, PCX, PBM, FBM,
+            PostScript, Face, Utah RLE
+  Exports:  Sun Rasterfile, GIF, IFF ILBM/HAM, TIFF, PCX, PBM, FBM,
+            PostScript, Face, Utah RLE
+  Features: Image processing functions (resize, scaling, halftoning,
+            quantizing, etc.), TIFF functions based on libtiff library, 
+            Utah RLE functions based on Utah Raster Toolkit, full source
+            code included in the distribution.
+
+  Name:     ImageMagick
+  Purpose:  X Window-based image display and conversion
+  Version:  3.6.1
+  Author:   John Cristy <cristy@dupont.com>
+  FTP:      ftp://ftp.x.org/contrib/applications/ImageMagick/ImageMagick-3.6.1.tar.gz
+  Imports:  AVS, BMP, Raw CMYK, Group 3 FAX, FITS, GIF, Raw GRAY,
+            JPEG, MIFF, MPEG, MTV, Photo CD, PCX, Mac PICT, PBM, PDS, PGM,
+            PPM, PM Postscript, RAD, Raw RGB, Utah RLE, SGI RGB, SUN Raster,
+            Targa, ASCII Text, TIFF, VICAR, Visual Image Directory, VIFF, X
+            Screen, XBM, XPM, XWD, Raw YUV.
+  Exports:  AVS, BMP, Raw CMYK, Group 3 FAX, FITS, GIF, Raw GRAY,
+            JPEG, MIFF, MTV, PCX, Mac PICT, PBM, PGM, PPM, PM Postscript, Raw
+            RGB, Utah RLE, SGI RGB, SUN Raster, Targa, TIFF, Visual Image
+            Directory, VIFF, X Screen, XBM, XPM, XWD, Raw YUV.
+  Features: Batch conversion, image preview, contact sheet creation,
+            slide shows, animation.
+
+  Name:     pbmplus - Extended Portable Bitmap Toolkit
+  Purpose:  Graphics file format manipulation and conversion toolkit
+  Version:  1.91d (10 December 1991)
+  Version:  10 December 1991
+  Author:   Jef Poskanzer <jef@well.sf.ca.us> <jef@netcom.com>
+  FTP:      ftp://ftp.wustl.edu/graphics/graphics/packages/pbmplus/pbmplus10dec91.tar.Z
+            ftp://gatekeeper.dec.com/.b/X11-contrib/pbmplus10dec91.tar.Z
+  Imports:  Sun Icon, X10 and X11 bitmap, Mac Paint, CMU, MGR, G3 FAX,
+            GEM IMG, FACE, .pi1, .pi3, Andrew Raster Object, Xerox Doodle,
+            FITS, FaceSaver, LISP machine bit-array, HIPS, PostScript, RAW,
+            GIF, IFF ILBM, PICT, XPM, PCX, TGA HPPJ, YUV, MTV/PRT, QRT,
+            Img-whatnot, Xim, Spectrum, SLD, Sun Rasterfile, TIFF, X10 and
+            X11 XWD
+  Exports:  Sun Icon, X10 and X11 bitmap, Mac Paint, CMU, MGR, G3 FAX,
+            GEM IMG, FACE, .pi1, .pi3, Andrew Raster Object, ASCII, HPLJ,
+            GraphOn, BBN, Printronix, Gemini 10x, Epson, Unix plot, Zinc Icon,
+            FITS, FaceSaver, LISP machine bit-array, GIF, NCSA, X11 puzzle,
+            IFF ILBM, PICT, XPM, PCX, TGA HPPJ, YUV, Motif UIL Icon,
+            DEC sixel, PostScript, TIFF, X11 XWD, Sun Rasterfile, DXF, SLD
+  Features: Supports monochrome, grayscale, and full-color bitmaps. Runs
+            under all flavors of Unix. Full source code included in the
+            distribution.
+
+  Name:     NetPBM - Extended Portable Bitmap Toolkit
+  Purpose:  Graphics file format manipulation and conversion toolkit
+  Version:  1 March 1994
+  Author:   Bill Davidsen <davidsen@tmr.com>
+  FTP:      ftp://ftp.wustl.edu/graphics/graphics/packages/NetPBM/*
+            ftp://ftp.cs.ubc.ca/ftp/archive/netpbm/*
+            ftp://ftp.x.org/contrib
+  Imports:  Sun Icon, X10 and X11 bitmap, Mac Paint, CMU, MGR, G3 FAX,
+            GEM IMG, FACE, .pi1, .pi3, Andrew Raster Object, Xerox Doodle,
+            FITS, FaceSaver, LISP machine bit-array, HIPS, PostScript, RAW,
+            GIF, IFF ILBM, PICT, XPM, PCX, TGA HPPJ, YUV, MTV/PRT, QRT,
+            Img-whatnot, Xim, Spectrum, SLD, Sun Rasterfile, TIFF, X10 and
+            X11 XWD, BDF, PK font, SPOT, Biorad, BMP, Mitsubishi S340-10,
+            XV thumbnail, HP PaintJet XL PCL, SGI, Solitaire image recorder,
+            Zeiss
+  Exports:  Sun Icon, X10 and X11 bitmap, Mac Paint, CMU, MGR, G3 FAX,
+            GEM IMG, FACE, .pi1, .pi3, Andrew Raster Object, ASCII, HPLJ,
+            GraphOn, BBN, Printronix, Gemini 10x, Epson, Unix plot, Zinc Icon,
+            FITS, FaceSaver, LISP machine bit-array, GIF, NCSA, X11 puzzle,
+            IFF ILBM, PICT, XPM, PCX, TGA HPPJ, YUV, Motif UIL Icon,
+            DEC sixel, PostScript, TIFF, X11 XWD, Sun Rasterfile, DXF, SLD,
+            BDF, PK font, SPOT, Biorad, BMP, Mitsubishi S340-10, XV thumbnail,
+            HP PaintJet XL PCL, SGI, Solitaire image recorder, Zeiss
+  Features: Based on the 10Dec91 version of pbmplus, image processing
+            functions include scaling, contrast and gamma adjustment, and
+            edge detection. Package also available for VMS, MS-DOS, and Amiga
+
+  Name:     xanim
+  Purpose:  Animation file viewer
+  Version:  
+  Author:   Mark Podlipec
+  FTP:      ftp://ftp.x.org/contrib/applications/xanim???.tar.Z
+  WWW:      <URL:http://www.univ-rennes1.fr/ASTRO/fra/xanim.html>
+  Imports:  DL, FLI, FLC, GIF, IFF, MovieSetter, PFX, Quicktime, RLE
+
+  Name:     Xew widget set
+  Purpose:  X Window widget set
+  Version:  
+  Author:   Markku Savela <msa@hemuli.tte.vtt.fi>
+            Technical Research Centre of Finland
+            Multimedia Systems, P.O.Box 1203, FIN-02044 VTT
+            http://www.vtt.fi/tte/staff/msa/
+  WWW:      http://www.vtt.fi/tte/EuroBridge/Xew/
+  Imports:  
+
+  Name:     xli
+  Purpose:  X Window image file display and manipulation
+  Version:  1.16
+  Author:   Graeme Gill <graeme@digideas.com.au>
+  FTP:      ftp://ftp.x.org/contrib/applications/xli.1.16.tar.gz
+  Imports:  CMU, GEM, GIF, JFIF, TIFF, Mac Paint, PCX, Sun Raster, Utah RLE,
+            TGA, X Window formats, PBM, FBM, Photograph on CD, Windows, 
+            OS/2 BMP Image.
+
+  Name:     xloadimage
+  Purpose:  X Window image file display
+  Version:  4.1
+  Author:   Jim Frost <jimf@centerline.com>
+  FTP:      ftp://ftp.x.org/R5contrib/xloadimage.4.1.tar.gz
+  Imports:  CMU, GEM, JFIF, TIFF, Mac Paint, PCX, Sun Raster, Utah RLE,
+            X Window famats, PBM formats, FBM formats.
+
+  Name:     xv
+  Purpose:  X Window-based image display
+  Version:  3.10a
+  Author:   John Bradley <bradley@cis.upenn.edu>
+  FTP:      ftp://ftp.cis.upenn.edu/pub/xv/xv-3.00a.tar.Z
+  Imports:  GIF, JPEG, TIFF, PBM, PGM, PPM, X11 bitmap, Sun Rasterfile, 
+            Utah Raster Toolkit RLE, PDS/VICAR, BMP, PCX, IRIS RGB, 
+            PostScript, and PM
+  Exports:  GIF, PM, PBM (raw), PBM (Ascii), X11 Bitmap, Sun Rasterfile,
+            BMP, PostScript, IRIS, JPEG, TIFF 
+
+------------------------------
+
+Subject: 4. Image Conversion and Display Programs for Amiga
+
+  Name:     ImageFX 2.0
+  Purpose:  Professional image manipulation and special effects package
+  Version:  2.0
+  Author:   Nova Design, Inc., 1910 Byrd Avenue, Suite 214, Richmond, VA 23230
+            Voice: 804.282.6528, Fax: 804.282.3768, 
+            Email: Kermit@cup.portal.com (Kermit Woodall)
+  Cost:     
+  Imports:  ILBM/IFF w/Alpha, ANIM/ANIM 7/ANIM 8, Clipboard, 
+            Datatypes, DCTV, Digiview DV21, FAXX, HAM-E, IMG8 (PP&S format),
+            Impulse, Rendition/Caligari, Sculpt 3D/4D, Toaster Framestore,
+            DPS PAR loader, Applied Magic Jstream, YUVN, PICT (w/vector and
+            JPEG variations), TIFF, MacPaint, Windows Icons, BMP, DP-IIe,
+            DL-View animation frame, FLI/FLC, GIF, PCX, PIC, GRASP/GL,
+            TGA w/Alpha, Alias, SGI RGB, Wavefront, Softimage, Abekas A60
+            series, JPEG, MPEG, C64 Koala, FITS, PS/EPS, PDS/Vicar, 
+            QRT/POV/MTV, Sunraster, and X-Window formats.
+  Exports:  ILBM/IFF w/Alpha, ANIM/ANIM 7/ANIM 8, Clipboard, 
+            Datatypes, DCTV, Digiview DV21, FAXX, HAM-E, IMG8 (PP&S format),
+            Impulse, Rendition/Caligari, Sculpt 3D/4D, Toaster Framestore,
+            DPS PAR loader, Applied Magic Jstream, YUVN, PICT (w/vector and
+            JPEG variations), TIFF, MacPaint, Windows Icons, BMP, DP-IIe,
+            DL-View animation frame, FLI/FLC, GIF, PCX, PIC, GRASP/GL,
+            TGA w/Alpha, Alias, SGI RGB, Wavefront, Softimage, Abekas A60
+            series, JPEG, MPEG, C64 Koala, FITS, PS/EPS, PDS/Vicar, 
+            QRT/POV/MTV, Sunraster, and X-Window formats.
+  Features: 24/32/56bit color painting, image retouching, prepress image 
+            correction, special effects, morphing, and batch processing.
+
+  Name:     JIV
+  Purpose:  Graphics file viewer
+  Version:  1.19
+  Author:   Juergen Weinelt <jow@hub-n.franken.de>
+  Cost:     Shareware donation (determined by the user)
+  FTP:      Aminet FTP mirrors and the Aminet #6 CDROM
+  Imports:  IFF/ILBM (1-8 and 24 planes, EHB, HAM, HAM8), uncompressed BMP 
+            (OS/2 and MS Windows w/ 1, 4, 8 and 24 planes), GIF87a (including
+            GIF animations) and a subset of GIF89a, PNM (PBM, PGM and PPM, 
+            ASCII and binary), PCX, and JPEG/JFIF.
+  Features: Support for all native Amiga graphics chipsets (OCS, ECS, AGA),
+            A2024 greyscale monitor, Picasso-II graphics board (village 
+            emulation), and CyberGraphics emulation. Supports Workbench and 
+            CLI/Shell. Slide show and autoscroll modes.
+
+  Name:     Photogenics
+  Purpose:  Paint and image processing package
+  Version:  V1.2
+  Author:   Almathera <almathera@cix.compulink.co.uk>
+            Almathera, Southerton House, Boundary Business Court, 
+            92-94 Church Rd, Mitcham, Surrey, CR4 3TD, ENGLAND.
+  Cost:     (UK) £54.95 UKPounds. International orders 62 UKPounds inc.
+            airmail delivery
+  Imports:  JPEG, IFF (all varieties), IFF-DEEP, Targa, PCX, PCD, TIFF,
+            ACBM, BMP, CDXL, QRT, QuadAnim, RAW, RGB8 and RGBN
+  Exports:  JPEG, IFF, IFF-DEEP, Targa, PCX, TIFF, BMP, QRT, RAW, Sculpt
+  Features: Full 24-bit painting, image manipulation, unique 'paint layer'
+            system.
+
+  Name:     Transition
+  Purpose:  Image processing package
+  Version:  1.2.1
+  Author:   Joel A. Corn, DarkSoftWare/DarkSoft Computers
+            610 S. Iowa Avenue, East Wenatchee, WA 98802 USA
+            Voice: 509.886.0581, Email: darksoft@ncw.net
+  Order:    Better Concepts, Inc. Voice: 800.252.6442      
+  Cost:     $59.95 retail
+  Imports:  IFF-ILBM, GIF, JPEG, PCX,,PBM+, BMP-Windows and OS/2 variety
+  Exports:  IFF-ILBM, GIF, JPEG, PCX,,PBM+, BMP-Windows and OS/2 variety
+  Features: Built-in batch processing, Quantizing, Precise scaling,
+            Color Correction, and easy to use.
+  Reviews:  Amiga World, August 1994
+            Amiga Report - online hyper-guide magazine
+
+------------------------------
+
+Subject: 5. Platform-Independent Image Conversion Toolkits
+
+  Name:     libtiff
+  Purpose:  TIFF file manipulation toolkit
+  Version:  3.3
+  Author:   Sam Leffler <sam@okeeffe.berkeley.edu>
+  FTP:      ftp://sgi.com/graphics/tiff/*.tar.Z
+  Imports:  TIFF, SGI
+  Exports:  TIFF
+  Features: Tools for image conversions and transformations, and much
+            contributed software.
+
+  Name:     Independent JPEG Group's JPEG Library
+  Purpose:  JPEG image manipulation toolkit
+  Version:  5
+  Author:   Independent JPEG Group <jpeg-info@uunet.uu.net>
+  FTP:      ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v?.tar.gz
+  Imports:  JPEG, JFIF, BMP, GIF TGA, Utah RLE, PBM formats
+  Exports:  JPEG, JFIF, BMP, GIF TGA, Utah RLE, PBM formats
+  Features: Baseline and extended processes, format conversion
+
+------------------------------
+
+
+Subject: 0. Acknowledgments
+
+The following people have made this FAQ take just a little bit longer to read
+since the last time you looked at it (blame them and not me):
+
+  Vincent Chen <vchen@ulead.com>
+  John Cristy <cristy@magick.es.dupont.com>
+  Graeme Gill <graeme@digideas.com.au>
+  Tom Lane <tgl@netcom.com>
+  Jonathan Law <jonlaw@princeton.edu>
+  Angus Montgomery <angus@cgl.citri.edu.au>
+  Borut Podlipnik <borut@lasco1.mpae.gwdg.de>
+  Jolyon Ralph <jralph@cix.compulink.co.uk>
+  Markku Savela <msa@hemuli.tte.vtt.fi>
+  Paul Schmidt <photodex@ix.netcom.com>
+  Marc Stengel <msss@netcom.com>
+  Juergen Weinelt <jow@hub-n.franken.de>
+  Kermit Woodall <Kermit@cup.portal.com>
+
+------------------------------
+
+Subject: 1. About The Author
+
+The author of this FAQ, James D. Murray, lives in the City of Orange, Orange
+County, California, USA. He is the co-author of the book Encyclopedia of
+Graphics File Formats published by O'Reilly and Associates, makes a passable
+living writing Microsoft Windows applications in C++, and may be reached as
+jdm@netcom.com, or via U.S. Snail at: P.O. Box 70, Orange, CA 92666-0070 USA.
+
+GCS d-- H++ s g- p? au+ a w+ v++ C+++(++++) US+++ p++>++++ L>++ 3 E--- N++ K-
+W---$ M-@ V-- po Y+ t++ 5-- j>x R+>-- G' tv-->! b+++ D++ B e- u* h- f r-->+++
+n++ y*(**)
+
+------------------------------
+
+Subject: 2. Disclaimer
+
+While every effort has been taken to insure the accuracy of the information
+contained in this FAQ list compilation, the author and contributors assume no
+responsibility for errors or omissions, or for damages resulting from the use
+of the information contained herein.
+
+------------------------------
+
+Subject: 3. Copyright Notice
+
+This FAQ is Copyright (C) 1994-95 by James D. Murray. All Rights Reserved. 
+This work may be reproduced, in whole or in part, using any medium,
+including, but not limited to, electronic transmission, CD-ROM, or published
+in print, under the condition that this copyright notice remains intact.
+
+From news.staffs.ac.uk!strath-cs!str-ccsun!news.dcs.warwick.ac.uk!hgmp.mrc.ac.uk!sunsite.doc.ic.ac.uk!agate!howland.reston.ans.net!swrinde!gatech!nntp.msstate.edu!olivea!charnel.ecst.csuchico.edu!csusac!csus.edu!netcom.com!jdm Thu May 18 12:22:26 1995
+Newsgroups: comp.graphics,comp.answers,news.answers
+Path: news.staffs.ac.uk!strath-cs!str-ccsun!news.dcs.warwick.ac.uk!hgmp.mrc.ac.uk!sunsite.doc.ic.ac.uk!agate!howland.reston.ans.net!swrinde!gatech!nntp.msstate.edu!olivea!charnel.ecst.csuchico.edu!csusac!csus.edu!netcom.com!jdm
+From: jdm@netcom.com
+Subject: Graphics File Formats FAQ: Where to Get File Format Specifications (Part 3 of 4)
+Message-ID: <graphics/fileformats-faq-3-799731112@netcom.com>
+Followup-To: poster
+Summary: This document answers many of the most frequently asked 
+	questions about graphics file formats on Usenet.
+Keywords: FAQ, GRAPHICS, FORMAT, IMAGE
+Sender: jdm@netcom20.netcom.com
+Supersedes: <graphics/fileformats-faq-3-796783512@netcom.com>
+Reply-To: jdm@netcom.com (James D. Murray)
+Organization: None Whatsoever
+References: <graphics/fileformats-faq-1-799731112@netcom.com> 
+Date: Sat, 6 May 1995 03:32:12 GMT
+Approved: news-answers-request@MIT.EDU
+Expires: Mon, 5 Jun 1995 03:31:52 GMT
+Lines: 1361
+Xref: news.staffs.ac.uk comp.graphics:15142 comp.answers:4497 news.answers:15305
+
+Posted-By: auto-faq 3.1.1.2
+Archive-name: graphics/fileformats-faq/part3
+Posting-Frequency: monthly
+Last-modified: 01May95
+
+This FAQ (Frequently Asked Questions) list contains information on graphics
+file formats, including, raster, vector, metafile, Page Description Language,
+3D object, animation, and multimedia formats.
+
+This FAQ is divided into four parts, each covering a different area of
+graphics file format information:
+
+  Graphics File Formats FAQ: General Graphics Format Questions (Part 1 of 4)
+  Graphics File Formats FAQ: Image Conversion and Display Programs (Part 2 of 4)
+  Graphics File Formats FAQ: Where to Get File Format Specifications (Part 3 of 4)
+  Graphics File Formats FAQ: Tips and Tricks of the Trade (Part 4 of 4)
+
+Please email contributions, corrections, and suggestions about this FAQ to
+jdm@netcom.com. Relevant information posted to newsgroups will not
+automatically make it into this FAQ.
+
+-- James D. Murray <jdm@netcom.com>  ;-{)>>>>
+
+----------------------------------------------------------------------
+
+Subject: 0. Contents of Where to Get File Format Specifications
+
+Subjects marked with <NEW> are new to this FAQ.
+Subjects marked with <UPD> have been updated since the last release
+ of this FAQ.
+
+I. General questions about this FAQ
+
+0. Maintainer's Comments <UPD>
+1. What's new in this latest FAQ release? <UPD>
+
+II. Where to Get File Format Specifications
+
+0. BMP - Windows Bitmap Format 
+1. CALS - Computer Aided Acquisition and Logistics Support Raster Format
+2. CGM - Computer Graphics Metafile
+3. DEM - Digital Elevation Model 
+4. DLG - Digital Line Graph 
+5. DXF - Autodesk Drawing Exchange Format <NEW>
+6. EPS - Encapsulated PostScript
+7. FBM - Fuzzy Bitmap <NEW>
+8. GIF - Graphics Interchange Format <UPD>
+9. GKS - Graphics Kernel System 
+10. IGES - Initial Graphics Exchange Specification
+11. IMJ - Image JPEG
+12. JFIF - JPEG File Interchange Format 
+13. MGF - Materials and Geometry Format
+14. MIFF - Magick Image File Format <UPD>
+15. NAPLPS - North American Presentation Layer Protocol Syntax
+16. NFF - Neutral File Format
+17. NITF - National Imagery Transmission Format
+18. OFF - Object File Format
+19. PBM - Portable Bitmap
+20. PCX - ZSoft Paint
+21. PDS - Planetary Data Systems Format
+22. PGM - Portable Greymap
+23. PIC - Pegasus Imaging Corporation Format
+24. PNG - Portable Network Graphics <UPD>
+25. PPM - Portable Pixmap
+26. POL - InnovMetric Software Polygon Models Format <NEW>
+27. POV - Persistence of Vision Raytracing 
+28. RAS - Sun Rasterfile
+29. Rayshade
+30. RIB - Renderman Interface Bytestream
+31. RIFF - Microsoft Resource Interchange File Format 
+32. RIX - ColoRIX Image File
+33. SHG - Segmented Hyper-Graphic
+34. STL - Stereolithography Interface Format
+35. TGA - Truevision (Targa) File Format 
+36. TIFF - Tag Image File Format <UPD>
+37. URT - Utah Raster Toolkit <NEW>
+38. VICAR2 - Planetary File Format
+39. VIFF - Visualization Image File Format
+40. VPF - Vector Product Format
+41. XBM - X BitMap
+42. WMF - Window Meta File
+43. WPG - WordPerfect Graphics Metafile
+44. XPM - X PixMap
+45. XWD - X Window Dump
+
+III. Kudos and Assertions
+
+0. Acknowledgments 
+1. About The Author 
+2. Disclaimer 
+3. Copyright Notice
+
+------------------------------
+
+Subject: I. General questions about this FAQ
+
+------------------------------
+
+Subject: 0. Maintainer's Comments
+
+One of the reasons you are looking through this FAQ collection is most likely
+to locate the specification for one or more graphics file formats. That
+assumption on my part makes this file one of the most important parts of the
+Graphics File Formats FAQ collection. I therefore wish to make this section
+as complete as possible.
+
+If you have any suggestions for formats to include then please email me at
+jdm@netcom.com and let me know!
+
+And it looks as though I'll be in the O'Reilly & Associates booth at SIGGRAPH
+in Los Angles on August 8th, 9th, and 10th. I'll be the long-haired computer
+nerd with the long, braided beard. ;-{)>>>>
+
+------------------------------
+
+Subject: 1. What's new in this latest FAQ release?
+
+  o Five new file format specification whereabouts added!
+  o GIF and TIFF sections updated with mention about Unisys license agreement
+  o More PNG information added
+  o MIFF information updated
+
+------------------------------
+
+Subject: II. Where to Get File Format Specifications
+
+This section contains an alphabetical listing of file formats, the names of
+the creators/caretakers, and where to obtain the official specifications, and
+a brief description of each format.
+
+------------------------------
+
+Subject: 0. BMP - Windows Bitmap Format
+
+BMP is the native bitmap file format of the Microsoft Windows environment.
+It efficiently stores mapped or unmapped RGB graphics data with pixels 1-,
+4-, 8-, or 24-bits in size. Data may be stored raw or compressed using a
+4-bit or 8-bit RLE data compression algorithm. BMP is an excellent choice for
+a simple bitmap format which supports a wide range of RGB image data.
+
+The BMP format was created and is maintained by Microsoft Corporation:
+
+  Microsoft Corporation
+  One Microsoft Way
+  Redmond, WA 98052-6399
+  Voice: 206.882.8080
+  Fax: 206.936.7329
+  BBS: 206.637.9009
+
+Additional BMP references:
+
+  Luse, Marv. "The BMP File Format," Dr. Dobb's Journal, #219 September
+  1994 (Vol 9, Issue 10), pp. 18-22.
+
+------------------------------
+
+Subject: 1. CALS - Computer Aided Acquisition and Logistics Support Raster Format
+
+CALS files are used for document imaging and therefore only store
+black-and-white, 1-bit image data. CALS Type I files only store a single
+image per file and the data is always compressed using the CCITT Group 4
+encoding algorithm. CALS Type II files may stored multiple images per file,
+the image data may be tiled, and tiles stored as raw data or as data
+compressed using CCITT Group 4 encoding.
+
+The CALS raster file format is defined primarily in the following
+military standards documents:
+
+  MIL-STD-1840A, Automated Interchange of Technical Information
+  MIL-R-28002A, Requirements for Raster Graphics Representation 
+    in Binary Format 
+
+These documents may be obtained from the following sources:
+
+  Standardization Documents Ordering Desk
+  Building 4D
+  700 Robbins Avenue
+  Philadelphia, PA 19111-5094
+
+  Global Engineering Documents
+  2805 McGaw Avenue
+  Irvine, CA 92714 USA
+  Voice: 800.854.7179
+  Voice: 714.261.1455
+
+The CALS raster file format is supported through the CALS office of the
+United States Department of Defense:
+
+  CALS Management Support Office (DCLSO)
+  Office of the Assistant Director for Telecommunications and
+    Information Systems
+  Headquarters Defense Logistics Agency
+  Cameron Station
+  Alexandria, VA 22314 USA
+
+------------------------------
+
+Subject: 2. CGM - Computer Graphics Metafile
+
+The current version of the CGM ANSI/ISO standard (commonly called 
+CGM:1992) is:
+
+  Information Processing Systems--Computer Graphics Metafile for the
+  Storage and Transfer of Picture Description Information, 
+  ANSI/ISO 8632-1992.
+
+This standard superseded the early CGM:1986 (ANSI X3.122-1986) ANSI
+standard. The CGM standard is contained in four ISO standards documents:
+
+  ISO/IEC 8632-1:1992 Part 1: Functional Specification
+  ISO/IEC 8632-3:1992 Part 2: Character Encoding
+  ISO/IEC 8632-3:1992 Part 3: Binary Encoding
+  ISO/IEC 8632-4:1992 Part 4: Clear Text Encoding
+
+These documents may be obtained from the following organizations:
+
+  International Standards Organization (ISO)
+  1 rue de Varembe
+  Case Postal 56
+  CH-1211 Geneva 20 Switzerland
+  Voice: +41 22 749 01 11
+  Fax:   +41 22 733 34 30
+
+  American National Standards Institute (ANSI)
+  Sales Department
+  11 West 42nd Street
+  New York, NY 10036
+  Voice: 212.642.4900
+
+  Canadian Standards Association (CSA)
+  Sales Group
+  178 Rexdale Blvd.
+  Rexdale, Ontario, M9W 1R3
+  Voice: 416.747.444
+
+A WWW page devoted to CGM is:
+
+  http://speckle.ncsl.nist.gov/~lsr/cgm_std.htm
+
+------------------------------
+
+Subject: 3. DEM - Digital Elevation Model
+
+The format of DEM map files is described in the publication:
+
+  Data Users Guide 5 - Digital Elevation Models
+
+and is available for $1.00 US from:
+
+  Earth Science Information Center (ESIC)
+  U. S. Geological Survey
+  507 National Center
+  Reston, VA  22092 USA
+  Voice: 1.800.USA.MAPS
+  Voice: 703.860.645
+
+------------------------------
+
+Subject: 4. DLG - Digital Line Graph
+
+The format of DLG graph files is described in the publications:
+
+  Data Users Guide 1 - Digital Line Graphs from 1:24,000-Scale Maps
+  Data Users Guide 2 - Digital Line Graphs from 1:100,000-Scale Maps
+  Data Users Guide 3 - Digital Line Graphs from 1:2,000,000-Scale Maps
+
+and each is available for $2.00 US from:
+
+  Earth Science Information Center (ESIC)
+  U. S. Geological Survey
+  507 National Center
+  Reston, VA  22092 USA
+  Voice: 1.800.USA.MAPS
+  Voice: 703.860.645
+
+------------------------------
+
+Subject: 5. DXF - Autodesk Drawing eXchange Format
+
+The AutoCAD DXF (Drawing eXchange Format) and AutoCAD DXB (Drawing eXhange
+Binary) formats are the native vector file formats of Autodesk's AutoCAD
+CAD application.
+
+DXF is probably one of the most widely supported vector formats in the world
+today. DXF is rich in features, including: support for 3D objects, curves,
+text, associative dimensioning, and is an easy format to parse. The DXB
+format is a binary representation of a DXF file and they are usually smaller
+and faster to load than the equivalent DXF file.
+
+The latest "official" DXF revision is Release 12. However, there is an even
+newer version of DXF containing several changes and additions to the format.
+Apparently the specification of the latest version of the DXF format is not
+yet (if it will ever be) freely available. Users are required to pay $4000US
+for a license to AutoCAD in to obtain the specs for this newest release of
+DXF file format.
+
+The official specification for DXF R12 may be found in the AutoCAD Manual
+Release 12:
+
+  AutoCAD Customization Manual, Release 12, Autodesk Inc., 1992, pp. 241-81.
+
+The specification for DXF R12 has also been released in electonic form and
+is available in several of the Internet file format archives. You can also
+try poking around on Autodesk's FTP site, but not much is usually there:
+
+  ftp://ftp.autodesk.com
+
+Many books detail the DXF format, including:
+
+  The AutoCAD Database Book, F.H. Jones and L. Martin, Ventana Press,
+    ISBN 0-940087-04-9. Order: 919.490.0062 voice.
+
+  AutoCAD, The Complete Reference, 2nd Ed., Johnson, N., McGraw-Hill,
+    New York, NY, 1991.
+
+Additonal information may be obtained directly from Autodesk:
+
+  Autodesk Inc.
+  Autodesk Developer Marketing
+  2320 Marinship Way
+  Sausalito, CA 94965
+  Voice: 415.491.8719
+
+------------------------------
+
+Subject: 6. EPS - Encapsulated PostScript
+
+The PostScript Language Software Development Kit is available from the
+creator of PostScript, Adobe Systems:
+
+  Adobe Systems Inc.
+  Attn: Adobe Systems Developer Support
+  1585 Charleston Road
+  P.O. Box 7900
+  Mountain View, CA 94039-7900
+  Voice: 415.961.7900
+  Voice: 800.344.8335
+  Fax:   415.961.3769
+
+------------------------------
+
+Subject: 7. FBM - Fuzzy Bitmap
+
+FBM is the native file format of the Fuzzy pixmap image manipulation and
+conversion toolkit written by Michael L. Mauldin at Carnegie Mellon
+University.
+
+Code to manipulate FBM (and many other) file formats is found in the
+FBM distrbution:
+
+  ftp://nl.cs.cmu.edu/usr/mlm/ftp/fbm.tar.Z
+
+------------------------------
+
+Subject: 8. GIF - Graphics Interchange Format
+
+GIF is a data stream-oriented file format used to define the transmission
+protocol of LZW-encoded bitmap data. GIF images may be up to eight bits (256
+colors) in depth and are always compressed. Despite the fact that GIF
+supports only 8-bits worth of colors, and the multimedia extensions
+introduced in the 89a release have not been widely utilized, GIF still
+remains a popular choice for storing lower resolution image data.
+
+The GIF89a specification is available via many BBSs and on-line information
+services. You may also obtain the specification directly from CompuServe:
+
+  CompuServe Incorporated
+  Attn: Graphics Technology Department
+  5000 Arlington Center Boulevard
+  Columbus, OH 43220
+  Voice: 614.457.8600, 800.848.8199
+
+Note: Any software created or modified after 01 January 1995 that supports
+the capability of reading and/or writing GIF files must obtain a patent
+license agreement from Unisys Corporation. See Part I of the FAQ for more
+details on the Unisys GIF-LZW license agreements.
+
+------------------------------
+
+Subject: 9. GKS - Graphics Kernel System
+
+GKS is a standard specifying the input and output primitives for displaying
+2D and 3D graphical data. Although GKS has no native file format, the CGM
+(Computer Graphics Metafile) format is often closely associated with its use.
+
+The following ISO documents describe the GKS standard:
+
+  ISO 7942    Functional Specification
+  ISO 8651-1  Fortran Binding
+  ISO 8651-2  Pascal Binding
+  ISO 8651-3  Ada Binding
+  ISO 8651-4  
+  ISO 8805    GKS-3D
+  ISO 8806    GKS-3D Bindings
+
+These documents are available from ISO, ANSI, and CSA (see the CGM section
+for the addresses of these organizations).
+
+------------------------------
+
+Subject: 10. IGES - Initial Graphics Exchange Specification
+
+IGES is a set of protocols for the transfer and display of graphical
+information on remote devices via a telephone or computer communications
+network. IGES does not define any new graphical file formats, but instead
+uses existing formats (such as CGM) to encapsulate graphical data.
+
+IGES is associated with the NCGA (National Computer Graphics Association) and
+is part of the U.S. Product Data Association (USPRO) and the IGES/PDES
+Organization (IGO). The NCGA administers the National IGES User Group (NIUG),
+which provides access to information on IGES.
+
+To obtain the IGES specification, you must be a member of both NIUG and a
+Regional Interest Group (RIG). The IGES specification is available through
+the NCGA for $100US. For more information about the NIUG, RIGs, and IGES,
+contact:
+
+  National Computer Graphics Association
+  2722 Merrilee Drive
+  Suite 3200
+  Fairfax, VA 22031 USA
+  Voice: 703.698.9600
+
+------------------------------
+
+Subject: 11. IMJ - Image JPEG
+
+IMJ was created by Pegasus Image Corporation as a variation of the JFIF file
+format. IMJ is essentially a JFIF file with a Microsoft Windows BMP header
+and enhanced palette optimization. The IMJ format is used in several
+screensaver applications, and by orgainizations such as Delrina and the
+National Center for Missing Children.
+
+See the section describing the PIC - Pegasus Imaging Corporation Format
+for more information.
+
+------------------------------
+
+Subject: 12. JFIF - JPEG File Interchange Format
+
+JFIF is a data stream-oriented file format used to define the transmission of
+JPEG-encoded bitmap data. The specification for JFIF may be obtained directly
+from C-Cube Microsystems:
+
+  C-Cube Microsystems
+  Attn: Scott Sinclair
+  Corporate Communications
+  1778 McCarthy Blvd.
+  Milpitas, CA 95035
+  Voice: 408.944.6300
+  Fax:   408.944.6314
+
+The Independent JPEG Group archive on ftp.uu.net also contains an on-line
+copy of the JFIF specification and additional JPEG information as:
+
+  ftp://ftp.uu.net/graphics/jpeg/jfif.ps.gz
+  ftp://ftp.uu.net/graphics/jpeg/jpeg.documents.gz
+
+------------------------------
+
+Subject: 13. MGF - Materials and Geometry Format
+
+MGF is an ASCII-based 3D rendering format designed to model surface geometry
+and materials for the purpose of visible-light simulation and rendering.  The
+overall objective of this format is to provide a very simple yet fairly
+complete modeling language that does not place unreasonable demands on the
+applications programmer or the object library creator.
+
+The format specification is available bundled with an MGF file reader
+and is distributed in the file mgflib0.7.tar.Z on the following sites:
+
+	http://radsite.lbl.gov/mgf/HOME.html
+  ftp://hobbes.lbl.gov/www/mgf
+
+The MGF software is currently in an alpha release stage, which means the
+language may change in some incompatible ways between now and the first
+release.  Use this software and data in this package at your own risk.
+
+Questions about MGF should be directed to:
+
+Greg Ward
+Voice: 510.486.4757
+Fax:   510.486.4089
+Email: GJWard@lbl.gov
+
+------------------------------
+
+Subject: 14. MIFF - Magick Image File Format
+
+MIFF is a bitmap format native to the ImageMagick toolkit which runs under
+the X Window System. ImageMagick is capable of displaying and converting a
+variety of still and animated graphics file formats.
+
+The specification for MIFF is available in the ImageMagick distribution
+available from:
+
+  ftp://ftp.x.org/contrib/applications/ImageMagick/ImageMagick-3.6.1.tar.gz
+
+For more information about ImageMagick and MIFF, contact:
+
+  duPont de Nemour & Company
+  Attn: John Cristy
+  Central Research and Development
+  Experimental Station
+  P.O. Box 80328
+  Room 162-A
+  Wilmington, DE 19880-0328
+  Voice: 302.695.1159
+  Email: cristy@dupont.com
+
+------------------------------
+
+Subject: 15. NAPLPS - North American Presentation Layer Protocol Syntax
+
+NAPLPS is a protocol for transferring ASCII-based graphical information to
+remote terminals via a communications channel (telephone systems, computer
+networks, and so forth). NAPLPS is used by many Videotext services and
+Prodigy, the commercial on-line information service, and is specifically
+designed to provide usable information transfer rates, even at data rates as
+low as 2400bps.
+
+Although there is no NAPLPS file format, NAPLPS data streams are often saved
+as files, and the files are then referred to as using the "NAPLPS file
+format".
+
+The NAPLPS specification is a standards documents available through ANSI, ISO,
+or CSA. (See the CGM section for the addresses of these organizations). The
+CSA document (T500-1983) also contains a supplement (1-1991) which is not
+included in the ANSI version of this standard.  
+
+Further information may be found in the February, March, April, and May 1983
+issues of Byte Magazine. These articles explain much of the NAPLPS coding
+system and discuss the potential for NAPLPS.
+
+Michael Dillon has authored a paper on NAPLPS and started a NAPLPS section on
+SIMTEL20.  Michael Dillon may be contacted at:
+
+  CompuServe: 71532,137
+  Internet:   mpdillon@halcyon.halcyon.com
+  BBS:        604.546.2705
+  
+The BBS also contains NAPLPS Shareware and art.
+
+------------------------------
+
+Subject: 16. NFF - Neutral File Format
+
+NFF is a minimal scene description language used to test rendering algorithms
+and efficiency schemes. It supports basic geometry of objects, surface
+characteristics, placement of lights, color of objects, and the viewing angle
+of the human eye. NFF is ASCII-based and is used with the Standard Procedural
+Database (SPD) software package used for creating databases for testing
+rendering schemes.
+
+The specification for NFF is available on numerous FTP sites which archive
+file format documents, such as:
+
+  ftp://zamenhof.cs.rice.edu/pub/graphics.formats
+
+and is available along with the SPD test programs, which produce NFF objects:
+
+  ftp://ftp.princeton.edu/pub/Graphics/SPD
+
+You may also contact the author of NFF:
+
+  Eric Haines
+  3D/Eye Inc.
+  1050 Craft Road
+  Ithica, NY 14850
+  Email: erich@eye.com
+
+------------------------------
+
+Subject: 17. NITF - National Imagery Transmission Format
+
+The National Imagery Transmission Format Standard (Version 2.0) is documented
+as a collection of military standards documents. The actual file format is
+documented in the following standard:
+
+  MIL-STD-2500, National Imagery Transmission Format (Version 2.0) for
+    the National Imagery Transmission Format Standard, 18 June 1993
+
+The remaining standards are as follows:
+
+  MIL-HDBK-1300, National Imagery Transmission Format Standard (NITFS),
+    18 June 1993
+  MIL-STD-3201, Computer Graphics Metafile (CGM) Implementation Standard
+    for the National Imagery Transmission Format Standard, 18 June 1993
+  MIL-STD-188-196, Bi-Level Image Compression for the National Imagery 
+    Transmission Format Standard, 18 June 1993
+  MIL-STD-188-197 Adaptive Recursive Interpolated Differential Pulse
+    Code Modulation (ARIDPCM) Compression Algorithm for the National
+    Imagery Transmission Format Standard, 18 June 1993
+  MIL-STD-188-198A, Joint Photographic Experts Group (JPEG) Image Compression
+    for the National Imagery Transmission Format Standard, 15 December 1993
+  MIL-STD-188-199, Vector Quantization Decompression for the National Imagery
+    Transmission Format Standard, 27 June 1994
+  MIL-STD-245-44500, Tactical Communications Protocol 2 (TACO2) for the
+    National Imagery Transmission Format Standard, 18 June 1993
+  JIEO Circular 9008, National Imagery Transmission Format Standards (NITFS)
+    Certification Test & Evaluation Program Plan, 30 June 1993
+
+The NITFS standards may be obtained via FTP from the ITSI (Information
+Technology Standards Integrated) BBS at:
+
+  ftp://jcdbs.2000.disa.mil/pub/library
+
+ITSI BSS may also be reached by modem at 703.834.6501 (14.4kbps, N-8-1).
+
+To receive hardcopies any or all of these documents, send a request via mail,
+fax, or email to:
+
+  DISA/JIEO/CFS/TBCE
+  c/o Logicaon
+  Fay Mignone
+  1831 Wiehle Avenue
+  Reston, VA 22090 USA
+  Fax:   703.318.1098  Attn: Fay Mignone
+  Email: mignone@cdbs.itsi.disa.mil
+
+or:
+
+  Defense Information Systems Agency
+  Center for Standards
+  Carol Ciepiela
+  Attn: TBCE, Rm 3304
+  10701 Parkridge Blvd
+  Reston, VA 22091 USA
+  Voice: 703.487.3536
+  Email: edi@itsi.disa.mil
+
+Questions may be directed to:
+
+  NITFS Certification Test Facility
+  Voice: 602.538.5458 x5494
+
+------------------------------
+
+Subject: 18. OFF - Object File Format
+
+OFF was developed in 1986 at Digital Equipment Corporation's Workstation
+Systems Engineering for the interchange and archiving of 3D objects. OFF is
+an ASCII-based format and is independent of languages, devices, and operating
+systems.
+
+The specification for OFF is:
+
+  Rost, Randi, OFF--A 3D Object File Format, November 6, 1986 (updated
+    October 12, 1989).
+
+The OFF archive is available from:
+
+  ftp://gatekeeper.dec.com/pub/DEC
+
+This archive contains the format specification, tools, and objects. It is not
+currently supported and is copyrighted.
+
+------------------------------
+
+Subject: 19. PBM - Portable Bitmap
+
+The Portable greymap file format is part of the Extended Portable Bitmap
+Utilities (PBMPLUS). PBM is used as an intermediate format for storing
+monochrome bitmap information generated by the PBMPLUS toolkit. PBM files may
+be either binary or ASCII and store data one-bit-per-pixel in size.
+
+Information and source code for PBM can be found in the distribution for
+PBMPLUS located at:
+
+  ftp://ftp.wustl.edu/graphics/graphics/packages/pbmplus/pbmplus10dec91.tar.Z
+
+The specification for the PBM format can also be found in the manual page for
+pbm(5) on many Unix systems.
+
+------------------------------
+
+Subject: 20. PCX - ZSoft Paint
+
+PCX is one of the oldest bitmapped formats popularized by MS-DOS paint
+programs that first appeared in the early 1980's. PCX files may store mapped
+and unmapped image data from 1- to 24-bits in pixel depth, always contain
+RLE-compressed image data, and are recognized by almost all still-image
+graphics programs ever written.
+
+But because of the kludged evolution of the PCX format (caused partly by the
+efforts of Zsoft to continue to support the ever-changing world of graphics
+display adapters) it is generally advised that the MS Windows BMP format be
+used in place of PCX whenever possible.
+
+The PCX specification is available directly from ZSoft:
+
+  ZSoft Corporation
+  Attn: Shannon Donovan
+  450 Franklin Road, Suite 100
+  Marietta, GA 32067
+  Voice: 404.428.0008
+  Fax:   404.427.1150
+  BBS:   404.427.145
+  CompuServe: 76702,1207
+
+------------------------------
+
+Subject: 21. PDS - Planetary Data Systems Format
+
+PDS was created by the Planetary Branch of the National Aeronautics and Space
+Administration (NASA) to store solar, lunar, and planetary data collected both
+on Earth and by spacecraft. And as with most U.S. Government documents, the
+specification is quite large and spread over several documents:
+
+  Jet Propulsion Laboratory, Standard for the Preparation and Interchange of
+    Data Sets, JPL Document D-4683, NASA, Pasadena, CA, 1988.
+  Jet Propulsion Laboratory, Data Preparation Workbook,
+    JPL Document D-7669, NASA, Pasadena, CA, 1990.
+  Jet Propulsion Laboratory, Planetary Data System Standards Reference,
+    JPL Document D-4683, NASA, Pasadena, CA, 1990.
+  Jet Propulsion Laboratory, Specification for the Object Description
+    Language, NASA, Pasadena, CA, 1990.
+
+These documents are available from:
+
+  NASA
+  Planetary Branch
+  Jet Propulsion Laboratory
+  Mail Stop 525-3610
+  4800 Oak Grove Drive
+  Pasadena, CA 91109
+  Voice: 818.354.7587
+  Email: PDS_Operator@jplpds.jpl.nasa.gov
+
+------------------------------
+
+Subject: 22. PGM - Portable Greymap
+
+The Portable greymap file format is part of the Extended Portable Bitmap
+Utilities (PBMPLUS). PGM is used as an intermediate format for storing
+greyscale bitmap information generated by the PBMPLUS toolkit. PGM files may
+be either binary or ASCII and store pixel values up to 8 bits in size.
+
+Information and source code for PGM can be found in the distribution for
+PBMPLUS (see the section on the PBM format for information on PBMPLUS). The
+specification for the PGM format can also be found in the manual page for
+pgm(5) on many Unix systems.
+
+------------------------------
+
+Subject: 23. PIC - Pegasus Imaging Corporation Format
+
+  Pegasus Image Corporation
+  4350 W. Cypress Street, Suite 908
+  Tampa, FL 33607
+  Voice: 813.875.7575
+  Fax:   813.875.7705
+  BBS:   813.874.5515  Name: guest guest, Password: demo
+  CIS:   GO PEGASUS
+
+------------------------------
+
+Subject: 24. PNG - Portable Network Graphics
+
+PNG (pronounced "ping") is a new bitmap format which is currently in
+development. Its creation is an attempt to give the graphics community an
+alternative to the shortcomings and misgivings found in most popular file
+formats. The current legal battle involving the GIF format may also have
+something to do with it too :-)
+
+The following paragraph, excerpted from the PNG (Portable Network Graphics)
+specification, eighth draft, explains the basic rationale behind the format:
+
+  The PNG format is intended to provide a portable, legally unencumbered,
+  simple, lossless, streaming-capable, well-compressed, well-specified
+  standard for bitmapped image files which gives new features to the end
+  user at minimal cost to the developer.
+ 
+The PNG specification is now in its tenth draft and is currently undergoing
+final editing in preparation for the 1.0 release. The PNG draft is considered
+finalized to the point that software may be safely written without the worry
+of the specification changing.
+
+A public draft of the current PNG specification may be found at:
+
+  http://sunsite.unc.edu/boutell/png.html
+
+Questions about PNG may be asked on the comp.graphics newsgroup or
+directed to the principle author of the PNG specification:
+
+  Thomas Boutell
+  boutell@netcom.com
+
+PNG developers may join the PNG mailing list. Send email to
+png-info@uunet.uu.net and ask for more information. A human will be reading
+your request to join the list, so make it good.
+
+PNG materials can be had in great profusion by anonymous FTP from:
+
+  ftp://godzilli.cs.sunysb.edu
+
+All programs on this site are in beta test and should be used carefully. In
+the case of questionable implementation, the specification is to be
+considered corrent and the code in error.
+
+------------------------------
+
+Subject: 25. PPM - Portable Pixmap
+
+The Portable pixmap file format is part of the Extended Portable Bitmap
+Utilities (PBMPLUS). PPM is used as an intermediate format for storing color
+bitmap information generated by the PBMPLUS toolkit. PPM files may be either
+binary or ASCII and store pixel values up to 24 bits in size.
+
+Information and source code for PPM can be found in the distribution for
+PBMPLUS (see the section on the PBM format for information on PBMPLUS). The
+specification for the PPM format can also be found in the manual page for
+ppm(5) on many Unix systems.
+
+------------------------------
+
+Subject: 26. POL - InnovMetric Software Polygon Models Format
+
+POL is the native 3D file format for software products created by InnovMetric
+Software. The POL format was created to fill the need of storing data
+representing multi-contour, simple, planular, polygons using a binary file
+format.
+
+InnovMetric Software is developing a complete line of software products for
+building 3-D polygonal models using a 3-D imaging system. Two of these
+software tools are targeted at real-time 3-D graphics applications.
+IMCompress and IMFilter are two complementary tools for optimally reducing
+the number of polygons in a 3-D model. IMCompress uses a surface-based
+algorithm to downsize highly redundant models such as Digital Terrain Models
+and polygonal models generated by a CAD or a 3-D imaging system. IMFilter
+uses a volume-based algorithm to create ultra-compact models (20 to 500
+triangles) for level of details management in applications requiring
+real-time 3-D graphics.
+
+The POL file format specification is primarily distributed as Appendix B of
+the IMCompress User's Guide published by InnovMetric Software. The
+specification is also available in PostScript format as the file pol.ps in a
+few of the graphics file format specification archived listed in part 1 of
+this FAQ.
+
+POL was created and is maintained by:
+
+  InnovMetric Software Inc.
+  2065 Charest ouest, Suite 218
+  Sainte-Foy, Quebec
+  Canada, G1N 2G1  
+
+Questions about POL may be directed to:
+
+  Marc Soucy  
+  msoucy@imetric.qc.ca
+
+------------------------------
+
+Subject: 27. POV - Persistence of Vision Raytracing
+
+The POV-Ray format is used to store a scene description language used by the
+POV-Ray ray tracing software package. POV-Ray files are always ASCII to allow
+easy transportation between different file systems.
+
+The specification for the POV file format and scene description language is
+found in the file povray.doc in the POV-Ray distribution. You may obtain
+this file (and the entire POV-Ray package) from the official POV-Ray FTP
+archive site: 
+  
+  ftp://alfred.ccs.carleton.ca/pub/pov-ray/POV-Ray2.2/POVDOC.*
+
+Questions about POV-Ray may also be direct to:
+
+  Drew Wells
+  POV-Team Leader
+  73767.1244@compuserve.com
+
+The following is an excellent book on ray tracing using the POV-Ray tracing
+software package for the PC:
+
+  Ray Tracing Creations: Generate 3D Photo-Realistic Images on the PC,
+    Drew Wells and Chris Young, Waite Group Press 1993.
+
+------------------------------
+
+Subject: 28. RAS - Sun Rasterfile
+
+Sun rasterfile is the native bitmap format of Sun Microsystem Unix systems.
+The rasterfile format has become more wide-spread with the growing popularity
+of the SunOS operating system and Sun SPARCStation family of Unix
+workststaions.
+
+Sun rasterfiles store images up to 32 bits in pixel depth and support a basic
+for of run-length data compression.
+
+The primary source of information for Sun Rasterfiles is the SunOS include
+file /usr/include/rasterfile.h and the rasterfile online manual page:
+
+  Sun Microsystems, rasterfile (5), Sun OS 4.0 Programmer's Manual, 1990.
+
+The following jounal article is devoted to the Sun rasterfile:
+
+  McGee, Format for Byte-Encoded Rasterfiles, Sun-Spots Digest, Volume 6,
+  Issue 84.
+
+And several books on graphics file formats also feature the rasterfile format.
+
+------------------------------
+
+Subject: 29. Rayshade
+
+Rayshade is a ray-tracing application for the MS-DOS environment. The
+Rayshade format is the native scene description language used by Rayshade.
+And like most 3D scene-rendering formats it is ASCII-based and supports
+most features commonly found in these formats.
+
+The specification is available in the Rayshade distribution on many BBSs
+and FTP archive sites. The format is detailed in the document:
+
+  Rayshade 4.0 Quick Reference
+
+The author may be contacted at:
+
+  Princeton University
+  Attn: Craig Kolb
+  Department of Computer Science
+  35 Olden Street
+  Princeton, NJ 08544
+  Email: cek@princeton.edu
+
+------------------------------
+
+Subject: 30. RIB - Renderman Interface Bytestream
+
+The RenderMAN file format specification may be found in the following
+document available from Pixar: 
+
+  The RenderMAN Interface, Version 3.1, September 1989. San Rafael, CA.
+
+  Pixar
+  1001 West Cutting Blvd.
+  Richmond, California 9484 USA
+  Voice: 415.236.4000
+
+Also of interest is the following publication:
+
+  The RenderMan Companion: A Programmer's Guide to Realistic Computer
+    Graphics, Steve Upstill, Addison-Wesley Publishing Company,
+    ISBN 0-201-50868-0, $26.95
+
+------------------------------
+
+Subject: 31. RIFF - Microsoft Resource Interchange File Format
+
+  Microsoft Corporation
+  Attn: Multimedia System Group
+  Product Marketing
+  One Microsoft Way
+  Redmond, WA 98052-6399
+  Voice: 206.882.8080
+  BBS:   206.637.9009
+
+Information on RIFF may be found in the following documents:
+
+  Microsoft Windows Multimedia Programmer's Guide, Microsoft
+  Corporation, Microsoft Press, Redmond, WA.
+
+  Microsoft Windows Multimedia Programmer's Reference, Microsoft
+  Corporation, Microsoft Press, Redmond, WA.
+
+The specification is also available in the Microsoft Multimedia Development
+Kit (MDK), on Disk 8 of the Microsoft Developer's Network CD distribution,
+and as a MS Windows help file on the FTP archive site:
+
+  ftp://ftp.microsoft.com/developer/MSDN/CD8/RIFFNE.ZIP
+
+------------------------------
+
+Subject: 32. RIX - ColoRIX Image File
+
+ColorRIX is the native bitmap format of the ColorRIX VGA Paint application
+for MS-DOS.
+
+The ColorRIX format is documented in the ColorRIX VGA Paint manual
+distributed with the ColorRIX program available from:
+
+  RIX SoftWorks Inc.
+  Attn: Richard Brownback or Paul Harker
+  18023 Sky Park Circle, Suite J
+  Irvine, CA 92714
+  Voice: 714.476.8266
+  Voice: 714.476.8486
+
+ColorRIX is also bundled with several different VGA cards and the
+specification may also be found on numerous FTP archive sites.
+
+------------------------------
+
+Subject: 33. SHG - Segmented Hyper-Graphic
+
+SHG is a file format used by Microsoft in the WinHelp on-line help facility
+found in Windows 3.1. This format is used to save a Microsoft Bitmap (BMP) or
+Windows Metafile (WMF) graphic and store the coordinates of specific areas of
+the bitmap known as "hotspots".  When the bitmap is displayed and the user
+selects a hotspot, WinHelp jumps to another part of the help documentation
+via a hyper-text link macro stored in the SHG file.
+
+Another file format used with SHG files is the Multiple-Resolution Bitmap
+(MRB) format. MRB files contain one or more SHG images, each rendered at a
+different resolution. Several SHG files are typically created using the
+SHED.EXE utility and then fed into the MRB compiler to create a single MRB
+file. When WinHelp reads the MRB file it chooses which bitmap most closely
+matches the resolution of the display.
+
+SHG is currently officially undocumented by Microsoft, but the specification
+may be found at:
+
+  ftp://ftp.microsoft.com/developr/drg/Multimedia/SHED.ZIP
+
+Information on SHG and MRB may be found in the following journal article:
+
+  .mrb and .shg File Formats, Windows/DOS Developer's Journal, Pete Davis,
+    February 1994 (Vol 5, No 4), pp. 37-46.
+
+Questions about these formats may also be directed to Section 16
+(WinHelp/Tools) of forum WINSDK on CompuServe.
+
+------------------------------
+
+Subject: 34. STL - Stereolithography Interface Format
+
+STL files are the native file format of the SLA CAD software created by 3D
+Systems of Valencia, CA, USA. STL files may be ASCII or binary in form,
+although binary is far more common due to the very large resulting size of
+the CAD data when saved to the ASCII format.
+
+[ More on this format next month ]
+
+------------------------------
+
+Subject: 35. TGA - Truevision (Targa) File Format
+
+Copies of the TGA specification, including a sample code disk, may be
+obtained from Truevision:
+
+  Truevision Incorporated
+  7340 Shadeland Station
+  Indianapolis, IN 46256-39925
+  Voice: 317.841.0332
+  Fax:   317.576.7700
+  BBS:   317.577.8783
+  FTP:   ftp.truevision.com
+
+------------------------------
+
+Subject: 36. TIFF - Tag Image File Format
+
+The TIFF 6.0 specification is available in the TIFF Developer's Kit.
+Information on obtaining this kit and joining the Aldus Developer's
+Association (ADA) may be obtained from the Developer's Desk at Aldus
+Corporation:
+
+  Aldus Corporation
+  Attn:: Aldus Developer's Desk
+  4411 First Avenue South
+  Seattle, WA 98144-2871
+  Voice: 206.628.6593, 800.331.2538
+  Fax:   206.343.4240
+  Email: tiff-input@aldus.com
+
+Or from the following FTP site:
+
+  ftp://sgi.com/graphics/tiff/TIFF6.ps.Z
+
+The TIFF Class F specification may be obtained from ADA's FAXback service at
+206.628.5753. Order document #9001 for an index of all documents available
+from this service.
+
+Note: Any software created or modified after 01 January 1995 that supports the
+capability of reading and/or writing bitmapped data stored in a TIFF file and
+compressed using the LZW algorithm must obtain a patent license agreement
+from Unisys Corporation. See Part I of the FAQ for more details on the
+Unisys GIF-LZW and TIFF-LZW license agreements.
+
+------------------------------
+
+Subject: 37. URT - Utah Raster Toolkit
+
+URT is the native raster file format of the Utah Raster Toolkit. This
+toolkit, which first appeared in 1983, is a rich source of bitmap
+manipulation tools and source code. The toolkit is copyrighted, but
+distributable on a GNU-like license.
+
+The specification for the URT file format is found in the following document
+of the Utah Raster Toolkit:
+
+  Design of the Utah RLE Format, Thomas, Spencer W., University of Utah,
+    Department of Computer Science.
+
+The Utah Raster Toolkit distribution (urt-3.0.tar.Z) may be obtained via FTP
+from the following sites:
+
+  ftp://cs.uath.edu
+  ftp://weedeater.math.yale.edu
+  ftp://freebie.engin.umich.edu
+
+Questions about URT may be directed to:
+
+  toolkit-request@cs.utah.edu
+  urt-request@caen.engin.umich.edu
+
+------------------------------
+
+Subject: 38. VICAR2 - Planetary File Format
+
+VICAR2 is used to store planetary image data gathered from Earth and by
+spacecraft. VICAR2 is similar in design and use to the FITS and PDS formats.
+
+Information on VICAR2 may be obtained directly from JPL:
+
+  NASA
+  Attn: Bob Deen
+  Image Processing Laboratory
+  Jet Propulsion Laboratory
+  4800 Oak Grove Drive
+  Pasadena, CA 91109
+  Email: rgd059@mipl3.jpl.nasa.gov
+
+------------------------------
+
+Subject: 39. VIFF - Visualization Image File Format
+
+VIFF is the native bitmap graphics file format of the Khoros System
+environment implemented using the X Window System.
+
+The VIFF format specification, including other documents related to the VIFF
+format, may be found in the Khoros distribution. Chapter 1 of Volume II,
+Programmer's Manual, the files in the directory src/file_formats, and the
+viff.h file are the most helpful.
+
+The following FTP sites archive the Khoros distribution:
+
+  ftp://ftp.eece.unm.edu/pub/khoros
+  ftp://ftp.uu.net/pub/window-sys/khoros
+
+The Khoros Consortium may be contacted at:
+
+Khoral Research Inc.
+6001 Indian School Road NE
+Suite 200
+Albuquerque, NM 87110
+Voice: 505.837.6500
+Fax:   505.881.3842
+Email: khoros-request@chama.eece.unm.edu
+Email: khorus@chama.eece.unm.edu (User's Group)
+Newsgroup: comp.soft-sys.khoros
+
+------------------------------
+
+Subject: 40. VPF - Vector Product Format
+
+VPF is a standard format, structure, and organization for large geographic
+databases that are based on a georelational data model. VPF is primarily used
+for organizing and encapsulating such digital geographic databases for
+transmission.  More information on VPF may be found in the newsgroup and FAQ
+of comp.infosystems.gis.
+
+The specification for VPF may be found in the following military standard
+document:
+
+  MIL-STD-600006, Vector Product Format, 13 April 1992
+
+This MIL-STD may be obtained from:
+
+  Naval Publications & Forms Center
+  Code 3051
+  5801 Tabot Ave.
+  Philadelphia, PA 19120 USA
+
+------------------------------
+
+Subject: 41. XBM - X BitMap
+
+XBM is a native file format of The X Window System and is used for storing
+cursor and icon bitmaps that are used in the X GUI. XBM files are quite
+different in that they are actually C language source files that are created
+to be read by a C compiler rather than a graphical display program.
+
+XBM data is typically found in headers (.h files) and are a series of static
+unsigned char arrays containing the monochrome pixel data. There is one array
+per image stored in the header.
+
+XBM was created by the X Consortium as part of the X Window System. Refer to
+the /bitmaps directory of the X Window distribution for examples of XBM
+files. The central FTP distribution site for X version 11 is:
+
+  ftp://ftp.x.org
+
+Reference works describing XBM include:
+
+  Xlib-C language X Interface, Gettys, James, and Robert W. Scheiffler,
+  Consortium Standard, X Version 11, Release 5, First Revision, August 1991.
+
+  Xlib Programming Manual, Nye, Adrian, third edition, O'Reilly & Associates,
+  Inc. Sebastopol, CA, 1992.
+
+------------------------------
+
+Subject: 42. WMF - Windows Meta File
+
+WMF is the native vector file format for the Microsoft Windows operating
+environment. WMF files are actually a collection of GDI (Graphics Device
+Interface) function calls also native to the Windows environment. When a WMF
+file is "played back" (typically using the Windows PlayMetaFile() function)
+the graphics is rendered. WMF files are device-independant and have no limit
+to their size.
+
+Most books on Microsoft Windows programming contain sections on the internals
+of WMF files. The Microsoft Knowledge Base (available at ftp://microsoft.com
+and on the Microsoft Developer Network CD) also contains the complete
+specification of WMF. I also highly recommend the book:
+
+  Inside Windows File Formats, Tom Swan, Sams Publishing 1993.
+  ISBN 0-672-30338-8 $24.95 softcover, 337 pages.
+
+------------------------------
+
+Subject: 43. WPG - WordPerfect Graphics Metafile
+
+WPG is the native graphics file format of the WordPerfect Corporation line of
+software products. For this reason it is common to find WPG files in MS-DOS,
+Microsoft Windows, Apple Macintosh, and Unix environments.
+
+WPG files may store bitmapped or vector graphics data, or Encapsulated
+PostScript data as well. Bitmapped data may be up to 24-bits deep and
+selectable from a palette of 256 colors. 
+
+The WPG specification is published in the WordPerfect Corporation Developer's
+Toolkit for PC Products. This toolkit is available directly from WordPerfect
+Information Services:
+
+  WordPerfect Information Services
+  Voice: 801.225.5000
+
+Technical questions regarding WPG may be directed to:
+
+  WordPerfect Manufacturer/Developer Relations Department
+  Voice: 801.228.7700
+  Fax:   801.228.7777
+  CompuServe: 72567,3612
+
+And if all else fails:
+
+  WordPerfect Corporation
+  1555 North Technology Way
+  Orem, UT 84057
+  Voice: 800.526.4477
+  Fax:   801.222.5077
+  BBS:   801.225.4414
+
+------------------------------
+
+Subject: 44. XPM - X PixMap
+
+XPM is a defacto standard for storing monochome, gray-scale, and color pixmap
+data to disk under the X Window system. XPM files, like XBM files, are
+C source code files, with each pixmap being defined as a static char array.
+
+The XPM format was created through the work of the KOALA Project at Groupe
+Bull Research. Questions about XPM may be directed to:
+
+  BULL Research
+  c/o INRIA
+  2004 route des Lucoiles
+  06565 Valbonne Cedex
+  France
+  Email: lehors@sophia.inria.fr
+
+You may subscribe to the XPM mailing list by sending a subscription request
+to:
+
+  xpm-talk-request@sophia.inria.fr
+
+The XPM library (a collection of utilities that read and write XPM files)
+version 3.2g (April 1993) may be obtained via FTP from:
+
+  ftp://avahi.inria.fr/contrib/xpm.tar.Z
+  ftp://export.lcs.mit.edu
+
+And a collection of XPM files (mostly icons) resides at:
+
+  ftp://ftp.x.org/contrib/AIcons
+
+------------------------------
+
+Subject: 45. XWD - X Window Dump
+
+XWD is used to store screen dumps created by the xwd client process in the X
+Window System. The image of any window or the background may be saved (dumped)
+to an XWD file. Using the following command:
+
+  xwd -root > bg.xwd
+
+The background is saved to the file bg.xwd. By replacing the "root" flag with
+the ID of a window, only that window will be saved to the XWD file.
+
+XWD was created by the X Consortium as part of the X Window System. Refer to
+the /usr/include/X11 directory for header files (XWDFile.h) that define the
+X10 and X11 versions of the XWD format.  The central FTP distribution site
+for X version 11 is:
+
+  ftp://ftp.x.org
+
+------------------------------
+
+Subject: III. Kudos and Assertions
+
+------------------------------
+
+Subject: 0. Acknowledgments
+
+The following people have made this FAQ take just a little bit longer to read
+since the last time you looked at it (blame them and not me):
+
+  Bjorn P. Brox <brox@corena.no>
+  John Cristy <cristy@magick.es.dupont.com>
+  James Durham <durhamj@CC.IMS.DISA.MIL>
+  Bruce Garner <garner@tis.llnl.gov>
+  Eric Haines <erich@eye.com>
+  Tom Lane <tgl@netcom.com>
+  Stanley F. Quayle <quayle@scriptel.com>
+  Marc Soucy <msoucy@imetric.qc.ca>
+
+------------------------------
+
+Subject: 1. About The Author
+
+The author of this FAQ, James D. Murray, lives in the City of Orange, Orange
+County, California, USA. He is the co-author of the book Encyclopedia of
+Graphics File Formats published by O'Reilly and Associates, makes a passable
+living writing Microsoft Windows applications in C++, and may be reached as
+jdm@netcom.com, or via U.S. Snail at: P.O. Box 70, Orange, CA 92666-0070 USA.
+
+GCS d-- H++ s g- p? au+ a w+ v++ C+++(++++) US+++ p++>++++ L>++ 3 E--- N++ K-
+W---$ M-@ V-- po Y+ t++ 5-- j>x R+>-- G' tv-->! b+++ D++ B e- u* h- f r-->+++
+n++ y*(**)
+
+------------------------------
+
+Subject: 2. Disclaimer
+
+While every effort has been taken to insure the accuracy of the information
+contained in this FAQ list compilation, the author and contributors assume no
+responsibility for errors or omissions, or for damages resulting from the use
+of the information contained herein.
+
+------------------------------
+
+Subject: 3. Copyright Notice
+
+This FAQ is Copyright (C) 1994-95 by James D. Murray. All Rights Reserved. 
+This work may be reproduced, in whole or in part, using any medium,
+including, but not limited to, electronic transmission, CD-ROM, or published
+in print, under the condition that this copyright notice remains intact.
+
+
+
+From news.staffs.ac.uk!strath-cs!str-ccsun!news.dcs.warwick.ac.uk!hgmp.mrc.ac.uk!sunsite.doc.ic.ac.uk!agate!howland.reston.ans.net!gatech!nntp.msstate.edu!olivea!charnel.ecst.csuchico.edu!csusac!csus.edu!netcom.com!jdm Thu May 18 12:22:54 1995
+Newsgroups: comp.graphics,comp.answers,news.answers
+Path: news.staffs.ac.uk!strath-cs!str-ccsun!news.dcs.warwick.ac.uk!hgmp.mrc.ac.uk!sunsite.doc.ic.ac.uk!agate!howland.reston.ans.net!gatech!nntp.msstate.edu!olivea!charnel.ecst.csuchico.edu!csusac!csus.edu!netcom.com!jdm
+From: jdm@netcom.com
+Subject: Graphics File Formats FAQ: Tips and Tricks of the Trade (Part 4 of 4)
+Message-ID: <graphics/fileformats-faq-4-799731112@netcom.com>
+Followup-To: poster
+Summary: This document answers many of the most frequently asked 
+	questions about graphics file formats on Usenet.
+Keywords: FAQ, GRAPHICS, FORMAT, IMAGE
+Sender: jdm@netcom20.netcom.com
+Supersedes: <graphics/fileformats-faq-4-796783512@netcom.com>
+Reply-To: jdm@netcom.com (James D. Murray)
+Organization: None Whatsoever
+References: <graphics/fileformats-faq-1-799731112@netcom.com> 
+Date: Sat, 6 May 1995 03:32:22 GMT
+Approved: news-answers-request@MIT.EDU
+Expires: Mon, 5 Jun 1995 03:31:52 GMT
+Lines: 527
+Xref: news.staffs.ac.uk comp.graphics:15143 comp.answers:4498 news.answers:15306
+
+Posted-By: auto-faq 3.1.1.2
+Archive-name: graphics/fileformats-faq/part4
+Posting-Frequency: monthly
+Last-modified: 01May95
+
+This FAQ (Frequently Asked Questions) list contains information on graphics
+file formats, including, raster, vector, metafile, Page Description Language,
+3D object, animation, and multimedia formats.
+
+This FAQ is divided into four parts, each covering a different area of
+graphics file format information:
+
+  Graphics File Formats FAQ: General Graphics Format Questions (Part 1 of 4)
+  Graphics File Formats FAQ: Image Conversion and Display Programs (Part 2 of 4)
+  Graphics File Formats FAQ: Where to Get File Format Specifications (Part 3 of 4)
+  Graphics File Formats FAQ: Tips and Tricks of the Trade (Part 4 of 4)
+
+Please email contributions, corrections, and suggestions about this FAQ to
+jdm@netcom.com. Relevant information posted to newsgroups will not
+automatically make it into this FAQ.
+
+-- James D. Murray <jdm@netcom.com>  ;-{)>>>>
+
+----------------------------------------------------------------------
+
+Subject: 0. Contents of Tips and Tricks of the Trade
+
+Subjects marked with <NEW> are new to this FAQ.
+Subjects marked with <UPD> have been updated since the last release
+ of this FAQ.
+
+I. General questions about this FAQ
+
+0. Maintainer's Comments
+1. What's new in this latest FAQ release?
+
+II. Programming Tips for Graphics File Formats
+
+0. What's the best way to read a file header?
+1. What's this business about endianness?
+2. How can I determine the byte-order of a system at run-time?
+3. How can I identify the format of a graphics file?
+4. What are the format identifiers of some popular file formats? <UPD>
+
+III. Kudos and Assertions
+
+0. Acknowledgments 
+1. About The Author 
+2. Disclaimer 
+3. Copyright Notice
+
+------------------------------
+
+Subject: I. General questions about this FAQ
+
+------------------------------
+
+Subject: 0. Maintainer's Comments
+
+Programmer's are code-hungry people. They just want the secrets and they want
+them to work NOW! But always in the back of a hack's mind there are the
+questions: "Is this really the best way to do this? Could it be better?".
+
+This FAQ is to share ideas on the implementation details of reading, writing,
+converting, and displaying graphics file formats. You'll probably get some
+good ideas here, find a few things you didn't know about, and even have a few
+suggestions and improvements of you own to add (send them to jdm@netcom.com).
+
+If you need to know the best way to do something with file formats, or just
+find it embarrassing to implement a chunk of some other programmer's code and
+then have to admit you really don't understand how it works, then this FAQ is
+for you.
+
+------------------------------
+
+Subject: 1. What's new in this latest FAQ release?
+
+A few more file identifiers have been added, but that's all. This is truly
+the most neglected part of this FAQ. I'm gonna hafta start stifting through
+comp.graphics more frequently to fill this part out, I guess.
+
+------------------------------
+
+Subject: II. Programming Tips for Graphics File Formats
+
+------------------------------
+
+Subject: 0. What's the best way to read a file header?
+
+You wouldn't think there's a lot of mystery about reading a few bytes from a
+disk file, eh? Programmer's, however, are constantly loosing time because
+they don't consider a few problems that may occur and cause them to loose
+time. Consider the following code:
+
+  typedef struct _Header
+  {
+    BYTE Id;
+    WORD Height;
+    WORD Width;
+    BYTE Colors;
+  } HEADER;
+
+  HEADER Header;
+
+  void ReadHeader(FILE *fp)
+  {
+    if (fp != (FILE *)NULL)
+      fread(&Header, sizeof(HEADER), 1, fp);
+  }
+
+Looks good, right? The fread() will read the next sizeof(HEADER) bytes from a
+valid FILE pointer into the Header data structure. So what could go wrong?
+
+The problem often encountered with this method is one of element alignment
+within structures. Compilers may pad structures with "invisible" elements to
+allow each "visible" element to align on a 2- or 4-byte address boundary.
+This is done for efficiency in accessing the element while in memory. Padding
+may also be added to the end of the structure to bring it's total length to
+an even number of bytes. This is done so the data following the structure in
+memory will also align on a proper address boundary.
+
+If the above code is compiled with no (or 1-byte) structure alignment the
+code will operate as expected. With 2-byte alignment an extra two bytes would
+be added to the HEADER structure in memory and make it appear as such:
+
+  typedef struct _Header
+  {
+    BYTE Id;
+    BYTE Pad1;      // Added padding
+    WORD Height;
+    WORD Width;
+    BYTE Colors;
+    BYTE Pad2;      // Added padding
+  } HEADER;
+
+As you can see the fread() will store the correct value in Id, but the first
+byte of Height will be stored in the padding byte. This will throw off the
+correct storage of data in the remaining part of the structure causing the
+values to be garbage.
+
+A compiler using 4-byte alignment would change the HEADER in memory as such:
+
+  typedef struct _Header
+  {
+    BYTE Id;
+    BYTE Pad1;      // Added padding
+    BYTE Pad2;      // Added padding
+    BYTE Pad3;      // Added padding
+    WORD Height;
+    WORD Width;
+    BYTE Colors;
+    BYTE Pad4;      // Added padding
+    BYTE Pad5;      // Added padding
+    BYTE Pad6;      // Added padding
+  } HEADER;
+
+What started off as a 6-byte header increased to 8 and 12 bytes thanks to
+alignment. But what can you do? All the documentation and makefiles you write
+will not prevent someone from compiling with the wrong options flag and then
+pulling their (or your) hair out when your software appears not to work
+correctly.
+
+Now considering this alternative to the ReadHeader() function:
+
+  HEADER Header;
+
+  void ReadHeader(FILE *fp)
+  {
+    if (fp != (FILE *)NULL)
+    {
+      fread(&Header.Id, sizeof(Header.Id), 1, fp);
+      fread(&Header.Height, sizeof(Header.Height), 1, fp);
+      fread(&Header.Width, sizeof(Header.Width), 1, fp);
+      fread(&Header.Colors, sizeof(Header.Colors), 1, fp);
+    }
+  }
+
+What both you and your compiler now see is a lot more code. Rather than
+reading the entire structure in one, elegant shot, you read in each element
+separately using multiple calls to fread(). The trade-off here is increased
+code size for not caring what the structure alignment option of the compiler
+is set to. These cases are also true for writing structures to files using
+fwrite(). Write only the data and not the padding please.
+
+But is there still anything we've yet over looked? Will fread() (fscanf(),
+fgetc(), and so forth) always return the data we expect?  Will fwrite()
+(fprintf(), fputc(), and so forth) ever write data that we don't want, or in
+a way we don't expect? Read on to the next section...
+
+------------------------------
+
+Subject: 1. What's this business about endianness?
+
+So you've been pulling you hair out trying to discover why your elegant and
+perfect-beyond-reproach code, running on your Macintosh or Sun, is reading
+garbage from PCX and TGA files. Or perhaps your MS-DOS or Windows
+application just can't seem to make heads or tails out of that Sun Raster
+file. And, to make matters even more mysterious, it seems your most
+illustrious creation will read some TIFF files, but not others.
+
+As was hinted at in the previous section, just reading the header of a
+graphics file one field is not enough to insure data is always read correctly
+(not enough for portable code, anyway). In addition to structure, we must also
+consider the endianness of the file's data, and the endianness of the
+system's architecture our code is running on.
+
+Here's are some baseline rules to follow:
+
+  1) Graphics files typically use a fixed byte-ordering scheme. For example, 
+     PCX and TGA files are always little-endian; Sun Raster and Macintosh
+     PICT are always big-endian.
+  2) Graphics files that may contain data using either byte-ordering scheme
+     (for example TIFF) will have an identifier that indicates the
+     endianness of the data.
+  3) ASCII-based graphics files (such as DXF and most 3D object files),
+     have no endianness and are always read in the same way on any system.
+  4) Most CPUs use a fixed byte-ordering scheme. For example, the 80486
+     is little-endian and the 68040 is big-endian.
+  5) You can test for the type of endianness a system using software.
+  6) There are many systems that are neither big- nor little-endian; these
+     middle-endian systems will possibly cause such byte-order detection
+     tests to return erroneous results.
+
+Now we know that using fread() on a big-endian system to read data from a
+file that was originally written in little-endian order will return incorrect
+data. Actually, the data is correct, but the bytes that make up the data are
+arranged in the wrong order. If we attempt to read the 16-bit value 1234h
+from a little-endian file, it would be stored in memory using the big-endian
+byte-ordering scheme and the value 3412h would result. What we need is a swap
+function to change the resulting position of the bytes:
+
+  WORD SwapTwoBytes(WORD w)
+  {
+      register WORD tmp;
+      tmp =  (w & 0x00FF);
+      tmp = ((w & 0xFF00) >> 0x08) | (tmp << 0x08);
+      return(tmp);
+  }
+  
+Now we can read a two-byte header value and swap the bytes as such:
+
+  fread(&Header.Height, sizeof(Header.Height), 1, fp);
+  Header.Height = SwapTwoBytes(Header.Height);
+
+But what about four-byte values? The value 12345678h would be stored as
+78563412h. What we need is a swap function to handle four-byte values:
+
+  DWORD SwapFourBytes(DWORD dw)
+  {
+      register DWORD tmp;
+      tmp =  (dw & 0x000000FF);
+      tmp = ((dw & 0x0000FF00) >> 0x08) | (tmp << 0x08);
+      tmp = ((dw & 0x00FF0000) >> 0x10) | (tmp << 0x08);
+      tmp = ((dw & 0xFF000000) >> 0x18) | (tmp << 0x08);
+      return(tmp);
+  }
+
+But how do we know when to swap and when not to swap? We always know the
+byte-order of a graphics file that we are reading, but how do we check what
+the endianness of system we are running on is? Using the C language, we might
+use preprocessor switches to cause a conditional compile based on a system
+definition flag:
+
+  #define MSDOS     1
+  #define WINDOWS   2
+  #define MACINTOSH 3
+  #define AMIGA     4
+  #define SUNUNIX   5
+  
+  #define SYSTEM    MSDOS
+  
+  #if defined(SYSTEM == MSDOS)  
+    // Little-endian code here
+  #elif defined(SYSTEM == WINDOWS)  
+    // Little-endian code here
+  #elif defined(SYSTEM == MACINTOSH)  
+    // Big-endian code here
+  #elif defined(SYSTEM == AMIGA)  
+    // Big-endian code here
+  #elif defined(SYSTEM == SUNUNIX)  
+    // Big-endian code here
+  #else
+  #error Unknown SYSTEM definition
+  #endif
+
+My reaction to the above code was *YUCK!* (and I hope yours was too!).  A
+snarl of fread(), fwrite(), SwapTwoBytes(), and SwapFourBytes() functions
+laced between preprocessor statements is hardly elegant code, although
+sometimes it is our best choice. Fortunately, this is not one of those times.
+
+What we first need is a set of functions to read the data from a file using
+the byte-ordering scheme of the data. This effectively combines the read\write
+and swap operations into one set of functions. Considering the following:
+
+  WORD GetBigWord(FILE *fp)
+  {
+      register WORD w;
+      w =  (WORD) (fgetc(fp) & 0xFF);
+      w = ((WORD) (fgetc(fp) & 0xFF)) | (w << 0x08);
+      return(w);
+  }
+  
+  WORD GetLittleWord(FILE *fp)
+  {
+      register WORD w;
+      w =  (WORD) (fgetc(fp) & 0xFF);
+      w = ((WORD) (fgetc(fp) & 0xFF) << 0x08);
+      return(w);
+  }
+  
+  DWORD GetBigDoubleWord(FILE *fp)
+  {
+      register WORD dw;
+      dw =  (DWORD) (fgetc(fp) & 0xFF);
+      dw = ((DWORD) (fgetc(fp) & 0xFF)) | (dw << 0x08);
+      dw = ((DWORD) (fgetc(fp) & 0xFF)) | (dw << 0x08);
+      dw = ((DWORD) (fgetc(fp) & 0xFF)) | (dw << 0x08);
+      return(dw);
+  }
+  
+  DWORD GetLittleDoubleWord(FILE *fp)
+  {
+      register WORD dw;
+      dw =  (DWORD) (fgetc(fp) & 0xFF);
+      dw = ((DWORD) (fgetc(fp) & 0xFF) << 0x08);
+      dw = ((DWORD) (fgetc(fp) & 0xFF) << 0x10);
+      dw = ((DWORD) (fgetc(fp) & 0xFF) << 0x18);
+      return(dw);
+  }
+  
+  void PutBigWord(WORD w, FILE *fp)
+  {
+      fputc((w >> 0x08) & 0xFF, fp);
+      fputc(w & 0xFF, fp);
+  }
+  
+  void PutLittleWord(WORD w, FILE *fp)
+  {
+      fputc(w & 0xFF, fp);
+      fputc((w >> 0x08) & 0xFF, fp);
+  }
+  
+  void PutBigDoubleWord(DWORD dw, FILE *fp)
+  {
+      fputc((dw >> 0x08) & 0xFF, fp);
+      fputc((dw >> 0x10) & 0xFF, fp);
+      fputc((dw >> 0x18) & 0xFF, fp);
+      fputc(dw & 0xFF, fp);
+  }
+  
+  void PutLittleDoubleWord(DWORD dw, FILE *fp)
+  {
+      fputc(w & 0xFF, fp);
+      fputc((w >> 0x08) & 0xFF, fp);
+      fputc((w >> 0x10) & 0xFF, fp);
+      fputc((w >> 0x18) & 0xFF, fp);
+  }
+
+If we were reading a little-endian file on a big-endian system (or visa
+versa), the previous code:
+
+  fread(&Header.Height, sizeof(Header.Height), 1, fp);
+  Header.Height = SwapTwoBytes(Header.Height);
+
+Would be replaced by:
+  
+  Header.Height = GetLittleWord(fp);
+
+The code to write the same value to a file would be changed from:
+
+  Header.Height = SwapTwoBytes(Header.Height);
+  fwrite(&Header.Height, sizeof(Header.Height), 1, fp);
+
+To the slightly more readable:
+
+  PutLittleWord(Header.Height, fp);
+
+Note that these functions are the same regardless of the endianness of a
+system. For example, the ReadLittleWord() will always read a two-byte value
+from a little-endian file regardless of the endianness of the system;
+PutBigDoubleWord() will always write a four-byte big-endian value, and so
+forth.
+
+------------------------------
+
+Subject: 2. How can I determine the byte-order of a system at run-time?
+
+You may wish to optimize how you read (or write) data from a graphics file
+based on the endianness of your system. Using the GetBigDoubleWord() function
+mentioned in the previous section to read big-endian data from a file on a
+big-endian system imposes extra overhead we don't really need (although if
+the actual number of read/write operations in your program is small you might
+not consider this overhead to be too bad).
+
+If our code could tell what the endianness of the system was at run-time, it
+could choose (using function pointers) what set of read/write functions to
+use. Look at the following function:
+
+  #define BIG_ENDIAN      0
+  #define LITTLE_ENDIAN   1
+
+  int TestByteOrder(void)
+  {
+      short int w = 0x0001;
+      char *byte = (char *) &word;
+      return(byte[0] ? LITTLE_ENDIAN : BIG_ENDIAN);
+  }
+
+This code assigns the value 0001h to a 16-bit integer. A char pointer is then
+assigned to point at the first (least-significant) byte of the integer value.
+If the first byte of the integer is 01h, then the system is little-endian
+(the 01h is in the lowest, or least-significant, address). If it is 00h then
+the system is big-endian.
+
+------------------------------
+
+Subject: 3. How can I identify the format of a graphics file?
+
+When writing any type of file or data stream reader it is very important to
+implement some sort of method for verifying that the input data is in the
+format you expect. Here are a few methods:
+
+1) Trust the user of your program to always supply the correct data, thereby
+freeing you from the tedious task of writing any type of format
+identification routines. Choose this method and you will provide solid proof
+that contradicts the popular claim that users are inherently far more stupid
+than programmers.
+
+2) Read the file extension or descriptor. A GIF file will always have the
+extension .GIF, right? Targa files .TGA, yes?  And TIFF files will have
+an extension of .TIF or a descriptor of TIFF. So no problem?
+
+Well, for the most part, this is true. This method certainly isn't
+bulletproof, however.  Your reader will occasionally be fed the odd-batch of
+mis-label files ("I thought they were PCX files!"). Or files with
+unrecognized mangled extensions  (.TAR rather than .TGA or .JFI rather than
+.JPG) that your reader knows how to read, but won't read because it doesn't
+recognize the extensions. File extensions also won't usually tell you the
+revision of the file format you are reading (with some revisions creating an
+almost entirely new format). And more than one file format share the more
+common file extensions (such as .IMG and .PIC). And last of all, data streams
+have no file extensions or descriptors to read at all.
+
+3) Read the file and attempt to recognize the format by specific patterns in
+the data. Most file formats contain some sort of identifying pattern of data
+that is identical in all files. In some cases this pattern gives and
+indication of the revision of the format (such as GIF87a and GIF89a) or
+the endianness of the data format.
+
+Nothing is easy, however. Not all formats contain such identifiers (such as
+PCX). And those that do don't necessarily put it at the beginning of the
+file. This means if the data is in the format of a stream you many have to
+read (and buffer) most or all of the data before you can determine the
+format. Of course, not all graphics formats are suitable to be read as a data
+stream anyway.
+
+Your best bet for a method of format detection is a combination of methods
+two and three. First believe the file extension or descriptor, read some
+data, and check for identifying data patterns. If this test fails, then
+attempt to recognize all other known patterns.
+
+Run-time file format identification a black-art at best.
+
+------------------------------
+
+Subject: 4. What are the format identifiers of some popular file formats?
+
+Here are a few algorithms that you can use to determine the format of a
+graphics file at run-time.
+
+
+GIF: The first six bytes of a GIF file will be the byte pattern of 
+     474946383761h ("GIF87a") or 474946383961h ("GIF89a").
+
+PNG: The first eight bytes of all PNG files are 89504e470d0a1a0ah.
+
+Sun: The first four bytes of a Sun Rasterfile are 59a66a95h. If you have
+     accidentally read this identifier using the little-endian byte order
+     this value will will be read as 956aa659h.
+
+TIFF: The first four bytes of a big-endian TIFF files are 4d4d002ah and
+      49492a00h for little-endian TIFF files.
+
+------------------------------
+
+Subject: III. Kudos and Assertions
+
+------------------------------
+
+Subject: 0. Acknowledgments
+
+Nobody yet. 
+
+Doesn't anybody have any neat tricks to share?
+
+------------------------------
+
+Subject: 1. About The Author
+
+The author of this FAQ, James D. Murray, lives in the City of Orange, Orange
+County, California, USA. He is the co-author of the book Encyclopedia of
+Graphics File Formats published by O'Reilly and Associates, makes a passable
+living writing Microsoft Windows applications in C++, and may be reached as
+jdm@netcom.com, or via U.S. Snail at: P.O. Box 70, Orange, CA 92666-0070 USA.
+
+GCS d-- H++ s g- p? au+ a w+ v++ C+++(++++) US+++ p++>++++ L>++ 3 E--- N++ K-
+W---$ M-@ V-- po Y+ t++ 5-- j>x R+>-- G' tv-->! b+++ D++ B e- u* h- f r-->+++
+n++ y*(**)
+
+------------------------------
+
+Subject: 2. Disclaimer
+
+While every effort has been taken to insure the accuracy of the information
+contained in this FAQ list compilation, the author and contributors assume no
+responsibility for errors or omissions, or for damages resulting from the use
+of the information contained herein.
+
+------------------------------
+
+Subject: 3. Copyright Notice
+
+This FAQ is Copyright (C) 1994-95 by James D. Murray. All Rights Reserved. 
+This work may be reproduced, in whole or in part, using any medium,
+including, but not limited to, electronic transmission, CD-ROM, or published
+in print, under the condition that this copyright notice remains intact.
+

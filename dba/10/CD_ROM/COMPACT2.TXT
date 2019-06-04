@@ -1,0 +1,193 @@
+COMPACT DISK 2
+
+CD-ROM Data Tracks
+
+Each CD-ROM data track is divided into individually addressable blocks of 
+2352 data bytes, i.e. one subcoding block or 98 frames.  A header in each 
+block contains the block address and the mode of the block.  The block 
+address is identical to the encoding of minute, second, and frame number 
+in subcode channel Q.  The modes defined in the CD-ROM specification are:
+
+Mode 0 -- all data bytes are zero.
+
+Mode 1 -- (CD-ROM Data):
+Sync Field - 12 bytes
+Header Field - 4
+User Data Field - 2048
+Error Detection Code - 4
+Reserved - 8
+Error Correction - 276
+
+Mode 2 -- (CD Audio or Other Data):
+Sync Field - 12 bytes
+Header Field - 4
+User Data Field - 2048
+Auxiliary Data Field - 288
+
+Thus, mode 1 defines separately addressable, physical 2K byte data blocks 
+making CD-ROM look at this level very similar to other digital mass 
+storage devices.
+
+Second Level Error Correction
+
+An uncorrected error in audio data typically results in a brief, often 
+inaudible click during listening at worst.  An uncorrected error in other 
+kinds of data, for example program code, may render a CD unusable.  For 
+this reason, CD-ROM defines a second level of error detection and error 
+correction (EDC/ECC) for mode 1 data.  The information for the EDC/ECC 
+occupies most of the auxiliary data field.
+
+The error detection code is a cyclic redundancy check (CRC) on the sync, 
+header, and user data.  It occupies the first four bytes of the auxiliary 
+data field and provides a very high probability that uncorrected errors 
+will be detected.  The error correction code is essentially the same as 
+the first level error correction in that interleaving and Reed-Solomon 
+coding are used.  It occupies the final 276 bytes of the auxiliary data 
+field.
+
+Editorial:  This extra level of error correction for CD-ROM blocks is one 
+of the many reasons that CD-ROM drives are much more expensive than 
+consumer audio players.  To perform this error correction quickly requires 
+substantial extra computing power (sometimes a dedicated microprocessor) 
+in the drive.
+
+This is also one reason that consumer players like the Magnavoxes which 
+claim to be CD-ROM compatible (with their digital output jack on the back) 
+are useless for that purpose.  They have no way of dealing with the CD-ROM 
+error correction.  They also have no way for a computer to tell them where 
+to seek.
+
+Another reason that CD-ROM drives are more expensive is that they are 
+built to be a computer peripheral rather than a consumer device, i.e. like 
+a combination race car/truck rather than a family sedan.  One story, 
+probably apocryphal but not far from the truth, has it that a major 
+Japanese manufacturer tested some consumer audio players to simulate 
+computer use:  they made them seek (move the optical head) from the inside 
+of the CD to the outside and back again.  These are called maximum seeks.  
+The story says they managed to do this for about 24 hours before they 
+broke down.  A CD-ROM drive needs to be several orders of magnitude more 
+robust.  Fast and strong don't come cheap.
+
+The High Sierra File System Standard
+
+Built on top of the addressable 2K blocks that the CD-ROM specification 
+defines, the next higher level of data encoding is a file system that 
+permits logical organization of the data on the CD.  This can be a native 
+file system like the Macintosh Hierarchical File System (HFS).  Another 
+alternative is the High Sierra (also known as the ISO 9660) file standard, 
+recently approved by the National Information Standards Organization 
+(NISO) and the International Standards Organization (ISO), which defines a 
+file system carefully tuned to CD characteristics.  In particular:
+
+1.  CDs have modest seek time and high capacity.  As a result, the High 
+Sierra standard makes tradeoffs that reduce the number of seeks needed to 
+read a file at the expense of space efficiency.
+
+2.  CDs are read-only.  Thus, concerns like space allocation, file 
+deletion, and the like are not addressed in the specification.
+
+For High Sierra file systems, each individual CD is a volume.  Several CDs 
+may be grouped together in a volume set and there is a mechanism for 
+subsequent volumes in a set to update preceding ones.  Volumes can contain 
+standard file structures, coded character set file structures for 
+character encoding other than ASCII, or boot records.  Boot records can 
+contain either data or program code that may be needed by systems or 
+applications.
+
+High Sierra Directories and Files
+
+The file system is a hierarchical one in which directories may contain 
+files or other directories.  Each volume has a root directory which serves 
+as an ancestor to all other directories or files in the volume.  This 
+dictates an overall tree structure for the volume.
+
+A typical disadvantage in hierarchical systems is that to read a file 
+(which must be a leaf of the hierarchy tree) given its full path name, it 
+is necessary to begin at the root directory and search through each of its 
+ancestral directories until the entry for the file is found.  For example, 
+given the path name "Wine Regions:America:California:Mendocino", three 
+directories (the first three components of the path name) would need to be 
+searched.  Typically, a separate seek would be required for each 
+directory.  This would result in relatively poor performance.
+
+To avoid this, High Sierra specifies that each volume contain a path table 
+in addition to its directories and files.  The path table describes the 
+directory hierarchy in a compact form that may be cached in computer 
+memory for optimum performance.  The path table contains entries for the 
+volume's directories in a breadth-first order; directories with a common 
+parent are listed in lexicographic order.  Each entry contains only the 
+location of the directory it describes, its name, and the location in the 
+path table of its parent.  This mechanism allows any directory to be 
+accessed with only a single CD seek.
+
+Directories contain more detailed information than the path table.  Each 
+directory entry contains:
+
+Directory or file location.
+File length.
+Date and time of creation.
+Name of the file.
+Flags:
+Whether the entry is for a file or a directory.
+Whether or not it is an associated file.
+Whether or not it has records.
+Whether or not it has read protection.
+Whether or not it has subsequent extents.
+Interleave structure of the file.
+
+Interleaving may be used, for example, to meet realtime requirements for 
+multiple files whose contents must be presented simultaneously.  This 
+would happen if a file containing graphic images were interleaved with a 
+file containing compressed sound that describes the images.
+
+Files themselves are recorded in contiguous (or interleaved) blocks on the 
+disc.  The read-only nature of CD permits this contiguous recording in a 
+straightforward manner.  A file may also be recorded in a series of 
+noncontiguous extents with a directory entry for each extent.
+
+The specification does not favor any particular computer architecture.  In 
+particular all significant, multibyte numbers are recorded twice, once 
+with the most significant byte first and once with the least significant 
+byte first.
+
+Multimedia Information
+
+Using the file system are applications that create and portray multimedia 
+information.  While it is true that a CD can store anything that a 
+magnetic disk can store (and usually much more of it), CDs will be used 
+more for storing information than for storing programs.  It is the very 
+large storage capacity of CDs coupled with their low cost that opens up 
+the possibilities for interactive, multimedia information to be used in a 
+multitude of ways.
+
+Programs like HyperCard, with it's ease of authoring and broad 
+extensibility, are very useful for this purpose.  Hypercard stacks, with 
+related information such as color images and sound, can be easily and 
+inexpensively stored on CDs despite their possibly very large size.
+
+Editorial:  The High Sierra file system gets its name from the location of 
+the first meeting on it:  the High Sierra Hotel at Lake Tahoe.  It is much 
+more commonly referred to as ISO 9660, though the two specifications are 
+slightly different.
+
+It has gotten very easy and inexpensive to make a CD-ROM disc (or audio 
+CD).  For example, you can now take a Macintosh hard disk and send it with 
+$1500 to one of several CD pressers.  They will send you back your hard 
+disk and 100 CDs with exactly the same content as what's on your disk.  
+This is the easy way to make CDs with capacity up to the size of your hard 
+disk (Apple's go up to 160 megabytes).  True, this is not a full CD but 
+CDs don't need to be full.  If you have just 10 megabytes and need 100 
+copies, CDs may be the best way to go.
+
+If you are buying a CD-ROM drive, there are several factors you might 
+consider in making your choice.  Two factors NOT to consider are capacity 
+and data rate.  The capacity of all CD-ROM drives is determined solely by 
+the CD they are reading.  Though you will see a range of numbers in 
+manufacturers' specs (e.g. 540, 550, 600, and 650 Mbytes), any drive can 
+read any disc and so they are all fundamentally the same.  All CD-ROM 
+drives read data at a net 150 Kbytes/sec for CD-ROM data.  Other data 
+rates you may see may include error correction data (not included in the 
+net rate) or may be a mode 2 data rate (faster than mode 1).  All drives 
+will be the same in all of these specs.
+
+

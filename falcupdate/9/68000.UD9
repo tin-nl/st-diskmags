@@ -1,0 +1,349 @@
+* This file  was  obtained  from  a  World  Wide  Web  site,  hence  the
+references to hypertext and links  throughout.  You  should  ignore  all
+these and just read the text because it is very  useful  for  those  who
+have  always  wanted  to  start  machine  code  programming  and  is  as
+applicable to the Falcon as to the ST.
+
+Those of you who require more assistance or can offer programming advice
+are strongly recommended to contact ICTARI - the Atari programmers group
+which offers a free and comprehensive monthly disk magazine covering all
+aspects of code from 680x0 to STOS.
+
+
+
+            *********************************************
+            Introduction to MC68000 Assembler Programming
+            *********************************************
+
+
+This document is written for new comers to Assembler. I'll start  simple
+and then move to more complex problems as  we  go.  With  this  being  a
+hyper text document, I'll just put the basic ideas and descriptions  in
+here, with links to follow if a more indepth approach is required.
+
+If you have problems with any of the information contained here, drop me
+an email and I'll put you straight.
+
+
+
+Fundamentals
+============
+
+To be able to program in assembler there are certain details of computer
+design that you'll need to be conversent with. This  section  is  where,
+without exception all books that teach assemberly start, so  I  will  as
+well.
+
+Bytes and Bits - How computer memory works and is arranged
+
+The most fundamental unit of information storeage on a computer  is  the
+'Bit' (Binary Digit). A bit is either On or Off. On the hardware level a
+bit is made of a few logic gates to form a flip flop, which stores  it's
+state and can be either switched on or off. To make life  easy,  8  Bits
+are grouped into a byte, which from the programmers point of view is the
+basic storeage unit. Actually when I program in  assemberly  I  consider
+the word to be the basic storage unit (see next).
+
+The Word
+--------
+
+When we group two bytes together we get a word. Ok great, but what  does
+that actually mean? Well a Byte has 8 Bits. This means that in base  two
+the largest value we can have is 11111111% (the percent means base  two,
+i.e a binary number). The right most bit has a value of one. The bit  to
+the right has a value twice that of the one  before.  So  the  bits  are
+worth: 128 64 32 16 8 4 2 1. Now if we group two bytes together  we  can
+store a maximum value of 256*256, which is 65000 odd.
+
+Each byte also can store one letter. The ASCII system allows us to store
+text on a computer, with one byte per character.
+
+In practice you don't really need to concern yourself with this, as most
+of programs people   write   either   involve   drawing   graphics,   or
+interfaceing with the OS/Hardware.
+
+Ok, now we take 1024*1024 of these bytes and stick them all together  to
+form 1 megabyte of memory. (If you've got a 512K st then  upgrade  now!)
+Each byte in memory has an address. The first byte has  address  0,  the
+second is 1, etc.
+
+The CPU registers
+-----------------
+
+The MC68000 processor has a number of registers  in  it  that  you  will
+using all of in the course of time.
+
+The Data Registers - d0,d1,d2,d3,d4,d5,d6,d7
+
+These are general perpose registers. When your program is  running,  all
+of these registers are free for you to use. Each register is 32 Bits, or
+two words, or four  bytes.  You  can  use  Logic,  arithmetic  and  move
+operations on these registers.
+
+The Address Registers - a0,a1,a2,a3,a4,a5,a6,a7
+
+The address registers are used for storeing the addresses of data  items
+that you wish to access, all registers EXCEPT a7 are free for your  use.
+Arithmetic and move operations are used with these registers. For a7 see
+'The Stack' later on.
+
+The Program Counter - PC
+
+This register keeps track of way in the program the cpu is.  You  cannot
+affect this register, except by using program control instructions.
+
+The Status Register - SR,CCR
+
+The status register contains flags which describe the current  state  of
+the cpu and the condition code flags. This register is  not  refferenced
+directly, but via comparsion comands.
+
+
+
+The First Program
+-----------------
+
+Tradition strikes again. For the first program we'll  do  the  good  old
+'hello world' program.
+
+
+
+*------------------------------------------------------------------*
+* Hello  World
+*------------------------------------------------------------------*
+
+*1      2    3
+        pea text 
+        move #9,-(sp) 
+        trap #1 
+        addq #6,sp
+
+        clr -(sp) trap #1
+
+text dc.b 'Hello World',0
+
+
+Ok now listen carefully, because here  the  main  concepts  of  assembly
+programming are explained.
+
+Look at the numbers 1,2,3. These list  the  columes  that  have  special
+meaning to the assembler. In colume 1 are  the  'Labels'.  These  Labels
+allow you to name parts of your program, so you can referrence them. Any
+where that you use a Label, it will be turned into an address.
+
+Colume 2 - This contains the mneomics. These  are  the  actual  language
+instructions, which are converted  into   exactly   one   machine   code
+instruction. The instructions, do various simple tasks. These tasks come
+down to these operations: Moving Data, Logic Operations, Arithmetic  and
+Program control.
+
+Colume 3 - The operands. This is what the instruction 'operates' on.
+
+
+Now we are going to analysis the program in more  detail.  This  program
+simply prints a message on  the  screen  and  then  quits.  The  message
+printing is done by the operating system, by calling the OS. To get  the
+OS to print the string, we need to pass the address of the string to it,
+then transfer control of the CPU to the OS.
+
+   pea text                               put the address on the stack 
+   move #9,-(sp)                          tell the OS to print a string
+   trap #1                                call the OS 
+   addq #6,sp                             put stack back where it was
+   clr -(sp)                              GEMDOS function zero 
+   trap #1                                terminate program
+
+text dc.b 'Hello World',0                 the text string
+
+After printing the text string, our program needs to quit. We do this by
+returning control to the operating system, via the pterm0 function.  The
+text string to be printed is held at address 'text' and is just  a  null
+terminated string, which conforms to the GEMDOS string requirements.
+
+
+The Stack
+---------
+
+The Stack is simply an area of memory set aside for passing and  storing
+tempory information. The stack is usally high  up  in  memory  and  goes
+backwards towards the bottom. (NOTE: I consider  address  0  to  be  the
+lowest, with the top of memory being at the last memory address. The top
+of memory is thus determined by how much ram you have.) Address register
+a7 stores the address of the stack (but use sp-Stack  Pointer  to  avoid
+confusion). Although you can use a different address register for a data
+stack, the CPU and the OS ALWAYS use a7. So you must make sure that  the
+sp/a7 always points to a valid stack. When your program is  run,  it  is
+given a stack. You will only need to set up your own  stack  in  certain
+situations, which will be pointed out when we come to them.
+
+Lets do something
+-----------------
+
+We now know how to print strings to screen and quit the  program.  While
+these are two useful things to do, we can hardly write a useful  program
+with them. (For futher GEMDOS calls and examples of use see  the  GEMDOS
+information)
+
+Program Control is achived in all languages  by  conditional  statements
+that  involve  variables.  68K  offers  a  number  of  ways  of  forming
+conditions. For these examples, the control variable/s will be  held  in
+the data registers d0-d7.
+
+
+*----------------------------------------------------------------------*
+
+*       Program Control
+
+*----------------------------------------------------------------------*
+
+start   move    v1,d0                   get variables
+        move    v2,d1
+        move    v3,d2
+        move    v4,d3
+
+        tst     d0                      test d0
+        beq     d0_is_zero              if d0=zero branch
+
+        nop
+        nop
+
+d0_is_zero
+
+        cmp     d3,d2                   d2=30,d3=27
+        bgt     d2_greater_d3           if d2>d3 branch
+
+        nop
+        nop
+
+d2_greater_d3
+
+        tst     d1                      test d1
+        sne     d4                      set if not equal
+
+        clr     -(sp)
+        trap    #1
+
+v1      dc.w    0
+v2      dc.w    -1
+v3      dc.w    30
+v4      dc.w    27
+
+
+The first contidional branch is: 
+
+        tst     d0                      test d0
+        beq     d0_is_zero              if d0=zero branch
+
+        nop
+        nop
+
+d0_is_zero
+
+Here the word sized value in d0 is tested to see if it's zero. the 'beq' stands
+for branch equal, i.e branch to the address 'd0_is_zero' if the zero flag in the
+status register is set. You can also use bne for branch not equal (to zero) and
+bmi, branch minus ( branch if negative ) 
+
+Now a comparison command: 
+
+
+        cmp     d3,d2                   d2=30,d3=27
+        bgt     d2_greater_d3           if d2>d3 branch
+
+        nop
+        nop
+
+d2_greater_d3
+
+Here the two words in d3 and d2 are compared ( d2 is compared to d3 ). If d2 if
+greater than d3 a branch occurs. 
+
+
+        tst     d1                      test d1
+        sne     d4                      set if not equal
+
+Here we are testing d1 to be zero. Then we are setting the BYTE in d4
+accordingly. If d1 is ne (not equal) to zero then set the BYTE in d4 to $FF
+(-1). Note:- Unless you like using bytes, it's best to sign extend to register
+with ext d4. 
+
+It's worth mentioning at this point, the branch instructions so far are of the
+'signed' varity. This can be important because if you have 20000 and 40000 in
+the registers and you do a compare, then a blt, you can find that you're being
+told that 40000 is less than 20000! To get around this you can either use long
+words, or unsignd branch conditions. 
+
+The Condition Codes
+
+
+
+For explict testing of flag state
+
+        bcc - Branch if carry clear             c=0
+        bcs - Branch if carry set               c=1
+        bpl - Branch if plus            n=0
+        bmi - Branch if minus           n=1
+        bvc - Branch if overflow clear  v=0
+        bvs - Branch if overflow set            v=1
+        bne - Branch if not equal               z=0
+        beq - Branch if equal           z=1
+
+For numeric comparsion between signed numbers
+
+        blt - Branch less than
+        ble - Branch less than or equal
+        bgt - Branch greater than
+        bge - Branch greater than or equal
+
+For numeric comparsion between unsigned numbers
+
+        blo - Branch lower
+        bls - Branch lower or same
+        bhi - Branch higher
+        bhs - British Home Stores
+
+
+Now you know how to compare numbers together, and print text to the screen. It's
+time explore addressing, looping and subroutines. 
+
+Addressing, Looping and Subroutines
+
+We're now going to write a little program that reads a string in from the
+keyboard (via gemdos), counts the number of characters, and tells you how many
+characters are in the string and wether the number of characters is equal to how
+many are expected. Sound complicated? Don't worry this is a breeze. 
+
+
+A little design work first:
+
+        Read string
+        Count Characters
+        Convert Binary Number To Decimal
+        Print Number of characters
+        Print wether number of characters is equal to amount requested.
+
+This a simple linear problem, but to keep things neat, and to  introduce
+them we'll put each section into it's own subrouine. We  don't  need  to
+pass any parameters between  the  subroutines,  as  each  subroutine  is
+working on the same data.
+
+To read the string in from the keyboard we'll use  gemdos  function  $0a
+Cconrs. If you look at the documentation for this call, you'll see  that
+it actually tells us how many characters are in the  string,  but  we'll
+count them anyway, just for the hell of it ( rebel! ).
+
+Converting a integer binary number to decimal is  simple  problem,  that
+just involes a few loops. If  you're  asking  the  question  'how  do  I
+convert flops to decimal' the answer is of course, 'we leave  that  sort
+of crap to high level languages'
+
+Printing the number of characters is just the same as the first program.
+Deciding wether the number of input  characters  is  acceptable  or  not
+involves a simple conditional test.
+
+To start off with, we'll decide what variables we need.  The  number  of
+acceptable characters, we will set as a constant. The input string we'll
+make it 70 characters, enough for a file name with a few folders in  the
+path, or a command line. We'll need a  constant  value  to  add  to  the
+decimal numbers to form printable ascii charcter, which we'll have as  a
+constant.

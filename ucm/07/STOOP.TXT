@@ -1,0 +1,83 @@
+{*f1
+              STOOP 1.05{*f0
+                         A NEW BOOTMANAGER FOR THE FALCON
+                 ------------------------------------------------
+
+autor  : Phil Hodgkins / U.K
+system : Falcon, 4MB RAM, VGA/SVGA-monitor recommended (on RGB/TV in interlace)
+status : shareware/keyware - registering for 10 pounds
+
+After X-BOOT and the great and unbeatable AIRBAG by Apache / ex-tnb (hehehe...)
+cames another bootmanager  along. This time  its for the Falcon only because it
+uses it's own graphic-interface and runs only in high resolutions with at least
+16 colors. Eventual it will  run on  graphic-cards or on the TT and compatibles
+but I wouldn't promise this...
+Ok, this new bootmanager  is filled up with tons of features  and I'm too tired
+to list them all and so I'll change to the doc of STOOP...
+
+...snap...
+
+Stoop can :
+
+ð Be  used  to determine  which  AUTO  programs, accessories, CPX  modules  and
+  NEWDESK.INF files should be active when starting up or re-booting.
+ð Control other types  of file (e.g. GDOS, ASSIGN.SYS files) to a maximum of 20
+  different types.
+ð Display  up to 512 file  names in each  of 20 boards. These boards have to be
+  paged to view all of the file names, but paging buttons will only appear when
+  they are necessary.
+ð Either change the extension of a file  name to make  it active/inactive, e.g.
+  ACX is changed to ACC and vice  versa, (the file may be also moved to another
+  folder at the same time) this can be done for a maximum of 254 files per file
+  type. Or  a single  file can  copied  and renamed  to  a  specific name, e.g.
+  C:\AUTO\STOOP\GENERAL.INF may become NEWDESK.INF.
+ð Make groups of  files which may be selected or de-selected by a single button
+  press, to a  maximum of 50 files per  board  per group, and  since there is a
+  maximum of 20 boards a maximum of 1000 files can be assigned per group.
+ð Control the  screen  resolution  of the desktop  that appears  after booting,
+  including  starting up  in  ST compatible  screens, without  having  to use a
+  specific NEWDESK.INF file.
+ð Change the application the desktop runs after boot-up.
+ð Store often used start-up configurations on buttons, to a maximum of 27.
+ð Copy, delete and move folders and files, and also rename files, using its own
+  file selector.
+ð Re-order the contents of the AUTO folder.
+ð Hide files  from  itself so  that  they cannot  be  selected/de-selected  for
+  boot-up by error. Up to 50 files can be hidden.
+ð Be easily configured while running from the AUTO folder.
+ð Pass parameters to applications that are to be auto-booted.
+ð Be booted in any resolution on a RGB or VGA monitor.
+ð Display  folders instead  of files  in a board, this  is primarily for moving
+  folders of  fonts in  and out of  NVDI 3's font directories, which means that
+  you can  choose which  fonts to  use  at boot  up more easily  by selecting a
+  family or group of fonts with a single mouse click.
+ð Protect your system with a password.
+ð Now wait  for a set  period and  then, if not  used, it will set up a default
+  configuration and exit.
+ð Swap preset buttons around.
+ð Copy preset buttons.
+ð Show an unlimited number of files and folders in the fileselector in a single
+  directory, it is now only limited by available memory.
+ð Merge and remove file names with/from preset configurations.
+ð Change the speaker volume and balance.
+ð Turn off the keyclick and the system bell sounds.
+ð Change the colours used by Stoop.
+ð Select an auto-booting program for a one-off configuration more easily.
+
+...snip...
+
+Huh! This program is fullfilled with features like no otherone! You can install
+it over an own installing-program which is easy to handle.
+To mention and test the single features would surely blow away this article and
+so I'll leave you at this point...
+I haven't nothing more to  say. Only one thing...
+Only the first view shows that this is the best bootmanager around, even if its
+Falcon-only. I for myself prefer the  AIRBAG, because this program is made by a
+(ex-)member of .tnb. and its freeware.
+A little minus-point of STOOP  is the graphic-interface. Ok, it  looks nice and
+colourfull  but when you're  running STOOP on RGB you'll  get a -Troll- because
+of the flickering screen.
+Now I'll stop this shit. If you haven't any bootmanager installed up to now you
+should take a look at this program! It's worth the ten pounds!
+
+----------------------------------------------------------------Moondog of tnb-

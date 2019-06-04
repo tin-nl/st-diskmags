@@ -1,0 +1,69 @@
+MODULE PLAYER .APP
+
+
+A new module player as application.
+
+Yep what do we have here, another nice utility to play your modules.
+This little module player was coded and send in by Dave Malins of the
+Pixel Twins.
+It plays modules on either the Atari ST and STE with very good quality.
+On STE machines it play at 25Khz so it sounds even better.
+
+An application ???
+
+Yes well this kind of prg isn't used very much so it deserves a bit of
+explaining before you can use it. There are two way to use this prg:
+
+1) On the desktop you choose a .MOD file (klick on it once so it turns
+   black and hold the mouse button down) and drag it to the MODPLAY.APP.
+   This way it will start the APP and will play the choosen .MOD file.
+
+2) You can install the application using a option in the DESKTOP.
+   
+    How to install an .APP file.
+
+    It's very ease, that is if you know how it is done. But here is an
+    helping hand. On the desktop you choose MODPLAY.APP (just klick on it
+    so it turns black) and the you go to the OPTIONS in the desktop.
+    You can see that can choose INSTALL APPLICATIONS. Just klick on it
+    and the following DIALOG BOX will appear.
+        ~DIALOG.BL2~                           
+                
+                                               Just like the one here, maybe
+                                               there a slight differences  
+                                               because of different TOS 
+                                               versions, but the main idea 
+                                               stays the same.
+                                                
+                                               You have to fill in some
+                                               small things so let's start.
+
+
+                                               ( P.S. nice option don't you 
+                                                 think, pictures in text ?)
+
+    You will have to fill in the DOCUMENT TYPE,see (1), just type "MOD"
+    there. Then you will have to fill in the BOOT STATUS, see (2). Just
+    klick on "NORMAL", most of the time that's also the default so you 
+    won't have to change it.
+    Then there is the APPLICATION TYPE, see (3), just klick on "GEM", also
+    most of the time default so you won't have to change that.         
+    After you've don that all press INSTALL, see (4), or just Return/Enter
+    on the keyboard.
+    Now you have installed an APPLICATION, if you now klick twice on a .MOD
+    file it will start first the MODPLAY.APP and the load the choosen file
+    itself and starts to play. Very nice indeed.
+    But if you press RESET now all installations will be lost !!! To prefend
+    that you will have to save the desktop by using SAVE DESKTOP. This way
+    all you installations will be saved and the next time you start up with
+    this disk it will be done for you. But remember the file MODPLAY.APP
+    must be on the disk you load the module from or else it will give an
+    error like CAN'T FIND FILE OR APPLICATION.
+
+So that was a lot of explaining, but it's so clear now that even a dog could do 
+it ( well at least i think !! ). I hope you like this player.
+       
+                                        Player by: Dave Malins
+                                        Text and explaining: Bonus Software
+
+

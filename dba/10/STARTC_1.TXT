@@ -1,0 +1,213 @@
+CODING ASM 1
+
+=====================================================================
+
+ CCCCCC    OOOOOO    DDD        II   NN     NN    GGGGGGG      !!
+CC    CC  OO    OO  DD  DD           NNN    NN   GG     GG     !!
+CC       OO      OO DD   DD    IIII  NN NN  NN  GG       GG    !!
+CC       OO      OO DD    DD    II   NN NN  NN  GG             !!
+CC       OO      OO DD     DD   II   NN  NN NN  GG             !!
+CC       OO      OO DD     DD   II   NN  NN NN  GG             !!
+CC       OO      OO DD    DD    II   NN   NNNN  GG    GGGGG    !!
+CC    CC  OO    OO  DD   DD     II   NN    NNN   GG     GGG
+ CCCCCC    OOOOOO   DDDDDD     IIII  NN     NN    GGGGGGG G    !!
+
+=====================================================================
+
+SOME PROBLEMS...
+
+Ever wanted to get started in assembler, but never got a chance to 
+because when you started, and you where half-way there you figured 
+you could do it faster in G.f.a.(or any other basic)???
+
+Last night I've tried to code a piece of assembler for you to 
+easy-understand. It isn't very difficult, but you just have to 
+sit back for a little while, and try to understand the code.
+
+If you are used to code in another language like for instance G.f.a.
+it isn't very difficult to code in assembler.
+
+The main difference between the two languages is that G.f.a. can
+solve some problems nice and neatly for you whereas when you code
+in assembler you have to solve those problems by yourself.
+
+But why bother??? You might ask, well good question, if you code in 
+assembler you have to face a lot of problems, and the debugging
+is a lot worse than in basic. If you code in assembler, and
+you don't know what you are doing it's very likely that the computer
+will crash, and the only solution is the reset-button.
+
+Now to get back to the question, ofcourse everybody knows that
+if you code a piece in assembler that the routine is more likely
+to be faster than the same routine in Basic. Due to the constant 
+checkings, and it's complex way of solving things.
+
+But there is more to come, in assebler you can put your code in 
+interrupts, and you don't have to bother looking after them. 
+This is just like installing a piece of music in the 
+back-ground, and you don't have to take a look at it anymore.
+
+Yesterday, I was sitting behind my computer, and I was thinking
+about this text. Sure it is a good idea, but I thought by-myself
+what the hell can I code in assembler which is (easy) to understand.
+
+I came up with a quite simple program, but I'm not quite happy with it.
+This program reads the volume of the three volume-channels of the 
+soundchip stored into your computer. But the main problem is what 
+to do with the values. Normally in basic it isn't any problem, 
+you just draw a line until the values are reached. 
+
+But in assembler it is a problem. If you want to draw a line onto
+the screen you have to know how the computer handels pictures and
+data according the screen. 
+
+It's quite difficult at first, and I can understand it if you are 
+quite dazzled, but that's no problem
+I think that everybody can not understand the 
+"computer-screen-theorie" by just reading about it, you need to 
+experiment a lot with it before you can understand it.
+You mustn't pay much attention to this, because you will not understand
+it today, and you will not understand it over a week, even if you sit
+days behind your computer...
+
+If you are patient and you'll just try to understand and work it out
+for yourself, you will wake up one morning and see the light.
+
+SOME INFORMATION...
+
+For those who want to give it a shot here is my explanation of the
+video-RAM. But maybe it is best to skip this part, and look it up
+a bit later, if you are up to it.
+
+#####################################################################
+
+The computer reserves after a reset a piece of memory which will
+be continuously send to the T.V. Monitor.
+
+If you store anything within this piece of memory it will be 
+shown on monitor/T.V.
+
+As you know the ST has got three resolutions (I will leave the 
+TT/Falcon resolutions if you don't mind.) 
+In High resolution you have two colours black and white. 
+This means there is one plane it's black or white.
+In switch terms it is very easy it's either on (white) or off (black).
+
+So every bit is either on or off either zero or one.
+(Have no more flavours, so no more explanation)
+
+In Medium resolution you have two planes (colour layers). 
+This means you have got four colours          2
+                                     ------> 2  = 4
+Check it out, you will see I'm right.
+To solve this problem Atari divided the memory into the following
+way:
+_____________________________________
+     WORD 0   !  WORD 2  ! WORD 4  !     <------ PLANE 1
+------------------------------------
+     WORD 1   !  WORD 3  ! WORD 5  !     <------ PLANE 2
+------------------------------------
+ETC...ETC...ETC...
+
+You probably know that 1 word is two bytes (If you didn't you know
+now) and you have to keep in mind that your computer is handeling the
+memory byte-wise. Sure it can read and write 1 word at a time, but
+the memore is divided byte-wise.
+
+If we switch to low resolution we've got control over 4 planes
+creating 16 colours:      4 planes
+                         2   = 16 colours
+
+Now the folks at Atari have used the same trick for this resolution
+as for the medium resolution.
+
+So another memory-map:
+
+-----------------------------------
+WORD 0 ! WORD 4 ! WORD 8  ! WORD 12!
+WORD 1 ! WORD 5 ! WORD 9  ! WORD 13! 
+WORD 2 ! WORD 6 ! WORD 10 ! WORD 14!
+WORD 3 ! WORD 7 ! WORD 11 ! WORD 15!
+------------------------------------
+ETC...ETC...ETC...
+
+Now that we know this you'll have to know that if are say at word 0 
+in low resolution, and you want to get to the next word in the same
+plane (which would be Word 4) you'll have to use the following command:
+
+     addq.l   #8,a0      ; If you have your screen-address placed in a0
+
+Why???, because I've told you that the computer handels the memory 
+byte-wise, and if you count with me Word 1,2,3,4 are 4 words and this
+means you'll have to step 8 bytes.
+
+That's it for the main theorie of the screen, and here's a little
+joggling for masters with numbers:
+
+High resolution: 640 x 400 pixels: ----> 
+(pixels/number of bits in a byte)*number of lines*number of planes
+( 640 / 8 ) * 400 * 1 = 32000 bytes
+
+Medium resolution: 640 x 200 pixels
+(pixels/number of bits in a byte)*number of lines*number of planes
+( 640 / 8 ) * 200 * 2 = 32000 bytes
+
+Low resolution: 320 x 200 pixels
+(pixels/number of bits in a byte)*number of lines*number of planes
+( 320 / 8 ) * 200 * 4 = 32000 bytes
+
+Well may I be damn'd mighty clever of those Atari boys isn't it???
+Three different resolutions, and still the same amount of
+data to be sent to the screen.
+
+This concludes my vision on T.V.'s and Monitors back to the main 
+course now...
+
+##################################################################### 
+
+AND SOME EXPLANATION....
+
+Another problem that Atari had to solve was the way at which standard
+routines are presented to the computer. Atari uses TRAPS for these
+standard routines, and you don't have to understand them, you must
+just realize that they can be mighty handy, and solve a lot of
+problems for you.
+
+You'll have to give the computer some information about which routine
+you want to use. This is done by using the stack. for instance
+     move.w    #9,-(sp)
+Moves the value 9 onto the stack. 
+
+The stack is in fact the address register 7 and if we should do the 
+folowing
+     move.w    #9,-(a7)
+We really would do the same.
+
+The stack is not endlessly big, and we have to correct it now and
+then, cause else we could get a bus error
+
+
+Atari has made three important traps for us, these are 
+TRAP #1        : Gemdos Trap
+TRAP #13       : BIOS Trap
+TRAP #14       : XBios Trap.
+
+These trap's consist each of different routines involving different
+parts of the computer.
+
+TRAP #1, The Gemdos Trap is one of the most slow trap's, but contains
+some of the most powerfull routines. These routines are mostly
+for the output on the hardware (screen,printer etc..)
+
+TRAP #13 The BIOS Trap is the quickest trap of them all, and gives
+mostly information over the computer.
+
+TRAP #14 Is one of the most used traps in our little program, it gives
+mostly information over the Hardware...
+
+
+But I think I have explained enough, here is the source for you
+to debug, and get some practical experience. 
+Hang on a moment, here it comes (in the second part, that is).
+
+

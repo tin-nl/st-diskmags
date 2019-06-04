@@ -1,0 +1,208 @@
+                                 TEAM
+
+
+                      A GAME BY IMPACT SOFTWARE
+
+
+
+"The ref woz blind! We woz  robbed!  We  wuz all over them! There goal
+was a fluke! And offside! And handball! Its all the linesman's fault!"
+
+Ah, the eternal lament of the football  fan, every ready with a string
+of excuses to cover up  a  disastrous  performance. And as a Sheffield
+Wednesday fan, I have more  than  my  fair  share of excuses. But when
+your team clicks, the passes flow, the  goals  hit the back of the net
+there can be few things  better.  Pele  called it "the beautiful game"
+and it  is  an  obsession  amongst  most  of  the  male  part  of  the
+population. Naturally soccer games are  amongst  the most popular game
+genres - stick a football related picture on the box and you are bound
+to shift units. Unfortunately, most soccer  games aren't that much kop
+(sic), and the Waddle-like  genius  pieces  of  soccer software can be
+counted on the fingers of one hand.
+
+We have a new contender for the  premiership title of best footy game.
+Enter Ralph "Kevin Keegan"  Lovesy,  his  perm  long  consigned to the
+annals of history, and his team, "Team". And to further the analogy it
+is the Newcastle United of footballing  game  - fast, flowing and full
+of beautiful touches, and although  it  may  have some dodgy points at
+the back, it is still at the top of the league.
+
+Team is a game for the STE  and  Falcon,  and the first one to use the
+potential of the improved video system. Scrolling the entire screen on
+the STFM was a  bit  of  nightmare  (unless  you  were  Nic of TCB and
+invented hardware scrolling routines  in  your sleep) and consequently
+soccer games were either  slow,  or  used  various  cheats to move the
+screen about (like Kick  Off's  amazing  realistic grass-like rasters.
+Trust Dino Dini to discvoer Timer B's horticultural potential).
+
+With the STE and Falcon things  are  different - this means the entire
+screen can be hardly scrolled,  freeing  up  the rest of the processor
+time  for  artificial   intelligence,   ball   control  and  collision
+detection. The whole pitch  in  team  is  stored  as  one  big area of
+memory, the screen just being  a  virtual  window  on this. This means
+that team requires one megabyte to  run  -  but with half meg upgrades
+being so cheap, I would  imagine  the  great  proportion of STe owners
+have 1024K of memory.
+
+The player sprites  are  quite  small,  but  this  allows  more of the
+playing area to be displayed on  screen.  You  can even put the screen
+into overscan so the screen area is further increased.
+
+The game is very smooth, running entirely in one vbl. The scrolling is
+also very well handled - when players run diagonally or quickly change
+direction the scrolling doesn't  jerk  about  but smoothly follows the
+player, a neat and polished touch.
+
+The in game sound is limited to  the  refs whistle and some cheers and
+gasps from the crowd. I hear  rumours that Ralph smuggled a dictaphone
+into Anfield to get this authentic crowd sound (or perhaps I am making
+this up). There is no  in-game  music,  this  would  have just been an
+unnecessary distraction from the game.
+
+The game as a whole is excellently  presented - from the intro screens
+to the main menu to  the  game  itself.  The  menu screens have a nice
+graduated fill behind them  (very  impressive  for  16  colours) and a
+50khz module plays in  the  background  and  it  sounds excellent. The
+replay is coded by Griff of Electronic Images.
+
+You have a variety of option from  the  main menu. You can changed the
+control method (keyboard, joystick and Jaguar powerpads are supported)
+the time of a match can be altered (but only a maximum of 10 minutes a
+half. I would have like an option  to  play a full 2x45 match like the
+original Kick Off. What do you mean  I should have better things to do
+with my time? I'm a student for gods sake!!!)
+
+You can select the leniency  of  the  referee  (although even the most
+lenient referee stops the game for ever  foul, he just doesn't book as
+many people). The pitch type and  wind  can also be selected. Overscan
+and the internal speaker can be  toggled  (a useful feature for Falcon
+owners!)
+
+You can play  a  single  friendly  match,  or  start  a  league or cup
+competition. The latter two options  are both highly configurable, you
+can choose the teams that enter, the  points  for a win, the number of
+times they play each other etc.  This  all  adds  to the appeal of the
+game.
+
+You also have the option to customise the team - you can enter all the
+players names and change their skin  and hair colour. This edited data
+can be saved to disk so  you  don't  need to go through this laborious
+process every time you load up!
+
+A set of teams comes with the  game,  but  they are a bit out of date.
+The Sheffield Wednesday squad is more similar to the one that beat Man
+Utd. 1-0 in the 1991  Rumbelows  cup  than  the present one, and Steve
+Hodge manages to be included in both the QPR and Leeds squads. Bizarre
+but true. I think Ralph has now  remedied this problem and there is an
+updated set of team data available.
+
+Back to the game, and you can't  help  admiring how smooth it is. This
+is an STe, not a console, but you would be fooled into thinking custom
+hardware is being used to shift everything about.
+
+But how does it play? The  gameplay  is  the bastard offspring of Goal
+and sensible soccer. You  have  got  aftertouch  and  you can vary the
+power on your shot with  the  fire  button.  The ball doesn't stick to
+your foot, but after a bit of practice you can dribble with it. I have
+to say that this whole  control  system  is  probably  the best on any
+football game EVER! When you first play the game you will find it very
+awkward, but the more  you  play,  the  more  skilled you become. This
+control system really works well. The only slight gripe I have is that
+not every direction  is  used  on  aftertouch,  only  those  within 45
+degrees of the original movement  direction.  I  would like to see the
+directions 90 degrees from the original direction being used for extra
+strength aftertouch. Just a thought (put it in Team 2 Ralph!)
+
+So the control system is an  absolute gem. Passing, tackling, heading,
+shooting, it all works brilliantly. Even free-kicks, corners and throw
+ins are well designed to fit in with this system.
+
+The computer artificial intelligence  is  also  pretty  good. When you
+first play the computer, you will  have  a  lot of trouble beating it.
+The computer plays a nice passing  style with backheels and other good
+touches. The scale of difficulty  is  set  well  from the might of Man
+Utd. to the incompetence of Ipswich,  there  is  a team there to match
+everyone's ability.
+
+The ball movement is great -  it bounces off other players, goalposts,
+corner flags and the crowd. It seems like a real 3D environment.
+
+Another excellent feature is the fact that you can't run through other
+players. Most  other  football  games  don't  do  collision  detection
+between players and thus you can  just  run though other players. Team
+is much more realistic and you  can  only  get passed people by skill.
+You can also obstruct opponents and  do shoulder barges and other Tony
+Adams style defensive tricks.
+
+The main problem with the game  comes with your OWN players artificial
+intelligence. This may seem like a  contradiction in terms, but let me
+explain. You only control one  player  (the  one nearest the ball) and
+the movement of all others is governed by an a.i. system. In team this
+is VERY simplistic  and  players  will  just  move  to  a set position
+depending on which quadrant the  ball  is  in.  They will never attack
+free space or run towards the ball  unless you are in control of them.
+This is very annoying!
+
+Suppose the ball is passed towards  a player, before this player comes
+under your control he will run  towards  his designated place and this
+is quite likely to be away  from  the  ball.  So  you pass a ball to a
+player and he moves away from it! This effect is compounded in defence
+with defenders running away from attackers towards their set positions
+- very frustrating.
+
+This annoyance is compounded  by  the  fact  that the computer players
+will run between two  of  your  players  causing  the  control to swap
+between them. One player will then  return to computer control and run
+away from the ball,  you  will  then  control  a  defender  in a worse
+position to put in a  tackle  and  the attacker will invariably score.
+This means defending is impossible.
+
+This flaw almost ruins the game.  Everyone  I  know who has played the
+game has pointed this out, but strangely it hasn't been fixed. If only
+players ran TOWARDS the ball,  not  some imaginary fixed position this
+would be a problem.
+
+The goalkeepers are also a bit  dodgy. Their positioning on shots from
+a diagonal angle is terrible  -  you  can  beat  the goalkeeper on his
+inside and still get the ball between keeper and goal. Invariably when
+you get in the right position you can score from 95% of opportunities.
+Also the keeper will watch  tame  shots  slide  past  him into the net
+without making an effort to stop them.
+
+Also the selection of which  player  you  are  given control of is not
+always right. When defending you should be given control of the player
+nearest the ball who is between  the  defender and the goal. Often you
+are given control of defender who may  be  near the ball but is behind
+the attacker so can't tackle him. (any  tackle from behind is a foul).
+This means it is impossible to stop a goal attempt.
+
+The referees are way too accurate! The  beauty of real referees is the
+fact they often make mistakes - in  team there is no margin for error.
+Any tackle that touches another  player  is  ruled  a  foul - which is
+wrong. You can come in with  the most perfect sliding tackle, whipping
+the ball away but have  it  judged  a  foul  as you brought the player
+down. As long as you win the ball and the tackle isn't from behind, it
+shouldn't be a foul.
+
+If I am sounding pedantic forgive me.  This  is a great game, and with
+some minor coding tweaks it could be a fantastic game.
+
+It compares very favourably with  its competition. It annihilates both
+Goal and Sensible Soccer. It  is  far  more playable then Sensible and
+much more stable than Goal. The  control  system  is  a joy to use and
+even with its flaws it  is  still  an amazingly playable and addictive
+game, and currently the most played game on my Falcon.
+
+If you like football, you must own this game. In their own words it is
+probably the best football game ever!!!!
+
+--------
+| TEAM |
+------------------------------------
+| Publisher     :  Impact Software |
+| Graphics      :  78%             |
+| Sound         :  81%             |
+| Playability   :  91%             |
+| Addictiveness :  96%             |
+| Overall       :  94%             |
+------------------------------------

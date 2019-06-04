@@ -1,0 +1,49 @@
+
+{*f1CDLAB 0.31 ADVERTISING{*f0 
+
+
+Ò       --------------------------- Latest news  -------------------------
+
+ CDLab 0.31 is available. It fixes a major bug in version 0.30. Go and check it 
+out in the download section of my homepage at Ûhttp://cdlab.atari.org  
+
+ÛHere are the current characteristics of CDLab : 
+
+     DAO (Disc-at-once) copy for any single-session discs ; 
+     CD-RW blanking function ; 
+     Supports the following drives : 
+     
+        * Philips CDD2000/CDD2600 and compatible models (such as the Mitsumi, HP 
+          or Kodak ones), Teac CD-R50S/CD-R55S and JVC/Traxdata compatible 
+          models,  
+        * Any writer which supports the SCSI-3 multimedia commands 
+        * Copies either directly from an ordinary CD-Rom drive, or via your hard 
+          disk 
+        * SCSIDRV-protocol compatible (supported by CBHD and HDDriver - also 
+          used by the SPIN! CD-ROM driver -, allowing CDLab to work on all 
+          available Atari-compatible platforms)   
+        * Full GEM advanced ergonomy using the WinDom GEM library. 
+
+ÚCDLab has been successfully tested on the following recorders : 
+
+     Philips CDD2600 
+     Mitsumi CR-2041TS 
+     TEAC CD-R55S 
+     Panasonic CW-7502 
+     Yamaha CRW4260 
+     Yamaha CRW6416 
+     and many more, please inform me if yours is working right and is not 
+     mentioned here, in order to enlarge the list !  
+
+
+ÛPlanned, but not yet implemented features : 
+
+     Multisession disc DAO copy ; 
+     Support for other models of writers ; 
+     Support for other available SCSI/ATAPI software interfaces, like Centek's 
+     Cecile driver one ; Of course, ISO image creation and TAO (Track-at-once) 
+     writing support.  
+
+
+Contact : Francois Galea aka Zerkman Û(fgalea@free.fr)
+Ò-----------------------------------------------------------------------------------

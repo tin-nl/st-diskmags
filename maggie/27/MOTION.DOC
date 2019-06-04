@@ -1,0 +1,176 @@
+----------------------------------------------------------------------
+ demos
+----------------------------------------------------------------------
+
+                                MOTION
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+'Motion' is one of those  Falcon  productions that enjoyed 'Holy Grail
+Status'. Those who had seen it whispered about in hushed tones, it was
+a potential Eko-Lazer-Avena beater. But like EKO's game, Griff's music
+program, 'Boom' and 'Space Junk' it looked likely to forever reside in
+the unfinished directory.
+
+During the Alt party we  had  plenty  of  chance to chat to Aggression
+about prospects for the release of this demo. Setok was pretty keen to
+let it loose on the  populous.  Wiztom  muttered about 'having all the
+source zipped up on his  PC  drive'  and  besides  he was busy writing
+games for Bloodhouse.
+
+As the months  progressed  the  chances  of  this  ever being released
+seemed to diminish. Then, out of the blue, a large file named 'Motion'
+arrived on the DHS pages.
+
+Before you get too excited, this  is  not  a release of the full demo.
+Instead it is a release  of  all  the  source code and associated data
+files - Wiztom's intention was  that  someone  else would sit down and
+finish it. Fortunately he also included executable binaries of all the
+screens.
+
+----------------------------------------------------------------------
+ ANIM
+----------------------------------------------------------------------
+This was obviously created as the  intro  for the demo. The large file
+size immediately gives  away  the  fact  that  this  is  some  sort of
+animation (the filename being the other, more damning clue). A texture
+mapped spins across the  screen,  each  side  of  bearing  a letter of
+'MOTION' which it stamps into the background.
+
+This is a well designed introduction  that  would have set the tone of
+the demo nicely.
+
+----------------------------------------------------------------------
+BEZIER
+----------------------------------------------------------------------
+The killer effect of the demo is  a  killer bee - or more accurately a
+wasp. Yes, the famous aggression flying insect has come to life in 3D!
+
+When people released how  good  the  DSP  was  at matrix calculation a
+whole series of dot  based  rotating  objects  were unleashed onto the
+Falcon public. As demo effects go,  they gave Mandlebrot screens a run
+for their money in the dullness stakes.
+
+Aggression show what can be done with dots  with a bit of design and a
+bit of imagination. A wasp  built  entirely  of dots flaps and rotates
+its way around the screen and  it  looks great. Tap the functions keys
+and the wasp will morph into a more traditional torus.
+
+----------------------------------------------------------------------
+EXPLOT
+----------------------------------------------------------------------
+
+
+This screen reminds me of the 'Geranium Demo', specifically the screen
+where a large strand of  blobs  rotates  around. ( great description -
+ED). Here we have some 3D shade bobs that rotate around the y axis and
+overlap with pleasant effect. Quite dreamy.
+
+----------------------------------------------------------------------
+GTMAP
+----------------------------------------------------------------------
+
+This is more of a demonstration of  a  routine rather than a screen in
+its own right. Wiztom has  coded  a  very fast gouraud texture mapping
+routine on the DSP, unfortunately its power is not really demonstrated
+by this simple screen.
+
+We get a triangle that  moves  about  the  screen,  there is no screen
+clearing going on so it looks very messy. The triangle doesn't rotate,
+its vertices are simply translated.
+
+This technology could have been used  in  a very impressive screen, in
+its current state you only get a glimpse of its power.
+
+----------------------------------------------------------------------
+PALDSP
+----------------------------------------------------------------------
+
+A rot zoomer with a twist -  the twist being a distortion sent through
+the  zoomer  which  displaces  the  texture.   A  nice  twist  on  the
+traditional rot zoomer (you've said this! - ED).
+
+----------------------------------------------------------------------
+ROMEO
+----------------------------------------------------------------------
+
+Or "fractals  made  interesting".  Romeo  is  a  very  fast  julia set
+calculator ( Romeo and Julia - geddit?  ), probably the best I've seen
+on the Falcon. It also  features  some  nice palette changes which you
+can imagine would have been synced to the music on the full demo.
+
+----------------------------------------------------------------------
+ROTTA
+----------------------------------------------------------------------
+
+Remember the Aggressive 2 party  invite?  Remember  the ace rot zoomer
+with motion blur? Well  here  it  is  again.  And its still impressive
+after all these years - no-one has  yet beaten it which is a testament
+to Aggression's skills.
+
+----------------------------------------------------------------------
+SUSIE
+----------------------------------------------------------------------
+
+'Susie' is Aggression's Wolf-3D  clone,  probably the best ray-casting
+engine to hit the Falcon.  Owners  of  the  Aggression 128K intro will
+have seen this before, and  unfortunately  it  has not been changed or
+updated in any way.
+
+----------------------------------------------------------------------
+TORUS
+----------------------------------------------------------------------
+
+Similar to the 3D-wasp, but not quite so exciting. A big dot 'a' spins
+around, and with a tap on the  keys  transforms into a torus. More dot
+based action courtesy of Mr DSP.
+
+
+----------------------------------------------------------------------
+WRITER
+----------------------------------------------------------------------
+
+It's the text writer that graced the Aggression 128k intro. As well as
+painting the Aggression  wasp  and  logo  it  draws  a  runner and the
+legened 'Keep In  Motion'.  Elsewhere  a  terrible  aggression logo is
+drawn.
+
+
+
+It is difficult  to  review  stand-alone  demo  screens.  Their impact
+usually comes from their context within a demo, the effects before and
+after them and the music. There is some good stuff here, unfortunately
+we have seen a lot of the best effects before.
+
+Of the 'new' stuff, the dot-wasp is  superb with the other dot effects
+being variations on this  routine.  The  Julia  is smart without being
+revolutionary and the  rotating  bobs  fit  better  into  the world of
+screen savers rather than high speed demos.
+
+All in all,  Motion  is  something  of  a disappointment. Aggression's
+superb effects on their  party  invite  and  128ktro promised much for
+their full demo - little did we  know they had already unleashed their
+best effects.
+
+Whilst the effect  remain  technically  excellent,  the  fact they are
+split up and unfinished  diminishes  their  effect.  Wiztom hopes that
+someone will put them  together  into  a  demo,  but  this is unlikely
+considering  some  effect  need  over   3.5mb   to  run  and  all  the
+documentation is in Finnish. Something  could  still  be done with the
+gouraud texture mapping though.
+
+If most demo coders released the  'unfinished' directory of their hard
+drive we would see a similar array of effects - some good, some not so
+good and some obviously unfinished.  With  the  release of these files
+Aggression have demystified the legend  of  'Motion'. No longer can is
+it one of those sacred productions  that 'if finished would have ruled
+the falcon scene'. It  would  have  been  in  the  top 10 falcon demos
+certainly, but it wouldn't  have  beaten  the  likes  of 'Sono', 'Eko-
+System' or 'Lost Blubb'.
+
+
+Aggression will be remembered for  their  incredible  ST demos such as
+'Brain Damage', it's a shame  that  their  atari involvement has ended
+with a whimper not a bang.

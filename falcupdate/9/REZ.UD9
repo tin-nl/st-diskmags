@@ -1,0 +1,395 @@
+ > Has anyone got any information on what the Falcons video registers
+ > do - the sort of values  they  should  take  &  general  pointers  to
+ > customised screen modes. I've heard that raster interrupts can be
+ > stabilised on VGA by adjusting some of the  horizontal  configuration
+ > registers during the HBL period.
+
+I got success with my screen rez changer now. I  can  tell  you  alittle
+bit, but you have to ask for specific stuff. Do you code assembler  (you
+really should) ?
+
+Here's the listing of a screen rez viewer...
+
+
+-------8<---------------------------------------------------------------
+;640*480*2=614400 bytes
+
+;672*624*1/2=269664 bytes
+
+        pea     super(pc)
+        move.w  #38,-(sp)
+        trap    #14
+        addq    #6,sp
+
+        pea     $20002
+        trap    #13
+        addq    #4,sp
+
+        clr     -(sp)
+        trap    #1
+
+super:  bsr.s   show_page
+        pea     $10002
+        trap    #13
+        move.l  d0,(sp)+
+        beq.s   super
+        rts
+
+show_page:      moveq   #27,d0
+        bsr     print_chr
+        moveq   #'H',d0
+        bsr     print_chr
+
+        lea     adr_tab(pc),a1
+        bra.s   hw_start
+hw_loop:        movea.l d0,a0
+        bsr     print           ;print name
+        moveq   #3,d1           ;type mask
+        and.b   (a0)+,d1                ;get type (0=binary, 1=decimal word)
+
+        move.l  (a1)+,d0
+        movea.l d0,a0
+        bsr.s   print_hlong             ;print address
+        moveq   #' ',d0
+        bsr     print_chr
+
+        moveq   #0,d0
+        bclr    #1,d1           ;byte or word ?
+        bne.s   word
+byte:   move.b  (a0),d0
+        bra.s   read_done
+word:   move.w  (a0),d0
+read_done:      tst.b   d1
+        beq.s   binary
+        bsr.s   print_decw
+        bra.s   reg_done
+binary: bsr.s   print_binw
+reg_done:       moveq   #' ',d0
+        bsr     print_chr
+        bsr     print_chr
+        bsr     print_chr
+        tst.l   (a1)
+        beq.s   hw_done
+        moveq   #13,d0
+        bsr     print_chr
+        moveq   #10,d0
+        bsr     print_chr
+
+hw_start:       move.l  (a1)+,d0
+        bne.s   hw_loop
+hw_done:        rts
+
+print_hlong     movem.l d0-d2,-(sp)
+        move.l  d0,d1
+        moveq   #8-1,d2
+hlong_loop      moveq   #15,d0
+        rol.l   #4,d1
+        and.b   d1,d0
+        move.b  hex(pc,d0),d0
+        bsr.s   print_chr
+        dbf     d2,hlong_loop
+        movem.l (sp)+,d0-d2
+        rts
+hex:    dc.b    "0123456789abcdef"
+
+print_binw:     movem.l d0-d2,-(sp)
+        moveq   #16-1,d2
+        move.w  d0,d1
+bin_loop:       moveq   #'0'>>1,d0
+        add.w   d1,d1
+        addx.w  d0,d0
+        bsr.s   print_chr
+        dbf     d2,bin_loop
+        movem.l (sp)+,d0-d2
+        rts
+
+print_decw:     movem.l d0-d1/a0,-(sp)
+        moveq   #0,d1
+        move.w  d0,d1
+        lea     5+temp(pc),a0
+        clr.b   (a0)
+prep_w_loop     divu    #10,d1
+        swap    d1
+        add.w   #'0',d1
+        move.b  d1,-(a0)
+        clr.w   d1
+        swap    d1
+        bne.s   prep_w_loop
+        bsr.s   print
+        movem.l (sp)+,d0-d1/a0
+        rts
+temp:   ds.b    6
+
+print_loop:     bsr.s   print_chr
+print:  move.b  (a0)+,d0
+        bne.s   print_loop
+        rts
+
+print_chr:      movem.l d0-d2/a0-a2,-(sp)
+        move.w  d0,-(sp)
+        pea     $30002
+        trap    #13
+        addq    #6,sp
+        movem.l (sp)+,d0-d2/a0-a2
+        rts
+
+adr_tab:        dc.l    syncmode,$00ff820a
+        dc.l    linewidste1,$00ff820e   ;LINEWIDTH-1 (Falcon)
+;       dc.l    linewidste2,$00ff820e   ;LINEWIDTH-1 (STE)
+;       dc.l    linewidste3,$00ff820f   ;LINEWIDTH-1 (STE)
+        dc.l    linewidfal,$00ff8210    ;LINEWIDTH (Falcon)
+
+        dc.l    stshift,$00ff8260
+        dc.l    ttshift,$00ff8262
+
+        dc.l    spshift,$00ff8266       ;SPSHIFT %.....2.T.HV8????: 2=2color mo
+de,
+T=Truecolor m ode, H=use external Hsync, V=use external Vsync, 8=8
+bitplane mode
+
+        dc.l    hhc,$00ff8280   ;HHC, Horizontal Hold Counter
+        dc.l    hht,$00ff8282   ;HHT, Horizontal Hold Timer
+        dc.l    hbb,$00ff8284   ;HBB, Horizontal Border Begin
+        dc.l    hbe,$00ff8286   ;HBE, Horizontal Border End
+        dc.l    hdb,$00ff8288   ;HDB, Horizontal Display Begin
+        dc.l    hde,$00ff828a   ;HDE, Horizontal Display End
+        dc.l    hss,$00ff828c   ;HSS, Horizontal SS
+        dc.l    hfs,$00ff828e   ;HFS, Horizontal FS
+        dc.l    hee,$00ff8290   ;HEE, Horizontal EE
+
+        dc.l    vfc,$00ff82a0   ;VFC, Vertical Frequency Counter
+        dc.l    vft,$00ff82a2   ;VFT, Vertical Frequency Timer
+        dc.l    vbb,$00ff82a4   ;VBB, Vertical Border Begin
+        dc.l    vbe,$00ff82a6   ;VBE, Vertical Border End
+        dc.l    vdb,$00ff82a8   ;VDB, Vertical Display Begin
+        dc.l    vde,$00ff82aa   ;VDE, Vertical Display End
+        dc.l    vss,$00ff82ac   ;VSS, Vertical SS
+
+        dc.l    vc,$00ff82c0    ;VC, Video Clock (Super78 puts $182 here)
+        dc.l    vco,$00ff82c2   ;VCO, Video COntrol (%............QHIL, Q=Quart
+er
+pixel widt h (quadruple pixels), H=Half pixel width (double pixels),
+I=Interlace (Skip line ), L=Line doubling
+
+        dc.l    0,0
+
+
+        IFEQ    0
+linewidste1     dc.b    "LWIDSTE1 ",0,3
+linewidste2     dc.b    "LWIDSTE2 ",0,1
+linewidste3     dc.b    "LWIDSTE3 ",0,1
+linewidfal:     dc.b    "LWIDFAL: ",0,3
+syncmode:       dc.b    "SYNC   : ",0,2 +1
+stshift:        dc.b    "STSHIFT: ",0,2 +1
+ttshift:        dc.b    "TTSHIFT: ",0,2 +1
+spshift:        dc.b    "SPSHIFT: ",0,2 +1      ;%.....2.T.HV8????: 2=2color mo
+de,
+T=Truecolor mode, H=use external Hsync, V=use external Vsync, 8=8
+bitplane mode
+hhc:    dc.b    "HHC    : ",0,3
+hht     dc.b    "HHT    : ",0,3
+hbb     dc.b    "HBB    : ",0,3
+hbe     dc.b    "HBE    : ",0,3
+hdb     dc.b    "HDB    : ",0,3
+hde     dc.b    "HDE    : ",0,3
+hss     dc.b    "HSS    : ",0,3
+hfs     dc.b    "HFS    : ",0,3
+hee     dc.b    "HEE    : ",0,3
+vfc     dc.b    "VFC    : ",0,3
+vft     dc.b    "VFT    : ",0,3
+vbb     dc.b    "VBB    : ",0,3
+vbe     dc.b    "VBE    : ",0,3
+vdb     dc.b    "VDB    : ",0,3
+vde     dc.b    "VDE    : ",0,3
+vss     dc.b    "VSS    : ",0,3
+vc      dc.b    "VC     : ",0,3         ; (Super78 puts $182 here)
+vco     dc.b    "VCO    : ",0,2 +1      ; (%............QHID, Q=Quarter pixel w
+idth
+(quadrup le pixels), H=Half pixel width (double pixels), I=Interlace
+(Skip line), D=line Doubling)
+        ELSEIF
+linewidste1     dc.b    "LINEWIDTH1 (STE)               : ",0,3
+linewidste2     dc.b    "LINEWIDTH2 (STE)               : ",0,1
+linewidste3     dc.b    "LINEWIDTH3 (STE)               : ",0,1
+linewidfal:     dc.b    "LINEWIDTH (Falcon)             : ",0,3
+syncmode:       dc.b    "SYNC                           : ",0,2 +1
+stshift:        dc.b    "STSHIFT                        : ",0,2 +1
+ttshift:        dc.b    "TTSHIFT                        : ",0,2 +1
+spshift:        dc.b    "SPSHIFT (%.....2.T.HV8????)    : ",0,2
++1      ;%.....2.T.HV8????: 2=2 color mode, T=Truecolor mode, H=use external
+Hsync, V=use external Vsync, 8=8 bi tplane mode
+hhc:    dc.b    "HHC, Horizontal Hold Counter   : ",0,3
+hht     dc.b    "HHT, Horizontal Hold Timer     : ",0,3
+hbb     dc.b    "HBB, Horizontal Border Begin   : ",0,3
+hbe     dc.b    "HBE, Horizontal Border End     : ",0,3
+hdb     dc.b    "HDB, Horizontal Display Begin  : ",0,3
+hde     dc.b    "HDE, Horizontal Display End    : ",0,3
+hss     dc.b    "HSS, Horizontal SS             : ",0,3
+hfs     dc.b    "HFS, Horizontal FS             : ",0,3
+hee     dc.b    "HEE, Horizontal EE             : ",0,3
+vfc     dc.b    "VFC, Vertical Frequency Counter: ",0,3
+vft     dc.b    "VFT, Vertical Frequency Timer  : ",0,3
+vbb     dc.b    "VBB, Vertical Border Begin     : ",0,3
+vbe     dc.b    "VBE, Vertical Border End       : ",0,3
+vdb     dc.b    "VDB, Vertical Display Begin    : ",0,3
+vde     dc.b    "VDE, Vertical Display End      : ",0,3
+vss     dc.b    "VSS, Vertical SS               : ",0,3
+vc      dc.b    "VC, Video Clock                : ",0,3         ; (Super78 puts
+ $182
+here)
+vco     dc.b    "VCO, Video COntrol (%QHID)     : ",0,2 +1      ;
+(%............QHID, Q=Quar ter pixel width (quadruple pixels), H=Half
+pixel width (double pixels), I=Interl ace (Skip line), D=line Doubling)
+        ENDC
+
+-------------------------------------------------------------->8--------
+
+And here's the listing to change back to that rez...
+
+
+-------8<---------------------------------------------------------------
+;256 color version
+        pea     super(pc)               ;routine
+        move.w  #38,-(sp)               ;superx, go cool
+        trap    #14
+        clr     (sp)            ;don't need to clean up
+        trap    #1
+
+get_key:        pea     $20002
+        trap    #13
+        addq    #4,sp
+        rts
+
+super:  pea     $58ffff         ;VgetMode
+        trap    #14
+        move.l  d0,(sp)         ;push old mode, ready for Vsetmode
+
+        bsr.s   get_key         ;wait till user ready to kill monitor
+
+        lea     my_vdo(pc),a6   ;pointer to my setup
+        bsr.s   set_vdo         ;go load hardware registers
+
+        bsr.s   get_key         ;wait til we watched the beauty
+
+        move.w  #$58,(sp)               ;VsetMode (overwrites highword)
+        trap    #14
+        addq    #4,sp           ;clean up stack
+        rts
+
+set_vdo:        move.w  sr,-(sp)                ;save IPL
+        ori.w   #$700,sr                ;IPL 7 for a while
+        movem.l (a6)+,d0-d7/a0-a5       ;get everything
+        move.l  a3,$ffff8260.w  ;l:$8260 (must be set as the first)
+        move.w  a1,$ffff820a.w  ;w:$820a
+        move.l  a2,$ffff820e.w  ;l:$820e
+        move.w  a4,$ffff8266.w  ;w:$8266
+        lea     $ffff8280.w,a1
+        lea     $ffff82a0.w,a2
+
+        move.w  d0,(a1)+                ;w:$8280
+        move.w  d5,(a2)+                ;w:$82a0
+        movem.l d1-d4,(a1)              ;l:$8282..$8290
+        movem.l d6-d7/a0,(a2)   ;l:$82a2..$82ac
+        move.l  a5,$ffff82c0.w  ;l:$82c0
+
+        move.w  (sp)+,sr                ;restore IPL
+        rts
+
+        IFEQ    0
+;gives 688x400 in 256 colors:
+my_vdo: dc.l    0       ;>d0    $8280, HHC (Horizontal Hold Counter)
+        dc.w    199     ;\d1    $8282, HHT (Horizontal Hold Timer)
+        dc.w    156     ;/      $8284, HBB (Horizontal Border Begin)
+        dc.w    13      ;\d2    $8286, HBE (Horizontal Border End)
+        dc.w    668     ;/      $8288, HDB (Horizontal Display Begin)
+        dc.w    147     ;\d3    $828a, HDE (Horizontal Display End)
+        dc.w    164     ;/      $828c, HSS
+        dc.w    0       ;\d4    $828e, HFS
+        dc.w    0       ;/      $8290, HEE
+        dc.l    0       ;>d5    $82a0, VFC (Vertical 
+        dc.w    1097    ;\d6    $82a2, VFT (Vertical 
+        dc.w    947     ;/      $82a4, VBB (Vertical Border Begin)
+        dc.w    147     ;\d7    $82a6, VBE (Vertical Border End)
+        dc.w    147     ;/      $82a8, VDB (Vertical Display Begin)
+        dc.w    947     ;\a0    $82aa, VDE (Vertical Display End)
+        dc.w    1093    ;/      $82ac, VSS
+        dc.l    512     ;>a1    $820a, syncmode
+        dc.w    0       ;\a2    $820e, LINEWIDSTE
+        dc.w    344 ;172        ;/      $8210, LINEWIDFAL
+        dc.w    0       ;\a3    $8260, STSHIFT
+        dc.w    0       ;/      $8262, TTSHIFT
+        IFEQ    0
+        dc.l    %00000010000 ;0 ;>a4    $8266, SPSHIFT
+        ELSEIF
+        dc.l    %00000010000 ;0 ;>a4    $8266, SPSHIFT
+        ENDC
+        dc.w    390     ;\a5    $82c0, VC (Video Clock)
+        dc.w    8       ;/      $82c2, VCO (Video COntrol)
+        ELSEIF
+;gives 688x400 in 16 colors:
+my_vdo: dc.l    0       ;>d0    $8280, HHC (Horizontal Hold Counter)
+        dc.w    199     ;\d1    $8282, HHT (Horizontal Hold Timer)
+        dc.w    156     ;/      $8284, HBB (Horizontal Border Begin)
+        dc.w    13      ;\d2    $8286, HBE (Horizontal Border End)
+        dc.w    668     ;/      $8288, HDB (Horizontal Display Begin)
+        dc.w    147     ;\d3    $828a, HDE (Horizontal Display End)
+        dc.w    164     ;/      $828c, HSS
+        dc.w    0       ;\d4    $828e, HFS
+        dc.w    0       ;/      $8290, HEE
+        dc.l    0       ;>d5    $82a0, VFC (Vertical 
+        dc.w    1097    ;\d6    $82a2, VFT (Vertical 
+        dc.w    947     ;/      $82a4, VBB (Vertical Border Begin)
+        dc.w    147     ;\d7    $82a6, VBE (Vertical Border End)
+        dc.w    147     ;/      $82a8, VDB (Vertical Display Begin)
+        dc.w    947     ;\a0    $82aa, VDE (Vertical Display End)
+        dc.w    1093    ;/      $82ac, VSS
+        dc.l    512     ;>a1    $820a, syncmode
+        dc.w    0       ;\a2    $820e, LINEWIDSTE
+        dc.w    172     ;/      $8210, LINEWIDFAL
+        dc.w    0       ;\a3    $8260, STSHIFT
+        dc.w    0       ;/      $8262, TTSHIFT
+        dc.l    0       ;>a4    $8266, SPSHIFT
+        dc.w    390     ;\a5    $82c0, VC (Video Clock)
+        dc.w    8       ;/      $82c2, VCO (Video COntrol)
+        ENDC
+
+-------------------------------------------------------------->8--------
+
+Now.. you use Blowconf to change the screen  resolution,  and  then  you
+execute Blowboot.prg from the autofolder. You now got the rez.  and  you
+run show_vdo.prg (first of the above files, when assembled)
+
+Now you write down everything (I should really make it save a file,  but
+I guess I'm a bit lazy), and type all of the info into test_vdo.prg.
+
+Ok, here's some info about blowconf... (You CAN synchronize  your  vbls,
+but it'll take some  time  to  find  the  correct  combination  for  VGA
+monitors!)
+
+If you got a MS2 monitor, you have no real problems! If you got a VGA or
+SVGA, you may have to try for a very long period of time!!
+
+Ok. Blowconf allows the following for a VGA monitor 30.8 kHz scanline up
+to 33kHz 56.7 Hz VBLs up to 60 Hz Blowconf won't save if  one  of  these
+frequencies are not valid. The more VBLs you get per  second,  the  less
+CPU time for bus read/write cycles. This is because the screen reads the
+bus, and when the screen reads the bus, the CPU has to  wait  until  the
+bus is free!
+
+Start by selecting your screen resolution.  Now  use  upper  border  and
+lower border  to  adjust  your  Vertical  Frequency.  You  can  see  the
+frequency in the right part of  the  dialogbox.  Remember  the  Vertical
+frequency should be between 56.7 and 60Hz. The upper and  lower  borders
+should be as close as possible, to appear on the middle of  the  screen.
+In case you for instance has a upper border at 10 and a lower border  at
+100, you increment the lower border, and decrement the upper  border  so
+they'll meet at around 55. This means that your upper and  lower  border
+will be around the same distance from the top and bottom... See ?
+
+Now set the left and right borders.  Again  you  have  to  look  at  the
+frequency. You only got one problem left... It's the  centering  of  the
+screen. I don't know how  to  calculate  this.  But  I  guess  the  only
+solution is to try enabling the MS2 button!! -But  you  better  do  that
+before you set the horizontal parameters.
+
+Finally a warning: Beware of the very high screen radiation... ;)                       

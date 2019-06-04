@@ -1,0 +1,264 @@
+-------------------------------------------------------------------------------
+===============================================================================
+-------------------------------------------------------------------------------
+
+                    Assembly language, in Devpac, Tutorial
+
+                                      by
+
+                         John Cove (Tronic of EfFeCt)
+
+                                     for
+                        
+                                  MAGGIE 19
+
+
+                       Series 1, part 1, Getting started
+
+-------------------------------------------------------------------------------
+===============================================================================
+-------------------------------------------------------------------------------
+
+
+
+
+
+  In the first part I am going to tackle very simple but very necessary things
+  like supervisor mode, exits, colours, move and movem commands...
+  
+  
+  _____________________________________________
+  Section 1.1 - Supervisor mode using the -(sp)
+  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+  
+  Here is the very standard routine to "get your machine into supervisor mode".
+
+  You are able to add things before the following routine to calculate how much
+  memory you have, etc, but I will not go into this. Also, some routines do not
+  need supervisor mode to run, but more about his later.
+  
+  Here is how to enter supervisor mode:
+  
+
+  --------------------------------------------------------------------------
+     clr.l  -(sp)                                           ...  line 1.1
+     move.w #$20,-(sp)                                      ...  line 1.2
+     trap   #1                                              ...  line 1.3
+     addq.l #6,sp                                           ...  line 1.4
+  --------------------------------------------------------------------------
+  
+  
+  This is going to sound  terrible but  I am  unsure  as  to  what  each  line
+  does!!   At this point (after line 4) you are able to save the value in your
+  stack so you can restore the value when you end your program but more  about
+  that later.
+  
+
+  You are now in supervisor mode!!  You can now play around with  the colours,
+  hertz, CPU (!) etc.... 
+  
+  The following piece of code is how you end your programs,ie to end supervisor
+  mode and return control to the C(entral) P(rocessing) U(nit).
+  
+
+  --------------------------------------------------------------------------
+     clr.l -(sp)                                             ... line 3.1
+     trap  #1                                                ... line 3.2
+  --------------------------------------------------------------------------
+  
+
+  This will return the control to the CPU and effectively end your program!!!
+  
+  So if you were to add the previous bits of code together, all that would
+  happen is, you would simply return to Devpac and nothing would change of
+  have happened!!!
+  
+  It is surprising that most people, who use 68000 to do intros and people who
+  want to figure out 68000 do not know about this!!
+  
+
+  ___________________________________________________________
+  Section 1.2 - Colour, using the move.w and movem.l commands
+  ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+  
+  Right, first off I will list the pitiful 16 colour registers:-
+  
+
+                $ffff8240       -       The background colour
+                $ffff8242       -       Colour 2
+                $ffff8244       -       Colour 3
+                $ffff8246       -       Colour 4
+                $ffff8248       -       Colour 5
+                $ffff824a       -       Colour 6
+                $ffff824c       -       Colour 7
+                $ffff824e       -       Colour 8
+                $ffff8250       -       Colour 9
+                $ffff8252       -       Colour 10
+                $ffff8254       -       Colour 11
+                $ffff8256       -       Colour 12
+                $ffff8258       -       Colour 13
+                $ffff825a       -       Colour 14
+                $ffff825c       -       Colour 15
+                $ffff825e       -       Background colour
+
+
+  Now I will list the simple colour palettes:-    
+
+                
+                     $000       -       Black
+                     $001       -       Dark Blue
+                     $007       -       Light Blue
+                     $010       -       Dark Green
+                     $070       -       Light Green
+                     $110       -       Dark Yellow
+                     $770       -       Light Yellow
+                     $100       -       Dark Red
+                     $700       -       Light Red
+                     $101       -       Dark Purple
+                     $707       -       Light Purple
+                     $011       -       Dark Cyan
+                     $077       -       Light Cyan
+                     $111       -       Grey ... Scale 1
+                     $222       -       Grey ... Scale 2
+                     $333       -       Grey ... Scale 3
+                     $444       -       Grey ... Scale 4
+                     $555       -       Grey ... Scale 5
+                     $666       -       Grey ... Scale 6                     
+                     $777       -       White
+                     
+                     $704       -       Magenta (in red/purple scale)
+
+
+  So, if you wannted to change the background colour to red, then you would#
+  write the following line:-
+  
+
+                        move.w  $700,$ffff8240.w
+                        ||||||  |||| |||||||||||
+                        111111  2222 33333333333
+                        
+
+  Sequence  one is the move command that will effectively move what is defined
+  in sequence two, and implement it into sequence three!!  Yes??  So, sequence
+  one is the move command, sequence two is the data you are moving to sequence
+  three, and sequence three is the background colour register,or what you want
+  to be changed by what is in sequence two!!!   Easy really!!!
+  
+  So, you can change sequence two, for different colours and  you  can  change
+  sequence three for other colour registers!!   You can also move sequence two
+  into a data bank, so you can use it, for restoring, or whatever, later on...
+  
+
+        =============------------------------------
+        program start - for example SUPERVISOR MODE
+        =============------------------------------
+
+        move.w  $700,red_colour_bank
+        
+        =======
+        program
+        =======
+        
+        move.w  red_colour_bank,$ffff8240.w
+        
+        ===========--------------------------------------
+        program end - for example clr.l -(sp) ... trap #1
+        ===========--------------------------------------
+
+  red_colour_bank      dc.w    0
+
+
+  Now it gets a little more complicated. You are moving $700 into the data bank
+  called red_colour_bank, which incidentally you can call whatever you  wanted,
+  but you MUST define what kind of store red_colour_bank  is!!!!   For  example
+  you are using a "move.w" command, so the bank MUST be defined as a "dc.w"....
+  
+  You get different kinds of stores, they are "dc.w",  "dc.b"  and "dc.l", plus
+  the "dcb.b" and others which I will go into later!!   You MUST  NOT  mix  and
+  match the ".w" with the ".l" with the ".b"!!!   If you are using the "move.b"
+  command to move data into a bank, then you MUST have a "dc.b" store!!!!!!!!!!
+  
+  The same when you are using the banks, if you have used a "dc.b" store,  then
+  you must using the "move.b" (or whatever)to use what is in the store correctly!
+  
+  I hope I have explained this so it is easy to understand, it  is a very  easy
+  concept which MUST be obeyed!!
+  
+
+  So, if you have understood this, then you can see what it can be used for  in
+  say an intro...you can save the contents of the colour registers into sixteen
+  banks and then restore then, by moving the contents of each store  into their
+  respective colour registers......oh god, this is getting compilicated!!!!!!!!
+  
+  There is a far easier way of does this, though........you can use a "movem.l"
+  command!!!  For example:-
+  
+  If you wanted to store and restore the ST palette, you would do it like this:-
+  
+
+        =============------------------------------
+        program start - for example SUPERVISOR MODE
+        =============------------------------------
+
+        movem.l    $ffff8240,d0-d7
+        movem.l    d0-d7,sts_colour_bank
+        
+        ===========--------------------------------------
+        program end - for example clr.l -(sp) ... trap #1
+        ===========--------------------------------------
+
+  sts_colour_bank      dc.l     16
+
+
+  Now, you should be able to see you this works instantly........it  simple moves
+  the sixteen colour datas into the register d0-d7 and then  moves  the  contents
+  of d0-d7 into the bank, which  can  hold  upto  sixteen  different  data  bits,
+  sts_colour_bank.  You can then restore the palette with the following routine:-
+  
+
+        =============------------------------------
+        program start - for example SUPERVISOR MODE
+        =============------------------------------
+
+        movem.l    sts_colour_bank,d0-d7
+        movem.l    d0-d7,$ffff8240
+        
+        ===========--------------------------------------
+        program end - for example clr.l -(sp) ... trap #1
+        ===========--------------------------------------
+
+  sts_colour_bank      dc.l     16
+
+
+  See, it is very easy!!   You can then use this routine to store any value
+  you want, for example, the vbl values and mfg values......no I  will  not
+  explain these, yet....I do not fully understand them myself!!!
+  
+
+  Anyway, I think that that is enough for this part, as there is quite a lot
+  here to get to grips with!!   You must try these routines out for yourself
+  and mess around with them to see what you can do!! Have fun and good luck!
+  
+  It is a very good idea to get a reset resident version of Devpac too!!!!!!
+
+-------------------------------------------------------------------------------
+
+
+       Tronic of Effect, aka John Cove, [C]opyright 1995 ... started: 04-11-1995
+                                                            finished: 05-11-1995
+
+
+            "I reserve the right to publish these tutorial series
+             wherever  I  choose...   Only,  with express written
+             confirmation,  is  this  to  be  published by anyone
+             other than myself.   These  series  were written for
+             ST WORLD, but if I feel that the series is not being
+             taken advantage of in the way that most ST USERS are
+             able  to read  the  series, then  I will publish the
+             series in my own, and other  peoples, disk magazines
+             and products."
+
+
+             Series written for Sion Dovey, editor of ST WORLD.
+           --------------------------------------------------------
+         -----------------------------------------------------------

@@ -1,0 +1,645 @@
+066030003040000132006000006008000
+11
+2#1
+F0110030001
+9[..................................................................]0110
+€----------------------------------------------------------------------
+ news
+----------------------------------------------------------------------
+
+                            RUMOURS & LIES€
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+
+[] PHENIX TO BE UNVEILED AT ATARI MESSE
+
+The legendary new super-atari, the Phenix, will be shown for the first
+time at the Atari  Messe  show  in  Neuss  Germany  on April 10th. The
+Phenix has been in development for 2 years now and it the most eagerly
+anticipated atari machine since the Falcon.
+
+Centek have also changed  the  specs  of  the  machine.  There will no
+longer be a 68040 model,  ALL  machines  will  be  fitted with a 68060
+running at 80Mhz. The  DSP  has  also  been  speeded  up, the Phenix's
+DSP563001 now runs at 100Mhz. Bus speeds have also been increased.
+
+Members of the maggie team are very  eager  to get their hands on this
+machine, and at least two of us  will definitely be buying Phenix's as
+soon as they are  released.  The  Phenix  is  the  future of the Atari
+scene.
+
+
+[] MYSTIC BYTES MAKE AMIGA EMULATOR FOR FALCON
+
+Polish demo kings "Mystic Bytes"  are  planning  an Amiga emulator for
+the Falcon.  Wiz-Coder  Sqward  is  creating  an  emulator  capable of
+running Amiga-OS and  compatible  applications.  This  is an ambitious
+project, but at least both  machines  are  based  on the same CPU. The
+difficulty will  come  in  emulating  the  custom  chips  and hardware
+registers. Sqward is currently looking  into  the PMMU features of the
+030 - this will allow him to emulate hardware registers without having
+to trap every single read and write to memory.
+
+It is unlikely that this  emulator  will  be  able to run the hardware
+bashing Amiga demos, but  there  is  a  chance  that  some of the more
+cleanly written amiga games may be able  to run. It would also be nice
+to see some of the legendary  amiga  art  packages making their way to
+the atari.
+
+The main drawback with this project  is  that Sqward is not attempting
+to emulate the copper, instead he will be emulating the graphics cards
+that came with the  more  recent  amigas,  specifically the Cyberstorm
+System.
+
+
+[] DUNE GIVE US PARADISE
+
+Dune have just released an  ST  intro!  'Paradise' was created back in
+1995, but never released. The recent surge  in ST demos that has given
+€us 'Do Things' and 'Nostalgico' encouraged  Dune  to dig out their STs
+and finally release this  production.  It's  a typically well designed
+Dune intro with very  nice  graphics  that  works  on  both the ST and
+Falcon.
+
+Apparently Dune  also  have  a  2  disk  ST  megademo  that  was never
+released. This was seen at the  Fried  Bits  3, but there were still a
+few minor bugs to clean up.  Dune  are promising to release some other
+stuff, so we may finally see this demo.
+
+
+[] NEW BEAT RELEASE FLEX TRACKER
+
+Willie creators New Beat  have  released  version  0.5 of their Falcon
+Tracker 'FlexTrax'. It support  4,  6  and  8  channel MODs, and makes
+extensive use of the DSP  for  effects  like  Reverb and Delay. Thomas
+will be releasing the complete  replay  source  soon.  As with all New
+Beat productions, FlexTrax looks great. It has the potential to be the
+most popular tracker on the Falcon.
+
+
+[] ERROR IN LINE 99
+
+The atari scene are heading en masse to  the Error In Line 99 party in
+Dresden over the Easter Weekend.  All  the  big  Players will be there
+including organisers Checkpoint, Escape,  Dead Hackers Society, Mystic
+Bytes, Fun, Mind Design, Cobra,  New  Beat  and  also the Maggie Team.
+Like Siliconvention before it, this  party  should  see the release of
+numerous demos and intros for the Falcon  and ST. Everyone seems to be
+working on something so competition will be fierce.
+
+
+[] EIL INTROS RELEASED
+
+Two invite intros have been released  for  the EIL 99 party. The first
+is by the organisers Checkpoint and runs on the ST. It features a nice
+feedback effect on a fuji logo. DHS have created a Falcon intro with a
+'rot zoomer' lake effect. To gain  access  to the hidden screen in the
+DHS intro, press '5' and '*' on the text screen at the start.
+
+
+[] CRACKMAN FOR EIL
+
+Teenage are busy putting the  final  touches  to their pacman game for
+the STe and Falcon  "Crackman".  Amongst  the  additions include a new
+powerpill that lets you  eat  ghosts.  Currently  all  that is left to
+finish are the intro  sequence  and  the  end  sequence.  They plan to
+release the final version at EIL 99. Tinker.(there I mentioned you ;-)
+
+
+[] OXYRON HAVE FUN
+
+Legendary C64 and Amiga crew are  collaborating with FUN for their EIL
+demo. The current team working on  this project are Earx (Code), Havoc
+(Graphics), Dforce (Music) and Noxs/Oxyron  (Music). They are creating
+a Falcon megademo which is said to  be 'huge'. Fungle Beats has proved
+€FUN's demo capabilities, lets hope for something equally good at EIL.
+
+
+[] PSX GRAPHICS RIPPER RELEASED
+
+Patrice Mandin has  coded  a  graphics  ripper  for PlayStation games.
+Provided you have a CD-Rom you are now able to steal graphics from PSX
+games. Like the .PI1 on the ST and  .GOD  on the Falcon, the PSX has a
+standard graphics format - the  .TIM.  This  ripper allows the reading
+and conversion of TIM files from  PSX  CDs - handy for anyone planning
+ports of PSX games!
+
+
+[] OPEN GL HITS ATARI
+
+MESA - a version of OpenGL, the popular 3D API, has been ported to the
+Falcon. OpenGL is a library of  3D routines which allow programmers to
+create 3D applications with ease and  speed.  It has proved popular on
+the PC,  both  because  it  is  easier  to  program  than  Microsoft's
+cumbersome Direct3D and  also  because  it  is  faster.  MESA has been
+ported by some French guys using the LDG system (Library Dynamic GEM).
+We hope to have a  full  report  into  this interesting API next issue
+once we have figured out all the French documentation!
+
+
+[] BINLINER SOURCE RELEASED
+
+The 'Binliner' project may be consigned to the dustbin of history, but
+Tat hasn't totally given up on  the  atari  scene. He has opened a new
+section of his web page which  is specifically dedicated to this demo.
+Here you can find executable  binaries  of  some  of the screens, full
+source code for the demo and also  a range of utilities he created for
+making the demo.
+
+The DSP code and demo  o/s  should  be  useful  to any coders planning
+Falcon demos. Currently documentation  of  the  routines is spare, but
+Tat is planning to write a full set of support docs which will explain
+how everything works and give people an insight into creating triple A
+Falcon demos.
+
+
+[] BUT IS IT ART?
+
+The Black Lotus continue to  work  away  on their highly secretive new
+falcon demo. We have been lucky enough  to  get our hands on a preview
+and can say that it is  really  mind  blowing!  It can also be monitor
+blowing; you are going  to  need  a  100hz  VGA  monitor  to see Art's
+effects  in  their  full  glory.  The   demo  just  needs  some  minor
+enhancements on the graphics  and  a  suitable  piece  of music before
+being released.
+
+
+[] VECTRONIX REORGANISE
+
+Maggie  Chart  winners  "Vectronix"   are   undergoing   a  major  re-
+organisation. Long standing  members  Metallinos  and  Phoenix  are to
+€leave the group. We will all  miss  them  greatly  as we have a lot of
+respect for the work they have done over the years, both on the ST and
+Falcon. But Vectronix are not dead, they will now by led by new member
+SJX, a talented young coder  and  hacker.  Phoenix believes he bring a
+lot of enthusiasm and fresh impetus  to  the  group. The future of the
+much read 'VexNews' is unknown at this point.
+
+
+[] HEXEN AND HERETIC HIT FALCON
+
+Following on from his port of  ID's  DooM, French coder Patrice Mandin
+is converting two more first person shooter  to the Falcon. He has got
+hold of the source code to both Hexen and Heretic and is busy creating
+Falcon versions of  both  of  them.  With  the  widespread adoption of
+accelerators like the  Nemesis  and  Centurbo  2,  these  games have a
+chance of running at a reasonable rate on these enhanced machines.
+
+
+[] TEENAGE ANNOUNCE CIVILISATION CLONE
+
+Crackman creators "Teenage" have  announced  the  plans for their next
+game. "Politically Incorrect" will be  a civilisation clone. You start
+at the dawn of  time  and  must  build  a  'great civilisation' (sound
+familiar?). The game is  based  or  real archeological discoveries are
+will incorporate "the most recent theories  about the history of man",
+including details of the Maya and Egyptian civilisations.
+
+Phenomenen has already coded  the  map  scrolling system which, unlike
+the original game, runs  in  one  vbl!  Some  basic  AI  has also been
+completed. Everybody loves civilisation, so  full marks to teenage for
+embarking on such a cracking project.
+
+
+[] ICQ COMES TO GEM
+
+First there was IRC or "Internet Relay Chat". This allowed people with
+internet connections to enter 'chat channels' and speak to like minded
+people. Each channel had a topic,  and  the most popular channels with
+Maggie readers are obviously #atari  and  #atariscne. The problem with
+IRC is that you can only see  the  people  who are on the channels you
+are connected to.
+
+ICQ allows  you  to  talk  to  anyone  who  is  currently  running ICQ
+software. Instead of having to log on  to channels, you have a hotlist
+of your friends and you  can  see  when  they are connected and easily
+start chatting to  them  without  waiting  for  them  to  log  on to a
+specific channel.
+
+ICQ has taken the PC world by storm,  and  looks set to do the same on
+the atari. ST2DISK author,  Pascal  Nowit,  is  currently coding a Gem
+version of ICQ - something that  is eagerly anticipated with all atari
+users with a net connection.
+
+
+[] EARX TAKES OVER QUICK DSP
+
+€Development of the 'Quick  DSP  Assembler', Audoly Giles's replacement
+for the horrendously slow Motorola tools, has been taken up by EarX of
+FUN. He has already released numerous  updates, fixed lots of bugs and
+added a lot of features. It may  not  quite yet be as comprehensive or
+reliable as the motorola assembler,  but  it  is amazingly fast and is
+highly recommended to all Falcon coders.
+
+
+[] MIND DESIGN PLAN EIL DEMO
+
+Swedish coders Mind Design are working  on  a demo for the forthcoming
+Error In Line 99 party. This  is  likely  to include routines from the
+unfinished "Modest" 96ktro. Help may come  from New Beat coder Thomas.
+The Viking is also planning to  buy  a  Net  Yaroze and write some psx
+games.
+
+
+[] NETWORKING MADE FUN
+
+Fun are creating an Ethernet adaptor for  the Atari! At last we should
+be able to have a  decent  and  reliable networking system. The system
+will be based  around  an  Ethernet  10baseT  connection  giving you a
+transfer rate of 10Mbit/s on the  TT  and Falcon. But ST owners aren't
+going to be left behind  -  there  is  an  adaptor  being made for the
+ST/STE and Mega series too.
+
+This should  allow  you  to  access  networking  peripherals  such  as
+printers and  modems,  easily  transfer  files  between  machines. You
+should even be able to link your atari up to PC and Mac networks!
+
+This is a  brave  project,  and  a  working  ethernet connection would
+surely be worth their asking price of  135 euros. It is still in early
+stages of development, but it is a project well worth supporting.
+
+
+[] DHS PLAN ST MEGADEMO
+
+Super-league winners DHS are planning to  raise their status on the ST
+by creating an ST mega  demo  for  EIL  99. Although their previous ST
+productions such as  'Massacre'  and  'DHS  Porno'  hardly  pushed the
+machine to the limits, they are  now  older and wiser and could really
+do something special.
+
+According to  inside  sources,  the  effects  will  includes  such DHS
+standards as tunnels, bump mapping  and  rot  zoomers. Perhaps we will
+get to hear the YM abilities  of  Toodeloo! Graphics are being painted
+by Edo of Sector One.
+
+
+[] THINKING SILLY
+
+Silly Software have just unveiled  their  latest  game. "Thinker" is a
+puzzle game for the  ST  and  Falcon.  It  was  originally designed by
+Stosser Software, but  Silly  then  took  over  devlopment  with Deano
+coding it to completion. Expect a full review in the next issue.
+
+€
+[] CREAM DOING MORE THINGS
+
+Cream are not  resting  on  their  laurels.  Following  the superb "Do
+Things", Candyman is back on devpac  coding effects. Although not much
+is yet complete, he hopes  to  have  another  ST demo released for the
+Error In Line party. If it's half as good as "Do Things" we are in for
+another treat!
+
+Candyman is also buying a Falcon.  He  is already teaching himself DSP
+assembly language. Given the quality  of  his  ST demos, a Falcon demo
+from Cream could be quite stunning.
+
+
+[] EQUINOX ANNOUNCE NEW MEGADEMO
+
+More nostalgia from France as another  old ST demo crew announce their
+plans to release a  mega  demo.  The  creators  of  "Eat My Bollocks",
+Equinox, are working on "Virtual  Escape",  a demo that was originally
+coded back in  1993,  but  was  never  completed.  Just  about all the
+screens are finished, Keops just  needs  to  write the loading system.
+Work will re-commence on this production on March 19th.
+
+
+[] VIDEL CRACKED
+
+The search for a perfect video  library  for the Falcon continues. The
+Videl chip has the advantage  of  being  highly flexible, but this can
+also be a disadvantage when trying  to  exactly restore screen mode on
+exiting a demo. Sage of Escape  has  developed a very clever system of
+Videl routines which appear to work  perfectly in all Falcon modes and
+even cope with speeders such as  Nemesis  and  Blow-Up. Evil of DHS is
+just about to release a video  library  containing these routines - no
+longer will we have  to  endure  horrible  monitor  sync problems when
+quitting a demo or game.
+
+
+[] NOSTALGICO RELEASE
+
+It was like the 'good old days' - an ace ST megademo was released with
+a spanking full screen  main  menu  and  lots  of  cool effects hidden
+behind doors.  Oxygene  finally  completed  their  eagerly anticipated
+'Nostalgic-O' demo and it has definitely been worth the wait. From the
+amazing 3D in  the  intro  to  the  super  smooth  main  menu  and the
+overlander's texture mapping screen, this  is  an  ST demo that puts a
+lot of Falcon releases in the shade.
+
+
+[] COBRA BITE BACK
+
+There is plenty of activity in the  Polish scene at the moment. Cobra,
+who split last year with  some  members  joining the Atari division of
+Whelpz, have re-organised. Mayonez has left whelpz and rejoined Cobra.
+They also now have the services of Poland's number 1 graphist, Vulgar,
+who was kicked out  of  the  Mystic  Bytes  by  Grey. Expect some more
+releases to follow 'Generation Gap'.
+€
+The future doesn't look so bright  for Whelpz atari division which has
+been reduced to just  Macgyver.  His  Falcon  is  broken  and it looks
+unlikely that we will see anything from Whelpz for some time.
+
+
+[] SYNTAX TERROR
+
+Despite rumours to the  contrary,  Syntax  are  still active on Atari.
+Klocek has just bought a Falcon so  maybe we will see 'Sometime Falcon
+flies higher than bumblebee!' At  the  moment  Yoyo  is very busy with
+school, but it shouldn't be long  before  this  great coder is back on
+devpac.
+
+Meanwhile  Klocek  is  working   on   a   new   atari  diskmag  called
+"underground" which will incorporated "player mag". This will again be
+mainly in Polish, but  we  hope  for  some  English  articles. Eros is
+helping to write some articles.
+
+
+[] SUPREMACY BURN CDS
+
+French coders Supremacy are busy creating  a series of CD-Roms for the
+atari. These will contain  a  complete  collection  of  all the Falcon
+demos and intros ever released.  Razaac  is  also planning to make CDs
+full of ROMs for emulators  -  handy  for  RG  if they are seeking new
+releases for GBX or GodleNES!
+
+
+[] FUN PARTY
+
+Dutch party-animals, FUN, are planning a  demo party in the summer. It
+will be held in Utrecht, Holland,  from  the  28th July to 4th August.
+People already planning to  attend  include  members  of Mystic Bytes,
+Poets of Decay, TSCC, Popsy  Team,  Wildfire, Sentry, Teenage and some
+of the Maggie Team.
+
+
+[] CENTURBO II RELEASED
+
+French hardware wizards, Centek, have finally completed their Centurbo
+2 upgrade board. Unlike the Centurbo  1 and Nemesis, this board really
+gives the Falcon a large kick up the ass
+
+
+[] FATBOY SLIM "YOU'VE COME A LONG WAY, ATARI"
+
+Fatboy Slim is currently  riding  high  in  all  the charts around the
+earth (and possibly  other  planets)  with  tracks  like 'Rockerfeller
+Skank', 'Gangster Trippin' and 'Praise You'. It is interesting to find
+that all his tunes are composed on a humble ST, proving you don't need
+500mhz processors and  overly  complex  new  software  to create chart
+topping tunes. Nice one, Norman.
+
+
+[] COBRA BRIDGE GENERATION GAP
+€
+The recent internal split in Polish demo crew Cobra has seemed to make
+some of its members more  active.  The  first  fruit of this increased
+motivation is 'Generation Gap', released at  the Last Party in Poland.
+Although not up to the  standards  of  the  top  Falcon demos, it is a
+promising start, especially  considering  it  was  coded  by  a former
+graphist and swapper! What next, Grey starts DSP coding?
+
+
+[] SENDMAIL COMES TO ATARI
+
+Assemsoft coder OZK is busy porting SendMail to the atari. This is the
+de facto mailing program on linux systems, and OZK hopes to bring this
+package to atari users with multi-tasking operating systems.
+
+
+[] HD DRIVER 7.7
+
+HD Driver, the de facto hard  drive  driver  (bit of a mouthful that!)
+has reached version 7.7 and its gleaming with features such as:
+
+* Supports Atari SH/Megafiles, SCSI1/SCSI2/SCSI3/Ultra-SCSI, IDE/EIDE,
+  Ultra-DMA and Atapi drives.
+* Runs on every atari including Hades, Medusa and Milan.
+* Works on all kinds of drives including Zip, Jaz, SyQuest, EZ, LS120
+  and even DVD-RAM
+* There is no upper limit for drive capacity!
+* Special functions for ZIP and JAZ drives
+* Automatic secure recognition of media changes
+* Support for Dos/Windows compatible partitioning
+* Long filename support
+* Non Blocking DMA transfers with MagiC
+
+With such an impressive array of  functions,  it  is no wonder that HD
+Driver has become so popular. It  will  be interesting to see how well
+Centek's HD Driver "Cecile" can compete.
+
+
+[] RG SHARPEN THEIR AXES
+
+Whilst all else around us seem  to  be losing their heads, RG increase
+their headcount by unveiling some new contributors. Entering the games
+industry hasn't turned RG against the  atari,  in  fact it has had the
+opposite effect with RG members enlisting  the  help of members of the
+games industry for  future  productions.  Already  one  of  the coders
+behind Colin McRae Rally has been  helping to optimize one of MrPink's
+intros. Andy Debus, who worked on the PlayStation game Chill, has been
+painting graphics for RG. Most exciting  of  all,  we have a new coder
+who goes by the rather frightening name  of 'Axeman'. He is demo coder
+from the C64 and Amiga scene who used to be in Fairlight.
+
+
+[] ARMEGEDDON IT
+
+Mind Design continue  to  work  on  their  Worms  game  for the Falcon
+"Armegeddon". The pace of development has slowed down since Christmas,
+€but Deez still hopes to finish this project. The specs are impressive,
+with everything running at 50fps in true colour on VGA and RGB.
+
+
+[] JAG BREEDS NEW DOOM CLONE
+
+A new breed of Jaguar games are being developed. Renowned Lynx and Jag
+coder, Carl Forham, has  got  hold  of  the  Doom  source  code and is
+planning his own first  person  game.  Already some optimisations have
+been made allowing the engine to  run  at  twice the resolution in the
+same rate. The game planned is entitled "The Breeders" and is based on
+a Role Playing Game.  It  should  be  something  for game-starved jags
+users to look forward to.
+
+
+[] POPSY PARTY
+
+French crew Popsy Team are organising a demo party for the summer. The
+VIP party will be held in  St  Priest,  near Lyon, France, from 2nd to
+4th of July. This may be  a  good  alternative from the Volcanic party
+which has gone very pc-oriented (see review by edo/sector one).
+
+
+[] NEW DEMO ARCHIVE OPENS
+
+Tommy of the Comic Pirates is helping  to  set up a huge new demoscene
+related site which will contain  atari  relevant material. Here is the
+information he sent us:
+
+ The TRebel archive will become a huge archive of demoscene-related
+ stuff, like demos and music. It contains more than 9 gigabytes of
+ data, and will at least have 5 mirrors.
+
+ TRebel is _not_ a crew. We, the staff, come from different crews
+ worldwide.
+
+ Our only working mirror is atm ftp://hu.trebel.org (hungary) and
+ still under construction. The idea of TRebel came when The Hornet
+ archive was closing. But Hornet was only supporting stuff for PC
+ while we also will support Atari etc.
+
+ The archive should be working completely in the middle of this year,
+ meanwhile you can contact us at feedback@trebel.org
+
+
+[] NEW TEENAGE MEMBER
+
+Drug-crazed Dutchies, Teenage, have  recruited  a  new member from the
+UK. "Beerserker" will  be  responsible  mainly  for  playtesting their
+releases but also hopes to  start  programming  on future releases. He
+also has a comedy name.
+
+
+[] DBE PLAYER 2.03
+
+Sector One have released a new version of their 'DBE PLAYER'. Not only
+€have there been a number of bugfixes,  there are also additions to the
+playlist.
+
+
+[] LYNX SFX
+
+Atari Lynx programmers may be  interested  in a sound programming tool
+created by Carl Forham. "SFX"  allows  you  to  get  to grips with the
+Lynx's complex audio chip through an intuitive GUI.
+
+"SFX" gives you full access  to  all  four  channels of Lynx audio and
+also all the audio  registers.  You  can  also  tinker  with the audio
+registers when mixing one or  more  channels.  When you are happy with
+your sound, you can  dump  it  out  and  include  it  straight in your
+
+program. This saves the hassle of messing around with sound effects in
+your code and having to recompile every time you need to test.
+
+
+[] PSX2 ANNOUNCED
+
+Although this is not strictly atari  news,  the release of the PSX2 is
+an event  of  significance  to  all  computer  users.  The  specs  are
+incredible - not only does it wipe the floor with the dreamcast but it
+even  blows  away  top  end  PCs   and  even  competes  with  graphics
+workstations. This could mark a  sea-change  in the computer landscape
+with less and less people buying  PCs  to  play games, this could also
+threaten the sales of 3D card  manufacturers.  Perhaps in 5 years time
+it will not be Intel/Microsoft holding a monopoly but Sony.
+
+For full details of this machine, see elsewhere in this issue.
+
+
+[] BATTLESPHERE BATTLES FOR RELEASE
+
+The future of 4Play's Jaguar  game "Battlesphere" is currently hanging
+in the balance. Despite the demise of atari, 4Play continued to create
+this ambitious 3D shooter.  To  press  their  game onto cartridge they
+need the permission of Hasbro (who recently bought Atari from JTS) and
+an encryption key. Hasbro seem  less  than  keen to help 4play release
+their game. It would be a real shame if this game doesn't get released
+due to corporate red tape.
+
+
+[] THALION TRIBUTE PAGE OPENS
+
+Alex Holland has opened  a  set  of  pages  dedicated to the legendary
+games company 'Thalion'. They were famous  for employing demo coders -
+mainly members of the Union -  and  getting  them  to make some of the
+most technically stunning  games  on  the  ST.  The  Thalion page will
+feature downloadable versions of all Thalion games. Ever wondered what
+Nic of TCB looked like? Well you  can  find out in the gallery section
+that has snapshots of  many  thalion  members.  There  will also be CV
+section which lists all Thalion  members  productions and a 'where are
+they now' bit, as Alex tracks down  the current location of the former
+thalion heads. Check it out at http://thalion.atari.org
+€
+
+[] REEKING RUBBER ENHANCEMENTS
+
+Not a week goes by without Nature  adding some extra features to their
+racing game "Reeking Rubber". Now  that  both Instream and Hencox have
+Falcons, development should speed  up.  They  have  also just bought a
+Centurbo 2 board and got the game running on this - it does 30fps!
+
+New features  in  Reeking  Rubber  include  the  addition  of tunnels,
+improved  texture  mapping  with  atmospheric  shading,  environmental
+effects such as snow and rain and  also a multiplayer mode! This works
+over a STING network which should allow you to play over the internet.
+You can also link  falcons  together  with  MIDI  leads  or null modem
+cables. Its about time we had an alternative to midi maze!
+
+Nature will be showing off the latest version of Reeking Rubber at the
+Error In Line party.
+
+
+[] STNICC 2000
+
+Richard Karsmakers, editor of the sadly  missed ST News, is organising
+a huge atari party for the  year  2000.  This will celebrate the tenth
+anniversary of the legendary  ST  News  international Christmas Coding
+Convention. Richard hopes to attract  lots  of  members  of the old ST
+demo scene to this party, including TEX, The Carebears, The Lost Boys,
+ULM, Legacy, Overlanders, TNT Crew,  ST CNX and Delta Force.
+
+The party will be held from  December  15th  - December 20th so if you
+want to meet some of the  most  famous  crews from the atari scene get
+sorting out your diaries! Richard Karsmakers can be contacted at:
+ cronos@atari.org
+
+
+[] CODE STAR AWARD
+
+Mr Pink of Reservoir  Gods  has  received  a  Code  Star award for his
+contribution to the atari scene. The Code Star awards have been set up
+by Karen and Terry Ross  and  reward  people  who  have worked hard to
+support the current atari  scene.  Mr  Pink  would  like  to thank the
+organisers of this award and the people who nominated him.
+
+
+[] PIE BILL GATES
+
+If you enjoyed seeing those crazy  belgians covering Mr Microsoft with
+goo, now is the chance to  relive  the  experience from the comfort of
+your own armchair. Pie-crazed Frenchies, Sector  One, are working on a
+new game that will allow  you  to,  quite literally, 'Pie Bill Gates'.
+The Pie is the limit!
+
+
+[] RESERVOIR JOBS
+
+Will wonders never cease?  Some  members  of  RG  have  managed to get
+€themselves jobs and will no longer spend their days dodging university
+lessons and sleeping through all the daylight hours.
+
+MrPink was first to be  roped  into  the  world  of employment. He now
+works  for  a  games  company  in  Oxfordshire  programming  the  Sony
+Playstation. His  is  currently  writing  the  graphics  engine  for a
+football game entitle "UEFA  Champions  League  2000".  It  is due for
+release next april.
+
+Being such a nice chip, MrPink  recommended  the talents of MSG to his
+company and they have  also  employed  him!  MSG  now  works as a lead
+tester on a strategy game called  "War Monkeys" which will be released
+on the Dreamcast and PC. He  is  also  coding some AI routines. Aren't
+these musicians versatile?
+
+Neither MrPink nor MSG has "quit  the  scene", they haven't sold their
+Falcons and they are not buying PCs. They may have less time for their
+atari activities but they are still as  keen as ever. And they will be
+investing their new found wealth in spanking new Centek Phenixs.
+
+
+----------------------------------------------------------------------
+   news -> gossip -> rumours -> lies -> scandal -> mrpink@atari.org
+----------------------------------------------------------------------

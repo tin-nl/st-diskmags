@@ -1,0 +1,146 @@
+NON CODERS STOS
+-----------------------------------------------------------------
+                     For The Non Programmer 
+-----------------------------------------------------------------
+
+In this issues STOS lesson is an intro that even one who are  new 
+in  the field of coding can use.  The intros gfx and sound is  in 
+separate  files and you can therefore change the looks and  sound 
+of the intro without any knowledge about coding.
+
+You needs STOS to load and compile this intro.  You also needs to 
+know a bit about basic to change the text page in the beginning.
+
+
+How To Change The Music:
+
+The  intro loads any THK sound file with the name 'TEST1.THK'  as 
+long as it isn't longer than 18000b (18kb). So the only thing you 
+have  to do is find a Megatizer song you likes,  save it  in  THK 
+format if it ist in it already and rename it to 'TEST1.THK'.
+
+  
+
+How To Change The GFX:
+
+The  gfx  can  be  found  in the  STOS  folder  ubnder  the  name 
+'DBAINT.NEO'  it  is  in standard NEO format so  all  gfx  progys 
+should be able to load it.
+
+When you have loaded the pic it would be smart to change colour 0 
+to another colour than black so you can differentiate it from the 
+other black.  Colour 0 is the 'See Through' colour and  shouldn't 
+be used as a part of an image.
+
+
+The Wave 'Road'
+
+This  is  blocks that forms the in/out waving DBA logo  they  are 
+inside x0,y0 - x64,x40.  You can change these if you like but you 
+can  only use colours 0-7 as the fourth bitplane is used  by  the 
+DBA  logo.  You can flip all or parts of these blocks around  but 
+dont move them outside the designated areas,  remember that  they 
+should always be inside a x16 y8 blocked area  as this is the way 
+they are used by the prog.
+
+Block Setup 
+
+Yrow 1: y0-y7       Xrow 1: x0-x15
+Yrow 2: y10-y15     Xrow 2: x16-x31
+Yrow 3: y20-y23     Xrow 3: x32-x47
+Yrow 4: y30-y31     Xrow 4: x48-y63
+Yrow 5: y32-Y39
+
+The DBA Logo
+
+The DBA logo can be found inside x256,y0 - x320,y200.  This is  a 
+one bitplane logo so use the colour i have used (any colour  from 
+8 to 15 will do).  There is no point in changing colour as it  is 
+irelevant  for  the outcome,  the only effect is  that  it  might 
+disappear.  You  have to keep within a block/grid of x16  y8   to 
+fit  them with the 'road'.  The effect of this bitplane  logo  is 
+that it changes colour 0 to colour 8,  colour 1 to colour 9  etc. 
+thereby making it look like there are two types of blocks in  the 
+road,  one using colours 0-7 and one using colours 8-15. Remember 
+to use colour 0 as the other colour in this logo.
+
+When you run the intro it looks like i updates the entire  'road' 
+each  update,  but i only scrolls the 'road' eight pix upwards  and 
+inserts a new 'road' block at the end. The one bit logo acts as a 
+filter and changes the colours of those 'road' blocks below it so 
+it  seems like there is a DBA logo made up of different  coloured 
+blocks in the 'road'. 
+
+To  understand how it works make a mess inside the DBA logo  area 
+with a colour between 8 and 15 and see how it looks in the intro.
+
+
+Borders/Dividers 
+
+The  scrolling borders are made up of 9 animated blocks that  you 
+can  find  inside  the  area  x80,y0  -  x208,y15.  If  you  dont 
+understand how these works then leave them alone.  You can change 
+the colours without destroying the scrolling and you can use  all 
+the colours you like.
+
+
+Network Logo
+
+This  one is easy,  the logo found inside x0,y50 - x208,y82 is  a 
+simple  gfx  block and you can put anything in it as it  is  just 
+copied into the intro without any fancy stuff done to it. You can 
+use all the colours you likes.
+
+
+Wiggle BG
+
+The background to the wiggling text can be found inside x0,y100 - 
+x16,y108.  As you can see it is very small,  you can use all  the 
+colours  you  likes in this bg but it would be wise to  use  dark 
+ones to avoid it from overshining the text.  The upper and  lower 
+edge and the left and right edge has to fit together. 
+
+
+Wiggle Text
+
+The wiggle text can be found inside x0,y192 - x64,y200.  This  is 
+more or less the same as with the bg but you must remember to use 
+colour 0 to make it possible for the bg to be shown (the bg  will 
+be shown through all pix drawn with colour 0).  Also remember  to 
+leave  some  room in the left or right edges to  make  some  room 
+between the words.
+
+
+Colours
+
+The  intro uses the colours from this picture so you  can  change 
+the intro colours by changing the colour in this  pic.  (remember 
+to  set colour 0 back to black before saving) But  remember  that 
+due  to the 1 bitplane logo all colours from 0 to 7 should be  of 
+one  shade  while the colours from 8 to 15 should be in  a  shade 
+that differentiates it from the others.  
+
+
+Errors 
+
+The  intro starts but bombs out soon after:  The music is  either 
+larger than 18kb or of the wrong type.
+
+You  get  an  error  48:  the  intro  cant  find  'TEST1.THK'  or 
+'DBAINT.NEO'
+
+The  Borders/dividers  acts  strangely:  you  have  changed  them 
+without knowing what you are doing or by pure accident.
+
+Some of the blocks in the 'road' has two colours: Your changes of 
+the  DBA  one  bitplane  logo  are  not  inside  the   designated 
+block/grid  pattern.  Remember that it has to fit with the  road, 
+the  logo  has to be built up of blocks that are 16*8pix  in  one 
+colour.
+
+The wiggle bg does not show:  The bg only shows through colour 0, 
+so  if  you havent used that one in the wiggle text then  the  bg 
+won't show.
+
+  
+

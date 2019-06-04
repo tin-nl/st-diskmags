@@ -1,0 +1,379 @@
+0660103030571
+9[........................................................]
+…
+ToodelooTrackerMusicTutorial!
+
+Welcome
+-------------
+€
+Afterbeenintotrackingandtrackermusicforalmost8yearsnow.I
+havepickedupafewusefultrickandcommandsontheway.Iknowthere
+arealotofbeginnersouttherewhohavejuststartedtotrackand
+reallywillbeinterestedinlearningeverythingfromthebeginning.I
+willinaseriesofarticlestakeyouthroughthebasicsoftracking
+andhowtoavoidbasicerrors.Wewillinthisfirstarticlestartwith
+thebasics,thatinmycaseistrackingwithsomedrumsandbeats.
+
+IalwaysstartoutmysongsbycreatingsomedrumswhichIlaterlay
+theaccordsandharmonyover.Sometexthasbeencopiedfromthe
+excellent"traxweekly".IthasbeenchangedtoworkwiththeAtari
+trackerssuchasProtracker,GraoumftrackerandDigitalHomeStudio.
+
+Nexttimewewillbegoingthroughchordtheoryandhowtotrackleads.
+
+/Toodeloo-DeadHackersSociety
+
+
+Trackingdrums
+---------------
+Thiswillshowthetrackerhowtotrackthe"generic"drumsjusttoget
+themdown...Itwillemphasizestaying"onthebeat",thenitwillgo
+intohowtospicethedrumsupintoreallycoolrhythms.Thissection
+willalsohavequiteafewquotesfromTraxWeeklyandBasehead'solde-
+zine...
+
+BasicDrumbeats
+===========================================
+
+TableofContents
+-----------------
+SettingUp...............WhatdoYOUthinkitis?
+Part1...................Basicbassdrum/hihatdancebeat
+Part2...................Morecomplexbeats,addingasnare
+TheArtofIrritation....Whatnottodoinyourbeats
+
+SettingUp
+----------
+First,you'llneedthefollowingsamples:
+1.Bassdrumkick
+2.ClosedHihat
+3.OpenHihat
+4.Snare
+
+Part1
+------
+Ok,tostart,putabassdrum(probablywillsoundbestatmiddle-c)
+oneveryhighlightedrowlikethis(fornowwe'llonlyusetrack1):
+
+00C-501-----<-
+01----------
+02----------
+03----------
+04C-501-----<-
+05----------
+06----------
+07----------
+............
+
+Playitback.Ifit'sright,itshouldsoundlikeanevenlyspaced
+thumpthumpthump.Ok,soit'sprettyboring,right?Let'sspiceit
+upabit.Thisiswhereyouropenhihatcomesin.Putanopenhihat
+betweeneachbassdrumlikethis:
+
+00C-501-----
+01----------
+02C-503-----<-
+03----------
+04C-501-----
+05----------
+06C-503-----<-
+07----------
+............
+
+Woahcool,nowyouhaveadancebeat.It'sstillprettyblandthough.
+Trythis:Onthetwolinesbeforeeverybassdrum,puttwoclosed
+hihatsonthefirstbeatonlylikethis:
+
+00C-501-----
+01----------
+02C-502-----<-
+03C-502-----<-
+04C-501-----
+05----------
+06C-503-----
+07----------
+............
+
+Besuretoleavethesecondbeatalone.Playitbacknow.Pretty
+nifty,eh?Butnowitsoundstoomechanical.Lowerthevolumeofthe
+secondopenhihatto42orsolikethis:
+
+00C-501-----
+01----------
+02C-502-----
+03C-50242---<-
+04C-501-----
+05----------
+06C-503-----
+07----------
+............
+
+Nowplayit.Here,youhaveaperfectbeattobaseadancetuneoff
+of.Experimentw/volumelevels(butnotonthebassdrums)andsee
+whatyoucancomeupwith.Ifyoufillinwithclosedhihatsbetween
+thebassdrums,youhavelotstoplaywith.Ok,snaretime.
+
+Part2
+------
+Ok,soyouhaveyourperfectdancebeat,right?Let'sspiceitup
+some,shallwe?Ok,onchannel#2,laydownasnarenexttoevery
+otherbassdrum,startingwiththesecondone,it'lllooklikethis:
+
+00C-501-----    ----------
+01----------    ----------
+02C-502-----    ----------
+03C-50242---    ----------
+04C-501-----    C-504-----<-
+05----------    ----------
+06C-503-----    ----------
+07----------    ----------
+08C-501-----    ----------
+09----------    ----------
+10C-502-----    ----------
+11C-50242---    ----------
+12C-501-----    C-504-----<-
+13----------    ----------
+14C-503-----    ----------
+15----------    ----------
+............    ..........
+
+(NoticehowIextendedthefirstcolumnbyhighlightingwhatwehadand
+pastingitoveragain).Nowwehave4beatswith2snares.What
+gives?Thisisthemostboringdrumtrackever!Ok,calmdown.Now
+trythis:Seehowyouhavetwoclosedhihats?Whatwouldhappenifwe
+tookthefirstclosedhihatoutandchangedthesecondonetoanopen
+hihat(andalsotookoutthevolumechange)?It'dlooklikethis:
+
+00C-501-----    ----------
+01----------    ----------
+02----------<-----------
+03C-503-----<-----------
+04C-501-----    C-504-----
+05----------    ----------
+06C-503-----    ----------
+07----------    ----------
+............    ..........
+
+Playitbacknow,youhavekindofamorejazzybeat.Whenyouhavea
+noteandthenonethreelinesdown,that'swhathappens.Canwedo
+thatwithasnare?Surewecan!Putanothersnareafterthefirstone
+threerowsdownlikeso:
+
+00C-501-----    ----------
+01----------    ----------
+02----------    ----------
+03C-503-----    ----------
+04C-501-----    C-504-----
+05----------    ----------
+06C-503-----    ----------
+07----------    C-504-----<-
+............    ..........
+
+Nowthisisstartingtoshapeuprathernicely.Optionally,foramore
+subtleversionofthat,youcouldlowerthesecondsnare'svolumeto
+42.Ok,nowcopywhatyouhaveandpasteitstartingonrow08.(it
+shouldlookthewayitdidlasttimewhenyoupastedit).Remember
+that"skipthreerowsdown"technique?Youcanalsoputitbefore!
+Stickasnareinonrow09.Itshouldlooklikethis:
+
+00C-501-----    ----------
+01----------    ----------
+02C-502-----    ----------
+03C-50242---    ----------
+04C-501-----    C-504-----
+05----------    ----------
+06C-503-----    ----------
+07----------    C-504-----
+08C-501-----    ----------
+09----------    C-504-----<-
+10C-502-----    ----------
+11C-50242---    ----------
+12C-501-----    C-504-----
+13----------    ----------
+14C-503-----    ----------
+15----------    C-504-----
+............    ..........
+
+Ok,there'syourfirstbeat.Seehowwejazzedupthesnare?Trythat
+withyourbassdrumandseewhathappens.
+
+00C-501-----    ----------
+01----------    ----------
+02C-502-----    ----------
+03C-501-----<-----------
+04C-501-----    C-504-----
+05----------    ----------
+06C-503-----    ----------
+07----------    C-504-----
+............    ..........
+
+Stickabassdrumintorow03.Wanttotrysomethingreallywicked?
+Takeoutthebassdrumonrow04andputitonrow05likethis:
+
+00C-501-----    ----------
+01----------    ----------
+02C-502-----    ----------
+03C-501-----    ----------
+04----------<-C-504-----
+05C-501-----<-----------
+06C-503-----    ----------
+07----------    C-504-----
+............    ..........
+
+Prettyneat,huh?Nowrepeatchannel1from00to07allthewayuntil
+theendofthebeat.Evenbetter.Onemorethingtotry,onthe
+snaresthataren'tontheimportantbeats(importantbeatsbeing04,
+09),makethenoteaC#5insteadofaC-5.
+
+TheArtOfIrritation
+---------------------
+Don't:
+Makemelodieswithyourhihats
+Putcymbalcrasheseverywhere
+Crowdyourbeatswithwaytoomanybassdrums
+
+Ok,that'sitforthisversion!Nowgoandtrack.
+
+Youcanproducea'swing'effectthat'scommonlyusedintracking
+today,bychangingthetempoateachrow.
+
+00C-501--F60(Setstempoto60bpm)
+01-------F90(Setstempoto90bpm)
+02D#501--F60(Backto60...)
+03G-501--F90(Backto90...)
+04-------F60(Andsoon.)
+05A#501--F90       .
+06G-501--F60       .
+07-------F90       .
+............
+
+It'sanicechangefromthoseannoyingquantisedbeatsyousee
+everywhereelse...Therearemanyvariationsonit,too...Aruleof
+thumbistoleavethefirstoneatabout2/3ofthesecond.You'llhave
+tofoolaroundtogetexactlytheamountofswingyou'relookingfor.
+Example:insteadofjustgoing8,5,8,5,etc.,oucanmaketheswingmore
+severebyusingfourdifferenttempos:suchas2,4,2,7,2,4,2,7,etc...
+
+Whilegenericdrumsarethingtoavoidatallcosts,it'susefulto
+knowwhatagenericbeatlookslike.Youshouldgotrackthese.Why?
+becauseinordertoavoidsomething,youneedtoknowwhatthat
+somethingis.Thereisnoknowledgethatisnotpower.Learnthese.
+I'lljustuseabasicsystemof
+
+B
+forbassdrum,
+H
+foraclosedhihat,
+O
+foranopenhihat,and
+S
+forasnare.Iuse
+:|
+
+asasymbolfor'repeat'(that'sascloseasIcangettothemusic
+symbolforitwithoutusingweirdfonts).Anoteinparenthesisis
+optional.Thelastthingthatyouneedtoknowtousethisguideto
+genericbeats.Drumlinesaremadeupoftwobasicparts:thebeat,and
+fills.Thebeatissomethingthatisregularlyrepeated,andmakesup
+themeatofthedrumsforthesong.Fills(orfill-ins)arelittle
+dittiesthatthedrummeruseseithertodrawasectionofthesongtoa
+close,oraccentaphrase.Fillsaretheequivalentofcadencesin
+chordaltheory.(qv.)They'renotrepeatedthewaybeatsare,and
+alwaysoccurrightattheendofapattern(orhalf-pattern).
+
+Technobeat:
+
+BHOH:|
+...[yawn]Usethisinverysmalldoses.
+Dancebeat:
+
+BHOHSHOH:|
+...Acheesyvariationontechno.
+Dancefill1:
+
+BHHHSHHS
+...Thisfillisthemostcommonfillever
+Dancefill2:
+
+BHHHBHSSS(S)
+...Thisisaworsefillthan1,butlesscommon.
+Rockbeat:
+
+BHHHSHHH:|
+...Blah!!!EvenworsethanDance.
+Hiphopbeat:
+
+BHHHSHBSBSBHSHHH:|
+...Trackthisoneandsee.Couldbeworse.
+Hiphopfill:
+
+BHHHSHBSBSBHSHSS
+...Fairlynice,butcommon.
+
+...Whentrackingdrums,youmustbeintimatelyawareofyourfriendand
+bitterenemy,'Copy-Paste.'Whiledrumsshouldalwaysfollowadistinct
+pattern,theymuststillfeelalive.Theyneedenergyhere,apause
+there,syncapationinbetween,andgraduallyfluctuatingvolume.Most
+importantly,youmustmatchthefeelofthemusic.Rhythmisan
+integralpartofyourmusic,notsomemechanicalloopthatyouthrowin
+theresosomeonecandancetoit.
+
+Tryandkeepabalancebetweenchaosandpattern.Sincewe'retalking
+aboutdrumshere,I'llexplainwhythat'simportantaboutdrums,but
+youshouldstriveforthisbalanceineverysectionofyourpiece,even
+inthepieceasawhole.Whilechaosisthespiceoflife(oristhat
+variety?Sixofone...),patternsarewhatallowpeopletoidentifyto
+yourmusic.Thinkofitasametaphorforpeople:everypersonhasa
+needtofeeloriginal,tobesomethinggreaterthanjustanotherclone.
+Theremustbesomethingspecialaboutthem,ortheybegintofeel
+unimportantanddepressed(whichmaywellbetheirwayofbecoming
+original,asitwere).Atthesametime,nopersoncanbesofar
+removedfromhis/hercomradesthattheyloseasenseofconnection
+(love,ifyouprefer)toothers...Nomanisanisland,astheysay.
+People'smoralsanddirectionallflowfromaneedforconformity,
+society...Callitwhatyouwill.
+
+Yourmusic(yourrhythms,inthiscase)mustbealiveinthissameay.
+Yourlistenermustbeabletoidentifywithit...Whichiswhyou
+chooseabasicrhythm(asabove)orsimplesamplesoron-the-beat
+tracking.Yetyoumuststillapplythechaos(thespice,the
+variety)...Thiscanbedonethroughunusualsamples,orcomplex
+rhythmicthemes,orunusualtimesignatures,orbyabandoningthose
+genericstyleswelistedabove.Bothoftheselistsshouldbereadwith
+anEXCLUSIVE'or',though.WhatdoImean?Imeanyouwouldbeill-
+advisedtousebizarredrumsamplesandanoddrhythmicthemeandtrack
+itallin7-beats-per-pattern.Why?Noonewillbeabletofollowit.
+It'stoomuch...Tooweird.Atthesametime,youcan'ttakeageneric
+snaredrumandagenerickickbass,andgoBSBSBSBSBSthewholesong
+through.Why?It'sBORING!
+
+Trytothinkofalloftheseaspectsasbeingrated...You'vegot
+rhythmicthemes,samples,speed,beats-per-pattern,andstyleallona
+scaleof-10to10,where10issomethingeveryoneeverywherehasheard
+aLOTof,and-10istotallyunheardof.Whatyoushouldstriveforis
+anENDTOTALof0,onceyouaddupallofthecategories(rhythm,time,
+speed,etc).Anexample:youcanuseagenerictechnobeat(BHOH:|)
+(ratedan8onrhythm)ifyouuseaweird'bosh'vocalsoundforthe
+hi-hat,a'doink'fortheopenhat,andasampleofa10-tonI-beam
+beingslammedwithasledgehammerasyourbassdrum(abouta-8).
+
+Whyisthiscool?'Causepeoplecanfollowthebeat(they'veheard
+technoabizilliontimesbefore),buttheydon'tgetbored,becausethe
+samplesarefresh.Ifbyouusedthesamesamplesisaweird
+B.O.OH.BB.HHH.BBOBOO.O.H:|pattern,peoplewillgo"WTF?!?"anddelete
+yoursongonthespot.Conversely,ifyoutookthosesamplesfrom
+SecondReality,you'dhaveyourlistenersyawninghalf-waythroughit,
+alwaysasking"okay,when'sthecoolpart?"andstilldeletingyour
+file.:)
+
+Balance.That'stheZenoftrackingrhythms.
+
+Oh,and,uhh...Watchyourvolumes,too.There'snothingquiteas
+annoyingasahihatonfullvolume.
+
+/Traxweekly
+
+Anyquestions?Mailmeat:toodeloo@swipnet.se
+
+/Toodeloo-DeadHackersSociety
+

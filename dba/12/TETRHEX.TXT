@@ -1,0 +1,193 @@
+TETRHEX ,THE SPECIAL CLONE
+
+TETRHEX is a game, or rather a group of Tetris-like or Columns-like games,
+being played on  a hexagonal board,  with hexagonal cells.  One of the  main
+features is the  possibility of creating  one's own rules.  The demoversion
+is distributed with only one rule file, but other rule files can be 
+supplied later.
+
+Bonus says (after several times of playing it):
+
+ Great fun, difficult but for real fans of these kind of games a good
+ clone with very nice things added. Shame, no sound (Or I'm deaf) and
+ the graphics could be better.
+
+ Points: Well I don't like giving point's, you like this game or not.
+         Like I said, for fans a must for others try it and you find
+         out...
+ 
+ (the rest of this text is mostly the read.me file but it gives you
+  a lot of information of what to expect of this strange game...)
+
+    1. System Requirements
+       """""""""""""""""""
+
+TETRHEX has been  written for Falcon,  but should  be able to  run on  any
+Atari (or other TOS-based computer) having  a 68030 (at least) and a  Falcon
+compatible (i.e. interlaced planes)  graphic mode 256 colors  >= 640 *  480,
+possibly with a substitute operating system (TOS/GEM compatible).
+
+TETRHEX needs about 300 KB free RAM (ST RAM or TT RAM). One of the  timers
+A and D is required (cf "Starting TETRHEX"); the default timer is D.
+
+
+    2. Starting TETRHEX
+       """"""""""""""""
+
+  TETRHEX can be  started either  by double-clicking  on its  icon from  the
+desktop, or from a shell (e.g. Gemini shell). It accepts Unix-like  options,
+which can be given by different  ways. TETRHEX creates a string composed  of
+the file TETRHEX.CFG (if it exists),  followed by the command line  options.
+Note: to have the possibility to enter options after double-clicking on  the
+icon, you  must replace  the  extension .PRG  by  the extension  .GTP  (.TTP
+equivalent for a GEM program). All the options start with the character  '-'
+and are separated by blanks (space and control characters). The command line
+mustn't have more  than 125 characters.  If the syntax  of the whole  string
+isn't correct, the program immediately  ends (and returns an non-zero  error
+code). Here are  the options (the  options that are  already recognized  but
+that are useful for non available functions aren't given):
+
+    3. Using TETRHEX
+       """""""""""""
+
+  Start  TETRHEX  (cf  "Starting  TETRHEX").   Hit  any  key  to  quit   the
+presentation. A menu appears:
+
+   . Help: help (unavailable in the demo version).
+   . Undo: load a rule (unavailable in the demo version).
+   . Return: play.
+   . F1-F10: high scores (unavailable in the demo version).
+   . Ctrl-Q: quit.
+
+  Hit Return to play. When the game is over, hit Ctrl-Escape to come back to
+the menu.
+
+
+    4. Rule TETRHEX.RUL
+       """"""""""""""""
+
+Keys:
+  . A (Q on the French keyboards): down (the piece stops for a while).
+  . Insert: left-down.
+  . Clr-Home: right-down.
+  . Down-arrow: left rotation (counter clockwise).
+  . Up-arrow: right rotation (clockwise).
+  . Left-arrow: left (same height in relation to the lowest cell
+    --> V-moving).
+  . Right-arrow: right (same height in relation to the lowest cell
+    --> V-moving).
+  . Space bar: drop.
+  . Escape: abandon.
+  . Undo: pause.
+  . Return: end of pause.
+  . + (num pad): next level.
+  . - (num pad): previous level (forbidden by the rule! thus here this key
+    is useless).
+  . Help: radar on/off.
+  . Backspace: destroy all the hexagons, under the condition that you have a
+    bomb (you have one when you reach 1000 bomb points) and that the current
+    piece has bombs.
+
+  The hexagons are destroyed in the following two cases:
+    _ Formation of a line of  hexagons: these hexagons are destroyed.  N.B.:
+      the lines are V's.
+    _ If the  current piece  has bombs:  contact between  this piece  and  a
+      connected (considering the  color) component  having a  bomb. The  two
+      connected components are destroyed.
+
+  Advise:
+    _ It may be interesting  to join the  pieces of the  same color so  that
+      more hexagons are destroyed by direct contact of two bombs.
+    _ The keys A,  Insert and  Clr-Home may be  very useful  to drag  pieces
+      under other pieces (to fill in holes).
+
+  Note 1: it is natural that at the beginning you don't make a line.  You'll
+improve as you play.  Moreover the demo version  is more difficult than  the
+shareware version.
+
+  Note 2: this rule file has a little bug that is noticed only in some  rare
+cases (which  have never  happened with  me). A  corrected version  will  be
+supplied later.
+
+    5. TETRHEX, the Sharware version
+       """""""""""""""""""""""""""""
+
+TETRHEX is SHAREWARE. This means  that if you want  to use it and  receive
+the complete version, you have to get  registered by sending 50 FF (or  more
+if you want to) to:
+
+      Vincent LEFEVRE
+      24 rue Louis Blanc
+      31400 Toulouse
+      France
+
+  Don't forget to give me your name and address!
+
+  If you have Internet access, I recommend that you contact me first by
+email. My address is:
+
+      vlefevre@ens.ens-lyon.fr
+
+
+The unregistered version has the following limitations:
+  . The rule can be changed (the UNDO key is disabled).
+  . The scores are not saved.
+  . A game ends after about 5 minutes.
+  . At most 10 games.
+  . No external routine.
+
+    6. Differences from the registered version 1.10
+       """"""""""""""""""""""""""""""""""""""""""""
+
+  They are many. Here is what else you can do with the registered version:
+
+  _ Other rule files (easier): already exist: Tetrhex (more interesting  and
+    easier version), Hexcolumns; planned:  Tetrhex light (much easier);  and
+    maybe another rule...
+
+  _ You can modify existing rule files and create your own rules: the  whole
+    documentation will  be supplied  with the  registered version,  but  you
+    should rather be a good programmer  to create your own rules. The  rules
+    are written in a specific language (interpreted language), close to both
+    functional languages  (expression  computing  in  prefix  notation)  and
+    assembly language (low-level language). The format of the rule files  of
+    the shareware version are different from the one of the demo version.
+
+  _ You can load other rule files (Undo key).
+
+  _ Scores are saved.
+
+  _ Help on Tetrhex and on the loaded rule file (Help key).
+
+  _ Radar (i.e. you can see the following piece).
+
+  _ Pause (configurable in the rule files).
+
+  _ You can  play in  a GEM  window (particularly  under MultiTOS).  TETRHEX
+    supports the AES 4.1: you can iconify the window.
+
+  _ You can  choose  the intensity  of  the  hexagons and  the  board  (with
+    options).
+
+  _ Better default display  (pieces and  patterns on the  hexagons are  more
+    visible).
+
+  _ An option allows you  to give TETRHEX a  group of relocatables  routines
+    enabling TETRHEX to communicate with the outside. For instance, one  can
+    write routines to allow playing with  the Joypad, or even playing  using
+    your voice (a small vocal recognition with the DSP should be  possible),
+    to make the computer play, to  have modules played at given moments,  to
+    put your own images at the background... These routines don't exist yet,
+    but they  can  be  written  without having  to  modify  the  application
+    TETRHEX.PRG (the  documentation  necessary  to write  routines  will  be
+    supplied  in  the  registered  version).  The  routines  consisting   in
+    displaying images at the background and in playing modules will normally
+    be supplied.
+
+  _ Better menu. "game over" is displayed when the game is over. Escape  key
+    to come back to the menu (instead of Ctrl-Escape).
+
+  _ The registered version works  with versions of  SpeedoGDOS in which  the
+    font identifiers are translated.
+
+

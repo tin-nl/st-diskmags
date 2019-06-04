@@ -1,0 +1,121 @@
+
+ò                        APPENDIX B: 680X0 INSTRUCTIONS
+
+This listing is based on ARTtbl's one. Big thanx a three cheers to him! =) It
+shows all 68030 instructions without FPU stuff. I just included it, because I
+feel every coder should have this list.
+
++-----------------------------------------------------------------------------+
+|ACBD       |Add Decimal with Extend      |useless..                          |
+|ADD        |Add                          |                                   |
+|ADDA       |Add Address                  |                                   |
+|ADDI       |Add Immediate                |                                   |
+|ADDQ       |Add Quick                    |                                   |
+|ADDX       |Add with Extend              |for working with big numbers       |
+|AND        |Logical AND                  |                                   |
+|ANDI       |Logical AND Immediate        |                                   |
+|ASL, ASR   |Arithmetic Shift L/R         |                                   |
+|-----------|-----------------------------|                                   |
+|Bcc        |Branch Conditionally         |                                   |
+|BCHG       |Test Bit and change          |                                   |
+|BFCLR      |Test Bit Field and Clr       |useful, but can be slow in loops   |
+|BFEXTS     |Signed Bit Field Extract     |                "                  |
+|BFEXTU     |Unsigned Bit Field Extract   |                "                  |
+|BFFFO      |Bit Field Find First One     |                "                  |
+|BFINS      |Bit Field Insert             |                "                  |
+|BFSET      |Test Bit Field and Set       |                "                  |
+|BFTST      |Test Bit Field               |                "                  |
+|BKPT       |Breakpoint                   |for debuuging purposes only        |
+|BRA        |Branch                       |                                   |
+|BSET       |Test Bit and Set             |                                   |
+|BSR        |Branch to Subroutine         |essential for structurising code   |
+|BTST       |Test Bit                     |                                   |
+|-----------|-----------------------------|                                   |
+|CALLM      |Call Module                  |unsupported from 030 and higher?   |
+|CAS        |Compare and Swap Operands    |useless, cos of low speed          |
+|CAS2       |As above in Dual Mode        |                "                  |
+|CHK        |Check Reg: Against Bound     |no idea                            |
+|CHK2       |Check Against Upper and      |no idea                            |
+|           |Lower Bounds                 |                                   |
+|CLR        |Clear                        |replace with moveq or move         |
+|CMP        |Compare                      |                                   |
+|CMPA       |Compare Address              |                                   |
+|CMPI       |Compare Immediate            |                                   |
+|CMPM       |Compare Memory to Memory     |                                   |
+|CMP2       |Compare Register Against     |no idea                            |
+|           |Upper and Lower Bounds       |                                   |
+|-----------|-----------------------------|                                   |
+|DBcc       |Test Condition, Decrement    |especially dbf/dbra is much used   |
+|           |and Branch                   |ideal for loops                    |
+|DIVS, DIVSL|Signed Divide                |slow, use muls where possible      |
+|DIVU, DIVUL|Unsigned Divide              |slow, use mulu where possible      |
+|-----------|-----------------------------|                                   |
+|EOR        |Exclusive Or                 |                                   |
+|EORI       |Exclusive Or Immediate       |                                   |
+|EXG        |Exchange Registers           |                                   |
+|EXT, EXTB  |Signed Extend                |                                   |
+|-----------|-----------------------------|                                   |
+|ILLEGAL    |Take Illegal Instruction Trap|for debugging purposes only        |
+|           |                             |                                   |
+|-----------|-----------------------------|                                   |
+|JMP        |Jump                         |                                   |
+|JSR        |Jump to Subroutine           |essential for structurising code   |
+|-----------|-----------------------------|                                   |
+|LEA        |Load Effective Address       |                                   |
+|LINK       |Link and Allocate            |useful for recursive subrout-calls |
+|LSL, LSR   |Logical Shift Left/Right     |                                   |
+|-----------|-----------------------------|                                   |
+|MOVE       |Move                         |unmissable :)                      |
+|MOVEA      |Move Address                 |                                   |
+|MOVE CCR   |Move Condition Code Reg.     |                                   |
+|MOVE SR    |Move Status Register         |                                   |
+|MOVE USP   |Move User Stack Pointer      |                                   |
+|MOVEC      |Move Control Register        |                                   |
+|MOVEM      |Move Multiple                |fast for moving large chunks of mem|
+|MOVEP      |Move Peripheral              |                                   |
+|MOVEQ      |Move Quick                   |                                   |
+|MOVES      |Move Alternate Address Space |                                   |
+|MULS       |Signed Multiply              |                                   |
+|MULU       |Unsigned Multiply            |                                   |
+|-----------|-----------------------------|                                   |
+|NBCD       |Negate Decimal with Extend   |useless                            |
+|NEG        |Negate                       |                                   |
+|NEGX       |Negate with Extend           |                                   |
+|NOP        |No Operation                 |no comment :)                      |
+|NOT        |Logical Complement           |                                   |
+|-----------|-----------------------------|                                   |
+|OR         |Logical inclusive Or         |                                   |
+|ORI        |Logical inclusive Immediate  |                                   |
+|-----------|-----------------------------|                                   |
+|PACK       |Pack BCD                     |useless                            |
+|PEA        |Push Effective Address       |fast version of move.l ..,-(sp)    |
+|-----------|-----------------------------|                                   |
+|RESET      |Reset External Devices       |resets our ATARI                   |
+|ROL, ROR   |Rotate Left and Right        |                                   |
+|ROXL,ROXR  |Rotate with Extend           |                                   |
+|RTD        |Return and Deallocate        |                                   |
+|RTE        |Return from Exception        |                                   |
+|RTM        |Return from Module           |unsupported from 030 and higher?   |
+|RTR        |Return from Restore Codes    |                                   |
+|RTS        |Return from Subroutine       |used in combination with BSR/JSR   |
+|-----------|-----------------------------|                                   |
+|SBCD       |Subtr. Decimal with Extend   |useless                            |
+|Scc        |Set Conditionally            |                                   |
+|STOP       |Stop                         |mhhh... don't use :)               |
+|SUB        |Subtract                     |                                   |
+|SUBA       |Subtract Address             |                                   |
+|SUBI       |Subtract Immediate           |                                   |
+|SUBQ       |Subtract Quick               |                                   |
+|SUBX       |Subtract with Extend         |for working with big numbers       |
+|SWAP       |Swap Register words          |                                   |
+|-----------|-----------------------------|                                   |
+|TAS        |Test Operand and Set         |handy sometimes                    |
+|TRAP       |Trap                         |calls the OS on our ATARI          |
+|TRAPcc     |Trap Conditionally           |handy for debugging                |
+|TRAPV      |Trap on Overflow             |handy for debugging                |
+|TST        |Test Operand                 |faster than cmpi #0,...            |
+|-----------|-----------------------------|                                   |
+|UNLK       |Unlink                       |used in combination with link      |
+|UNPK       |Unpack                       |useless                            |
++-----------------------------------------------------------------------------+
+

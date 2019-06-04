@@ -1,0 +1,247 @@
+
+ò-------------------------------------------------------------------------------ð
+         ó   Some hints on writing applications for the Falcon DSPð
+ò-------------------------------------------------------------------------------ð
+
+
+ñ1. How to pick a suitable subject for the DSP.ð
+
+In general, the DSP is very well suited for multiplication and additions and is
+not very good at bit operations. So for instance a GIF-viewer won't gain much
+from using the DSP (a lot of bit operations), whereas a JPEG viewer will (JPEG
+needs matrix multiplications). Realtime audio and video manipulations are major
+areas of interest, complicated floating point calculations another.
+Another speed consideration is the overhead involved in getting data into the
+DSP and getting it out; therefore a floating point emulator using the DSP is
+possible, but can't be expected to give a large speed gain. If you can pack your
+calculations together into a DSP program then large gains are possible. The
+limited number range of the DSP has to be considered here as well; by proper
+scaling most calculations are possible however, with respect to ordinarily
+needed precision.
+
+
+ò2. How to write a DSP program.ð
+
+You will need some documentation about the DSP and how it is tied into the
+Falcon for this. This is contained in the developers kit, but it has been
+covered very well in the German and Dutch Atari magazines also. For sound
+modification (a major application for the Falcon DSP) some knowledge about the
+Falcon sound system is needed as well. Sources: developers kit, magazines. The
+'DSP56000/DSP56001 Digital Signal Processor User's Manual' from Motorola is
+almost a 'must-have' for a serious DSP programmer. It has a full coverage of the
+instruction set (not included in the developers kit!) and a lot of hardware ins
+and outs. It is probably for sale (around dfl 100 ?) at the importers of
+Motorola: in Holland that is Diode, or EBV Elektronik in Maarssenbroek.
+DSP Memory map: a memory map for the Falcon DSP is included in the developers
+kit. There are a few minor mistakes in this and therefore a revised version is
+included in this document.
+Code always starts with a jump instruction at P:$0. The rest of memory up to
+P:$40 is reserved for interrupt vectors, so don't put your program there...
+To put the assembler to full use its documentation can be studied, revealing
+macro assembly, conditional assembly, buffer allocation etc.
+Some example programs are included in this archive; you can study them to see
+how to put data in memory, how to organize code in memory, and how to use the
+host interface.
+
+
+ó3. How to assemble a DSP program.ð
+
+I use the Atari Development kit for the Falcon myself; this kit contains
+Motorola's DSP Assembler and linker. A public domain assembler exists, but I
+haven't been able to put that one to good use yet (didn't try much either).
+After assembling you need to convert the code into the Atari-specific .LOD
+format; this is done with the CLDLOD.TTP utility program. This program needs
+output redirection to get a useful .LOD file (!). Therefore your commandline
+interpreter has to support output redirection; most of them don't. After this
+you can trash the .CLD file.
+To do this automatically you can write a batch file along these lines:
+
+cd d:\pc\projects\mandel
+\dsp\asm56000.ttp -a -b -l -our mndl_56k.asm
+\dsp\cldlod.ttp mndl_56k.cld >mndl_56k.lod
+rm mndl_56k.cld
+
+I use a Gulam shell that I found in an GNU C++ archive. Batch files for each
+project are stored in the project directory and copied to the Gulam directory
+when needed. From my Pure C compiler I then 'E'xecute Gulam and the batchfile is
+processed automatically. The only drawback is that Gulam can't execute an 'exit'
+from a batchfile, so this command has to be typed in manually. Also, Pure C
+can't take the status of the DSP file into account when performing a 'make', so
+you will have to look after that yourself.
+To be sure the correct batchfile has been copied to the Gulam directory a line
+consisting of:
+     MSG  'Assembling ...'
+is included in all my sourcefiles. The assembler normally does not give a clue
+about what file is processed, but this will. The switches in the batchfile mean
+'absolute code' (.CLD output, no linking necessary), 'make object file' (what
+else), 'print a listing' (to disk) and 'signal unresolved references' (those are
+not tolerable in a project of a single assembly file ...).
+
+
+ñ4. How to run a DSP program.ð
+
+Use the DSP XBIOS functions to load the .LOD file into the DSP and to provide it
+with parameters. The developers kit includes new XBIOS function definitions that
+should be used to approach the Falcon DSP. Clever written programs won't be
+affected much by the overhead these routines put upon them. An example
+program is included in this archive that shows how to use these routines
+ideally and how to avoid some pitfalls. The latest Pure C version (1.1) contains
+bindings and online help for these functions.
+Be careful with the host interface routines: they will probably hang the
+computer if the program in the DSP and your host routine don't agree on the
+number of parameters that should be transferred either way.
+
+
+ò5. How to debug a DSP program.ð
+
+The developers kit provides you with DSPDebug, which gives you ample opportunity
+to examine your code's behaviour. If you don't have it, you will have to stick
+to putting debugging statements into your program and outputting values to the
+host interface. Some common sense and persistence is useful here as well...
+
+
+ó6. How to write fast DSP programs.ð
+
+First of all: get your program to work well! Don't optimize it before you have
+validated your algorithm. You should think about how it can be optimized
+beforehand, though.
+Very important: put all of your code into internal program RAM if possible to
+avoid memory wait states. Most programs will fit in the 512 word internal
+program RAM. Although the external RAM is zero waitstate, there is a penalty for
+accessing it twice in a single instruction, because there is only one external
+data bus. The internal buses are all separate however, so the instruction MACR
+in the loop:
+
+[         ORG P:$40           ;    fetch instructions from internal memory
+          MOVE #$00,R0        ;    point into internal X-memory
+          MOVE #$00,R4        ;    point into internal Y-memory            ]
+          CLR   A          X:(R0)+,X0      Y:(R4)+,Y0  ; init loop
+          DO    #256,loop_end
+          MACR  X0,Y0,A    X:(R0)+,X0      Y:(R4)+,Y0  ; calc sum of products
+loop_end:
+
+executes in the minimum 2 clock cycles! This means a burst rate of 48 MIPS (or
+80 MIPS if you count multiply, accumulate, round separately :-) ). One of the
+memory references (P, X, Y) might even have been to external memory without
+affecting execution speed. The powerful instruction set and the cyclic buffers
+of the DSP56001 give it even more power than other DSP's.
+In the DSP, you have to watch for opportunities to do parallel moves. Use the
+circular buffer modes to the full to avoid register loads and tests. Use the DO
+instruction for the same purpose; decrementing and testing registers is not
+meant for that and therefore awkward. Use short jumps and short immediate
+register loads as much as possible. Between host and DSP the amount of data
+transferred should be minimized. If possible have the host do something useful
+(calculating new parameters, drawing on the screen, providing a user interface)
+instead of busy-waiting for the DSP, to make full use of the multiprocessor
+system.
+If large data transfers are necessary, there are a few ways to enable these.
+Basically there are two connections between the DSP and main memory, the host
+interface and the SSI (through the sound multiplexer chip). The SSI path is
+limited to about 1 MB per second, which can be accomplished by setting the
+master clock of the multiplexer to 32 MHz and using 4 stereo 16 bit channels (4
+* 2 * 2 bytes per frame). The speed of host interface communication is mainly
+dependent on the host. Normally this is done by the host processor either by OS
+calls or from an interrupt routine. By programming the Blitter as a DMA device a
+much higher transfer rate could be accomplished at the cost of non-portable low
+level programming (the DMA chip cannot be programmed to transfer data from or to
+the DSP). Speed of main memory will always limit the transfer rate to less than
+25 MB/sec (...), but the DSP cannot provide or accept more than 24 MB per second
+at the very most. A loop like:
+
+               DO    #N_PARAMS,get_loop         ; loop for N_PARAMS parameters
+wait_data:     JCLR  #0,X:<<HSR,wait_data       ; busy wait for host data
+               MOVEP X:<<HRX,X:(R0)+            ; store host data in X memory
+get_loop:
+
+would be the fastest I could provide, and would execute in 6 + 4 = 10 cycles,
+and therefore has a burst rate of 3.2 MW/s, or 9.6 MB/s at most. Data has to be
+provided to/accepted from the 8-bit wide host port at 9.6 MB/s for this; it is
+very well possible that neither the main processor nor the Blitter is up to that
+(I have no data on that).
+
+
+ñ8. How to convert data between the DSP and the host processor.ð
+
+Short and long integer data are readily transferred between the DSP and the host
+processor by means of the OS system calls. For long integers the range has to be
+limited to between 0x800000 and 0x7FFFFF; floating point numbers between -1 and
+1 can be multiplied by 0x800000 to copy them into the DSP. This covers the 24-
+bit data format of the DSP very well; the double width 48-bit format however is
+more difficult to accommodate. The common floating point format with 64 bits
+mantissa is wide enough, but conversion is trickier. For data transfer to and
+from the DSP some routines have been written, both for use without and with FPU,
+which are included in this archive (DBL2DSP.S and testprogram TDBL2DSP.C, CPU
+and FPU versions through different project files). These are provided in this
+archive; to compile them on your system some pathnames may have to be adjusted.
+
+
+ò9. DSP memory map.ð
+
+
+            P                   X                   Y                 Address
+     +--------------+    +--------------+    +--------------+         $FFFF
+     :              :    |  Int. I/O    |    |  (Ext. I/O)  | (64)
+     :              :    +--------------+    +--------------+         $FFC0
+     :              :    :              :    :              :
+     :              :    :              :    :              :
+     :              :    :              :    :              :
+     :              :    :              :    :              :
+     /              /    /              /    /              /
+     :              :    :              :    :              :
+     :              :    :              :    :              :
+     :              :    :              :    :              :
+     :              :    :              :    :              :
+     :              :    :              :    :              :
+     +--------------+    +--------------+    +--------------+         $8000
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    +--------------+    +--------------+         $4000
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     |              |    |              |    |              |
+     +--------------+    +--------------+    +--------------+         $0200
+     |   Internal   |    | Log table or |    | Sine table or| (256)
+     |              |    | external mem.|    | external mem.|
+     |   program    |    +--------------+    +--------------+         $0100
+     |              |    | Internal X   |    | Internal Y   | (256)
+     |   memory     |    | memory       |    | memory       |
+     +--------------+    +--------------+    +--------------+         $0000
+
+Notice the mirrors in X- and Y-memory and the relationship between external P-
+and X/Y-memory. The mirrors are there for a purpose: the first 256 (or 512, if
+dataroms enabled) bytes in the high mirror are unique; in the low mirror they
+are masked out by the internal data memories. The high mirrors are very
+convenient for large circular buffers, which have to start on an even larger
+address boundary (e.g. a 15K circular buffer can only start on $4000, $8000,
+$C000 if you don't want to include internal X/Y memory).
+There is a continuous 16K block available at $4000 in both X- and Y-memories, so
+the total amount of memory available is 16k (X) + 16k (Y) + 512 (P) + 256 (X) +
+256 (Y) words = 33 k words = 99 kbyte.
+
+
+Send any questions (only about this program!) and comments to:
+
+óRobert Jan Ridderð
+De Sikkel 37
+5384 HT  Heesch
+The Netherlands
+
+or leave a message to me on Atari Benelux BBS (Holland ..-31-3473-77584).
+Job offers from the United States appreciated.
+
+ñ-------------------------------------------------------------------------------ð
+òtext provided by                                                   Earx / FUNð
+ñ-------------------------------------------------------------------------------                                         
+                          ð

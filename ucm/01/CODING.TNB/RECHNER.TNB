@@ -1,0 +1,60 @@
+
+                               TASCHENRECHNER
+                               ~~~~~~~~~~~~~~
+
+ Habt ihr schon mal versucht, einen kleinen  Taschenrechner mit in eure Pro-
+ gramme einzubinden? Und hattet ihr  dabei Probleme? Die meisten tun sich ja 
+ recht schwer mit diesem Problem. So ein Taschenrechner soll schlieûlich ei-
+ ne ganz normale  Zeichenkette als  Eingabe erhalten und diese dann abarbei-
+ ten. Mîglichst natÅrlich mit Punkt-vor-Strich- und  Klammerrechnung. Dieses 
+ Taschenrechner-Problem hat dann vor einigen  Jahren auch zu einem weit Åber 
+ 1000 Zeilen  langes Listing  in einer (damals)  groûen Computer-Zeitschrift 
+ gefÅhrt. Dabei gibt es hierfÅr eine ganz einfache Lîsung! Ich will sie hier 
+ vorstellen. Diesmal gibt es aber kein Listing dazu. Das dÅrfte sowieso kein 
+ allzu groûes Problem darstellen.
+
+ FÅr das ganze  brauchen wir drei  Variablen ( a, b, c ) und einen "Klammer-
+ Stack". Wenn wir  die Anzahl der  Klammerebenen beschrÑnken, kînnen wir fÅr
+ den Klammer-Stack auch ein dimensioniertes Variablenfeld verwenden.
+
+ 1. a=0
+    b=0 
+ 2. c=Erste Zahl (falls am Anfang eine Zahl steht...)
+ 3. Rechenoperant - -> Weiter bei 4
+                  + -> Weiter bei 5
+                  / -> Weiter bei 6
+                  * -> Weiter bei 7
+                  ( -> Weiter bei 8 \ Klammern stehen meistens nach den
+                  ) -> Weiter bei 9 / Operandent
+ 4. c=-c 
+    Rechenoperant wird zu +
+ 5. a=a+b 
+    b=c
+    Weiter bei 10 
+ 6. Wenn c=0 dann Fehler: Division durch Null!
+    b=b/c
+    Weiter bei 10 
+ 7. b=b*c
+    Weiter bei 10
+ 8. Letztes Rechenzeichen untern Klammer-Stack
+    a,b unter Klammer-Stack
+    a=0
+    b=0
+    Weiter bei 10
+ 9. c=a+b
+    b,a,Letztes Rechenzeichen vom Klammer-Stack holen
+    Weiter bei 3 
+ 10. Bei 1 weitermachen, bis die Zeichenkette voll abgearbeitet ist.
+     a=a+b
+
+ Das Ergebnis der Berechnung steht nun in a. Dabei wurden  alle Rechenopera-
+ tionen korrekt abgearbeitet. Ist doch gar nicht so schwer, oder? Das System
+ lÑût sich auch noch leicht erweitern. Wie wÑr's mit Sinus und Cosinus-Funk-
+ tionen,  Wurzelberechnungen,  Variablen  etc.? Funktionen  lassen sich sehr
+ Ñhnlich wie die Klammerberechnungen einbinden. Die Einbindung von Variablen
+ an sich ist wohl Åberhaupt kein Problem - nur deren Verwaltung...
+ Aber das bleibt ja euch Åberlassen.
+
+ Viel Spaû beim Rechnen...
+         
+                                          by Lucky of ST

@@ -1,0 +1,82 @@
+  HOW TO BUGGER ABOUT WITH STOS TO GET SOME NICE PALETTE SPLITS
+  -------------------------------------------------------------
+
+Written  by that stupid bugger (I was going to put  bastard,  but 
+there  is  no need for swearing) from the WATCHMEN who  does  all 
+those stupid basic demos.
+
+As you're reading this it is obvious that Sammy Joe thought  this 
+text was worth putting into the Lost Boys disk maggie (Hi guys!)
+
+Many  people that use STOS (The few!) have tried to  write  demos 
+with it, I admit I have as well, and although it's crap for speed 
+you can (with a little trickery) get quite good results. Over the 
+last  few months I have been writing the BIG STOS DEMO (The  good 
+one,  written by myself and THE SKUNK,  not the crap one!) people 
+who  were stupid enough to buy it or unforturnate enough  to  see 
+it,  will see that I managed to get some reasonably good  results 
+without the need for any machine code routines.
+
+At the ATARI '90 show a few people didn't believe that you  could 
+split  the palette directly from STOS.  The way STOS is  written, 
+any attempt to turn timer B (the horizontal blank timer) on  will 
+result in the program panicing wildly and eventually finishing in 
+a  small jibbering heap.  However,  it is possible to  split  the 
+colours with a little thought.
+
+The WAIT VBL command will stop execution of the program until the 
+electron  gun  hits the top of the screen.  With this and  a  few 
+timed  FOR  NEXT  loops we can trace the electron  gun  down  the 
+screen;
+
+10      WAIT VBL                ; WAIT FOR TOP OF SCREEN
+20      FOR I=1 TO 300:NEXT I   ; WASTE SOME TIME
+30      DOKE $FF8240,$700       ; CHANGE THE BACKGROUND COLOUR
+40      FOR I=1 TO 300:NEXT I   ; WASTE MORE TIME
+50      DOKE $FF8240,$000       ; CHANGE BACKGROUND COLOUR AGAIN
+60      GOTO 10                 ; REPEAT AGAIN
+
+This program MUST be compiled other wise it won't run fast enough 
+to work correctly. The first FOR NEXT loop will waste enough time 
+to  let  the electron gun get down to around the  middle  of  the 
+screen.  The program then changes the first colour register  (the 
+background  colour) to $700 (red),  the next FOR NEXT loop  waits 
+again and changes the colour back to back ($000),  the final GOTO 
+makes  sure that the routine runs every blank.  The result  is  a 
+palette  split  halfway down the screen.  You  can  increase  the 
+number  counted to in the loop to increase the  distance  between 
+the  splits,  likewise  you can add more colour changes  via  the 
+colour registers (for complete idiots below is a map of them!)
+
+$FF8240         COLOUR PALETTE REGISTER 0 (BACKGROUND COLOUR)
+$FF8242         COLOUR PALETTE REGISTER 1 
+$FF8244         COLOUR PALETTE REGISTER 2
+$FF8246         COLOUR PALETTE REGISTER 3 
+$FF8248         COLOUR PALETTE REGISTER 4 
+$FF824A         COLOUR PALETTE REGISTER 5      
+$FF824C         COLOUR PALETTE REGISTER 6 
+$FF824E         COLOUR PALETTE REGISTER 7 
+$FF8250         COLOUR PALETTE REGISTER 8 
+$FF8252         COLOUR PALETTE REGISTER 9 
+$FF8254         COLOUR PALETTE REGISTER 10 
+$FF8256         COLOUR PALETTE REGISTER 11 
+$FF8258         COLOUR PALETTE REGISTER 12 
+$FF825A         COLOUR PALETTE REGISTER 13 
+$FF825C         COLOUR PALETTE REGISTER 14 
+$FF825E         COLOUR PALETTE REGISTER 15 
+
+The  program has to change the colour registor directly  as  STOS 
+only  changes  colours  at the start of  every  blank,  which  is 
+useless  to  us.  If you run the program you will find  that  the 
+split is jumpy, this I'm afraid can't be helped, so you will have 
+to play around with the loop count to get the best results.
+
+Anyway,  I never intended to write this much on such a nausiating 
+subject, I can see you're bored stiff so I'll finish now...
+
+(Thanks to Christophe for helping me with my spelling!)
+
+ZOGG of THE WATCHMEN.
+                 ---
+
+

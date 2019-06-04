@@ -1,0 +1,129 @@
+ 
+                     ‰Centurbo 2, the Final Chapter?
+ 
+This little piece has been written as a necessary follow-up to the main 
+review  in this issue of Maggie.  We thought that we had caught all the 
+bugs  back then,  but it turned out there were one or two of the little 
+sods scurrying around still!  Maybe this time,  the hardware fix 'Roach 
+Motel' has finally done the business? - CiH
+ 
+It is the morning of Saturday,  the 13th November 1999, south London. A 
+newly-arrived  Frenchman  fidgets impatiently with  a  soldering  iron, 
+conscious  that  time is getting very short.  Shortly,  the convoy from 
+System  Solutions premises is heading to Stafford,  and this job has to 
+be finalised before then....
+
+A fair bit later, that same morning.
+
+Stafford,  a big hanger somewhere.  Keyclicks ring out filling the cold 
+still morning air.  On the Maggie stand, a big box suddenly arrives. We 
+open it,  a mixture of fear and hope well up. Is this the final chapter 
+in  the extended Centurbo 2 story?  Can we dare to hope that this time, 
+it's working alright?
+
+Well,  looking back at that day,  and the following few days after, the 
+signs  are very good.  I'm still waiting to hear exactly what  Rodolphe 
+did to get this errant upgrade to work.  Still, if the original creator 
+of the CT2,  and resident genius of Centek can't sort it, then who can? 
+I'm sure that there was more to it than just  replacing the DSP  static 
+RAM, which was what I've been told was done?
+
+The good news is now,  that the DSP is working, and has stayed working, 
+even with the machine switched on for a long time.  We verified that by 
+giving 'Whip!' a very thorough going-over at the ACC Show at  Stafford. 
+Also, Aniplayer kept its end up, without showing a DSP hang-up once.
+
+Further  experimentation  with  various DSP  dependent  software,  from 
+Graoumf  to  'Running'  all  came up  okay.  The  general  patterns  of 
+behaviour   described  in the main review still  apply,  possibly  with 
+Graoumf being a little more stable than before.
+
+The even better news is that the serial port/modem bug at 50 mhz  seems 
+to have been beaten at last!  I persisted with the 'old but reliable at 
+16  mhz' STinG installation that I started with,  although it might  be 
+worthwhile  to  try an upgraded version at some point.  CAB,  always  a 
+tricky  subject,  started to cooperate as well.  A newer OVL file might 
+well have helped here too.
+
+(Stupid things to do of an evening, part 1... I tried web browsing at a
+1024  x  768  (256  colours) screen mode.  Don't  know  why,  the  text 
+visibility for smaller characters is retina-busting on my screen, which 
+is  only really meant for 800 x 600 un-interlaced.  After that,  things 
+get a bit fuzzy. The point is though, it kept on going!)
+
+CAB does brighten up with the extra speed, and is a lot more responsive 
+and easier to get on with,  especially when things like picture loading 
+and  depacking  are going on.  It is now possible to scroll down a  web 
+page whilst the page is still loading.  Those frustrating 'sticky page' 
+episodes  are  now a thing of the 16 mhz past.  For smaller pages  with 
+less   elaborate graphics,  the load/depack time is near-instantaneous. 
+For larger pages, still a lot quicker than on an unexpanded machine. At 
+times,  the worst delay can come from the (lack of) connection speed to 
+the internet, especially at busy times!
+
+I  did try the 'Running' test,  and what was intended as a five  minute 
+session,  just  to  see if it was okay there,  turned into a  half-hour 
+plunge  into level two (the office),  before I realised it was gone 1am 
+in the morning! The fact that I'd got stuck on a bit of the level where 
+the  only  obvious exit was at ceiling height,  and I couldn't  go  any  
+further had nothing at all to do with my pulling the plug and going  to 
+bed!
+
+I've now got a working WAD file,  and Patrice Mandin's 'Doom' port does 
+work on this.  In fact,  a CT2 is really strongly recommended for this, 
+as  it  is a non-DSP based 3D engine,  and slug-slow on  an  unexpanded 
+Falcon.  You  might  like  to check out the review of  v0.21  for  more 
+information.
+
+Out  of  the ones that I tried the first time around,  Rainbow Paint  2 
+still refused to have anything to do with 50 mhz.  Strange really, that  
+Katherine Ellis reported this as working okay on turbo?  Also, there is 
+still a b-i-i-i-g question mark over 'Steel Talons', as this works, but 
+then goes on to experience regular hang-ups.  There is some DSP code in 
+there, judging  by the presence of an *.LOD file, but it is unlikely to 
+be  anything  to do with the 3-D updating?  Strange then,  that the one 
+production  that uses 'dirty' DSP code comes direct from an Atari  Corp 
+sponsored production!  Update - this game is okay, but only on the lower 
+16 mhz mode after all.
+ 
+Oh  yes,  there is the first major game failure on the system to report 
+as  well.  The  Arkanoid  game for the Falcon,  'Impulse',  crashes  or 
+freezes  as  soon  as  it  gets  to  the  main  game  screen.  This  is 
+irrespective  of whether it is turbo,  or non-turbo mode.  I don't know 
+how  it performs on other CT2 systems?  (Impulse checked out okay on my 
+Nemesis Falcy, so that's how I know it failed here.)
+
+The bad news?  Not a lot really,  I did notice that the 'B' drive in my 
+Desktopper case had gone down,  but that is a very minor inconvenience, 
+compared with all the other gains, so I'll forgive Rodolphe that one!
+
+So, what have we learned from this long and winding tale?
+
+1.  System  Solutions  have stuck by this right until the end,  and  my 
+deepest  thanks go out to them for their efforts on my behalf.  Surely,  
+the temptation must have been there to shrug their corporate shoulders, 
+and  give  it up?  I don't know how other people have fared,  but  this 
+makes me personally more confident of buying from them in the future.
+
+2.  Taking 1. above as typical, you can forget about self-installation! 
+There seem to be reports of varying success for this?
+
+3. When it works, it is brilliant! The idea of a 'Super Falcon '030' is 
+closer  than  ever.  Compatibility is better than I expected it to  be, 
+even  in difficult areas like games and some demos.  Something like the 
+Afterburner  or forthcoming (when?) Tempest accelerator may  have  more 
+power,  but  you  are considering these less as a Falcon enhancer,  and 
+more as an upgrade to a generic GEM box high-spec Atari compatible. The 
+Afterburner  is not noted for its DSP support,  we don't know that much 
+about the Tempest as yet.
+
+4.  The main review text viewpoint remains valid. It is really a catch-
+up  exercise  to  compensate for Atari Corps lack of  interest  in  the 
+Falcon.
+
+5. But what a catch-up exercise!
+
+That's it.
+
+CiH - Nov '99
+ 

@@ -1,0 +1,200 @@
+BLITTER-TEST.
+
+Hello, this is O.T.M. of the D.B.A.
+
+I'm going to bore you with another test from me again. This
+time I have written an Ste-Blitter test.
+
+Since Bonus was over-hyper-super-active with special Ste-coding,
+which is, I think probably a good thing because it's a great 
+machine which needs to be pushed a little more. 
+
+Suddenly one day at school it crossed my mined to check on what's
+so special on the Ste-blitter. I knew by then that it was a 
+powerfull chip. I already had written a dozen of programs that 
+didn't run in the SYNC  (*) even at 16 MHz cache. (**)
+But when I turned the blitter on such programs made it in time 
+with ease. Sometimes I even kept about 20% of the processor-time 
+at 8 MHz with the blitter on when the program couldn't run in 
+16 MHz cache with blitter.
+
+So I wrote a simple (little) test-program which tested various of 
+G.F.A. commands on it's compatibility with the blitter.
+
+Before I go any further I want to remark that the program I've 
+written is not out of any book, it's not an official test, and it
+doesn't test the blitter on all graphical capacities of the St(e).
+I've just used the most important (graphic) routines which I think
+are most used by the G.F.A. Ste-programmer. 
+
+Well I think you must see for yourself, I hope you can figure out
+my way of testing. Well here are the all the test-results I could
+get out of my Mega Ste.
+
+=====================================================================
+UNCOMPILED, 8 MHz.
+
+TEST           BLITTER OFF    BLITTER ON        TIME-PROFFIT IN % 
+
+FILL            2407            2360            0.9859450388085
+BOX             152             106             17.82945736434
+LINES           187             117             23.02631578947
+CIRCLES         635             637             -0.1572327044025
+PSET            137             137             0
+PLOT            454             476             -2.365591397849
+TEXT            2747            2007            15.56583929323
+PRINT           837             718             7.652733118971
+BMOVE           38              38              0
+GET             369             86              62.1978021978
+PUT             781             88              79.74683544304
+
+
+UNCOMPILED, 16 MHz.
+
+FILL            2238            2198            0.9017132551849
+BOX             144             103             16.5991902834
+LINES           176             115             20.96219931271
+CIRCLES         544             547             -0.2749770852429
+PSET            133             133             0
+PLOT            447             465             -1.973684210526
+TEXT            2652            1959            15.02927781392
+PRINT           805             704             6.693174287608
+BMOVE           38              38              0
+GET             339             85              59.90566037736
+PUT             704             87              78.00252844501
+
+
+UNCOMPILED, 16 MHz. CACHE
+
+FILL            1204            1229            -1.027538018907
+BOX             93              96              -1.587301587302
+LINES           117             107             4.464285714286
+CIRCLES         352             360             -1.123595505618
+PSET            78              78              0
+PLOT            269             434             -23.47083926031
+TEXT            1651            1568            2.578440509475
+PRINT           543             659             -9.650582362729
+BMOVE           36              36              0
+GET             216             83              44.48160535117
+PUT             420             86              66.00790513834
+
+
+COMPILED, 8 MHz.
+
+FILL            2400            2353            0.9888491479066
+BOX             147             101             18.54838709677
+LINES           177             106             25.08833922261
+CIRCLES         631             633             -0.1582278481013
+PSET            75              75              0
+PLOT            406             428             -2.637889688249
+TEXT            2221            1481            19.98919502971
+PRINT           713             595             9.021406727829
+BMOVE           38              38              0
+GET             364             82              63.22869955157
+PUT             777             86              80.06952491309
+
+
+COMPILED, 16 MHz
+
+FILL            2232            2192            0.9041591320072
+BOX             139             98              17.29957805907
+LINES           166             104             22.96296296296
+CIRCLES         540             543             -0.2770083102493
+PSET            72              72              0
+PLOT            396             414             -2.222222222222
+TEXT            2141            1449            19.27576601671
+PRINT           685             582             8.129439621152
+BMOVE           37              38              -1.333333333333
+GET             335             81              61.05769230769
+PUT             700             84              78.57142857143
+
+
+COMPILED, 16 MHz CACHE.
+
+FILL            1201            1225            -0.9892827699918
+BOX             90              92              -1.098901098901
+LINES           111             99              5.714285714286
+CIRCLES         350             358             -1.129943502825
+PSET            45              45              0
+PLOT            247             391             -22.57053291536
+TEXT            1339            1215            4.855129209084
+PRINT           474             556             -7.961165048544
+BMOVE           36              36              0
+GET             214             80              45.57823129252
+PUT             419             84              66.60039761431
+
+
+=====================================================================
+
+AND NOW FOR SOME REMARKS ABOUT THE RESULTS:
+
+- The figures below BLITTER OFF/ON are the time-clicks produced
+  by the 200 Hz timer between start and end of an test.
+
+This means:
+- If you want the results in seconds you have to divide the
+  figure by 200.
+- It is not an special numbre just grabbed out of the air.
+
+- The figures under TIME-PROFFIT IN%
+  These values give the proffits of the blitter in percents.   
+
+This means:
+- Negative values even mean a time-loss.
+
+! All tests where done in Low resolution.
+! And I have left the Bitblt-command (which is also an ST command)
+alone coz we will explain it later and than another test would be 
+in place.
+
+ABOUT THE PROGRAM:
+
+I don't know is there is enough space for it left, but if there
+is and the program is placed on the BRANDNEW D.B.A. DISKMAGAZINE 
+8, THE HORROR ISSUE, you'll have to check it out. If I may say so,
+this program proofs that you can make a program very clear and neat
+so I think anyone can figure it out. And for the real cracks, I 
+included the official way to get the blitter active or inactive.
+This routine is really according to the books. (read reg out, and 
+than place bit's and peaces.)
+
+The footnotes:
+
+* SYNC - This means the main procedure is fast enough to complete 
+itself before the screen is. If a scroll (for instance) does not 
+run in the SYNC this means that the scroll will not move smoothly 
+along the screen. (In other word's you get a bumpy scroll.)
+
+** A Mega Ste can switch between 8, 16 and 16 MHz CACHE. These
+are the frequency's the main clock in the St's are producing. For
+an normal ST/Ste this frequency is 8 Mhz, for a TT it's 32 Mhz, and
+a Mega Ste-user has 3 frequency's at his hands.
+
+I'M SORRY FOR:
+
+You as reader to read this crummy article with crummy results and 
+crummy English, but it is late, and I had a bad day at school.
+
+Everybody who doesn't understand my program. Sorry 
+Sorry Sorry (Write to our mag, and I will see what I can do for 
+you.)
+
+Greenpeace, I am sorry to waste so much energie, and therefor I
+will quit this nonsense.
+
+O.T.M. 
+
+Logging off.......
+
+O.k. disconnecting, ................
+XXXXXXXXXXXXX
+
+Lost satelite com-link, 
+Disconnecting main-frame.
+................
+.
+
+
+
+
+System.

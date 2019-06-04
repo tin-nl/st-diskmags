@@ -1,0 +1,405 @@
+
+(Tash,  sorry  about the disappearing ascii logo.,  but that looked like it had 
+been involved in a train crash by the time it got to me!) - CiH
+
+
+          =G=     =O=     =D=     =P=     =A=     =I=     =N=     =T=
+
+******************************************************************************* 
+*******************************************************************************
+
+                  WELCOME TO AN INTRODUCTION TO: GOD PAINT - 
+               THE RESERVOIR GODS' TRUECOLOUR PAINTING PACKAGE.
+
+What You Will Need: 
+-------------------
+    > A Falcon 
+    > A colour RGB/VGA monitor, or TV (inadvisable) 
+    > A copy of GOD PAINT 
+    > A decent mouse (no chunky Atari mice please) 
+    > An amusing mouse mat 
+    > Formatted disk/s and/or  Hard  Drive  (for  any  work worthy of saving) 
+    > Patience 
+    > An adequate repertoire of swear words 
+    > And plenty of inspiration
+
+******************************************************************************* 
+******************************************************************************* 
+Let's begin..
+
+*Firstly: 
+--------- 
+In general,  LEFT mouse button SELECTS,  RIGHT  mouse button QUITS (from screen 
+to  menu,  from window to menu etc.) Undo can be achieved by pressing the  Undo 
+key (wow). God Paint file format = .GOD
+
+Loading God Paint 
+~~~~~~~~~~~~~~~~~
+God  Paint  can  be  run off floppy or Hard Disk.  To  load,  double  click  on 
+GODPAINT.PRG   and   after  the God Paint intro screen has loaded,  click  left 
+mouse button,   (author's address will be displayed) left again (you are now on 
+the draw screen) and right to access the menu.
+
+The Menu 
+~~~~~~~~
+On  the  menu screen is  a  magnification  window,  the current pen  head,  RGB 
+colour  bars and a series of icons   which   allow  you to carry out  different 
+operations,  such as drawing filled boxes,  cutting blocks etc.      To exit to 
+the screen, move  the   mouse  pointer onto free space (white) and click right, 
+or press space.
+
+The Magnification Window: 
+------------------------- 
+This  is the  smaller  of   the   two   Magnification   windows  in God  Paint.  
+It will magnify that part of the screen  the  mouse  pointer was over when  you 
+last exited to the menu with the  right   mouse   button.    Beneath the window 
+are  four  arrows,  clicking left on each of these  will  allow  you to  scroll 
+around your magnified picture, clicking right on them  will  move  in  steps, a 
+quick  way  of moving around the image.   To the right of   the   window    are  
+three  icons,  the  '-' (minus) icon decreases  the  magnification,   the   '+'  
+(plus)   icon   increases  the magnification and the blue  square  alters   the  
+magnification    to   exactly  16x16 pixels,  which can be  useful  when  doing 
+sprites of  that  size,   since  one sprite will fit exactly into the window.
+
+The Pen Head: 
+------------- 
+Below the  magnification  window  is   a   grid,    this   displays the current 
+pen head (the default pen head is one  pixel   in  size).   You can change this 
+by  drawing,  with left mouse  button  on  the   grid,    to   delete   you use 
+right button.   The 'P' icon next to the grid accesses the pen studio, but more 
+of that later.
+
+The Colour Bars: 
+---------------- 
+On  the three RGB colour bars the level of  colour ranges from 0 at the  bottom 
+to  full (31 R/B,  63 G) at the  top.     You  can alter the level of colour by 
+clicking on the desired place on  the  bar   with   the   left mouse button but 
+there  are  also some nifty keyboard short-cuts which come in  handy.   If  you 
+press '*',  '-', '+', on the numeric keypad it will  select  the   three colour 
+icons at the right of the colour bars,  ('*'  selects  Red  bar,  '-'   selects   
+Green   bar,  '+' selects Blue bar (you can also click on these  manually  with  
+the left mouse button)). Once you have done this, press '0'  (on  the   numeric  
+keypad)  and  each colour bar you have selected will increase  by   one   step,   
+similarly,    pressing  '.' will decrease them (you can also click on  the   up  
+and   down  arrows  next to the colour icons).      Other useful short-cuts  on 
+the numeric keypad:
+
+         Pressing 1 will decrease Red down to zero 
+         Pressing 2 will decrease Green down to zero 
+         Pressing 3 will decrease Blue down to zero 
+         (Thus pressing 1, 2 and 3 will give you black)
+         Pressing 4 will increase Red up to full colour 
+         Pressing 5 will increase Green up to full colour 
+         Pressing 6 will increase Blue up to full colour 
+         (Thus pressing 4, 5 and 6 will give you white)
+         Pressing 7 will decrease Red by one 
+         Pressing 8 will decrease Green by one 
+         Pressing 9 will decrease Blue by one
+         Pressing ( will increase Red by one 
+         Pressing ) will increase Green by one 
+         Pressing / will increase Blue by one
+
+The Icons: 
+---------- 
+The rest of the menu is taken  up  with a series of icons,  these cater for all 
+the other functions, such as  drawing   lines,   boxes,  polygons, circles etc.  
+If  you move over an icon,   text  will  appear  at  the  bottom  of the screen 
+telling you what that icon does.  Clicking left on  an  icon will either select 
+it  e.g.  filled  box,  co-ordinates,   or   it   will   activate    it    e.g.   
+greyscale,    swap colours.   On some icons you can click right button to bring  
+up  a  preferences window for that icon e.g.  filled circle,  pen   mode.     In   
+these   windows  you  will  be able to alter certain things,  to select  a  new  
+setting  e.g.  on the filled circle menu, changing from  solid  to  shade,  you  
+use    the    left    mouse   button.    When  you   are  increasing/decreasing 
+numerical values,  the   left  mouse  button will change the number in steps of 
+one,  clicking   and  holding  left and then clicking and right will change the 
+number much more  quickly.   To exit these windows you click right button.
+
+Blocks 
+~~~~~~
+Cutting and Pasting: 
+-------------------- 
+The block mode (Scissors   icon)   allows   you   to   cut  and  paste parts of 
+your picture.  First select the  icon   with   left  button,  then  exit to the 
+screen.  Click (and release) left to make the  first  point of your block, move 
+the  mouse until the block is  the  desired  shape   then   click  left  again, 
+the block will now be on your mouse pointer.  To  place  it,  just  position it 
+where  you want it and click left.   To flip the block  before  you   place it, 
+use  the cursor keys.   Right mouse button will remove the block from the mouse 
+pointer.
+
+Block Types: 
+------------ 
+If  you  click  right  button on  the   Scissors  icon   it  will  bring  up  a 
+preference window.   The different block types  you  can  have are Solid, X-Ray 
+or  Back.   Solid  means that  when   you   cut   the   block    ever    colour   
+will    be  present,  even  the background colour.    X-Ray  means   that   the   
+first   colour  in your palette (default of black) will not be included in  the  
+block  and Back means that the block will be displayed behind every  colour  on  
+the   screen,  except the first colour in the palette (again default black).
+
+Move Types: 
+----------- 
+On the preference window,  you   will   be   able  to  change  the Move Type of 
+your  block.   It  will be defaulted to Move,  which  means that the block will 
+move  over  the screen as normal,   but  there  are   various   other  options.  
+Add  means that the block will be added to   whatever   you   paste    it   to,  
+its colours will increase (unless it is put down on black),    Sub  means  that 
+the  block will be subtracted from whatever you paste it to.   There  are  also  
+options  such  as  And,  Eor,  Nor,  Nand etc.  but apart from creating  amusing  
+messes  of your picture, I find these to be of little use.     If you wanted to 
+brighten  or  darken   part  of your picture by a controllable amount then  you 
+would create  a   filled   box   of  colour:  R\01 G\02 B\01 then cut this as a 
+block with Move Type on  Add  or Sub (to lighten or darken). You would position 
+this  block  in the   desired   place   and  paste  it  as many  times  as  you 
+wanted,  until  the  correct   hue    was   obtained.     When    you  do  this 
+operation, the Block Type should be selected to either Solid or X-Ray.
+
+Block Size: 
+----------- 
+If the Block Size is on Define   then   this  means  that you make the size  of 
+the block you wish to cut, as you  are  cutting  it, if the size is on Box then 
+you can alter the X and Y  values  in   the   preference  window to create  the 
+exact size of the block you want to cut e.g.   16x16,   32x32,  11x45 etc.  and 
+when  you exit to the screen a box of that size will be on your mouse  pointer.     
+If  you have cut a  block  but   realized  that  you  wanted it on  X-Ray,  not 
+Solid,  then  you  can exit to  the  menu  with  the space bar and  change  the 
+block to X-Ray as normal.  You  can  then   exit   back   to  the  screen (with 
+space  or right button) and the block will still  be  on  the   mouse  pointer, 
+but will now be in X- Ray mode.     Blocks will load   into   the   top   left-
+hand   corner  of  the screen unless otherwise instructed.
+
+The Grid 
+~~~~~~~~
+The default Grid size is 16x16,  but  this  can be changed by clicking right on 
+the grid icon and then altering the X and Y values.     For extra accuracy when 
+cutting   sprites  (for  example,  of size 32x32) you would use grid and  Block  
+Size   Box   together,    increase the grid to 32x32 and then select the  Block 
+Size as a Box of 32x32.
+
+The Palette
+~~~~~~~~~~~~
+To view the current palette   click   left   and  right  mouse buttons together 
+(or  Return  on the keyboard)  when  you   are   on   the   draw  screen.   The 
+palette options are as follows:  Choose,  Pick,  Swap,  Copy,   Range, Mix.  To 
+quit the palette, use right button.
+
+Choose: 
+------- 
+Choose  allows  you to select one  of  the  colours  in  the palette,  it  will 
+then  become  your pen/line/box etc.,  colour.     You   also  use  Choose  for 
+some of the other operations you do in the palette, such as Range, Copy etc.
+
+Pick: 
+----- 
+Pick allows you to pick  a  colour  from   the  screen (with left) and  include 
+it  in the palette.   It will  replace   the   currently  chosen  square   (the 
+one with the white border around).
+
+Swap: 
+----- 
+Swap  allows  you to interchange   the   positions   of  two   colours  in  the 
+palette. First use Choose to select one of  the  colours you want to swap, then 
+select Swap and click on the colour you want to swap it with.
+
+Copy: 
+----- 
+Copy  allows  you to copy   the   same   colour  onto  other   squares  in  the 
+palette. Click on Choose to select the square you wish to copy then select Copy 
+and click on the square you want to copy it to.
+
+Range: 
+------ 
+Range  allows  you  to  generate a  range   of  different  shades  between  two 
+different  colours.   Use  Choose to select  the  first   colour  you  want  to 
+range between, then select Range and click on the second colour.
+
+Mix: 
+---- 
+Mix  allows  you to combine different  colours  in the palette to  make  a  new 
+colour.  Use Choose to select the base colour,   then  select  Mix and click on 
+the colour you want to mix with the base colour.
+
+Loading/Saving 
+~~~~~~~~~~~~~~
+To load or save work the icon   you   will  need  has  a  picture of a disk  on 
+it.  Clicking  right  button  on  this  icon   will   bring   up  a  preference 
+window  for file formats,  so if you wanted to  load  an   Egg  Paint  picture, 
+you  would click on the file format displayed after  'Load  File   Type'    and  
+then  select  Egg Paint from the list brought up (left button),  right   button  
+will  then exit you from this menu.  To complete the operation  you  will  need  
+to   load  in the Egg Paint picture,  so you would click left on the same  disk   
+icon  and  select 'Load Picture'.  It is also possible to load and save blocks, 
+to save  a block select Save Block - God Paint will send you to the screen, you  
+then   make  a  box around the block you want to save,  or use a predefined box  
+size,   and   once   you have done this it will exit to the Gem  File  Selector 
+where  you   type   in  the  name of your file e.g.  BLOCK___.GOD.      If  you 
+select Load File Type:    Auto  on  the file format window, this means that all 
+graphics files will be  displayed   in  the file selector and you will be  able 
+to  load  any  of them,  as  long  as  God Paint caters for that  file  format.     
+To  load a block into the  mouse   pointer  instead of the screen,  click right 
+on  the disk icon to  bring  up   the   file   formats  window.   At the bottom 
+of this window is an option:  Block Dest., select  Mouse  and then load a block 
+as normal. It will now load into the mouse pointer.
+
+The Magnification Studio 
+~~~~~~~~~~~~~~~~~~~~~~~~
+Clicking  on  the  Magnifying  Glass  icon  will    allow   you  to  enter  the 
+Magnification Studio.   In the studio, there is  one  window  for the magnified 
+image  and one for the unmagnified image.    As  you  draw  on   the  magnified 
+image,  the  normal image is real-time updated so that you can  see  what  your 
+amendments  look  like  on the real image.      The arrows at the  top  of  the  
+magnify   window  allow you to scroll around the image.   There are two    sets   
+of    '+'    and   '-',    the  first  '+' increases the X  magnification,  the  
+second   '+'   increases   the   Y  magnification. The minuses decrease X and Y 
+magnification.    Clicking  on  the  segmentation icon will put a white boarder 
+around  all the   pixels   in   the  magnify  window,   so that you can  easily 
+see each individual one.  The  black   icon  allows  you to set the size of the 
+magnification   window    e.g.     16x16,     32x32    etc.      To   exit  the 
+magnification studio click right button.
+
+The Pen Studio 
+~~~~~~~~~~~~~~
+Clicking  on the 'P' icon next to the current Pen Head on the menu  will  allow 
+you  to  enter the Pen Studio.    The   box   in   the  centre  of  the  studio 
+displays the current pen head which you draw  on  with  left button and  delete 
+with right.   The arrows at the top of the  screen   allow   you  to scroll the 
+pen  head  around.    You  can  also  flip  the    pen    head    horizontally,   
+vertically   or   in 90 degree steps.  Inverting the pen means that what    was  
+black   (and thus pen) becomes white (and thus not pen) and vice versa.    Fill  
+pen  gives  you  a nice,   chunky pen head, clear pen gives you no pen head  at  
+all   (so  you literally would not be able to draw anything!).   You can toggle 
+the   segmentation of the pen head box off and on and you can magnify the   pen  
+head   (with   the  plus icon) incase you have got your contact lenses in  back  
+to   front.    The   minus  icon decreases the magnification. The two arrows at 
+the  left  of  the  screen  allow  you to view the six different  default  pens 
+available,  the  icon  beneath   them   allows  you to load and save pen  sets.  
+To exit the pen studio, click right button.
+
+The Greyscale Icon 
+~~~~~~~~~~~~~~~~~~
+If you click  (left  button)  on   the   Greyscale   icon,  your entire picture 
+will be transformed into shades of grey.    But  beware!  there  is no Undo for 
+this.
+
+The Swap Colours Icon 
+~~~~~~~~~~~~~~~~~~~~~
+Clicking right mouse button on this  icon  will  bring up a preference  window, 
+in this you  select which colour you  want  to  swap  with which e.g.  Red with 
+Blue  (click  on red square at left and blue  square at right).   Right  button 
+exits the window and then left on the icon will carry out the swap.
+
+The Mask Screen Icon 
+~~~~~~~~~~~~~~~~~~~~
+Mask  Screen allows you to change   the   colour  balance  of the whole  screen 
+e.g.  increase the red content, decrease the blue etc.     If you add 10 Red to 
+the   screen  and  then decide you don't like it and want to change it back  to 
+how it was,  you  then  have to subtract the same amount of Red from the screen 
+(-10).   Once   you   have  done  this  it  will be back to its original colour 
+intensity,  but if  you  were   to   click  left on the icon a second time,  it 
+would decrease the red content of the screen by ten.
+
+The Resize Screen Icon 
+~~~~~~~~~~~~~~~~~~~~~~
+Clicking  left  on this icon will  send  you   to  the screen,  where you  will 
+have to decide on the amount you want  to  resize  your picture,  by decreasing 
+the  size of a box,  the bottom  right-hand  corner  of   which  is attached to 
+your  mouse  pointer.  When  the block is  the  desired  size,    click    left  
+button  and  your picture will be altered accordingly.   You can do  this    as   
+many  times as you want, but clicking right will finalize the size (there is no 
+undoing this either).
+
+The Colour Box Icon 
+~~~~~~~~~~~~~~~~~~~
+Colour  Box allows  you  to  create   a  filled  box,   shading  between  three 
+main  colours.   The  default Colour  Box  will   produce   a  box that  shades 
+between  blue,  cyan  and red,  but you can  change  the   colours  by clicking 
+right  on the icon and changing the sets of RGB values.   Here are some example 
+Colour Boxes:
+               RED GREEN BLUE 
+         Start -00+ -48+ -00+     This will give a Colour Box shading 
+between: 
+         X End -19+ -00+ -31+     Green, Purple and Red/Pink 
+         Y End -31+ -00+ -11+
+               RED GREEN BLUE 
+         Start -00+ -00+ -14+     This will give a Colour Box shading 
+between: 
+         X End -00+ -35+ -31+     Blue, Light Blue and Yellow 
+         Y End -31+ -63+ -00+
+               RED GREEN BLUE 
+         Start -31+ -50+ -00+     This will give a Colour Box shading 
+between: 
+         X End -20+ -20+ -20+     Orange, Pink and Green 
+         Y End -00+ -40+ -10+
+               RED GREEN BLUE 
+         Start -20+ -00+ -31+     This will give a Colour Box shading 
+between: 
+         X End -13+ -13+ -31+     Purple, Blue and Green 
+         Y End -05+ -63+ -15+
+
+The Filled Circle Icon 
+~~~~~~~~~~~~~~~~~~~~~~
+Clicking  right on this icon  will  bring  up   a preference window,  on  which 
+you can choose between a Solid (one colour)  or a Shade (many colours)  circle. 
+The  Solid  circle  will use your current colour bar  colour,   but  the  shade 
+circle  has to be created by altering the   values   in   the   window.    Here  
+are some example shade circles:
+
+         RED -31+ -00+     This will  give  a  red circle, shading to 
+green at the 
+       GREEN -00+ -63+     centre. 
+        BLUE -00+ -00+
+         RED -00+ -00+     This will  give  a blue circle, shading to 
+black 
+       GREEN -00+ -00+     around the circumference. 
+        BLUE -00+ -31+
+         RED -00+ -31+     This will  give  a blue circle, shading to 
+white at 
+       GREEN -00+ -63+     the centre. 
+        BLUE -23+ -31+
+
+The Smooth Icon 
+~~~~~~~~~~~~~~~
+Smooth  allows  you to quickly  blend several colours together,  removing  hard 
+edges  and anti-aliasing lines.   On the preference window you can alter the  X 
+and  Y co- ordinates of the box size,  e.g.  you  could  have a box the size of 
+the screen,  the box will become your mouse pointer  and  everything  inside it 
+will be smoothed.  You can also change the  Smooth  Step,  the   lower the step 
+e.g.  R/0,  G/0,  B/0,  the more it will shade.      If you have the  Red  step  
+relatively  high,   about 15, and the Green and Blue steps at 0 then the object 
+you  shade (provided it has at least some of all three colours in it)  will  be 
+shaded  to   red,    as   the green and blue are stripped away quicker than the 
+red because of the lower smooth step.
+
+******************************************************************************* 
+*******************************************************************************
+
+     There are many more  icons  in  God  Paint,    such  as Spray Can,  Letter 
+Box (for those a  little  bemused  by  this  icon,   it  allows  you  to create 
+square/rectangular  boarders - on the screen  make  one  large  square,  then a 
+smaller  one  inside and it will fill in  the  space    between    them    with   
+either  one  colour (solid) or many colours (shade)),  Cycle,  Slow  Draw,   K-
+Lines,    Rays,   Fractals  etc.,  but  I am not going to explain how all these 
+other icons work because:
+
+1)   This is not the God Paint manual
+2)   Hopefully, by now you  should  have  grasped the structure of the 
+     menu system and be able to cope with it on your own
+3)   I have explained the more  useful functions, for serious drawing, 
+     those left tend towards being gimmicky.
+
+******************************************************************************* 
+*******************************************************************************
+
+Mr.  Pink  will  be    coding    God   Paint   II,    so   if   you   have  any 
+suggestions for functions,  structure etc.  or just feedback,  then the address 
+to write to is:
+    Leon O'Reilly, 
+    Cwm Isaf, 
+    Abermule, 
+    Montgomery, 
+    Powys, 
+    SY15 6JL
+================================================================================
+ Ripley/Reservoir Gods. 
+

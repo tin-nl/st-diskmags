@@ -1,0 +1,105 @@
+DFC 1.20
+
+What does DFC do?
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+DFC, an abbreviation of 'Desktop File Connector', does as it's name suggests: as
+soon as you double click on any file that's not executable, the desktop will au-
+tomatically run DFC, passing on the file's name. DFC then checks the extension
+and runs the appropriate program. Which program is connected to which extension
+is read from the DFC.INF file in the root directory of the bootdrive.
+A big advantage is that a special key combination can be assigned to each con-
+nected program. This can either be <Shift>, <Control>, <Alternate> or any combi-
+nation of these. Let's say we assign <Shift> to our text editor and no key to
+our text viewer. Now, when we double click on a text file, keeping <Shift>
+pressed down (assuming we connected some extensions like .TXT and .DOC) it'll
+be shown by the text EDITOR. But if we hadn't held down the shift key, we would
+have had the textfile presented in the text VIEWER. This is also useful if you
+regularly change .INF or .CFG files.
+
+
+Features
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+Here's a list of wat DFC offers you:
+
+- You may connect as many extensions as you want to an application.
+- The ability to assign a combination of special keys, so that different appli-
+  cations can be connected to the same extension.
+- It's very suitable for extracting .ZIP files etc. using a commandline.
+- It doesn't use extra memory but merely a few bytes, so you should be able to
+  use every program you were able to use before.
+- The installation procedure is very easy.
+
+How to install Desktop File Connector (DFC)
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+- Run the DFC_xxx.TOS file, and all files will be extracted. It doesn't matter
+  where you placed the .TOS file on your disk, the installation program will
+  automatically place it where it belongs.
+  Make sure you keep a backup of the original DFC_xxx.TOS file, so that you can
+  install DFC later again in case something went wrong.
+- Run the INSTALL.PRG program inside the DFC folder (usually you won't need to
+  change the options).
+- Select the 'Install' button (DFC will now be installed on your boot drive).
+- Reset the computer, as soon as the installation program tells you to do so.
+- When you're back on the desktop, delete the DFC_xxx folder that was created
+  by the DFC_xxx.TOS program. It isn't neccessary anymore, because the DFC fol-
+  der was copied onto your bootdrive.
+
+  I didn't make the installation program remove this folder all by itself, be-
+  cause if anything had gone wrong, and if you also had deleted the DFC_xxx.TOS
+  file from your disk, you wouldn't have DFC anymore!
+
+- Read the MANUAL.DOC file for futher explanation.
+
+New features/removed bugs of Desktop File Connector (DFC)
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+* Only summaries are given, read MANUAL.DOC for full explanation.
+
+1.20: (01-05-94) D.B.A. Magazine 10 release
+ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ
+- Improved interface, both setup and installation programs.
+- 'Check all' option added. This option checks every application in the list for
+  it's existence. If an application couldn't be found, you can order DFC to look
+  for it elsewhere on the disk or remove it from the list.
+  This checking procedure is also performed at start-up.
+- Improved manual, Mantra (also a member of Dawn) gave me some second opinions
+  and checked the grammar.
+- The program's resource files (.RSC) are internal now.
+- Improved installation program.
+  It's real 'smart' now, the older versions could do some weird things, like
+  accidently erase the original DFC folder. I think you can trust it now, I made
+  a good protection to prevent such disaster.
+- Bug removed from the setup program.
+  There were some serious errors in the structure check routines. If you went
+  fooling around, things could get messed up. This was due to a fault in the
+  move-routine, which moves items to a different place in the list to avoid
+  conflicts.
+- Bug removed from the setup program.
+  If you typed in a few extensions without storing them by clicking on store or
+  selecting a different item, and clicked on a button causing the fileselector
+  to appear, the typed extensions disappeared in most cases. It's fixed now.
+
+*******************************************************************************
+Additive applications/files included with DFC:
+
+TEXTVIEW.TTP - A simple textviewer. Since the desktops' text viewer won't be
+               available anymore after installing DFC, you should install this
+               text viewer or anything equivalent.
+ACC_ACX .TTP - Renames a .ACC file to a .ACX file and vice versa.
+               If you change the extensions in the filename (for example:
+               INF_INX.GTP) then those extensions are used. Ofcourse you can
+               create more of them by copying and renaming it. 
+DELETE  .TTP - Deletes the selected file.
+MONO_ICN.RSC - A resource file containing a monochrome icon of DFC to put on
+               desktop (for computers older than the Falcon: TOS 2.xx/3.xx)
+COLR_ICN.RSC - A resource file containing a color icon of DFC to put on your
+               desktop (only Falcon or compatible, TOS 4.00 or higher).
+
+Please read MANUAL.DOC on how to install the applications.
+
+Here's the address: Sandor Drie‰nhuizen (Zeme of Dawn)
+                    Bottinge 29
+                    8604 AH Sneek
+                    The Netherlands
+
+
+

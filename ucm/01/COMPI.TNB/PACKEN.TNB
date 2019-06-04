@@ -1,0 +1,116 @@
+ ___________________________________________________________________________
+ ::::::::::::::::::::::::::: Du und Dein Archiv ::::::::::::::::::::::::::::
+ :::::::::::::::::::::::::::::::::: oder :::::::::::::::::::::::::::::::::::
+ :::::::::::::: Was Sie schon immer ber LHarc wissen wollten, :::::::::::::
+ ::::::::::::::::::: sich aber nicht zu fragen trauten... ::::::::::::::::::
+ ===========================================================================
+
+ #### Dieser Artikel entstand fr das TNB-Diskmag und ganz speziell fr ####
+ ######## Moondog, den ich h„ufig mit *.LZH-Archiven ge„rgert habe. ########
+
+ ___________________________________________________________________________
+
+ Hallo Leute!  Ihr habt keine  Probleme mit LHarc???  Seltsam... Naja , dann
+ braucht  ihr nicht  weiterzulesen.  Aber vielleicht  gibt es noch  ein paar
+ Leute, die mit Archivierern und Packern auf Kriegsfuž stehen. Also,man kann
+ jeden Streit vermeiden,wenn man viel Festplatte, viel RAM, oder viele Disk-
+ laufwerke hat.  Aber ganz ruhig lebt man nur mit allem dreien. Nun bat mich
+ Moondog , mal aufzuschreiben, wie sich LHARC berreden l„žt , vernnftig zu
+ arbeiten. Darum einige Lektionen:
+
+ Man bekommt eine Dokumentation mit , die entweder hervorragend und englisch
+ ist, oder deutsch und miež...
+
+ Man kann eine Hilfsseite aufrufen, wenn man LHARC.TTP ohne Argumente
+ aufruft -> kurz, deutsch, miež!!!
+
+ Ansonsten sieht die Kommandozeile so aus:
+
+ Befehl   Archiv         Verzeichnis    Dateien     Optionen
+ ===========================================================
+ siehe    A:\HOTTEHUE    '\' am Ende    *.TXT       siehe
+ unten    oder so was    wichtig                    unten
+
+ Die n”tigsten Befehle:
+
+ a - Dateien einpacken
+ x - Dateien auspacken
+ l - Archivinhalt auflisten
+
+ Die Optionen:
+
+ Sie werden mit einem Minus begonnen. Da w„ren
+ r - Rekursiv archivieren ( mit Ordnern und kompletten Pfadnamen )
+ n - keine Anzeige des Packfortschritts
+ m - evt. Fragen ( z.B. "Ordner anlegen?" ) mit ja beantworten
+ h - am Ende auf Tastendruck warten
+ Die andern habe ich noch nicht gebraucht.
+
+ Was muž man nun tun???
+
+ Hat man eine Festplatte , so gibt es kaum Probleme, da man dann genug Disk-
+ platz hat. Wenn man nur ein Laufwerk hat, so ist der RAM entscheidend, d.h.
+ man muž sich eine  RAM-Disk  anlegen. Manchmal ( ganz selten ) gibt es evt.
+ Probleme, wenn man zwei verschiedene Laufwerke anspricht. Und beim Einfgen
+ oder ( bzw. Entfernen  ) einzelner Dateien in ein ( bzw. aus einem ) Archiv
+ muž man sehr vorsichtig sein. ICH mache es lieber nicht nicht und packe nur
+ komplette Archive ein. Das Auspacken kann aber stckweise  erledigt werden.
+ Nun einige Beispiele:
+
+ ---------------------------------------------------------------------------
+ a D:\TEST D:\ *.TXT *.DOC README.*
+
+ Packt alle Dateien *.TXT, *.DOC, README.* vom Drive D: in das Archiv
+ D:\TEST.LZH.
+ ---------------------------------------------------------------------------
+ a D:\TEST D:\ *.* -r
+
+ Packt s„mtliche Dateien von Drive D: und aus allen Unterverzeichnissen in
+ das D:\TEST.LZH.
+ ---------------------------------------------------------------------------
+ x D:\TEST A:\ *.*
+
+ Packt s„mtliche Dateien aus D:\TEST.LZH aus und schreibt sie nach A:\.
+ Ein evt. vorhandener Dateibaum wird nicht angelegt.
+ ---------------------------------------------------------------------------
+ x D:\TEST A:\ *.* -rm
+
+ Wie oben. Aber die Dateistruktur ( Ordner ) wird angelegt.
+ ---------------------------------------------------------------------------
+ l D:\TEST -h
+
+ Listet das Archiv D:\TEST.LZH auf. Man verkneife sich ein '-r' am Ende,denn
+ sonst wird die Liste leicht unleserlich. Das '-h' ist dagegen wichtig, denn
+ sonst kommt in aller Eile der Desktop wieder.
+ ---------------------------------------------------------------------------
+
+ So, das war's zun„chst. Mehr mache ich auch nicht und komme eigentlich ganz
+ gut zurecht ( Ok, ich habe zwar keine Festplatte,aber mit 2.5 MB immer noch
+ ganz gut Lachen... ). Die anderen  Archivierer sind alle  irgendwie „hnlich
+ ( ZOO hat sogar 'ne GEM-Oberfl„che! ).  Achso, eines noch: LHarc bietet die
+ M”glichkeit, fr den  Online-Depacker AFX zu packen. Ich rate davon ab, AFX
+ ist zwar schnell, aber wer seine Dateien liebt... ( ...der schiebt?! ). Wer
+ auch mal zu den Emm&Ess-Dosen schielt, beachte bitte die Versionsnummern:
+
+ Beim ATARI k”nnen die LHarc's ab 2.01 das neue lh5-Format erkennen. Bei den
+ Dosen gibt es keine LHarc > 1.3xx. Dafr heižt das Programm LHA2.04 und er-
+ kennt wunderbarerweise das lh5.  Sollte man fr die alten  Versionen archi-
+ vieren wollen , oder ist man nicht ganz sicher , so sollte man die Optionen
+ -ko  einsetzen. Diese  sorgen fr Archive , die die alten LHarc  auch lesen
+ k”nnen.
+
+
+ ===========================================================================
+ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> APACHE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ ===========================================================================
+
+
+ Erreichbar unter:
+
+ APACHE
+ Zi. 316
+ Neust„dter Passage 10 / Bl. 011
+ Halle
+ 06122
+
+ oder per E-Mail: WNVQSU@MLUCOM.URZ.UNI-HALLE.DE

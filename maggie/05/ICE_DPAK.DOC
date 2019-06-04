@@ -1,0 +1,113 @@
+
+
+       +-------------------------------------------------------+
+       | Instructions for 'Ice Data Depacker v2.0' by MUG U.K¿ |
+       +-------------------------------------------------------+
+               
+                    Released into the Public Domain
+                    -------------------------------
+
+This  document belongs to the utility in the Programs  folder  of 
+this issue of Maggie.
+
+Right then, this little program will allow you to depack ANY data
+file  that  has been packed with the Ice Packer v2.11 by  Axe  of 
+Delight.  This was a much needed feature missing from the packer, 
+because it was a pain in the backside if you just packed the file 
+that you only had a single copy of !!
+
+The program is really easy to use, and should any problems occur, 
+then it is something that I haven't accounted for (which isn't  a 
+lot !!).  All you have to do is load up my program,  and you will 
+prompted  with a file-selector which requires you to click  on  a 
+file  that  has  been  packed  with  the  ICE  Packer  (v2.11  or 
+previous).  This program will check the header of the  file,  and 
+let  you  know if the file is NOT an ICE data file  and  it  also 
+recognises the Automation packer header too !!!
+
+If the file is NOT an ICE packed file,  or any disk error occurs, 
+you will be returned to the first file-selector. Either try again 
+with  another  file or select 'Cancel'  from  the  file-selector, 
+where  you will be given the option of returning to the  desktop, 
+or back to the program.
+
+If the file is an ICE packed file,  a screen will appear with the 
+following information on it:-
+
+  i) The length of the file (in disk-space terms)
+ ii) The length of the packed file (as ICE packer knew it as)
+iii) The length of the unpacked file (as it will be AFTER it  is 
+     unpacked)
+
+The reason for including both (i) & (ii) on the screen,  is  that 
+some  files I found would be 20K in length,  but the  ICE  header 
+would say it was only 19K in length - very odd indeed !!!
+
+Anyway,  if  you press a key at this point (ESCAPE will escape  - 
+naturally  !!)  the file will be depacked (and  the  screen  will 
+flash  a bit - oo-er !!) and then another file-selector will  ask 
+you for the output filename.
+
+That's  all there is to my little program.  It works with  almost 
+everything I've tried,  with one or two exceptions - eg. Life's a 
+Bitch  Demo  (sorry  guys - but I was  trying  out  my  Disk2File 
+Grabber,  as  well as this program and your demo was perfect  for 
+testing !!!).
+
+Have  fun,  and I look forward to updating this program  soon  so 
+that  it  will  work with any version of  the  ICE  Packer  (v2.2 
+onwards). This program is not compatible with v2.2 for the simple 
+reason  that the source code I've been sent will not  depack  the 
+extended  picture  packer files.  If anyone (Axe of  Delight  ??) 
+would  like to send me an up-to-date version of the v2.2  source-
+code,  then write to the address at the end of this file.  Do not 
+send ANY form of pirated software, as the address is for my mates 
+computer shop !!
+
+I would also like depack source code OR the following packers:-
+
+Automation v2.51+ (I've got 2.51r - any later versions  available??)
+Ice Packer v2.2+ (especially the depack sources)
+Pompey Pirates v1.9y (even if it's just the depack source code !!)
+Gollum Packer (whatever it is & whoever wrote it - I want it !!)
+Fire Packer (a pre-release Ice Packer - or what, I want it !!).
+YOUR packer (if it's any good that is !!)
+
+If  you are wondering what the hell I want all the above  packers 
+for,  I  shall explain.  I want to write a similar shell as  this 
+program, but it will be able to depack ANY form of packed data by 
+the best packers available !!  The program (if it is ever started 
+!!),  will be released into the Public Domain,  and I daresay  it 
+could  even be well received by everyone - but I need  YOUR  help 
+(packer authors especially) in order to finish it off !!
+
+Have fun
+
+MUG U.K¿ - 1/4/1991
+
+
+
+Credits:
+--------
+
+Depacker Program & Documents:   MUG U.K¿ - 1/4/1991
+
+Ice Packer & Depack Source:     Axe of Delight
+
+
+Contact Address:
+----------------
+
+Broadsword Computers,
+141 High Street
+Rhyl
+CLWYD
+LL18 1UF
+
+
+Any problems, queries, questions etc. should be sent to the above address,
+and don't even think of writing if you want copies of software etc.  I will
+keep all the disks & burn the letters of idiots who write to me asking me
+for the addresses of so-and-so etc.
+
+

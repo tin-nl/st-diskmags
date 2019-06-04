@@ -1,0 +1,59 @@
+{*f1REEKING RUBBER 0.8{*f0
+
+                 - new preview of the Lotus-game by Nature -
+
+Another version  of this well known game-project. And this time it looks like
+NATURE  have made a real  game out  of it. Or  at least, that's how I see it.
+It's no  complete game  with multiple  levels, scenario's or tournaments, but
+the authors  seem to have the basic gaming engine completed and even a little
+intro is ready.
+
+After having  watched the small  but quite cool intro (nice bumpmapped logo +
+cool zooms) you  are taken into the  main menu. Hires stuff this is, looks ok
+if you leave out the flickering of your tv/rgb monitor :)
+A pity that  the graphics all suffer from lack of background pictures.. Would
+have made it a bit better.
+But maybe we can expect to see this in version 1.o?
+
+In this  version there  are little  options  to choose  from. You  can select
+joystick or  joypad, but  no more. The  menu has  a few options that can't be
+used yet. Ok, so we just choose start and off we go.
+
+And. Wow! This  is cool. Your car  stands before  the  starting-line  and the
+music starts to  play. The surroudings are reminiscent of the desert-level in
+ñLOTUS II/IIIð on the ST, but only now glorious true-color! Most of the scenery
+and background  are probably  hand-drawn as far as I can judge. The cars seem
+to be raytraced. Nice stuff.
+
+We  start  the  car  by  pressing  fire  and  shift  gear  with  up/down. The
+combination  of the engine-sound with the module-music is great! Something we
+never  had in the  old Lotus.. There are some 'enemy' cars on the desert-road
+and when  you accidently  bump into them  you hear a muffled 'bump?' and lose
+speed.
+
+Many  gaming-elements  are  already  included. ñCheckpointsð, òscoreð, ótimeð, etc.
+here you  have to  race against  the clock  and gain  points  for every meter
+driven. Passing  through  a  checkpoint  gives  extra time. Fail  to  reach a
+checkpoint in time and it's game over. Exactly the same as in Lotus.
+
+Even some special  effects are in there. In this desert-level you have little
+'bushes' being blown over the road. A nice effect and functional too. Bumping
+into them slows  you down again. Let's  hope for more of these effects in the
+final version.
+
+That's  about it  for this  version. With  some more levels and championships
+this could be a full game to beat the living crap out of the old Lotus. And I
+am really looking forward to it. :)
+
+Only a few things could be improved:
+- The speed. Surely  this can be  souped up. The ground texture is really not
+  so hard  to optimise. All  you need  is  an 'addx' loop  to make  it 3o-5o%
+  faster. I guess the sprites can also be optimised by using bitmasks.
+  Reeking Rubber  now runs  in 1o-11fps on RGB. Not fast, but not bad either.
+  But I don't want to know how it behaves on VGA..
+- The falcon gets instabile after leaving the game.
+
+But for  the best  part: This  is already a  great achievement. We don't have
+many falcon game(previews) of this quality!
+
+-<EarX/FUN>------------------------------------------------------------------

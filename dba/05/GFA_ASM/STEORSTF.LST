@@ -1,0 +1,7 @@
+VSYNC                 ! Wait the next VBL
+SPOKE &FFFF8209,74    ! Set the video counter
+IF PEEK(&FFFF8209)=74 ! Still the same value ?
+  ste_flag!=-1        ! It's a STE
+ELSE                  ! otherwise...
+  ste_flag!=0         ! It's a STF
+ENDIF                 ! Wotta long routine !

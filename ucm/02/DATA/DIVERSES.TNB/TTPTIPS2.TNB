@@ -1,0 +1,61 @@
+
+                                 TTP-TIPS 2
+                                 ~~~~~~~~~~
+
+ Auch zum Beitrag TTP-TIPS von GNORT  aus der letzten  Ausgabe hÑtte ich einen
+ Nachtrag.
+
+ Er meinte: "Es gibt  auch ein  PD-PRG (CALL_TTP), daû die  Bedienung von TTPs
+ vereinfachen soll. Allerdings kann ich dazu nichts weiteres sagen ( nicht ge-
+ testet)."
+
+ öber DIESES Programm  kann ich zwar auch  nichts nÑheres sagen, aber Åber das
+ Programm TTP-Start von Michael Wedding.
+
+ Es liegt hier in Version 1.6 vor und ist Freeware.
+
+ Zur Beschreibung mîchte ich aus der Anleitung zitieren:
+
+ ----------------------------------- schnipp ---------------------------------
+
+ TTP-START lîst einige Probleme und érgernisse mit einen Schlag:
+
+ - Es  steht Ihnen eine lÑngere Eingabezeile zur VerfÅgung, und zwar 124 statt
+   nur 38 Zeichen.
+ - Das aktuelle Verzeichnis (Default-Directory) kann Åber  die Fileselektorbox
+   gewechselt werden. Wichtig z.B. bei der Anwendung von Packern.
+ - Sie kînnen die Fileselektorbox aufrufen und Dateien oder Pfade anwÑhlen,wo-
+   bei diese dann in die Eingabezeile Åbernommen werden.
+ - Sie kînnen Kommandozeilen als Datei speichern und laden.
+ - Ab dem hochauflîsenden  ST-Modus kînnen Sie entscheiden, ob die Bildschirm-
+   ausgabe mit dem normalen 16*16 oder dem  kleineren 8*16 Systemfont erfolgen
+   soll.
+ - Nach Beendigung des  TTP/GTP-Programmes kann  wahlweise auf ein Tastendruck
+   gewartet werden. Einige TTP/GTP-Programme bieten diese Mîglichkeit nicht,so
+   daû Sie nicht lesen kînnen, was das Programm ausgibt, da sofort zum Desktop
+   zurÅckgekehrt wird!
+ - Es bietet Ihnen eine zuschaltbare Stoppuhr. Das ist z.B. ganz nÅtzlich,wenn
+   Sie die Leistungen  verschiedener, Ñhnlicher TTP/GTP-Programme  miteinander
+   vergleichen  wollen. Gleichzeitig wird  der RÅckgabewert ( Errorlevel ) vom
+   aufgerufenen Programm ausgegeben.
+ - Der Mauszeiger kann  wahlweise eingeschaltet werden. Praktisch bei Program-
+   men,die wahlweise als GEM-Applikation (mit Kommandozeile) oder als TTP/GTP-
+   Programm gestartet werden kînnen.
+
+ ---------------------------------- schnapp ----------------------------------
+
+ Es ist sehr nÅtzlich und wird einfach unter EXTRAS ANWENDUNG ANMELDEN auf die
+ Dateiendung TTP oder *TP (fÅr GTP Programme) angemeldet.
+ Das TTP-Programm  wird wie immer  aufgerufen, zur Eingabe der Parameter steht 
+ nun aber die erweiterte Box zur VerfÅgung. 
+
+ Mir ist bei meiner  Arbeit nur eine  UnzulÑnglichkeit  aufgefallen. Unter dem 
+ Multitasking-Betriebssystem MultiTOS gehen die Aufrufe schief. Ich werde ver-
+ suchen den Autor zur Behebung dieses Fehlers zu veranlassen.
+
+                                             by Jailbird
+
+
+
+[Eric, ob das nicht lieber in Programmetest soll muût Du entscheiden, es
+mÅûte dann eben ein Verweiû darauf in Compi zu finden sein.]

@@ -1,0 +1,69 @@
+
+{*f1REANIMATION{*f0
+
+                  INTERJAM'98 RELEASE BY -SYNTAX- (POLAND)
+
+  ____ ________ ________ ______
+ !____!    _   |    _   |  _   | -[system]- st/e/1mb/rgb
+ |    |   |/   |   !/___! |/   | -[crediz]- yoyo/syntax     (code)
+ |    |   |    |   ___!   !    |....        klocek/syntax   (gfx)
+ !____!___!____!___!  !________!   :        mad max/tex     (chip-msx)
+                           :.......:        maxym/credo     (tracker-msx)
+
+
+This little ST demo made the second place at the INTERJAM'98 demo competition
+and cames from the  youngsters SYNTAX, a crew which was born only some months
+ago. YOYO, their coder, impressed  the people already  with his screens shown
+on the ORNETA party last year and you can see his beloved effects, vectors!
+The demo starts with a mediocre and strange looking SYNTAX logo. On ST a chip
+music (an old one) from MAD MAX starts to play. On STE you can choose between
+chip or tracker music, and this because of the cpu time needed to display all
+the objects in an acceptable speed.
+Ok, after the logo  of the band follows a "Reanimation" logo, very old styled
+and in  horrible colours. (Just  a joke  from the INTERJAM'98... "So, it's an
+old styled demo?! Yes, it's just a 'dream' in red and blue...")
+It shows a twitching vector line.
+Short after this  the main part of the demo starts. On the right side you can
+see some kind of Electrocardiogram, a  red wave on a blue raster. On the left
+side several vector objects coming up. At first some kind of a flying saucer,
+as filled vector  with horrible much sides! After  this a texture mapped cube
+is coming up, with  4 bitplane textures in 2*2 pixels  and after a short time
+the textures began to zoom! Wow! Looks  really nice and I can't remember that
+I have seen this so far on ST.
+After that more texture mapped objects coming up, just  like geometric stuff,
+an earth (really cool!) and a playing  figure from the chess game, again with
+many textured sides.
+Now a peace-logo was displayed on the  left side (again in the  polish design
+colours blue and red =)  ...) and you can see this logo mapped on a torrus!
+Cool too, but  horrible slow! And  after this  another torrus  cames up, also
+with textures.
+The last object is a pyramid with polish traffic signs and the main part ends
+and after this another strange picture appeared on the left side meanwhile on
+the right side the credits and greetings were shown.
+End...
+Conclusion: Hum... YOYO seems to be a good coder on ST. But it's not the best
+            to say that  you need 16Mhz and  Cache to make  the demo run much
+            more smooth. Just try to optimise the routines! Only a few people
+            own a ST with "tuned" hardware  or a MegaSTE... And again, try to
+            design your stuff! Perhaps its somekind  of the personal style of
+            KLOCEK to use this  horrible colours, but they only tormenting my
+            eyes! And what do you want with cool effects  when the demo isn't
+            able to present them in the best way? The MAD MAX music isn't the
+            best choice too, there  are a lot other musix around (and I don't
+            mean SID stuff). The module is ok, but nothing special too...
+            Because of this points this demo is just  mediocre! Sorry, but it
+            seems as the word "design" don't  has penetrated the polish demo-
+            scene so far... But this is the only real thing! Anyway, go on!
+
+                 ___      ____                       ______   ________   _
+ ________ ______!   !__  !____!________ ______      |    __| |    _   | !_! /
+|    _   !__    |    __!_!    |    _   |    __!_    |   !____!   !/   |    /
+|   |/   |  _   |   |/   |    |   |/   |   !_   |   !_____   !    _   !   /
+|   !____! !/   |   !    |    |   |    |   !/   |   |   !/   |   !/   |  / _
+!___!  !________!________!____!___!____!________!   !________!________! / !_!
+
+ -[code]- 85%  -[dsign]- 25%  -[gfx]- 45%  -[msx]- 6o%  -[originality]- 75%
+
+-----------------------------------------------------------------------------
+ .no retreat and no surrender.                      moondog . poets of decay
+-----------------------------------------------------------------------------

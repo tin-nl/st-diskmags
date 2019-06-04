@@ -1,0 +1,557 @@
+                      A brief introduction
+                      --------------------
+
+ Welcome to BDU, the "Backup Destruction Utility"!
+
+ BDU  is  a program that allows you to clean up  your  hard  disk 
+insofar  that  it  allows  you to quickly  get  rid  of  all  (or 
+selected)  backup  files.  These are usually backups  of  text-or 
+source  code  files  with  their  names  ending  in  BAK  or  DUP 
+extensions.  More often than not these backup files are no longer 
+needed and only use up valuable hard disk space.
+ However, BDU can do more than just remove them.
+
+-  It  can  include  or  exclude  any  individual  partition.  On 
+   included partitions, specific folders can be skipped.
+-  It  can include or exclude specific files by name or  by  type 
+   (!).
+-  It can optionally move all deleted files up to a certain  size 
+   to  a  buffer  directory that will be left  intact  after  the 
+   program is exited.
+-  It  allows  you  to  specify  up  to  eight  different  backup 
+   extensions.
+-  The configuration you specify can be saved to disk.
+-  A  library  of readily recognized file types can  be  kept  on 
+   disk, allowing for quick identification of many file types you 
+   may later want to include or exclude.
+
+
+                            Shareware
+                            ---------
+
+ The  "Backup Destruction Utility" accompanying this text file is 
+shareware,  which means  that you  can  spread  it as much as you 
+want,  copy it  to  all  your friends,  sell  it in Public Domain 
+libraries,   and generally  do with it whatever you want. You can 
+use it or trash it, I won't mind.
+ However,  if you find it useful (or if you don't find it  useful 
+but  use it anyway) you are requested to pay a  modest  so-called 
+shareware  registration fee.  Quite a bit of work went  into  the 
+conception of this product.
+ The  registration fee can be anything you want but  should   not 
+be  less than the equivalent of about  10  German marks.  If  you 
+send  a  disk  and International Reply  Coupon  along  with  your 
+registration fee you will get a possible later version of BDU  as 
+well  as  various  other shareware and  Public  Domain  utilities 
+written by me (depending on how much can fit on the disk).
+ Anything in any  currency is welcome at the address mentioned at 
+the end of this text file.
+
+ Why shareware?
+
+ I  believe  that  people should be allowed to test  a  piece  of 
+software  before they commit themselves to paying for it.   Using  
+the shareware  principle  this  is as easy as can  be.   You  use  
+the software to see if it's any good; if it isn't you leave it be 
+and  never   pay   anything for it.   If  you  start   using   it  
+regularly, however, you are requested to pay a shareware fee.
+ If you honestly use the shareware principle everybody  benefits, 
+quite literally.
+
+ Shareware  works.   And  I  will  release  many  more  shareware 
+utilities  depending  on the success of programs like the "Backup 
+Destruction Utility".
+ I hope you'll register.
+
+
+                         The BDU Manual
+                         --------------
+
+ FIRST A BIT OF LEGAL STUFF
+
+ I make no warranties,  either expressed or implied, with respect 
+to this manual or with respect to the software described in  this 
+manual, its quality, performance, merchantability, or fitness for 
+any  particular purpose.  The entire risk as to its  quality  and 
+performance  is  with  the  user.   Should  the  programme  prove 
+defective following its acquisition,  the user assumes the entire 
+cost of all necessary servicing,  repair,  or correction and  any 
+incidental or consequential damages. In no event will I be liable 
+for direct,  indirect or consequential damages resulting from any 
+defect in or misuse of the software.
+ You should note that the "Backup Destruction Utility" is a  very 
+flexible  and powerful program that is capable of  trashing  your 
+entire  hard  disk  contents  if only  you  tell  it  to.  ALWAYS 
+configure the settings before using it for the first time!
+
+ STARTING THE "BACKUP DELETION UTILITY"
+
+ BDU can be launched like any ordinary program, although it can't 
+be  used  as an accessory like some other  programs.  It  uses  a 
+familiar GEM interface (courtesy of Gregor Duchalski's "FlyDials" 
+shareware set of GEM routines of "GfA Basic").  Use the mouse  or 
+the  keyboard  to  control  the  individual  options   (including 
+keyboard shortcuts with [ALTERNATE]). The BDU works on any ST, TT 
+or  Falcon with any monitor and any memory configuration.  On  ST 
+colour monitors,  be sure to select MEDIUM resolution. On Falcon, 
+be sure to select 80 column mode.
+ Files belonging to BDU are "BDU.PRG" (the program file  itself), 
+"BDU.CFG"  (the  configuration  file,   which  is   theoretically 
+optional) and "BDU.LIB" (the file type recognition library  file, 
+optional).
+
+ THE MENU
+
+ After  a few moments,  during which BDU loads its  configuration 
+and library file,  you will enter the main menu. Nine options are 
+available from this menu,  selectable by using the mouse to point 
+and click or alternatively by keeping the [ALTERNATE] key pressed 
+and  pressing the key underlined in the respective  buttons.  The 
+"Do Delete" option is not available using such a shorcut; you can 
+press  [RETURN] or [ENTER] to select  it  instead,  however.  The 
+"About  BDU"  option is additionally available  by  pressing  the 
+[HELP]  key.  "Exit"  is additionally available by  pressing  the 
+[UNDO] key.
+
+ DO DELETE
+
+ This calls the actual deletion routine.  All other options  have 
+been  included for configuration purposes only.  No  confirmation 
+will be requested, and the program will go about deleting all the 
+stuff  it has to delete according to the way you have  configured 
+it.
+ If no configuration file is present and you click on "Do Delete" 
+accidentally,  nothing bad will happen. By default, no partitions 
+are selected and the program will return to the main menu without 
+any  deletions  having  taken  place.   In  case  of  an  'alien' 
+configuration file being present (i.e. you got the program with a 
+"BDU.CFG"  file in the same directory) you would do well  not  to 
+perform a "Do Delete" until you've verified the settings to be in 
+accordance with your own wishes.
+ The  "Do  Delete"  option may ask  for  confirmation  before  it 
+deletes  specific  files,  all depending on the settings  in  the 
+FILES dialog.
+
+ PARTITIONS
+
+ This  option  displays a dialog with  24  buttons,  representing 
+drives  C-Z  (drives  Q-Z are can be  supported  under  "MetaDOS" 
+only).  Upon initialization,  the program checks which partitions 
+are actually present and disables the other partition buttons.
+ Selecting  a partition that you want to be used during  the  "Do 
+Delete"  operation  is  done  by  clicking  on  the   appropriate 
+partition button once.  It will turn black.  Clicking once  again 
+will deselect it in case you have second thoughts.  It will  turn 
+white  again.  Instead of using the mouse,  you can also use  the 
+familiar  [ALTERNATE]  keyboard  shortcuts  with  any  underlined 
+characters.  Clicking on "OK" will accept your settings; clicking 
+on "Cancel" (or pressing the [UNDO] key) will leave the  settings 
+the way they were when you entered the dialog and go back to  the 
+main menu.
+
+ DIRECTORIES
+
+ With  BDU it is possible to define a set of a maximum  of  eight 
+paths  (i.e.  directories  or folders) per  partition.  For  each 
+individual  partition  an "include or exclude" flag can  be  set. 
+When the flag is set to "include" for a specific partition,  only 
+the  specified paths will be checked and all others  (i.e.  those 
+not specified, including the root directory) skipped. When set to 
+"exclude",  however,  all folders (including the root  directory) 
+with  exception of the ones you have specified will  be  checked. 
+The ones you specified will be skipped. Leaving this dialog using 
+"OK"  will  cause  your settings to be  taken;  leaving  it  with 
+"Cancel"  or  by pressing [UNDO] will cause the old  settings  to 
+remain the way they were before.
+ Paths  can  be  as long as you want  (up  to  32,768  characters 
+actually)  but  only  the rightmost 64 characters  will  then  be 
+displayed.
+ Using the "Seek" button adjacent to the text fields,  a path can 
+be  selected using whatever item selector you have  installed  in 
+your system. Just enter the directory you want and click on "OK". 
+If you have second thoughts,  press "Cancel". If, for some reason 
+or  other,  you  wish  to clear the entry,  you  should  enter  a 
+partition's ROOT directory (i.e.  the topmost directory) and then 
+select "OK".
+ If  you select a path,  you should know that all  further  paths 
+within that path (so-called "child paths") will also be scanned.
+ Before  entering  the  actual dialog where these  paths  can  be 
+specified, you will have to pass through a selection dialog which 
+lets  you  determine the partition on which you  want  your  path 
+settings to take effect.  Keyboard shortcuts with [ALTERNATE] are 
+supported.
+ It  should  be  noted  that  any  settings  configured  in   the 
+DIRECTORIES (i.e.  PATHS) dialog take precedence over any setting 
+in the FILES dialog.
+
+ FILES
+
+ BDU also allows for specific file names or file types (!) to  be 
+included  or excluded.  An extensive dialog is included for  this 
+purpose, so let's first have a look at what it displays.
+ The text fields are on the left.  Here,  the file names or  file 
+types are specified. If a file name is longer than 40 characters, 
+only  the rightmost 40 characters are  displayed.  Internally,  a 
+file name can have a length of up to 32,768 characters,  which to 
+all intents and purposes should suffice.  A file TYPE description 
+can only be 40 characters long,  and is editable (on the contrary 
+to a file name).
+ When  editing a file type description,  you have  the  following 
+keys at your disposal:
+ You  can use the arrow left/right keys to move the  cursor  back 
+and  forth over a text respectively.  You can  delete  characters 
+using  [BACKSPACE] and [DELETE].  With multiple editable  fields, 
+the  arrow  up/down  keys  will take  you  to  the  previous/next 
+editable  field.  Additionally,  [ESC] will clear the  entry  the 
+cursor  is  currently in,  [TAB] will move to the  next  editable 
+field analogous to the arrow down key,  and [CLR HOME] will  move 
+the cursor to the topmost editable field.  The mouse can also  be 
+used to point and click on another editable field you may wish to 
+edit.  All  changes are automatically accepted after leaving  the 
+dialog  by clicking on "OK" or [RETURN],  but lost  when  leaving 
+through  the "Cancel" button.  Only alphanumerals and  space  are 
+accepted as edited input.
+ File names,  once entered in a text field,  cannot be edited the 
+way the file type descriptions can.  It is possible,  however, to 
+use wild cards ("?" and "*") IN THE FILE NAME ONLY when selecting 
+a  file in the item selector.  After having selected a  name  but 
+before  clicking on "OK" in the item selector,  you  can  replace 
+characters by the "?" (one character can be any character) or "*" 
+(any number of any characters can appear after) wild cards.
+ Directly to the right of the text fields there's a row of "Seek" 
+buttons,  each  allowing you to define a file name or  file  type 
+that will be displayed in the adjacent text field.  Depending  on 
+the setting of the "Type/Name" switch,  you will have to select a 
+file type or file name respectively.  An entry can be cleared  by 
+selecting no file in the item selector and then clicking on "OK". 
+"Cancel" in the item selector will cause nothing to change.
+ If you select a file name,  the settings WILL ONLY BE VALID  FOR 
+THAT  SPECIFIC  FILE AND NO OTHER WHATSOEVER.  If  you  select  a 
+specific file type (say, a "GfA Basic" source file), the settings 
+WILL  BE  VALID  FOR ALL FILES OF THAT TYPE  ON  THAT  PARTITION, 
+REGARDLESS OF THE DIRECTORY THEY'RE IN. To check for a file type, 
+the  first SIX bytes of a file will be read and compared  to  the 
+type you specified.
+ The "Type/Name" switch can be toggled.  Do note that the setting 
+in the adjacent text field will be lost if you toggle the  switch 
+after having specified a file name/type already.
+ Next  you  will  see a  row  of  "Skip/Delete"  switches.  These 
+determine  whether  the  file name/type  specified  in  the  text 
+field should be skipped (i.e.  kept) or deleted.  You will notice 
+the  rightmost button becoming selectable when the  "Skip/Delete" 
+switch is set to "Delete".  This fourth button determines whether 
+the program should ask you for confirmation for deletion when the 
+file  is  found  ("Confirm")  or simply  to  delete  it  with  no 
+questions asked ("Ignore").
+ Before  entering  the  actual dialog where these  files  can  be 
+specified, you will have to pass through a selection dialog which 
+lets  you  determine the partition on which you  want  your  file 
+settings to take effect.  Keyboard shortcuts with [ALTERNATE] are 
+supported.
+ It  should  be  noted  that  any  settings  configured  in   the 
+DIRECTORIES (i.e.  PATHS) dialog take precedence over any setting 
+in the FILES dialog.
+
+ Tip:  You  can  emulate  excluding  or  emulating  a  folder  by 
+selecting a file name in the item selector,  changing the  actual 
+file name to "*.*" and clicking on "OK" afterwards.
+
+ EXTENSIONS
+
+ This is a simple dialog,  but probably the most important in the 
+program  - it determines which file types should be  regarded  as 
+'backup' files.  The multitude of existing programs use "BAK"  as 
+backup extension,  though "Tempus" for example uses "DUP" (as  in 
+'duplicate').   Should   you  encounter  different  backup   file 
+extensions, these can be added using this dialog.
+ It  should  be noted that considerable care should  be  observed 
+here.  It's easy to imagine what could happen if you would define 
+extensions such as "PRG" and "TOS" here,  which would most likely 
+lead  to the ultimate destruction of virtually all program  files 
+on your hard disk.
+ ONLY  FILES  WITH  EXTENSIONS DEFINED IN THIS  DIALOG  ARE  EVER 
+SCANNED.  Files with different extensions are never deleted,  and 
+it's only useful to include and exclude files in the FILES dialog 
+that  may  occur  with the specified extensions at  one  time  or 
+another.
+ When  editing the extensions,  the same keys are valid as  those 
+explained for the FILES dialog.
+
+ MORE PARAMETERS
+
+ BDU  supports some additional options that can  increase  safety 
+and  speed.  These can be specified using the  "More  Parameters" 
+dialog.
+ This dialog consists of two parts.  The top part,  which is also 
+the largest,  gathers together the options that have something to 
+do  with  the possibility to buffer files that will  be  deleted. 
+Using the "Buffer files yes/no" radio buttons,  it is possible to 
+specify whether you want files to be MOVED to a buffer  directory 
+or simply DELETED respectively.  Setting this to "yes" will  make 
+the  deletion  process reversible,  though this  is  usually  not 
+needed.  Three  further options go with this:  "Determine  buffer 
+directory"  (displays an item selector where you can specify  the 
+path  that  any files should be buffered into,  "Cancel"  if  you 
+don't  want it to change),  "Check disk free space yes/no"  (will 
+cause the program to check if there's enough space on the  buffer 
+partition  to  buffer  a  file  on  in  the  first  place,  which 
+considerably slows down the process however) and two "left arrow" 
+and "right arrow" buttons that decrease/increase the maximum size 
+that  a file can have in order to be buffered  respectively.  The 
+maximum file size is displayed in a box that can also be  edited. 
+Files  of a larger size will not be buffered and  simply  deleted 
+anyway.  If the file size limit you specify is high and your hard 
+disk  buffer  partition free space only small,  it  would  be  an 
+excellent  idea  to  have the "check free space"  status  set  to 
+"yes".
+ All  settings  in  the above cluster are  valid  only  when  the 
+"Buffer  files yes/no" radio button is set to "yes".  If  set  to 
+"no",  all  other  settings there are ignored.  If you  exit  the 
+dialog with "0 Kb" specified,  the program will change this to "1 
+Kb" internally.
+ The  bottom  part  of this dialog allows for two  things  to  be 
+specified.
+ First,  it  allows you to instruct the program to show  you  the 
+file names which are being scanned (which is the default setting) 
+or to go into turbo mode with no display whatsoever and all power 
+centered  on the disk I/O seek and destroy routines.  This  turbo 
+mode is four times faster.
+ Second,  it allows you to specify whether ALL delete  operations 
+should be confirmed or not.  If set to 'yes' (which is  default), 
+this will override all other confirmation settings.  No file will 
+be deleted without your confirming it.
+
+ Note on identical file names: All files that have to be buffered 
+are written to the same subdirectory.  When files from  different 
+source  paths have the same name,  the first buffered  copy  will 
+have  the  regular  extension,  the next ten  having  their  last 
+characters replaced by "0" through "9". After a total of 11 files 
+with  "the  same name" any further files with that name  will  be 
+written  across the first one.  It should also be noted that  the 
+program only knows which files have already been buffered  WITHIN 
+THE  SAME SESSION.  This means that it will not 'see' files  that 
+have been written to the buffer path in a previous session  (i.e. 
+before  the program was exited) and these will be overwritten  if 
+the same name occurs.
+
+ SAVE CONFIGURATION
+
+ All  settings  you  have specified can be saved  to  disk  in  a 
+configuration  file called "BDU.CFG".  This  configuration  file, 
+incidentally, is a plain text file that can even be edited from a 
+word processor (with WP mode off) or text editor.
+ The following settings are saved:
+
+o Buffer files below specified size when deleting yes/no.
+o Maximum size of files that may be buffered when deleting.
+o Buffer directory path.
+o Check disk free space at each backup delete yes/no.
+o Display file names during scan and delete yes/no.
+o Confirm ALL deletes yes/no.
+o The eight possible backup file extensions.
+o The use/skip status of each partition.
+o The  maximum  of eight directories per partition  that  can  be 
+  included  or  excluded  - their full  path  specifications  and 
+  include/exclude status per partition.
+o The maximum of eight file names/types per partition that can be 
+  included  or  excluded  - their full path  name  or  file  type 
+  description  (the latter including the values of the first  six 
+  bytes by which it can be recognized) and all their status flags 
+  (type/name, skip/delete and ignore/confirm).
+
+ When  manually  editing this file (which  is  theoretically  not 
+needed),  you should take extreme care not to alter the amount of 
+lines anywhere,  for otherwise the program will more likely  than 
+not crash when reading it on start-up.  In case of an  emergency, 
+you  can  always delete this file.  The program will  then  reset 
+itself  to  its  default  settings  on  startup  (no  paths/files 
+included/excluded,  no  partitions selected,  no file  buffering, 
+display of file names on,  all delete operations confirmed, "BAK" 
+and "DUP" extensions). The program can then be configured fresh.
+
+ ABOUT BDU
+
+ A  fairly straightforward dialog telling you where I  live,  how 
+much to pay should you want to register, that sort of thing. Exit 
+by clicking on "OK" or pressing [RETURN].
+
+ EXIT
+
+ Need this be explained?  Should you have changed anything to the 
+settings  after having saved a configuration file  (radio  button 
+settings excluded!), you are requested to confirm first.
+
+ THE LIBRARY FILE
+
+ When  'seeking' file TYPES using the FILES  dialog,  file  types 
+will  usually  be  identified as "UNKNOWN FILE  TYPE  A"  through 
+"UNKNOWN  FILE  TYPE  H",   depending  on  their  position  in  a 
+partition's FILES dialog.  If you want them to be recognized  the 
+way  they should,  however,  you can maintain a library of  ready 
+file  type  description and identification bytes in a  text  file 
+called "BDU.LIB".
+ A small library file is present on the disk.  All you would need 
+to  do is add your own files types.  Let's have a look at such  a 
+sample file the way it would look in any word processor (WP  mode 
+off) or text editor:
+
+BDU Library File
+3
+GfA Basic 2.x Source File
+6,0,2,47,66,41,42
+GfA Basic 3.5 Source File
+5,3,47,46,41
+GfA Basic 3.6TT Source File
+6,0,4,47,46,41,2d
+
+ The first line of a BDU LIB file should always contain the  text 
+"BDU  Library File" (mind the upper/lower  case  characters,  and 
+there must be one space between each word!) in its header for the 
+program to recognize it in the first place. The program will warn 
+you that the header is faulty if this is not the case.
+ The  second line of a LIB file should always contain  the  total 
+amount  of  entries.  In the above example there are  three  file 
+types,  so  it's 3.  There can be up to 255 file types in  a  LIB 
+file. If you have more than that, the extra ones will be ignored. 
+The  total  amount  of  entries should  always  be  specified  in 
+ordinary, decimal notation.
+ Each  file type entry consists of two lines.  First there  is  a 
+description that can have a maximum length of 40 characters  (any 
+more will be cut off when read in). You can use any UPPER case or 
+lower case letter,  as well as numbers and reading  signs.  Don't 
+use commas (",") though, unless you want the program to crash.
+ On the second line of each entry you will find the actual  bytes 
+by  which the program has to identify the file types.  This  line 
+should  consist  of one decimal and several  hexadecimal  values, 
+where  the decimal value should always be the first and equal  to 
+the amount of hexadecimal bytes to follow on that line.  All need 
+to  be separated by a comma (you need to use commas  here!).  You 
+should  always  take care that the length  identifier  (i.e.  the 
+first  number  on  the  line)  correspond  with  the  amount   of 
+recognition values that follow it.
+ There are two ways to get to know the actual recognition bytes.
+
+ 1)  You can specify a file type using the FILES dialog and  then 
+     save a configuration file. You can load in the configuration 
+     file and get the bytes (which are in the exact format needed 
+     by  the  library)  from  the  proper  partition  file   type 
+     description.  When an unknown file type is encountered,  the 
+     program will use a default of 8 recognition bytes  (i.e.  an 
+     "8" followed by eight hexadecimal values).
+ 2)  You  can examine a file type you want using a  disk  monitor 
+     and write them down,  then copy them into the LIB file using 
+     a  text  editor.   Some  disk  monitors  always  display  in 
+     hexadecimal,  but  some other disk monitors have  a  hex/dec 
+     display switch somewhere.
+
+ In  both  cases  you  would do well  to  check  whether  totally 
+different files of the same type actually have the bytes you want 
+at their start.  If not,  you may have to decrease the amount  of 
+bytes allowing their identification.  The less values per  entry, 
+however,  the  bigger  the chance that a file  might  be  wrongly 
+identified.
+
+ Note:  Should you send in your registration fee with a disk  for 
+me  to copy goodies on,  please send the latest version  of  your 
+"BDU.LIB"  file if you have added entries.  Please  also  mention 
+this on a note.
+
+ PRIORITY
+
+ To properly understand when files may or may not be deleted,  it 
+is of importance to read this section of the manual.
+
+ 1)  Files  can  be  deleted  only on  the  partitions  you  have 
+     selected using the PARTITIONS dialog.
+ 2)  Only  those paths will be checked that have  been  specified 
+     using  the PATHS dialog.  If the specified paths are set  to 
+     "included",  the root directory and the other paths of  that 
+     partition  will not be checked.  If the specified paths  are 
+     set  to "excluded",  the root directory and other  paths  of 
+     that  partition WILL be checked.  All child paths within  an 
+     included  path  will  also  be scanned  (this  is  called  a 
+     recursive scan).
+ 3)  Only  files ending with an extension of "BAK" or  "DUP"  (or 
+     other ones,  according to what you entered in the EXTENSIONS 
+     dialog)  will  be scheduled for deletion in the  paths  that 
+     need  to be scanned according to the specifications  set  in 
+     2).
+ 4)  Once  a properly recognized backup file has been found in  a 
+     proper  directory,  BDU  will  check if the  file  has  been 
+     included   or  excluded  in  that   particular   partition's 
+     settings.  If  found with a "skip" setting,  it will not  be 
+     deleted.  In  cases  of any backup file found  without  this 
+     setting, it will be history.
+     If the "buffer files" flag is set to "yes",  any file  below 
+     the  specified number of Kb in size will be buffered in  the 
+     specified buffer directory if that has sufficient space.  In 
+     case  of confirmation being required,  you will be asked  to 
+     confirm.
+
+ A SHORT HISTORY
+
+ Until I wrote the "Backup Destruction Utility", I primarily used 
+the "Baksplat" program that J.  Beswick wrote and that he put  on 
+an "ST Format" cover disk quite some ago.  It was lightning  fast 
+but limited insofar that it only deleted all the BAK files on the 
+partition  it  was on.  It didn't delete any BAK files  on  other 
+partitions  so you would have to keep multiple copies for  it  to 
+work there.  Also,  it did not allow specification of files to be 
+included/excluded and only deleted files ending with  "BAK".  The 
+second  program  like it I've seen is Mark  Matt's  "Delbak".  It 
+catered  for  all partitions but it wasn't  possible  to  exclude 
+partitions  or  specific files.  Also,  due to the fact  that  it 
+displayed  the  files  it was currently scanning  it  was  a  lot 
+slower.  Due to the fact that it required input at every  delete, 
+it  was  a process that needed to be done with  the  user  always 
+ready to interact.
+ After  Christmas 1993 I was fed up with both.  I had toyed  with 
+the idea of something like "Baksplat" for a while,  but I  wanted 
+to  have all the bells'n'whistles such a program might  need.  So 
+that's   why  I  spent  the  Christmas  holidays  neglecting   my 
+girlfriend,  coding instead.  I built in stuff that I wanted,  as 
+well as some more stuff - like the backup buffer option.  And  in 
+the end I saw that it was good.  At least good enough for  me.  I 
+hope it's good enough for you too.
+
+ COMPATIBILITY
+
+ "Backup  Destruction Utility" works on any machine with any  TOS 
+(including  "MultiTOS" and "Geneva").  It even works on half  meg 
+machines.
+
+ CREDITS
+
+ I'd  like to credit Gregor Duchalski for writing a  rather  nice 
+library of shareware GEM interface routines for "GfA  Basic".  If 
+you're  interested in obtaining the evaluation version  of  this, 
+send  a disk plus sufficient reply postage or IRCs to  Baueracker 
+15a,  D-44627 Herne, Germany. If you add DM 30,- you will get the 
+registered version right away.
+
+
+                           The Address
+                           -----------
+
+ I can be reached at the following address.  There,  I would like 
+to  receive  possible shareware registrations  and  miscellaneous 
+other communications.
+
+ Richard Karsmakers
+ P.O. Box 67
+ NL-3500 AB  Utrecht
+ The Netherlands
+ Email r.c.karsmakers@stud.let.ruu.nl
+
+ PLEASE NOTE THAT THE ADDRESS IN THE PROGRAM IS NO LONGER VALID!
+
+ It should be noted that the email address may not be valid after 
+the summer of 1996.
+ The  program on this disk and its manual are copyright  1994  by 
+Richard  Karsmakers.  However,  you may copy them as much as  you 
+want  as  long as the package remains complete  (i.e.  program  + 
+document file + other associated files).
+ I would also like to send greetings to all my fellow shareware 
+programmers on all systems: Ours is the divine cause! Ours is the 
+task  to change the world of software!  Or,  as Jeff  would  have 
+me say: Death to The Men With Suits!

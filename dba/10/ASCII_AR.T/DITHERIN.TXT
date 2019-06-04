@@ -1,0 +1,400 @@
+DITHERIN' LESSON
+
+                ...Ideas and design by  JOVIS...
+DESCAVES Philippe (jovis)____7, rue Victor-Hugo_____95440 ECOUEN_____FRANCE
+
+You remember my old BLUE Mouse-pad picture, and its dithers...?
+Why so shitty blue ? Is it because blue is the darkest colour ?
+You'll understand, reader !
+
+* You often use a drawing software, like Degas Elite.
+  You thought 16 colours were too few for your virtual masterpieces.
+* You often play on the StF or StE very limited colours.
+  You wondered how you could get easily many more (in PI1,NEO,IFF).
+* You dribbled on the VGA+ 16 Millions colours.
+  You wanna find the RGB Mystery.
+__________________________________________________ _____ ___ __ _ _  _
+
+First of all you must know why some colours lack, while others are useless.
+                     ._______________________.
+It is because of the |RRRRRR   GGGGGG BBBBBB | pixel.
+                     |RR   RR GG      BB   BB|
+                     |RR   RR GG      BB   BB|
+                     |RR   RR GG      BB   BB|
+                     |RRRRRR  GG  GGG BBBBBB |
+                     |RR   RR GG   GG BB   BB|
+                     |RR   RR GG   GG BB   BB|
+                     |RR   RR GG   GG BB   BB|
+                     |RR   RR GG   GG BB   BB|
+                     |RR___RR__GGGGGG_BBBBBB_| (Red, Green, Blue).
+                         2       1       3
+Why '213' ?!
+Because in each pixels, releasing a grey (total-blend) dot,
+like 777 (white), Green is the lightest, an Blue the darkest.
+
+A (real) white pixel (speaking light, not contrast) (= 777),
+is therefore the maximum state of brightness, which is 100%.
+    In those 100%. just know that the Blue piece
+    has a proportion of about 10% ! (Red is three times...)
+
+When you change the RGB values (3 equal numbers) to get another grey,
+the percentage doesn't differ at all.
+But when one or all the RGB digits are different, there's a problem,
+which comes from the fact that the grey scales are curves.(Baah! Maths.)
+
+-  So, you only have to remember that when doing grey colours,
+   the RGB values are different, although it doesn't seem to.
+-  For coloured greys or vivid colours, just change the RGB values
+   in this order : B then R then G to get nearest bright-colours.
+
+Try this Lipton :
+BLACK > BLUE > RED > MAGENTA > GREEN > CYAN > YELLOW > WHITE
+(start)   .     .      (grey (both!)     .      .   (end(wrap))
+
+And try this sequence :
+000 , 001 , 100 , 101 , 010 , 011 , 110 , 111 , 112 , 211 , 212 , 121 , ...
+you'll understand how the RGB values work.
+
+Hey, man !  It is thus possible to get more greys than expected !?
+
+Before leaving you to the main subject of this article,
+do you really know how to get marvelous unseen colours ?
+    You'll have to dither (in a clean way), and for each dither,
+    you'll have to change one step upper the colour value.
+Which value ?  ONLY the Blue one in fact, (see the 16MCOLOR.picture).
+If you had changed the Red, or especially the Green value,
+your dither would have been more visible, and thus it'd been useless...
+
+* DIFFICULT COLOURS :
+                      The DARKest    and    the LIGHTest ones.
+        = e.g. Around black-->blue   and   yellow-->white.
+                      """"""""""""         """"""""""""""
+- The first (darker) are lacking (despite of the fact that, when very dark,
+                              the unseen colours don't seem to...)
+e.g. do try a purple palet. (The most difficult colour for painters.)
+                             -Fake Bonus-Note : "I know, Jovis..."-
+- The second (lighter) are often useless (coz 2 brit').
+e.g. 770 -> 777 (yellow->white) or  070 -> 077 (green->cyan).
+
+When you draw (create a palet), or when you dither,
+those difficult colours should be taken back !
+e.g. 070 -> 077 : 3 first green (thus blue...) are the same.
+                                                   -USELESS-
+I don't bother if you didn't mind reading these RGB explanations...
+
+Shame on you !  It was deadly important !!!!!!!!!!! !!!! !!! !! ! !
+Now let's go to the target of this crapartikl.
+-=====================================-=====-===-==-=-=--=--- -- - -  -
+ -  - - -- ---=--=-=-==-===-=====-=====================================-
+
+   We wanna see how it is possible to dither between two colours.
+(With three or more colours, just put the dither farther and loop.)
+
+  - You remember the ASCII ARTICLES in the DBA MAG #9  ?
+  - You enjoyed the way we dithered from black to white  ?
+  - You managed to dither your pictures or texts  ?
+
+GOood !!   Now  let's perform your technique ! (On any computer again...)
+__________________________________________________ _____ ___ __ _ _  _
+To do so (dithering..), we have mainly 3 MEANS ;
+  1) Using the software filling-presets (patterns),
+  2) 'Plotting' dots yourself,
+  3) Making dotted lines.
+=== =================================-=====-===-==-=-=--=--- -- - -  -
+ I   DITHERING USING THE SOFTWARE FILLING-PRESETS (PATTERNS) : ( by jovis )
+_I_ """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+ A > USING THE (MONO.) FILLING-BOXES (rectangles or squares):
+ 
+You can get a lot of colours (hues) through this option.
+Knowing that the filling-box has a maximum number of full pixels,
+ we can get its average percentage, which is the 50% blend (grey).
+ 
+FOR INSTANCE with a  20 x 20  (square) filling-box,
+    the minimum number of white (=empty ) pixels is 0, while
+    the maximum number of black (=filled) pixels is 400 (20x20).
+ The right average percentage in pixels is thus 200 (white or black)
+ and had to be calculated like this : 400 x 50% or better 400 / 2 .
+
+Do you understand what I mean by all this ?
+In fact, yes !  For the best of you, you should have understood
+that when you change the average-blend value you get another hue.
+
+Let's take our example and modify the 'middle' blend-point.
+    With 25% of black we get 100 filled pixels (400 x 25%),
+    with 75% of   "   "   "  300   "      "    (400 x 75%).
+
+Now we have 4 possible greys in such a pattern (20x20 filling-box);
+   -  0 % of black pixels --==>  0  filled one (out of 400)
+   - 25 % of black pixels --==> 100 filled one (out of 400)
+   - 50 % of black pixels --==> 200 filled one (out of 400)
+   -100 % of black pixels --==> 400 filled one (out of 400).
+ ( For more intermediate greys you'll have to do it by yourself.)
+
+It's high time to use our little example of grey-patterns, isn't it ?
+How ?  Simply by counting yourself the pixels of your dither...
+
+For instance we want a 50% grey pattern ;
+ here it is ! (Rem: you should see squares, not rectangles down there!)
+ 
+ 20x20, 50% pattern     20x20, 50% pattern     20x20, 50% pattern
+  __________________   =   __________________   =   __________________
+ /Example 1: W/Black\     /Example 2: Middle \     / Example 3: Lines \
+ ..........XXXXXXXXXX     ....................     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ........XXXX........     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ...XXXXXXXXXXXXXX...     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ..XXXXXXXXXXXXXXXX..     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ..XXXXXXXXXXXXXXXX..     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ..XXXXXXXXXXXXXXXX..     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ..XXXXXXXXXXXXXXXX..     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ...XXXXXXXXXXXXXX...     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ........XXXX........     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ....................     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ...................X     X.X.X.X.X.X.X.X.X.X.
+ ..........XXXXXXXXXX     .................XXX     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ...............XXXXX     X.X.X.X.X.X.X.X.X.X.
+ ..........XXXXXXXXXX     .......XXXXXXXXXXXXX     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     .......X....XXXXXXXX     X.X.X.X.X.X.X.X.X.X.
+ ..........XXXXXXXXXX     .......X....XXXXXXXX     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     .......X....XXXXXXXX     X.X.X.X.X.X.X.X.X.X.
+ ..........XXXXXXXXXX     .....XXXXXXXXXXXXXXX     .X.X.X.X.X.X.X.X.X.X
+ ..........XXXXXXXXXX     ...XXXXXXXXXXXXXXXXX     X.X.X.X.X.X.X.X.X.X.
+ ..........XXXXXXXXXX     .XXXXXXXXXXXXXXXXXXX     .X.X.X.X.X.X.X.X.X.X
+
+What about drawing in those filling-boxes ?  Like for one bit. icons...
+
+ 20x20, 50% pattern     20x20, 50% pattern
+  __________________   =   __________________ 
+ /Example 4: Smiley \     /Example 5: Island \
+ XXXXXXXXXXXXXXXXXXXX     ............XXXX....
+ XXXXXX........XXXXXX     ........XXXXX..X....
+ XXXX............XXXX     ....X.X.X....X.XXX..
+ XXX......DC......XXX     .....X..XX...XXX.XX.        Hai capito  ?
+ XX................XX     .......XX..XXX..X.X.       T'as compris  ?
+ XX...XX......XX...XX     ..XX...X..X...X.X.X.      Hast verstanden ?
+ X...X.XX....X.XX...X     .XXXX..XX.XX.XX..XX.     You've understood ?
+ X...XXXX....XXXX...X     .XXXX...XXX.X.X..X..
+ X....XX......XX....X     ..XX.X...X..X.X.XX..
+ X..................X     .........XX.XXXXXX..
+ X.XXX..........XXX.X     X..X.XXXXX..X.XX..XX
+ XX.X............X.XX     XX..XXXXX..XXXX.X..X     Contact me if not,
+ X..XX..........XX..X     X.X.XXXXXX..XXXX...X     or to have a chat.
+ X...XX.XXXXXX.XX...X     XX.XXXXXX..XXXXX.X.X
+ XX..XXXXXXXXXXXX..XX     XXX.XXX.XX..XXX.XXXX
+ XX...XXXX.X.XXX...XX     X.XXXXX.X..X.X..XXXX
+ XXX...XXX..XXX...XXX     XXXXX.X....X...XXXXX         - jovis -
+ XXXX....XXXX....XXXX     XXXX..........X.XXXX
+ XXXXXX........XXXXXX     XXXX.......X.X.X.XXX
+ XXXXXXXXXXXXXXXXXXXX     XXX.X.....X.X.X.XXXX
+
+     This method is really convenient with even patterns ;
+e.g. 10x8, 15,15, 16x16, 20x20, 13x17 pixels filling-boxes...
+
+     So when you draw a pattern, there mustn't be any problem
+     with the borders (esp. for dithers like '1010101010')...
+
+But in any way, in any software, you'll be to count by yourself
+all the pixels till you get the right percent-number ('grey').
+__________________________________________________ _____ ___ __ _ _  _
+ B > USING THE INTERMEDIATE DITHERED COLOURS (esp. on PC):
+
+* Where can we find or get such ditherings ?
+ - Mainly in drawing programs, in the Filling option,
+ - or you must draw them (then cut,copy; cut,c... !).
+In softwares we won't be able to change them.
+So, the hand-made dither isn't so bad.
+Think about it !
+
+* What will we use these dithered colours for ?
+ - For longer displayed colours,
+ - for better, wider blends. (Speaking 2 colours.)
+In any case it is cleaner than the random-fill (Deluxe Paint).
+But it depends on your need, and the blurred texture (esploded-shit)
+can be interesting sometimes (journalists think so...).
+ HERE ARE THE CUBES !
+
+CAD_3D's rough 4x4 dither      .     NeXT,PC's normal 4x4 dither
+                              .+.
+_____TEXTURE-PIXELS___________+*+____________FREE PIXELS_______
+                             .+*+.
+....   ....   .X..   .X..    .+*+.    ....   ....   ....   ....
+....   ....   ....   ....    .+*+.    ....   ...X   ...X   ...X
+....   ...X   ...X   X..X    .+*+.    ....   ....   ....   ....
+....   ....   ....   ....    .+*+.    ....   ....   .X..   .X.X
+_0__   _1__   _2__   _3__    .+*+.    _0__   _1__   _2__   _3__
+                             .+*+.  
+.XX.   .XX.   .XX.   .XX.    .+*+.    ....   ..X.   ..X.   ..X.
+....   ....   .X..   .XX.    .+*+.    .X.X   .X.X   .X.X   .X.X
+X..X   X..X   X..X   X..X    .+*+.    ....   ....   X...   X.X.
+....   ...X   ...X   ...X    .+*+.    .X.X   .X.X   .X.X   .X.X
+_4__   _5__   _6__   _7__    .+*+.    _4__   _5__   _6__   _7__
+                             .+*+.
+.XX.   .XX.   .XX.   .XX.    .+*+.    X.X.   X.XX   X.XX   X.XX
+.XX.   .XXX   .XXX   XXXX    .+*+.    .X.X   .X.X   .X.X   .X.X
+X..X   X..X   X..X   X..X    .+*+.    X.X.   X.X.   XXX.   XXXX
+X..X   X..X   XX.X   XX.X    .+*+.    .X.X   .X.X   .X.X   .X.X
+_8__   _9__   _10_   _11_    .+*+.    _8__   _9__   _10_   _11_
+                             .+*+.
+.XX.   .XXX   .XXX   XXXX    .+*+.    XXXX   XXXX   XXXX   XXXX
+XXXX   XXXX   XXXX   XXXX    .+*+.    .X.X   .XXX   .XXX   .XXX
+X..X   X..X   XX.X   XX.X    .+*+.    XXXX   XXXX   XXXX   XXXX
+XXXX   XXXX   XXXX   XXXX    .+*+.    .X.X   .X.X   XX.X   XXXX
+_12_   _13_   _14_   _15_    .+*+.    _12_   _13_   _14_   _15_
+
+Rem: for a many colours dither (only one after the other) ;
+
+-Color A-  Number 1 ---> N.8 ---> N.15 ---> -C.B-  N.0 (16)  (...) -C.C-...
+           (start)     (middle)                  (wrap+start)
+
+===== ===============================-=====-===-==-=-=--=--- -- - -  -
+ I I  'PLOTTING' DOTS YOURSELF :  ( by jovis )
+_I_I_ """""""""""""""""""""""""
+
+       We can do this conscienciously, or in a very dirty way.
+Of course I prefer and recommend you the first option...
+It is by using the SQUARE DITHERS. (Look above, right-side !)
+The center of your dither = 50% blend-point, should be :
+                          X.X.X.X.
+                          .X.X.X.X
+                          X.X.X.X.
+                          .X.X.X.X
+So, like painters, when you dither dot after dot, remember that
+There are THREE MAIN STATES of light (and dither);
+   black        --->        grey        --->        white
+  ........                X.X.X.X.                XXXXXXXX
+  ........                .X.X.X.X                XXXXXXXX
+  ........                X.X.X.X.                XXXXXXXX
+  ........                .X.X.X.X                XXXXXXXX
+
+( Note that, except for ES (who is clever), the idea is spreaded that
+  this grey can be used as a colour itself !  That's WRONG !
+Even if we can use this trick to draw (I use it a lot too!),
+  we should use it ONLY AS A (an optic-) COLOURING TRICK !!
+The difference consists in its use ;
+- to draw juicy, soft girl's skin please hide your dithered pixels,
+  so that she doesn't look hairy, shaggy like a bear (a fantasy ?).
+  > Change the palet, soften the colours.
+- Some people, like Dhole and especially Spaz, are doing great use
+  of this plotting technique. But !...
+ 1-They should understand that it is a funny idea to show their
+   wasted time in pointing when it's useless (Spaz, ...).
+   > Try to paint undithered on Falcon (by overlayed bands).
+ 2-Pictures become pale like Death ! (Dhole,Niko, ...)
+   > Add some contrast to the colours, colour the colours !
+- When the texture is smooth, it is smooth !
+  > No dither there.
+- Glass, metal (chrome), plastic, soft wood (paper), water, clouds :
+  > No dither (or little and clean (square) !).
+- Sand, stone, rough wood, (thick leaf) plants, other not smooth textures :
+  > No clean (well square) dithers > random-fill sometimes...(Useful ?)
+
+ES understood that sand, or stone textures aren't nice with pixels
+  displayed in a square way (the cleanest one everywhere else however).
+Spaz didn't understand so, and thinks skin is like wood, like stone, ...).
+Tanis (still drawing on Atari ?) only thought gold (yo !) was like glass !
+))))))))  (End of round brackets).
+ 
+This middle-grey is still visible. Thus :
+   black  -> dark grey  ->  grey  -> light grey ->  white
+  ........    ........    X.X.X.X.    XXXXXXXX    XXXXXXXX
+  ........    .X.X.X.X    .X.X.X.X    .X.X.X.X    XXXXXXXX
+  ........    ........    X.X.X.X.    XXXXXXXX    XXXXXXXX
+  ........    .X.X.X.X    .X.X.X.X    .X.X.X.X    XXXXXXXX
+
+WELL DISPLAYING THE GREYS (not colors yet) :
+Example;
+XXXXXXXXXXXXXXXXXXXX..............................OOOOOOOOOOOOOOOOOOOO
+XXXXXXXXXXXXXXXXXXXX..............................OOOOOOOOOOOOOOOOOOOO
+XXXXXXXXXXXXXXXXXXXX..............................OOOOOOOOOOOOOOOOOOOO
+XXXXXXXXXXXXXXXXXXXX..............................OOOOOOOOOOOOOOOOOOOO
+\________20________/\_____________30_____________/\________20________/
+
+1- Find the middle to blend (two here coz two colours):
+XXXXXXXXXXX.X.X.X.X.X.X.X.X.X............O.O.O.O.O.O.O.O.O.OOOOOOOOOOO
+XXXXXXXXXX.X.X.X.X.X.X.X.X.X.X..........O.O.O.O.O.O.O.O.O.O.OOOOOOOOOO
+XXXXXXXXXXX.X.X.X.X.X.X.X.X.X............O.O.O.O.O.O.O.O.O.OOOOOOOOOOO
+XXXXXXXXXX.X.X.X.X.X.X.X.X.X.X..........O.O.O.O.O.O.O.O.O.O.OOOOOOOOOO
+\__20/2__/\______10+10_______/\rest(10)/\______10+10_______/\__20/2__/
+
+2- Add two 'X' and two 'O' greys:
+XXXXXXXXXXXXXXX.X.X.X.X.X....................O.O.O.O.O.OOOOOOOOOOOOOOO
+XXXXXXXXXX.X.X.X.X.X.X.X.X.X.X..........O.O.O.O.O.O.O.O.O.O.OOOOOOOOOO
+XXXXXXXXXXXXXXX.X.X.X.X.X....................O.O.O.O.O.OOOOOOOOOOOOOOO
+XXXXXXXXXX.X.X.X.X.X.X.X.X.X.X..........O.O.O.O.O.O.O.O.O.O.OOOOOOOOOO
+\___10___/\___/\___10___/\___/\___10___/\___/\___10___/\___/\___10___/
+          \____grey_X:_20____/          \____grey_O:_20____/
+                         \____middle:_20____/
+  It's not over, but you can see that  what we're looking for,
+is to get bands of the same size (20 pixels here).
+  Now (at the end), let's touch those greys up a little.
+So we need more greys :
+          V                 V                V                V
+....  ........ ........ ..X...X. X.X.X.X. X.XXX.XX XXXXXXXX XXXXXXXX  XXXX
+....  ...X...X .X.X.X.X .X.X.X.X .X.X.X.X .X.X.X.X .X.X.X.X .XXX.XXX  XXXX
+....  ........ ........ X...X... X.X.X.X. XXX.XXX. XXXXXXXX XXXXXXXX  XXXX
+....  .X...X.. .X.X.X.X .X.X.X.X .X.X.X.X .X.X.X.X .X.X.X.X XX.XXX.X  XXXX
+
+3- In our example:
+XXXXXXXXX.XXX.X.X.X.X.X.X...X...X....O...O...O.O.O.O.O.O.OOO.OOOOOOOOO
+XXXXXX.X.X.X.X.X.X.X.X.X.X.X.X.X.X..O.O.O.O.O.O.O.O.O.O.O.O.O.O.OOOOOO
+XXX.XXX.XXX.XXX.X.X.X.X.X.X...X........O...O.O.O.O.O.O.OOO.OOO.OOO.OOO
+XXXXXX.X.X.X.X.X.X.X.X.X.X.X.X.X.X..O.O.O.O.O.O.O.O.O.O.O.O.O.O.OOOOOO
+You see that  there are less points at the centre (better blend).
+
+Let's put an end to this long  chapter II.
+I'd want to warn you that these hand-dotted dithers work with curves too.
+Always remember to use them for fitted textures, or hide them (colour)...
+always remember to share equally the surfaces to be dithered or not(center)
+always remember to point the pixels in a 'square way' (and lozenge)...
+always remember to put the darker pixel at the right place (.X.X not X.X.) 
+
+I won't show you how to add some more pixels (greys) at the very end.
+I won't show you how to blend 'X' and 'O' (easy).
+I won't show you how a dark pixel can do a grey one near a light pixel.
+I won't show you how Dan Malone does his ditherings.
+I won't show you how to make real plotted textures.
+
+It's a big work, no ?
+(And I don't speak of bigger, colourful, drawn patterns used as dithers !)
+
+======= =============================-=====-===-==-=-=--=--- -- - -  -
+ I I I   MAKING DOTTED LINES :  ( by jovis )
+_I_I_I_ """""""""""""""""""""
+
+As I don't have room enough here to speak about this excellent chapter III,
+ do refer to my 16MCOLOR picture, which uses this dithering strange method.
+ (Rip it, I'll be glad, and play with the colours (Blue...).)
+If you want only vertical or only horizontal very long dithered surfaces,
+ you are welcome here ! Think about the thrift of colours...
+ Two colours are enough to dither through all the screen.
+
+Normally such dotted lines are done through a program-editor (GFA,..).
+ It's because we must count the pixels.
+To my mind, I'm the first who used this technique and, to understand,
+ the result is a little like in the background of the game Vaxine (StF),
+ but far cleaner, and miles more stretched !
+Be careful ! Hide the bows or tiangles (you'll see them (<decimal point)!).
+
+Bla, bla, bla, baah!  Here's an EXAMPLE (do make yours and better ones !):
+We'll skip one line after the other, to get a long dither.
+( To easily get it twice longer, we'll repeat the dotted line.)
+We'll dither the first line all the screen long, then the second line.
+
+Rem: 1st line below gets into:
+(one line '.') ;(=ENTER) ("".) ; .............X ; ("") ; ......X ; () ;
+....X () ; ...X () ; ...X..X () ; ..X ; () ;
+and you must repeat all the line long the dither. This one for instance:
+3.X/2.X,0. --> ...X..X...X..X...X..X...X..X...X..X(and so on) +one line '.'
+___________.___.__._.._... .. .  .   .
+OK ?  Let's go !
+0., 0.; 13.X, 0.; 6.X, 0.; 4.X, 0.; 3.X, 0.; 3.X/ 2.X, 0.; 2.X, 0.;
+2.X/ 2.X/ 1.X, 0.; 2.X/ 1.X/ 1.X, 0.; 2.X/ 1.X/ 1.X/ 1.X, 0.;
+1.X, 0.; (1st middle)
+2X./ 1X./ 1X./ 1X., 0.; 2X./ 1X./ 1X., 0.; 2X./ 1X., 0.; 2X./ 2X./ 1X., 0;
+2X., 0.; 3X./ 2X., 0.; 3X., 0.; 4X., 0.; 6X., 0.; 13X., 0.; (main middle)
+
+Now reverse all these dotted-lines (and blank(.) ones, and do the same
+ for the (only one) '.'line -> 'X'. Then the two lines will be 'X'...
+Next we'll hide the bows or triangles (not shown nor done...).
+                                                                      jovis
+

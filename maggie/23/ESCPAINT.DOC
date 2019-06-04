@@ -1,0 +1,96 @@
+
+Maggie 23: Utilities
+
+
+                         Escape Paint v0.06
+
+                          Steve Tattersall
+
+
+I'm sure someone who can actually draw should be doing this review, 
+but I suspect everyone has forgotten / doesn't have time to write 
+about this art package from Germany. It's the brainchild of No of 
+Escape, also responsible for this issue's 'Sili Con Carne' demo. 
+Judging from the documentation this program has been in development 
+for quite some time now, and looks to have had quite a lot of work 
+put into it.
+
+Good true-colour art packages on the Falcon aren't particularly rare: 
+there is already the excellent but costly Apex Media, the cumbersome 
+but powerful Rainbow 2 and the old standby Godpaint. These three all 
+eschew a GEM-interface in favour of custom systems in order to 
+squeeze the best performance out of the Falcon; on the ST the nearest 
+neighbour would be NeoChrome or Deluxe Paint. Escape Paint favours 
+the overall approach of Degas in that it has a mix of a GEM menu and 
+window front end, plus a non-GEM set of tools on the actual drawing 
+screens.
+
+
+                               In Use
+
+Booting it up for the first time is a little disconcerting, as 6 
+windows slowly appear on the screen filled with options. Click the 
+right mouse button and a nice logo appears - this is the drawing 
+screen. Click again, and it's back to the options.
+
+My first experience with this program was not great - I tried to move 
+one of the windows and the program crashed. Hmmm... try again and 
+this time there are no problems. However moving and configuring the 
+windows with all the tools in is a bit fiddly at first, and I'd 
+recommend running in a high resolution if possible so you can see all 
+the options.
+
+So first, let's check out all the tools... they all seem to work 
+fine. Loading and saving... yep, seems to work... zoom modes? Crikey, 
+thousands of them. Everything uses the curious mix of GEM and non-
+GEM, but hangs together pretty well after a couple of hours.
+
+I begin to wonder how to review a paint program without being able to 
+draw. So instead of attempting to paint something, then going into 
+all the features in use in any great depth, I'm just going to make 
+some general observations.
+
+Escape Paint appears to be a programmer's paint program in many ways. 
+This is not just because there are lots of techy options ('Xor'
+drawing modes for example!), but also because there is a lot of 
+emphasis on drawing pixel-by-pixel rather than high-level picture 
+manipulation.
+
+In fact our very own Agent -t- uses Escape Paint because of the large 
+number of zoom options. You can do the Degas-style zoom, a NeoChrome 
+Zoom, realtime Zoom in the corners when doing normal painting, and so 
+on and on... and on. It's a bit strange at first, but the longer you 
+spend using the program, the more you realise that it's very well-
+designed for the hardened painter.
+
+One final very nice feature is the ability to code external modules 
+that you can hook into Escape Paint to extend the range of basic 
+features. On this version there is the module to use GemView picture 
+loaders, which turns the program at a stroke into an excellent file 
+converter for programmers.
+
+
+
+                               Overall
+
+So, a very nice 'little' program. It's still very much in development,
+but already has lots of good features. You can write to the author at:
+
+        Norman Feske (No/Escape)
+        Caemmerswalder Strasse 19
+        01189 Dresden
+        Germany
+
+        Email: 03514015154@t-online.de (his telephone number too)
+
+
+
+
+
+
+
+[tat]
+
+
+
+

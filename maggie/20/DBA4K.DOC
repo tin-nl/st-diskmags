@@ -1,0 +1,72 @@
+
+                              DBA 4KTRO
+                              ---------
+
+I assume this 4K intro is by  DBA,  or someone affiliated to them as I
+seem to remember they entered the  competition.  As there is no readme
+file with it, and the file name is enigmatically titled "TEST_ASM.PRG"
+I have no evidence anyone else wrote it.
+
+OK, on with the review.
+
+The file itself is tiny (as you expect from a 4K intro). The version I
+have is unpacked AND still has the symbol table in it, and yet is only
+4275 bytes. This is either the  most  awesome feat of coding, or there
+isn't much in the demo.
+
+Running the demo you find the latter to be the case.
+
+Some text ("4KTRO") is printed all over  the screen. This is to become
+the background for the effect. I  think  this is displayed in case you
+were under the misconception that this is actually a 4meg demo.
+
+The screen is filled with  a  4KTRO  logo  which  is mirrored in the x
+axis. This  has  a  sinewave  distorter  running  through  it.  In the
+background of the logo the "4KTRO" text scrolls.
+
+On the top of the screen there is  also a spline type effect with lots
+of dots rotating about.
+
+Its a great effort for 4K, but  it  does look very ST. The effects are
+very dated, and it doesn't compare very well with the other 4K intros.
+The colours chosen and design aren't  the best. Even though the screen
+is 768*240 in 16 colours,  it  looks  like  ST  Medium as only about 4
+colours have been used.
+
+Next time perhaps they will realise that they have a bit more space to
+play around with and  that  they  can  have  more  than  one screen of
+effects - this seemed to be a  bone of contention. For the time being,
+the only phrase that springs  to  mind  is 4k off! (Appalling! Your're
+hired! -Ed).
+
+
+Owing to severe pressure on menu space. these two reviews have been
+merged - CiH..
+
+                              DBA 96KTRO
+                              ==========
+
+It is always worrying when you look  at  the file size of a 96ktro and
+see that it doesn't come near  the  limit.  This intro clocks in at an
+underwhelming 46k, so expectations were low.
+
+The logo begins with a hastily  drawn  DBA logo being displayed at the
+top of the screen. Underneath some  text  informs  us that this is, in
+fact a 96Ktro (not a 46ktro)  and  was  coded in 45 minutes. This then
+wipes off.
+
+The effect then appears in the lower  portion of the screen. It is two
+shaded rasters with a  sinewave  distortion  running  through them. As
+this is 256 colour  mode,  a  bit  based  distortion would have looked
+nice, but DBA opted to  move  things  in  16 pixel blocks, which makes
+things a lot easier but a lot less visually impressive.
+
+There are two rasters. The one  in  the  foreground is red. The one in
+the background is green. There  is  really  not  much else to say. The
+green one fades out giving red  the  chance  to  strut his stuff for a
+bit, before retiring and offering  the  screen  back to green for some
+more distortion based antics.
+
+This demo was knocked up very quickly  and was probably a lot more fun
+to code than it  is  to  watch.  Not  quite  "Master of Puppets", more
+raster by muppets.

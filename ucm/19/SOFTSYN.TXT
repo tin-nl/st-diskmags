@@ -1,0 +1,166 @@
+
+{*f1FALCON SOFTSYNTH{*f0
+                          ñ(Dream or Reality?)
+
+            (Reality actually!) A UCM Exclusive first look!ð
+
+Back  when the Falcon was a blurry and indistinct picture in the  Atari 
+mags  of the day,  a lot of excitement was expended in the direction of 
+one of the major components of the new machine.
+
+This  was,   of  course,   the  world-famous  Motorola  DSP  chip.  The 
+possibilities  of  this  new and novel piece of silicon  seemed  to  be 
+boundless back then.  We were told of the many wonderful things that it 
+could  do,  such as fast JPEG decoders,  modem tone emulation (whatever 
+happened  to  that?)  realtime audio data processing,  even  whizzy  3D 
+precalculations to get the best out of those latest games and demos!
+
+Best  of  all,  from my point of view at least,  this magic chip  could 
+synthesise all manner of sounds,  properly programmed, able to act as a 
+software synthesiser,  a musical instrument in the classical sense. (At 
+least  if you consider 'classical' to include anything made  by  messrs 
+Moog, Yamaha, and Roland!!)
+
+Over time, the Falcon realised most of these promises, DSP modem aside, 
+but the one killer application, ideally suited to the unique properties 
+of the DSP, which never quite made it, was that elusive softsynth.
+
+It  was  never  from want of trying,  there have been  at  least  three 
+attempts  to  bring something out,  one of these commercial,  the  most 
+famous and recent failure being Dutch demo and CD-warez masters, Sentry 
+and their sadly 'missing in inaction' TB303 emulator.
+
+Now I can take great pleasure in announcing that now I've got a beta of 
+a fully functional Falcon Softsynth, it really works, and it rocks too!
+
+This  new  entry  is  down to the efforts  of  one  Jason  Coughlin,  a 
+previously unknown USA-based programming talent. (Cue drum roll) He has 
+some  pretty  big plans for his new softsynth,  let's hope he gets  the 
+time and energy to realise them.
+
+
+ñ++ Dat' Current early Beta ++ð
+
+This  is pretty crude,  and pretty early,  but there is enough there to 
+give you a good idea of what might be coming soon.
+
+'Zounds',  to give its current (soon to be changed) working title is an 
+emulated tri-oscillator analogue style synthesiser. I start the program 
+up,  and the main screen boots into a dodgy 70 hz style RGB mainscreen. 
+This  is  entirely  a feature of the programmers  own  personal  whims, 
+shortly  before  more socially acceptable coding  and  presentation  is 
+introduced for a wider audience. 
+
+My  Centurbo 2 Falcon does run it,  and my pretty old but patient  SVGA 
+screen  does  display the weird screen mode,  in the same way  that  it 
+displays such RGB only classics as the Digital Chaos 'Bio' demo, IE, it 
+shouldn't really,  but what the heck!  At this point,  I realise,  that 
+quite   by  accident,   Jason  has  created  a  beta  that  is  closely 
+'customised'  to my set-up,  and no-one elses.  I breath a deep sigh of 
+relief for the fact that it works, and start to dig a bit further.
+
+A forest of knobs and slider controls greet the eye. I suspect they are 
+mouse clickable. They are.
+
+On the left hand side of the screen,  are the three oscillators,  where 
+waveform type, from the ever popular pulse, to the eerily pure sine are 
+available.  Frequency,  volume,  Pulse width and detune knobs await our 
+fevered  twiddling,  more  on that later.  Next door to those,  are the 
+assorted  controls  dealing with low,  high and band-pass filter,  also 
+sound cut-off, and the mysterious 'Q' knob are there.
+
+{*i osc5.pi1 m 0 20 0 100}
+
+Some  slider-based action next,  where the all-important (A) Attack (D) 
+Decay (S) Substain (R) Release controls are located.  It is here,  that 
+the basic 'shape of your waveform is created.
+
+To  the  right  hand side of the screen ,  various control  panels  are 
+located  for  Depth,  Rate,  Delay,  and the mysterious 'Wet' and 'Dry' 
+knobs.  Finally, in the bottom right hand corner, there is an (uncoded) 
+DSP manager, which doesn't do a lot just yet.
+
+
+ñ++ In Use ++ð
+
+This  beta  has a choice of inputting via a MIDI source,  or hacking  a 
+patch out on the Falcy keyboard. Almost immediately, you discover, that 
+not  everything  is  quite what it seems,  and not  everything  on  the 
+control panel, is quite, well, ready at the moment.
+
+Still,  what is there, gives plenty to be going on with, as we start by 
+playing  with  the ASDR controls,  either for a long sweeping  sort  of 
+sound,  or  something  sharper and shorter.  Quite small changes to the 
+ASDR  values  can produce big changes in the sound you  are  trying  to 
+make. I'm not sure if the 'Release' control is working properly or not, 
+but it hardly matters.
+
+The  richness,  or 'tone' of the sound is influenced by the choices you 
+make  from  the  oscillator  settings,  where you can  freely  mix  the 
+different  waveform  types,  according  to taste,  sine wave  producing 
+purer, less obviously 'synthy' sounds. 
+
+For  being  able to synthesise classic growls and squelches  and  weird 
+throbbing  fades that would do an early Synth pioneer credit,  'Zounds' 
+really  does  have  the  knack!  An element of  'live'  performance  is 
+introduced  when you start playing around with the knobs  and  sliders. 
+
+Particularly good ones to fiddle with include the detune and  frequency 
+controls on the oscillators.  UK people over a certain age,  who recall 
+the childrens television programme 'The Clangers' wll realise how  most 
+of  the  other-worldly sound effects were created!  (A very  bored  BBC 
+radiophonics  workshop  technician,  with a real synthesiser!)  I  will 
+quickly pass over just how much of the scarey/cheesy 'incidental' music 
+from the olden tele series 'Dr Who', I managed to recreate!
+
+If this sounds dangerously retro, then don't worry, as introducing some 
+cleaner  sounding  waveforms into the proceedings  improves  matters  a 
+great deal. With care and diligence, I managed to get some decent flute 
+sounds  out  of it,  and just once,  something that sounded quite a lot 
+like  a half-decent impression of a classical piano?  The sounds I  got 
+out  of it were fantastic,  entirely DSP-generated,  and as far removed 
+from  current YM soundchip based softsynths,  as it is possible to get! 
+Technical  fans  might  be  interested  to  note,   that  this  current 
+incarnation  only  uses about 20% of the DSP's processing  power.  This 
+leaves lots of room for future expansion, more on which soonish.
+
+Zounds  is buggy,  not dangerously so,  and many of the bugs are simply 
+down  to  features  due  to be implemented,  not being  there  yet.  It 
+sometimes  appears with the console panel onscreen,  but no sound,  and 
+seems  to  be happiest running in truecolour mode.  To sum up,  I would 
+describe it as ragged around the edges, but inspired!
+
+There isn't any way of storing or keeping the sounds that you make,  or 
+the  sythesiser settings or 'patches' that you inspiredly create.  This 
+is set to change shortly, as a powerful patch editor is promised, among 
+a great many other cool features.
+
+
+ñ++ So What Next? ++ð
+
+Jason  would like to go a lot further with Zounds,  or whatever it will 
+be called shortly.  What the finished final product will look like,  is 
+down to him.  We are hopeful for the future, as he is intending to come 
+up  with something very much like a audio equivalent of the top  Falcon 
+sound-to-light proggy, Whip!
+
+A  future Zounds will go a lot further than this current beta,  as  not 
+just  one,  but several 'virtual' synths will be loaded in at the  same 
+time.  It should be possible to keep what you are doing, in the form of  
+patch save,  or even direct-to-disk output for any samples you may wish 
+to  pass  on to admiring Protracker and Digital Home  Studio  fans.  It 
+hardly  needs to be mentioned,  that it will be considerably tidied up, 
+and  I've seen some preview graphics for a future control  panel,  that 
+takes it way beyond the functional look of the present time.
+
+The  ultimate  utopian  vision  goes  something  like  a   multi-module 
+synthesiser, no,  more  like  a virtual recording studio,  but one with 
+total control over your sound creation, and all thanks to the wonderful 
+and unique DSP in the Falcon.
+
+A big hand is awarded to Jason for succeeding where others have failed. 
+Let's hope he can finish the job!
+
+   òCiH, for Undercover Mag, March '00ð
+
+

@@ -1,0 +1,166 @@
+
+--------------------------------------------------------------------------------
+
+                         HOW TO WRITE A SHAREWARE GAME
+
+--------------------------------------------------------------------------------
+
+                      A GUIDE BY MR. PINK / RESERVOIR GODS
+
+--------------------------------------------------------------------------------
+
+In the current  Atari  market,  the  majority  of  new  games  being created are
+shareware games. Writing a shareware game  is  a totally different discipline to
+writing a commercial game -  you  don't  have  the publisher breathing down your
+back, you don't have deadlines to meet, and  you don't have to wait for approval
+for your ideas from others.
+
+There are many benefits to having the  freedom  of a shareware author, but there
+are also drawbacks. You have  to  be  highly  motivated,  otherwise you will not
+complete projects. You  will  have  to  handle  all  publicity  and distribution
+yourself.
+
+When deciding on what type of game  to  write, always observe this golden rule -
+make sure it is a game you  like!  Don't  try  to create a game just because you
+think other people will like it  if  you  are  not  passionate about it! You are
+going to spend hundreds of hours over this game and if you don't like it then it
+won't be finished.
+
+Once you've designed a game that you  like,  have a look at the competition both
+on the Atari and on other platforms. Then decide how you are going to improve on
+it. You want your game to be the best!  There is no point in releasing a game if
+others have been there before and done it better.
+
+Choosing the language to write the game  in  is  very important. If you want the
+code to be portable to other  platforms  then  C  is  a good choice. If you want
+speed then the obvious choice is  assembly  langauge.  GFA basic can easily cope
+with Role Playing Games. With the right extensions, even STOS can make some neat
+platform games. Pascal is best  avoided  unless  you  want  to write a GEM based
+game. If you are  even  considering  using  COBOL  then  you  are quite probably
+clinically insane.
+
+Personally I always opt for assembly language.  This gives me total control over
+all the hardware. It also gives me the  chance  to squeeze the most I can out of
+the machine. Assembly language gets a bad press, but it is very easy to use. You
+do spend a lot of time bug hunting,  but  with the aid of a decent debugger such
+as BSS Debug or MON ST then  it  isn't  too  much of a problem finding the exact
+line where the bug occurs.
+
+When using high level languages, there  are  often  bugs in the compiler so your
+programs may contain errors that are nothing  to  do with you. As most languages
+haven't got Falcon specific versions, it  is  always  a bit of gamble using high
+level languages.
+
+Most  high  level  languages  allow  you   to  include  some  assembly  language
+subroutines, so it is a good idea to learn  the basics of 68000. Even if all the
+rest of the game is written in another language, assembler routines for clearing
+the screen and displaying sprites will speed up things no end.
+
+In this media led age, the most  important  thing  about a shareware game is the
+presentation. From the moment a user  first  loads  your game, you have to start
+impressing them.  Like  those  shampoos  ads  say,  first  impressions  are very
+important. Your game may  only  be  loaded  once,  and  if  it  doesn't grab the
+attention on the first encounter, it may never be tried again.
+
+You've got to capture the attention and the imagination of the player, and above
+all you don't want to antagonise him  before  the game even begins. If possible,
+set the screen into the right resolution when the game is loaded so people don't
+have to mess around on the  desktop  getting  the right resolution. If the first
+thing a player sees is the "I  can't  run in this resolution" dialogue box, then
+you are off to a bad start. This is why it is a good idea not to write GEM based
+games that are tied to a specific resolution.
+
+When the game has loaded and the proper resolution has been set, you should have
+some presentation screens. These give the game identity and character. The style
+and format of these introduction screen are  up  to you, but they let the player
+know they have left the territory of  the  GEM  Desktop and entered a new world,
+created by you.
+
+I believe that game menus are important. A  player  should be able to set up the
+game just how he likes. There  is  nothing more frustrating then spending months
+writing a game and then recieve  a  lot  of complaints about something that only
+requires a change to one line of  code.  For example someone remarked to me that
+they wished the cursor  moved  faster  in  "Tautology",  so  in "Tautology II" I
+included an option where you can  define  the  speed  of the cursor. Be aware of
+these potential pitfalls and let the player choose how to play the game.
+
+Onto graphics - I believe that  the  speed  that graphics move is more important
+than the resolution of graphics. A game is  more likely to be playable if it has
+a decent framerate.  Therefore  gear  your  game  to  getting  the highest pixel
+turnover possible. If doing a 3D game don't  be afraid to drop the resolution of
+the screen to up the framerate. No matter how good a game looks, no one is going
+to play it if it is running at a couple of frames a second!
+
+For a case in point, look at  the  French Wolfenstein clone "Lasers & Men". This
+game had a lot of potential when  it  started.  There wasn't much detail and the
+framerate was reasonable. We  were  promised  a  DSP  version  and we expected a
+faster more playable game. Instead of going for speed, the author decided to add
+more detail and texture map the  floors  and  ceilings.  The game became so slow
+that the final version, although looking lovely, was totally unplayable.
+
+On the other hand "Running"  has  decided  speed  is  of the essence. Floors and
+ceiling are not mapped. When needed there are some coloured flat shaded polygons
+on the floor (e.g. steps). As  the  game  is  so playable, you don't notice this
+abscence.
+
+This principle doesn't just  apply  to  texture  mapped  games, a good framerate
+keeps all games ticking along healthily.  This  doesn't mean that every game has
+to run at 50fps or else it is deemed unplayable - far from it. Most Falcon games
+don't run at this magic figure and they  are still hugely enjoyable. I would say
+the cut off point is where you, as a  player, are aware that you are waiting for
+the screen to update. You have  pressed  a  key  the screen updates aren't quite
+keeping up with your movements.
+
+Obviously the "framerate" debate is  only  applicable  to arcade games. Strategy
+games are relatively unhampered by such  concerns, although players shouldn't be
+left waiting too long between turns.  When  creating  a role playing games it is
+sometimes tempting to make an overly  complex equation for working out something
+(such as combat) where a much simpler approximation will suffice. The simplified
+equation will execute much faster and most players won't notice the difference.
+
+I have to advise against writing GEM  based  games. Sure they are compatible and
+should run on all ataris including  future  models  (!)  so you can be sure that
+microbox owners will play your game. But  lets  face it, GEM is not rock'n'roll.
+If it was a rock'n'roll band, it  would  be  Dire  Straits - dull but worthy AOR
+rock types. You want your game to rock!  To  stand out from the crowd, not to be
+mistaken as an upgraded version of First Word Plus!
+
+Don't use line-a calls! Everyone (except the  author of "Realtime 3D graphics on
+the Atari ST) realised that line-a calls  were  poo in 1983. And that was before
+they had been invented! Give them a wide berth!
+
+Don't use the VDI as this ties  you  to  whatever resolution the game was booted
+in. You may  find  that  a  lot  of  screen  accessing  functions  in high level
+langauges are tied to the  VDI  so  its  time  to  write your own assembly based
+replacements!
+
+Lets face it, it is unlikely that  there  will be any future Atari machines, and
+if there is then compatibility with old GEM  software may not be a priority. You
+are never going to reach the full  capabilities  of  the machine if your code is
+tied to system calls.
+
+Sound is an often overlooked element  of  games,  usually slapped on at the last
+minute in a "will this  do?"  fashion.  This  a  shame  because decent sound can
+really enhance a game. Although good  music  is  important, sound effects have a
+much greater significance and add  a  whole  extra  dimension to a game. Sampled
+sound effects usually sound  best.  The  relevance  of  the  sound effect to the
+action it portrays is not as important  as  the actual existence of that effect.
+i.e. as long as its there it doesn't matter so much what it is!
+
+So here we have the Reservoir Gods game plan:
+
+1. Choose a game genre that you love with a passion!
+2. Check out the competition - become the leader of the pack!
+3. If using a high level language, inject with asm routines for extra speed!
+4. Don't antogonise the player! Set the right screen mode for him!
+5. Introduce yourself! Have some nice presentation screens.
+6. Give the player choice! Give them the options they deserve.
+7. Keep the framerate up! Keep it playable.
+8. Avoid GEM wherever possible! Unless you have a beard and cardigan!
+9. Avoid VDI calls! Write your own graphics routines
+10.Beef up the game with sound effects! They are the icing on the cake.
+
+
+That's enough babble from me! Go forth and start making some games!
+
+

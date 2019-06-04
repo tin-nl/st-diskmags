@@ -1,0 +1,84 @@
+
+             THE AUTOMATION PACKER 2.3r
+                       by Michael  Schuessler  (Sammy Joe) 
+
+Along  with the disk magazine I will always try to bring you  the 
+best  utilities which I am send.  So in this issue there  is  the 
+ultimate packer by Automation. The program is on the disc in one 
+of the folders. 
+
+Let's get down to the actual review then.....
+
+The packer has 5 different options, they are:
+
+               1. Pack/Depack Program
+               2. Pack/Depack Data Files
+               3. Multi Pack Menu
+                  1. Multi Pack All
+                  2. Multi Pack but no Programs
+                  3. Back to Main Menu
+               4. Pack Data File (with an offset)
+               5. Exit
+
+
+1:
+A  fileselector  box  comes up and you are asked to  click  on  a 
+program  or tos file.  When you have clicked on it,  the  program 
+will  load automationally.  You will then will be asked  how  you 
+want the program packed.  Your choice goes from F1 to F10. If you 
+press  F1,  the Packer will pack the program fast (and if  course 
+the program will depack itself quite fast too),  but it will  not 
+pack it very efficiently.  Whereas if you select F10, the packing 
+will take years but the file will be a lot smaller. The depacking 
+will  also  take an instant longer.  When the progam  is  totally 
+packed the Packer will tell you how much it has packed!!! Finally 
+you are asked under which name you want to save it.
+If you have packed a program, you can depack it again by clicking 
+on it.
+
+2: 
+The packing with the data files is merely the same except that at 
+the end you are asked whether you want to save the data file as a 
+program  or again as a data file.  If you choose to save it as  a 
+program you are asked to type in at which address you would  like 
+the program to depack itself to.  When the file is saved you will 
+find it as a clickable .prg file on the disk. 
+Again, as with 1. you can depack your data files again!!!!
+
+3: 
+This  here is quite a useful feature,  it saves you  clicking  on 
+each  program.  If  you select Multi Pack All,  the  Packer  will 
+automatically  pack  everything  on the  disc,  the  programs  as 
+programs,  the data files as data files. If you choose Multi Pack 
+No Programs,  the packer will just pack all the data files on the 
+disk. 
+
+4:
+The fourth option is also quite useful.  You are asked to enter a 
+offset, this offset (a number) tells the program how far into the 
+data  file it should begin to pack.  For example,  if you have  a 
+file  which is 350K long and the first 200K consist of a  sample, 
+you enter the length of the sample and the program will only pack 
+the graphix data beginning at the end of the sample.  I can  hear 
+you ask,  isn't it easier to pack the whole file ?  My answer  to 
+that  would be:  Samples do not pack very well and therefore  you 
+save yourself a lot of time.
+
+5:
+I do not think that there is any need to explain what this does.
+
+
+Finally  I  would like to thank Carormation for  allowing  me  to 
+include this packer in the disk magazine.
+
+                         Thanks guys....
+
+                                        Michael Schuessler
+
+P.S.: I personally reckon that this is the best Packer ever!!!!!!
+P.P.S.: Thanks also go to whoever send it to me.
+P.P.P.S.: The reason why this article in twice in this magazine 
+	  fairly simple, I could not decide whether to put this
+	  artcile in the utility section or the PD section, so
+	  my decision was, put it in both. It looks like more too.
+

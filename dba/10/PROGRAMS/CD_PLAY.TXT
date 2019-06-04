@@ -1,0 +1,140 @@
+CD MODULE PLAYER
+
+
+The D.B.A. presents their own, and surely not without pride, CD MODULE 
+PLAYER II. It's a project I (Bonus) wanted to make for a very very 
+long time but didn't had the time nor the tools to do so. But after 
+the Falcon showed me a few nice things I thought "What the heck, just 
+do it" and here is the result....
+
+What is it then ??
+------------------
+
+Well it's another (you might say) module player, but with loads of 
+options, some of them never showm before, and possibilities. Let me
+explain them to you (with a screen shot of the most important 
+functions):
+~CDPLAY.BL2~                                 Here it is. 
+                                             The first button left, almost 
+                                             in the corner is the EXIT 
+                                             button (great way to start 
+                                             ain't it). Just klick that 
+                                             one to leave the program.
+                                             
+                                             More to the right you can see 
+                                             three small buttons with 
+                                             12,25 and 50 in it. Select 
+                                             one of these to set the 
+                                             frequency to replay the 
+                                             module 
+
+                                             Next to that you can two 
+                                             triangles (arrows). These 
+                                             you can use to scroll to 
+                                             the list of modules that
+                                             stands here were now this 
+                                             text is. I would say you 
+                                             will get the hang of it 
+                                             as soon as you work with it.
+                                             
+
+
+Well the rest of the functions really explain theirselves but for the 
+butthead amongs us I will spread them out.
+
+MOD INFO
+--------
+Did you ever see the text that is in most of the modules ??? No most 
+of you haven't. Normaly it isn't there but some composers use the 
+space to give a sample a name to write almost complete textfiles or 
+greetings.  This option you don't see often (or is it even unique ?) 
+but you can now read the whole file that's is hidden inside the 
+module.
+
+DBA INFO
+--------
+Do I have to explain ??? Just read !!!!
+
+TRACKER RESET ALL
+-----------------
+Aaaah a real nice one this is. For some reasons, I didn't get it 
+straight as yet, some modules seem to f*ck up the player if you place 
+them in repeat mode. The program will ask for the CD_MOD.DAT file. Just 
+give him what he asks and he will play you every tune.
+
+Okay now a brief word about the normal keys...
+
+REWIND        Sets replay pointer back in module.
+
+PLAY          Play the module you have chosen.                                       
+
+FORWARD       Sets replay pointer forward in module.
+
+BALANCE       Setting sound left or right. Standard setting is 0 that 
+              means the same amount of sound on both speakers.
+
+PLAY ALL      Plays all the tunes listed in the directory. If all the 
+              modules have been played it starts all over again.
+
+STOP          Stops the module that is playing and sets pointers back 
+              to start position.
+
+PAUSE         Pauses the module that is playing but doesn't reset the 
+              pointers in the module. Click on it and it pauses the 
+              module, click on it again and it resumes playing...  
+
+VOLUME        Set replay volume of the module from 1 to 15.
+
+SHUFFLE       Plays all the tunes listed in the directory in a random 
+              order. It will keep on doing so until you stop him.
+
+REPEAT        Sets a module in repeat mode, so wenn the player has 
+              reached the end it start all over again.
+
+PATH          A special one. Here you can select the drive and 
+              directory where the mod files are. Just select the path 
+              like "D:\MUSIC\MODULES\" and press RETURN or OK and the 
+              list will be filled with the new modules.
+
+PLAY MODULE   Press the down arrow to select a previous module or the 
+              up arrow to select the next module. Does also work in 
+              SHUFFLE and PLAY ALL mode.
+
+You can also click on a module name in the list to get it loaded and 
+started, as easy is that !!. 
+
+So what more ??? Well there aren't any un-packers build in yet, that 
+for the future. There is a max. number of 400 modules in one directory 
+for now (We tried it on a Module CD ROM, great !!) but this can be 
+changed any time to up to a 1000 or maybe even more (until we discover 
+a CD ROM with more than 1000 in one directory !!). 
+
+But if you find any bugs (afterall it the first real release of this 
+module player) or have usefull tips/hints/expantions for us don't 
+forget to write us. We will see if it is usefull/helpfull for this 
+small programm. 
+                                             
+---------------------------------------------------------------------
+
+To use the player put the DBA_TRAK.TOS on a blank disk and click on 
+it. It will now self extract to two files. THen just click on the .PRG 
+file and there she goes....
+
+---------------------------------------------------------------------
+
+Happy happy joy joy with this player
+
+                                               Bonus Software 
+
+P.S. donations are welcome or just send a programm for the magazine it 
+return ....
+
+  
+
+
+
+
+
+
+
+

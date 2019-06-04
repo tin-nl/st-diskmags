@@ -1,0 +1,50 @@
+ñ                            < - . - >
+
+ñ                    U    P    D    A    T    E    !
+ñ                 -- - -- - -- - -- - -- - -- - -- - --
+
+ñSNDPlayer 1.2ğ by òAssem-Softğ and òDHSğ [óAny Atariğ] (1999)
+
+
+Whoa. Those swedes are ñfast!!ğ :-)
+Even though Evil and Ozk themselves couldn't reproduce the bugs Candyman
+and i had to report about òSNDPlayer 1.1ğ, they found the bug in less than
+a week.
+Like i already assumed the whole memory management has somehow gotten
+corrupted, screwing up òGEMğ and òTOSğ really good in some way.
+But after all, it seemed to turn out to be a òTOS 4.0xğ bug rather than
+a programming error. Hard to tell in the end, but now, òSNDPlayer 1.2ğ
+is available along with a set of new tunes to play within.
+
+Like said in the ñSNDPlayer 1.1ğ review, òSNDPlayer 1.2ğ plays almost
+anything from óTaoğ or the currently very popular ñSidSound-Designerğ-
+tunes. The package available called ñDec_99ğ contains quite a lot of
+files with tunes from óTao, DMA Sc, 505, MC Laserğ and even by other
+people like óViking, D-Force, Baggioğ and óHavocğ.
+
+To put it in a nutshell, òSNDPlayer 1.2ğ does its job excellently. No
+timing problems, no matter what Atari at what speed you run in what
+resolution on what monitor, no synchronisation problems, no replay
+problems - òSNDPlayer 1.2ğ plays its tunes almost anywhere anytime.
+Additionally, it has now been improved for òSingleTOSğ to run as an
+óAccessoryğ that doesn't automatically open a window right after the
+boot-sequence.
+ñMiNT, MagiC, N.AESğ and ñGenevağ-users can of course run it as a simple
+desktop program using drag & drop.
+The only shadow that falls on this great program is the fact that it
+still isn't capable of reserving memory so if you run it as an accessory
+under òSingleTOSğ, loading a new "foreground" program will immediatelly
+terminate replay. But i understand the problem and see currently no
+solution for that myself so i guess òSingleTOSğ-users (Hello Thomas ! :-)
+will have to arrange with that.
+
+òSNDPlayer 1.2ğ is what ñeveryğ Atari user needs on his desktop to enjoy
+a bunch of really great tunes during everday's work, coding or painting !
+
+Thanks a lot to óozkğ and óEvilğ for putting it together ! 
+
+
++------------------------------------------------------------------+
+|  It totally rules.                                               |
+|                                        [The Paranoid of Paranoia ]
++----------------------------------------[Think you can handle it?!]

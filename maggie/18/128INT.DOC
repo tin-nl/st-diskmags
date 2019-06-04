@@ -1,0 +1,243 @@
+066030003040000132006000006008000
+11
+2#1
+F0110030001
+9[..................................................................]0110
+Ä----------------------------------------------------------------------
+ demos
+----------------------------------------------------------------------
+
+                           Å128 BYTE ROUNDUPÄ
+
+----------------------------------------------------------------------
+                                                              pink/rg
+----------------------------------------------------------------------
+
+128 byte intros. Hate them  or  despise  them,  you can't ignore them.
+They are the programming  equivalent  of  a  guitar  solo  - a feat of
+technical wizardry appreciated by other  practitioners  of the art but
+loathed by the public at large.
+
+Whilst with axe work the criteria for 'greatness' is length and skill,
+128 byte intros are based on  shortness  and  skill. Just how much can
+you squeeze into 128 bytes?  Had  DHS  and  our good selves pushed the
+format to its limits? To judge by the latest releases, the answer is a
+resounding no.
+
+
+----------------------------------------------------------------------
+128 TRON II :: T.O.Y.S
+----------------------------------------------------------------------
+
+With 'Hong Tron Phooey' the Reservoir  Gods created both the first 128
+byte game and the most  contrived  game  title. 'Hong Tron' placed the
+player in a futuristic cityscape (a  blue square with some white dots)
+with the task of flying  a  jet  powered  skybike  (a line) around the
+skyscraper dots. Never before had  a  32-bit game been outperformed by
+ZX81 releases. Some people even liked it.
+
+But in the dark heart  of  sweden,  a  solitary  coder had his mind on
+greater things. Peylow of TOYS (for it is he) decided he could squeeze
+even more out of those 128 bytes.  He wanted multiplayer action and he
+wanted in one eighth of a kilobyte.
+
+Not being able to think of a name as terrible as 'Hong Tron Phooey' he
+christened  his  game  '128  Tron  2'.  Gone  was  the  cityscape  and
+skyscrapers and in its place was  a  fiendish human controlled line to
+do battle with. You can  even  play  with  yourself (if you enjoy that
+sort of thing).
+
+After his work on ToyMan, Peylow  knows  all  about writing games in a
+strictly limited space. 128 Tron 2  is  another triumph of man against
+machine. Image the classic tron game in just 128 bytes with two player
+on screen. Simultaneously. Keep imagining  and  it will save us having
+to do a screenshot.
+
+Unlike 'Hong Tron Phooey', 128 Tron 2 is  not much fun to play on your
+own.  But  its  multiplayer  capabilities   open  up  new  avenues  of
+entertainment. Who needs the  internet  and networked 'Half-Life' when
+you can play 2 player tron on  your Falcon! The keys are also sensibly
+layed out with cursors  for  one  player  and  numeric  keypad for the
+other.
+Ä
+You can even redefine your  keys!  Well,  this  does involve typing in
+scancodes into the supplied source,  but  should  you  be one of those
+people who can only control Tron if their keys are Z,$,Right Shift and
+Undo you can set this up with a bit of tinkering.
+
+128 Tron 2 is class. Forget Marbles,  this is Peylow's best work since
+'ToyMan'. 9/10
+
+
+----------------------------------------------------------------------
+MANDEL :: NO CREW
+----------------------------------------------------------------------
+
+No Crew remain  an  enigma.  These  crazy  norwegians  knocked out the
+flawed but  technically  excellent  'o-tentyk'  demo.  Their technical
+skill is undoubted, their approach to design eccentric.
+
+The 128 byte demos has inspired them  back  into life, and this is the
+first fruit of their loins - a sort of 'second coming'.
+
+As the title suggests, Fractals are on the menu and they are served up
+in a strictly no frills manner.
+
+Lets face it, fractals are dull at the best of times. Even coders have
+to be pretend to be  interested  in  them. The Reservoir Gods 128-Byte
+Mandlebrot 'Lettuce From Brechnev' was about  as popular as a UN peace
+keeping team in Iraq. 'Mandel' offers a little more, but not enough to
+get the paces pulsing.
+
+'Just like the  first  Falcon  demos,  a  fractcal  zoom' promises the
+readme file, forgetting that most  people  who were unfortunate enough
+to witness the 'fractal zoom' sold their falcons soon afterwards.
+
+One  of  the  many  great   things   about  fractals,  from  a  coders
+perspective, is that they are  easy  to  zoom. And unlike bitmap zooms
+they don't  loose  resolution  and  become  blocky  -  unless  you are
+cheating or your floating point numbers underflow.
+
+Like 'Lettuce', Mandel requires an FPU, but I wouldn't say that either
+of these intros are worth buying an  FPU  for. Perhaps they are a good
+reason to sell your FPU  and  force  fractal  coders to do things 'the
+hard way'. That may just put a stop to it!
+
+'Mandel' runs in a small corner of the screen (a 128x128 square if you
+want to be anal about this). Its pretty hard to zoom a fractal in real
+time using the brute force method,  especially  on the fpu, so this is
+less of a zoomer more of  an  'updater displaying a smaller section of
+mandlebrot set'. Doesn't quite trip off the tongue in the same way.
+
+NoBrain has gone for the classic coders  trick of using shades of blue
+to represent the iterations  of  the  mandlebrot.  Pretty this ain't -
+lacking the crazy colours of 'Lettuce'.  It also doesn't do any screen
+swapping so you can see the fractal being updated scanline by scanline
+which sorts of ruins any illusion of zooming.
+
+ÄAs Felice might say,  'Good,  if  you  like  that  sort  of thing'. It
+improves  on  'Lettuce'  in  terms  of  features  but  falls  down  in
+presentation. If Mandlebrots don't  tickle  your  fancy,  then you are
+best off avoiding both of them. 6/10
+
+----------------------------------------------------------------------
+PLASMA :: NOCREW
+----------------------------------------------------------------------
+
+After the super  soaraway  success  of  'Mandel',  NoCrew  return with
+'Plasma' - a super soaraway  plasma  effect!  Like their earlier demo,
+'Plasma' requires an FPU. Also like  the earlier demo, 'Plasma' is not
+really the 'Killer App'  that  will  persuade  millions  (?) of Falcon
+users to invest in a floating point co-processor.
+
+This plasma effect fills the screen  with  a  sea of curvy lines which
+fluctuate  through  various  shades  of  green  and  blue.  There  are
+
+obviously sinewaves at  work,  but  similar  effects  could  have been
+created without the FPU.
+
+Plasma is a pleasant enough  128  byter  and certainly gives DadPlaz a
+run for its money. A quick smile rather than a toothy grin. 7/10
+
+
+----------------------------------------------------------------------
+SIERPINS :: NOCREW
+----------------------------------------------------------------------
+
+Its a 'Power Morphing' sierpinski triangle.  We are not sure where the
+'power' comes from (the  68030?  -Ed)  or  even  the morphing for that
+matter. But it is a  sierpinski  combined  with another effect. That's
+two whole effects in one 128 byter.
+
+The sierpinski has already  reared  its  ugly  triangular  head in the
+Reservoir Gods  'Renegade  Pasta'  intro.  It's  probably  the easiest
+fractal to code - I even had to de-optimize some of the code to pad it
+out to 128 bytes!
+
+'PMST' starts slowly. In fact when I  first  ran it I wasn't sure that
+it had started at all as no image  was obvious on my (very dark) atari
+monitor. Then suddenly faint traces of blue began to appear which then
+begin to seep across the screen  like  the cautious fingers of the sun
+at daybreak. (What do you think this is? Reader's Digest? -ED)
+
+So what you get is an averaging  effect,  similar to a fire effect but
+far more subtle. If you leave the  screen running it builds up looking
+more and more impressive. Its like  a  raytracer without all the balls
+and checkered landscapes.  On  second  thoughts,  its  nothing  like a
+raytracer at all.
+
+If I was Jon Snow controlling  the  pendulum of 128 Byte Sierpinskis I
+would point at that the factors  against  'PMST' are its slow pace and
+initial darkness  (making  the  background  colour  black  would  have
+helped) but  in  its  favour  are  its  added  depth  and  complexity.
+Comparing this against 'Pasta' is  like  comparing instant coffee with
+Äreal. If  you  like  your  effects  to  reach  a  climax  quickly  and
+colourfully, go for pasta. If you prefer to take your time and reach a
+more satisfying conclusion, go with the Power Morpher. 8/10
+
+----------------------------------------------------------------------
+PONG :: NOCREW
+----------------------------------------------------------------------
+
+Whilst once 'Hong Tron Phooey' resided  in  a motorcycle emptiness - a
+lone 128 byte game in a metropolis  of 128 byte demos - reinforcements
+are arriving in numbers.
+
+Pong is NoCrew's contribution to the  128  byte games scene. And its a
+bit of a corker.
+
+There are two bats and a ball - well actually two lines and a pixel in
+this implementation - what more do you need for a game?
+
+Pong is totally mouse controlled  with horizontal movement controlling
+one bat and vertical the other. This does prove a bit of a problem for
+two player battles, but its great if  you want to play with yourself -
+keep your eyes on the ball, grip it tightly and move it up and down.
+
+Unfortunately the restrictions of 128 bytes  mean  there is no loss of
+life, score or deviation of the ball from the most simple pattern. But
+it does  remain  strangely  playable  and  is  infinitely  better than
+holland games design's Ping 2000. 9/10
+
+
+----------------------------------------------------------------------
+STAAARS :: CHECKPOINT
+----------------------------------------------------------------------
+
+The 'Grapes Of Hoth' was the first  128 byte starfield. It recquired a
+Falcon and an FPU. Checkpoint's demo  runs  on a plain vanilla ST with
+no additional floating point help required.
+
+Starfields and demos are  synomous  so  it  is  only  a matter of time
+before it became 'big' on the  128  byte scene. 'Staaars' is a classic
+implementation of a classic effect. Reach for the staars! 8/10
+
+
+----------------------------------------------------------------------
+HUNT4FJI :: CHECKPOINT
+----------------------------------------------------------------------
+
+The names get worse, the demos get better. RG (as ever) were the first
+to attempt to make a  rot  zoomer  in  128  bytes. Their conversion of
+Sanity's "Terminal Fuckup", the  cunningly  titled "Terminal Ketchup",
+was a brave if flawed attempt, with rotating raster bars.
+
+Whilst 'Ketchup' had the advantage  of  the  Falcon,  the FPU and true
+colour mode (easy to plot pixels),  Checkpoint  had  an ST, no FPU and
+bitplane mode. And they went and made  not  only the best 128 byte rot
+zoomer but also the best 128 byte demo ever conceived.
+
+ÄThe demo comes with an  installer  program  that searches through your
+TOS ROM for the Fuji  bitmap.  Once  its  address has been located, it
+wries a special version of the demo  which is set up for your machine.
+There is not enough space to do this sort of search in a 128 byte demo
+so this is a cool way to maintain compatibility.
+
+Run the demo and be  amazed.  A  proper rot-zoomer featuring the atari
+logo running at a  more  than  decent  speed  and featuring no obvious
+corner cutting and glitches. This effect  is  good enough to have gone
+in a full demo (in fact it  out  performs  a lot of rot zoomers I have
+seen in full demos).
+
+Truly stunning and a testimony  to  DefJam's skill. Well worth hunting
+down. 10/10

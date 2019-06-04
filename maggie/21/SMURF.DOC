@@ -1,0 +1,141 @@
+
+=\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/=
+
+                            SMURF PREVIEW
+
+=\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/=
+
+
+If you read the  Symposium  party  report  you  will have noticed that
+Germany crew Therapy were busy working  on a very interesting graphics
+program for the Falcon030. This has the  title "Smurf" and seems to be
+a very powerful tool.
+
+Maggie has received an  exclusive  press  release  about this exciting
+product from Dodger of Therapy:
+
+----------------------------------------------------------------------
+
+Yes, you're right, we're working on  a graphics converter called SMURF
+- silly name for a piece of  software  don't you think? It will be the
+firstproject of our software label 'Therapy Seriouz Software'.
+
+But meanwhile it is no more only a converter, it also grew to an image
+processing program - i just  don't  know  where  the feature list will
+end...
+
+Here is some detailed information:
+
+I have to make one correction to the Symposium-Article in Maggie 20 -
+we support - at the moment  -  86  file formats (not 160...), the full
+version will support about 130 formats  in import and export with full
+support of the capabilities of each format (we can even read and write
+compressed, monochrome Targa images...).
+
+All importers, exporters and  image  processing functions are external
+modules, so easy updating is guaranteed.
+
+We now have 25 edit-modules - simple ones, such as invert, grayscale,
+brightness/contrast, twirl,  and  more  complex  ones,  like  the bump
+mapper (produces bump mapped images, with free chooseable lightsource,
+colour and texture, from any image) or the stereomodule which produces
+'magic eye' stereo-images from grayscale-depth-images.
+
+Further edit-modules planned are:
+-OCR - a full optical character recognition
+-a 3D-Object modeller
+-a renderer for the objects done with it
+
+3D-support will probably be not  in  the  first  Smurf version, but we
+will do it.
+
+The whole thing is pretty  fast,  resulting  from the extensive use of
+assembly  programming  in  most  processor-time-eating-functions  like
+dithering, etc.
+
+Some examples:
+
+Load an 8-Bit GIF-Image, 1024*768 Pixels and dither Floyd-Steinberg to
+16 Colors:
+ Smurf    vs.   GEMView    Papillon
+  26s            2:45        3:40
+  100%           942%        1307%
+
+Load the same picture as a Targa and dither FS to 16 Cols:
+ Smurf   vs.    GEMView
+  17s            2:26
+  100%           1329%
+
+Load True-Color TGA (1,0 Mbyte;  768x480),  decompress, Median Cut and
+FS-Dither
+to 16 Colors:
+ Smurf    vs.   GEMView
+  17.49           3:11
+  100%            1829%
+
+640*421 TC-TIFF horizontal mirror
+ Smurf    vs.     DA's Picture
+  2.2s             14s
+  100%             636%
+
+Invert 640*421 TC-TIFF
+ Smurf    vs.      DA's Picture     Photoshop PPC
+  1.5s                5.3s             1.3s
+  100%                353%              86%
+
+1024*768 GIF: 4X4 Mosaic-effect
+ Smurf    vs.     Photoshop PPC
+  1.0s               3.8s
+  100%               380%
+
+Smooth 320*200-TC-image with 3*3-matrix:
+ Smurf   vs.      DA's Picture
+  4.2s               16.0s
+  100%                380%
+
+The tests with Photoshop were done on  a 66MHz Power PC, 16MB RAM, 1GB
+Harddisk with the PPC-native Photoshop-version...
+And the edit-modules are not fully optimised (C-code only...)
+
+There will be a lot of useful functions e.g:
+
+-load or convert a whole folder of images into an animation
+
+-convert all TC-xxx-images from a certain folder into
+ 8Bit yyy file-format AND all zzz-images to vvv... and so on
+
+All edit-modules can be used on single images AND animations without a
+special preparation of the module itself  for that. Anyone with just a
+little experience in coding will be able  to program his own modules -
+import, export or edit - very easy.  Most  of the modules did take not
+longer than 2 hours  to  complete.  That's  because  Smurf does almost
+anything concerning GEM and  window  management.  The modules can open
+windows and tell smurf  to  put  their  own  GEM-Resource into it. All
+window-handling, including Redraw, is done  by  Smurf, then. There are
+certain functions of the main program wich  can be used by the modules
+for easy realization of e.g. sliders, list fields, Pop-ups, etc.
+
+Up to 20 modules can run simultaneously.
+
+The whole program is  fully  GEM-compatible  and  runs  under any TOS-
+compatible OS. There will be a special 030 / FPU - version for maximum
+performance.
+
+We will soon release a second  preview version (the first was released
+in may and was really  shit  -  buggy,  not  running  on ST or MagiC -
+sorry) which will run on all  TOS-OS, all Atari-machines (well, except
+800XL, 300XE, Portfolio and the  typewriters)  with graphics cards and
+accellerator cards without problems.
+
+
+The full version will be  released  by  the  end of September 1996 (at
+least I hope so) as  a  commercial  product  for  70 - 90DM (we're not
+really sure about the price yet).
+
+----------------------------------------------------------------------
+
+This sounds like  an  excellent  program  and  we  are  really looking
+forward to it. Hopefully we will receive a preview version for further
+inspection in time for Maggie 21.
+
+

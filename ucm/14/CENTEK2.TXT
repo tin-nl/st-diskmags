@@ -1,0 +1,265 @@
+================================================================================
+
+                                  - ñCenòTuróbo2ð -
+
+                                  official review
+
+--------------------------------------------------------------------------------
+
+Yes, it's the  long-awaited Falcon hardware-accelerator from the French hardware
+wizzards and deadline-ignoring-folk called òCENTEKð! And we reviewed it for you!
+
+--------------------------------------------------------------------------------
+
+The CenTurbo2 (CT2) was  to be the  ultimate  Falcon accelerator. Offering  very
+fast  TT-RAM memory, a new  50MHz 68030 CPU as well as accelerating  the DSP and
+the VIDEL. There  was and is a big hype around the whole  CT2. It was claimed to
+be as fast as the ñAFTERBURNER040ð and also more compatible and cheaper.
+
+I (earx) wanted to  get one straight away in May this year. The only problem was
+that  CENTEK delayed  this project endlessly. Well... Maybe  not that  long, but
+only early September I could buy one.
+
+The unit  cost me 750 guilders (= 670 DM or œ240). I  felt a bit  insecure about
+the  whole thing at first. This much money for a compact board with  only a tiny
+installationguide and a disk? The fitting wasn't even included in the price!
+And please note that neither an FPU or a SIMM for the TT-RAM are supplied!
+
+So, what do you get exactly?
+
+óCenTurbo2 òrev. Að:
+
+ñ* CenTurbo2 board
+  The  compact  red  board looks  well  designed  and solid  and fits  into  the
+  Falcon030's  expansionslot. It contains one  EDO SIMM socket for  a 16 or 32MB
+  SIMM, an  FPU-socket, a  new COMBEL, a  32-bit  wide  throughport  for  future
+  extensions, some clockcrystals (50MHz for CPU/FPU/DSP and 36MHz for VIDEL) and
+  ofcourse a brandnew 50MHz 68030.
+ò* the CenTurbo2 modul
+  This is a tiny  additional board that contains some chips. I have no clue what
+  they could be for. But I know the CenTurbo2 contains a DMApatch. This patch is
+  essential  if the IDE  or SCSI transferrate  rises above  500KB/s. It  is only
+  contained in  the C-LAB falcons as standard, but with the CT2 you also get one
+  for free.
+ó* an installationguide (in English) counting 8 pages
+  This contains all information about the things you have to cut and solder.
+  Nothing much else is in here, except a little resistor taped to a page.
+ñ* a plug with 12 wires
+  This fits  onto a connector  on the CT2 board and is used to connect the board
+  with other circuits in the Falcon.
+ò* a disk with various software and documentation
+  There is software to update  the flashEPROM of the  CT2, to control  the NVRAM
+  settings  in your Falcon, to enhance the screenresolution as  well as numerous
+  benchmarking programmes.
+  The  documentation  varies  from a  compatibility list, to  information  about
+  clockticks, memory-accesses, etc. A quite extensive amount of information.
+ó* a switch for turning the CT2 off and on
+ñ* a CENTEK sticker
+ò* a CENTEK card
+
+As you might  have figured, the fitting of  this board is no  easy task. It fits
+into the extension port easily, but from then on it is a horrific job.
+Especially  cutting  pins on  chips and  tinning them can be  nervewrecking. And
+trust me.. There  is alot of this  work involved! If you are not sure about your
+soldering talents, ñPLEASE LET SOMEONE ELSE FIT ITð for you!
+
+It's possible  to let CENTEK themselves fit  it at a price of  400FF (=120 DM or
+œ 40) and this excludes  the postage and packing. Yes, gentlemen.. You gotta pay
+to play! If you  screw up yourself, you  have no garantee your Falcon  will ever
+work again, so it's  a wise idea  to let CENTEK fit it. Also.. They  can be held
+responsible for screwing up and you can claim a new Falcon motherboard.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+I was  unwise, I had it installed by a friend. But it was worth the gamble. In a
+few hours  the CT2 was fitted and my Falcon was turbocharged! I couldn't believe
+my eyes! My falcon booted faster, loaded faster, worked faster! Wow!
+And not just a bit, but an enormous amount!
+
+Please  note that  I had bought  a 16MB EDO SIMM and  this was  installed on the
+board. This  makes quite a difference as the TOS 4 can be loaded into the TT-RAM
+and  that helps  a lot! Without  this  memory, the  performance is  considerably
+lower!
+
+I also noticed there was a special bootprogram that let you select various OSses
+such as  DOLMEN, the old TOS 4 from ROM and the  FASTRAM TOS (misguidingly named
+TOS 7! HAHA!). It also offers a new harddisk driver, boot videosettings and AUTO
+folder manager. And all this in the ROM! Fast and efficient!
+
+On the downside.. my Falcon wasn't exactly the same even when the CT2 was turned
+off. Some  demos  and  games  simply refused  to work  correctly. No wonder: the
+original falcon CPU  can never be turned on again and everything is still routed
+over the CT2 board!
+
+Also, when the  CT2 is on, games and demos tend  to cause serious  problems with
+the  VIDEL. Using  the  ñexternal VIDEL-clockð now  results  in a ó36MHzð  frequency
+instead of the 32MHz frequency, causing the screen to be hopelessly distorted!
+CENTEK claim  this 36MHz clock can  be turned into 32MHz  again by  selecting an
+option  in the  bootprogram. I tried this dozens  of times, but still  it didn't
+work!
+
+Furthermore  there are some  problems with the òBLITTERð. This thing ofcourse does
+NOT work with TT-RAM. When NVDI or MAGIC aren't installed  the blitter is always
+turned on  and loads of  shit is displayed on  screen in the  desktop! Even when
+NVDI is installed  games can  turn the blitter back on after having  exitted and
+you need to turn the blitter off again.
+
+Luckily, I  discovered  that  the  utility CENTSCREEN  can be  used to  keep the
+blitter  turned off. BUT! This wasn't noted in CENTEK's  documentation! But this
+trick  only works  with NVDI or MAGIC again. So  I think  NVDI is an  unmissable
+addition to your setup!
+
+To my suprise, the DSP was  not even a problem. Eventhough it is accelerated and
+the Falcon  has always been very  sensitive to changes  in the DSP's  clock. But
+most programs  work fine. Even most games and demos give good sound. I couldn't
+hear crackling in the output. It still is crystalclear.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+So.. The CT2 is  fast, but there  is a pricetag connected to it, and  that's not
+all. There  are some  serious consequences  to fitting  the CT2. To give a  more
+clear image, I'll some the highs and lows up right here...
+
+                                  +++ ñHIGHSð +++
+
+ñ+ Horribly FAST!
+  It takes out every other accelerator. Maybe the Afterburner offered this speed
+  as well, but this card isn't produced anymore and was much more expensive!
+ò+ TT-RAM on the board is a great improvement.
+  For once, more than 14MB in your Falcon!
+ó+ Great flashEPROM with bootprogram.
+  This  offers  a  configurable  harddiskdriver, videosettings, OS-selection, as
+  well as a ability to upgrade free of cost.
+ñ+ Good compatibility.
+  Not the most compatible, but for  this amount of  speed it's  good. Especially
+  the DSP part. Also the SCSI and the IDE interfaces work without any problems.
+ò+ Includes DMApatch.
+  Fixes serious harddisk problems for older Falcons.
+ó+ Loads of software and information.
+  Very  complete bunch  of utilities  and almost  everything you  wanted to know
+  about the CT2 is included in ASCII form.
+ñ+ FAST IDE interface.
+  The IDE interface  can now reach speeds up to 8.5 MB/s. This only works with a
+  new  IDE  drive, though. The  old  65 MB  or  84 MB  models  surely  won't  be
+  accelerated.
+
+                                  --- ñLOWSð ---
+
+ñ- Horribly EXPENSIVE!
+  It might  seem reasonably priced, but  loads of things  that should  have been
+  standard aren't included (FPU, EDO SIMM).
+ò- Really hard to fit!
+  And this also costs a buckets of money extra if you leave it to CENTEK.
+ó- Falcon will never be the same.
+  There can be  problems with compatibility in games and demos even with the CT2
+  turned off!
+ñ- Problems with VIDEL.
+  Many  games and  demos show  wrong  resolutions. CENTEK  claim there  is a way
+  around this, but after all I tried I still had no success.
+ò- Problems with the BLITTER.
+  This can be solved with NVDI and CENTSCREEN, but it still is annoying.
+ó- The CT2 board doesn't fit 100% the right way.
+  All metal casing needs to be removed. Also, a piece of the IDE harddisk-holder
+  has to be cut off.
+ñ- Extra coolingfan!
+  The unit requires an extra coolingfan! Stupid and noisy. And why was this CPU-
+  fan required anyway? A 50MHz 030 should work perfectly without one I thought..
+  But no.. Underneath that cooler was a ñ33MHz RATEDð model!
+  Simply overclock the shit and put a fan on it! òSHAME ON YOU CENTEK!
+ò- Little distortion in screen when cachebursts occur.
+  When writing  from the  TT-RAM to the ST-RAM, the VIDEL is forced  to wait and
+  can't put  the pixels on  screen. Luckily this only happens in the desktop and
+  not in games or demos.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+                                >>> ñBENCHMARKSð <<<
+
+Yes, I might have said the CT2 to be fast, but exactly how fast is it? I decided
+NOT to include  normal ratings from official benchmarking programs, because they
+are mostly not representative of the complete system performance.
+
+òGEM applications:
+
+GEM applications  always support TT-RAM. This is why the CenTurbo2 has such high
+performance in this area. When TOS is loaded into TT-RAM it, the desktop behaves
+over 3 times as fast. The scrolling is one hell of a smooth afair!
+Even in 640*400 Truecolor, the scrollspeed is still acceptable.
+
+Assembling with DEVPAC 3.1 is 3-5 times faster. A complete 10000 line-sourcecode
+with  many INCLUDES and INCBINs now assembled in 9  seconds instead  of 30! In a
+more intensive  resolution it  still took 9 seconds, whilst the  standard Falcon
+slowed down to 44 seconds!
+
+This immediately  shows off how  effective  TT-RAM really is. It is fully 32-bit
+and supports the cachebursts off the 68030 at full speed. Also, it is unhampered
+by the  VIDEL and SDMA. So it is available 100% of the time exclusively  for the
+IDE and CPU!
+
+The CT2  without TT-RAM is  like driving  over a speedway  with  your  gramdma's
+bicycle. You  need this stuff! Go  kick some PC owners! Tell them they need DIMM
+right now, because EDO SIMMs are outdated and rip them off!
+
+Applications  using the DSP are also faster. But the DSP is only 55% faster than
+before, so the  speedincrease is not so dramatical. Loading JPEG images with the
+brainstorm decoder is indeed smoother, but not twice as fast. Also, the DSP MPEG
+player and fractal programs get a healthy speedboost.
+
+óGames and demos:
+
+These don't  always support TT-RAM. Also, the CT2 has heavy resolution problems!
+When games  and demos do work, they can be expected to be twice as fast when 3d-
+graphics are used. When they support TT-RAM, it really gets nice :) 3 or 4 times
+as fast graphics is no exception.
+
+Games  with  2d-graphics  mostly  operate  at  a fixed  framerate  and  won't be
+accelerated at all. Maybe only the startup or loading will be accelerated.
+3d-games however, will allways be faster!
+
+For demos  it's mostly  the same. Falcon  demos don't use  sprite based graphics
+much, so they will fly all over your screen. A really good trend is the usage of
+25MHz VIDEL frequencies which the CT2 has no problem with. The newest demos also
+support TT-RAM! So get ready to rock!
+
+Still, I gotta  say that GEM applications are mostly the things that benefit the
+most from the  CT2. Many demos use DSP as well and this part of the falcon isn't
+that much faster.. Most GEM programs don't use the DSP, and since the memory and
+CPU are that  much faster, it becomes clear why GEM-programs suddenly  behave as
+they should have in the first place :)
+
+                               <<< ñFINAL THOUGHTð >>>
+
+           (To use the words of that lousy hypocrite Jerry Springer.)
+
+I want to give  some words of caution to everyone with a fine working Falcon. If
+you have no need for acceleration in ñGEM programsð and you play demos and games
+a lot, please  do think twice  about fitting this. Especially since  your Falcon
+will be  irriversably changed after fitting and there are too many problems with
+demo/game resolutions!
+
+Also, I think  it's clear that  the CT2 is too  expensive for what it  offers as
+standard. For ó670DMð I would have expected at least some an  EDO SIMM and fitting
+as included. Maybe  a standard FPU would have been a good thing  as well. CENTEK
+give  an explanation  for the  high price: They  will put  the profits  into the
+development of the òPHENIXð.
+
+If you  want  to  sign up as  a software developer  for the  forthcoming  PHENIX
+system, you  get 50% off the retailprice of the CT2. Now that's alot better. You
+might even call it cheap. 340DM is a low price for this kind of equipment.
+
+So  if  you're  someone  who  believes  in the  PHENIX  and  you  use  many  GEM
+applications  the CT2 can be a great addition to your system. The speed increase
+is  enormous and I   never expected to see the Falcon to work at  this speed. It
+feels groovy!
+
+So  far, the CT2 is  doing great. CENTEK's  stocks have  been  sold out  2 times
+already and  if you ask me, this will happen  once or twice  more. Still I think
+CENTEK  should make the unit less expensive and fix the damn VIDEL problem! This
+is annoying to say the least!
+
+If this  will happen, the  future for the  CenTurbo2 will  look very  bright. It
+could withstand even the competition from the ñTEMPESTð coldfire accelerator. (and
+we still have to see exactly how hard that unit is to fit and what compatibility
+problems it brings :))
+
+=================================================================== EarX/fUn ===

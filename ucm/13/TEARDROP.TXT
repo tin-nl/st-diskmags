@@ -1,0 +1,101 @@
+                      __
+      _  _ _ __     __\ \   _____   _______   _____   _____
+               /   /  _  \ /  __ \ /       \ /  _  \ /   __\   \  \  \
+            \  \   \  \  / \  ___/ \  / /  / \  /  / \__   /   /  /
+          \  \  \   \___/   \___/   \_\_\_/   \___/   \___/   /__ __ _  _
+     -  - -- --- --------------------------------pAranoid----- --- -- -  -
+
+--------------------------------------------------------------------------------  
+          óTeardropð - òMystic Bytesð 1998 [QuaST party release] ñ(Falcon)ð
+--------------------------------------------------------------------------------          
+
+What does  a polish programmer  do if he  wins a 14 MB memory  expansion for his
+Falcon? Of course  he writes  14 MB demos. óTeardropð may  cause some  problems if
+less than ñ14 MBð are found, so I made sure that I boot a clean  machine and dived
+into òMystic Bytesò latest adventure: óTeardropð.
+
+The demo  starts with an ASCII-Logo by òsK!ð, depacks and  precalculates some data
+and either crashes now or starts the demo.
+Luckily it started  without any problems on my machine. The first effect is some
+ñzooming lettersð (or at least  something that looks like  letters), followed by a
+ñMystic bytes logoð, this  time not  as  nice as  in òtime outð, then the  screen is
+"shaken" off and displays a ñzoomingð óteardropð logo in front of a ñtextured tunnelð.
+The border of the screen flashes according to the music, this time by òDr.Maxð ...
+
+Hmmm... Haven't we seen that in time out before in some way? The screen with the
+textured tunnel is then zoomed out while another screen is simultanesously being
+zoomed  in. It's a  weird looking 2D ñplasmað with  some ñmoving lightflaresð on it,
+and it's pretty fast, too.
+
+This doesn't hold on very long and is  being replaced  by a ñtextured tunnelð with
+ñlightflares moving, melting, dissappearing and popping upð again. When the flares
+appear or melt, the  tunnel, which is also  being moved  a little, slows  down a
+lot, which of course makes the effect look a little less good.
+
+Again  we  switch back  to a  kind of ñ2D Plasma with lightflaresð popping  up and
+moving. There  are 3 "centres" in  the plasma  and their  surrounding  plasma is
+being  interpolated  between the centres, so it's  really hard  to call  it a 2D
+plasma, as the  centres also  move. Colours are being switched from time to time
+from a dark green/blue to a medium brown/gold.
+
+Finally, a òMystic  logoð appears  which  is  illuminated  by  a  ñbumpmapperð. What
+happens  then could be  described as  a ñ"blowing  up" effectð. It looks  like the
+òMystic Bytesð logo  was  printed  on a balloon  which is  then  inflated - motion
+blurred. Excellently  synchronised with the  music, like  the most of  the other
+effects.
+
+The logo  drops and you  await that someone  opens a door  for you to  leave the
+cinema, but the demo isn't quite finished yet. The music starts to live up again
+and  the ñwinning graphicð from òmOdð, Jasmin, is  being scrolled  on the screen. It
+moves out again after a few seconds, leaving the screen black and blank.
+
+Not very  long however, as  a blue òMystic Bytesð logo  ñzooms and rotatesð from the
+viewer  into the background, again  its ñmotion being blurredð, again  excellently
+synchronised with the music.
+
+Time for  another tunnel. This time, it is a ñtextured tunnel with lightflaresð on
+the wall which  seem to be moving  around the inner rim of the tunnel  and are a
+bit motion-blurred, too. 
+The last effect consists of ñmany textured cubesð which  look like  wooden blocks.
+The viewer  is moved around and between the blocks  for a while until  the music
+and the demo finally ends.
+
+Again, the òMystic Bytesð team  released an  impressive demo, underlining the fact
+that first-class Falcon demos do not belong to western europe only  anymore. The
+most positive  aspects about óteardropð are the  excellent synchronisation between
+the music  and the effects, the variablity and the  flexibility of  the effects.
+There is  an awful lot of effects in óteardropð, and they are all new in some way.
+
+The negative  aspects of óteardropð are that  most effects look  quite ugly. No, I
+don't mean  that they flicker  or aren't being well  presented, but the textures
+being used in the tunnels, the 2D plasma, they are all dark, do not feature many
+colours and aren't  designed very nice  either. Comparing them with the textures
+being used  in -time out-, where  everything was  light, colour- and  beautiful,
+this is a step backwards in my eyes.
+
+The rest  of the graphics - besides òmOd'sð picture - are not too  hot in my eyes.
+The óteardropð logo is  simple and plain white (more or less) and the òMysticð òBytesð
+logo is the same as used in ñMaggie 25ð intro, rather simple.
+
+I think the positive  aspects outweigh the negative aspects though  in any case.
+òSqwardð has shown that he is a damn good programmer and the music is pretty good,
+too. Graphics may not be the strong point of the demo, but the  graphics are not
+very important in this demo either.
+A bit  more  design, and óteardropð would  have been  mentioned  along  with òDreamð
+òDimensionð  or  probably  even  òSonolumineszenzð,  as  it  is  a  very  good  demo
+considering the technical aspects. Looking  like  that, óteardropð remains to be a
+very good demo, but not a perfect demo.
+
+                   _    __                            ______   __   __
+                 _/ \_  \_\                          /  __  \ / /  / /
+    ____   ____ /_   _\   __    ____    _____        \  \/  // /__/ / _  __
+   /  __\ /  _ \  \  \   /  \  / _  \  /  _  \       /  __  \\___  / (_)/ /
+   \  \   \  \  \  \  \__\   \ \  \  \ \  \   \      \  \/  /  /  /    / /_
+    \__\   \____/   \___/ \__/  \__\_/  \__   /       \____/  /__/    /_/(_)
+   __     __    __   __  __ ___ _____ ____/  /_______ _____ ____ ___  ___   ___
+  /_/    /_/   /_/  /_/ /_//__//____//______//______//____//___//__/ /__/  /__/
+
+--------------------------------------------------------------------------------
+                                                     The Paranoid
+                                             Paranoia (The Lunatic Asylum)
+--------------------------------------------------------------------------------

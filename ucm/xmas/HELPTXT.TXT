@@ -1,0 +1,21 @@
+{*f1
+               Helptext{*f0
+
+The keys:
+
+ CRSR up    - scroll up
+ CRSR down  - scroll down
+ CRSR left  - page up
+ CRSR right - page up
+   i        - invert background
+   f        - change font
+   m        - music on/off
+   p        - print (disabled, sorry!)
+   q        - quit
+  HELP      - this text
+ BACKSPACE  - return to the last text
+
+To select a key simply move the mouse into the text-window. Now you can move
+a bar up and down and select a text by using the left mousebutton. Press the
+right button (or BACKSPACE) to return to the menu-page. It couldn't be
+easier...

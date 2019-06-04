@@ -1,0 +1,339 @@
+--------------------------------------------------------------------------------
+                            bresenHam-Linerout 
+--------------------------------------------------------------------------------
+
+
+Well, the reason for writing this article is, that I have read EarX/FUNs article
+about his fast line-rout and remembered my Truecolor-Bresenham-Linerout, which I
+developed  for the  Growing-Kind-Of-Fractal-Plant in  the "Terrorise Your Soul"-
+96ktro released at the Fried Bits III 1995.
+
+So I  thought: Well, if  there is  interrest in  optimized  68K-Assembly, I will
+reveal  some of  my routines, explain  them in  more or  less  detail  and maybe
+motivate some people to kick ass if they use some of these tricks.
+
+And I must admit that I really don't care if someone just rips that code without
+understanding. Someone  will surely rip it and blame that he did it, so it would
+not matter anyway...
+
+
+
+First some words about the bresenham-line-routine.
+
+
+As you  can see, if you're  in the realms  of pixels  you can  only  approximate
+whether to set a pixel or leave it blank, which gives you  those stairs when you
+draw a line. Well, you can smooth them out by using antialiasing, but that's not
+what I want to explain here, it even isn't the problem at all, it's in fact that
+we are going to take advantage of it.
+
+{*i lines.pi1 l 0 20 3 200}
+
+
+But: How to draw a line then?
+
+Simple, you  just  have  to calc  the slope  and add  this value  to your start-
+position. Say, you  want to  draw a line from  <nobr>0 / 0</nobr>  to <nobr>16 /
+8</nobr>. So you want to plot 17 pixels, from the left to the  right this means:
+For each pixel you draw on the x-scale add 8 / 16 = 0.5 to your y-value and plot
+at <nobr>x,trunc(y+0.5)</nobr>
+
+x / y
+
+0 / 0
+1 / 0.5
+2 / 1.0
+3 / 1.5
+4 / 2.0
+5 / 2.5
+[ ... ]
+12 / 6.0
+13 / 6.5
+14 / 7.0
+15 / 7.5
+16 / 8.0
+
+x / trunc(y+0.5)
+
+0 / 0
+1 / 1
+2 / 1
+3 / 2
+4 / 2
+5 / 3
+[ ... ]
+12 / 6
+13 / 7
+14 / 7
+15 / 8
+16 / 8
+
+{*i delta.pi1 l 0 20 3 200}
+
+
+
+But this means we have to use floating-point- or fixed-point-math.
+And that's what Bresenham  recognized  as well, and as  you all know  that using
+floating-point  is quite accurate  but also  quite slow  compared to  the use of
+intergers, fixed-point-math is also slower than pure integer-calculations due to
+the need of scaling.
+
+
+So what's the solution then?
+
+Well, the  slope in  the example  above is  <nobr>8/16 = 0.5</nobr>, or  if  you
+use  somewhat  more  typical   values   from   the  real  world    <nobr>32/51 =
+0.62745098.</nobr>
+Or in other words: It tells you how often 51 fit into 32.
+
+Looking at the inverse funtion it reads:
+How often fits 32 into 51 <nobr>( 51 / 32 = 1.59375 ).</nobr>
+
+This means, every  1.59375 pixels  to the left you must step up  one pixel, then
+you have climbed 32 pixels after you set 51 Pixels.
+
+
+But you aks: How should I add 1.59375 each pixel with integer?
+
+Ignore the result of the division: You just count how often it fits, that's all!
+To handle  the 1.59375 you just hold the rest from testing  how often 32 fits in
+mind, just like a kind of fixed-point-calculations, but with dx as the basis.
+
+
+In Pseudocode it looks like this: 
+   
+
+
+dx = x2 - x1
+dy = y2 - y1
+count = dx                    ; init the count-value  
+
+y = y1
+for x = x1 to x2:
+  plot x,y                    ; plot Pixel 
+  count = count - dy          ; try if value fits
+  if count <= 0:             
+    count = count + dx        ; keep the rest
+    y = y + 1                 ; do the y-step
+
+
+The next problem is to handle the <nobr>trunc(y+0.5).</nobr>
+But that's no problem, too.
+
+Just sub 0.5 from  the count-value, which  gives you  <nobr>0.5*dx</nobr> as the
+initial  count-value, because  the   <nobr>trunc(y+0.5)</nobr> is  the  same  as
+(remember  the  routine  works  with  the inverse  fraction  x/y  as  add-value)
+skipping  the  first  half  of  your  does-it-fit-test.  Ooh,  shit! Again  some
+fraction... But this one is  really easy to  handle: Double the other values and
+you don't even  have to deal with  rounding-errors (well, that's in  fact fixed-
+point-math again - but  as the scaling can be done before the mainloop  we claim
+it's not).
+
+In Pseudocode it looks like this: 
+   
+
+
+dx = x2 - x1
+dy = y2 - y1
+count = dx                    ; init the count-value  
+
+y = y1
+for x = x1 to x2:
+  plot x,y                    ; plot Pixel 
+  count = count - 2 * dy      ; try if value fits
+  if count <= 0:             
+    count = count + 2* dx     ; keep the rest
+    y = y + 1                 ; do the y-step
+
+
+
+Okay, that's for the Bresenham algorithm.
+
+Now to the adaption in 68K-assembly-language.
+
+
+Read carefully, as it  is a bit different  than that  straight  implementation I
+descibed  above, as it splits up into four possible  ends (no good  style I must
+admit, but as it goes for optimization...).
+
+ 
+ 
+
+; In: D0.w - x1
+;     D1.w - y1
+;     D2.w - x2
+;     D3.w - y2
+;     D4.w - Farbe
+
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+tc_line:
+ 
+ 
+
+
+
+                   cmp.w   D2,D0   ;always left to right
+                   ble.s   noother
+                   exg     D0,D2
+                   exg     D1,D3
+noother:
+ 
+ 
+
+
+
+                   move.l  #640,D7 ;Y-Inc (Length of a Scanline)
+
+                   movea.l log_scr,A0 ;get Screenadr.
+                   sub.w   D0,D2   ;dx
+                   add.w   D0,D0   ;*2
+                   adda.w  D0,A0   ;X-Screenadr.
+ 
+ 
+
+                   sub.w   D1,D3   ;dy
+                   bpl.s   noabs2  ;positve?
+                   neg.w   D3
+                   neg.l   D7      ;then Y-Inc must be Y-Dec
+noabs2:
+ 
+ 
+
+
+
+                   muls    #640,D1
+                   adda.l  D1,A0   ;Pixel-Screenadr.
+                                 ;alt. you could use
+                                 ;add.l (multab.l,pc,d1*4),a0
+ 
+ 
+
+                   cmp.w   D2,D3   ;dydx?
+                   bgt.s   moredy
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+moredx:
+ 
+ 
+
+
+
+                   move.w  D3,D1   ;d = 2*dy-dx
+                   add.w   D1,D1
+                   move.w  D1,D5   ;inc1=2*dy
+                   sub.w   D2,D1
+                   move.w  D1,D6   ;inc2=2*(dy-dx)
+                   sub.w   D2,D6
+ 
+ 
+
+                   tst.w   D1      ;init flags in the first run
+ 
+ 
+
+
+
+setline_mdx:
+                   bpl.s   incy
+ 
+ 
+
+incx:
+                   move.w  D4,(A0)+ ;SetPix & X-Add
+                   add.w   D5,D1   ;d=d+inc1
+                   dbra    D2,setline_mdx  ;doesn't change flags
+                   rts
+ 
+ 
+
+incy:
+                   move.w  D4,(A0)+ ;SetPix & X-Add
+                   adda.l  D7,A0   ;Y-Add
+                   add.w   D6,D1   ;d=d+inc2
+                   dbra    D2,setline_mdx  ;doesn't change flags
+                   rts
+
+
+
+ 
+ 
+
+moredy:
+ 
+ 
+
+
+
+                   move.w  D2,D1   ;d = 2*dx-dy
+                   add.w   D1,D1
+                   move.w  D1,D5   ;inc1=2*dx
+                   sub.w   D3,D1
+                   move.w  D1,D6   ;inc2=2*(dx-dy)
+                   sub.w   D3,D6
+ 
+ 
+
+                   tst.w   D1
+ 
+ 
+
+
+
+setline_mdy:
+                   bpl.s   incy2
+ 
+ 
+
+incx2:
+                   move.w  D4,(A0) ;SetPix
+                   adda.l  D7,A0   ;Y-Add
+                   add.w   D5,D1   ;d=d+inc1
+                   dbra    D3,setline_mdy  ;doesn't change flags
+                   rts
+ 
+ 
+
+incy2:
+                   move.w  D4,(A0)+ ;SetPix & X-Add
+                   adda.l  D7,A0   ;Y-Add
+                   add.w   D6,D1   ;d=d+inc2
+                   dbra    D3,setline_mdy  ;doesn't change flags
+                   rts
+source 
+So, why  the hell such  a bloated  code  that has not  much in  common  with the
+pseudocode above? Well, it's  because of the  following  reasons: * I wrote that
+routine for  speed in  the main-loop   * The init  is a bit bigger  as I  wanted
+the mainloop to be as a  fast as  possible. This routine  takes in worst  case 5
+fast instructions (otherwise worst case would  be 7), well,  maybe I'm wrong, so
+please  send me  an example for my blindness...  * I used add instead of sub for
+the Count-Value (can't tell you why)
+
+Okay, I hope  you had no problems  to  follow my  explainations  and  my english 
+wasn't too bad. For  questions or if you have a much better routine, leave mail!
+
+                             .-------------------------------------------------.
+.----------------------------| dynaCore/.tHE .sIRIUS .cYBERNETICS .cORPORATION |
+| andreas_john@tesla.inka.de |-------------------------------------------------'
+'----------------------------'

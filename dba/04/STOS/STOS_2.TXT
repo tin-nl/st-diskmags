@@ -1,0 +1,135 @@
+STOS LESSON 2
+----------------------------------------------------------------
+
+NN    NN EEEEEEE TTTTTTTT WW         WW   OOOOO   RRRRR  KK   KK 
+NNN   NN EE         TT    WW         WW OO     OO RR  RR KK  KK
+NN N  NN EEEEE      TT    WW    W    WW OO     OO RR  RR KKKK 
+NN  N NN EE         TT    WW   WWW   WW OO     OO RRRR   KK  KK
+NN   NNN EE         TT     WW WW WW WW  OO     OO RR  RR KK   KK 
+NN    NN EEEEEEE    TT      WWW   WWW     OOOOO   RR  RR KK   KK
+   
+THE CYBERPUNKS STOS LESSON PART 2                      (PD) 1992
+
+-----------------------------------------------------------------
+
+This time we shall take a closer look at the scrolling routine in 
+the beginning of the first interlude in the S-Extension demo.  As 
+that  routine is rather short i have included four  other  little 
+progs  called  fun1-4.  I'll tell more about them  after  i  have 
+explained how the scroll works.
+
+The  Scroll works by moving the screen with the  Physic=  command 
+which  moves the screens addresse in steps of  256  bytes.  There 
+are  some problems with this command,  firstly if you  moves  the 
+screen  by  256 bytes it will jump sideways  and  not  downwards, 
+secondly  you have a problem with the standard screen  format  as 
+it  saves  the palette right below the screen  data,  moving  the 
+screen  address  will  therefore make the  palette  data  visible 
+(garbage  in  the  lower part of the screen  (this  problem  also 
+occurs if you removes the borders)). 
+
+The  solution to the first problem is to move the screen  address 
+by steps of 1280 bytes which equals 8 screen lines. 
+
+The solution to  the second problem is to use the copy command to 
+copy raw screen data into normal databanks (not datascreens).  By 
+doing that you avoids coping the palette data.  
+
+-----------------------------------------------------------------
+
+In  this routine i use two banks at 33920bytes each,  the  reason 
+for using two banks is to scroll smother than the normal 8  lines 
+a update. 
+
+(a 4 bitplane full screen scroll text needs 64kb + Block size * 2)
+
+
+- Standard startup + palette setup and shift speed for the  false 
+  parallax effect.
+ 
+10 mode 0 : flash off 
+20 palette $0,$3,$4,$115,$226,$337,$247,$760,$425,$536,$536,
+$536,$757,$647,$647,$647
+30 shift 2,8
+
+- Reserves the two 'Screens'.  Notice that they are larger  than 
+  normal screens.
+
+40 reserve as work 8,33920
+50 reserve as work 7,33920
+
+- Copies  the  graphics in bank 6 to bank 8 and  7.  Notice  that 
+  screen   7  are  copied   from   screen  8   with   640   bytes   
+  difference. 640 bytes is the half of 1280 (see later). The size   
+  of the graphic in bank 6 is 2560 bytes, (1280+1280=2560)
+ 
+60 for I=start(8) to start(8)+34560 step 2560
+70 copy start(6),start(6)+2560 to I
+80 next I
+90 copy start(8)+640,start(8)+length(8) to start(7)
+
+- And this is it,  the main loop.  Not much is it,  but holy shit 
+  does it look impressive in basic.
+
+  Look how  each screen is  used twice but with a  difference  of 
+  1280 bytes.  1280 bytes is  the same as 8 screen lines and  the 
+  minimum  you can  move if you want to  move  without  scrolling 
+  sideways.  By  switching  between the two screens  that  has  a 
+  difference  of 4 lines (640bytes)  i can scroll by  4  lines  a 
+  update  which are half of what you normally can do by  swapping 
+  screen address.
+
+100 repeat 
+110 physic=start(8) : wait vbl 
+120 physic=start(7) : wait vbl 
+130 physic=start(8)+1280 : wait vbl 
+140 physic=start(7)+1280 : wait vbl 
+150 until inkey$=" "
+
+-  Erases  bank 7 and 8:  not necessary here but  useful  in  the 
+   original demo. 
+
+160 erase 7 : erase 8 : default
+
+As you might have noticed,  this routine does not scroll at  all, 
+it  just  jumps  back and fort in the  two  banks.  The  standard 
+'Screen  filed with equal looking squares that can scroll in  any 
+direction  demo'  uses a more  advanced version  of  this  little 
+trick.
+
+Next  time you will find the entire code,  graphic and sound  for 
+the 'It can be done, easily' demo from 'S-EXTENSION V1.1: THE STE 
+EXTENDED REMIX' and an explanation of why it goes at 25htz  while 
+Colins goes at 50htz. (Its rather easy to speed it up)
+
+-----------------------------------------------------------------     
+
+But now lets have some fun!
+
+Fun1.bas:  This  prog  is ,if i can  remember  right,  a  distort 
+screen routine that you can control with the mouse
+    
+Fun2.bas:  Is a preset distort routine, move the mouse pointer to 
+the upper and middle part of the screen and see what happens.
+
+Fun3.bas: This is a striped down version of the first demo i made 
+in  STOS (never released) it had a sample and used  several  pics 
+from Tenage Queen.
+
+Fun4.bas:  Is a FX rut for the main scroll screen in S-EXTENSION, 
+(which  again  is a direct result of how people  reacted  to  the 
+first  demo (fun3).  Read about it in the intro text to the  main 
+S-EXTENSION scroll text, printed in this or the next mag.)
+
+The picture that the FUN files uses is one of the few pictures  i 
+have drawn freehand lately (except for my game). 
+
+Well  this  is the end,  have a STOSing good time  till  we  meet 
+again.
+
+Signing off
+
+Cyberpunk of Network.
+
+    
+

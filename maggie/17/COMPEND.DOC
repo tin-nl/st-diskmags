@@ -1,0 +1,136 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[....................................................]0010
+€
+                         THE ATARI COMPENDIUM
+
+Reviewed by Leon O'Reilly
+
+If  Atari  reference  books  were  judged  by  size,  then  the  Atari
+compendium would lead the world.  Unfortunately,  it  is down to me to
+provide a slightly more in depth analysis, but let me again stress the
+point that this is a  BIG  book.  Very  big.  I  will try to review it
+without resorting to such cliches as calling it a 'bible' (as everyone
+else seems to).
+
+The back cover blurb informs us that the compendium has now become the
+'de facto programmers  reference  for  Atari  computers'. Whilst other
+books may plaster themselves  with  plaudits from national newspapers,
+compendium has a comment from a  review  in Atari Explorer Online! And
+yes, the reviewer (wiz utility  coder  Damien  M. Jones) calls it 'The
+Atari Bible'.
+
+The book opens with  self  congratulatory  forward  from Scott Sanders
+before introducing to all the  different atari models (anyone remember
+the 260ST?), GEM,  third  party  system  software  (which only details
+Geneva) and programming  languages.  The  book  gives  examples of all
+functions in C and assembly  language  and  politely mocks those using
+other high level languages.
+
+Like most books of this genre,  the  compendium splits up the o/s into
+its separate components and has  a  chapter  on  each, and first up is
+that old warhorse 'GEMDOS'. The  introduction covers the normal facets
+of gemdos - the file system, memory managements, executing files - and
+also MiNT, the extension to GEMDOS that allows multitask. To be honest
+I, like most programmers, know  very  little  about  this, and want to
+keep it that way.
+
+All the functions are listed in alphabetical order, which will come as
+a bit of a surprise to those  familiar with other reference books that
+list functions numerically, but it turns  out  that this is actually a
+€more convenient way of structuring  them  as similar functions usually
+start with the same letter (FOPEN, FREAD, FSEEK, FCLOSE etc.).
+The function number is also  given  in  both  hex and decimal which is
+handy as some books only give you it in one format.
+Also, all the MiNT calls are  listed  - no other reference books cover
+these. The description for  each  call  is  more detailed and accurate
+than any most books.
+
+The BIOS chapter is, as always, very small. It covers some interesting
+and often overlooked areas - the system bootup sequence, the operating
+system header and the cookie jar. And of course, all 12 bios functions
+are covered, and no they haven't changed since day 0 of the ST.
+
+Like a thriller reaching  a  climax  or  a  whodunnit's last page, the
+XBIOS section is always  the  highlight  of  reference  books, and the
+compendium doesn't disappoint. We have  a  discussion of the new video
+systems of the TT and Falcon, the Falcon's sound system and the DSP.
+These topics are extremely complex  and  deserve  a  book in their own
+right, a sketchy couple  of  pages  only  scratches the surface. Still
+there are XBIOS functions that allow you  to do most things with these
+pieces of hardware, and they are  well  documented in the remainder of
+this chapter. Particularly  useful  are  the  new  calls  for the DSP,
+setting screen resolution and sound replay.
+
+Chapter 5 attempts a look 'into' the hardware, covering "those aspects
+of Atari  software  programming  that  can  only  be  accomplished  by
+accessing hardware registers directly." Running  to a flimsy 27 sides,
+this can't really cover all  we  need  to  know,  but  it makes a fair
+effort. Subjects like the  data  and  instruction  caches of the 68030
+need more than 3 lines.  The  keyboard  information  is useful but has
+been well covered by previous books,  it  does  focus on the new style
+game  controllers  -  light  guns,  paddles  and  Power  Pads  (jaguar
+controllers). Screen layout  and  fine  scrolling  are  discussed, but
+there are an array  of  registers  on  the  Falcon's  video chip which
+aren't mentioned.
+
+Chapters 6 & 7 allow this book to live up to its name - they cover the
+€AES and  VDI,  the  highest  levels  of  the  operating  system. Other
+reference books tend to only cover GEMDOS/XBIOS  & the BIOS so this is
+a welcome addition for all GEM  programmers.  All versions of GDOS are
+covered including SPEEDOGDOS and the  88  pages of AES information and
+168 pages of VDI/GDOS info give you a sound grounding in GEM.
+
+Line A graphics functions are covered  in  chapter 8 even though Atari
+recommends you don't use them as future machines may not support them.
+They are also slow and crap  and  anyone  who uses them deserves to be
+shot.
+
+'Chapter' 8 has the words  'filler'  written  all  over it. Like a bad
+screen in a demo it  sits  uncomfortably between the other heavyweight
+chapters. Running to a grand total of  1  and a half pages (count 'em)
+it tells you all about running programs and desktop files. Essential.
+
+How much more can you write about? Loads, if you are Scott Sanders and
+next up we have a chapter on  XCONTROL - the Extensible control panel,
+an desk accessory which allows the loading  of other accs - whilst the
+final chapter cover GEM user interface  guidelines which is a plea for
+conformity amongst GEM programs. It will never work lads.
+
+Appendix A gives us GEMDOS,  BIOS,  XBIOS,  AES & VDI functions listed
+numerically  which  is  handy  for  those  confused  by  the  previous
+alphabetical listing.
+
+Appendix B is an extensive  memory  map  covering  all the vectors and
+hardware addresses on all  machines.  This  looks  very similar to Dan
+Hollis's excellent listing, and information about each address is kept
+to a bare minimum.
+
+Appendix C covers file  formats  such  as  .GEM,  .IMG,  .FNT and .RSC
+whilst GEMDOS and BIOS error codes are detailed in Appendix D. We then
+have the obligatory ASCII  and  Scan  code  tables  (Why  do scan code
+tables always miss out the '#~' key -  am  I the only one who has this
+on their keyboard?)
+
+€The book is wrapped up with  a  SPEEDO  character map, a discussion of
+the  drag  and  drop  protocol  (used  for  transferring  data  within
+MultiTos) and extensive bibliography  and  a  poor  index. To be fair,
+this index is lot better than  the  ones  you find in rival tomes, but
+considering  the  amount  of  information   covered  it  is  far  from
+sufficient.
+
+So there we have it - the  Atari  compendium, the best book ever or an
+overpriced, oversized door stop? Well, start believing the hype, it is
+the best book ever. That's not to say that it is without its faults.
+The DSP deserves a lot more  coverage,  but  to do justice to it would
+require the size of the book to  double  so  it is best to get hold of
+Motorola's DSP manual for this  purpose.  However,  there is no excuse
+for not covering the Blitter chip. This chip has been around for aeons
+and still there is no decent documentation  for it! No wonder it never
+gets used.
+
+Despite  these  omissions,  the  Atari  Compendium  remains  the  most
+complete source of information  for  Atari  programmers  and I have no
+hesitation in recommending it. It costs forty quid. Start saving now.

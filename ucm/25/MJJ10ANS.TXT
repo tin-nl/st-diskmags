@@ -1,0 +1,131 @@
+ó--------------------------------------------------------------------------------
+                       "COMPILE MJJ A 10 ANS + 1" by MJJ PROD
+ó--------------------------------------------------------------------------------
+
+system .. ST, STe, STEEM, RGB
+
+credits . code - Zorro2, Bigfoot, Squale, Fenris, San-A, Godfather, Tooseb
+          gfx  - F.F., Wilfried
+          msx  - NoMore of Animal Mine, Mad Max, Big Alec, Count Zero
+
+size .... one disk
+
+release . 12/o3
+
+ó--------------------------------------------------------------------------------
+
+This is no big demo but a  bunch of screens and  intros done by several MJJ PROD
+members  that were, as  the title says, done  within the  last 11  years and not
+released because of different reasons so far.
+
+After a  bootloader with rasters  and the homepage adress, we get the main menu,
+presenting 1o different screens that can be selected by pressing a number on the
+keypad. The menu looks  ok, very oldschoolish with  a big but  unspectacular MJJ
+logo, jumping rasterbars in the  background and a little scrolly, mainly written
+in... french :)
+
+So not much words to lose, lets check the single  screens. After pressing one of
+the numbers, you get a little  information screen  with a zooming chessboard and
+some infos to the single screens, unfortunately  again mainly in french. I think
+I have to mention that the main menu is memory resident  and you come back after
+each single screen without problems... Well done...
+
+ò-1- "Cursor" by Bigfoot
+
+This screen brings us an  oldschool but always  nice looking  effect, a rastered
+disting  vertical  scrolling background  in all colours of  the rainbow together
+with  some  textdisplayer  with a  mad cursor and  a chiptune. That's it... Nice
+screen that can't hide his oldschool origin.
+
+{*i MJJCOMP1.PI1 m 0 20 0 200}
+
+ò-2- "Demo" by Squale
+
+Arf! What an oldschoolish thing that reminds  me in its outfit  hard to some old
+Germs DCK screens, sorry to say that. It brings us a  disting MJJ logo, a scroll
+on rasters, two jumping  MJJ logos, sound analyzers and  something like vertical
+rasters  in  the background  as well as a  damn old chiptune... Not a  screen to
+watch twice and longer than a minute...
+
+ò-3- "Fullfish" by Bigfoot
+
+This one is a fullscreen  with a jumping  scroller and a mad disting MJJ logo in
+front of a little picture. Not that bad but looks quite outdated anyway. Nice to
+hear an old Mad Max digidrum tune.
+
+ò-4- "MJJ 001" by Fenris & San-A
+
+This oldie  brings us  some title picture, then  another one with  a disting MJJ
+logo a jumping scroller and a tracker tune with damn  low replay frequency. This
+screen was  thought to be released  in the Transbeauce demo  and so it is even a
+lot older than "just" 11 years... and this old  style you see at any bit... Have
+I mentioned that it wasn't taken for the demo?
+
+ò-5- "Piche" by Bigfoot
+
+Erm.. This  screen is just  a pixeled picture of a guy with a bicycle crash that
+has lost  his head  and glues on  a wall, together with  a scroller. Little joke
+a side, he  still wips  with his  feet to the  music... But afterall, again some
+screen you wouldn't watch twice.
+
+ò-6- "Raster" by Bigfoot
+
+He brings us now some vertical rasterstuff that can be modified in its waveforms
+by  pressing  several keys. It  comes along  with an  old Count Zero  tune and a
+scrolly. Nothing spectacular, a  state of the  art screen  in the early nineties
+but some kind of boring today.
+
+ò-7- "ScrollPT" by Bigfoot
+
+This is a  quite interesting screen, bringing us the  tortured head of a guy and
+a dotsscroller that comes  along as circlescroll and in other ways later on. You
+can select different musix while pressing the function keys and you can make his
+eye move around as well. Still an oldschoolish screen but some kind of funny and
+for me the best screen in this compile so far.
+
+ò-8- "Modplayer" by Godfather
+
+This is a simple STE module player, showing a picture, sound analyzers, a scroll
+and a swinging  MJJ logo. It is a bit ugly to use, you have  to type in the name
+of the module that is in the same directory of the screen to run the screen...
+What to say... watched once and surely never again.
+
+ò-9- "Demons" by Tooseb
+
+This screen was coded by Tooseb under his old nick Pulsar (of NeXT).
+This screen stays  black at first, then  we get a picture  already used in a TLB
+demo, it was "Oooh Crickey..." if I remember right. It comes along with a scroll
+and 3 animated skull sprites, and the title music from the game No Second Price.
+Hmmm... what to say... oooould stuff.
+
+{*i MJJCOMP2.PI1 m 0 20 0 200}
+
+ò-0- "Exotica" by Tooseb
+
+This brings a fullscreen with a rasterscroller using ripped grafix from the game
+Outrun and from other  sources. Best thing is the older sid tune by Tao... Not a
+burner screen at all.
+
+At last, on  the disk  you will  find another  screen, "Sangoku" by Tooseb, also
+coded under his  old nick Pulsar, and  this brings a  french favour, Dragon Ball
+stuff, a  picture, sprites, sound analyzers, jumping logo and a  swinging Dragon
+Ball  logo as well as a scroller. Not that bad even though I don't like all that
+Manga and Anime stuff at all.
+
+Furthermore you can find the bootloader on the disk as well as some README's.
+
+That's it...
+
+ñFinal words... Somehow  the whole  thing leaves me  the impression of a harddisk
+ñ               cleaning, digging  out  old stuff  that was never  thought  to be
+ñ               released, in parts surely with a good reason. Such a wave of  old
+ñ               styled stuff is hard digestible today, esp. since the most of the
+ñ               screens  wheren't even  state of the  art in the  times they were
+ñ               once done. On the other hand  I have to admit  that this is a way
+ñ               to save some old  stuff from being wasted  completely. I had done
+ñ               quite common things 8  years back  with some leftovers from never
+ñ               released .tnb. things... but after all a collection  of old stuff
+ñ               can never  weight up the  release of a  new and fresh little demo
+ñ               at all...
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_òo1/2k4ó_

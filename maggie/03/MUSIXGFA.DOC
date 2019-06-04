@@ -1,0 +1,102 @@
+
+             MAD MAX MUSIX USED FROM WITHIN GFA BASIC
+                                   BY MICHAEL SCHUESSLER
+
+Hi,  it's  me again the crappy programmer.  Once upon a  time  in 
+Germany (about three years ago) when I began to develop  programs 
+with  GFA Basic 2.00 I once wrote a song using the  GFA  Commands 
+provided for the use with the sound chip.  To be honest,  at that 
+time  I thought that it was excellent to produce one  beep  after 
+the  other  in  a different octave.  But  as  time  progressed  I 
+realized  that I would not get very far using this kind of  musix 
+so I decided to give up on that.  A few weeks later I got hold of 
+a  copy  of  the great TNT Demo no 5.  Which  at  that  time  was 
+probably  one of the best demos around (and probably  still  is). 
+Anyway,  this demo contained some marvellous tunes for that time. 
+A few weeks further on then,  the B.I.G. Demo was released mainly 
+to  show  off  Mad Max's capabilities with the ST  Sound  Chip  !  
+Anyway, at this point I gave up with the idea of producing my own 
+musix.  At the time when I then founded our group I picked up the 
+idea again and began to do musix hacks. At the beginning this was 
+very  very  hard  but with the time it  got  easier  and  easier. 
+Nowadays it doesn't take me too long to get any tune that I  want 
+to !!  As I do not like programming in assembler I wrote a little 
+routine to use Mad Max (just as an example) tunes in my programs.
+
+So  here's  the actual problem,  you want to use a  Machine  Code 
+program (the musix) with your GFA Program,  this does not  always 
+work  as  some  of  the musicians on the  Atari  use  some  weird 
+routines  which make it quite complicated to use them  with  your 
+own program.  Anyway, most of the musicians aren't as good as Mad 
+Max  or Count Zero anyway and therefore don't need to be  worried 
+about.   
+
+The program for the actual usage of the musix is very simple:
+(this  particular  program will only runs with tunes  which  were 
+used  in  Maggie as I have to put a small  assembler  program  in 
+front of the tunes, anyway, here's the basic code:
+
+               musix%=300000
+               Bload "name.mus",musix%
+               Dim r%(16)
+               r%(6)=1
+               Rcall musix%,r%()
+
+Now,  this  program is not very good as it uses some cruel  code. 
+But  i  will explain what it does anyway and after  that  I  will 
+explain what could be done to make the program look a lot nicer. 
+The first line basically equals the label musix% with the address 
+300000. This is essential for the last line in the program as the 
+command Rcall does not allow a number,  instead one has to use  a 
+variable. Anyway, the second line loads the musix to this address 
+earlier given address.  The third line then dimensions a variable 
+for all the possible registers which you might want to pass on to 
+the  machine  code  program  (the  assembler  uses  16  different 
+registers along with a few other which cannot be manipulated this 
+way).  Anyway, this is not so important, the second line from the 
+bottom indicates which value / or what address you would like  to 
+pass on   to the machine code program.  In our case I am  passing 
+on the value 1 (number of the tune in the file as sometimes there 
+are more tunes in one file) to the data register D6.  You can see 
+which register I am passing the value to by looking what it  says 
+in  the  brackets (r%(6)).   The last line in  the  program  then 
+actually executes the musix routine and the musix will play.
+
+The program could then continue with something like that:
+
+                    Print " Any key to shut up the musix "
+                    key%=INP(2)
+                    musix%+musix%+32
+                    ~C:musix%(L:x,W:y,z)
+                    END
+                    
+Well first of all,  the program prints the message on the  screen 
+telling  you to press a key when you were bored with  the  musix. 
+Secondly  it then has to add 32 to the position where you  loaded 
+the  musix to as the musix can't possibly be turned  on/off  with 
+the same piece of code. Anyway, the routine to turn the musix off 
+is 32 Bytes into the program.  After having changed the  position 
+one  simply has to execute the routine again and  ....  there  is 
+no  more noise blasting from your monitor (or whatever  you  have 
+connected).  As  usual  I am a very lazy bastard and I  can't  be 
+bothered  to  explain  in every detail how  you  could  make  you 
+program look nicer,  so here's a quick summary of the things that 
+you  could do (i.e.  I have done with the routine on  the  disk). 
+It  is always very useful to reserve some memory for the  program 
+(do not forget to set it free again when you leave the  program), 
+as all my files are packed there is a little depacking routine at 
+the beginning of the code!,   I also think that it is very useful 
+to  make comments in every line of your program as  it  sometimes 
+happens that one forgets what a line does.... 
+
+I hope that this little introduction was of some use to  you,  if 
+not, though luck.....
+
+
+                              Michael Schuessler
+
+P.S.:  You should hear a English men pronouncing my  surname,  it 
+       sure sounds very funny!
+
+   
+

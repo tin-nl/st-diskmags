@@ -1,0 +1,243 @@
+
+                                 FALCON MAGGIE
+
+                            (C) 1995 RESERVOIR GODS
+
+Hello  and  welcome all to  the  Falcon  Maggie  shell (which  has already  been
+cruelly dubbed "Faggie"). This is the  first  version  of the shell so there are
+bound to be plenty of bugs in it,  so  stop  that moaning at the back! The shell
+does run happily on both  RGB  and  VGA  monitors  via  a system of custom VIDEL
+routines which I hope work on all monitors! I have tested it on my Atari monitor
+and Ripley's SVGA and it seems to work  ok. This shell requires 4mb of memory to
+run.
+
+In the beginning there was "Maggie 1" and  Maggie 1 was bad - probably the worst
+text displayer ever seen,  4  colour  title  screen,  gem  menu bars etc. Maggie
+steadily got better with a  new  shell  for  issue  4 (slightly buggy) which was
+improved so by issue 8.1  it  was  one  of  the  best  gem based shells any disk
+magazine had seen. Then Delta Force stepped in.
+
+The Delta Force Maggie  shell  is  now  quite  legendary  with its big scrolling
+boxes, fast text displayer, nice fades. My only (minor) criticism of it was that
+I felt the design, like the content of  their magazines, was a tiny bit clinical
+and lifeless. It still remains the best ST disk magazine shell every created.
+
+Late in 1994,  CIH approached  me with  some  ideas about a new maggie shell for
+the Falcon. I said this would be an excellent idea, and I would start work on it
+soon. I was pretty busy with other Reservoir Gods productions at the time and it
+wasn't  until  February  of  1995 that  I  knocked up the first routines - a 256
+colour text displayer with pictures behind the text and lovely graduated rasters
+flowing behind it with some  DSP  music.  Unfortunately  rasters tend to flicker
+horribly on the Falcon, especially when using  other interrupts so this idea was
+shelved.
+
+At the start of the  summer  I  started  recoding  the whole shell from scratch.
+Ripley and I spent a lot of  time  designing each different section of the shell
+(what do you mean you can't tell!) and we hope this is now a magazine that fully
+represents the Falcon's capabilities.
+
+ THE MAGGIE MENU
+ ---------------
+
+We had various ideas for this  -  one  with  the  text boxes appearing as little
+parchments that unfurled as you clicked  on  them, and then simulated a "blowing
+in the wind effect", pieces of boxes  wizzing together from various sides of the
+screen and various other obscure  ideas  (most  of  which  were Ripleys) until I
+finally had the idea to rotate and scale  in  the boxes. A germ of this idea had
+formed when I saw the  intro  screen  to  Lost Blubb. Unfortunately everyone who
+sees this remarks on its similarity to an  effect  in Apex Media (which is a lot
+better than mine!) but I hadn't seen  this  effect until after I had coded mine,
+and I was pretty annoyed as I  thought  I  had come up with something (slightly)
+original.
+
+The menu icons were designed and  drawn  by  Ripley.  There are a lot more icons
+available than the ones you see on the first  issue. The main menu is coded in a
+modular way and different icons and  menus  can  easily be added by changing one
+line. Menus to look out for in  future issues include: programming, internet and
+the uncalled for return of eddiecat (what does it mean?)
+
+The main menu runs in 320*240 true colour  mode  so has ample room for an "issue
+defining cover picture" (CIH tech-speak)  which  was  elegantly  drawn by SH3 of
+Reservoir Gods, who will be a bit down cast tomorrow as David Pleats rejuvenated
+Sheffield Wednesday side hammer Liverpool.
+
+Along the bottom of the menu is a scroller - well Richard Karsmakers has them so
+why can't we! Hopefully it  will  contains  kilobytes  of enlightening text, but
+quite probably it will be full of  utter  mindless crap in the true tradition of
+scrolltexts. Did you know I have drunk half  a  cup of tea during the writing of
+this article? Hey this scrolltexts lark isn't so difficult...
+
+ THE LOADING SCREEN
+ ------------------
+
+Rejoice! As you disk drive/hard drive furiously  retrieves bits of data, you can
+admire the glorious true colour artwork of  SH3 whilst a little white bar creeps
+along the screen.
+
+The fadeout idea was  blatantly  copied  from  one  of  Tat's  bit in the recent
+Avena/Digital Chaos Fried Bits 3 demo which  I  think  is one of the best Falcon
+demos ever released, even if  other  people  who  work for the magazine disagree
+with me.
+
+ THE TEXT DISPLAYER
+ ------------------
+
+It displays text! It scrolls  about!  Erm,  thats  about  it!  Yes, its the text
+displayer. Nicely making use of the Falcon's  256 colour mode with overscan with
+some rather turgid one plane text. I must apologise about the low quality of the
+fonts, they were just some I found lying  around (on Maggie 16 actually) and the
+graphics people don't seem too enthusiastic about  drawing an 8x8 one plane font
+- and who can blame them?
+
+You do get the  added  "bonus"  of  a  starfield  in  the  background (which can
+thankfully be turned off) and the  usual  slider  and  arrow bars. Page and line
+numbers are displayed for you to drool over.
+
+On the top menu bar are  three  options.  On  the  far left is an arrow pointing
+left, this is the exit arrow. In the middle of the screen there is a button with
+an "i" on it,  this  brings  up  the  information  and  options  screen. On some
+selected articles you will see the "SEE PIC"  icon. This will glow to inform you
+there is a picture accompanying the article. Click on it to view the picture.
+
+Keyboard control:
+
+Up arrow - move up line
+Down arrow - move down line
+Left arrow - move up page
+Right arrow - move down page
+Insert - move to top of document
+Clr/Home - move to bottom of document
+F1-F10 - select font
+Undo - Return to main menu
+
+You can also scroll the text by clicking on the arrow icons or slider bar.
+
+
+ PICTURES
+ --------
+
+As Maggie is now on a high density disk, there is plenty of room for pictures to
+be included. From  now  on,  the  majority  of  games  and  demos reviews (where
+possible) will have a picture with  them.  How  do  you get these amazing screen
+shots you ask in bewilderment. A-ha!  (no,  I  haven't enlisted help from an old
+scandanavian pop group). That is down to  the "Reservoir Ripper" my new graphics
+ripping utility. With this I have been  able to take screenshots from just about
+every single Falcon game and demo. Maybe one day  I will release it, but it is a
+bit fiddly to set up unless you have some knowledge of interrupts and the like.
+
+So look out for the glowing  SEE  PIC  icon!  I  have written some custom screen
+setting routines so I  can  quickly  skip  into  a  multitude  of resolutions. I
+haven't had the time to  thoroughly  test  them  on  all  monitors, so if you do
+experience problems get in touch with us!
+
+ INFORMATION
+ -----------
+
+Information is power! And now you have  the power to change information! (Clever
+wording, cheers). On this  screen  you  can  generally  mess  about  and have "a
+laugh". Or something. Its like a nightclub with its trancey pulsing lights. Well
+its not really. Right, on this screen  you  can  GOTO a line (wahey), change the
+colours of the text displayer, turn the  starfield  on or off, find a string and
+even save the current text file.
+
+You can change the font  (pick  from  any  one  of  ten quite repulsive alphabet
+sets!) and mess around with the music.  Those  of you with VGA monitors may want
+to turn the internal speaker on (if you  dare!) and there is a volume slider bar
+to control the output level of the music.
+
+There is also some quite  useless  information  about  the  text displayed - the
+number of lines, words,  pages  and  even  the  average  word  length for you to
+calculate who is the most verbose of the Maggie writers!
+
+Oh, and there is some  sort  of  plasma  effect  behind this screen. Pretty poor
+really but I was rushed for time.  Yes,  that  is  the best excuse I can come up
+with!
+
+ THE HIDDEN QUEST
+ ----------------
+
+Started by Sammy Joe in the early maggies  where your main incentive to get past
+the questions was seeing a  hidden  article  featuring  crap heavy metal lyrics.
+Huzzah. As, unfortunately, the Maggie team  are  no longer spotty long haired 15
+year olds (we are all starting to go grey),  we toyed with the idea of hiding of
+hiding some lyrics of some more mature  music, like Dire Straits or Celine Dion.
+Strangely, most people we talked to in a random street survey wouldn't answer 40
+questions about the Falcon demo scene  just  to  read  the lyrics of Brothers in
+arms. So instead you get whatever we drag up  from the internet,  usually  dodgy
+in nature, but are you surprised, eh? - Thought not.
+
+ THE BUGS
+ --------
+
+Let me introduce you to the bugs, you  will  be  meeting quite a few of these on
+your journey through the maggie shell.  You  will  become so familiar with these
+you will begin  to  treat  like  friends,  if  not  family.  The  bugs are there
+specifically to annoy you (but mainly me) and  to try and make everyones life as
+uncomfortable as possible. But hey, life goes  on, so lets just pretend they are
+not there for now. Try  ignoring  them,  or  squinting  through one eye when one
+comes into view.  Alternatively  shout  at  it.  Bugs  don't  like  loud voices,
+especially early in the morning. You could  always  wait for the next version of
+the shell, where I am going to do a bit of ethnic cleansing on the bugs.
+
+ THE CREDITS
+ -----------
+
+Here comes the long winded back  patting  ego  massaging part, so if you weren't
+involved in making Maggie, you better skip it. Its sad, but it cheers us up.
+
+-----------------------
+---MAIN MENU CREDITS---
+-----------------------
+Coding..........Mr Pink
+Design..........Ripley
+                Mr Pink
+Icons...........Ripley
+Title Picture...SH3
+Mouse Pointer...Ripley
+Font............Tim
+-------------------------
+
+--------------------------
+--LOADING SCREEN CREDITS--
+--------------------------
+Coding...........Mr Pink
+Graphics.........SH3
+Design...........Mr Pink
+                 SH3
+                 Tat
+
+------------------------
+--TEXT DISPLAY CREDITS--
+------------------------
+Coding...........Mr Pink
+Graphics.........SH3
+Design...........Mr Pink
+                 SH3
+                 Ripley
+
+
+-----------------------------
+--PICTURE DISPLAYER CREDITS--
+-----------------------------
+Ripper Coding....Mr Pink
+VIDEL Coding.....Mr Pink
+VIDEL info.......Skynet
+                 Tat
+
+
+-----------------
+--MUSIC CREDITS--
+-----------------
+DSP tracker......L. De Soras
+
+Subliminal advertising: Register for GRAOUMF tracker! Its great!
+
+
+Big thanks must go to all those who have written articles for this issue.
+
+-------------------
+--WRITING CREDITS--
+-------------------
+See the 'Maggie Team' article for the credits on this bit.
+
+

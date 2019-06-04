@@ -1,0 +1,48 @@
+-------------------------------------------------------------------------------
+                              SOUND MACHINE v2.5
+-------------------------------------------------------------------------------
+
+done by : The Beast of Typhoon / Supremacy Corp.
+system  : ST / STE / Falcon, 512 KB RAM, RGB / VGA / monochrome
+
+SOUND MACHINE is another chip-sound-player and converter. It runs (a little bit
+buggy) also on the Falcon and can replay the most usual sound-chip-formats. Ok,
+for replay  there are some better players around (with much  more formats) like
+the FANTASY PLAYER or our (.tnb.) MEGAPLAYER (hehehe =) ...) but for use on the
+Falcon these aren't the best.
+But SOUND MACHINE cannot only replay  the sounds, you also can  identify files.
+But this little feature isn't very good. So it doesn't know the Synergy-driver,
+one of the most important drivers of the last time, at least in my eyes.
+But therefore the program understands also several packers.
+Ok, here comes a list of the sounds you can replay
+
+Big Alec Sidsound             editor by Big Alec of Delta Force
+Blipp Blopper                 editor by Niclas Pennskog
+Count Zero Soundchip          by Count Zero of Electronic Images
+David Whittaker Soundchip     editor by David Whittaker
+Epic Soundchip                editor by Epic of The Misfits
+Lap Soundchip                 by Lap of Next
+Lotus Halftrack               by Lotus of Hotline
+Lynx Trisound 2.5 Halftrack   editor by Eagle of Sentry
+Mad Max Soundchip             editor by Mad Max of The Exceptions
+Megatizer                     editor by Jedi of Sector One / The Heavy Killers
+Tao Soundchip                 editor by Tao of ACF + Cream
+Undead (all types)            Undead YM Tracker v1.7
+XLR8 Sidsound                 editor by XLR8 of Sentry
+
+can identify also
+
+ENS Music Halftrack
+LTK Mystik
+PSG Soundchip & Haltrack      editor by Crawdaddy of Chronicle + Aggression
+
+Hum. There  is also a  convert-option included, but I haven't matched it to use
+it right, because there isn't a read-me-file included.
+A bit not-understandable  for me is that the Count Zero driver was used to play
+Scavenger-sounds (not  all). Hum, an  own format  is also  included but I don't
+know how to use it.
+Some final words: it's a nice little player, even if this  thing is still a bit
+buggy and not finished. There is a must to include some more formats...
+Ok, we will see what future versions will bring...
+
+------------------------------------------------------------ Moondog of .tnb. -

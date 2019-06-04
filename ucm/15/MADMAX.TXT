@@ -1,0 +1,254 @@
+================================================================================
+
+                ÒINTERVIEW WITH: ÛMAD MAX of ÚTHE EXCEPTIONS
+
+================================================================================
+
+Believe it or not but we really managed it to get in cotanct with the master of
+the chippy tunes on ST itself... JOCHEN HIPPEL also known as MAD MAX from TEX!
+After years of research and we finally managed to get in touch with a pioneer 
+of our time... Let's see what he has to tell...
+
+
+
+UCM:       Hi Jochen, or should I say MAD MAX?!? Well anyway... We don't have 
+           to say that much about you, coz everybody on Atari should have heard
+           who you are. Please tell me, how old are you now and what did you
+           during the last 6-7 years? I think Amberstar was the last music you
+           have released... am I right?
+
+MAD MAX:   Yeah, I think Amberstar was my last project but I'm not sure coz
+           it's so long ago now. In the meantime I worked on smaller projects
+           like a player for Jaguar but I never finished it.
+
+
+
+UCM:       After you have visited the Siliconvention in 1997, everybody thought
+           that you are back in the business coz you added the sidvoice to your
+           editor and copied some new and previously unreleased chiptunes to
+           Llama of tSCc... Unfortunately this was the only sign of life from
+           you since then. Have you worked on new tunes or new techniques to
+           create sound on ST?
+
+MAD MAX:   When I first heard some SID-Tunes, I wanted to try out how all the
+           old tunes from Wings of Death or Jambala would sound like with a
+           SID-Voice. That's why I modified my player and added a Sid-voice
+           as test to the tunes. 
+           Then I wanted to know if I still can compose "new" tunes. The 2
+           Sid-tunes where the only ones I had finished at the time of the
+           Siliconvention. I spent very few time at my computer and tried
+           crazy sounds. Sid-Voice 1 modulated from Voice 2 or 3, for example
+           "Modu" Sound with Sid-Sound at the same time. The results are
+           extremely distorted. They absolutely doesn't sound like YM 2149.
+
+
+
+UCM:       Well, you mentioned in your first Audio-CD 'GIVE IT A TRY' that you
+           want to create a full Audio-CD out of the Soundtrack from the game
+           Dragonflight. What happened to that?
+
+MAD MAX:   Unfortunatly I have to say that nothing has happened in that 
+           direction. I have done some tunes on my synth at home but nothing 
+           was finished.
+
+
+
+UCM:       Have still contact to the former guys from THALION? I mean ES, -ME-
+           and all the rest? Why haven't you worked for Blue Byte or Eclipse
+           after THALION went down?
+           
+MAD MAX:   I have lately again contact to -ME-. I haven't seen him for about
+           7 years. I also have contact to Daryl. A very few times with ES.
+           The others seem to be lost.
+           I have sent Bittner a mail but he didn't react yet. Well, I'm not 
+           that long on the net. Concerning the 2nd part of the question:
+           After Amberstar I have started my civilian service and was fed up
+           with all the computer stuff. That was the reason why nobody has
+           heard anything from me then and why I haven't worked for other firms.
+
+
+
+UCM:       Have you earned many money from all the music you did for games on
+           the ST? I mean you started with early stuff from RAINBOW ARTS and
+           later on THALION. Was it worth it?
+
+MAD MAX:   I am not rich. In the beginning it was very few money but in the end
+           it was worth while. It was a fantastic time and that's what counts.
+
+
+
+UCM:       Can you imagine how many ST Chipsounds or 'Computer Musics' at all
+           you have done during the years? 1000? 2000?
+
+MAD MAX:   I'm sure I've never reached such a high amount. I really can't 
+           imagine how many tunes I have made but there are never 1000 or 2000
+           tunes by me. In the beginning I mostly did convertions and I did
+           over 100 of them. 
+
+
+
+UCM:       As I am chipsound-freak I also collect C64-SIDsounds and I have 
+           some tunes in my collection where your name is given as author!
+           Some friend of mine told me that it could not be the same guy.
+           So I ask you. Have you ever done C64 stuff?
+
+MAD MAX:   I started to rip Hubbard-sounds on C64. Later on I have written some
+           tunes with his player but there was nothing worth to spread. The only
+           tunes that I have written on C64 where some of the Dragonflight tunes
+           which I later on converted to the ST, but I never spreaded them.
+           I would say the C64-tunes you have are not from me.
+           Maybe there is someone with the same name.
+
+
+
+UCM:       Daryl once told me that you have converted your 7-Voice-Amiga-
+           tracker to Jaguar. Have you ever tried to do stuff for the JAG 
+           and what do you think in general about it?
+
+MAD MAX:   Yes, that's true. I have converted my 7-voice-routine converted to
+           the Jaguar. It was fascinating how fast the routine was coz of 
+           16 Bit, Stereo and Balance function for each voice, compared to
+           the amiga. It was a hard job coz I have to modify my routine for
+           16 bit, but it only played in 8 bit... Unfortunatly I haven't 
+           seen much more from the Jaguar so I can't say anything else 
+           to that topic.
+
+
+
+UCM:       It was again Daryl I think who told me that you got hold of a
+           Falcon. Is that true? If yes, what do you think of this machine
+           and what experiences have you made with it?
+
+MAD MAX:   Daryl lend me his Falcon but I nearly haven't used it. I also had
+           no Software or Documentations at all. I have only a normal ST+.
+
+
+
+UCM:       There are lotsa different sound-formats from you, esp. on Amiga.
+           For example the COSO-Format. Well can you give us a little 
+           overview of this format-jungle? Why is there no general replayer
+           on ST or Falcon for all your Amiga-formats? Maybe you could
+           release such a thing someday?!?
+
+MAD MAX:   Ok, wait a minute, let me think. It all started with the TFMX-format
+           on Atari and Amiga. Those tunes where umcompromised pieces of music,
+           which existed mostly of ZERO's and they needed many memory place.
+           That's why I wrote a converter that converts the TFMX-format to the
+           COSO-format. I still edited the tunes in TFMX-format (even today
+           they do so!). Then I changed Vibrato and Portamento-routs coz they
+           should sound also at high tones equally strong. The Atari-player
+           recognizes the difference in the header ("MMME" or "TFMX") and
+           sets the right replay. On Amiga I was to lazy to do it like on the
+           ST. With the time I added some special commands to the sound-
+           administration, for example "SDIV" for Sidvoice. Unfortunatly the
+           newer players on Amiga are not compatible to the older versions.
+
+
+
+UCM:       You told me before that you are working with synths on new music
+           that is more non-computer-based. What synths are you using and
+           how will this 'new' music sound like?
+
+MAD MAX:   I have a D 20 and U220. A friend of mine has some better synths but
+           don't ask me about the types. The tunes still sounds too much like
+           "Computer" but I'm still working on it.
+
+
+
+UCM:       What do you thing about the evolution of chipmusic on Atari ST 
+           during the last years? For example TAO's new invention called 
+           'Sync-buzzing'?
+
+MAD MAX:   I don't know Syncbuzzer-tunes, but the songs from the new demos
+           are a lot better than some years ago. There are more musicians.
+           The Sidvoice is a brilliant thing.
+
+
+
+UCM:       Please tell us your fave games and demos on Falcon and/or ST.
+
+MAD MAX:   Bubble-Bobble, Lethal-XS, Supersprint, Amberstar.
+           The games are pretty old, but that coz I haven't watched the 
+           evolution of the software on atari until 1997. I played the
+           above mentioned games like hell. The TCB-Demos where always good
+           but that doesn't mean that I didn't like all the other demos.
+
+
+
+UCM:       What was, in your eyes, the most important/impressive frontiers
+           the ST/Falcon coders stepped through the years?
+
+MAD MAX:   In general I like it when you do things with your computer that
+           are a total difference from the standard, for example SidVoice,
+           open borders, Sync-Scroller and so on. All the stuff the Amiga-
+           freaks said: "That's impossible!"
+
+
+
+UCM:       The best memory you have from your life in the atari-scene?
+           (best party, etc...)
+
+MAD MAX:   STNICCC
+
+
+
+UCM:       Have you any future plans concerning the atari scene? If yes,
+           what can we expect from you then?
+
+MAD MAX:   [Not Answered]
+
+
+
+UCM:       VR-SECTION. DUNGEON MASTER. You are one of the 4 characters in 
+           Dungeon Master... which one would you choose (Magician, Warrior...)
+           and what guys from the Atari scene would you choose to complete
+           your party?
+
+MAD MAX:   I'm sorry but I never played Dungeon Master.
+
+
+
+UCM:       It's Brainstorming time and we have prepared a special edition for
+           you MAD MAX! Just give a short answer of what comes to your mind 
+           when you read following names:
+
+A. AMBERSTAR              - Karsten Kîper
+B. BIG DEMO               - LUIGI - Bad DÅrkheim
+C. CHAMBERS OF SHAOLIN    - The falling Shaolin-Monk (man, we had fun!)
+D. DRAGONFLIGHT           - 1st meeting with -me- and -es-
+E. ENCHANTED LAND         - Sync-Scroller
+F. FIRST TEX DEMO         - I really liked it (I wasn't in TEX at that time)
+G. GHOST BATTLE           - Austria
+H. HUMAN RACE             - 2 voices have to do it
+I. ICC                    - ---
+J. JUST BUGGIN            - ---
+K. KINGSOFT               - Space Pilot
+L. LEAVIN TERAMIS         - Bittner
+M. MAGIC LINES            - Amiga-loading-routs (came from me)
+N. NO SECOND PRIZE        - the longest project in the world
+O. OVERLANDERS            - reminds me on a megademo on 2 disk featuring a
+                            screen with 3D stuff in 1 VBL which I really liked
+P. A PREHISTORIC TALE     - The Lost Boys
+Q. QUADRALIEN             - empty
+R. REPLICANTS             - <-> Bladerunner
+S. SEVEN GATES OF JAMBALA - Amiga-Version of the game was from me
+T. TEX/THALION            - reminds me on the time in Bad DÅrkheim/GÅtersloh
+U. UNION                  - nice logo
+V. VCS 2600               - My first videogame (great joysticks!)
+W. WINGS OF DEATH         - Marc Rosocha: "Please make a 200kb long music"
+X. XEXON II               - never played it
+Y. YAK                    - Jeff Minter
+Z. ZAK MC KRACKEN         - never played it
+
+
+UCM:       Your last words/message for the scene out there please.
+
+MAD MAX:   Greets from me.
+
+
+(Averagly converted from german to english by MC Laser/tSCc. If you want to
+write MAD MAX the send an email to: JHippel@aol.com )                                                              
+
+-- -- --- -------------------------------------------------------------- --- - -
+ Òmc_laser@atari.org       ÚnO ProM!sEs - nO DeManDs        ÛMC Laser/tSCc^PoD
+--- -- --- -------------------------------------------------------------- --- --

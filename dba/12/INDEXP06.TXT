@@ -1,0 +1,328 @@
+ATARI CD-ROM SUMMARY 6
+~DROPS.FIL~
+Updates/        2       J. Bammi's Gnustuff updates
+ contents       3       contents file
+ update14.zoo   222     ??? various diffs, XBRA docs
+ update15.zoo   179     ??? various, merged pml and 881 libs
+ update16.zoo   119     ??? First support for GCC 2.0
+ update17.zoo   20      ??? various
+ update18.zoo   312     ??? libg++ 2.0, Patch 2.0 12u6
+ update19.zoo   100     ??? GCC 2.1, gperf 2.5
+ update20.zoo   68      ??? Curses, GAS 68040, GDB 2.6 pl 18
+ update21.zoo   126     ??? Merge TOS and MiNT includes, bison 1.18
+ update22.zoo   70      ??? GCC 2.2.1, libg++ 2.1
+ update23.zoo   36      ??? GCC 2.2.2, libg++ 2.2, include & lib 82
+ update24.zoo   50      ??? widget lib, idents
+ update25.zoo   106     ??? Bison 1.19, baserel for GCC, GAS fix
+ update26.zoo   109     ??? GCC 2.3.1
+ update27.zoo   134     ??? GCC 2.3.3, libg++ 2.3
+ update28.zoo   90      ??? Falcon gemlib, etc.
+ update29.zoo   119     ???
+ update30.zoo   111     ???
+ update31.zoo   33      ???
+ update32.zoo   93      ???
+ update33.zoo   93      ???
+ update34.zoo   5       ???
+ update35.zoo   67      ???
+ update36.zoo   579     ???
+ update37.zoo   29      ???
+ update38.zoo   5       ???
+ update39.zoo   2       ???
+ update40.zoo   22      ???
+
+Util/           2       GCC-related utilities (ld, sym-ld, ar, nm, fixstk,
+...)
+ aa.gnu.util    4       description file
+ utlbin36.zoo   264     GCC-utils pl36, binaries
+ utlsrc36.zoo   164     GCC-utils pl36, source
+ utlsrc37.zoo   164     GCC-utils pl37, source
+
+============================================================================-
+====
+Graphics:
+
+[Note: all cyber .seq files can be viewed with animate.lzh]
+
+0index          ??      This index you love so much.....
+3d_512.lzh      207     animated Spectrum demo.  Needs anispec to run   
+3dbin.arc       49      Demo of rotating 3d perspective objects 
+50hzboot.prg    1       Sets monintor to 50hz.  Needed for some demos, etc.
+89a_87a.lzh     15      Converts GIF 89a to 87a format
+aim2_51.arc     217     2d signal processing software for pictures      
+aim_3_1.zip     239     AIM software, version 3.1
+aim_xtra.arc    171     Utilities for use with aim      
+andro.lzh       20      Andromeda, a German monochome paint program
+animate.lzh     17      Tom Hudson's cyber .seq displayer
+animatic.arc    99      Demo of the Animatic Animation System
+anispec.lzh     3       Viewer for animated spectrum sps sequences from
+unispec 
+anist.arc       148     Aegis animator, now as shareware
+apfelman.arc    24      They tell me this is a fractal generator        
+argh_anim.zip   462     Good animation plus player.
+artgalry.arc    6       Desk accessory pic displayer (Degas, Tiny, Neochrome)
+artpak.tos      175     Many nice little programs to convert pic formats     
+
+ 
+artprint.lzh    13      Prints your clipart collection into a catalog
+artst232.lzh    58      ST drawing/painting program
+ascdraw.lzh     64      an ascii/PC-ansi character drawing program
+ascgif.zip      31      Converts .GIF files to Ascii art
+asprite.arc     34      Sprite designer for hardware sprites (ie mouse) 
+ataripic.lzh    58      Degas pics of the new atari computers
+avsplayr.lzh    15      Plays avs animation sequences.
+beztwist.arc    9       Very good animation demo of bezier curves. All res.  
+
+ 
+bgif.arc        21      Converts Gifs to Spectrum or Degas format
+bigcolor.lzh    16      Color monoitor emulator 
+bitcamra.lzh    84      Enlarge/reduce/convert 2/4/16/256/TC graphics
+bitmap.arc      30      Convert text to medium rez graphics
+blit.arc        20      Manual for blitter chip
+brodie.arc      25      Picture of Bob Brodie; why, I'm not sure. 
+bugs.lzh        49      Bugs Bunny avs demo     
+c3d2raw.zoo     20      Converts CAD-3D files to .RAW
+c_burst2.arc    40      Color burst 2.
+canvasdm.lzh    128     Demo of canvas from EA.  Quite powerful.             
+
+ 
+cat.lzh         327     Caterpillar tractor avs demo    
+cb_paint.lzh    27      Paint program demo      
+ccolord.lzh     35      Lexicor Cyber Color demo. Color 3D2 objects.
+ckartdoc.zoo    38      English docs for crack art.
+col_spce.zoo    96      Colour-space, light synthesizer
+colawars.lzh    396     AVS sound/animation demo
+
+graphics/Cyber_seq: Cyber sequnces
+ angel.lzh      115     A rotating spaceship cyber 
+ backflip.lzh   250     Skeleton doing a backflip 
+ balldemo.lzh   263     ???  
+ car.lzh        232     Solid model racing car 
+ catnap.lzh     278     ??? 
+ chasers.lzh    61      animation of two birds chasing each other       
+ circles.lzh    225     ???  
+ deja_vu.lzh    309     ???  
+ dinohel.lzh    264     Dinosaur and helicopter 
+ froggie.lzh    156     ???  
+ golf.lzh       203     A golfing tragedy 
+ gunship.lzh    228     View from a cockpit 
+ insects.lzh    178     A couple of bees flying around
+ klingone.zoo   207     Klingon ship being blown up.    1 meg.
+ lamp.lzh       65      A luxo lamp a la Bixlar 
+ manta_2.lzh    155     Demo of a swimming manta ray,  Nate says "Awesome"
+ pt7_step.lzh   120     ???  
+ scanned.lzh    46      Series of scanned images to create animation 
+ starwar.lzh    223     X wing destroying deathstar 
+ tecdelit.lzh   62      ???
+ unicycle.lzh   102     ???  
+ vidibat.lzh    503     Vidi digitized images from bat man 
+ visitor.lzh    138     ???     
+crackart.lzh    293     Wolfgang calls it "the ultimate drawing program"
+cyber.zip       660     Excellent .seq files!
+dcshowit.arc    7       Replacement desktop document show option. Displays
+pics.
+degadesk.arc    23      Replaces desktop 'gray' with degas picture.
+degas2ps.arc    65      Degas to post script converter.
+degasnap.arc    1       Takes snapshots of screen for use with degas    
+degasnap.lzh    1       Similar to degasnap.arc, but has doc file.
+depict.arc      14      Degas to MacPaint converter
+deskpic2.lzh    12      Display Spectrum pics at boot (used with Desk
+Manager)
+deskpic5.tos    86      Display .GIF pics as desktop backdrop
+deskvid.lzh     260     A Spectrum animation demo
+digitzd1.arc    92      Gray scale digitized degas pictures. Some are funny
+digitzd2.arc    51      More of the same
+dlxpaint.lzh    157     Deluxe paint program    
+dmjgif3.lzh     195     Converts gifs to spectrums. Version 3.0 
+double.lzh      3       Doubles the screen size
+dtpaint.lzh     73      Mono paint acc. 
+easelst.arc     56      Demo of EaselST, puts pic on desktop
+elmrsesn.zoo    26      Great background of Elmer Fudd (good for kids) 
+ 
+graphics/Elwell: A collection graphics work by R. Elwell
+ readme         1       Readme explaining the whole directory
+ alienseq.lzh   65      IadaAlien sequence
+ crx19.3d2      7       Honda crx 3d picture 
+ crxseq.lzh     34      Honda crx sequence
+ ecomobc1.3d2   9       Eco modile      
+ elan.3d2       3       Lotus Elan
+ elwell2.zip    72      GIFs created using Cybersculpt and CAD3D2, Xenomorf
+ f16falc.3d2    4       F16 Falcon      
+ f1_04c.3d2     13      Ferrari Formula One
+ fw14.3d2       16      William's formula one car
+ fw14seq.lzh    36      William's formula one sequence  
+ fwxjrseq.lzh   40      Williams and the jaguar 
+ helicopt.3d2   16      Apache helicopter 3d
+ heliseq.lzh    22      Apache helicopter sequence      
+ lotus7.3d2     47      Lotus Super 7   
+ spun.3d2       3       Motorbike with wrapped around fairling
+ xjr14.3d2      10      Jaguar racing car       
+ xjr14seq.lzh   16      Jaguar racing car       
+epsxcvg.lzh     45      Converts EPS and AI --> CVG and CVG --> EPS
+escher.arc      21      Drawing program ala the Escher perspective
+esp01.lzh       74      Yet another raw file or use with photochrome
+ezgem.arc       13      Converts Uniterm .GEM files to EasyDraw .GEM files
+face.lzh        72      Animate a face. (Mono)
+fantasia.zoo    37      Light Fanatasia
+fastgif.lzh     16      Gif viewer, nice and fast. Low and Med rez only.
+fishes.lzh      6       Itty bitty scampering fish simulation. Nice in mono
+flmplayer.zip   21      Good player for FLM's and DLT's
+flutteranim.zip 55      Cool animation with included player.
+fly_ex.lzh      56      Swat the flys as they land on the desktop.
+fractint.arc    207     A fractal generator, no doubt (with dozens of
+fractals).
+fracland.zip    64      Fractal landscape generator.
+fracjrn2.lzh    136     Fractal Journey into OuterSpace w/ zoom controls.
+fractals.tos    284     Yet another fractal generator.
+ Graphics/Gemview
+ gvw_inst.app   27      The install program. Can use with just gemview.pax
+ gvw_lies.txt   16      German readme
+ gvw_pic0.pax   80      Sample pictures for Gemview (use install.app)
+ gvw_read.txt   13      English readme 
+ gvw_v303.pax   337     GemView v3.03 (requires GVW_INST.APP...)
+ new_gemv.zip   67      GemView suport files for STraight Fax & CyberCube
+gif2raw.lzh     17      Converts .GIF -> .RAW for use with PhotoChrome  
+giffer.arc      32      Another gif viewer no doubt.
+gifshw2.arc     26      I'd bet this is another gif viewer.
+gifspc.arc      28      Gif => spectrum converter
+giftxt.arc      14      Text description of a gif file
+grabber2.lzh    2       Grabs current screen to a file  
+graphiti.lzh    24      Graphiti your screen....
+grogcolr.lzh    124     Outline Art contest winner. Needs Outline Art 3 demo.
+guck18.zip      62      Guck: the ultimate displayer; files, pics, metafi-
+les...
+hp2xx.zoo       42      Converts HPGL to other formats.
+hpcd051b.zoo    34      Converts Kodak Photo CD images to PPM files
+hpchrome.lzh    31      Prints degas & neo files on'colour' hp deskjet
+icone.arc       15      Edit the gem desktop icons      
+iff2ximg.lzh    24      Converts Amiga .IFF pics to GEM XIMG color format
+iffspc.arc      16      Iff => spectrum and back again.
+img2hplj.lzh    29      Prints gem imag files on HP laserjet
+img2view.lzh    29      Demo of .img viewer     
+invdemo3.lzh    378     Demo of Invision Elite, mono graphics application
+jp_art.arc      41      Makes nice little patterns on the screen.
+jpegv3.zip      73      Jpeg, v3.0, binaries only.
+jpeg4a.zoo      64      gif2jpg and jpg2gif conversion programs.
+jpeg4bin.zip    62      Jpeg, v4.0, binaries with nroffed manual.
+kand170.zip     574     .GEM vector graphics editor
+kraftw.zoo      146     Power plant simulation.  In german. Mono only.
+kwickpic.arc    7       ACC to display Neochrome and Degas pics
+lowmorph1.zip   472     Cool morphing animation with player.
+lowmorph2.zip   134     More morphing with player. lowmorph1.zip is better..
+machgun.lzh     6       Riddles your screen with machine gun bullets.
+mandlbx1.arc    31      C source for a Mandelbrot fractal generator
+mandltoy.arc    23      Hi speed, low res, mandelbrot generator (sources)     
+manyboin.arc    4       Many boink demo. lots of balls bouncing around screen
+
+ 
+mdl10.zoo       57      Animates .DL files
+megabit2.arc    25      Color version of megablit.arc   
+megablit.arc    19      A drawing program that's capaable of beyond 640*400  
+
+ 
+mgif42b.zoo     76      Monochrome .GIF viewer/utility
+million.lzh     12      Million dot pictures
+minidraf.lzh    100     Interesting CAD like drawing program.          
+molecule.arc    32      3d molecule viewer.  Not very good.  But neat.
+morpher.zip     192     Demo of Lexicor's Metamorphosis 24-bit morphing
+package
+morph882.zip    184     Metamorphosis demo, for systems with math-co.
+movie100.zip    335     Plays .FLI/.FLC files
+ms074.lzh       179     Molecular viewing software.
+multsync.lzh    24      Usenet articles about STs and multisync moniters      
+ 
+mvice.lzh       622     Miam vice avs demo (good music) 
+mydrw110.lzh    128     Shareware vector package, German.
+nagel.lzh       109     Spectrum pics of Nagel's ladies
+nrps.arc        17      Neochrome Random Picture Selector for your AUTO
+folder
+graphics/Pbm:
+pbm-bin.zoo    532     Portable bitmap binaries
+pbm-man.zoo    45       "          "   man pages
+pbm-readme     3       The file that explains it all 
+pgm-bin.zoo    332     Portable grey map binaries
+pnm-bin.zoo    718     Portable any map utilities for any portable map 
+ppm-bin.zoo    558     Portable pixel map for color pictures 
+ol3_demo.lzh    167     Outline Art 3 - demo version
+pchrome3.lzh    45      New version of Photochrome
+pchrome4.zip    42      Latest Photochrome, good.
+pearl.arc       72      Create animated Raytrace sequences (given enough
+time)  
+phoenix2demo.zip        261     Demo of Lexicor's Phoenix 2
+phoenix2-030.zip        245     Falcon/TT version of Lexicor's Phoenix 2
+photchrm.lzh    31      Photochrome: picture converter/displayer/etc.
+pic_pack.lzh    360     Picture packer
+picfmts.doc     30      Dave Bagget's pic format docs.
+picload.arc     18      Searches dir and loads all pics (Neo, Degas, etc)
+picsw7.arc      37      converts many different pic types to st formats
+picsw101.lzh    83      Newer version of PicSwitch. Does NOT convert as much
+                        as previous version, so don't lose your copy of
+picsw7! 
+pixproII.arc    10      Picture pro II
+polyfilm.zip    291     Polygon Film Creation Program. Demo version.
+ppclip01.arc    14      Clip art for Publishing partner 
+ppclip02.arc    12      Same    
+ppclip03.arc    62      same    
+ppclip04.arc    69      same    
+ppclip05.arc    27      Same
+ppclip06.arc    31      same    
+ppmtoraw.lzh    13      Converts from ppm to raw format (see pbm and photc-
+hrm)
+ppviewer.lzh    13      Viewer for pp c lip art 
+prismdem.zip    260     Demo of Lexicor's Prism Paint II (ARTIS ANIMATOR)
+qrt.lzh         146     Quick ray tracer, I think.
+quickgif.lzh    9       Quick giffer.  Shows gifs quickly.
+raisins.lzh     432     California raisins demo 
+rawfiles.zip    258     .raw 24-bit raytraced pictures
+raymovi2.arc    32      C source to generate 3D scenes
+raystart_demo.zip 150   Demo of Lexicor's fast new raytracer for all STs.
+raytrace.arc    192     Ray traced pictures     
+raytutor.zip    10      RayStart demo tutor from Lexicor
+rend5120.lzh    96      3d-rendering of objects.  Needs frmdo12d.lzh
+rsflip11.arc    42      A flip-book animator
+rshade30.zoo    172     Ray shade 3.0: Ray trace program
+sam_fox.lzh     481     An/Ra Cool's Samantha Fox audiovisual demo.     
+scan.lzh        14      Various utilities for Hand Scanners
+shinybub.lzh    147     Xanth Parks Shiny Bubbles demo from ST-Log      
+siren3.arc      16      Little car runs across your screen. Loveit.
+smeister.arc    60      Demo of the Stitchmeister cross-stitch design prg.
+snap.lzh        3       Takes a snapshot of the screen (Degas)
+snapshot.larc   2       Take a snapshot of your screen and save it as a pic. 
+spc3kv17.arc    21      Spectrum viewer with fix for timing problems
+spcmovie.zip    420     Good spectrum movies and player.
+spcshow.lzh     2       Show spectrum pics at 50/60 Hz.
+specpics.arc    722     Spectrum pics, soon to be moved to spcpics.
+specshow.arc    6       Spectrum show.
+spicln_e.lzh    228     SPICELINE 1.3 demo - graphics postprocessor for Spice
+spiro_gr.zoo    11      Spiro graph
+spirocol.arc    17      A Spirograph simulator!  Color. 
+spoflt26.lzh    52      Speed of Light Gif Viewer
+spoflt31.zip    289     Speed of Light Gif/JPEG viewer 3.1, Shareware
+spritest.arc    22      Sprite test 
+sprity.lzh      33      German sprite editor. Mono. Generates GFA 3.x source.
+spslidex.arc    6       Spectrum slide show.
+spurtdem.lzh    10      Spectrum uncompress ray trace demo
+spx_v18.lzh     7       View extended Spectrum pictures
+st_splin.lzh    9       Cool multiple spline graphics show.
+squeezim.zoo    7       Squeezes .img files
+stadconv.lzh    44      Decodes packed STAD-pics and encodes 32k-pics
+starwars.lzh    205     Star Wars AVS animation
+st_cad.arc      22      Very bad st cad program.  
+stitch_x.lzh    41      Creates and prints stitch patterns in Degas
+strngart.arc    21      String Art displays random vector designs.
+studphot.zip    255     Demo of color image manipulator
+suprpoly.lzh    24      "turns your Atari into a $1000 lava-lamp."  Colorful.
+
+switchf.arc     25      TOS based font loader.  C source + exec.
+tabplot.arc     35      Number tables into x-y plots.  GFA source + exec.
+tbxcad.lzh      165     Demo version of tbxCAD, a nice looking 2-D CAD
+program.
+tlcshow3.lzh    9       Spectrum picture viewer.
+tp_demo.zip     397     Very limited True Paint Demo
+tt_mandl.zoo    34      Mandelbrot set generator
+tuxntail.zoo    22      Daffy and Bugs background screen
+tv_title.lzh    77      TV video tape titler
+vceldemo.arc    164     Demo of vcel program.  
+vctrdemo.prg    55      ST port of Amiga Red Sector demo, fun.  
+viewgf12.lzh    70      image viewer (many formats, including gifs) good.    
+
+END OF PART 6

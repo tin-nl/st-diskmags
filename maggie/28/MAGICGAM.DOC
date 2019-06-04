@@ -1,0 +1,357 @@
+
+                       ‰The MagiC Game Contest '99
+
+ This  is a departure from all the previous online competitions,  as the 
+'serious'  users fight back with one of their own.  The combined forces 
+of  Bengy Collins (MagiC Online),  the Atari news provider  'Place2be', 
+and assorted prize sponsors from ASH onwards,  all came together to put 
+this new idea of online competitions to work for them. We were asked to 
+advertise this for them,  and willingly would have done so, but for the 
+fact  that  Maggie issue release dates are  assuming  geographical  era 
+proportions.
+
+Still,  enough of our misery, instead, you get the consolation prize of 
+all these nice games reviewed right here!
+
+In the end,  there were eight entries to the competition. There is also 
+another game in here,  which didn't get into the competition, as it was 
+prematurely   released,   the  always  interesting  'Rosemary  Rancoon' 
+striptease game.
+
+Of further interest, were the entries that apparently didn't make it in 
+the  end.  In this spirit,  we bid a sad farewell to the missing 'MagiC 
+Lands'  (a Mario style game?) There were also mentions for a  Pipemania 
+game, and a Defender in GEM. We hope to see these appear someday?
+
+Well, let's take a look at those that did make it....
+
+
+  Asteroids, by Mario Becroft. 
+
+First  off,  is a high authenticity vector line based blast-em up  from 
+the very early eighties,  made to enjoy being on a multi-tasking O/S on 
+a  TOS computer.  The author is New Zealand based hardware genius Mario 
+Becroft. The game, Asteroids.
+
+I had some previous contact with a beta version of this game, thanks to 
+Mario.   This  was  essentially  complete,  but  with  an  occasionally 
+embarrassing  'running out of bullets' bug.  I am happy to report  that 
+the full rate of fire is maintained throughout the final version!
+
+He has put in quite a lot of work 'behind the scenes' The graphics  are 
+very authentic,  and stay that way,  no matter how you choose to resize 
+the game window, as these are scaleable vectors. There is sound support 
+with  superb  samples  for  DMA  compatible  Atari's  (Falcon/TT).  Not 
+forgetting  to  mention,  that you can configure it any which  way  you 
+wish.
+
+It plays well,  subject to a minimum power level of a 16 mhz CPU,  with 
+FPU.  This  is acceptable running under MagiC,  with not too big a game 
+window,  better  in  a 16 colour mode,  and better with a lower  screen 
+resolution where possible.  With a CT2,  and higher, then there is more 
+than enough speed, and you can either tweak it down, or adjust the game 
+window  to a larger size onscreen.  It prefers MagiC (should run  under 
+Mint?) but will run under single TOS, with NVDI installed.
+
+Control can be a choice of mouse or keyboard,  the mouse is responsive, 
+the keyboard controls feel a little unfinished?
+
+Authenticity levels are high, but not quite perfect, as the saucers are 
+too  easy  to  avoid,  and  some of the background  sound  effects  are 
+missing, Mario has not had a lot of experience with the arcade cabinet, 
+to be fair to him.
+
+But you can guess I liked this one a lot!
+
+ Conclusion - It's classic Asteroids, nothing more, or less.  
+
+
+  Orb, by Mario Becroft. 
+
+Mario's  second  entry from a strong challenge put in by  him  to  this 
+contest (three in all).  This is another timeless classic,  with a more 
+misleading title,  as what you get,  isn't something with an 'orb' feel 
+to it, (you might think of something like a NetHack clone) but instead, 
+it is a GEM windowed version of Sokoban.
+
+This  uses a very similar GEM shell to Asteroids,  and supports  modern 
+GEM/MagiC features like that game does, resizeable window etc. Speed is 
+adequate,  for  whatever  system it runs on.  Graphically,  it does look 
+more attractive in 256 colours and above, at least for the backgrounds. 
+Ingame presentation is functional,  but on the nice side of functional, 
+the  main  game  character looking like  a  suspiciously  potato-shaped 
+Dizzy!
+
+There  isn't any sound,  as far as I can tell,  unless system generated 
+keyclicks are your thing?
+
+As for gameplay,  it's simply Sokoban,  and using the original maps for 
+this.  Push the blocks home, don't get stuck. Another seemingly trivial 
+game that magically waves away a couple of hours you didn't realise had 
+gone by.
+ 
+Conclusion,   another   well-converted   classic,   gentler-paced  than 
+Asteroids.
+
+ 
+  Pentagon by Mario Becroft.
+
+ Mario's third,  and possibly most ambitious entry to the contest,  this 
+is a two-player game,  (as in two human players) where the players have 
+to  take  turns to put counters on a board,  trying to complete  a  row 
+across (of five). This enlarged game of noughts and crosses also allows 
+you  to push the other players counters off the edge of the board,  not 
+forgetting that they can do the same to you.
+
+This  not only allows two player access to the same computer,  but  the 
+game  is  networkable  too!  Meaning,  that  with  the  right  sort  of 
+connection  software  (StinG),you can play against  another  player  on 
+another separate computer!
+
+The presentation is more obviously tilted towards higher end  machines, 
+with  a gorgeous looking background 'tile'.  (there may be an option to 
+add your own backgrounds to this game?)
+
+The only weakness from what looks like quite a fun game, is the lack of 
+a computer player option. Unless there is another Atari-loving human in 
+the vicinity (not always easy,  I know),  this becomes as worthwhile as 
+single player arm-wrestling!
+
+ Conclusion, looks like it could be a real laugh, but needs two players. 
+
+
+  AtariGO by Herbert Waltz. 
+
+This is probably the game closest to an older school of design. It is a 
+computerised  version  of  the board game Go!  It  is  entirely  German 
+language  based,  readme  and all,  but anyone familiar with the  basic 
+rules won't have any problem with that.
+
+The  look  of  the game is very functional  and  GEM-like  indeed,  the 
+computer player seems to have lightning reflexes, whatever speed of TOS 
+computer  it is running under.  So this is the game most happy on a low 
+powered machine.
+
+One intriguing footnote to this game, the MagiC games contest specified 
+that any entries had to be games not seen or released before.  This one 
+not  only looks older than the rest,  in general design terms,  it also 
+has a copyright date from 1994 to the present?
+
+ Conclusion, not pretty, but it does the job. 
+
+
+  BoinkOut II by Dan Ackerman. 
+
+There already is a GEM version of Break-Out,  it was by Atari Corp, and 
+the  less  said  about  it now,  the better.  This  interpretation,  is 
+thankfully nothing like that.
+
+In  fact,  this  version is a conversion of a half-remembered early  ST 
+game,  by  Samuel Streeper,  and it can be positioned somewhere between 
+the  basic   unadorned  Breakout,  and the rather more  snazzy  looking 
+Arkanoid, as mixed in with the simple bat and ball action, you do get a 
+certain number of  power-ups thrown in,  such as multi-balls, difficult 
+to  kill  bricks,  something  called  a 'magic  bottom'  (?!)  and  the 
+completely mad and scary total darkness screen(!)
+
+Visuals are great, especially in 256+ colour modes, and with reasonably 
+powered Atari's,  it slips by super-smoothly, (A bit too quickly on CT2 
+plus  MagiC perhaps?) It really is speed critical,  and benefits from a 
+faster  machine,  still  playable,  but a bit too juddery on a standard 
+Falcon. it can be speed-tweaked if you are running it on a Hades, so at 
+least you can get a meaningful game that isn't over in 2.5 seconds!
+
+You also tweak it further by loading in your own background images,  or 
+maybe try a little level editing,  if you are feeling adventurous.
+
+Sound  is limited to a bunch of YM-generated bleeps and scrunches,  but 
+these are entirely appropriate to the game.
+
+Out  of  all of the entries in this competition,  this is probably  the 
+most polished and professional feeling.
+
+ Conclusion - great work, surely GEM Turrican can't be too far off?! 
+
+
+  GEM Peaks by Christian Putzig. 
+ 
+It's  a  card game,  a super-elaborate version of somethign  or  other, 
+reminded me of Solitaire, or one of the other Windows card games.
+
+It  invades  the whole screen,  it looks sumptuous in scale,  and it is 
+entirely in German.
+
+An  English docfile,  even a partial one,  would have been a great help 
+here,  as it is,  we can only guess about this one.  (Ruftrade does not 
+get into .HYP files too easily.)
+
+ Conclusion,  strictly for card-game fans, looks like a good 'un for the 
+genre! 
+ 
+
+  Milanopoly, by Matthias Jaap. 
+
+Like  Atari Go!,  this is another interpretation of a famous boardgame. 
+Unlike Atari Go!  This is an extremely ambitious project, a GEM version 
+of the arch-capitalist's starter kit 'Monopoly' (trademark of  someone, 
+or other...)
+
+ Digression:-  When Bill Gates played monopoly as a young child,  did he 
+allow anyone else to take turns, or have any money, or did he just yell 
+"It's all mine and no arguments from the rest of you!"
+ 
+It  has (almost) the full range of options,  and a board which has been 
+cunningly  altered in places to reflect a slightly more  computer-based 
+boardscape.  You can build houses,  but not hotels,  otherwise, all the 
+other game elements are in there.
+
+Features  such  as  dice roll,  and the various  community  chest  type 
+random-factor  cards are all in there.  The only thing that is missing, 
+are  the  little lead pieces,  but there always was  something  strange 
+about making a minature metallic Yorkshire terrier go to jail?
+
+It looks good,  if a little bit small.  I'm too used to the larger size 
+of  the original board game.  Original Monopoly fans may well miss  the 
+reassuring  tactile  feel of holding chunky amounts of  cash  in  their 
+sweaty palms!
+
+The money for this one is in Euros, but don't let that worry you!
+
+Like Mario Becroft's Pentagon game,  it is a two player effort,  and as 
+with  that  entry,  there is no computer player option.  
+ 
+Conclusion,  good clean capitalistic fun,  you're not forced to turn to 
+those Wintel PC's for that sort of thing now!
+ 
+
+  Fanwor by Thomas Huth. (Thothy) 
+ 
+We now turn to a game which is nearest to a 'scene' perspective on  the 
+MagiC games contest. This takes a Zelda type graphical arcade adventure 
+and sticks it in a GEM window!
+
+This  one  is  by the authors of  STune,  (previewed  separately),  and 
+features  luxuries (for GEM games) such as Jaguar powerpad  support,  a 
+choice  of  sampled  sound effects or PSG generated  noises,  and  even  
+modfile  music  in the background if you want it,  (courtesy  of  MSG's 
+Zelda tune.) 
+
+The  game  has you looking for eight scattered pieces  of  a  gemstone, 
+killing or avoiding the creatures in your path.  Unwanted contact loses 
+the  player energy or 'hit points',  a zero amount of these means  game 
+over.  Finding the pieces of gemstone restores your energy, finding all 
+eight brings peace back to the land (for the moment at least.)
+
+It  runs  well enough,  even on lower powered systems,  but the  window 
+looks  a  little  small  on higher  screen  resolutions  and  can't  be 
+dynamically resized,  in the manner of, say, the Mario Becroft entries. 
+You are playing with minute flyspeck figures,  although this game looks 
+quite respectable on lower resolution screens.
+
+The  other  naughty tendency it has,  is an occasional failure to  quit 
+properly  when  asked,  which  makes a clean shutdown of  MagiC  a  tad 
+impossible. Japad support is there, but in practice, I still prefer the 
+cursor  keys  as  my  choice of control method,  as  the  Jagpad  feels 
+slightly  uncertain  in  use.  (But  that might  be  down  to  personal 
+preferences?)
+
+At  the  end of the day,  this is a creditable attempt to bring  Godboy 
+type  fun  to  the MagiC owning masses those people  not  blessed  with 
+the sacred covenant of the F030!
+
+ Conclusion - No one is safe from the long arm of the 'Scene'!
+
+ 
+  Rosemary Rancoon, by Michel Desangles. 
+
+This one didn't make it to the competition,  as it crept out too early, 
+however,  it  is  available  from  the same site as  the  rest  of  the 
+competition entries, and it is being looked at here accordingly.
+
+This is a characteristically gallic stir of the diverse GEM game  theme 
+pot,  as we get a 'paper/scissors/stone' scenario, utilised as the main 
+game engine here.
+
+You are locked in mortal combat with the deadliest enemy of them all, a 
+cartoon  representation  of a female figure,  recognisable from a  very 
+early  striptease  game!  Strangely enough,  the aim of the game hasn't 
+changed  one jot,  but you have gained stumbling attempts at bargaining 
+for nudity in a GEM window!
+
+There are a choice of three,  ranging from (fairly) easy, right through 
+to 'Is she ever going to run out of things to take off!?'
+
+There is the novelty of Bubble-GEM support (in French) is there if  you 
+want  it,  and this accompanies every successful,  or unsuccessful move 
+that you make in the form of a speech caption from the female 'player'.
+
+Tends to look and move fine on just about every configuration.
+
+ Conclusion, one for dirty-minded children of all ages!!  
+
+
+Well,  the first MagiC games contest succeeded in generating a wide and 
+varied set of entries.  Board and card games,  a staple theme of system 
+legal  stuff in the past,  were popular here,  with four of the entries 
+more or less falling into that category. More dynamic, and difficult to 
+implement,  arcade-based games made up most of the rest,  with Rosemary 
+Rancoon very much standing there as the 'odd woman out'!
+
+National  preferences expressed themselves strongly,  with two or three 
+games purely in German,  and one in French.  None of them were too hard 
+to  figure  out,  even with the language barrier.  The other  potential 
+barrier  to  enjoyment  on a couple of these,  was the  compulsory  two 
+player  requirement.  Maybe a computer intelligence should be added for 
+future versions of Milanopoly and Pentagon?
+
+This  competition was a roaring success,  I believe other  competitions 
+from  MagiC Online are to follow,  and I was only half joking about GEM 
+Turrican! (Or how about 'Let's write a new Atari Web Browser!)
+ 
+ CiH, Dec '99
+
+And finally;
+
+                   ‰~ MagiC Games Contest Results! ~  
+  
+1st Place 
+ Orb  
+Mario Becroft 
+298 Points
+
+2nd Place 
+ Boink Out II  
+Dan Ackerman
+259 Points
+
+3rd Place 
+ Fanwor  
+Thomas Huth (Thothy)
+254 Points
+ 
+4th Place 
+ GEM Peaks  
+Christian Putzig 
+249 Points
+ 
+5th Place 
+ Pentagon  
+Mario Becroft
+231 Points
+ 
+6th Place 
+ Asteroids  
+Mario Becroft 
+229 Points
+
+7th Place  
+ Milanopoly  
+Matthias Jaap
+201 Points
+ 
+8th Place 
+ Atari GO  
+Herbert Waltz
+198 Points
+
+

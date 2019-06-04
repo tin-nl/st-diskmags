@@ -1,0 +1,308 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[.......................................................]0010
+€
+[=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=]
+
+                        TheStoryofGodlenes
+
+       ABehindTheSceneslookatthenewFalconNESEmulator
+
+                     byMrPinkofReservoirGods
+
+[=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=][=]
+
+Duringthesummerof1997,bothCiHandEd'DonkeyIsland'Cleveland
+visitedReservoirGodsHQdeepintheheartofruralWales.Ishowed
+himtheGodBoywithgamessuchasMarioandKirby'sDreamland.Cogs
+whirredintheLiverpudlian'sbrainandlightbulbpoppedabovehis
+head-thelampintheroomhadjustblown,butalsoEdhadanidea
+germinatinginhisscallymind.ANintendoemulatorforthehumbleST.
+
+October.IhadrelocatedbacktoLiverpooltoliveinahousewith
+fourgirls.It'satoughlifebeingaperpetualstudent!Idecidedto
+getintouchwithEdtoseewhathewasupto.Thebadnewswasthat
+DonkeyIslandseemedtobeasdeadastheSTversionofMonkeyIsland
+2.ThemoreintriguingnewswasthathewasworkingonaNESemulator
+andalreadyhadsomeROMsrunning.
+
+ThissurprisedmeasithadtakenmeoveramonthtogetmyGameboy
+emulatordoinganythingwhilstEdseemedtohaveknockedhisupina
+fiveminuteteabreak.Butthetruthwassoonrevealed.TheCPU
+emulationcode-thecoreofanyemulator-camefromelsewhere.
+
+WhilsttrawlingthroughanAmigaCD,youngEdwardstumbleduponthe
+codeforaCommodore64emulator.AlthoughthiswasfortheA1200,the
+68020codeforthe6502emulatorwaseasilyportedtotheST(mainly
+bereplacingthescaleddataregisterinstructions).
+
+ThelargesttaskforanyemulatorcoderiswritingtheCPUemulator
+andittookmealongtimetocodeandperfectmyZ80emulatorwhich
+€theGodBoyisbasedaround.TofindafullyfunctionalCPUemulator
+foryourtargetmachinesavedalotoftimeandhassle.
+
+The6502isalsoaloteasierchiptoemulatethantheZ80.Itonly
+has3registers(!)X,YandA.Althoughitsindirectaddressingmodes
+areprettyadvancedforitsday,theyarenothingthatthe68000can't
+handleeasily.
+
+Nowtherealskillcamein.EdpouredoversomeNEStechnical
+documentsbyYoshiandMaratFayzullin.Theseprovidedallthe
+informationneededtocreateanemulator,butaseverwereambiguous
+insomeplacesandcoveredsomeareasofthemachineinfartoolittle
+detailleadingtoalotoftrialanderror.
+
+TheNESisaninterestingmachine,andprettyadvancedgraphically
+comparedtoitscomputerbasedcompetitionoftheday.
+
+Themainprocessorisa6502witha16bitaddressingrangegiving64K
+ofmainmemory.
+
+Thememoryisbasicallysplitintotwowiththelowerhalfbeingused
+fordatastorageandtheupperhalfforcode.
+
+Moreprecisely,thefirst256bytesareusedforthe6502'sspecial
+zeroaddressingmodewhereonlyonebyteissuppliedfortheaddress.
+Thenext256bytesaregenerallyusedforthestack.
+
+Therestofthelowermemoryisusedfordatastorage.
+
+Addressrange6000-7FFFistermedWriteableRamandcanbewrittento
+cartridgeswithsavingfacilities.GameslikeFinalFantasystore
+theirglobalvariableshereandatpointsduringthegamethiswhole
+sectionofmemorycanbedumpedtothecart.
+
+Somegames,suchasSuperMarioBrothers,useaddressrange7000-7FFF
+tostoretrainercodewithvariousbuiltincheatroutines.
+YoucandemonstratetheMariotrainerrambypressing'B,A,R,U,L,
+€D,B,A,B'whilstthegameisinpausemode.
+
+Theprogrammemoryrangesfrom8000-FFFF.
+Mostgamessplitthismemoryintotwo16kbanks(8000-BFFF&C000-
+FFFF).Moreadvancedmapperscansplitthismemoryinto4banks.
+
+TheearlyNESgamesfeaturedonly16kofprogrammemory,justfilling
+oneofthebanks.SuperMarioBrotherswasthefirsttousethefull
+32kofprogrammemory.
+
+TheNES'smainmemorylookssomethinglikethis
+
++------+---------------------------+
+:0000:ZeroPageMemory          :
+:0100:StackSpace               :
+:0100:DataSpace                :
+:6000:WRAM(Saveable)         :
+:7000:WRAMorTrainerRAM       :
+:8000:ProgramMemory(Bank0):
+:A000:ProgramMemory(Bank1):
+:C000:ProgramMemory(Bank2):
+:E000:ProgramMemory(Bank3):
++------+---------------------------+
+
+ThegraphicspoweroftheNESishousedinitsdedicatedvideochip-
+thePictureProcessingUnitorPPU.
+
+ThePPUevenhasitsownmemory-a16kbankseparatefromthemain
+6502memory.
+
+TheNESgraphicsdisplayisquitedecent.
+
+Thescreenresolutionis256x240or256x224(dependingonthedisplay
+type,PALorNTSC).
+Itcandisplay64hardwaresprites,eitherof8x8or8x16pixels.
+Thebackgroundis16coloursandthespritesare16colours,bothhave
+differentpalettesgivinganeffective32coloursonscreen.
+€TheNESfeaturesbothverticalandhorizontalhardwarescrolling.
+
+Asagamesmachine,itleaveseventheSTfarbehind!
+
+
+LiketheGameboy,thereisnoactualscreenintheSTorfalconsense.
+Instead,youhaveamapwhichindicateswhichtilesshouldbe
+displayedonthescreen.
+Tilesare8x8sectionsofgraphics.TherearetwotilebanksinPPU
+memory,eachconsistingof256tiles.
+
+Generally,onebankoftilesisusedforthescreenandonebankis
+usedforthesprites.Theprogrammercandefinewhichisusedfor
+which.
+
+Therearefourscreens,butonlytwoofthemareactiveatanytime
+dependingonwhetherthegameisinHorizontalorVerticalscrolling
+mode.Theunusedscreensbecomemirrorsoftheircorresponding
+entries.Confused?IwaswhenIstartedcodingmyPPUemulator!
+
+AllfourscreensarestoredinPPUmemory.
+
+Theyarelaidoutlikethis:
+
+   +---+---+
+   |A|B|
+   +---+---+
+   |C|D|
+   +---+---+
+
+SoforahorizontallyscrollinggameonlyscreensAandBareused.
+CbecomesamirrorofAandDbecomesamirrorofB.
+
+Foraverticallyscrollinggame,screensAandCareusedwithB
+becomingamirrorofAandDbecomingamirrorofC.
+
+Whythemirroring?Wellthisenablesomnidirectionalscrolling.Both
+€HorizontalandVerticalscrollinggameshaveaccesstobothscroll
+registers,thatishorizontalgamescanscrollverticallyandvertical
+gamescanscrollhorizontally.Clearasmud?
+
+
+Eventhespriteshavetheirownmemory,a1Kblockimaginatively
+entitled'SpriteMemory'.
+Thespritescanbehardwareflippedhorizontallyandvertically
+meaningalotlessgraphicshavetobestored.Forexampleinmost
+gamestheframesofspritemovingrightarejusttheinverseofthe
+spritemovingleft.
+Spritescanalsohaveaclippingbitset,meaningthattheywillbe
+drawnbehindthescreenbackground.
+
+Thegraphicsstoredintilememoryarejusttwoplanes,yetthescreen
+candisplaythemin16colours.Howisthis?
+
+Well,aswellasthescreenbeingmadeupfromtilesfromtilememory,
+thereisasecondparttothescreen.Theattributetablemarksout
+bigsquareofcolourthatoverlaythescreen.Theattributetable
+storestwobitsforeach32x32sectionofthescreen,representingthe
+bitpatternofthehighesttwoplanes.
+
+Foreachsprite,twobitsarestoredtodeterminethebitpatternof
+thetwoplaneswhichoverlaythem.
+
+ThePPUmemorylookssomethinglikethis:
+
++------+---------------------------+
+:0000:TileTable0              :
+:1000:TileTable1              :
+:2000:ScreenMapA              :
+:23C0:AttributeMapA           :
+:2400:ScreenMapB              :
+:27C0:AttributeMapB           :
+:2800:ScreenMapC              :
+;2BC0:AttributeMapC           :
+€;2C00:ScreenMapD              :
+:2FC0:AttributeMapD           :
+:3F00:BackgroundColourPalette:
+:3F10:SpriteColourPalette     :
++-----+----------------------------+
+
+
+
+ThebestthingabouttheNES,frommypointofview,isitsinterrupt
+structure.Theiseffectivelyonlyoneinterrupt-theVBL-which
+makescodingsuchaJoycomparedtothecomplicatedrangeof
+interruptsontheGameboy.
+
+Theslowestpartofanyemulatorishandlingtheinterrupts.The
+conventionalwaytodothisishaveacyclecounter,andhaveatable
+storingthenumberofclockcyclesforeveryinstruction.Thecycle
+counterisinitialisedtothenumberofclockcyclesinavbl.For
+everyinstructionexecutedyousubtracttherelevantnumberofclock
+cycles.Whenthecounterbecomeszeroyoujumptorelevantinterrupt
+routine.
+
+Thereareanumberofproblemswiththis.Themostobviousisthe
+extraburdenonyourfetchloop-asubtractionandsomesortof
+compareandbranchhavetobeperformedforeveryinstruction.
+
+Alessobvious,butperhapsmoresignificantfactoritthesocalled
+idlingperiod.
+
+Inthe'idlingperiod'theprogramiswaitingforaninterrupt,
+effectivelydoingnothinguntiltheinterrupthasoccurred.
+ThisisequivalenttotheWait_VblcallsontheSTorFalcon.
+AtypicalidlingperiodinaNEScanbespottedininstructionslike:
+
+C038LDA#00
+C03ASTA30
+C03CLDA30
+C03EBEQC03C
+€
+Here,address30isusedasVblflagtoindicatethatthevblhas
+executed.Theprogramclearsthisflag,thensitsinaloopwaiting
+forthevbltobeexecutedbeforecontinuing.
+
+Ifyouhave,say,30,000clockcyclesinaVBLandallthecodeis
+executedin10,000cycles,theemulatorwillspend20,000cyclesin
+theloopabove.Allgamestheemulatorrunswillbereducedtothe
+speedoftheslowest.
+
+Ihadtwosolutionsforthisproblem.Thefirstwastousethe
+Falcon'sVBLtoactuallytriggertheVBLroutine.Thismeantnoclock
+cyclecounting,aroutineontheFalcon'sVBLmodifiedthecodeinthe
+6502FetchloopsoitjumpedtotheVBLroutine.Thismeantnoclock
+cyclecountingandthe'idleperiod'waslimitedtoamaximumof1
+verticalblank.
+
+Thisworkedsplendidlywithsomegames,butcausedproblemswith
+otherswhichweren'texpectingtheVBLtoappearoutofsync.Well
+codedgamesmaskofftheVBLuntiltheywantittoappear,butothers
+adoptamorecavalierattitude.
+
+ThefirstreleaseofSuperMarioBrothersusesVBLswitching.
+
+Mysecondsolutionwastotrackdownallthe'idlingperiods'ineach
+gameandmodifythem.Iwouldaddaninstructionsoitwouldjumpto
+theverticalblankroutine.Thishadadramaticeffectonthespeedof
+theemulatorandmeantalotofgamesranalotquicker.
+
+Butsurelyitmustbetrickywadingthoughhundredsofkilobytesof
+codesearchingforidlingperiods?Well,withthehelpofmyhandyNES
+Debugger'NESCAFE'(anothercomedytitlecourtesyofReservoirGods!)
+thisprocessisrelativelystraightforward.
+
+Ithenwentona'idlingperiod'patchingfrenzyandwatchedwithglee
+asloadsofNESgamesspeededupnoend.
+
+€
+NESgamescreatorsstartedtorealisethelimitofhavingjust32kof
+programmemoryand8kofgraphicsmemoryonacart.Theywantedmore
+space-principallyfor   graphics.   NintendoinventedaMemory
+ManagementController,achipthatcouldholdmorethanthestandard
+amountofmemoryonacart.TogetroundtheNES'saddressing
+limitations,banksofmemorycouldbeswitched.
+
+AnumberofdifferentmappersweremadefortheNES-themostsimple
+ones(Mappers2and3)justallowedtheswitchingofeitherProgram
+pagesorgraphicspages.
+
+Butmorecomplexmappersallowed   theswitchingofboth,also
+controlledhorizontal/verticalscrollingandcouldswitchbetween
+differentbanksizes.Mapper1hadallthesefeatures.
+
+Perhapsthemostcomplexmapperismapper4,whichhasitsown
+interrupt,triggeredeveryscanline(liketheHBLontheST)which
+programmerscanlinkintotodorastertricks,likescreenorpalette
+splitting.
+
+Thereareover34documentedMapperchipsavailablefortheNES,with
+differentgamescompaniesmakingtheirownvariations.Tomakea
+completeNESemulator,wehavetoimplementallthesemappertypes.
+
+SofarwehavedoneMapper0(hehe!),Mapper1(about90%accurate),
+Mapper2,Mapper3andMapper4(partial).Generally,thebiggerthe
+game,themorecomplexthemapperused.
+
+Havingmappablememorymeansthattheemulationisslower-readsand
+writestomemoryhavetocheckwhichpagesarecurrentlyactivebefore
+performingtheiroperation.
+
+
+IamprettyhappywithGodlenes.ItrunsalotfasterthanGodBoy,the
+gamesarebigger,morecolourfulandrequirelessworktogetthem
+runningnicely.TherearesomesuperbgamesontheNESlikeZeldaand
+€FinalFantasy(whichwewillbereleasingsoon).Facilitieslikethe
+trainermodesandloadandsaveatanypointmakeitevenbetterthan
+therealthing.
+
+It'ssogoodofNintendotoprovideuswithawealthofclassgames
+thatwecanporttotheFalcon!
+

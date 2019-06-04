@@ -1,0 +1,35 @@
+MEGA POKES 2
+
+How to switch Mega STE turbo on and off
+
+The following pokes can be used to switch the processor speed of the new Mega
+STE to 8 and 16 MHz and also to switch on and off the cache memory.
+Here is how to do it from within GFA Basic:
+
+
+
+------------------------------- cut here -------------------------------------
+
+PROCEDURE turbo_on
+   SPOKE &HFFFF8E21,BSET(PEEK(&HFFFF8E21),0)
+RETURN
+
+PROCEDURE turbo_off
+   SPOKE &HFFFF8E21,BCLR(PEEK(&HFFFF8E21),0)
+RETURN
+
+PROCEDURE cache_on
+   SPOKE &HFFFF8E21,BSET(PEEK(&HFFFF8E21),1)
+RETURN
+
+PROCEDURE cache_off
+   SPOKE &HFFFF8E21,BCLR(PEEK(&HFFFF8E21),1)
+RETURN
+
+
+                              This file was brought to you by:
+
+                                               KGE from the DBA
+
+                                          Happy Poking !
+

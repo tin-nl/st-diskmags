@@ -1,0 +1,116 @@
+
+           The Quickie Demo Maker v. I
+                              by Sammy Joe of TLB
+
+Hello  again,  it's  about time for another article  with  loadsa 
+grammer,  spelling and expression mistakes (as my English teacher 
+would probably say). So let's get started.
+
+Well, the program I am about to review is a program which I coded 
+a  few  years back for Microdeal,  so here's its  history(if  you 
+don't  want to read the history,  just skip the next 3 pages  and 
+start reading where it says "I reckon........)...... .
+
+Once upon a time there was a Lost Boy and a Computer Show.  (That 
+was around the time when our Power Demo was released).  This Lost 
+Boy was with his friends at this computer show showing off  their 
+new demo. The Lost Boy's name was Sammy Joe, already then he  had 
+a  nose for business and money.  He went into the arcade  section 
+and  loaded up their demo on every machine,  he even  managed  to 
+sell  a few copies to some admires.  There also was another  Lost 
+Boy with  the name Manikin who wanted to earn some  quick  money, 
+programming a game for a computer company. So Sammy Joe suggested 
+to show  their demo to various Software Companies.  At first 
+Manikin didn't really want to, but then, he began to get used  to 
+the idea and we started off.
+
+The  software  house we decided to show it to first was  in  fact 
+Microdeal. As you probably know, the Power Demo contains  various 
+hacked  pieces  of  musix. Now, what would  you   expect  from  a 
+manager  of a company when he sees that the demo  contains  musix 
+from his games ?  Well,  John Symes saw red (he did  not actually
+see  red,  but  his face became red  as  the  redest tomatoe). He
+calmed himself quickly when a Lost  Boy  mentioned that Microdeal
+was greeted in the scrolline. 
+
+When Sammy Joe started talking,  John Symes stopped him  abruptly 
+and asked: "Are you German or  what ?  Your accent  is definitely
+not  English." Sammy Joe,  confused as  he  was, replied that his
+nationality is German and that  he  has  been living  in  England
+for some time now.  John Symes suddenly began to  smile all  over
+his  face  and asked Sammy Joe  whether  he  would  be interested
+in translating game manuals for him ?  Sammy Joe was so surprised
+so that he agreed. Manikin who was more interested in a 
+programming job didn't get anything (Everybody say "ahhh").
+
+A  few  weeks later Sammy Joe got  his  first  translation!!!  It 
+was  Goldrunner,  Karate Kid,  Jupiter Probe and an  some other 
+game !!!
+
+Shortly  after that,  John Symes asked whether Sammy Joe  (bloody 
+hell,  do  you know that it is very hard to write of yourself  in 
+the third person singular ? Anyway, I am going to stop that now.)         
+could write a little program for him that would play a 7.5 Khz 
+Sample and display a picture in either colour or high resolution.
+John Symes wanted the program made so that he only would have  to 
+put a sample and a picture on the disk and that the program would
+do the rest. The reason why he wanted 7.5 Khz was, that he wanted
+to fit as much sampled speech as possible on one single sided 
+disk.
+
+I  reckon  that  wraps  just about the  history  of  this  little 
+program. In the next few lines you will find the instructions for 
+the program, oh, oh, it is so hard to use !!!!
+
+INSTRUCTIONS (for the use with ST Replay and Degas)
+
+  1.Select  the sampling frequency to 7.5 Khz (don't  make  the 
+    sample longer than 330 k) 
+ 2. Sample a tune (preferably Heavy Metal)
+ 3. Save it on the disk called "Heavy.spl" 
+ 4. Have a break
+ 5. Load Degas
+ 6. Draw a picture
+ 6.1. Get your mono emulator out, load degas again, draw another 
+      picture,  save it as "Heavy.pi3",  now your demo will also  
+      run on a monochrome monitor
+ 7. Select it to uncompressed
+ 8. Save the picture as "Heavy.pi1"
+ 9. Install an Auto folder on the disk
+10. Copy the program on the disk
+11. Protect your disk(we don't want it to be blanked by a virus) 
+12. Reset your computer
+13. Enjoy your little sample demo
+
+
+If  you  do not like the names under which you had  to  save  the 
+files, use a disk monitor to change the filenames.
+With  this  program you cannot do perfect sample  demos,  as  the 
+sample will only loop.  
+I quite often use this program,  not to do sample demos, but when 
+I want to talk to a friend of mine who doesn't live here in  good 
+old  England.  What  I just do is,  I talk something  onto  tape, 
+sample  it  and copy it on the disk.  And the  spoken  letter  is 
+finished.   You  usually  get  the  sample  quality  to  a  quite 
+acceptable  standard.  Now this way you save a lot of  money  you 
+would  otherwise  have to spend on the telephone  bill  !!!  Your 
+friend  who  is going to receive this letter will also  be  quite 
+surprised.
+
+If you are not happy with the 7.5 Khz sample rate, tuff luck. 
+
+Either  this  issue or the next issue will  contain  an ASSEMBLER 
+source  code  with which you can easily create  your  own  sample 
+demos.  We  will explain to you in every detail what you have  to 
+change  in order to have a different frequency,  so that you  can 
+have  different  samples in your demo and therefore  improve  the 
+length of it. 
+There will also be a scroller on the screen along with a picture. 
+
+I  have just reached the end of the second A4 page in First  Word 
+plus and therefore I will finish this article off.
+
+                              Sammy Joe of TLB
+
+
+

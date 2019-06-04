@@ -1,0 +1,147 @@
+
+
+                          TOS VERSION 2
+                          -------------
+By Leon O'Reilly
+
+                 Atari are finally get their act together with  a 
+succession  of  new computers that are truly the  finest  in  the 
+world.  But  it  is  no good having good  hardware  if  the  user 
+interface  is appalling,  the Amiga demonstrates this.  TOS is  a 
+million times better than its Amiga equivalent,  though it  isn't 
+without its problems.
+     The earliest versions of TOS had to be loaded from disk. How 
+lame and Amiga-like you may say,  but this did have advantages  - 
+you could update TOS very easily,  and if there was a bug in  it, 
+this  needn't  be a major problem.  But loading it from  disk  on 
+every boot-up was a pain and Atari soon put it on ROM.
+     Some  games  coded  for  the early  versions  of  TOS  won't 
+recognise  joystick movement on later machines.  This is true  of 
+some PD games which have never been updated.
+     In the later STs there was TOS 1.4 which boasted an improved 
+item  selector and move file option among other things.  TOS  1.6 
+was  the  equivalent  version for the  STE  which  was  nicknamed 
+Rainbow TOS as when you clicked for info about it, it displayed a 
+fuji  logo with colours cycling through it.  Stonehenge  here  we 
+come!
+     TOS  1.6  contained  some  bugs,   most  noticeable was  its 
+inability to boot-up in medium resolution.  These bugs were fixed 
+in  TOS 1.62,  but they really shouldn't have been there  in  the 
+first place. 
+     Now showing on a Mega STE near you is TOS Version 2,  and it 
+is very different to version 1.62.
+
+     The first thing you notice about TOS Version 2 is the pretty 
+graphics - a 'groovy' background.  Then you move up to menu  bars 
+and discover a wealth of options:
+DESK
+     Desktop Info
+FILE
+     Open [R]
+     Show Information [S]
+     --------------------
+     Delete Item
+     --------------------
+     Create Folder [F]  
+     Close Directory    
+     Close Top Window   
+     Bottom To Top [W]  
+     Select All Items   
+     --------------------
+     Format Floppy Disk
+VIEW
+     Show As Icons [I]
+     Show As Text [T]
+     -----------------
+     Sort By Name
+     Sort By Date
+     Sort By Size
+     Sort By Type
+     No Sort
+     -----------------
+     Size To Fit
+OPTIONS
+       Install Icon [D]
+       Install Application [A]
+       Install Devices
+       Remove Desktop Icon
+       -----------------------
+       Set Preferences [P]
+       Set Launch Preferences
+       Set Desktop Background
+       Read Inf File
+       -----------------------
+       Save Desktop [V]
+       Print Screen
+       -----------------------
+       Blitter
+
+          The  letters  enclosed  in  square  brackets  are   the 
+keyboard  shortcuts for various functions,  accessed by  pressing 
+shift  and  a key.
+     The use of most of these functions is obvious,  but some are 
+more obscure.  'Bottom to top' swaps the currently active window, 
+useful  if you have a lot of windows open on the screen and  want 
+to  access  one  obscure by the others.  Select  all  items  will 
+highlight  every  file in the current path,  much more  fun  than 
+holding down shift and selecting each item!
+     The Format Floppy Disk option is a revelation.  Not only can 
+you format single sided and double sided,  but,  wait for it, you 
+can format to 1.44 meg!  This means Atari will be installing high 
+density disk drives into their future computers! And Amiga owners 
+thought they were clever because they had 880k drives!
+     The  size  to  fit option is useful;  when  you  have  files 
+displayed   as  icons  they  often  spill  out  of   the   window 
+horizontally.  With size to fit on, they can't do this. They will 
+fill  the open window space.  If there still isn't  enough  space 
+then  they  will be placed vertically below the contents  of  the 
+current  window.  Accessing these files is simple as now you  can 
+use Cursor Up and Down keys to scroll through a  window.  Another 
+hassle  caused by earlier versions of TOS happened when you  were 
+copying a number of files from a disk containing a lot of  files. 
+When  you highlighted the files currently displayed and tried  to 
+scroll  the window down to access other files,  the  files  you'd 
+already  highlighted were automatically deselected.  Not so  with 
+TOS V2,  items remain highlighted even when you scroll through  a 
+window.
+     Installing  desktop  icons is fun.  As well  as  having  the 
+boring  old  drawers  and  trash can  icons,  TOS  V2  has  icons 
+representing  fonts,  art packages,  hard drives,  laser and  dot 
+matrix printers, typewriter (for a WP), tools (for a utility) and 
+a  book among other things.  There are trendy little  disk  icons 
+which  you can use for drive A & B instead of  the  drawers.  The 
+icons of files in windows can be changed.  Previously icons could 
+only  be a square with a shaded top for an executable file and  a 
+pile  of  paper with a corner turned over  for  a  non-executable 
+file. Now you can choose whatever icon you want for whatever file 
+you  want.  You  can  also drag files out  of  windows  onto  the 
+desktop,  this  makes  them  easier to find  and  they  will  run 
+providing  you have the disk with the file on in the  drive.  You 
+can place a printer icon on the desktop,  and when you want files 
+printed you simply drag them onto this.
+     Set preferences hasn't changed much, you still choose if you 
+want file deletes/file copies/file overwrites verified.  You  can 
+switch between resolution - and it still has to reboot.
+     When  setting the desktop background you have a choice of  8 
+different   patterns   and  2/4/16  colours  depending   on   the 
+resolution.  
+     Reading  Inf files is useful,  if you have a desktop  you've 
+carefully saved you don't have to reboot just to display it, this 
+reads a desktop inf file and displays that desktop.
+     You can move files by holding down control when you drag and 
+release them.  If you press the right mouse button when  dragging 
+and releasing files then you can copy and rename them.
+     The  item selector will be familiar to users of TOS 1.4  and 
+above,  nothing  astounding  but  better than  the  original  one 
+(just).  Take my advice and invest in the Universal Item Selector 
+Three (œ19.95 from the ST Club).
+     Overall this is a major improvement,  and it was what the ST 
+needed,  the success of Neodesk proves  this.  While its features 
+may  not  be  as  comprehensive as Neodesk,  it  is  a  lot  more 
+interesting  to  look at and more functional  than  the  original 
+desktop.  I  think  this TOS will only be found in the  Mega  STE 
+which  is  a shame because it would enhance  the  standard  STE's 
+reputation  if it had such a glowing desktop.  Its not  Mac-like, 
+its  not even up to Neodesk's standard,  but at least  Atari  are 
+taking a step in the right direction. Well done.
+

@@ -1,0 +1,1864 @@
+06601030305800
+F0110030
+9[.......................................................]001
+€
+     
+                        ˆAtari* System Reference manual€
+    
+                            ˆ(c) 1987 By Bob DuHamel€
+     
+     
+                                  Bob Duhamel
+                             6915 Casselberry Way
+                             San Diego, CA  92119
+     
+     
+     
+                *Atari is a registered trademark of Atari Corp.
+                                             
+    CHAPTER 18
+
+
+THE JOYSTICK PORTS
+
+
+The joystick ports are the I/O ports of the PIA chip.  This means that
+they are bidirectional, capable of output as well as input.  The
+joystick ports are usually set up for input.  To read them, simply
+read the port registers.  PORTA [$D300 (53016)] will read joystick
+ports 1 and 2.  PORTB [$D301 (54017)] will read joystick ports 3 and
+4.  Joystick ports 3 and 4 are used for memory control on the XL/XE
+models and don't have external connectors.
+
+Each bit of each port can be configured independently for input or
+output.  To reconfigure a port, the port control registers, PACTL and
+PBCTL [$D302 (54018) and $D303 (54019)], are used.  The port control
+registers also control some lines on the serial I/O connector.
+
+ The port control registers
+
+
+ 7 6 5 4 3 2 1 0
+PACTL-----------------
+or   |n 0 1 1 n n 0 n|
+PBCTL-----------------
+ 1 6 3 1 8 4 2 1
+ 2 4 2 6
+ 8
+
+  bits
+    PACTL
+
+7    Peripheral A interrupt status.  Set by peripheral
+ interrupt; reset by reading PORTA.
+3    Cassette motor control (0 = on: 1 = off).
+2    0 = PORTA is now port A direction control.
+ Writing to PORTA will now set bits for input
+ or output.
+€ 0 sets bit for input; 1 sets bit for output.
+ 1 = PORTA operational
+1    1 = peripheral A interrupt enabled.
+
+    PBCTL
+
+7    Peripheral B interrupt status.  Set by peripheral
+ interrupt; reset by reading PORTB.
+3    Serial connector command line.
+2    0 = PORTB is now port B direction control.
+ Writing to PORTB will now set bits for input
+ or output.
+ 0 sets bit for input; 1 sets bit for output.
+ 1 = PORTB operational
+1    1 = peripheral B interrupt enabled.
+
+The electronic configuration of the controller ports is as follows.
+
+  ----------------------  
+  \0 1 2 3 R/\4 5 6 7 R/  
+   \t + - L/  \t + - L/   
+    -------    -------    
+
+0 through 7 are the binary data bits for port A or port B.
+
++ and - are +5 volts and ground respectively.
+
+R and L are the left and right game paddles.
+
+t is the joystick trigger line.
+
+The data bits in the joystick ports are used as follows for the
+joysticks and game paddles.
+
+ The joysticks and the port registers
+
+ 7 6 5 4 3 2 1 0
+-----------------
+PORTA|U|D|L|R|U|D|L|R|
+-----------------
+ 1 6 3 1 8 4 2 1
+ 2 4 2 6
+ 8
+
+paddle| || |
+triggers   3 21 0
+
+
+PORTB-----------------
+(400/800  |U|D|L|R|U|D|L|R|
+only)-----------------
+
+paddle| || |
+triggers   7 65 4
+€
+U = up
+D = down    
+L = left
+R = right
+
+
+The joysticks may be read either directly from the port registers or
+from the joystick shadow registers.  During vertical blank, the data
+in the port registers is separated and put into the shadow registers. 
+These registers are, STICK0 [$0278 (632)], STICK1 [$0279 (633)],
+STICK2 [$027A (634)] and STICK3 [$027B (635)].  The triggers may be
+read from the joystick trigger registers, TRIG0 - TRIG3 [$D010 - $D013
+(53264 - 53267)].  These register have shadow registers, STRIG0 -
+STRIG3 [$0284 - 0287 (644 -647)].  If these registers read zero the
+associated triggers are pressed. The paddle triggers may be read from
+their shadow registers also.  They are, PTRIG0 - PTRIG 7, [$027C -
+$0283 (236 - 643)].
+
+THE GAME PADDLE REGISTERS
+
+Although the game paddles are plugged into the joystick ports, they
+are not read from the port registers.  The game paddles are read by
+first writing any number to the start-pot-scan register, POTGO [$D20B
+(53771)]].  This turns off the capacitor dump transistors and allows
+the pot reading
+capacitors to begin charging.  It also sets the TV scan line counter
+to zero.  As each capacitor crosses a certain trigger voltage, the
+number of TV lines scanned is put in the respective pot value
+register.  When the scan counter reaches 228, the capacitor dump
+transistors are turned on and the number 228 is put into any pot value
+registers which are still empty.
+
+Before reading the pot value registers, ALLPOT [$D208 (53768)] should
+be checked.  In this register, each bit corresponds to the validity of
+a pot value register.  If a bit is zero, its' associated pot value
+register is valid.  If bit 2 of SKCTL, [$D20F (53775)], is 1, the pots
+go into the fast scan mode.  In this mode the paddles are read in only
+2 TV scan lines.  They can also be read without regard to POTGO or
+ALLPOT.
+
+The pot value registers contain the number of TV scan lines it last
+took for the paddle reading capacitors to charge (up to 228).  These
+registers are POT0 - POT7 [$D200 - $D207 (53760 -53767)].  Their
+shadow registers are PADDL0 - PADDL7 [$0270 - $0277 (624 - 631)].
+
+THE LIGHT PEN REGISTERS
+
+Whenever a joystick trigger is pressed, the light pen registers, PENH
+and PENV are updated.  PENH [$D40C (54284)] takes a value based on a
+color clock counter.  The value can be from 0 to 227.  PENV [$D40D
+[54285)] takes the 8 highest bits of the vertical line counter.  A
+light pen is simply a photo transistor connected to a joystick trigger
+line and focused on the TV screen.  When the electron beam strikes the
+€part of the screen the light pen is focused on, the transistor turns
+on pulling the trigger line low.  The light pen registers then contain
+numbers relative to where the light pen was pointing.  The shadow
+register for PENH and PENV are LPENH [$0234 (564)] and LPENV [$0235
+(566)).
+
+
+
+    Useful operating system equates
+
+
+TRIG0  $D010(53264): joystick triggers
+   |
+TRIG3  $D013(53268):
+POT0   $D200(53760): paddle value
+   |
+POT7   $D207(53767):
+ALLPOT $D208(53768): reads validity of pot values
+POTGO  $D20B(53771): starts paddle read
+SKCTL  $D20F(53775): bit 2 enables fast pot scan
+PORTA  $D300(53016): port A data
+PORTB  $D301(53017): port B data
+PACTL  $D302(54018): port A control
+PBCTL  $D303(54019): port B control
+PENH   $D40C(54284): light pen horizontal value 
+PENV   $D40D(54285): light pen vertical value
+
+
+ Shadow registers
+
+
+LPENH  $0234  (564): light pen horizontal value
+LPENV  $0235  (566): light pen vertical value
+PADDL0 $0270  (624): game paddle values
+|
+PADDL7 $0277  (631)
+STICK0 $0278  (632): joystick registers
+|
+STICK0 $027B  (635):
+PRTIG0 $027C  (636): paddle triggers
+|
+PTRIG7 $0283  (643):
+STRIG0 $0284  (644): joystick triggers
+|
+STRIG3 $0287  (647):
+
+    CHAPTER 19
+
+
+MISC HARDWARE REGISTERS AND INFORMATION
+
+
+VERTICAL LINE COUNTER
+
+€The ANTIC chip has a vertical line counter at $0D4B (54283).  This
+counter shows the high 8 bits of a 9 bit counter.  This gives two line
+resolution.  The value of this counter is placed into PENV [$D40D
+(54285)] when a joystick trigger is pressed.
+
+SERIAL PORT REGISTERS
+
+The POKEY chip has some registers which control the serial port.
+
+The serial port control register, SKCTL [$D20F (53775)], controls the
+serial port configuration and the game paddle scan mode.  and some
+keyboard circuitry.
+
+   The serial port control register
+
+  7 6 5 4 3 2 1 0
+ -----------------
+ SKCTL| | | | | | | | |
+ -----------------
+  1 6 3 1 8 4 2 1
+  2 4 2 6
+  8
+
+  bits
+
+0    1 = enable keyboard debounce
+1    1 = enable keyboard scan
+both 0 = set initialization mode.
+2    1 = fast pot scan
+3    1 = serial output is two tone (for cassette)
+ instead of logical true/false
+4\
+5 >- serial port mode control
+6/
+7    1 = forced logical 0 on output
+
+If the serial port control register is read from it gives the serial
+port status.  The register is then called SKSTAT
+
+ Serial port status register
+
+ 7 6 5 4 3 2 1 0
+-----------------
+| | | | | | | |1|
+-----------------
+ 1 6 3 1 8 4 2 1
+ 2 4 2 6
+ 8
+
+  bits
+
+0    not used, reads 1
+1    0 = serial input shift register busy
+2    0 = last key is still pressed
+€3    0 = shift key pressed
+4    0 = direct from serial input port
+5    0 = keyboard over-run
+6    0 = serial data input over-run
+7    1 = serial data input frame error
+
+The serial port status is latched and must be reset by writing any
+number to its' reset register, SKRES [$D20A (53770)].
+
+SERIAL PORT INPUT AND OUTPUT DATA
+
+When a full byte of serial input data has been received, it is read
+from the serial input data register, SERIN [$D20D (53773).  Serial
+output data is written to the same register, which is then called the
+serial output data register, SEROUT.  This register is usually written
+to in response to a serial output data interrupt (bit 4 of IRQST).
+
+HARDWARE CHIP MEMORY ALLOCATION
+
+The addresses for the hardware chips are not completely decoded.  For
+example, the PIA needs only four bytes of memory but is active from
+$D300 - D3FF.  Enough room for 64 PIA chips.  A second pair of
+parallel ports could be added by accessing the address bus and further
+decoding the address for a second PIA.  (This would also require a
+small modification of the computer's circuit board to disable the
+original PIA when the new one is active.)  Similarly, there is room
+for 15 more POKEY or ANTIC chips and 7 gtia chips, should you ever
+need them.  (GTIA uses $D000 - D0FF, POKEY uses $D200 - $D2FF and
+ANTIC uses $D400 - $D4FF.)
+
+    Useful data base variables and OS equates
+
+
+
+SKRES  $D20A(53770): serial port status reset
+SEROUT $D20D(53773): serial output data
+SERIN  $D20D(53773): serial input data
+SKCTL  $D20F(53775): serial port control
+SKSTAT $D20F(53775): serial port status
+VCOUNT $D40B(54283): vertical line counter
+
+
+Os shadow registers
+
+
+SSKCTL $0232  (562): SKCTL
+
+    CHAPTER 20
+
+
+    THE XL AND XE MODELS
+
+
+BASIC B BUGS
+€
+Most of the Atari 600XL and 800XL models were supplied with the
+"debugged" version B of Atari BASIC.  This new BASIC got rid of the
+minor bugs of BASIC A and introduced some new major bugs of it's own.
+
+Each time a program is saved, 16 extra bytes are tagged onto the end
+of the program.  After many saves and reloads, as when developing a
+long program, the program becomes too large for the memory.
+
+The computer may lock up unpredictably.
+
+Program line links may get messed up, leaving garbage in the listing
+and the program unrunable.
+
+Large LISTed programs may not run unless SAVed and reLOADed.
+
+If the length of a listed program is a multiple of a certain number of
+bytes, it will not run unless the length is somehow changed.
+
+BASIC version B has been replaced by version C.  All of the XE models
+have this truly debugged version of BASIC.
+
+NEW OPERATING SYSTEM PROBLEMS
+
+I have heard of only one bug in the operating system in XL and XE
+models.  This is a mishandling of the printer timeout.  The computer
+cannot tell if there is a printer attached or not.  This may have been
+fixed in the XE models.  However, many programs, some even formerly
+sold by Atari, do not jump through published jump vectors when using
+the operating system.  These programs will not run on XL/XE models. 
+(Some of these programs are Atari Word Processor (not Atariwriter) and
+LJKs Letter Perfect and Data Perfect.)  Since the operating system ROM
+can be switched to RAM, a "translator" can be used to load the 800
+operating system into an XL or XE model.
+
+130XE MEMORY MANAGEMENT
+
+The 130XE has an extra 64K bank of memory.  It is divided into four
+blocks of 16K each.  Each block can be switched to replace part of the
+main bank of RAM from $4000 (16384) to $7FFF (32767).  Furthermore, it
+can be switched in such a way that only the 6502, or the ANTIC chip
+can see the extra memory.
+
+Port B (formerly the two extra joystick ports of the 400/800) is used
+to manage the memory.
+
+
+Port B  and memory management
+
+ 7 6 5 4 3 2 1 0
+-----------------
+PORTB|T|U|A|C|S S|B|R|
+-----------------
+ 1 6 3 1 8 4 2 1
+€ 2 4 2 6 
+ 8
+
+
+R   1 = OS replaced by RAM
+B   0 = BASIC enabled
+   S S   bank select bits
+C   0 = CPU sees switched RAM at $4000
+A   0 = ANTIC sees switched RAM
+U   unused
+T   0 = self test
+
+
+Bits 2 and 3 of PORTB select which block of the extra bank of memory
+is switched in.
+
+ Bank select bits
+
+bits block
+
+2 3  address
+    -------------------------
+0 0  $0000 - $3FFF
+0 1  $4000 - $7FFF
+1 0  $8000 - $BFFF
+1 1  $C000 - $FFFF
+
+Bits 4 and 5 select which chip sees the switched in RAM at $4000 -
+$7FFF
+
+ Chip select bits
+
+bits ANTIC6502
+
+4 5
+    --------------------------
+0 0  Ext. Ext.
+0 1  Ext. Main
+1 0  Main Ext.
+1 1  Main Main
+
+
+THE XL PARALLEL PORT
+
+   Pin out of the parallel port
+
+
+    top from rear
+
+    111112222233333444445
+2468024680246802468024680
+-------------------------
+-------------------------
+11111222223333344444
+€1357913579135791357913579
+
+
+ 1    2   GND
+ 3   A1    4   A0
+ 5   A3    6   A2
+ 7   A5    8   A4
+ 9   GND  10   A6
+11   A8   12   A7
+13   A10  14   A9
+15   A12  16   A11
+17   A14  18   A13
+19   A15  20   GND
+21   D1   22   D0
+23   D3   24   D2
+25   D5   26   D4
+27   D7   28   D6
+29   GND  30   GND
+31   GND  32   phase 2 clock
+33   RESET34
+35   RDY  36   IRQ
+37   37
+39   40
+41   GND  42
+43   RAS  44
+45   R/W  46   GND
+47   +5V  48   +5V
+49   GND  50
+
+The phase 2 clock runs at 1.8 MHz.  When the clock is high, the
+address and R/W lines are valid.  The clock goes from high to low,
+when the data lines are also valid.  All lines then become invalid.
+
+The 130XE doesn't have the parallel port.  However, it has a cartridge
+slot expansion.  This is a small cartridge-slot-like connector with
+the necessary connector to use parallel expansion.
+
+FINE SCROLLING
+
+If address $026E (622) is $FF, graphics 0 will be in the fine scroll
+mode.
+
+OTHER ADDRESSES
+
+DSCTLN [$0D25,2 (725)] is the disk sector size.  should be $80 (128).
+
+DMASAV [$02DD (735)] is a copy of the DMA control register, SDMCTL
+[$022F (559)].  It is set up when a channel is opened to the screen. 
+The value is moved to SDMCTL whenever a key is pressed.  It is used to
+restore the display if DMA is disabled.
+
+PUPBT [$033D,3 (829-831)] is used to test memory integrity when
+[RESET] is pressed.  If these bytes are not $5C, $93 and $25, the
+computer will do a cold start when [RESET] is pressed.
+€
+The self-test ROM is from $D000 to $D7FF, the same addresses as the
+hardware registers.  This part of the operating system ROM is disabled
+when not used.  When The computer is put into the self-test mode, This
+part of ROM is copied to $5000 to $57FF and run from there.
+
+GINTLK [$03FA (1018)] is a logical 1 if a cartridge is installed
+(built-in BASIC is considered a cartridge).  BASIC can be disabled by
+poking 1018 with a non-zero number.  If [RESET] is then pressed, the
+computer will attempt to load the DUP.SYS file and basic will be
+completely disabled.
+
+    APPENDIX A
+
+
+HARDWARE REGISTERS
+
+
+ RegisterShadow
+
+
+
+Name   Description  Address  NameAddress
+
+----------------------------------------------------------------------
+
+ALLPOT game paddle ready indicators  $D208 53768  
+
+AUDC1  Audio channel 1 control  $D201 53761  
+
+AUDC2  Audio channel 2 control  $D203 53763  
+
+AUDC3  Audio channel 3 control  $D205 53765  
+
+AUDC4  Audio channel 1 control  $D207 53767  
+
+AUDCTL general audio control    $D208 53768  
+
+AUDF1  Audio frequency 1 control$D200 53760  
+
+AUDF2  Audio frequency 2 control$D202 53762  
+
+AUDF3  Audio frequency 3 control$D204 53764  
+
+AUDF4  Audio frequency 4 control$D206 53766  
+
+CHACTL character control   $D401 54273 CHART  $02F3 755
+
+CHBASE Address of character set / 256$D409 54281 CHBAS  $O2F4 756
+
+COLBK  color/brightness of setcolor 4$D01A 53274 COLOR4 $02C8 712
+
+COLPF0 Color/brightness of setcolor 0$D016 53270 COLOR0 $02C4 708
+
+€COLPF1 color/brightness of setcolor 1$D017 53271 COLOR1 $02C5 709
+
+COLPF2 color/brightness of setcolor 2$DO18 53272 COLOR2 $02C6 710
+
+COLPF3 color/brightness of setcolor 3$DO19 53273 COLOR3 $02C7 711
+
+COLPM0 color/brightness, player/missile 0 $D012 53266 PCOLR0 $02C0 704
+
+COLPM1 color/brightness, player/missile 1 $DO13 53267 PCOLR1 $02C1 705
+
+COLPM2 color/brightness, player/missile 2 $DO14 53268 PCOLR2 $02C2 706
+
+COLPM3 color/brightness, player/missile 3 $DO15 53269 PCOLR3 $02C3 707
+
+CONSOL [START], [SELECT], [OPT.], speaker $D01F 53279  
+
+DLISTH display list pointer high byte$D403 54275 SDLSTH $0231 561
+
+DLISTL display list pointer low byte $D402 54274 SDLSTL $0230 560
+
+DMACTL Direct Memory access control (DMA) $D400 54272 SDMCTL $022F 559
+
+GRACTL graphics control    $D01D 53277  
+
+GRAFM  missile graphics    $D011 53265  
+
+GRAFP0 player 0 graphics   $D00D 53261  
+
+GRAFP1 player 1 graphics   $D00E 53262  
+
+GRAFP2 player 2 graphics   $D00F 53263  
+
+GRAFP3 player 3 graphics   $D010 53264  
+
+HITCLR clear collisions    $D01E 54278  
+
+HPOSM0 horizontal position of missile 0   $D004 53252  
+
+HPOSM1 horizontal position of missile 1   $D005 53253  
+
+HPOSM2 horizontal position of missile 2   $D006 53254  
+
+HOPSM3 horizontal position of missile 3   $D007 53255  
+
+HPOSP0 horizontal position of player 0    $D000 53248  
+
+HPOSP1 horizontal position of player 1    $D001 53249  
+
+HPOSP2 horizontal position of player 2    $D002 53250  
+
+HPOSP3 horizontal position of player 3    $D003 53251  
+
+HSCROL horizontal scroll   $D404 54276  
+
+€IRQEN  interrupt request enable (IRQ)$D20E 53774 POKMSK $0010  16
+
+IRQST  IRQ status$D20E 53774  
+
+KBCODE keyboard code  $D209 53769 CH$O2FC 764
+
+M0PF   missile 0 to graphics collisions   $D000 53248  
+
+M0PL   missile 0 to player collisions$D008 53256  
+
+M1PF   missile 1 to graphics collisions   $D001 53249  
+
+M1PL   missile 1 to player collisions$D009 53257  
+    
+M2PF   missile 2 to graphics collisions   $D002 53250  
+
+M2PL   missile 2 to player collisions$D00A 53258  
+
+M3PF   missile 3 to graphics collisions   $D003 53251  
+
+M3PL   missile 3 to player collisions$D00B 53259  
+
+NMIEN  non-maskable interrupt enable (NMI)$D40E 54286  
+
+NMIRES NMI reset $D40F 54287  
+
+NMIST  NMI status$D40F 54287  
+
+P0PF   player 0 to graphics collisions    $D004 53252  
+
+P0PL   player 0 to player collisions $D00C 53260  
+
+P1PF   player 1 to graphics collisions    $D005 53253  
+
+P1PL   player 1 to player collisions $D00D 53261  
+
+P2PF   player 2 to graphics collisions    $D006 53254  
+
+P2PL   player 2 to player collisions $D00E 53262  
+
+P3PF   player 3 to graphics collisions    $DOO7 53255  
+
+P3PL   player 3 to player collisions $D00F 53263  
+
+PACTL  port A control $D302 54018  
+
+PAL    Europe/North America TV indicator  $D014 53268  
+
+PBCLT  port B control $D303 54019  
+
+PENH   light pen horizontal position $D40C 54284 LPENH  $0234 564
+
+PENV   light pen vertical position   $D40D 54285 LPENV  $0235 565
+
+€PMBASE player/missile address / 256  $D407 54279  
+
+PORTA  port A    $D300 54016 STICK0 $0278 632
+
+    STICK1 $0279 634
+
+PORTB  port B    $D301 54017 STICK2 $027A 634
+
+    STICK3 $027B 635
+
+POT0   game paddle 0  $D200 53760 PADDL0 $0270 624
+
+POT1   game paddle 1  $D201 53761 PADDL1 $0271 625
+
+POT2   game paddle 2  $D202 53762 PADDL2 $0272 626
+
+POT3   game paddle 3  $D203 53763 PADDL3 $0273 627
+
+POT4   game paddle 4  $D204 53764 PADDL4 $0274 628
+
+POT5   game paddle 5  $D205 53765 PADDL5 $0275 629
+
+POT6   game paddle 6  $D206 53766 PADDL6 $0276 630
+
+POT7   game paddle 7  $D207 53767 PADDL7 $0277 631
+
+POTGO  start pot scan sequence  $D20B 53771  
+
+PRIOR  p/m priority and GTIA mode    $D21B 53275 GPRIOR $026F 623
+
+RANDOM random number generator  $D20A 53770  
+
+SERIN  serial port input   $D20D 53774  
+
+SEROUT serial port output  $D20D 53773  
+
+SIZEM  missile size   $D00C 53260  
+
+SIZEP0 player 0 size  $D008 53256  
+
+SIZEP1 player 1 size  $D009 53257  
+
+SIZEP2 player 2 size  $D00A 53258  
+
+SIZEP3 player 3 size  $D00B 53259  
+
+SKCTL  serial port control $D20F 53775 SSKCTL $0232 563
+
+SKREST reset serial port status $D20A 53770  
+
+SKSTAT serial port status  $D20F 53775  
+
+STIMER start timer    $D209 53769  
+
+€TRIG0  joystick trigger 0  $D010 53264 STRIG0 $0284 644
+
+TRIG1  joystick trigger 1  $D011 53265 STRIG1 $0285 645
+
+TRIG2  joystick trigger 2  $D012 53266 STRIG2 $0286 646
+
+TRIG3  joystick trigger 3  $D013 53267 STRIG3 $0287 647
+
+VCOUNT vertical line counter    $D40B 54283  
+
+VDELAY vertical delay $D01C 54276  
+
+VSCROL vertical scroll$D405 54277  
+
+WSYNC  wait for horizontal sync $D40A 54282  
+
+
+
+  NUMERICAL ORDER
+
+
+Registers sharing addresses are listed first when writen to, then when
+read from
+
+ RegisterShadow
+
+
+
+Name   Description  Address  NameAddress
+
+----------------------------------------------------------------------
+
+HPOSP0 horizontal position of player 0    $D000 53248  
+
+M0PF   missile 0 to graphics collisions   $D000 53248  
+
+HPOSP1 horizontal position of player 1    $D001 53249  
+
+M1PF   missile 1 to graphics collisions   $D001 53249  
+
+HPOSP2 horizontal position of player 2    $D002 53250  
+
+M2PF   missile 2 to graphics collisions   $D002 53250  
+
+HPOSP3 horizontal position of player 3    $D003 53251  
+
+M3PF   missile 3 to graphics collisions   $D003 53251  
+
+HPOSM0 horizontal position of missile 0   $D004 53252  
+
+P0PF   player 0 to graphics collisions    $D004 53252  
+
+HPOSM1 horizontal position of missile 1   $D005 53253  
+
+€P1PF   player 1 to graphics collisions    $D005 53253  
+
+HPOSM2 horizontal position of missile 2   $D006 53254  
+
+P2PF   player 2 to graphics collisions    $D006 53254  
+
+HOPSM3 horizontal position of missile 3   $D007 53255  
+
+P3PF   player 3 to graphics collisions    $D007 53255  
+
+SIZEP0 player 0 size  $D008 53256  
+
+M0PL   missile 0 to player collisions$D008 53256  
+
+SIZEP1 player 1 size  $D009 53257  
+
+M1PL   missile 1 to player collisions$D009 53257  
+
+SIZEP2 player 2 size  $D00A 53258  
+
+M2PL   missile 2 to player collisions$D00A 53258  
+
+SIZEP3 player 3 size  $D00B 53259  
+
+M3PL   missile 3 to player collisions$D00B 53259  
+
+SIZEM  missile size   $D00C 53260  
+
+P0PL   player 0 to player collisions $D00C 53260  
+
+GRAFP0 player 0 graphics   $D00D 53261  
+
+P1PL   player 1 to player collisions $D00D 53261  
+
+GRAFP1 player 1 graphics   $D00E 53262  
+
+P2PL   player 2 to player collisions $D00E 53262  
+
+GRAFP2 player 2 graphics   $D00F 53263  
+
+P3PL   player 3 to player collisions $D00F 53263  
+
+GRAFP3 player 3 graphics   $D010 53264  
+
+TRIG0  joystick trigger 0  $D010 53264 STRIG0 $0284 644
+
+GRAFM  missile graphics    $D011 53265  
+
+TRIG1  joystick trigger 1  $D011 53265 STRIG1 $0285 645
+
+COLPM0 color/brightness, player/missile 0 $D012 53266 PCOLR0 $02C0 704
+
+TRIG2  joystick trigger 2  $D012 53266 STRIG2 $0286 646
+
+€COLPM1 color/brightness, player/missile 1 $D013 53267 PCOLR1 $02C1 705
+
+TRIG3  joystick trigger 3  $D013 53267 STRIG3 $0287 647
+
+COLPM2 color/brightness, player/missile 2 $D014 53268 PCOLR2 $02C2 706
+
+PAL    Europe/North America TV indicator  $D014 53268  
+
+COLPM3 color/brightness, player/missile 3 $D015 53269 PCOLR3 $02C3 707
+
+COLPF0 Color/brightness of setcolor 0$D016 53270 COLOR0 $02C4 708
+
+COLPF1 color/brightness of setcolor 1$D017 53271 COLOR1 $02C5 709
+
+COLPF2 color/brightness of setcolor 2$D018 53272 COLOR2 $02C6 710
+
+COLPF3 color/brightness of setcolor 3$D019 53273 COLOR3 $02C7 711
+
+COLBK  color/brightness of setcolor 4$D01A 53274 COLOR4 $02C8 712
+
+VDELAY vertical delay $D01C 54276  
+
+GRACTL graphics control    $D01D 53277  
+
+HITCLR clear collisions    $D01E 54278  
+
+CONSOL [START], [SELECT], [OPT.], speaker $D01F 53279  
+
+AUDF1  Audio frequency 1 control$D200 53760  
+
+POT0   game paddle 0  $D200 53760 PADDL0 $0270 624
+
+AUDC1  Audio channel 1 control  $D201 53761  
+
+POT1   game paddle 1  $D201 53761 PADDL1 $0271 625
+
+AUDF2  Audio frequency 2 control$D202 53762  
+
+POT2   game paddle 2  $D202 53762 PADDL2 $0272 626
+
+AUDC2  Audio channel 2 control  $D203 53763  
+
+POT3   game paddle 3  $D203 53763 PADDL3 $0273 627
+
+AUDF3  Audio frequency 3 control$D204 53764  
+
+POT4   game paddle 4  $D204 53764 PADDL4 $0274 628
+
+AUDC3  Audio channel 3 control  $D205 53765  
+
+POT5   game paddle 5  $D205 53765 PADDL5 $0275 629
+
+AUDF4  Audio frequency 4 control$D206 53766  
+
+€POT6   game paddle 6  $D206 53766 PADDL6 $0276 630
+
+AUDC4  Audio channel 1 control  $D207 53767  
+
+POT7   game paddle 7  $D207 53767 PADDL7 $0277 631
+
+ALLPOT game paddle ready indicators  $D208 53768  
+
+AUDCTL general audio control    $D208 53768  
+
+KBCODE keyboard code  $D209 53769 CH$O2FC 764
+
+STIMER start timer    $D209 53769  
+
+RANDOM random number generator  $D20A 53770  
+
+SKREST reset serial port status $D20A 53770  
+
+POTGO  start pot scan sequence  $D20B 53771  
+
+SEROUT serial port output  $D20D 53773  
+
+SERIN  serial port input   $D20D 53774  
+
+IRQEN  interrupt request enable (IRQ)$D20E 53774 POKMSK $0010  16
+
+IRQST  IRQ status$D20E 53774  
+
+SKCTL  serial port control $D20F 53775 SSKCTL $0232 563
+
+SKSTAT serial port status  $D20F 53775  
+
+PRIOR  p/m priority and GTIA mode    $D21B 53275 GPRIOR $026F 623
+
+PORTA  port A    $D300 54016 STICK0 $0278 632
+
+    STICK1 $0279 633
+
+PORTB  port B    $D301 54017 STICK2 $027A 634
+
+    STICK3 $027B 635
+
+PACTL  port A control $D302 54018  
+
+PBCTL  port B control $D303 54019  
+
+DMACTL Direct Memory access control (DMA) $D400 54272 SDMCTL $022F 559
+
+CHACTL character control   $D401 54273 CHART  $02F3 755
+
+DLISTL display list pointer low byte $D402 54274 SDLSTL $0230 560
+
+DLISTH display list pointer high byte$D403 54275 SDLSTH $0231 561
+
+€HSCROL horizontal scroll   $D404 54276  
+
+VSCROL vertical scroll$D405 54277  
+
+PMBASE player/missile address / 256  $D407 54279  
+
+CHBASE Address of character set / 256$D409 54281 CHBAS  $O2F4 756
+
+WSYNC  wait for horizontal sync $D40A 54282  
+
+VCOUNT vertical line counter    $D40B 54283  
+
+PENH   light pen horizontal position $D40C 54284 LPENH  $0234 564
+
+PENV   light pen vertical position   $D40D 54285 LPENV  $0235 565
+
+NMIEN  non-maskable interrupt enable (NMI)$D40E 54286  
+
+NMIRES NMI reset $D40F 54287  
+
+NMIST  NMI status$D40F 54287  
+
+
+
+
+    SHADOW REGISTER ORDER
+
+
+ALPHEBETICAL ORDER
+
+ RegisterShadow
+
+
+
+Name   Description  Address  NameAddress
+
+----------------------------------------------------------------------
+KBCODE keyboard code  $D209 53769 CH$O2FC 764
+
+CHACTL character control   $D401 54273 CHART  $02F3 755
+
+CHBASE Address of character set / 256$D409 54281 CHBAS  $O2F4 756
+
+COLBK  color/brightness of setcolor 4$D01A 53274 COLOR4 $02C8 712
+
+COLPF0 Color/brightness of setcolor 0$D016 53270 COLOR0 $02C4 708
+
+COLPF1 color/brightness of setcolor 1$D017 53271 COLOR1 $02C5 709
+
+COLPF2 color/brightness of setcolor 2$D018 53272 COLOR2 $02C6 710
+
+COLPF3 color/brightness of setcolor 3$D019 53273 COLOR3 $02C7 711
+
+PRIOR  p/m priority and GTIA mode    $D21B 53275 GPRIOR $026F 623
+€
+PENH   light pen horizontal position $D40C 54284 LPENH  $0234 564
+
+PENV   light pen vertical position   $D40D 54285 LPENV  $0235 565
+
+POT0   game paddle 0  $D200 53760 PADDL0 $0270 624
+
+POT1   game paddle 1  $D201 53761 PADDL1 $0271 625
+
+POT2   game paddle 2  $D202 53762 PADDL2 $0272 626
+
+POT3   game paddle 3  $D203 53763 PADDL3 $0273 627
+
+POT4   game paddle 4  $D204 53764 PADDL4 $0274 628
+
+POT5   game paddle 5  $D205 53765 PADDL5 $0275 629
+
+POT6   game paddle 6  $D206 53766 PADDL6 $0276 630
+
+POT7   game paddle 7  $D207 53767 PADDL7 $0277 631
+
+COLPM0 color/brightness, player/missile 0 $D012 53266 PCOLR0 $02C0 704
+
+COLPM1 color/brightness, player/missile 1 $D013 53267 PCOLR1 $02C1 705
+
+COLPM2 color/brightness, player/missile 2 $D014 53268 PCOLR2 $02C2 706
+
+COLPM3 color/brightness, player/missile 3 $D015 53269 PCOLR3 $02C3 707
+
+IRQEN  interrupt request enable (IRQ)$D20E 53774 POKMSK $0010  16
+
+DLISTH display list pointer high byte$D403 54275 SDLSTH $0231 561
+
+DLISTL display list pointer low byte $D402 54274 SDLSTL $0230 560
+
+DMACTL Direct Memory access control (DMA) $D400 54272 SDMCTL $022F 559
+
+SKCTL  serial port control $D20F 53775 SSKCTL $0232 563
+
+PORTA  port A    $D300 54016 STICK0 $0278 632
+
+    STICK1 $0279 633
+
+PORTB  port B    $D301 54017 STICK2 $027A 634
+
+    STICK3 $027B 635
+
+TRIG0  joystick trigger 0  $D010 53264 STRIG0 $0284 644
+
+TRIG1  joystick trigger 1  $D011 53265 STRIG1 $0285 645
+
+TRIG2  joystick trigger 2  $D012 53266 STRIG2 $0286 646
+
+TRIG3  joystick trigger 3  $D013 53267 STRIG3 $0287 647
+€
+
+
+  NUMERICAL ORDER
+
+
+IRQEN  interrupt request enable (IRQ)$D20E 53774 POKMSK $0010  16
+
+DMACTL Direct Memory access control (DMA) $D400 54272 SDMCTL $022F 559
+
+DLISTL display list pointer low byte $D402 54274 SDLSTL $0230 560
+
+DLISTH display list pointer high byte$D403 54275 SDLSTH $0231 561
+
+SKCTL  serial port control $D20F 53775 SSKCTL $0232 563
+
+PENH   light pen horizontal position $D40C 54284 LPENH  $0234 564
+
+PENV   light pen vertical position   $D40D 54285 LPENV  $0235 565
+
+PRIOR  p/m priority and GTIA mode    $D21B 53275 GPRIOR $026F 623
+
+POT0   game paddle 0  $D200 53760 PADDL0 $0270 624
+
+POT1   game paddle 1  $D201 53761 PADDL1 $0271 625
+
+POT2   game paddle 2  $D202 53762 PADDL2 $0272 626
+
+POT3   game paddle 3  $D203 53763 PADDL3 $0273 627
+
+POT4   game paddle 4  $D204 53764 PADDL4 $0274 628
+
+POT5   game paddle 5  $D205 53765 PADDL5 $0275 629
+
+POT6   game paddle 6  $D206 53766 PADDL6 $0276 630
+
+POT7   game paddle 7  $D207 53767 PADDL7 $0277 631
+
+PORTA  port A    $D300 54016 STICK0 $0278 632
+
+    STICK1 $0279 633
+
+PORTB  port B    $D301 54017 STICK2 $027A 634
+
+    STICK3 $027B 635
+
+TRIG0  joystick trigger 0  $D010 53264 STRIG0 $0284 644
+
+TRIG1  joystick trigger 1  $D011 53265 STRIG1 $0285 645
+
+TRIG2  joystick trigger 2  $D012 53266 STRIG2 $0286 646
+
+TRIG3  joystick trigger 3  $D013 53267 STRIG3 $0287 647
+
+€COLPM0 color/brightness, player/missile 0 $D012 53266 PCOLR0 $02C0 704
+
+COLPM1 color/brightness, player/missile 1 $D013 53267 PCOLR1 $02C1 705
+
+COLPM2 color/brightness, player/missile 2 $D014 53268 PCOLR2 $02C2 706
+
+COLPM3 color/brightness, player/missile 3 $D015 53269 PCOLR3 $02C3 707
+
+COLPF0 Color/brightness of setcolor 0$D016 53270 COLOR0 $02C4 708
+
+COLPF1 color/brightness of setcolor 1$D017 53271 COLOR1 $02C5 709
+
+COLPF2 color/brightness of setcolor 2$D018 53272 COLOR2 $02C6 710
+
+COLPF3 color/brightness of setcolor 3$D019 53273 COLOR3 $02C7 711
+
+COLBK  color/brightness of setcolor 4$D01A 53274 COLOR4 $02C8 712
+
+CHACTL character control   $D401 54273 CHART  $02F3 755
+
+CHBASE Address of character set / 256$D409 54281 CHBAS  $O2F4 756
+
+KBCODE keyboard code  $D209 53769 CH$O2FC 764
+
+    APPENDIX B
+
+  OPERATING SYSTEM EQUATES
+
+
+0100 ;
+0101 ;ATARI 800 EQUATE LISTING
+0102 ;
+0103 ;
+0104 ;
+0105 ;This listing is based on the original release of Operating System,
+0106 ;version A.  The vectors shown here were not changed in version B.
+0107 ;New equates for XL and XE models are included and noted.  Changes
+0108 ;from version B to XL/XE are also noted.
+0109 ;
+0110 ;Most of the equate names given below are the official Atari
+0111 ;names.  They are in common use but are not mandatory.
+0112 ;
+0113 ;
+0114 ;  DEVICE NAMES
+0115 ;
+0116 ;
+0117 ;SCREDT = "E"   SCREEN EDITOR
+0118 ;KBD    = "K"   KEYBOARD
+0119 ;DISPLY = "S"   DISPLAY
+0120 ;PRINTR = "P"   PRINTER
+0121 ;CASSET = "C"   CASSETTE
+0122 ;DISK   = "D"   DISK DRIVE
+0123 ;
+0124 ;
+€0125 ;
+0126 ;  STATUS  CODES  
+0127 ;
+0128 ;
+0129 SUCCES = $01   1
+0130 BRKABT = $80 128 BREAK KEY ABORT
+0131 PRVOPN = $82 130 IOCB ALREADY OPEN
+0132 NONDEV = $82 130 NONEXISTANT DEVICE
+0133 WRONLY = $83 131 OPENED FOR WRITE ONLY
+0134 NVALID = $84 132 INVALID COMMAND
+0135 NOTOPN = $85 133 DEVICE OR FILE NOT OPEN
+0136 BADIOC = $86 134 INVALID IOCB NUMBER
+0137 RDONLY = $87 135 OPENED FOR READ ONLY
+0138 EOFERR = $88 136 END OF FILE
+0139 TRNRCD = $89 137 TRUNCATED RECORD
+0140 TIMOUT = $8A 138 PERIPHERAL TIME OUT
+0141 DNACK  = $8B 139 DEVICE DOES NOT ACKNOWLEDGE
+0142 FRMERR = $8C 140 SERIAL BUS FRAMING ERROR
+0143 CRSROR = $8D 141 CURSOR OUT OF RANGE
+0144 OVRRUN = $8E 142 SERIAL BUS DATA OVERRUN
+0145 CHKERR = $8F 143 SERIAL BUS CHECKSUM ERROR
+0146 DERROR = $90 144 PERIPHERAL DEVICE ERROR
+0147 BADMOD = $91 145 NON EXISTANT SCREEN MODE
+0148 FNCNOT = $92 146 FUNCTION NOT IMPLEMENTED
+0149 SCRMEM = $93 147 NOT ENOUGH MEMORY FOR SCREEN MODE
+0150 ;
+0151 ;
+0152 ;
+0153 ;
+0154 ;  COMMAND CODES FOR CIO
+0155 ;
+0156 ;
+0157 OPEN   = $03   3
+0158 OPREAD = $04   4 OPEN FOR INPUT
+0159 GETREC = $05   5 GET RECORD
+0160 OPDIR  = $06   6 OPEN TO DISK DIRECTORY
+0161 GETCHR = $07   7 GET BYTE
+0162 OWRITE = $08   8 OPEN FOR OUTPUT
+0163 PUTREC = $09   9 WRITE RECORD
+0164 APPEND = $09   9 OPEN TO APPEND TO END OF DISK FILE
+0165 MXDMOD = $10  16 OPEN TO SPLIT SCREEN (MIXED MODE)
+0166 PUTCHR = $0B  11 PUT-BYTE
+0167 CLOSE  = $0C  12
+0168 OUPDAT = $0C  12 OPEN FOR INPUT AND OUTPUT AT THE SAME TIME
+0169 STATUS = $0D  13
+0170 SPECIL = $0E  14 BEGINNING OF SPECIAL COMMANDS
+0171 DRAWLN = $11  17 SCREEN DRAW
+0172 FILLIN = $12  18 SCREEN FILL
+0173 RENAME = $20  32
+0174 INSCLR = $20  32 OPEN TO SCREEN BUT DON'T ERASE
+0175 DELETE = $21  33
+0176 DFRMAT = $21  33 FORMAT DISK (RESIDENT DISK HANDLER (RDH))
+0177 LOCK   = $23  35
+0178 UNLOCK = $24  36
+€0179 POINT  = $25  37
+0180 NOTE   = $26  38
+0181 PTSECT = $50  80 RDH PUT SECTOR
+0182 GTSECT = $52  82 RDH GET SECTOR
+0183 DSTAT  = $53  83 RDH GET STATUS
+0184 PSECTV = $57  87 RDH PUT SECTOR AND VERIFY
+0185 NOIRG  = $80 128 NO GAP CASSETTE MODE
+0186 CR= $9B 155 CARRIAGE RETURN (EOL)
+0187 ;
+0188 IOCBSZ = $10  16 IOCB SIZE
+0189 MAXIOC = $80 128 MAX IOCB BLOCK SIZE
+0190 IOCBF  = $FF 255 IOCB FREE
+0191 ;
+0192 LEDGE  = $02   2 DEFAULT LEFT MARGIN
+0193 REDGE  = $27  39 DEFAULT RIGHT MARGIN
+0194 ;
+0195 ;  OS VARIABLES
+0196 ;
+0197 ;PAGE 0
+0198 ;
+0199 LINZBS = $00   0 (800) FOR ORIGINAL DEBUGGER
+0200 ;   $00   0 (XL) RESERVED
+0201 NGFLAG = $01   1 (XL) FOR POWER-UP SELF TEST
+0202 CASINI = $02   2
+0203 RAMLO  = $04   4 POINTER FOR SELF TEST
+0204 TRAMSZ = $06   6 TEMPORARY RAM SIZE
+0205 TSTDAT = $07   7 TEST DATA
+0206 WARMST = $08   8
+0207 BOOT?  = $09   9 SUCCESSFUL BOOT FLAG
+0208 DOSVEC = $0A  10 PROGRAM RUN VECTOR
+0209 DOSINI = $0C  12 PROGRAM INITIALIZATION
+0210 APPMHI = $0E  14 DISPLAY LOW LIMIT
+0211 POKMSK = $10  16 IRQ ENABLE FLAGS
+0212 BRKKEY = $11  17 FLAG
+0213 RTCLOK = $12  18 3 BYTES, MSB FIRST
+0214 BUFADR = $15  21 INDIRECT BUFFER ADDRESS
+0215 ICCOMT = $17  23 COMMAND FOR VECTOR
+0216 DSKFMS = $18  24 DISK FILE MANAGER POINTER
+0217 DSKUTL = $1A  26 DISK UTILITY POINTER (DUP.SYS)
+0218 PTIMOT = $1C  28 (800) PRINTER TIME OUT REGISTER
+0219 ABUFPT = $1C  28 (XL) RESERVED
+0220 PBPNT  = $1D  29 (800) PRINTER BUFFER POINTER
+0221 ;   $1D  29 (XL) RESERVED
+0222 PBUFSZ = $1E  30 (800) PRINTER BUFFER SIZE
+0223 ;   $1E  30 (XL) RESERVED
+0224 PTEMP  = $1F  31 (800) TEMPORARY REGISTER
+0225 ;   $1F  31 (XL) RESERVED
+0226 ZIOCB  = $20  32 ZERO PAGE IOCB
+0227 ICHIDZ = $20  32 HANDLER INDEX NUMBER (ID)
+0228 ICDNOZ = $21  33 DEVICE NUMBER
+0229 ICCOMZ = $22  34 COMMAND
+0230 ICSTAZ = $23  35 STATUS
+0231 ICBALZ = $24  36 BUFFER POINTER LOW BYTE
+0232 ICBAHZ = $25  37 BUFFER POINTER HIGH BYTE
+€0233 ICPTLZ = $26  38 PUT ROUTINE POINTER LOW
+0234 ICPTHZ = $27  39 PUT ROUTINE POINTER HIGH
+0235 ICBLLZ = $28  40 BUFFER LENGTH LOW
+0236 ICBLHZ = $29  41
+0237 ICAX1Z = $2A  42 AUXILIARY INFORMATION BYTE 1
+0238 ICAX2Z = $2B  43
+0239 ICSPRZ = $2C  44 TWO SPARE BYTES (CIO USE)
+0240 ICIDNO = $2E  46 IOCB NUMBER X 16
+0241 CIOCHR = $2F  47 CHARACTER BYTE FOR CURRENT OPERATION
+0242 ;
+0243 STATUS = $30  48 STATUS STORAGE
+0244 CHKSUM = $31  49 SUM WITH CARRY ADDED BACK
+0245 BUFRLO = $32  50 DATA BUFFER LOW BYTE
+0246 BUFRHI = $33  51
+0247 BFENLO = $34  52 ADDRESS OF LAST BUFFER BYTE +1 (LOW)
+0248 BFENHI = $35  53
+0249 CRETRY = $36  54 (800) NUMBER OF COMMAND FRAME RETRIES
+0250 LTEMP  = $36  54 (XL) LOADER TEMPORARY STORAGE, 2 BYTES
+0251 DRETRY = $37  55 (800) DEVICE RETRIES
+0252 BUFRFL = $38  56 BUFFER FULL FLAG
+0253 RECVDN = $39  57 RECEIVE DONE FLAG
+0254 XMTDON = $3A  58 TRANSMISSION DONE FLAG
+0255 CHKSNT = $3B  59 CHECKSUM-SENT FLAG
+0256 NOCKSM = $3C  60 CHECKSUM-DOES-NOT-FOLLOW-DATA FLAG
+0257 BPTR   = $3D  61
+0258 FTYPE  = $3E  62
+0259 FEOF   = $3F  63
+0260 FREQ   = $40  64
+0261 ;
+0262 SOUNDR = $41  65 0=QUIET I/O
+0263 CRITIC = $42  66 CRITICAL FUNCTION FLAG, NO DEFFERED VBI
+0264 FMSZPG = $43  67 DOS ZERO PAGE, 7 BYTES
+0265 CKEY   = $4A  74 (800) START KEY FLAG
+0266 ZCHAIN = $4A  74 (XL) HANDLER LOADER TEMP, 2 BYTES
+0267 CASSBT = $4B  75 (800) CASSETTE BOOT FLAG
+0268 DSTAT  = $4C  76 DISPLAY STATUS
+0269 ;
+0270 ATRACT = $4D  77
+0271 DRKMSK = $4E  78 ATTRACT MASK
+0272 COLRSH = $4F  79 ATTRACT COLOR SHIFTER (EORed WITH
+GRAPHICS)
+0273 ;
+0274 TMPCHR = $50  80
+0275 HOLD1  = $51  81
+0276 LMARGN = $52  82 SCREEN LEFT MARGIN REGISTER
+0277 RMARGN = $53  83 SCREEN RIGHT MARGIN
+0278 ROWCRS = $54  84 CURSOR ROW
+0279 COLCRS = $55  85 CURSOR COLUMN, 2 BYTES
+0280 DINDEX = $57  87 DISPLAY MODE
+0281 SAVMSC = $58  88 SCREEN ADDRESS
+0282 OLDROW = $5A  90 CURSOR BEFORE DRAW OR FILL
+0283 OLDCOL = $5B  91
+0284 OLDCHR = $5D  93 DATA UNDER CURSOR
+0285 OLDADR = $5E  94 CURSOR ADDRESS
+€0286 NEWROW = $60  96 (800) DRAWTO DESTINATION
+0287 FKDEF  = $60  96 (XL) FUNCTION KEY DEFINATION POINTER
+0288 NEWCOL = $61  97 (800) DRAWTO DESTINATION, 2 BYTES
+0289 PALNTS = $62  98 (XL) EUROPE/NORTH AMERICA TV FLAG
+0290 LOGCOL = $63  99 LOGICAL LINE COLUMN POINTER
+0291 MLTTMP = $66 102
+0292 OPNTMP = $66 102 TEMPORARY STORAGE FOR CHANNEL OPEN
+0293 SAVADR = $68 104
+0294 RAMTOP = $6A 106 START OF ROM (END OF RAM + 1), HIGH BYTE
+ONLY
+0295 BUFCNT = $6B 107 BUFFER COUNT
+0296 BUFSTR = $6C 108 POINTER USED BY EDITOR
+0297 BITMSK = $6E 110 POINTER USED BY EDITOR
+0298 SHFAMT = $6F 111
+0299 ROWAC  = $70 112
+0300 COLAC  = $72 114
+0301 ENDPT  = $74 116
+0302 DELTAR = $76 118
+0303 DELTAC = $77 119
+0304 ROWINC = $79 121 (800)
+0305 KEYDEF = $79 121 (XL) KEY DEFINATION POINTER, 2 BYTES
+0306 COLINC = $7A 122 (800)
+0307 SWPFLG = $7B 123 NON 0 IF TEXT AND REGULAR RAM IS SWAPPED
+0308 HOLDCH = $7C 124 CH MOVED HERE BEFORE CTRL AND SHIFT
+0309 INSDAT = $7D 125
+0310 COUNTR = $7E 126
+0311 ;
+0312 ZROFRE = $80 128 FREE ZERO PAGE, 84 BYTES
+0313 FPZRO  = $D4 212 FLOATING POINT RAM, 43 BYTES
+0314 FR0    = $D4 212 FP REGISTER 0
+0315 FRE    = $DA 218
+0316 FR1    = $E0 224 FP REGISTER 1
+0317 FR2    = $E6 230 FP REGISTER 2
+0318 FRX    = $EC 236 SPARE
+0319 EEXP   = $ED 237 VALUE OF E
+0320 NSIGN  = $ED 237 SIGN OF FP NUMBER
+0321 ESIGN  = $EF 239 SIGN OF FP EXPONENT
+0322 FCHFLG = $F0 240 FIRST CHARACTER FLAG
+0323 DIGRT  = $F1 241 NUMBER OF DIGITS RIGHT OF DECIMAL POINT
+0324 CIX    = $F2 242 INPUT INDEX
+0325 INBUFF = $F3 243 POINTER TO ASCII FP NUMBER
+0326 ZTEMP1 = $F5 245
+0327 ZTEMP4 = $F7 247
+0328 ZTEMP3 = $F9 249
+0329 DEGFLG = $FB 251
+0330 RADFLG = $FB 251 0=RADIANS, 6=DEGREES
+0331 FLPTR  = $FC 252 POINTER TO BCD FP NUMBER
+0332 FPTR2  = $FE 254
+0333 ;
+0334 ;
+0335 ;PAGE 1
+0336 ;
+0337 ;   65O2 STACK
+0338 ;
+€0339 ;
+0340 ;
+0341 ;
+0342 ;PAGE 2
+0343 ;
+0344 ;
+0345 INTABS = $0200    512 INTERRUPT RAM
+0346 VDSLST = $0200    512 NMI VECTOR
+0347 VPRCED = $0202    514 PROCEED LINE IRQ VECTOR
+0348 VINTER = $0204    516 INTERRUPT LINE IRQ VECTOR
+0349 VBREAK = $0206    518
+0350 VKEYBD = $0208    520
+0351 VSERIN = $020A    522 SERIAL INPUT READY IRQ
+0352 VSEROR = $020C    524 SERIAL OUTPUT READY IRQ
+0353 VSEROC = $020E    526 SERIAL OUTPUT COMPLETE IRQ
+0354 VTIMR1 = $0210    528 TIMER 1 IRQ
+0355 VTIMR2 = $0212    530 TIMER 2 IRQ
+0356 VTIMR4 = $0214    532 TIMER 4 IRQ
+0357 VIMIRQ = $0216    534 IRQ VECTOR
+0358 CDTMV1 = $0218    536 DOWN TIMER 1
+0359 CDTMV2 = $021A    538 DOWN TIMER 2
+0360 CDTMV3 = $021C    540 DOWN TIMER 3
+0361 CDTMV4 = $021E    542 DOWN TIMER 4
+0362 CDTMV5 = $0220    544 DOWN TIMER 5
+0363 VVBLKI = $0222    546
+0364 VVBLKD = $0224    548
+0365 CDTMA1 = $0226    550 DOWN TIMER 1 JSR ADDRESS
+0366 CDTMA2 = $0228    552 DOWN TIMER 2 JSR ADDRESS
+0367 CDTMF3 = $022A    554 DOWN TIMER 3 FLAG
+0368 SRTIMR = $022B    555 REPEAT TIMER
+0369 CDTMF4 = $022C    556 DOWN TIMER 4 FLAG
+0370 INTEMP = $022D    557 IAN'S TEMP
+0371 CDTMF5 = $022E    558 DOWN TIMER FLAG 5
+0372 SDMCTL = $022F    559 DMACTL SHADOW
+0373 SDLSTL = $0230    560 DISPLAY LIST POINTER
+0374 SSKCTL = $0232    562 SKCTL SHADOW
+0375 ;   $0233    563 (800) UNLISTED
+0376 LCOUNT = $0233    563 (XL) LOADER TEMP
+0377 LPENH  = $0234    564 LIGHT PEN HORIZONTAL
+0378 LPENV  = $0235    565 LIGHT PEN VERTICAL
+0379 ;   $0236    566 2 SPARE BYTES
+0380 ;   $0238    568 (800) SPARE, 2 BYTES
+0381 RELADR = $0238    568 (XL) LOADER
+0382 CDEVIC = $023A    570 DEVICE COMMAND FRAME BUFFER
+0383 CAUX1  = $023C    572 DEVICE COMMAND AUX 1
+0384 CAUX2  = $023D    573 DEVICE COMMAND AUX 2
+0385 TEMP   = $023E    574 TEMPORARY STORAGE
+0386 ERRFLG = $023F    575 DEVICE ERROR FLAG (EXCEPT TIMEOUT)
+0387 DFLAGS = $0240    576 FLAGS FROM DISK SECTOR 1
+0388 DBSECT = $0241    577 NUMBER OF BOOT DISK SECTORS
+0389 BOOTAD = $0242    578 BOOT LOAD ADDRESS POINTER
+0390 COLDST = $0244    580 COLD START FLAG, 1 = COLD START IN
+PROGRESS
+0391 ;   $0245    581 (800) SPARE
+€0392 RECLEN = $0245    581 (XL) LOADER
+0393 DSKTIM = $0246    582 (800) DISK TIME OUT REGISTER
+0394 ;   $0246    582 (XL) RESERVED, 39 BYTES
+0395 LINBUF = $0247    583 (800) CHARACTER LINE BUFFER, 40 BYTES
+0396 CHSALT = $026B    619 (XL) CHARACTER SET POINTER
+0397 VSFLAG = $026C    620 (XL) FINE SCROLL TEMPORARY
+0398 KEYDIS = $026D    621 (XL) KEYBOARD DISABLE
+0399 FINE   = $026E    622 (XL) FINE SCROLL FLAG
+0400 GPRIOR = $026F    623 P/M PRIORITY AND GTIA MODES
+0401 GTIA   = $026F    623
+0402 PADDL0 = $0270    624 (XL) 3 MORE PADDLES, (800) 6 MORE PADDLES
+0403 STICK0 = $0278    632 (XL) 1 MORE STICK, (800) 3 MORE STICKS
+0404 PTRIG0 = $027C    636 (XL) 3 MORE PADDLE TRIGGERS, (800) 6 MORE
+0405 STRIG0 = $0284    644 (XL) 1 MORE STICK TRIGGER, (800) 3 MORE
+0406 CSTAT  = $0288    648 (800)
+0407 WMODE  = $0289    649
+0408 BLIM   = $028A    650
+0409 ;   $028B    651 5 SPARE BYTES
+0410 NEWADR = $028E    654 (XL)  LOADER RAM
+0411 TXTROW = $0290    656
+0412 TXTCOL = $0291    657
+0413 TINDEX = $0293    659 TEXT INDEX
+0414 TXTMSC = $0294    660
+0415 TXTOLD = $0296    662 OLD ROW AND OLD COL FOR TEXT, 2 BYTES
+0416 ;   $0298    664 4 SPARE BYTES
+0417 TMPX1  = $029C    668 (800)
+0418 CRETRY = $029C    668 (XL)  NUMBER OF COMMAND FRAME RETRIES
+0419 SUBTMP = $029E    670
+0420 HOLD2  = $029F    671
+0421 DMASK  = $02A0    672
+0422 TMPLBT = $02A1    673
+0423 ESCFLG = $02A2    674
+0424 TABMAP = $02A3    675 15 BYTE BIT MAP FOR TAB SETTINGS
+0425 LOGMAP = $02B2    690 4 BYTE LOGICAL LINE START BIT MAP
+0426 INVFLG = $02B6    694
+0427 FILFLG = $02B7    695 FILL DIRING DRAW FLAG
+0428 TMPROW = $02B8    696
+0429 TMPCOL = $02B9    697
+0430 SCRFLG = $02BB    699 SCROLL FLAG
+0431 HOLD4  = $02BC    700
+0432 HOLD5  = $02BD    701 (800)
+0433 DRETRY = $02BD    701 (XL)  NUMBER OF DEVICE RETRIES
+0434 SHFLOC = $02BE    702
+0435 BOTSCR = $02BF    703 24 NORM, 4 SPLIT
+0436 PCOLR0 = $02C0    704 3 MORE PLAYER COLOR REGISTERS
+0437 COLOR0 = $02C4    708 4 MORE GRAPHICS COLOR REGISTERS
+0438 ;   $02C9    713 (800) 23 SPARE BYTES
+0439 RUNADR = $02C9    713 (XL) LOADER VECTOR
+0440 HIUSED = $02CB    715 (XL) LOADER VECTOR
+0441 ZHIUSE = $02CD    717 (XL) LOADER VECTOR
+0442 GBYTEA = $02CF    719 (XL) LOADER VECTOR
+0443 LOADAD = $02D1    721 (XL) LOADER VECTOR
+0444 ZLOADA = $02D3    723 (XL) LOADER VECTOR
+0445 DSCTLN = $02D5    725 (XL) DISK SECTOR SIZ
+€0446 ACMISR = $02D7    727 (XL) RESERVED
+0447 KRPDER = $02D9    729 (XL) KEY AUTO REPEAT DELAY
+0448 KEYREP = $02DA    730 (XL) KEY AUTO REPEAT RATE
+0449 NOCLIK = $02DB    731 (XL) KEY CLICK DISABLE
+0450 HELPFG = $02DC    732 (XL) HELP KEY FLAG
+0451 DMASAV = $02DD    733 (XL) SDMCTL (DMA) SAVE
+0452 PBPNT  = $02DE    734 (XL) PRINTER BUFFER POINTER
+0453 PBUFSZ = $02DF    735 (XL) PRINTER BUFFER SIZE
+0454 GLBABS = $02E0    736 GLOBAL VARIABLES, 4 SPARE BYTES
+0455 RAMSIZ = $02E4    740 PERMANENT START OF ROM POINTER
+0456 MEMTOP = $02E5    741 END OF FREE RAM
+0457 MEMLO  = $02E7    743
+0458 ;   $02E9    745 (800) SPARE
+0459 HNDLOD = $02E9    745 (XL) HANDLER LOADER FLAG
+0460 DVSTAT = $02EA    746 DEVICE STATUS BUFFER, 4 BYTES
+0461 CBAUDL = $02EE    750 CASSETTE BAUD RATE, 2 BYTES
+0462 CRSINH = $02F0    752 1 = INHIBIT CURSOR
+0463 KEYDEL = $02F1    753 KEY DELAY AND RATE
+0464 CH1    = $02F2    754
+0465 CHACT  = $02F3    755
+0466 CHBAS  = $02F4    756 CHARACTER SET POINTER
+0467 NEWROW = $02F5    757 (XL) DRAW DESTINATION
+0468 NEWCOL = $02F6    758 (XL) DRAW DESTINATION
+0469 ROWINC = $02F8    760 (XL)
+0470 COLINC = $02F9    761 (XL)
+0471 CHAR   = $02FA    762
+0472 ATACHR = $02FB    763 ATASCII CHARACTER FOR CIO
+0473 CH= $02FC    764
+0474 FILDAT = $02FC    764 COLOR FOR SCREEN FILL
+0475 DSPFLG = $02FE    766 DISPLAY CONTROL CHARACTERS FLAG
+0476 SSFLAG = $02FF    767 DISPLAY START/STOP FLAFG
+0477 ;
+0478 ;
+0479 ; PAGE 3
+0480 ;
+0481 ;
+0482 ;RESIDENT DISK HANDLER/SIO INTERFACE
+0483 ;
+0484 DCB    = $0300    768 DEVICE CONTROL BLOCK
+0485 DDEVIC = $0300    768
+0486 DUNIT  = $0301    769
+0487 DCOMND = $0302    770
+0488 DSTATS = $0303    771
+0489 DBUFLO = $0304    772
+0490 DBUFHI = $0305    773
+0491 DTIMLO = $0306    774
+0492 DBYTLO = $0308    776
+0493 DBYTHI = $0309    777
+0494 DAUX1  = $030A    778
+0495 DAUX2  = $030B    779
+0496 TIMER1 = $030C    780 INITIAL TIMER VALUE
+0497 ADDCOR = $030E    782 (800) ADDITION CORRECTION
+0498 JMPERS = $030E    782 (XL) OPTION JUMPERS
+0499 CASFLG = $030F    783 CASSETTE MODE WHEN SET
+€0500 TIMER2 = $0310    784 FINAL VALUE, TIMERS 1 & 2 DETERMINE BAUD
+RATE
+0501 TEMP1  = $0312    786
+0502 TEMP2  = $0313    787 (XL)
+0503 TEMP2  = $0314    788 (800)
+0504 PTIMOT = $0314    788 (XL) PRINTER TIME OUT
+0505 TEMP3  = $0315    789
+0506 SAVIO  = $0316    790 SAVE SERIAL IN DATA PORT
+0507 TIMFLG = $0317    791 TIME OUT FLAG FOR BAUD RATE CORRECTION
+0508 STACKP = $0318    792 SIO STACK POINTER SAVE
+0509 TSTAT  = $0319    793 TEMPORARY STATUS HOLDER
+0510 HATABS = $031A    794 HANDLER ADDRESS TABLE, 38 BYTES
+0511 MAXDEV = $0321    801 MAXIMUM HANDLER ADDRESS INDEX
+0512 PUPBT1 = $033D    829 (XL) POWER-UP/RESET
+0513 PUPBT2 = $033E    830 (XL) POWER-UP/RESET
+0514 PUPBT3 = $033F    831 (XL) POWER-UP/RESET
+0515 ;
+0516 ;IOCB's
+0517 ;
+0518 IOCB   = $0340    832
+0519 ICHID  = $0340    832
+0520 ICDNO  = $0341    833
+0521 ICCOM  = $0342    834
+0522 ICSTA  = $0343    835
+0523 ICBAL  = $0344    836
+0524 ICBAH  = $0345    837
+0525 ICPTL  = $0346    838
+0526 ICPTH  = $0347    839
+0527 ICBLL  = $0348    840
+0528 ICBLH  = $0349    841
+0529 ICAX1  = $034A    842
+0530 ICAX2  = $034B    843
+0531 ICAX3  = $034C    844
+0532 ICAX4  = $034D    845
+0533 ICAX5  = $034E    846
+0534 ICAX6  = $034F    847
+0535 ; OTHER IOCB's, 112 BYTES
+0536 PRNBUF = $03C0    960 PRINTER BUFFER, 40 BYTES
+0537 ;   $03E8   1000 (800) 21 SPARE BYTES
+0538 SUPERF = $03E8   1000 (XL) SCREEN EDITOR
+0539 CKEY   = $03E9   1001 (XL) START KEY FLAG
+0540 CASSBT = $03EA   1002 (XL) CASSETTE BOOT FLAG
+0541 CARTCK = $03EB   1003 (XL) CARTRIDGE CHECKSUM
+0542 ACMVAR = $03ED   1005 (XL) RESERVED, 6 BYTES
+0543 MINTLK = $03F9   1017 (XL) RESERVED
+0544 GINTLK = $03FA   1018 (XL) CARTRIDGE INTERLOCK
+0545 CHLINK = $03FB   1019 (XL) HANDLER CHAIN, 2 BYTES
+0546 CASBUF = $03FD   1021 CASSETTE BUFFER, 131 BYTES TO $047F
+0547 ;
+0548 ;
+0549 ;  PAGE 4
+0550 ;
+0551 ;
+0552 USAREA = $0480   1152 128 SPARE BYTES
+€0553 ;
+0554 ;  SEE APPENDIX C FOR PAGES 4 AND 5 USAGE
+0555 ;
+0556 ;
+0557 ;
+0558 ;
+0559 ;PAGE 5
+0560 ;
+0561 PAGE5  = $0500   1280 127 FREE BYTES
+0562 ;   $057E   1406 129 FREE BYTES IF FLOATING POINT ROUTINES
+ NOT USED
+0563 ;
+0564 ;FLOATING POINT NON-ZERO PAGE RAM, NEEDED ONLY IF FP IS USED
+0565 ;
+0566 LBPR1  = $057E   1406 LBUFF PREFIX 1
+0567 LBPR2  = $05FE   1534 LBUFF PREFIX 2
+0568 LBUFF  = $0580   1408 LINE BUFFER
+0569 PLYARG = $05E0   1504 POLYNOMIAL ARGUMENTS
+0570 FPSCR  = $05E6   1510 PLYARG+FPREC
+0571 FPSCR1 = $05EC   1516 FPSCR+FPREC
+0572 FSCR   = $05E6   1510 =FPSCR
+0573 FSCR1  = $05EC   1516 =FPSCR1
+0574 LBFEND = $05FF   1535 END OF LBUFF
+0575 ;
+0576 ;
+0577 ; PAGE 6
+0578 ;
+0579 ;
+0580 PAGE6  = $0600   1536 256 FREE BYTES
+0581 ;
+0582 ;
+0583 ; PAGE 7
+0584 ;
+0585 ;
+0586 BOOTRG = $0700   1792 PROGRAM AREA
+0587 ;
+0588 ;
+0589 ;  UPPER ADDRESSES
+0590 ;
+0591 ;
+0592 RITCAR = $8000  32768 RAM IF NO CARTRIDGE
+0593 LFTCAR = $A000  40960 RAM IF NO CARTRIDGE
+0594 C0PAGE = $C000  49152 (800) EMPTY, 4K BYTES
+0595 C0PAGE = $C000  49152 (XL) 2K FREE RAM IF NO CARTRIDGE
+0596 ;   $C800  51200 (XL) START OF OS ROM
+0597 CHORG2 = $CC00  52224 (XL) INTERNATIONAL CHARACTER SET
+0598 ;
+0599 ;
+0600 ; HARDWARE REGISTERS
+0601 ;
+0602 ;
+0603 ;  SEE REGISTER LIST FOR MORE INFORMATION
+0604 ;
+0605 ;
+€0606 HPOSP0 = $D000  53248
+0607 M0PF   = $D000  53248
+0608 SIZEP0 = $D008  53256
+0609 M0PL   = $D008  53256
+0610 SIZEM  = $D00C  53260
+0611 GRAFP0 = $D00D  53261
+0612 GRAFM  = $D011  53265
+0613 COLPM0 = $D012  53266
+0614 COLPF0 = $D016  53270
+0615 PRIOR  = $D01B  53275
+0616 GTIAR  = $D01B  53275
+0617 VDELAY = $D01C  53276
+0618 GRACTL = $D01D  53277
+0619 HITCLR = $D01E  53278
+0620 CONSOL = $D01F  53279
+0621 AUDF1  = $D200  53760
+0622 AUDC1  = $D201  53761
+0623 AUDCTL = $D208  53768
+0624 RANDOM = $D20A  53770
+0625 IRQEN  = $D20E  53774
+0626 SKCTL  = $D20F  53775
+0627 PORTA  = $D300  54016
+0628 PORTB  = $D301  54017
+0629 PACTL  = $D302  54018
+0630 PBCTL  = $D303  54019
+0631 DMACLT = $D400  54272
+0632 DLISTL = $D402  54274
+0633 HSCROL = $D404  54276
+0634 VSCROL = $D405  54277
+0635 CHBASE = $D409  54281
+0636 WSYNC  = $D40A  54282
+0637 VCOUNT = $D40B  54283
+0638 NMIEN  = $D40E  54286
+0639 ;
+0640 ; FLOATING POINT MATH ROUTINES
+0641 ;
+0642 AFP    = $D800  55296
+0643 FASC   = $D8E6  55526
+0644 IFP    = $D9AA  55722
+0645 FPI    = $D9D2  55762
+0646 ZFR0   = $DA44  55876
+0647 ZF1    = $DA46  55878
+0648 FSUB   = $DA60  55904
+0649 FADD   = $DA66  55910
+0650 FMUL   = $DADB  56027
+0651 FDIV   = $DB28  56104
+0652 PLYEVL = $DD40  56640
+0653 FLD0R  = $DD89  56713
+0654 FLD0P  = $DD8D  56717
+0655 FLD1R  = $DD98  56728
+0656 FLD1P  = $DD9C  56732
+0657 FSTOR  = $DDA7  56743
+0658 FSTOP  = $DDAB  56747
+0659 FMOVE  = $DDB6  56758
+€0660 EXP    = $DDC0  56768
+0661 EXP10  = $DDCC  56780
+0662 LOG    = $DECD  57037
+0663 LOG10  = $DED1  57041
+0664 ;
+0665 ;
+0666 ;  OPERATING SYSTEM
+0667 ;
+0668 ;
+0669 ;MODULE ORIGIN TABLE
+0670 ;
+0671 CHORG  = $E000  57344 CHARACTER SET, 1K
+0672 VECTBL = $E400  58368 VECTOR TABLE
+0673 VCTABL = $E480  58496 RAM VECTOR INITIAL VALUE TABLE
+0674 CIOORG = $E4A6  58534 CIO HANDLER
+0675 INTORG = $E6D5  59093 INTERRUPT HANDLER
+0676 SIOORG = $E944  59716 SIO DRIVER
+0677 DSKORT = $EDEA  60906 DISK HANDLER
+0678 PRNORG = $EE78  61048 PRINTER HANDLER
+0679 CASORG = $EE78  61048 CASSETTE HANDLER
+0680 MONORG = $F0E3  61667 MONITOR/POWER UP MODULE
+0681 KBDORG = $F3E4  62436 KEYBOARD/DISPLAY HANDLER
+0682 ;
+0683 ;
+0684 ;  VECTOR TABLE, CONTAINS ADDRESSES OF CIO ROUTINES IN THE
+0685 ;  FOLLOWING ORDER. THE ADDRESSES IN THE TABLE ARE TRUE ADDRESSES-1
+0686 ;
+0687 ;  ADDRESS + 0  OPEN
+0688 ;+ 2  CLOSE
+0689 ;+ 4  GET
+0690 ;+ 6  PUT
+0691 ;+ 8  STATUS
+0692 ;+ A  SPECIAL
+0693 ;+ C  JMP TO INITIALIZATION
+0694 ;+ F  NOT USED
+0695 ;
+0696 ;
+0697 EDITRV = $E400  58368 EDITOR
+0698 SCRENV = $E410  58384 SCREEN
+0699 KEYBDV = $E420  58400 KEYBOARD
+0700 PRINTV = $E430  58416 PRINTER
+0701 CASETV = $E440  58432 CASSETTE
+0702 ;
+0703 ;   ROM VECTORS
+0704 ;
+0705 DSKINV = $E453  58451
+0706 CIOV   = $E456  58454
+0707 SIOV   = $E459  58457
+0708 SYSVBV = $E45F  58463
+0709 VBIVAL = $E460  58464 ADR AT VVBLKI
+0710 XITVBV = $E462  58466 EXIT VBI
+0711 VBIXVL = $E463  58467 ADR AT VVBLKD
+0712 BLKBDV = $E471  58481 MEMO PAD MODE
+0713 WARMSV = $E474  58484
+€0714 COLDSV = $E477  58487
+
+    APPENDIX C
+
+
+    MEMORY USE
+
+
+ Page 0
+
+$00-$7F
+
+Operating system zero-page.  The entire first half of page zero is
+reserved for the operating system.
+
+$80-$FF
+
+Free zero-page.  The top half of page zero is free if BASIC is
+disabled.  BASIC uses all but $CB-$D1.  The floating point math
+routines use $D4-$FF.  If the floating point arithmetic package is not
+used this memory is free.
+
+ Page 1
+
+$100-1FF
+
+This is the 6502 stack.  The stack pointer initialized to $1FF and
+moves downward as the stack is filled.
+
+Pages 2-5
+
+$200-$47F
+
+This area is used for operating system database variables.  Parts
+which are not used in some particular programs, such as the cassette
+buffer or printer buffer, may then be used for other purposes.  See
+the O.S. equate listing for these locations.
+
+$480-$57D ($480-$6FF if no floating point)
+
+This is called the user work space.  It is free to be used by
+programs.  If the floating point arithmetic package is not used the
+user work space extends to $6FF.  This area is used by BASIC.
+
+$57E-$5FF
+
+This area is used by the floating point arithmetic package.  It is
+free if the package is not used.
+
+ Page 6
+
+$600-6FF
+
+Atari has solemnly sworn never to put anything in this page of
+€memory.
+
+  Page 7-the screen region
+
+$700
+
+This is called the boot region.  Most machine language programs which
+don't use DOS load at this address.  DOS extends from $700-$1CFB.
+
+  MEMLO
+
+The address pointed to by the O.S. database variable MEMLO [$02E7,2
+(743)] is the first byte of free memory.  This pointer is usually
+changed by any program's initialization routine.  For example, upon
+power-up, MEMLO points to $700.  When DOS loads in, DOS changes MEMLO
+to point to $2A80.  If an AUTORUN.SYS program then loads in just above
+DOS, such as DISKIO, it will usually change MEMLO to point above
+itself.  One important reason for this is to protect the program from
+BASIC.  BASIC uses memory starting at MEMLO.
+
+MEMTOP
+
+MEMTOP [$2E5,2 (741)] is set by the O.S. whenever a graphics mode is
+entered.  The graphics region is at the very top of ram and extends
+downward.  The address MEMTOP points to depends on how much memory the
+screen region uses.
+
+APPMHI
+
+APPMHI [$0E,2 (14)] should be set by any program to point to the
+highest address required by the program.  If the O.S. cannot set up a
+screen without going below APPMHI it will return a
+not-enough-memory-for-screen-mode error.
+
+The cartridge slots
+
+$8000 (32768)
+
+This is the beginning of the 8K bytes used by the right cartridge slot
+of the 800.  This is also where 16K cartridges begin.  If there is no
+cartridge here it is ram.
+
+$A000 (40960)
+
+This is the beginning of the left cartridge of the 800 or the only
+cartridge slot on all other models.  This is where the BASIC ROM
+resides in the XL/XE models.  This area is RAM is there is no
+cartridge or BASIC is disabled on XL/XE models.
+
+    above the cartridges
+
+$C000-$CFFF (49152-53247)
+
+This area is empty on the 800.  Sometimes special ROM chips, such as
+€Omnimon are wired in here.  On the XL/XE models $C000-C7FF is free ram
+if there are no cartridges.  On XL/XE models, the O.S. ROM starts at
+$C800
+
+$D000-$D7FF (53248-57373)
+
+This area is taken up by the hardware chips.  The chips actually take
+only a fraction of this space.  If these addresses are further decoded
+there is space for many, many more hardware chips.  For example, The
+PIA chip uses 256 bytes of memory but needs only 4 bytes.  There is
+room for 64 PIA chips in this reserved memory.
+
+$E000-E3FF (57344-58367)
+
+This is the location of the ATASCII character set.
+
+$E400-FFF7 (58368-65527)
+
+This is the operating system ROM
+
+$FFF8-$FFFF (65528-65535)
+
+These last 8 bytes contain the addresses of the interrupt vectors. 
+Upon power up the 6502 gets a reset pulse and looks up the reset
+routine here.

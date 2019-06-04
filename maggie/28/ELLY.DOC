@@ -1,0 +1,92 @@
+
+                               ‰~ E l l y ~
+
+              A new DMA Modfile player for Atari Computers
+
+By RGF Software . .  (Version 1.2)
+ 
+I  once knew a bloke called Richard Gordon at school,  I bet it  wasn't 
+him  who  did  this though.  He didn't have Faika as a last  name,  and 
+wasn't a German national, not as far as I knew at least.
+
+ This is something of an unusual event,  a new GEM-based modfile player, 
+which purely uses the DMA sound hardware,  as seen (heard!) in the STe, 
+TT,  and Falcon. A useful addition to your audio armoury perhaps, or is 
+it merely reinventing the wheel?
+
+The  interface is the near-universal CD player console used many  times 
+before, experienced readers may well remember Flaysid and Megaplayer?
+
+It has a nice colourful post-modern GEM style,  and has a little bit of 
+visual 'zing' in the form of indicator bars at the side of the display. 
+An  extra  panel opens out at the bottom revealing extra  functions  on 
+display  for elapsed time a modfile has been playing,  the track number 
+etc,  pointing  towards  a  discreet playlist function,  accessed by  a 
+couple of extra buttons,  and which can look in a given directory, able 
+to access all the mods that are there. There also seems to be an option 
+for an external sound module apart from the internal DMA sound?
+ 
+In operation,  it really needs a higher resolution.  It looks and works 
+better  in  VGA type modes,  IE,  vertical resolution of 400 pixels  or 
+more.  It  does  function  in lower screen modes,  ST low or medium  or 
+equivalents,  but the buttons are largely obsured and difficult to make 
+out. It looks and works fine in ST mono by the way.
+
+To  see  how your machine performs or struggles,  there is a handy  CPU 
+progress  bar.  It  is  reasonable with cpu time on  the  '030  powered 
+Falcon,  with  25-40% cpu useage typical on a standard 16 mhz Falcon at 
+the highest 50 khz replay rate. 
+
+The  all-important  sound replay quality is very good  on  the  Falcon, 
+especially  at  the  top replay rate.  We would assume that  the  sound 
+matrix  on the Falcy helps to smooth things out too?  There is a choice 
+of lesser freqencies.  from 6.25 khz (STe only),  12.5 khz,  and 25 khz 
+too.
+
+The STe copes up to a point. It manages a respectable 50% cpu useage at 
+25  khz.  However,  it  runs  out  when asked to play at  50  khz,  and 
+registers its discontent by missing out a couple of the sound channels! 
+It should be able to manage the lot with a bit more power, say a 16 mhz 
+Mega  STe,  or Veloce powered STe.  The meatier TT would take it all in 
+its stride. 
+
+It should function in a modern multi-tasking environment such as Magic. 
+There  is  even an option to let it play in the  background  if  multi-
+tasking is available.  In practice, it seems to be unwilling to do this 
+on  my  Falcon/Magic 6 combination.  In this case it goes  through  the 
+motions  but  produces  no sound,  and the timer acts like it  has  got 
+stuck? In theory, it should be possible to use this in conjunction with 
+program  that uses the DSP on the Falcon,  say a picture displayer that 
+uses it for depacking.  There are still bugs being worked out and there 
+may be a problem with Elly running under Magic 6?
+
+I  tried it as an accessory in single TOS.  No luck there either as  it 
+loaded in but came up with the stark message 'No system Dialog'!
+
+It  is  a  bit  limited in other ways too,  as it can  only  play  very 
+standard  4 channel protracker tunes.  At this stage there is no multi-
+channel  option  available,  and no exotic PC style formats either.  We 
+wait to see what later versions might bring?
+
+In conclusion,  the optimum use for it may not be on the Falcon,  which 
+has many DSP-based alternatives, but for the TT and Mega STe, where the 
+modern GEM display would complement a higher spec desktop.
+
+ Advantages..
+Neat and well featured GEM interface.
+Good replay quality at 50 khz.
+Compatible across a wide range of Atari Computers. (With DMA sound)
+Should be compatible with multi-tasking systems.
+Frees up DSP for other roles on the Falcon.
+Nice 'play all the mods in a given directory' option.
+
+Disadvantages..
+Only four channel Protracker as an option.
+Runs out of breath on lower powered machines.
+Crabby display at lower screen resolutions.
+Multi-tasking seems to be a bit awkward in reality?
+No accessory option for single TOS.
+
+ CiH - July '99
+
+

@@ -1,0 +1,247 @@
+                        *******************************
+                        *        ray presents         *
+                        * implementing trig-functions *
+                        *          may 2001           *
+                        *******************************
+
+Intro
+-----
+
+Hey fellas, time for a new tute, I guess...a short one this time. well this time
+I'm gonna try  to cover a easy  way of implementing trigonometrical functions on
+the M680x0. It might  be useful  for precalculating  lookuptables  and  stuff on
+machines which lack a FPU whithin your own program.
+
+But before, the  ordinary contact  lines (if you're  having problems, advices or
+anything):
+
+ email: reimund.dratwa@freenet.de
+ hp:    http://www.ray-tscc.de.gs
+
+
+Story
+-----
+
+Once upon a time...
+I went into real  trouble  getting a good  offset-table  for a tunnel  which had
+built at  runtime (the actual problem). This  problem  was based  on a  devilish
+math-gnome called arctan (urghh, he looks like some toadstool with arms and legs
+or something =) ) needed for that. Now some might come  up saying "Hey why din't
+you end up just  including an atan table ?"...easy, the thing had to be as small
+as possible.
+Good, I know, there are  probably some  nasty tricks around to avoid usage of an
+atan for a tube  lookup. But mine  should look  good, too and  I wanted it to be
+mathematical  correct so I  chose the harder  way which didn't appear to be that
+hard anymore later one.
+I remembered a  way for complex math-functions approximations called the 'taylor
+series'... using them you'll be able to approximate hyperbolic, trigonometrical,
+inverse-trigonometrical functions and some more within a certain interval.
+I'm just going to cover the common ones namely the trig and trig^-1 functions.
+
+some math....
+
+sin, cos and tan approximations:
+
+ -> sin(x) = x - x^3/3! + x^5/5! - x^7/7! ... +/- x^n/n!   (n faculty)
+
+ works fine for x = [-pi/2;+pi/2] wich is equal to an interval between
+ -90° and + 90° (notice: x is arc not deg !)
+
+ -> cos(x) = 1 - x^2/2! + x^4/4! - x^6/6! ... +/- x^n/n!
+
+ same as above
+
+ -> tan(x) = x + x^3/3 + 2x^5/15 + 17x^7/315 + 62x^9/2835 ...
+
+             + [2^2n(2^2n-1)Bn x^2n-1]/(2n!)
+
+ complicated, isn't it...but it works wiht |x| < pi/2
+
+ -> cot(x) = 1/x - x/3 - x^3/45 - 2x^5/945 ...
+
+             - [2^2n Bn x^2n-1]/(2n)!
+
+ for x = [0;pi]
+
+
+that on the trigs...and now for the inv-trigs:
+
+ -> atan(x) = x - x^3/3 + x^5/5 - x^7/7 ...+/- x^n/n  |x| < 1 
+
+ mirror to pi/2 or take a look into the source if you wanna cover
+ a full quadrant
+
+ -> asin(x) = x + 1x^3/2*3 + 1*3x^5/2*4*5 + 1*3*5x^7/2*4*6*7... |x| < 1
+
+ -> acos(x) = pi/2 - asin(x) |x| < 1
+
+quite hard thing you might think...well, me too. but  I'm neither  gonna explain
+how exactly they work nor trying to understand this right now :).
+So you're not alone...
+
+
+Implementation
+--------------
+
+Basically, these formulas are quite clear structured and thus easy to implement.
+And the great advantage: they don't need any lookup-tables so things will remain
+short, even reasonably  quick for  ST purposes (remember we do not have a FPU on
+the ST, so it's better than nothing).
+The more elements you're going to use the more accurate your results will be but
+since we're dealing with a limited number of data-registers 5 to 7 elements have
+to be enough if  we're not going  to use variables or stackspace, which would be
+really getting slow, I think.
+At the same hand  we have our  limited fixed-point  precision...so more elements
+wouldn't make sense with that in mind.
+I used 8.8 fixedpoint  precision for instance...with 6 elements this is gonna do
+well for most of the functions.
+For sin and cos you  might as well  use 2.14 fixedpoint, because results will be
+in a range of -1;1...the more precision the better results.
+
+
+Some code and closing words
+---------------------------
+
+That's all...keep  looking for  my new tutorials ;)...next  time maybe something
+on raycasting a la wolf3d...bye.
+
+For the last part I merged 2 examples on here to show  you how I implemented the
+cos and the atan function, by now:
+
+;--------------------------------- atan -----------------------------------
+
+; *********************************************************
+; * computes the arctan to a given tangens value          *
+; *             - by ray//.tSCc. 2000 -                   *
+; *********************************************************
+; *                                                       * 
+; * input  D0.w  - tan in 8.8 fp                          *
+; * output D0.w  - arc in 8.8 fp                          *
+; *********************************************************
+
+pi     EQU $0324  ; guess
+
+
+arctan:        cmp.w  #256,D0   ; tan = 1
+         beq.s  returnpi4
+         bhi.s  adjtan     ; adjust tan
+         bsr.s  precomp
+         rts
+
+adjtan:     move.l #$FFFF,D1
+         divu   D0,D1
+         move.w D1,D0      ; tan = 1/tan
+         bsr.s  precomp
+
+         move.w #pi/2,D1
+         sub.w  D0,D1      ; arc = PI/2 - arctan(1/tan)
+         move.w D1,D0      ; (mirrored)
+         rts
+
+returnpi4:    move.w #pi/4,D0    ; return PI/4
+         rts
+
+
+; *********************************************************
+; * precomputes arctan for using a taylor-serie           *
+; * at some places i had to cheat a bit to keep the error *
+; * as small as possible :)                               *
+; *********************************************************
+; *                                                       * 
+; * input  D0.w  - tan in 8.8 fp                          *
+; * output D0.w  - arc in 8.8 fp                          *
+; *                                                       *
+; * D1     tan^2                                          *
+; * D2-D7 elements of taylor serie                        *
+; *********************************************************
+
+precomp:    movem.l D1-D7,-(SP)
+
+         move.w D0,D1
+         mulu   D1,D1
+         lsr.w  #8,D1      ; D1 = tan^2
+
+         move.w D1,D2
+         mulu   D0,D2
+         lsr.w  #8,D2
+         divu   #3,D2      ; D2 = tan^3/3
+
+         move.w D2,D3
+         mulu   D1,D3
+         lsr.w  #8,D3
+         divu   #5,D3      ; D3 = tan^5/5
+
+         move.w D3,D4
+         mulu   D1,D4
+         lsr.w  #8,D4
+         divu   #7,D4      ; D4 = tan^7/7
+
+         move.w D2,D5
+         mulu   D1,D5
+         lsr.w  #8,D5
+         divu   #9,D5      ; D5 = tan^9/9
+
+         move.w D3,D6
+         mulu   D1,D6
+         lsr.w  #8,D6
+         divu   #11,D6     ; D6 = tan^11/11
+
+         move.w D2,D7
+         mulu   D1,D7
+         lsr.w  #8,D7
+         divu   #13,D7     ; D7 = tan^13/13
+
+; D0 = tan - tan^3/3 + tan^5/5 - tan^7/7 + tan^9/9 - tan^11/11 + tan^13/14
+; (taylor-series)
+
+         sub.w  D2,D0
+         add.w  D3,D0
+         sub.w  D4,D0
+         add.w  D5,D0
+         sub.w  D6,D0
+                        add.w  D7,D0
+
+         ext.l  D0      ; to be sure :)
+         movem.l (SP)+,D1-D7
+
+         rts
+
+;---------------------------------- cos -----------------------------------
+
+; *************************************************
+; * computes the cosine to x using a taylor-serie *
+; *************************************************
+; * input  - D0  8.8 fp                           *
+; * output - D0  8.8 fp                           *
+; *************************************************
+; *      by ray//.tSCc. 2000                      *
+; *************************************************
+
+; cos a = 1 - a^2/2 + a^4/24 - a^6/720    ( a = [-PI/2;PI/2] )
+
+cos:     move.w  D0,D1           ; a^2
+                mulu    D1,D1
+                lsr.l   #8,D1
+
+                move.w  D1,D2           ; a^4
+                mulu    D2,D2
+                lsr.l   #8,D2
+
+                move.w  D2,D3           ; a^6
+                mulu    D1,D3
+                lsr.l   #8,D3
+
+                lsr.l   #1,D1           ; D1 = D0^2/2
+                divu    #24,D2          ; D2 = D0^4/24
+                divu    #720,D3         ; D3 = D0^6/720
+
+                move.w  #256,D0
+                sub.w   D1,D0
+                add.w   D2,D0
+                sub.w   D3,D0           ; D0 = 1 - D0^2/2 + D0^4/24 - D0^6/720
+
+                add.w   D0,D0
+                rts
+
+eof
+--------------------------------------------------------------------------------

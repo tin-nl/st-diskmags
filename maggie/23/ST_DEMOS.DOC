@@ -1,0 +1,208 @@
+
+Maggie 23: Programming
+
+
+                     ST Demos Explained - Part 3:
+
+               Distorters, more scrollers, and sprites
+
+
+Hello and welcome to another episode in the continuing saga 
+of Demos From Yesteryear. This valuable document of socio-
+economic importance will soon be available at your local 
+news vendor in instalments, published by Marshall Cavendish 
+(free binder with part one!) Meanwhile you lucky Maggie 
+readers can get it for free... or realise you clicked on the 
+wrong article and go back to the main menu.
+
+
+                         3.1. More scrollers
+
+Now I know scrollers have been banned under the infamous 
+Representation of the Demo Watching Public Act (1992) which 
+declared them illegal on the grounds of having to read 
+greetings to the same old people again and again. 
+Unfortunately they did not have the delight of reading 
+Quazar's full serialisation of Proust's "Remembrance of 
+Things Past" in their fantastic 6-disk "Eat my Trousers" 
+demo, or they would have changed their minds.
+
+No, the real "interest" of the scroller was not the words - 
+after all, we were usually dealing with 16 year-olds for 
+whom English was not the native language (even the British 
+coders, who conversed in assembly) - but the silly things 
+you could do to a piece of text. We shall look at some of 
+the inventive tricks they used, starting with some simple 
+stuff:
+
+
+
+                             3.1 Benders
+                     (yes, that does say Benders)
+
+Best Example: Omega's part in the SoWatt demo (1990)
+
+A "bender" in demo-speak is something that distorted, 
+usually sideways or up and down. Most people would call it a 
+distorter, but I quite fancy taking this as an excuse to be 
+gratuitously obstruse.
+
+                             Preshifting
+
+Part Two dealt with one of the main tricks of distortion: 
+that of pre-shifting, although in a slightly different way. 
+In distortion, the thing that's quite difficult is shifting 
+graphic data sideways. Moving it in blocks of 16 pixels is 
+easy, because that is the way the screen is stored. Moving 
+it in steps of less than 16 pixels is hard, because we need 
+to shift each individual piece of graphic data sideways (in 
+itself quite slow on a 68000 processor) and because to make 
+one chunk of shifted data on the screen, we need to take two 
+pieces of source data, shift them, then combine the results 
+into one destination chunk.
+
+With demo makers hating waste as they do, they were 
+reluctant to use lots of processor time doing all this 
+shifting. The clever trick is to make 16 copies of the 
+sprite and store them all in memory BEFORE the demo started. 
+Then all you needed to do was simply copy all the graphic 
+areas you wanted. Voila! No shifting.
+
+
+
+                           3.2. Distorters
+
+The same principle is used in all those distorting logos in 
+old ST demos. A preshifted logo rather than a sprite or 
+chunk of scroller buffer was used, and the shift amount on 
+each scanline was changed, usually by looking it up in a 
+pre-calculated table. Not much more to say about the 
+standard horizontal distorters, really.
+
+
+
+
+                 3.2.2 Word Benders and Byte Benders
+
+Just being able to move a block of graphics sideways wasn't 
+much of a technical achievement. Wibbling them up and down 
+was the next decent improvement to be made. The idea is very 
+simple: just get the data out in the same way, but according 
+to table data, draw each chunk on the scanline above or 
+below as required. Here's a very simple assembler example:
+
+        Move.w (a0)+,d0         ;get the chunk of gfx data
+        Move.w (a0)+,d1         ;get the offset onto the scrn
+        Move.w d0,(a1,d1.w)     ;draw it
+        Addq.w #8,a1            ;move to next chunk along
+
+- where the offset d1 would be -160 for a line above, 0 for 
+the same line and so on. This was easily optimised using 
+self-modifying code to:
+
+        move.w (a0)+,xxx1(a1)   ;or use movem.w (a0)+
+        move.w (a0)+,xxx2(a1)
+        move.w (a0)+,xxx3(a1)
+
+- where the offsets xxx1, xxx2, xxx3 were pre-written each 
+frame by taking them from a table and adding 8 to each 
+successive value.
+
+'Byte'benders just put a byte ie. 8 pixels of data onto 
+the screen each time instead of 16. For copy more than one 
+bitplane, there was a very nice trick to this - the 'movep'
+instruction. Instead of a normal 'move' this placed 8 bits 
+at the effective address, the next 8 bit at address+2, the 
+next at address+4. It was intended to be used for writing to 
+hardware peripherals, but it comes in useful because you can 
+access up to 4 bitplanes all in one go, for example:
+
+       movem.l (a0)+,d1/d2/d3/d4       ;4-plane gfx
+       movep.l d1,xxx1(a1)
+       movep.l d2,xxx2(a1)
+       movep.l d3,xxx3(a1)
+       movep.l d4,xxx4(a1)
+
+
+
+
+            Barrel scrollers and distorters; 4 bit benders
+
+The barrel scroller was the one that appeared to wrap itself 
+round a central object. This in itself was quite easy, but 
+came in handy with the 4-bit bender. To create the barrel 
+effect, all you need to do is copy selected scanlines of the 
+scroller buffer to give the impression of circular 
+distortion. (A similar effect in distorters was used to make 
+them seem like they were 'squashing' horizontally.)
+
+This comes in useful for the 4-bit bender, because it's not 
+a '4-bit' bender in the sense of byte and word benders 
+above. In fact there was no bending at all: all that was 
+done was the font graphics used were pre-distorted (ie 
+'sheared' vertically every 4 pixels) to give the impression 
+that the whole scroller was distorted. Cunning.
+
+
+
+
+                         Horizontal squishing
+
+By now you might have guessed how horizontal squishing might 
+work: yes, it's all precalculated frames of the logo, just 
+like pre-shifting.
+
+
+
+
+
+                             3.3. Sprites
+
+Yes, sprites were all preshifted as well. That's why there 
+were so few animated sprites in demos (they ate quite a lot 
+of memory) and why they were often small but with thousands 
+of the little blighters. However, even sprites had their 
+tricks..
+
+                      Self-coded sprite routines
+
+Just like the time wasted on coding a hardware scroll 
+routine, much effort was put into the perfect sprite 
+routine. The biggest way of speeding the extra ounce of 
+speed from your routines was not just to pre-shift the 
+little darlings, but to also use a routine that would 
+‘write’ another routine that would draw the sprite:
+
+This had the advantage of:
+- not drawing an empty piece of data onto the screen (e.g. 
+if there was a 'hole' in the sprite;
+- allowing oft-repeated bits of data to be stored in data 
+registers (this is quicker than copying from memory);
+- using move.w #xxxx addressing instead of move.w (a0)+ 
+which was in some cases quicker.
+
+Although the speed improvements gained were individually 
+tiny, this was the only way you could get several big 
+sprites onto the screen at once.
+
+The supreme example of this is an Overlanders screen from 
+the European Demos. Not only did it use this technique, but 
+it was a fullscreen demo. So as well as making an 
+intelligent sprite routine, the coders had to make an 
+instruction cycle-counter which would alter the video 
+registers to create the overscan effects as well!
+
+
+
+
+That's all for this time; the deadline for articles is 
+approaching...
+
+
+
+
+Tat
+16th April 1997
+
+
+

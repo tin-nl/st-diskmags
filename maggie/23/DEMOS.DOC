@@ -1,0 +1,136 @@
+
+                   -= What has become of Demos! =- 
+          -= An article by NEV of 'Phat Ass Recordings'! =-
+ 
+Remember 1990?   Great huh?   The demo scene was at its peak then,  but 
+what   has  happened to demos ever since and why do they seem  to  have 
+less impact  then in the olden days.  Lets take a deep exploration into 
+the world of  demo  evolution.
+
+Originally  a standard demo would be this.   Intro --> Menu --> FX  --> 
+Outro.   Okay   so  this is a textbook type demo setup,   but it worked 
+and  was  a  clean way  of  doing things,  but these days  things  have 
+really changed.
+
+Now    and   then   a  demo  would  come  along  that   contained    no  
+interactivity  whatsoever.   These  were known as rolling demos,  where 
+the user just  sat  back and watched the effects.  Each screen lasted a 
+few seconds followed by  a  new screen.   The problem with this is that 
+if the screen is  shite  and  goes on for too long then tough  titties,  
+you  have to be patient.  But even  then it still wasn't too much of  a 
+problem.
+
+The   PC demo scene really started in about 1994/5 and is a  very  hush  
+hush  underground affair.   The PC is being abused by demo coders and I 
+fear  that   the  Falcon  is going the same way.  Let me  give  you  an 
+example. 
+
+There  was a demo on the PC called 'Caero'(I think,   don't trust  me).  
+This   came  on a 1.44Mb floppy and was zipped.   You had to unzip  the  
+file  onto  your Hard Drive.   This not only took ages,   but also took 
+up 6Mb of space.  As it is 6Mb just for one demo is terrible. 
+
+When  this demo eventually loaded it was just a one screen job,   yes I  
+kid  you not, one screen, that's it! Sure the screen was great, but 6Mb 
+of  drive   space and 8Mb of RAM to run,  this really is a pain in  the 
+arse.
+
+Anyone  with some PC demos will know what I mean.   There are a lot  of  
+PC   demos  like  this  and  to  be  honest,   while  the  effects  are 
+unbelieveable, the  spec needed is ridiculous.
+
+The  Falcon seems to be going the same way.  I don't own a Falcon so  I 
+can't   really  judge,   but  from  hearsay,   some demos  need  to  be 
+installed onto the  Hard Drive before they can be executed and yes some 
+of them only contain a  few screens. Damn.
+
+Whatever happened to the days of Bootloaders and Fast loaders?  We seem  
+to   be  making backward steps in the demo world.   Demos are meant  to  
+evolve.   Take  the  old  200 sprites routines.   First  TCB  displayed 
+something like 196  2 plane sprites on screen,   then other people come 
+along  and beat it.  This  is good for demos as it sets the competitive 
+ball rolling.
+
+Sure,   if  an effect is large then by all means use it,   but when you  
+need   some beefy specs for it to work then this really is starting  to 
+look  like  lazy code at play.
+
+Why   not  just stick to 1 or 2 disks (and no Hard  Drive),   then   at  
+least   people  can try to cram more and more onto a  disk  instead  of 
+requiring more  and more Hard Disk space. 
+
+I  could  talk about this subject for hours,  but I think you catch  my 
+drift.   Stick   to   a   4Mb 030 and only when you  have   a   totally  
+fantastic  brain  busting effect you can consider maybe a HD and 8Mb.
+
+-= DJ NEV(ex demo coder) =-
+
+CiH replies..
+
+Sorry  about  cutting in at the end of this missive,  but some  of  the 
+points raised really do deserve a right to reply..
+
+Not  all demos are multi-megabyte disk monsters..  If you've spent  any 
+time on the PC, you will have come across the small intro category that 
+features  regularly in any semi-decent coding convention..  On the  PC, 
+these  are  known  as 64kb intros,  the Falcon has  an  equivalent  96k 
+category,  and  the Amiga boys feel confident enough to work down to  a 
+40kb limit.. There, the coders are working to strict memory limits, but 
+can still achieve amazing results within those confines.. Take the TSCC 
+'Terrorise  Your  Soul'  Falcon 96ktro entry to  the  1995  Fried  Bits 
+party.. A whole demo within that tiny space, and some pretty fierce and 
+cunning optimisation to do it..
+
+If  that  is not enough for some people,  there is the even tinier  4kb 
+intro category! And once again, considering what little coders have set 
+themselves  to work with,  some amazing results have been achieved here 
+too..  See most of the '96 Symposium entries to see what I mean there.. 
+If this idea of a Summer get-together at Dave H's place takes off, I'll 
+gladly take the time out to show you some of these masterpieces of  the 
+coders art..
+
+For the bigger stuff, I'm not sure if we can go back to bootloaders and 
+floppy only demos.. This just about worked on the ST, but on the Falcon 
+and  PC,  you  usually  have much more data to push around,  masses  of 
+picture  data,  textures  for  3-D  objects,  and often  higher  screen 
+resolutions  to play with compared with what went before,  big modfiles 
+with  chunky samples as opposed to tiny soundchip tunes,  often  direct 
+from disk audio streams as well.. 
+
+With all these heavier demands, you would be left waiting for ages even 
+with  the best floppy based fastload system..  On certain Falcon demos, 
+even  ones  where there aren't such top heavy luxuries as  direct  from 
+disk audio,  hard drive speed becomes an issue, with slower older drive 
+mechanisms  knocking  the timing of the music and  loading  of  effects 
+awry..   The  average  demo  these days is a rolling  demo  where  more 
+effects  are pushed onscreen and out again quicker than  ever  before.. 
+Coders are very conscious of an effect outstaying its welcome, so there 
+is  even more disk accessing than was the case previously which can  be 
+put down to that particular state of mind.. 
+
+With respect,  I think, apart from the specialised categories discussed 
+in  some earlier paragraphs,  a hard drive is an essential part of most 
+modern  demos,  and bootloaders really died with the halcyon days of ST 
+demos..  There  is  no realistic way of bringing them back unless  some 
+charitable  coders want to stage a singlehanded revival of the ST  demo 
+scene in an authentic 'Old School' fashion?? 
+
+Next point, I do agree with your point about coder's laziness, but hey, 
+that's  the PC for you!!  It does also take other forms apart from  the 
+olde chestnut of unoptimised code requiring a stupidly powerful machine 
+to run it.. There is also the enjoyment blighting spirit of 'It'll do', 
+that shows lazy design in its worst light.. Why code decent effects and 
+ruin  them  with  piss-poor or  half-finished  presentation  and  bodge 
+graphics for example..  This has happened on the various Atari machines 
+more  times  than  I  care to remember..  Finally,  on the  subject  of 
+'laziness',  why  are  so many people reinventing the wheel?  A lot  of 
+recent diskmag intros, in the UK at least seem to be timewarped back to 
+1989  with  their  big scrollers,  clunky fonts and  gaudily  preschool 
+coloured raster effects?? Move on and do something new please guys!!
+
+BTW,  Why an "Ex Demo coder"??  Your other letter must be an attempt to 
+do something about it!
+
+  CiH
+
+

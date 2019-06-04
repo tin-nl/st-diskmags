@@ -1,0 +1,33 @@
+F-PATCH FOR GFA
+
+We all know that small prg called FPATCH which we mostly use in
+the AUTO folder so we are able to hear the sound the Falcon makes. But 
+if we start up without the AUTO folder there are no sounds to hear unless 
+the programmer has chanced that. Well to say the least most of them 
+don't, out of lazyness or just don't know how. 
+
+But the GFA programmers, they will never forget it again after they 
+have seen this. Here is another small listing that does exactly the 
+same as FPATCH. We just disassembled it and re-wrote it in GFA, and to
+be honest it isn't that special. The guy's at Atari just forgot some 
+pointers to set which you will have to do now...
+
+PROCEDURE sound_patch
+  VOID XBIOS(&H8B,0,8,0,0,1)      !  Device connect...
+  VOID XBIOS(&H84,0)              !  Set 8 bit stereo 
+  VOID XBIOS(&H82,2,&H40)         !  Reduce volume left input channel
+  VOID XBIOS(&H82,3,&H40)         !  also right channel
+  VOID XBIOS(&H82,6,3)            !  Set Pre Scale (divisible by 160)
+  VOID XBIOS(&H82,4,3)            !  ADDRIN
+  VOID XBIOS(&H82,5,3)            !  ADC input set to L+R soundchip
+  VOID XBIOS(&H2C,&HFFFE)         !  Unknown (I don't know it)
+RETURN
+
+You see, easy if you know it. Build this in your own demo, game or 
+whatever uses the sound and voila it works. So if you have any tips
+left for GFA basic send them in and we can help other GFA programmers 
+in the future on the Falcon.
+
+Bonus Software
+ 
+

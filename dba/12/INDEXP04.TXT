@@ -1,0 +1,374 @@
+ATARI CD-ROM SUMMARY 4
+~DROPS.FIL~
+Falcon/Sound/Tracker:
+
+dspsndtr.zip     228 32-track sound tracker (uses DSP)
+dsptrack.zip     135 Source code routines for using DSP to play MOD files
+mgtk-095.zip     128 Another sound tracker that uses the DSP
+
+Falcon/Sound/D2D:
+
+wr_v1371.zip     157  WinRec direct-to-disk recording
+
+
+Falcon/Telecomm:
+
+voxmail.zip      165  Turns Falcon into answering machine
+
+
+Falcon/Utilities:
+
+bckw252.tos      45   "ST Emulator" improves downward compatibility
+blowUP_D.lzh     51   Demo version of blowUP - heed all warnings!!!
+bootconf.zip     3    Configures NVRAM
+falcnsx2.zip     28   Util sets hardware: CPU cache, Volume, Bus, etc.
+falconf.zip      13   .ACC/.PRG configures NVRAM?
+falcvolu.lzh     1    Sets Falcon volume to 1/2 from AUTO
+fboot.lzh        2    Lets you choose some options at boot time on a falcon
+fpatch2.zip      1    Fixes 2 TOS 4.0/4.04 problems with sound, Bconmap()
+full_rez.zip     33   Full resolution display on non-overscan TVs
+icons04.zip      48   TOS 4.xx Color Icon Editor
+magi.lzh         8    Helps prgs and demos run on Falcons.  Untested.
+mltiblow.zip     6    Assists in setting overscan mode
+nvram11.zip      7    German CPX to configure the NVRAM of a TT or Falcon.
+overscan.lzh     2    Two programs, turn overscan mode or or off
+reset_falcon.prg 5    Pressing RESET goes to desktop instead of reboot
+rez_fool.lzh     26   Fool VGA monitor into thinking its a TV
+sblaster.zip     36   Screenblaster demo version
+snd_thru.zip     2    Sound Thru: Runs sound from mic in to headphone out
+super_78.zoo     1    Sets screen to 78Hz scan rate
+
+============================================================================-
+Games:
+
+0index         ??   This index.
+3d_ski.zip     64   Egotistical robot takes the slopes
+4_7_11.lzh     37   Interesting Card Games (Solitaire variations)
+abalone.zoo    29   Marble game using a hexagonal board.
+acctris.zip    128  Tetris clone, runs as .PRG or .ACC; 2 player.
+adventr.arc    67   A really old adventure game.
+aks.arc        88   Alfred Kistenlager Schieberien: mono only
+alienate.zip   89   Robot chased by aliens
+amaze.lzh      24   Clear the block i nthe maze.  Color only.
+amoeba.arc     27   ???
+andurlin.arc   27   Search through maze, and make sword. mono only
+apathy.lzh     226  Tetris and Light cycle games by Bad Brew Brew (BBC)
+arcadem.arc    109  Arcade maniac - mono only
+astropan.arc   20   Astro Panic.  Shoot the aliens. Fall asleep.
+atax.lzh       95   Arcade game. Shootemup. Color.
+atom13ie.lzh   49   Boulder Dash-like program.  With construction set.
+awari.arc      49   Ancient african board game. Really good.
+backgamm.lzh   71   Ralf and friend's backgammon: german docs. Hi rez.
+ballzone.lzh   42   Arkanoid, breakout clone.
+bandwurm.arc   29   ???
+batlship.arc   46   Play battleship. Good, color only.
+battle.lzh     108  Excellent tetris like game
+bellum.lzh     13   Galaxian clone
+berzerk.zip    88   Faithful Adaptation of Classic by D. Munsie (shareware)
+biglife3.zoo   158  LIFE game, 64K x 64K universe, includes 200 patterns.
+blaster.lzh    24   A ok version of Galaga.  Don't get too excited.
+bldedit.lzh    16   Bloodwych charcter editor
+blobbrun.lzh   60   Color game.
+blockade.lzh   73   Breakout clone
+blox.arc       230  Dave's highly addictive fill-in-the-ring of blox game
+bnoid.arc      16   Breakout clone
+boggle.arc     27   The classic word game, now on the ST.
+bombs.arc      28   Minesweeper game for ths ST
+bouble.arc     16   ???
+breakout.arc   8    DA version of breakout. Fun, but limited. Mono/Color.
+breaksrc.arc   5    Source for breakout.arc
+bs_300pd.zip   367  "Operation Blue Sunrise" - adventure game.  Color.
+bt2ram.lzh     8    ???
+bubble.arc     32   You're a bubble, float around. Challenging. Color.
+bugs.lzh       82   Millipede type game. Donationware. Good. Color Only.
+cannon.lzh     35   Blow up your opponents castle. Mono only.
+canbomb.arc    35   (Lame) canyon bomber
+catchme.arc    13   Catch the moving alert box
+cbd_demo.zoo   139  CyberDome demo: hoverjet simulator
+cbsrc02.zip    73   CB Zone (Xwindows game) ST port source
+cbzone02.zip   46   CB Zone (Xwindows game) Mono only, Battlezone lookalike
+centauri.arc   175  Lee's Centurian game.  Shoot 'em up style.
+centped.lzh    93   Best Centipede Version ever! Better than Arcade version
+chaos1.msa     399  Chaos game, 1 meg version, color only.
+chaos2.msa     402  Chaos part II.
+chaos1_2.arc   339  1/2 meg version of chaos.  Color only.
+cheat.arc      105  ???
+cheats.ps.Z    87   Compressed PostScript file of game cheats
+cheats.rtf.Z   53   Compressed RTF format file of game cheatS
+cheats.zoo     53   ASCII text - Cheats for several games
+chain.lzh      51   Yet another Tetris clone
+chips.lzh      56   Demo of Chip's Challenge : classic puzzle game
+clubdemo.lzh   99   Demo of dominoes game (multiple modes including modems)
+col_drachen.arc 45  Color version of drachen, in english.
+colony.lzh     33   Clone of M.U.L.E. Color.
+columns.arc    30   Tetris like game, only better.
+combat.zoo     124  ST version of old 2600 game.  Color only
+conquer.lzh    50   Conquer the world.
+conquest.tos   138  World Conquest Game, color low res
+coolteV1.2.arc 71   Even coole than the one above.....
+corewars.arc   27   Run your program against another. Fun. Mono.
+crosspro.lzh   36   Crossword puzzle game.
+csb.arc        64   Help for Chaos Strikes Back.
+csb13.arc      72   More help.
+csb15.arc      94   Even more help. (Is this game hard or what?)
+csbchars.arc   6    Calvin & Hobbes and Bloom County characters for CSB/DM
+csbmaps.arc    108  Maps for CSB.
+cyber.lzh      99   Cybernetix, Awesome! defender ish sort of game
+daleks.arc     19   Similar to unix robots game
+dam.arc        69   Frustrating draughts game, completely in Dutch.
+dandungn.lzh   88   "Dangimere Dungeon"
+dangmer1.lzh   193  Role Playing game Low resolution (seems good) part 1
+dangmer2.lzh   276  part 2 of above
+darkperl.lzh   80   Intriguing game by Dave Munsie. Color. Vert. Scroller.
+daythund.lzh   37   Playable demo for Days of Thunder
+dclickme.arc   5    Click on the spot that appears.
+defdemo.prg    136  Defender II demo
+dinkum3a.zoo   83   Australian text adventure game
+discodad.arc   41   Disco dad
+dm_ed10.zip    29   Dungeon Master editor
+dm_hints.zoo   56   Some more maps and hints for DM
+dmdung2.arc    59   New dungeon for DM.  Needs original games.
+dmeditor.arc   11   Edit DM. Make it easy. Win cash prizes.
+dmhelp.arc     7    Help for DM.
+dml1to7.arc    37   Help for DM levels 1 to 7.
+dml8to14.arc   35   Help for DM levels 8 to 14.
+dmltnman.arc   18   Demolition man
+dogfight.arc   46   Steve's really great game.
+dogfight.zip   278  Demo of Micropose's new Dogfight!
+downfall.zip   15   Pile snow on your opponent! Uses 2 joysticks.
+drachen.arc    50   Find the otrher piece that can slide. Fun, mono.
+dreissig.arc   51   A dice game from germany. mono only
+droog.arc      37   A really lame arrow shooting game
+drwho.lzh      117  Dr. Who plays berserk
+dstar.arc      27   Death star text adventure game, for use with eamon
+duckdash.zip   75   Danny duck defends against mutant lab animals
+dungeon.zoo    219  Port of cdungeon
+eamon_mt.arc   93   Eamon system, with beginner's cave
+entombed.zip   53   Platform game - escape the Pyramid's traps!
+escapade.lzh   158  Game demo.  Puzzle w/ wierd background 'voices'.
+esp.lzh        9    Test your intuition.  Color.  Scary.
+espredit.lzh   88   Level editor for esprit.
+evader.lzh     81   Shoot-em-up game
+evasion.arc    108  Hunback style game, using STOS.
+extensor.arc   84   Sorta like light cycles of TRON. My roomate like this.
+flife101.zip   154  ST hi res version of LIFE
+flipped.zoo    93   Flip the tile game for colour st/stes.
+flipper.lzh    17   Othello clone.  Color only
+football.arc   29   Play the game of football. Hard to read. Color only.
+frogger.lzh    58   Dave Munsie's version of classic. Excellent
+fs.lzh         16   Flip side.  Good othello clone. Color only
+fuzzball.lzh   30   Qbert clone.  Color only.
+galaxian.lzh   160  Shareware Galaxian.  The licensed version!!!!!
+gemamigo.zip   138  GEM AmiGo - port of X11 Amiga Go program
+gaunted.arc    64   Guantlet editor.
+gems.arc       22   Similar to 8bit game of Diamonds
+gemchess09.zip 303  Warwick's GEM Gnu chess, v.0.9
+get_gems.lzh   55   Maze search puzzle, w/ editor and GFA sources
+get_worm.lzh   53   Another maze search puzzle
+getslide.lzh   54   Author says it's similar to get_worm only harder
+gilgalad.lzh   64   Action adventure text game.
+gmines.zoo     20   port of XMINES bomb field game
+gncipher.arc   123  Guess the phrase by guessing letters. Fun.
+gnu-m522.zoo   232  The latest port of moria v.5.22 compiled on gnu.
+gnuchess.arc   131  Obviously, gnu chess.
+gnugo.arc      19   Obviously, gnu go.
+go_board.lzh   43   Another form of go.
+go_up.lzh      61   Lode runner clone
+gobang.arc     36   5 in a row version of go
+grail.arc      96   Search for the holy grail.  Kill the black night. Mono.
+grav.arc       84   Similar to oids and thrust and other move and shoot.
+grav2.arc      317  From the author of grav and chaos, comes grav2.
+greed.arc      21   Lame, lame, lame. Eat squares. Die.
+gthor_2.arc    103  Othello clone, hi res only.
+hacman.arc     45   Pac man clone. Color only.
+hacmn215.arc   307  Dave Bagget's phenomenal Hac Man II. ver 2.15 Color.
+hangman.lzh    31   Med rez version of hangman with dictionaries
+happywrm.lzh   25   Happy pacworm maze game
+hardcore.zip   173  Demo of shoot-'em-up
+haunted.arc    47   Demo of a bad game. Color.
+hazzard.tos    203  Demo of new STOS based game. Like DM in space.
+hector.lzh     187  Mutant Vampire Tomatoes from Hell
+hero.arc       86   ???
+hexmin12.zoo   44   Sweep the hexagonal mines, but only in color.
+hiqgame.arc    19   Just like the board game. Really fun. Color.
+hotshot.arc    43   Good checkers game. Mono.
+ikbdptch.lzh    1   Patch keyboard on TOS 2.x and greater for some games.
+inv_pain.zip   233  Space Invaders (great) Qix type game also in same file
+invade.lzh     39   Good space invaders. Works on STe's unlike invaders.tos
+invaders.lzh   10   Neat space invaders from Germany. Mono only
+invaders.tos    53  Another version of Space Invaders. Hates TOS 2.06
+insect.zip     129  Insectroid. Shareware Galaxa-type game.
+ishar_sk.lzh   78   Ishar "survival kit".  Hints and tips for play.
+ishido.zoo     16   Game "ported" from Lynx title of same name
+isola3.zip     129  2 player GEM tactical blocking game, any resolution
+jasse31a.lzh   73   Dutch card game
+kaboom.lzh     37   Excellent shareware version of old 2600 classic
+keno.arc       63   The card game keno.
+
+/Kids-games:   A directory of games just for kids
+
+1stmaths.lzh   64   Teaches addition/subtraction/counting
+dot2dot.lzh    47   Join the dots and color in the picture
+fiveyrs.zoo    83   Several games suitable for 5 year olds
+fouryrs.zoo    66   Several games suitable for 4 year olds
+kidmixup.zoo   55   From the KidPrgs series by D.A.Brumleve
+kidpiano.zip   16       "
+kidshape.zip   24       "
+kidsong1.zoo   28       "
+kv_fonic.zoo   106  (4-7 yrs) match words to pictures
+kv_geo_1.lzh   77   (6-10 yrs) learn about our solar system
+kv_house.zoo   80   (4-7 yrs) be a butterfly and wander around a house
+kv_me1st.arc   108  (4-7 yrs) sequence pictures
+magspell.lzh   107  Magic Spell
+numbrs10.zip   175  Learning numbers game (DMA sound req. STe/TT/Falcon)
+noah.zip       183  Load the ark by spelling the animal names
+potato.zoo     24   Potato, the kid's game
+trains.zip     74   Counting and adding with cute animation of trains
+killtime.lzh   168  Interesting 5 part game
+ko2_edit.arc   146  Kickoff team editor
+kong.tos       147  Shareware clone of Donkey Kong by Dave Munsie (Good!)
+krabat2.arc    31   The chess game krabat.
+kubes.lzh      68   Interesting falling block game but like all others
+landmine.lzh   17   Find-the-mines classic
+larn12.arc     123  Adventure game, sorta like nethack, but easier.
+larn12s.arc    237  Sources and executables for larn12
+ldrdemo.tos    155  Leander demo by Psygnosis (1991). low res
+lifev4.zoo     109  The fourth in a series of life generations from Jeroen.
+Life_4-1.zip   216  Excellent version of Life. Many options.
+lightv12.arc   321  Light cycles: shareware 1 or 2 player game
+linecras.zip   46   A version of Lightcycles for up to eight players
+litpuz2.zoo    106  Updated small puzzles.  Low rez only. GFA sources below
+litpz2gf.zoo   51   GFA sources for litpuz2.zoo
+llamatrn.lzh   237  Outrageously excellent version of robotron,1 meg, color
+lodeclon.arc   47   Lode runner clone, mono only.
+m_stones.zip   39   Three games in one program, just try it.
+macpan.lzh     30   Just like pacman, only different.
+macrowar.zoo   96   Sorta like core wars and tank combined
+madtris.zip    105  ??
+manic.zip      249  Minesweeper clone, with music + samples
+manix.lzh      112  Just like the arcade version, only different.
+maps.zoo       253  Maps for several adventure games
+mariant.zip    51   Game of Solitaire, preferred by Marie Antoinette...
+mars.arc       59   Not a lunar lander, but a core wars program.
+mastermd.lzh   14   Board game
+maz.lzh        25   A good maze game.
+mazewar.zip    68   An eight player game (can use up to 8 joysticks)
+mcminos.lzh    490  McMinos. English/French/German. Shareware. ?
+mdmz2doc.lzh   10   English docs for midimaze2 (midimaz2.lzh)
+megamaze.arc   55   The famous Megamaze program.
+megaroid.arc   38   Asteroids compiled with Megamax C. A must have. C/M.
+memory.lzh     57   A concentration-type game. Mono, nice graphics.
+midibatl.lzh   489  Cool Midi game (ST & STe versions included) (Solo also)
+midimaz2.lzh   304  Many players use midi to play mazes.
+minds_11.zip   90   Minesweeper clone, very well done, works in all res
+mine2e.lzh     62   Similar to minesweeper from msw ent packages.
+mineswep.lzh   23   Another mine sweeper game
+minigolf.arc   42   Play putt putt on the st. mono,
+minos.arc      5    Maze game in a desk acc
+missle.arc     14   A bad version of missle command.
+molecule.zip   37   A find the atoms in the 8x8 grid game.  Colour only.
+monolife.arc   6    A different version of life.  Mono.
+monopoly.arc   75   A great one player version of the famous board game. C.
+monopool.lzh   14   Pool with sizx balls.  Fun, mono only.
+moria_54.zoo   195  A different compilation of moria 5.4
+mosaic.arc     12   Randy's port of mosaic, a tile game from X
+mst.lzh        23   Mastermind clone
+multi.zip      790  MULTI-BRIQUES demo version 1.02
+mystwell.zip   140  Fantasy adventure game - color
+nh313gemd.zoo  858  Nethack, gem version.  3.1.3d
+nh313txt.zoo   667  Nethack, text version.  Requires 2 meg machine.
+nhspoils.lzh   81   Help for nethack.
+nibe.zip       62   Centipede clone
+nitro.lzh      129  Playable demo of nitro.  Ed says, "Purtty good."
+no_limt8.zip   305  Shareware pinball game
+nostram.zip    157  Gods type game (STOS) use STOS fix for TOS > 1.62
+nova.lzh       36   Galaxian type game - color.
+omega202.zoo   248  Duneon style game. Newer version.
+oxyd.lzh       455  An esprit like game.
+oxyd2.lzh      671  Sequel to oxyd.  Mono only.  Works on TT
+oxydcolr.zip   706  Color version of oxyd, has some instructions.
+orbit.lzh      59   Awesome breakout game (with screen editor)
+p_worlds.zoo   1    Populous world listing from Mickey
+pacmen.zip     121  PD Pacman with guns, up to 8 players (!)
+panic.lzh      8    Shoot 'em up.  No docs. Works in all resolutions.
+patience.arc   73   Jusdt like the board game.
+patience.lzh   53   German, several solitaire card games, now w/English docs
+pengo.lzh      18   Just like the arcade. Color. Run the penguin around.
+pentom.lzh     76   Pentominoes for the ST, puzzle fans, unite.
+pinfo.zoo      266  plays InfoCom level 3 games
+pipeline.lzh   12   Simple but fun game, works in all resolutions
+pmj_eng2.zip   244  Mahjong for all Atari computers (including Falcon!)
+predchet.arc   6    Cheat for predaadtor
+prens.zip      96   Interesting puzzle/action game with good graphics.
+primitiv.lzh   31   German logic game for 2-4 players. Mono.
+psy_pig2.zip   389  PsychoPig 2; see docs concerning two-disk setup
+pushover.lzh   321  Demo of Pushover, where you knock over dominoes, good.
+puzzle.arc     11   ???
+puzzle2.arc    120  Endless jigsaw puzzle.  Shareware from TOMMYSOFT.
+puzzler.arc    129  7 great desktop puzzles in one!
+quest14.arc    17   ???
+quix.arc       29   Similar to frenzy
+rayoid.zip     80   Excellent Asteroids type game. Shareware.
+reflecti.zoo   120  Hit objects by bouncing light beam off mirrors/prisms
+rev_demo.lzh   13   Reversi cpx module
+revenge.zoo    137  Revenge of the Mutant Camels (from the Llamatron folks)
+reversi.arc    6    The classic game, DA. Color/Mono.
+risk.arc       93   Mono version of the board game. Dutch.
+risk_eng.lzh   79   English version of risk.arc
+robotz.lzh     83   Berzerk like game, from someone obviously on ludes
+robugs13.zoo   58   Brad's freeware make the bugs and watch 'em go game 1.3
+rockball.arc   238  Futuristic sports game
+roguefix.arc   6    Fix fo rogue???.
+rubc.arc       124  Spin the cube on the st.
+saddam.lzh     58   Shoot the man on the animal, cause controversy.
+sb2cheat.lzh   8    Speedball II cheat program, excellent!!
+sbreak.zoo     103  Great breakout/arkanoid clone.
+seepee2.lzh    27   Worm game, like PC Catepillars.
+sherlock.arc   27   A good who-done-it. Mono. German/English.
+shfflbin.zoo   21   Shuffle game (takes picture and shuffles it. Put it bac
+shfflsrc.zoo   16   Sources for above
+shgatehp.zoo   9    Shadow gate help
+shift3.lzh     134  Nat!'s mono shift game
+shocker2.zip   481  Interesting mono only German game
+sixteen.lzh    20   English sixteens puzzle
+skates.lzh     220  Skate board game. Color. Fun. Big.
+skulldig.lzh   59   ???
+slaughtr.arc   59   Kill the kids in the schoolyard. Cause more controversy.
+smashhit.lzh   127  Pretty good tennis games.  Color only.
+smashout.arc   20   Quite like breakout, only different
+snake.lzh      73   Cybersnake - color only
+sokoban.arc    28   ???
+sokobang.lzh   33   Van snyder's version of sokoban.
+sokobin.zoo    32   Binaries for Bob's port of sokoban
+sokosrc.zoo    20   Sources for above
+solitare.arc   17   Play solitare as  a DA. Color/mono.
+solution.zoo   322  Solutions to many adventure games
+soma.lzh       8    Cube puzzle game
+sorry.lzh      56   Just like the board game.
+soshang.lzh    19   Another version of Hangman
+spaceinv.lzh   12   Relive your youth. Play this game.
+spacew41.arc   58   Another space war of sorts
+spacewar.arc   37   Two player mono only. Fly around and blow up your friend
+spacewar132.zip59   Another shot at the classic computer game.
+spacola.lzh    660  Mono. Travel through galaxy as a salesman.
+sparrow.lzh    55   Some game without a good readme ???
+spider2.zoo    42   Solitare card game.  Not easy.  Low rez only.
+squaroff.zoo   71   Arcade/maze game for colour st/ste.  Now PD.
+staball.arc    113  Statistically accurate baseball
+staccato.arc   111  Piano player. Quite nice.  Wrong section.
+stacdemo.arc   292  Graphics/text adventure system game
+starball.zip   345  Pinball game, enhancd for Falcon
+stbr215e.zip   50   The card game Bridge
+stcheats.lzh   51   Large collection of how to cheat on games :)
+stello11.lzh   356  Shareware othello program, works on ST/STE/TT/Falc/MTOS
+stinvadr.arc   18   ST Invaders.
+stonedlx.zoo   52   Similar to wanderer. Color only. W/GFA source
+strabble.zoo   284  Play your ST or a friend in Warwick's scrabble. C/M.
+stratage.lzh   663  Empire type stategy game, 2 players, color, > 1meg RAM
+sttetris2.ar   22   Another version of tetris. Not bad.
+swap_tls.lzh   65   Swap Tiles - strategy game
+swar2000.zip   202  Combo of Space Wars, Xtank and Scorched Earth.
+swtng132.lzh   58   Spaceware, the next generation, v1.32. Two player.
+sundghlp.arc   12   Sun Dog help.
+ 
+END OF PART 4

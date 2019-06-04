@@ -1,0 +1,137 @@
+-------------------------------------------------------------------------------
+             *Umbauanleitung fÅr hîheren DSP-Takt des Falcon030*
+                         *(c)1995 Mitja Rateiczak*
+-------------------------------------------------------------------------------
+
+_Benîtigtes Werkzeug:_
+Kleiner Seitenschneider
+Scharfes Messer
+Entlîtsaugpumpe
+16W Lîtkolben
+Heiûklebepistole
+Multimeter oder auch GlÅhlampe mit Batterie und ein wenig Litze :-)
+
+_Material:_
+Lîtzinn
+Schaltlitze z.B. 0,08mm^2
+Quarzoscillator 48MHz (ggf. 50MHz)
+KÅhlkîrper z.B. fÅr 24 poliges IC
+WÑrmeleitpaste
+ggf. Doppelklebeband
+
+_Sonstiges:_
+Wo wird der Lîtkolben heiû?
+Eine ruhige Hand
+ca. zwei Stunden Zeit
+
+_Achtung!_
+Da ich  nicht 100% weiû  ob die verschiedenen  Boardrevisionen die gleiche Bau-
+teilbezeichnungen haben, gilt das hier Beschriebene nur fÅr Rev D/C!
+
+U38 ist der DSP-Chip
+U37 ist der Quarzoscillator 32MHz fÅr DSP- und DMA-Chip
+U36 ist der DMA-Chip
+
+Die Pinbelegung eines Quarzoscillators (Bodenansicht):
+
+ +---------                       +---------------
+ |*1     4*|                      |*1           7*|
+ |         |                      |               |
+ |*8     5*|                      |*14          8*|
+  ---------                        ---------------
+
+1 Nicht angeschlossen            1  Nicht angeschlossen
+4 Masse                          7  Masse
+8 +5V                            14 +5V
+5 Taktausgang                    8  Taktausgang
+
+
+Auf der Platine des Falcon REV D/C ist das Layout wie folgt angelegt:
+Ansicht auf die Oberseite des Motherboards!
+
+DMA   |                U37
+      |         Nicht*     *+5V
+      | angeschlossen
+------+
+U36             Masse*     *Takt    +--------+
+                            DMA     |        |   U38
+                                    |  DSP   |
+                Masse*     *Takt    |        |
+                            DSP     +--------+
+
+* = Lîtpunkte fÅr den Oscillator
+
+Das GehÑuse  und der Blechverhau  des Falcon030 sind zu entfernen. Auch die Un-
+terseite des Falcon030-Motherboards muss zugÑngig sein!
+
+Zuerst  wird der  Quarzoscillator U37 vorsichtig  ausgelîtet. Bei  mir war eine
+kleine Version  eingebaut, welche in der Draufsicht quadratisch ist. Diese Ver-
+sion ist unbedingt fÅr diesen Umbau von nîten.
+
+Auf der  Unterseite des  Motherboards ist  eine Leiterbahn, welche den Lîtpunkt
+Takt DMA  mit dem Lîtpunkt  Takt DSP verbindet. Diese  Verbindung  wird mit dem
+scharfen Messer unterbrochen. Aber bitte nicht zu tief bohren, es  handelt sich
+beim Motherboard schlieûlich um eine Multilayerplatine!
+
+Wichtig: Testen ob die Unterbrechung wirklich hergestellt ist!
+
+Man lîtet  eine PrÑzisions-IC-Fassung  14polig in  die 6 freigemachten Lîtaugen
+von U37. Dazu  kneift man die  nicht benîtigten 8 _Beinchen_ der IC-Fassung ab,
+so daû  nur noch 6  Beinchen vorhanden  sind und die abgekniffenen Beinchen das
+Motherboard keinesfalls berÅhren kînnen. Zur Sicherheit fÅllt man die nicht be-
+nîtigten 8 Kontakte  mit Lîtzinn, damit  keine Kontaktsplitter  auf der Platine
+herumfliegen kînnen.
+
+So der schwierigste Teil ist Åberstanden.
+
+Jetzt kommt  der kleine Quarzoscillator  32MHz, dessen vier Kontakte ordentlich
+versÑubert wurden  wieder in  seine angestammte Possition in der IC-Fassung von
+U37.
+
+
+_FÅr Leute deren Falcon im Tower sitzt:_
+Am neuen Quarzoscillator 48MHz werden die beiden Beinchen (Taktausgang und Mas-
+se) vorsichtig nahe am GehÑuse um 90Grad nach auûen hin abgewinkelt. Der Quarz-
+oscillator wird dann in die zwei noch freien Sockel der IC-Fassung gesteckt, so
+daû die beiden anderen Beinchen des Quarzoscillators zu den Audio-Buchsen (Mic-
+ro und Kopfhîhrer) des Falcon zeigen.
+
+Jetzt  fehlt nur  noch +5V fÅr  den 48MHz  Quarzoscillator. Diese +5V stehen an
+vielen Stellen im Falcon zur VerfÅgung. Z.B. liegt diese Spannung an Pin 50 der
+Speicherplatine. Also verbindet man Pin 50 der Speicherplatine mit dem +5V Ein-
+gang des Quarzoscillators.
+
+
+_FÅr Leute deren Falcon noch im OrginalgehÑuse sitzt:_
+Der  Quarzoscillator 48MHz  wird rÅcklings  mit Doppelklebeband auf das IC U45,
+welches  sich unterhalb  des DSP befindet geklebt. Man verzinnt ein StÅck Litze
+und steckt diese in den Taktsockel DSP der IC-Fassung und lîtet das andere Ende
+an den Taktausgang des Quarzoscillators 48MHz. Man verzinnt ein StÅck Litze und
+steckt diese in den Massesockel der IC-Fassung und lîtet das andere Ende an die
+Masse des  Quarzoscillators 48MHz. Man verbindet mit Litze Pin 50 der Speicher-
+platine mit dem +5V Eingang des Quarzoscillators.
+
+_Jetzt ist man fast fertig!_
+Man sollte  seine Arbeit  nochmals  kontrollieren und  alle Lîtspritzer von der
+Platine  entfernen. Auch die  von der Fertigung  von Atari! Was man da so alles
+findet :-( (mein  grîûter  Fund  war  bisher  ein StÅck Lîtzinn mit den Abmaûen
+2mm*6mm)
+
+Den KÅhlkîrper  setzt man, nachdem man ihn mit WÑrmeleitpaste leicht eingestri-
+chen hat auf den DSP und fixiert ihn mit Heiûkleber.
+
+Nun sollte man den Rechner wieder zusammenbauen.
+
+Wenn man  den Rechner  einschaltet und  es passiert nichts *sofort Ausschalten*
+und nochmals  die Schaltung  kontrollieren. Wenn  nur das  Atari-Logo kommt und
+sonst nichts passiert kann es sein, daû der DSP keinen Takt bekommt.
+
+*WICHTIG*
+Diese  Umbauanleitung wurde  von mir  mit grîûter  Sorgfalt  erstellt, trotzdem
+Åbernehme  ich keinerlei  Verantwortung fÅr  SchÑden jedwelcher Art, welche aus
+deren Gebrauch entstehen kann.
+
+(c)1995 Mitja Rateiczak                 eMail: mitja_rateiczak@bm.maus.de
+
+Ciao .\\itja
+-------------------------------------------------------------------------------

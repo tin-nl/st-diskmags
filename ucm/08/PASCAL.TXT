@@ -1,0 +1,399 @@
+
+                       ECHTE PROGRAMMIERER MEIDEN PASCAL
+                     -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+Vor langer  Zeit, in der  Goldenen ra der  Computer, war es noch  einfach, die
+M„nner  von den  Memmen zu  trennen (mitunter  auch "Echte  M„nner" und "Msli-
+fresser" genannt). Echte M„nner programmierten Computer, und Mslifresser lies-
+sen es bleiben. Ein  Echter Programmierer  sagte Dinge wie "DO 10 I=1, 10" oder
+"ABEND", und  der Rest  der Welt  quengelte "Computer sind mir  zu kompliziert"
+oder "Ich kann zu Computern keine gefhlsm„ige Bindung aufbauen - sie sind mir
+zu unpers”hnlich". Dabei  zeigte schon  Remy Eyssen's  Buch "Echte M„nner m”gen
+kein Msli" (Heyne TB 6290), da Echte M„nner zu nichts und niemanden eine "ge-
+fhlsm„ige Bindung" aufbauen, und da sie auch keine Angst haben, unpers”nlich
+zu sein.
+
+Aber die  Zeiten „ndern  sich. Heute  stehen wir  einer  Welt gegenber, in der
+kleine  alte Damen vollcomputerisierte  Mikrowellenherde  kaufen k”nnen, in der
+zw”lf Jahre alte Dreik„sehochs gestandene M„nner bei ASTEROIDS und PACMAN satt-
+machen, und in der jeder seinen eigenen Heimcomputer kaufen und sogar verstehen
+kann. Der Echte  Programmierer ist gef„hrdet von Studenten mit einem igITT 2020
+(deutsche Version des Abfall-II, A.d.R.) im Gep„ck ersetzt zu werden!
+
+Es gibt allerdings einige Unterschiede zwischen dem typischen PACMAN-spielenden
+Gymnasiasten und einem Echten Programmierer. Die Erkenntnis dieser Unterschiede
+wird den Heranwachsenden ein Ziel geben, nach dem sie streben k”nnen - ein Vor-
+bild, eine  Vaterfigur. Auerdem  schtzt sie  den Echten Programmierer vor der
+Arbeitslosigkeit.
+
+Der einfachste Weg um einen Echten Programmierer zu erkennen fhrt ber die von
+ihm verwendete Programmiersprache. Echte Programmierer benutzen FORTRAN. Msli-
+fresser benutzen Pascal.
+
+Nikolaus Wirth, der  Sch”pfer von  Pascal, wurde einmal gefragt, wie man seinen
+Namen  ausspreche. "You  can either  call me by name, pronouncing it 'Veert' or
+call me  by value, 'worth'", antwortete  er. Diese  Bemerkung zeigt sofort, da
+Wirth ein Mslifresser ist. Der einzige Parameterbergabemechanismus, den Echte
+Programmierer  akzeptieren  ist  call-by-value-return (call-by-result, A.d.R.),
+wie er in  den IBM FORTRAN G und H Compilern  implementiert ist. Echte Program-
+mierer  brauchen schlielich keine abstrakten Konzepte, um ihre Arbeit zu erle-
+digen; sie sind vollkommen glcklich mit einem Lochkartenstanzer, einem Fortran
+IV Compiler und einem Bier.
+
+Echte  Programmierer  erledigen  Listenverarbeitung, Zeichenkettenmanipulation,
+Abrechnungswesen (wenn  berhaupt) und  knstliche  Intelligenz in FORTRAN. Was
+sie nicht  in FORTRAN machen  k”nnen machen  sie in Assembler, was sie nicht in
+Assembler machen k”nnen lassen sie ver„chtlich liegen.
+
+Akademische  Computerspezialisten  sind in den  letzten Jahren auf das Abstell-
+gleis der  strukturierten  Programmierung geraten. Sie behaupten, da Programme
+verst„ndlicher werden, wenn bestimmte Sprachkonstrukte und Programmiertechniken
+benutzt  werden. Sie k”nnen sich natrlich nicht einigen, welche  Konstrukte am
+besten  geeignet sind  und die Beispiele, an  denen sie ihren speziellen Stand-
+punkt aufzeigen  wollen, passen ausnahmslos auf eine Seite irgendeines obskuren
+Journals. Als ich aus der Schule kam, dachte ich, ich sei der beste Programmie-
+rer  der Welt. Ich  konnte  ein  unschlagbares tic-tac-toe-Spiel schreiben, be-
+herrschte  fnf verschiedene  Programmiersprachen und schrieb fehlerfreie 1000-
+Zeilen Programme. Dann kam ich in die Wirklichkeit.
+Meine erste  Aufgabe bestand  darin, ein 200.000 Zeilen FORTRAN Programm zu le-
+sen, zu verstehen und um den Faktor zwei zu beschleunigen. Jeder Echte Program-
+mierer wird  einem versichern, da die gesamte  strukturierte Programmierung in
+diesem Fall nicht hilft - hier braucht man wirklich Talent.
+
+Einige  Betrachtungen zum Thema "Echte Programmierer und strukturierte Program-
+mierung":
+
+*   Echte Programmierer haben keine Angst vor GOTO's.
+
+*   Echte Programmierer schreiben  fnf Seiten lange  DO-Schleifen, ohne durch-
+    einander zu geraten.
+
+*   Echte Programmierer lieben das arithmetische IF-Statement (das mit den drei
+    Ausg„ngen, A.d.R.), weil sie den Code interessanter machen
+
+*   Echte Programmierer schreiben selbstmodifizierende Programme, speziell wenn
+    sie damit in einer kleinen Schleife zwei Nanosekunden einsparen k”nnen.
+
+*   Da FORTRAN strukturierte  IF, REPEAT...UNTIL oder  CASE  Anweisungen  nicht
+    kennt, braucht  sich der  Echte Programmierer  nicht zu  sorgen, da er sie
+    nicht  benutzt. Auerdem kann  man sie n”tigenfalls  ber "Assigned GOTO's"
+    simulieren.
+
+Auch Datenstrukturen  waren in letzter Zeit in der Diskussion. Abstrakte Daten-
+typen, Records, Pointer, Listen  und Zeichenketten sind in gewissen Kreisen po-
+pul„r geworden. Wirth, der Mslifresser, verfate sogar ein ganzes Buch ("Algo-
+rithmen und Datenstrukturen", Teubner 1975), in dem er behauptete, da man Pro-
+gramme  schreiben k”nne , die  auf Datenstrukturen aufbauen, statt es umgekehrt
+zu machen. Wie  jeder Echte Programmierer  wei gibt es nur eine wirklich sinn-
+volle Datenstruktur, das Array.
+Zeichenketten, Listen, Records  und Mengen sind allesamt Sonderf„lle von Arrays
+und k”nnen  auch so behandelt werden, ohne dadurch die Sprache zu verkomplizie-
+ren. Das  Schlimmste an  den ganzen Typen ist auerdem, da man sie deklarieren
+mu, w„hrend Echte Programmiersprachen, wie man wei, den Typ anhand des ersten
+Buchstaben eines maximal sechs Zeichen langen Bezeichners implizit festlegen.
+
+Welches Betriebssystem der Echte Programmierer benutzt? CP/M? Gott bewahre! Das
+ist doch im Grunde ein Spielzeug-Betriebssystem. Selbst kleinere alte Damen und
+Hauptschler k”nnen CP/M benutzten und verstehen.
+
+UNIX ist natrlich schon viel komplizierter - der typische UNIX Hacker wei nie
+wie das PRINT  Kommando diese  Woche heit - aber  wenn man es genau nimmt, ist
+UNIX doch  nur ein verherrlichtes Telespiel. Niemand arbeitet auf UNIX Systemen
+an  ernstzunehmenden  Dingen - man  schickt kleine Witzchen ber USENET rund um
+die Welt, oder schreibt ein neues Adventure Spiel oder Forschungsberichte.
+
+Nein, der  Echte Programmierer benutzt OS/370. Ein guter Programmierer kann die
+Beschreibung  des Fehlers IJK3051 in  seinem JCL Handbuch finden und verstehen.
+Ein groartiger  Programmierer kann  JCL schreiben, ohne  je in das Handbuch zu
+sehen. Ein  wahrhaft auergew”hnlich guter  Programmierer  kann Fehler in einem
+sechs Megabyte Hexdump finden, ohne einen Taschenrechner zu benutzen.
+
+OS/370 ist  wirklich  ein bemerkenswertes  Betriebssystem. Mit  einem  einzigen
+falsch placierten Leerzeichen kann man die gesamte Arbeit mehrerer Tage zerst”-
+ren, was die Wachsamkeit im Programmierteam ungemein f”rdert.
+
+Der beste Weg zum System ist der Kartenstanzer. Zwar behaupten einige Leute, es
+g„be ein  Timesharing System unter OS/370, aber nach sorgf„ltigen Nachforschun-
+gen bin ich zu dem Schlu gekommen, da sie sich irren.
+
+Welche Werkzeuge  ein Echter Programmierer  benutzt? Nun, theoretisch k”nnte er
+seine  Programme ber  die Maschinenkonsole  eingeben und laufen lassen. In den
+frhen Tagen der Computerei, als Computer noch Maschinenkonsolen  hatten, wurde
+dies auch  gelegentlich getan. Der typische Programmierer wute den Systemurla-
+der Bit  fr Bit auswendig  und tastete  ihn ein, sobald er von seinem Programm
+zerst”rt worden war.
+Damals war Speicher  auch noch  Speicher - der war nicht einfach leer, wenn der
+Strom ausfiel. Hauptspeicher von heute vergessen entweder Dinge, die sie behal-
+ten sollen oder behalten Informationen, die schon lange weg sein  sollten. Aber
+zurck zum Thema.
+
+Die Legende  sagt, da Seymour Cray, der Erfinder des Cray-I Supercomputers und
+der meisten Computer  von Control Data, selbst das erste Betriebssystem fr die
+CDC7600 an  der Maschinenkonsole  eingetastet hat, als sie das erste Mal einge-
+schaltet wurde. Cray ist selbstverst„ndlich ein Echter Programmierer. Einer der
+Echten  Programmierer, die  ich am meisten  bewundere, arbeitete als Systempro-
+grammierer  fr Texas Instruments. Eines Tages erhielt er ein Ferngespr„ch, von
+einem Benutzer, dessen System mitten in einer wichtigen Arbeit abgestrzt war.
+
+Der Typ  reparierte dann den  Schaden ber das Telefon. Er brachte den Benutzer
+dazu, ber  die Maschinenkonsole  Disk I/O Instruktionen einzutasten, Systemta-
+bellen in Hexadezimal zu reparieren und Registerinhalte ber das Telefon durch-
+zugeben.
+
+Die Moral von der Geschicht: Obwohl ein Echter Programmierer normalerweise Kar-
+tenlocher  und Schnelldrucker  benutzt, kommt  er im Notfall auch mit einer Ma-
+schinenkonsole und Telefon aus.
+
+In einigen  Firmen besteht die  Programmeingabe  allerdings nicht mehr aus zehn
+schlangestehenden Ingenieuren, die auf einen 029-Locher warten. In meiner Firma
+zum Beispiel steht kein einziger Kartenlocher.
+Der  Echte Programmierer  mu in diesem Falle seine Arbeit mit einem Texteditor
+erledigen. Auf den meisten Rechnern stehen verschiedene Editoren zur Verfgung,
+und der  Echte Programmierer  mu aufpassen, da  er einen erwischt, der seinen
+pers”hnlichen Stil wiedergibt. Viele Leute glauben, da die besten Editoren der
+Welt  am Xerox Palo Alto Research Center  geschrieben  wurden und auf Alto oder
+Dorado Computern laufen. Unglcklicherweise  wrde jedoch  kein Echter Program-
+mierer einen Computer mit einem Betriebsystem benutzen, da SmallTalk heit und
+sicher auch nicht ber eine Maus mit einem Rechner kommunizieren.
+
+Einige Konzepte  der Xerox Editoren sind mittlerweile in Editoren eingeflossen,
+die unter sinnvoller benannten Betriebssystemen arbeiten, so wie EMACS oder IV.
+Das Problem  mit diesen  Editoren ist, da  Echte Programmierer das Konzept des
+"Du kriegst, was du siehst" fr  schlecht  halten. Der Echte Programmierer will
+einen "Du hast es so gewollt, da hast Du's"-Editor, einen, der kompliziert ist,
+kryptisch, leistungsf„hig, gnadenlos und gef„hrlich. TECO um genau zu sein.
+
+So wurde  beobachtet, da  TECO-Kommandofolgen  dem  Leitungsrauschen „hnlicher
+sind als  dem lesbarem Text. Eins  der unterhaltsamen Spiele, die mit TECO m”g-
+lich sind, besteht  darin, den eigenen Namen als Kommando einzugeben und zu ra-
+ten, was  dann passiert. So  ungef„hr jeder  m”gliche Tippfehler kann dank TECO
+das gerade  editierte Programm zerst”ren, oder schlimmer noch, kann kleine mys-
+teri”se Fehler in einstmals funktionierende Unterprogramme einbringen.
+Aus diesem Grunde editieren Echte Programmierer nur sehr widerwillig Programme,
+die schon fast laufen. Sie finden es viel einfacher, den bin„ren Objektcode di-
+rekt  zu „ndern, fr  gew”hnlich  mit einem  Programm, das  SUPERZAP heit (auf
+Nicht-IBM-Rechnern  entsprechend anders). Dies  funktioniert  so gut, da viele
+laufende  Programme auf  einem  IBM-System keine  hnlichkeit mit den ursprng-
+lichen FORTRAN-Quellprogramm haben. In einigen F„llen ist nicht einmal mehr das
+Quellprogramm vorhanden. Wenn dann der Zeitpunkt gekommen ist, so  ein Programm
+zu „ndern, wrde kein Manager auch nur daran denken, einem geringerem als einem
+Echten Programmierer  diese Arbeit zu  bertragen - kein Mslifressender struk-
+turierter Programmierer wte auch nur, wo er mit der Arbeit anfangen soll. Man
+nennt das Arbeitssicherungsmanahmen.
+
+Hier eine  Liste der wichtigsten Programmierhilfen, die der Echte Programmierer
+nicht benutzt:
+
+*    FORTRAN-Pr„prozessoren  wie  MORTRAN oder RATFOR. Dies  Haute Cuisine  der
+     Programmierung eignet sich hervorragend, um Msli zu produzieren.
+
+*    Quellcodeorientierte Debugger. Echte Programmierer lesen Hexdumps.
+
+*    Compiler, die  Code fr Array-Indexberprfungen  erzeugen. Sie  ersticken
+     jede Kreativit„t  im Keim; zerst”ren  die meisten der interessantesten An-
+     wendungen  der EQUIVALENCE-Vereinbarungen, und  machen  nderungen des Be-
+     triebssystems mit Hilfe negativer  Indizes unm”glich. Und  schlimmer noch,
+     solcher Code ist ineffizient.
+
+*    Programmpflegsysteme. Ein  Echter Programmierer  h„lt seine  Software  als
+     Kartenstapel  unter  Verschlu, denn  dies  zeigt, da der  Besitzer seine
+     wichtigen Programme nicht unbewacht lassen kann.
+
+Wo der typische Programmierer arbeitet? Welche Art von Programmen derart talen-
+tierter  Individuen wrdig  sind? Nun, man  kann sicher sein, da man nie einen
+Echten Programmierer  beim  schreiben  von Buchhaltungsprogrammen  in COBOL er-
+wischen wird oder gar beim sortieren von Abonnentenadressen des STERN-Magazins.
+Nein, ein Echter Programmierer braucht Aufgaben von weltbewegender Bedeutung.
+Echte Programmierer arbeiten fr das Los Alamos National Laboratory und schrei-
+ben dort  Atomkriegs-Simulationen  auf Cray-I Supercomputern, oder sie arbeiten
+bei  der National Security Agency  und entschlsseln russische Funksprche. Nur
+weil tausende Echter Programmierer fr die NASA gearbeitet haben, waren "unsere
+Jungs" eher auf dem Mond als die Kosmonauten.
+
+Die  Computer im  Space Shuttle wurden  von Echten Programmierern programmiert,
+und auch  die Betriebssysteme  der  Cruise Missiles der Firma BOEING wurden von
+diesen Echten Professionals entworfen.
+
+Einige der  furchteinfl”ssendsten  Echten Programmierer arbeiten im Jet Propul-
+sion  Laboratory  in Kalifornien. Viele  von ihnen kennen das gesamte Betriebs-
+system  der Pioneer- und  Voyagersonden auswendig. Mit  einer  Kombination  aus
+groen, bodengebundenen  FORTRAN-Programmen  und kleinen  von den Sonden mitge-
+fhrten Assemblerprogrammen  vollbringen sie unglaubliche Kunststcke der Navi-
+gation und Improvisation.
+
+So treffen  sie nur  10 Kilometer groe  Fenster nahe Saturn nach  sechs Jahren
+Flug durch den  Weltraum, oder reparieren, beziehungsweise umgehen defekte Sen-
+soren, Sender  oder Batterien. Angeblich soll es einem Echten Programmierer so-
+gar  gelungen sein, in  ein paar  hundert Bytes unbenutzten Speichers innerhalb
+der Voyager-Sonde ein Mustererkennungsprogramm zu pressen, da einen neuen Mond
+des  Jupiters suchte, fand und photographierte. Fr die GalileoSonde ist vorge-
+sehen, da  sie auf  ihrem Weg  zum Jupiter  entlang einer schwerkraftgelenkten
+Bahn am Mars vorbeizieht. Diese Bahn fhrt in einer Entfernung von 80 +-3 km an
+der Marsoberfl„che  vorbei. Kein  Mensch wrde  diese Art  von Navigation einem
+Pascal-Programm oder gar -Programmierer anvertrauen.
+
+Viele der  Echten Programmierer  dieser Welt arbeiten fr die amerikanische Re-
+gierung, meist  fr das Verteidigungsministerium. So  soll es  sein. In letzter
+Zeit allerdings erscheinen dunkle Wolken am  Horizont der Echten Programmierer.
+Es scheint als h„tten einige einflussreiche Mslifresser im Verteidigungsminis-
+terium entschieden, da in  Zukunft alle Verteidigungsprogramme in so einer Art
+von groer, vereinheitlicher Programmierersprache namens ADA geschrieben werden
+mten. Lange  Zeit schien es, als  l„ge ADA's Bestimmung im Versto gegen alle
+Regeln der Echten Programmierung.
+
+Es ist eine Sprache der Strukturen, Datentypen, strenger Typenbindung und Semi-
+kolons. Kurz, sie  ist wie  geschaffen  um die Kreativit„t des typischen Echten
+Programmierers zu verkrppeln.
+
+Glcklicherweise  hat die jetzt vom DoD ausgew„hlte Sprache noch gengend inte-
+ressante  Eigenschaften, um  dem Echten Programmierer eine Ann„herung zu erm”g-
+lichen: Sie  ist unglaublich komplex, sie enth„lt M”glichkeiten, um mit dem Be-
+triebssystem  herumzumachen  und Speicherbereiche  neu zu verteilen, und  Edgar
+Dijkstra mag  sie nicht. Dijkstra  ist, wie  man wissen  sollte, der  Autor von
+"GOTO's are Considered Harmful", einem Meilenstein der Programmiermethodologie,
+der von Pascal-Programmierern und Mslifressern gleichermaen bewundert wird.
+Und  auerdem kann  ein zu  allem entschlossener  Echter Programmierer in jeder
+Sprache FORTRAN-Programme schreiben.
+
+Der  Echte Programmierer  kann allerdings  auch Kompromisse in Bezug  auf seine
+Prinzipien  eingehen und an etwas geringerem als der Vernichtung des Lebens ar-
+beiten, sofern  er dafr entsprechend  bezahlt wird. Viele  Echte Programmierer
+schreiben  zum  Beispiel Videospiele  fr Atari, allerdings  spielen  sie nicht
+damit. Ein  Echter Programmierer  wei, wie  er die Maschine  jedesmal schlagen
+kann und  damit ist es keine Herausforderung mehr. Jeder bei Lucas-Film ist ein
+Echter Programmierer, denn  es w„re doch verrckt, das Geld von fnfzig Millio-
+nen Star-Wars Fans auszuschlagen.
+
+Der Anteil  der Echten Programmierer im Bereich der Computer-Graphics ist etwas
+niedriger  als anderswo, was  wahrscheinlich  daran liegt, da noch niemand den
+Nutzen   von  Computer-Graphics  entdeckt  hat. Andererseits  werden  Computer-
+Graphics berwiegend in FORTRAN abgehandelt, daher gibt es einige Leute, die so
+das Schreiben von COBOL-Programmen vermeiden.
+
+Im Allgemeinen  spielt der Echte Programmierer wie er arbeitet - mit Computern.
+Er ist  st„ndig darber erheitert, da sein Arbeitgeber ihn tats„chlich fr et-
+was bezahlt, was  er nur so zum  Spa tun wrde. - Allerdings achtet er darauf,
+diese  Meinung nicht laut zu „uern. Gelegentlich kommt der Echte Programmierer
+auch aus seinem Bro heraus, um sich ein wenig frische  Luft und ein  oder zwei
+Bierchen zu genehmigen.
+Hier einige  Hinweise, wie man den Echten Programmierer auerhalb des Computer-
+raums erkennt:
+
+*     Auf Parties stehen Echte Programmierer in einer Ecke und diskutieren ber
+      die Sicherheitsmechanismen von Betriebssystemen, und wie man darum herum-
+      programmiert.
+
+*     Bei  Fuballspielen vergleicht der Echte Programmierer die Ergebnisse mit
+      seinen  auf  grnliniertem  Leporello-Papier  gedruckten Computer Simula-
+      tionsergebnissen.
+
+*     Am Strand zeichnet ein Echter Programmierer Fludiagramme in den Sand.
+
+*     Ein  Echter Programmierer  geht in die Disco  um sich die Lichtorgel oder
+      die Lasershow anzusehen.
+
+*     Bei Begr„bnissen sagt der Echte Programmierer typischerweise "Armer Knut-
+      Uwe. Er  war mit  seinem Sortierprogramm  schon fast  fertig, als ihn der
+      Herzinfarkt erwischt hat.".
+
+*     Im Supermarkt  besteht der  Echte Programmierer  darauf, seine  Bierdosen
+      selber  ber das Fenster des Strichcodelesers zu schieben, weil er keinem
+      Kassierer zutraut, dies beim ersten Versuch richtig zu machen.
+
+In welcher  Umgebung der  Echte Programmierer am besten funktioniert? Nun, dies
+ist  eine sehr  wichtige Frage  fr die Manager von Echten Programmierern. Wenn
+man bedenkt, wie teuer es ist, einen von ihnen im Betrieb zu halten, dann soll-
+te man ihn oder sie in eine optimale Arbeitsumgebung versetzen.
+
+Der typische Programmierer lebt vor einem Computerterminal. Rund um dieses Ter-
+minal  liegen Ausdrucke  von jedem  Programm, an  dem er je gearbeitet hat, sie
+stapeln sich grob chronologisch geordnet auf jeder ebenen Fl„che des Bros.
+Im Zimmer verteilt finden sich ber ein Dutzend mit kaltem Kaffee mehr oder we-
+niger  gefllte Tassen. Gelegentlich schwimmen Zigarettenkippen darin herum, in
+einigen F„llen auch Reste von Orangenschalen. Irgendwo liegen Kopien des OS JCL
+Manuals  und der "Principles Of Operation", an  einer  besonders  interessanten
+Stelle aufgeschlagen, herum, auáer bei extrem guten Leuten.
+
+An der  Wand klebt  ein  Schnelldrucker-Kalender  mit Snoopy drauf aus dem Jahr
+1969. šber  den Boden verteilt liegen Reste der Verpackungen von gefllten Kek-
+sen (der Typ, der schon in der Fabrik so furztrocken gebacken wird).
+Schlielich, in  der  linken, oberen  Schublade  des  Schreibtisches, unter der
+Schachtel  mit den Muntermachern, liegt  eine Schablone  fr Fludiagramme, die
+sein Vorg„nger dort vergessen hat.
+
+Echte  Programmierer schreiben  Programme und keine Dokumentation, da berl„t
+er den Typen von der Wartung.
+
+Der  Echte Programmierer  ist in  der Lage  dreiig, vierzig, ja  sogar fnfzig
+Stunden in einem Rutsch zu arbeiten, und das unter hohem Zeitdruck. Genaugenom-
+men mag er es so am liebsten. Schlechte Antwortzeiten regen den Echten Program-
+mierer  nicht  auf - sie  geben  ihm die  Chance, zwischen  zwei  Kommandos ein
+bichen Schlaf zu ergattern.
+
+Wenn die Planung nicht genug Zeitdruck bereith„lt, dann tendiert der Echte Pro-
+grammierer dazu seine Arbeit herausfordernder zu machen, indem er sich die ers-
+ten neun  Wochen mit  einem kleinen, aber  sehr interessanten Teil des Problems
+befat, um  dann in der  letzten Woche seine Aufgabe  in zwei oder drei fnfzig
+Stunden Marathonsitzungen zu beenden.
+
+Dies  beeindruckt nicht  nur den Manager, sonder schafft gleichzeitig eine her-
+vorragende  Entschuldigung fr das Fehlen der Dokumentation. Und berhaupt kein
+Echter  Programmierer  arbeitet  von neun  bis fnf  auer denen von der Nacht-
+schicht. Echte  Programmierer tragen keine Schlipse. Echte Programmierer tragen
+keine  hochhackigen Schuhe. Echte Programmierer kommen zur Arbeit, wenn  andere
+zum Mittagessen  gehen. Ein  Echter Programmierer  vergit vielleicht den Namen
+seiner  Angetrauten, aber niemals den Inahlt der gesamten ASCII- (oder EBCDIC-)
+tabelle. Echte  Programmierer k”nnen  nicht kochen. Da  Superm„rkte um drei Uhr
+morgens selten ge”ffnet sind, mssen sie sowieso von Kaffee und Keksen leben.
+
+Die Zukunft  betrachtend machen  sich eine Reihe von Echten Programmierern Sor-
+gen, da  die jngste Programmiergeneration nicht mehr mit der gleichen Lebens-
+perspektive  aufw„chst wie sie selbst. Viele der Jngeren  haben noch nie einen
+Computer mit einer Maschinenkonsole gesehen.
+
+Kaum ein Schulabg„nger kann heute noch hexadezimal rechnen, ohne einen Taschen-
+rechner zu  benutzen. Die Studenten  von heute  sind weich - geschtzt  vor den
+Realit„ten  der Programmierung  durch  symbolische  Debugger, Texteditoren, die
+Klammern z„hlen und benutzerfreundliche Betriebssysteme.
+
+Und das  schlimmste ist, einige  dieser angeblichen Computerspezialisten kommen
+zu Rang und  Namen ohne  je FORTRAN zu lernen! Sind wir dazu verdammt, eine In-
+dustrie von UNIX-Hackern und Pascal-Programmierern zu werden?
+
+Nun, aus  meiner  Erfahrung  heraus  glaube  ich  behaupten  zu drfen, da das
+Schicksal den Echten Programmierern wohlgesonnen ist. Weder OS/370 noch FORTRAN
+zeigen  irgendwelche  Symptome  des  Aussterbens, trotz aller Anstrengungen der
+Pascal-Programmierer.
+
+Selbst  subtilere Tricks wie das Hinzufgen strukturierter Schleifen zu FORTRAN
+sind fehlgeschlagen. Sicher, einige Computerhersteller  liefern FORTRAN-77 Com-
+piler, aber  jeder einzelne  von ihnen  l„t  sich ber eine  einzige Compiler-
+Option in einen FORTRAN-66 Compiler verwandeln - mit DO-Schleifen, wie von Gott
+geschaffen.
+
+Selbst UNIX  scheint fr Echte Programmierer nicht mehr so schlecht zu sein wie
+frher. Die neueste  UNIX-Version  hat das Potential eines Betriebssystems, das
+eines Echten  Programmierers  wrdig ist. Sie hat zwei verschiedene, leicht in-
+kompatible  Benutzerschnittstellen, einen geheimnisvollen und komplizierten Te-
+letype-Treiber  und virtuellen  Speicher. Und  wenn der Echte Programmierer die
+Strukturierung ignoriert, kann er sich sogar mit C anfreunden. Schlielich gibt
+es keine  Typenbindung, Bezeichner  sind sieben (Zehn? Acht?) Zeichen lang, und
+man  hat Zeiger als  Bonus. Das ist  als h„tte man die besten Teile von FORTRAN
+und Assembler  vereint, von  den kreativen  M”glichkeiten  des #define  ganz zu
+schweigen.
+
+Nein, die  Zukunft  ist nicht  v”llig  schlecht. So hat sich in den vergangenen
+Jahren  die popul„re Presse sogar ber die clevere neue Brut von Computerschra-
+ten und  Hackern ge„uert, die  Pl„tze wie  Stanford oder das MIT zugunsten der
+Wirklichkeit verlassen haben.
+
+Allen Anzeichen  nach lebt der Geist der Echten Programmierung weiter in diesen
+jungen  M„nnern und Frauen. Und solange es schlecht beschriebene Ziele, bizarre
+Fehler und  unrealistische Zeitpl„ne  gibt, solange wird es Echte Programmierer
+geben, die bereit  sind einzuspringen, das  Problem zu l”sen und sich die Doku-
+mentation fr sp„ter aufheben.
+Lang lebe FORTRAN!
+#MTIHYPER:
+#TITLE:Essen Sie Msli???
+
+-------------------------------------------------------------------------------

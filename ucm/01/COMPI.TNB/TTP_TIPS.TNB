@@ -1,0 +1,63 @@
+
+                                       TTP
+                                       ~~~
+                  (Diese besch... eidenen TTP-Programme!)
+
+ Ja. Alle  Atarianer  hassen sie. Jeder  ist wohl schon mal zusammengezuckt,
+ wenn nach dem Aufruf des PRGs nur die kahle Dialogbox mit der leeren Einga-
+ bezeile auf dem DESKTOP herumliegt.
+ NatÅrlich, auf dem  ST braucht man keine mehr oder weniger kryptischen Kom-
+ mandos ( cd b: dir/p copy d:\quatsch.exe a:\mistord.ner ) einzutippen, denn
+ _hier_ gab es schon eine BenutzeroberflÑche, bevor  Bill Gates seine zweite
+ Milliarde gemacht hatte (ca. Mitte 80er).
+
+ Aber so schlimm sind die  TTPs  gar nicht. Wenn man ein PRG nach der "Quick
+ and dirty"-Methode zusammenhaut, ist keine OberflÑche eigentlich besser als
+ eine schlechte, die mal wieder Bombenhagel erzeugt. Diese TOS TAKES PARAME-
+ TER-Programme sind teilweise von Kisten ohne BenutzeroberflÑchen (*NIX etc.
+ konvertiert (portiert) worden.
+ 
+ TTPs sind zumeist  PRGs mit nur _einer_ Funktion, typischerweise Pack- bzw.
+ Entpackprogramme oder Konvertierungsprogramme.
+ FÅr die gÑngigsten gibt es auch Bedienungshilfen (Shells). FÅr ZIP.TTP gibt
+ es ST_ZIP (sehr schîn), fÅr LZH.TTP und ARC.TTP z. B. MASH.
+
+ Und wenn es keine Shell hat? Dann muû getippt werden!
+
+ Im Ernst,wenn mîglich,sollte man die Anleitung genau lesen. ("If everything
+ fails, read the manual"). Ansonsten  empfiehlt sich die 2-Pass-methode: zu-
+ erst dings.ttp  aufrufen und _ohne_ Eingabe ("Kommandozeile") starten. Dann 
+ wird zumeist  eine BefehlsÅbersicht  gezeigt. Man merkt oder besser notiert
+ sich die nîtigen Kommandos. PRG beenden.
+ Dann startet  man dings.ttp erneut und gibt diesmal so gut's geht die  Kom-
+ mandozeile ein. Am schlimmsten ist die Pfadeingabe,und dabei findet man auf
+ der Atari-Tastatur sogar noch ziemlich leicht den Backslash ( \ ).
+ (Ich muû  immer schmunzeln, wenn ein  verzweifelter DOSler auf der Tastatur
+ ein Hafti mit: "Backslash: Alt + STR+ ö" o. Ñ. kleben hat ). Weil das Pfad-
+ eingeben eine so fehlertrÑchtige TÑtigkeit ist,gibt es ja auch bei den STs,
+ AMIGAs und MACs die Fileselectbox.
+
+ Das Eintippen des Pfads kann man vereinfachen, wenn man das zu bearbeitende
+ File und das TTP in den  selben Ordner kopiert. Denn der  Startordner eines
+ PRGs wird automatisch durchsucht.
+
+ Bei Pack/EntpackTTPs wird der  Normaluser wie ich ( von gewissen 14jÑhrigen
+ auch Lamer genannt ) zumeist nur die Entpackfunktion benutzen. Dann verein-
+ facht sich die Bedienung (zumeist) nach Kopieren des TTPs in den Ordner des
+ gepackten Krams ("Archiv") auf die Eingabe von:  
+
+ x *.*
+
+ Meint: eXtrahiere alle Dateien (extrahieren = entpacken)
+
+ Wenn jetzt noch genug Platz auf der Disk ist, ist alles geritzt.
+     
+ Sollte man sich die MÅhe gemacht haben, fÅr ein TTP eine Shell programmiert
+ zu haben, dann nichts wie auf  den Markt damit! Auch wenn sie nicht so toll
+ ist,jede Hilfe wird gern entgegengenommen. Und wenn der Sourcecode beiliegt
+ kann ein Interessent die Shell ja verbessern.
+
+ Es gibt auch ein PD-PRG (CALL_TTP), das die Bedienung von TTPs vereinfachen
+ soll. Allerdings kann ich dazu nichts weiteres sagen (nicht getestet).
+ 
+                                                    by Gnort

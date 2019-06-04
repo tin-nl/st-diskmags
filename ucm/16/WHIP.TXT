@@ -1,0 +1,160 @@
+ò_____.    ________         .__.ð
+ò     |   /  _____/         |  |            ___   ___   ___ð
+ò   __|__/_ /____    ___   _|_ | ________  /  /  /  /  /  /    .___.. .  .ð
+ò  /  ____/  ____\  /  /  /  / |/  _____/ /  /  /  /  /  /     |ð
+ò  \  \   \  \_____ \  \ /  /  |\  \____  \  \ /   \ /  /      |ð
+ò   \  \---\_______\-\  '  /|  |-\   ___\--\  `     `  /-------+ð
+ò    \  \             \   / |__|  \  \_____ \___/\____/        |ð
+ò     \__\             \_/         \_______\ .     .   . ..____|ðñ pAð
+
+ñWhip!ð by òNoð of òEscapeð (óFalconð) [presented at EIL'99 first]
+
+When hearing the word "ñWhip!ð", people tend to react in different ways.
+The guys from òCreamð for example should be frightened ... After all,
+it's called "ñwhipðped cream".
+Baggio may think different about ñWhipð's and chains, but who, honestly,
+would have thought about a òVirtual Light machineð behind this name ?
+And basically, what óisð a òVirtual Light machineð ?
+
+A òVirtual Light machineð is commonly the name for an òeffect-generatorð,
+that produces graphical effects to a music that is being fed into the
+computer using the ñLine-inð input. The name òVLMð arised mainly because
+the first effect-generator like this on óAtarið was bundled with the
+òJaguar CD-ROMð and was called òVLMð.
+The first òVLMð on the Falcon was probably ñBitBopperð, a powerful
+software, but so far, a little expensive.
+ñWhip!ð is supposed to be changing that. Until now, ñWhip!ð is free and
+due to the modular structure, òWhip!ð-development continues permanently,
+even without direct influence of its creator, òNoð of òEscapeð.
+
+To run ñWhip!ð, you basically only need a óFalconð, a óCD-Playerð or
+another audio-source connected to the óFalcon's Line-Inð, an óRGBð-
+Monitor or a óVGA-Monitorð capable of displaying 100 Hz screens.
+ñWhip!ð then automatically searches a folder òVLMð, which might stand
+for òVðirtual òLðight òMðodules. ñWhip!ð itself - or at least the main-
+program - is basically just the shell and driver for the modules as
+they do the effects.
+ñWhip!ð feeds the modules with all the necessary data extracted in realtime
+from the ñsound/musicð that is being piped into the óFalconð.
+Since this modular structure allows everyone to write new modules, òNoð
+enclosed a description how to build a ñWhip!ð-module.
+
+On startup, ñWhip!ð welcomes the user with a cool-looking graphical shell,
+which is supposed to be the first preview of òNoð's upcoming GEM-replacement
+in spe. Wow! The left side of the screen lets you "equalize" sound input
+and output so you have decent waveforms that ñWhip!ð can work with and
+of course that you have a decent sound-output since you surely want to
+óhearð the music ñWhip!ð let's you see.
+The right side of the screen displays a ñWhip!ð-logo, some information about
+the program-package and of course the list of òVLMðs found and active.
+The ñwindowsð mostly feature sliders that work smooth in realtime and really
+look cool. If òNoð manages to do a GEM-replacement in that style, even i,
+the world's greatest òSingleTOS + GEMð-fanatic will can òGEMð and use òNoð's
+user interface.
+Most important is of course, once you have finetunes in- and output, the
+ñWhip!ð-modules. You can select each one individually or have ñWhip!ð call
+one after the other by random and play each module for 5, 10, 15 or 20 
+seconds. The left mousebutton works as known, the right one always brings
+you back to the main-menu.
+Additionally, each ñWhip!ð-module can feature settings you can control in
+the right lower corner of the main-menu. Those settings vary from module
+to module, but even the ñslidersð and ñbuttonsð in this menu look terrific.
+
+So what are the modules like ?
+I list all the modules currently available and in case i forgot one or
+gave credits to the wrong people, please excuse. 
+
+2D-Bump   - A ñ2D bumpmapperð by òDHSð. The brightness follows the beat
+            of the music.
+Analyser  - Basically displays the waveform in several colours as a 
+            ñpile-diagramð. By òEscapeð.
+Bluroszi  - Funky ñMotion-blurredð oszilloscope by òDHSð. Something close
+            to this can be found in ñDream Dimensionð.
+Classic   - ñMoving dotsð that react to the music in several ways.
+            By òEscapeð.
+Dotbox    - Funny movements of several ñdotsð by òEarXð.
+Flight    - This one by òEscapeð might be the best looking included. The
+            viewer ñfliesð over a landscape created by the waveform.
+            Trancy colours, cool movement, this one is a winner.
+Julia     - By òNoCrewð. This is a ñJulia-diagramð that moves according
+            to the music. Looks good on "slow" music.
+Nailspin  - Displays an ñenvmappedð nail-object that spins around by
+            òEarXð.
+Plasma    - A ñPlasmað-effect by òEscapeð.
+Raytun    - Something that has to do with ñraycastingð and tunnels.
+            Looks spacy and is from òEarXð.
+Reso      - Resonance, a weird-looking ñgaraud-shadedð cube in front of
+            a melt-o-vision background by òEscapeð.
+RGBSplit  - This one from òDHSð moves a red, green and blue disc from
+            each other along with the beat.
+Sparkle   - A ñcascadeð-effect from òNoCrewð.
+Tunnel    - Guess what. And guess by whom. ;-) òDHSð.
+Twin      - 2 garaud shaded triangles zoom according to the beat in front
+            of variable backgrounds. Cool stuff by òEscapeð.
+Whipong   - This one is so weird, it could have been from Paranoia. ;-)
+            This is Pong, this time voice-controlled by òNoCrewð.
+Wire      - 2 wire-objects move into each other. By òEscapeð.
+
+I hope i didn't mix up too many names and too many modules.
+
+óResumeeð.
+ñWhip!ð is one hell of a program. Although basically "useless", it is very
+much fun to have audio-based effects and the whole presentation of ñWhip!ð
+along with the excellent idea of having modules do the main job makes it
+even better.
+So far, ñWhip!ð has no competition as ñBitBopperð, the only similar program,
+costs a fortune and ñWhip!ð is free (until now).
+But not only that makes ñWhip!ð a unique product.
+ñWhip!ð is for everybody as everybody listens to music, as everybody can
+contribute by writing new modules, as everybody can have the music and
+effects of his/her own taste and "demo"-effects at the same time.
+
+ñWhip!ð is a superb program and there is no excuse for any Falcon-owner not
+to have it.
+
+
+ò.  . |. ...________ Rating ______... .. .  .        |ð
+ò     |     > Originality:  99 % <---------------+   |ð
+ò     |         > Design: 91 % <-----------------+---+ð
+ò     |               > Technical: 40-85 %       |ð
+ò     |       depending on the module you run    |   ð
+ò     |                       > Fun: 89 %  <-----+ð
+ó     +----------------------------> Overall: 92 %ð
+     
+ñ   --.-- The Paranoid --.-- Paranoia --.-- The Lunatic Asylum --.--ð
+   
+   
+  ò             ----------- some words by Deam ------------   ð
+             
+    When you say the word 'VLM' to the normal  atari user the most  of them will
+think about the jaguar. For the falcon we already had 'BitBopper' but this one   
+is very expensive about $250,- and the usersinterface isn't good. 
+
+A new 'VLM' programm for the falcon is 'Whip!' by No/Escape. And this one isn't  
+expensive, you can download  it for  free ! With 'Whip!' you can  put something     
+(cd-player, discman,  walkman) on  your  microphone port  and 'Whip!' makes the     
+video for you... The only hardware you need is an  falcon 030 with atleast four     
+megabytes of ram.
+
+                        ñEverything connected ?ð
+
+The only thing you need to do is to select the input volume. Then just click on  
+one of the 'Whip!' modules  and there  you go. You can also  select  the option     
+random to play all the modules.
+
+Coding whip  modules is also  no problem with the  documentation in the 'Whip!'    
+archive.
+
+                       You can download ó'Whip!'ð from:
+
+                      ñhttp://escape.atari.orgð
+                      òhttp://dhs.atari.orgð
+
+                  You can find the latest modules of ó'Whip!'ð at:
+
+                      ñhttp://escape.atari.orgð
+                      òhttp://dhs.atari.orgð
+
+         You can contact óNoð at ónf2@inf.tu-dresden.deð
+
+Stay cool Stay Atari 4ever! DEAM in the 1999...................................

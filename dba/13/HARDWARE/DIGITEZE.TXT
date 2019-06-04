@@ -1,0 +1,99 @@
+MAT VIDEODIGITZER
+~WAVE.FIL~                                       __       __
+                                                /_/\     /_/\
+            _______                    _______  \_\/'    \_\/'
+           /       \  ______  ________/  ___  \____________
+          /   /\/\  \/  __  \/__   __/  /\_/  /  / ____/  /\
+         /   / /\/  /  __   /\_/  / /  /_//  /  / /\__/  / /'
+        /___/ /:/__/__/ /__/ //__/ /________/__/ /_/ /__/ /:
+        \___\/: \__\__\/\__\/:\__\/\________\_/_____/\__\/:
+         ':::'   ':The Realtime Videodigitizer\_____\/:::' 
+                                               ':::::' 
+
+A new realtime videodigitizer for the Atari ST/STE/TT/Falcon
+The Matdigi is a group of videodigitizers boards. They were specially 
+made for the ROM port and optional as a Treu Color Grafixcart TC1208 
+and TC1006. All digitizer digitisch in realtime a full videopicture in 
+the best reachable quality and resolution.
+
+The speed of which the digitizer does his work depends on things like 
+picture/image size, number of colors, digitizer base (ROM port or TC 
+cart) and ofcourse type of computer.
+
+Three different kind ( exp. camera, recorder, TV ) of input sources 
+can be used together and be switched by software.
+
+Technical Details:
+
+The MatGraph TC1208/1006
+
+The MatDigi 1
+
+Connection         : Option for TC1208/1006
+Input              : 3 videosources switch-able through software
+Video standard     : PAL, NTSC, SECAM
+Video Signal type  : BAS, VHS, S-VHS
+Resolution         : 768x576
+Memory             : 1 Mb
+Digitizing speed   : Realtime
+Digitizing format  : YC 4:2:2
+Number of colors   : 16,7 Milion (24 Bit) through software color
+                     converter.
+Presentation speed :
+
+- 16,7 Mil. colors                     +/-  0,3 fullpicture/sec
+- Faster greymode (256)                +/-  3   fullpicture/sec
+- Smaller picture 384x288 (256 grey's) +/- 12   fullpicture/sec
+  (read lesser resolution)
+
+Because of the fast grey mode with lesser resolution you can follow 
+the movement of an objekt almost in realtime. 
+
+Special ROM port version for the Atari.
+
+MatDigiR1
+
+Without the use of the TC graphiccart in the ROM port you are limited 
+to digitize video images only. This because of the fact that HiRes 
+graphics without the TC cart aren't possible, the MatDigiR1 will be 
+used without pallette,- and graphic output. The technical data however 
+is the same as the MatDigi1 and TC1208/1006. Again the resolution, 
+speed and colors are restricted to the kind of computer that is used. 
+Every resolution from the Atari ST mono till the Falcon Treu Color is 
+supported. The MatDigiR1 is already uptimized for the 16 bit mode of 
+the Falcon, so there will be a very good quality picture with an 
+resonable speed possible. 
+
+Software for the MatDigi1 and MatDigiR1
+
+For the use of these carts there are three software tools available.
+An accessory for digitizing and showing a video image in different 
+kind of applications.
+A videoprogram that gives you the control over the video functions and 
+parameters.
+With the help of an import module you can port pictures right into a 
+Calamus DTP document.
+
+What do you get...
+
+The software tools and a S-VHS cable with mini DIN plugs, and a VHS 
+Adaptor with normal plug is the standard package. An optional video 
+cable with 3 x mini DIN plugs and a VHS adaptor will make it possible 
+to cinnect 3 devices at the same time. 
+
+Advantage of Digitizing.
+
+- The resolution is independent of the size of the object.
+- 3D objects can be digitized.
+- No hazzards like developing the film or thing like that.
+- Good quality with small objects (5 Cm) 
+- Digitizing is faster that scanning and no 2D limitation.
+- Highspeed shot can be made. Shuttertime of 1/10.000 sec.
+
+For more information write to:  MATRIX
+                                Talstrasse 16
+                                7155 Oppenweiler
+                                Germany.
+
+                                                 Bonus Software.
+~YELLOW.PAL~    

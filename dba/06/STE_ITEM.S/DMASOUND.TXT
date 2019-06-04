@@ -1,0 +1,111 @@
+DMA SOUND
+
+                     DMA SOUND MADE EASY   
+                     -------------------
+                   by Homeboy from the DDC
+
+
+When you've read my article in DBA magazine 5 you already know 
+that I own an Atari MegaSTe. It was one of my fondest wishes to 
+play Replay 4 samples trough the DMA soundchip with an Omikron 
+Basic program. I did not know how to accomplish this so I asked 
+some people how to do it. They told me that is was dead easy but 
+nobody could tell me exactly how it was done. Luckily there was an 
+article in DBA magazine 4 which explained all about the DMA chip's 
+addresses and the sampleformat so I only had to solve two problems; 
+how to make the program in Omikron Basic and how to convert the 
+samples.
+
+CONVERTING THE SAMPLES:
+
+The DMA soundchip is able of playing stereo samples at a sample rate 
+of 6.25, 12.5, 25.0 or 50.0 KHz. To make it do it's work you need 
+to put the sample data in a special format (called a frame) into 
+memory. This frame consists of two different signed (-128 to 127) 
+samples, one for the left and one for the right channel. The upper 
+byte of the first word of the frame is the sample for the left 
+channel. The lower byte of the first word of the frame is the sample 
+for the right channel.
+
+The problem with Replay 4 is that it uses an unsigned (0 to 255) 
+sample format, that it does not support stereo sound and that the 
+only DMA compatible sample rate is 50 KHz.
+To get a stereo sample you need to sample the same sound twice, the 
+first time connect the Replay 4 cartridge to the left output of a 
+audiosource and the second time to the right output. Use the Replay 
+4 editor to get the timing of the two samples right and equal them 
+in length.
+To convert an unsigned sample to a signed sample you need to 
+subtract 128 for each value higher than 127 and add 128 to every 
+value less than 128.
+A 50 KHz sample sounds great but it also needs a lot of memory so 
+it's better to use a sample rate like 25 KHz. Replay does not support 
+25 KHz and to prevent the sample from playing too slow or too fast 
+you can use a 50 KHz sample and convert it to 25 KHz. This is done by 
+adding every 2 bytes and devide them by 2. The 25 KHz sample you 
+get this way often sounds better than a sample sampled directly at 
+25 KHz!
+
+If this is all abracadabra to you then the Omikron Basic program 
+CONVERT.BAS that is included on this disk was made especially for 
+you. First compile it using the Omikron Basic Compiler, be sure you 
+have 2 samples of the same length named LEFT.SPL and RIGHT.SPL in 
+the root directory of your drive and then run the program. A time 
+bar on your screen will tell you when conversion is ready after 
+which the DMA frame STEREO.FRM will be written to the disk.
+
+PLAYING THE SAMPLE:
+
+Playing a DMA frame is simple, you have to tell the DMA chip were 
+the frame starts, where it ends, what playback rate it should play 
+the frame and finally if it has to play the frame once or in al 
+loop.
+
+The start and end addresses have to be split up in a low, a middle 
+and a high byte. Selecting the sample rate is done by poking a 
+value into address $FF8920
+
+0 = 6.25 KHz
+1 = 12.5 KHz
+2 = 25.0 KHz
+3 = 50.0 KHz
+
+Address $FF8900 is used to initialize the DMA chip
+
+0 = Stop playing
+1 = Play once
+3 = Play loop
+
+It can all be done with the Omikron Basic program PLAYDMA.BAS. 
+Compile it with the Omikron Compiler, be sure you have a frame 
+named STEREO.FRM in the root directory and execute the program. 
+Running the Basic version of PLAYDMA.BAS or using the EXEC *.PRG 
+option of the Omikron Basic editor will result in a screen black-
+out so run PLAYDMA.PRG from the desktop only!
+Use a compiled version of the STOPDMA.BAS program to stop it all.
+
+You will notice that during DMA playback it is possible to run other 
+programs from the desktop without losing any valuable processor 
+time. Actually DMA playback uses no processor time at all!
+
+I did not test the software on any other computer than on my own 
+MEGA STe but I think it will work on the 1040STe, TT or even on the 
+FALCON without any problem. The Omikron Basic program can easily be 
+converted to GFA Basic or any other Basic dialect.
+
+If there is anybody out there who knows a better way to play DMA 
+sound, how to set the volume, balance and tone of the DMA soundchip 
+or how to make use of hardware scrolling on the STe with Omikron 
+Basic then please write to DBA magazine!!! 
+
+
+                 ************************************
+                 **  Please support the (mega)STe  **
+                 ************************************
+
+
+                        C.Ya'll   Homeboy 
+                        Havenhoofd 92
+                        1353 PM Almere
+                        the Netherlands
+

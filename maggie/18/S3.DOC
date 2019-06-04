@@ -1,0 +1,356 @@
+066030003040000132006000006008000
+11
+2#1
+F0110030001
+9[..................................................................]0110
+Ä------------------------------------------------------------------------
+ hardware
+------------------------------------------------------------------------
+
+                               Å  Centek Phenix
+
+                            S3 Virge 3D AcceleratorÄ
+
+------------------------------------------------------------------------
+                                                                pink/rg
+------------------------------------------------------------------------
+
+If the recent explosion in the PC games scene can be traced to one piece
+of hardware, it is the 3D  chipsets. Making processors faster and faster
+is great for performing lots of  mathematical calculations, but there is
+not necessarily an increase in the  amount  of data you can shift around
+video RAM.
+
+The Falcon suffers  from  the  similar  problem.  With  the  DSP you can
+transform a large number of 3D  points,  but drawing the actual polygons
+is slow. The reason for this  bottleneck  is manifold; the slow bus, the
+slow memory and the fact you are tying up the CPU by just drawing polys.
+
+3D cards give an elegant solution to  this problem. They work with their
+own video memory in parallel with the  main  CPU. This video memory is a
+lot faster than the memory you find  in  your Falcon. Just being able to
+clear a high res true colour screen  in a frame would give a significant
+advantage over our trusty bird.
+
+Let's begin our study of the S3 Virge  with the range of 2D functions it
+provides.
+
+Åo BITBLITÄ
+
+Ever since the STE, Atari  machines  have  been  equipped with a blitter
+which allows the transfer  of  blocks  of  data  around  memory. The key
+feature of the  Atari  blitter  was  its  ability  to  shift data across
+bitplanes -  this  was  either  a  computationally  expensive  or memory
+expensive operation in software.
+
+The Blitter was not without  its  problems,  cheif amongst these was the
+fact that it used the  same  bus  as  the  CPU  meaning that it couldn't
+operate in parallel - an  advantage  that  the amiga's blitter enjoyed -
+meaning thats it performance was  significantly impeded. Effectively you
+could write software routines that outperfromed the blitter.
+
+As the S3 Virge  operates  on  its  own  video  memory,  all its bitblit
+operations (and all operations for that matter) can run in parallel with
+the Phenix's CPU. This means that  the  Virge  can be shifting blocks of
+data around video memory (for example drawing sprites or windows) whilst
+the CPU is off doing other tasks.
+
+Åo LINE DRAWÄ
+
+Another problem with the  Atari  blitter  was  that  it only operated on
+rectangles of data. You could draw squares, or masked sprites, but there
+Äwas no ability to draw lines  (apart  from vertical and horizontal lines
+which are just a subset of rectangles). The S3 Virge chip has the simple
+but useful feature of being able to draw lines.
+
+Åo POLYGON FILLÄ
+
+Again, the Atari  blitter  could  only  do  polygon  fills  if they were
+rectanglular. Theoretically you could  draw  a  polygon by recalculating
+blitter offsets every scanline,  but  this  is  not a particularly speed
+efficient way of drawing polygons. The S3  Virge has the ability to draw
+filled polygons.
+
+
+So just the 2D acceleration features  of  the  S3 Virge will give a huge
+benefit over the current  line  of  Atari  machines. Whilst the assembly
+language routines of NVDI and  MagiC  give impressive screen draw rates,
+they will be as nothing compared to  the hardware acceleration of the S3
+Virge. And its ability to throw chunks  of data around video memory will
+be a real boon to 2D games programmers.
+
+
+Now let's get onto the  real  meat  of  the  card  - the 3D acceleration
+options.
+For displaying polgyons, the Virge gives the following options:
+
+Åo FLAT SHADINGÄ
+
+Similar to the 2D filled  polygon  feature,  this  will display a single
+colour polygon.
+
+Åo GOURAUD SHADINGÄ
+
+Here the colour of the  polygon  is  interpolated across its face giving
+give more realistic and more aesthetically pleasing shading.
+
+Åo TEXTURE MAPPINGÄ
+
+A graphic image is mapped across the polygon face.
+
+I'm sure you are all familiar  with  these  terms - they have become the
+staple  of  atari  demos  for  the   last   five  years.  These  can  be
+computationally expensive processes -  even  the  most optimised texture
+mapping routines on the falcon  require  about  5 instructions per pixel
+plus all the overhead of setting up the data. True gouraud shading isn't
+really done in falcon demos - what  usually happens is an index value is
+interpolated across the polygon face  and  this  is  used to reference a
+palette table. The seperate RGB constituents of the colour are not split
+up and interpolated - this is something that the S3 Virge can do, giving
+much more impressive gouraud shading.
+
+For an example of a true RGB  split shading, check out the 'Most Wanted'
+demo by Scarface, then realise  how  much  detail  is lost in most other
+gouraud routs!
+
+Let's now look at some of the more advance 3D features:
+
+Åo PERSPECTIVE CORRECTIONÄ
+
+Because of the speed of the  falcon, perspective correct texture mapping
+is rarely implemented.  The  way  texture  mapping  routines are usually
+coded on the falcon is to use  'linear texture mapping'. This means that
+the texel selected for each pixel of  the  polygon is just a function of
+the the (x,y) position of that  pixel.  You  are just interpolating in x
+and y and not taking into account the z position of each pixel.
+
+With perspective  correct  teture  mapping,  the  texel  selected  is  a
+function of the (x,y,z) position. This  gives a more accurated synthesis
+of human vision. Whereas  in  'linear  mapping'  the texels selected are
+evenly spaced out, the  space  between  texels selected for persepective
+correct mapping varies with z.
+
+An example: a large  texture  mapped  polygon  which  veers off into the
+distance. At the positions on  the  polygon  where  it is closest to the
+viewer there are only small  steps  between  the texels selected. As the
+polygon moves into the distance  the  steps  between the pixels selected
+increases.
+
+Falcon programmers avoid perspective correction because of all the extra
+calculations in involves for every single pixel drawn. With the S3 virge
+this is no longer a problem!
+
+Åo Z BUFFERINGÄ
+
+Z-buffering is a method for  accurately  sorting 3D objects that handles
+intersecting  and  overlapping  polygons.   Sorting   algorithms  are  a
+problematic but often overlooked aspect  of  3D graphics. When rendering
+your 3D objects you have to ensure they  are drawn in the right order so
+that objects in the distance appear behind those in the foreground.
+
+The most simple solution to  this  problem  is  the painters algorithm -
+objects are just drawn in z order  -  draw the most distant object first
+through to the closest objects last.  This  means distant object will be
+drawn over with closer objects.
+
+There are a number of problems with this approaches:
+
+1. Unless an polygon is normal  to  the  z-plane, it can be difficult to
+assign a single z value to it.  Usually  it  is given the average of all
+its vertex z values, but this it  not a total solution. When sorting big
+polygons against small polygons,  this  average  value can be misleading
+and lead to sorting errors.
+
+2. Intersecting polygons are not  handled.  One polygon will obscure the
+other.
+
+3. Overlapping polygons can be  problematic  and can flicker from behind
+to in front of each other from one frame to the next.
+
+A Z-buffer algorithm eliminates these problems. Instead of just sampling
+one z value for each polygon, the z value is calculated at each pixel of
+the polygon. It is then compared  against  the z value in our 'z-buffer'
+(bascially an array that stores a z value for each pixel on the screen).
+ÄIf the z value of our new  pixel  is more distant than the one currently
+in the buffer the pixel is  discarded.  If  the  z value of our pixel is
+near than the one in the buffer the  pixel  is drawn and the new z value
+is stored in the buffer.
+
+Z buffering has  been  implemented  on  a  number  of  falcon demos. The
+classic EKO demos which boast of z  buffering are misleading - these are
+using polygon intersection techniques.  This  involves considerably less
+processing - just clipping  polygon  faces  against  other polygons, the
+number of calculations is dependent on  the  number of poly faces rather
+than the number of pixels.  Demos  which  use really z buffering include
+the end part of built-in-obselence.  You  can  see that slight errors in
+the accuracy of the z interpolation causing a zigzagging effect down the
+intesected polygon edges - a sure sign  that proper z buffering is being
+used. The S3 Virge shouldn't  suffer  from  such artefacts with its more
+accurate z buffering.
+
+If you want an example of a machine that doesn't use z-buffering look at
+the Playstation and look at all  the horrendous sorting problems it has.
+This won't be a problem for the S3 Virge!
+
+Åo BI-LINEAR INTERPOLATIONÄ
+
+Texture mapping can look very ugly,  especially when a small textured is
+scaled up to a much large size.  Then  you can see each texel reprsented
+by a large amount of pixels giving an unpleasing pixelation effect. Also
+at lower detail when  the  polygon  is  a  lot  smaller than the orginal
+texure map, the texel selected for each  pixel can vary a lot from frame
+to frame causing a 'swimming' effect.
+
+So in effect the two problems with have with texture mapping are:
+
+1. Polgon Face larger than texture map  -> horrible chunky pixels as one
+texel cover a multitude of pixles.
+2. Texture map larger than polygon face -> loss of detail and 'swimming'
+as a single texel is chosen to represent many.
+
+Bi-Linear interpolation solves these problems.  Instead of just choosing
+one texel for each pixel on  the  texture  map,  it finds all the texels
+that contribute to that pixel (in  x  and y directions) and calculates a
+weighted average of  those  pixel  values  before  drawing it. Bi-Linear
+interpolation is  an  anti-aliasing  scheme  which  gives  much smoother
+texture mapping.
+
+Åo MIP MAPPINGÄ
+
+Mip Mapping is a memory  hungry  technique that also eliminates aliasing
+artefacts and gives a lot smoother  textures. It can also give increased
+performance of the texture mapping.
+
+MIP Mapping stored the texture map at a number of different resolutions.
+
+At the top level there is the  original texture map. For each subsequent
+level, the x and y dimensions are halved and a new texture map is stored
+which now a quarter of the  size  of  the  one  in the level above. Each
+texel in the new map is stored as an average of the four pixels from the
+Ämap above so effectively anti-aliasing is precalculated.
+
+When texture mapping the mip map which is closest in size to the polygon
+is chosen and this is  used  for  the  texture  mapping. This means that
+small textures can used the pre-anti-alised versions and as the movement
+between texels in a texture is  smaller  cacheing is more effecient (the
+smaller mip maps should fit totallly in a cache).
+
+
+Åo TRI LINEAR FILTERINGÄ
+
+This is a version of mip mapping  where seperate maps are stored for the
+red, green and blue components of each texture. So instead of having one
+texture map each level of the mip map, there are maps for red, green and
+blue.
+
+Like mip mapping, each level of  the  mip  map  stores a scaled down and
+averaged version of the higher level.
+
+When texturing, instead  of  just  choosing  the  mip  map  that closest
+resembles the size of the poly, you choose the two maps that are nearest
+to the polygon  size.  For  each  pixel  of  the  poly  you calculated a
+weighted average from the texels in  the  two mip maps (combing the Red,
+Green and Blue maps to create a pixel value).
+
+Åo DEPTH CUEING & FOGGINGÄ
+
+These are systems that base the instensity of a colour on the z distance
+of that object  from  the  viewer.  They  give  a  lighting system where
+objects are  smoothly  shaded  into  the  distance.  The  fogging  helps
+disguise artefacts such as pop-up.
+
+
+Åo ALPHA BLENDINGÄ
+
+
+Alpha blending allows you to  overlay  polygons,  with  the top layer of
+polygons acting as a filter for  lower  levels.  Anyone who has used the
+'Add' or 'Sub' options in  GodPaint  will  be  familiar with some of the
+effects you can use alpha blending for.
+
+For example you can  overlay  a  poly  which  darkens everything under -
+useful for displaying text on top.  Alpha  blending can be used for more
+subtle effects such as a pane of glass in a 3D world or a smoke effect.
+
+
+Åo MEMORY & COMPRESSIONÄ
+
+The S3 Virge has on board 2  Megabytes  of  EDO-RAM. This has to be used
+for the screen (or screens if double buffering), textures and a z-buffer
+if needed.
+
+Although this is a generous amount  compared  to the standard 4mb falcon
+configuration, people are always  wanting  more  space  for textures. S3
+have  a  very   cunning   compression   scheme   that  allows  real-time
+decompression of textures!
+Ä
+Basically what this  means  is  that  you  can  store  a  load of packed
+textures in video memory and when the  S3 displays the t-mapped polys it
+realtime decompresses these to the display buffer.
+
+The compression algorithm is lossy, but this shouldn't really be noticed
+in high speed  3d  environments.  The  compression  ratio is impressive;
+about 10:1 allowing you to squeeze a  large amount of textures in there.
+Amazingly the performance hit  from  the  realtime decompression is very
+small due to the virge's powerful decompression chips.
+
+
+Åo SCREEN RESOLUTIONSÄ
+
+The S3 Virge can display a lot of colours in high resolutions.
+These are its standard resolutions:
+
+
+   X      Y     Colours
++------+------+---------+
+| 1280 | 1024 |   256   |
++------+------+---------+
+| 1024 |  768 | 65536   |
++------+------+---------+
+|  800 |  600 | 16.7m   |
++------+------+---------+
+|  640 |  480 | 16.7m   |
++------+------+---------+
+
+As you can see there is  support  for  the falcon's 16-bit "true colour"
+resolution and also a glorious 16  million colour mode. Coders will also
+appreciate the palettised byte per pixel  256 colour mode with which you
+can do some funky effects without the headache of bitplanes!
+
+
+Åo VIRGEÄ
+
+Some people have already made some negative comments about the S3 Virge.
+It is true that it is not as  powerful  than the latest 3D cards for the
+PC.  But  that  is  missing  the   point  -  compared  to  the  graphics
+capabilities of the Falcon it is  light  years ahead. It has very strong
+2D acceleration which will allow to chuck  lots of big sprites about and
+make 2D games better  than  anything  on  the  consoles  - something the
+Falcon has not been very good at.
+
+And we will be able to  throw  a  lot  of  polygons around and create 3D
+environments that are both  detailed  and  fast!  Properly z-buffered 3D
+worlds with texture mapping and gouraud  shading  will be possible - and
+we can add perspective  correction  and  tri-linear  filtering should we
+wish!
+
+This is a 3D card that  outperforms  the playstation - a feat impossible
+on the Falcon - and will look a lot nicer.
+
+And we'll be able to get a good  deal  more perfomance out of it than PC
+coders have been able to. On  the  PC  you  have to code very general 3D
+Äroutines that will work on all the  card.  We can tailor our routines to
+specifically get the maximum perfomance out of the Virge.
+
+Also on the PC most programmers  use  Microsoft's Direct3D API for their
+3D  engines.  As  you  would  expect   from  Microsoft  this  is  not  a
+particularly  efficient  set  of   routines   and   adds  a  significant
+performance hit to the 3D engine. We will be able to avoid this.
+
+Even a very  simple  graphics  card  would  add  a  tremendous amount of
+performance to the Falcon. On the Phenix  with its 060, DSP56301 and now
+a decent 3D card which  can  run  in  parallel and knock out perspective
+correct texture mapping with tri-linear filtering we are on the Virge of
+greatness!
+
+

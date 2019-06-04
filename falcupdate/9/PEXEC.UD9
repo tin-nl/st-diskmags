@@ -1,0 +1,886 @@
+* Yet another for our programming special issue... hope you like it!
+
+The Pexec Cook Book - From the web
+
+Many people asked for the Pexec Cookbook or wondered what it was. What I
+have and post hereby is a "preliminary version of the long-awaited Pexec
+cookbook". It was posted already some time ago ("those good old days") by
+Allan Pratt (Atari) in this newsgroup. I do not know if a newer version
+exists. - Appended to the Pexec Cookbook you will find some more
+comp.sys.atari.st articles on the subject of program calling. Hopefully
+you will find some useful information there! 
+
+  Dipl.-Inform. Rainer Klute      klute@heike.informatik.uni-dortmund.de
+  Univ. Dortmund, IRB             klute@unido.uucp, klute@unido.bitnet
+  Postfach 500500         |)|/    ...uunet!mcvax!unido!klute
+D-4600 Dortmund 50        |\|\    Tel.: +49 231 755-4663
+
+
+=================================== snip, snip
+===================================
+Allan Pratt (Atari) on the subject of Pexec:-
+
+This is in response to a request from Christian Kaernbach  which  I  got
+from BITNET: I can't reply directly to BITNET, but I'm sure other people
+will find this interesting, too:  it's  a  preliminary  version  of  the
+long-awaited Pexec cookbook!
+
+In broad terms, the things you have to know  about  Pexec  are  that  it
+starts up a process, lets it execute, then returns to  the  caller  when
+that process terminates. The "caller" -- the process which used Pexec in
+the first place -- has some responsibilities:  it  has  to  make  memory
+available to the OS for allocation to the child, and it has to build  up
+the argument string for the child.
+
+All GEMDOS programs are started with the  largest  block  of  OS  memory
+allocated to them. Except in very rare circumstances, this block is  the
+one stretching from the end of the accessories and resident utilities to
+the beginning of screen memory. The  point  is  that  your  program  has
+probably been allocated ALL of free memory.  In  order  to  make  memory
+available for a child process, you have to SHRINK  the  block  you  own,
+returning the top part of it to GEMDOS. The time to do this is when  you
+start up.
+
+If you use Alcyon C (from the developer's kit), you know that you always
+link with a file called GEMSTART. If you've been paying  attention,  you
+should have gotten the *new* GEMSTART from Compuserve (or from  somebody
+else who got it): I wrote that GEMSTART. In GEMSTART.S, there is  a  lot
+of discussion about memory models, and then a variable you  set  telling
+how much memory you want to keep or give back to  the  OS.    Make  your
+choice (when in doubt,  use  STACK=1),  assemble  GEMSTART.S,  call  the
+result GEMSEXEC.O (or something), and link the programs which Pexec with
+that file rather than the normal GEMSTART.
+
+Now here's a discussion of what GEMSTART  has  to  do  with  respect  to
+keeping or returning memory:
+
+Your program is invoked with the address of  its  own  basepage  as  the
+argument to a function (that is, at 4(sp).l). In this  basepage  is  the
+structure you can find in your documentation. The interesting fields are
+HITPA (the address of first byte NOT in your TPA),  BSSBASE  (the  first
+address of your bss) and BSSLEN (the length of your BSS).
+
+Your stack pointer starts at HITPA-8 (because 8 is  the  length  of  the
+basepage argument and the dummy return PC on the stack). The space  from
+BSSBASE+BSSLEN to your SP is the "stack+heap"  space.  Library  malloc()
+calls use this space, moving  a  pointer  called  the  "break"  (in  the
+variable __break, or the C variable _break if you use Alcyon C) up as it
+uses memory. Your stack pointer moves down  from  the  top  as  it  uses
+memory, and if the sp and _break ever meet, you're  out  of  memory.  In
+fact, if they ever come close (within a "chicken factor"  of  about  512
+bytes or 1K), malloc() will fail because it doesn't want your  stack  to
+overwrite good data.
+
+When a process starts, it gets *all* of memory allocated to it: from the
+end of any accessories or resident utilities up to  the  default  screen
+memory. If you want to use Pexec, you have to give some memory  back  to
+the OS. You do this with the Mshrink call. Its arguments are the address
+of the memory block to shrink (your basepage address) and the  new  size
+to shrink it to. You should be sure to leave enough room above your  BSS
+for a reasonable stack (at least 2K) plus any malloc() calls you  expect
+to make. Let's say you're writing "make" and you want to leave about 32K
+for malloc() (for your  dependency  structures).  Also,  since  make  is
+recursive, you should leave lots of space for the stack - maybe  another
+16K. The new top of memory that your program needs is:
+
+    newtop = your bss base address + your bss size + 16K stack + 32K heap
+
+Since your stack pointer is at the top of your CURRENT TPA, and you're about
+to shrink that, you'd better move your stack:
+
+    move.l      newtop,sp
+
+Now you want to compute your new TPA size and call Mshrink:
+
+    move.l      newtop,d0
+    sub.l       basepage,d0     ; newtop-basepage is desired TPA size
+    move.l      d0,-(sp)        ; set up Mshrink(basepage,d0)
+    move.l      basepage,-(sp)
+    move.w      #$4a            ; fn code for Mshrink
+    trap        #1
+    add.l       #10,sp          ; clean up args
+
+Now that you've shrunk your TPA, the OS can allocate this new memory  to
+your child. It can also use this memory  for  Malloc(),  which  is  used
+occasionally by GEM VDI for blt buffers, etc. Note that you only have to
+do this once, when you  start  up:  after  that,  you  can  do  as  much
+Pexec'ing as you want.
+
+When you want to exec a child, you build its complete filespec into  one
+string, and its arguments into another. The argument string is a  little
+strange: the first character of the argument string is the length of the
+rest of the string!
+
+Here is a simple system call: pass it the name of the  file  to  execute
+and the argument string to use.
+
+        long system(cmd,args)
+        char *cmd, *args;
+        {
+            char buf[128];
+
+            if (strlen(args) > 126) {
+                printf("argument string too long\n");
+                return -1;
+            }
+            strcpy(buf+1,args);                 /* copy args to buffer+1 */
+            buf[0] = strlen(args);              /* set buffer[0] to len */
+            return Pexec(0,cmd,buf,0L);
+        }
+
+The first zero in the Pexec call is the Pexec function  code:  load  and
+go. The cmd argument is the full filespec, with the path, file name, and
+file type. The third argument is the command-line argument  string,  and
+the fourth argument is  the  environment  pointer.  A  null  environment
+pointer means "let the child inherit A COPY OF my environment."
+
+This call will load the program, pass the arguments and  environment  to
+it, and execute it. When the program terminates, the  call  returns  the
+exit code from the program. If the Pexec fails (not enough memory,  file
+not found, etc.) a negative code is returned, and you should  deal  with
+it accordingly. Note that error returns from Pexec are  always  negative
+LONGS, while return codes from the child will have zeros in the upper 16
+bits.
+
+EXIT CODES:
+
+GEMDOS, like MS-DOS before it, allows programs to return a  16-bit  exit
+code to their parents  when  they  terminate.  This  is  done  with  the
+Pterm(errcode) call. The value in errcode is passed to the parent as the
+return value of the Pexec  system   call.   The   C   library   function
+exit(errcode) usually uses this call.
+
+Unfortunately, the people who wrote the startup file for  the  Alcyon  C
+compiler didn't use this. The compiler calls exit() with an error  code,
+and exit() calls _exit(), but _exit always uses Pterm0(), which  returns
+zero as the exit code. I fixed this by rewriting  GEMSTART.S,  the  file
+you link with first when using Alcyon.
+
+Even though new programs return the right exit code, the compiler itself
+still doesn't. Well, I have patched the binaries of all  the  passes  of
+the compiler so they DO. It isn't hard, and I will post instructions  at
+a later date for doing it. IF YOU  DO  THIS,  PLEASE  DON'T  BOTHER  OUR
+CUSTOMER SUPPORT PEOPLE IF IT DOESN'T WORK.  THEY  DON'T  KNOW  ANYTHING
+ABOUT IT.
+
+I hope that this little cookbook makes Pexec less mysterious. I  haven't
+covered such topics as the critical-error and  terminate  vectors,  even
+though they are intimately connected with the idea of exec'ing children.
+A more complete cookbook should be forthcoming.
+
+If there are any errors or gross omissions in the above text, please let
+me know BY MAIL so I can correct them coherently. Landon isn't  here  to
+check my semantics, so I  may  have  missed  something.  [Landon  is  on
+vacation in France until early September.]
+
+********************************************************************
+
+C. Kaernbach's question was why his accessory,  which  basically  did  a
+Pexec from a file selector, didn't always work. The answer  is  that  it
+works when used within a program which has returned enough memory to the
+OS for the child. Why might it bomb? Because if a program has returned a
+*little* memory to the OS (only about 2K), a bug in Pexec shows up  that
+breaks the memory manager. Accessories are strange beasts anyway, so for
+the most part combining two strange beasts (Accessories  and  Pexec)  is
+bad news.
+
+/----------------------------------------------\
+| Opinions expressed above do not necessarily  |  -- Allan Pratt, Atari Corp.
+| reflect those of Atari Corp. or anyone else. |     ...lll-lcc!atari!apratt
+\----------------------------------------------/        (APRATT on GEnie)
+
+in article <767@saturn.ucsc.edu>, koreth@ssyx.ucsc.edu (Steven Grimm) says:
+> #include 
+> 
+> main()
+> {
+>       long basepage;
+> 
+>       basepage = Pexec(3, "test.tos", "", 0L);
+>       printf("basepage = %08lx\n", basepage);
+>       Pexec(4, 0L, 0L, basepage);
+>       printf("done\n");
+> }
+
+The correct call for Pexec type 4 is "Pexec(4,0L,basepage,0L);"
+
+The combination of load/nogo plus just-go does not work reliably.  There
+are bugs in Pexec relating to memory ownership which cause trouble.
+
+You should be able to determine something about  where  the  bombs  are,
+though: is the PC in ROM, or less than "basepage" (i.e. in the  parent),
+or greater than basepage (i.e. in the child)?
+
+I have a trick which *does* work for fooling with a child before it  has
+started executing, but it is ugly. I use it in my debugger. What are you
+trying to do? Maybe the same trick would work  for  you.  Mail  me  more
+explanation.
+
+/----------------------------------------------\
+| Opinions expressed above do not necessarily  |  -- Allan Pratt, Atari Corp.
+| reflect those of Atari Corp. or anyone else. |     ...lll-lcc!atari!apratt
+\----------------------------------------------/
+
+in article <1322@dasys1.UUCP>, stevef@dasys1.UUCP (Steve A. Feinstein) says:
+> Does anyone know
+> if there is anyway to, say load a program into the top of the TPA
+> and execute it up there.  So that when it exits, there won't be any holes?
+
+There is one way to do this with Pexec, but it requires knowing how much
+memory the program will need (lots of heuristics here).
+
+long topPexec(cmd,args,env,size)
+char *cmd, *args, *env;
+unsigned long size;
+{
+        unsigned long blocksize;
+        char *addr;
+        long ret;
+
+        blocksize = Malloc(-1L);        /* find out size of largest block */
+        if (block < size) {
+                return ENSMEM;          /* largest block not big enough! */
+        }
+        addr = Malloc(blocksize);       /* allocate that block */
+        Mshrink(addr,blocksize-size);   /* shrink it by size TSR needs */
+        ret = Pexec(0,cmd,args,env);    /* exec the TSR */
+        Mfree(addr);                    /* free the padding */
+        return ret;                     /* return the exit code */
+}
+
+This procedure takes a "size" argument which is the amount of memory the
+program in question  will  need  for  its  text,  data,  bss,  basepage,
+environment, and stack/heap. This is not a computable number:  you  have
+to figure it out empirically. text+data+bss+env+10K or so  should  work,
+but you will always leave a small hole at the  top  of  memory,  because
+TSR's always Mshrink a little bit.
+
+============================================
+Opinions expressed above do not necessarily     -- Allan Pratt, Atari Corp.
+reflect those of Atari Corp. or anyone else.      ...ames!atari!apratt
+============================================
+
+
+Attention Mark Williams, Beckmeyer, and Gert Poltiek, and anybody
+else interested:
+
+There is a trick that some shells and compiler libraries use  that  lets
+you pass argument strings to programs which  are  longer  than  the  127
+bytes which fit in the command line area of the basepage. Their trick is
+to put the  word  ARGV=  in  the  environment,  and  follow  it  with  a
+null-separated list of argument strings. The  list  is  terminated  with
+another null.
+
+This scheme works pretty well, but has two drawbacks, one major and  one
+minor.
+
+The minor drawback is that it defies the definition of what  is  in  the
+environment: the environment should  consist  of  strings  of  the  form
+NAME=value terminated by a final . This is minor  because  shells  using
+this convention usually put the ARGV  information  at  the  end  of  the
+environment anyway.
+
+The major drawback is that you can't tell if the  ARGV  string  in  your
+environment is really meant for you. Imagine you have the Mark  Williams
+shell (msh), an editor compiled with Alcyon, and  another  utility  like
+"echo" compiled  with  MWC.  Imagine  further  that  the  editor  has  a
+"shell-escape" command that lets you execute another program from within
+the editor.
+
+Do this:
+
+        From msh (the MWC shell): start up the editor with the
+        command line arguments "this is a test."
+
+        Tell the editor to execute the command "echo hello world."
+
+        The "echo" command will echo "this is a test," not
+        "hello world."
+
+What happened is that msh put "this is a test" in  the  environment  for
+the editor (as well as in the command tail in the basepage). The editor,
+not knowing any better, didn't put  "hello  world"  in  the  environment
+before executing "echo." When "echo" started, it found "ARGV=this  is  a
+test" in its environment and echoed that.
+
+What is needed is a way for a program to tell if the "ARGV="  string  in
+its environment is really intended for it, or is just left over from  an
+earlier program. There is a way to  do  this  that  doesn't  affect  old
+programs compiled without this fix.
+
+The new convention could be to place another string in  the  environment
+with your own basepage address, before Pexec'ing your child.  The  child
+could start up, and check to see if its parent's  basepage  address  (in
+its basepage) matches the address in the environment. If it does  match,
+the child will know that the ARGV= string  is  for  it.  If  it  doesn't
+match, the child will know it was started from a  non-MWC  program  like
+the editor above, and will look in its basepage for the command line.
+
+Note that if the parent's basepage isn't in the environment at all,  but
+the ARGV= string is, the child must  assume  that  the  ARGV  string  is
+intended for it, just as it  does  now.  Therefore,  old-style  programs
+could still Pexec new-style children, and vice-versa.
+
+This would all require a change in the startup code that  calls  main(),
+and the exec() code which Pexec's the child.
+
+How about it, guys? If we could all agree on the name and format of this
+new environment variable, we could get rid of a  serious  flaw  in  Mark
+Williams' otherwise clever scheme. Other shells could adopt  this,  too,
+and ultimately  everybody  would  be  able  to  kiss  the  127-character
+command-line limit goodbye.
+
+For now, I propose that the environment variable in question  be  called
+PBP, and that its value be the decimal string of digits  making  up  the
+parent's basepage. The reason for this is that almost all libraries have
+an atol() function, where not all have an atolx() function.
+
+A shell using this trick, with a basepage  at  366494  (decimal),  could
+Pexec a child called "test.prg" with these strings in the environment:
+
+...
+PBP=366494
+ARGV=test.prgfirstsecondthird
+
+In the startup code of the child, you would do something like this:
+
+If there's a PBP= in the environment
+        If atol(PBP) == my parent's basepage
+                get args from environment
+        else
+                get args from command line
+        endif
+else
+        if there's an ARGV= in the environment
+                get args from environment
+        else
+                get args from command line
+        endif
+endif
+
+
+Does this sound reasonable? I would like  to  see  this  kind  of  thing
+become a standard, but until a safeguard like this is in place, I  can't
+condone using ARGV= in the environment for finding your arguments.  It's
+too chancy just to assume that you were started by a  program  savvy  to
+this scheme.
+
+/----------------------------------------------\
+| Opinions expressed above do not necessarily  |  -- Allan Pratt, Atari Corp.
+| reflect those of Atari Corp. or anyone else. |     ...lll-lcc!atari!apratt
+\----------------------------------------------/
+
+
+==================================== The End
+====================================
+
+
+-- 
+Article 543 of comp.sys.atari.st:
+Path:
+unido!mcvax!uunet!seismo!sundc!pitstop!sun!amdcad!ames!rutgers!uwvax!umn
+n-d-ub!umn-cs!ems!nis!stag!daemon
+>From: syntel!dal@stag.UUCP (Dale Schumacher)
+Newsgroups: comp.sys.atari.st
+Subject: shell p usage
+Message-ID: <326@stag.UUCP>
+Date: 3 Feb 88 14:17:46 GMT
+Article-I.D.: stag.326
+Posted: Wed Feb  3 15:17:46 1988
+Sender: daemon@stag.UUCP
+Lines: 176
+
+
+   writes...
+> Question #1 : How MWC's msh is discovering who called it ?
+>  (desktop, or other...) it is in the local shell variable 'calledfrom'.
+> An other shell is able to tell the list of all parents programs...
+> The base page does not contain any backward pointer, so what is it ?
+
+I'm not sure that MSH does* detect being called from the desktop.  What
+difference would it make (or does it in MSH).  The basepage, however,
+DOES* contain a "backward pointer" to the parent processes basepage.
+Here is a struct to clarify...
+
+typedef struct
+        {
+        char    *p_lowtpa;              /* pointer to self (bottom of TPA) */
+        char    *p_hitpa;               /* pointer to top of TPA + 1 */
+        char    *p_tbase;               /* base of text segment */
+        long    p_tlen;                 /* length of text segment */
+        char    *p_dbase;               /* base of data segment */
+        long    p_dlen;                 /* length of data segment */
+        char    *p_bbase;               /* base of BSS segment */
+        long    p_blen;                 /* length of BSS segment */
+        char    *p_dta;                 /* pointer to current DTA */
+        char    *p_parent;              /* pointer to parent's basepage */
+        char    *p_reserved;            /* reserved for future use */
+        char    *p_env;                 /* pointer to environment string */
+        long    p_undefined[20];        /* scratch area... don't touch */
+        char    p_cmdlin[128];          /* command line image */
+        }
+        BASEPAGE;
+
+> Question #2 : I read again the dev kit doc on shell_p, the posting
+> by A.Pratt about it, and I still wonder : what is it ?
+> I would infer it is a pointer to a string telling the file name of a shell...
+> I am right ?
+> What would be the use otherwise ?
+
+The shell_p variable, if it is valid, should point to a routine which
+will take a string argument and process it like the Un*x system() call.
+Here is an example implementation of system() which tries to use the
+shell_p variable, if possible.
+
+/*----------------------------------------------------------------------*/
+#include 
+#include 
+#include 
+#include 
+
+static parse_args(cmdln, argv)
+        char *cmdln;
+        register char *argv[];
+        {
+        register char *p;
+        static char delim[] = " \t\r\n";
+
+        if(p = strtok(cmdln, delim))
+                {
+                do
+                        {
+                        *argv++ = p;
+                        } while(p = strtok(NULL, delim));
+                }
+        }
+
+int system(command)
+        register char *command;
+/*
+ *      Attempts to pass  to the shell program pointed to by
+ *      the system variable "_shell_p".  If a valid shell can't be found
+ *      there, the "SHELL" environment variable is searched for.  If it
+ *      exists and is not empty, it will be the name of the shell program
+ *      to execute the given command.  If "SHELL" is not valid, the
+ *      "PATH" variable is used as a list of directories to search for
+ *      the program name which is the first token of the command.  The
+ *      extensions tried (if none is specified) are ".TTP", ".TOS",
+ *      ".PRG" and ".APP".
+ */
+{
+        register char *p;
+        register int (*shell)();
+        char rv[2];
+        char cmdln[1024];
+        char *args[64];
+        char *getenv();
+
+        if(!command)
+                return(ERROR);
+
+        /* get _shell_p value */
+        p = Super(0L);
+        shell = *((long *) 0x4F6L);
+        Super(p);
+
+        /* validate _shell_p */
+        if((shell) &&                           /* Shell available. */
+           (((long) shell) < ((long) _base)) && /* Reasonable shell pointer. */
+           (strncmp(shell, "PATH", 4)))         /* Not corrupted */
+                {
+                /* execute the command */
+                return((*shell)(command));
+                }
+
+        /* copy the command line for parsing */
+        strcpy(cmdln, command);
+
+        /* SHELL= variable? */
+        if((p = getenv("SHELL")) && (*p))
+                {
+                args[0] = p;
+                parse_args(cmdln, args+1);
+                forkvpe(p, args, NULL);
+                wait(&rv);
+                return((rv[1] == 0) ? rv[0] : rv[1]);
+                }
+
+        /* attempt to find first token as a program on the path */
+        parse_args(cmdln, args);
+        if(p = pfindfile(args[0], ".ttp\0.tos\0.prg\0.app"))
+                {
+                forkvpe(p, args, NULL);
+                wait(&rv);
+                return((rv[1] == 0) ? rv[0] : rv[1]);
+                }
+        return(ERROR);
+}
+/*----------------------------------------------------------------------*/
+
+I hope this answers your question.  It's so easy for a shell to install
+itself on the shell_p vector and it's so convenient if other program
+which support shell escapes use a system() call like the one above.
+In case there is any question about installing and removing the shell_p
+vector, the following routines will handle it nicely.
+
+/*----------------------------------------------------------------------*/
+long (*sh_save)();      /* previous value of _shell_p variable */
+
+sh_install(new_shell)
+        int (*new_shell)();
+/*
+ * install _shell_p vector
+ */
+        {
+        register long *ssp;
+        register (**shell_p)() = 0x4F6L;
+
+        ssp = Super(0L);
+        sh_save = *shell_p;
+        *shell_p = new_shell;
+        Super(ssp);
+        }
+
+sh_restore()
+/*
+ * restore old _shell_p vector
+ */
+        {
+        register long *ssp;
+        register (**shell_p)() = 0x4F6L;
+
+        ssp = Super(0L);
+        *shell_p = sh_save;
+        Super(ssp);
+        }
+/*----------------------------------------------------------------------*/
+
+PS.  For those waiting for dLibs v1.1 and/or MicroEMACS 2.19, I have
+sent out disks for all the requests I had outstanding, you should either
+already have them, or should receive them soon.  Sorry for the delays.
+I hope you're happy with the results.  I'd like to hear from some of you
+after you've used dLibs a bit.  I'd be happy to receive bug reports,
+suggested enhancements or just experiences so that I know they're being
+put to good use.
+
+                Dale Schumacher
+                ..ihnp4!meccts!stag!syntel!dal
+                (alias: Dalnefre')
+
+Article 616 of comp.sys.atari.st:
+Path:
+unido!mcvax!uunet!husc6!bloom-beacon!gatech!rutgers!uwvax!umn-d-ub!umn-c
+cs!mmm!ems!viper!john
+>From: john@viper.Lynx.MN.Org (John Stanley)
+Newsgroups: comp.sys.atari.st
+Subject: Re: Print redirection routine
+Message-ID: <595@viper.Lynx.MN.Org>
+Date: 8 Feb 88 09:49:38 GMT
+Article-I.D.: viper.595
+Posted: Mon Feb  8 10:49:38 1988
+References: <8801271313.AA10750@lasso.laas.fr> <15@obie.UUCP>
+Reply-To: john@viper.UUCP (John Stanley)
+Organization: DynaSoft Systems
+Lines: 54
+
+
+ >In article <8801271313.AA10750@lasso.laas.fr>, 
+ >ralph@lasso.UUCP (Ralph P. Sobek) writes:
+ >> To: inria!score.stanford.edu!info-atari16
+ >> Subject: Print redirection routine
+ >> 
+ >> what I'm looking for is an assembler or C program which would redirect
+ >> the output of one of these programs to an ascii file rather than the
+printer.
+
+   The best program to accomplish this is called barrel written by
+Moshe Braner.  It has several functions to allow capturing text or
+screen dumps to a file.  It is TSR (terminate & stay resident) which
+may or may not be what you originaly wanted, but it is good and it
+works....
+
+
+In article <15@obie.UUCP> wes@obie.UUCP (Barnacle Wes) writes:
+ >You can redirect the output to printer in your program via the
+ >following:
+ >
+[part of sample deleted]
+ >      /* Now execute the program, the standard handles are inherited.  */
+ >      Pexec(0, "disk:/program/name/path.prg", NULL, tail);
+ >....
+ >
+ >      Hope this helps whoever it was!
+
+  Not likely...  The example you gave will bomb miserably...  The
+parameters you gave for Pexec are in the wrong order and ignore an
+important pecularity in the Pexec call (the command tail is a Pascal
+style string, not a C style string).
+
+  The correct order for Pexec parameters is:
+        Pexec mode:     zero is fine
+        Program name:   standard C string format
+        Command tail:   a pointer to a Pascal style string (a string 
+                        with the character count in the first byte!)
+        Environment:    A pointer to an environment block or NULL if
+                        you want to use the default environment.
+
+  Thus, a corrected version would read:
+
+static unsigned char tailbuf[255];
+....
+tailbuf[0] = strlen(tail);
+strcpy(tailbuf+1,tail);
+Pexec(0, "A:\\folder1\\folder2\\program.ttp", tailbuf, (char*)NULL);
+
+
+
+--- 
+John Stanley (john@viper.UUCP)
+Software Consultant - DynaSoft Systems
+UUCP: ...{amdahl,ihnp4,rutgers}!meccts!viper!john
+
+
+>From laura!unido!mcvax!philmds!leo Tue May  3 13:24:35 MET DST 1988
+Article 8601 of comp.sys.atari.st:
+Path: laura!unido!mcvax!philmds!leo
+>From: leo@philmds.UUCP (Leo de Wit)
+Newsgroups: comp.sys.atari.st
+Subject: Re: preloading programs
+Message-ID: <474@philmds.UUCP>
+Date: 2 May 88 11:25:04 GMT
+References: <8804141742.AA01455@decwrl.dec.com> <693@ast.cs.vu.nl>
+<390@uvicctr.UUCP> <188@obie.UUCP>
+Reply-To: leo@philmds.UUCP (L.J.M. de Wit)
+Organization: Philips I&E DTS Eindhoven
+Lines: 69
+Posted: Mon May  2 12:25:04 1988
+
+In article <188@obie.UUCP> wes@obie.UUCP (Barnacle Wes) writes:
+>In article <390@uvicctr.UUCP>, collinge@uvicctr.UUCP (Doug Collinge) writes:
+>> Someone said that OS9 68k is capable of "preloading" commands; that is,
+>> loading some programs into memory and executing them there when invoked
+>> rather than loading them from disk.  This seems to be yet another
+>> excellent idea incorporated in OS9 that no-one else seems to have
+>> thought of.
+>
+>Yes, that is one of the many good features of OS9.  Another is
+>pre-loaded modules.  You can have "external" modules on OS9 - when
+> [...stuff deleted...]
+>itself.  You can, of course, pre-load modules.  Nice feature.
+>
+>> How difficult would it be to hack this into Gulaam?
+>
+>Probably VERY difficult.  TOS is not setup to handle pre-loaded programs;
+> [...stuff deleted...]
+
+Never used gemdos call 0x4b (Exec) with a mode of 4?
+You can have preloaded programs on the Atari ST as well, and it works quite
+nicely. I used it in a find command and in a shell I programmed for the Atari 
+(yes, the Unix find command!), for example:
+find .. -type d ! -name . ! -name .. -exec ls -l {} \;
+(For those not familiar with find, this one finds all directories beneath 
+the current directory's parent (excluding . and .. names) and does a ls -l
+on each one of them).
+
+Each time loading ls worked fine on the ramdisk I used to use, but once I
+started working on a hard disk, it becomes really slooooooooooowwww!
+Then I decided to preload the ls command (with gemdos(0x4b,3,"ls",0,0)).
+The gemdos function returns the basepage address of the loaded program.
+Now 'find', each time it has to 'ls', copies the argument string into the
+basepage; then it runs 'ls' by gemdos(0x4b,4,0,0,0) (I don't remember whether
+these are the correct values for the parameters). It is now (nearly) as fast 
+as a builtin function!
+
+There are however a few problems (and I have not solved all of them):
+1) When the parent program changes directories, the child stays in the
+directory
+it started in (the current directory and disk are saved somewhere on the 
+basepage, start+55?).
+2) There is also a problem with the memory; the loaded child obtains, as usual
+the rest of the memory available (in addresses basepage+4 to basepage+7 the
+address of the 'next free location' or something like that is found: 0xF8000 on
+my 520 ST+). Thus there is a problem with multiple preloaded childs or childs
+requesting additional memory. I've overcome this (sort of) by using setblock
+(gemdos 0x4a) and adjusting the 'next_free_location' ptrs on the childs 
+basepages. It's better now, but still buggy (I don't know all about Gemdos
+memory management, I'm finding out now).
+3) There could be problems as well with file descriptors (they're also on the
+basepage).
+4) Initialized static and extern variables do not regain their initial value
+after a run. This is in consequence of the 'once-only' load. It could be
+overcome by a) always explicit initializing (by the child process), or 
+b) make a copy of the initialized data space (by the parent process) and use 
+this to re-initiate from the next time (more expensive, but not breaking 
+existing code).
+
+If you manage to overcome these difficulties, it should not be very hard to
+code this preloading into a shell (I did it, having still these little problems
+...). The shell maintains a list of preloaded programs, their pathname and
+their fat number and handles loading/executing depending on memory available,
+programs preloaded etc. Preloaded programs are almost as fast as functions
+built into the shell.
+
+If anybody has suggestions about the memory management part, or questions 
+'about the real code', or want examples, please RESPOND! A commented
+disassembly
+of the gemdos part of the O.S. would also be great ....
+
+                leo.
+
+
+>From laura!unido!mcvax!philmds!leo Tue May 17 13:00:13 MET DST 1988
+Article 8838 of comp.sys.atari.st:
+Path: laura!unido!mcvax!philmds!leo
+>From: leo@philmds.UUCP (Leo de Wit)
+Newsgroups: comp.sys.atari.st
+Subject: Re: preloading programs
+Keywords: Preload, Ramdisk, Pexec
+Message-ID: <482@philmds.UUCP>
+Date: 16 May 88 11:28:03 GMT
+References: <8804141742.AA01455@decwrl.dec.com> <693@ast.cs.vu.nl>
+<474@philmds.UUCP> <219@obie.UUCP>
+Reply-To: leo@philmds.UUCP (L.J.M. de Wit)
+Organization: Philips I&E DTS Eindhoven
+Lines: 139
+Posted: Mon May 16 12:28:03 1988
+
+In article <219@obie.UUCP> wes@obie.UUCP (Barnacle Wes) writes:
+>In article <474@philmds.UUCP>, leo@philmds.UUCP (Leo de Wit) writes:
+>> ...[stuff deleted]...
+>
+>One of the problems is that GEMDOS will release all of the memory
+>allocated to program, including that gotten in the original
+>load/Mshrink process, when the program exits via Pterm or Pterm0.  I
+>don't know if the Pexec(,4,,,) call re-allocates that memory or not.
+>
+>> ...[stuff deleted]...
+>
+
+I have had some time to figure things out (disassembled Pexec and several 
+others) and managed to get a reusable load image in core that can be run over 
+and over.
+A word of caution: the program should not depend on initialized data, unless
+this data will not change (is 'readonly'). An example:
+
+#define INTERACTIVE 1
+
+int option = 0;
+
+main(argc,argv)
+int argc;
+char *argv[];
+{
+   if ((argc > 1) && (!strcmp(argv[1],"-i"))) {
+      option |= INTERACTIVE;
+   }
+   /* REST OF CODE ... */
+}
+
+After one run with -i flag option 'has the INTERACTIVE bit set' and will have
+it too on the next run. So option must be explicitly initialized:
+
+main(argc,argv)
+int argc;
+char *argv[];
+{
+   option = 0;
+   /* REST OF CODE ... */
+
+Before I give the prescription I will give a more detailed explanation of the 
+Pexec call, Pexec(mode,path,tail,env); mainly because most books about GEMDOS 
+are much too terse about the subject (please correct me if I'm wrong, I had
+to find out things the hard way, like so many of us).
+Which functions will be performed within Pexec depends on the mode word; this
+can be either 0, 3, 4 or 5.
+The following actions are performed:
+1) mode 0 and 3: searchfile. If the program file 'path' does not exist, Pexec
+returns error -32 (file not found).
+2) mode 0, 3 and 5: 'basepage initializations':
+   a) create environment string. If 'env' is null a copy of the parent's
+environment string is made, else a copy of 'env' is made. 'env' is terminated
+by two '\0' 's. The new environment space is allocated and bp[11] is set to
+point to it (consider bp a (char **), it is the start of the basepage).
+   b) allocate program space. The maximum available space is claimed (that
+returned by Malloc(-1)).
+   c) If mode == 0, the environment and program spaces are owned by the child
+(in the memory parameter blocks the owner is the new basepage); if mode == 3 or
+mode == 5, the parent owns the memory blocks. This fact ensures that the
+program area is not automatically reclaimed when the child exits (but space
+Malloced by the child is).
+   d) bp[0] is set to the basepage, bp[1] is set to basepage + length of 
+program block (i.e. the first location above the program).
+   e) Initiate (redirected) file descriptors 0 - 5 (bytes 48 through 53 on the
+basepage).
+   f) Initiate current working directories: for each drive one (bytes 64 
+through 79 on the basepage). Note that e) and f) involves more than simply
+assigning a value.
+   g) Initiate current drive (byte 55 on the basepage). This is copied from the
+parent.
+   h) Copy tail to basepage + 128 (max. 0x7d bytes). bp[8] is set to point to
+this location.
+3) mode 0 and 3: load program. This is a function on its own, and I will not
+explain all details. Generally speaking, the function performs some checks on
+the program format, it loads program and data, does relocation, null fills
+all above data and sets bp[2]: text start, bp[3]: text length, bp[4]: data 
+start, bp[5]: data length, bp[6]: bss start, bp[7]: bss length.
+4) mode 0 and 4: final initializations and run.
+   a) bp[9] is set to the current basepage (parent).
+   b) A save area for registers is initialized at the last 50 locations of the
+program; bp[30] and bp[31] are set to point to this area; bp[26] through bp[30]
+are for saving other registers.
+   c) switch process: the new basepage is entered into the long at 0x602c and
+registers are loaded using the save area and bp[26]..bp[30] mentioned in b).
+
+So far for the 'preliminary meditations'; here's the recipe:
+
+A) First preload using mode 3:
+bp = (char **)Pexec(3,"program","",0);
+B) Return unused memory to the system:
+Calculate the memory needed, e.g.
+memneed = 0x100 + (int)bp[3] + (int)bp[5] + (int)bp[7] + 0x800 + 0x800;
+          basepage     text         data         bss     heap    stack.
+(the values needed for heap and stack depend on your program/your needs).
+Now:
+Mshrink(bp,mneed); /* return unused memory to the system */
+Mfree(bp[11]);     /* free the new environment space, we won't use it */
+bp[1] = (char *)bp + mneed; /* first free location is lower now */
+C) Prepare to run:
+bp2 = Pexec(5,0,"arguments",0);
+Mshrink(bp2,0x100); /* only keep a basepage */
+for (i = 1; i < 8; i++) bp2[i] = bp[i]; /* set pointers and lengths correctly*/
+D) Now run it:
+code = Pexec(4,0,bp2,0);
+Mfree(bp2[11]); /* frees the environment space */
+Mfree(bp2); /* frees the new basepage */
+
+For each run, do C) and then D). Hey, it works!
+Some remarks:
+a) the environment is not used (0, so the parent's is used). You can use an
+environment string, in C): Pexec(5,0,"arguments","environment\0");
+note that the environment string must end on a double '\0', as in the example.
+b) Although the arguments string is simply copied, it is a convention that the
+first byte of the args string contains its byte count. This is probably due
+to the fact that the GEMDOS readline function (0xa) also returns the count in
+the string (and probably GEM uses this type of string for Pexec when starting
+TTP applications). So:
+
+char newtail[128];
+
+strncpy(newtail,tail,0x7d);
+newtail[0] = strlen(newtail + 1);
+Pexec(5,0,newtail,0);
+
+c) The bp[..] and bp2[..] mentioned are longs (char *, to be precise).
+d) Preload could be used to provide more than 128 characters arguments string.
+The arguments can be placed on the child's stack; the child can find them using
+bp[8] (this will break existing code that uses simply (char *)bp + 128). I
+suggest that we use bp[8] as a char *[], as is argv; and use a startup module
+that uses this scheme if bp[8] != (char *)bp + 128 and the old one if it
+equals.
+e) A similar scheme can be used for the 'env', bp[11].
+f) I'm sure d) and e) start up new discussions!
+
+    Hope this clarifies some things about Pexec and makes it better usable.
+    I'm waiting for your responses, questions, remarks, experiences...
+
+    Leo (Swimming in the C..)

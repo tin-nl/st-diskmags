@@ -1,0 +1,98 @@
+
+                    Assembly language, in Devpac, Tutorial
+
+                                      by
+
+                         John Cove (Tronic of EfFeCt)
+
+                                     for
+                        
+                                  MAGGIE 19
+
+
+                       Series 1, part 0.5, introduction
+
+
+
+  I have  been contemplating writing an Assembler  Language  tutorial for  some
+  time but  never  felt that I was the man for the job.  Well, as you can see I
+  have  decided  to give it a go.  These  tutorials will start with VERY simple
+  routines and necessary tweeks so you are able to  start  coding in 68000.  If
+  I design these tutorials correctly, you should be able to write your own work
+  by the end of this series.  Even if it is altering my codes and  implementing
+  other codes, this also counts as a great leap forward in programming. Instead
+  of just assembling pre-written codes, such as intro codes  where all you have
+  to do is change  the  picture, music, font and  scroller , you  hav e created
+  something new. This achievement most people will find to be very exciting but
+  to many  people, they feel that  they have achieved one of the many thousands
+  of simple, and complicated,  routines in  the complex 68000 language.  It all
+  depends on you, obviously.  I hope I explained that so it was understood!!!!!
+  
+
+  These articles will be very easy  to  understand,  and there will be a lot of
+  actual coding, and  explaining, and  much less of  un-necessary chat, as most
+  people will look at tutorials and see all the text and  very little  code and
+  think s*d this, and will not even bother to read it, let alone understand it!
+  
+  
+  Please try and follow what I am trying to do in my tutorial, as  the ST scene
+  does need much, much more amateur and expierienced  coders, may it  be 68000,
+  GFA, STOS or C, it all helps towards the survival of the ST,and of course the
+  Falcon, as most owners of ST's will, hopefully, buy Falcon's,true? Maybe not!
+  
+  
+  As I said the tutorials will be extremely easy to understand, as I am only an
+  amateur coder, but am able to code most things.  The main  thing you  have to
+  remember, when coding on a 16 bit machine, is that most of what you code will
+  orientate around the manipulation of bitmaps and graphics.   If you  go  onto
+  writing in C on the PC, using X-Windows, then it becomes a hell of a lot more
+  difficult, and you are no longer using graphics but  creating  and  using the
+  created graphics in the execution of one program!!   For  example, creating a
+  program with 4 windows.  The first window tells you what is going on and some
+  options, while the other three windows  contain  the  following;  Window  one
+  contains a polygon with three facets.  In  this  window  you  are able to add,
+  remove facets, and alter the position of each facet.  The  other  two windows
+  are copying what you are doing, one in even-odd algorithms and  the  other in
+  a different algorithm.  You are also able to change the  way  the  polygon is
+  displayed in the other two windows, for  example,  filled  (with  or without)
+  tiles, points etcetera.  Everytime you alter the factes in the  second window
+  the other  two  must  alter,  in realtime, obviously,  their  facets,  whilst
+  compiling to the set algorithm.  You can then, save out the facet data as the
+  vertices and x, y, z values, in  a  resource  data  file.  This  is  just  an
+  example of a far most complex program that creates 2D polygons where you have
+  to create the graphics instead of using pre-drawn graphics...well I  did  not
+  really  need  to  go  into  so  much  detail but  hey, if you are going to do
+  something then do it properly.
+
+  
+  Anyway, this is the introduction over.  Look out  for GFA and  STOS tutorials
+  from other members of Effect, and even addition 68000 texts but  I doubt  the
+  latter!!
+
+  Enjoy..........and do not forget, coding is one of the BIGGEST nightmares you
+                 can possibly tackle on the ST, especially on the STf!!!  It is
+                 FAR easier to code on the STe but I will not go into this,just
+                 yet!!         Do not quit!!!         Coding is like  sex,  the
+                 first few times....no I will not continue.....................
+
+
+-------------------------------------------------------------------------------
+
+
+       Tronic of Effect, aka John Cove, [C]opyright 1995 ... started: 04-11-1995
+                                                            finished: 04-11-1995
+
+
+            "I reserve the right to publish these tutorial series
+             wherever  I  choose...   Only,  with express written
+             confirmation,  is  this  to  be  published by anyone
+             other than myself.   These  series  were written for
+             ST WORLD, but if I feel that the series is not being
+             taken advantage of in the way that most ST USERS are
+             able  to read  the  series, then  I will publish the
+             series in my own, and other  peoples, disk magazines
+             and products."
+
+
+             Series written for Sion Dovey, editor of ST WORLD.
+           --------------------------------------------------------

@@ -1,0 +1,377 @@
+
+{The  following  doc,  I will be releasing around the Atari and  PC  PD  
+libraries, which I have just put together from experience from making a  
+few a quid whilst I have been unemployed.  Try it.  JPH  :-)  } 
+----------------------------------------------------------------------
+How to get computer stuff for {nearly} free
+v1.5 (23/2/1997)
+ 
+By John Hayward
+
+The methods:
+
+This  does  not involve legal hocus pocus,  nor any kind of fraud.  The 
+trick  to get machines or peripherals for very little cash  is  simple,  
+just  general computing knowledge,  some common sense,  and a trip to a 
+small council owned  place a lot of us visit on sunday afternoons:
+
+The tip!
+
+- But the stuff must be useless or people would not dispose of it?
+
+True,  but  we  live  in a wasteful society,  people often  dispose  of 
+systems purely because they are  old, or because to get a dealer to fix 
+something   is not worth it (typically a minimum of 40 plus  parts  and 
+vat  normally)  and as they don't have knowledge or guts to  repair  it 
+themselves, people often  chuck the whole thing away.  The machines you 
+can get hold of are usually  faulty,  but sometimes you can get hold of 
+working  stuff.  I have been doing  this for a couple of years now with 
+some quite profitable results.
+
+Computer  shops around industrial estates sometimes have skips  outside 
+with   all  kinds  of stuff which to them they have  not  the  time  or 
+inclination  to fiddle  with,  but to the casual hobbyist user a source 
+of  dirt   cheap  servicable spare parts is there for  the  taking,  or 
+sometimes even a whole working system can be obtained.
+
+If  you cannot get the equipment working yourself,  discarded  machines 
+can  be used for spares as trying to diagnose and repair faults can  be  
+complicated  and expensive if you are not experienced,  but I can  tell 
+you   40% of British buisnesses use obsolete XTs,  286s and 386s  which 
+are   perfect  for their needs and don't need to upgrade,  which  means 
+people  like   me and you can make some honest money from  spares  from 
+dead systems otherwise destined to be landfill fodder.
+
+Items I have got in 1996:- 
+Amstrad 1512, IBM PC XT (2 of them), IBM PS/2s various models (at least 
+4   of them) Compaq DeskPro 286e (3,  two of them worked!) and  386s/20 
+(2)  ARC   Turbo  12 (286 based AT  clone)  Amstrad  PCW8256,  PCW8512, 
+PCW9512  (there is  loads of demand for parts for these,  especially 3" 
+drives)  Apple IIe and  Mac SE/30.   Epson FX-80 and FX-100 dot matrix, 
+Epson  SQ2550  inkjet,  Howtek  Flatbed scanner,  various keyboards and 
+mice and lots of manuals, some new.
+
+Ideal salveagable parts:
+
+Your typical PC has the following parts:-
+
+- Power supplies (usually work if no physical damage, if they appear to 
+be  wet, make sure they are properly dried off or they explode!) 
+
+-  Motherboard  (normally the machine is scrapped if  this  develops  a 
+fault,   you may be lucky though,  best thing to do is to sell it sold-
+as-seen  for a  couple of quid.)  If you suspect it is dead,  then  the 
+processor still may be  useful. 
+
+- Memory, this can be one of the following. 
+*  SIMMS,  small  pieces of the circuit board with chips on  which  are 
+pushed  into sockets.  Normally these will be already removed. 
+*  DRAMs  single  chips  which  may be  soldered  or  socketed  on  the 
+motherboard  or mounted on a card.  The most commmon ones are marked as 
+4164  or   41256,  only  worth  a  few pence  but  hold  onto  them.  
+*Proprietry,  ie:  older  Apricots  and Compaqs have their own  special  
+boards. 
+
+-  Hard  disk.   Normally missing,  if machine looks though it has been  
+dropped/damaged it is likely to be useless.   Cables are useful as well 
+as  controller cards. 
+
+-  Case (on well known PCs like IBMs and Compaqs that cannot support  a  
+standard  clone motherboard there is normally no demand for  cases,  so 
+you  might as well chuck it away,  keep all the screws and metal plates 
+which go  over unused card slots at the back.) 
+
+- Co-processors.  Extra chip added on the motherboard to speed  certain 
+software  up.   Marked  8087,  287  or 387,  for 8086,  286 or 386 based  
+machines.   Easily  prised  out and worth 2-10.   Normally is  optional 
+extra  on most PCs so you might as well remove it from working machines 
+as well. 
+
+- Floppy drives 5.25" or 3.5".  Normally reliable, it is a good idea to  
+carefully  disassemble  them  to get rid of the fluff  stuck  in  them.  
+Amstrad   3"  units tend to be unreliable,  expensive and difficult  to 
+replace,   although  kits are available to repair them as sometimes  it 
+just the rubber  band on the bottom which has snapped or stretched. 
+
+- Tape streamers.   Not worth much even working, best to just sell them  
+sold-as-seen for a few quid. 
+
+- Keyboards.   Pretty reliable,  most common fault is the DIN connector 
+on   the  end  which  may have broken pins,  remove the  cable  of  the 
+keyboard  and test with  a battery and bulb,  if any pins have  broken, 
+you  may need to cut the end  off and solder a new connector on if  you 
+can find which coloured wires go  to which pins.  Sometimes the plastic 
+tops/springs can be missing. 
+
+-  Mice.   Usually the rollers that are rubbed in contact with the ball 
+get  all kinds of dirt clogged up in them.  Use alcohol solution to get 
+the  dirt   loose and scrape off with a screw  driver.   Sometimes  the 
+connection  plugs   break,  see  above  on  keyboards  to  replace  the 
+connectors. 
+
+-  Cards.   Normally  work.   Hard  disk controllers,  graphics  cards, 
+network  cards etc. 
+
+- Monitors.  Difficult to repair.  Don't bother with any obsolete types 
+like  Hercules,  CGA, EGA, or anything monochrome, if the tube or line-
+output   transformer  has gone it won't be worth it.   Colour  VGA  and 
+Apple  monitors  should normally be economical to be repaired.   Office 
+machines often have  screen burn which is impossible to remove  without 
+replacing the picture tube. 
+
+-  Dot matrix printers.   Normally scrapped if the print head starts to 
+fade  or  if a pin blows.   In older Epson the motherboards tend to  go 
+senile  and   refuse to recognise when you are trying to switch  it  on 
+line.  You can  self-test most D/M printers by switching on and holding 
+the Form Feed  button.  
+
+-  Daisy wheel printers.   So old they're hardly worth bothering  with.  
+Still demand for  the Amstrad units used on the PCW series. 
+
+-  Inkjet  printers.   Rarely  turn  up as  they  are  normally  pretty 
+reliable,   but  check the printhead has not blocked up and there is no 
+ink spilt in to  the machine. 
+
+-  Plotters.   Also rarely turn up as they are reliable,  plotters have  
+rarely  changed in the last 10 years.   Hewlett-Packard and Roland ones 
+are  nice. 
+
+- Laser printers.  Extremely complicated amount of precision mechanical  
+and  light sensitive parts,  make it almost impossible to repair by the  
+casual  user.   If the drum (chemical coated light sensitive  aluminium  
+cylinder)  has  been  exposed  to the light it  will  be  useless,  and 
+expensive   to  replace.  In severely damaged machines,  toner may have 
+leaked into the  rest of the machine and makes a terrible mess. Look on 
+the  motherboard  (normally slides out) to see if there is  any  memory 
+(usually SIMMs) worth  grabbing. 
+
+-  Cables.   You  can  make your own serial cables,  monitor cables  or  
+whatever.   Carefully desolder the connector, strip back the insulation 
+and   decent lengths of multi-core cable can be reused.   25 and 9  way 
+'D'   connectors can be reused as well as the plastic hoods are  always 
+useful.   Use a battery and bulb to check the connections are good. 
+
+- Large computers (eg:  UNIX systems,  minicomputers, fileservers) Have 
+some  useful parts.   Floppy drives, tapestreamers, hard disks, cables, 
+large  watt power supplies, etc. 
+
+- Collectable computers.   Almost all computers have some value even if  
+they  don't  work.   8 bit machines may be difficult to repair but  are 
+sought   after  by collectors and although they may not  worth  a  huge 
+amount now, are still worth hanging onto.
+
+Useful  tools  to  begin recycling digital junk.   Not  all  these  are 
+essential but they help.
+
+* Philips screwdriver 
+* Flat screwdriver 
+* TORQ screwdriver (Most Compaqs and older small Macs need them) 
+* Long nosed pliers 
+* Hammer (for panel beating dented cases!) 
+* Stanley Knife 
+* Soldering iron & solder 
+* Glue (for any small plastic parts which may have broken) 
+* Isopropyl alcohol (tape head cleaning fluid to you and me,  great for   
+  removing  labels, cleaning drive heads/mice rollers and other things,   
+  costs about 1 a bottle from Tandys) 
+* Simple battery and bulb circuit for testing pins on cables, etc. 
+* Plastic tub to put screws, etc in. 
+* Cardboard  boxes  to  put spare parts like  cables,  case  panels  & 
+  brackets,  drives, cards etc. 
+* WD40 (eject mechanisms on old floppy drives tend to seize up) 
+* Kitchen cleaner and a piece of rag for cleaning cases. 
+* White spirit or turpentine 
+* Old PC, (ideally 286 with standard ISA slots) for testing stuff. 
+* DOS disks 3.5" & 5.25" 
+* Diagnostic software. 
+* Small initial cost. 
+* Storage space: garage/shed/loft/cupboard/spare bedroom. 
+* Sympathetic wife/girlfriend/parents!
+
+Ideal sources of equipment 
+-------------------------- 
+* Amenity sites (The tip) 
+* Computer shops in industrial estates sometimes have skips outside. 
+* Insurance companies and colleges sometimes throw stuff away. 
+* Car boots 
+* Jumble sales
+
+Tips on selling recycled parts 
+------------------------------
+-  When sourcing items:
+
+*  Don't pay too much to the tip man,  you don't what bits are going to  
+work,  you usually have to pay anything from 2-10, but you can normally  
+beat them down. 
+
+*  Don't go anywhere you are not supposed to.   Do get permission  from  
+companies  before taking stuff out of steel bins,  they shouldn't mind, 
+the   skips  are  expensive to hire,  and you are doing them  a  favour 
+getting rid  of the stuff!  Leave the place tidy afterwards. 
+
+* At the tip, all electrical equipment will put to one side where it is  
+sold  for a few quid,  have a rummage about and don't forget to look in 
+the   steel bins,  even machines with smashed up cases have some useful 
+parts. 
+
+*  If you don't know if something works,  sell it cheap as sold-as-seen 
+to  people who the knowledge to fix themselves so you don't waste money 
+on  postage  having to get customers to send stuff  back  that  doesn't 
+work. 
+
+*  The  tip  may have other interesting things as  well  as  computers.  
+Bikes,   pieces  of  wood, and  even  antique  furniture  can  turn  up 
+sometimes.
+
+-  Once you have obtained the gear:
+
+*  Invariably equipment gets left in the rain and should be  dried  off  
+carefully and inspected before being powered up. 
+
+*  When you have got a machine partly working,  don't spend too much on  
+parts  to make it whole,  you may not get much for it once it is  fully  
+complete. 
+
+* Don't open lethal high voltage items like power supplies and monitors  
+whilst they are plugged in. 
+
+* Small bits like unused drive panels, expansion slot covers and screws  
+and  fixings and even the badges on front of the cases,  are all  worth  
+keeping. 
+
+* When you sell a working machine to a customer,  consider giving him a 
+part   exchange on his existing machine whether it works or  not.   You 
+then have  another system to rebuild or use for parts. 
+
+* Long lengths of cable can be reused and made into other cables,  with 
+new  connectors from Maplins. 
+
+*  If you need start-up disks for machines,  I think Compaq and Apricot 
+have  a free BBS service to download  these to get older machine going.  
+Some  dealers also do this service for older well known PCs. 
+
+*  Small  bits  that are missing can be obtained by putting  an  ad  in  
+something  like MicroMart.   For example,  I put an ad for five keytops 
+for my Amstrad 1512 keyboard, after which a guy sent me some  for  1.50 
+including  postage. 
+
+*  Scrap metal.   Unusable parts can sometimes be recycled for money at 
+your   local scrap metal merchants,  by seperating aluminium and copper 
+parts,   once  in large amounts are worth 40 and 80 pence a kilo.   Why 
+not  collect  it for you local school,  hospital or charity?   I am not 
+absolutely  sure,   but  I  think with gold chips,  although  they  are 
+plated, it is possible to  extract the gold out of them.
+
+-  Once you are ready to sell:
+
+* Don't advertise lots of stuff at once in MicroMart otherwise they get  
+suspicious and think you are a dealer.  (This happened to me!) 
+
+*  Build up a address list of people who are regularly after parts  for  
+specific machines, you may be able to do more business with them later. 
+
+*  Do make sure you get customers money as cheque or PO before  sending  
+parts. 
+
+* Jiffy bags cardboard and bubble wrap are essential for mailing  items 
+to  customers. 
+
+* Do remember to tell customers the price includes postage.   Typically  
+this is roughly 4 for a keyboard, 1.50-2.00 for a floppy drive. 
+
+* Completely useless bits like cases,  monitor tubes,  etc can be taken 
+back  to the tip, and you can pick up something else.
+ 
+Computer slang. 
+--------------- 
+
+These  are  words which are not official jargon but are often  used  by 
+people  in the computer trade.
+
+* Big Blue.  Nickname for IBM. 
+* Bootleg.  Pirated copy of something. 
+* Clunker/Iron/Breadbasket.  General term for old banger computer. 
+* Clunky.  Old fashioned, crude way of using something. 
+* Luggable/Lunchbox.  Type of portable computer originally made British  
+manufacturer,  Osborne.   Has  built  in  power supply,  not batteries, 
+usually  has a glass screen tube, but sometimes has an LCD screen.  The 
+most  popular ones were made by Compaq.   New ones still being made but 
+not so  common now. 
+* Reseller.  Stupid official word for a dealer. 
+* Zebedee.   Special type of monitor stand, made of steel with a sprung  
+lever normally found on IBM XGA monitors.   Named after the mustachioed  
+sprung character from The Magic Roundabout.
+ 
+Ideal uses for obsolete PCs: 
+----------------------------
+
+*  Word processing.   A system could be invaluable to charity or church 
+for  day to day admin tasks. 
+
+*  Satellite card emulation.   This is becoming a popular,  albeit very  
+illegal  way of getting free subscriptions to channels on  a  satellite 
+dish   receiver.   By  using any 286 with a cable that plugs into  your 
+serial  port  with an interface that plugs in the card slot.   Software 
+(which  needs  updating every quarter) is normally only available  from 
+being downloaded  from a BBS. 
+
+*  Phone  Phreaking.   Much the same as they above,  an art in dabbling 
+with   things  the  telephone  company don't want  you  to  do.   Phone 
+phreaking has  been popular since the mid 1970s. 
+
+* Radio HAM.   I don't know very much about comms,  but radio HAM users 
+are   happy to stick with cheap XTs and 286 for quick  no-nonsense  DOS 
+based   software  and as old machines are more likely to have  6  or  8 
+slots and  plenty of drive bays for easy upgrading/messing around. 
+
+*  Storing  backups  of important files.   A program for the  Atari  ST 
+called  Ghostlink lets you backup files via a null modem cable to store 
+files on a  slave PC. 
+
+*  Kids.   A  great way for a child to learn computing,  as well as for 
+older   games  and  educational  software,  children can  learn  to  do 
+upgrades  and  learn how a computer works as older machines have  cheap 
+parts for  tinkering with.
+ 
+To advertise parts 
+------------------ 
+- MicroMart 
+- FreeAds (or whatever your local trading newspaper is) 
+- Postcards in local supermarket
+
+To send parts through the post. 
+------------------------------- 
+
+- Bubble wrap (you can get it from garden centres in metres but it's  a 
+bit  expensive) 
+
+-  Kitchen  cleaner (usually works well on cases to get them  nice  and  
+shiny.) 
+
+-  White spirit or turpentine (often people have written things on  the 
+case  with a permanent marker which can be difficult to remove.) 
+
+- Jiffy bags 
+
+- Cardboard (boxes or flat pieces, you can get from shops.)  
+
+-  Polystyrene  blocks,  can  be easily cut to any  shape  for  general 
+packaging  or for mounting chips on. 
+
+-  Anti-static bags are useful for storing chips,  motherboards,  cards 
+and  memory. 
+
+-  Pieces of foam (like you get on old flammable  furniture)  essential 
+for  sending fragile things like hard disks. 
+
+- Parcel tape (avoid the cheap stuff which breaks easily.) 
+
+-  Print out a neat label with customer's address as well  as  fragile, 
+this  way up, etc.
+ 
+Have fun, remember you are doing the environment a favour by recycling!
+Let me know if this has been any use to you.
+ 
+John Hayward 
+81 Baffins Road, Copnor, Portsmouth, Hants, PO3 6BE
+

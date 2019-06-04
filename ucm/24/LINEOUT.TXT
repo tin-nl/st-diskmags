@@ -1,0 +1,175 @@
+ó--------------------------------------------------------------------------------
+                               "Delta" by LineOut
+ó--------------------------------------------------------------------------------
+
+system... Falcon, 4 MB RAM, RGB/VGA
+
+credits.. code - earx of lineout/fun
+          gfx  - havoc of lineout/fun
+                 evl of dhs
+          msx  - dforce of lineout/fun
+                 earx of lineout/fun
+                 frequent of ephidrena
+                 laxical of the silents
+
+release.. o1/o3
+
+ó--------------------------------------------------------------------------------
+
+LineOut?! Surely this label may have painted the one or other question mark into
+the eyes of  several readers, but  the puzzle  solves itself if you read through
+the credits. LineOut is  nothing other  than the  new label  by  Earx of Fun. He
+decided  to use this one to leave the unproductive and uncooperative Fun members
+behind... and brings us his new full time Falcon demo under this label now...
+
+"Delta" is  build up of 3 different  parts including  a menu  screen and you can
+either chose a single part  to watch or start a  special part, but here you have
+to watch the whole rest of the demo then. But before this, let's go step by step
+with loading the demo.
+
+After loading a  little info screen appears for the screen settings and a detail
+button. Maybe I am wrong but I couldn't find out really if I switched the detail
+on or off as I didn't saw a big difference (or no?) in the demo then.
+
+At first a pixeled LineOut  logo appears on the  screen, made by Havoc, followed
+by a presents and a  triangle line vector  object, that gets delayed then and is
+some  kind of  logo for  the "Delta" demo. Anyway, it turns its  rounds with the
+feedback effect and then the menu screen  appears, offering  you to chose one of
+the 3 demo parts or to leave the scenery. All this happens in complete silence.
+Ok, let's browse through the demo...
+
+ò...Part A...
+
+I must say it  right here, it  seems as Pieter had cleaned up his harddisk here,
+as he  bombs us  with a load of effects that  were already  seen  before in many
+other demos and often in better quality too. You get the most things to see here
+that  were  released  in the  demos of  the late  nineties, tunnels, zooming and
+disting textures, melt-o-vision  effects, glasballs that are joining each other,
+raytracing  balls, water wave  effects, sky and floor  mappers, a  flight over a
+landscape and so on. Unfortunately those effects are combined with in parts very
+ugly colours (yellow and pink...) and a  tracker tune by DForce that sounds like
+he would be 1o years old (the tune, not Dforce... ;)
+Unfortunately I have to say that I watched this part of the demo just two times,
+at first as I got the demo  and then for this  test. It offers no real "boah" fx
+and looks a bit loveless smashed together... I have to say I was a bit disturbed
+to see Pieter crawling out all those old thingies... The only better thing was
+a lighsourced grey texture tunnel short before the end of this part.
+
+ò...Part B...
+
+But now  Pieter shows  that he  can do  much better... At first, with Part B the
+music changes a lot into a real nasty industrial noise soundtrack.
+Then he starts an orgy  of environment mapped  3d stuff that  shows off the last
+steps  he made in  his coding  skills. We can see  some triangle  vectors flying
+around on the screen  and then we  are flying  through them  as they're building
+some kind of tunnel. In the  middle of  the screen a gold coloured vector object
+appears and when the  triangles are vanished, some  blue lightnings appearing to
+the beat of the music around this vector object.
+
+After some  kind of waterdrops  effect or something the grey lightsourced tunnel
+from part A comes back, followed by two vector spirals that are moving into each
+other. The  next one  is a real cool  thing... you can  see 4 env. mapped golden
+vector rings  on the screen in  different size, that are moving  together around
+and turning around different axis' to move together in one direction at the end.
+Check the screenshot below...
+
+{*i DELTA1.PI1 m 0 20 0 200}
+
+ñ...not to forget that the movement is quite fast...
+
+This already cool effect is followed by  another one, showing  a bigger bunch of
+env mapped vector stars that are moving in a waveform over the screen.
+After  another landscape  flight we  can see 3 half  env mapped  balls  that are
+hollow and moving together timed to the music. This is a very abstract scenery.
+But the following one  brings  the  first  real "wow" effect, as two env. mapped
+vector  cogwheels  appearing on  the  screen, moving  together. Then  an axis is
+stuck into one  of them and  on the other  end of  this axis two  more cogwheels
+appearing, all still in movement. This looks really good, a nice idea.
+The next one looks a bit known to us and  reminds slightly to the "Hmmm" demo by
+Escape as it brings also a lined cube in environment  mapping including a little
+triangle vector  inside, mapped  as well. All moves quite  smooth and is of very
+reasonable size.
+
+We go on  with some  strange caleidoscope effects  and then the  screen with the
+four rings that  was mentioned  above appears  in a  similar  form but using now
+square  vectors  in the same  way. Another  strange  vector  object comes up and
+zooms away then and as the screen  turns black the  music  changes from the very
+hard style into a more groovy one.
+
+At first we see now some kind of feedback effect in a  strange dither  style and
+the grey  lightsourced  tunnel appears  again, followed  by an  animated strange
+ring-a-like vector object. This one finally turns away and makes place for...
+
+ò...Part C...
+
+The music now changes into a more relaxed  one and we  start with a textured sea
+star that is slightly  animated and  gives the impression  to fall down onto the
+ground of the ocean. As he found his place besided another one the whole scenery
+gets darker and the bumpmapped.
+
+At  next we  see some  textured mussel shells in different styles, that are also
+animated  and swimming around on the  screen. The best  one is  a big "ammonit",
+you  know  those  spiraled  big  things? At  next we  see some  kind of animated
+textured bubbles that  are moving  upwards and leave a bit the impression to see
+a jellyfish from above without tentacles.
+
+Following is a  fractal plant that was shown in a similar way in "Terrorise Your
+Soul" and  is animated as  well, building  up quite  impressive bushes. We go on
+with another water wave effect that  builds up another cogwheel in the end, sure
+as little reminder  to part B, followed by a very cool textured and lightsourced
+metaballs effect.
+
+Then we  see some  mapped vector  stars  that are  surrounded  by some  partycle
+effect, that  flies around on the screen like a komet while the vector stars are
+flying around him. This looks also very cool...
+
+{*i DELTA2.PI1 m 0 20 0 200}
+
+ñArf... I should search a possibility to include animations here ;)
+
+And we still haven't  reached the end, as a  pulsating  purple/blue vector comes
+up flying around together with a starfield. Looks also quite nice.
+The music changes a bit and  sounds like a hard  breathing  human while a big 3d
+ifs fractale is build up in the background that moves around.
+This is followed by another very strange vector stuff, also  coloured in purple-
+blue again and then animated mandelbrot stuff comes up, and again  those strange
+vector stuffs. Here I'm running out of words as the whole scenery is  build with
+animated, pulsating and moving texture mapped vectorstuff.
+
+The screen turns  black and the  writing "all these worlds are yours" is printed
+onto the screen, followed by some big  dots galaxies  in  different forms, while
+the  greetings and  credits appearing. A  real nice  end part as this quite long
+trip is over now...
+
+òFinal words... "Delta" leaves a  quite mixed  impression. I have  to  say that I
+ò               was a bit disturbed after I saw the first part, that  looked more
+ò               like a step backwards, in the  wrong direction, with the  effects
+ò               and the  whole style  and music. Therefore  the two  other  parts
+ò               bringing  quite  good effects  onto the  screen, very  big vector
+ò               stuff  that shows that Pieter is  working  hard  to  hold  up the
+ò               contact to the top coder  league. Some of the  shown screens have
+ò               really a special  flair and  the musical  score  is  a mess as it
+ò               hits my taste  very well. Unfortunately  the  few design  effects
+ò               aren't  enough, those  many  black  screens surely hadn't must be
+ò               and  this is  surely  a big  drawback for  the  whole  demo as it
+ò               doesn't features many  good transitions or design  elements. Some
+ò               screens really create a  special  atmosphere, but  the whole demo
+ò               itself looks a bit smashed together loveless. Sorry to say so...
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals.......ð  6o % ñ- some nice pixels, fonts and textures
+ñaudio.........ð  7o % ñ- the first track lowers the score a lot!
+ñeffects.......ð  8o % ñ- a big bunch of vector stuff with mappings and so on
+ñdesign........ð  5o % ñ- some parts are cool, others look quite ugly (Part A)
+ñoriginality...ð  65 % ñ- the 1st part destroys the score again...
+
+ó___ðOveralló______ð65ó_ð%ó____________________________________________________________
+
+If the first part  wouldn't have been included the demo surely  would  have got
+a better rating, for example I  would have  rated the  musix  from part B and C
+with about 85 % at least... as well as design and originality had made a little
+step higher, too. But... it isn't the fact and I have to rate the demo at once,
+with all parts...
+
+ó_ò.tSCc.ó_________________________________________________________òmoondogó_òo2/2k3ó_

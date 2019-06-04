@@ -1,0 +1,46 @@
+
+Something  of interest which may appeal to the WWW addicts who seek  an 
+alternative to CAB - CiH
+ 
+Sb: #New WWW browser info 
+Fm: Michel Vanhamme 100422,651 
+To: ALL
+
+Hi,
+I  caught  this  on  Oxo Concept's web site  yesterday.  Since  it  may 
+interest WWW-deprived fellow Atarians, I thought I'd pass it along. The 
+web site also shows a screenshot of the thing.
+
+Michel
+
+Webspace  is a HTML browser,  so it permits the consultation of the WWW 
+internet servers.  It is compatible with the quasi-totality of the HTML 
+3.2 specifications,  and also with the Netscape (registered trade mark) 
+extensions.   Its  100%  GEM interface is very intuitive.  The usage of 
+indexed  dialog forms is an innovation (see the  screenshot).  Webspace 
+integrates  a file manager dedicated to the managing of  the  consulted 
+pages, the bookmark and the HTML cache.
+
+Webspace manages a HTML pages and pictures disk cache.  Thus the access 
+to  the  pages may be 10 times faster.  Furthermore,  the cache storage 
+respects  the  original  name and structuration of  the  files,  It  is 
+possible   to  consult  HTML  pages  after  disconnection.   The  cache 
+automatically  manages the equivalence between the UNIX long names  and 
+the 8.3 Atari format.
+
+Webspace permits two types of software extensions: the services and the 
+modules.  The  services  are non-HTML extensions:  newsgroups,  e-mail, 
+ftp...  Les  modules  are programs witch manages HTML code.  It already 
+exists  a  disk directory module (the C source code of this  module  is 
+furnished  as  example)  and hypertext database  modules.  The  modules 
+developer  documentation is furnished.  This modular system permits  to 
+test cgi-bin programs prior to compile them on a big HTML server.
+
+Webspace is compatible with all machines,  it works in 2,  16,  256 and 
+TRUE COLOR,  from 320 per 200 points. The JPEG unpacking takes usage of 
+the  DSP present.  It works with at least 1 Mb of RAM.  The recommended 
+configuration is 4 Mb and a hard disk (a free space of 10 Mb to 100  Mb 
+permits a good usage of the cache).
+
+                              ----------
+

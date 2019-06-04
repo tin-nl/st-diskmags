@@ -1,0 +1,89 @@
+JEDI MUSAX PLAYER 
+ 
+.THE BEST WAY TO PLAY JEDI'S CHIP-MUZAXX
+
+by JEDI himself...
+
+
+
+
+In the previous issue of dis disk-magazine, Bonus Software xplained how to
+play my chip-muzaxx. As the format is xactly the Mad Max', his routine
+worked perfectly, but my utility also allows you to call the muzaxx many
+much easier. Indeed, the D0 register doesn't need to be initialized, so a
+single CALL instead of a RCALL is possible. Moreover, the second 'BRA' of
+my routine calls a sub-routine that stops perfectly the resident-sounds.
+Although the WAVE 0,0,0,0 instruction does the same thing, you'd better use
+the built-in rout 'coz all YM-registers are reinitialized. My utility can
+also use sampled drums. In dis case, you MUST call the second 'BRA' to stop
+the muzak, otherwise the interrupts wouldn't be restored and lotsa things
+wouldn't work anymore.
+
+P.s. There are a lot more GFA ans ASM sources to play music in the
+Megatizer folder on disk A. Jedi didn't know at that time that he would
+release the Megatizer. (BONUS)
+
+
+
+********************************* GfA-Source *******************************
+
+FILESELECT "A:\*.THK","",file$               Choose a file
+IF EXIST(file$)=0                            Does it exist ?
+  EDIT                                       No => Quit
+ENDIF
+OPEN "I",#1,file$                            Yes => Let's load it !
+muzak$=INPUT$(LOF(#1),#1)                    Load...
+CLOSE #1                                     Close...
+super%=GEMDOS(&H20,L:0)                      Supervisor mode
+muzak%=V:muzak$                              Address of the muzak
+CALL muzak%                                  Init. muzak
+LONG{&H4D2}=muzak%+8                         Play it
+~GEMDOS(&H20,L:super%)                       -> Back to the user mode
+
+... Here is your program ...
+
+super%=GEMDOS(&H20,L:0)                      Supervisor mode anew
+LONG{&H4D2}=0                                Don't play anymore
+stop%=muzak%+4                               Second 'BRA'
+CALL stop%                                   Cut the resident-sounds
+~GEMDOS(&H20,L:super%)                       -> User mode
+ 
+
+
+
+******************************* Assembly Source ****************************
+
+        clr.l -(sp)
+        move #$20,-(sp)
+        trap #1                              Supervisor mode
+        move.l d0,2(sp)                      Save the user stack
+        
+        bsr muzak                            Init.muzak
+        
+        move.l #muzak+8,$4d2.w               Play muzak
+        
+... Insert your program here ...
+
+        clr.l $4d2.w                         Stop muzak
+        bsr muzak+4                          Cut resident-sounds
+        
+        trap #1                              User mode
+        addq.l #6,sp
+        
+... Insert the end of your program here ( PTERM0, Chaining,... ) ...
+
+
+
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+
+    C ya soon in the Bee Forol Demo !!!
+        
+                            #    ###    ##     #
+                            #    ##     # #    #
+                          ###    ###    ##     #
+                   
+                         of Sector One from T.H.K   
+                         

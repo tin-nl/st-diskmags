@@ -1,0 +1,39 @@
+SMALL RAMDISK
+
+Another ramdisk ????
+
+Well yes, altought it isn't very special. But at the F.O.D. i needed
+a small ramdisk to copy some small sources for the diskmagazine but
+i forgot my utility disk. So i ask some other people "do you have a
+ramdisk program ????". Well nobody seem to have one so i thought it
+was wise to get one and put it on the diskmagazine so it wouldn't 
+happen to me again in the future.
+
+1) How to use ????
+
+It couldn't be simpler. Just klick the RAMDISC.TTP twice and a message
+box will appear on screen. Type in on the line PARAMETER how much Kb
+the ramdisk must be as " 50, or 200 " and nothing more. Don't even type
+ "K" or something like it, just the number of Kb and the return.
+Then a message will appear either:
+
+- RAMDISK TOO SMALL: You have chosen to little Kb too work with. Choose 
+                     more Kb's say about 50Kb to start with.
+- RAMDISK TOO BIG  : You have chosen to much Kb to work with. Remember
+                     you can only use as much Kb as you have ram on board
+                     and you will have to leave a bit of ram free for the
+                     ST to work with.
+- RAMDISK INSTALLED: You now have a ?? Kb large ramdisk to use. Now go to
+                     the desktop, klick FLOPPY DISK A on it until it turns
+                     black. Now go to OPTIONS and klick on INSTALL DISK
+                     DRIVE... Choose DRIVE INDENTIFIER: "D": and klick on
+                     INSTALL or press return. Then klick twice on DRIVE D
+                     and a window will appear.     
+
+So you see, very easy to use. BUT remember this ramdisk is NOT reset
+prove, so save everything to floppy before reseting !!!!
+Or else all data and prg's will be lost !!
+
+                                                Bonus Software
+ 
+

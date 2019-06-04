@@ -1,0 +1,102 @@
+FALCON MY OPINION
+
+Last saturday I was at the Dusseldorfer Atari Messe and could finally see with 
+my own eyes what the Falcon 030 was all about.
+
+The production machines look different from what we all have seen in various 
+articles. The final color is light grey with dark grey keys with white 
+symbols. The name-plate of the machine tells us in color 'ATARI Falcon 030' 
+and yes it's the dreaded 1040 STE case (Atari said that it was done to be even 
+'optically' compatible..).. Too bad for that, maybe they will bring out a 
+MEGA-STE style case in the near future. 
+
+Most of the machines were securely strapped onto the display desks so there 
+was no chance to put one under your T-Shirt... 
+There was a on the hour demonstration of the machine which was run on a large 
+screen video-wall. Stupidly enough the whole demonstration failed several 
+times, the programs kept on crashing... but no wonder , Tony Barker (some said 
+already 'Tony Barf..') programmed them. Taking in account that we were there 
+the second day and the demonstration was every hour it was quite obvious that 
+even for the tenth time they still had'nt found out what was wrong (which was 
+of course: bad programming) 
+
+We (Bonus and I) tried to run our superb (ahum) magazine on the Falcon, but it 
+failed (two bombs... GFA Basic fouled up again...arrrgggh) Even my INTRO of 
+DBA magazine 4 which runs perfectly on the TT030 didn't work, I suspect that 
+the packer crashed, the program itself is quite clean and takes over the 
+complete computer so there shouldn't be any unknown interrupts occuring. but 
+anyway they didn't work...   
+Most of the machines on display had 14 Megabytes built in, there is no 
+difference in FAST or SLOW ram, all the available memory is fast (16 MHz)
+The blitter has returned in the Falcon unlike the TT which has no blitter. The 
+blitter used in the Falcon is a souped-up ST blitter but now it runs on 16 MHz 
+and has some additional features.
+Sound has much improved and it's now 16 bit CD quality (by the way, I think 
+STE/TT sound is already very good) The Digital Signal processor which the 
+Falcon incorporates has an outstanding 16 MIPS speed and can real time echo 
+your voice for example when you speak into the microphone which you can 
+plug directly into the Falcons (stereo) microphone input. All without 
+intervention of the main processor (16 MHz 68030) The DSP has 32k (of 24 bits) 
+of high speed memory (no wait-states) and should be capable of playing mod-
+files all by itself (and I mean with four 16 bit stereochannels, Amiga eat 
+that!)
+I think it's time to create a whole new kind of modfile player..... The DSP is 
+also capable of doing highspeed modem emulation so you can connect a simple 
+telephone line interface to the DSP port and voila a highspeed data transfer 
+system is born...
+
+Screen resolutions are much better than announced and you can select with all 
+resolutions how many colors you need (2/4/16/256 or True-Color) You can switch 
+on 'overscan' so no borders will be visible and interlace is also supported 
+for video applications, although the desktop in interlace is just horrible (it 
+flickers just as bad as the Amiga, but that was to be expected) You can 
+dynamically select the number of scanlines between 200 and 480 so there is no 
+need for border-open trickery. Of course the large screens with true color 
+take up a huge amount of RAM (maximum of 737280 bytes !!!) so it will be of no 
+use to buy a 1 Mb Falcon (I don't know if that possible at all, but the main 
+board supports it)  With so many colors at once on screen you don't need 
+rasters anymore so that should be a big relief for all you demo programmers !
+ 
+The operating system on the displayed machines was not ready yet, some 
+machines even reported 'Sparrow operating system' Sparrow was the pre-
+production name of the Falcon.. There was no Falcon with MultiTOS built in..
+Sam Tramiel reported earlier already that MultiTOS is probably NOT going to be 
+available for the older 68000 ST's..  
+
+On asking what the official price will be of the Falcon there was no definite 
+price set. The machine should be available in the shops in november (don't 
+worry, that will be in 1992..) But the price will be far under 2000 guilders.
+
+The internal harddisk which can be connected works great, Atari have made a 
+special AHDI driver to support IDE boot etc. Maximum data transfer speed on 
+this IDE bus is 3 Mbyte/sec, now it's just for you to find such a fast 
+harddisk but ok, the interface is good) If you own already a SCSI harddisk 
+then it's possible to hook it up to the SCSI-2 port, the 'old' DMA port has 
+vanished from the Falcon (too bad for you MegaFile/SH204/205 owners..)
+There is no fan built in, so I suspect some heat problems if you try to 
+connect some large IDE harddisks (internally there is space for a 2.5 inch 
+drive only!)
+
+At the HiSoft stand we talked to one of the program designers of HiSoft who 
+showed us his prototype Falcon (which was indeed dark grey with light grey 
+keys with yellow symbols...) It ran at that moment a new paint package called 
+'True-Paint' especially designed for the Falcon, although it should run just 
+as fine on the TT (only with less colors of course..) It wasn't finished yet , 
+and I couldn't persuade him to give me a copy.. Too bad... On asking about his 
+experiences with the Falcon he said: 'It's a fabulous machine, great hardware' 
+I asked what he thought of the lousy demonstration of the Falcon on the video-
+wall at the Atari stand, he answered: 'It's not the machine which is faulty, 
+but the software..' This restored a little of my lost confidence in the 
+Falcon... We also looked at HiSoft basic which they had for sale at the stand, 
+it ran fine on the Falcon so we bought a copy of that just to be compatible.. 
+So there is a great chance that the next diskmagazine is created in HiSoft 
+basic instead of the 'not-so-portable' GFA Basic.
+
+Well my fingers begin to wear out so I will stop now, my overal opinion of the 
+Falcon is that of a 'beast-of-a-machine' with some minor software problems. I 
+will not judge too hard before I can get my hands on one just to check things 
+out.
+
+        KGE
+     
+

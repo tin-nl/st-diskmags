@@ -1,0 +1,308 @@
+066010303050001132002006006010000
+11
+2#1
+F0110000001
+9[........................................................]0010
+€
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+                 DeadHackersSociety128ByteIntro
+
+                ExaminedbyMrPinkofReservoirGods
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+DeadHackersSocietyhavestartedanewtrendindemomakingwiththe
+releaseoftheir128byteintros.Codingintrosofsuchsizerequires
+agreatdealofskill,gooddesignandabitofluck!
+
+DHSbeganthingswithalittlefireeffect.Anatarilogoswingsfrom
+sidetosideanditburnsupthescreen.Buthowcanallthisbedone
+injust128bytes?Surelyitsnotpossible?
+
+Letslookatthosevital128bytesofcode.
+
+        CLR.L   -(A7)
+        MOVE.W#$20,-(A7)
+        TRAP    #1
+
+Theintrobeginsbyturningthemachineintosupervisormode.
+Thisisfortwothings:accesstothescreenaddresssystemvariable
+andaccesstoROM.
+
+Itisispossibletosetthescreenaddressviaatrapcallbutthis
+wouldtakealotmoreinstructionsthanthesingleinstructionmove
+intoscreenpt.
+
+Thesupexeccallcouldhavebeenusedinsteadofthesupercall,but
+astheaddressoftheroutinetoexecutewouldhavetobepushedonto
+thestackthiswouldhavemeantmorebytesused,evenifapcrelative
+addresswasused.
+
+        LEA     screen_space(PC),A0
+€
+screen_spaceisablockof200,000bytes,enoughtostoreatrue
+colourscreenof320x240.Noticethepcrelativeaddressing,this
+saves2bytesonthisinstruction.
+
+        MOVE.LA0,$45E.W
+
+Thescreenaddressismovedintothesystemvariablescreenpt.
+Thisvariableiscontinuallymonitoredbytheoperatingsystem,andif
+itcontainsanon-zerovaluethisissetasthenewscreenaddress.
+
+        LEA     $7D00(A0),A5
+
+A5isloadedwithscreen_space+$7d00,thatis50linesdownthe
+screen.Thefireeffecttakesplaceintheupper50linesofthe
+screen.
+
+IfDHShadwantedtomovefurtherdownthescreen,saysixtylines,
+thiswouldhavemadethecodelarger.Why?
+
+WellatthemomenttheycanuseanLEAinstructiontoloadtheoffset
+fromthescreen(a0)intoa5.AnLEAhasarangeof+-32768sothat
+isapositiveoffsetof$7fffinhex.At$7d00theyareneartheend
+ofthatrange,60linesdownwouldbe60*640=38400meaningitwouldbe
+oeoutoftherangeofanLEAandtheywouldhavetodoanADD.L
+instructionwhichtakestwoextrabytes.Theywouldalsohavetomove
+a0intoa5beforedoingthislongmeaninganother2extrabytes.
+
+Itmayhavesurprisedsomepeoplethatthis128byteintroisFPUonly
+asfireeffectsreallydonotneedtheFPUaretheyarebasedonvery
+simplemathematicalcalculations(addsandshifts).
+
+TheFPUisusedtomovethespriteinthatnicecurvingwavethatis
+actuallyasinewave.
+
+ImustadmitthatIdon'tknowtoomuchabouttheFPU,havingonly
+useditonce(during'FractalPlayground')butIcandeducewhatthe
+€codedoes.
+
+Payattention,here'sthesciencebit!
+
+
+MOVEQ     #$64,D3
+
+D3isloadedwith100.Thisvalueistobeusedforthesinwaveand
+therootofthesinewave.Thesinvaluewillvarybetwen+100and-100
+andthen100willbeaddedtoit.ThiswillbeusedastheXvaluefor
+thefujisprite.
+
+FMOVE.W   D3,FP1
+
+FloatingPointregister1isloadedwith100.
+
+L0000:
+FADD.S    #9.4999999E-2,FP1
+
+Wecontinuallyaddtothisregistertocyclethroughallthepossible
+sinvalues.
+
+FSIN.X    FP1,FP0
+
+MovethesinvalueofthecurrentvalueofFP1intoFP0.
+
+FMUL.W    D3,FP0
+
+MultiplythesinevalueinFP0by100togetavalueintherangeof
++100to-100.
+
+FMOVE.L   FP0,D0
+
+Getcalculatedvalue.
+
+ADD.W     D3,D0
+
+€Add100tothisvalue,sowenowhaveaxvaluefrom0to200.
+
+LEA       $E49434,A0
+
+Aseeminglystrangeinstruction.Whatisataddress$E49434?Thisis
+actuallyaROMaddressandyouneedtobeinsupervisormodetoaccess
+datafromhere.Atthisaddressthereisactuallyabitplaneversion
+ofthefamousfujilogothatyouseewhenyouswitchyourFalconon!
+
+I'mabitworriedthatthisinstructionisprobablyabitmachine
+specific,i.e.thereisnoguaranteethatthelogoresideshereonall
+TOSversions.ItworksfineonmyTOS4.04machinethough.
+
+LEA       (0.B,A5,D0.W*2),A1
+
+ThisinstructiongetstotheXpositiononthescreenwehave
+calculatedtheFPUSINinstruction.Weareabouttocopythefuji
+spritetothisscreenposition.
+
+MOVEQ     #$55,D4
+
+Thisisthevaluefortheyloopofthespritecopyroutine.Thefuji
+logoisactually$55+1=$56(or86indecimal)pixelshigh.
+
+L0001:
+MOVEQ     #2,D5
+
+Thisisthevalueforthexlooppartofthespritecopy.
+Thelogois(2+1)*32bits=96pixelswide.
+
+L0002:
+MOVE.L    (A0)+,D0
+
+AlongwordisreadfromROMcontainingpartoftheatarilogo
+graphics.Thisisinbitplaneformat,soeverybitrepresentapixel.
+Thisbitplaneformatneedstobeconvertedtotruecolourtobe
+displayedonthescreen.
+€
+MOVEQ     #$1F,D7
+
+Thissetsuptheloopforexaminingall32bitsofthelongword.
+
+L0003:
+ASL.L     #1,D0
+
+Thehighestbitofthelongword   isshiftedout,causingthe
+appropriateflagregisterstobeset.Doingthisiterativelyis
+equivalenttoindividuallytestingeverybitinalongword.
+
+BCC.S     L0004
+
+Ifthisbitisclear,thenthepixelisblanksowewon'tplotit.
+
+MOVE.W    #$1F,(A1)
+
+Thebitissetsowedrawapixelonthescreen.
+$1Fisfullblueonatruecolourscreen.Blueisaveryusefulcolour
+touseforaveragingeffects!
+
+L0004:
+ADDQ.W    #2,A1
+
+Thissimplymovestothenextxpixelonthescreen.
+
+DBF       D7,L0003
+
+ThisloopsforalltheXpixelsofthecurrentlongword.
+
+DBF       D5,L0002
+
+Thisisaloopforallthepixelsofthesprite.
+
+LEA       $1C0(A1),A1
+
+€Wehavereachedtheendofthexpixels,sowemovedowntothenext
+screenline.
+
+DBF       D4,L0001
+
+Thisloopsforallylinesofthesprite.
+
+
+Thespritehasnowbeencopiedtothescreensowecanbeginthefire
+effect.Alittetheoryhere...
+
+Afireeffectisbasicallyanaveragingeffect.Youmovethroughall
+pixelsonthescreenandsettheirnewvaluebasedontheaverage
+valuesonanumberofsurroundingpixels.
+
+Thegivethefireanupwardmomentum,theaveragevaluesforthe
+currentpixelmustbecalculatedfrompixelsbelowit.
+
+Duetothenatureofaveraging,eventuallyallpixelswillbezeroed,
+thatiswhyitnecessarytocontinuallyaddnewdataatthebottomof
+thescreen.
+
+Inthisfireeffect,forapixel(x,y)thesepixelsareaveraged:
+
+                     (x-1,y+1)         (x+1,y+1)
+                               (x,y+2)
+
+Thisworksprettywell.
+
+Usuallytheaveragingisdownwithtwotables,onewhichcontainsa
+mapofthescreenin'averaged'values,andanotherpalettetableso
+thatthepixelsplottedcanbeafirelikerangeofredsandoranges.
+
+In128byteswedon'thavethisluxurysoDHSusethescreenastheir
+displayer,paletteandaveragingtable!
+
+Thisisdonebyjustusingthelower5bitsofeachpixel-theblue
+€bits.Bysettingtheinitialvaluesofeachpixelto$1fthenthe
+pixelswillnotexceedthisrangeandtheaveragingeffectwillresult
+inaflamingbluedemoscreen!
+
+here'sthecode...
+
+WebeginA5pointingtothetopofthescreen.
+
+LEA       $500(A5),A0
+
+A0issettopixelposition(x,y+2)
+
+LEA       $282(A5),A1
+
+A1issettopixelposition(x+1,y+1)
+
+LEA       $27E(A5),A2
+
+A2issettopixelposition(x-1,y+1)
+
+MOVEA.L   A5,A6
+
+Thescreenaddressiscopiedintoa6.
+
+MOVE.W    #$6DFF,D7
+
+Thisisthesizeoftheaveragingareainpixels.
+
+L0005:
+MOVE.W    (A0)+,D0
+
+Readlowestpixel(x,y+2)
+
+ADD.W     (A1)+,D0
+
+Addvalueofrightpixel(x+1,y+1)
+
+€LSR.W     #1,D0
+
+Getaveragevalue.
+
+ADD.W     (A2)+,D0
+
+Addvalueofleftpixel(x-1,y+1)
+
+LSR.W     #1,D0
+
+Getaveragevalue.
+D0nowcontainstheaverageofthesethreepixels.
+Itwouldseemthatthereisaslightbiastowardstovalueoftheleft
+pixel!
+
+MOVE.W    D0,(A6)+
+
+Storeavergaedpixelvalue.
+
+DBF       D7,L0005
+
+Loopforallpixelsindemoarea.
+
+BRA.S     L0000
+
+Gobacktothestart!
+
+
+IfyouaddonthesizeoftheBSSsectionyouwillfindthatthis'128
+byte'introactuallytakesupnearly200k!Butitisthesizeofthe
+codeweareinterestedin,andthatisameasly128bytes!
+
+        SECTIONBSS
+screen_space:
+        DS.B      200000
+
+
+€Writinga128byteintrocanbealotoffun.Peopledon'texpectmuch
+fromjust128bytes-letsfaceitWindows95needsthismuchspace
+justtostoreafilename!
+
+I'mlookingforwardtoseeingmoreoftheselittleintros,andwell
+donetoDHSforcomingupwithanoriginalnewidea!
+

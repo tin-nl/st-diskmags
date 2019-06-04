@@ -1,0 +1,117 @@
+STE OR STFM ????
+
+HOW TO MAKE THE DIFFERENCE BETWEEN A STE AND A STFM ???
+
+by JEDI of SECTOR ONE from THE HEAVY KILLERS
+
+
+
+PLEASE CODE PROPERLY !!!
+------------------------
+
+The marvellous Atari STE is now more than one year old, but just a few demos
+and games were especially coded for it. Wotta pity, isn't it ? Some demos,
+like the "Gigadance Demo" ( by The Shadow Warriors, ex-members of THK ) had
+the good idea of testing if the user was owning a STFM of a STE. In dis last
+case, the soundtracker music was played in stereo with the D.M.A . The idea
+was pretty good, but there was a nasty problem: on some STEs, the demo
+crashed and it was impossible to peek at it on a TT. It's why I decided
+to disassemble it, and I fastly discovered what was wrong : the STE-test.
+The lamer who coded the boot of dis demo used to read values inside the ROM
+to conclude, whether it was a STE or not. So you can guess why the test
+failed on TT... And just imagine, that a STFM-owner updates his T.O.S
+version; the demo would reconize a STE and crash...
+It wouldn't be a serious problem if a single coder was using dis technic,
+but it isn't the case ! For instance, the great "Corporation Megademo"
+does exactly the same test. It could be really nasty for a megademo
+especially coded for STE. So, I yell a big cry : " STOOOOOOOOOOOOOOOOOP ! "
+Never try to scan the ROM again or I kill you ! Please code properly !!!
+
+
+HOW TO SOLVE DIS NASTY PROBLEM
+------------------------------
+
+According to me, the best way to test what kind of computer your screen is
+working on is the following one :
+
+  - First, wait the beginning of a VBL ( Vsync )
+  - Then, set the lowest byte of the video counter to a random value
+    ( It must be different from the lowest byte of the screen address )
+  - Finally, you just have to compare the value you set with the current
+    value of the lowest byte of the video counter.
+    
+On STFM, the video counter can't be set by the user, so at the beginning of
+a VBL, it must be null. On STE, it can be set, so if the value you set is
+saved by the Shifter, the demo must be working on a STE. Don't forget the
+VBL-waiting 'coz while the screen is displaying itself, the video counter
+changes its content...
+ 
+
+A SOURCE, A SOURCE !!!
+----------------------
+
+Here are two sources to make dis technic clear...
+
+
+****************************** Assembly Source *****************************
+
+        clr.l -(sp)
+        move #$20,-(sp)
+        trap #1                Supervisor mode
+        move.l d0,2(sp)        Save user stack
+        
+        move #37,-(sp)         
+        trap #14               Wait the beginning of the next VBL
+        addq.l #2,sp
+        
+        lea $ffff8209.w,a0     Lower byte of the video counter
+        moveq #74,d0           Randomized value
+        move.b d0,(a0)         Write it
+        cmp.b (a0),d0          Equality test
+        bne.s stfm             Failed ? => it's a STFM
+        st ste_flag            Otherwise, it's a STE
+
+stfm    trap #1                User mode
+        addq.l #6,sp
+        
+...insert the rest of your sourcecode here...
+
+ste_flag dc.b 0
+
+
+ste_flag if filled with the byte $FF if the computer is a STE, and null
+if it isn't the case...
+                
+
+
+
+***************************** GfA-Basic source **************************** 
+
+VSYNC                          Wait the next VBL
+SPOKE &FFFF8209,74             Set the video counter
+IF PEEK(&FFFF8209)=74          Still the same value ?
+  ste_flag!=-1                 It's a STE
+ELSE
+  ste_flag!=0                  It's a STF
+ENDIF
+
+
+If ste_flag! is set to -1, the computer is a STE
+
+
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+
+
+That's all for dis article. I hope the future demos featuring the STE will
+be properly coded...
+
+                           *    *****    ****     *
+                           *    *            *    * 
+                           *    ***      *   *    *
+                           *    *        *   *    *
+                       ****     *****    ****     *
+
+

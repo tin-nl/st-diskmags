@@ -1,0 +1,302 @@
+ó--------------------------------------------------------------------------------
+                  "NETHACK v3.4.o" - new version of the hack'n'slay
+ó--------------------------------------------------------------------------------
+
+system .... all TOS machines with 2MB or more, 16 colours (RGB, VGA), harddisk
+
+style ..... hack'n'slay
+
+ó--------------------------------------------------------------------------------
+
+Yooo, it's quite a while ago that I have  played this game  as it appeared first
+for the Falcon and I got a copy of it. So I think there was also a review in one
+of the  old issues of UCM, maybe  by my old mate  Lot, but I don't remember yet,
+since this is the first new version  of that game  that was released  within the
+last 9 years and so I thought it would be good to take a look on it, again...
+
+But at first, what is NETHACK? It's quite simple, an overhead  hack'n'slay game.
+The original HACK is one  of the oldest role  playing games in gaming history at
+all. It exists on many  machines, so also on  the ST/Falcon/TT and  this version
+called NETHACK is the first that offers more than just ASCII grafix. Furthermore
+you have an intelligent menu and  window system and you  can play the  game with
+mouse or alternative only via keyboard (as it was in the classical HACK).
+
+So I wont spent too much words here, but take a closer look onto it.
+
+After  starting the game (it is better to use a high resolution with 16 colours,
+and things like Screenblaster or BlowUp will better up the situation a lot more)
+you get a welcome screen and you have to type in your name. At next, and this is
+new  in  comparison with  the '93 version  of NETHACK, the  game offers  you the
+possibility to create a character by your own OR to create a random hero for you
+that is  surely the less attractive  one for classical  players but  maybe a new
+challenge for hardcore players.
+
+Here some short hint for ST users, as said, the game runs also in ST Low, but be
+sure that it doesn't looks good there, since it runs under GEM 3 windows are put
+onto the screen... The main  window, showing  the playfield  can be scrolled up/
+down  and left/right, but on  the state and info  windows you have work in parts
+with very small fonts and I doubt that it is a fine thing under RGB. Furthermore
+the menu's are smashed close together and sometimes  the screen looks a bit like
+screwed up, so don't take this review too serious for your machines since I have
+tested  it on  Falcon/VGA/16*8oo*6oo... not to  forget that you  urgently need a
+harddrive and a HD floppy as well, a HD floppy since the packed file is over 1MB
+in size and the harddrive since even if you matched it  with exe packers to make
+the files matching onto your disk, the loading times will be awfully slow!
+Sorry for you all, the only way to pass some of the problems could be to convert
+the  grafix files (IMG) to 4 or 2 colours to let it run in higher resolutions on
+your ST... or  you have to buy a grafix card (yurk...), as well as a accelerator
+(aargh...)... Or, much better, don't try the game at all (sorry...).
+
+{*i NETHACK.PI1 m 0 20 0 200}
+
+ñIn ST Low Res the game looks like this...
+
+Therefore you can chose between 13 different classes, just as the usual knights,
+rogues and monks as well  as also  some archeologists, quite crazy. As this game
+features  only a "one-man-party" the  game starts right  after you have  defined
+your character if it has to be male/female or orc/human/dwarf/elf/gnome, it just
+depends on the  hero you select (such  as a caveman can be human/dwarf/gnome/orc
+and a barbarian only human or orc).
+At this point  another difference to the old  version pops up since you have now
+one class more as well as some classes  changed, so the  elf isn't available now
+but therefore the monk and the priest.
+
+While chosing  your character you should keep in mind that all of them have some
+special skills and  if you like it to run  around as killing machine, you should
+take the  ORC since he has the  advantage against  the DWARF that he's resistant
+against poison, but therefore he isn't  very clever and  mostly will  find traps
+only if he already  stumbled into  one. Every hero  you chose has  furthermore a
+special equipment, the TOURIST  uses his photo camera  to flash up  the monsters
+while the BARBAR uses rough powers and metal weapons...
+
+NETHACK is in the following fact quite different  to usual role players since it
+always creates a new dungeon, many levels deep. You will never play the same one
+again and so also rooms, dungeons, traps  and monsters always  differ a lot. But
+here lays also a big problem since the quite limited  save option makes very big
+problems for players that are willing to save their position, but later for that
+more...
+
+A thing that didn't changed from the former version is the grafix side, the game
+uses the known little grafix, without much  animations and so on. It looks a bit
+dull in high resolutions, but if you would see the  little monsters and items in
+original size, you would be happy to see them not :) Btw. some of the grafix are
+ripped from  the game "ROGUE" from EPYX  that was released  in the late eighties
+for the ST, that is some kind of a grafical predecessor of NETHACK since it uses
+also the window environment... but as mentioned above, it suffers under the very
+limited grafical abilities of the ST.
+
+But back  to the game  itself... After you have  chosen your  character you will
+find yourself back in level one of a dungeon system  with 2o or more levels. You
+can just see the things that you could see if you would stay there and while you
+are moving around you can explore more and more parts  of the level and your aim
+is to find  the way to the next  one and so on, finally to  find some  amulet or
+something.
+
+While  running  around  and exploring  the rooms and  dungeons it depends on the
+character how fast you can  find out more, just you're stumbling into a trap, to
+find a hidden door or to  find out that a big stone is blocking your way and you
+are moving him. From time to time some monsters are  coming up, some are running
+afterwards you and some don't take notice, but you should kill them anyway since
+every kill brings experience points :)
+A -short- list of monsters that may appear on your way through the dungeons will
+follow at the end of this article.
+
+Ofcourse the game features not only deep  dungeons and monsters, nope, also some
+shops are around where you can buy and sell different items, there are some kind
+of role playing game supermarkets, that dealing with everything  as well as some
+specialised  shops for  potions or  weapons. Furthermore  there are  some  magic
+fountains or places to pray to some  gods. About the fountains you just can find
+out what kind of water they have while drinking something, sometimes you're just
+a bit refreshed and sometimes you will get healing.
+
+To pray is another way to gain some  power, if your godess is satisfied with the
+things you did, you will maybe get some power back, if not, you will see :)
+
+On the way through the dungeons  you will  stumble over several items like gems,
+potions, weapons, armours and several other items. It is  always very usefull to
+collect the food laying around since your character needs it to survive the game
+too, if  you're going hungry  it's time  to eat, if you  ignore it, or you don't
+have food on  the hand, your hero will go weak, loose hitpoints and finally will
+die. If you collect eggs, eat  them fast since  they're very  perishable. And if
+you need  hardly food, you  can try to  eat the corpse of the latest monster you
+killed. Here you will get some bonus if you're an orc since the corpses are most
+rotten and you wont suffer too much  then, just getting a bit confused or even a
+bit unconcious, other guys that aren't poison resistable could die.
+
+Another problem comes up with other things you will find and so the orc offers a
+drawback too since he isn't very clever and can't read  the scrolls he finds and
+so it is always  a bit unsave to drink  some potions since  as orc you will have
+problems to find out what you're going to drink then...
+
+But not  only the potions  can have negative  effects. So the  armours, weapons,
+rings and amulets can have them too... Not every armour will protect you and not
+every shoe will help you while running around. The problem is the following, the
+most armours and  weapons that  are laying around in the dungeons are worthless,
+the best  items you can get for a lot of money at the shops or by killing a good
+monster. But here it can be that you will get a cursed weapon or armour and they
+will make surely some problems to  you. So some of them are lowering your armour
+points, there are rings around  that will make your body change into some animal
+or monster within special times always  causing that  you're loosing all weapons
+and items, others like floating  shoes will make  it impossible to get back onto
+the floor  and so you  can't go downstairs  to the next  level, can't get things
+that are laying on the ground and so on. This can be very demotivating since you
+mainly only get informed if you're a specialised guy (like magician or so) or if
+you are already wearing the cursed items and then you can't remove them anymore.
+
+But LOT gave a hint  in his old review  of NETHACK I wont leave out here. A good
+possibility to  find out what  you're wearing and  having in your  pockets is to
+leave the game with saving it since so the  computer MUST  give you all the info
+about the things you collected.
+
+And as we're speaking about  hints, òthe save option is the dullest I ever saw in
+òa role playing gameð. So you always can only save the  game while leaving it, and
+this only once. òIf you're dying the save game will be deleted automatically!
+That sucks a  lot and  the only  way to avoid  this is to copy the savegame into
+another folder to get it back if  needed. It isn't a comfortable  procedure, but
+it works and saves the motivation to start the game again.
+
+And as we're on the run for hints, here  are a few more. If you're in a shop and
+you took something the shop owner offers, you can't leave the shop untill you've
+paid the price. If you think now "Hey, I'm  a barbarian, let's  squeeze his head
+out..." forget it, òyou can't kill shop owners, they will kill YOU, everytime!
+I never matched it, even as level 1o fighter, to kill any shop owner...
+
+Another thing to  mention, in  later levels  there are  areas where watchmen are
+running around. Avoid it to slaughter monsters if they're in sight since they're
+hunting you, calling  their colleagues  from the whole level and an escape isn't
+easy then. It can also be  that there are some  rooms that are  occupied by some
+guys that are calling for the watchmen too, if you're entering their room. So if
+you're exploring a  level where you  can see some  watchmen running around, take
+care about the things you're doing!
+
+But ehh, I wont give  you too much hints  here since I wont make it too easy for
+you to step  deeper into the world  of NETHACK and you should make your very own
+experiences, maybe you're  going other  ways, dunno, but this game gives so many
+different ways in solving it that hints aren't really universal.
+
+Ok, It seems as I have lost the thread in this review and I think it's better to
+cut it off here...
+
+òFinal words... Apart from the problems to leave the  game run  on a simple ST it
+ò               is a game  that should  make the  teeth of  hack'n'slay  gamblers
+ò               dripping. Stunning grafix  and sound are  a foreign word here and
+ò               apart from the fact  that there is  no sound at all, very sparse,
+ò               even on ST niveau. But therefore  the game matches  it to attract
+ò               by its nearly endless  play modes, hardcore slayers will find new
+ò               dungeons every time  and hundreds of  monthers to kill, there are
+ò               tons of items to collect and try out and many levels to explore.
+ò               Because of the lack of  grafix the atmosphere  isn't the best and
+ò               far away from 3D  role players, but  in some way  it still is big
+ò               enough to bound you on your machine for hours and days. Biggest
+ò               drawback  apart from  the low  gfx/snd use  is the  horrible save
+ò               option but with our hints above it wont be that hard I hope...
+
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals .....ð  2o % ñ- ST low, extremely small sprites, oooould school
+ñaudio .......ð  oo % ñ- errr. nothing?
+ñcontrols ....ð  9o % ñ- with mouse or keyboard, window systems
+ñidea ........ð  4o % ñ- a hack'n'slay
+ñmotivation ..ð  8o % ñ- very deep dungeons to explore, dungeon generator
+
+ó___ðoveralló_____ð46ó_ð%ó_____________________________________________________________
+
+Sure, not much points here, but we're  writing the year of  2oo2 where you can't
+win any flowers pot with such grafix and missing sound...
+
+At last the announced monster list... far from being completed!
+
+At next here  comes a list  of the many, many  monsters I met during my fight as
+barbarian as I reached level 9 of the dungeons...
+
+*   - means very easy to kill
+**  - means no problem if you're a skilled fighter with, level 5 or higher
+*** - don't try this, it even kills very skilled fighters!
+
+Acid Blob          - *   ... Easy to kill, but damages you while dying!
+Bat                - *
+Blue Jelly         - *** ... Don't attack them, they will freeze you to death!
+Bugbear            - **
+Cave Spider        - **
+Centipede          - *
+Coyote             - *
+Crocodile          - **
+Dingo              - **
+Dwarf              - **  ... Mostly peaceful if you don't attack them!
+Dwarf Zombie       - **
+Elf Zombie         - *** ... Can be killed, but take care!
+Fire Ant           - **  ... very dangerous, kills also other monsters!
+Floating Eye       - *** ... If you don't attack them, they stay peaceful!
+Fog Cloud          - *   ... Not very dangerous, but difficult to destroy!
+Fox                - *
+Gargoyle           - *** ... Can be killed, but you have to be a good fighter!
+Garter Snake       - *   ... Easy to kill, but they often appear in groups!
+Gas Spore          - *   ... Easy to destroy, but beware of the gas cloud!
+Gecko              - *
+Ghoul              - **
+Giant Ant          - **
+Giant Bat          - **
+Giant Beetle       - **
+Giant Rat          - **
+Gnome              - **  ... they're using distance weapons very often!
+Gnome Lord         - **
+Gnome Zombie       - *
+Gnomish Wizard     - *** ... Curses you, you can kill him, but be careful!
+Golden Naga Hatchling - **
+Green Mold         - *
+Grid Bug           - *
+Guardian Naga Hatchling - **
+Hobbit             - *   ... Beware if they're going angry! sometimes peaceful
+Hobgoblin          - **  ... Using distance weapons very often!
+Homunculus         - *** ... You can kill it, but be very careful!
+Housecat           - *
+Human Zombie       - **
+Iguana             - **  ... Sometimes they run away in a longer fight!
+Imp                - *** ... This small enemy makes bad jokes while killing you!
+Jackal             - *
+Jaguar             - *** ... Can be killed, but hard even for level 8/9 fighters
+Kitten             - *
+Kobold             - *
+Kobold Lord        - **
+Kobold Mummy       - **
+Kobold Shaman      - **  ... Will try to curse you or to burn your brain!
+Kobold Zombie      - **
+Large Kobold       - **
+Leather Golem      - **
+Lichen             - *
+Manes              - **
+Mimic              - *** ... Beware! They kill even level 1o fighters!
+Monkey             - *   ... Easy to kill, but they steel your stuff!
+Newt               - *
+Orc Mummie         - **
+Owlbear            - *** ... Takes a hard fight!
+Paper Golem        - *
+Pony               - **
+Quasit             - *** ... Can be killed but take care!
+Quivering Blob     - *
+Rabid Rat          - **
+Raven              - *
+Red Mold           - *
+Rock Mole          - *** ... Hard to kill, eats stone and metal!
+Rock Piercer       - **  ... Not very dangerous but hard to kill!
+Rope Golem         - **
+Rothe              - **  ... It goes hard if they appear in hordes!
+Shrieker           - *
+Soldier Ant        - **
+Spotted Jelly      - **
+Straw Golem        - **
+Tengen             - **
+Vampire Bat        - **
+Violet Fungus      - **
+Watchmen           - **  ... better don't attack them...
+Watchmen Captain   - *** ... Be aware!
+Werejackal         - **
+Wererat            - **
+White Unicorn      - *** ... Mainly peaceful, make a bow around them!
+Wolf               - *** ... You can kill them, but be careful!
+Woodland Elf       - **  ... Fights over distance! Double shooting speed!
+Yellow Light       - *   ... Easy to kill but let you stay blind for a while!
+Yellow Mold        - *
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_òo8/2k2ó_

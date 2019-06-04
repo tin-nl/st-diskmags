@@ -1,0 +1,616 @@
+
+ñAugust 13, 1999ð
+ñ-------------------------------------------------------------------------------ð
+ó               Experiences with Centurbo II (Rev-B) and Centek.ð
+ó-------------------------------------------------------------------------------ð
+
+                      by Anders Eriksson (ae@atari.org)
+                      ---------------------------------
+
+First of all, this 'review' is very objective. I got my
+Centurbo II for free, and hence I might be overlooking
+some bad sides other people who actually spent money on
+it is bothered about.
+
+
+
+ 1. Hardware
+
+ 2. Unpacking
+
+ 3. Installation
+
+ 4. Using
+
+ 5. Problems
+
+ 6. Final thoughts
+
+
+
+
+
+ò1. Hardware.ð
+
+   The Centurbo II is a circuitboard which fits to the
+   internal expansionslot of the Falcon. Plus that it
+   has the 'usual' Nemesis/Centurbo 1 motherboard over-
+   clockings and patches.
+   
+   In a few lines, this is what your Falcon has after
+   installing:
+   
+   - A new 68030 running at 50 MHz.
+
+   - A socket on the Centurbo II board to put a new FPU
+     in. It will be clocked at 50 MHz.
+
+   - Overklocked DSP to 50 MHz.
+   
+   - Overklocked ST-RAM/BUS to 25 MHz.
+   
+   - IDE-Interface patches to allow newer and larger IDE-
+     harddisks at higher speeds.
+     
+   - Overclocked Videl to 50 MHz.
+   
+   - 16, 32, 64 or 128 MB Fastram. Accessed at 50 MHz,
+     32-bit with burst.
+
+
+
+ó2. Unpacking.ð
+
+   When first hearing of the Centurbo II, reading the news
+   from Centek one would belive this is something they
+   have put their entire soul into. Getting an absolute
+   perfect product, in every detail.
+
+   Not even god managed to create a perfect world, so I 
+   took those newsletters with a bit of salt.
+
+   Later, about 8 months to be precise, the Error In Line'99
+   convention took place in Dresden/Germany. Their Falcon
+   democompetition proudly stated a Centurbo II accelerator
+   as first price. Not bad!  I entered a little demo to the
+   competition, and to my surprice it won, which means I
+   got the Centurbo II card.
+   
+
+   Back home from the party, I unpacked it (ok ok, I unpacked
+   it earlier on the way home too) and took a careful look
+   of what was there, here's the list:
+   
+   - An antistatic bag with the Centurbo II card.
+   
+   - A plasticbag with a short wire, a few photcopied a4
+     pages, a switch, a resistor and a little veroboard peice.
+
+     Oh! I almost forgot, you got a sticker saying
+     "Powered by Centek" as well.
+     
+   The next thing to notice is that the installation manual
+   really did not motivate me to actually have the card
+   mounted. It was a bad photocopy, and unclear in most ways.
+
+   The english is very badly checked, and can sometimes
+   be confusing. This is what happens when you take French
+   grammar and English words. If you have tested the Altavista
+   Babelfish translator, you will feel at home with Centeks
+   English as well.
+
+
+   At this stage, I was lucky to have taken some salt with
+   with the Centurbo II newsletters. There is zero feeling
+   about professionalism once you receive the card.
+
+   But maybe it's just a French way of doing things? 
+   Let's go on!
+
+   
+   The board itself looked robust and welldesigned.
+   Except for a terrible cooling fan; it did not fit
+   as it should and has a tendency to easily fall off.
+
+   That help a great deal to enhance the "low-class" 
+   feeling of the entire product. If they can't even 
+   fit a fan, will the damn board really work?
+
+
+ò3. Installation.ð
+
+   Here comes the horror part.
+   
+   Strip it naked, cut some legs, sue it together.
+   
+   Sounds like the Frankenstiens Monster movie, but it isn't.
+   This is what happens during a Centurbo II install. 
+   
+   If you dare, go on reading.
+
+   All the hopeful promises from Centek about "easy install"
+   quickly vanishes when you read what has to be done, or
+   what about this:
+   
+   - Cut a leg from the existing 68030!
+   
+   - Cut several legs from other chips!
+   
+   - Cut two paths on the motherboard!
+   
+   - Cut your IDE cable!
+   
+   - Solder over a dozen points, including soldering directly
+     to the motherboard and to the old 68030!
+
+   Yes, and it really isn't any easier than it sounds. The
+   pins of the 68030 are very tiny, and cutting tracks on
+   the motherboard isn't the easiest thing. Especially not if
+   you like it done with precision.
+      
+   For any Atarian with a weak heart, do not do this yourself,
+   you'll fall into tears seeing the machine being butchered!
+   
+   
+   Anyway, if you against all odds manage to get the soldering
+   and cutting done, it's time to install the actual board.
+
+   This is a peice of cake, 10 seconds and it's there. 5 secs
+   more to fit the EDO SIMM module.
+   
+   Now the fun begins (hopefully) !
+
+
+
+ò4. Using / performance.ð
+
+   Having read the instructions, it is told that you should
+   boot the machine, and run the "putflash" program to enable
+   the Flashboot setup, and then also be able to enter the
+   turbo modes.
+   
+   However, in my case the Flash was already loaded, and it
+   started directly when I switched the machine on.
+   
+   And I mean directly here! From power-on until the Flash-
+   bios menus are on screen it is like half a second delay!
+
+
+   The next thing you notice is the extreme ugly colours and
+   font of the flashbios! Jesus, did they hire a kindergarden
+   kid with crayons to make this one?
+
+   The flashbios is configurable, and the way you move around
+   the menus is crap. Like a 5 min hack from a lazy programmer.
+   Some would even suggest it's worse than those sh*t crap
+   dhs musicdemo-menus ;-P
+
+   In the flashbios you can toggle a few things, like the
+   boot resolution, which harddisk driver to use, dsp and ide
+   waitstates and a few things more, such as:
+   
+   Decide to boot in three ways:
+   
+   - Dolmen.
+     This is an alternative OS from Centek, which unfortenly
+     was not delivered. I wonder if they (Centek) ever got a
+     Swedish mail about that name, it's sort of a synonym
+     for penis.
+     
+   - TOS 4.
+     This is the good old TOS, no differencies, except that
+     the machine is running alot faster! Yep, the CPU is
+     running in 50 MHz here, but there is no FastRam
+     supported.
+     
+   - TOS 7.
+     Yeah. This is fullspeed 50 MHz with Fastram! The TOS
+     is patched and put into Fastram. There are other things
+     such as a new error handler (replacing the old bombs..)
+     which tells a bit more specific what has happened. You
+     are also allowed to exit the program causing the error,
+     you can try to continue (really useful!) or reboot the
+     machine. A real improvement to the old bombs.
+     
+     
+   So after having booted in TOS7 for the first time, you feel
+   "so this was all". And yes, it actually is. The machine runs
+   a bit quicker.
+  
+   But well then, how much faster does it run?
+  
+   This is a question without answer, as it performs differently
+   from application to application. Depending if the app can
+   make use of fastram, how dsp-intense it is and which
+   videomode it runs in.
+  
+   If the application uses no dsp, and can't use fastram, the
+   average speedup is 2-3 times. Depending a bit which video-
+   mode and how good the code is (eg, cache optimized).
+  
+   On the other hand, if the application is pure DSP the 
+   increase stays at around 60%.
+  
+   The best case for noticeable speedup is if the application
+   uses no dsp, has good fastram support and is running in
+   an intense videomode. Then you can end up with some 6-7
+   times speedup. A good example of this is if you run a
+   packer in GEM with a high screenmode.
+  
+   Here follows a few tests I've done, in the no-turbo modes,
+   the extended resolutions have been made with BlowUP.
+  
+          Test: LHA packing
+    Resolution: ST-High
+   Normal Falc: 2 min 53 sec
+      CT2 Falc: 0 min 44 sec
+
+          Test: LHA packing (same file as above)
+    Resolution: 896*704*4bit at 64Hz
+   Normal Falc: 5 min 57 sec
+      CT2 Falc: 0 min 47 sec
+
+  
+   As you can see from these two tests, the extended resolution
+   almost killed the standard Falcon, while the Fastram on the
+   CT2 saved the speed to almost the same level as  with ST-High
+   resolution. 
+
+   Check the test below, it's the same file again but with twice
+   as heavy videomode.
+  
+          Test: LHA packing (same file as above)
+    Resolution: 896*704*8bit at 64Hz
+   Normal Falc: not possible
+      CT2 Falc: 0 min 48 sec
+
+
+   As you can see, still practically the same speed! Fastram
+   does wonders!
+
+   It isn't hard to create a demolike application that uses
+   fastram all the way.
+
+   These are the steps:
+
+   A. Calculate how large the program is and add space
+      for stack (in this case $1000 bytes).
+
+      move.l  4(sp),a5         ;address to basepage
+      move.l  $0c(a5),d0       ;length of text segment
+      add.l   $14(a5),d0       ;length of data segment
+      add.l   $1c(a5),d0       ;length of bss segment
+      add.l   #$1000,d0        ;length of stackpointer
+      add.l   #$100,d0         ;length of basepage
+      move.l  a5,d1            ;address to basepage
+      add.l   d0,d1            ;end of program
+      and.l   #-2,d1           ;make address even
+      move.l  d1,sp            ;new stackspace
+
+
+   B. Do an mshrink() call to return all mem we don't need.
+      Using the registers from previous calculations.
+
+      move.l  d0,-(sp)         ;mshrink() - bytes to keep
+      move.l  a5,-(sp)         ;address to block (basepage)
+      move.w  d0,-(sp)         ;dummy
+      move.w  #$4a,-(sp)       ;
+      trap    #1               ;
+      lea.l   12(sp),sp        ;
+
+  
+   C. Reserve memory with the mxalloc() call with ramtype '0' 
+      requested. This asks for stram only. Should be called
+      to reserve memory for screenbuffers and sample-dma
+      buffers. If d0.l returns '0' there wasn't enough free
+      stram, and you should pterm().
+
+      move.w  #0,-(sp)         ;mxalloc() - stram only
+      move.l  #bytes+256,-(sp) ;number of bytes+256
+      move.w  #$44,-(sp)       ;
+      trap    #1               ;
+      addq.l  #8,sp            ;
+
+      tst.l   d0               ;check if there was enough ram
+      beq     exit             ;nope
+
+      add.l   #256,d0          ;
+      clr.b   d0               ;make screenaddress even
+      move.l  d0,screen_adr    ;save address
+
+     
+  D. That's it.
+  
+  
+
+ó5. Problems.ð
+
+   Centek promised alot. 100% compatibility, no errors with
+   anything. Better sound than CT1 and Nemesis. New improved
+   IDE interface that is much more compatible. Normal mode
+   which would run anything. Easy installation. Great
+   support.
+   
+   It was all hype. Nothing of the above feels familiar
+   with my situation. Here's the real thing, how I experienced
+   it.
+   
+   
+   * Better sound than CT1 and Nemesis.
+
+     I can't talk about CT1, but for sure the Nemesis machines
+     I've tried had just as good sound as my CT2 machine.
+     Eg, identical to a normal Falcon, not better, not worse.
+     
+   * New improved IDE interface.
+   
+     Bullshit. Perhaps it's faster, perhaps it can use newer
+     harddisks. But better compatibility? No chance. My own
+     IDE disk stopped working.
+  
+   * Normal mode runs anything.
+
+     This was professional craptalk. Centek knew themself that
+     they didn't wire the DSP-INT, not in turbo, not in normal
+     modes. Some DSP programs are using DSP-INT, and will crash,
+     Turbo or Normal mode doesn't matter. So how on earth they
+     could say the machine was 100% compatible has no other
+     answer than that they lied to get more customers.
+
+     If you tried to talk to them, pointing out that the
+     CT2 did have a problem here, they replied extremly arrogant
+     in the style of "crappy coded software uses DSP-INT".
+
+     Yes perhaps crappy programs does, but still, those crappy
+     programs does not run with CT2! And, in my opinion some
+     of these programs are not crappy at all. MegaPlayer is
+     one example. If you upgrade to CT2, you can kiss the
+     MegaPlayer goodbye.
+     
+     
+   * Easy installation.
+
+     As said above: If you are not extremly good at electronics
+     and have professional tools; this is nothing for you!
+     The easy install arguments was false, and I belive Centek
+     themself realised it too. They no longer sell the cards
+     without doing the fitting themself.
+     
+
+   * Great support.
+   
+     What a joke. Centek is known for being rude to their 
+     customers. Constantly "downranking" them. Have them feel
+     like imbecills. 
+     
+     Same thing happened to me. I was asked to read the FAQ,
+     even though the FAQ didn't contain anything of what I
+     asked for. I was asked to read french docfiles. I know
+     no french! I asked them alot of questions, they might
+     have answered 10% of them. It should be said I've only
+     tried their E-mail service, not phone.
+     
+     However their e-mail service seems to be there to
+     push down their customers so they don't dare asking
+     anything more.
+     
+  
+   My own Centurbo II problems are a history of themself. 
+   Below is a micro-version of what happened, and made me more
+   or less Falconless for three months.
+
+   
+   After the actual hardware installation first had been made, 
+   I started to test some software.
+   
+   I quite quickly noticed that a certain type of applications
+   didn't work at all: DSP-Audio ones.
+
+   MP2 Audio, FlaySID, DSPMOD etc all crashed. And I knew these
+   programs worked with a friends CT2 machine.
+
+   Further problems were that the auto-folder text was a bit 
+   screwed, some letters had the wrong offset.
+   
+   My IDE disk didn't work.
+
+   The 32mb EDO SIMM was seen as 64mb by the CT2.
+   
+   The standard mode was terrible. Crashing much more than the
+   turbo mode.
+   
+
+   So I tried to e-mail Centek for the first time, to hear if
+   they have any tips for me, how to solve these problems.
+   
+   The first reply I got was quite alright. They probably
+   answered 50% of my questions. And not a single pointer
+   to a FAQ or french docfile.
+   
+   The auto-folder textproblem was due to my blitter not keeping
+   up with the 25 MHz speed correctly. It shouldn't have any
+   other sideeffects regarding to Centek. Okey, phew.. one 
+   problem down.
+   
+   The IDE disk however was a downer. I was told my IDE was
+   too slow. Great.
+   
+   Centek wanted to know the brand of my EDO simm and how
+   many chips it had.
+   
+   Their tip about crappy standard mode was a bad 32MHz signal.
+   
+   The DSP-Audio problems was probably from an unstable SDMA.
+   
+   
+   
+   So I began composing a reply to their mail, telling the
+   EDO-SIMM type, and here I made my first misstake; I forgot
+   to count the number of chips on the SIMM. At this time
+   I had written my own ram-test program that actually
+   verified the SIMM to be a 64mb one. The dealer at the 
+   shop had given me the wrong one. Hurray, 32mb extra for
+   free. I don't complain!
+   
+   However, Centek did. I got to know with alot of CAPITALS
+   and '!!!!!!!!!!!!!!!!!!' marks that I forgot to tell
+   them the number of chips on the SIMM.
+
+   They didn't have any suggestion about the DSP and Normal-
+   mode problems other than "Send the Falcon mb+ct2 to us, we
+   will fix it. We perfectly know the Falcon".
+   
+   Yes, even the grammar misstakes were like that.
+   
+   
+   Well, I decided that we (me and my friends who helped with
+   the hardware installation) should make a last try to
+   check everything before sending back the machine to Centek.
+   
+   It didn't work out at all. There was no difference made.
+   
+   In the meantime, I had given Centek the number-of-chips
+   information about my EDO SIMM, and got to know from Centek
+   it was a 16mb SIMM, not 32, not 64. Bahh what nonsense.
+   
+   
+   At this time I was in the middle of fixing the 4col intro
+   and waited with sending the machine until that was done.
+   
+   
+   So, I shipped the Falc, the cost was approx 25 euro. I had
+   most of luck getting a replacement Falcon while the other
+   was in France. After approx 2 weeks idle, no word from
+   Centek at all. I mailed them and asked if they had gotten
+   the Falcon. No responce. A week later they wrote and told
+   me the Falcon was fixed, and had been sent back.
+   
+   Yippie!  However, they did send it with the slowest possible
+   mail. So from the date it was sent, until I got it was
+   nearly two weeks.
+   
+   
+   It was interesting to see what modifcations they had done
+   to our install.
+   
+   An example: In the instructions of fitting, it is clearly
+   stated that you should not, absolutely not have any leads
+   going over chips. And still, Centek themself had even taped
+   a lead right on top of my videl! 
+
+   So, assembling the machine, and testing.. will it work now?
+   
+   Answer: No. The machine was stone-dead. Not even the Flash-
+   bios menus appeared on screen. I shut the CT2 off, and what
+   a surprice, the machine started. Alright, checking so the
+   CT2 module is fitted well, and the EDO SIMM as well. Yep,
+   seems to be alright, let's try again. Same thing, no life
+   at all from the machine, except the CT2 led.
+   
+   Next was removing the EDO SIMM and see if that made any
+   difference. And whoa! It did. The machine started, showed
+   the flashbios.  Damn, have Centek messed up the EDO 
+   controller on my CT2?  Fixed anohter SIMM to test with. 
+   This one did however work! It was a slow old SIMM, and the
+   CT2 was very very unstable with it. Not exactly surpricing
+   as the CT2 needs 60ns SIMMs, and this one was a 80ns.
+   
+   So, it looked like that my 64mb EDO SIMM was damaged.
+   I wrote Centek and asked what could have gone wrong. They
+   replied that I should try downgrading the Flashbios, as 
+   they had put a beta version there! Cheez... Okey, downgraded
+   the flash and the machine worked with my 64mb SIMM.
+   
+   Why Centek install beta flashes to their customers is a
+   mystery, or why they reset the NVRAM another (my Falcon
+   came back with French nvram setups!).
+   
+   Not a big deal if you are familiar with setting up the NVRAM.
+   
+   Okey, now I am supposed to have the machine working anyway.
+   100% as Centek claimed in their commercials.
+   
+   Let's test.
+   
+   Xboot and NVDI have a hard time to boot, one time of three
+   they crash upon booting. Centek replies that they shouldn't.
+   But gives no suggestion or other ideas why it does or how
+   to fix it. 
+   
+   If the machine comes thru Xboot and NVDI, it works pretty 
+   well however. The apps I expect to work, does work. The ones
+   with DSP-IRQ fails, even with Centeks feeble attempt of a
+   patch program for this.
+   
+   So, time to test old-time compatibility. Switch off the CT2,
+   load some old stuff. It works like shit. The machine is way
+   less stable than in turbo mode! I quickly realise that 
+   Centek can not have made any tests in normal-mode at all.
+
+   Even though I did tell them about those problems.
+   
+   
+ò6. Final thoughts.ð
+
+   At the moment, what hits my mind when saying "CT2" is
+   nothing but "problems".
+   
+   Centek have produced 240 cards to date, and I feel sorry
+   for all of the people who put money to get into trouble.
+   
+   Because it is trouble. Especially if you depend on the 
+   Falcon a bit, eg. use it for daily purposes, not only for
+   watching a demo now and then.
+   
+   Considering the high price of the CT2, it cannot be said
+   to be priceworthy at all. Especially not if you use the
+   machine professionally, and loose money with every minute
+   the machine is not working or away for fitting. Becuase with
+   Centeks slow snailmailing, it takes you ~3 weeks to get the
+   machine back.
+   
+   The speedincrease is what can be expected. Nothing over
+   the ordinary, but still it's a nice feeling compared to a
+   normal Falcon.
+   
+   The extra memory is great though. Especially if you run
+   the Falcon with a bit more demanding operatingsystems
+   such as Linux or MiNT. 
+   
+   MiNTOS boots in a flash. N.AES starts in a kick. If you
+   give the MiNT kernel a few megs memory for diskcache,
+   it speeds up the disk operations a whole damn lot.
+   Changing resolution in N.AES and having the diskcache
+   up for some megs, the change is done within a couple of
+   seconds. It hardly touches the harddisk, all goes from
+   fastram diskcache.
+   
+   MP2-Audio goes down from average 80% DSP-Load to average
+   50% when playing 192kbit files. Plenty of time to add 
+   extra sound effects.
+
+   There are many negative sides, and one that never escapes
+   you is the damn ugly boot sequence. Starting in cyan/white
+   colours, continues to blue/yellow and then sticks to the
+   normal nv-ram bootsettings. If you enter the flashmenu,
+   the colours are even worse.
+
+   A few demos run fine with the CT2, those are easily counted
+   though. And with running fine I mean those who actually
+   take use of extra hardware, not just those that look the
+   same or running too fast.
+
+   The CT2 is almost a "vga only" product, so it's a big
+   dissapointment almost all demos are rgb only. Again, there
+   are some that both runs with vga and take use of extra
+   hardware. The ALIVE demo by FUN is an excellent example.
+
+   
+   Okey, that's that. This review is my very personal opinion
+   and other people might think different. 
+
+
+   --   
+ò   Anders Erikssonð
+ñ   ae@atari.orgð
+

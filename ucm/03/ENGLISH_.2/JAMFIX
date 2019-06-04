@@ -1,0 +1,14 @@
+ 
+                                JAM4.0-Fix
+                                ==========
+
+You know, the famous  JAM-Pack does not work  in ST-comptible screenmodi of the
+F030. Now, I did write a  little program to fix the bug in a JAM-packed proggy.
+You simply have  to pull your packed  program to JAMFIX.TTP and it will correct
+the offset Physbase+$7f00 wich causes the colorful stripes in non-ST-modi and a
+bus error in ST-modi to a better one of Physbase-$100.
+
+Sorry for the  short description, but it is extra  work for me to translate the
+texts into english...
+
+                                                     Apache of tnb / 23.03.1994

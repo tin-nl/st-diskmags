@@ -1,0 +1,678 @@
+
+			GFA BASIC PART IV 
+				WRITTEN MY MICHAEL SCHUESSLER
+				FOR MAGGIE 4.00
+
+      RIGHT$
+
+HOW:       RIGHT$(string[,n])
+
+EG:        N$="GFA BASIC"
+           PRINT RIGHT$(N$)
+           PRINT RIGHT$(N$,5)
+           PRINT RIGHT$(N$,12)
+
+PURPOSE:   RETURNS THE LAST CHARACTERS OR 'n' NUMBER OF CHARACTERS
+           (FROM THE RIGHT) OF A CHARACTER STRING 'string'
+
+           'string' IS A CHARACTER STRING OR STRING VARIABLE.  'n'
+           IS, LOGICALLY ENOUGH, A NATURAL DIGIT OR A VARIABLE.
+           (DECIMAL DIGITS CAN ALSO BE USED, IN WHICH CASE THE 
+           EDITOR WILL ONLY CONSIDER THE WHOLE NUMBER OF THE
+           DECIMAL)
+
+           IT FUNCTION PRODUCES A PARTIAL STRING OF 'n' CHARACTERS
+           (STARTING FROM THE RIGHT) - SPACES INCLUDED. IF THE
+           OPTIONAL 'n' IS NOT USED, THE FUNCTION RETURNS THE LAST
+           CHARACTER OF THE CHARACTER STRING 'string'.  IF 'n' IS
+           GREATER THAN THE NUMBER OF CHARACTERS IN 'string' THEN
+           THE WHOLE OF 'string' IS RETURNED.  IF 'n' IS ZERO, AN
+           EMPTY STRING IS RETURNED.
+
+
+      RMDIR
+
+HOW:       RMDIR "directory name"
+
+EG:        MKDIR "A:DIRECTORY"
+           FILES "A:*.*"
+           RMDIR "A:DIRECTORY"
+           FILES "A:*.*"
+
+PURPOSE:   DELETES EMPTY DIRECTORIES
+
+           FOR 'directory name' - See MKDIR
+
+           WHEN DELETING FROM A SPECIFIC DIRECTORY THE DIRECTORY
+           SEARCH PATH MUST BE ENTERED IN FRONT OF THE DIRECTORY
+           NAME.  FROM A ROOT DIRECTORY, THIS ALWAYS BEGINS WITH
+           '\', FOR EXAMPLE, RMDIR "\vehicle\driver" WOULD DELETE
+           A DIRECTORY 'driver' FROM 'vehicle' IN THE ROOT.
+
+
+      RND
+
+HOW:       RND [(x)]
+
+EG:        FOR I=1 TO 20
+             PRINT RND
+           NEXT I
+
+PURPOSE:   RETURNS A RANDOM NUMBER BETWEEN 0 AND 1
+
+           THE OPTIONAL PARAMETER (x) IS DISREGARDED.  RND RETURNS
+           A RANDOM NUMBER BETWEEN 0 (INCLUSIVE) AND 1 (EXCLUSIVE)
+           IT IS POSSIBLE TO CREATE RANDOM NUMBERS BETWEEN 1 AND 
+           'n' (BOTH INCLUSIVE) WITH THE FOLLOWING FORMULA:
+
+           Z=INT(RND*n)+1
+
+           (see RANDOM)
+
+
+      SAVE   PSAVE  
+
+HOW:       SAVE "file name"
+           PSAVE "file name"
+
+EG:        SAVE "A:\PROG"
+           FILES "A:\*.*"
+
+PURPOSE:   SAVES A PROGRAM FILE (PSAVE IS WITH LIST PROTECTION)
+
+           'file name' IS THE NAME OF THE PROGRAM.  SEE MKDIR FOR
+           THE EXPLANATION OF HIERARCHICAL FILING SYSTEM.  IF A
+           PROGRAM ALREADY EXISTS WITH THE SAME NAME IT WILL BE
+           WRITTEN OVER DURING THE SAVE.
+
+           PROGRAMS WHICH ARE SAVED WITH PSAVE ARE NOT LISTED BUT
+           RUN STRAIGHT AFTERH THE COMMAND 'LOAD' IS GIVEN.           
+
+
+      SEEK
+
+HOW:       SEEK [#]n,x
+
+EG:        OPEN "O",#1,"DAT1"
+           OPEN "O",#2,"DAT2"
+           PRINT #1,"1234567"
+           PRINT #2,"ABCDEF"
+           SEEK #1,3
+           SEEK #2,5
+           PRINT LOC(#1),LOC(#2)
+
+PURPOSE:   SETS THE FILE POINTER ON THE BYTE NUMBER 'x' OF FILE #n
+
+           'n' IS AN INTEGER EXPRESSION BETWEEN 0 AND 99 WHICH 
+           REFERS TO THE CHANNEL NUMBER.  'x' HAS A VALUE (TOTAL)
+           EITHER GREATER OR SMALLER THAN THE LENGTH OF THE FILE
+           ADDRESSED.
+
+           EVERY DATA CHANNEL HAS A FILE POINTER (READING AND 
+           WRITING POINTER) WHICH POINTS TO A SPECIFIC BYTE IN THE
+           FILE.  THIS POINTER CAN BE PLACED ON ANY BYTE IN THE 
+           FILE BY SEEK.  POSITIVE 'x' PLACES IT AY BYTE NUMBER 
+           'x' AT THE BEGINNING OF THE FILE, WHEREAS NEGATIVE 'n'
+           VALUES CAUSE THE POINTER TO BE PLACED 'n' NUMBER OF 
+           BYTES FROM THE END OF THE FILE.
+
+
+      SETCOLOR
+
+HOW:       SETCOLOR i,r,g,b       OR SETCOLOR i,n
+
+EG:        SETCOLOR 0,0,0,0
+           FOR COL=1 TO 30000
+             SETCOLOR 0,COL
+           NEXT COL
+
+PURPOSE:   DEFINES THE COLOURS RED, GREEN AND BLUE FOR THE COLOUR
+           REGISTER 'i'.
+           'r,g,b' ARE THE LEVELS OF THE THREE PRIMARY COLOURS
+           FROM 0 TO 7.
+           ANOTHER WAY OF DEFINING COLOURS IS TO USE THE VALUE 'n'
+           WHERE N=R*256+G*16+B
+
+
+      SETTIME
+
+HOW:       SETTIME timestring,datestring
+
+EG:        PRINT TIME$,DATE$
+           SETTIME "11:30:11", "29.6.1987"
+           PRINT TIME$,DATE$
+
+PURPOSE:   SETS THE TIME AND THE DATE.
+
+           'timestring' IS A STRING EXPRESSION WHICH CONTAINS THE
+           TIME.  HOURS, MINUTES AND SECOND CAN BE DISPLAYED. THE
+           COLONS ARE OPTIONAL AS TWO DIGITS HAVE TO BE ENTERED.
+           THE SECONDS CAN ALSO BE LEFT OUT.  
+
+           'datestring' IS A CHARACTER STRING EXPERSSION FOR THE
+           DATE.  IT MUST ALWAYS CONTAIN:  Day, Month and Year, 
+           EACH SEPERATED BY A FULL STOP.  WHEN USING THE YEARS
+           BETWEEN 1980 AND 2097 THE FIRST TWO DIGITS CAN BE LEFT
+           OUT.
+
+
+      SGN
+
+HOW:       SGN(x)
+
+EG:        INPUT A
+           B=SGN(A)*A
+           PRINT B
+
+PURPOSE:   ASCERTAINS WHETHER 'x' IS POSITIVE, NEGATIVE OR 0
+
+           'x' CAN BE ANY NUMERIC EXPERSSION.  SGN(x) IS THE
+           MATHEMATIC SIGN FUNCTION.
+           THE VALUES -1, 0 AND 1 CAN BE RETURNED:-
+
+           -  0  IF X=0
+           - +1  IF X>0
+           - -1  IF X<0
+
+           (See ABS)
+
+
+      SIN
+
+HOW:       SIN(x)
+
+EG:        1)  INPUT RAD
+               PRINT SIN(RAD)
+               INPUT GRAD
+               PRINT SIN(GRAD*PI/180)
+
+           2)  PLOT 320,200
+               FOR I=1 TO 5400
+                 X=I/36*SIN(I*PI/180)
+                 Y=I/36*SIN(I*PI/180)
+                 DRAW TO 320+X,200+Y
+               NEXT I
+
+PURPOSE:   RETURNS THE SINE VALUE OF 'x'
+
+           'x' IS A NUMERIC EXPERSSION WHICH SHOWS THE ANGLE, FOR
+           WHICH THE SINE IS CALCULATED, IN RADIAN MEASURE (RAD)
+
+           IF THE ANGLE IS TO BE INDICATED IN DEGREES, 'x' IS
+           REPLACED BY GRAD*PI/180. IN THE FIRST EXAMPLE THE (RAD)
+           OF THE CHOSEN ANGLE IS CALCULATED AND THEN THE DEGREE
+           ACCORDING TO THE SINE VALUE.  IN THE SECOND EXAMPLE A
+           'SNAIL' FORM IS CREATED BY USING DEGREES.
+
+
+      SOUND
+
+HOW:       SOUND voc,vol,note,octave[,dur]
+           SOUND voc,vol,note,#period[,dur]
+
+EG:        FOR I=1 TO 8
+             SOUND 1,15,1,I,40
+             FOR J=1 TO 6
+               READ A
+               SOUND 1,15,A,I,20
+             NEXT J
+             RESTORE
+           NEXT I
+           DATA 3,5,6,8,10,12
+
+PURPOSE:   GENERATES MUSICAL NOTES
+
+           'voc' IS AN EXPRESSION WITH ONE OF THE VALUES 1,2,3 AND
+           SELECTS THE SOUND CHANNEL.
+           'vol' IS AN EXPRESSION WITH A VALUE OF 1 TO 15 AND
+           SELECTS THE VOLUME.
+           'note' IS AN EXPRESSION WITH A VALUE OF 1 TO 12 AND
+           SELECTS ONE OF THE FOLLOWING NOTES:
+
+           1=C, 2=C#, 3=D, 4=D#, 5=E, 6=F, 7=F#, 8=G, 9=G#, 10=A
+           11=A#, 12=B
+
+           'octave' IS AN EXPRESSION WITH A VALUE BETWEEN 1 AND 8,
+           AND DETERMINES THE OCTAVE IN WHICH THE NOTE IS PLAYED.
+           THE NOTE A IN TH SCALE OF C (440 Hz) IS THE 4th 
+           OCTAVE (10th NOTE).
+
+           'dur' IS AN INTEGER EXPRESSION AND SPECIFIES THE TIME 
+           IN 1/50ths OF A SECOND THE TIME GFA BASIC HAS TO WAIT
+           BEFORE EXECUTION OF THE NEXT COMMAND.
+
+           A FURTHER POSSIBILITY TO CHOOSE THE PITCH IS TO ENTER 
+           'PERIOD'  PREFIXED BY '#' INSTEAD OF 'note' AND 
+           'octave'.  THE PERIOD CAN BE CALCULATED FROM THE
+           FREQUENCY AS FOLLOWS:
+           
+           Period = TRUNC(125000/frequency +0.5)
+
+           THEREFORE THE NOTE A (440 Hz) HAS A PERIOD OF 284. THIS
+           NOTE CAN BE PLAYED FOR 10 SECONDS THUS:
+
+           SOUND 1,15,10,4,500   OR
+           SOUND 1,15,#284,500
+
+           (See WAVE)
+
+
+      SPACE$
+
+HOW:       SPACE$(x)
+
+EG:        FOR I=0 TO 20
+             PRINT SPACE$(I);I
+           NEXT I
+
+PURPOSE:   CREATES A CHARACTER STRING CONTAINING 'x' SPACES.
+
+           'x' IS A NUMERIC EXPRESSION WITH A VALUE WHICH MUST LIE
+           BETWEEN 0 AND 32767.  ONLY INTEGERS OF 'x' WILL BE
+           ACCEPTED.
+
+           
+      SPC
+
+HOW:       SPC(n)
+
+EG:        PRINT "GFA";SPC(10);"BASIC"
+           PRINT "here";SPC(200);"there"
+
+PURPOSE:   PRODUCES 'n' SPACES INA PRINT COMMAND
+
+           'n' IS AN INTEGER EXPERSSION. HOWEVER, ONLY THE VALUE
+           TRUNC(n MOD 256) IS CONSIDERED.
+
+           THE FUNCTION SPC CAN ONLY BE USED WITH PRINT COMMANDS.
+
+
+      SPOKE    SDPOKE    SLPOKE
+
+HOW:       SPOKE x,n    SDPOKE x,    SLPOKE x,n
+
+EG:        A$="A"
+           L=ARRPTR(A$)
+           SDPOKE L+4,4
+           Z=VARPTR(A$)
+           SLPOKE Z,1111638594
+           PRINT A$
+           SPOKE Z,67
+           PRINT A$
+
+PURPOSE:   WRITES 1, 2 or 4 BYTES INTO AN AREA OF MEMORY WHICH
+           BEGINS WITH THE ADDRESS 'x'
+
+           'x' IS A NUMERIC EXPRESSION WHICH NAMES AN ADDRESS IN 
+           THE MAIN MEMORY.  THE VALUE OF 'x' MUST BE AN EVEN
+           NUMBER IN THE COMMANDS SDPOKE AND SLPOKE. 
+           'n' IS A NUMERIC EXPRESSION WHEREBY THE VALUE FOR
+           SPOKE MUST LIE BETWEEN 0 AND 255, THE VALUE FOR SDPOKE
+           BETWEEN 0 AND 65535 AND THE VALUE FOR SLPOKE BETWEEN
+           -2147483648 AND +2147483647.
+
+           THIS COMMAND WORKS IN THE SUPERVISOR MODE OF THE 68000
+           CPU, IE. RESERVED STORAGE SPACE CAN ALSO BE ACCESSED.
+           OTHERWISE THE SAME AS POKE.
+
+
+      SPRITE
+
+HOW:       SPRITE A$[,x,y]
+
+EG:        A$=MKI$(1)+MKI$(1)+MKI$(0)
+           A$=A$+MKI$(0)+MKI$(1)
+           FOR I=1 TO 16
+             A$=A$+MKI$(0)+MKI$(65535)
+           NEXT I
+           SPRITE A$,20,20
+           PAUSE 200
+           SPRITE A$
+
+PURPOSE:   PUTS THE SPRITE DEFINED IN A$ AT (X,Y) OR, IF NO
+           COORDINATES ARE GIVEN, DELETES IT.
+           A$ IS 74 CHARACTERS LONG :-
+
+           A$ = MKI$(X POSITION)
+              + MKI$(Y POSITION)
+              + MKI$( 0=NORMAL OR 1=XOR MODE)
+              + MKI$(SCREEN COLOUR MOSTLY 0)
+              + MKI$(SPRITE COLOUR MOSTLY 1)
+              + BIT PATTERN OF SCREEN AND SPRITE
+
+           UNLIKE DEFMOUSE THE BIT PATTERNS FOR SCREEN AND SPRITE
+           ARE NOT STORED IN SEPARATE BLOCKS BUT IN ALTERNATE
+           WORDS (16 BITS).
+           IF THE SAME SPRITE IS PUT ONTO THE SCREEN IN ANOTHER
+           POSITION THEN THE FIRST SPRITE IS DELETED.
+
+
+      SQR
+
+HOW:       SQR(X)
+
+EG:        INPUT X
+           PRINT SQR(X)
+
+PURPOSE:   CALCULATES THE SQUARE ROOT OF 'X'.
+           
+
+      STOP
+
+HOW:       STOP
+
+EG:        FOR I=0 TO 200
+             PRINT I
+             IF I=123 THEN
+               STOP
+             ENDIF
+           NEXT I
+
+PURPOSE:   STOPS EXECUTION OF A PROGRAM.
+           UNLIKE THE END COMMAND IT DOES NOT CLOSE ANY FILES AND
+           BY TYPING CONT THE PROGRAM WILL RESUME FROM THE LINE
+           FOLLOWING THE STOP COMMAND.
+
+
+      STR$
+
+HOW:       STR$(X)
+
+EG:        INPUT "INPUT A NUMBER ";N
+           A$=STR$(N)
+           PRINT A$
+ 
+PURPOSE:   TRANSFORMS THE VALUE 'X' INTO A CHARACTER STRING.
+           (SEE ALSO HEX$, OCT$ AND BIN$)
+
+
+      STRING$
+
+HOW:       STRING$(N,string)  OR  STRING$(N,C)
+
+EG:        Z$="A"
+           PRINT STRING$(50,Z$)
+           PRINT STRING$(50,"A")
+           PRINT STRING$(50,65)
+           PRINT STRING$(25,"AA")
+
+PURPOSE:   PRODUCES A STRING FORMED BY REPEATING 'string' OR
+           CHR$(C) 'N' TIMES. 
+           'N' IS A NUMBER FROM 0 TO 32767.
+           ALL THE ABOVE EXAMPLES PRODUCE A STRING OF FIFTY
+           LETTER 'A's.
+
+
+      SUB
+
+HOW:       SUB VAR,N
+
+EG:        FOR I=5 TO 50
+             PRINT I,SUB I,5
+           NEXT I
+
+PURPOSE:   DEDUCTS 'N' FROM 'VAR'. SAME AS VAR=VAR-N BUT EXECUTES
+           ALMOST TWICE AS FAST.
+
+
+      SWAP
+
+HOW:       SWAP var1,var2
+
+EG:        DIM A(3),B(8)
+           ARRAYFILL B(),8
+           A$="FIRST"
+           B$="SECOND"
+           SWAP A$,B$
+           SWAP A(),B()
+           PRINT A$,B$
+           PRINT A(8),B(2)
+
+PURPOSE:   EXCHANGES THE VALUES OF 'var1' AND 'var2'.
+           THE VARIABLES MUST BE OF THE SAME TYPE.
+           WHEN SWAPPING ARRAY FIELDS THE DIMENSIONS ARE ALSO
+           SWAPPED.
+
+
+      SYSTEM
+
+HOW:       SYSTEM
+
+EG:        INPUT "ENTER PASSWORD! ";P$
+           IF P$<>"BEH HEH HEH HEH" THEN
+             SYSTEM
+           ENDIF
+
+PURPOSE:   CAUSES A RETURN TO THE GEM DESKTOP, SAME AS QUIT.
+
+
+      TAB
+
+HOW:       TAB(N)
+           
+EG:        PRINT TAB(30);"GFA"
+           PRINT SPACES$(40)
+           PRINT TAB(30);"BASIC"
+
+PURPOSE:   SETS THE TABULATOR TO THE Nth COLOUMN.
+           TAB CAN ONLY BE USED IN CONJUNCTION WITH THE PRINT
+           COMMAND.
+           IF THE CURREN POSITION IS ALREADY PAST 'N' THEN THE
+           TAB FUNCTION IS SET FOR THE NEXT LINE.
+
+
+      TAN
+
+HOW:       TAN(X)
+
+EG:        INPUT RAD
+           PRINT TAN(RAD)
+           INPUT GRAD
+           PRINT TAN(GRAD*PI/180)
+
+PURPOSE:   RETURNS THE VALUE OF THE TANGENT OF 'X'
+           'X' IS THE ANGLE IN RADIANS.
+
+
+      TEXT
+
+HOW:       TEXT X,Y, [ L, ]string
+
+EG:        DEFTEXT 1,16,0,21
+           A$="ABC D"
+           TEXT 10,50,A$
+           TEXT 10,350,200,A$
+           TEXT 300,350,-200,"ABC D"
+
+PURPOSE:   PUTS A TEXT ONTO THE SCREEN AT GRAPHICS COORDINATES
+           'X,Y'. THE GRAPHICS CAN FIRST BE DEFINED BY USING
+           THE COMMAND DEFTEXT.
+           THE POINT 'X,Y' IS AT THE BOTTOM LEFT HAND CORNER OF
+           THE TEXT TO BE PRINTED.
+           THE OPTIONAL PARAMETER 'L' CAN BE POSITIVE OR 
+           NEGATIVE AND DETERMINES THE LENGTH OF THE TEXT TO BE
+           DISPLAYED IN GRAPHIC DOTS. IF +L THEN THE TEXT IS SET
+           TO THIS LENGTH BY ALTERING THE SPACING BETWEEN THE
+           CHARACTERS. IF -L, THEN THE TEXT IS MADE TO FIT BY
+           ALTERING THE SPACES BETWEEN THE WORDS.
+           (SEE EXAMPLE )
+           IF L=0 THEN THE TEXT IS UNCHANGED.
+
+
+      TIME$
+
+HOW:       TIME$
+
+EG:        DEFTEXT 1,16,0,32
+           DO
+             PRINT AT(1,1);TIME$
+             TEXT 240,180,TIME$
+           LOOP
+
+PURPOSE:   RETURNS THE SYSTEM TIME.
+           THE STRING FORMAT IS HH:MM:SS . THE SECONDS ARE UPDATED
+           EVERY TWO SECONDS.
+
+
+      TITLEW
+
+HOW:       TITLEW N,"title"
+
+EG:        TITLEW 2,"HEADING"
+
+PURPOSE:   GIVE THE WINDOW NUMBER 'N', THE NEW TITLE 'title'.
+           IF BEFORE OPENW A TITLEW N,"" IS EXECUTED THEN THE 
+           WINDOW DOES NOT HAVE A TITLE LINE. THIS CAN BE CHANGED
+           BY ENTERING TITLEW N,"".
+
+
+      TRON   TROFF
+
+HOW:       TRON
+           TROFF
+
+EG:        TRON
+           DO
+             PRINT I
+             INC I
+             IF I=25 THEN
+               TROFF
+             ENDIF
+           LOOP
+
+PURPOSE:   SWITCHES THE TRACE FUNCTION ON AND OFF.
+
+
+      TRUNC
+
+HOW:       TRUNC(X)
+
+EG:        A=3.14155
+           PRINT TRUNC(A)
+           PRINT TRUNC(-12)
+           PRINT TRUNC(-1.99)
+
+PURPOSE:   RETURNS THE INTEGER PORTION OF 'X'.
+           TRUNC IS IDENTICAL TO FIX (SEE ALSO).
+
+
+      UPPER$
+
+HOW:       A$="basic"
+           PRINT UPPER$(A)
+           PRINT UPPER$("1a")
+           PRINT UPPER$("GFA")
+
+PURPOSE:   TRANSFORMS ALL LOWER CASE LETTERS OF A STRING TO UPPER
+           CASE. ANY NON LETTER CHARACTERS ARE LEFT UNCHANGED.
+
+
+      VAL
+
+HOW:       VAL(X$)
+      
+EG:        A$="4000 DUESSELDORF 11"
+           PRINT VAL(A$)
+           PRINT VAL("1.5E+05")
+           PRINT VAL("GFA")
+
+PURPOSE:   TRANSFORMS 'X$' INTO A NUMBDER, AS FAR AS POSSIBLE.
+           IN THE CASE OF A PURELY ALPHABETICAL STRING THE VALUE
+           0 IS RETURNED.
+
+
+      VAL?
+      
+HOW:       VAL?(X$)
+
+EG:        A$="22 KG"
+           PRINT VAL?(A$)
+           PRINT VAL?("1.0+E19")
+           PRINT VAL?("1E19")
+           PRINT VAL?("AB123")
+
+PURPOSE:   DETERMINES THE NUMBER OF CHARACTERS STARTING AT THE
+           BEGINNING OF A STRING THAT CAN BE CONVERTED INTO A 
+           NUMERICAL VALUE WITH VAL.
+           
+
+      VARPTR
+
+HOW:       VAPTR(var)
+
+EG:        A%=17
+           N$="GFA"
+           PRINT VARPTR(A%)
+           PRINT LPEEK(VARPTR(A%))
+           PRINT VARPTR(N$)
+           PRINT PEEK(VARPTR(N$))
+           PRINT PEEK(VARPTR(N$)+1)
+           PRINT PEEK(VARPTR(N$)+2)
+           
+PURPOSE:   DETERMINES THE ADDRESS OR STARTING ADDRESS OF A
+           VARIABLE 'var'. 
+
+
+      WAVE
+
+HOW:       WAVE voc,env,form,len,dur
+
+EG:        SOUND 1,15,1,4,20
+           SOUND 2,15,4,4,20
+           SOUND 3,15,8,4,20
+           WAVE 7,7,0,65535,300
+           WAVE 0,0
+
+PURPOSE:   PRODUCES NOISES FROM THE THREE SOUND CHANNELS.
+           
+           'voc' IS TREATED 'BIT-WISE' WITH THE BIT-VALUES FOR THE
+           THREE CHANNELS AS FOLLOWS. 
+
+           BIT 1=CHANNEL 1           BIT  8 NOISE ON CHANNEL 1
+           BIT 2=CHANNEL 2           BIT 16 NOISE ON CHANNEL 2
+           BIT 4=CHANNEL 3           BIT 32 NOISE IN CHANNEL 3
+
+           256*PERIOD OF THE NOISE GENERATOR (0 TO 31) CAN ALSO
+           BE ADDED TO THIS.
+
+           'env' DEFINES WHICH CHANNELS THE ENVELOPE WILL BE
+           ACTIVE UPON (eg. BINARY 101 WOULD BE CHANNELS 1 & 3).
+           
+           'form' SPECIFIES THE ENVELOPE SHAPE :-
+
+           0 TO 3 = LINEAR FALLING.
+           4 TO 7 = LINEAR RISING AND TERMINATING.            
+                8 = SAWTOOTH FALLING.
+                9 = LINEAR FALLING (AS 0 TO 3).
+               10 = PEAKED BEGIN FALLING.                      
+               11 = LINEAR FALLING VAR.LOUDNESS.
+               12 = SAWTOOTH RISING.
+               13 = LINEAR RISING CONTINUOUS.
+               14 = PEAKED BEGIN RISING.
+               15 = LINEAR RISING (AS 4 TO 7)
+
+           'len' SPECIFIES THE PERIOD OF THE ENVELOPE.
+
+           'dur' IS THE TIME IN 1/50S BEFORE NEXT COMMAND.
+
+           PARAMETERS WHICH ARE LOCATED AT THE END OF THE COMMAND
+           AND WHICH ARE TO REMAIN UNCHANGED CAN BE OMITTED IN THE
+           NEXT COMMAND.
+           WAVE 0,0 SWITCHES OFF ALL SOUND CHANNELS.
+
+
+      WHILE....WEND
+
+HOW:       WHILE condition
+           WEND
+
+EG:        WHILE A<10
+             A=A+1
+             PRINT A
+           WEND
+
+PURPOSE:   CREATES A CONDITIONAL LOOP BETWEEN WHILE AND WEND UNTIL
+           THE 'condition' IS FULFILLED. THIS IS CHECKED AT THE
+           BEGINNING OF THE LOOP AND SO IT IS POSSIBLE THAT THE
+           LOOP IS NEVER EXECUTED.
+

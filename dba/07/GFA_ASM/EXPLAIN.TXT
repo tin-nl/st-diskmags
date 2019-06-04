@@ -1,0 +1,246 @@
+(X)BIOS AND GEMDOS
+
+Explanation of XBios, Bios and Gemdos routines.
+
+O.k. I admit for some people this seems a bit technical, but 
+stick with me, and everything will be clear for you.
+
+First something about these routines. These routines are used in
+our Gfa/ASM programs, and they are standard routines for the Atari.
+
+Bios stands for Basic Input Output System, and it is used mostly
+for getting information over the Atari itself. For instance:
+with bios 10 you can get information about the all the drives 
+which are connected. 
+
+Xbios stands for eXtended Basic Input Output System, and with this
+routine you can get information from the Atari itself, but also
+from other connected Hardware (monitor, printer etc....)
+For instance: Xbios 4 tells you in which resolution the computer
+works at the moment.
+
+Gemdos stands for GEM Disk Operating System. These routines fill
+the holes Bios and Xbios don't cover. For instance with GEMDOS 14
+you can set the drive.
+
+When do we use such routines?
+
+If you take a good look to our other programs coded by Jedi,
+Bonus, K.G.E., the Giants, and even some programs from moi, you
+can see that we have used such routines.
+
+First let us start with the bios routines.
+The bios routines are not so interesting for demo-coding, and
+therefor they are not used in our programs, so I won't explain
+them.
+
+The Xbios routines.
+
+Xbios(2)
+Gfa:
+old%=XBIOS(2)
+(OLD% WILL HOLD THE VALUE OF THE ADDRES)
+
+Asm:
+        MOVE.W  #2,-(SP)                ; 2 ON STACK
+        TRAP    #14                     ; XBIOS
+        ADDQ.L  #2,SP           ; CORRECT STACK
+(D0 (DATA REGISTER 0) HAS THE ADDRES)
+
+This routine gives you the starting address of the TV/Monitor in
+the memory. If you do anything behind this address within a range
+of 32000 bytes it will be shown on screen.
+
+Xbios(3)
+GFA/ASM 
+(SEE ABOVE)
+
+This routine also gives you the starting address of the 
+TV/Monitor. I will explain later why we have two routines doing
+the exact same things.
+
+Xbios(4)
+GFA:
+rez%=XBIOS(4)
+PRINT rez%                      ! 0=LOW 1=MEDIUM 2=HIGH
+
+ASM:
+        MOVE.W  #4,-(SP)        ; 4 ON STACK
+        TRAP      #14           ; XBIOS
+        ADDQ.L  #2,SP   ; CORRECT STACK
+
+This routine gives you the resolution in which you are working.
+
+Xbios(5)
+GFA:
+VOID XBIOS(5,L:XBIOS(3),L:XBIOS(2),0)
+
+ASM:
+        MOVE.W  #0,-(SP)        ; REZ
+        MOVE.W  #-1,-(SP)       ; KEEP OLD SCREEN-ADDRES
+        MOVE.W  #-1,-(SP) ; KEEP OLD SCREEN-ADDRES
+        MOVE.W  #5,-(SP)  ; NUMBRE OF ROUTINE
+        TRAP      #14
+        LEA $C(SP),SP   ; CORRECT STACK
+
+This routine is used in one of the first Gfa-programs which was 
+shown in diskmagazine 1. (Do you remember it?)
+With this routine you can change the starting addres of the TV or
+Monitor. 
+
+Xbios(6)
+GFA:
+VOID XBIOS(6,L:address of pallete.)     
+(HARD TO EXPLAIN LOOK AT DEGAS LOADER (GFA CORNER DISKMAG 3)
+
+ASM:
+        PEA     paletteptr 
+        MOVE.W  #6,-(SP)        ; 6 ON STACK
+        TRAP      #14           ; XBIOS
+        ADDQ.L  #6,SP   ; CORRECT STACK
+
+We use this routine to set the color pallete. 
+
+Xbios(7)
+GFA:
+SETCOLOR colornum,color
+
+ASM:
+        MOVE.W  color,-(SP)
+        MOVE.W  colornum,-(SP)  ;0-15
+        MOVE.W  #7,-(SP)                ; %0111 ON STACK (%0111 IS BINAIR FOR 7)
+        TRAP      #14                   ; XBIOS
+        ADDQ.L  #6,SP           ; CORRECT STACK
+
+Zis rout changes one color.
+For Gfa coders not so interesting, but for ASM-coders it can 
+be very important.
+
+Xbios(28)
+GFA:
+VOID XBIOS(28,data,regno)
+
+ASM:
+        MOVE.W  regno,-(SP)     ; REGISTER NUMBER OF SOUNDCHIP
+        MOVE.W  data,-(SP)      ; READ/WRITE
+        TRAP      #14
+        ADDQ.L  #6,SP
+
+With this routine you can read/write the soundchip.
+We have used it in demo's to read the soundchip, and give
+a graphic presentation of it. I believe it was Diskmag 2.
+
+Xbios(32)
+GFA:
+VOID XBIOS(32,L:ptr)
+
+ASM:
+        PEA  ptr
+        MOVE.W  #32,-(SP)
+        TRAP      #14
+        ADDQ.L  #6,SP
+
+If I remembered well Jedi used this routine in one of his sources
+to play some of his musics. So therefor I will explain it. (Well
+what is still left to explain?) With this routine you can put 
+values in the Atari Soundchip.
+
+And now, the moment all readers where waiting for, the GEMDOS
+routines.
+
+GEMDOS(7)
+GFA:
+VOID INP(2)
+
+ASM:
+        MOVE.W  #7,-(SP)        ; WAIT TILL KEYPRESS
+        TRAP      #1            ; GEMDOS
+        ADDQ.L  #2,SP
+
+D0 HOLDS THE VALUE OF THE PRESSED KEY.
+
+Not so interesting for Gfa coders, but ASM coders will need
+this routine if they have created small programs.
+
+GEMDOS(9)
+GFA:
+CLS
+PRINT "RUBBISH"
+
+ASM:
+        PEA     TEKST(PC)
+        MOVE.W  #9,-(SP)        ; SHOW TEXT
+        TRAP    #1
+        ADDQ.L  #6,SP   ; CORRECT STACK
+
+TEKST: DC.B 27,'E','RUBBISH',0
+
+27,'E', CLears the Screen. After the text there must always be a 
+0
+
+Again not so interesting for Gfa-coders. This routine puts some 
+text on the screen.
+
+GEMDOS(11)
+
+GFA:
+VOID INP?(2)
+
+ASM:    
+        MOVE.W  #11,-(SP)
+        TRAP      #1                    ; GEMDOS
+        ADDQ.L  #2,SP           ; CORRECT STACK
+
+You have guessed it, this routine looks if a key is pressed while
+the program was running, and Gfa has other commands for such 
+operations.
+
+GEMDOS(32)
+GFA:
+super%=GEMDOS(32,L:0)
+program in 
+supervisor
+modus
+VOID GEMDOS(32,L:super%)        ; get out of supervisor
+
+ASM:
+        CLR.L   -(SP)           ; ENTER SUPERVISOR
+        MOVE.W  #32,-(SP)
+        TRAP      #1            ; GEMDOS
+        ADDQ.L  #6,SP
+        MOVE.L  D0,USP
+
+; HERE COMES YOUR PROGRAM.
+
+        MOVE.L  USP,-SP ; ENTER USER MODE
+        MOVE.W  #32,-(SP)
+        TRAP      #1            ; GEMDOS
+        ADDQ.L  #6,SP   ; CORRECT STACK
+        
+This routine gives you the possibility to enter in supervisor or 
+in user modus. If you are in user modus, you are not alloud to
+"touch" some system addresses. Ofcourse in Supervisor you can.
+(It is obvious isn't it?)
+
+And that was the last routine I will explain. There are ofcourse 
+more possibilities with Bios Xbios and GEMDOS, but they are not
+so very interesting for us.
+
+Some final assembler notes:
+
+- If you use these routines in assembler you must keep in mind
+  that when you execute a TRAP function the data- and address-
+  registers will be changed.
+
+- If you do not correct the stack proparly you can get a bus error
+
+- According to the books xbios routines should always be executed in
+  supervisor modus, but till thisfar I didn't have any problems with
+  it.
+
+Well that's it for today.
+
+Happy coding, 
+
+O.T.M.
+

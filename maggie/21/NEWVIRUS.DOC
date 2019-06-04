@@ -1,0 +1,224 @@
+
+New  nasties  alert!!  This  info has appeared recently and  should  be 
+included here as a public service/warning.. - CiH
+
+ 
+            Info on Two New Atari Viruses: Pharaoh & Carpe Diem
+
+From: Richard Karsmakers (cronos@worldaccess.nl)
+
+Below you will find descriptions of two new viruses that have  appeared 
+on  the  Atari platform,  analysed and included in the "Ultimate  Virus 
+Killer" version 6.9 in the past few days. This has been posted earlier, 
+but  some  people  have requested this info to be  re-posted.  So  here 
+goes...
+
+Name:  Official  name of the virus.  When several different versions of 
+one  virus  exist,  their  difference is indicated  by  one  additional 
+character - "A" for the earliest or most widely spread version, "B" for 
+the next, etc.
+
+Type:  The  description  of  the virus fitting the  most  common  virus 
+classification.
+
+Discovery  date:  The  date when the virus was earliest reported to  be 
+seen.   If  the  discoverer  is known,  his/her name is  added  between 
+brackets.
+
+Virus  can copy to drive(s):  This indicates to which drives the  virus 
+can copy itself.   "Current drive" implies that the virus copies to the 
+drive that is currently in se of the ones listed.
+
+Virus  attaches itself to:  Here it is mentioned which system vector(s) 
+the  virus  attaches  itself to.   When indicated to  be  'undocumented 
+reset-proof',  this  refers to the undocumented method for programs  to 
+become reset-resistant through the $12123456 method.
+
+Disks can be immunized against it: Informs of whether a virus cannot be 
+immunized  against,  or  whether it can be immunized against.   In  the 
+latter  case,  it  is indicated how one can immunize against  it.   The 
+format   of   the  immunization  method   is:   Offset   (hexadecimal), 
+Byte/Word/Longword, and the hexadecimal value expected at that offset.
+
+Disks can be immunized with UVK:  Indicates whether or not a particular 
+virus'  immunization  was capable of being including in  the  "Ultimate 
+Virus Killer" advanced immunization method.
+
+What  can  happen:   Lists the effect that the virus is  programmed  to 
+cause to occur.
+
+When does that happen: Specifies when the above will happen (ahem).
+
+Reset-proof:  Tells  you  whether or not the virus can survive  a  warm 
+reset.
+
+Can copy to hard disk: Tells you...er...well...this is pretty obvious, 
+actually.
+
+Remarks: Here all the other things worth mentioning are summed up.
+
+Virus #94 
+
+Name: Pharaoh Virus. 
+
+Type: Memory-resident reset-proof bootsector call virus. 
+
+Discovery date: Spring 1996. 
+
+Virus can copy to drive(s): Current floppy drive (A or B). 
+
+Virus attaches itself to:   Hdv_bpb,  resvector and undocumented reset-
+resistant. 
+
+Disks can be immunized against it:  Yes, though it is not known exactly 
+how.  Immunizable  with  UVK:  Very  likely.  It copies to none of  the 
+immunized disks I tried to have it infect. 
+
+What can happen:  Noise is made, as well as a high frequency sound. 
+
+When does that happen: After five copies have been made. 
+
+Resetproof: Yes. 
+
+Can copy to harddisk: No.
+
+Remark:   A  particularly  devious virus,  which uses two 32-bit random 
+values  to  double-encrypt itself.  It can also start at  13  different 
+locations in the bootsector,  and the initial instruction can be one of 
+2048 different ones. This results in a total of (2^3)  * (2^32)  * 13 * 
+2048  different  versions that it can make of itself  (when  multiplied 
+that's 4.9112611*10^23...).  It is also MS-DOS mimicking.
+
+It  was sent to me anonymously,  with an Arnhem (Netherlands) postmark. 
+The virus is Falcon-compatible but does not copy to high density disks. 
+As it fiddles around with BPB FAT values,  programs such as "FCopy" and 
+"Knife ST" may fail to operate properly on infected disks because  they 
+may find the manipulated BPB values hard to swallow.
+
+It is also known as "The Curse Virus" or "Klatwa Virus" (this is Polish 
+for  "Curse",  and  was used to make it appear as if it was written  in 
+Poland).  Disks  once  infected with the "Pharaoh Virus" will never  be 
+completely  regular  because  of the virus  having  rearranged  various 
+values in FAT and BPB. Copy all files you need to retain off them, then 
+perform a soft or hard format, and copy the files back.
+
+
+Virus #95 
+
+Name: Carpe Diem Virus. 
+
+Type:  Memory-resident  reset-proof bootsector virus originating from a 
+Trojan Horse. 
+
+Discovery date: Spring 1996. 
+
+Virus can copy to drive(s): Current floppy drive (A or B). 
+
+Virus  attaches  itself to:   Hdv_bpb,  resvector,  vbl and undocumented 
+reset-resistant. 
+
+Disks can be immunized against it: No. 
+
+Immunizable with UVK: No. 
+
+What  can  happen:   The text "BO[BJOF" appears at the top left of  the 
+screen.  Your computer can crash.   When does that happen:  The text is 
+displayed 2048 vertical blanks after system start-up (on a 50 Hz colour 
+monitor  that  would be after about 40 seconds).   The crash  can  (and 
+will) happen any time after that.
+
+Resetproof: Yes. 
+
+Can  copy  to  harddisk:  Yes,  but only in a file form  ("~.PRG",  see 
+below).
+
+Remark:   This virus has an interesting history.  It originally came in 
+a  ZIP  archive  called "CARPDIEM.ZIP".   It contained  a  file  called 
+"CARPDIEM.PRG"  (normally 91,750 bytes in size) and a small  text  file 
+with  the contents "Sease the day,  and run this great falcon  enhanced 
+game!!"  (sic).   Upon  running  this 'game',  nothing would appear  to 
+happen  (though a quick eye would see the text "Ruth Marcs  Development 
+Inc.  (Dedicated  to the memory of Lucky Lady)" flicking on and off the 
+top of the screen).   The 'game' wouldn't run, and the desktop would be 
+displayed  again.  The  virus,  however,  would have installed itself in 
+memory  and  on  the current floppy disk,  and would have  written  the 
+"~.PRG"  file   (see below) in C:\AUTO\.   Useless,  the "CARPDIEM.ZIP" 
+file  and  related items would be thrown away.  So this virus  actually 
+arose  from what is commonly known as a "Trojan Horse".   Even if you'd 
+get  rid  of all virus occurrences on floppy disks,  the  "~.PRG"  file 
+would reinstall it[self] on floppy every time you reboot.  Likewise,the 
+floppy version of the virus would reinstall the "~.PRG" file!  So it is 
+quite  impossible  to  let  the "Ultimate  Virus  Killer"  on  its  own 
+completely get rid of the virus for you.
+
+HOW TO PROPERLY GET RID OF THE "CARPE DIEM VIRUS". 
+
+You have to remember that, on an infected system, there are a potential 
+number of three copies of the virus:   One on your floppy disk,  one in 
+the hard drive C:\AUTO\ folder and one in memory.
+
+These are the steps: 
+
+1)  First  you have to reboot without a disk,  or with a disk  that  is 
+guaranteed  to be virus free.   Turn your system off for half a minute. 
+This  will get rid of two of the possible three copies of the virus  in 
+your  system (in memory and on floppy).   Make sure the floppy disk  is 
+write-protected.
+
+2)  Turn  your computer back on.   Press [CONTROL] during  the  booting 
+process. This way - at least with the Atari hard disk driver - the hard 
+disk  will  be  installed  and accessible,  but  the  programs  in  the 
+\AUTO\folder  will  *not* be executed.  If you have another  hard  disk 
+driver   installed,   simply  try  to  bypass  hard  disk  installation 
+altogether   (pressing   [CONTROL],   [LEFT  SHIFT]   and   [ALTERNATE] 
+simultaneously  usually ought to do the job) and install the hard  disk 
+driver  from  floppy.   This,  too,  will not install any of the \AUTO\ 
+folder  programs.  If you have a Claus Brod hard disk driver installed, 
+all you need to do is simply boot off another partition, like D:.
+
+3)  Now  you  have to get rid of a file called "~.PRG"  in  the  \AUTO\ 
+folder of hard disk partition C:.   It can't  be located anywhere else. 
+Unfortunately,  the  file  is hidden.   That means you can't delete  it 
+until  you  can  see   it,  and you can't normally see  it.  There  are 
+probably quite a few ways to delete it:
+
+i) With "GfA Basic".   Go into "direct mode",  "chdrive" to drive C and 
+"chdir" to the \AUTO\ folder.   Now,  with "files", you can display the 
+full  directory,  including  hidden files.   You can now use the "kill" 
+command to delete "~.prg".
+
+ii)  With the alternative file selector "Selectric".  Turn the "display 
+hidden"  option on,  and smply delete the file from "Selectric" itself. 
+"Selectric"  can be started from the desktop,  without needing to start 
+it  from  the  AUTO  folder.   You might have to  switch  to  a  higher 
+resolution first, though.
+
+iii)   In the absence of the two options mentioned above,  you can  use 
+any  command line interpreter (such as "COMMAND.PRG").   These may  not 
+allow you to delete the file,  but this is no problem. Using  the "ren" 
+command you can rename the file,  for example to "file.xxx".  This will 
+not  remove  the  file  from the \AUTO\  folder,  but  will  render  it 
+completely harmless - after all, only programs with the "prg" extension 
+are executed when the \AUTO\ folder is invoked.
+
+4)  Now,  with  a clean and uninfected system,  you can get rid of  all 
+occurrences of the virus on all your floppies with the "Ultimate  Virus 
+Killer".
+
+IMPORTANT:   The  floppy-based  version  of the "Carpe Diem  Virus"  is 
+recognised  without  further ado.   To recognize the  tiny  (1024-byte) 
+"~.PRG" file from the link virus check (both the "CARPDIEM.PRG"  mother 
+file and the "~.PRG" file are recognised,  regardless of what name they 
+might  currently  have) you have to set the lowest limit  of  the  link 
+virus  check to 1 Kb (this will cause only files below 1 Kb not  to  be 
+scanned).  By default, this value is set to 3 Kb, which would cause the 
+"~.PRG"  file to be skipped.   The lowest link virus check limit can be 
+altered  by  means of the "UVK.CNF" file (see  the  appropriate  manual 
+section).   A  line containing ".001" (without the quotes) added at the 
+end of the file (using a text editor, for example) will do the job.
+
+Richard Karsmakers                 cronos@worldaccess.nl 
+C.R.I.M.E. Development; "Twilight World" Magazine; WWW-MMM 
+P.O. Box 67, 3500 AB, Utrecht, Netherlands 
+"Who is General Failure and why is he reading my disk?"
+ 

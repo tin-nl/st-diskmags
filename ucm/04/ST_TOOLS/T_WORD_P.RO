@@ -1,0 +1,102 @@
+ 
+                                Tempus Word ( pro )
+                                ===================
+                             < aktuelle Version 2.86 >
+
+Nun, da ich mir die Pro-Version  von Tempus Word geleistet  habe, mîchte ich es
+ein biûchen testen. Viel mehr als die ST-Computer kann ich natÅrlich auch nicht
+herausfinden.
+
+Bedienbarkeit, Philosophie und Allgemeines:
+-------------------------------------------
+TW lÑût sich flott bedienen, Konzeptfehler gibt es in der OberflÑche kaum.
+Die Tastaturbelegung lÑût sich frei Ñndern, es gibt zusÑtzlich Makros und Text-
+bausteine. öberhaupt kann  man fast alle  Einstellungen seinen eigenen WÅnschen
+anpassen.
+Vor TWpro habe ich Åber ein Jahr mit der TW-junior-Version von der TOS-Disk ge-
+arbeitet, obwohl es KEINE  Anleitung und nur  eine spÑrliche  Hilfe gab. Aller-
+dings vermittelt das nur das  Handbuch das Wissen, ohne daû  eine effektive und
+ausschîpfende Bedienung nicht mîglich ist.
+Die Hersteller bezeichnen TW auch als  Autorensystem, und dem  muû ich mich an-
+schlieûen: Tempus Word verwaltet Fuû-, Kapitel- und Endnoten, Absatz- und Kapi-
+telÅberschriften ( auch mit automatischer Numerierung ). Man kann sogar Kommen-
+tare in den Text  einfÅgen, die automatisch vom Druck  ausgeschlossen sind.
+Die graphischen Mîglichkeiten ( Einbindung von *.IMG und *.GEM-Dateien, Vektor-
+objekte ) sind  ausreichend. Mit dem  Write&Flip-Modul gibt es  einen Hauch von
+DTP ( noch ein biûchen dÅrftig ).
+Sonstige Kleinigkeiten:
+Seitenpreview, Textinfo, Suchen/Ersetzen auch  mit Textattributen, Gestaltungs-
+Åbersicht  ( alle öberschriften ),  Tabellen,  ASCII-Editormodus, Kalender  mit
+Terminplaner, einfache  Datenbank fÅr die  Serienbrieffunktion, Rechenfelder im
+Text u.v.a.
+
+Druck:
+------
+Man kann  auf  alles  Drucken was  man  hat. Bildschirm, *.IMG-File, *.PCO-File
+( Druckerdaten ) und manchmal  auch auf den  Drucker, dazu stehen  hÅbsch viele
+Druckertreiber zur VerfÅgung.
+Die Geschwindigkeit  des Ausdrucks  hÑngt prinzipiell  nur noch vom Drucker ab.
+Weiterhin: Hintergrunddruck, Querdruck, Buchdruck ( man  muû  die  BlÑtter  nur
+noch falten und zusammenheften ), Ausdruck einzelner Seiten bzw. Bereiche, ver-
+kleinerter Ausdruck...
+
+Speicherbedarf:
+---------------
+Meine  Version  belegt  mit  ca. 60 Bitmap-Fonts, dem  Hilfesystem, dem  groûen
+Wîrterbuch und allen  Zusatzprogrammen  etwa 4 MB auf der  Platte. Arbeiten von
+der Diskette sollte auch funktionieren ( zum Drucken sollten die Fonts aber auf
+Ram-Disk oder wenigstens auf die gleiche Diskette wie die Texte... ).
+Die Programmdatei ist ca. 500 kB groû, lÑût  sich aber auf  etwa 350 kB packen.
+TW lÑuft auf  allen Systemen ab  1 MB Speicher  und einer  Auflîsung ab 640x400
+Punkten.
+
+Geschwindigkeit:
+----------------
+Tempus Word steht im Prinzip fÅr Geschwindigkeit schlechthin. Einzig die exter-
+nen Module hÑngen noch etwas hinterher. Sogar  mit SPEEDO-Fonts wird  die volle
+Geschwindigkeit beim Tippen erreicht, da jeder Font nur einmal geladen wird und
+dann aus dem Fontcache lÑuft. Allerdings  kann das Laden  schon mal eine Minute
+dauern (TrueType-Fonts). Die TW-Bitmapfonts werden natÅrlich schneller geladen.
+
+Preis:
+------
+Nun, Ñh, ahem, jetzt kommts:
+- junior       199,-
+- student      454,-
+- pro          654,-
+Studenten ( Leute, die stÑndig feiern und die woher auch  immer eine Studienbe-
+scheinigung haben ) bekommen die Pro-Version 200,- Mark billiger.
+Die Module schlagen mit folgenden Preisen zu Buche:
+- Write&Flip                           59,-
+- FormelPi                             89,-
+- Calamus Loader ( unserialisiert )    59,-
+- Calamus Loader ( alle Schriften )    99,-
+Aber man kann evt. noch ein biûchen mit den Leuten von CCD handeln.
+
+Support:
+--------
+Es gibt eine  Telefonische Hotline, Briefe  werden scheinbar sogar durchgelesen
+(zu meiner Kritik  nahm Chefprogrammierer  Dirk Beyelstein selber  Stellung und
+mir wurde kostenlos ein Zwischenupdate 2.85 -> 2.86 zugeschickt).
+
+WÅnsche fÅr die Version 3.x:
+----------------------------
+- skalierbare Bildschirmausgabe
+- Absatzvorabstand
+- Grafik von Text umflieûen lassen
+- etwas handlichere Bearbeitung der Rechenfelder
+- automatischer Seitenumbruch
+
+Fazit:
+------
+Wer noch  keine Textverarbeitung  hat, sollte  es sich  Åberlegen, ob er  nicht
+Tempus Word  nehmen will. Es mag Programme  geben, die  etwas mehr  in die DTP-
+Ecke gehen, aber die Gestaltungselemente  von TW sind auch  ausreichend um Ein-
+ladungen zum nÑchsten BesÑufnis zu drucken. Aber fÅr die Diplomarbeit sollte es
+wohl auch reichen ( Ok - Chemiker nehmen sowieso Signum... )
+
+-------------------------------------------------------------------------------
+                                                                  Apache of tnb
+-------------------------------------------------------------------------------
+
+(Redax: Und Grafiker nehmen sowieso Papyrus... :-)

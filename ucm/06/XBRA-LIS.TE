@@ -1,0 +1,856 @@
+Und wieder ein gesplittetes File...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Liste der offiziell vergebenen XBRA-Kennungen
+---------------------------------------------
+
+Stand: 26. MÑrz 1995
+
+ErgÑnzungen und Anfragen bitte an:
+
+Julian Reschke
+
+EMail:     jr@ms.maus.de, reschke@math.uni-muenster.de
+
+Briefpost: Maxon Computer GmbH
+           Redaktion ST-Computer
+           Julian Reschke, Expertenforum
+           Industriestraûe 26
+           D-65760 Eschborn
+
+
+/* Weitergabe */
+
+...ist hochgradig erwÅnscht. Aber bitte *immer* nur in unverÑnderter Form.
+Niemandem ist damit gedient, wenn es verschiedene 'Fassungen' dieser Liste
+gibt.
+
+
+/* VerfÅgbarkeit */
+
+Die aktuelle Version dieser Liste liegt stets (nun ja, bis auf Weiteres)
+in der Mailbox 'Maus MÅnster 2' (0251/77262), îffentlicher Programmteil,
+Dateiname 'XBRALIST.ZOO' und auf dem FTP-Server 'ftp.uni-muenster.de' im
+Verzeichnis 'pub/atari/Docs'.
+
+
+/* Neue Eintragungen */
+
+Benîtigte Angaben sind:
+
+- ob es sich um einen Cookie und/oder eine XBRA-Kennung handelt,
+- die Kennung selbst,
+- der Name des Autors bzw. des Herstellers,
+- der Name des Programms,
+- eine Liste der verbogenen Vektoren,
+- Bezugsquelle bzw. Copyrightstatus und
+- Optional die email-Adresse, unter der der Autor erreichbar ist
+  (bitte nach Mîglichkeit immer in Internet-Schreibweise).
+
+Es werden *definitiv* nur noch solche Anmeldungen bearbeitet, die
+vollstÑndig und in genau der unten benutzten Form formatiert sind. Ich
+bitte dafÅr um VerstÑndnis, daû ich alle anderen Anmeldungen aus
+ZeitgrÅnden *kommentarlos* ignorieren muû.
+
+
+/* Anfragen */
+
+Bitte haben Sie dafÅr VerstÑndnis, daû ich Anfragen bzgl. der Adressen von
+hier aufgefÅhrten Programmierern prinzipiell nicht beantworten kann
+(schon deshalb nicht, weil ich meist selbst keine weitergehenden
+Informationen besitze).
+
+
+/* Schreibweisen */
+
+Mit 'C' gekennzeichnete Programme machen einen Eintrag in den Cookie
+Jar, 'X' steht fÅr XBRA-Kennungen.
+
+Mit '_' beginnende Cookie-Jar-Kennungen sind fÅr Atari reserviert!
+
+'Offene' Cookies -- also solche, die von mehreren verschiedenen
+Programmen gesetzt werden kînnen -- sind mit '(Standardcookie)'
+gekennzeichnet.
+
+
+/* Die Liste */
+
+C       _AKP    Atari Corporation
+Tastaturtyp (Bits 0..7) und Landessprache (Bits 8..15).
+
+C       _CPU    Atari Corporation
+CPU-Typ.
+
+X       _DOS    Atari Corporation
+GEMDOS-Einsprung (im GEMDOS 0.30).
+
+C       _FDC    Atari Corporation (Standardcookie)
+Beschreibt den Typ des vorhandenen Floppy-Controllers.
+
+C       _FLK    Atari Corporation (Standardcookie)
+Gesetzt: File-Locking verfÅgbar (wird z. B. von MiNT ab Version 0.9
+benutzt).
+
+C       _FPU    Atari Corporation
+Informationen Åber die angeschlossene FPU.
+
+C       _FRB    Atari Corporation
+Zeiger auf Buffer im ST-RAM fÅr DMA-Zugriffe im Fast-RAM.
+
+X       _FSR    Atari Corporation
+FLCNSER 1.0 -- Patchprogramm fÅr Fehler in den TOS-Routinen fÅr die
+seriellen Schnittstellen (benîtigt fuer TOS 4.00..TOS 4.04).
+
+C       _IDT    Atari Corporation
+Datumsformat.
+
+C       _INF    Atari Corporation
+Fix fÅr den Desktop.Inf-Bug im Desktop des TOS 1.06 des STE. In der von
+Karsten Isakovic modifizierten Version mit XBRA. HÑngt sich in den
+GEMDOS-Trap.
+
+C       _MCH    Atari Corporation
+Typ der verwendeten Hardware.
+
+X       _MET    Atari Corporation
+MetaDOS (ab Version 2.2).
+
+C       _NET    Atari Corporation (Standardcookie)
+Typ des verwendeten Netzwerks.
+
+CX      _OOL    Allan Pratt, Atari Corporation
+POOLFIX3, beseitigt ein Problem in der Speicherverwaltung von TOS 1.04 und
+TOS 1.06 (GEMDOS 0.15).
+
+C       _SLM    Atari Corporation
+Wird vom Diablo-Treiber (ab Version 1.4) fÅr die Atari-SLM-Laserdrucker
+gesetzt.
+
+C       _SND    Atari Corporation
+Typ der verwendeten Sound-Hardware.
+
+C       _SWI    Atari Corporation
+Zustand der 'configuration switches'.
+
+C       _VDO    Atari Corporation
+Typ der verwendeten Video-Hardware.
+
+X       60Hz    Jean-Pierre Rasquon
+'60Hz resident'. Schaltet 200 mal pro Sekunde auf 60Hz (Freeware,
+verschiedene Spiele laufen dann trotzdem mit 60 Hz). Verbiegt 200Hz System
+Clock.
+
+X       8*8     Rainer Seitel
+Schriftumschaltung fÅr GEM-Programme.
+
+X       A2sv    Harald Siegmund
+Trapsave. Sorgt dafÅr, daû von den vier Trap Handlern keine CPU-Register
+verÑndert werden (auûer dem RÅckgaberegister D0). Copyrightstatus: Public
+Domain. Bezugsquelle: z.B. Maus KL (0631-17901), ôPT, TRAPSAVE.LZH.
+Vektoren: GEMDOS-Trap, GEM-Trap, BIOS-Trap, XBIOS-Trap.
+
+X       ACCS    Steffen Engel
+ACCS.PRG (PD). Accessories werden aus dem Ordner \ACCS geladen. Verbiegt
+GEMDOS (Fsfirst('\*.ACC')) zweimal, danach Auskettung.
+
+CX      AFnt    Hayo Schmidt
+AES Font Loader, Auto-Ordner-TSR. LÑdt neue IBM- und SMALL-Fonts fÅr das
+AES und paût die rsrc-Routinen des AES an. Cookie enthÑlt Zeiger, der
+Zugriff auf auf Datenstruktur ermîglicht. Verbiegt Trap #1, #2 (AES/VDI)
+und #13. Freeware bis v0.9.
+
+X       AgK0    Marcel Waldvogel
+AusGUCK-"RAM"-Disk.
+
+X       AHVR    Alexander Herzlinger, OverScan GbR
+VRAM (virtuelle Speicherverwaltung fÅr den TT). Verbiegt hdv_rw,
+hdv_bpb, buserror, ikbdsys...
+
+CX      AmAN    Sven Kopacz
+A-MAN verbiegt Vektor 33 (Gemdos) und 34 (AES) und kann die MENU_ID der
+installierten Accessories sowie zusÑtzliche Fensterinformationen unter
+allen Betriebssystemen liefern. Freeware, enthalten in WINCOM, zu finden
+in der Maus@S.
+
+X       AMC1    Arnd Beiûner
+Software zur Monitor-Switchbox von Hard&Soft.
+
+X       AMC2    Arnd Beiûner
+Treibersoftware zum PC-Tastaturinterface von Hard&Soft.
+
+X       ANSe    Borek Lupomesky
+ANSI-Emulation (verbiegt Bconout-Vektor).
+
+C       APGM    Andreas Pietsch
+SysGem (Zusatz zu Sys-Info, zeigt Rechnerdaten an). Shareware.
+
+X       ARTS    Massimo Farina
+ARTSEVNT.PRG. 'TT-Artist' screen saver resident part, by Cybercube
+Research & Massimo Farina.
+
+CX      asGT    Harald Siegmund, adequate systems
+Wacom Graphiktablett-Treiber (als Cookie-ID fÅr alle
+Graphiktablett-Treiber, die dem ASGARD Standard entsprechen). Treiber mit
+Mausemulation und Mausstatuspufferung fÅr Wacom-Graphiktabletts der
+UD-Serie (Wacom II-S und Wacom IV Emulation). Copyrightstatus: Lîhnware.
+Bezugsquelle: as adequate systems GmbH, Am Steinern Kreuz 19, 64297
+Darmstadt. Vektoren: 200 Hz system clock ($114), XBIOS-Trap,
+KBDVBASE.mousevec.
+
+X       ASum    Holger Nassenstein, MW-electronic
+ASUMLENK -- lenkt Bildschirmausgaben von AUTO-Ordner-Programmen auf den
+Drucker um. Verbiegt TRAP #1 und #13.
+
+X       AVOJ    Oliver Joppich
+Anti-Virus-Programm.
+
+X       BASH    Edgar Rîder
+Bourne-Again-Shell der FSF. Umgebogen: shell_p.
+
+CX      BBD2    Michael Maaûen
+Bastel-Bus-Treiber V2.xx. Ermîglicht die Ansteuerung eines Meû- und
+Steuerbus Åber das BIOS. Verbiegt: prv_lst, prv_lsto, xconstat0, xconin0,
+xcostat0, xconout0, trap #13 (Bios).
+
+X       BHdl    Steffen Richter
+BadHandle 1/92, behebt den "ungueltiges Handle" - Fehler diverser
+Programme im Zusammenhang mit GDOS. verbogen: Trap 2 (VDI/AES).
+
+C       BHLP    Thomas Much
+Gibt die BubbleHelp-Verzîgerungszeiten der PurePascal-Library ObjectGEM
+an. Shareware, Bezug: Maus KA (Archiv GOBJ_1xx.ZIP).
+
+CX      BIGS    Julian Reschke, SciLab GmbH
+BigScreen 2, das neue BigScreen fÅr ST, STe und TT (verbiegt Trap 2,
+XBIOS und VBlank).
+
+X       BIOC    Tiemann Bjîrn
+Pirosca, Residenter Druckerspooler mit Hardcopy-Utility.
+
+X       BSIM    Marcel Waldvogel
+BLiTSIM, ein "BLiTTER-Simulator" (hÑngt sich im TRAP #14 ein). Er meldet
+auf eine Blitmode()-Anfrage bloû zurÅck, daû ein Blitter installiert und
+aktiv sei.
+
+X       BUG1    Markus Fritze
+Bugaboo (Debugger).
+
+X       C24P    Cybercube Research Limited
+XBRA-Kennung des CyReL 24Bit-Patch-Programms. Diese Programm verÑndert den
+XBIOS-Vektor and wandelt die True Color Pixel Formate aRGB nach RGBa um.
+
+C       CALD    Walter Hermann
+Wird von HIGH_END (Computer Aided Loudspeaker Design ab Version 4.5) zur
+Laufzeit benutzt, um u.a. Messages mit Modulen auszutauschen. Das Programm
+ist Shareware. Maus M.
+
+X       CatS    Hayo Schmidt
+CatStick, Accessory. Bindet einen Joystick als Eingabemedium fÅr das
+Maustausch-Frontend CAT ein. WÑhrend der Laufzeit von CAT werden die
+IKBD-Vektoren mousevec und joyvec verbogen. Freeware.
+
+C       CaTT    Cybercube Research Ltd, Toronto, Canada
+CyReL Dashboard, CyReL CaTTamaran GIOS. Cookie des CyReL CaTTamaran TT030
+Beschleuniger Moduls. Zeigt auf die Einsprungadresse des CyReL CaTTamaran
+GIOS (General I/O System, siehe CyReL CaTTamaran Developer's
+Documentation). Cybercube Research Limited, 126 Grenadier Crescent,
+Thornhill, Ontario, L4J 7V7, Canada.
+
+X       CB2K    Claus Brod
+Patch zur Behebung des "2KB-Gemdos-Bugs".
+
+X       CBCE    Claus Brod
+Modifizierter Critical-Error-Handler.
+
+X       CBDF    Claus Brod
+`DabbelFeature' (Umlenkung von Laufwerkszugriffen).
+
+X       CBHD    Claus Brod
+Harddisktreiber.
+
+X       CBHY    Claus Brod
+Tastaturtreiber in 'Hyperformat'.
+
+X       CBIT    Guido Sawade
+c't Bus-Interface-Treiber.
+
+X       CCDA    CCD
+Tempus Word 2.0.
+
+X       cdMC    Guenther Leis
+CDROM.XFS >V0.6. Dateisystem fÅr CDROMs unter MiNT/MultiTOS > V0.4.
+Vektor: hdv_mediach. Maus S2. Freeware.
+
+CX      CHAM    Karsten Isakovic
+Accessory zum Nachladen/Entfernen von Accessories.
+
+X       CHTW    Dirk Haun
+Chatwin (universelles Shell-Programm). Verbiegt den xconout-Vektor #2
+(Ausgabeumlenkung in Fenster, auf den Drucker (mit Zeichenwandlung) bzw.
+auf Null-Device). Auf Rechnern ohne DMA-Sound wird auch der Timer-A-Vektor
+verbogen.
+
+X       CISY    Ingo Ciechowski
+CISYSTEM (Ciechowsky Computer Innovations).
+
+X       CKBD    Pascal Fellerich
+COMPOSE (ist Freeware und lÑuft auf allen ST-kompatiblen Rechnern; ist
+ein erweiterter flexibler Tastaturtreiber fÅr Atari-Computer, der es
+erlaubt, beliebige Sonderzeichen zu erzeugen). Features: Erzeugung von
+Sonderzeichen mittels dreier verschiedener Methoden, auswechselbare
+Tabellen. Verbiegt IKBDSYS und ggf. resvector, kcl_hook und bell_hook.
+
+X       CKJR    Julian Reschke
+Installiert einen leeren Cookie Jar (ST-Magazin 3/1990). Verbiegt den
+Reset-Vektor.
+
+CX      CLCK    Sieghard SchÑfer
+Zwei Auto-Ordner-TSR-Utilities fÅr Mega-ST Hardwareuhr oder Online-Anzeige
+der Tastaturprozessor-Uhr in Rechnern ohne Hardware-Uhr. Verbogen wird der
+IKBD-Systemvektor ikbdsys wg. Hotkey. Auûerdem erfolgt ein Cookie- und ein
+VBL-Eintrag.
+
+X       CLK1    Dieter Jankowski
+Utility fÅr MEGA-ST Hardwareuhr.
+
+C       CM16    Cybercube Research Limited
+Dieses Cookie wird von dem CM16_VIP.PRG (CyReL M16 Versatile Installation
+Program) eingetragen, falls eine oder mehrere CyReL M16-1280
+True-Color-Graphikkarte(n) im System installiert ist/sind. Der Cookie
+zeigt dann auf den Anfang der M16-STRUCTure (siehe X M16s). Ist das
+niederwertigste Bit des Pointers gesetzt (zeigt also auf eine UNGERADE
+Adresse) dann wird die M16-STRUCTure gerade von einem anderem
+Programm bearbeitet/verÑndert. Das LSB MUSS vor jedem Zugriff geprÅft und
+mit einer READ/MODIFY/WRITE Instruktion gesetzt werden. Nach der
+Bearbeitung der M16-STRUCTure wird das MSB wieder zurÅckgesetzt.
+
+X       COLO    Meinolf Schneider
+'Colos' (Mono->Color-Converter; Vertrieb ASH).
+
+X       CPSL    Patrick Dubbrow, JÅrgen Heindel
+CapsLock-Anzeige (ab V2.0), von JÅrgen Heindel und Patrick Dubbrow. In
+der Mega ST-Tastatur sind schon alle Vorbereitungen fÅr eine LED, die
+den Status der CapsLock-Taste anzeigt, getroffen. Auch in ST/STE/TT lÑût
+sie sich leicht einbauen. Das Programm installiert eine VBLANK-Routine.
+
+X       CRAC    Protar
+Protar-Festplattentreiber.
+
+CX      CRIT    Thomas Schrîter, Fast Electronic GmbH
+'CRYPT-IT Personal Data Protection fÅr Atari ST/TT', verbiegt die drei
+hdv_-Vektoren.
+
+CX      CSMD    Cybercube Research Limited
+CyReL Serial Mouse Manager. Der Cookie zeigt auf einen Parameterblock im
+residenten Maustreiber, der als eine AUTO-Ordner-Programm geladen wird.
+Der Treiber klinkt sich in die Keyboard-, Mouse-, 200Hz- und
+Reset-Vektoren ein. Zusammen mit dem dazugehîrigen Accessory kînnen
+folgende serielle Muse an jedem seriellen Port des Atari
+(ST/MegaST/STe/MegaSTE/TT030/Falcon030) betrieben werden: Microsoft Mouse
+kompatible EingabegerÑte (Muse, PenMouse, TouchScreen), Mouse System
+Corporation kompatible GerÑte, Summagraphics MM Digitizer sowie
+Summagraphics BitPad II Digitizer sowie kompatible Tablette.
+
+C       CTCH    Edgar Rîder
+Master-Modul catch.mmx (Abfangen von ^C, ^\ und ^Z, Timeouts fÅr
+Programme).
+
+X       CtCp    Jean-Pierre Rasquin
+'Control Caps V1.4'. CapsLock-Anzeige und Sonderfunktionen per
+CTRL-ALT-Tasenkombination (Freeware). Verbiegt IKBD, evt_term, 1 VBL-Slot
+(falls alle belegt, verbiegt letzter Slot per XBRA).
+
+X       CTSF    Lars Erik Osterud
+CTSFIX.PRG -- 'CTS-bug fix'.
+
+CC      cVDI    Cybercube Research Limited
+Dieser Bezeichner wird vom CyReL M16-1280 VDI-Treiber verwendet. Er wird
+im VDI-Trap eingetragen. Das Cookie zeigt auf einen Parameterblock im
+VDI-Treiber, der Informationen Åber die momentane Auflîsung, Modus, Line-A
+Konfiguration u.a. enthÑlt.
+
+CX      DATL    Delirium Arts Alvar Freude & Peter Scherer GbR
+TwiLight - Der Bildschirmschoner. Verbiegt TRAP #1, TRAP #2, 200 Hz
+System Timer, IKBD/MIDI, Resvector, midivec (Kbdvbase), mousevec
+(Kbdvbase), joyvec (Kbdvbase). Vertrieb: DDT Digital Desktop GmbH.
+
+X       DCF7    Sven Kopacz
+DCF77 decodiert die Signale eines Joystickport-FunkuhrempfÑngers. Per
+Accessory frei konfigurierbare MenÅ-Uhr. Verbiegt Kbdvbase->joyvec.
+Freeware, zu finden in der Maus@S.
+
+CX      DEPI    Norbert Marschalleck
+DeskPic (ACC und TSR-Programm) -- Bild als Desktop- und
+Programmhintergrund anmelden. (Vektoren: VDI (ausgewertet wird die Nummer
+114, recfill), BIOS (zwecks Neuinstallation des VDI-Traps z.B. nach Start
+von TOS/TTP-Anwendungen)). Bezugsquelle: Norbert Marschalleck,
+Ehrenpfortensteig 4, W-1000 Berlin 28, Tel.: 030/4042717
+
+CX      DBFX    Julian Reschke
+Patchprogramm, das den Betrieb des Diablo-Emulators unter MiNT 0.96 (und
+neuer) mîglich macht. Wird ab Diablo-Version 1.6 nicht mehr
+benîtigt. Verbiegt die BIOS-Ausgaberoutinen fÅr den Drucker. Freeware.
+
+X       DPRS    Wilfried Cordes
+Druckerbuffer (PD).
+
+X       DRIV    Stefan Hintz
+Drive-Edit (verbiegt die drei Harddisk-Vektoren).
+
+X       DRRH    Dietmar Rabich
+Wodan (Accessory zur Tastaturbelegung).
+
+X       DSSO    David von Stetten
+SOKRATES (Tastaturtreiber, verbiegt den IKBD-Vektor).
+
+X       DYJA    Dimitri Junker
+CCONRS.PRG installiert neue CCONRS-Routine, mit
+Korrekturmîglichkeiten (Cursortasten, Delete, Backspace,...) und
+History-Buffer. Der GEMDOS-Vektor wird verbogen. Das Programm ist Freeware
+Es ist incl. Source in der Maus AC vorhanden.
+
+C       DYNL    Robert Federle
+Kennung des "Dynamic Link Library Driver", mit dem das dynamische Linken
+von Programmen auf dem  Atari unterstÅtzt wird. Status: Freeware.
+Bezugsquelle: noch nicht freigegeben, spÑter Åber div. Mailboxen. Benutzte
+Vektoren: TRAP #9. Achtung: derzeit noch in Entwicklung!
+
+X       EADC    JÅrgen Luers
+Easydisc -- flexible und resetfeste Ramdisk mit vielen Extras.
+
+X       EDFX    Hansi Richstein, Kaktus GbR
+EDPBFIX.PRG -- Patchprogramm zum Betrieb von MS-DOS-ED-Disketten (1 Sektor
+pro Cluster) unter TOS. Freeware.
+
+X       EMNP    Jiri Lamac
+MNP emulator -- software that emulates MNP (without compression).
+
+C       ENVR    Pascal Fellerich
+Programm zum Setzen des Desktop-Environments.
+
+X       ETM     M. Nick
+Entmauser.
+
+X       EXRA    Marcel Waldvogel
+ExtraRAM-Verwaltung fuer die FAFST-Beschleunigerkarte. Herstellung und
+Vertrieb: F. Aschwanden. Vektoren: GEMDOS, BIOS, XBIOS.
+
+X       FALT    Richard Kurz
+FALTOFF (Fixprogramm fÅr ein Problem bei Setscreen() auf MegaSTE's, PD).
+
+X       FAXR    Julian F. Reschke, TKR GmbH
+FaxRedirector -- sorgt fÅr die automatische Umlenkung von
+GDOS-Druckerausgaben auf die FAX-GerÑtenummer. Verbiegt TRAP #2, ist aber
+normalerweise unsichtbar (da der Trap anschlieûend noch vom AES verbogen
+wird). FÅr Tele-Office-Benutzer bei TKR frei erhÑltlich.
+
+X       FHFX    Thomas Binder
+F030HFIX.PRG (Falcon030-GEMDOS-Handle-Fix) fÅr Falcon030. Korrigiert einen
+Fehler im GEMDOS des Falcon, der dazu fÅhrt, daû sÑmtliche Filefunktionen
+nicht mehr mit den negativen Geraetehandles (-3 bis -1) zurechtkommen
+(deswegen kann Gfa-Basic auch nicht mehr drucken). Verbogene Vektoren:
+trap #1.
+
+C       FIX2    Uwe Seimet
+FIX24 (beschrÑnkt 68030-Adressierung auf 24 Bit, verîffentlicht in ST-
+Computer).
+
+X       FLXD    Alex Esser
+Flexdisk (Version 1.4).
+
+CX      FLTP    Patrick Dubbrow
+FlyTop, erlaubt Bestimmung der Position, an der fliegende Dialogboxen
+erscheinen (verbiegt Trap 2 und -- bei Neuinstallierung des Cookie
+Jars -- resvector). Legt VSCR-Cookie an. ST-Magazin 1/92.
+
+CF      FOse    Hayo Schmidt
+Fontselector (ACC oder PRG) mit Zusatzprogramm FOSEINST.PRG (ST-Computer
+PD 430, PD-Pool 2239).
+
+C       FSEL    Standardcookie
+Das Vorhandensein dieses Cookie signalisiert, daû der AES-Aufruf
+'fsel_exinput()' gemacht werden darf (wird von einigen File-Select-Boxen
+gesetzt).
+
+CX      FSER    Franz Sirl
+'Fast_Ser' - Routinen zur Bedienung der seriellen Schnittstelle(n);
+verbiegt MAPTAP- sowie SCC-Vektoren. Freeware.
+
+X       FSmp    Martin Patzel
+Fileselector (PD).
+
+X       GABI    Michael Schwingen
+Gabriele 9009 IFD1-Emulator - Treiber fuer Schreibmaschine an der
+seriellen Schnittstelle (verbesserte Version, Original war mal in
+ST-Computer). Belegt Trap #13 und MFP Int #12.
+
+C       GDEV    Edgar Rîder
+GNU-C Device-Driver. Der Wert ist ein Zeiger auf eine verkettete Liste
+von Device-Records (eine genauere Beschreibung gibt es auf Anfrage), die
+von Programmen beim Start in eine entsprechende interne Liste
+eingehaengt werden. Gemeinsam realisieren sie dann eine dem /dev-Directory
+von Unix entsprechende Sammlung von Geraetetreibern (im Moment verfuegbar:
+/dev/tty, /dev/tty1, /dev/mouse, /dev/null, /dev/lp, weitere Treiber sind
+geplant).
+
+X       GEHC    GE-Soft
+Hotkey-Treiber fÅr Hypercache Turbo+ (verbiegt ikbdsys).
+
+X       GEHD    GE-Soft
+Harddisktreiber.
+
+X       GENV    Julian Reschke
+GEM-Environment-Setter (ST-Magazin 6/1990).
+
+X       Gfix    Thomas Binder
+Gamefix fÅr Falcon030 und davon erzeugte Programme. FÑngt bei aktivierter
+alter Bildschirmadresse den Srealloc-Call ab, allerdings liegt die Routine
+in einem offiziell nicht mehr zugÑnglichen Speicherbereich. Verbogene
+Vektoren: trap #1. Status: Erschienen in ST-Computer 11/93.
+
+CX      GI30    Andreas BÑr
+Gandhi - gibt die zu den Exceptions erhÑltlichen Infos aus, verbiegt
+folgende Vektoren: 2-9, 11, 13, 48-54, 56-58. Cookie zeigt auf eine
+Konfigurations-Struktur. Freeware.
+
+X       GIGA    Roland Alder
+GIGA-BOX St Driver.
+
+X       gkCO    Gerd Knops
+Calamus OberflÑchenmodul ((gkCO): Mausknopfroutine (Åber VDI: vex_butv)
+Mausbewegung (Åber VDI: vex_motv)).
+
+X       gk5"    Gerd Knops
+Treibersoftware fÅr 5.25" HIGH-Density-Drittlaufwerk (hdv_rw, hdv_bpb,
+hdv_mediach, etv_critic).
+
+X       GLAS    Uland TÑffner
+ACC zur Anzeige des freien Speicherplatzes auf den GEMDOS-Laufwerken
+(hÑngt in hdw_rw und TRAP #1).
+
+CX      GMNI    Stefan Eissing & Gereon Steffens
+GEMINI, der Shareware-Desktop.
+
+X       GNUC    Edgar Rîder, Jwahar Bammi
+GNU-CC Libraries (verbogen: alle Traps von Buserror bis Tracetrap,
+kbd_vecs->ikbdsys, VBL, etv_term, etv_timer, resvector).
+
+C       GOBJ    Thomas Much
+Wird von allen Programmen, die mit der PurePascal-Library ObjectGEM
+entwickelt wurden, fÅr eine interne Verkettung zur Verwaltung der
+Instanzen verwendet. Shareware, Bezug: Maus KA (Archiv GOBJ_1xx.ZIP).
+
+X       GOff    Laurenz PrÅûner
+Grow- und Shrinkboxen abschalten (Trap #2).
+
+X       GSP1    Steven van Rossen
+GEM Spooler (erhÑltlich in Maus MS 2 (0251/77262)).
+
+X       GULM    Jwahar Bammi
+GulÑm, Command-Shell (verbiegt: _shell_p).
+
+X       HABO    Julian Reschke
+HaBoo 1.8, Harddiskcache (erstmals verîffentlicht in ST-Magazin 6/1988).
+Hinweis: wird *nicht* mehr unterstÅtzt, Nachfrage zwecklos. Stattdessen
+TOS 1.04 (oder neuer) mit CACHENNN.PRG o. Ñ. benutzen!
+
+X       HAMM    Ingomar Otter  &  Hybrid Arts
+Software zum 'Melody Maker', verbiegt verschiedene Timer-Vektoren.
+
+CX      HBFS    Harald Becker
+BoxKite, residente Dateiauswahlbox. Verbiegt Trap #2 und #13. Shareware.
+Der Wert des Cookies ist die Einsprungadresse des Trap #2-Handlers.
+
+X       HcP6    Michael Schwingen
+Nec-P6-Hardcopy in zwei Groessen, laeuft mit Hyperscreen. Belegt
+Hardcopy-Vektor ($502).
+
+X       HDEY    Borek Lupomesky
+Hard Disc Eye -- lights drive's A: LED whenever harddrive is accessed
+(_hdv_rw).
+
+CX      HDJR    Dieter Jankowski, Julian Reschke, Hard&Soft
+HuSHI -- Hard & Soft Harddisk-Interface (Festplattentreiber).
+
+X       HDLD    Jean-Pierre Rasquin
+'HD-LED' Drive A: LED als HD-LED (Public Domain, dissassembliert und
+Fehler behoben). Verbiegt hdv_rw.
+
+X       HDPR    Roland Scholz
+HDPROTEC (Schreib- & Leseschutzprogramm).
+
+X       HDSW    Oliver Scheel
+HDSWITCH.PRG - High Density Switcher (z.Zt. V1.1). Konfiguration fÅr
+HIDS. Verbiegt scr_dump. öber [LSHIFT][ALT][HELP] wird der Modus
+gewechselt (auto, forced HD, forced DD).
+
+CX      HFIX    Patrick Dubbrow
+Handle-Fix. Sorgt dafÅr, daû bei v_opnvwk() die von den
+Atari-GDOS-Versionen erwÅnschte GerÑtenummer Åbergeben wird (ST-Magazin
+4/92).
+
+X       hFRB    Steffen Engel
+BIOS-Treiber fÅr Rwabs-Transfers ins/aus dem Fast-RAM; fÑngt Rwabs ab, und
+biegt alle Zugriffe auf Fast-RAM durch den FRB hindurch. Nîtig fÅr PAK mit
+Fast-RAM (PD).
+
+X       HIDS    Oliver Scheel
+HIGHDENS.PRG - High Density Disk Driver (z.Zt. V2.0). Verbiegt
+etv_critic, hdv_bpb, hdv_rw, XBIOS. Braucht 1xVBI. Durch
+SchaltungsÑnderung der MAXON-HD-Lîsung ist mit diesem Driver ein (fast)
+nicht bemerkbares High-Density Handling mîglich, insbesondere bei 5
+1/4"-Drives und/oder zwei Laufwerken.
+
+X       HMDU    Thomas Uhl
+Speicherdump fÅr PMD des HM2-Systems, Exception 2-8.
+
+X       HMOC    Andreas Alich
+Object-Cache fÅr HÑnisch-Modula.
+
+X       HMRD    Thomas Uhl
+Runtime-Debugger des HÑnisch-Modula. Folgende Vektoren werden verbogen:
+TRAP 0, 3-12, 15; Exceptionvektor 2-8, VBL-Interrupt.
+
+X       HMRS    Thomas Uhl
+Runtime-System des HM2-Systems, Exception 2-8.
+
+X       HPHC    Martin Wunderli
+Hardcopy fÅr HP Deskjet; verbiegt Hardcopy-Vektor.
+
+X       HPLJ    Robert Federle
+"HP-Laserjet-Emulator V1.04" -- dieses Accessory wandelt die
+Drucker-Steuercodes eines HP-Laserjet-Druckers, die Åber eine GEMDOS- oder
+BIOS-Funktion ausgegeben werden, in eine Raster-Grafik um. Benutzte
+Vektoren: Trap #1, Trap #13.
+
+X       HSCD    Julian Reschke
+MiNT-CDROM-Treiber (Mediachange-Vektor). Kommerzielles Produkt von Hard &
+Soft.
+
+C       HSnd    Richard Kurz
+X       HSND    Richard Kurz
+CrazySounds -- belegt Betriebssystemaktionen, TastendrÅcke usw. mit
+Sampleausgaben. Vektoren: GEMDOS; BIOS; AES/VDI; IKBD/MIDI; Maus
+(KBDVECS.mousevec); bell_hook; kcl_hook; Busfehler; Adressfehler;
+illegaler Befehl; ST-MFP-I13 (Timer A). Vertrieb durch MAXON Computer GmbH.
+
+X       IBMP    Lars Erik Osterud
+IBMPRINT.PRG -- 'Converts norwegian characters to IBM standard printer'.
+
+C       ICFS    Dirk Haun
+ICFS ("Iconify-Server") vergibt Positionen fÅr ikonifizierte Fenster fÅr
+Programme, die ein Iconify auch unter alten TOS-Versionen und Mag!X
+anbieten wollen. Freeware, Bezug: Maus WI2 (Archiv ICFS.LZH).
+
+X       IDSK    Stefan Becker
+ICON-Desk (aus ST-Digital).
+
+X       IMAC    Wilfried Cordes
+Bootsektor-WÑchter (PD).
+
+C       INSJ    Oliver Groeger
+Insjar installiert einen Cookie-Jar oder erweitert einen bereits
+bestehenden. Die fÅnf Standard-Cookies werden eingetragen. _CPU und _FPU
+werden mit den Werten entsprechend der installierten Hardware versorgt.
+Falls ein 68030 Board vorhanden ist, wird _longframe entsprechend gesetzt.
+
+C       INXR    Dietmar PÅttmann/Dietmar Rabich
+Indexgenerator.
+
+CX      iPRN    Peter Missel
+Interrupt-benutzender BIOS-Handler fÅr GerÑt PRN. Beschleunigt die
+Druckausgabe bei Programmen, die Åber GEMDOS oder BIOS drucken, sowie den
+Bildschirmausdruck Åber Alternate-Help. Eliminiert die Gedenkminute bei
+ausgeschaltetem Drucker sowie das MÅllbyte beim Reset. Der Cookie enthÑlt
+einen Zeiger auf Konfigurationsvariablen. Verbiegt den BIOS-Trap,
+prv-lsto, prv-lst, xcostat0, xconout0 und resvector (alle mit XBRA).
+Aktiviert und benutzt MFP-Interrupt I0. Freeware bis 0.99, danach
+Shareware. Kontakt: Peter_Missel@m4.maus.de
+
+X       IRSB    Ilja Rateiczak
+Das Shareware Programm VBL_BRIX.PRG verbiegt den Autovektor-Interrupt,
+Level 4, um die Umschaltung der Shutter eine SEGA Shutterbrille im VBL zu
+ermîglichen.
+
+C       J_Sc   John McLoud
+SECURE.PRG, stellt einen Zeiger zu VerfÅgung, der von JML-Snapshot
+benutzt wird. SECURE ist Bestandteil des JML-Snapshotpakets, aber Freeware.
+
+X       JAM1    Pascal Fellerich
+'Butler James'. Verbogene Vektoren sind hdv_rw, hdv_bpb, Trap #1, Trap
+#14, scrdump, MouseVec, IKBDsys. Auûerdem wird ein VBL-Slot belegt.
+Bezugsquelle: div. Mailboxen, oder direkt beim Autor (-> siehe ST-Magazin
+2/90).
+
+X       JCNB    Jens C. Neffe
+JCNBOOT (mausbedienbarer Bootselektor (Auto, Acc, Setups)). Eventuell
+Verbogen: mousevec, etv_term, exec_os, resvector.
+
+X       JCNC    Jens C. Neffe
+Kontrollfeld (little multi ACC). Verbogen etv_term, $114, mousevec,
+kbdsys und vielleicht in Zukunft clockvec.
+
+X       JCNH    Jens C. Neffe
+Hardcopyprogramm. Verbogen $100.
+
+X       JCNT    Jens C. Neffe
+Textverarbeitungsprogramm von Jens C. Neffe, Name COCTEAU (kann sich
+noch Ñndern). Verbogen etv_term.
+
+CX      JFTP    Jan-Hinrich Fessel
+SCSI-Treiber fÅr generische BandgerÑte. Kompatibel zu Paul Moreaus
+Tape-Driver, in Basisfunktionen auch zu Alan Houriane's Kopie. Treiber fÅr
+MiNT. Vektoren: BIOS wird bei Versionen < 2.0 erweitert. Aktuelle Version:
+1.4 :-). Vertrieb: Shareware/Beta-Releases. Versionen > 2.0 evtl. mit
+MultiTOS.
+
+CX      JMLS    John McLoud
+JML_SNAP, ein Snapshotprogramm fÅr alle Auflîsungen in 2/4/16/256 Farben
+im Palette-Modus sowie 15/16/24/32 Bit im Direct-Color-Modus. Der Cookie
+zeigt auf eine Programmierschnittstelle. Verbogene Vektoren: scr_dump
+
+X       JSHD    JÅrgen Stessun
+Hyper-Density Kontrollprogramm (ST-Computer 7/1989).
+
+X       JUST    Robert Irrgang, Trillian Computer AG
+'Justify'. Registriert alle Programm- und deren Datei-Aufrufe und
+sichert diese. Diese Informationen kînnen dann ausgewertet werden.
+Verbogen: GEMDOS-Trap.
+
+X       KbEv    Michael Seyfried
+Keyboard-Handling-Modul fÅr MM2.
+
+X       KIDI    Robert Irrgang
+Ramdisk.
+
+X       KREG    Julian F. Reschke
+KillRegisters -- hÑngt im GEMDOS-Trap und zerstîrt die Register
+A0/A1/A2/D1/D2 (Freeware, killregs.zoo, zB in Maus MS2)
+
+X       KyMp    Eric Smith
+Keyboard Macro & Remapping Utility (verbogene Vektoren: kbdvbase->ikbdsys
+und etv_timer). Public Domain.
+
+X       LACY    Oliver Michalak
+LAZy-Shell-III -- verbiegt TRAP1, TRAP13, GEMDOS. Sonderdisk bei MAXON
+Computer GmbH.
+
+X       LALA    Laurenz PrÅûner
+ALBOLALA! Modul zum Abspielen von Samples via bell_hook (ST-Magazin 1/92).
+
+X       LASB    Klaus Garms, DMC
+Laserbrain, Epson-Emulator fÅr Atari-SLM-Laserdrucker (BIOS-Trap,
+GEMDOS-Trap, Hardcopy-Vektor).
+
+CX      LAWC    Robert Federle
+'Look-Ahead-Write-Cache V1.10' -- dieses Cache-Utility setzt zum Lesen
+von Sektoren das Look-Ahead-Verfahren und zum Schreiben einen Write-Cache
+ein. Benutzte Vektoren: hdv_rw.
+
+CX      LEDP    Christoph Zwerschke
+LED-Panel, zeigt Harddisk-Zugriffe und anderes auf dem Bildschirm an.
+Version 2.4 (31.1.94), PD. öber XBRA verbogen: hdv_rw.
+
+X       LLCR    Logilex
+1st_lock (hdv-Vektoren).
+
+X       LoSe    Markus Kohm
+Protokolliert Ausgaben von und an das Modem. VerÑndert xconin und xconout
+fÅr AUX.
+
+X       LPCD    Laurenz PrÅûner
+Carrier-Detector.
+
+X       LPJM    Laurenz PrÅûner
+Joy-Mouse (ST-Magazin 7/89).
+
+X       LP/2    Laurenz PrÅûner
+Malloc/2, Gemdos-Vektor, vorgestellt im ST-Magazin 3/91.
+
+CX      LTMF    Oliver Scheel
+LETEMFLY.PRG bzw. LET_LGHT.PRG - Let 'em Fly! Verbiegt: TRAP #2
+(AES/VDI), TRAP #13 (BIOS). Ersetzt/erweitert fast alle form_xxxx
+Routinen des AES. Dadurch sind jetzt viele Dialoge a) flugfÑhig, b) Åber
+die Tastatur zu bedienen und c) bei Edit-Feldern mit zusÑtzlichen
+Funktionen ausgestattet. Weiterhin wird Åber den Cookie-Jar eine
+Flugroutine fÅr non-form_do() Dialoge bereitgestellt. Status: Freeware.
+
+X       M16s    Cybercube Research Limited
+Bezeichnet den Start der CyReL M16 STRUCTure. Ein residenter
+Datenblock, der die I/O-Vektoren und Hardwareadressen der CyReL M16-1280
+True-Color-Graphikkarten enthÑlt (max. 4 pro System). Wenn das CyReL GIOS
+(General IO System) installiert ist, wird diese XBRA-Kennung auch im
+BIOS-, XBIOS- und GEMDOS-Vektor eingetragen.
+
+X       M16X    Cybercube Research Limited
+CyReL M16 XBIOS-Emulator. Wird im XBIOS-Vektor eingetragen.
+
+CX      macc    Ken Badertscher, Atari Corporation
+MACCEL 3.3 (verbiegt MFP rec. buffer full, mousevec, ikbdsys). Der
+Cookie hat einen anderen (nicht druckbaren) Wert (nÑmlich $00AA006E).
+
+C       MADN    Robert Federle
+NEX-Output, AUTO-Ordner-TSR. Der Cookie enthÑlt die Adresse einer
+Funktion, die zum öbertragen von Daten inkl. Steuercodes Åber die serielle
+Schnittstelle respektive auf die Console zustÑndig ist. NEX-Output ist nur
+im NEX-Paket enthalten und unterliegt damit dem gleichen Status.
+Bezugsquelle fÅr NEX (Shareware) und Anfragen bzgl. NEX: Franz Blaha,
+TUMA-Box Kînigsbrunn (08231-87787)
+
+C       MagC    Dirk Steins
+Konfiguration der MagicDials fÅr CAT und CatPutz und andere
+Magic-Programme, die den Cookie unterstÅtzen. Konfiguriert werden kann die
+FlugfÑhigkeit, die Tastaturbedienung, das Aussehen der Alertboxen usw.
+
+C       MagX    Sven&Wilfried Behne, Andreas Kromke
+MagIC (multitaskingfÑhiges Betriebssystem fÅr ST- und STE-Modelle).
+
+C       MADD    Uwe Seimet
+ADDMEM (Nutzung des TT-RAM trotz 24-Bit-Adressierung, verîffentlicht in
+ST-Computer).
+
+X       MAST    Naumann&Rîder
+Master (verbogen: Buserror, Trap #1, Trap #13, etv_critic, etv_term,
+_shell_p, resvector (old_resvalid steht direct vor dem 'XBRA')).
+
+CX      MBRD     Michael Maaûen
+Blit_RD: Ramdisk, die -- wenn vorhanden -- den Blitter benutzt. Verbiegt
+die drei hdv_... Vektoren.
+
+CX      MDIA    Helmut Neukirchen
+MultiDialog, befîrdert beliebige Dialoge in Fenster. Verbiegt: TRAP #2
+(AES), TRAP #13 (BIOS), etv_term (GEMDOS-Vektor #258). Cookie-Jar enthÑlt
+Zeiger auf diverse Informationen. Freeware, MAUS KR
+
+X       MDRK    Steffen Engel
+MegaDark -- Bilschirmschoner fÅr die MegaVision300-Grafikkarte ein Slot in
+der vbl-queue, ikbdsys und InitMouse (Sang Support-Mailbox).
+
+X       MFFM    Markus Haebler
+Mfsfm -- Marcus' file selector for MiNT. Verbogene Vektoren: GEM/VDI-Trap,
+BIOS-Trap. Status: Shareware.
+
+X       MFIX    Thomas Binder
+MONOFIX.PRG fÅr Falcon 030. Setzt, wenn ein SM124/44/46 angeschlossen ist,
+die Systemvariable $44c auf den korrekten Wert 2 (Maccel schont dann
+richtig) und Ñndert die Palettengrîûe im VDI work_out-Feld ebenfalls auf
+2. Damit funktionieren einige Ñltere Programme, die vorher meinten, sie
+liefen nicht in ST-hoch, wieder. Verbogene Vektoren: trap #2.
+
+CX      MFNT    Hayo Schmidt
+Fontloader-Accessory oder Programm mit Zusatzprogramm MFNTINST.PRG
+(PD-Pool 2240).
+
+CX      MGEM    Pascal Merle
+Multi-GEM (Maxon GmbH).
+
+X       MID3    Lars Erik Osterud
+MIDINET3.PRG -- 'Resident MidiNet terminal (for use with MiniBBS)'.
+
+X       MIMA    Oliver Scheel
+MIDIMAN.PRG/ACC - MIDI-Manager (z.Zt V1.0û) (verbiegt: midisys, klinkt
+aus: midivec, braucht: 1xVBI). Ein MIDI-Utility, welches es erlaubt,
+SysEx-Daten auszutauschen, einen MIDI-Monitor, ein MIDI-Keyboard, einen
+MIDI-Filter und latÅrlich MIDI-Thru enthÑlt.
+(in

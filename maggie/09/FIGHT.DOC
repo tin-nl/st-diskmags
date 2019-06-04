@@ -1,0 +1,566 @@
+
+ ******************************************************************
+* THIS IS A VERY STRANGE PIECE OF TEXT THAT I FOUND ON MY FINAL  * 
+* FIGHT DISK. IT SERVES ABSOLUTELY NO PURPOSE, BUT THERE IS ALOT * 
+* OF VALUABLE INFORMATION STORED IN IT! I HOPE MR APLIN DOESN'T  *
+* MIND THIS BEING USED. HE SHOULDN'T HAVE PUT IT ON THE DISK IF  *
+* HE DIDN'T WANT PEOPLE TO READ IT, SHOULD HE!? O.K. HAVE FUN    *
+* FOLKS!                                                         *
+*                                                                *
+*                        ALL THE BEST,                           *
+*                                                                *
+*                             ALAN JOHNSTONE                     *
+*                                                                *
+******************************************************************
+
+                                Final Fight
+                               -===========-
+                              ½1991 U.S. Gold
+
+              Written for Creative Materials by Richard Aplin
+                        (Started 10th January 1991)
+
+Ok. Remember Line Of Fire? Here we go again, crackers! Fill in the 
+blanks:
+
+type (Loads of pointless ANSI codes and whizzy animated bits)
+_____ of _____ presents the latest in Hot Warez..
+
+Final Fight +++++++++++++++++++++++++++++++++++++++++++++++ 14925%!
+
+Cracked, Trained and Nobbed-Up by the amazing _______!!!
+
+Call our UK HQ on ____-______ for 1.4Tetrabytes of warez stored on 
+Sinclair Microdrive, on-line 25hrs a minute, 75-19.2Gigabaud.
+
+Hot Greets to Taz,Faz,Gaz,Baz,Haz,Kaz,Waz and Saz!! Limp Armwavings 
+to HumungousBigPenisSubstitute of The UtterlyInanelyNamedCrew!!
+
+Look mum! I can use SEKA, TETRAPACK and DMS! (Next week I'm learning 
+bowel control)
+
+(I've got a mate who can do fantastically dull psuedo house music on 
+NoiseTracker, and another mate is really amazing at doing 
+uninteresting bas-relief metallic logos on Dpaint - We're going to 
+call ourselves WetDream Design, and do a game for Psygnosis and 
+they'll pay us œ7500000 and we'll get our photos ridiculed in Zero 
+and then we're going to do Soopa Fannycon games and charge more than 
+the national debt of Brazil and after that it's virtual reality and 
+I actually SAW Andrew Braybrook at the PC Show and he actually SPOKE 
+to me and we had this really good conversation and I told him all
+about how crap Rainbow Islands is and how he should have written it 
+using Seka and used hardware sprites for the scrolling background 
+and when I asked him why he left out the bit on the arcade machine 
+when you first turn it on and some gliched graphics come up for a
+thirtieth of a second - which really contributes to the gameplay - 
+ he said 'Why don't you shut the f**k up and leave me alone, you 
+irritating little t*at' and I knew he was just saying that cos he 
+knew I was right and how much better than him I am and I bet he's 
+never written a parallax sprite starfield sine scrolly bob demo 
+with soundtracker music in his life and I bet he wouldn't even know 
+how and he's rubbish anyway you know I actually saw one BNE in his 
+code that could have been a BNE.S and I nearly wet myself I mean how 
+can he call himself a programmer when he obviously isn't nearly as 
+good as me.. etc,etc,etc,etc,etc)
+
+Anyway I must go now as my mum says my rusks are getting soggy... 
+CUL8RAIGWNGIS DUDES!"
+
+Intro by HugeRedPorkSword of The TotulAnihilashunAndDeth2Evreywun(sic) 
+Crew
+
+P.S. When I grow up I want to be a British Rail guard
+
+
+
+Totally_Naff_Intro_With_Some_Filled_Polygon_Graphics_That_Rotate_
+Around_Their_Own_Axies_Cos_I_Dont_Have_A_Clue_How_The_Code_Works_As_
+I_Got_It_Off_My_Mate_In_Sweden
+
+Pointless_And_Really_Badly_Bugged_Trainer_Options_With_OH_MY_GOD_Not_
+ANOTHER_Parallax_Starfield_And_Sine_Scrolly_Message_If_I_Ever_See_
+Another_One_I'm_Going_To_Leave_The_Country_And_Become_A_Trappist_
+Monk_In_Tibet_Mind_You_That_Wouldn't_Be_A_Very_Good_Idea_Now_The_
+Chinese_Have_Invaded_Ah_Well_Maybe_Just_Suicide_Or_Even_
+DemoWriterIcide_Is_The_Answer
+
+Pitifully_Badly_Cracked_Version_Of_The_Game_That_Only_Runs_With_An_
+A501_Insider_Ram_Board_On_My_Computer_And_Anyway_The_Fileloader_I_
+Got_Out_Of_Amiga_Disk_Drives_Inside_And_Out_Has_The_Headstep_Delay_
+Set_Much_Too_Fast_So_It_Crashes_All_The_Time_And_Even_Then_It_Uses_A
+_Software_Timing_Loop_So_It_Won't_Work_On_Faster_Processors_Sometimes
+_I_Really_Don't_Know_Why_You_Lot_Bother_I_Really_Don't
+
+Oh_Shit_It's_Guru'd_Ah_Well_What_Do_You_Expect_Your_Amiga_Has_The_
+Wrong_Colour_Fat_Agnus_Chip_And_The_Power_Light_Is_Too_Bright_And_
+The_Drive_Makes_The_Wrong_Pitched_Clicking_Noise_It_Works_Alright_
+On_My_T.V._Honest
+
+Reset
+
+Right, that (to quote my Line Of Fire Startup-Sequence) is that over 
+with!
+
+******************************************************************
+* You May Not Read Further If You Are Under 14 or Have A Datel   *
+* Action Replay Mk.I (The Mk.II one's ok cos the software's much *
+* better)                                                        *
+******************************************************************
+
+ Yes kids, It's *PROGRAMMER'S EGO* time!
+
+Other games I've written: (the list gets longer!)
+Double Dragon I (Amiga,ST,Amstrad CPC)
+Double Dragon II (Amiga,ST,Amstrad) (Aargh! Endless beat-em-ups!)
+Shinobi (Amstrad)
+Block Racer (Amiga,ST)
+ESWAT (Spectrum!)
+Line Of Fire (Amiga,ST)
+Rotox (Amiga,ST)
+Fly Spy (Amstrad)
+The Islands of Dr.Destructo (64)
+U.C.M. (64) (barf)
+
+Utilities,etc:
+Zap (Amiga)
+Cyclone (Amiga)
+TimeWarp turbo loader (Amstrad)
+Invade-a-load (64)
++various other bits'n'pieces & in-house stuff.
+
+
+Right, that's the programography over with, now the customary 
+rubbish that I sometimes put in the startup-sequence to amuse you 
+pirates before you get down to the 5-minute job of cracking the game 
+(see also Line of Fire!)
+
+Incidentally, I gave up protecting games seriously after I spent a 
+week doing the protection for Shinobi and Double Dragon II on the 
+Amiga, which was (and I say so myself), pretty bloody good.. even if 
+Weetabix did eventually crack DD2 (by  the way, I never did find out 
+how long it took you!)
+
+The way I look at it, the better the protection, the greater the 
+challenge, and although it would be fun if protection could adapt 
+itself to what the cracker is doing (like a game of chess), as it is 
+the whole game is a bit one-sided. I mean, whatever I do for 
+protection, once I've done it, it's cast in stone, and as it is 
+impossible to cover every one of the bizarre things you lot will try, 
+eventually a game will get cracked, so why bother in the first place?  
+I don't agree with piracy, but as in-game protection is just 
+providing you lot with some amusement over a boring weekend, I don't 
+bother much any more..
+
+I daresay some people still think that it's possible to do 'pirate-
+proof' protection, but personally, after DD2 (which really did have 
+some bloody neat ideas in it), I don't!
+
+Another problem is that when I do a really neat disk format, that, 
+say, gives you 6.5k a track and is well hard to copy, the *$#?**!ing 
+duplicators can't duplicate it!  Kind of defeats the object really!
+
+Any road up, on this game I'm reasonably pleased with the interrupt-
+driven disk loader; everyone else did it ages ago - so did I, but 
+ that sort of loading is not really suitable for most types of games:  
+you need dynamic memory-allocation and multi-tasking uncrunch routines 
+for a start, and then you run into all sorts of problems with ram 
+fragmentation, and eventually you end up spending more time sorting 
+out the problems caused by the system than it solves, but I thought I 
+might as well use it in Final Fight, just so that Ronald McDonald at 
+the Sales Curve would shut up! (Sorry Ronald!)
+
+Oh yeah.. the real-time x/y-flipping and decompressing sprite-routine 
+is alright too.. but a tad slow. Ah well, the Line of Fire real-time 
+scaling sprite routine was slightly neat as well, and look how slow 
+that game was!
+
+The main problem with this game is the amount of time & memory used 
+up by all the massive sprites.. I ripped all the graphics out of the 
+arcade board's roms, and I really didn't want to have to shrink them 
+or anything, so we end up with what you see here..  bloody huge 
+sprites!
+
+Tum te tum.. what next..? I know! It's..
+
+                        The arcade machine's specs:
+
+(The standard CapCom board- as used on everything from Ghouls'n'Ghosts
+to Strider and Dynasty Wars)
+
+68000 running at about 10Mhz
+Z80 driving the sound chip (standard Yamaha 6-voice FM chip) and 
+sample-playback hardware
+1.5Mb of program and data roms (aargh!)
+2Mb of sprite & character graphic roms (double aargh!) - there's space 
+on the board for 16Mb!
+256k of sample/music rom
+Triple playfield screen, with a rather interesting method of 
+displaying data (see later)
+Loads of 128x128 hardware sprites with hardware X & Y flipping (bog 
+standard)
+64k of video ram
+64k of processor ram
+
+The screen displays are quite interesting.. the 3 overlayed 
+playfields are made up differently.. but they are all character-
+mapped, not bitmapped. Naturally they all have independant hardware 
+scroll! There's also no practical limit on the number of characters 
+you can access at any one time with a screen - all the character map 
+screens use 16-bit character numbers!
+
+Playfield 1:
+
+  The back parallax layer consists of 32x32 character blocks, with 
+  each block having a selectable pallette (of 16 colours) from a set 
+  of 32 different pallettes.. (that's up to 512 colours on this 
+  screen alone!) 
+
+ Playfield 2:
+
+  The main playing area.. Uses 16x16 character blocks, each with a 16 
+  colour pallette selected from another bank of 32!
+
+Playfield 3:
+
+  The top layer for scores, text,etc. Uses 8x8 characters, 16 colours, 
+  from yet another bank of 16 pallettes.
+
+All characters can be individually X and Y flipped, and the playfield 
+2 characters can be set to appear in front of or behind (or both) any
+sprites!
+
+Each sprite is up to 128x128 pixels, and is character mapped too!  
+Only 16 colours in any one sprite, but the sprite pallette is 
+selected from yet another set of 32 different ones! Naturally, the 
+sprite can be flipped in either direction by just setting a bit!  I 
+don't know how many sprites you get, but I suspect 64!
+
+Right, so that gives you a grand total of 1280 colours on screen, not
+counting the sprites, without even using raster-splits!  Don't you 
+just want to BURN your Amiga?
+
+Can you believe what you could do with this board? EVERYTHING is done 
+in hardware, and you've got a 10Mhz 68000 just do change a few 
+registers with! It doesn't even have to drive the sound chip..  the 
+Z80 does that!
+
+(This board is considered to be old technology and is not really used 
+by Capcom much any more!!)
+
+...Can I have one for Christmas, Santa?
+
+If you think that's good.. you should have seen the hardware on Line 
+Of Fire that I converted before! Two 12Mhz 68000s and a Z80 all co-
+processing!
+
+Oh yeah, if any other companies want to hire me to extract graphics 
+and data from arcade boards they're converting, get in touch..
+
+Ah well, back to the real world..
+
+(Short bit about me, 'cos I wrote this game and I feel like it!) :-
+
+I'm 21, tall, and with boundless enthusiasm (and far less talent) for 
+music, playing pool and drinking alcohol... oh yeah.. I'm half 
+Australian too (not that that helps!)
+
+Written in my slum at our Bristol office, on a meagre:
+A500 with 2.5mb, A590, Cygnus ED, Genim2 and DPaint3 (ArgAsm's bugged 
+to hell!)
+A500 with 1mb (to download to)
+Poxy 1040ST in the corner covered in junk
+ Comfy chair (noooooobody expects the Spanish Inquisition!)
+Loud stereo & millions of albums
+Video Walkman (+ all of BlackAdder II/III/IV & the Young Ones)
+GameBoy (with Tetris superglued into it)
+U.S. Robotics HST 9600 baud modem (for rapping with the artists in 
+Whitby!)
+Final Fight board (connected to crappy joystick and Commodore 
+monitor!)
+Some custom rom-reading hardware
+Filter coffee machine, Microwave and endless copies of The 
+Independent.
+
+..That's it! No PDS, no SNASM, no nothing! C'est la vie!
+
+For light relief at my flat, I've wasted huge amounts of money on;
+Amiga A1000+2mb etc,etc
+Casio FZ1 sampler
+Roland D110 synth
+Korg M1R synth
+Cheetah MS6 analogue synth (and MkV II keyboard gathering dust)
+Alesis Quadraverb digital effects processor (hours of fun!)
+Alesis SR16 drum machine
+Yamaha TX7 synth
+Desktech 8-Channel mixer (now redundant)
+Fender Strat (cheapo clone) guitar
+CryBaby WahWah pedal (so I can sound like all the other crappy 
+Manchester bands!)
+A couple of el cheapo distortion/compression pedals
+Fostex B16 16-track reel-to-reel tape recorder (wooo!)
+SoundTracks 16:8:16 mixer (double woo!)
+Yamaha FSK sync converter (crappy - not even SMPTE compatible!)
+...and no, you can't come round and burgle me!
+
+Actually, the CDTV has just come out, and does look rather sexy (I 
+saw a preview at the Software Developer's Conf. in Bournemouth a while 
+back, and it was well impressive) - maybe that's next on the 
+'expensive toys' list..?
+
+Right, that's that over with!
+
+Now.. the Musicography!
+Music that contributed to the writing of this game... 
+(I've got pretty varied tastes!)
+
+KLF - The White Room/Chill Out/Space/1987 What The F*** Is Going On
+      Shag Times/Who Killed The Jams (MU MU!)
+
+The Smiths - The World Won't Listen/Hatful of Hollow/Strangeways, 
+             here we come/Louder Than Bombs (All absolutely fab)
+
+Pink Floyd - The Wall/Wish You Were Here/Dark Side of the Moon/
+             Momentary Lapse Of Reason
+
+Roger Waters - Radio KAOS/The Pros and Cons of Hitchiking
+ 
+The Cure - Standing on the beach/Head on the Door/Kiss Me,Kiss Me,
+           Kiss Me/Disintegration
+
+Pet Shop Boys - Please/Introspective/Disco/Actually/Behaviour 
+                (<-*Beautiful* chord progressions on the last two 
+                songs)
+
+Public Enemy - Yo! Bum Rush the Show!/Fear of a Black Planet
+
+Inxs - Kick/Listen Like Thieves
+
+Prince - LoveSexy/Grafitti Bridge/Purple Rain/Sign Of The Times/Round 
+         The World In A Day
+
+Propaganda - A Secret Wish/1 2 3 4 (Yeaaah! Mucho underrated)
+
+Thomas Dolby  - The Flat Earth/Aliens Ate My Buick
+
+The Shamen - EnTact/In Gorbachev We Trust
+
+Tracy Chapman - T.C./Crossroads
+
+Thompson Twins - Quick Step and Side Kick/Into The Gap
+
+Happy Mondays - Pills, Thrills'n'Bellyaches
+
+Cameo - Word Up/She's Strange
+
+Heaven 17 - How Men Are/The Luxury Gap/Penthouse and Pavement
+
+The Beloved - Happiness/Blissed Out
+
+Depeche Mode - Violator (I just rediscovered them!)
+
+*The The* - Soul Mining/Infected/Mind Bomb (Totally my favourite! 
+            Bloody brilliant!!)
+
+James Brown - The Great J.B. (Get on up!)
+
+Peter Gabriel - So/Shaking the Tree
+
+They Might Be Giants - Flood/T.M.B.G. (Prosthetic Foreheads?)
+
+Grace Jones - Island Life (Pull up to the bumper? Obscene!)
+
+Jean Michel Jarre - Zoolook/Oxygene/Rendezvous
+
+Neneh Cherry - Raw Like Sushi
+
+Squeeze - The Singles
+
+Genesis - Duke/Invisible Touch/Genesis (Invisible Touch is still 
+          totally adult MOR stuff)
+ 
+Motorhead - The Ace Of Spades
+
+The HouseMartins - London 0 Hull 4/The People Who Grinned Themselves 
+                   to Death
+
+The Beautiful South - The Beautiful South/Choke
+
+The Police - The Singles/Regatta De Blanc/Ghosts in the Machine
+
+Talking Heads - Fear of Music/Little Creatures/True Stories/More 
+                Songs About Buildings & Food
+
+Talk Talk - Spirit of Eden/Natural History/The Party's Over (Love 
+            that tortured harmonica!)
+
+Orchestral Manoeuvres in the Dark - The Best of OMD/That other 
+                                    compilation with 'White Trash' 
+                                    on
+
+Simple Minds - New Gold Dream/Street Fighting Years/Once Upon a Time 
+               (Pretentious, but I'm a sucker for Trevor Horn 
+               production)
+
+Bassomatic - Set the Controls for the Heart of the Bass (You don't 
+             want MY brain!)
+
+Frankie Goes To Hollywood - Welcome to the Pleasure Dome
+
+Erasure - Wonderland/The Circus (Plinketty plonk, Vince)
+
+Alison Moyet - Alf
+
+Roachford - Roachford
+
+The Beatles - Sgt. Pepper's (how many holes in Blackburn, 
+              Lancashire?)
+
+Bruce Hornsby and the Range - The way it is (Tinkle those ivories!)
+
+T'Pau - Bridge of Spies
+
+Betty Boo - Boomania
+
+ABC - Lexicon of Love/How to be a Zillionaire
+
+Father Barabus & The Butcher Monks - Live at the Lightship/F.B.B.M. 
+                                     ('Cos he's Ken, Ken, Ken and he 
+                                     ain't got no mates!)
+
+The Orb - The Orb's Adventures Beyond The Ultraworld
+
+The Proclaimers - Sunshine on Leith
+
+ New Order - Substance/Technique (Featuring "New Order Standard 
+            Guitar Sound(TM)")
+
+Electribe 101 - Electribal Memories
+
+Bronski Beat - The Age of Consent (Slam your goolies in a drawer 
+               and SING!)
+
+Jimi Hendrix - Electric Ladyland/Best Of..
+
+Marillion - Clutching at Straws/Misplaced Childhood (Uzis on the 
+            street corner? I ASK you!)
+
+Mike And The Mechanics - Living Years/M.A.T.M.
+
+The Boomtown Rats - Mondo Bongo/The Fine Art Of Surfacing
+
+Terence Trent D'Arby - Introducing the hardline..
+
+S'Express - Original Soundtrack
+
+Tears For Fears - Songs from the Big Chair/Sowing the Seeds of Love
+
+Steve Winwood - Back In The High Life/Arc Of A Diver
+
+Dire Straits - Brothers in Arms/Making Movies/Love Over Gold/Alchemy
+
+UB40 - The Best Of UB40 (Even if it does all sound the same)
+
+B52's - Cosmic Thing/Rock Lobster
+
+Suzanne Vega - Solitude Standing
+
+Massive - Blue Lines (From Bristol - Yeeeeeeah!)
+
+Bomb The Bass - Enter The Dragon
+
+Seal - Seal (pretty good.. but then I'm a sucker for Trevor Horn's 
+            production!)
+
+R.E.M. - Out Of Time
+
+Electronic - Electronic (BLOODY EXCELLENT!)
+
+Don Henley - Building the Perfect Beast/The End of The Innocence
+
+Soft Cell - Non Stop Exotic Cabaret (Goooooood!)
+
+Hothouse Flowers - People
+
+E.M.F. - Schubert Dip (Hmmmm)
+
+Eurythmics - Be Yourself Tonight/Sweet Dreams/We Two Are One/Revenge
+
+ ....As I said, pretty varied!
+
+And also some tapes supplied by my mate Alex (and ratings)..
+(There you are Alex! Your official mention!)
+
+Tackhead - Strange Things (Funky.. but still.. 6/10)
+
+Che - Narcotic (Wooo! Pretty sample-y, but melodic.. 8/10)
+
+The Shamen - In Gorbachev We Trust (Hmmm.. A bit tiring.. 5/10)
+
+P.I.L. - Second Edition (Never really liked P.I.L... 4/10)
+
+
+Anyway, greetings go to:
+Del at Codemasters, Kris at Argonaut, Charlie, Tim C. and Tim M., 
+Paul D. and Paul 'Hadaway!', Steve H., Nick V.,Andy S. and Andy H., 
+Pat, Maria, Mike H., Alan B., The Bitmaps, J.M.P., Bob, Nadeem, Dan 
+Dan The SineScroll Man, Alex, Spex, Jim, Adrian Stephens, Ricardo 
+Pinto and the rest of the Assembly Line, Joby, James, Cash and Rob, 
+D.M.L., Mike Day .. ..  ..
+...and thingy (your name's slipped my mind - you know who you are!)
+.....and finally, all the various crowd I know from parties, shows,
+etc,etc!
+
+Dubious substances (and late-night parties) supplied by JW Inc!
+
+Ha ha! Neil Tennant's going GREY! I've just seen an interview in NME, 
+and he is looking a tad oldish - never mind, amazing music 
+nonetheless. I'm seeing the PSBs live at the NEC soon, and if this 
+game is still under development then, I'll give you an update.
+
+* (- 11th June - Yep! Saw them last monday in Birmingham!
+  Were they good? - Is the Pope Catholic? The best live show I've 
+  ever seen!)
+
+Hey! I've just been mugged! (21st May) Some b**tard came up behind me
+when I was coming home from a club last night and hit me over the head
+bloody hard with something - I don't know what, I was do busy being 
+knocked unconcious. I woke up in the gutter some time later, in a pool 
+of blood (mine) with some nice police lady calling me an ambulance (I 
+don't know why, my name is Richard, after all - ho ho ho). After about 
+6 stiches in my head courtesy of the Bristol Royal Infirmary (and a 
+tetanus jab), all I have to show for my night of fun is a small bald 
+patch with blue stiches in on the back of my head, and the most 
+amazingly coloured bruises you have ever seen. Who says you can't have 
+fun in Bristol any more? Anyway, thanks to the nice police woman and 
+the staff of the B.R.I. in casualty that night, and no bloody thanks 
+at all to whoever hit me!
+
+Oh yeah - Hi to all the plebs who crowd into the Virgin Games Centre 
+in Bristol every Saturday morning and consistently refuse to 
+recognise me or Tim, even when we talk loudly about all the games we 
+have written!!!!
+ 
+- hellos also to the regulars at the White Hart (+nice student barmaid)
+and Sportsman pubs in Bristol!
+
+Ah well, it looks like I'll be doing some Super Famicon, MegaDrive, 
+or Master System work now, if our SNASM system ever turns up!!
+
+By the way, hope you like the cheat mode! (very silly)
+
+See you on the next one! Byeeeeeeeeeeeeeeeeeeeeee!
+        Luv and Irony,
+                Richard Aplin.
+
+
+P.S. All you young and impressionable people who think programmers 
+make loads of money.. well, most of us don't! (Mind you, the hours 
+are good!)
+
+P.P.S. Good Startup-Sequence eh?
+
+P.P.P.S. Update: My next game(s) are: 'GodFather III' (U.S. Gold)
+                 and 'Creatures' (Thalamus) on 68000!
+
+
+

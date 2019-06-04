@@ -1,0 +1,480 @@
+
+ò                       //==/\=/\=/\=/\=/\=/\=/\=/\=/\==\\
+ò                      <<ðó CHAPTER 7 : EXTREME OPTIMISINGðò >>
+ò                       \\==\/=\/=\/=\/=\/=\/=\/=\/=\/==//
+
+This chapter is dedicated to 680x0 instruction optimising. In chapter 5 is
+some information about higher level optimisations. This chapter is more like
+a big appendix with a huge amount of small optimisation tips gathered from
+here and there.
+
+Now there are two rules when it comes to optimising instructions:
+1) Shorter is "mostly" faster. If an instruction takes up 10 bytes and can
+   be replaced with one of only 2 bytes, the latter will be faster most of the
+   time.
+2) Simple instructions are often the fastest. Instructions like multiplies,
+   subroutine jumps, traps, etc. have loads of functionality in them. Simple
+   instructions like add, move, etc (much used stuff) are optimised to run
+   in only a small number of cycles. (sometimes only 1 on a 68060).
+3) On the 680x0 series, optimisation is mostly the case of getting the most
+   used constant and variable data in the registers instead of ram or
+   immediate data. This is a rule you must always stick to! The trick is to
+   store all values in registers when initialising a loop.
+4) A good strategy has always been precalculating or precalcing as coders
+   say. Basicly the same as the preshifted sprites things, but a more
+   general term. Precalcing all kinds of bitmaps is fast because the heavy
+   calculations are done only once and the CPU is faster at moving bitmaps
+   then calculating bitmaps realtime.
+
+Addressing:
+
+When accessing the highmemory registers (videocontrol/colorpalette,
+interrupt control) or lowmemory vars (the exceptionvectors or cookies). You
+can use the word-based addressingmode instead of the long-based
+
+$xxxx.l -> $xxxx.w
+
+$ffffxxxx.l -> $xxxx.w
+
+        move.l  a0,$00000000.l
+        =
+        move.l  a0,$0000.w
+
+        move.l  d0,$ffff8200.l
+        =
+        move.l  d0,$ffff8200.w
+
+Using programcounter-relative addressingmodes (pc-modes) can also be a bit
+faster. Sometimes data can be nearby the programcounter. If it isn't more
+than 32KB away you can use it. (I hate the word "pc")
+
+        move.w  localvar(pc),d0
+
+localvar:
+        DC.W    0
+
+Branching:
+
+All branch-type instructions (bsr, bra, bcc) offer short versions. This
+means they are only as big as a two bytes instead of four bytes. Ofcourse
+this label you branch to mustn't be more than 128 bytes away! AND a
+shortbranch can never branch 0 bytes away!
+
+        bra.s   locallabel
+        move.w  #56,d0
+locallabel:
+        move.w  d0,d1
+
+Moving:
+
+Moving small immediate values into a register longword, can sometimes be
+replaced by "moveq" or "move quickly". Values can only range from -128 to
+127.
+
+        move.l  #-128,d0
+        =
+        moveq   #128,d0
+
+A really nice trick to save up some bytes is:
+
+        move.l  #$10000000,d0
+        =
+        moveq   #1,d0
+        ror.l   #4,d0
+
+Saves 2 bytes =). Not much, but every byte counts when making 128bytro's.
+
+When moving from memory into registers, the "momem" instruction is always
+nice. If you're doing 3 or more word/long moves this is an ideal solution.
+
+        move.l  (a0)+,d0
+        move.l  (a0)+,d1
+        move.l  (a0)+,d2
+        =
+        movem.l (a0)+,d0-d2
+
+Ofcourse this can also be done for word-sizes:
+
+        move.w  (a0)+,d0
+        move.w  (a0)+,d1
+        move.w  (a0)+,d2
+        ext.l   d0
+        ext.l   d1
+        ext.l   d2
+        =
+        movem.w (a0)+,d0-d2
+
+This has the added advantage of automaticly extending the words to longs!!
+Can be very handy in some cases!
+
+Add's:
+
+Add's and sub's with small immediate data numbers can often be replaced with
+"addq" and "subq". These mean "add quickly" and "subtract quickly" and
+they're called that for a reason =)
+
+        add.l   #1,d0
+        =
+        addq.l  #1,d0
+
+        add.l   #7,d0
+        =
+        addq.l  #7,d0
+
+        sub.l   #1,d0
+        =
+        subq.l  #1,d0
+
+        sub.l   #7,d0
+        =
+        subq.l  #7,d0
+
+Note, "subq.w" and "addq.w" are just a bit faster than "subq.l" and "addq.l"
+on a standard 68000.
+
+When using "addq" and "subq" with address registers there is no
+speeddifference. Only note that there is a difference between adding with a
+long and a word!!
+
+        adda.l  d0,a0
+is faster than:
+        adda.w  d0,a0
+
+Also, when doing an address increment/decrement with immediate data it's the
+best idea to use "lea" for this. Ofcourse this again faster.
+
+        adda.w  #3126,a0
+        =
+        lea     3126(a0),a0
+
+But this isn't the only good use of lea..
+
+        movea.l a0,a1
+        adda.w  #3126,a1
+        =
+        lea     3126(a0),a1
+
+Cool, eh? A very fast and compact solution.
+
+Anding:
+
+When only having to modify the low word of a dataregister it might worth
+considering only using a word for it. Byte sizes won't do any good, since
+the instruction will be as big as the wordwise "and".
+
+        andi.l  #$fffffff0,d0                   * Slow.
+        =
+        andi.w  #$fff0,d0                       * Faster.
+        =
+        andi.b  #$f0,d0                         * Not faster or smaller.
+
+Clearing:
+
+clr.l/clr.w/clr.b on a register is dead stupid. Motorola made a serious
+error in these instructions, so that they aren't that fast anymore. They
+work, but should be avoided, because they are slow.
+
+        clr.l   d0
+        =
+        moveq   #0,d0
+
+        clr.l   a0                              * Slow.
+        =
+        suba.l  a0,a0                           * Faster.
+        =
+        movea.l d0,a0                           * Fastest, when d0 already contains 0.
+
+        clr.w   d0
+        =
+        sub.w   d0,d0
+
+        clr.b   d0
+        =
+        sub.b   d0,d0
+
+For clearing linear parts of memory the clr instruction can also be used.
+It's fast enough for doing medium sized blocks and the big advantage is it
+doesn't use up data registers. But, please note one thing..
+
+        clr.l   (a0)+
+is actually slower than:
+        clr.l   -(a0)
+
+When clearing big amounts of memory the movem.l command is unmissable.
+Simply clear some data registers and movem.l them to the ram.
+
+* Clear all free registers.. Yes.. addressegisters too.
+        moveq   #10-1,d7                        * Prepare to loop 100 times.
+        adda.l  #100*14*4,a0                    * Set a0 to top of block.
+        moveq   #0,d0
+        moveq   #0,d1
+        moveq   #0,d2
+        moveq   #0,d3
+        moveq   #0,d4
+        moveq   #0,d5
+        moveq   #0,d6
+        movea.l d0,a1
+        movea.l d0,a2
+        movea.l d0,a3
+        movea.l d0,a4
+        movea.l d0,a5
+        movea.l d0,a6
+
+loop:   movem.l d0-d6/a1-a6,-(a0)               * Move 13 longs to mem.
+        movem.l d0-d6/a1-a6,-(a0)               * etc.
+        movem.l d0-d6/a1-a6,-(a0)               * etc.
+        movem.l d0-d6/a1-a6,-(a0)
+        movem.l d0-d6/a1-a6,-(a0)
+        movem.l d0-d6/a1-a6,-(a0)
+        movem.l d0-d6/a1-a6,-(a0)
+        movem.l d0-d6/a1-a6,-(a0)
+        movem.l d0-d6/a1-a6,-(a0)
+        movem.l d0-d6/a1-a6,-(a0)
+        dbra    d7,loop
+
+Why "movem.l ...,-(a0)" instead of "movem.l ...,(a0)+"? Well.. because the
+(a0)+ doesn't exist! =)
+
+Testing:
+
+After almost every move-/calculation- instruction the statusregister (sr)
+takes on a conditioncode. The result of the operation (what is written in
+the destination-operand) is tested and bits are set in the sr.
+
+This means you don't always have to perform a test after an operation:
+
+        move.w  d0,d1                           * Copy d0.w to d1.w.
+        tst.w   d1                              * This is redundant!
+        =
+        move.w  d0,d1                           * Automaticly tests d1.w!
+
+The same goes for all operations to memory. However, when operating with
+address-registers as the destination, automatic testing is not done! If you
+want to test values, you HAVE TO TEST with a seperate instruction.
+
+        move.l  a0,a1                           * Copy a0.l in a1.l!
+        cmpa.l  #0,a1                           * Test most be done!
+
+Also note that the basic 68000 has no special "tst" instruction for the
+address-registers. You have to do this with a compare to zero. The 68020 and
+above however, do have a special "tst".
+
+The most important bit is that with dataregister tests a copy-operation to
+itself is faster than a "tst"!!
+
+        move.l  d0,d0
+is faster than:
+        tst.l   d0
+
+Alignment:
+
+This memory moving-stuff brings us to alignment of longwords. With the
+coming of the 68030 and it's burstcache, it is advisable to put big longword
+buffers on a longword egde or a 16 byte egde (16 bytes = size of one 68030
+cacheline). A longword operation on an address on a word boundary is 30%
+slower than on a longword edge.
+
+So when using large amounts of longs in ram, be sure to allocate all buffers
+on 16 byte edges by ANDing addresses with #$fff0.
+
+Swaps:
+
+Swap is used to swap the highword and lowword of a dataregister. It is a
+quite fast instruction. Or at least much faster than this:
+
+        moveq   #16,d0
+        rol.l   d0,d1
+        =
+        swap    d1
+
+Multiplies:
+
+mulu/muls are costly instructions. Mostly ranging from 20 to 50 cycles (!)
+
+        mulu.w  #2,d0
+        =
+        add.w   d0,d0
+
+        mulu.w  #4,d0
+        =
+        lsl.w   #2,d0
+
+        mulu.w  #3,d0
+        =
+        move.w  d0,d1
+        add.w   d0,d0
+        add.w   d1,d0
+
+        mulu.w  #7,d0
+        =
+        move.w  d0,d1
+        lsl.w   #3,d1
+        sub.w   d0,d1
+
+But beware.. Don't overdo this!! Trying to change for a multipication with a
+too complex number you'll get too much moves, add's or sub's. and this will
+especially on 030 and above cost more cycles than an actual multiply
+instruction. The Pure C compiler mostly does make this mistake and the code
+generated will be very big and also slower.
+
+Multiply instructions do however have one major advantage.. They automaticly
+extend words to longwords. Doing this in a move,add,sub combination costs
+you an extra ext.l command.
+
+Divides:
+
+Divides are even more expensive than multiplies. They can sometimes be
+replaced by simple shifts!! Whenever you divide with a power of 2
+(2,4,8,16,32...) you can do this for instance.
+
+        divu.w  #8,d1
+        =
+        lsr.w   #3,d1
+
+When this is possible, please do so.. It saves up a tremendous amount of
+cycles. When you really need an awful amount of divisions it's best to
+prepare your data for shifting instead of divides.
+
+Divide instructions do also have one advantage. They automaticly perform a
+modulo function as well! The modulo from a division is stored in the
+highword of the destination register.
+
+        divu.w  #10,d0                          * Perform division and modulo.
+        swap    d0                              * Get highword in lowword.
+
+Sometimes fixed-point divides can be replaced by multiplies. Instead of
+first adjusting values for fixedpoint divisions and then doing expensive
+divides, you can also use only one multiply!
+
+        swap    d0                              * Shift d0.w up 16 bits.
+        divu.w  #3,d0                           * Divide it.
+        =
+        mulu.w  #$5555,d0                       * Mulitply d0.w with 1/3.
+
+Modulo:
+
+Which brings us to our next topic. When trying to get the modulo of a
+number, you can again make this a modulo function with a power of 2.
+
+        andi.w  #4-1,d0                         * = d0 MOD 4
+
+        andi.w  #8-1,d0                         * = d0 MOD 8
+
+An even better option is making this a modulo function with 256 or 65536.
+Why? This is exactly the range of the byte/word unit.
+
+* Perform calc on d0 here...
+        move.b  d0,d1                           * = d0 MOD 256
+
+* Perform calc on d0 here
+        move.w  d0,d1                           * = d0 MOD 65536
+
+Shifting:
+
+Now you understand that a combination of shifts and moves is actually faster
+than a multiply (except on 68060, which has razorfast multiplying). Shifting
+left by one can be replaced with a simple "add".
+
+        lsl.l   #1,d0
+        =
+        add.l   d0,d0
+
+        asl.l   #1,d0
+        =
+        add.l   d0,d0
+
+On a 68000 upto 68030 the shift instruction takes up 8 cycles and an "add"
+takes up 4 on 68000 and only 2 on 68030.
+
+With 680x0 coding you're often confronted with having to shift right or left
+8 bits. This because you need a byte in the lowest part of the register for
+instance. Sometimes this can be avoided with "addx" loops as shown in
+chapter 6.
+
+In some other situations, where you need to spilt up a word into two
+seperate bytes spread over a longword (i.e. 0000xxyy -> 00xx00yy), you can
+use the "movep"-instruction. A movep must have a data-register as one
+operand and a memory-address as the other.
+
+For instance:
+
+        movep.w d0,(a0)                         * 0000xxyy -> 00xx00yy
+or:
+        movep.w (a0),d0                         * 00xx00yy -> 0000xxyy
+
+The weird thing about the instruction was, that it was originally meant as
+an easier way to access the hardware-registers (often using bytes instead of
+words), but you really don't need it for that so often as you'd need it for
+optimising bitplane copying.
+
+Offsets:
+
+The 680x0 offers the lovely (an,dn) addressingmode.
+
+        adda.l  d0,a0
+        move.w  d1,(a0)
+        suba.l  d0,a0
+        =
+        move.w  d1,0(a0,d0.l)
+
+Ofcourse this is only useful in particular cases. When you need a different
+offset for every move to an address, this offset addressingmode is
+unbeatable.
+
+From the 68020 and on the scaled offset addressingmode is at your disposal.
+This is absolutely gorgeous.
+
+        move.l  d0,d2
+        lsl.l   #3,d0
+        adda.l  d0,a0
+        move.w  d1,(a0)
+        suba.l  d0,a0
+        move.l  d2,d0
+        =
+        move.w  d1,0(a0,d0.l*8)
+
+There is another big advantage to these addressingmodes.. They can be used
+by "lea" as well!
+
+        move.l  d0,d1
+        lsl.l   #3,d0
+        movea.l a0,a1
+        adda.l  d0,a1
+        move.l  d1,d0
+        =
+        lea     (a0,d0.l*8),a1
+
+Stack moves:
+
+As most demo-coders.. I hate the stack. But sometimes when moving immediate-
+data onto it you can optimise the lot.
+
+        move.w  #1,-(sp)
+        move.w  #2,-(sp)
+        =
+        move.l  #$00020001,-(sp)
+
+        move.l  #$00001000,-(sp)
+        =
+        pea     $1000.w
+
+Selfmodifying code:
+
+Please people, avoid this technique. It will only work on simple 68000 or on
+>68020 with the caches turned off. Still, on a basic 8MHz 68000 it might be
+considering if you absolutely want to get everything out of your machine.
+
+Selfmodifying code is mostly used in loops where you don't have enough
+registers left (i.e. used up all 8 data and 7 address registers). Using
+variables in RAM is a poor solution since this slows down, quite alot
+compared to using registers.
+
+The technique relies on immediate data instructions and modifying the
+immediate data everytime you need to change the variable. This means loading
+the address of the immediate data field of the instruction and changing the
+value.
+
+But selfmodifying code hasn't been used by most coders for quite a while now
+and that's a good thing. It makes code horribly unreadable as well as
+totally unpredictable and incompatible with newer CPU's.
+

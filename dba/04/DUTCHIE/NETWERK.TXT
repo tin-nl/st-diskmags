@@ -1,0 +1,119 @@
+A.N.S.
+
+                   het "Atari Network System"
+                 ------------------------------
+                  (c)1992 Byte computershops
+
+
+
+Waarom een netwerk?
+-------------------
+
+De computers uit de Atari ST serie hebben steeds meer hun weg gevonden 
+naar professionele toepassingen. De krachtige Atari TT computers zijn 
+uit dit segment al helemaal niet meer weg te denken. Het omvangrijke
+software aanbod in branche specifieke toepassingen en algemene software
+zoals tekstverwerkers, databases, spreadsheets en desktop publishing
+programma's hebben daar zeker toe bijgedragen. 
+
+In een dergelijke omgeving komt het al snel voor dat de diverse mede-
+werkers over dezelfde data bestanden moeten kunnen beschikken. De prijs
+van een ST laat natuurlijk ook toe iedere medewerker zijn eigen ST op de
+werkplek te geven.
+
+Als een ieder echter een eigen copie heeft van het centrale bestand en
+daar zelf veranderingen in aanbrengt dan ontstaat al snel een onover-
+zichtelijke situatie. Het moet daarom mogelijk zijn de verschillende
+computers met een gezamenlijk bestand te laten werken. Dit is mogelijk
+door middel van een netwerk. Bijkomend voordeel van een netwerk is dat
+dure randapparaten zoals laserprinter en harddisk gezamenlijk gebruikt
+kunnen worden. Daarnaast vergemakkelijkt een netwerk de uitwisseling
+van gegevens, en behoort email (electronic mail) tot de mogelijkheden.
+
+Atari Network System (ANS)
+--------------------------
+
+Het Atari Network System is een netwerk systeem dat gebruik maakt van
+ethernet standaard (zowel thin als thick) en werkt volgens het internet
+protocol. Het is in eerste instantie ontworpen voor koppeling van de
+Atari Mega ST, Mega STe en TT computers. Dankzij het gebruik van het
+internet protocol behoort koppeling met omvangrijke UNIX netwerken
+binnen de mogelijkheden.
+ 
+ANS bestaat uit zowel hard- als software. Voor de Atari Mega ST werd 
+een board ontwikkelt dat op de Mega bus past. Voor de Atari Mega STe
+en TT computers werd een VME kaart ontwikkelt. Deze VME kaart kan worden
+geplaatst zonder dat men de kast van de computer hoeft te openen.
+
+De ANS netwerk kaarten werken op een snelheid van 10Mbit/sec. en hebben
+64Kb statische RAM aan board voor het bufferen van informatie. Een 
+goede galvanische scheiding op de netwerkkaart zorgt ervoor dat de kaart
+( en uw computer) ongevoelig is voor spanningspieken.
+
+Atari File Server (AFS)
+-----------------------
+
+AFS is het netwerk besturingssysteem van ANS. Het biedt de mogelijkheid
+om meerdere servers in het netwerk op te nemen. Middels een inlog pro-
+gramma bepaalt de gebruiker op welke server hij wil worden aangesloten.
+AFS kent zowel dedicated als non-dedicated servers, dat laatste is 
+belangrijk voor kleindere netwerken waar men de server ook voor andere
+doeleinden wil gebruiken.
+
+De privileges van de gebruiker zoals naam, password en de toegang tot
+afgeschermde gegevens op de server liggen vast in de server, waardoor
+het mogelijk is dat een gebruiker op elk station in het netwerk kan
+inloggen onder de eigen naam. De gehele installatie van het netwerk
+en al de gebruikers wordt centraal vanuit de server uitgevoerd en 
+onderhouden., middels een eenvoudig te bedienen GEM programma.
+
+AFS biedt de mogelijkheden voor de printerspoolers en het gezamen-
+lijk gebruik van printers. Daarnaast beschikt AFS over email faci-
+liteiten, waardoor communicatie tussen de diverse gebruikers kinder-
+spel is. U voorkomt daarmee onnodig "lopen".
+
+AFS gebruikt het UDP protocol voor de communicatie tussen de ver-
+schillende computers. Hierdoor is koppeling mogelijk met andere 
+metwerk systemen, met name die onder UNIX. Koppeling via TCP/IP
+en TELNET horen nu al tot de mogelijkheden, alsmede koppeling 
+via het Xserver protocol. (De internet utilities en de Xserver
+software zijn optioneel en maken geen deel uit van de standaard
+ANS software).
+
+Speciaal voor programmeus van netwerkvriendelijke programma's
+biedt ANS een u itgebreid scala aan netwerkcalls die file-en
+recordlocking faciliteiten bieden. Daarnaast beschikt ANS over
+een eigen multitasking omgeving die ook tot de beschikking staat
+van de programmeur.
+
+
+ANS bestaat uit:
+
+* Netwerk kaart met AFS software (oa printerspooler en mail)
+
+Optioneel:
+
+* Internet tools (TELNET,TFTP,FTP en SMTP)
+* Advanced AFS Mail system SMTP onder AFS
+* X/ST/Window (Xserver Software voor de Atari ST)
+
+Software:
+
+* Atarinet File Server software gebaseerd op UDP
+* Zowel dedicated als non-dedicated server mogelijkheden
+* Programmeerbare interface met file en recordlocking
+* TCP/IP
+* TELNET
+* FTP
+* Programmeerbare interface
+* X/ST/Window
+* X/TT/Window
+
+
+Wilt u meer weten over netwerken? Kom dan naar uw dichtsbijzijnde
+computershop. Daar kan men u er nog meer over vertellen.
+
+(c)1992 Byte computershop/Atari computer
+
+
+

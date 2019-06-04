@@ -1,0 +1,332 @@
+ATARI CD-ROM SUMMARY 10
+~DROPS.FIL~
+Sound/Sounds:   The atari.archive Sound Index
+
+The sounds in this directory are 8-bit sample files for use with Play,
+Beep, Digital Keyclick, and EPlay (located in ../players/).  The sample 
+data is in the same format as Mac sample data, so many of these sounds 
+may look familiar to Mac users.  Jason Banham <cs89jmb@brunel.ac.uk>
+reports that these sounds can be played on Acorn Acrhimedes machines
+using a PD program called !DSEdit.
+
+Note: Sample rates are in Hz (samples per second).
+
+
+Sound File      Rate    Description
+----------      ----    -----------
+20secnds.snd    11000   from Robocop 1: "You have 20 seconds to comply."     
+20th_cen.snd    11000   The 20th Century Fox opening music
+ah.snd          11000   From Monty Python: "Ah!"
+allright.snd    8000    Repo man: "...you're all right!" [Rated R]
+allthean.snd    22000   Rosie Robot: "I should have all the answers..."
+aln_land.snd    11000   ???: "The aliens have landed among us..."
+amiss.snd       15000   Sylvesth-th-ster Cat: "...somethin's amiss..."
+answer.snd      11000   Bart: "I know the answer, you know the answer..."
+applause.snd    11000   Mocking applause; sounds like a game show
+assist.snd      11000   ???: "Re-re-ready to assist you."
+attack.snd      11000   Captain Kirk: "Prepare for attack..battle stations.."
+attentio.snd    11000   Robotic voice: "Attention!"
+autopil.snd     7500    ???: "Automatic pilot now functioning."
+awasting.snd    11000   Cecil Turtle: "Time's a-wastin', speedy"
+backoffm.snd    22000   Bill Murray (Ghostbusters): "Back off, man..."
+bad_guys.snd    22000   Bad guys music from Star Wars (excerpt)
+bam_boom.snd    22000   Elvis Presley
+bark.snd        11000   A dog barking
+bart.snd        11000   Homer Simpson: "Bart!
+batman.snd      8000    From Batman TV show: "To the Batmobile!  Let's go..."
+be-nice.snd     22000   Marge Simpson: "Be nice to your sister."
+beam_up.snd     11000   Transporter sound from Star Trek: TNG
+beat.snd        11000   A drum beat from a cheesy drum machine
+beaver.snd      11000   Naked Gun: "Nice beaver!"
+beback.snd      22000   The Terminator: "I'll be back."
+beep.snd        22000   ???: "Beep."
+beware.snd      11000   ???: "...your brain may no longer be the boss."
+bidding.snd     22000   Darth Vader: "What is thy bidding, my master?"
+bing.snd        22000   From Monty Python: "...the machine that goes bing!"
+bird.snd        11000   An Australian bird call
+bitrunny.snd    11000   From Monty Python: "It's a -- bit runny, sir"
+blerp.snd       22000   Computer noise from Max Headroom
+bogus.snd       11000   Bill & Ted (together): "Bogus!"
+boing.snd       11000   An amusing system beep.
+boom_ooh.snd    8000    George of the Jungle: Explosion followed by "oooh".  
+boop.snd        8000    Boop sound.
+bottle.snd      22000   Air across the lip of a bottle
+br_clang.snd    22000?  Metal clanging
+burp.snd        11000   You figure it out.
+buycheez.snd    11000   From Monty Python: "Won't you buy some cheese!"
+cant_do.snd     11000   ??? (a valley girl): "You can't do that!"
+captains.snd    11000   Captain Kirk: "Captain's Log, stardate..."
+chandra.snd     11000   Hal: "...I'm ready to start the countdown..."
+cheer.snd       22000   Bart: "Aw c'mon, I'll cheer ya up."
+chinese.snd     11000   ??? [A bit of music]: "I like Chinese"
+chord.snd       11000   Startup chord frequently heard on Macs
+clint.snd       22000   Clint Eastwood: "...make my day..."
+clunk.snd       11000   Foghorn Leghorn: "What's...the big idea..."
+comply.snd.Z    16000   Robocop: "you have 20 seconds to comply"
+conv.snd.Z      10000   Church Lady: Isn't that convenient?
+cosbylip.snd    11000   Bill Cosby: "Take your bottom lip..."
+cow.snd         11000   Mooooo!
+crash.snd.Z     10000   Car Crash
+cricket.snd     11000   The insect, not the game.
+cuckoo.snd      22000   A cuckoo clock
+curley1.lzh     18000   Third stooge
+curley2.lzh     22000   third stooge
+curley3.lzh     31000   third stooge
+damn_mnt.snd    11000   Spock: "One damn minute, admiral."
+dasdafac.snd    22000   Bill Murray (?): "Das da fac', Jack!"
+dead.snd        22000   From Monty Python: "Bring out 'cher dead!"
+deadjim.snd     11000   Bones: "He's dead Jim..."
+destruct.snd    11000   A famous quote from Mission: Impossible!
+digiding.snd    8000    A computerized "ding" sound
+disapnt.snd     22000   From Tron: "...how disappointed I am in you."
+disapp.snd      11000   ???: "...how disappointed I am to find you here."
+doesnot.snd     11000   Robby the Robot (?): "Does not compute!"
+dog.snd         11000   A dog barking.
+dont.snd        11000   Bart: "Don't make me say it."
+dontworr.snd    22000   Bobby McFerrin: "Don't worry, be happy..."
+doorbell.snd    11000   Sounds like a late 60's model
+downdown.snd    8000    Daffy Duck being cutthroat.
+dragnet.snd     22000   The famous 9 notes.  Good sound quality.
+drop_20.snd     11000   Animal House: "You're all worthless and weak..."
+drwho.snd       11000   The entire Dr. Who theme (most recent version)
+eastla.snd      22000   Cheech: "I was born in East LA, man..."
+easy.snd        11000   Bart: "Oh yeah, easy."
+eatshort.snd    11000   Bart: "Eat my shorts."
+elephant.snd    11000   A large pachyderm trumpeting
+elmer.snd       11000   Elmer Fudd: "Be vewy vewy quiet..."
+end_line.snd    22000   From Tron: "End of line."
+energize.snd    8000    The Enterprise transporter.  Nicely digitized.
+entrdoor.snd    11000   The swish...swish of a door on the Enterprise
+evil.snd        8000    Evil laughter; flanged.
+excuuseme.snd   11000   Steve Martin: "Excuuuuuuse -- me!"
+exlnt.snd       11000   Bill & Ted (together): "Excellent!"
+explode.snd     11000   Your run-of-the-mill detontation.
+explosn.snd     11000   Another one.
+extermin.snd    11000   A Dalek: "Exterminate!"
+f_troop.snd     22000   The F-Troop theme (excerpt)
+family_d.snd    11000   3 Stooges: "What was your family decomposed of? ..."
+fart.snd        22000   Monty Python:"I fart in your general direction..."
+flash.snd       22000   A cheesy sound effect
+flush.snd       11000   A toilet flushing.
+fortywin.snd    22000   Yogi Bear: "I was just takin' forty winks."
+frankly.snd     11000   Rhett Butler: "Frankly my dear, I don't..."
+freeze.snd      22000   ???: "Freeze!"
+funny.snd       11000   Roger Rabbit: "Only when it was funny! ..."
+gameover.snd    8000    From Alien: "Game over, man!"
+gas.snd         11000   ???: "Gas music from Jupiter, indeed."
+geepers.snd     11000   Roger Rabbit: "Geepers, that almost killed me!"
+getsmart.snd    11000   The "Get Smart" theme music
+gimmick.snd     11000   Foghorn Leghorn: "What's ... the gimmick, son..."
+ginmill.snd     11000   Roger Rabbit: "Oh, ... a gin mill, a speakeasy..."
+gm_vtnam.snd    22000   Robin Williams: "Good morning, Vietnam!"
+gorn.snd        11000   The Gorn (Star Trek): "I shall be mericiful..."
+greeting.snd    11000   From Wargames: "Greetings, Professor Falkan."
+gunfire.snd     22000   A barrage of bullets.
+hal.snd         22000   Hal: "I'm sorry Dave, I'm afraid I can't..."
+hal10.snd       11000   Hal: "Goodbye."
+hal2.snd        11000   Hal: "...what do you think you're doing, Dave?"
+hal20.snd       11000   Hal: "...it can only be...human error."
+hal3.snd        11000   Hal: "That is something I cannot allow to happen."
+hal4.snd        22000   Hal: "Are you sure you're making the right decision?"
+hal6.snd        11000   Hal: "...I wouldn't worry myself about that."
+hal7.snd        11000   Hal: "I feel much better now.  I really do."
+hal9.snd        22000   Hal: "I'm completely operational..."
+haleluja.snd    11000   Short excerpt from Handel's Messiah
+hallucin.snd    11000   ???: "You are probably -- hallucinating."
+hanhan.snd      22000   ???: "Uh-huh uh-huh uh-huh."
+harp.snd        11000   The beginning of a "dream sequence"
+heheheh.snd     22000   The name says it.
+helicopt.lzh    97000   helicoptor
+hello_sk.snd    11000   ???: "Hello seekers..." [can't be explained!]
+heyrocky.snd    8000    Bulwinkle: "Hey, Rocky."
+heywilma.snd    22000   Fred Flintstone: "Hey Wilma!"
+hi-man.snd      22000   Bart: "Hi man!"
+hithere.snd     8000    Peter Gabriel (from "Big Time"): "Hi there."
+ho_yes.snd      11000   From Monty Python (?): "Ho, yes!"
+holy_sh.snd     11000   Animal House, Belushi: "Holy shit!"
+honk.snd        22000   A little horn tooting.
+horse_rc.snd    11000   The trumpeting that starts a horse race
+hot.snd         22000   Aliens: "It's hot as hell in here..."
+how_feel.snd    11000   Trek IV, Computer: "How do you feel?"
+humanbra.snd    11000   Dr. Who: "Small though it is, the human brain..."
+humor.snd       11000   Roger Rabbit: "Where's your sense of humor?"
+huuuuh.snd      22000   From Monty Python (?): "Uhhh!"
+idea.snd        22000   ???: "Do you have any idea what you've done here?"
+impressi.snd    22000   Darth Vader: "Impressive."
+intercom.snd    11000   The intercom sound from Star Trek
+irabbit.snd     11000   Bugs Bunny: "Toitle shmoitle, I'm the rabbit!"
+is_wrong.snd    22000   ???: "Everything you know is wrong!"
+janet.arc               Rhythm Nation remixes for Digital Keyclick
+jet.snd         22000   A loud flying machine
+kaboom.snd      11000   The Martian: "Where's the kaboom? ..."
+kickdrum.snd    8000    An electronic kickdrum.
+klang.snd       22000?  Something metal being hit.
+knightni.snd    11000   Monty Python(Holy Grail):"the knights who say-n-i!"  
+kookabur.snd    11000   The call of the Kookaburra.  (It's a bird...)
+lamb.snd        22000   A lamb bleating
+laugh.snd       22000   A witchy laugh with machine noises in the bkgnd
+laughitu.snd    22000   Han Solo: "Laugh it up, fuzzball!"
+leaveit2.snd    11000   The "Leave it to Beaver" theme music
+letmeout.snd    11000   Guy inside your computer: "Lemme outta here!"
+letsrock.snd    15000   From Aliens: "Let's rock!"
+look_up.snd     22000   ???: "Look, up in the sky...it's Superman!"
+looneytu.snd    11000   Loony Toons closing music
+loonytun.snd    22000   Loony Toons opening music
+magic.snd       11000   Fairy-waves-magic-wand sound effect
+maxhead.snd     8000    Max Headroom: "This is M-M-Max Headroom"
+maxheadr.snd    22000   Max Headroom: "Isn't there something better..."
+meepmeep.snd    22000   The Road Runner's familiar sound
+missile.snd     7500    Some kind of large gun being fired.
+money.snd       11000   Dire Straits: "Money for Nothing" (excerpt)
+monkey.snd      8000    A monkey: "Eeeep!"
+mr_t.snd        22000   Eddie Murphy: [imitating Mr. T]
+notajedi.snd    22000   Darth Vader: "...you are not a Jedi yet!"
+nyuknyuk.snd    22000   Curly: "Nyuk-nyuk-nyuk-nyuk" <clunk>
+ohmygod.snd     11000   Sounds like Mrs. Cleaver: "Oh my God!"
+ohprunel.snd    22000   Bugs Bunny: "A-ha-ha-ha.  Oh, Prunella!"
+ohshit.snd      11000   ???: "Oh shit."
+okie.snd        22000   Bart: "Okie dokie."
+peewee.snd      22000   Pee-wee Herman: "Whyncha make me?"
+phasers.snd     22000   From a Steve Miller song.
+ping.snd        11000   The machine that goes "ping".
+pingpong.snd    8000    Sound of a ping pong ball being hit.
+pity.snd        22000   Bart's sis: "I don't want your pity."
+presbush.snd    11000   President Bush: "Thank you, God bless you..."
+presto.snd      8000    Bulwinkle: "Presto!"
+r2d2.snd        22000   Boop-bleep-boop-whooo-blip
+reagan.snd      11000   Ronald Reagan: "I'm not going to lie..."
+ripped.snd      11000   From Monty Python:"...his head's been ripped off..."
+risky2.snd      22000   A musical sound bite from Risky Business (?)
+rooster.snd     8000    Wake up!
+rubyaout.snd    11000   Warner Bros. Mobster: "I'm gonna rub ya out, see..."
+sarcasm.snd     22000   From Monty Python: "He used -- sarcasm."
+saveme.snd      8000    Daffy Duck: "Quick, quick, save me, pal!"
+scifi.snd       8000    Sounds like something from Warner Bros.
+scream.snd      8000    Daffy Duck screaming.
+sealion.snd     8000    A sea lion barking.
+secret.snd      8000    Daffy Duck: "I'll find out his secret..."
+sexyhi.snd      11000   A sexy voice: "Hi."
+shatter.snd     11000   Glass shattering.
+shootyou.snd    11000   Monty Python: "...I'm going to have to shoot you."
+sonarpin.snd    22000   A sonar ping.
+spacemod.snd    11000   Martian: "The eludium Q-36 explosive space modulator"
+splat.snd       11000   Cartoon sound effect (the name says it).
+st-ng.snd       8000    "Star Trek: TNG" theme music (excerpt)
+stoogei.snd     22000   Three Stooges closing music.
+stopit.snd      11000   From Monty Python: "Stop it!"
+strength.snd    8000    Bulwinkle: "Ooh.  Don't know my own strength."
+su-bach.snd     22000   Opening notes from Tocatta and Fugue in D minor
+su-fanf.snd     22000   Opening fanfare from some old flick.
+su-russi.snd    22000   Excerpt from Tchaikovsky's Nutcracker Suite
+superior.snd    11000   A Dalek: "...we are the superior beings"
+surprise.snd    11000   Gomer Pyle: "Surpriiise, surprise, surprise!"
+tardis.snd      11000   Dr. Who's Tardis arriving (or departing).
+tarzan.snd      8000    Edgar Rice Burroughs' ape man.
+taughtyo.snd    22000   Darth Vader: "Obi-Wan has taught you well."
+theyrehr.snd    22000   From Poltergeist: "They're here."
+thriller.snd    22000   Vincent Price laughing (from MJ's "Thriller")
+thunder.snd     22000   Thunder and rain
+timetobl.snd    22000   Jane Jetson: "time to blast off for dreamland"
+toko.snd        22000?  A sci-fi sound effect of some kind
+toot.snd        11000   Party horn toot.
+trnsport.snd    11000?  The Enterprise transporter (again)
+trumpets.snd    22000   Another Nutcracker Suite Excerpt
+trythink.snd    22000   Curly: "I'm tryin' t' think but nothin happens"
+tutti.snd       22000   Little Richard (?)
+twilight.snd    22000   "The Twilight Zone" theme music (excerpt)
+twltzone.snd    22000   A longer excerpt from "The Twilight Zone"
+type1.snd       8000    Keypress on a typewriter.
+type2.snd       8000    Keypress on another typewriter.
+underdog.snd    22000   Narrator:"There's no need to fear, Underdog is here!"
+vulcan.snd      8000    Bones: "Are you out of your Vulcan mind?"
+waitamin.snd    8000    From Warner Bros.: "Hey, wait a minute."
+wattle.snd      11000   The call of the Wattle.  (Another bird.)
+ways.snd        22000   From Wargames: "There's ways around that." (sic)
+wetmice.snd     11000   Foghorn Leghorn: "Nice girl, but..."
+what.snd        11000   Bart: "What are we talking about?"
+whatsup.snd     11000   Bugs Bunny: "What's up, Doc?"
+where.snd       22000   Bart: "Where's your sense of humor, man?"
+whipbird.snd    11000   The call of the Whip Bird.  (Yet another bird.)
+whizz.snd       11000   Cartoon sound effect
+whosfrst.snd    22000   From the famous Abbott & Costello routine.
+why_you.snd     8000    Bugs Bunny (?) goes on a tirade.
+wipeout.snd     22000   The beginning of the song.
+woo.snd         8000    Daffy Duck: "Wh-wh-whuhooo!"
+yabbadab.snd    22000   Fred Flintstone: "Yabba-Dabba Doo!"
+yahoo.snd       22000   Daffy Duck cheers.
+yeah.snd        8000    Bulwinkle: "Yeah!"
+younick.snd     11000   ???:"You all %!#&ing nicked me old beauty." [R rated]
+yourang.snd     22000   Lurch: "You rang."
+zamfir.snd      11000   Zamfir, master of the Pan flute.
+zany_sto.snd    11000   Bugs Bunny: "..who'd ever believe such a zany story?"
+
+============================================================================-
+Ssolsdem: A collection of demos of programs distributed by Systems Solutions
+
+dapidemo.tos           DA's picture demo
+dtdemo.lzh             DigiTracker demo
+kobold.lzh             Kobold - the file copier
+layouttc.lzh           DA's layout demo
+midispy.lzh            MidiSpy demo (informative, I know :-)
+mus_pic.lzh            (PD?). Takes a picture and converts to midi info
+musicmon.lzh           ???
+quill.lzh              DA again
+vecpro.lzh             DA's vector Pro demo
+vector.lzh             DA's vector
+
+============================================================================-
+Ste:
+
+0index          ???     This Index you're currently loving.
+Ste/Mega: a directory for MegaSTe-specific programs
+booter.lzh      1       use 16mHz with self booting disks
+megaste.lzh     10      Shareware utilties by John townsend for megastes
+mhz.lzh         9       Freeware program to change between 8/16 Mhz
+speed.lzh       7       Another speed switcher
+speed_sw.arc    10      Collection of programs for Mega STe to control speed
+wrap_fix.arc    5       Fixes MegaSte/TOS 2.05 screen bug on mono monitors   
+
+ 
+50play.lzh      37      50kHz STe Pro-Tracker player
+armadaisdead.lzh 198    Fractal demo from Aggression
+autoexec.lzh    18      Allows to set up various params on boot & play samp
+backtrak.lzh    7       Plays .mod files on ste/tt
+bdamag1.lzh     733     Excell. demo by Aggression Part1 (get next file also)
+bdamag2.lzh     647     Part 2
+bf_demo.arc     60      Banafisk demo, pretty neat      
+blat.lzh        417     STe falling blocks game with a difference
+boingste.arc    421     STE demo by Autralian Guy (nice music)  
+coolste.arc     385     By An Cool.  Scrolling Mickey Mouse     
+delirs3a.msa    402     Part a of the delirious 3 demo  
+delirs3b.msa    387     Part b of above.  You need both parts.  
+dips.lzh        3       CPX, lets you change internal dip switches on MSTE
+double2.lzh     4       Double vertical screen resol. on Ste (no scrolling)
+dtpcdmo2.arc    62      Demo by desktop center  
+dtrak111.lzh    35      Plays mods in the backgr. under multitos (pos. MiNt)
+dynabust.lzh    342     Game; requires DMA sound & analog joy port.
+dynamite.arc    351     Dynamite sound demo for ste/tt
+fant_emu.lzh    2       Allows you to run fantasia.arc on Mega Stes     
+fantasia.arc    620     Fast 3d graphics and cure samples       
+jukebx11.zoo    18      Plays mod & segm in background on Ste / TT
+jungle.arc      338     Cool jungle noises and animated Dr. Livingstone 
+ms2demo.lzh     122     Mastersound II demo.  STE support.
+monster.lzh     3       Display huge virtual screens. 
+only_ste.lzh    802     Only ste demo. (Packed with msa, which is included)
+pacman_on_Es.lzh 297    Awesome Pac-Man Game. uses all STe features!
+sam_seq.lzh     97      Sampled sound sequencer for STe only
+scrth.zoo       34      Scrolling Thunder text browser for STe and up. Demo
+simmfix.zoo     3       Tweaks MMU to allow 2.5Mb of memory.
+skulls.zoo      24      Skulls game with user defined sounds.
+sndunex1.msa    317     Sounds of the unexpected demo, part 1.  STE only.
+sndunex2.msa    320     Sounds of the unexpected demo, part 2.   Ditto.
+soundoff.lzh    329     Click on picture and you'll get related sound   
+ste_pw.arc      293     Scrolling text, bouncing letters demo   
+stedemo.lzh     253     ???
+steplay.lzh     49      Play noisetracker mods in stereo        
+stesnd.lzh      7       Gem based STe DMA sample player 
+trackste.lzh    25      Noisetracker module player w/ste support.
+utopos.lzh      216     Demo of shareware game from Chronicle, req. 1 meg
+wd_sines.arc    87      Wyrd Sines! demo .  Mediocre.
+yo_ste.arc      98      Automation demo.  Simple, but good.     
+ 
+END OF PART 10

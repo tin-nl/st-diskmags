@@ -1,0 +1,436 @@
+
+
+                           - N e m e s i s -
+
+                    Faster Falcons for fifty notes!
+
+ 1.4.97 note....
+
+I  think  we  should get our corrective fluid out  at  this  point,  as 
+although  we benefitted from Titan Designs generosity and  largesse  to 
+the  sum described above,  I do recall seeing more recent adverts  that 
+were  suggesting  a  retail  price of sixty  ukp..  The  'Fifty  notes' 
+assertion remains valid of course, if you are a registered Apex user..
+
+ Preamble....
+
+There was a brilliant chap called Dave Encill,  who got together with a 
+few other near-geniuses,  and they gave us Apex Media,  and Expose, and 
+all  sorts  of  other wonderful things..  Now they also  did  a  rather 
+stonkingly powerful accelerator board called 'Afterburner',  but seeing 
+that not quite everyone was going to be able to pick up one for a song, 
+decided  to try pushing the Falcon faster for the benefit of the  skint 
+and impoverished masses out there.. 
+
+Being a skink and impoverished mass, the Maggie Team start to take note 
+of  stories that abound last summer about a new cheap accelerator  card 
+called 'Nemesis'..  "By 'eck, that sounds good!", they say, in a rather 
+poor imitation of a Tony Greenwood accent, "When is it out?"
+
+Titan  make  reassuring  'soon  now'  noises,  but  they  like  to  get 
+everything  *just*  right before they let it go,  as it is only in  the 
+dying days of March that a mysterious summons to the parcel  collection 
+depot sends me scurrying forth on a cold Easter morning..
+
+ The physical unit itself....
+
+There isn't a lot to Nemesis, the whole thing, instruction manual, disk 
+of  bits and bobs,  and all fit inside a packet the size of a  hardback 
+book.. The Nemesis unit comes in a sealed black anti-static bag, and is 
+as  tiny  as  the initial pictures of it suggest,  mounted  on  a  tiny 
+daughterboard a couple of small oscillators,  some support chips, and a 
+generous,  nay impressive amount of wiring..  A second, even smaller to 
+the  eye,  board  is the DMA buffer patch to help stablise the  Falcon, 
+particularly with respect to disk accessing..
+
+ How easy it was to fit....
+
+(Or, 'Oh the stupid insane things we do to get good 'copy!')
+
+As of the time of writing (1.4.97), this is where all the fun is taking 
+place..  At this moment in time, Nemesis is resident on my Falcons PCB, 
+it  is connected intimately,  and breathing gently,  whilst the rest of 
+the Falcon gets on with things in 'normal' mode..  However,  as soon as 
+we  try to wake it to do what it is supposed to do,  the keyboard  chip 
+throws a wobbly and refuses to hand back basic control of my  machine.. 
+Relaying  this  news  to Dave Encill and he advises in  the  manner  of 
+someone  who's  already done this one and got the  souvenir  Tee-shirt, 
+that  all  Nemesis needs is a bit of grounding,  it being sensitive  to 
+interference and all.. 
+
+Which is why I'm writing this very first bit of the review on my  rusty 
+old 'FM, which has been given some speed-up pills to make it go faster!
+
+With  regard  to  'fitting',  I  would strongly advise *NOT  TO  DO  IT 
+YOURSELF*  if you are not familiar with ST or Falcon motherboards,  and 
+aren't  sure  about  such actions as cutting  and  joining  chip  pins, 
+soldering  wires  to pins,  cutting fine tracks in the motherboard  and 
+soldering  to them etc..  This is not an upgrade in the plug in and  go 
+class,  and  will  need a fair bit of time and effort to get done..  We 
+thought we could get it done in a fairly long evening session, but only 
+got   three-quarters   of   the  way  there   before   we   collapsed.. 
+Unfortunately,  this  was  at  the  point just before  it  gets  really 
+interesting..
+
+The  manual  is well laid out,  and guides you through,  including some 
+very  necessary  step by step testing..  The manual was apparently  the 
+part that took the most time to prepare,  and if that was the case,  it 
+was  time well spent by Dave and the team..  In the process,  I learned 
+quite a lot about the Falcon motherboard whilst watching Nathan (he who 
+is fitting it for me) closely, giving me the sort of perspiration worry 
+beads  you might well get if you saw the ground-up bits of cow that  go 
+into 'economy' beefburgers!
+
+This  upgrade carries a real risk of damaging major components  on  the 
+motherboard  if you are careless,  so I repeat if you are anything less 
+than 100% confident of the outcome,  then get it fitted for you..  Both 
+Titan and The Upgrade Shop are doing the fitting service, and both have 
+a very good reputation..
+
+One  small  criticism  I  must  make  of  the  'presentation'  of   the 
+instructions,  is  that an extra modification to the Videl circuitry is 
+required,  should  you  wish to use Nemesis in conjunction with an  RGB 
+monitor.. The manual assumes that most people will be just using (S)VGA 
+monitors  in  conjunction with Nemesis,  which I'm not sure is  totally 
+correct,  but still..  I also get the impression that this modification 
+might  well be missed off if it is being fitted by the fitting  service 
+unless  you really make sure you ask for it..  Or is this just me being 
+paranoid?
+
+Anyway,  do  we have a fully Nemesised Falcon,  or a nasty repair bill! 
+Read on shortly to find out!!
+
+                     ***A A A A A A A A A G H !***
+
+Well  it  could have been a lot worse than it turned  out..  With  Dave 
+Escott  and the Upgrade Shop to the rescue,  I've finally had my Falcon 
+with  Nemesis  restored  to  me in the early days  of  May..  I'll  let 
+posterity draw a veil over the 'have they still got it or not?'  antics 
+of the courier company,  who shall mercifully remain nameless, but were 
+coming  perilously  close  to  a 'Parcel  Delivery  Cheese  Shop'  type 
+scathing article in this issue.. 
+
+Anyway, enough anguished hair-tearing, and on with the review proper..
+
+ Some GEM Bench saddoes type stuff....
+
+GEM  Bench  test on standard Falcon 030 running at 16mhz  (CiH  default 
+setup),  somewhat  abbreviated as these things really go on for far too 
+long..
+
+GEM Bench v4.03  
+============================================
+Falcon 030 TOS 4.01
+Blitter Enabled
+NVDI not present
+Video Mode: 768*240*16
+LineF FPU installed
+Ref: F030 + FPU, 640*480*16
+============================================
+Graphics:                            130%
+CPU:                                 102%
+Average:                             123%
+
+As  you  can see,  this is with running my Falcon in a  favourable  RGB 
+screen  mode,  which always seems to be a bit quicker than the  default 
+VGA mode suggested by GEM Bench..
+
+
+With Nemesis installed..
+
+GEM Bench v4.03 
+============================================
+Graphics:                            178%
+CPU:                                 167%
+Average:                             175%
+
+A  goodly  boost  for  the CPU,  which is what Nemesis  is  all  about, 
+although seemingly not such a huge improvement on the desktop, although 
+things like window opening and closing,  and screen updates in GEM felt 
+a  lot quicker regardless of what the figures say..  This was based  on 
+the  rather  so-so  standard GEM desktop in 16  colours..  Much  better 
+results  for  the graphics tests would be obtained with  a  replacement 
+desktop..  What GEM Bench does not tell you of course,  is that the DSP 
+has  been accelerated too,  as the supplied DSP tester proglet was only 
+too  happy to confirm that it was running at 150% of its  potential,  a 
+mouth-watering 48 mhz or 24 mips worth in fact..
+
+ The look and feel of it....
+
+As  I  said  only  a  paragraph ago,  the  'feel'  of  the  desktop  is 
+immediately improved,  with windows, menu bars, file selectors and all, 
+hurling  themselves  into  their  tasks  with  renewed  vigour..   This 
+crispness  even  continues  into the  notoriously  sluggish  truecolour 
+modes,  and leads directly to one of the major selling points,  that is 
+the  ability  given by Nemesis for SVGA monitors to  access  truecolour 
+even in high resolution.. 
+
+'Boring' applications such as text editors and the like get a  makeover 
+and  become  crisper to use..  Even ancient software such as  1st  Word 
+benefits..  Just  about  all  GEM  based software  will  show  a  great 
+improvement,  from Imagecopy,  to Positive Image, to Papyrus, and CAB.. 
+The art and image manipulation software able to use the enhanced screen 
+modes provided by Nemesis..
+
+Of  the  art packages within my reach,  Godpaint was a-ok running  with 
+Nemesis,  also  Rainbow Paint 1.2 worked with Nemesis..  We assume that 
+version 2 of Rainbow Paint will be fine as well..
+
+Also,  Apex Media will benefit, being already set up for enhanced CPUs, 
+and  the  Apex  Picture viewers are appreciably  faster  in  operation, 
+especially with JPEG decoding..  We don't really need to say anymore at 
+the  moment  about the forthcoming Apex Alpha,  for which  Nemesis  was 
+developed in mind for..
+
+Animation  players  are also able to use the extra  speed,  with  Tello 
+Guillaumes 'M_Player' showing less skipping of frames on AVI  playback, 
+which  is interesting,  as an accelerator of this nature would not show 
+so  much  benefit  for applications using a  lot  of  disk  accessing.. 
+Perhaps  the  total system speed-up made possible by Nemesis,  and  not 
+just the CPU, helps here? The Brainstorm Movie FLI player also seems to 
+be more comfortable if two or three animations are playing at the  same 
+time.. The only complication with M_Player is that it has a falling out 
+with  Nemesis  if it tries to force truecolour  from  a  non-truecolour 
+video mode..
+
+ The sound of Music....
+
+The  news here is mostly good,  but here was also where we reported our 
+first  failure..  Graoumf Tracker recognised the extra CPU and DSP time 
+available  with  reduced  CPU load  on  several  complex  multi-channel 
+modules..  Certain  modules that were pushing a standard Falcon  fairly 
+hard  could  be played with room to spare now..  Digital  Tracker  also 
+worked,  but with the complication that it always tries to access drive 
+C,  which  does  not go down too well in 24 mhz high clock mode  on  my 
+Falcon..  It  is okay with 20 mhz low clock though..  Protracker worked 
+normally enough,  up until you asked it to play a modfile,  and then it 
+didn't..  Protracker  decided  that it really did not want to  ever  go 
+again,  a garbled screen occuring even with Nemesis turned off,  a rare 
+casualty of this upgrade..
+
+Also  tested were the NTK4 tracker which came up okay,  with most  four 
+channel  modfiles showing a very low 2% processor time,  Bobtracker was 
+happy,  as  was  Octalyser,  the  bigger brother of  Protracker..  Also 
+Megatracker, another multichannel monster worked just fine with Nemesis 
+in place..  Even the grandfather of them all,  Griff's original modfile 
+replay routines, worked with Nemesis activated..
+
+Of the desk accessories, 'Rape the DSP' seems to be okay as long as you 
+don't swap around drive partitions and stick to the assigned  partition 
+where  you  keep your modfiles..  FlaySID runs,  (and is playing  right 
+now!)  and even the Cream SID player co-operated after an initial  bout 
+of a juddery screen..
+
+ Demonstrably Nemesis!
+
+Alright,  what  you  are all waiting for,  does that foxy Martina  spin 
+across the screen any more quickly than she already does in Lost Blubb, 
+do those already incredibly smooth EKO vectors melt into  indescribable 
+creamyness with Nemesis assisting?
+
+Well, I have to say with many  demos running under Nemesis, forget it.. 
+Demos  don't actually crash and burn,  merely run with garbled  screens 
+and  often over-fast tracker music as well..  Just about any demo  that 
+has had a 'Good' label attached to it at any time in its life, probably 
+won't run properly with the upgrade switched on..  The classic demos we 
+tried,  with  recent  Siliconvention entries,  do fortunately still run 
+with Nemesis off though..
+
+There  were  one or two pleasant surprises to start  with..  The  Lazer 
+Symposium  textured 3D spaceships 4k intro does run more  quickly,  the 
+TSCC  ST  based  Siliconvention  Bumpmap intro is  a  lot  quicker  and 
+smoother than normal.. Several older demos do run with Nemesis as well, 
+the Passion Arrival demo definitely being quicker across the board, the 
+Pentagonia  demo  worked  fine,  and  seemed to  get  through  its  set 
+programme  quite a bit quicker as well..  On the working list were some 
+Fried Bits 3 96K intros, with Burning Water running faster, and Doomino 
+of course.. The ancient Lazer demo Warum worked most of the time, apart 
+from a couple of bits where the screen and soundtrack glitched, The ICE 
+(Inner  Circuit Explorers) NAS intro worked okay,  and even the  Senior 
+Dads joined in the fun with a fully enabled Anal Tuck demo!
+
+Of others we tried, the Agony demo got halfway, and the EKO 'Papa was a 
+Bladerunner'  looked  like it might go at first,  but succumbed to  the 
+screen glitch tendency.. The one demo you might expect not to run again 
+properly irrespective of whether Nemesis was on or not was the Abstract 
+'Xperienced'  demo,  which  relied  on some  extremely  dubious  screen 
+display  routines which didn't work with the majority of monitors  even 
+at the best of times..
+
+Generally the older or less intensively coded the demo, the more likely 
+it  is  to run with Nemesis..  After extensive testing,  quite a  large 
+proportion  of  the older stuff (1993-94) did run,  and often showed  a 
+tangible increase in speed or smoothness in operation..
+
+ Playing Around....
+
+Another  major area of interest for a lot of people,  especially  those 
+people running an RGB set up, is how Nemesis performs with games..
+
+These  were  generally more co-operative than the  demos,  not  usually 
+refusing to run with it.. Of first interest were the 3-D games produced 
+for   the  Falcon..   They  all  produced  noticeable  improvements  in 
+performance,  starting  with  Bad  Mood,  touched  upon  in  the  Atari 
+Computing  official  review,  which  updated to the  screen  much  more 
+quickly and starts to look like a respectable 'Doom' clone..  Of Lasers 
+and  Men  gained faster updating,  but also gained super tough  enemies 
+with  devastating firepower,  so a bit of a no score draw there..  Moon 
+Games  (Moon  Speeder) was very smooth in operation,  positive  reports 
+second hand (via Matt Smith) have also come back about Steel Talons and 
+Gravon..   One  disappointment,  at  least  in RGB mode,  was the  non-
+displaying  of Towers II under Nemesis,  it producing the same sort  of 
+garbled  screen seen with running the demos..  A quick burst of  normal 
+non-Nemesis operation saw that one all right again though..
+
+Most  other  games  were expected to run faster,  but  this  would  not 
+necessarily  be  reflected in what was being sent to  the  screen.  One 
+exception  to this rule was Spice,  the Martin Steen produced  Defender 
+clone,  which when run in Truecolour,  did actually seem to run quicker 
+with  the accelerator having a direct effect on the screen  update  and 
+general game speed..
+
+Most Reservoir Gods games were fine,  apart from Skyfall, which gave us 
+another  burst of that garbled screen referred to before..  Neurobotix, 
+ok,  Llamazap  was fine too,  Killing Impact came up positive as well.. 
+Wotanoid,  a game already quite fast enough worked too, and the demo of 
+X-Moon ran too..   The general rule for most Falcon games, is that they 
+run  with  Nemesis,  but without too much discernible  difference  from 
+before  with  what you see on the screen..  Sometimes,  the game  logic 
+(generating  bad guys etc) may be speeded up by the  accelerator  which 
+was  actually  seen  to take place in Starball,  to name  one  specific 
+example..
+
+The  new  generation  of Falcon games,  such as Running and  Willy  the 
+Adventurer should be ready to make full use of Nemesis..  'Running', as 
+a  3D  Doom  style  game will be able to run   more  smoothly  with  no 
+modifications to the game code needed, and the programmers of Willy the 
+Adventurer are looking into adding extra code to make use of Nemesis if 
+it is detected..
+
+Obsession  and other ST based games such as Starball worked  fine,  but 
+showed a screen ghost/garbage bug on the extreme right of the  screen.. 
+Many ST games, such as the Stosser Soft games, run insanely fast in any 
+case, and are better off without Nemesis..
+
+Christian  Gandler's ZX Spectrum emulator with assorted 48k games  runs 
+quicker with Nemesis on, y-e-s!!
+
+ A view on diskmags....
+
+But does Maggie run with it? The Falcon shell co-operates with Nemesis, 
+although  certain issues with intros may need the intros disabling,  as 
+these involve timing-critical code..  The ST shell runs fine apart from 
+a strange 'ghosting' bug which is discussed in more detail later in the 
+text..  As for other diskmags, and Falcon compatible ST-News issues are 
+fine, ST+ (ST Plus) from issue fourteen runs very quickly, and with the 
+right  hand screen ghosting that affects a lot of other  ST  programs.. 
+Undercover magazine,  okay,  unless an intro gets in the way first.. We 
+tried  issue  twelve  of DBA (Diskbusters) mag,  and that  worked  with 
+Nemesis,  but a little juddery on scrolling down the menu bars..  Those 
+diskmags  based  on  the  simpler  non-custom  menu  shells  will  take 
+advantage of the extra speed available to the GEM desktop..
+
+The  majority  of  diskmags aren't speed hogs,  and don't  really  need 
+Nemesis..
+
+ A quick word of reassurance....
+
+I have been looking forward to getting this upgrade,  but part dreading 
+it  as  well..  A  lot  of previous upgrades on any  Atari  have  often 
+involved  large  chunks  of a  software  collection  suddenly  becoming 
+inaccessible, as fairly drastic things have been done to the computer.. 
+Taking something like the Afterburner '040 upgrade as an example, where 
+it  is not so much a question of "What doesn't work on it?",  and  more 
+like  "What  *can*  I get to work on it?" You can see  that  a  certain 
+amount of justifiable nailbiting was involved..  Happily,  this was not 
+to be required..
+
+I  can report that Nemesis passes its 'Staying out of the way  if  it's 
+not  wanted  test' with only one or two  isolated  problems  previously 
+discussed..  If  anyone  has  a  large collection of  things  that  are 
+unlikely to run with Nemesis activated,  don't worry, you can still use 
+them with Nemesis turned off..
+
+ All good news then?
+
+There  are  some  oddities in operation,  especially when  running  the 
+Nemesis 'High' clock (the only one people will bother with most of  the 
+time..) 
+
+The documentation warns that some IDE drives don't co-operate with  the 
+upgrade,  even  running  in the 'Low' clock mode..  It turns out that I 
+have  one of those troublesome drives,  (Toshiba 120 meg) which seem to 
+stop dead once the 24 mhz high clock is activated, although it was fine 
+at 20 mhz..  However,  any external SCSI devices are unaffected, and as 
+all  the  vital stuff is located thus,  I don't consider it to  be  too 
+major  an irritation..  It is considered a rare situation by Titan  but 
+people  with large IDE devices,  or who rely predominantly on these for 
+storage should take note..
+
+There  is also a strange video display bug which affects programs  that 
+run in ST low resolution.. A 'ghosting ' effect at the extreme right of 
+the  screen appears as though the palette is starting to  split..  This 
+does  not affect the operation of any programs,  just makes the  screen 
+look a bit messy at the extreme right..  An identical bug has been seen 
+by  us  before,  when  we use the Reservoir Ripper software  to  obtain 
+screenshots for Maggie,  funnily enough this only appears with programs 
+running  in  ST low mode as well..  (This may be a feature of  the  RGB 
+patch, do (S)VGA monitors get this same bug?)
+
+If  Nemesis  is running in the high clock mode,  there may be  problems 
+changing resolution if you have one of the problematic IDE drives  like 
+I  do..  In this sort of case,  it is a good idea to remember where you 
+kept  the off switch or low clock program and run that before  changing 
+resolutions..
+
+Matt Smith, who also has Nemesis, suggests that a complete cold boot is 
+advisable  if you are intending to run Nemesis unfriendly software,  as 
+the supplied 'Nemesis off' program isn't guaranteed to clear the system 
+on its own for everything that might follow according to him..
+
+These are fairly minor points, and shouldn't really affect your use and 
+enjoyment of Nemesis..
+
+ Overview and conclusion....
+
+Well  I've  had  Nemesis installed for a week now,  running  it  fairly 
+continuously for most of the time my Falcon has been switched on..  The 
+Falcon  has  been on for several hours at a time,  with not a  hint  of 
+instability from the upgrade.. This goes to prove that The Upgrade Shop 
+do  a good job when they install the unit,  there is even a four  month 
+guarantee if things do go wrong again after they've fixed it..
+
+Nemesis has proved to be unobtrusive and trouble free in use,  the only 
+effects  being positive ones,  with only the odd isolated problem  left 
+over, which may well be cured by progressively better software patching 
+in any case?
+
+In my case.  it is not quite the sort of thing I would leave in my Auto 
+folder,  as I have too much software in certain categories that refuses 
+point  blank to work with Nemesis installed..  I do keep it close by on 
+the  desktop  though,  and tend to use it more for the sort of  session 
+like  this,  where  a  GEM environment is involved,  and wherever  else 
+possible  as well..  The extra responsiveness given by Nemesis  becomes 
+very  addictive,  and a bit like getting your first hard drive where it 
+is  also  very  difficult  to  go back to  what  you  had  before..
+
+Nemesis  is likely to prove very popular even with people who  normally 
+don't  rush into upgrading their machine..  The good value at fifty  or 
+sixty pounds is one factor,  and yes,  people have been able to DIY fit 
+them  without  problems,  so let's just say I was unlucky..  The  other 
+major factor in the deserved popularity of Nemesis is the fact that  it 
+does not interfere with the normal operation of your Falcon,  providing 
+the  required extra speed without imposing compatibility penalties  and 
+severely limiting what you can run with it.. Indeed, if Nemesis catches 
+on  enough,  you  are  likely to see applications  and  other  software 
+written  specially  for  it..  We already have the new  Apex  range  of 
+software  coming  from Titan Designs to look forward to,  let's see  if 
+third party producers and independent coders will take up what  Nemesis 
+has to offer!
+
+As an upgrade Nemesis has achieved better than 95% of my  expectations, 
+which is as good as things can get.. Definitely recommended!
+
+ CiH.. May '97
+
+

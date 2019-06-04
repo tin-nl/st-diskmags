@@ -1,0 +1,85 @@
+
+                                  ‰Whip!
+                      Sound to light for the Falcon
+                                by Escape
+
+This  little baby first emerged at last Easter's Error in  Line  coding 
+party in the 'Wild' competition.  We thought,  "Hey wow!" but seriously 
+wondered if we'd ever see it get out into open country?
+
+Fortunately,  Norman/No  of  Escape relented,  and here is version 0.3, 
+fixed  for VGA monitors,  at least those monitor tubes that are able to 
+manage 100HZ?
+
+Very very simply,  Whip!  takes an external audio source fed in through 
+the  handily available microphone socket on the back of the Falcon.  It 
+reads it through the DSP matrix,  and makes an effect on screen, chosen 
+from  the  crateload now available,  move around in time to the  music. 
+Then the audio is spat back out through the headphone audio/out socket.
+
+The basic operation of Whip! thus described is extremely uncomplex, but 
+of course, there is a bit more to it than the paragraph above. There is 
+a lovely custom interface, slider bars and all, done in a gorgeous arty 
+'far away from bland GEM as possible' style.  Functionally, it is split 
+into slider bars on the left for input and output values, with a simple 
+oscilloscope to see how you're fine-tuning. There is also an option for 
+the sad and desperate, internal speaker on/off!
+
+On the right,  is where the major action takes place, as there are menu 
+selectors for the range of individual effects loaded into the  program. 
+(As VLM modules,  more of which in a minute.) Below that, is a sub-menu 
+to control parameters of the module presently running.  There is also a 
+randomiser  (with  adjustable timer) for those fans of  slideshow  type 
+multimedia  displays.  And of course,  you can choose which VLM modules 
+you  want  up there on the screen,  and those which are staying out  of 
+things today.
+
+With  the  three  effects seen at EIL,  and with  the  additional  ones 
+supplied  by  Escape when they released Whip!,  this was a bloody  good 
+product. Going for an add-on module format, means that the Whip! system 
+can  be added to indefinitely.  The next really good idea of Escape was 
+to release details of how the VLM format could be programmed. This gave 
+all  sorts  of third party programmers a leg up,  and we saw a wave  of 
+early summer 'Whip-Mania' consume the Atari nation!
+
+Contributors as diverse as Earx/Fun, NoCrew, and even DHS got involved, 
+all  reprising favourite demo effects in VLM.  How could be do  without 
+the famous DHS tunnel strutting its funky stuff in time to the beat  on 
+whip?  The clear winner,  in this mad race to get the most over the top 
+effect possible,  is NoCrew,  with their 'Whip-pong' VLM.  Basically, a 
+pong  game  which can be 'played' with two mono  microphones  into  the 
+stereo  source,  and  the players shouting at the bat to move,  or just 
+letting  the  music 'play for you!  A real crowd-pleaser,  or  stopper, 
+depending on your point of view.
+
+Another  way  of  looking  at Whip!,  is of course a  cunning  plan  to 
+introduce  commonplace  demo  effects to unsuspecting  members  of  the 
+public! If you can somehow listen to your favourite CD through it, then 
+Whip! magically becomes elevated beyond the 'waste of time downloading'  
+view  of  normal demos that a lot of non-scene people have.  It can  be 
+described as working like a sugar-coated pill in that case!
+
+A  short review like this doesn't really do justice to seeing Whip!  in 
+action.  I'm not sure whether it can be called a 'utility', as there is 
+very little 'usefulness' in a production like this.  However, if you're 
+showing off at a large public venue, with a suitably large screen, then 
+be  prepared  to  knock  out the crowds  of  gawping  PC  owners  drawn 
+magnetically to you. (And steal their wallets!)
+
+It works on Centurbo 2 as well. Just thought you'd like to know that!
+ 
+
+ Advantages..
+Uniquely uses some of best bits of Falcy
+Infinite possibilities for third party adding on 
+Enthusiastic take-up by Atari Scene!
+Great for showing off!
+Makes demo effects user friendly!
+Seems to be accelerator friendly? 
+
+ Disadvantages..
+Well, none really!
+ 
+
+ CiH - Sept '99
+

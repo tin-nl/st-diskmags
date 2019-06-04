@@ -1,0 +1,168 @@
+ó--------------------------------------------------------------------------------
+                                 "Posh" by Checkpoint
+ó--------------------------------------------------------------------------------
+
+system... Atari ST/STe, 1 MB RAM, RGB, STeem 2.4
+
+credits.. code - defjam/checkpoint
+          gfx  - modmate/checkpoint
+                 exocet/jff
+                 sts/alive
+          msx  - 5o5/checkpoint & creators
+
+release.. o5/o3, took 1st place at Error In Line 2oo3 ST Demo compo
+
+ó--------------------------------------------------------------------------------
+
+ñ-> Follow the crosslinks for more screenshots!!!!
+
+Wow, we had to wait about  4 years for the next  big demo by Checkpoint, as this
+is the first  diskfiller by Defjam and his mates since "Suretrip" 1999. Original
+this demo should see the light many  years before, as it was originally produced
+for the STNICCC 2ooo under the title "Monostyle" but  because of a bunch of bugs
+the demo wasn't shown and not released at all.
+
+As it didn't appeared on Error In Line 2oo1 nobody  thought it would be possible
+to see it somewhen. Defjam conquered the Gameboy Advance and later on the PalmOS
+with demo  coding and anybody  thought the Atari  scene wouldn´t see him back at
+all doing some of his freaky stuffs on the ST.
+How wrong we were! As the first rumours at the  Error In Line 2oo3 came up, that
+Defjam might release something, all people  crossed their fingers and  have hold
+their breath, as  already "Suretrip" was  able to show  Defjams skills very much
+and  nobody  matched it  so far  to  top "Suretrip" really... Many  coders maybe
+reached a quite similar style, but "Suretrip" was always one step beyond 'coz of
+Defjam's hardcore ideas to present  us screens that  everyone thought they would
+not be possible on the ST at all. So all wondered, if Defjam will be able to top
+his own production. And... right now said, he did it...
+
+"Posh" itself comes really old schoolish as boot disk onto our machines and runs
+only on ST as well  as on emulation. But if we get some new demo for our beloved
+STs we  have to dig out our old machines, torture it with the MSA packer (yummy)
+and hep, ówe get some new and cool self running demo diskð... put' into the floppy
+and looking  if the ST still runs, ofcourse he does even if the drive makes some
+strange noises... But this isn't that important  as right after putting the disk
+into the floppy the demo starts...
+
+At first a white  screen appears while coloured  blocks are building an abstract
+loading  logo  and a  sample from  Headcrash's "Back to basics" that  matches in
+parts  with some  discussions  in  the  scene... ó"what colour  is right and what
+ócolour  is wrong..."ð hehehe... The screen turns black and a chip music starts to
+play while a Checkpoint logo is build up line by line, it is drawn by Exocet and
+well done.
+
+{*i POSH1.PI1 m 0 20 0 200}
+
+The first bigger  effect is a Posh logo with 3 bumpmaps on it, filling the whole
+low res screen, the whole  scenery turns white and then bright yellow to show us
+some small stylish logos for Defjam, mOdmate and 5o5 jumping and snipping around
+on the screen. The chipmusic  goes straight  forward and  turns out to be a óreal
+ócool demo soundtrack!
+
+It goes on with a kind of plasma  effect with nice  colours, followed by the pic
+that  was done by mOdmate for  the EIL 3 gfx  competition. A well  drawn picture
+with a  lot of hardcore  dither  stuff. At next  follows  some kind  of whirling
+effect that zoomes and distes on the screen.
+
+Then a Checkpoint logo is build up on the screen piece by piece, it's again done
+by mOdmate and quite stylish and  then a very big  burning vector cube is shown,
+that remembers  hard to their  Drooling intro from 1996. Another  zoom something
+effect comes up, that looks  a bit like a  wormhole that  can't decided  in what
+direction  it has to run ;) and we get  another very  great picture  by mOdmate,
+showing his "Monostyle Biest"... hehe. Then  another nice  effect comes up, that
+brings us some raindrops onto the screen created out of shaded ascii signs. Also
+a very cool effect.
+
+ñ-> some more cool effects <-                                                       {*\POSH1.TXT}
+
+With a new music  a new part of the demo  starts. At first  there are given some
+technical  notes about  the following  thing, while  the screen  swaps again and
+again  to another  one, who  builds  up a  little logo, saying "doughnut"... Ah.
+And then we  get the donut, build of 128 faces and  gouraudshaded... You can get
+a screenshot by following the link some lines below.
+
+That screen  runs quite a  while, exchanging  the background  pictures again and
+again, those are downscaled pictures from Amiga/PC artists from several parties.
+A little drawback in my eyes is  the fact that  the donut is halted in movement,
+when the  pictures are exchanged. At last  you get the  whole screen filled with
+donuts.
+
+At next follows a fast textured tunnel with curves, a cool but  known picture by
+Exocet again and... shaded  raytracing balls with  z-buffering?! I really don't
+know how to describe it right...
+
+But if you think Defjam has already finished his  effect orgy, you are so wrong,
+as he  brings us the  fractal plant  from the "Terrorise Your Soul" Falcon demo
+onto the screen, together  with a short  snipped of the  original tracker music,
+wow, a dejavu! The chipmusic  comes shortly back  and makes place for one of the
+last killer effects...
+
+Defjam brings us now: "Terminal Fuckup" onto the ST, 1o years  after its release
+on the  Falcon we  get a quite  good version  on our  little machines. You don't
+remember? The original demo was created by Sanity on Amiga and then converted by
+Sanity again onto the Falcon. It shows some texture mapped zoom rotator. Ok, you
+might say, zoom rotators are old shit, Sanity did it on the ST too... yes, yes..
+but Defjam  has done  it  in... fullscreen... with  distorting  texture and, the
+original tracker  music! That screen really rocks! Look some lines below for the
+screenshot link!
+
+After a while the screen turns black and the music is turned off, while a little
+"the end" logo is displayed... underlined with "has not been reached yet"... Uh!
+
+And then we get the last killer effect, together with another stunning chipmusic
+by 5o5 a wolfenstein routine appears on  the screen. But not an ordinary one, it
+features  even floor  and ceiling mapping and  this with a quite good speed. Ok,
+the resolution  isn't the highest  but therefore  we get some  animated walls as
+well, showing wormholes, plasmas, zoomrotators and bumpmappers. What a rush!
+
+ñ-> the last orgasm <-                                                             {*\POSH3.TXT}
+
+Then the music is  switched off and we  get a picture by mOdmate  again, showing
+his winning "Jasmin" picture from  Quast'98 (?) in 16 colours  and brown shaded,
+smoking a cigarette. Nice effect, that is build of Defjams fire routines.
+
+{*i SMOKING.PI1 m 0 20 0 200}
+
+ñ"Die EU Gesundheitsminister: Rauchen gef„hrdet Ihre Gesundheit!"
+
+Then you can either press space to see the end part or watch  Jasmin a while and
+wait for the automatical move to the end part.
+
+Here you get some scroller with changeable  speed, a Checkpoint  logo that dists
+in X and Y axis  as well as  some purple bouncing something... Dunno, surely the
+background of the logo...
+
+The scroller features  a lot of technical  informations (smashing onto the shit,
+harhar), the complete credits  and greetings. And  then you have no other choice
+as to reset the machine, for another demotrip...
+
+òFinal words... I can't describe it, Defjam  kicks ass like hell  and I think the
+ò               scene surely will  forgive him the  last years in "doing nothing"
+ò               and working on other  systems too. He shows us  again, what freak
+ò               he is, as I think nobody  around thought  on converting  parts of
+ò               Falcon demos to the ST, and  overall with  success. He shows what
+ò               the ST is able to  do with such a  coding wizard  on the keys and
+ò               Defjam surely has overrode his old idols for lightyears. The demo
+ò               also  leaves us  a bit  split impression, since  it features very
+ò               straight designed  parts while  on other  moments it  seems to be
+ò               kicked together in  a hurry. mOdmates grafix and design and 5o5's
+ò               outstanding  musix... if  this team would  sit and  work together
+ò               much more close, yawn... I think  no one would be able to imagine
+ò               the things they could do then... I'm so damn happy that this demo
+ò               has finally found its way to our old ST's, kicking ass once more,
+ò               in times as the Amiga 5oo is already burried and gone, harhar ;)
+
+ó___ðratingsó______________________________________________________________________
+
+ñvisuals.......ð  9o % ñ- great grafix, logos and fonts, yummy!
+ñaudio.........ð 1oo % ñ- 5o5's soundtrack is just outstanding
+ñeffects.......ð  9o % ñ- overload, in parts not seen before on the ST
+ñdesign........ð  8o % ñ- in parts very cool designed, unfortunately some breaks
+ñoriginality...ð  9o % ñ- several parts weren't seen before on the ST
+
+ó___ðOveralló______ð9oó_ð%ó____________________________________________________________
+
+One thing  is  sure, Defjam  created with  his mates  a demo  that is  already a
+classic now, technical  it is definitly  high end  but lacks a  bit consequently
+design. Btw... have I mentioned that I watched the demo 11 times for this test?!
+
+ó_ò.tSCc.ó__________________________________________________________òmoondogó_òo6/2k3ó_

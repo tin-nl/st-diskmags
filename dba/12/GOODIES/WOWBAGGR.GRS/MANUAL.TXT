@@ -1,0 +1,284 @@
+                      A brief introduction
+                      --------------------
+
+ Welcome to "Grandson of Wowbagger",  a third-generation  program 
+which  is  probably  the  most  tasteless  and  insulting  little 
+accessory you're likely ever to have other people - or yourself - 
+stumble across.
+
+ The  accessory's  full  name  is  "The  Automated  Grandson   of 
+Wowbagger Still the Infinitely Prolonged", named after the rather 
+infamous  character  featured  in the first  chapter  of  Douglas 
+Adams'   hilariously   funny  book  "Life,   the   Universe   and 
+Everything".
+ For  those  who  don't  know:   After  some  problems  involving 
+something elastic and time travelling, Wowbagger became immortal. 
+He  thought this was rather nice,  but as time progressed he  got 
+kinda fed up with everything. So he set out to insult every being 
+in the entire universe, in alphabetic order.
+ So there. This is automated version of this immortal being - or, 
+rather, as this is already the sixth (and now most definitely the 
+last   and  certainly  the  best)  version  of  this   particular 
+accessory, the Grandson Of.
+ Wowbagger  himself,  as well as any of his  offspring,  can  now 
+retire.
+
+                     Public Domain products
+                     ----------------------
+
+ The  products mentioned in this bit,  just like the  product  to 
+which this documentation file belongs to,  are freeware, i.e. you 
+can  copy  them freely and you don't have to pay for  using  them 
+unless you really feel you want to (which would be nice).
+
+- The Background Music Utility (BMU)
+  Working  on the ST can be tedious.  Wouldn't it be nice if  you  
+  had  one  of about 50 different pieces of nice  music  sedately  
+  running  in  the  background,  using the  ST's  built-in  sound  
+  routines (which' capacity you should not underestimate)?   Then 
+  this accessory is perfect for you.
+- Speedwriter II
+  A somewhat older 'interactive animated correspondence' utility,  
+  including its GfA Basic 2.0 source.  With this,  it is possible  
+  to send remarkable letters that you can see being typed as  you 
+  look, including all cursor movements. Just a nice titbit.
+- Handy
+  A tiny accessory that allows you to do three things: Access the  
+  file  selector (handy when using one like "UIS  III"),  Specify  
+  date & time, and freeze the system until a password is entered.  
+  A source is included so that you can easily adapt the password,  
+  and then compile it again (using GfA Basic 3.x).
+- Name Creator
+  Although  this program will only appeal to those  into  reading  
+  and  writing fantasy fiction,  this utility will be  useful  to  
+  those  who  generally  need to think up fantasy  names  in  the  
+  category of dwarves,  elves,  etc. Using a database of existing  
+  parts of names (taken from  Donaldson,  Tolkien,  Weis/Hickman,  
+  McCaffrey and Herbert, among others), you will be amazed at the  
+  quality  of the many thousands of different names this  program  
+  can come up with.  Creating anagrams is also possible -  though  
+  doing  this  with large names will use  LOTS  of  memory.  This  
+  program  is  being used professionally by a games  company  for  
+  their role playing games.  Word parts can be added,  a  history  
+  can be kept, etc...
+
+                      The Wowbagger Manual
+                      --------------------
+
+ Simply  copy  the WOWBAGGR.ACC file into the root  directory  of 
+your boot drive.  In case you do not have a hard disk,  this will 
+be A, and in case you DO have a harddisk this will most likely be 
+C.  After booting your system, the Grandson of Wowbagger will lie 
+lurking in the background, invisible to the world.
+ Until it hits, that is.
+ This  accessory is slightly 'illegal' (in the  definition  Atari 
+gives to the word, that is) - it does not occupy a desk accessory 
+slot in the 'Desk' pull-down menu.  This represents no  problems. 
+It even works together with the "Chameleon" accessory loader.
+ Even though "Grandson of Wowbagger" occupies no accessory  slot, 
+this  does  not  mean  you  can  suddenly  have  more  than   six 
+accessories  installed! This limit still remains (at  least  with 
+non-"MultiTOS" Operating Systems).
+ AT  ALL  TIMES you should make sure the WOWBAGGR.CNF is  in  the 
+same  directory  as  the actual program.  When  using  it  as  an 
+accessory,  make sure that the configuration file is in the  root 
+directory,  even when the accessory is somewhere else (like in  a 
+"C:\ACCS\"  folder).  Before you use it as an accessory  for  the 
+first time, always check if the settings are to your liking.
+
+ CONFIGURATION MODE
+
+ "WOWBAGGR.ACC" can be renamed to "WOWBAGGR.PRG".  If you execute 
+the  program  then,   with  the configuration file  in  the  same 
+directory,  you will enter the built-in editor,   which can  edit 
+the relevant accessory parameters which are the following:
+
+ INSULT INTERVAL IN MINUTES AND SECONDS (1 to 60 minutes)
+  Sets the intervals at which curses will be flung on the  screen 
+  and/or printer, with an accuracy of 1 second.
+ OUTPUT TO PRINTER/SCREEN/BOTH
+  Determines  whether  curses  should appear  on  a  printer  (if 
+  connected), screen, or both.
+ NUMBER OF INSULTS PER ACTIVATION (1-5)
+  Specifies  the amount of curses that will be put on the  screen 
+  in one fell swoop.
+ CURSE RATING (U, PGA or XXX)
+  Internally the words have been rated somewhat.  "U" (Universal) 
+  is pretty harmless but insulting nonetheless.  "PGA"  (Parental 
+  Guidance  Advised) is already pretty raunchy and "XXX"  (Triple 
+  X  Rated) contains all the words after which your parents  told 
+  you  to wash your mouth (or even more  drastic  things).  These 
+  include blatantly sexist and counter-religious words, and a lot 
+  worse.
+ LANGUAGE (English or Dutch)
+  There are many more English than Dutch curses,  but it might be 
+  fun to see a few Dutch curses.  To Dutch people (or people from 
+  Belgium,  or  even  South  Africa) they  might  actually  prove 
+  useful. It should be noted that only the actual curse mode will 
+  be fully in Dutch when selected.  Configuration mode is  always 
+  in English.
+
+ By  default,   screen  and  printer output are  enabled  (if  no 
+printer is connected or on-line this will be no problem) and  the 
+insult  time  is  set to five minutes (quantity  is  set  to  5).  
+Default  curse  rating  is "U" and default language  is  English.  
+You  can  imagine what fun it would  be to put the  accessory  on 
+someone's   boot   disk/partition  with  a high  time  limit  and 
+printer  output  only.   He  will  never notice it until  he  has 
+turned  on  his  printer  and  is,  for  example,  printing   out 
+something.   "Grandson  of  Wowbagger"  can  interrupt  any   GEM 
+application as well as any printing going on at the  moment,  and 
+will  spill  the insult (for example in the middle  printing   an 
+official  document...limitless  loadsa  hard-core  fun!)  without 
+mercy.
+ When  entering  configuration mode,  the "SAVE" button  will  be 
+default.  Once  you have saved your settings,  the "EXIT"  button 
+will be default.  At all times you can alternatively press [UNDO] 
+to exit or [HELP] for the "About" dialog.
+ Once  the  parameters have been edited,  all you need to  do  is 
+rename  the file to something ending in ".ACC" and make sure  the 
+configuration  file ("WOWBAGGR.CNF") in the  same  directory.  It 
+should  be noted that this configuration file is  NOT  compatible 
+with that of earlier versions of the program.
+
+ IN CASE OF AN EMERGENCY
+
+ Should you ever yourself be surprised by a sudden appearance  of 
+swearing words on your monitor (whether because you  accidentally 
+left  it on yourself or because some evil person put it  on  your 
+boot  partition),  there  is a way out.  Simply leave  the  curse 
+screen whilst keeping the [ALTERNATE] key pressed.
+ No  further  insults will appear on screen and/or printer  -  at 
+least not until you boot again.
+
+ PUBLIC HEALTH WARNING
+
+ There are some really nasty insults possible with this program -
+as a matter of fact,  of all the literally millions and  millions 
+of possible insults only a couple are somewhat mild in one way or 
+another.  So  nobody  under 18 should use it,  unless  they  have 
+really liberal parents.
+ I have included some really gross words,  so beware! Don't write 
+to me and say I haven't warned you.
+ If  it  comforts you to know that I was pissed out of  my  skull 
+during the creation of this program: I was berzerkedly drunk when 
+I  created most of it.  Also see the note at the very end of  the 
+manual.
+ Oh  yeah.  Nearly forgot.  A total of  2,056,732,555,440 (that's 
+over 2 TRILLION!!) curses are possible.  Even if you  install the 
+accessory's  parameters   to  5 curses to  be  displayed  at  the 
+smallest  interval  - one minute - it will take  you   well  over 
+775,000  years  of non-stop computing to  see  them   all  (given  
+that  no  insults appear twice,  which is quite unlikely  not  to 
+happen).
+ That's quite a long time.
+
+ THE THEORY
+
+ Well,  there isn't much to say really. Basically it has a couple 
+of long lists of words. One contains only adverbs (very, grossly, 
+insubordinately,  etc.), another one only adjectives (big, small, 
+putrid) which is followed by nouns (git, twat, horse). Some nouns 
+(I believe they're called non-count nouns or mass nouns) can have 
+something  like  "load of" in front of them - so there's  also  a 
+list of words along that line (bag full of, toilet full of). This 
+latter category also has an extra adjective added (say, "bag full 
+of RANCID milk").
+ And that,  basically,  is all there is to it.  It is based on an 
+original  idea  by  Stefan Posthuma  and  Dave  Bloemendaal,  but 
+"Wowbagger"  is  much more naughty and doesn't  limit  things  to 
+Dutch.
+
+ OTHER VERSIONS
+
+ Quite an enormous while ago,  somewhere in 1989 methinks, I made 
+the first version of "Wowbagger" for the disk magazine "ST NEWS". 
+It  has been spread reasonably effectively.  The difference  with 
+the later versions was that the number of insults per  activation 
+could  not be changed and that about 1.5 BILLION  swearing  words 
+could  be generated with it.  In this version I used  the  second 
+part of a swearing word (the adjective) twice.  So you would  get 
+"very RANCID PUTRID sissy" or something like that.
+ As  of the second version,  the middle bit was only  used  once. 
+This reduced the amount of curses possible, but on the other hand 
+I  had added about twice as many words so the fun was  more  than 
+doubled. And, of course, You could press "Help" while a curse was 
+on  screen to get some credits.  This second version  was  called 
+"Version Integrale" and was done on July 14th 1991.
+ The  third  version  was  called  "Son  of  Wowbagger"  and  was 
+basically  a  revamp of the second version.  The editor  was  now 
+built in (an external program did it before),  the accessory  was 
+now compressed, and quite a lot of words had been added again. It 
+was released on February 24th 1993.  A slight rehash,  the  Final 
+Son,  was  done  on  March 17th 1993 (it could  create  about  30 
+million additional swearing words).  The version number was  then 
+3.01.
+ The  fifth  version,  at  the time proclaimed to  be  the  FINAL 
+version (3.5) was released on May 25th 1993.  It had yet  another 
+enormous  amount of words added,  totalling to a possible half  a 
+billion different curses. I genuinely intended it to be the final 
+version, but...
+ Now,  finally,  we have reached the sixth version (version 4.2). 
+Nothing  about it is proclaimed to be final,  though chances  are 
+substantially bigger that it might very well be.  Of course a lot 
+of  words  have been added,  but more things  have  changed.  For 
+starters  it  now uses a GEM-compatible  interface  (courtesy  of 
+Gregor  Duchalski's  "FlyDials")  and  has  some  added  switches 
+("English/Dutch"  and "U/PGA/XXX" curse filth  ratings).  Between 
+the "x full of" and the noun there is now an adjective  too.  The 
+boot  problem present up to and including the fifth  version  was 
+also fixed, and it is now even compatible with "MultiTOS" as well 
+as  "Geneva".  I'd  like to use these last  enhancements  as  the 
+reason  behind  actually making this sixth version in  the  first 
+place.
+ It's not as if I was actually having fun or anything.
+
+ LITERATURE
+
+ Well, I am actually slightly proud to say that none of the words 
+used are fictitious - even though many may very much seem  so.  I 
+used   a  standard  dictionary,   a  special   "Superior   People 
+Dictionary" by Peter Bowler,  and the help of some song lyrics as 
+well as,  in the earliest version,  the invaluable assistance  of 
+Tim  and Dave of The Lost Boys.  The gross words are  either  off 
+Dave  or  off Carcass' "Symphonies of Sickness"  CD  lyrics.  The 
+third  version also incorporated a lot of new words from  various 
+dictionaries   (most   notably  amongst  which  is   "Slang   and 
+Euphemisms"  by Richard Spears) as well as quite a lot  of  words 
+heard  on the BBC series "Red Dwarf".  Further versions had  more 
+"Red Dwarf" bits added, primarily.
+ The Dutch part of version 4.2 was based on the original  program 
+written  in  1987 by Stefan Posthuma and  Dave  Bloemendaal  with 
+strange  word  assistance by Jordy.  A lot of  Dutch  words  have 
+afterwards   been  added,   inspired  by  Eric  Schreurs'   "Joop 
+Klepzeiker" and "Geharrebar".
+
+                           The Address
+                           -----------
+
+ I can be reached at the following address.  There,  I would like 
+to  receive  possible  donations too (given the  fact  that  this 
+particular  accessory  guarentees  at  least  775,000  years   of 
+entertainment, I should think that's worth something)!
+
+ Richard Karsmakers
+ P.O. Box 67
+ NL-3500 AB  Utrecht
+ The Netherlands
+ Email: r.c.karsmakers@stud.let.ruu.nl
+
+ PLEASE NOTE THAT THE ADDRESS IN THE PROGRAM IS NO LONGER VALID!
+
+ It should be noted that the email address may not be valid after 
+the summer of 1996.
+ The  program on this disk and its manual are copyright  1994  by 
+Richard  Karsmakers.  However,  you may copy them as much as  you 
+want  as  long as the package remains complete  (i.e.  program  + 
+document file + other associated files).
+ Death to The Men With Suits!
+ By the way,  I was quite sober when I made the program.  I think 
+this kind of thing should be possible in this day and age. If not 
+for anything else, I made this program to make a statement.
+ I just wish to have you know that.
+
+                       Utrecht, the Netherlands, August 14th 1994

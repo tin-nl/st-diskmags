@@ -1,0 +1,38 @@
+    HOW TO REMOVE THE BOTTOM BORDER BY POWER MAN OF THE WILD BOYS
+    -------------------------------------------------------------
+
+Alright, alright, I know you have probably seen an article like this in
+every disk magazine there is, but my routine is much better than the one
+by TEX in ST NEWS. Their routine left a horrible fish or whatever they
+call it at the bottom right hand corner of the screen. If you haven't any
+idea what I am talking about, then I mean the routine by TEX caused the
+video chip to miss out the last 2 bytes of the screen before moving below
+the border. This caused everything in the border to be shifted by 1 bitplane
+and in general made a bit of a mess. But have no fear, the Powerman is here
+with his 'much better than the TEX one' border routine! As I said, my one
+is much tidier, and doesn't mess up the screen at all.
+
+So, Mr Powerman, how does it work. Well, the principle is the same as the TEX
+routine. What happens is, on the last scanline the computer waits until the
+right border is reached by the electron beam, and then switches to 60 HZ. Then
+a few NOP instructions make the computer wait for a bit more, and then goes 
+back to 50 HZ. If you dont know what 50 HZ and 60 HZ is, then it is the 
+speed at which the screen is updated, either 50 or 60 times a second.
+The TIMER B interrupt is used to do the switching (see my article on rasters
+if the Lost Boys have included it, for an explanation of the TIMER B).
+
+To put grafix in the border, just treat the screen as if its 30 lines or so 
+longer than a normal screen. I am not sure how many extra lines are drawn, but
+on my monitor, I can easily see about 30.
+
+Now, all thats left is for you to assemble the program BORDER.S and be amazed!
+
+I would like to say that I don't mean to offend TEX or anything becuase my
+routine is better. In fact, I think they are great and I think they were one of
+the first crews to remove the bottom border, so I hope they will not be too 
+angry if they see this......
+
+If you are a grafix artist or can do wicked muzix, then read my ad in the
+contacts section, if it has been included.
+
+See ya dudes!  

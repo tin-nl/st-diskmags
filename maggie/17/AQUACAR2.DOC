@@ -1,0 +1,82 @@
+06601030305800
+F0110030
+9[........................................................]001
+€[ Version 1.1 ]    maintained by vgriscep@wam.umd.edu
+This document is available on the World Wide Web at:
+http://www.wam.umd.edu/~vgriscep/lists/aquarius
+/- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\
+|   KEY:                                                              |
+|              Rarity:   C  = common                                  |
+|                        U  = uncommon                                |
+|                        R  = rare                                    |
+|                        ER = extremely rare                          |
+|                        NR= never released;  i.e. very, very rare!   |
+|                (My policy is simple:  things are only nonexistent   |
+|                 until someone finds one.)                           |
+|                                                                     |
+|              Gr (graphics rating):  1 = poor graphics               |
+|                                     2 = reasonable graphics         |
+|                                     3 = decent graphics             |
+|                                     4 = good graphics               |
+|                                     5 = excellent graphics          |
+|                                                                     |
+|              Pl (playability):      1 = tedious                     |
+|                                     2 = dry;  brief enjoyment       |
+|                                     3 = worth playing               |
+|                                     4 = fun                         |
+|                                     5 = irresistible                |
+|                                                                     |
+|(These are all subjective, of course.  If you see something with     |
+|     which you don't agree, I hope you'll let me know!)              |
+|                                                                     |
+|              Man?, Have?:   indicates whether I (VGR) own           |
+|                               instructions or game itself,          |
+|                               respectively                          |
+|                                                                     |
+|              Overlay: R, L and K refer to the number of             |
+|                         right-keyboard, left-keyboard and           |
+|                         keypad overlays I have                      |
+|                                                                     |
+|                      To remove these so you can put in your         |
+|                      own indicators of which games you own,         |
+|                      use the Unix command:                          |
+|                                                                     |
+|                        sed 's/|[A-Z].*$/|/' vgrlist > mylist        |
+|                                                                     |
+|                                                                     |
+|                                                                     |
+\- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -/
+
+
+
+
+Name                              Mattel    Rarity  Gr  Pl  Man? Overlay Have?
+                                  Model No.                       R L K
+
+Aquarius main unit                   5931       U          |Yes   1 1 0  Yes
+Mini Expander                        4063       U          |No    0 0 0  Yes
+€FileForm                             4177       U          |Yes   1 1 0  Yes
+FinForm                              4178       U   4   4  |Yes   1 1 0  Yes
+Data Recorder                        4394       U          |Yes   0 0 0  Yes
+Night Stalker                        4595       R   3   4  |Yes   1 1 1  Yes
+4K Memory                            ????       U          |No    0 0 0  No
+16K Memory                           ????       U          |No    0 0 0  Yes
+Advanced Dungeons & Dragons:  Treasure of Tarmin
+                                     ????       ER         |No    1 1 0  No
+Astrosmash                           ????       R          |No    0 0 0  No
+Biorhythms                           ????       ER         |No    0 0 0  No
+Burgertime                           ????       R          |No    0 0 0  No
+Chess                                ????       ER         |No    0 0 0  No
+Extended Microsoft BASIC             ????       ER         |No    0 0 0  No
+Hints From Heloise                   ????       ER         |No    0 0 0  No
+Lock 'n' Chase                       ????       R          |No    0 0 0  No
+Logo                                 ????       ER         |No    0 0 0  No
+Master Expansion Module              ????       ER         |No    0 0 0  No
+Melody Chase                         ????       ER         |No    0 0 0  No
+Modem                                ????       ER         |No    0 0 0  No
+Printer                              ????       R          |No    0 0 0  No
+Reversi                              ????       R          |No    0 0 0  No
+Sea Battle                           ????       R          |No    0 0 0  No
+Snafu                                ????       R          |No    0 0 0  No
+Tron Deadly Discs                    ????       U   4   3  |No    1 1 1  Yes
+Utopia                               ????       U   4   4  |No    1 1 2  Yes

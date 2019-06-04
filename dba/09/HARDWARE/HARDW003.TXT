@@ -1,0 +1,242 @@
+HARDW REGISTER 3
+
+#############Floating Point Coprocessor (in MSTe)         ###########
+-------+-----+--------------------------------------------+----------
+$FFFA40|???? |FP_stat    Response-Register                |??? (MSTe)
+$FFFA42|???? |FP_ctl     Control-Register                 |??? (MSTe)
+$FFFA44|???? |FP_save    Save-Register                    |??? (MSTe)
+$FFFA46|???? |FP_restor  Restore-Register                 |??? (MSTe)
+$FFFA4A|???? |FP_cmd     Command-Register                 |??? (MSTe)
+$FFFA4E|???? |FP_ccr     Condition-Code-Register          |??? (MSTe)
+$FFFA50|???? |FP_op      Operanden-Register               |??? (MSTe)
+$FFFA54|???? |FP_selct   Register Select                  |??? (MSTe)
+$FFFA58|???? |FP_iadr    Instruction Address              |??? (MSTe)
+-------+-----+--------------------------------------------+----------
+##############MFP 68901 #2 (MFP2) - TT Only               ###########
+-------+-----+--------------------------------------------+----------
+$FFFA81|byte |Parallel Port Data Register                 |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+$FFFA83|byte |Active Edge Register     BIT 7 6 5 4 . 2 1 0|R/W   (TT)
+       |     +--------------------------------------------+
+       |     |   When port bits are used for input only:  |
+       |     |0=Interrupt on pin high-low conversion      |
+       |     |1=Interrupt on pin low-high conversion      |
+-------+-----+--------------------------------------------+----------
+$FFFA85|byte |Data Direction           BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+       |     |0=Pin becomes an input                      |
+       |     |1=Pin becomes an output                     |
+-------+-----+--------------------------------------------+----------
+$FFFA87|byte |Interrupt Enable A       BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+$FFFA8B|byte |Interrupt Pending A      BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+$FFFA8F|byte |Interrupt In-service A   BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+$FFFA93|byte |Interrupt Mask A         BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+       |     |MFP Address                  | | | | | | | ||
+       |     |$17C ------------------------' | | | | | | ||
+       |     |$178 --------------------------' | | | | | ||
+       |     |$174 ----------------------------' | | | | ||
+       |     |$170 ------------------------------' | | | ||
+       |     |$16C --------------------------------' | | ||
+       |     |$168 ----------------------------------' | ||
+       |     |$164 ------------------------------------' ||
+       |     |$160 --------------------------------------'|
+       |     |1=Enable Interrupt       0=Disable Interrupt|
+-------+-----+--------------------------------------------+----------
+$FFFA89|byte |Interrupt Enable B       BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+$FFFA8D|byte |Interrupt Pending B      BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+$FFFA91|byte |Interrupt In-service B   BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+$FFFA95|byte |Interrupt Mask B         BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+       |     |MFP Address                  | | | | | | | ||
+       |     |$15C ------------------------' | | | | | | ||
+       |     |$158 --------------------------' | | | | | ||
+       |     |$154 ----------------------------' | | | | ||
+       |     |$150 ------------------------------' | | | ||
+       |     |$14C --------------------------------' | | ||
+       |     |$148 ----------------------------------' | ||
+       |     |$144 ------------------------------------' ||
+       |     |$140 --------------------------------------'|
+       |     |1=Enable Interrupt       0=Disable Interrupt|
+-------+-----+--------------------------------------------+----------
+$FFFA97|byte |Vector Register                        BIT 3|R/W   (TT)
+       |     |1=Software End-of-interrupt mode   (Default)|
+       |     |0=Automatic End-of-interrupt mode           |
+-------+-----+--------------------------------------------+----------
+$FFFA99|byte |Timer A Control                  BIT 3 2 1 0|R/W   (TT)
+$FFFA9B|byte |Timer B Control                  BIT 3 2 1 0|R/W   (TT)
+       |     +--------------------------------------------+
+       |     |0000 = Timer stop, no function executed     |
+       |     |0001 = Delay mode, divide by 4              |
+       |     |0010 =     .           .     10             |
+       |     |0011 =     .           .     16             |
+       |     |0100 =     .           .     50             |
+       |     |0101 =     .           .     64             |
+       |     |0110 =     .           .     100            |
+       |     |0111 = Delay mode, divide by 200            |
+       |     |1000 = Event count mode                     |
+       |     |1xxx = Pulse extension mode, divide as above|
+       |     +--------------------------------------------+
+$FFFA9F|byte |Timer A Data                                |R/W   (TT)
+$FFFAA1|byte |Timer B Data                                |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+$FFFA9D|byte |Timer C & D Control        BIT 6 5 4 . 2 1 0|R/W   (TT)
+       |     |                               Timer   Timer|
+       |     |                                 C       D  |
+       |     +--------------------------------------------+
+       |     |000 = Timer stop                            |
+       |     |001 = Delay mode, divide by 4               |
+       |     |010 =      .           .    10              |
+       |     |011 =      .           .    16              |
+       |     |100 =      .           .    50              |
+       |     |101 =      .           .    64              |
+       |     |110 =      .           .    100             |
+       |     |111 = Delay mode, divide by 200             |
+       |     +--------------------------------------------+
+$FFFAA3|byte |Timer C Data                                |R/W   (TT)
+$FFFAA5|byte |Timer D Data                                |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+$FFFAA7|byte |Sync Character                              |R/W   (TT)
+$FFFAA9|byte |USART Control            BIT 7 6 5 4 3 2 1 .|R/W   (TT)
+       |     |Clock divide (1=div by 16) --' | | | | | | ||
+       |     |Word Length 00=8 bits ---------+-+ | | | | ||
+       |     |            01=7 bits          | | | | | | ||
+       |     |            10=6 bits          | | | | | | ||
+       |     |            11=5 bits ---------+-' | | | | ||
+       |     |Bits Stop Start Format ------------+-+ | | ||
+       |     |00     0    0   Synchronous        | | | | ||
+       |     |01     1    1   Asynchronous       | | | | ||
+       |     |10     1    1.5 Asynchronous       | | | | ||
+       |     |11     1    2   Asynchronous ------+-' | | ||
+       |     |Parity (0=ignore parity bit) ----------' | ||
+       |     |Parity (0=odd parity,1=even) ------------' ||
+       |     |Unused ------------------------------------'|
+$FFFAAB|byte |Receiver Status          BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+       |     |Buffer full -----------------' | | | | | | ||
+       |     |Overrun error -----------------' | | | | | ||
+       |     |Parity error --------------------' | | | | ||
+       |     |Frame error -----------------------' | | | ||
+       |     |Found - Search/Break detected -------' | | ||
+       |     |Match/Character in progress -----------' | ||
+       |     |Synchronous strip enable ----------------' ||
+       |     |Receiver enable bit -----------------------'|
+$FFFAAD|byte |Transmitter Status       BIT 7 6 5 4 3 2 1 0|R/W   (TT)
+       |     |Buffer empty ----------------' | | | | | | ||
+       |     |Underrun error ----------------' | | | | | ||
+       |     |Auto turnaround -----------------' | | | | ||
+       |     |End of transmission ---------------' | | | ||
+       |     |Break -------------------------------' | | ||
+       |     |High bit ------------------------------' | ||
+       |     |Low bit ---------------------------------' ||
+       |     |Transmitter enable ------------------------'|
+$FFFAAF|byte |USART data                                  |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+##############6850 ACIA I/O Chips                         ###########
+-------+-----+--------------------------------------------+----------
+$FFFC00|byte |Keyboard ACIA control                       |R/W
+$FFFC02|byte |Keyboard ACIA data                          |R/W
+$FFFC04|byte |MIDI ACIA control                           |R/W
+$FFFC06|byte |MIDI ACIA data                              |R/W
+-------+-----+--------------------------------------------+----------
+##############Realtime Clock                              ###########
+-------+-----+--------------------------------------------+----------
+$FFFC21|byte |s_units                                     |???
+$FFFC23|byte |s_tens                                      |???
+$FFFC25|byte |m_units                                     |???
+$FFFC27|byte |m_tens                                      |???
+$FFFC29|byte |h_units                                     |???
+$FFFC2B|byte |h_tens                                      |???
+$FFFC2D|byte |weekday                                     |???
+$FFFC2F|byte |day_units                                   |???
+$FFFC31|byte |day_tens                                    |???
+$FFFC33|byte |mon_units                                   |???
+$FFFC35|byte |mon_tens                                    |???
+$FFFC37|byte |yr_units                                    |???
+$FFFC39|byte |yr_tens                                     |???
+$FFFC3B|byte |cl_mod                                      |???
+$FFFC3D|byte |cl_test                                     |???
+$FFFC3F|byte |cl_reset                                    |???
+-------+-----+--------------------------------------------+----------
+$FA0000|     |                                            |
+    :  |     |128K ROM expansion cartridge port           |R
+$FBFFFF|     |                                            |
+-------+-----+--------------------------------------------+----------
+$FC0000|     |                                            |
+    :  |     |192K System ROM                             |R
+$FEFFFF|     |                                            |
+-------+-----+--------------------------------------------+----------
+
+                  68000 Exception Vector Assignments
+
+Vector Number   Address   Space   Assignment
+---------------+---------+-------+--------------------------------
+0              |0/$0     |SP     |Reset:Initial SSP
+1              |4/$4     |SP     |Reset:Initial PC
+Reset vector (0) requires four words, unlike other vectors which only
+require two words, and is located in the supervisor program space.
+---------------+---------+-------+--------------------------------
+2              |8/$8     |SD     |Bus Error
+3              |12/$C    |SD     |Address Error
+4              |16/$10   |SD     |Illegal Instruction
+5              |20/$14   |SD     |Zero Divide
+6              |24/$18   |SD     |CHK, CHK2 Instruction
+7              |28/$1C   |SD     |cpTRAPcc, TRAPcc, TRAPV Instruction
+8              |32/$20   |SD     |Privilege Violation
+9              |36/$24   |SD     |Trace
+10             |40/$28   |SD     |Line 1010 Emulator (LineA)
+11             |44/$2C   |SD     |Line 1111 Emulator (LineF)
+12             |48/$30   |SD     |(Unassigned, Reserved)
+13      (68030)|52/$34   |SD     |Coprocessor Protocol Violation
+14      (68010)|56/$38   |SD     |Format Error
+15             |60/$3C   |SD     |Uninitialized Interrupt Vector
+16-23          |64/$40   |SD     |(Unassigned, Reserved)
+               |95/$5F   |SD     |-
+24             |96/$60   |SD     |Spurious Interrupt
+Spurious interrupt vector is taken when there is a bus error
+during interrupt processing.
+---------------+---------+-------+--------------------------------
+                68000 Auto-Vector Interrupt Table
+---------------+---------+-------+--------------------------------
+25             |100/$64  |SD     |Level 1 Int Autovector (TT VME)
+26             |104/$68  |SD     |Level 2 Int Autovector (HBL)
+27             |108/$6C  |SD     |Level 3 Int Autovector (TT VME)
+28             |112/$70  |SD     |Level 4 Int Autovector (VBL)
+29             |116/$74  |SD     |Level 5 Int Autovector
+30             |120/$78  |SD     |Level 6 Int Autovector (MFP)
+31             |124/$7C  |SD     |Level 7 Int Autovector
+---------------+---------+-------+--------------------------------
+32-47          |128/$80  |SD     |Trap Instruction Vectors
+               |191/$BF  |SD     |(Trap #n = vector number 32+n)
+---------------+---------+-------+--------------------------------
+                Math Coprocessor Vectors (68020 and higher)
+---------------+---------+-------+--------------------------------
+48             |192/$C0  |SD     |FFCP Branch or Set
+               |         |       |          on Unordered Condition
+49             |196/$C4  |SD     |FFCP Inexact Result
+50             |200/$C8  |SD     |FFCP Divide by Zero
+51             |204/$CC  |SD     |FFCP Underflow
+52             |208/$D0  |SD     |FFCP Operand Error
+53             |212/$D4  |SD     |FFCP Overflow
+54             |216/$D8  |SD     |FFCP Signaling NAN
+55             |220/$DC  |SD     |(Unassigned, Reserved)
+---------------+---------+-------+--------------------------------
+56             |224/$E0  |SD     |MMU Configuration Error
+57             |228/$E4  |SD     |MC68851, not used by MC68030
+58             |232/$E8  |SD     |MC68851, not used by MC68030
+---------------+---------+-------+--------------------------------
+59-63          |236/$EC  |SD     |(Unassigned, Reserved)
+               |255/$FF  |SD     |-
+---------------+---------+-------+--------------------------------
+64-255         |256/$100 |SD     |User Defined Interrupt Vectors
+               |1023/$3FF|SD     |-
+---------------+---------+-------+--------------------------------
+
+ 
+|-This file passed through --- /\ ---.------ /\ ---*--.- FidoNet 2:200/612 --|
+|                     .  * .  // \        . // \  .      FujiNet 7:102/102   |
+|  +46-451-91002             //   \   +    //   \      .  MegaNet 66:666/1   |
+|                       +   //  /  \      //     \   +    NeST 90:1101/112   |
+|  +46-451-91002           /\\  \\ /  .  //   \\ /                           |
+|                      .  // \   \/     //    /\/   .    16800 DUAL STANDARD |
+|  +46-451-91002          \\ /   /      \\  \/    +                          |
+|                      *   \\   /  + .   \\  \ .    .  .                     |
+|                        .  \\ /          \\ /                               |
+|- SysOp: Rickard Troedsson  \/ARCASTIC -- \/XISTENCE - PD and ShareWare!!! -|
+< Advertisment added using -=Bad Ad=- 1.92 by Troed/Sync. BBS: +46-451-91002 >

@@ -1,0 +1,248 @@
+DGRAPH 0.2
+
+This drawing prg was given to us at the Fried Bits Party II by
+Jade of Dune. Thanx man, another dame fine product for the Falcon.
+
+                           **************************
+                           *                        *
+                           *   Dgraph version 0.2   *
+                           *                        *
+                           **************************
+
+                              by Evil Metal / DUNE
+                              ππππππππππππππππππππ
+History
+πππππππ
+I began to code Dgraph in fact for Atari ST(e). This one was in 240 
+colors on a simple stf. But this version wasn't finish. Certainely 
+because i haven't enough motivation to finish it. Cortexx and Morton 
+work with my lame shit. Like it was unfinished and bugged, they had 
+some problem to graph with it. The second reason that's i never 
+finished this program, was because i hate DEGAS look like interface 
+(an it look like that's !!!).
+One year and half passed and i finally had my FALCON. In my totally 
+deception, there is NONE good drawing program on it. Prism paint is 
+very slow and lame, and True paint is a big shit. Only Eclipse paint 
+(Neochrome master Falcon) is certainely excellent, but for the 
+moment it wasn't sell in your shop so... I decided to start to code 
+Dgraph for many reasons. Many of us members graphist were 
+desapointed that's there is no drawing program without bug (Mic 
+drawed one day with Delmpaint 0.9 but this version is very too 
+bugged, after this Cortexx try too, but he stopped immediatelly it's 
+work...). Some editor have sell some drawing program, but i think 
+they haven't understood that graphist don't need a nice interface 
+with gem, but a old nice graphixx interface. When i diffuse my first 
+version (0.1), i have notice some remark like : the interface look 
+like old ST drawing program ! (Also a Dune members said it!) But for 
+your informations, the Amiga 1200 have a excellent programm called 
+Deluxe paint, and it look like old Amiga concept. On Atari we have 
+new concept but NONE good drawing program ! Another reason why i coded
+this was for my personnal work. Like i love Neochrome (Mic too) and i 
+decided to recode a kind of this type of drawing program.
+
+ShareWare ?
+πππππππππππ
+Yes, this program is a ShareWare. I hope i will receive some money 
+for help me in my motivation too add some news fonctions and 
+debugged it ! In the next version (0.4) the unregisted version will 
+can't save your work ! So i hope you will understand that's (I hate 
+this kind of think but i must do it, my pocket is soon empty !). For 
+to be registed you must send 15$ (About 80-90FF) and 2 disks to : 
+
+PIGNARD Arnaud
+4 Square Eugäne Varlin
+91000 Evry 
+
+You will received the two next version. (For the version 1.0 it will 
+be different ! But i have many work before this !) 
+
+Contact me
+ππππππππππ
+For increase my drawing program, send me all suggestions at the same 
+adress. If i'm looking for GIF, PCX, TIF, IFF load and save routine 
+and TGA load routine. If you have coded a drawing programm contact 
+me too...
+
+Bug, you said bug ?
+πππππππππππππππππππ
+If you notice any bug on it report me it at the same adress.
+
+What's will do in the future
+ππππππππππππππππππππππππππππ
+- Bezier courbe (like Deluxe paint AMIGA)
+- Differents loupe weight
+- More format to load and save
+- Less bug (Is there one ?)
+- More functions in block (Rotate, zoom bloc, 3d...)
+- Lasso mode (Like Neochrome master)
+- Improve palette edition
+- Inverse the functions selected 
+- A better eraser
+- Slide Show mode
+- and many more ...
+
+************************************************************************
+*                                Bugs                                  * 
+************************************************************************
+
+- I have some problem in my code with the XBIOS 5. So please run DGRAPH in a
+  40 columes mode for a fun compatibility. (Fileselector)
+  My problem was, when i change screen for about 10 times the XBIOS 5 fonction
+  crash with a wrong video adress and with 2 bombes !
+
+- When you swap in fullscreen and to menuscreen the bloc will don't put where
+  it was before. Easy to modify, but no times ...
+
+- For the moment STE palettes will don't be load with a P?1 FORMAT.
+
+- When you cut a block you have no problems, but if you put it and forgot
+  it to delete from the block ram before you press space. The falcon
+  will freeze this bug in the screenaddress. Now if you cut a new block
+  and will put it and delete it correct. Press Space and then any other
+  menu point. The program will set the block you have cut and deleted from
+  the block ram a half screen under the your block you have sets.....
+    
+**************************************************************************
+*                                Help                                    *
+**************************************************************************
+
+Palette
+πππππππ
+When you select copy, i copy the select color in a buffer (For the 
+moment i don't found any good idea for display the color in the copy 
+buffer so, if you have an idea, write me fast !).
+When you select paste, i copy the color into the select color.
+The fonction transparence will make the calcul betwen two color, one 
+selected (how will be erase be the transparent color) and the color 
+in the buffer.
+The load and save palette fonction save a palette in 1024 octets 
+like this: RRGG00BB. So  Long red, Long green, Long free, Long blue.
+
+Cut
+πππ
+It's similary of Neochrome cut fonction. For the moment, i cut the 
+bloc on the picture for a free move and paste. You can paste your 
+bloc selected by pressing the right botton (like neochrome master), 
+in this case, the bloc would be put in the picture, but you can also 
+move it again.
+You can flip the bloc by pressing the arrow keys.
+
+Load
+ππππ
+For the moment the DC1 format isn't finish, it will be a compacted 
+version
+
+The DG1 version work very well. The format is :
+
+3 octets : DGU      = DGRAPH UNPACKED
+1 octets : 1        = Version of the type of this format
+2 octets : Taille X = Largeur de l'image
+2 octets : Taille Y = Hauteur de l'image 
+1024 oct.: Palette  = Palette of 256 colors in .L per composant
+64000 oc.: Image    = Image 8 plans entrelace(Not like Amiga format)
+
+Dgraph can also load :
+
+PI1 or PC1, a good old format on Atari ST. For the moment, i have 
+some little problem to load Ste palette (Easy to fix, but no time to 
+do it...)
+
+TPI Very usefull for import image from True Paint, and like Dgraph 
+don't know PC picture standard, you can load it with True Paint and, 
+Dgraph will load it. (Only picture save with a taille of 320*200 in 
+256 colors are better)
+
+DOO Very nice format for coders (Especially when we save an image 
+with MonTT). In the future i will put a alert box for some 
+parameters like : number of plans.
+
+PI9 is the DELMPAINT drawing format. 1024 octecs for the palette and 
+64000 octets for the picture
+
+Save
+ππππ
+DG1 work very well
+
+PI9 work very well
+
+PI1 Some problem with the palette, but save the first 4 plans
+
+DOO work very well
+
+TGA normaly work very well (Very good for transfert your picture for 
+Gemview to another format !) Add: Load it with GemView or Studio Photo !
+
+Disk tools
+ππππππππππ
+Don't work for the moment, use a fileseletor ...
+
+Drawing fonctions
+πππππππππππππππππ
+Very easy to use, draw and that's all (for the moment !)
+
+Fixed zoom
+ππππππππππ
+For the moment only the draw mode work. Wait for the fill and line mode.
+When you press MOUSE K. the programm will modify the fonction of the right
+botton : Select color 2 or Take the color behing the mouse in color 1.
+
+**************************************************************************
+*                               Keys                                     *
+**************************************************************************
+
+Always keys :
+πππππππππππππ
+
+ESC or SPACE    : Fullscreen
+Shift + R       : Exit the program
++ or -          : Scroll the image (soon modified for color)
+0 to 9 num. pad : Select screen of work
+UNDO            : Undo
+D               : Drawing
+L               : Line
+F1 or TAB       : Loupe
+C               : Cut
+
+Palette keys :
+ππππππππππππππ
+C               : Copy the current color into a buffer
+P               : Paste the buffer into the current color
+
+Bloc keys :
+πππππππππππ
+Arrows keys     : Fill the bloc
+
+Zoom keys :
+πππππππππππ
+Arrows keys     : Scroll the center of the image
+
+**************************************************************************
+*                               Greetings                                *
+**************************************************************************
+
+
+Moral support
+πππππππππππππ
+Red of Hol : Thanks you for your test and moral support, idea
+
+Dune members :
+ππππππππππππππ
+
+MIC : Thanks you for your idea and test 
+CORTEXX : Thanks you for your test and idea 
+JADE : Thanks you for your test and idea
+CIRCEE : Thanks you for your idea, test
+THADOSS : Thanks you for your test
+TRIX : Thanks you for your test
+
+Others :
+ππππππππ
+Axys of The misfits
+Artoax and Nytrix of Hydroxid
+
+I hope you will enjoy this preview and don't have to flight with a 
+perhaps little bug i had forgotten. I hope received many donations.
+
+
+
+                                                Evil Metal of DUNE

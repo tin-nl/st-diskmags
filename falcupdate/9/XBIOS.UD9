@@ -1,0 +1,667 @@
+-----------------------------------------------------------------------
+                              XBIOS Calls
+-----------------------------------------------------------------------
+
+(0) initmouse                        Initalise the mouse packet handler
+
+        move.l  #vec,-(sp)
+        move.l  #param.-(sp)
+        move    #type,-(sp)
+        move    #0,-(sp)
+        trap    #14
+        lea     12(sp),sp
+
+
+vec: is the address of a new mouse packet handler
+param: is a 12 byte data block:
+
+0       origin of y position   0=y origin at bottom   1=y origin at top
+1       parameter for IKBD set mouse buttons
+2       relative mode=x threshold
+        absolute mode=x scale
+        keycode mode=x delta
+3       relative mode=y threshold
+        absolute mode=y scale
+        keycode mode=y delta
+4       max x position
+6       max y position
+8       inital x position
+10      inital y position
+
+type:   action
+
+0       disable mouse
+1       enable moose, in relative mode
+2       enable moose, absolute mode
+3       unused
+4       enable moose, in keycode mode
+
+
+
+(1) ssbrk                               Reserve memory at top of memory
+
+        move.?  #amount,-(sp)
+        move    #1,-(sp)
+        trap    #14
+        addq    #4/6,sp
+
+Results:        d0.l - pointer to allocated memory.
+Notes:  must be called before the OS initallizes.
+
+
+
+(2) _physBase                        Get screen's physical base address
+
+        move    #2,-(sp)
+        trap    #14
+        addq    #2,sp
+
+Results:        d0.l - address of the physical screen memory
+
+
+
+(3) _logBase                          Get screen's logical base address
+
+        move    #3,-(sp)
+        trap    #14
+        addq    #2,sp
+
+Results:        d0.l - address of the logical screen memory
+
+
+
+(4) _getRez                         Get the screen's current resolution
+
+        move    #4,-(sp)
+        trap    #14
+        addq    #2,sp
+
+Results:        d0.w - the current video resolution 0=lo 2=med 3=hi
+
+
+
+(5) _setScreen                            Set phy/log addresses and rez
+
+        move    #rez,-(sp)
+        pea     phys_base
+        pea     log_base
+        move    #5,-(sp)
+        trap    #14
+        lea     12(sp),sp
+
+Notes:  Negative values are ignored, to change only the rez, both the
+        phys_base and log_base can set to -1.l
+
+
+
+(6) _setPallete               Set contents of hardware palette register
+
+        pea     palette
+        move    #6,-(sp)
+        trap    #14
+        addq    #6,sp
+
+
+
+(7) _setColor                             Set palette register to color
+
+        move    #col,-(sp)
+        move    #reg,-(sp)
+        move    #7,-(sp)
+        trap    #14
+        addq    #6,sp
+
+
+
+(8) _floprd                                            Read disk sector
+
+        move    #sects,-(sp)
+        move    #side,-(sp)
+        move    #track,-(sp)
+        move    #sectno,-(sp)
+        move    #drv,-(sp)
+        pea     0
+        pea     buffer
+        move    #8,-(sp)
+        trap    #14
+        lea     20(sp),sp
+
+Notes:  sects=number of sectors to read
+        side=side 0 or 1
+        track=track to read from 0-79 (81- at your own risk)
+        sectno=which sector to start reading from (1-9)(11)
+        drv=which drive 0=a 1=b
+        buffer=where to put the read info
+
+
+
+(9) _flopwr                                           Write disc sector
+
+        move    #sects,-(sp)
+        move    #side,-(sp)
+        move    #track,-(sp)
+        move    #sectno,-(sp)
+        move    #drv,-(sp)
+        pea     0
+        pea     buffer
+        move    #9,-(sp)
+        trap    #14
+        lea     20(sp),sp
+
+Notes:  sects=number of sectors to write
+        side=side 0 or 1
+        track=track to read from 0-79 (81- at your own risk)
+        sectno=which sector to start reading from (1-9)(11)
+        drv=which drive 0=a 1=b
+        buffer=data to be written to the floppy
+
+
+
+(10) flopfmt                                 Format a floppy disk track
+
+        move    #filler,-(sp)
+        pea     $87654321
+        move    #interleave,-(sp)
+        move    #side,-(sp)
+        move    #track
+        move    #sects_track,-(sp)
+        move    #drv,-(sp)
+        pea     0
+        pea     buffer
+        move    #10,-(sp)
+        trap    #14
+        lea     26(sp),sp
+
+Notes:  filler is a value with which the sectors will be filled with
+        $87654321 is a magic number to make sure the format occurs
+        interleave is the sector interleave factor
+        side is side
+        track is track
+        sects_track is the number of sectors per track to format
+        drv is 0=drive a 1=drive b
+        buffer is a word alinged buffer large enough to store an
+        entire track image ~ 7000 bytes
+
+
+
+(11) ????                                         ---------------------
+
+
+
+(12) midiws                                   Write string to midi port
+
+        pea     buffer
+        move    #cnt,-(sp)
+        move    #12,-(sp)
+        trap    #14
+        addq    #8,sp
+
+notes:  cnt is the number of characters to write minus one
+
+
+
+(13) _mfpint                    Set (BUT NOT read) mfp interrupt vector
+
+        pea     vector
+        move    #vnum
+        move    #13,-s(p)
+        trap    #14
+        addq    #8,sp
+
+notes:  vector is the new interrupt routine to use
+        vnum is the number of the interrupt 0-15
+
+
+
+(14) iorec                                         Get io buffer record
+
+        move    #dev,-(sp)
+        move    #14,-(sp)
+        trap    #14
+        addq    #4,sp
+
+notes:  dev is 0=rs232 1=keyboard 2=midi
+results:        d0.l address of record
+
+        bytes 0-3   address of input buffer
+        bytes 4-5   size in bytes of input buffer
+        bytes 6-7   next write position
+        bytes 8-9   next read position
+        bytes 10-11 low water mark
+        bytes 12-13 high water mark
+
+
+
+(15) rsconf                                       Configure RS-232 port
+
+        move    #scr,-(sp)
+        move    #tsr,-(sp)
+        move    #rsr,-(sp)
+        move    #ucr,-(sp)
+        move    #flow,-(sp)
+        move    #speed,-(sp)
+        move    #15,-(sp)
+        trap    #14
+        lea     14(sp),sp
+
+notes:  speed   rate
+        0       19,200
+        1       9,600
+        2       4,800
+        3       3,600
+        4       2,400
+        5       2,000
+        6       1,800
+        7       1,200
+        8       600
+        9       300
+        10      200
+        11      150
+        12      134
+        13      110
+        14      75
+        15      50
+
+        flow    type
+        0       no flow control
+        1       xon/xoff
+        2       rts/cts
+        3       xon/xoff + rts/cts
+
+        scr=synchronous character register
+        tsr=transmitter status register
+        rsr=receiver status register
+        ucr= usart control register
+
+        ucr bit settings
+
+        bit
+        0       not used
+        1       parity 0=odd 1=even
+        2       parity 0=off 1=enable
+        3-4     start and stop bits
+                0=no start/stop
+                1=1 start/1 stop
+                2=1 start/2 stop
+                3=2 start/2 stop
+        5-6     data bits per word
+                0=8
+                1=7
+                2=6
+                3=5
+        7       clock
+                0=synchronous transfer
+                1=divide clock frequency by 16
+
+
+
+(16) keytbl                          Get/set keyboard translation table
+
+        pea     caps_lock
+        pea     shift
+        pea     unshifted
+        move    #16,-(sp)
+        trap    #14
+        lea     14(sp),sp
+
+notes:  a value of -1 is ignored
+results:        returns in d0.l pointer to list of key tables
+
+        bytes   0-3     unshifted table
+        bytes   4-7     address of shift table
+        bytes   8-11    caps lock table
+
+
+
+(17) random                               Return 24 bit 'random' number
+
+        move    #17,-(sp)
+        trap    #14
+        addq    #2,sp
+
+results:        d0.l    24 bit psuedo random number
+
+
+
+(18) _protobt                                     Produce a boot sector
+
+        move    #execflag,-(sp)
+        move    #disktype,-(sp)
+        move    #serialnum,-(sp)
+        pea     buffer
+        move    #18,-(sp)
+        trap    #14
+        lea     12(sp),sp
+
+notes:  buffer is word alinged 512 byte buffer
+        serialnum is the serial number to place on the bootsector
+        disktype is
+                0: 40 tracks, single sided (180K)
+                1: 40 tracks, double sided (360K)
+                2: 80 tracks, single sided (360K)
+                3: 80 tracks, double sided (720K)
+        execflag is
+                 0=non executable bootsector
+                 1=executable bootsector
+                -1=stay as before
+
+
+
+(19) flopver                                Verify a floppy disk sector
+
+        move    #numsects,-(sp)
+        move    #side,-(sp)
+        move    #track,-(sp)
+        move    #startsect,-(sp)
+        move    #drv,-(sp)
+        pea     0
+        pea     buffer
+        move    #19,-(sp)
+        trap    #14
+        lea     14(sp),sp
+
+notes:  numsects is the number of sectors to verify
+        side is the side
+        track is the track
+        startsect is which sector to start at
+        drv is 0=drive a 1=drive b
+        buffer is a word aligned 1024 byte buffer
+
+results:        a bios error code or zero
+        the buffer will contain a null terminated list of bad sectors
+
+
+
+(20) scrdmp                                          Output screen dump
+
+        move    #20,-(sp)
+        trap    #14
+        addq    #2,sp
+
+
+
+(21) cursconf                                     Configure text cursor
+
+        move    #newrate,-(sp)
+        move    #function,-(sp)
+        move    #21,-(sp)
+        trap    #14
+        addq    #6,sp
+
+notes:  newrate is the new cursor blink rate in scan frequnices
+        function is
+                0 hide cursor
+                1 show cursor
+                2 cursor set to blink
+                3 cursor set not to blink
+                4 set cursor blink timer to newrate
+                5 return cursor blink timer value
+results:        d0.w is cursor blink timer value when function=5
+
+
+
+(22) settime                                       Set system time/date
+
+        pea     date/time
+        move    #22,-(sp)
+        trap    #14
+        addq    #6,sp
+
+notes:  date/time has format:
+        bits    0-4     seconds in 2 sec increments
+                5-10    mintues
+                11-15   hour
+
+                16-20   day
+                21-24   month
+                25-31   year (minus 1980)
+
+
+
+(23) gettime                                       Get system time/date
+
+        move    #23,-(sp)
+        trap    #14
+        addq    #2,sp
+
+results:        d0.l    date/time in format as above
+
+
+
+(24) bioskeys                          Restore default key board tables
+
+        move    #24,-(sp)
+        trap    #14
+        addq    #2,sp
+
+
+
+(25) ikbdws                        Write string to intelligent keyboard
+
+        pea     buffer
+        move    #cnt,-(sp)
+        move    #25,-(sp)
+        trap    #14
+        addq    #8,sp
+
+notes:  buffer is the address of the string
+        cnt is the number of bytes in the string -1
+
+
+
+(26) jdisint                                   Disable an MFP interrupt
+
+        move    #intno,-(sp)
+        move    #26,-(sp)
+        trap    #14
+        addq    #4,sp
+
+notes:  disables interrupt 'intno' on the mfp
+
+
+
+(27) jenabint                                   Enable an MFP interrupt
+
+        move    #intno,-(ap)
+        move    #27,-(sp)
+        trap    #14
+        addq    #4,sp
+
+notes:  enable interrupt 'intno' on the mfp
+
+
+
+(28) giaccess                                         Access sound chip
+
+        move    #reg,-(sp)
+        move    #val,-(sp)
+        move    #28,-(sp)
+        trap    #14
+        addq    #6,sp
+
+notes:  reg is the sound chip register to read/write
+        read or write is determined by bit 7 0=read 1=write
+        val is the value to write to the sound chip
+
+
+
+(29) offgibit                             Reset port a of gi sound chip
+
+        move    #bitno,-(sp)
+        move    #29,-(sp)
+        trap    #14
+        addq    #4,sp
+
+notes:  the bit of port a are:
+        0       select disk side 0/1
+        1       select drive a
+        2       select drive b
+        3       rs-232 rts
+        4       rs-232 dtr
+        5       centronics strobe
+        6       general purpose output
+        7       not used
+
+
+
+(30) ongibit                                Set port A of gi sound chip
+
+        move    #bitno,-(sp)
+        move    #30,-(sp)
+        trap    #14
+        addq    #4,sp
+
+notes:  see above for port a bits
+
+
+
+(31) xbtimer                                              Set MFP timer
+
+        pea     vector
+        move    #data,-(sp)
+        move    #control,-(sp)
+        move    #timer,-(sp)
+        move    #31,-(sp)
+        trap    #14
+        lea     12(sp),sp
+
+notes:  vector is an interrupt handler
+        data is a byte placeed in the timer's data register
+        control is a byte placed in the timer's control register
+        timer is the timer number 0-3 for timers a-d
+
+        timer   a       reserved for end-users and applications
+                b       resevered for graphics
+                c       system timer (200hz)
+                d       rs-232 baud rate control
+
+
+
+(32) dosound                                       Set sound parameters
+
+        the use of this function is forbidden on the grounds of taste
+
+
+
+(33) setprt                                Configure dot matrix printer
+
+        move    #config,-(sp)
+        move    #33,-(sp)
+        trap    #14
+        addq    #4,sp
+
+notes:  if config is -1.w it returns the printer configuration
+        config is a bitmap:
+
+        bit     0               1
+
+        0       dot matrix      daisy wheel
+        1       color           monochrome
+        2       atari printer   epson printer
+        3       draft mode      final mode
+        4       parallel port   rs232 port
+        5       form feed               single sheet
+        6-14    reserved                reserved
+        15      must be zero
+
+
+
+(34) kbdvbase                                 Get keyboard vector table
+
+        move    #34,-(sp)
+        trap    #14
+        addq    #2,sp
+
+results:        d0.l address of io vector table
+
+        0       midi input
+        4       keyboard error
+        8       midi erro
+        12      ikbd status packet
+        16      mouse packet
+        20      clock packet
+        24      joystick packet
+        28      system midi vector
+        32      ikbd vector
+
+
+
+(35) kbrate                                    Set keyboard repeat rate
+
+        move    #repeat,-(sp)
+        move    #inital,-(sp)
+        move    #35,-(sp)
+        trap    #14
+        addq    #6,sp
+
+notes:  repeat is the delay between generating key clicks
+        inital is the delay between is a key press and it repeating
+        if a value is -1 then it is ignored
+results:        returns the old values with:
+        initial in d0.hw
+        repeat in d0.lw
+
+
+
+(36) _prtblk                            Print graphics block to printer
+
+        pea     pblk
+        move    #36,-(sp)
+        trap    #14
+        addq    #6,sp
+
+notes:  pblk is pointer to structure with format:
+
+        .l      address of screen ram
+        .w      bit offset from start above address
+        .w      width in pixels
+        .w      height in pixels
+        .w      left margin
+        .w      right margin
+        .w      source res
+        .w      printer res
+        .l      address of color palette
+        .w      printer type
+                        0=atari mono
+                        1=atari daisy
+                        2=atari color
+                        3=eoson compatible
+        .w      printer port
+                        0=parallel
+                        1=rs232
+        .l      address of half tone table 0=use ROM tables
+
+
+
+(37) vsync                                       Wait for vertical sync
+
+        move    #37,-(sp)
+        trap    #14
+        addq    #2,sp
+
+notes:  waits until the next v-blank before returning.
+
+
+
+(38) supexec                            Execute code in supervisor mode
+
+        pea     code
+        move    #38,-(sp)
+        trap    #14
+        addq    #6,sp
+
+notes:  executes code in super visor
+
+
+
+(39) puntaes                                          Chuck out the AES
+
+        move    #39,-(sp)
+        trap    #14
+        addq    #2,sp
+
+notes:  this command is useless
+
+
+
+

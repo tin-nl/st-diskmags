@@ -1,0 +1,77 @@
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+                             F L A M E S
+
+                           by Martin Steen
+
+\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+
+Since the dawn of time  man  has  been  fascinated  by fire. It was an
+otherwordly creation, magical, mystical. It  was worshipped and feared
+in equal measure.
+
+Over the centuries fire has  inspired  artists, authors, poets and pop
+stars. Most noticablly was John Lydon  recent chant of "Burn Hollywood
+Burn" on Leftfield's 'Open Up'.
+
+Coders are not culturally ignorant. They recognised the growing demand
+for a realistic fire effect to appear on demos. And in a puff of smoke
+it appeared.
+
+The effect itself is quite  straightforward.  Each pixel is calculated
+from an average of pixels below  it.  This  value  is used to access a
+colour table that  ranges  from  white,  through  reds  and oranges to
+black. The actual palette  of  this  table  is  very  important in the
+illusion of creating fire.
+
+Martin Steen is best known  as  the  creator  of  such Falcon games as
+"PacThem", "Ganymed" & "Spice"  but  he  also  been  known to use demo
+effects to enhance the presentation of his games.
+
+Flames begins with some introductory  text  appearing along the bottom
+of the screen:
+
+"Flames For Falcon030"
+
+It announces. This text is  then  burnt  and  the fades burning up the
+screen.
+
+"68030 Version by Martin Steen"
+
+Although strictly  speaking  this  is  coded  in  C  not  raw assembly
+language.
+
+"Inspired by Fire by Jare of VangelSTeam"
+
+I'm not sure who this dude is, but perhaps he came up with the concept
+of fire.
+
+The author then credits his girlfriend  before  we are into the effect
+proper.
+
+A huge  pire  builds  up  at  the  bottom  of  the  screen  and  burns
+impressively. It is like Guy  Fawkes  night come early, except without
+the toffee apples and screaming brats.
+
+At the top of the screen is  the  text again informing us that this is
+"Flames for Falcon030" in case we  hadn't realised what the flickering
+red and white  display  was  supposed  to  represent,  and also hadn't
+realised that our grey ST-like computer was actually a Falcon.
+
+As is often the case with  this  sort  of averaging technique, we have
+some static colour bands at the left and right of the main fire.
+
+Behind the text at the  top  we  have  a  nice  rippling blue effect -
+perhaps this is water or steam.
+
+This is a good introduction to the  world of demo fire effects. It has
+been since done better - notably  in  Spirits'  amazing 4Ktro - but we
+have to give Martin credit for  being  one  of the pioneers (or should
+that be pire-neers!).
+
+
+( Words: Mr. Pink )
+
+

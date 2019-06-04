@@ -1,0 +1,1034 @@
+* This is for the programmers amoungst you  who  don't  have  the  Atari
+Compendium book from HiSoft. It is a long listing of the AES  Calls  and
+should prove helpful  to  anyone  learning  this  stuff.  Otherwise  I'd
+suggest looking at another file!
+
+Rich
+
+
+                              ********************
+                              AES Call Information
+                              ********************
+
+
+appl_init()     dc.w    10,0,1,0,0
+-----------
+Register the application with the AES
+        
+results:                intout  application ID, ap_id
+          
+
+appl_read()     dc.w    11,2,1,1,0      
+-----------
+Read a message from event buffer
+
+inputs:         intin   ID of application, ap_id
+                intin+2 number  of  bytes  to  read  from 
+                        message pipe (event buffer)
+                addrin  address of buffer used to  store message
+
+results:                intout  status, 0=an error, >0=no error
+
+
+appl_write()    dc.w    12,2,1,1,0      
+-----------
+Write a message to event buffer
+
+inputs:         intin   ID of application, ap_id
+                intin+2 number  of  byts  to  write to message buffer
+                addrin  address of buffer used to  store message
+
+results:                intout  status, 0=an error, >0=no error
+
+
+appl_find()     dc.w    13,0,1,1,0
+----------
+Find application id     
+
+inputs:         addrin  address of program to find
+
+results:                intout  application id that was named. 
+                        -1=application not loaded
+
+
+appl_tplay()    dc.w    14,2,1,1,0
+-----------
+Playback  users  mouse  and keyboard  input.  Does  not  function 
+correctly but may in future versions of TOS. 
+
+inputs:         intin   number  of user inputs  to  play back
+                intin+2 speed  to  play  back  from  1-
+                        10,000. 100 = original speed, 50 = half speed
+                addrin  address of buffer used to  store 
+                        recorded user inputs
+
+results:                intout  1
+
+
+appl_trecord()  dc.w    15,1,1,1,0      
+-------------
+Record  users  mouse  and keyboard  input.  Does  not  function 
+correctly but may in future versions of TOS. 
+
+inputs:         intin   number of user inputs to record. 
+                        Needs 6 bytes for each input so should be
+                        size of buffer/6
+                addrin  address  of buffer where  inputs will be
+                        stored.  Each event is stored as 6 bytes.
+                        The first 2 bytes hold
+                                0=timer event
+                                1=mouse button event
+                                2=mouse movement event
+                                3=keyboard event
+                        The last 4 bytes can be:
+                                time elapsed in milliseconds or
+                                mouse button:
+                                    low word, button state
+                                    high word, number of clicks
+                                mouse movements:
+                                    low word, x position
+                                    high word, y position
+                                keyboard
+                                    low word, char
+                                    high word, shift key status
+
+results:                intout  number of events actually recorded
+
+
+appl_exit()     dc.w    19,0,1,0,0
+----------
+Notify AES the application is about to terminate
+        
+results:                intout  status, 0=an error, >0=no error
+          
+
+appl_keybd()    dc.w    20,0,1,0,0
+-----------
+
+results:                intout  keycode
+
+
+evnt_button()   dc.w    21,3,5,0,0
+------------
+Wait for mouse button event
+
+inputs: (all coords in pixels)
+                intin   number of clicks
+                intin+2 which mouse button; 1=left  mouse  button
+                        2=right mouse button, 3=both mouse buttons
+                intin+4 button state; 0=both buttons up, 
+                        1=left button down, 2=right button down,
+                        3=both down
+
+results:                intout  number of clicks
+                intout+2        x mouse coord
+                intout+4        y mouse coord
+                intout+6        final mouse button state; 0=both buttons up,
+                        1=left button down,  2=right button down,
+                        3=both down
+                intout+8        status of keyboard shift keys
+                        Bit     value   Key
+                        0       1       right shift
+                        1       2       left shift
+                        2       4       control
+                        3       8       alt
+
+
+evnt_mouse()    dc.w    22,5,5,0,0
+-----------
+Wait for mouse pointer to enter or leave a rectangle on screen
+
+inputs: (all coords in pixels)
+                intin   enter or leave rectangle 1=leave,0=enter
+                intin+2 x coord of rect
+                intin+4 y coord of rect
+                intin+6 width of rect
+                intin+8 height of rect
+results:                intout  reserved
+                intout+2        x mouse coord
+                intout+4        y mouse coord
+                intout+6        final mouse button state; 0=both buttons up,
+                        1=left button down,  2=right button down,
+                        3=both down
+                intout+8        status of keyboard shift keys
+                        Bit     value   Key
+                        0       1       right shift
+                        1       2       left shift
+                        2       4       control
+                        3       8       alt
+
+
+evnt_mesag()    dc.w    23,0,1,1,0
+-----------
+Wait for message event
+
+inputs:         addrin  address of 16 byte event buffer
+
+results:                intout  reserved
+                  
+Contents of meassage buffer: (all coords in pixels)
+
+word    contents (message)
+0       10, menu item selected (mn_selected)
+3       object number of menu title selected
+4       object number of menu item selected
+
+0       20, redraw window (wm_redraw)
+3       handle of window to redraw
+4       x coord of window
+5       y coord of window
+6       width of window
+7       height of window
+
+0       21, new window selected (wm_topped)
+3       handle of selected window
+
+0       22, close box selected (wm_closed)
+3       handle of selected window
+
+0       23, full box selected (wm_fulled)
+3       handle of selected window
+
+0       24, scroll bar or arrow clicked on (wm_arrowed)
+3       handle of selected window
+4       0=page up,  1=page down,  2=line up (up arrow),  3=line 
+        down (down arrow), 4=page left, 5=page right, 6=column left
+        (left arrow), 7=column right (right arrow)
+
+0       25, move horizontal slider (drag slider) (wm_hslid)
+3       handle of selected window
+4       0=far left, 1000=far right
+
+0       26, move vertical slider (drag slider) (wm_vslid)
+3       handle of selected window
+4       0=top, 1000=bottom
+
+0       27, drag size box (wm_sized)
+3       handle of selected window
+4       (current) window x coord
+5       (current) window y coord
+6       width 
+7       height
+
+0       28, drag window move bar (wm_moved)
+3       handle of selected window
+4       window x coord
+5       window y coord
+6       (current) width 
+7       (current) height
+
+0       29, window selected (wm_newtop)
+3       handle of selected window
+
+0       40, desk accessaory selected (ac_open)
+4       menu item number selected (menuid)
+
+0       41, desk accessory closed (ac_close)
+4       menu item number (menuid)
+
+
+evnt_timer()    dc.w    24,2,1,0,0
+-----------
+Wait for a specified  time to pass, in milliseconds
+
+inputs:         intin   low word of time value 
+                intin+2 high word of timer value
+                  
+results:                intout  reserved
+
+                 
+evnt_multi()    dc.w    25,16,7,1,0    
+-----------
+Wait for muliple events
+
+inputs:         intin   event/s to wait for
+                        bit     value   event
+                        0       1       mu_keybd
+                        1       2       mu_button
+                        2       4       mu_m1
+                        3       8       mu_m2
+                        4       16      mu_report
+                        5       32      mu_timer
+
+                init+2  clicks \
+                init+4  mask    > from event_button
+                init+6  state  /
+                init+8  flag1 \
+                init+10 x1     |
+                init+12 y1      > from event_mouse
+                init+14 w1     |
+                init+16 h1    /
+                init+18 flag2 \
+                init+20 x2     |
+                init+22 y2      > from event_mouse
+                init+24 w2     |
+                init+26 h2    /
+                init+28 timer low word \
+                init+30 timer hi word  / from event_timer
+                addrin  message buffer from event_multi
+
+results:                intout  type of event that happened
+                intout+2        x mouse coord
+                intout+4        y mouse coord
+                intout+6        final mouse button state; 0=both buttons up,
+                        1=left button down,  2=right button down,
+                        3=both down
+                intout+8        status of keyboard shift keys
+                        Bit     value   Key
+                        0       1       right shift
+                        1       2       left shift
+                        2       4       control
+                        3       8       alt
+                intout+10       keycode (see book appendix)
+                intout+12       number of button clicks
+
+
+evnt_dclick()   dc.w    26,2,1,0,0  
+------------
+Set or read speed of mouse button double-click
+
+inputs:         intin   new double-click speed. 0 to 4 (4=fastest)
+                intin+2 read (1) or set (0) double-click
+                 
+results:                intout  the new or current  double-click setting
+                
+
+menu_bar()      dc.w    30,1,1,1,0
+---------
+Display or erase menu bar   
+
+inputs:         intin   erase (0) or (1) show menu bar
+                addrin  address of menu object tree
+results:                intout  status, 0=an error, >0=no error
+          
+
+menu_icheck()   dc.w    31,2,1,1,0
+-----------
+Place or erase tick before menu item
+
+inputs:         intin   object number of selected item
+                intin+2 erase (0), display (1) tick
+                addrin  address of object tree
+results:                intout  status, 0=an error, >0=no error
+          
+menu_ienable()  dc.w    32,2,1,1,0
+-------------
+Enable or disable a menu item
+
+inputs:         intin   object number of item
+                intin+2 disable (0), enable (1) menu item
+                addrin  address of object tree
+results:                intout  status, 0=an error, >0=no error
+          
+
+menu_tnormal()  dc.w    33,2,1,1,0
+-------------
+Show menu title in normal or reverse video. Used to return a menu title
+to normal video after it has been selected by user.
+
+inputs:         intin   object number of item
+                intin+2 reverse (0), or normal (1) video
+                addrin  address of object tree
+results:                intout  status, 0=an error, >0=no error
+    
+    
+menu_text()     dc.w    34,1,1,1,0
+----------
+Change text of menu item
+
+inputs:         intin   object number of item
+                addrin  address of object tree
+                addrin+2        address of new text string which 
+                        should not be longer than string it replaces
+
+results:                intout  status, 0=an error, >0=no error
+
+
+menu_register() dc.w    35,1,1,1,0
+--------------
+Add menu item to desk menu. Up to 6 may be added.
+Add desk accessory to DESK menu, leftmost menu. 
+
+inputs:         intin   applications id        
+                addrin  address of text string for menu item
+results:                intout  desk accessory's menu id. valid range is 0-5
+                        -1=no room left for any more DA's.
+
+
+objc_add()      dc.w    40,2,1,1,0
+---------
+Add an object to a tree
+
+inputs:         intin   object number of parent
+                intin+2 object number of child to be added   
+                addrin  address of object tree
+               
+results:                intout  status, 0=an error, >0=no error
+
+
+objc_delete()   dc.w    41,1,1,1,0
+------------
+Delete an object from a tree
+
+inputs:         intin   object  number of object  to  be deleted                   
+                addrin  address of object tree
+               
+results:                intout  status, 0=an error, >0=no error
+
+
+objc_draw()     dc.w    42,6,1,1,0
+----------
+Draw an object tree
+
+inputs: (all coords in pixels)
+                intin   object number of parent, or first object
+                        to be drawn.
+                intin+2 level  of objects to  be  drawn. Parent
+                        objects (children)=1, chidren of children=2
+                        and so on
+                intin+4 x coord of clipping rectangle
+                intin+6 y coord of clipping rectangle
+                intin+8 width of clipping rectangle
+                intin+5 height of clipping rectangle
+                addrin  address of object tree
+               
+results:                intout  status, 0=an error, >0=no error
+
+
+objc_find()     dc.w    43,4,1,1,0
+----------
+Find objects under mouse pointer
+
+inputs:         intin   object number of parent, or first object to
+                        be searched. All dependants will be searched
+                        too
+                intin+2 level of objects to be searched. Parent
+                        objects (children)=1, children of children=2
+                        and so on
+                intin+4 x coord of object
+                intin+6 y coord of object
+                addrin  address of object tree
+               
+results:                intout  object number of object found. -1 if no
+                        object found
+
+
+objc_offset()   dc.w    44,1,3,1,0
+------------
+Find objects screen position as absolute position instead as an offset
+of parent
+
+inputs:         intin   object whose screen location want to find
+                addrin  address of object tree
+               
+results:                intout  status, 0=an error, >0=no error
+                intout+2        x coord of object in pixels
+                intout+4        y coord of object in pixels
+
+
+objc_order()    dc.w    45,2,2,1,0
+-----------
+Move child to new relative to siblings
+
+inputs:         intin   object number of child to be moved
+                intin+2 -1=on top, 0=bottom,1=one from bottom,
+                        2=two from bottom, etc
+                addrin  address of object tree
+               
+results:                intout  status, 0=an error, >0=no error
+
+
+objc_edit()     dc.w    46,4,2,1,0      edit text in an object
+----------
+
+inputs:         intin   object number of editable text object
+                intin+2 character
+                intin+4 next position
+                intin+6 0= reserved, 1= cursor  on, 2=display/enter
+                        text, 3=turn cursor off
+                addrin  address of object tree
+               
+results:                intout  status, 0=an error, >0=no error
+                intout+2        next char position                  
+
+objc_change()   dc.w    47,8,1,1,0
+------------
+Change an objects state
+
+inputs: (all coords in pixels)
+                intin   object  number 
+                intin+2 0
+                intin+4 x coord of clipping rectangle
+                intin+6 y coord of clipping rect
+                intin+8 height of clipping rect
+                intin+10        width of clipping rect
+                intin+12        new value
+                intion+14       0=no redraw, 1=redraw object
+                addrin  address of object tree
+               
+results:                intout  status, 0=an error, >0=no error
+                 
+
+form_do()               dc.w    44,1,3,1,0
+--------
+Handle dialog box
+
+inputs:         intin   0=no editable text, or object number of
+                        editable text field
+                addrin  address of object tree
+               
+results:                intout  object number of exiting object. If
+                        'touchexit' object is double-clicked the high
+                        bit of this value is set.
+
+
+form_dial()     dc.w    51,9,1,0,0    
+----------
+Can be used for different dialog box operations: 
+
+inputs: (all coords in pixels)
+                intin   0=reserve screen area used by dialog box,
+                        1=draw expanding box, 2=draw shrinking box, 
+                        3=redraw screen area reserved by 0 flag, and
+                        send a redraw message
+                intin+2 x coord of samller rectangle
+                intin+4 y coord of smaller rect
+                intin+6 height of smaller rect
+                intin+8 width of smaller rect
+                intin+10        x coord of larger rectangle
+                intin+12        y coord of larger rect
+                intin+14        height of larger rect
+                intin+16        width of larger rect
+
+results:                intout  status, 0=an error, >0=no error
+
+
+form_alert()    dc.w    52,1,1,1,0
+-----------
+Display an alert box
+
+inputs:         intin   default exit button when user presses Return
+                        key. 0=no default exit button, 1=1st exit 
+                        button, 2=2nd exit button, 3=3rd exit button
+                addrin  address of string. Format for string is:
+                        [icon number][message][exit button text]
+
+                        The icon number can be:
+
+                        number  image           meaning
+                        0       none
+                        1       exclamation mark        note
+                        2       question mark   wait
+                        3       stop sign               stop
+
+The text message can be up to 5 lines, and a maximum of 40 chars per line.
+The vertical bar char '|' is used to indicate a new line. There can be a
+max of 3 exit buttons, with the text for each button seperated with a
+vertical bar. A max of 20 chars per button is allowed.
+
+results:                intout  the  exit button selected by the user:
+                        1=first button. 2=second, 3=third
+
+
+form_error()    dc.w    53,1,1,0,0
+-----------
+Display an error box 
+
+inputs:         intin   the TOS error code. To get correct message
+                        the result of the error code a negative
+                        number usually in d0 should be made positive
+                        and then 31 subtracted. This gives the correct
+                        GEMDOS error code when the result is passed
+                        to the intin array and this call made.
+
+results:                intout  exit button selected
+
+
+form_center()   dc.w    54,0,5,1,0
+------------
+Centre dialog box
+
+inputs:         addrin  address of object tree
+
+results:        (all coords in pixels)
+                intout  reserved
+                intout+2        x coord
+                intout+4        y coord
+                intout+6        width
+                intout+8        height
+
+
+form_keybd()    dc.w    55,3,3,1,0      
+-----------
+This forms part of the evnt_multi() call
+
+inputs:         intin   number of object currently being edited.
+                intin+2 next object to be edited
+                intin+4 keycode
+                addrin  address of object tree
+               
+results:                intout  0=exit object selected, 1=carry on
+                intout+2        new editable object
+                intout+4        processed keycode, 0=no further processing
+                        required.
+
+
+form_butn()     dc.w    56,2,2,1,0      
+----------
+This forms part of the evnt_multi() call
+
+inputs:         intin   number of object clicked on
+                intin+2 number of (evnt_multi) mouse button clicks
+                addrin  address of object tree
+               
+results:                intout  0=exit object selected, 1=carry on
+                intout+2        new editable object
+
+
+graf_rubberbox()        dc.w    70,4,3,0,0      
+---------------
+
+Draw an outline of a box whilst the left button is pressed. The top left
+corner is fixed whilst the lower right follows the mouse pointer. Call this
+once the left mouse button is down; the function ends once the left button
+is up and the box is erased from the screen. 
+
+inputs: (all coords in pixels)
+        intin   x coord
+        intin+2 y coord
+        intin+4 min width
+        intin+6 min height        
+
+results:  intout        status, 0=an error, >0=no error
+        intout+2        width of box at end of routine
+        intout+4        height of box at end of routine
+
+
+graf_dragbox()  dc.w    71,8,3,0,0      drag a box
+--------------
+Draw an outline of a box whilst the left button is pressed which stays a
+fixed distance from mouse pointer. The box can be moved within the
+rectangle defined by programmer. Call this once the left mouse button is
+down; the function ends once the left button is up and the box is erased
+from the screen.    
+
+inputs: (all coords in pixels)
+                intin   width
+                intin+2 height
+                intin+4 x coord
+                intin+6 y coord
+                intin+8 x coord of confining rect
+                intin+10        y coord of confining rect
+                intin+12        width of confining rect
+                intin+14        height of confining rect
+results:                intout  status, 0=an error, >0=no error
+                intout+2        x coord at end of routine
+                intout+4        y coord of box at end of routine
+
+graf_movebox()  dc.w    72,6,1,0,0
+--------------
+Draw a moving box
+
+inputs: (all coords in pixels)
+        intin   width
+        intin+2 height
+        intin+4 x coord of first rect
+        intin+6 y coord of first rect
+        intin+8 x coord of final rect
+        intin+10        y coord of final rect
+
+results:        intout  status, 0=an error, >0=no error
+                  
+
+graf_growbox()  dc.w    73,8,1,0,0
+--------------
+Draw an expanding box
+
+inputs: (all coords in pixels)
+                intin   x coord small rect
+                intin+2 y coord small rect
+                intin+4 width small rect
+                intin+6 height small rect      
+                intin+8 x coord of large rect      
+                intin+10        y coord of large rect
+                intin+12        width of large rect
+                intin+14        height large rect
+                 
+results:                intout  status, 0=an error, >0=no error
+
+ 
+graf_shrinkbox()        dc.w    74,8,1,0,0
+---------------
+Draw a shrinking box
+
+inputs: (all coords in pixels)
+                intin   x coord ending small rect
+                intin+2 y coord ending small rect
+                intin+4 width ending small rect
+                intin+6 height ending small rect      
+                intin+8 x coord of large start rect      
+                intin+10        y coord of large start rect
+                intin+12        width of large start rect
+                intin+14        height large start rect
+                 
+results:                intout  status, 0=an error, >0=no error
+                 
+
+graf_watchbox() dc.w    75,4,1,1,0
+--------------
+Watch a rectangluar object
+
+inputs:         intin   reserved
+                intin+2 object number to watch
+                intin+4 ob_state flag when mouse pointer is in
+                        object's rect (with button down)
+                intin+6 ob_state flag when mouse pointer is outside
+                        object's rect (with button down)
+                addrin  address of object tree
+results:        when user has released left mouse button
+                intout  0= mouse pointer outside rectangle
+                        1=mouse pointer inside rect
+
+
+graf_slidebox() dc.w    76,3,1,1,0
+--------------
+Drag a rectangular object, can be used for own slider within a dialog box. 
+
+inputs:         intin   object number of parent
+                intin+2 object number of child
+                intin+4 0=horizontal movement,1=vertical movement
+                addrin  address of object tree
+results:                intout  position of slider relative to parent in
+                        range 1-1000; 0=left or top, 1000 right
+                        or bottom
+
+
+graf_handle()   dc.w    77,0,5,0,0
+------------
+Get physical screen handle
+
+results:                intout  VDI handle for current physical workstation
+                intout+2        char cell width of default font in pixels
+                intout+4        char cell height of default font in pixels
+                intout+6        width of box surrounding a char cell in
+                        default font in pixels, eg close box in
+                        window
+                intout+8        height of box surrounding a char cell in
+                        default font in pixels, eg close box in
+                        window.
+  
+
+graf_mouse()    dc.w    78,1,1,1,0  
+-----------
+Change shape of mouse pointer.
+
+inputs:         intin   new mouse shape code               
+         
+                        Number  shape
+                        0       arrow
+                        1       vertical bar (I beam)
+                        2       busy bee
+                        3       pointing hand
+                        4       flat hand
+                        5       thin cross hairs
+                        6       thick cross hairs
+                        7       outline cross hairs
+                        255     user defined
+                        256     mouse pointer of
+                        257     mouse pointer on
+
+                addrin  address of 37 word array for custom mouse
+                        pointer. Set to 0 if predefined shape used.
+                        Format of array is:
+
+                word    contents
+                0       x position of hot spot
+                1       y position of hot spot
+                2       number of bit planes. This must be 1
+                3       background colour, normally 0
+                4       foreground colour, normally 1
+                5-20    16 words of mask data
+                21-36   16 words of image data
+
+results:                intout  status, 0=an error, >0=no error
+                 
+
+graf_mkstate()  dc.w    79,0,5,0,0
+-------------
+Get mouse & shift-key status
+Note this does not wait for an event unlike evnt_multi()
+
+results:                intout  reserved
+                intout+2        x mouse coord
+                intout+4        y mouse coord
+                intout+6        mouse button state; 0=both buttons up,
+                        1=left button down, 2=right button down,
+                        3=both down
+                intout+8        status keyboard shift keys
+
+                        Bit     value   Key
+                        0       1       right shift
+                        1       2       left shift
+                        2       4       control
+                        3       8       alt
+
+
+scrp_read()     dc.w    80,0,1,1,0
+----------
+Read scrap directory see scrp_write() which writes the path of the data
+to be shared by other programs to disk in a file called scap. scrp_read
+reads this path.
+
+inputs:         addrin  address of buffer for path
+
+results:                intout  status, 0=an error, >0=no error
+
+
+scrp_write()    dc.w    81,0,1,1,0
+-----------
+Write scrap directory
+
+inputs:         addrin  address of buffer with path string
+
+results:                intout  status, 0=an error, >0=no error
+
+
+fsel_input()    dc.w    90,0,2,2,0
+-----------
+inputs:         addrin  address of path of directory
+                addrin+4        address of string of initial file selection,
+                        if any.
+
+results:                intout  status, 0=an error, >0=no error
+                intout  button selected: 0=cancel, 1=OK
+
+
+wind_create()       dc.w        100,5,1,0,0
+------------
+Allocate a window its components
+
+inputs: (all coords in pixels)
+                intin   window components, see book
+                intin+2 max x coord of window
+                intin+4 max y coord of window
+                intin+6 max width
+                intin+8 max height
+                 
+results:                intout  window handle 0=desktop, -1= no more windows
+
+
+wind_open()     dc.w    101,5,1,0,0
+----------
+Display a window
+
+inputs: (all coords in pixels)
+                intin   window handle, returned by wind_create()
+                intin+2 initial x coord of window
+                intin+4 initial y coord of window
+                intin+6 initial width
+                intin+8 initial height
+                 
+results:                intout  status, 0=an error, >0=no error
+
+
+wind_close()    dc.w    102,1,1,0,0
+-----------
+Removes a window from the screen, but does not delete it. Can be reopened.
+
+inputs:         intin   window handle
+                                 
+results:                intout  status, 0=an error, >0=no error
+
+
+wind_get()      dc.w    104,2,5,0,0
+---------
+Get info about a window
+
+inputs:         intin   window handle
+                intin+2 type of info requested:
+
+                        4=window work area coords
+                        5=window exterior coords
+                        6=previous window coords
+                        7=max window coords
+                        8=relative position of horizontal slider,
+                                1=leftmost, 1000=rightmost
+                        9=relative position of vertical slider,
+                                1=top, 1000=bottom
+                        10=window handle of active wimdow
+                        11=coords of 1st rectangle in rectangle list
+                        12=coords of 2nd rectangle in rectangle list
+                        13=reserved
+                        15=relative size of horizontal slider
+                                compared to scrioll  bar. 
+                                -1=minimum size, 1-1000 percentage
+                                filled in 10ths
+                        16=relative size of vertical slider compared
+                                to scroll bar. -1=minimum size,
+                                1-1000 percentage filled in 10ths
+
+results: (all coords in pixels) 
+                intout  status, 0=an error, >0=no error
+                intout+2        x coord
+                intout+4        y coord
+                intout+6        width
+                intoput+8       height
+
+
+wind_set()      dc.w    105,6,1,0,0
+---------
+Change/set a windows settings
+
+inputs:         intin   window handle
+                intin+2 type of change requested:
+
+                        1=window components, same as wind_create()  
+                        2=address of string: name of the window,
+                                intin+4-intin+6  
+                        3=address of string: information line of the
+                                window, intin+4-intin+6
+                        5=window exterior coords
+                        8=relative position of horizontal slider,
+                                1=leftmost, 1000=rightmost
+                        9=relative position of vertical slider,
+                                1=top, 1000=bottom
+                        10=window handle of active wimdow
+                        14=address of object tree for desktop window
+                                background, intin+4=high word of
+                                address, intin+6=low word, intin+8
+                                =object number to start drawing.
+                        15=relative size of horizontal slider compared
+                                to scrioll bar. -1=minimum size,
+                                1-1000 percentage filled in 10ths
+                        16=relative size of vertical slider compared
+                                to scroll bar. -1=minimum size,
+                                1-1000 percentage filled in 10ths
+
+results:                intout  status, 0=an error, >0=no error
+               
+
+wind_find()     dc.w    106,2,1,0,0
+----------
+Find window under mouse pointer
+
+inputs:         intin   x coord of mouse pointer
+                intin+2 y coord of mouse pointer
+
+results:                intout  window handle
+
+
+wind_update()   dc.w    107,1,1,0,0
+------------
+Lock or release screen, this is often used to ensure that a menu doesn't
+drop down at an inappropriate moment.
+
+inputs:         intin   one of the following values
+
+                value   name            action
+                -----   ----            ------
+                0       beg_update      application is updating
+                                        a window
+                1       end_update      application is ending
+                                        updating a window
+                2       beg_mctrl       application is taking 
+                                        control of all mouse
+                                        functions
+                3       end_mctrl       application is ending its
+                                        control of all mouse
+                                        functions
+
+results:                intout  status, 0=an error, >0=no error
+
+
+wind_calc()     dc.w    108,6,5,0,0
+----------
+Get window dimensions  
+
+inputs:         intin   0=border postion & size, 1=work position &
+                        size
+                intin+2 window components, same as wind_create
+                intin+4 x coord of window
+                intin+6 y coord
+                intin+8 width
+                intin+10        height
+                 
+results:  (all coords in pixels)
+                intout  status, 0=an error, >0=no error
+                intout+2        x window coord
+                intout+4        y window cord
+                intout+6        width
+                intout+8        height
+
+
+rsrc_load()     dc.w    110,0,1,1,0
+----------
+Load a resource file, this call allocates memory for the object tree(s).
+
+inputs:         addrin  address of path and name of resource file
+                        to be loaded
+
+results:                intout  status, 0=an error, >0=no error
+               
+
+rsrc_free()     dc.w    111,0,1,0,0
+----------
+Unload a resource file, this call frees memory for the object tree(s)
+previously loaded.
+
+results:                intout  status, 0=an error, >0=no error
+
+
+rsrc_gaddr()    dc.w    112,2,1,0,1
+-----------
+Get address of resource data
+
+inputs:         intin   type of object:
+
+                0       object tree
+                1       OBJECT
+                2       TEDINFO
+                3       ICONBLCK
+                4       BITBLCK
+                5       pointer to free strings
+                6       pointer to free image data
+                7       ob_spec field of OBJECT
+                8       te_ptext field of TEDINFO
+                9       te_ptmplt field of TEDINFO
+                10      te_pvalid field of TEDINFO
+                11      ib_pmask field of ICONBLK
+                12      ib_pdata field of ICONBLCK
+                13      ib_ptext field of ICONBLCK
+                14      bi_pdata field of BITBLK
+                15      ad_frstr, address of pointer to free string
+                16      ad_frimg, address of pointer to free image
+
+                intin+2 object number (index)
+                  
+results:                intout  status, 0=an error, >0=no error
+                addrout address of requested data 
+
+
+rsrc_saddr()    dc.w  113,2,1,1,0
+-----------
+Store address of resource data
+
+inputs:         intin   type of object into which address is placed
+                        as above
+                intin+2 object number (index)
+                addrin  address of data structure
+                  
+results:                intout  status, 0=an error, >0=no error
+                
+     
+rsrc_obfix()    dc.w    114,1,1,1,0
+-----------
+Change resource file coords to pixel coords, called internally by
+rsrc_load()
+
+inputs:         intin   object number (index)
+                addrin  address of object tree
+                  
+results:                intout  status, 0=an error, >0=no error
+
+     
+

@@ -1,0 +1,44 @@
+
+ How to do "DECENT" conversions from TCB-Tracker mods to Protracker mods (M.K.)
+ó--------------------------------------------------------------------------------
+
+After some  many years of  music collecting  and mod-ripping I  decided to write
+down how to do  a good conversion  from  TCB-Tracker mods  to normal  Protracker
+ones. When I did  some conversions lately  I recognized that I  forgot something
+important  at the  end. Then I  decided to do  this list so that I  myself can't
+forget and of the actions that has to be done.
+
+1. There are  two different TCB-Tracker  module formats. Older  format and newer
+   format. They have different headers "AN COOL." and "AN COOL!".
+
+2. You need  a tool or better  a tracker-programm called AUDIO SCULPTURE created
+   by SYNC. This program  is able to load TCB-Tracker modules  and can only save
+   them as Protracker modules.
+
+3. Make sure that "PACK IS OFF" when you save the module.
+
+4. Problem 1: Audio Sculpture DOES NOT convert the loops of samples. You have to
+   load the converted  module into a  protracker compatible tracker  to edit the
+   loops already in Audio Sculpture.
+
+5. Problem 2: Audio Sculpture  DOES NOT convert speed. You have enter the module
+   speed by  hand aswell. Often you have  to listen to the original tune  in the
+   demo to find out what's the correct speed.
+
+6. Problem 3: Audio Sculpture  DOES NOT convert the correct length of  the song.
+   There  is always  ONE MORE pattern then  in  the  source-module. You  have to
+   decrease the length by ONE pattern.
+
+7. Problem 4: You  might  have  guessed  it. Audio Sculpture  does  not  convert
+   pattern breaks! So you have to figure  out where you  have to set the pattern
+   breaks in the module... as usually by hand.
+
+8. If you have  done everything  from that list you should have a good converted
+   Ex-TCB-Tracker module.
+
+Many people made  mistakes when  they converted TCB2PROTRACKER in the  past (hey
+Artoax/Hydroxid... you DID NOT had the pattern breaks aswell). Just load it into
+Audio Sculpture and then save it IS NOT ENOUGH. Please remember this.
+
+        Lotek Style (MC Laser) / The Sirius Cybernetics Corporation - 23.03.2003
+ó--------------------------------------------------------------------------------

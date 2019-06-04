@@ -1,0 +1,232 @@
+
+                                 HELLO GUY'S 
+ ****************************************************************************
+ HERE IS SASCHA A MEMBER OF  CAST  ON THE KEYBOARD. (OH SORRY - ONLY GERMAN TO
+ WRITE !! I FORGOTT.)
+ ALSO NOCHMAL: 
+ SASCHA EIN MITGLIED DER CAST SCHREIBT EUCH HIER SEINEN ERSTEN ARTIKEL FöR
+ DIESES DISK-MAGGIE.
+ ZUERST EINMAL MEINE GERéTEKONFIGURATION:
+
+ ATARI 520 ST
+ 1 MB
+ PSEUDO-STEREO SOUND
+ ALLE IC'S WURDEN DURCH FAST-IC'S ERSETZT, WAS DIE PERFORMANCE STEIGERT
+ TOS 1.04 UND TOS 2.06 UMSCHALTBAR
+ AT-BUS
+ 2*AT-BUS FESTPLATTE a 80 MB WESTERN DIGITAL
+ OVERSCAN (ORGINAL) KEIN NACHBAU
+ BIG TOWER MIT 250 WATT NETZTEIL
+ 2*3.5 '' LAUFWERKE 1,44 MB
+ INTEGRIERTER SUPERCHARGER MIT 1 MB UND V-CHIP
+ ABGESETZTE TASTATUR
+ EINSCHALTVERZôGERUNG VON 0-5 MINUTEN EINSTELLBAR
+ 3 TASTEN PC MAUS 300 DPI
+
+ ALSO DEMNéCHST HABE  ICH VOR  NOCH  WEITERE UMBAUTEN  VORZUNEHMEN. VIELLEICHT
+ STELLE ICH JA BEI INTERESSE  MAL EINEN SCHALTPLAN  FöR DIVERSE  ERWEITERUNGEN
+ VOR!! (BITTE NACHFRAGEN)
+
+ DA JA ALLE WELT VON FALCON  UND CO REDET UND ICH  LEIDER NUR EINEN "NORMALEN"
+ ST HABE, MôCHTE ICH EUCH DIVERSE TESTERGEBNISSE NICHT VORENTHALTEN.
+
+
+ ============================================
+ ST  TOS 2.06, MiNT not present
+ Blitter not present, NVDI not present
+ Video Mode = 736 * 232 * 4 Colours
+ FPU not present
+ Run and Malloc from STRAM
+ Reference = ST, No Blitter
+ overscan on
+ ============================================
+ GEM Dialog Box:            9.755     86%
+ VDI Text:                 17.015     78%
+ VDI Text Effects:         29.195     80%
+ VDI Small Text:           16.565     60%
+ VDI Graphics:             22.760    113%
+ GEM Window:                4.025     97%
+ Integer Division:          8.990    100%
+ Float Math:                5.655    100%
+ RAM Access:                3.155    100%
+ ROM Access:                3.595     87%
+ Blitting:                 10.400    112%
+ VDI Scroll:               15.725     83%
+ Justified Text:           16.505     83%
+ VDI Enquire:               3.145     84%
+ ============================================
+ Average:                              90%
+ Graphics:                             87%
+ CPU:                                  96%
+
+
+
+ ============================================
+ ST  TOS 2.06, MiNT not present
+ Blitter not present, NVDI not present
+ Video Mode = 640 * 200 * 4 Colours
+ FPU not present
+ Run and Malloc from STRAM
+ Reference = ST, No Blitter
+ TURBO 1.6 ACTIVE
+ QUICKST 2.1 ACTIVE
+ ============================================
+ GEM Dialog Box:            3.555    237%
+ VDI Text:                  1.350    992%
+ VDI Text Effects:         28.365     82%
+ VDI Small Text:           16.620     59%
+ VDI Graphics:             22.865    113%
+ GEM Window:                1.440    271%
+ Integer Division:          0.000      0%
+ Float Math:                0.000      0%
+ RAM Access:                0.000      0%
+ ROM Access:                0.000      0%
+ Blitting:                 10.380    112%
+ VDI Scroll:                2.500    527%
+ Justified Text:           13.245    103%
+ VDI Enquire:               3.150     84%
+ ============================================
+ Average:                             258%
+ Graphics:                            258%
+ CPU:                                   0%
+
+
+ ============================================
+ ST  TOS 2.06, MiNT not present
+ Blitter not present, NVDI 1.00 present
+ Video Mode = 640 * 200 * 4 Colours
+ FPU not present
+ Run and Malloc from STRAM
+ Reference = ST, No Blitter
+ turbo 1.6 active
+ quickst 2.1 active
+ ============================================
+ GEM Dialog Box:            3.710    227%
+ VDI Text:                  3.015    444%
+ VDI Text Effects:         28.365     82%
+ VDI Small Text:           16.605     60%
+ VDI Graphics:             22.810    113%
+ GEM Window:                1.475    265%
+ Integer Division:          8.985    100%
+ Float Math:                5.660    100%
+ RAM Access:                3.155    100%
+ ROM Access:                3.595     87%
+ Blitting:                 10.405    112%
+ VDI Scroll:                2.500    527%
+ Justified Text:           13.270    103%
+ VDI Enquire:               3.340     79%
+ ============================================
+ Average:                             171%
+ Graphics:                            201%
+ CPU:                                  96%
+
+
+ ============================================
+ Falcon 030 TOS 4.01, MiNT not present
+ Blitter Enabled, NVDI not present
+ Video Mode = 640 * 400 * 2 Colours
+ FPU not present
+ Run and Malloc from STRAM
+ Reference = F030
+ ============================================
+ GEM Dialog Box:            3.865    100%
+ VDI Text:                  3.800    100%
+ VDI Text Effects:          8.235    100%
+ VDI Small Text:            4.225    100%
+ VDI Graphics:              9.115    101%
+ GEM Window:                1.485    102%
+ Integer Division:          1.545    100%
+ Float Math:                2.595    102%
+ RAM Access:                1.090    100%
+ ROM Access:                1.170     99%
+ Blitting:                  1.120    103%
+ VDI Scroll:                2.800    101%
+ Justified Text:            3.590    100%
+ VDI Enquire:               1.665    103%
+ ============================================
+ Average:                             100%
+ Graphics:                            101%
+ CPU:                                 100%
+
+
+ ============================================
+ Falcon 030 TOS 4.92, MiNT not present
+ Blitter Enabled, NVDI not present
+ Video Mode = 640 * 400 * 2 Colours
+ FPU not present
+ Run and Malloc from STRAM
+ Reference = F030
+ ============================================
+ GEM Dialog Box:            2.750    141%
+ VDI Text:                  3.415    112%
+ VDI Text Effects:          7.425    111%
+ VDI Small Text:            3.730    114%
+ VDI Graphics:              8.870    104%
+ GEM Window:                1.320    115%
+ Integer Division:          1.545    100%
+ Float Math:                2.605    102%
+ RAM Access:                1.050    104%
+ ROM Access:                1.350     85%
+ Blitting:                  1.040    111%
+ VDI Scroll:                2.595    109%
+ Justified Text:            3.135    115%
+ VDI Enquire:               0.940    182%
+ ============================================
+ Average:                             114%
+ Graphics:                            121%
+ CPU:                                  97%
+
+
+ ============================================
+ Falcon 030 TOS 4.01, MiNT 1.04
+ Blitter Enabled, NVDI not present
+ Video Mode = 640 * 400 * 2 Colours
+ FPU not present
+ Run and Malloc from STRAM
+ Reference = F030
+ ============================================
+ GEM Dialog Box:            4.410     88%
+ VDI Text:                  3.960     96%
+ VDI Text Effects:          8.475     97%
+ VDI Small Text:            4.455     95%
+ VDI Graphics:              9.265    100%
+ GEM Window:               10.260     14%
+ Integer Division:          2.295     67%
+ Float Math:                4.080     65%
+ RAM Access:                1.550     70%
+ ROM Access:                1.595     72%
+ Blitting:                  1.200     96%
+ VDI Scroll:                2.910     97%
+ Justified Text:            3.805     95%
+ VDI Enquire:               1.945     88%
+ ============================================
+ Average:                              81%
+ Graphics:                             86%
+ CPU:                                  68%
+
+ ZUM BESSEREN VERGLEICH EMPFEHLE ICH DIE LISTEN AUSZUDRUCKEN. 
+
+ FALLS JEMAND MAL MEINE HARD UND SOFTWARE LISTEN HABEN WILL :
+
+       SASCHA HEMMER
+       SCHUERENFELD 8
+       45329 ESSEN
+       WEST GERMANY
+
+ ACHTUNG:DISK UND RUECKPORTO NICHT VERGESSEN!!!!
+
+ SCHREIBT MIR ODER DER REDAKTION DOCH MAL WIE EUCH DER VORSCHLAG GEFéLLT,HARD-
+ WARE-ERWEITERUNGEN ALS BASTELEI  HIER MIT DOKUMENTATION UND SCHALTPLAN VORZU-
+ STELLEN !!
+
+ ACH SO FALLS JEMAND SICH  NICHT TRAUT SEINEN ST  AUFZUSCHRAUBEN UND DARIN HE-
+ RUMZULôTEN, DAS MACHE  ICH AUCH. EINEM TREFFEN ZU DIESEM ZWECK WéRE ICH NICHT
+ ABGENEIGT. (GEHT NATöRLICH AUCH MIT DER POST)
+
+ SO DAS WAR'S ERSTMAL.( MUSS GLEICH ARBEITEN - UND SCHREIBE  LIEBER öBER HARD-
+ WARE, ABER ERST MAL SEHEN OB IHR SOWAS AUCH WOLLT)
+
+                                                   SASCHA OF CAST
+
+ (Anm.d.Redax: NatÅrlich sind wir an  Bastel-VorschlÑgen interessiert! Mal se-
+               hen,ob ich ihn noch fÅr dieses Mag mobilisieren kann...)

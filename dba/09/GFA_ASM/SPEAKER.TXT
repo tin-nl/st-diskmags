@@ -1,0 +1,46 @@
+FALCON SPEAKER
+
+                   The Internal Falcon Speaker 
+
+                               or
+
+                 How to rape sound at his birth
+
+Take a 68030 CPU, a DSP chip, a blitter, put them together in a case 
+and call it FALCON. Say that it can show marvelous pictures and hock 
+it up to an VGA screen and dribbel. Show it speed and let him draw 
+fractals and people start to smile. Let them hear sound through the 
+great internal speaker and you NEVER sell a Falcon again !!!!!!!!
+
+DID YOU EVER HEAR IT ?????? IT'S AWFULL, HOW COULD THEY DO SUCH A 
+THING. Selecting superior parts and then choose a tweeter to produce 
+the 50 Khz sound. The best thing you could do is take a screwdriver 
+and pop it out !!!. But that would invalid the garantee so what to do 
+now ?????
+
+Simple, just put the internal speaker to rest by using these small 
+hint's.
+
+In GFA Basic it looks like this:
+
+  VOID XBIOS(30,&H40)    ! speaker off
+
+and if you must turn it on again try,
+
+  VOID XBIOS(29,&HBF)    ! speaker on
+
+and there he is again.
+
+Easy enough, but it was one of the first thing I didn't as soon as I 
+had my Falcon installed. So okay you can use the Control Panel to 
+lower the volume, but if you don't have a harddisk you will have to 
+boot with the installation disk everytime. And that takes a lot of 
+time since booting up isn't one of the fastest thing to happen.The 
+sound always is wide open, to wide, cause the small speaker can't 
+handle such an amount of power and start to deform every bit of sound 
+he get. But now you can listen using you stereo or headphones by 
+putting in the lead in the HEADPHONES socket and this is much better. 
+
+Hopefully you can use it, until next time...
+
+                                                          Bonus Software    

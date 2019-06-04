@@ -1,0 +1,94 @@
+
+                    INCUBATOR - THE FALCON-GAME
+
+
+It all began a short time before the Fried-Bits-II, when we thought of
+making a game for the ATARI (first for the ST, then changed to the new
+wonderful FALCON). For  the  name  we  choosed  BOOM  (you  can surely
+imagine why, can't you ?). After a short  period  of planning we began
+to code and paint for it;  it  should  be  fast (even on VGA) and very
+colorful (truecolor). Half a  year   later   (around   proTOS  '94) we
+released the first preview of the game. But the programs were not good
+enough (we thought so) and we began  to code everything a second time.
+The new routs are now a lot better than the old ones.
+
+Scrolling mainpart
+==================
+This part runs in 320*240 pixels resolution in FALCON-TRUE-COLOR at 25
+frames per second on  VGA-  and  RGB-monitors.  There  will be over 30
+sprites simultanously on screen. Different  weapons (like plasma-shot,
+triple-gun, flame-thrower, laser, rockets)  will  be available with at
+least 3 power-levels for every weapon.
+
+The  sound-system  is  based   on   a   DSP-rout   written  by  Roland
+Spatzenegger. It works at a frequency  of  33  kHz  with  four  music-
+channels and four channels for sound-fx. The balance of every voice is
+free setable.
+
+DSP-dungeon
+===========
+The DSP-dungeon also works in TRUE-COLOR-mode. We use NO double pixels
+for displaying the  GFX.  Using   all   hardware-capabilties,  we were
+able to achieve an average display-rate  of 12-15 frames per second at
+a resolution  of  200*126  pixels.  For  orientation  we  included  on
+overlayed map like AVP  on  the  JAG.  There  will  be  at least three
+different weapons for the player and a minimum of 5 different enemies.
+
+The  whole mapsize  is  about  128*128  walls  big.  Every  texture is
+128*128 pixels and the sprites are  about  96*96 pixels. The walls can
+be set in any direction (no 90 degree-walls like some other games) and
+the sound-system consists of four channels for stereo sound fx.
+
+Amounts of GFX, MUSIC
+=====================
+Overall, there are more than 40 different enemies in the game. The
+scolling-part is divided into 4 levels (jungle, underwater, technic,
+alien). Every Level has its  own  big  end-enemy. In addition to that,
+there are 4 DSP-dungeons to be played  and  one very secret game-part.
+A lot of different wall textures is used to build the dungeons.
+
+For setup the game,  there  is  a  big  fantastic  main-menu. A lot of
+raytraced animations are included and  for  your  ears  we have over 6
+well-composed pieces of music  from  a  great   musician   and over 20
+different samples. You  can  control  the  game  optional  by  digital
+joystick, keyboard or  JAG-PAD.  The  system  requirements  will  be a
+standard FALCON030 (speeder cards are  normally  no  problem,  but  no
+Graphic-cards  !),  4  MB  of  ST-RAM  (additional TT-RAM will be used
+by the  programs  to  speed up the game) and about 10-20 MB of free on
+harddisk.
+
+Developers:
+===========
+Holger Stahl (programming): Horizontal-scrolling part
+                            Music-replay (68030-routs)
+                            Highscore
+                            File-system
+
+Roland Spatzenegger (programming): DSP-dungeon
+                                   Main-menu
+                                   8 voices-soundsystem (DSP routs)
+                                   Intro
+
+Dominik Bohn (music): all music-pieces and all samples
+
+Andras Kavalecz (GFX): all painted graphixx
+                       game and level-design
+
+Reiner Friedewald (raytracing): all raytraced animations
+
+
+We hope to release the game in the first half of 1996 and we even hope
+that we can sell enough   games   to   think  of  making  another game
+for the FALCON.
+
+That's all for now - I hope  you liked these few informations and find
+them interesting enough to tell  any  ATARI-Falcon-user you know about
+our forthcoming game.
+
+
+======================================================================
+MAGGIE NOTE:
+
+We must thank Holger Stahl for sending this information and we greatly
+look forward to what promises to be a fantastic game!
+======================================================================

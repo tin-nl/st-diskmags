@@ -1,0 +1,56 @@
+
+                                 PAUSEN-SCHALTER
+                                 ~~~~~~~~~~~~~~~
+
+ So Leute,geht's los mit der kleinen,aber feinen Hardware-Bastelei. Die Profis
+ unter euch m”gen mir verzeihen, daž ich hier und heute keinen ultra-hyper-gu-
+ ten Hradware-Bauvorschlag abgebe, aber ich muž mir mal eben einen ( oder auch 
+ zwei) Schaltplan aus den Fingern 'saugen'. Es eilt eben. ( Man, warum hat der
+ Tag blož keine 48 Stunden?)
+ Achso,fr alle,die einen gedruckten Schaltplan haben m”chten - ihr k”nnt mich
+ ja mal anschreiben. ( Habe  auch ein offenes  Ohr fr neue  Schaltpl„ne  oder 
+ Ideen.) (Addy im Basar)
+ Also dieser Schaltplan ist extrem klein und ben”tigt auch keine Zeichnung. Er
+ ist an alle 'Zocker' unter euch gerichtet,die sich ber nicht vorhandene Pau-
+ sen-Funktion in Games des ”fteren „rgern.
+
+ - Man schraube den Atari auf ( unter Beachtung  der blichen  Sicherheitsvor-
+   schriften).
+ - Nun nehmt das Abschirmblech (falls noch vorhanden) ab,indem ihr die kleinen
+   Laschen mittels einer Flachzange gerade biegt.
+ - Nachdem ihr den  MC 68000  lokalisiert habt, sucht ihr  Pin 17 ( siehe auch 
+   'Zeichnung' fr die richtige Z„hlweise)
+ - L”tet ein Kabel an diesen Pin und verbindet es mit einem Schalter.
+ - Dann l”tet ein Kabvel an den anderen Pin des Schalters und dessen Kabelende 
+   irgendwo im  Computer an Masse. ( Masse ist die breite  verzinkte Umrandung 
+   der Hauptplatine)
+ - Nun befestigt den Schalter irgendwo und schliežt das Geh„use.
+ - Computer verkabeln und einschalten.
+ - Er gibt keinen Mucks von sich? Dann legt doch mal den Schalter um. Nun seit
+   ihr um einen Pausenschalter,der immer funktioniert,reicher.
+   Eventuelle  Farbeverschiebungen  im Bild  sind bei  Gebrauch  des Schalters
+   normal.
+
+
+ Z„hlweise bei Computer-IC'S :
+                
+                _________
+              1 |  ()   | 64  >>>>>  Hier muž eine Kerbe oder ein Punkt sein.
+              2 |       | 63  Achtung:
+              3 | M     | 62  Immer nach den IC'S orientieren,
+              4 | C     | 61  N I C H T !!!! nach den eventuell
+              5 |       | 60  vorhandenen Sockeln !!!!!
+              6 | 6     | 59
+              7 | 8     | 58
+              8 | 0     | 57
+              9 | 0     | 56
+             10 | 0     | 55
+             11 |       | 54
+                |       |
+             30 |       | 35
+             31 |       | 34
+             32 |       | 33
+                ---------
+
+                                  SASCHA OF CAST
+

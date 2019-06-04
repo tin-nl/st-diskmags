@@ -1,0 +1,214 @@
+* Yet another programming file, this time  relating  to  the  BIOS  Trap
+calls, again it should prove very useful if you don't already have  this
+information, or would prefer to have it as an ASCII file.
+
+
+-----------------------------------------------------------------------
+                         BIOS Calls Trap #13
+-----------------------------------------------------------------------
+Conventions:
+  d0 is data register 0
+  d0.w means the lowest 16 bits in d0 - the high bits are undefined
+  d0.l means a long word value is returned - all bits are defined
+  d0.hw means the highest 16 bits of d0
+  d0.lw means the lowest 16 bits of d0
+  undefined means the bits can (and frequently do) have ANY value
+  d0.hw, d0.lw are always used TOGETHER i.e all bits are defined
+
+  move = move.w
+
+  for error codes see: System Exceptions, GEMDOS,BIOS error codes
+
+
+(0) getmpb                                     Get memory pointer block
+
+        move.l  #buffer,-(sp)   buffer address
+        move    #0,-(sp)                function number
+        trap    #13
+        addq    #6,sp           stack correction
+buffer  ds.b    12
+
+Result: .l      pointer to memory free list memory descriptor [md]
+        .l      pointer to memory allocated list md
+        .l      pointer to roving md
+
+
+(1) bconstat                              Character device input status
+
+.wait   move    #2,-(sp)                device
+        move    #1,-(sp)
+        trap    #13
+        addq    #4,sp
+        beq.s   .wait
+
+results d0.w    0       no characters are available
+        d0.w    -1      character/s available
+
+devices:        0       prt     printer parallel port
+        1       aux     rs-232
+        2       con     console, the screen
+        3       midi    port
+        4       kbd     keyboard
+
+ops:
+           0 prt   1 aux   2 con   3 midi   4 kbd
+bconstat   no      yes     yes     yes      no
+bconin     yes     yes     yes     yes      no
+bconout    yes     yes     yes     yes      yes
+bcostat    yes     yes     yes     yes      yes
+
+
+(2) bconin                                   Read character from device
+
+        move    #dev,-(sp)      device as above
+        move    #2,-(sp)
+        trap    #13
+        addq    #4,sp
+
+results:        does not return until a character is input
+        d0.l    $0000cccc               c=character
+        if dev = 2 (console) then d0.hw=scancode d0.lw=character
+
+
+(3) bconout                                   Write character to device
+
+        move    #char,-(sp)     character to output
+        move    #dev,-(sp)      output device
+        move    #3,-(sp)
+        trap    #13
+        addq    #6,-(sp)
+
+results:        dev is device as listed above
+        does not return until character written
+
+
+(4) rwabs                        Read/write logical sectors on a device
+
+        move    #drive,-(sp)    drive
+        move    #logsect,-(sp)  logical sector to start at
+        move    #numsect,-(sp)  number of sectors read/write
+        pea     buffer          address of buffer
+        move    #flag,-(sp)     operation
+        move    #4,-(sp)
+        trap    #13
+        lea     14(sp),sp
+
+buffer  ds.b    512*numsect
+
+results:        bios error code
+
+        flag is 0=read 1=write 2=read do not affect media change
+                               3=write "  "    "      "      "
+        buffer is read/write buffer, word aligned.
+        numsect is number of sectors to tranfer
+        logsect is where to start transfer
+        drive is 0 drive A
+                 1 drive B
+                 2+ Hard discs, networks etc
+
+
+(5) setexc                                        Set exception numbers
+
+        move.l  #vec_addr,-(sp)
+        move.l  #vec_num,-(sp)
+        move    #5,-(sp)
+        trap    #13
+        addq    #8,sp
+vec_addr  ~~~~
+        rte
+
+Results:        d0.l odd interrupt vector, restore before exiting
+
+        vec_num is the number of the vector to get or set
+        vec_addr is the address of the new vector to be installed
+        or is -1.l in which case only a read of the vector is done.
+
+
+(6) tickcal                                           Timer calibration
+
+        move    #6,-(sp)
+        trap    #13
+        addq    #2,sp
+
+Results:        d0.?  system timer calibration value, to the nearest milli
+        second.
+
+
+(7) getbpb                                     Get bios parameter block
+
+        move    #dev,-(sp)
+        move    #7,-(sp)
+        trap    #13
+        addq    #4,sp
+
+Results:        d0.l  pointer to the BIOS parameter block for specifed drive
+        or returns 0.l if bpb cannot be determined.
+
+the bpb:        word    sector size in bytes (512)
+        word    cluster size in sectors (2)
+        word    cluster size in bytes (1024)
+        word    directory lenght in sectors (7)
+        word    FAT size in sectors (5)
+        word    sector number of FAT 2
+        word    sector number of the first data cluster
+        word    number of data clusters on the disk
+        word    flags bit 0 0=12 bit fat 1=16 bit fat
+
+
+(8) bconstat                                Return output device status
+
+        move    #dev,-(sp)
+        move    #8,-(sp)
+        trap    #13
+        addq    #4,sp
+
+Results:        d0.w    0 device no ready  -1 device ready
+
+        dev is as above
+
+
+(9) mediach                                      Inequire media change
+
+        move    #dev,-(sp)
+        move    #9,-(sp)
+        trap    #13
+        addq    #4,sp
+
+Results d0.w   0 no media change  1 possiable mc  2  media change
+
+        GEMDOS will respond to a return value of 1 with a read
+        operation. If the BIOS detects an absolute media change,
+        it will return a "media change" error at that time
+
+
+(10) drvmap                                            Return drive map
+
+        move    #10,-(sp)
+        trap    #13
+        addq    #2,sp
+
+Results:        d0.l  A bitmap of all drives 1 = connected 0 = not connected
+
+
+(11) kbshift                                Set/return shift key status
+
+        move    #mode,-(sp)
+        move    #11,-(sp)
+        trap    #13
+        addq    #4,sp
+
+Results:        d0.w   bit use
+                  0  right shift key
+                  1  left shift key
+                  2  control
+                  3  alt key
+                  4  caps-locks
+                  5  right mouse button (clr/home)
+                  6  left mouse button (insert)
+                  7  reserved
+
+
+
+
+
+

@@ -1,0 +1,977 @@
+ 
+====================================================================== 
+programming
+
+                               The MMU
+
+                                                               pink/rg 
+======================================================================
+
+The  MMU is perhaps the most  overlooked  aspect of the  68030.  Whilst 
+coders moving from the 68000 are quick  to  pick up on the 030's  extra 
+addressing modes and  even  exploit  its  data  and  instruction  cache 
+capabilities, few have used the MMU.
+
+When profiling GodBoy  it  became  obvious  that  one  of  the largest 
+bottlenecks was the address  decoding.  For  each  memory read/write a 
+series of tables had to be consulted to see which block of rom/ram was 
+currently paged in. Then the status  of  this  address range had to be 
+ascertained - was it writeable  (RAM)  or  read only (ROM). ROM writes 
+had to be trapped and specific actions carried out (typically, a write 
+to ROM on the  GameBoy  changes  ROM  or  RAM  bank). Also certain RAM 
+writes had to be  trapped  -  if  these  writes  were made to hardware 
+registers.
+
+The biggest difference between GodBoy  and  GBX  was the optimising of 
+the memory access routines. But even the GBX routines had to use table 
+lookups and jump to different routines - this also added to the burden 
+on the I-Cache and D-Cache.
+
+Wouldn't it be nice if the 68030  code  decode the addresses for me in 
+hardware, and carry out the specific  actions I needed? After GodBoy I 
+had looked through all the Motorola  manuals  and decided that the MMU 
+would be ideal for this purpose.  The  documentation  on the MMU was a 
+bit confusing and I had no example sourcecode to work from, so for GBX 
+I went for  a  software  optimisation.  After  the  release  of GBX, I 
+decided to thoroughly research the documentation and reprogram the MMU 
+to all the tasks I was doing in software.
+ 
+Whilst MMUs are great for emulation,  this is not their raison d'etre. 
+The 68030 MMU was designed for  operating systems that support virtual 
+memory.
+
+The MMU sits between the CPU and the  address bus. The CPU will make a 
+read/write request for a certain address. This is known as the logical 
+address. The MMU then consults  its  look  up tables which map logical 
+address to physical addresses. It then fetches/stores a piece of data.
+
+The key concept here is that of Logical and Physical adresses. 
+We are used to seeing  the  memory  on  the  ST  and Falcon in a quite 
+simplistic way - it is a flat, linearly addressable space that ranges 
+The memory model looked a bit like this:
+
+0x00000000      Interrupts / System Variables 
+0x00000B54      RAM 
+0x00E00000      Operating System 
+0x00F00000      Hardware Registers
+
+The ST used a 24bit address bus  - effectively the highest byte of the 
+address was ignored. This meant  you  could  do neat tricks like using 
+word addressing to  access  the  hardware  registers,  or even storing 
+attribute data in the high byte of an address.
+
+Word addressing was used by nearly ever demo and games coder. 
+Instead of supplying a complete address:
+
+        move.l  #$00FF8240,a0
+
+you could supply a partial address:
+
+        move.w  #$8240,a0
+
+The partial address would then be  sign  extened.  As the upper bit of 
+$8240  is  1,  the  address  got  sign  exteneded  to  $FFFF8240.  The 
+advantages were smaller code  size,  and  less  memory access for each 
+ instruction fetch. But there  was  a  problem  -  sign extending would 
+create  address  $FFFF8240  when  the   palette  register  resided  at 
+$00FF8240. But, because of the  the  ST's  24-bit address bus, the top 
+eight bits were ignored and you got the same result.
+
+This trick worked fine on the ST.  But  what happened when a new atari 
+machine was introduced with 32-bit  addressing? $FFFF8240 now became a 
+completely different address  from  $00FF8240  meaning  problems would 
+arise. Unless...unless there was a way  of configuring the CPU so that 
+$00FF8240 and $FFFF8240 were interpreted as  the same address. But who 
+could perform such a task? Let me introduce my little friend, Mr. MMU.
+
+The MMU  on  the  Falcon  is  configured  to  take  a  logical address 
+($FFFF8240) and convert it to  a  physical adress ($00FF8240). Best of 
+all, this translation is completely transparent to the user program!
+
+
+VIRTUAL MEMORY
+
+The principal use of Memory  Management  Units  is in managing virtual 
+memory. Virtual Memory is way  to  increase  the memory compacity of a 
+computer by utilising secondary storage  devices  like hard disks. The 
+total memory avalaible becomes is the total  of RAM plus the size of a 
+swap file on the hard  disk.  At  the  most basic level, when programs 
+access memory outside of RAM, the  results are fetched/stored from the 
+hard disk.
+
+Virtual Memory is generally  provided  at  an  operating system level. 
+Memory is divided into pages, and  information  is stored on how often 
+and how recently each page is accessed.
+
+Lets look at a basic overview of a virtual memory management scheme.
+
+The CPU request access to logical address. 
+If this page is  in  memory,  the  logical  address  is converted to a 
+physical address and data is stored/fecth. 
+If the page is not in  memory,  the  VM  finds  a  page to swap out of 
+ memory ( usually using a Least  Recently  Used scheme ) and saves this 
+out to the swapfile. 
+The Requested page of memory is now loaded in, the physical address of 
+this page is mapped to a logical  address. The access to the requested 
+address is now performed.
+
+
+Completely  transparent  Virtual  Memory  schemes  are  impossible  in 
+software. Every single memory access would have  to make a call to the 
+virtual memory manager  which  would  carry  out  a  lot of processing 
+meaning the system would  run  at  a  snails  pace.  MMUs are not just 
+useful for Virtual Memory schemes, they are essential.
+
+
+TRANSLATION
+
+MMUs work by translating logical addresses into physical addresses. To 
+do this translation, they use  translation  table that map one address 
+space into another. This presents us with a problem. For a translation 
+table that completely remaps all of  the  4mb of Falcon memory we need 
+16mb of space! Fortunately, translation  tables  work in a smarter way 
+than this.
+
+The translation tables on the 68030  work by splitting memory up using 
+uniform subdivision. Then for each  page  of  logical memory, only one 
+pointer to a physical memory location is needed.
+
+There is still a problem with  this.  If  you want really fine control 
+over your memory management (  I  needed  pages  of just 256 bytes for 
+GodBoy ) then  a  single  translation  table  that  divides the entire 
+memory up is going to be massive.  And  what if you want a combination 
+of large memory  pages  and  small  pages?  The  solution  is multiple 
+translation tables.
+
+On the 68030 you can have 4  levels of translation table arranged in a 
+hierarchical structure.  The  top  level  table  provides  very coarse 
+control over the memory, and  the  further  you travel down the table, 
+ the greater your control over memory is.
+
+PAGE SIZE
+
+Unlike other processors, which work with fixed page size, the 68030 is 
+very flexible when it comes to dividing  up memory. The MMU allows you 
+to have one of 8 different page sizes  - 32K, 16k, 8k, 4k, 2k, 1k, 512 
+bytes and 256 bytes.
+
+
+TRANSLATION CONTROL
+
+Now things start to  get  slightly  complicated.  If you have multiple 
+translation tables arranged hierarchically, you  need to specify which 
+bits of an address  are  controlled  by  each  register. This is where 
+translation control comes in.
+
+Conventionally, the four levels of table on the 030 are labelled A,B,C 
+and D. To access these tables, we need four indexes:
+
+TableIndexA - this indexes into TableA to get a pointer to a TableB 
+TableIndexB - this indexes into TableB to get a pointer to TableC 
+TableIndexC - this indexes into TableC to get a pointer to TableD 
+TableIndexD - this indexes into TableD to get a pointer to memory
+
+Lets call these indexes TIA, TIB, TIC and TID.
+
+Lets look at how this works with some pseudo code:
+
+
+void *  GetpMemory( int TIA, int TIB, int TIC, int TID ) 
+{
+        TABLE * pTableB;
+        TABLE * pTableC;
+        TABLE * pTableD;
+        void *  pMemory;
+
+         pTableB =  TableA[ TIA ];
+        pTableC = pTableB[ TIB ];
+        pTableD = pTableC[ TIC ];
+        pMemory = pTableD[ TID ]; 
+}
+
+
+As you can see, we only have one  TableA. This is an array of pointers 
+to TableBs. Each TableB contains an  array of pointers to TableCs, and 
+each TableC contains an  array  of  pointers  to  TableDs. Each TableD 
+contains an array of pointers to phsyical memory locations.
+
+Each table index is created  from  bits  in the logical address. Which 
+bits in the logical address are  mapped  to a table index is specified 
+by the translation control register.
+
+Lets look at a scheme where the logical address is divided into 4 8bit 
+chunks. Here, each table  index  is  taken  from the following logical 
+address bits:
+
+31-24 : TIA 
+23-16 : TIB 
+15-8  : TIC
+ 7-0  : TIA
+
+
+As an example, lets look at address 0x01BC2340
+
+TIA = 0x01 
+TIB = 0xBC 
+TIC = 0x23 
+TID = 0x40
+
+
+How much memory  is  this  scheme  going  to  take  up for translation 
+tables?
+
+ TableA :      1 Tables of 256 entries. 
+TableB :    256 Tables of 256 entries. 
+TableC :  65536 Tables of 256 entries. 
+TableD :  16.7M Tables of 256 entries.
+
+That means we end up with  more  table  entries than we is possible to 
+fit in RAM even if we had 0xFFFFFFFF bytes of RAM! And this isn't even 
+taking into consideration the fact  that  each  table entry for an 030 
+MMU is 8 bytes long! Something is very wrong here.
+
+It is now  the  time  to  introduce  three  important  facts  into the 
+equation. First, you don't need to  have  4  levels of table - you can 
+just use TableA for a very  coarse division of memory. Second, certain 
+bits of the logical address can be ignored. So, for example, you could 
+just use the upper 20  bits  of  the  logical  address for your TableA 
+index and use no other tables. Lets look at this example:
+
+Logical Address 0x01BC2340
+
+TIA = 0x01BC2
+
+Memory required:
+
+TableA : 1 table of 512k entries
+
+In this case, the logical address will fetch entry 0x1BC2 from TableA. 
+This will contain a pointer to  a  physical address. 0x340 is added to 
+this pointer to create the physical address.
+
+This is great as it  has  a  limited  memory footprint, but it doesn't 
+give us the fine control we want.  For  that we need more tables and a 
+spiralling memory requirement.
+
+To solve this,  we  introduce  the  concept  of  EARLY TERMINATION. To 
+explain this further, we shall examine the table entry structure.
+
+Table entries come in two forms:
+ 
+SHORT 4 byte structure 
+LONG  8 byte structure
+
+The entry size is specified at a  table  level, that is you can have a 
+table of Long entries or a table of Short entries but you can't have a 
+table that contains both Long and Short entries.
+
+The bottom four  bits  of  every  pointer  in  a  table entry contains 
+attribute bits and is not  part  of  the  address. This means that all 
+tables must be aligned to 16 byte boundaries.
+
+Two of these attribute bits contain a Descriptor Type (DT). 
+There are four different DTs:
+
+ $00 - INVALID
+
+ This marks the entry as invalid ( non-addressable memory ).
+ If the MMU reaches an INVALID descriptor, the table search ends
+
+ $01 - PAGE DESCRIPTOR
+
+ This specifies that the table  entry  points  to  a page, not another 
+table. If this descriptor is  encountered  in  high level table, it is 
+seen as an EARLY TERMINATION descriptor and table search ends.
+
+ $02 - VALID 4 BYTE
+
+ This specifies that the  table  entry  points  to  a table with SHORT 
+format entries.
+
+ $03 - VALID 8 BYTE
+
+ This specifies that the  table  entry  points  to  a  table with LONG 
+format entries.
+
+
+ Using INVALID and  EARLY  TERMINATION  descriptors  means  that we can 
+dramatically cut down the number of tables we need.
+
+Let's look at an example.  If  we  want  10mb of logically addressable 
+space, the top  level  tables  that  with  entries  point  to areas of 
+logical memory above 10mb  can  have  INVALID  descriptors  so that no 
+lower level tables are needed for this space.
+
+As was said previously, certain  bits  of  the  logical address can be 
+ignored. This is down with the  Initial Shift field of the Translation 
+Control register. The Initial Shift (IS)  specifies how many bits from 
+the top of the address to ignore.
+
+In this example, we want  to  split  memory  into 1megabyte pages, but 
+only address 10mb of space. The best  way  to do this is to ignore the 
+top 8 bits of the address, use the  next 4bits as the TableA index and 
+create a single table of 16 entries.
+
+IS  = 8 
+TIA = 4
+
+Entry   Logical Address Range   Descriptor Type 
+0       0x00000000-0x000FFFFF   PAGE_DESCRIPTOR 
+1       0x00100000-0x001FFFFF   PAGE_DESCRIPTOR 
+2       0x00200000-0x002FFFFF   PAGE_DESCRIPTOR 
+3       0x00300000-0x003FFFFF   PAGE_DESCRIPTOR 
+4       0x00400000-0x004FFFFF   PAGE_DESCRIPTOR 
+5       0x00500000-0x005FFFFF   PAGE_DESCRIPTOR 
+6       0x00600000-0x006FFFFF   PAGE_DESCRIPTOR 
+7       0x00700000-0x007FFFFF   PAGE_DESCRIPTOR 
+8       0x00800000-0x008FFFFF   PAGE_DESCRIPTOR 
+9       0x00900000-0x009FFFFF   PAGE_DESCRIPTOR 
+10      0x00A00000-0x00AFFFFF   INVALID 
+11      0x00B00000-0x00BFFFFF   INVALID 
+11      0x00C00000-0x00CFFFFF   INVALID 
+11      0x00D00000-0x00DFFFFF   INVALID 
+11      0x00E00000-0x00EFFFFF   INVALID 
+ 11      0x00F00000-0x00FFFFFF   INVALID
+
+
+If we want finer  control  over  our  address  space,  say down to 64K 
+pages, this is what we would have to do:
+
+Set TableB Index (TIB) to 4. 
+Create 10 TableBs of 16 entries each. 
+Set the descriptor type (DT)  of  the  first  10  entries of TableA to 
+VALID 4 BYTE and set them to point to TableBs. 
+The data would then look like this:
+
+
+IS  = 8 
+TIA = 4 
+TIB = 4
+
+Entry   Logical Address Range   Descriptor Type         Pointer 
+0       0x00000000-0x000FFFFF   VALID 4 BYTE            TableB_0 
+1       0x00100000-0x001FFFFF   VALID 4 BYTE            TableB_1 
+2       0x00200000-0x002FFFFF   VALID 4 BYTE            TableB_2 
+3       0x00300000-0x003FFFFF   VALID 4 BYTE            TableB_3 
+4       0x00400000-0x004FFFFF   VALID 4 BYTE            TableB_4 
+5       0x00500000-0x005FFFFF   VALID 4 BYTE            TableB_5 
+6       0x00600000-0x006FFFFF   VALID 4 BYTE            TableB_6 
+7       0x00700000-0x007FFFFF   VALID 4 BYTE            TableB_7 
+8       0x00800000-0x008FFFFF   VALID 4 BYTE            TableB_8 
+9       0x00900000-0x009FFFFF   VALID 4 BYTE            TableB_9 
+10      0x00A00000-0x00AFFFFF   INVALID                 - 
+11      0x00B00000-0x00BFFFFF   INVALID                 - 
+11      0x00C00000-0x00CFFFFF   INVALID                 - 
+11      0x00D00000-0x00DFFFFF   INVALID                 - 
+11      0x00E00000-0x00EFFFFF   INVALID                 - 
+11      0x00F00000-0x00FFFFFF   INVALID                 -
+
+So now you should be getting some  idea  of how things work. Lets fill 
+in the details.
+ 
+Hardware level address translation  is extremely efficient, especially 
+when compared to any software based  scheme,  but  it does add a small 
+performance hit to all memory accesses.
+
+Some extra logic has to be performed  on chip before the memory access 
+can be started. Although this is  far better than this logic appearing 
+in software - with the associated instruction time, extra memory reads 
+etc - there is a slight problem. The MMU has to access the translation 
+tables to work out the logical  to  physical mapping, and these tables 
+are stored in main memory - which means extra memory accesses. 
+
+Fortunately the MMU has a cache to store table entries - this is known 
+as the Addres Translation Cache (ATC),  and  it works in a similar way 
+to the data cache. When the MMU has to perform a translation, it first 
+searches its ATC to see if the  entry  is already included. If its not 
+there, it has to be fetched from main memory. 
+
+This will have some affect  on  performance.  The first access to page 
+will cause the MMU to fetch  an  entry  from the table, but subsequent 
+accesses to that page will be fast. The ATC only has 22 entries. 
+So to optimise for the ATC, ensure you perform as many accesses to the 
+same page in the same code block -  try not to jump all around memory. 
+Every time a new page is  encountered, performance will suffer for the 
+first access.
+
+The 68030 always uses the MMU. TOS  intialises  it so all your code is 
+running through the MMU. This  may  seem  frustrating  if you are just 
+addressing memory as normally and don't won't the functionality of the 
+MMU. You are not  getting  its  benefits,  so  why  should you get its 
+performance hits?
+
+Fortunately the MMU caters for  this  case.  It  has two registers for 
+Transparent Translatioin. These identify blocks  of memory that can be 
+translated without access to MMU.  Unfortunately,  the slice of memory 
+that the Transparent Translation registers can specify is 16MB.
+
+ ROOT POINTERS
+
+You have set up your TableA, but how  do you let the MMU know where it 
+is? The MMU has a register which points  to the level A table known as 
+a root pointer. In fact there are  2 root points, the CPU Root Pointer 
+(CRP) which is used when  the  030  is  running  in  User mode and the 
+Supervisor Root pointer (SRP) which is used when running in supervisor 
+mode. Both are 64 bits in length and specify the following data:
+
++------------------------------------------------+ 
+| ROOT POINTER (CRP/SRP)                         | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| 00  |   04   | reserved ( must be 0 )          | 
+| 04  |   28   | TableA Address (upper 28 bits)  | 
+| 32  |   02   | Descriptor Type                 | 
+| 34  |   14   | reserved ( must be 0 )          | 
+| 48  |   15   | Limit                           | 
+| 63  |   01   | L/U                             | 
++----+---------+---------------------------------+
+
+- TableA Address
+
+A pointer to the top level table. 
+Only the top 28 bits of the  address  are specified, so TableA must be 
+aligned to a 16 byte boundary
+
+- Descriptor Type (DT)
+
+Descriptor Type for TableA. 
+This takes the same values as the DTs found in Translation Tables:
+
+  00 INVALID
+
+  This value is not allowed in the root pointer and will cause an MMU
+  exception.
+ 
+  01 PAGE DESCRIPTOR (EARLY TERMINATION)
+
+  No translation table exists, all memory accesses are calculated by
+  adding the TableA address to the logical address specified.
+
+  02 VALID 4 BYTE
+
+  TableA consists of SHORT (4 byte) entries.
+
+  03 VALID 8 BYTE
+
+  TableA consists of LONG (8 byte) entries
+
+- Limit
+
+This specifies the maximum or minimum value for indexing TableA. 
+That is, TIA is limited to this value.
+
+- L/U
+
+This specifies whether the value in Limit  field is the lower or upper 
+limit. When this bit is  set,  the  limit  value  is an unsigned upper 
+limit, when this bit is cleared, the  limit value is an unsigned lower 
+limit.
+
+
+So there are already some handy tricks you can perform here. 
+If you want to transparently translated the entire memory, you can set 
+the DT field to 01 and set the TableA address to zero. 
+
+If you want to cut down the amount  of entries in your TableA, you can 
+specify a value in the Limit field. 
+
+So, lets take another look at  our  earlier  example where we set up a 
+TableA for a 10mb addressable range. We had  a 4 bit index for TIA and 
+had 16 entries in  our  table  A,  but  the  final 6 entries contained 
+ INVALID descriptors. We could save space by using the limit register:
+
+L/U   = 0 ( specify upper limit ) 
+Limit = 9 ( maximum TableA index is 9 )
+
+In this case, we only need a 10 entries for TableA.
+
+If we don't want our  TableA  index  range  to  be limited, we can use 
+either of these combinations:
+
+L/U = 0; LIMIT = 0x7FFF;
+
+or
+
+L/U = 1; LIMIT = 0x0000;
+
+
+TRANSLATION CONTROL REGISTER
+
+The Translation Control register does exactly  what it says on the tin 
+- controls translation. This is where  you  set  up the sizes of table 
+indices and page size. It is a 32 bit register set up as follows:
+
+
++------------------------------------------------+ 
+| TRANSLATION CONTROL (TC)                       | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| 00  |   04   | TableD Index (TID)              | 
+| 04  |   04   | TableC Index (TIC)              | 
+| 08  |   04   | TableB Index (TIB)              | 
+| 12  |   04   | TableA Index (TIA)              | 
+| 16  |   04   | Initial Shift (IS)              | 
+| 20  |   04   | Page Size (PS)                  | 
+| 24  |   01   | Function Code Lookup (FCL)      | 
+| 25  |   01   | Supervisor Root Enable (SRE)    | 
+ | 26  |   05   | unused                          | 
+| 31  |   01   | Enable (E)                      | 
++-----+--------+---------------------------------+
+
+- TIA, TIB, TIC, TID
+
+These fields specify the number of bits used for each table index.
+
+- IS
+
+The initial shift specifies the the number of bits from the top of the 
+logical address to ignore.
+
+- PS
+
+Page size specifies the size of the page and can contain the following 
+values:
+
++-------------------+ 
+| PAGE SIZE (PS)    | 
++-------+-----------+ 
+| Value | Page Size | 
++-------+-----------+ 
+| 1000  | 256 bytes | 
+| 1001  | 512 bytes | 
+| 1010  | 1KB       | 
+| 1011  | 4KB       | 
+| 1100  | 8KB       | 
+| 1101  | 16KB      | 
+| 1111  | 32KB      | 
++-------+-----------+
+
+- FCL
+
+Function Code Lookup is an advanced  feature  that adds an extra level 
+of hierarchy to the translation table  tree. When function code lookup 
+is enabled, an extra table is added that sits above TableA. This table 
+ has 8 entries, each  corresponding  to  the  3bit  code written to the 
+function code register.  This  means  that  you  can  have  8  sets of 
+translation tables that you switch between,  so you effectively have 8 
+times as much logically addressable space. 
+
+I never really found this feature useful so I always disabled it. 
+FCL can contain one of two values:
+
+  0 Function Code Lookup disabled
+  1 Function Code Lookup enabled
+
+- E
+
+As everybody knows, Es are good.  And  you can't anywhere in the world 
+of Memory management without an E.  This  register gives you the power 
+to completely disable or enable translation.
+
+  0 Translation Disabled (boo!)
+  1 Translation Enabled  (rejoice!)
+
+
+The main part of this register  is the specification of table indices, 
+pages sizes and intial  shift.  This  defines  how the logical address 
+will get sliced up.
+
++--------------------------------------+ 
+| Table Indices                        | 
++-------+-----------------------+------+ 
+| Index | Starting Bit Position | Size | 
++-------+-----------------------+------+ 
+|   A   | 31-IS                 | TIA  | 
+|   B   | 31-IS-TIA             | TIB  | 
+|   C   | 31-IS-TIA-TIB         | TIC  | 
+|   D   | 31-IS-TIA-TIB-TIC     | TID  | 
++-------+-----------------------+------+
+
+When setting up the TC register, it is worth remember that
+ 
+ IS + TIA + TIB + TIC + TID + PS = 32
+
+These values must always sum to 32, as  there are 32 bits in a logical 
+address. 
+TIA must always be greater than zero, and  if TIB is zero it must be a 
+minimum of two. 
+If any of the TIn values contain  zeroes,  the tables at a lower level 
+is ignored. So if you set TIC to zero, you must also set TID to zero.
+
+
+DESCRIPTOR FIELDS
+
+We know how to set up the Root Pointer to point to our TableA. 
+
+We know how to set up page sizes and table sizes with the TC. 
+
+But setting up  the  tables  themselves  is  a  little more confusing, 
+espeically as they can contain data in a variety of different formats. 
+
+The different formats of data share  a  common set of fields, although 
+they don't always appear in the same bit positions. 
+
+We'll begin with a description of all the possible field types a table 
+entry can contain.
+
+- CI ( Cache Inhibit )
+
+  This will prevent the ATC from cacheing this entry.
+  Useful for pointers that are frequently updated.
+
+
+- DESCRIPTOR ADDRESS
+
+  A 30bit field which contains the physical address of a page
+  descriptor. The lowest 2 bits of the address are ignored.
+
+ - DT ( Descriptor Type )
+
+  It comes in 4 fruity flavours :
+     INVALID
+     PAGE DESCRIPTOR
+     VALID 4 BYTE
+     VALID 8 BYTE
+  See earlier description for more info.
+
+- LIMIT
+
+  Specifies a lower or upper limit for table indexing.
+  Any indices that fall outside this limit will cause a bus error.
+
+- L/U
+
+  Used to specifiy whether the Limit value is a Lower or Upper limit.
+
+- M ( Modified )
+
+  Whenever a write access is made to the page pointed to by this table
+  entry.
+
+- PAGE ADDRESS
+
+  A 24bit pointer to the physical base address of a page in memory.
+  This specifies the top 24bits of the address, the lowest 8 bits are
+  set to zero - pages must be 256 byte aligned.
+
+- RESERVED
+
+  These bits are reserved by Motorola and must be written in the
+  format specified.
+
+- S ( Supervisor )
+
+  Setting this bit means that the page pointed to be this table has
+   supervisor access only. Reads and writes to supervisor pages in user
+  mode will cause a bus error.
+
+- TABLE ADDRESS
+
+  A 28bit pointer to the base address of a lower level table.
+  This specifies the top 28bits of the address, the lowest 4 bits are
+  set to zero ( tables must be 16byte aligned ).
+
+- WP
+
+  Write Protect.
+  The states of all WP bits encountered through a table search are
+  ORed together. If the result is 1 and a write operation is
+  attempted, a bus error will occur.
+
+- U
+
+  Update bit.
+  Whenever a table entry is accessed, the U bit is set.
+
+
+- UNUSED
+
+  These bits are not used by the 030 and can be used by user software
+
+TABLE ENTRIES
+
+
++------------------------------------------------+ 
+| SHORT FORMAT TABLE DESCRIPTOR                  | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   01   | Write Protect (WP)              | 
+| 03  |   01   | Update (U)                      | 
+ | 04  |   28   | Table Address                   | 
++-----+--------+---------------------------------+
+
+These entries can reside in all but the lowest level table. 
+They point to the base adress of the next level table.
+
+
++------------------------------------------------+ 
+| LONG FORMAT TABLE DESCRIPTOR                   | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| LongWord0                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   01   | Write Protect (WP)              | 
+| 03  |   01   | Update (U)                      | 
+| 04  |   04   | Reserved ( must be 0000 )       | 
+| 08  |   01   | Supervisor (S)                  | 
+| 09  |   07   | Reserved ( must be 1111110 )    | 
+| 16  |   15   | Limit                           | 
+| 31  |   01   | L/U                             | 
++-----+--------+---------------------------------+ 
+| LongWord1                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   04   | Unused                          | 
+| 04  |   28   | Table Address                   | 
++-----+--------+---------------------------------+
+
+
+These entries can reside in all but the lowest level table. 
+They point to the base adress of the next level table which is A limit 
+can be supplied to restrict the  indexing  and  size of the next level 
+table.
+
+
+
+ +------------------------------------------------+ 
+| SHORT FORMAT EARLY TERMINATION PAGE DESCRIPTOR | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   01   | Write Protect (WP)              | 
+| 03  |   01   | Update (U)                      | 
+| 04  |   01   | Modified (M)                    | 
+| 05  |   01   | Reserved ( must be 0 )          | 
+| 06  |   01   | Cache Inhibit (CI)              | 
+| 07  |   01   | Reserved ( must be 0 )          | 
+| 08  |   24   | Page Address                    | 
++-----+--------+---------------------------------+
+
+This entry points to the base address of a page of memory. 
+It is placed anywhere but the lowest level table. 
+This saves on a whole table that specifies a large contiguous block of 
+memory.
+
++------------------------------------------------+ 
+| LONG FORMAT EARLY TERMINATION PAGE DESCRIPTOR  | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| LongWord0                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   01   | Write Protect (WP)              | 
+| 03  |   01   | Update (U)                      | 
+| 04  |   01   | Modified (M)                    | 
+| 05  |   01   | Reserved ( must be 0 )          | 
+| 06  |   01   | Cache Inhibit (CI)              | 
+| 07  |   01   | Reserved ( must be 0 )          | 
+| 08  |   01   | Supervisor (S)                  | 
+| 09  |   07   | Reserved ( must be 1111110 )    | 
+| 16  |   15   | Limit                           | 
+ | 31  |   01   | L/U                             | 
++-----+--------+---------------------------------+ 
+| LongWord1                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   07   | Unused                          | 
+| 08  |   24   | Page Address                    | 
++-----+--------+---------------------------------+
+
+Like the Short Format Early Termination page descriptor, but this also 
+contains a LIMIT field for restricting  the indexing and size of lower 
+level tables.
+
++------------------------------------------------+ 
+| SHORT FORMAT PAGE DESCRIPTOR                   | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   01   | Write Protect (WP)              | 
+| 03  |   01   | Update (U)                      | 
+| 04  |   01   | Modified (M)                    | 
+| 05  |   01   | Reserved ( must be 0 )          | 
+| 06  |   01   | Cache Inhibit (CI)              | 
+| 07  |   01   | Reserved ( must be 0 )          | 
+| 08  |   24   | Page Address                    | 
++-----+--------+---------------------------------+
+
+This entry points to the base address of a page of memory. 
+It is only found in the lowest level table.
+
++------------------------------------------------+ 
+| LONG FORMAT PAGE DESCRIPTOR                    | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| LongWord0                                      | 
++-----+--------+---------------------------------+ 
+ | 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   01   | Write Protect (WP)              | 
+| 03  |   01   | Update (U)                      | 
+| 04  |   01   | Modified (M)                    | 
+| 05  |   01   | Reserved ( must be 0 )          | 
+| 06  |   01   | Cache Inhibit (CI)              | 
+| 07  |   01   | Reserved ( must be 0 )          | 
+| 08  |   01   | Supervisor (S)                  | 
+| 09  |   07   | Reserved ( must be 1111110 )    | 
+| 16  |   16   | Unused                          | 
++-----+--------+---------------------------------+ 
+| LongWord1                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   07   | Unused                          | 
+| 08  |   24   | Page Address                    | 
++-----+--------+---------------------------------+
+
+Like the short format page descriptor, but  with the addition of the S 
+field.
+
++------------------------------------------------+ 
+| SHORT FORMAT INVALID DESCRIPTOR                | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   30   | Unused                          | 
++-----+--------+---------------------------------+
+
+The short format invalid descriptor can  be  used  in any level of the 
+translation table  apart  from  the  root  pointer.  It  specifies the 
+address range as invalid.
+
++------------------------------------------------+ 
+| LONG FORMAT INVALID DESCRIPTOR                 | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
+ +-----+--------+---------------------------------+ 
+| LongWord0                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   30   | Unused                          | 
++-----+--------+---------------------------------+ 
+| LongWord1                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   32   | Unused                          | 
++-----+--------+---------------------------------+
+
+Like the short format descriptor, but with  lots of space for the user 
+to store extra flags.
+
++------------------------------------------------+ 
+| SHORT FORMAT INDIRECT DESCRIPTOR               | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   30   | Descriptor Address              | 
++-----+--------+---------------------------------+
+
+The short format indirect descriptor resides at the bottom level table 
+of the translation tree, and instead of having a page descriptor has a 
+pointer to a valid 4 byte or valid 8 byte entry. This gives a level of 
+indirection to the look up.
+
++------------------------------------------------+ 
+| LONG FORMAT INDIRECT DESCRIPTOR                | 
++-----+--------+---------------------------------+ 
+| Bit | Length | Contents                        | 
++-----+--------+---------------------------------+ 
+| LongWord0                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Descriptor Type (DT)            | 
+| 02  |   30   | Unused                          | 
+ +-----+--------+---------------------------------+ 
+| LongWord1                                      | 
++-----+--------+---------------------------------+ 
+| 00  |   02   | Unused                          | 
+| 02  |   30   | Descriptor Address              | 
++-----+--------+---------------------------------+
+
+Like the short format indirect descriptor but with extra space for the 
+user to store info.
+
+MMU SPECIFIC INSTRUCTIONS
+
+The MMU has a set of instructions that are exclusively associated with 
+it.
+
+PFLUSH
+
+This instruction invalidates an entry in the ATC. 
+
+It gives you quite detailed control over  the ATC, you can specify the 
+address of the entry to flush, or the type of entry to flush. 
+
+Its complete specification is beyond  the  scope  of this article, but 
+for simplicity's sake, when you  modify  any entry in your translation 
+tree you  should  issue  a  PFLUSHA  instruction  -  this  flushes all 
+entries.
+
+PLOAD
+
+This loads an entry into the ATC.
+
+PMOVE
+
+This instruction gives access to the full range of MMU registers: 
+CRP, SRP, TC, TT0, TT and the MMUSTATUS register. 
+It allows you to read or write any of these registers.
+
+ PRESTORE
+
+Restore MMU status & registers.
+
+PSAVE
+
+Save MMU status & registers.
+
+PScc
+
+Set on MMU condition.
+
+PTEST
+
+Tests a logical address. Returns the following info:
+ Invald Descriptor
+ Limit Violation
+ Bus Error
+ Supervisor Violation
+ Write Protected
+ Modified
+ Transparent
+ Number of levels
+
+PTRAPcc
+
+If the specified MMU condition is true, performs a trap.
+
+PVALID
+
+Validates a pointer.
+
+
+TRANSLATION ENDS HERE
+
+The MMU seems rather daunting  and  overly  complex at first. Motorola 
+seem to have gone for flexibility  over simplicity, and in places this 
+ seems unneccessary. The long format  descriptors just serve to confuse 
+and in most cases aren't really  useful.  There are too many different 
+page sizes, and not enough large page sizes ( the biggest size you can 
+specify is a measly 32k ). The function code lookup and an extra layer 
+of complexity to the system.
+
+But once you've got your head  around  a few key concepts and  ploughed 
+through all the nonsense,  the  power  of  the MMU becomes apparent. If 
+you are  writing  an  emulator,   operating  system  or  virtual memory 
+routine, the MMU isn't just useful, it's essential.
+
+All you have to do is translate  all this facts and figures into code. 
+Unfortunately, there is no hardware assistance  for this - you'll have 
+to manage on your own.
+

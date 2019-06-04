@@ -1,0 +1,390 @@
+AUDIO FAQ 3
+
+10.1 What is Biamping? Biwiring?
+ Most speakers are connected to an amplifier by one pair 
+ of terminals on each speaker. Within these speakers, a 
+ crossover distributes the signal (modified appropriately) 
+ to each of the drivers in the speaker.
+
+ Some speakers are set up to be either biwired or biamped. A 
+ much smaller number allows triwiring and triamping.  The same 
+ principles apply but use three sets of wires or three amplifiers 
+ instead of two.  Most speakers that support biamping/biwiring 
+ have two pairs of terminals and some mechanism for shorting 
+ the two pairs together when used in the normal way. This 
+ mechanism is most likely a switch or a bus bar. To help 
+ the descriptions below, I will refer to these two pairs as 
+ LO and HI  (because normally one pair connects to the woofer
+ and the other pair connects to the tweeter/midrange).
+
+ Biwiring means that a speaker is driven by two pairs of wires
+ from the same amplifier output. One cable pair connects HI to
+ the amp, and the other cable pair connects LO to the same amp 
+ output that you connected the HI cable to.  Biwiring is 
+ controversial; some folks hear a difference, some do not. The 
+ most plausible explanation involves magnetic induction of noise 
+ in the relatively low current HI cable from the relatively high 
+ current signal in the LO cable.  Accordingly, Vandersteen 
+ recommends the two cable pairs for a channel be separated by at 
+ least a few inches. In any case, the effect appears to be small.
+
+ Biamping means that the two pairs of terminals on a speaker are
+ connected to distinct amplifier outputs. Assuming you have two 
+ stereo amplifiers, you have two choices: either an amp per 
+ channel, or an amp per driver. For the amp per channel, you 
+ connect each terminal pair to a different channel on the amp 
+ (for example, the left output connects to HI and the right side 
+ to LO). In the other configuration, one amp connects to the LO 
+ terminals, and the other amp is connected to the HI terminals.
+
+ The point of biamping is that most of the power required to 
+ drive the speakers is used for low frequencies. Biamping allows 
+ you to use amps specialized for each of these uses, such 
+ as a big solid-state amplifier for the LO drivers and higher 
+ quality (but lower power) amp for the higher frequencies. 
+ When you have two identical stereo amps, some folks 
+ recommend distributing the low-frequency load by using an amp 
+ per channel.  In any case, whenever you use two different 
+ amplifiers, be careful to match levels between them.
+
+ Biamping also allows you to use high-quality electronic 
+ crossovers and drive the speaker's drivers (the voice coils) 
+ directly, without the series resistance and non-linear 
+ inductance of a passive crossover.  Biamping which uses the 
+ speaker's crossover is therefore much less desirable.  Replacing
+ a good speaker's crossover with an electronic crossover has 
+ advantages, but involves some very critical tradeoffs and tuning 
+ which is best left to those well-equipped or experienced.
+ 
+ See also section 16.0 below, on wire and connectors in general.
+
+10.2 Can amplifier X drive 2 ohm or 4 ohm speakers?
+ Almost any amplifier can drive almost any load if you don't turn 
+ the volume up too high.  Tube amplifiers are one exception.  
+ Some amps clip if you play them too loud.  This is bad and 
+ damages speakers.  Other amplifiers shutdown if they are asked 
+ to play too loud.  Many will overheat, with bad consequences. 
+ However, in almost all cases, it takes seriously loud sound or 
+ low speaker resistance (less than 4 ohms) to do damage.  Running 
+ two sets of 8 ohm speakers at once with common amplifiers 
+ represents a 4 ohm load.  Four sets of 8 ohm speakers makes a 2 
+ ohm load.  Two sets of 4 ohm speakers also makes a 2 ohm load.  
+ If you stay sober and don't turn it up past the point where it 
+ distorts, you are PROBABLY safe with most amplifiers and most 
+ loads.  See 10.3 for more information.
+
+10.3 How do I drive more than two speakers with one stereo amplifier?
+ One amp can drive many speakers.  However, there are two limits 
+ to this practice.  The first is that you can overheat or damage 
+ an amplifier if you drive too low of an impedance to loud 
+ listening levels.  Avoid loading any amplifier with a lower 
+ impedance than recommended.  Adding two speakers to one amp 
+ output loads that output with half the impedance of one speaker.  
+ (See also 10.2 above)
+
+ The second is that with tube amplifiers, which are uncommon in 
+ today's common system, it is important that the speaker 
+ impedance and the amplifier output impedance be well matched.
+
+ When driving two or more speakers from one amp output, always 
+ wire them in parallel, rather than series.  Series connection, 
+ while safe in terms of impedance levels, can hurt sound quality 
+ by raising the impedance that the speakers themselves see. 
+
+ Many amplifiers have connectors for two pairs of speakers.  In 
+ general, these amplifiers also have a speaker selector switch.
+ These amplifiers almost exclusively connect the speakers in 
+ parallel when both are selected.  It is common for these 
+ amplifiers to specify 8 ohm speakers only.  The reason that they 
+ specify 8 ohm speakers is because the amplifier is built to 
+ drive either 4 or 8 ohms, and two sets of 8 ohm speakers loads 
+ the amplifier as if it were one set of 4 ohm speakers.  It is 
+ probably perfectly safe to connect one set of 4 ohm speakers to 
+ an amplifier with two sets of outputs, provided that you NEVER 
+ use the second set for any set of speakers.
+
+10.4 How big an amplifier do I need?
+ Unfortunately, amplifier power ratings and speaker power ratings
+ are almost always misleading.  Sometimes, they are factually 
+ wrong.  Speaker ratings are almost useless in evaluating needs.
+
+ More importantly, human hearing is sensitive to the log of the 
+ power coming out of the speaker.  This means that the perceived 
+ difference between an 80 watt amplifier and a 100 watt 
+ amplifier, all else equal, is very small. (under 1 dB!)
+
+ There is a wide variation in the "efficiency" and "sensitivity" 
+ of the various speakers available.  I have seen good speakers 
+ with under 80 dB per watt efficiency and have also seen good 
+ speakers with over 96 dB per watt efficiency, measured one meter 
+ from the speaker.  This difference of 16 dB represents a factor 
+ of 40 difference in power requirement!
+
+ So the first step in determining amplifier requirements is to 
+ estimate relative speaker efficiency.  Other factors include how
+ loud you will want to listen, how large your room is, and how 
+ many speakers you will drive with one amplifier.  This 
+ information will give you a rough starting point.  For an 
+ example, a typical home speaker will produce 88 dB at 1 watt.  
+ In an average room, a person with average tastes will be happy 
+ with this speaker and a good 20 watt per channel amplifier.  
+ Someone who listens to loud music or wants very clean 
+ reproduction of the dynamics of music will want more power.  
+ Someone with less efficient speakers or a large room will also 
+ want more power. 
+
+ Past that point, you will have to use your ears.  As with all 
+ other decisions, your best bet is to get some candidates, borrow
+ them from a friendly dealer, take them home, and listen to them 
+ at your normal and loudest listening level.  See if they play 
+ cleanly when cranked up as loud as you will ever go, into your 
+ speakers in your room.  Of course, it is also important to be 
+ sure that the amp sounds clean at lower listening levels. 
+
+10.5 Do all amplifiers with the same specifications sound alike?
+ Some say that they do.  Some say that they don't.  Some 
+ demonstrated that many amplifier differences can be traced to 
+ very slight frequency response difference.  Let your own ears 
+ guide you.  If you want to compare amplifiers, you can do it 
+ best in a controlled environment, such as your home, with your
+ music and your speakers.  Also be very careful to match levels 
+ precisely.  All you need to match levels of amplifiers is a high 
+ input-impedance digital voltmeter set to AC volts and a test 
+ recording or signal generator.
+
+10.6 Is this amplifier too big for that set of speakers?
+ There is no such thing as an amplifier that is too big.  Small
+ amplifiers are more likely to damage speakers than large ones, 
+ because small amplifiers are more likely to clip than larger 
+ ones, at the same listening level.  I have never heard of 
+ speakers being damaged by an overly large amplifier.  I have 
+ heard of 100 watt speakers being damaged by a 20 watt 
+ amplifier, however, in really abusive hands.
+
+10.7 Where can I get a cheap low-power amplifier?
+ There are very few available.  One source is to buy a cheap boom 
+ box and only use the amplifier.  Another source is Radio Shack.  
+ A third alternative is to buy a car stereo booster and get a 12V 
+ power supply for it.  Finally, you can build an amp pretty 
+ easily if you are handy, but it probably won't be that cheap.  
+ Mark V Electronics, for example, sells 20 watt amp kits for 
+ under $30 and 80 watt amp kits for under $150.  (See 10.14, 
+ 10.15, and 10.16.)
+
+10.8 Is the stuff sold by Carver really awesome?
+ Some people really like it.  Others believe that it doesn't 
+ perform up to specifications.  Still others believe that it 
+ isn't all that it is hyped up to be. One of Carver's claims to 
+ fame is lots of watts per pound of weight.  As with almost 
+ everything else, the best policy is to listen for yourself and 
+ see what you think.
+
+10.9 What is a preamplifier?
+ A preamplifier is an amplifying electronic circuit which can be
+ connected to a low output level device such as a phono cartridge 
+ or a microphone, and produce a larger electrical voltage at a 
+ lower impedance, with the correct frequency response.  Phono 
+ cartridges need both amplification and frequency response 
+ equalization.  Microphones only need amplification. 
+
+ In most audio applications, the term 'preamplifier' is actually 
+ a misnomer and refers to a device more properly called a 
+ 'control amplifier'.  Its purpose is to provide features such 
+ as input selection, level control, tape loops, and sometimes, 
+ a minimal amount of line-stage gain.  These units are not 
+ preamplifiers in the most technical sense of the word, yet 
+ everyone calls them that.
+
+10.10 What is a passive preamplifier?
+ A passive preamplifier is a control unit without any
+ amplification at all. It is a classic oxymoron, because it has
+ no capability to increase the gain of the signal.  It is only
+ used with line level sources that need no gain beyond unity.
+
+10.11 Do I need a preamp?  Why?
+ The tasks of a preamp are to:
+  Switch between various input signals,
+  Amplify any phono inputs to line level,
+  Adjust the volume,
+  Adjust the treble and bass if necessary,
+  Present the right load impedance for the inputs, and
+  Present a low source impedance for the outputs.
+
+ If you have a turntable, you NEED a preamp with a phono input.
+ This is because the turntable has an output which is too
+ small for driving amplifiers and because the output of the
+ turntable requires frequency response equalization.  You
+ can't connect any other source to a phono input other than a
+ turntable (phono cartridge).  Also, you can't connect a phono
+ cartridge or turntable to any input other than a phono input.
+
+ Microphones also require special preamplifiers. Some microphones
+ also require "phantom power".  Phantom power is operating power
+ for the microphone which comes from the preamp.  Microphone
+ preamps are often built into tape decks and microphone mixers.
+
+ If you only have high level inputs, such as the output of a CD
+ player and the output of a tape deck, the main value of a preamp
+ is selecting between inputs and providing a master volume
+ control.  If you only listen to CDs, it is plausible to skip
+ the preamp entirely by getting a CD player with variable level
+ outputs and connecting them directly to a power amplifier.
+
+ Some caveats apply. One, the variable outputs on a CD player are
+ often lower sound quality than fixed outputs.  Two, some sources
+ have high or nonlinear output impedances which are not ideal for
+ driving an amplifier directly.  Likewise, some amplifiers have
+ an unusually low or nonlinear input impedance such that common
+ sources can't drive the input cleanly.  A good preamplifier
+ allows use of such devices without sacrificing sound quality.
+
+ Unfortunately, the only way to be sure that a preamplifier is
+ of value with your sources and your amplifier is to try one.
+
+ Almost all receivers contain a phono preamp, a volume
+ control, and input switching.  Therefore, if you have a
+ receiver, you may never need a preamp.
+
+10.12 Should I leave equipment on all of the time or turn it on and off?
+ Some gear draws significant electricity, so you will waste money
+ and fossil fuel if you leave it on all of the time.  As an 
+ example, a common amplifier consumes 40 watts at idle.  High-end 
+ gear uses far more electricity, but ignoring that, 40 watts x 
+ 168 hours x 52 weeks x US $0.0001 per watt hour (rough estimate) 
+ is $35/year.  Now add a CD player, a preamp, and a tuner, and it 
+ really adds up.
+
+ High-end enthusiasts claim that equipment needs to warm up to 
+ sound its best.  If you care about the best sound, give your 
+ equipment at least 20 minutes to warm up before serious 
+ listening.  Warm up will allow the inside temperature to 
+ stabilize, minimizing offsets, bring bias currents up to their 
+ proper values, and bringing gain up to operating level.
+
+ Either way, good gear will last a very long time.  Tubes are 
+ known to have a finite life, but good tube designs run tubes 
+ very conservatively, giving them life exceeding 10 years of 
+ continuous service.  Some amplifiers run tubes harder to get 
+ more power out, and thereby may be more economical to turn off 
+ between use.
+
+ Filter capacitors will fail after enough time at temperature 
+ with voltage applied.  They will last longer if turned off 
+ between use.  However, like tubes, filter caps can last tens of 
+ years of continuous use, as can power transformers, 
+ semiconductors, and the like.
+
+ Filter capacitors have a funny problem that justified a simple 
+ break-in or reforming when they are restarted after many years 
+ of rest.  It involves bringing up the power line voltage slowly 
+ with a variable transformer.  For tips on reforming capacitors, 
+ consult "The Radio Amateur's Handbook", by the ARRL.
+
+ Semiconductors seem to fail more often because of bad surges and 
+ abuse than age.  Leaving gear off may be best for semiconductors 
+ and other surge-sensitive gear if you expect power line surges, 
+ as come from an electrical storm or operation of large motors.
+
+ Fuses seem to age with temperature and get noisy, but they are 
+ so inexpensive that it should not bias your decision.  However, 
+ some are inconvenient to change, and may require opening the 
+ case and even voiding the warranty.
+-- 
+Bob Neidorff; Unitrode I. C. Corp.  |  Internet: neidorff@uicc.com
+7 Continental Blvd.                 |  Voice   : (US) 603-424-2410
+Merrimack, NH  03054-0399 USA       |  FAX     : (US) 603-424-3460
+Archive-name: AudioFAQ/part2
+Last-modified: 1993/6/4
+Version: 1.5
+
+10.13 What about swapping op-amps?
+ Many components use ICs called op amps as audio amplifiers.  
+ Earlier op amps had poor sound quality, especially if misused.  
+ Some engineers with a strong background in ICs and op amps 
+ learned that they could improve sound if they replaced slow, 
+ noisy, low slew-rate, or otherwise bad op amps with better ones.  
+ Some less informed people tried doing the same thing and made 
+ the sound worse.
+
+ One pitfall with op amp swapping is that some op amps are more 
+ prone to unwanted oscillation than others.  The faster the op 
+ amp, the more likely it will cause an unwanted oscillation, 
+ which will really damage the sound.  For that reason, Joe may 
+ succeed in replacing 741 op amps with 5534 op amps in his gear, 
+ and you may fail.  It is dependent on design, layout, etc.
+
+ As technology and design expertise improves, audio op amps 
+ get better and swapping is getting less and less useful.
+ Newer op amps are displacing yesterday's best, and sound
+ surprisingly similar to straight wire.
+
+ Still, there are different op amps for different purposes. 
+ Bipolar op amps are ideal for preamplifiers where noise is
+ critical.  The OP-27, OP-37, LT1028, and LT1115 are very well
+ received for phono preamps, head amplifiers, and microphone
+ preamplifiers.  Bipolar op amps are also more practical for
+ signals with low source impedance.
+
+ FET devices like the OPA604 and OPA2604 have higher slew rate,
+ higher bandwidth, and lower input current.  These op amps are
+ better for line-level inputs and high source-resistance signals.
+ Some amplifiers, like the OP-37 and LT1115 achieve higher
+ bandwidth by using less internal compensation.  These amplifiers
+ are not unity gain stable, and should not be used in circuits
+ with low closed loop gain or large feedback capacitors.
+
+ Some of the better op amps for audio as of today include 
+ (* means highly recommended):
+  Single  Dual
+  AD847  AD827
+  AD797*  NE5535
+  NE5534  NE5532
+  OP-27  AD712
+  LT1115*  LM833
+  AD811
+  AD841  AD842
+  HA5112*  OPA2604*
+  LT1057  OP249*
+  LT1028
+
+ With op amp part numbers, there is a lot of room for confusion.  
+ Here is a guide to the numbers that is often accurate:
+
+ Op amp part numbers start with a manufacturer's prefix:
+  Analog Devices uses AD
+  Burr Brown uses OPA
+  Linear Technology uses LT
+  Motorola uses MC
+  National uses LF and LM
+  PMI uses OP
+  Signetics uses NE and SE
+  TI uses TL
+ This can be confused because if TI copies a Signetics op amp, 
+ they may assume the Signetics prefix, or they may use their own.  
+ Fortunately, if the part numbers are the same, circuitry is 
+ almost exactly the same, as is the performance. (Note: almost)
+
+ The next thing in the part number is two, three, four or five 
+ digits.  This is invariably the key to the part. If the numbers 
+ are the same, the parts are almost surely the same.  For 
+ example, an LM357N and an LM357J are electrically identical and 
+ sound the same.
+
+ Next is a letter or two indicating the op amp package and 
+ possibly how it has been tested and what tests it passed.  
+ Unfortunately, manufacturers haven't standardized these letters.
+ Fortunately, you almost never care.  If it is a dual-inline 
+ (DIP) package and you are replacing a DIP, you shouldn't have to 
+ worry whether or not it is ceramic or molded.  Likewise, you 
+ rarely care if it has 100uV offset or 4mV offset for audio.  
+ Finally, you don't care if it wasn't tested at elevated 
+ temperatures because you will use it in your house, inside well 
+ ventilated gear.
+
+ So in general, an NE5532J is a TL5532N, and an AD827JN will 
+ sound the same as an AD827LD.  If you aren't sure about some 
+ detail, call or write the IC maker and ask for a data sheet on 
+ the parts in question.  They will always send data sheets for 
+ free, and these data sheets contain details on the various part 
+ numbers, internal circuitry, and electrical characteristics.
+

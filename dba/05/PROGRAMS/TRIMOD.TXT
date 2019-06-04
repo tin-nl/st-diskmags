@@ -1,0 +1,41 @@
+TRISOUND CONVERTER
+
+
+The Tri Sound converter (TriMod v2.1)
+
+Most of you will have seen a sound chip editor called Tri Sound Sequencer.
+It's an old editor, good but there  are no up dates made anymore. The
+sound it produced was quit good, the first editore ever to use 1
+channel for digi sound/samples. It was made by the crew Lynx, but after
+a while it was called Insignia. Most people use the Tri Sound still to
+make music, but the replay routines are often to complex or not available
+and then you have no use for your music. But here is the solution made
+by Eagle of Sentry....
+
+Well, finaly here it is. TriMod v2.1, the Fastest Replayer for Digidrums!
+Trimod is a utility coded by Eagle of Sentry to make includable music
+from a Lynx Trisound Sequencer Song-file and Voiceset (GigaSound v1.0).
+To do this you only have to select your song and voiceset and enter the
+maximal replayspeed. Trimod does the rest for you.
+
+After the files have been converted, you will be asked to enter a save name.
+The produced file can be used like Count Zero music files. This means you
+have to put a number in D0 and call the music, put the music's adres plus
+six in a vertical blank and the music plays. The end it, you call its
+adres plus two and clear the routine from the vertical blank. A source-list
+which shows this is in the TRIMOD21 folder.
+
+The replay-routine uses Timer A and is Absolutly the Fastest routine on the
+ST! If you don't need your diskdrive while playing the music, it can all be
+faster!! You simply put a 1 in D0 at initialisation, but DON'T use any drive
+when you do this.
+
+For the ones who already know the program, this version does recognize the
+end of a sequence properly and is MUCH faster!
+
+If you want to contact me, the adres is:
+                        Eagle of Sentry
+                        PO.Box 120
+                        4847 ZJ  Teteringen
+                        The Netherlands
+                       

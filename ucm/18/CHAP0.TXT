@@ -1,0 +1,330 @@
+
+ó                           CHAPTER 0 : ASSEMBLER?
+
+Right! For those of you that don't even know what assembler is I'm going to
+explain briefly what it's all about. For more experienced people, see the
+introduction. For people who can already code alot of stuff: Completely ignore
+the first three chapters!
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+You might be using your Atari like any normal person. Just doing the normal 
+things to get the electrons flowing in your Atari's wires. Using the occasional
+tool, playing games and watching demos.
+
+Ofcourse you understand things like videomodes, RAM, ROM, disks, samples and
+so forth. But have you ever wondered for instance how the screen is brought
+from your atari to your screen? Or how a sprite is stored in memory and
+how it is blitted?
+
+Before starting to code in any language (let alone assembler) one should 
+understand the basics of how an atari works. And so we start off with a
+(immensely, hugely, completely) simplified schematic of your trusty old
+machine.
+
+                   +---------+           +----------+
+                   | display |           | controls |
+                   +---------+           +----------+
+                        ^                     v 
+                  +-----------+   +-----+  +------+
+                  | videochip |<--| RAM |  | IKBD |
+                  +-----------+   +-----+  +------+
+                        ^            ^         ^
+       . . . . . . . . .|. . . . . . | . . . . | . . . . . . . .
+       b u s   b u s    |    b u s   |   b u s |   b u s   b u s
+       . . . . . . . . .|. . . . . . | . . . . | . . . . . . . .
+                        |            v         |
+                        |         +-----+      |
+                        +-------->| CPU |<-----+
+                                  +-----+
+
+There it is.. An ST without sounds or any peripherals except video and
+controls (basics of a modern computer). Ofcourse the CPU (in this case the
+68K) is the heart of the whole thing. It can read from the controls (mouse,
+joystick, keyboard), read/write from/to RAM and send commands to the various
+chips.
+
+<CPU>
+
+Very shocking, I agree completely =) The important thing is that the CPU
+is PROGRAMMABLE. This means it can execute little commands (copying bytes,
+calculating little arithmetic, etc.) and can execute these in sequence,
+repeat and even execute them depending on condition codes. If you have ever
+written some basic you understand what this means.
+
+In assembler, when you're working on the lowest possible level, you can imagine
+that you can't do a whole lot of things with one command (= "instruction"
+in assembler terms). You can typically copy small portions of memory or
+do a addition or mulitplication.
+
+Anyway.. The CPU reads these little instructions from RAM or ROM. Typicly
+these instructions are very small.. 2 upto 12 bytes depending on their
+purpose.
+
+So the CPU uses the RAM to get it's program and to buffer too. In both cases
+a whole bunch of wires spanning the motherboard are needed. These are called
+the:
+
+<BUS>
+
+The bus is needed to get things from chip to ram and the other way round.
+If for instance the videochip wants to read some bytes to transform into
+signals for the monitor it requests data from a specific ADDRESS. It sends
+this request to the bus and the bus returns the data.
+
+The same thing goes for the CPU wanting to access a piece of RAM or even to
+send/receive to/from codes the video or ikbd. Sometimes chips have registers
+for access on the bus. These are called hardware registers. These toghether
+with all accessible RAM and ROM form the MEMORYMAP. Every byte in this map
+has it's own unique 32bit address.
+
+<VIDEOCHIP>
+
+As mentioned above it can read from RAM, which means the videomemory is
+located in the main RAM and is accessible from the CPU as well. The ST
+videochip reads it's data in a quite awkard manner which is described in
+chapter 2.
+
+Also this chip has got shiftmode and palette hardwareregisters, which means
+you can send information to it as well.
+
+<IKBD>
+
+Has a few hardware registers for access. It reads from the keyboard and puts
+scancodes and movements in it's register. It can be commanded from the CPU
+by accessing a controlregister. This means you can alter the way mouse/
+joystick information is sent.
+
+Now you know that the CPU can control all major building blocks in the atari.
+Equally important is the fact is that it can run a complex program with
+sequencing, repetition and selection.
+
+How to program this CPU? The asnwer is putting a sequence of instructions
+in RAM where the CPU will read. And what better way to do this than with
+the thing closest to putting the bytes in there by hand -> ASSEMBLER!
+
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+
+First, you need a program called an assembler. Appendix D lists alot of these
+and you're free to choose whatever one you like best. I still use DEVPAC 3.1.
+In my eyes the best one so far.
+
+A complete assembler package consists off:
+
+* An editor: just a stupid screen your type your code into, and allows to load,
+  save and use blockfunctions, etc.
+* An assembler: Actually "assembles" (cool word, isn't it =)) the sourcecode
+  you typed in to a nice PRG or TOS program.
+* A debugger: Doesn't actually automaticly remove bugs from your code, but you
+  can go through your code step by step to see what happend exactly. A debugger
+  is also called a monitor.
+
+You can begin with starting up the package. Then typing in some crap in a new
+sourcefile. You need to understand the basic format of the assembler language.
+Every line in assembler consists of fields. As you can see in the ASCII drawing
+below, there can be four. Field are separated by spaces or tabs (easier).
+
+labels  instr   param   comments
+|       |       |       |
+v       v       v       v
+label:  move.l  d0,d1   * Moves d0 into d1.
+        move.l  d0,d2   * Moves d0 into d2.
+
+The beginning of everyline can be filled up with a label. Simply a name to give
+a certain part of te code. This is optional, you can also type in a tab or a
+few spaces. After having typed that you must type the instructionfield. Take a
+look at appendix B for a complete list of all possible instructions.
+
+The next field is the parameterfield for the instruction. Some instructions like
+"rts", "nop", "reset" don't require any parameters. Some require 1 and some 2.
+Parameters can be so-called CPU-registers, addresses, and pointers. Which
+parameters can be used, depends on the used instruction. Parameters are
+seperated by "," characters.
+
+A asterisk "*" or ";" semicolon indicates the following characters in the line
+are comment and should not be assembled.
+
+Now, for our very first program. Type in the following:
+
+        clr.w   -(sp)                   * Code 0: Pterm: Terminate program.
+        trap    #1                      * Call OS to do call.
+
+And find the "assemble" option in your package. Once it has assembled the
+sourcecode into a PRG-file you can also run it. Search for the run option and
+use it.
+
+This program should do nothing more than return to the assembly package. Cool,
+eh? ;-) Not very stunning or anything, but what did you expect from 2 lines
+code? =)
+
+Now you do however know to basic steps to make a program:
+
+1) Edit the sourcecode.
+2) Assemble it.
+3) Run it.
+
+Now for some small excersizes with some basic instructions and explaining what
+these instructions actually do. But before this let's explain the registers of
+the 680x0 CPU.
+
+d0 to d7: 32bits (=LONGWORD) data registers. Most number crunching instructions
+          can only have them as parameters. You can also use the low-word (=
+          the lower 16 bits), or the low-byte of the registers for
+          instructions. Registers can hold integer numbers, fixed point
+          fractional numbers, characters, bitfields, etc.
+a0 to a6: 32bits address registers. These can be filled with an address that
+          points to a byte/word/longword in RAM. Most C-users (blech!! =))
+          would call these pointers. Most number crunching instructions don't
+          work with these. It's only possible to copy and add/subtract with
+          address registers. And ofcourse use them for what they are designed to
+          do: fetch data, store data to the position they point to.
+a7 (sp):  Address register nr. 7 is also an address register, but this time
+          it's used as a so called "StackPointer". A register that points to a
+          stack of data. You can put data on the stack and you can get it off
+          the stack again. See it as a pile of little blocks.
+
+The most basic instructions:
+
+* move: moves data from one operand to the other.
+
+        move.w  #1,d0                   * Copy number 1 into the lowword of d0.
+        move.w  d0,d1                   * Copy contents of d0 lowword in d1.
+        move.l  d1,d2                   * Copy longword d1 to d2.
+        move.b  (a0),d0                 * Fetch byte from RAM where a0 points
+                                        * and put it in d0 lowbyte.
+        move.l  d0,a0                   * Copy d0 longword to a0.
+        move.b  d2,(a0)                 * Store d2 low byte in RAM where a0
+                                        * points.
+
+* add: adds one operand to the other.
+
+        add.w   #1,d0                   * Add 1 to d0 lowword.
+        add.w   d0,d1                   * Add d0 to d1 lowword.
+        add.w   (a2),d0                 * Fetch word from RAM where a2 points.
+                                        * and add it from d0 lowword.
+
+* sub: subtracts one operand from the other (big suprise there! =)).
+
+        sub.w   #1,d0                   * Subtract 1 to d0 lowword.
+        sub.w   d0,d1                   * Subtract d0 to d1 lowword.
+        sub.w   (a2),d0                 * Fetch word from RAM where a2 points
+                                        * and subtract it from d0 lowword.
+
+You might have noticed the instruction field can often have a point with a "b"
+(byte), "w" (word) or "l" (longword) attached to it. This denotes the size of
+the parameters. Some instructions can have only one size and don't need this
+attachment.
+
+What do all these instructions do? The basis of coding assembler is knowing
+every detail of an instruction. Let's explain sizes and addressingmodes a bit
+further with examples:
+
+>> register move.w
+
+* before: d0 = 12345
+*         d1 =     0
+
+        move.w  d0,d1                   * Copy d0 word to d1.
+
+* after:  d0 = 12345
+*         d1 = 12345
+
+>> register add.w
+
+* before: d0 = 12345
+
+        add.w   #1,d0                   * Add 1 to d0 word.
+
+* after:  d1 = 12346
+
+>> register sub.w
+
+* before: d0 = 12345
+
+        sub.w   #1,d0                   * Subtract 1 from d0 word
+
+* after:  d0 = 12344
+
+Here, all instructions are pretty straightforward. They only use immediate- and
+register addressingmodes and one size (word). For smaller numbers you can also
+use bytes. For larger numbers than 65535 you must use longwords. For more info
+you can check out appendix A.
+
+Ofcourse you can also work with the memory. The most basic instruction for
+working with the memory is again the "move" instruction:
+
+>> memory word load
+
+* before: d0:     0
+*         a0:  1234
+*         memory at address 1234: 22222
+
+        move.w  (a0),d0                 * Load one word from memory to d0.
+
+* after:  d0: 22222
+*         a0:  1234
+*         memory at address 1234: 22222
+
+As you can see the addressregister a0 has a value that points to a certain
+location in the memory. This value is also known as an "address". Hence
+"addressingmodes".
+
+>> memory word store
+
+* before: d0: 11111
+*         a0:  1234
+*         memory at address 1234: 0
+
+        move.w  d0,(a0)                 * Store one word from d0 to memory.
+
+* after:  d0: 11111
+*         a0:  1234
+*         memory at address 1234: 11111
+
+As you can see you can use every register you have with these instructions.
+That's part of the 68000 architecture. So an operation on d0 will also work on
+d1, d2,..., d7. The same goes for a0..a6 (a7 is a special one..).
+
+
+
+Now, what to do with all the calculation instructions? Read all about that in
+Chapter 2.
+
+The summary:
+
+Address:                A place in the memorymap where data can be accessed.
+Addressingmode:         An instruction can have one or more addressingmodes.
+                        An instruction can for instance only work with
+                        dataregisters or immediate data (data is contained by
+                        the instruction itself). Some addressingmodes can use
+                        data from memoryaddresses too or even have complex
+                        indexing functionality.
+Assembler:              Assembles your sourcecode into an executable program.
+Comment:                In your sourcecode a commented line (always skipped by
+                        the assembler) is denoted by putting a ";" at the
+                        beginning of the line. Most assemblers also support the
+                        asterisk "*".
+Debugger:               Allows you to step through your programfile and run
+                        and skip certain parts of the code to pinpoint the
+                        bugs.
+Editor:                 You type your sourcecode with this program. Good
+                        editors offer easy cooperation with the assembler and
+                        the debugger.
+Instruction:            A code that defines a specific operation the CPU can
+                        execute. One instruction typed in your editor is always
+                        one line of text, never more. Assembled it can be 2
+                        upto 16 bytes.
+Memorymap:              The memorymap is basicly all RAM, ROM and hardware-
+                        registers. Try to see it as a large street where every
+                        house has an address and can contain RAM, ROM or a
+                        hardware register.
+Operand:                A parameter for the instruction. An operand can be a
+                        data/address register or a memoryaddress or immediate
+                        data, etc.
+OS Call:                A call to the Operating System. The program can can call
+                        the OS to execute a specific task.
+Registers:              The internal data/address registers of your CPU. These
+                        are small and directly accessible dataunits used when
+                        instructions are executed.
+Sourcecode:             Textfile(s) and complementary datafiles needed to
+                        assemble your program.

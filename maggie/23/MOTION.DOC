@@ -1,0 +1,110 @@
+
+
+              Eddies Cat Un-Interactive presents...
+
+PROGRAMMING QUITE STUPID AND USELESS  THINGS  FOR  PEOPLE WHO ARE JUST
+STARTING TO PROGRAM IN ASSEMBLER.
+
+You know, people always  ask  me,  "Ed,  how  do you write Aggression-
+beating demos?", to which  I  always  reply,  "Dunno  mate,  I just do
+games. But I do know how to  make  a  Pac Man bounce around the screen
+with the same pseudo-motion blur  effect  as seen in their Braindamage
+demo." And here's how you do it...
+
+First, look in the GOODIES folder in this issue of Maggie. It contains
+all you  need  to  make  your  own  Motion  Pac  demo  apart  from the
+assembler. If you know what you're doing, fine, otherwise read on...
+
+UNDERSTANDING HOW IT WORKS
+--------------------------------
+
+This requires both a knowledge of  how  the  STs screen is laid out in
+menory and the format of a Degas  .PI1 file. If you've read Tats' demo
+writing article in the last issue  of  Maggie  you should know how the
+screen works, so I'll just explain the Degas picture format:
+
+First word: screen resolution. (0= low res, and don't forget 1 word =2
+bytes)Second word: 16 words of  palette  information.Rest of the file:
+32000 bytes  of  picture  information,  in  the  same  format  as  the
+screen.There's sometimes a  bit  of  colour  cycling information after
+this, but it's not worth bothering with.
+
+So, if  we've  "included"   a  degas  file  at  a  label  we've called
+"PICTURE" then we can display a degas picture by:
+
+1) getting the address of the screen.
+2) setting the palette to #PICTURE+2, which is the screen colours.
+3) copying  32000  bytes  from  #PICTURE+34  to  the  address  of  the
+screen.And make sure you're in the same resolution as the picture file
+first!
+
+Motion Pac simply  works  by  copying  different  parts  of  the Degas
+picture onto the  screen,  and  using  the  bitplane  principle  and a
+specially calculated colour palette to  give a transparency effect. If
+you're going to mess about with  it, in the time honoured programmers'
+tradition of "learning by mucking about", be sure to keep in mind that
+the setting of the palette and the actual palette colours the graphics
+are drawn in are essential to its' operation.
+
+DOUBLE BUFFERING - WHY ST GAMES NEVER FLICKER BUT PC ONES DO
+----------------------------------------------------------------------
+
+Because the video circuitry is constantly  reading the area of the STs
+RAM that forms the screen  picture,  if  you  try and alter the screen
+image by directly writing to it  you  will get flicker, as the picture
+could be halfway  through  being  displayed  when  it  is altered. The
+solution to this is to have two "video RAMs", physical and logical.
+
+At the start, the computer displays  the  physical video RAM. When you
+want to alter the picture, you  write  to the logical screen RAM, then
+when you've finished, you swap  the  pointers  to physical and logical
+video RAM and  then  tell  the  video  circuitry  registers to display
+these. At the next vertical  blanking  period, the screen is instantly
+switched and you have your  non-flickering  graphics! You can see this
+happening in the subroutine called SHOW.  The vsync O.S. call is there
+to make  the  program  wait  for  the  vertical  blank  so  everything
+synchronises.
+
+One odd thing about PCs is that  they do not have the screen switching
+circuitry STs and Amigas do, which  means  they have to do the process
+in software.
+
+Instead of swapping  pointers  and  altering  some hardware registers,
+they have to manually copy the  logical  RAM to physical RAM using the
+CPU, while the screen is  still  being  displayed. This is why there's
+sometimes a "slicing" effect on the screen  when a large amount of the
+image alters. One particulary stupid example  of this occurs in the ST
+version of Legends of Valour.
+
+The C-grade conversionsmith who did  this  game  uses the PC method to
+update the screen,  which  slows  down  the  game  unnecessarily! Even
+stranger, the people who sold  this  game  then  decided that, as with
+Monkey Island,  a  second-rate  ST  conversion  deserved  a first-rate
+price. What a suprise!...
+
+AND FINALLY
+--------------
+
+One thing I would  recommend  if  you  intend  to get into programming
+seriously is to get a hard drive.  When you assemble a program, it has
+to load all the grahpics and  include  files  off the disk which slows
+down assembly time on a floppy-based system a hell of a lot.
+
+With  a  hard  drive,  access  time   for  these  files  is  virtually
+instantaneous. But if you are  using  a  floppy-based system, there is
+something you can do to help.  Install a reset-proof Ramdisk, then run
+a automated copy program, to load  all  the graphics and include files
+onto the Ramdisk and then set all the paths in the source code to take
+these files off the Ramdisk when assembling.
+
+You can do this by putting  the  Ramdisk  and  the Copy program in the
+auto folder of your boot disk. The  only problem with this approach is
+that it uses up RAM, so  you'll  be  a  bit  restricted in the size of
+programs you can write unless you  get  some  more.  On an ST, I'd say
+you'd want 2Meg of RAM and a hard drive for any serious programming. I
+know hard drives can be a bit pricey, but once you have got one you'll
+never look back,  also  remember  that  ST's  are  very  economical on
+program size so even an 80Meg model  will be useful (I've got a 160Meg
+drive, and I've only filled about 25Meg on it). Also if you're using a
+hard drive get something like Teradesk  or  TOS  2.06 as these can put
+files on the desktop which makes life a lot easier.

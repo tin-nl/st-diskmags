@@ -1,0 +1,338 @@
+HARDW REGISTER 2
+~ARKA.FIL~
+##############Falcon030 DMA/DSP Controllers               ###########
+-------+-----+--------------------------------------------+----------
+$FF8930|word |DMA Crossbar Controller                     |R/W (F030)
+       |     +--------------------------------------------+
+       |     |DMA Output                       BIT 3 2 1 0|
+       |     |0 - DMA in, 1 - all others ----------' | | ||
+       |     |00 - 25.175Mhz clock ------------------+-+ ||
+       |     |01 - External clock -------------------+-+ ||
+       |     |10 - 32Mhz clock ----------------------+-' ||
+       |     |0 - Handshake on, 1 - Handshake off -------'|
+       |     +--------------------------------------------+
+       |     |DSP Output                       BIT 7 6 5 4|
+       |     |1 - Connect, 0 - disconnect ---------' | | ||
+       |     |00 - 25.175Mhz clock ------------------+-+ ||
+       |     |01 - External clock -------------------+-+ ||
+       |     |10 - 32Mhz clock ----------------------+-' ||
+       |     |0 - Handshake on, 1 - Handshake off -------'|
+       |     +--------------------------------------------+
+       |     |External Input                    BIT 10 9 8|
+       |     |00 - 25.175Mhz clock ------------------+-+ ||
+       |     |01 - External clock -------------------+-+ ||
+       |     |10 - 32Mhz clock ----------------------+-' ||
+       |     |0 - Handshake on, 1 - Handshake off -------'|
+       |     +--------------------------------------------+
+       |     |ADC Input                             Bit 12|
+       |     |0 - Internal sync, 1 - External sync ------'|
+-------+-----+--------------------------------------------+----------
+$FF8932|word |DMA Crossbar Destination Select             |R/W (F030)
+       |     +--------------------------------------------+
+       |     |DMA-In                           BIT 3 2 1 0|
+       |     |0 - DSP out, 1 - All others ---------' | | ||
+       |     |00 - Source DMA Output ----------------+-+ ||
+       |     |01 - Source DSP Output ----------------+-+ ||
+       |     |10 - Source External Input ------------+-+ ||
+       |     |11 - Source ADC Input -----------------+-' ||
+       |     |0 - Handshake on, 1 - Handshake off -------'|
+       |     +--------------------------------------------+
+       |     |DSP-Input                        BIT 7 6 5 4|
+       |     |0 - Disconnect, 1 - Connect ---------' | | ||
+       |     |00 - Source DMA Output ----------------+-+ ||
+       |     |01 - Source DSP Output ----------------+-+ ||
+       |     |10 - Source External Input ------------+-+ ||
+       |     |11 - Source ADC Input -----------------+-' ||
+       |     |0 - Handshake on, 1 - Handshake off -------'|
+       |     +--------------------------------------------+
+       |     |External Output                   BIT 10 9 8|
+       |     |00 - Source DMA Output ----------------+-+ ||
+       |     |01 - Source DSP Output ----------------+-+ ||
+       |     |10 - Source External Input ------------+-+ ||
+       |     |11 - Source ADC Input -----------------+-' ||
+       |     |0 - Handshake on, 1 - Handshake off -------'|
+       |     +--------------------------------------------+
+       |     |DAC Output                         BIT 13 12|
+       |     |00 - Source DMA Output -----------------+--+|
+       |     |01 - Source DSP Output -----------------+--+|
+       |     |10 - Source External Input -------------+--+|
+       |     |11 - Source ADC Input ------------------+--'|
+-------+-----+--------------------------------------------+----------
+$FF8934|byte |Frequency Divider External Sync             |R/W (F030)
+-------+-----+--------------------------------------------+----------
+$FF8935|byte |Frequency Divider Internal Sync             |R/W (F030)
+-------+-----+--------------------------------------------+----------
+$FF8936|byte |Record Tracks Select                 BIT 1 0|R/W (F030)
+       |     |00 - Record 1 Track ---------------------+-+|
+       |     |01 - Record 2 Tracks --------------------+-+|
+       |     |10 - Record 3 Tracks --------------------+-+|
+       |     |11 - Record 4 Tracks --------------------+-'|
+-------+-----+--------------------------------------------+----------
+$FF8937|byte |CODEC Input Source from 16bit adder  BIT 1 0|R/W (F030)
+       |     |Multiplexer -----------------------------' ||
+       |     |ADC/DAC -----------------------------------'|
+-------+-----+--------------------------------------------+----------
+$FF8938|byte |CODEC ADC-Input for L+R Channel      BIT 1 0|R/W (F030)
+       |     |0 - Microphone, 1 - Soundchip            L R|
+-------+-----+--------------------------------------------+----------
+$FF8939|byte |Channel amplification          BIT LLLL RRRR|R/W (F030)
+-------+-----+--------------------------------------------+----------
+$FF893a|byte |Channel reduction         BIT LLLL RRRR ....|R/W (F030)
+-------+-----+--------------------------------------------+----------
+$FF8941|byte |Data Direction                     BIT 2 1 0|R/W (F030)
+       |     |0 - In, 1 - Out -----------------------+-+-'|
+-------+-----+--------------------------------------------+----------
+$FF8943|byte |Data                               BIT 2 1 0|R/W (F030)
+-------+-----+--------------------------------------------+----------
+##############TT Clock Chip                               ###########
+-------+-----+--------------------------------------------+----------
+$FF8961|byte |Register select                             |????  (TT)
+$FF8963|byte |Data of selected clock chip registers       |????  (TT)
+-------+-----+--------------------------------------------+----------
+##############Blitter (Not present on a TT!)              ###########
+-------+-----+--------------------------------------------+----------
+$FF8A00|word |Halftone-RAM, Word 0                        |R/W (Blit)
+    :  |  :  |    :     :     :  :                        | :
+$FF8A1E|word |Halftone-RAM, Word 15                       |R/W (Blit)
+$FF8A20|word |Source X Increment Register                 |R/W (Blit)
+$FF8A22|word |Source Y Increment Register                 |R/W (Blit)
+$FF8A24|long |Source Address Register                     |R/W (Blit)
+$FF8A28|word |Endmask 1                                   |R/W (Blit)
+$FF8A2A|word |Endmask 2                                   |R/W (Blit)
+$FF8A2C|word |Endmask 3                                   |R/W (Blit)
+$FF8A2E|word |Destination X Increment Register            |R/W (Blit)
+$FF8A30|word |Destination Y Increment Register            |R/W (Blit)
+$FF8A32|long |Destination Address Register                |R/W (Blit)
+$FF8A36|word |Words per Line in Bit-Block                 |R/W (Blit)
+$FF8A38|word |Lines per Bit-Block                         |R/W (Blit)
+$FF8A3A|word |Halftone Operation Register                 |R/W (Blit)
+$FF8A3B|word |Logical Operation Register                  |R/W (Blit)
+$FF8A3C|word |Line Number Register                        |R/W (Blit)
+$FF8A3D|word |SKEW Register                               |R/W (Blit)
+-------+-----+--------------------------------------------+----------
+##############SCC-DMA                                     ###########
+-------+-----+--------------------------------------------+----------
+$FF8C01|byte |DMA-Address Pointer (Highest Byte)          |R/W   (TT)
+$FF8C03|byte |DMA-Address Pointer (High Byte)             |R/W   (TT)
+$FF8C05|byte |DMA-Address Pointer (Low Byte)              |R/W   (TT)
+$FF8C07|byte |DMA-Address Pointer (Lowest Byte)           |R/W   (TT)
+$FF8C09|byte |DMA-Address Counter (Highest-Byte)          |R/W   (TT)
+$FF8C0B|byte |DMA-Address Counter (High-Byte)             |R/W   (TT)
+$FF8C0D|byte |DMA-Address Counter (Low-Byte)              |R/W   (TT)
+$FF8C0F|byte |DMA-Address Counter (Lowest-Byte)           |R/W   (TT)
+$FF8C10|byte |Continue Data Register (High-Word)          |R/W   (TT)
+$FF8C12|byte |Continue Data register (Low-Word)           |R/W   (TT)
+$FF8C14|byte |Control register                            |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+##############SCC Z8530 SCC (MSTe/TT/F030)                ###########
+-------+-----+--------------------------------------------+----------
+$FF8C81|byte |Channel A - Control-Register                |R/W  (SCC)
+$FF8C83|byte |Channel A - Data-Register                   |R/W  (SCC)
+$FF8C85|byte |Channel B - Control-Register                |R/W  (SCC)
+$FF8C87|byte |Channel B - Data-Register                   |R/W  (SCC)
+-------+-----+--------------------------------------------+----------
+##############MSTe/TT VME Bus                             ###########
+-------+-----+--------------------------------------------+----------
+$FF8E01|byte |VME sys_mask             BIT 7 6 5 4 . 2 1 .|R/W  (VME)
+$FF8E03|byte |VME sys_stat             BIT 7 6 5 4 . 2 1 .|R/W  (VME)
+       |     |_SYSFAIL in VMEBUS ----------' | | | | | | ||program
+       |     |MFP ---------------------------' | | | | | ||autovec
+       |     |SCC -----------------------------' | | | | ||autovec
+       |     |VSYNC -----------------------------' | | | ||program
+       |     |not used ----------------------------' | | ||
+       |     |HSYNC ---------------------------------' | ||program
+       |     |System software INT ---------------------' ||program
+       |     |not used ----------------------------------'|
+       |     +--------------------------------------------+
+       |     |Reading sys_mask resets pending int-bits in |
+       |     |sys_stat, so read sys_stat first.           |
+-------+-----+--------------------------------------------+----------
+$FF8E05|byte |VME sys_int                            BIT 0|R/W  (VME)
+       |     |Setting bit 0 to 1 forces an INT of level 1 |Vector $64
+       |     |INT must be enabled in sys_mask to use it   |
+-------+-----+--------------------------------------------+----------
+$FF8E0D|byte |VME vme_mask             BIT 7 6 5 4 3 2 1 .|R/W  (VME)
+$FF8E0F|byte |VME vme_stat             BIT 7 6 5 4 3 2 1 .|R/W  (VME)
+       |     |_IRQ7 from VMEBUS -----------' | | | | | | ||program
+       |     |_IRQ6 from VMEBUS/MFP ---------' | | | | | ||program
+       |     |_IRQ5 from VMEBUS/SCC -----------' | | | | ||program
+       |     |_IRQ4 from VMEBUS -----------------' | | | ||program
+       |     |_IRQ3 from VMEBUS/soft --------------' | | ||prog/autov
+       |     |_IRQ2 from VMEBUS ---------------------' | ||program
+       |     |_IRQ1 from VMEBUS -----------------------' ||program
+       |     |not used ----------------------------------'|
+       |     +--------------------------------------------+
+       |     |MFP-int and SCC-int are hardwired to the    |
+       |     |VME-BUS-ints (or'ed)                        |
+       |     |Reading vme_mask resets pending int-bits in |
+       |     |vme_stat, so read vme_stat first.           |
+-------+-----+--------------------------------------------+----------
+$FF8E07|byte |VME vme_int                            BIT 0|R/W   (TT)
+       |     |Setting bit 0 to 1 forces an INT of level 3 |Vector $6C
+       |     |INT must be enabled in vme_mask to use it   |
+-------+-----+--------------------------------------------+----------
+$FF8E09|byte |General purpose register - does nothing     |R/W   (TT)
+$FF8E0B|byte |General purpose register - does nothing     |R/W   (TT)
+-------+-----+--------------------------------------------+----------
+##############Mega STe Cache/Processor Control            ###########
+-------+-----+--------------------------------------------+----------
+$FF8E21|byte |Mega STe Cache/Processor Control            |R/W (MSTe)
+-------+-----+--------------------------------------------+----------
+##############STe Extended Joystick/Lightpen Ports        ###########
+-------+-----+--------------------------------------------+----------
+$FF9210|???? |Paddle 0 Position                           |R    (STe)
+$FF9212|???? |Paddle 1 Position                           |R    (STe)
+$FF9214|???? |Paddle 2 Position                           |R    (STe)
+$FF9216|???? |Paddle 3 Position                           |R    (STe)
+$FF9220|???? |Lightpen X-Position                         |R    (STe)
+$FF9222|???? |Lightpen Y-Position                         |R    (STe)
+-------+-----+--------------------------------------------+----------
+##############Falcon VIDEL Palette Registers              ###########
+-------+-----+--------------------------------------------+----------
+       |     |     BIT 33222222 22221111 11111198 76543210|
+       |     |         10987654 32109876 543210           |
+       |     |         RRRRRR.. GGGGGG.. ........ BBBBBB..|
+$FF9800|long |Palette Register 0                          |R/W (F030)
+$FF9804|long |Palette Register 1                          |R/W (F030)
+   :   |  :  |   :        :     :                         | :     :
+$FF98fc|long |Palette Register 255                        |R/W (F030)
+-------+-----+--------------------------------------------+----------
+##############Falcon DSP Host Interface                   ###########
+-------+-----+--------------------------------------------+----------
+$FFA200|byte |Interrupt Control Register                  |R/W (F030)
+$FFA201|byte |Command Vector Register                     |R/W (F030)
+$FFA202|byte |Interrupt Status register                   |R   (F030)
+$FFA203|byte |Interrupt Vector Register                   |R/W (F030)
+$FFA204|byte |Unused                                      |    (F030)
+$FFA205|byte |DSP-Word High                               |R/W (F030)
+$FFA206|byte |DSP-Word Mid                                |R/W (F030)
+$FFA207|byte |DSP-Word Low                                |R/W (F030)
+-------+-----+--------------------------------------------+----------
+##############MFP 68901 - Multi Function Peripheral Chip  ###########
+-------+-----+--------------------------------------------+----------
+       |     |MFP Master Clock is 2,457,600 cycles/second |
+-------+-----+--------------------------------------------+----------
+$FFFA01|byte |Parallel Port Data Register                 |R/W
+-------+-----+--------------------------------------------+----------
+$FFFA03|byte |Active Edge Register     BIT 7 6 5 4 . 2 1 0|R/W
+       |     |Monochrome monitor detect ---' | | | | | | ||
+       |     |RS-232 Ring indicator ---------' | | | | | ||
+       |     |FDC/HDC interrupt ---------------' | | | | ||
+       |     |Keyboard/MIDI interrupt -----------' | | | ||
+       |     |reserved ----------------------------' | | ||
+       |     |RS-232 CTS (input) --------------------' | ||
+       |     |RS-232 DCD (input) ----------------------' ||
+       |     |Centronics busy ---------------------------'|
+       |     +--------------------------------------------+
+       |     |   When port bits are used for input only:  |
+       |     |0=Interrupt on pin high-low conversion      |
+       |     |1=Interrupt on pin low-high conversion      |
+-------+-----+--------------------------------------------+----------
+$FFFA05|byte |Data Direction           BIT 7 6 5 4 3 2 1 0|R/W
+       |     |0=Pin becomes an input                      |
+       |     |1=Pin becomes an output                     |
+-------+-----+--------------------------------------------+----------
+$FFFA07|byte |Interrupt Enable A       BIT 7 6 5 4 3 2 1 0|R/W
+$FFFA0B|byte |Interrupt Pending A      BIT 7 6 5 4 3 2 1 0|R/W
+$FFFA0F|byte |Interrupt In-service A   BIT 7 6 5 4 3 2 1 0|R/W
+$FFFA13|byte |Interrupt Mask A         BIT 7 6 5 4 3 2 1 0|R/W
+       |     |MFP Address                  | | | | | | | ||
+       |     |$13C GPI7-Monochrome Detect -' | | | | | | ||
+       |     |$138   RS-232 Ring Detector ---' | | | | | ||
+       |     |$134 (STe sound)    Timer A -----' | | | | ||
+       |     |$130    Receive buffer full -------' | | | ||
+       |     |$12C   Receive buffer empty ---------' | | ||
+       |     |$128    Sender buffer empty -----------' | ||
+       |     |$124           Sender error -------------' ||
+       |     |$120 (HBL)          Timer B ---------------'|
+       |     |1=Enable Interrupt       0=Disable Interrupt|
+-------+-----+--------------------------------------------+----------
+$FFFA09|byte |Interrupt Enable B       BIT 7 6 5 4 3 2 1 0|R/W
+$FFFA0D|byte |Interrupt Pending B      BIT 7 6 5 4 3 2 1 0|R/W
+$FFFA11|byte |Interrupt In-service B   BIT 7 6 5 4 3 2 1 0|R/W
+$FFFA15|byte |Interrupt Mask B         BIT 7 6 5 4 3 2 1 0|R/W
+       |     |MFP Address                  | | | | | | | ||
+       |     |$11C                FDC/HDC -' | | | | | | ||
+       |     |$118          Keyboard/MIDI ---' | | | | | ||
+       |     |$114 (200hz clock)  Timer C -----' | | | | ||
+       |     |$110 (USART timer)  Timer D -------' | | | ||
+       |     |$10C           Blitter done ---------' | | ||
+       |     |$108     RS-232 CTS - input -----------' | ||
+       |     |$104     RS-232 DCD - input -------------' ||
+       |     |$100        Centronics Busy ---------------'|
+       |     |1=Enable Interrupt       0=Disable Interrupt|
+-------+-----+--------------------------------------------+----------
+$FFFA17|byte |Vector Register                        BIT 3|R/W
+       |     |1=Software End-of-interrupt mode   (Default)|
+       |     |0=Automatic End-of-interrupt mode           |
+-------+-----+--------------------------------------------+----------
+$FFFA19|byte |Timer A Control                  BIT 3 2 1 0|R/W
+$FFFA1B|byte |Timer B Control                  BIT 3 2 1 0|R/W
+       |     +--------------------------------------------+
+       |     |0000 = Timer stop, no function executed     |
+       |     |0001 = Delay mode, divide by 4              |
+       |     |0010 =     .           .     10             |
+       |     |0011 =     .           .     16             |
+       |     |0100 =     .           .     50             |
+       |     |0101 =     .           .     64             |
+       |     |0110 =     .           .     100            |
+       |     |0111 = Delay mode, divide by 200            |
+       |     |1000 = Event count mode                     |
+       |     |1xxx = Pulse extension mode, divide as above|
+       |     +--------------------------------------------+
+$FFFA1F|byte |Timer A Data                                |R/W
+$FFFA21|byte |Timer B Data                                |R/W
+-------+-----+--------------------------------------------+----------
+$FFFA1D|byte |Timer C & D Control        BIT 6 5 4 . 2 1 0|R/W
+       |     |                               Timer   Timer|
+       |     |                                 C       D  |
+       |     +--------------------------------------------+
+       |     |000 = Timer stop                            |
+       |     |001 = Delay mode, divide by 4               |
+       |     |010 =      .           .    10              |
+       |     |011 =      .           .    16              |
+       |     |100 =      .           .    50              |
+       |     |101 =      .           .    64              |
+       |     |110 =      .           .    100             |
+       |     |111 = Delay mode, divide by 200             |
+       |     +--------------------------------------------+
+$FFFA23|byte |Timer C Data                                |R/W
+$FFFA25|byte |Timer D Data                                |R/W
+-------+-----+--------------------------------------------+----------
+$FFFA27|byte |Sync Character                              |R/W
+$FFFA29|byte |USART Control            BIT 7 6 5 4 3 2 1 .|R/W
+       |     |Clock divide (1=div by 16) --' | | | | | | ||
+       |     |Word Length 00=8 bits ---------+-+ | | | | ||
+       |     |            01=7 bits          | | | | | | ||
+       |     |            10=6 bits          | | | | | | ||
+       |     |            11=5 bits ---------+-' | | | | ||
+       |     |Bits Stop Start Format ------------+-+ | | ||
+       |     |00     0    0   Synchronous        | | | | ||
+       |     |01     1    1   Asynchronous       | | | | ||
+       |     |10     1    1.5 Asynchronous       | | | | ||
+       |     |11     1    2   Asynchronous ------+-' | | ||
+       |     |Parity (0=ignore parity bit) ----------' | ||
+       |     |Parity (0=odd parity,1=even) ------------' ||
+       |     |Unused ------------------------------------'|
+$FFFA2B|byte |Receiver Status          BIT 7 6 5 4 3 2 1 0|R/W
+       |     |Buffer full -----------------' | | | | | | ||
+       |     |Overrun error -----------------' | | | | | ||
+       |     |Parity error --------------------' | | | | ||
+       |     |Frame error -----------------------' | | | ||
+       |     |Found - Search/Break detected -------' | | ||
+       |     |Match/Character in progress -----------' | ||
+       |     |Synchronous strip enable ----------------' ||
+       |     |Receiver enable bit -----------------------'|
+$FFFA2D|byte |Transmitter Status       BIT 7 6 5 4 3 2 1 0|R/W
+       |     |Buffer empty ----------------' | | | | | | ||
+       |     |Underrun error ----------------' | | | | | ||
+       |     |Auto turnaround -----------------' | | | | ||
+       |     |End of transmission ---------------' | | | ||
+       |     |Break -------------------------------' | | ||
+       |     |High bit ------------------------------' | ||
+       |     |Low bit ---------------------------------' ||
+       |     |Transmitter enable ------------------------'|
+$FFFA2F|byte |USART data                                  |R/W
+-------+-----+--------------------------------------------+----------
+
+

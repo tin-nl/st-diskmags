@@ -1,0 +1,84 @@
+--------------------------------------------------------------------------------
+                     ñ"VOLCANO 4 INTRO vo.o1"ð by òIDEMLINE
+--------------------------------------------------------------------------------
+ò________________________________________________________________________________
+ò _______________   _____________  ____ ____     /
+ò/   ____ __/   /__/  _     / _  \ \ __/   /_   / ðmachines: ñste/fo3o
+ò\__/ __  \_   __  \_/  /\  \_/  / / \_   __/__ \ ðspecials: ñ512kb/rgb
+ò/    \/  /    \/  /    \/  /    \/  /    \/   \ \ ðcredits: ñcode - sine
+ò\____    \____    \____    \____    \____     / /          ñgfx  - sine
+ó====ðAò\___/ó===ðBò\___/ó===ðOò\___/ó===ðUò\___/ó===ðTò\_md/ó=ò/   ñ        msx  - big alec
+ò________________________________________________________________________________
+
+This intro  was  òIDEMLINEð's  contribution  to the  64K intro  competition at the
+óVOLCANIC PARTY 4ð, held  in February in  France. At the  moment I  don't have any
+information  about the ranking  of this production, I  even got the  information
+that it was released  on this party very late. Another bad example for  the weak
+information flow from our neighbour country. It's in comparison with other local
+scenes again and again a mystery for the most people whats going on  in the land
+of the 365 sorts of cheese (C'est domage avec le fromage =) ...).
+
+As all òIDEMLINEð productions it's again a GFA intro, starting also with a GEM box
+where you  can decide if you really want to run the demo or abort it before it's
+too late.
+
+After starting the intro a  wellknown soundchip music by óBIG ALECð starts to play
+and  several information  about the  intro are  displayed with  a small  font on
+plain black  background. An  IDL logo in green/white  appears on the screen with
+blue  rasterstuff  in it (or  something  like that). After  a while  the rasters
+colouring the logo completely blue and it scrolls out to the upper border.
+At next a painted crystal in blue  colours appears in the  middle of the screen,
+a bar with a one-plane  VOLCANO logo is swinging up and  down to stay finally on
+the lower border and a field made of filled circles  in different sizes is flyin
+over the crystal... Nice looking but I still miss some more design!
+To give you a little impression here comes up a screenshot...
+
+{*i volcano1.pi1 m 0 20 0 200}
+
+The next  thing is a  bit strange. The òIDEMLINEð logo  object, a strange  painted
+figure is  turning on two wobbling vector  areas or  something. I can't describe
+this effect in the way it used to be, sorry. Anyway it looks not bad...
+Now the  crystal with  the VOLCANO  logo comes  up again, it's the break between
+all the effects and I will not mention it anymore now.
+After this an  old effect comes up, but still a  nice one. A delayed  chessboard
+zoomer in blue colours again. Nice.
+After this some plasma waves coming up and this time there are 5 different waves
+in blue colour...
+At next another good effect comes up, delayed  tridi line  vectors. Again a nice
+effect but it looks a bit boring without any design features... sniff...
+Look by yourself...
+
+{*i volcano2.pi1 m 0 20 0 200}
+
+After this the  crystal thing  comes up  again but  this  time the  VOLCANO logo
+scrolls  out to the right and on the still displayed line  on the lower border a
+little animated man  is trying to run on  the screen  to say "Thats all folx" or
+something like that. After  he's vanished  from  the screen on  the right side a
+small THE END logo appears and the filled circles field comes up again.
+After some short greetings  and the  information that  this  intro  was released
+without beer a picture of Bill Gates is displayed where he was  hit by some eggs
+at a press conference. =)
+
+òConclusionð: It isn't a bad intro but I  don't see  the need  of the  STE blitter
+            for the displayed effects. Perhaps it's easier to display  the stuff
+            but nearly all the effects are released in  a similar  way on the ST
+            too, sometimes many years ago. The grafix  are  more or less ok, but
+            there isn't much grafix stuff  included. The design  isn't the best,
+            therefore a nice but also too often used chip music is included.
+            Without any doubt, óSINEð (the coder) has a  lot of potential left and
+            with the right help he will surely match it  to create real stunning
+            intros, but up to now he's suffering under the  problem to do all by
+            himself... anyway, it's a ñnice screenð...
+
+ñ________________________________________________________________________________
+ñ ________________________   ___   _________________   ______
+ñ/   ____ /   ____ __/   /_ /   \ /   ____ /    ___/__/  ___/__  ócode.ð65% ógfx.ð5o%
+ñ\__/  \/ \__/ __  \_   __/_\___/_\__/   / \   /__  \______    \ óorig.ð6o% ómsx.ð7o%
+ñ/    \   /    \/  /    \/  /     /     /  /    \/  /    \/    / ódesign.......ð25%
+ñ\____/   \____    \____    \__   \____/   \____    \____     / ò/================
+ò====ðRñ\___/ò===ðAñ\___/ò===ðTñ\___/ò=ðiñ\___/ò==ðNñ\___/ò===ðGñ\___/ò===ðSñ\_md/ò=/ óOVERALL......ð65%
+ñ________________________________________________________________________________
+
+--------------------------------------------------------------------------------
+ ó.no retreat and no surrender.                         òmoondogð . ópoets of decay
+-----------------------------------------------------------------------26-o8-98-

@@ -1,0 +1,124 @@
+
+                      Interview Outlines
+ 
+
+Name:  Ben
+Group:  Chaos (  Chaotic Mayhem Ltd.(very Ltd.))
+Country:  England
+Function   in   group:    Coder,Graphics   individual,Motivator,PR 
+man,Make-up assistant,Main drinker and all round great guy.
+
+Describe the activities of your group:   we have recently released 
+our  second demo,  entitled PANDEMONIUM,  the first being  DOUBLE 
+DOOZER,  which recieved many accolades including worst demo ever, 
+most badly written demo ever,  and of course came second in the
+well  known  competition  for  the  demo  called  double   doozer 
+competition.(joint second) 
+What was your last production?  erm.
+Can I have your babies ben ?  Yes you MAY.
+Tell  us  more  about yourself:   well,  what  is  there  to  say, 
+really,I'm great in (and out of) bed,  I'm fun to be around,  and 
+I'm loaded.
+Tell us more about your group:  we have 5 members....
+  me(ben),  tat(coder  - he's our  funny  man),ntt  (grafix),karl 
+(another  coder  - well at least he says he's a  coder,  I  never 
+actually see anything he does, he usually sends the wrong disk..)
+and finally tufty who occasionally writes a tune for me.
+Is this one of the standard questions, or is it one that has just 
+been inserted by you,  Ben,  you total bastard ?   Yes, its a fair 
+cop, I have just inserted it.
+Any future plans/ideas for your group?  no megademos for a bit- if 
+ever as  they  take up too much time,  and with me being a can't  be 
+arsed  kinda guy,  I should think we'll never do one,  but  we'll 
+still  be  very active writing guest screens for  people,  so  if 
+anyone wants one... then...
+What things do you like on the ST scene?  big things and sometimes 
+little things, but mostly big things..
+What  things do you not like on the ST scene?   middle  things,  I 
+hate  middle things,  and some small things,  but  middle  things 
+ really piss me off.
+Why did you buy an ST?   because I wanted a computer.I already had 
+a BBC and no-one had amigas at the time,  everyone had st's, so I 
+bought one, because it had good gfx. and was fast (in 1987).
+Was that last question boring or what ?  It was boring.
+Describe  any  other  non-computer  interests:    shagging  is  my 
+favourite,(except  with  ugly  men).  I  also  pursue  an  active 
+interest in shooting (ie not shagging)....thats guns.
+What  was  the last game you bought and why?   3d  grand  prix  by 
+microprose because its excellent and was well worth the money,  I 
+am also interested in 3d and it's 3d is shit hot.
+If  you  do not buy any games - why not?   I only do if  they  are 
+good,  and  they have to be very very good,  because I'm a  tight 
+arsed bastard, and any money I get I keep.
+Describe any commercial products from you or your group:   the one 
+which  immediately  springs  to mind out of  our  wide  range  of  
+commercial  products  is  the "bugger-all  suite"  and  also  the 
+"blank-disk  type proggy" they are both brill and can  be  bought 
+from  me  at  my address for only œ50.34 - a snip  at  twice  the 
+price.
+Who are your 3 favourite demo coding groups and why?  I'm going to 
+have to be boring and say:
+     Number 1:  TCB  - because cuddly is simply the best-  but  
+even  so, being  complacent is not really on - this does not
+ just apply  to this group, many are equally if not more guilty.  
+      Number 2:   TLB - I am a great friend of manikin,  and  know 
+from first hand how good he is at coding,  and like TCB has  been 
+coding for a long time consistenly, improving.
+     Number 3:   OVR - Mainly because of ziggy, he is from what I 
+have  seen an excellent programmer ,  and I have a great deal  of 
+respect  for  his  talent.(ooer!)  -  Mega  tridi  was  great   ! 
+Do you know your a total arselick ?  Yes I do.
+
+What are your 3 favourite games and why?  oooo...
+My 3 favorite ever are:
+                Cholo (BBC)
+                3D grand prix (ST)
+                 Llamatron (ST) 
+What are your 3 favourite utilities/programs and why?   GenST  for 
+fucking  obvious reasons,  which I'm just not going  to  mention, 
+because  if  you can't guess then your rubbish.  Also  FCOPY  PRO 
+because its bloody ace. And... STOS ! Yes, thats right I code all 
+my demos in STOS ...  cor,  TEXTURE MAPPING in STOS, wow ! No not 
+really,  but  all  my  tables I do  in  stos..  Its  really  user 
+friendly.
+If you had written a game and saw a hacked copy, how would you 
+feel?   I'd  feel  cheated,  raped by a stranger with  big  teeth, 
+touched  in  places I'd never been  touched  in  before,strangely 
+aroused,  and  later  I'd  feel a sense of deep  guilt  and  self 
+hatred.... or is that an answer to a different question..? 
+What  do  you think about slandering other groups?   I  think  its 
+great....ie.  TLB  are  shit,  CHAOS are  wankers,  EVERYONE  are 
+cunts..  no jovialities aside,  I think its senseless, and unless 
+its  done  in   good humour (see above  -  in  good  humour,  not 
+humourous) I think that the crews who are doing it are children. 
+Describe any ST parties you have attended?   fuck all,  so I cant, 
+....soz.
+What are your views on the fact that the ST is losing 
+popularity?
+  I view it too, and cry tears of blood.
+How long have you been working on your new demo?  About a year and 
+2  months-  thats how long it took to make,  but I've had  a  few 
+girlfriend breaks in between.
+Can  you tell us more about your demo?   yes,  heres the  complete 
+listing..
+         MOVE.L #$80000,-(a7)
+         MOVE.W #$20,-(a7)
+         TRAP   #1
+         ADDQ.L #6,a7
+.loop    NOT.W  $FFFF8240.w
+         BRA.S  .loop
+isn't this a good demo,  its called the flashing screen demo..
+When is it due for release?  anytime now....
+Who or what inspired you to write demos?  Playing with my dick too 
+ much I'd put it down to.
+Tell  us  your favourite demo of 1991 and  why?   Ooh  Crikey  and 
+European  Demos have joint top position,  because they  are  good 
+and  not  bad,  its a stupid question,  so it deserves  a  stupid 
+reply.
+
+Do you have any ideas for improving Maggie?   Yes,  charge for  it 
+and send me the profits..
+Do  you know your really ace Ben,and all the best lases  go  after 
+you,  and everyone idolises you and thinks your dead funny and  a 
+really great coder etc. etc. etc. ?   No.
+ 

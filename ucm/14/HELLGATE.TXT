@@ -1,0 +1,102 @@
+                            _______              _______
+                         __/ __   /__  ___  ____/   __  \_     __
+                  ______/_   \/  /   \/   \/    \   \/  / \___/  \
+                 /  __   /      /                \   __/  /  ___  \
+                /   \/  /\_____/\    /\    /\    /\______/   \__\__\
+             ___\__    /         \__/  \  /  \__/__     pA\__   \__
+            /   /   __/                 \/     /  /__________\__   \
+           /_______/                          /  __________________/
+                                              \_/
+--------------------------------------------------------------------------------
+              ñHellgateð by òSmartSoftð (1998) ó[ST, STE & Falcon]ð
+--------------------------------------------------------------------------------             
+
+An Ex-member  of the Atari  community was  friendly enough  to give me a copy of
+ñSTOS 3Dð. However, this  package is very complicated and besides a few 3D objects
+being rotated  on the screen, I have never seen STOS 3D being used for something
+serious. One who  mastered  STOS 3D is òDavid Waltersð of òSmartSoftð as ñHellgateð is
+100% STOS 3D code.
+
+After loading  the game you find yourself in a menu where you can select to load
+a game, to resume a game or to start a new game.
+After starting a game by either loading or starting a new one, you are presented
+with a "map" which  building you will be transported to, a bit like in òDoomð (1),
+but this time in isometrical 3D.
+
+ñHellgateð then  starts  the  main game. On the  lower screen  you find  a control
+panel, like  in  Wolfenstein 3D  or in Substation, directly  above  this  in the
+middle of the screen a gun is shown.
+By pressing  the cursor  keys you can "walk" in first-person-perspective through
+the level and fire your gun.
+
+Like said above, everything consists of  polygon-objects, there are  no textures
+at all, so walls, enemies and even bonus objects are all polyon objects.
+Movement  is incredibly smooth for STOS 3D, even  on an STE. The  controls react
+quite quickly, so slick control of your character is given.
+
+Usually, your  main task  is to find  the exit. This of course  requires  you to
+shoot  opponents, which  mainly  consist  of  moving  or  static robots, pick up
+medikits, ammunition, weapons, and of course keys.
+After walking  through one  level, you are  being brought back to the  main menu
+where you can save the game or continue.
+
+So far, the  game has a  few minor  deficiencies. Wall detection works  alright,
+although  they are  not displayed  properly sometimes. The  same counts  for the
+doors, which  are a bit problematic as well. However, as a STOS 3D product, this
+is already better than anything released so far.
+
+The gameplay is pretty  good already. Entering a room usually confronts you with
+the thrill  of having to look around and search for opponents, to aim  quick and
+dodge the robot's fire.
+Although the "ñshoot and coverð"-aspect that some other 3Dgames like this feature,
+are not given in Hellgate, one can't complain about missing action.
+The difficulty level increases quick, soon fast reflexes, a bit  luck and a good
+overview is required.
+
+The levels  itself are probably  a making, so far, they are bit too simple. Most
+rooms are simply square and just vary in size and number of doors in the walls.
+Although it is possible, that the game engine supports only square rooms yet, it
+would be very good to see a more flexible level-design.
+
+The Falcon plays  no music, on  the STE/STf some chipmusic is being  played. The
+bitmap graphics are a bit simple and unfortunately don't underline the promising
+character  of the  game well - I hope, David Walters takes his time  to redesign
+the bitmap graphics.
+The polygon objects look pretty good considering the fact that they only consist
+of "ñsimpleð" polygons  without  textures. Probably  some  more  robots  could  be
+designed, although the game really doesn't rely on this.
+
+If  one  compares Hellgate  to the  other Wolfenstein-type games  on  the óST(E)ð,
+òDestruction Imminentð and òSubstationð, Hellgate doesn't look bad at all.
+In comparison  to òDestruction Imminentð, ñHellgateð is a bit  smoother, although it
+doesn't top the average speed of òD.I.ð.
+In contrast  to this, ñHellgateð features  real-3D sprites  and the more  flexible
+movement ñinð the maze, which òD.I.ð doesn't.
+
+òSubStationð features  the more professional  layout and of  course a better story
+around the game  and the more professional design around the game itself. On the
+other  hand,  ñHellgateð features  "textured" walls (consisting  of  polygons) and
+again, smoother "real 3D"-sprite movement.
+
+For  the  next version, I  wish, óDavid Waltersð would  redesign  the  surrounding
+graphics and  menus and of  course look after the ñminorð bugs in wall-display and
+door-detection. A bit  more flexibility in the level-design, which seems to be a
+bit limited, would of course also improve the gameplay.
+
+óHellgateð is a promising game. I wonder what the next version will look like, but
+I'm pretty sure, it will be good.
+
+--------------------------> Rating:          <----------------------------------
+                                  2D GFX  21%
+                                  3D GFX  61%
+                                   Sound  ??%
+                                    Tech  73% (STOS)
+                                     Fun  61% (for the preview)
+                                 Overall  64%
+                          <------------------>
+
+--------------------------------------------------------------------------------                          
+                                                                    The Paranoid
+                                                   Paranoia - The Lunatic Asylum
+--------------------------------------------------------------------------------                                                   
+                                    

@@ -1,0 +1,92 @@
+ó--------------------------------------------------------------------------------
+                                MORPION 3D v1.1o
+ó--------------------------------------------------------------------------------
+
+system ... ST, STe, STeem, 512 KB RAM, RGB
+
+done by .. Wolfy 2 / France
+
+genre .... puzzle game
+
+release .. 11/2k2
+
+url ...... http://emulatari.free.fr/morpion3d.html
+
+ó--------------------------------------------------------------------------------
+
+Quite unexpected I stumbled  over this  small game that was well (?) hidden on a
+homepage in french language and so you may guess that the game is done in french
+language only as well, eh? This time not that big problem at all  as the idea of
+the game is quite simple and easy to understand, even for non-french people :)
+
+ñ"MORPION 3D"ð is a  clone  of the  game "4 wins" or  something, dunno  how  it is
+called in english originally, it's a "4 in a row" game, you know, where you have
+to put  4 stones in  a vertical/horizontal or  even diagonal  line to  win, on a
+playfield that is just 4 * 4 fields in size.
+
+"Arf" you might  say now, but in fact, lets take a closer look onto it as it is
+a  bit  more  as  just "4 wins". The  original  game  was  created  only  in 2D
+perspective and this  coder  has added the 3rd dimension. You now have not just
+one playfield but 4 and with the possibility  to put one single  stone on every
+field in the right place to win a round.
+
+Ofcourse you could play just on one playfield, but if you chose the computer as
+opponent you have to fight on all 64 fields and on all 4 playfields at once and
+this turns out to be a hard nut.
+
+If you thought at first "baah... boring stuff" you should have learned more now,
+as "Morpion 3D" is a real hard strategic thing and offers more as well.
+
+At first the òvisualsð  are on a òquite good levelð, playfield  and surroundings are
+well drawn. Ok, there isn't much action and animations on the screen but the gfx
+are still òdoing their job fineð.
+Furthermore the game comes along with, unfortunately, òquite often used chipmusic
+but you can switch it off, too.
+
+{*i MORPION.PI1 m 0 20 0 200}
+
+óLooks ok, doesn't it?
+
+The game offers a ñtwo player modeð and the  possibility to play against the Atari
+itself, that is quite hard, but so you have some competition :)  Furthermore the
+game offers a little information about all the possibilities to win as well that
+comes along as "how to set stones guide".
+
+But as always (naaa, not really), also that little, on the first view, well made
+games can have ñsome drawbacksð. But here there aren't much, but I want to mention
+them anyway.
+
+At first, the  game came along as ò.ST emulator fileð, aaarg! So you  get a 7oo KB
+.ST file  that includes  a 1oo KB game. I  think even  emulation users should be
+able  to start programs out  of the emulation  so that .ST files could be banned
+for such little programs. Furthermore the release in file versions would support
+the users of real Atari machines a bit more, as many just make a bow around such
+images.
+
+Other drawbacks are the  french language in readme and  the game itself. You can
+play it  anyway but  the readme  isn't  that easy to  understand for people that
+can't speak one single french word.
+
+Last but not least a little problematic is the òhigh A.I.ð that  leaves you nearly
+no chance to win as the machine seems to avoid any  human mistake... but I think
+some people will like the competition with the "originally dumb" computer...
+
+ñFinal words... so what? If you sum it up the positive moments are superior, it's
+ñ               a nice  little game  with nice  artwork and  a quite  interesting
+ñ               idea, but with  some drawbacks anyway. But  after all they  don't
+ñ               drag the game that much down. So if you haven't checked it out so
+ñ               far, just take a look at it if you like strategic boardgames.
+
+ó___ratingsó______________________________________________________________________
+
+visuals .....  65 % - board and items and surroundings are looking quite ok
+audio .......  5o % - old chipmusic, some sound fx
+controls .... 1oo % - just mouse controlled, can't be solved better
+idea ........  6o % - "4 Wins" in 3D... very interesting
+motivation ..  6o % - unfortunately the A.I. makes playing hard against Atari
+
+ó___ðoveralló_____67ó_%ó_____________________________________________________________
+
+A nice little game for a break...
+
+ó_eil2k3ó_________________________________________________________________moondogó_

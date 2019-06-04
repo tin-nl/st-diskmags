@@ -1,0 +1,58 @@
+
+                                 STTODSK.TTP
+                                 """""""""""
+Program by ArghBlarg
+Review by RYdER/Vectronix  <ryder_vex@mindless.com>
+
+I guess I should fill you in on why this program was written to make things a
+little more understandable. The bbs's of old days are now almost obsolete.
+Only a  dozen or  so GOOD scene  bbs's left. Atari  did  not kill  the Atari,
+hackers did not kill the Atari, The Internet killed the Atari!
+Everyone  wanted to  be on the  internet, and  you could only upto a year ago
+only use  your Atari with  a Unix Shell  account to  get on the internet, and
+without graphics at that.
+So now there is STik (SLiP) and STiNG (SLiP/P) to get your Atari connected to
+the internet  with full fleged graphics. Which  now leads  me to  what  I was
+getting at! PaCifiST! The PC Atari Emulator.
+PaCifiST runs almost every game/demo  made  for  the  Atari, minus STe/Falcon
+stuff, but I'm sure that will soon follow. There  are TONS of  PaCifiST sites
+shooting up all over the place with FULL menu disk archives from: Automation,
+Pompey Pirates, Medway Boys.. etc.
+But  most of  the time when  you download  a file  and unzip  it you  see for
+example: MEDWAY12.ST
+What the fuck  is an .ST extention!? A disk Image! PaCifiST uses a disk image
+of the Atari  program in  an .ST file extention. I sure a lot of you have run
+across this .ST extention and wondered how to use it on you Atari?!
+Well  ArghBlarg  has  written this program to convert (.ST) Atari disk images
+for use with PaCifiST back to bootable Atari disks.
+
+To use this program is quite simple.  The easiest  way I've found to use this
+proggy  is to install  it as an application.  I will now go through the steps
+for installing and extracting.
+
+1. Take the file STTODSK.ZIP on the UCM disk
+
+2. Unzip it into a directory called ST2DISK
+
+3. Place your .ST disk image in the same directory
+
+4. Click once on the file STTODSK.TTP (highlight it)
+
+5. Go upto INSTALL APPLICATION under the OPTIONS dropdown menu from the desk
+
+6. Type ST in the DOCUMENT TYPE:
+
+7. Click boot status AUTO
+
+8. Click on INSTALL
+
+9. Now  make sure you  have  a  disk  in the  drive READY to go as you get no
+   warning!!! It starts immediatly!!!
+
+10. Double click on the .ST file.. and away it goes!  That simple!
+
+
+                                    RYdER/Vectronix  <ryder_vex@mindless.com>
+
+-<EOF>-----------------------------------------------------------------------
+

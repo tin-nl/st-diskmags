@@ -1,0 +1,152 @@
+0660300030471
+11
+2#1
+9[........................................................]
+
+          Ñ"youdon'tneedtoreadinstructionstounderstandthegame"
+                                                         Äreadme.doc
+
+
+Å[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+
+                                PUSHAGO
+
+                            byMarkusBinder
+
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+Ä
+                      
+
+MarkusBinderresortstotheFisher-Priceschoolofgamenamingto
+christenhislatestrelease.Name-wise'Pushago'ispossiblya
+cousinof'Bustamove'.Gameplaywise,initisinatotallydifferent
+family.
+
+Rememberthoselittleslidingpocketpuzzlegamesthatwouldallowyou
+tocreateapictureafterhoursoffrenziedfingerflicking?Wellnow
+forgetthembecausealthoughPushagoissimilar,itisalotsimplerin
+concept.
+
+Apictureappearsonthescreen.Itisthensubdividedintotiles,
+whicharerandomlyshuffledaboutthescreen.Yourmission,should
+youchoosetoacceptit,istore-arrangethetilesbackintothe
+originalpicture.
+
+Torearrangethepictureyouclickfirstonasourcetile,thenyou
+clickonadestinationtileandtheyareswapped.Thesetilesdon't
+needtobeadjacent-youcanswaptilesanywhereacrosstheboard.
+Thismeansyoudonothavetoplananystrategiesahead-anytilescan
+bemovedanywhereatanytime.
+
+PushagohasthegreatadvantageofrunningontheST,TTand
+Falcon.Thegraphicsarecateredtothecurrenthardware.After
+loadingyougetarendereddiagonalPushagologo.ShouldyouhaveNVDI
+installed,yougetallsortsof3Dobjectswhizzingabout.
+
+Afterthisyougetasmallamountoftextwarningyouthatthe
+gamewasprogrammedinOmnikronbasic.
+
+Thereisnomenuoroptionsorhighscores.Aclickofthebutton
+andyouarestraightintothegame.Thequalityofthegraphics
+dependsentirelyonthescreenmodethegameisbeingrunfrom.
+
+Pushagowillrunhappilyfromanyofthesemodes:
+
+Å*ST-Low      320x200x16
+*ST-Hi       640x400x2
+*TT-low      320x480x256
+*FalconVGA640x480x256Ä
+
+Unfortunately,Pushagostoresacopyofallitsgraphicsforeach
+differentscreenmodeandnoneofthesearecompressed.Itwould
+havebeenbetterifitjuststoredapackedversionofthehighestres
+one,andscaledthisdowntotheappropriateresolutiononloading.
+
+Backletsgoanddosomepushing...
+
+Whenyouhavepickedthetilesyouwhichtoswap,theyarebox-
+wipedout,swapped,thenbox-wipedbackon.That'stheonlyeffectyou
+getduringthegame!Thecurrentlyselectedtileishighlightedwitha
+whiteframe.Unfortunatelyifthesquareisallwhitethisframe
+becomesinvisible-reallytheframeshouldflash.Still,thereare
+notmanytilesthatareallwhitesothisisarareproblem.
+
+Thereisalsonogloriousfanfarewhenyoucompletealevel.
+Instead,thepictureissimplyoutlinedwithathinwhiteborder
+untilyoupressakey.Inspirational.
+
+Ifyoupresstherightmousebuttonagridfillsthescreenshowing
+youwhichtilesyouhaveplacedintherightplace.Thisisan
+invaluableaid!
+
+Thefirstlevelfeaturesapictureofaniguanasunbathingonsome
+rocks.Thegridisonly4x4soalthoughquitesimpleto
+completeitformsagoodintroductiontothegame.
+
+Onthenextlevel-ascenicviewofabridge,river,housesanda
+forest-thegridhasincreasedto5x5.Ittakesabitlongertoget
+pastthisone-Igotstucksortingoutthesky.Althoughthisall
+looksthesame,itstillhastobeplacedinexactlytherightplace
+beforeyoucanprogress.
+
+It'sonlevel3whereitreallystartstogethard.Thisisa
+viewofwhatappearstobeanAmericancity,stuffedwith
+skyscrapersandanarrowbandofskyacrossthetop.Thegridhas
+increasedsotherearenowmoresmallertiles.Thisleveltakesanage
+togetpast-butRomewasn'tbuiltinaday!
+
+Whenyoufinallycompletethecitylevelyouthinkyouhavegotpast
+theworst.
+
+Boyyouaresowrong!
+
+Nextweareinthejungle!Thereareareasofdenseundergrowth,
+flowersandfernsandblurredgrass.Everythinglooksverysimilar,
+especiallywhenthescreenisslicedinto100smallchunks.Atthis
+pointthegamebecomeslikethemostfrustratingjigsawyouhaveever
+tackled.
+
+Afteryearsofsortingouttheslightlydifferentshadesof
+grassyouarefinallyoutofthejungle.Onthenextlevelawideroad
+windslazilythroughafirlinedmountain.TheTarmacandtheskyare
+easytoplace,thenitisjustacaseofsortingoutthebranches.
+Quiteeasythisone,especiallycomparedtothehorrorsofthe
+jungle!
+
+Thenextlevelisagainanatureshot,thistimeabigflowerbed.
+Fortunatelythepictureis'framed'byarasterboxsoitiseasy
+toplacealltheedgetiles.Oncethesehavebeendone,completingthe
+middleissimple.
+
+Disappointinglythereisnoendsequenceorcongratulationsscreen,you
+arejustwrappedbacktothefirstlevel.
+
+OnceyouhaveplayedthroughPushagoonce,thereisnogreat
+incentivetogoback.Therearenotimelimits,nohighscoresto
+smash,nodifficultyleveltochange.Youcan'tevenchangethegrid
+sizes.
+
+Pushagowouldbeimprovedbytheadditionofanyofthese
+features.Amultiplayeroptionwouldalsobeexcellent.
+
+Themainproblemisthatthereareonlysixlevelsanditgivesyouno
+facilitytoloadyourowngraphicsintoit.Youcouldpossiblyfinda
+pieceofgraphics,convertitinto.DOOformatinallthefour
+possibleresolutions,deleteoneofthelevels,copyyourfilesinto
+thefolderandrenamesotheymatchthedeletedlevelnames.Butthis
+seemslikequitealotofhassle...
+
+Thisfourprongedapproachtolevelgraphicsleavestheburdenvery
+muchonyourharddisk.Eachleveltakesup512Kofdiskspace,with
+theentiregametakingup3.8Mbyteofspace.Thishastobeoneofthe
+biggestFalcongamesever!
+
+Butdespiteallthis,thegame'sweakpoint-itssimplicity-is
+alsoitsstrongpoint.Youcanpickitforthefirsttimeandina
+matterofsecondsbetotallyaddicted.
+
+Taketwotilesintotheshower?Notme,IjustPushandGo!
+
+                                                        ---------------
+                                                        review.mrpink
+                                                        ---------------

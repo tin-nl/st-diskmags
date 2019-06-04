@@ -1,0 +1,62 @@
+06603020203800
+1
+2
+F0110030
+9[............................................................]001
+Ä
+[Any Colour You Like]
+ÅTECH VIEW:Ä Shadows go from strength to strength... just a shame 
+they've split up when they were on the verge of creating something 
+ÑreallyÄ outstanding. The graphic design and music are excellent; it 
+appears to take inspiration from some PC demos doing the rounds at the 
+moment.
+The main problem is that the Falcon really wasn't designed to do a 
+demo like this well: the table effects and overlaid graphics require 
+both a large amount of pre-processing and memory movement. So what I 
+think spoils this demo slightly are the pauses between effects while 
+the next part is loaded and unpacked. Some way of combining effects in 
+memory, loading during effects or better underlying code design would 
+have helped. But this is a fairly minor niggle; overall one of the 
+best Falcon demos in recent times [tat]
+
+
+
+[MJJ Prod demo]
+ÅTECH VIEW:Ä Eurk, what hideous design. The high point in this demo 
+is... um... well I suppose it's the 3d bump mapping. We think it's 
+bump mapping where all the points are calculated and drawn into a 
+buffer, like a normal 2D bump map effect, then texture mapped onto the 
+cube, but it looks quite nice. Also of note is the blobs effect, all 
+about which you can read in this issue's Programming section. However, 
+although the code is pretty nice, the demo is so badly designed I have 
+trashcanned it already. Doh. [tat]
+
+
+4k demos:
+
+[Blue]Å
+TECH VIEW:Ä A nice little demo this, not as brainblasting as the DHS 
+one but neatly designed nonetheless. The graphics corrupted when 
+running from medium resolution on my machine, but the motion blur 
+routine is especially neat for the use of a good colour table. The 
+"tunnel" effect is in fact a revamped feedback effect, done by drawing 
+two pillars at the side of the screen and the landscape floor, then 
+using the feedback to "scroll" the effect outwards. It will be 
+interesting to see what they come up with next [tat]
+
+[4ever/DHS]Å
+TECH VIEW:Ä Yay! This more like it! DHS come up trumps with a 4K intro 
+that shows really good design in its underlying code. The decision to 
+use the FPU may annoy some quarters, but it's a revelation in the 4K 
+department where difficult calculations can be reduced to just a 
+couple of bytes to precalc all those nasty bits. It also allows a nice 
+smooth and precise rotation since the FPU includes sine tables.
+  In fact there are only a few relatively simple routines used in this 
+demo: for example there's a "circle" drawer, a rotater, a tunnel 
+calculator, a bump mapper, a blur effect. Each of these need only 
+occupy a couple of hundred bytes. But the trick is to be able to 
+combine these effects to create new ones (e.g. to pipe the output from 
+the bump mapper into the tunnel effect) and DHS do it brilliantly.
+
+Time to dig my FPU docs out... [tat]
+
