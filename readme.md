@@ -15,7 +15,7 @@ This is by no means complete and also not very thoroughly checked for depack err
 The texts are depacked as-is, embedded images can be almost always found alongside the txt file (but be warned: they use ancient ST file formats).
 
 ### "Toolset"
-This repository contains C source to depack ice packed files (courtesy of Mr. Ni/TOS Crew). Also there's a sorry exclude for a golang conversion of Mr. Nis Atomic depacker (just C code embedded in a golang skeleton AFAIR).
+This repository contains C source to depack ice packed files (courtesy of Mr. Ni/TOS Crew). Also there's a sorry excuse for a golang conversion of Mr. Nis Atomic depacker (just C code embedded in a golang skeleton AFAIR).
 Then there are two tools to unlink the Maggie/DBA data file, also in golang.
 Don't expect any of this to work on current golang/C/whatever versions. The toolset is not tested in any way upon release.
 
